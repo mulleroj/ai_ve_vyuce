@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Český jazyk – AI Pomůcky pro Učitele</title>
+    <meta name="description"
+        content="AI aktivity a prompty pro výuku českého jazyka. Opravování slohů, diktáty, literární rozbory, gramatická cvičení." />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon">🤖</div>AI ve <span>Výuce</span>
+            </a>
+            <div class="nav-links">
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link active">📚 Předměty <i class="fa-solid fa-chevron-down"
+                            style="font-size:.65rem"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="matematika.html" class="nav-dropdown-item"><span class="item-icon">🔢</span>
+                            Matematika</a>
+                        <a href="cestina.html" class="nav-dropdown-item"><span class="item-icon">📖</span> Český
+                            jazyk</a>
+                        <a href="anglictina.html" class="nav-dropdown-item"><span class="item-icon">🇬🇧</span> Anglický
+                            jazyk</a>
+                        <a href="prirodoveda.html" class="nav-dropdown-item"><span class="item-icon">🔬</span> Přírodní
+                            vědy</a>
+                        <a href="dejepis.html" class="nav-dropdown-item"><span class="item-icon">🏛️</span> Dějepis</a>
+                    </div>
+                </div>
+                <a href="prompty.html" class="nav-link">✨ Prompty</a>
+                <a href="asistenti.html" class="nav-link">🤖 AI Asistenti</a>
+                <a href="aktivity.html" class="nav-link">🎯 Aktivity</a>
+                <a href="vibe-coding.html" class="nav-link">💻 Vibe Coding</a>
+            </div>
+            <a href="prompty.html" class="btn btn-primary btn-sm nav-cta">📋 Prompty</a>
+            <button class="nav-mobile-toggle"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+    <div class="mobile-menu">
+        <a href="index.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏠 Domů</a>
+        <a href="matematika.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔢 Matematika</a>
+        <a href="cestina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">📖 Český jazyk</a>
+        <a href="anglictina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🇬🇧 Angličtina</a>
+        <a href="prirodoveda.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔬 Přírodní vědy</a>
+        <a href="dejepis.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏛️ Dějepis</a>
+        <a href="prompty.html" class="nav-link" style="font-size:1rem;padding:14px 16px">✨ Prompty</a>
+        <a href="asistenti.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🤖 Asistenti</a>
+        <a href="aktivity.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🎯 Aktivity</a>
+        <a href="vibe-coding.html" class="nav-link" style="font-size:1rem;padding:14px 16px">💻 Vibe Coding</a>
+    </div>
+
+    <section class="page-hero" style="background:linear-gradient(135deg,#0a0f1e 0%,#002040 100%)">
+        <div class="page-hero-glow"
+            style="background:radial-gradient(ellipse,rgba(74,144,226,0.12) 0%,transparent 70%)"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="page-hero-icon"
+                    style="background:linear-gradient(135deg,rgba(74,144,226,0.2),rgba(74,144,226,0.05))">📖</div>
+                <h1 class="page-hero-title">Český jazyk <span
+                        style="background:linear-gradient(135deg,#4a90e2,#6a78d1);-webkit-background-clip:text;-webkit-text-fill-color:transparent">s
+                        AI</span></h1>
+                <p class="page-hero-subtitle">Opravujte slohy, generujte diktáty, analyzujte literaturu a tvořte
+                    gramatická cvičení s pomocí AI. Ušetřete hodiny opravování.</p>
+                <div class="page-hero-stats">
+                    <div class="page-hero-stat"><span>🎯</span><strong>16</strong> aktivit</div>
+                    <div class="page-hero-stat"><span>✨</span><strong>28</strong> promptů</div>
+                    <div class="page-hero-stat"><span>🤖</span><strong>3</strong> AI nástroje</div>
+                    <div class="page-hero-stat"><span>🏫</span>ZŠ · SŠ</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="tabs-container">
+                <div class="tabs" role="tablist">
+                    <button class="tab-btn active" data-tab="aktivity">🎯 Aktivity</button>
+                    <button class="tab-btn" data-tab="prompty">✨ Prompty</button>
+                    <button class="tab-btn" data-tab="asistenti">🤖 Asistenti</button>
+                    <button class="tab-btn" data-tab="tipy">💡 Tipy</button>
+                </div>
+            </div>
+
+            <div id="tab-aktivity" class="tab-panel">
+                <div class="filter-bar">
+                    <span class="filter-label">Ročník:</span>
+                    <div class="filter-group">
+                        <button class="filter-chip active" data-filter="all">Vše</button>
+                        <button class="filter-chip" data-filter="zs1">1.–5. ročník</button>
+                        <button class="filter-chip" data-filter="zs2">6.–9. ročník</button>
+                        <button class="filter-chip" data-filter="ss">SŠ</button>
+                    </div>
+                </div>
+                <div class="activity-grid">
+                    <div class="activity-card reveal" data-level="zs2">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-purple">Claude</span><span
+                                    class="badge badge-gray">6.–9. ročník</span></div>
+                            <span style="font-size:1.8rem">✍️</span>
+                        </div>
+                        <div class="activity-title">Opravovač slohových prací</div>
+                        <div class="activity-desc">Vložte slohy žáků do Claude – AI je opraví, navrhne zlepšení stylu,
+                            gramatiky a struktury a přidá konstruktivní zpětnou vazbu.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 2 min/žák</span><span
+                                class="activity-meta-item">📝 Sloh</span></div>
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span>
+                            <button class="btn btn-mint btn-sm"
+                                onclick="openModal({title:'Opravovač slohových prací',body:'<div style=\'background:rgba(0,0,0,0.3);padding:16px;border-radius:12px;font-size:0.875rem;color:var(--text-secondary);line-height:1.7\'>Oprav tuto slohovou práci žáka [ROČNÍK]. Zaměř se na: 1) gramatiku a pravopis, 2) stavbu vět a odstavců, 3) vhodnost slovní zásoby, 4) splnění zadání. Pro každou chybu uveď správnou variantu a stručné vysvětlení. Na závěr napiš celkové hodnocení a 3 tipy na zlepšení. Sloh: [TEXT SLOHU]</div><div style=\'margin-top:16px\'><button class=\'copy-btn btn btn-mint btn-sm\' data-copy=\'Oprav tuto slohovou práci žáka [ROČNÍK]. Zaměř se na: 1) gramatiku a pravopis, 2) stavbu vět a odstavců, 3) vhodnost slovní zásoby, 4) splnění zadání. Pro každou chybu uveď správnou variantu a stručné vysvětlení. Na závěr napiš celkové hodnocení a 3 tipy na zlepšení. Sloh: [TEXT SLOHU]\'>📋 Kopírovat</button></div>'})">Detail
+                                →</button>
+                        </div>
+                    </div>
+                    <div class="activity-card reveal" data-level="zs2">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span
+                                    class="badge badge-gray">6.–9. ročník</span></div>
+                            <span style="font-size:1.8rem">🎧</span>
+                        </div>
+                        <div class="activity-title">Generátor diktátů</div>
+                        <div class="activity-desc">AI vygeneruje diktáty zaměřené na konkrétní gramatické jevy s různou
+                            úrovní obtížnosti a klíčem.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 5 min příprava</span><span
+                                class="activity-meta-item">🏫 Třída</span></div>
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span>
+                            <button class="btn btn-mint btn-sm"
+                                onclick="openModal({title:'Generátor diktátů',body:'<div style=\'background:rgba(0,0,0,0.3);padding:16px;border-radius:12px;font-size:0.875rem;color:var(--text-secondary);line-height:1.7\'>Vytvoř diktát pro žáky [ROČNÍK] ZŠ zaměřený na [GRAMATICKÝ JEV, např. vyjmenovaná slova / psaní i/y / shoda přísudku s podmětem]. Délka: cca [POČET] slov. Přidej: opravný klíč a seznam procvičovaných jevů s vysvětlením pravidla.</div><div style=\'margin-top:16px\'><button class=\'copy-btn btn btn-mint btn-sm\' data-copy=\'Vytvoř diktát pro žáky [ROČNÍK] ZŠ zaměřený na [GRAMATICKÝ JEV]. Délka: cca [POČET] slov. Přidej opravný klíč a seznam procvičovaných jevů s vysvětlením pravidla.\'>📋 Kopírovat</button></div>'})">Detail
+                                →</button>
+                        </div>
+                    </div>
+                    <div class="activity-card reveal" data-level="ss">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-mint">Gemini</span><span
+                                    class="badge badge-gray">SŠ</span></div>
+                            <span style="font-size:1.8rem">📚</span>
+                        </div>
+                        <div class="activity-title">Literární rozbor díla</div>
+                        <div class="activity-desc">Gemini provede komplexní literární rozbor díla – žánr, téma, postavy,
+                            kompozici, jazykové prostředky a historický kontext.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 10 min příprava</span><span
+                                class="activity-meta-item">👤 Individuální</span></div>
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span>
+                            <button class="btn btn-mint btn-sm"
+                                onclick="openModal({title:'Literární rozbor díla',body:'<div style=\'background:rgba(0,0,0,0.3);padding:16px;border-radius:12px;font-size:0.875rem;color:var(--text-secondary);line-height:1.7\'>Proveď literární rozbor díla „[NÁZEV]"
+                                od [AUTOR]. Zahrň: žánr a literární druh, téma a hlavní myšlenky, charakteristiku
+                                hlavních postav, kompozici a stavbu díla, jazykové prostředky, historický a společenský
+                                kontext. Odpovědi strukturuj jako přehledné body vhodné pro přípravu žáků SŠ.</div>
+                                <div style=\'margin-top:16px\'><button class=\'copy-btn btn btn-mint btn-sm\'
+                                        data-copy=\'Proveď literární rozbor díla „[NÁZEV]" od [AUTOR]. Zahrň: žánr,
+                                        téma, postavy, kompozici, jazykové prostředky a historický kontext.\'>📋
+                                        Kopírovat</button></div>'})">Detail →
+                            </button>
+                        </div>
+                    </div>
+                    <div class="activity-card reveal" data-level="zs1">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span
+                                    class="badge badge-gray">1.–5. ročník</span></div>
+                            <span style="font-size:1.8rem">🔤</span>
+                        </div>
+                        <div class="activity-title">Cvičení vyjmenovaných slov</div>
+                        <div class="activity-desc">AI vygeneruje kreativní cvičení a příběhy procvičující vyjmenovaná
+                            slova zábavnou formou pro mladší žáky.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 5 min příprava</span><span
+                                class="activity-meta-item">🏫 Třída</span></div>
+                        <div class="activity-footer"><span class="badge badge-gold">Oblíbené</span><button
+                                class="btn btn-mint btn-sm">Detail →</button></div>
+                    </div>
+                    <div class="activity-card reveal" data-level="ss">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-purple">Claude</span><span
+                                    class="badge badge-gray">SŠ</span></div>
+                            <span style="font-size:1.8rem">🗣️</span>
+                        </div>
+                        <div class="activity-title">Příprava na maturitní ústní zkoušku</div>
+                        <div class="activity-desc">Claude simuluje maturitní ústní zkoušku – klade otázky k literárnímu
+                            dílu a hodnotí odpovědi žáka s radami na zlepšení.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 20 min aktivita</span><span
+                                class="activity-meta-item">👤 Individuální</span></div>
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><button
+                                class="btn btn-mint btn-sm">Detail →</button></div>
+                    </div>
+                    <div class="activity-card reveal" data-level="zs2">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span
+                                    class="badge badge-gray">6.–9. ročník</span></div>
+                            <span style="font-size:1.8rem">📝</span>
+                        </div>
+                        <div class="activity-title">Asistent pro tvorbu slohových útvarů</div>
+                        <div class="activity-desc">Žáci dostávají krok-za-krokem průvodce pro psaní různých slohových
+                            útvarů – líčení, popis, vypravování, charakteristika.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 15 min aktivita</span><span
+                                class="activity-meta-item">👤 Individuální</span></div>
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><button
+                                class="btn btn-mint btn-sm">Detail →</button></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-prompty" class="tab-panel d-none">
+                <div class="prompt-grid">
+                    <div class="prompt-card reveal">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Opravovač slohu s konstruktivní zpětnou vazbou</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span
+                                        class="badge badge-purple">Claude</span><span class="badge badge-gray">6.–9.
+                                        ročník</span></div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">Oprav tuto slohovou práci žáka [ROČNÍK]. Zaměř se na: 1) gramatiku a
+                            pravopis, 2) stavbu vět a odstavců, 3) vhodnost slovní zásoby, 4) splnění zadání. Pro každou
+                            skupinu chyb uveď počet, příklady a správnou variantu. Na závěr: celkové zhodnocení (2–3
+                            věty) a 3 konkrétní tipy na zlepšení. TEXT: [VLOŽTE TEXT]</div>
+                        <div class="prompt-footer">
+                            <span class="badge badge-blue">Opravování</span>
+                            <button class="copy-btn"
+                                data-copy="Oprav tuto slohovou práci žáka [ROČNÍK]. Zaměř se na: 1) gramatiku a pravopis, 2) stavbu vět a odstavců, 3) vhodnost slovní zásoby, 4) splnění zadání. Pro každou skupinu chyb uveď počet, příklady a správnou variantu. Na závěr: celkové zhodnocení (2–3 věty) a 3 konkrétní tipy na zlepšení. TEXT: [VLOŽTE TEXT]">📋
+                                Kopírovat</button>
+                        </div>
+                    </div>
+                    <div class="prompt-card reveal">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Generátor diktátu s klíčem</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span
+                                        class="badge badge-gold">ChatGPT</span><span class="badge badge-gray">ZŠ</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">Vytvoř diktát pro žáky [ROČNÍK] zaměřený na [GRAMATICKÝ JEV]. Délka:
+                            cca [POČET] slov. Text musí být tematicky zajímavý pro žáky. Přidej: opravný klíč (označení
+                            správných písmen), seznam klíčových slov s pravidlem a 3 cvičné věty jako rozcvičení před
+                            diktátem.</div>
+                        <div class="prompt-footer">
+                            <span class="badge badge-green">Diktáty</span>
+                            <button class="copy-btn"
+                                data-copy="Vytvoř diktát pro žáky [ROČNÍK] zaměřený na [GRAMATICKÝ JEV]. Délka: cca [POČET] slov. Text musí být tematicky zajímavý pro žáky. Přidej: opravný klíč, seznam klíčových slov s pravidlem a 3 cvičné věty jako rozcvičení před diktátem.">📋
+                                Kopírovat</button>
+                        </div>
+                    </div>
+                    <div class="prompt-card reveal">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Literární rozbor – kompletní šablona</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span
+                                        class="badge badge-mint">Gemini</span><span class="badge badge-gray">SŠ</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">Proveď literární rozbor díla „[NÁZEV]" od [AUTOR]. Struktura: 1)
+                            Bibliografické údaje, 2) Literární druh a žánr, 3) Téma, motiv, hlavní myšlenka, 4)
+                            Charakteristika postav, 5) Kompozice a struktura, 6) Jazykové prostředky, 7) Historický a
+                            společenský kontext, 8) Osobní hodnocení díla. Vhodné pro přípravu na maturitu.</div>
+                        <div class="prompt-footer">
+                            <span class="badge badge-orange">Literatura</span>
+                            <button class="copy-btn" data-copy="Proveď literární rozbor díla „[NÁZEV]" od [AUTOR].
+                                Struktura: 1) Bibliografické údaje, 2) Literární druh a žánr, 3) Téma, motiv, hlavní
+                                myšlenka, 4) Charakteristika postav, 5) Kompozice a struktura, 6) Jazykové prostředky,
+                                7) Historický a společenský kontext, 8) Osobní hodnocení díla.">📋 Kopírovat</button>
+                        </div>
+                    </div>
+                    <div class="prompt-card reveal">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Průvodce psaním slohového útvaru</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span
+                                        class="badge badge-purple">Claude</span><span
+                                        class="badge badge-gray">ZŠ/SŠ</span></div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">Pomoz mi napsat [SLOHOVÝ ÚTVAR:
+                            líčení/popis/vypravování/charakteristika/úvaha] na téma [TÉMA] pro žáka [ROČNÍK]. Nejprve
+                            vysvětli strukturu tohoto útvaru, pak uveď osnovu, klíčová jazyková spojení typická pro
+                            tento útvar a nakonec ukázkový odstavec jako inspiraci. Nestyl za mě celý text.</div>
+                        <div class="prompt-footer">
+                            <span class="badge badge-pink">Sloh</span>
+                            <button class="copy-btn"
+                                data-copy="Pomoz mi napsat [SLOHOVÝ ÚTVAR] na téma [TÉMA] pro žáka [ROČNÍK]. Vysvětli strukturu, uveď osnovu, klíčová jazyková spojení a ukázkový odstavec jako inspiraci. Nestyl za mě celý text.">📋
+                                Kopírovat</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-asistenti" class="tab-panel d-none">
+                <div class="assistant-grid">
+                    <div class="assistant-card reveal">
+                        <div class="assistant-header">
+                            <div class="assistant-logo"
+                                style="background:linear-gradient(135deg,#de7c3c,#c9561a);font-size:1.8rem">🟠</div>
+                            <div>
+                                <div class="assistant-name">Claude</div>
+                                <div class="assistant-provider">Anthropic · Claude 3.5 Sonnet</div>
+                            </div>
+                        </div>
+                        <div class="assistant-desc">Nejlepší volba pro opravování slohů a tvorbu strukturovaných
+                            zpětných vazeb. Claude exceluje v porozumění jazykové kvalitě textu.</div>
+                        <div class="assistant-tags"><span class="badge badge-purple">Opravování slohů</span><span
+                                class="badge badge-mint">Zpětná vazba</span></div>
+                        <div class="assistant-footer">
+                            <div class="assistant-rating"><span class="stars">★★★★★</span></div><a
+                                href="https://claude.ai" target="_blank" class="btn btn-primary btn-sm">Otevřít →</a>
+                        </div>
+                    </div>
+                    <div class="assistant-card reveal">
+                        <div class="assistant-header">
+                            <div class="assistant-logo"
+                                style="background:linear-gradient(135deg,#00a67e,#008f6c);font-size:1.8rem">🟢</div>
+                            <div>
+                                <div class="assistant-name">ChatGPT</div>
+                                <div class="assistant-provider">OpenAI · GPT-4o</div>
+                            </div>
+                        </div>
+                        <div class="assistant-desc">Výborný pro generování diktátů, cvičení a výuku gramatiky. Zvládá i
+                            rozbor literárních textů a tvorbu testů.</div>
+                        <div class="assistant-tags"><span class="badge badge-gold">Diktáty</span><span
+                                class="badge badge-blue">Gramatika</span></div>
+                        <div class="assistant-footer">
+                            <div class="assistant-rating"><span class="stars">★★★★★</span></div><a
+                                href="https://chatgpt.com" target="_blank" class="btn btn-primary btn-sm">Otevřít →</a>
+                        </div>
+                    </div>
+                    <div class="assistant-card reveal">
+                        <div class="assistant-header">
+                            <div class="assistant-logo"
+                                style="background:linear-gradient(135deg,#4285f4,#34a853);font-size:1.8rem">🔵</div>
+                            <div>
+                                <div class="assistant-name">Gemini</div>
+                                <div class="assistant-provider">Google</div>
+                            </div>
+                        </div>
+                        <div class="assistant-desc">Vhodný pro literární rozbory díky přístupu k aktuálním informacím.
+                            Gemini zvládne kontext díla v rámci doby i aktuálního výkladu.</div>
+                        <div class="assistant-tags"><span class="badge badge-orange">Literatura</span><span
+                                class="badge badge-green">Kontext</span></div>
+                        <div class="assistant-footer">
+                            <div class="assistant-rating"><span class="stars">★★★★☆</span></div><a
+                                href="https://gemini.google.com" target="_blank" class="btn btn-primary btn-sm">Otevřít
+                                →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-tipy" class="tab-panel d-none">
+                <div style="display:grid;gap:16px;max-width:860px">
+                    <div class="info-box reveal"><span class="info-box-icon">💡</span>
+                        <div class="info-box-text"><strong>Tip: Claude je král opravování</strong>Pro opravování
+                            slohových prací je Claude výrazně lepší než ostatní modely – lépe rozumí stylistickým
+                            nuancím češtiny a dává konkrétnější zpětnou vazbu.</div>
+                    </div>
+                    <div class="info-box reveal"><span class="info-box-icon">📝</span>
+                        <div class="info-box-text"><strong>Tip: Vždy specifikujte slohový útvar</strong>AI potřebuje
+                            vědět, jaký slohový útvar opravuje – jinak hodnotí každý text stejně. Vždy napište: "Toto je
+                            [útvar] pro žáka [ročník]."</div>
+                    </div>
+                    <div class="info-box reveal"
+                        style="background:rgba(231,76,60,0.07);border-color:rgba(231,76,60,0.2)"><span
+                            class="info-box-icon">⚠️</span>
+                        <div class="info-box-text"><strong>Upozornění: Citlivost dat žáků</strong>Před vložením slohu
+                            žáka do AI odstraňte nebo anonymizujte osobní údaje (jméno, škola, třída). Dodržujte GDPR.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><a href="index.html" class="nav-logo"
+                        style="margin-bottom:12px;display:inline-flex">
+                        <div class="nav-logo-icon">🤖</div>AI ve <span>Výuce</span>
+                    </a>
+                    <p>Průvodce AI pro české učitele.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>🎯 Předměty</h4>
+                    <ul>
+                        <li><a href="matematika.html">🔢 Matematika</a></li>
+                        <li><a href="cestina.html">📖 Český jazyk</a></li>
+                        <li><a href="anglictina.html">🇬🇧 Angličtina</a></li>
+                        <li><a href="prirodoveda.html">🔬 Přírodní vědy</a></li>
+                        <li><a href="dejepis.html">🏛️ Dějepis</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>📚 Zdroje</h4>
+                    <ul>
+                        <li><a href="prompty.html">✨ Prompty</a></li>
+                        <li><a href="aktivity.html">🎯 Aktivity</a></li>
+                        <li><a href="asistenti.html">🤖 Asistenti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>🔗 Navigace</h4>
+                    <ul>
+                        <li><a href="index.html">🏠 Domů</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><span>© 2026 AI ve Výuce · Pro české pedagogy</span></div>
+        </div>
+    </footer>
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title"></h3><button class="modal-close"
+                    onclick="document.getElementById('modalOverlay').classList.remove('open')">✕</button>
+            </div>
+            <div class="modal-body"></div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

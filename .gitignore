@@ -1,0 +1,19 @@
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+
+# Temp
+*.tmp
+*.log
+
+# Node (if any future build tools)
+node_modules/
+
+# Source images folder (not needed for deployment)
+pic/
+texty/

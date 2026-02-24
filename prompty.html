@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Knihovna Promptů – AI ve Výuce</title>
+    <meta name="description"
+        content="Kompletní sbírka promptů pro učitele. Prompty pro ChatGPT, Claude a Gemini tříděné dle předmětu a ročníku." />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon">🤖</div>AI ve <span>Výuce</span>
+            </a>
+            <div class="nav-links">
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link">📚 Předměty <i class="fa-solid fa-chevron-down"
+                            style="font-size:.65rem"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="matematika.html" class="nav-dropdown-item"><span class="item-icon">🔢</span>
+                            Matematika</a>
+                        <a href="cestina.html" class="nav-dropdown-item"><span class="item-icon">📖</span> Český
+                            jazyk</a>
+                        <a href="anglictina.html" class="nav-dropdown-item"><span class="item-icon">🇬🇧</span> Anglický
+                            jazyk</a>
+                        <a href="prirodoveda.html" class="nav-dropdown-item"><span class="item-icon">🔬</span> Přírodní
+                            vědy</a>
+                        <a href="dejepis.html" class="nav-dropdown-item"><span class="item-icon">🏛️</span> Dějepis</a>
+                    </div>
+                </div>
+                <a href="prompty.html" class="nav-link active">✨ Prompty</a>
+                <a href="asistenti.html" class="nav-link">🤖 AI Asistenti</a>
+                <a href="aktivity.html" class="nav-link">🎯 Aktivity</a>
+                <a href="vibe-coding.html" class="nav-link">💻 Vibe Coding</a>
+            </div>
+            <a href="prompty.html" class="btn btn-primary btn-sm nav-cta">📋 Prompty</a>
+            <button class="nav-mobile-toggle"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+    <div class="mobile-menu">
+        <a href="index.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏠 Domů</a>
+        <a href="matematika.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔢 Matematika</a>
+        <a href="cestina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">📖 Český jazyk</a>
+        <a href="anglictina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🇬🇧 Angličtina</a>
+        <a href="prirodoveda.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔬 Přírodní vědy</a>
+        <a href="dejepis.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏛️ Dějepis</a>
+        <a href="prompty.html" class="nav-link" style="font-size:1rem;padding:14px 16px">✨ Prompty</a>
+        <a href="asistenti.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🤖 Asistenti</a>
+        <a href="aktivity.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🎯 Aktivity</a>
+        <a href="vibe-coding.html" class="nav-link" style="font-size:1rem;padding:14px 16px">💻 Vibe Coding</a>
+    </div>
+
+    <section class="page-hero" style="background:linear-gradient(135deg,#0a0f1e 0%,#0d0020 100%)">
+        <div class="page-hero-glow"
+            style="background:radial-gradient(ellipse,rgba(243,156,18,0.12) 0%,transparent 70%)"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="page-hero-icon"
+                    style="background:linear-gradient(135deg,rgba(243,156,18,0.2),rgba(243,156,18,0.05))">✨</div>
+                <h1 class="page-hero-title">Knihovna <span class="gradient-text-gold">Promptů</span></h1>
+                <p class="page-hero-subtitle">Přes 130 otestovaných promptů pro ChatGPT, Claude a Gemini. Zkopírujte
+                    prompt, doplňte mezery v závorkách a používejte ihned ve výuce.</p>
+                <div class="page-hero-stats">
+                    <div class="page-hero-stat"><span>✨</span><strong>130+</strong> promptů</div>
+                    <div class="page-hero-stat"><span>📚</span><strong>5</strong> předmětů</div>
+                    <div class="page-hero-stat"><span>🤖</span>ChatGPT · Claude · Gemini</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <!-- Search + Filter bar -->
+            <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-bottom:32px">
+                <div class="search-bar" style="flex:1;min-width:240px">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" class="search-input" id="promptSearch" placeholder="Hledat prompty...">
+                </div>
+                <div class="filter-group">
+                    <button class="filter-chip active" data-filter="all">Vše</button>
+                    <button class="filter-chip" data-filter="mat">🔢 Matematika</button>
+                    <button class="filter-chip" data-filter="cj">📖 Čeština</button>
+                    <button class="filter-chip" data-filter="aj">🇬🇧 Angličtina</button>
+                    <button class="filter-chip" data-filter="pv">🔬 Přírodní vědy</button>
+                    <button class="filter-chip" data-filter="dej">🏛️ Dějepis</button>
+                    <button class="filter-chip" data-filter="gen">🎯 Obecné</button>
+                </div>
+            </div>
+
+            <!-- Obecné prompty box -->
+            <div style="margin-bottom:40px">
+                <div class="section-header">
+                    <h2 class="section-title">🎯 Obecné prompty pro každý předmět</h2>
+                    <p class="section-subtitle">Šablony, které fungují pro jakýkoliv předmět nebo ročník</p>
+                </div>
+                <div class="prompt-grid">
+                    <div class="prompt-card reveal" data-subject="gen">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Generátor testových otázek</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span class="badge badge-gold">Jakýkoli
+                                        LLM</span><span class="badge badge-gray">Obecný</span></div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">Vytvoř test z předmětu [PŘEDMĚT] na téma [TÉMA] pro žáky [ROČNÍK].
+                            Formát: 5 otázek s výběrem odpovědi (A–D), 3 doplňovací otázky, 2 otevřené otázky. Přidej:
+                            opravný klíč, časový limit na každou část a bodové ohodnocení.</div>
+                        <div class="prompt-footer"><span class="badge badge-green">Testování</span><button
+                                class="copy-btn"
+                                data-copy="Vytvoř test z předmětu [PŘEDMĚT] na téma [TÉMA] pro žáky [ROČNÍK]. Formát: 5 otázek s výběrem odpovědi (A–D), 3 doplňovací otázky, 2 otevřené otázky. Přidej: opravný klíč, časový limit a bodové ohodnocení.">📋
+                                Kopírovat</button></div>
+                    </div>
+                    <div class="prompt-card reveal" data-subject="gen">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Plán hodiny (45 minut)</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span
+                                        class="badge badge-purple">Claude</span><span
+                                        class="badge badge-gray">Obecný</span></div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">Připrav plán vyučovací hodiny (45 minut) z [PŘEDMĚT] pro [ROČNÍK] na
+                            téma [TÉMA]. Struktura: Zahřívací aktivita (5 min), Výklad / prezentace (15 min), Skupinová
+                            aktivita (10 min), Samostatná práce (10 min), Reflexe a shrnutí (5 min). Přidej pomůcky,
+                            cíle hodiny a způsob hodnocení.</div>
+                        <div class="prompt-footer"><span class="badge badge-blue">Plánování</span><button
+                                class="copy-btn"
+                                data-copy="Připrav plán vyučovací hodiny (45 minut) z [PŘEDMĚT] pro [ROČNÍK] na téma [TÉMA]. Zahřívací aktivita (5 min), Výklad (15 min), Skupinová aktivita (10 min), Samostatná práce (10 min), Reflexe (5 min). Přidej pomůcky, cíle a způsob hodnocení.">📋
+                                Kopírovat</button></div>
+                    </div>
+                    <div class="prompt-card reveal" data-subject="gen">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Diferenciace pro různé úrovně</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span
+                                        class="badge badge-gold">ChatGPT</span><span
+                                        class="badge badge-gray">Obecný</span></div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">Vezmi toto zadání: [PŮVODNÍ ÚLOHA]. Vytvoř 3 verze pro různé úrovně
+                            žáků ve třídě [ROČNÍK]: 1) Verze pro žáky se speciálními vzdělávacími potřebami
+                            (zjednodušená), 2) Standardní verze, 3) Verze pro nadané žáky (rozšiřující). Zachovej stejné
+                            téma, jen upravuj náročnost.</div>
+                        <div class="prompt-footer"><span class="badge badge-orange">Diferenciace</span><button
+                                class="copy-btn"
+                                data-copy="Vezmi toto zadání: [PŮVODNÍ ÚLOHA]. Vytvoř 3 verze pro různé úrovně žáků [ROČNÍK]: 1) Pro žáky se SVP (zjednodušená), 2) Standardní, 3) Pro nadané. Zachovej téma, jen upravuj náročnost.">📋
+                                Kopírovat</button></div>
+                    </div>
+                    <div class="prompt-card reveal" data-subject="gen">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Zpětná vazba k žákovskému výtvoru</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span
+                                        class="badge badge-purple">Claude</span><span
+                                        class="badge badge-gray">Obecný</span></div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">Napíš konstruktivní zpětnou vazbu k tomuto žákovskému výtvoru [PŘEDMĚT,
+                            ROČNÍK]: [TEXT/POPIS]. Zpětná vazba musí: být pozitivní celkově, uvést 3 silné stránky,
+                            nabídnout 3 konkrétní návrhy na zlepšení, být srozumitelná pro daný věk. Tón: přátelský,
+                            povzbuzující.</div>
+                        <div class="prompt-footer"><span class="badge badge-pink">Zpětná vazba</span><button
+                                class="copy-btn"
+                                data-copy="Napíš konstruktivní zpětnou vazbu k žákovskému výtvoru [PŘEDMĚT, ROČNÍK]: [TEXT]. Zahrň: 3 silné stránky, 3 návrhy na zlepšení. Tón musí být přátelský a povzbuzující.">📋
+                                Kopírovat</button></div>
+                    </div>
+                    <div class="prompt-card reveal" data-subject="gen">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Skupinové projektové zadání</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span
+                                        class="badge badge-mint">Gemini</span><span
+                                        class="badge badge-gray">Obecný</span></div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">Navrhni skupinový projekt pro žáky [ROČNÍK] na téma [TÉMA]. Obsahuje:
+                            cíle projektu, rozdělení rolí ve skupině (4–5 členů), harmonogram (celkem [POČET] týdnů),
+                            formu prezentace výsledků, způsob hodnocení (učitel + sebehodnocení), a propojení s ŠVP /
+                            RVP.</div>
+                        <div class="prompt-footer"><span class="badge badge-mint">Projekty</span><button
+                                class="copy-btn"
+                                data-copy="Navrhni skupinový projekt pro žáky [ROČNÍK] na téma [TÉMA]. Zahrň: cíle, role ve skupině (4–5 členů), harmonogram ([POČET] týdnů), formu prezentace, způsob hodnocení a propojení s ŠVP.">📋
+                                Kopírovat</button></div>
+                    </div>
+                    <div class="prompt-card reveal" data-subject="gen">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Komunikace s rodiči – šablona dopisu</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span
+                                        class="badge badge-gold">ChatGPT</span><span class="badge badge-gray">Pro
+                                        učitele</span></div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">Napiš dopis/email rodičům žáka [ROČNÍK] ohledně: [TÉMA: např. pokroku v
+                            učení / chování / nadcházející akce / třídní výlet]. Tón: profesionální, ale přátelský.
+                            Délka: cca 150 slov. Přidej konkrétní příklady nebo informace: [DETAILY].</div>
+                        <div class="prompt-footer"><span class="badge badge-blue">Komunikace</span><button
+                                class="copy-btn"
+                                data-copy="Napiš email rodičům žáka [ROČNÍK] ohledně: [TÉMA]. Tón: profesionální, ale přátelský. Délka: cca 150 slov. Přidej konkrétní detaily: [DETAILY].">📋
+                                Kopírovat</button></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Matematika prompty -->
+            <div style="margin-bottom:40px">
+                <div class="section-header">
+                    <h2 class="section-title">🔢 Matematika</h2><a href="matematika.html"
+                        class="btn btn-outline btn-sm">Více →</a>
+                </div>
+                <div class="prompt-grid">
+                    <div class="prompt-card reveal" data-subject="mat">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Generátor slovních úloh</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span
+                                        class="badge badge-gold">ChatGPT</span><span class="badge badge-gray">ZŠ</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">Vytvoř 5 slovních úloh z matematiky pro žáky [ROČNÍK] zaměřených na
+                            [TÉMA: procenta/zlomky/rovnice/geometrie]. Každá úloha musí: být zasazena do reálné situace
+                            blízké žákům, mít jasné zadání, přiměřenou obtížnost a podrobný postup řešení s odpovědí.
+                        </div>
+                        <div class="prompt-footer"><span class="badge badge-gold">Úlohy</span><button class="copy-btn"
+                                data-copy="Vytvoř 5 slovních úloh z matematiky pro žáky [ROČNÍK] zaměřených na [TÉMA]. Každá úloha musí být zasazena do reálné situace blízké žákům, mít jasné zadání a podrobný postup řešení.">📋
+                                Kopírovat</button></div>
+                    </div>
+                    <div class="prompt-card reveal" data-subject="mat">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Krok za krokem – výklad tématu</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span
+                                        class="badge badge-purple">Claude</span><span
+                                        class="badge badge-gray">ZŠ/SŠ</span></div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">Vysvětli matematické téma [TÉMA] žákům [ROČNÍK] krok za krokem. Začni
+                            od základů, použij jednoduché příklady a vizuální analogie. Přidej: definici, vzorce (pokud
+                            existují), 2 ukázkové příklady (od lehčího k těžšímu) a 3 cvičné úlohy s klíčem.</div>
+                        <div class="prompt-footer"><span class="badge badge-blue">Výklad</span><button class="copy-btn"
+                                data-copy="Vysvětli matematické téma [TÉMA] žákům [ROČNÍK] krok za krokem. Začni od základů, použij jednoduché příklady. Přidej: definici, vzorce, 2 ukázkové příklady a 3 cvičné úlohy s klíčem.">📋
+                                Kopírovat</button></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jazyky prompty section -->
+            <div style="margin-bottom:40px">
+                <div class="section-header">
+                    <h2 class="section-title">🌍 Jazyky (ČJ + AJ)</h2>
+                </div>
+                <div class="prompt-grid">
+                    <div class="prompt-card reveal" data-subject="cj">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Opravovač slohu s rubrikou</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span
+                                        class="badge badge-purple">Claude</span><span
+                                        class="badge badge-gray">Čeština</span></div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">Oprav tuto slohovou práci žáka [ROČNÍK] dle kritérií: 1) Gramatika a
+                            pravopis (0–25b), 2) Stavba vět a odstavců (0–25b), 3) Slovní zásoba (0–25b), 4) Splnění
+                            zadání (0–25b). U každého kritéria: bodové hodnocení + komentář. Celkové shrnutí. Sloh:
+                            [TEXT]</div>
+                        <div class="prompt-footer"><span class="badge badge-pink">Sloh</span><button class="copy-btn"
+                                data-copy="Oprav slohovou práci žáka [ROČNÍK] dle rubrik: Gramatika (0–25b), Stavba textu (0–25b), Slovní zásoba (0–25b), Splnění zadání (0–25b). U každého: hodnocení + komentář. Sloh: [TEXT]">📋
+                                Kopírovat</button></div>
+                    </div>
+                    <div class="prompt-card reveal" data-subject="aj">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Konverzační partner v angličtině</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span
+                                        class="badge badge-gold">ChatGPT</span><span
+                                        class="badge badge-gray">Angličtina</span></div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">You are a patient English conversation partner for a Czech student at
+                            [CEFR] level. Topic: [TOPIC]. Only speak English. Correct mistakes gently by echoing the
+                            correct version. Ask follow-up questions. If they don't understand, rephrase using simpler
+                            vocabulary. Start with an engaging opening question about the topic.</div>
+                        <div class="prompt-footer"><span class="badge badge-mint">Konverzace</span><button
+                                class="copy-btn"
+                                data-copy="You are a patient English conversation partner for a Czech student at [CEFR] level. Topic: [TOPIC]. Only speak English. Correct mistakes gently by echoing the correct version. Ask follow-up questions and start with an engaging opening question.">📋
+                                Kopírovat</button></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info box about usage -->
+            <div class="info-box reveal" style="max-width:800px;margin:0 auto">
+                <span class="info-box-icon">💡</span>
+                <div class="info-box-text">
+                    <strong>Jak používat prompty:</strong> Zkopírujte prompt, vložte ho do ChatGPT / Claude / Gemini a
+                    doplňte text v hranatých závorkách [JAKO TOTO] dle vaší situace. Závorky jsou placeholderky –
+                    nahraďte je konkrétním obsahem.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><a href="index.html" class="nav-logo"
+                        style="margin-bottom:12px;display:inline-flex">
+                        <div class="nav-logo-icon">🤖</div>AI ve <span>Výuce</span>
+                    </a>
+                    <p>Průvodce AI pro české učitele.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>🎯 Předměty</h4>
+                    <ul>
+                        <li><a href="matematika.html">🔢 Matematika</a></li>
+                        <li><a href="cestina.html">📖 Český jazyk</a></li>
+                        <li><a href="anglictina.html">🇬🇧 Angličtina</a></li>
+                        <li><a href="prirodoveda.html">🔬 Přírodní vědy</a></li>
+                        <li><a href="dejepis.html">🏛️ Dějepis</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>📚 Zdroje</h4>
+                    <ul>
+                        <li><a href="prompty.html">✨ Prompty</a></li>
+                        <li><a href="aktivity.html">🎯 Aktivity</a></li>
+                        <li><a href="asistenti.html">🤖 Asistenti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>🔗 Navigace</h4>
+                    <ul>
+                        <li><a href="index.html">🏠 Domů</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><span>© 2026 AI ve Výuce · Pro české pedagogy</span></div>
+        </div>
+    </footer>
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title"></h3><button class="modal-close"
+                    onclick="document.getElementById('modalOverlay').classList.remove('open')">✕</button>
+            </div>
+            <div class="modal-body"></div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

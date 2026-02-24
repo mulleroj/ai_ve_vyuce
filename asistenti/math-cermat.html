@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MathCERMAT – AI ve Výuce | Detail asistenta</title>
+    <meta name="description"
+        content="Digitální asistent pro české středoškolské učitele. Generuje matematické úlohy dle standardů CERMAT a SCIO včetně řešení a analýzy chyb." />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .assistant-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .detail-main {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 40px;
+        }
+
+        .detail-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .sidebar-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+        }
+
+        .detail-header {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .detail-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, rgba(0, 212, 168, 0.2), rgba(0, 212, 168, 0.05));
+        }
+
+        .detail-title h1 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .detail-platform {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .detail-hero-img {
+            width: 100%;
+            max-height: 360px;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .content-section {
+            margin-bottom: 32px;
+        }
+
+        .content-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .content-section h2 {
+            font-size: 1.25rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .content-section p {
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .content-section ul {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-left: 8px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .content-section ul li {
+            padding: 4px 0;
+        }
+
+        .content-section ol {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-left: 20px;
+        }
+
+        .content-section ol li {
+            padding: 4px 0;
+        }
+
+        .section-divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 32px 0;
+        }
+
+        .prompt-container {
+            position: relative;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            padding-top: 48px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: #d1d5db;
+            white-space: pre-wrap;
+            margin-top: 16px;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 6px 12px;
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .copy-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .tag-list {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .sidebar-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .example-box {
+            background: rgba(138, 43, 226, 0.08);
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            margin: 16px 0;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .warning-box {
+            background: rgba(245, 166, 35, 0.08);
+            border: 1px solid rgba(245, 166, 35, 0.2);
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            margin-top: 16px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        @media(max-width:900px) {
+            .assistant-detail-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .detail-main {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-logo">
+                <div class="nav-logo-icon">🤖</div>AI ve <span>Výuce</span>
+            </a>
+            <div class="nav-links">
+                <a href="../prompty.html" class="nav-link">✨ Prompty</a>
+                <a href="../asistenti.html" class="nav-link">🤖 AI Asistenti</a>
+                <a href="../aktivity.html" class="nav-link">🎯 Aktivity</a>
+                <a href="../katalog-asistenti.html" class="nav-link active">🚀 Katalog</a>
+            </div>
+            <a href="../prompty.html" class="btn btn-primary btn-sm nav-cta">📋 Prompty</a>
+        </div>
+    </nav>
+
+    <div class="container" style="padding-top:120px; padding-bottom:80px;">
+        <a href="../katalog-asistenti.html"
+            style="color:var(--text-muted); text-decoration:none; display:inline-flex; align-items:center; gap:8px; margin-bottom:24px; font-size:0.9rem">
+            <i class="fa-solid fa-arrow-left"></i> Zpět do katalogu
+        </a>
+
+        <div class="assistant-detail-grid">
+            <main class="detail-main reveal">
+                <div class="detail-header">
+                    <div class="detail-icon">📐</div>
+                    <div class="detail-title">
+                        <h1>MathCERMAT</h1>
+                        <div class="detail-platform"><i class="fa-solid fa-microchip"></i> ChatGPT · Claude · Gemini Pro
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero obrázek -->
+                <img src="../images/MathCERMAT.png" alt="MathCERMAT – asistent pro matematické úlohy"
+                    class="detail-hero-img">
+
+                <!-- O asistentovi -->
+                <div class="content-section">
+                    <h2><i class="fa-solid fa-circle-info"></i> Asistent pro tvorbu českých testových úloh z matematiky
+                    </h2>
+                    <p>Tento asistent je určen učitelům středních škol, kteří chtějí rychle a kvalitně vytvářet
+                        matematické úlohy ve stylu českých přijímacích zkoušek a maturit (CERMAT, SCIO).</p>
+                    <p>Pomáhá generovat úlohy, které odpovídají české testovací logice – tedy důraz na porozumění
+                        zadání, vícekrokové řešení, práci s chybou a praktický kontext.</p>
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- Co asistent umí -->
+                <div class="content-section">
+                    <h2><i class="fa-solid fa-check-double"></i> Co asistent umí</h2>
+                    <p>Asistent dokáže vytvářet:</p>
+                    <ul>
+                        <li>✅ Uzavřené testové úlohy (4 možnosti A–D)</li>
+                        <li>✅ Otevřené úlohy s výpočtem</li>
+                        <li>✅ Vícekrokové slovní úlohy</li>
+                        <li>✅ Úlohy zaměřené na argumentaci a zdůvodnění postupu</li>
+                        <li>✅ Varianty jedné úlohy pro diferenciaci výuky</li>
+                        <li>✅ Úlohy z praxe (finance v Kč, energie, doprava, technické obory, demografie…)</li>
+                    </ul>
+                    <p>Všechny matematické zápisy jsou přehledně formátované v LaTeXu.</p>
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- Jak vypadá výstup -->
+                <div class="content-section">
+                    <h2><i class="fa-solid fa-file-lines"></i> Jak vypadá výstup</h2>
+                    <p>Každá úloha obsahuje:</p>
+                    <ol>
+                        <li><strong>Zadání</strong></li>
+                        <li><strong>Řešení</strong> krok za krokem</li>
+                        <li><strong>Typickou chybu žáka</strong> (didaktická poznámka)</li>
+                        <li><strong>Označení obtížnosti</strong> (základní / střední / vyšší)</li>
+                    </ol>
+                    <p>U testových úloh jsou připraveny realistické distraktory odpovídající běžným chybám.</p>
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- Jak asistenta používat -->
+                <div class="content-section">
+                    <h2><i class="fa-solid fa-play-circle"></i> Jak asistenta používat</h2>
+                    <p>Na začátku stačí zadat:</p>
+                    <ol>
+                        <li><strong>Téma</strong> (např. „kvadratické funkce", „pravděpodobnost", „Pythagorova věta",
+                            „lineární rovnice")</li>
+                        <li><strong>Typ úlohy</strong> (testová / otevřená / kombinovaná)</li>
+                        <li><strong>Obtížnost</strong> (základní / střední / vyšší)</li>
+                    </ol>
+                    <div class="example-box">
+                        „Lineární rovnice, testová úloha, střední obtížnost."
+                    </div>
+                    <p>Asistent následně vygeneruje kompletní zadání včetně řešení a didaktické poznámky.</p>
+                    <p>Po každé úloze můžete požádat o:</p>
+                    <ul>
+                        <li>• další úlohu stejného typu</li>
+                        <li>• variantu na procvičení jiné dovednosti</li>
+                        <li>• zvýšení nebo snížení obtížnosti</li>
+                        <li>• úpravu pro konkrétní typ školy (např. technický obor)</li>
+                    </ul>
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- K čemu je asistent ideální -->
+                <div class="content-section">
+                    <h2><i class="fa-solid fa-star"></i> K čemu je asistent ideální</h2>
+                    <ul>
+                        <li>• rychlá příprava na maturitu</li>
+                        <li>• tvorba cvičných testů</li>
+                        <li>• diferenciace ve třídě</li>
+                        <li>• příprava opravných či náhradních testů</li>
+                        <li>• tvorba domácích úkolů</li>
+                        <li>• procvičování konkrétních chyb</li>
+                    </ul>
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- Co od něj nečekat -->
+                <div class="content-section">
+                    <h2><i class="fa-solid fa-triangle-exclamation"></i> Co od něj nečekat</h2>
+                    <div class="warning-box">
+                        Asistent nenahrazuje výklad ani pedagogický úsudek učitele. Je to nástroj pro efektivní tvorbu
+                        kvalitních úloh, ne automatický hodnoticí systém.
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- Prompt -->
+                <div class="content-section">
+                    <h2><i class="fa-solid fa-code"></i> Prompt ke zkopírování</h2>
+                    <p>Vložte tento text do svého oblíbeného LLM (ChatGPT, Claude nebo Gemini) jako systémovou
+                        instrukci:</p>
+                    <div class="prompt-container" id="assistantPrompt"><button class="copy-btn"
+                            onclick="copyPrompt()"><i class="fa-solid fa-copy"></i> Kopírovat</button>Role a persona
+                        Jste specialista na tvorbu testových úloh pro české střední školy.
+                        Pomáháte učitelům vytvářet úlohy ve stylu přijímacích zkoušek a maturit (CERMAT/SCIO) a zároveň
+                        podporujete rozvoj logického myšlení žáků.
+                        Vaším cílem je generovat kvalitní testové i otevřené matematické úlohy na základě tématu
+                        zadaného učitelem.
+
+                        ────────────────────────────────────────
+
+                        Obsahové oblasti
+                        Úlohy mohou spadat do oblastí:
+                        1. Algebra
+                        2. Funkce
+                        3. Geometrie (slovní popis)
+                        4. Statistika a pravděpodobnost
+                        5. Číselné výrazy a rovnice
+                        6. Slovní úlohy z praxe (finance v Kč, energie, demografie, doprava, technické obory)
+
+                        ────────────────────────────────────────
+
+                        Formát úloh
+                        Asistent musí být schopen generovat:
+                        – uzavřené úlohy (4 možnosti A–D)
+                        – otevřené úlohy s výpočtem
+                        – úlohy na argumentaci / zdůvodnění
+                        – komplexní vícekrokové příklady
+                        Všechny matematické zápisy musí být v LaTeXu.
+
+                        ────────────────────────────────────────
+
+                        Struktura výstupu
+                        Každá úloha musí obsahovat:
+                        1. Zadání
+                        2. Řešení (krok za krokem)
+                        3. Typickou chybu žáka (didaktická poznámka)
+                        4. Označení obtížnosti (základní / střední / vyšší)
+
+                        ────────────────────────────────────────
+
+                        Interakce
+                        Na začátku se zeptejte učitele:
+                        1. Téma
+                        2. Typ úlohy (testová / otevřená / kombinovaná)
+                        3. Obtížnost
+
+                        Po vygenerování nabídněte:
+                        „Chcete další úlohu stejného typu, nebo variantu na procvičení jiné dovednosti?"</div>
+                </div>
+
+            </main>
+
+            <aside class="detail-sidebar reveal">
+                <div class="sidebar-box">
+                    <h3 class="sidebar-title"><i class="fa-solid fa-share-nodes"></i> Přístup</h3>
+                    <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:16px;">Univerzální prompt
+                        použitelný ve všech hlavních AI nástrojích.</p>
+                    <div style="display:flex; flex-direction:column; gap:8px;">
+                        <a href="https://chatgpt.com" target="_blank" class="btn btn-sm"
+                            style="border:1px solid #10a37f; color:#10a37f; text-align:center">🟢 ChatGPT</a>
+                        <a href="https://claude.ai" target="_blank" class="btn btn-sm"
+                            style="border:1px solid #de7c3c; color:#de7c3c; text-align:center">🟠 Claude</a>
+                        <a href="https://gemini.google.com" target="_blank" class="btn btn-sm"
+                            style="border:1px solid #4285f4; color:#4285f4; text-align:center">🔵 Gemini</a>
+                    </div>
+                </div>
+
+                <div class="sidebar-box">
+                    <h3 class="sidebar-title"><i class="fa-solid fa-tags"></i> Kategorie</h3>
+                    <div class="tag-list">
+                        <span class="badge badge-mint">Matematika</span>
+                        <span class="badge badge-blue">CERMAT</span>
+                        <span class="badge badge-purple">SCIO</span>
+                        <span class="badge badge-gold">SŠ / Maturita</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-box">
+                    <h3 class="sidebar-title"><i class="fa-solid fa-bullseye"></i> Vhodné pro</h3>
+                    <ul
+                        style="font-size:0.85rem; color:var(--text-secondary); line-height:1.8; list-style:none; padding:0; margin:0;">
+                        <li>📝 Přípravu na maturitu</li>
+                        <li>📄 Tvorbu cvičných testů</li>
+                        <li>🎯 Diferenciaci ve třídě</li>
+                        <li>🏠 Domácí úkoly</li>
+                        <li>🔄 Opravné a náhradní testy</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <span>© 2026 AI ve Výuce · Pro české pedagogy</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        function copyPrompt() {
+            const el = document.getElementById('assistantPrompt');
+            // Get only the text content, excluding the button text
+            const clone = el.cloneNode(true);
+            const btn = clone.querySelector('.copy-btn');
+            if (btn) btn.remove();
+            const promptText = clone.textContent.trim();
+
+            navigator.clipboard.writeText(promptText).then(() => {
+                const copyBtn = document.querySelector('.copy-btn');
+                const originalHtml = copyBtn.innerHTML;
+                copyBtn.innerHTML = '<i class="fa-solid fa-check"></i> Zkopírováno!';
+                setTimeout(() => {
+                    copyBtn.innerHTML = originalHtml;
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+
+</html>

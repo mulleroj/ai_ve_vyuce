@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metodický asistent – AI ve Výuce | Detail asistenta</title>
+    <meta name="description"
+        content="Podrobnosti o AI asistentovi pro tvorbu metodických příprav a plánování hodin. Prompt ke zkopírování a návod k použití." />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .assistant-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .detail-main {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 40px;
+        }
+
+        .detail-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .sidebar-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+        }
+
+        .detail-header {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .detail-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, rgba(66, 133, 244, 0.2), rgba(66, 133, 244, 0.05));
+        }
+
+        .detail-title h1 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .detail-platform {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .content-section {
+            margin-bottom: 32px;
+        }
+
+        .content-section h2 {
+            font-size: 1.25rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .content-section p {
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .prompt-container {
+            position: relative;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #d1d5db;
+            white-space: pre-wrap;
+            margin-top: 16px;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 6px 12px;
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .copy-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .tag-list {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .sidebar-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        @media(max-width:900px) {
+            .assistant-detail-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-logo">
+                <div class="nav-logo-icon">🤖</div>AI ve <span>Výuce</span>
+            </a>
+            <div class="nav-links">
+                <a href="../prompty.html" class="nav-link">✨ Prompty</a>
+                <a href="../asistenti.html" class="nav-link">🤖 AI Asistenti</a>
+                <a href="../aktivity.html" class="nav-link">🎯 Aktivity</a>
+                <a href="../katalog-asistenti.html" class="nav-link active">🧩 Katalog</a>
+            </div>
+            <a href="../prompty.html" class="btn btn-primary btn-sm nav-cta">📋 Prompty</a>
+        </div>
+    </nav>
+
+    <div class="container" style="padding-top:120px; padding-bottom:80px;">
+        <a href="../katalog-asistenti.html"
+            style="color:var(--text-muted); text-decoration:none; display:inline-flex; align-items:center; gap:8px; margin-bottom:24px; font-size:0.9rem">
+            <i class="fa-solid fa-arrow-left"></i> Zpět do katalogu
+        </a>
+
+        <div class="assistant-detail-grid">
+            <main class="detail-main reveal">
+                <div class="detail-header">
+                    <div class="detail-icon">🎨</div>
+                    <div class="detail-title">
+                        <h1>Metodický asistent (Gemini Gem)</h1>
+                        <div class="detail-platform"><i class="fa-solid fa-microchip"></i> Platforma: Google Gemini
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2><i class="fa-solid fa-circle-info"></i> O asistentovi</h2>
+                    <p>Tento asistent je navržen tak, aby se stal vaším pravou rukou při plánování výuky. Rozumí
+                        struktuře českého vzdělávacího systému (RVP/ŠVP) a pomůže vám vytvářet hodiny, které jsou
+                        moderní, interaktivní a smysluplné.</p>
+                </div>
+
+                <div class="content-section">
+                    <h2><i class="fa-solid fa-code"></i> Prompt ke zkopírování</h2>
+                    <p>Zkopírujte tento text a vložte jej jako instrukci při vytváření nového Gemu v Google Gemini:</p>
+                    <div class="prompt-container" id="assistantPrompt">Jsi zkušený pedagogický mentor a metodik se
+                        zaměřením na moderní trendy ve vzdělávání a digitální gramotnost. Tvým úkolem je pomáhat
+                        učitelům s přípravou vyučovacích hodin.
+
+                        Při práci s učitelem:
+                        1. Vždy se ptej na předmět, téma a cílovou skupinu (ročník).
+                        2. Navrhuj vzdělávací cíle podle Bloomovy taxonomie.
+                        3. Strukturuj hodinu do fází (evokace, uvědomění, reflexe).
+                        4. Navrhuj konkrétní aktivity, které zapojují žáky a využívají aktivní učení.
+                        5. Pokud je to možné, navrhni i využití AI nebo digitálních nástrojů přímo v hodině.
+
+                        Piš v přátelském, ale profesionálním tónu. Používej českou pedagogickou terminologii. Pokud něco
+                        nevíš, zeptej se na upřesnění.
+                        <button class="copy-btn" onclick="copyPrompt()">
+                            <i class="fa-solid fa-copy"></i> Kopírovat
+                        </button>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2><i class="fa-solid fa-lightbulb"></i> Jak asistenta používat</h2>
+                    <p>1. Otevřete <a href="https://gemini.google.com/gems" target="_blank"
+                            style="color:var(--accent-mint)">Google Gemini Gems</a>.</p>
+                    <p>2. Klikněte na "Vytvořit Gem".</p>
+                    <p>3. Do pole pro pokyny vložte zkopírovaný prompt výše.</p>
+                    <p>4. Pojmenujte ho např. "Metodický asistent" a uložte.</p>
+                </div>
+            </main>
+
+            <aside class="detail-sidebar reveal">
+                <div class="sidebar-box">
+                    <h3 class="sidebar-title"><i class="fa-solid fa-share-nodes"></i> Přímý odkaz</h3>
+                    <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:16px;">Můžete si asistenta
+                        rovnou přidat do svého účtu přes tento odkaz (pokud jej autor nasdílel):</p>
+                    <a href="#" class="btn btn-primary" style="width:100%; text-align:center">Přidat do Gemini →</a>
+                </div>
+
+                <div class="sidebar-box">
+                    <h3 class="sidebar-title"><i class="fa-solid fa-tags"></i> Kategorie</h3>
+                    <div class="tag-list">
+                        <span class="badge badge-mint">Metodika</span>
+                        <span class="badge badge-blue">Příprava hodin</span>
+                        <span class="badge badge-purple">RVP / ŠVP</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-box">
+                    <h3 class="sidebar-title"><i class="fa-solid fa-star"></i> Hodnocení</h3>
+                    <div style="font-size:1.2rem; color:#f5a623">★★★★★</div>
+                    <p style="font-size:0.8rem; color:var(--text-muted); margin-top:8px;">Prověřeno v praxi učiteli na
+                        ZŠ i SŠ.</p>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <span>© 2026 AI ve Výuce · Pro české pedagogy</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        function copyPrompt() {
+            const promptText = document.getElementById('assistantPrompt').innerText.replace(' Kopírovat', '');
+            navigator.clipboard.writeText(promptText).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                const originalHtml = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> Zkopírováno!';
+                setTimeout(() => {
+                    btn.innerHTML = originalHtml;
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+
+</html>

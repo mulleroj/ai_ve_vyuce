@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vibe Coding – AI ve Výuce | Tvořte aplikace bez programování</title>
+    <meta name="description"
+        content="Vibe Coding pro učitele: vytvářejte kvízy, hry a interaktivní cvičení pomocí AI bez znalosti programování. Návody, nástroje a příklady." />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .vc-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .vc-step {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 32px 24px;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .vc-step:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .vc-step-number {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin: 0 auto 16px;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.2), rgba(0, 212, 168, 0.15));
+            color: var(--accent-mint);
+        }
+
+        .vc-step h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .vc-step p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 24px;
+        }
+
+        .tool-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            transition: var(--transition);
+        }
+
+        .tool-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .tool-card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 14px;
+        }
+
+        .tool-card-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+
+        .tool-card-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .tool-card-sub {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .tool-card-desc {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .tool-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+        }
+
+        .example-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .example-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .example-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .example-card-top {
+            padding: 24px 24px 0;
+        }
+
+        .example-card-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .example-card-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .example-card-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .example-card-bottom {
+            padding: 16px 24px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .prompt-box {
+            background: rgba(138, 43, 226, 0.06);
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            margin: 24px 0;
+            position: relative;
+        }
+
+        .prompt-box::before {
+            content: '💬';
+            position: absolute;
+            top: -14px;
+            left: 20px;
+            font-size: 1.5rem;
+            background: var(--bg-primary);
+            padding: 0 8px;
+        }
+
+        .prompt-box-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #8a2be2;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 12px;
+        }
+
+        .prompt-box-text {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .prompt-box-text strong {
+            color: var(--text-primary);
+            font-style: normal;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px 24px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .faq-question i {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0 24px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 500px;
+            padding: 0 24px 20px;
+        }
+
+        .faq-item.open .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .workflow-timeline {
+            position: relative;
+            padding-left: 40px;
+            margin: 32px 0;
+        }
+
+        .workflow-timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #8a2be2, #00d4a8);
+            border-radius: 2px;
+        }
+
+        .wf-step {
+            position: relative;
+            margin-bottom: 32px;
+        }
+
+        .wf-step::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 4px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #8a2be2;
+            border: 3px solid var(--bg-primary);
+            box-shadow: 0 0 0 2px #8a2be2;
+        }
+
+        .wf-step h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .wf-step p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        @media(max-width:600px) {
+            .tool-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .example-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .vc-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon">🤖</div>AI ve <span>Výuce</span>
+            </a>
+            <div class="nav-links">
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link">📚 Předměty <i class="fa-solid fa-chevron-down"
+                            style="font-size:.65rem"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="matematika.html" class="nav-dropdown-item"><span class="item-icon">🔢</span>
+                            Matematika</a>
+                        <a href="cestina.html" class="nav-dropdown-item"><span class="item-icon">📖</span> Český
+                            jazyk</a>
+                        <a href="anglictina.html" class="nav-dropdown-item"><span class="item-icon">🇬🇧</span> Anglický
+                            jazyk</a>
+                        <a href="prirodoveda.html" class="nav-dropdown-item"><span class="item-icon">🔬</span> Přírodní
+                            vědy</a>
+                        <a href="dejepis.html" class="nav-dropdown-item"><span class="item-icon">🏛️</span> Dějepis</a>
+                    </div>
+                </div>
+                <a href="prompty.html" class="nav-link">✨ Prompty</a>
+                <a href="asistenti.html" class="nav-link">🤖 AI Asistenti</a>
+                <a href="aktivity.html" class="nav-link">🎯 Aktivity</a>
+                <a href="vibe-coding.html" class="nav-link active">💻 Vibe Coding</a>
+            </div>
+            <a href="prompty.html" class="btn btn-primary btn-sm nav-cta">📋 Prompty</a>
+            <button class="nav-mobile-toggle"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+    <div class="mobile-menu">
+        <a href="index.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏠 Domů</a>
+        <a href="matematika.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔢 Matematika</a>
+        <a href="cestina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">📖 Český jazyk</a>
+        <a href="anglictina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🇬🇧 Angličtina</a>
+        <a href="prirodoveda.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔬 Přírodní vědy</a>
+        <a href="dejepis.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏛️ Dějepis</a>
+        <a href="prompty.html" class="nav-link" style="font-size:1rem;padding:14px 16px">✨ Prompty</a>
+        <a href="asistenti.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🤖 Asistenti</a>
+        <a href="aktivity.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🎯 Aktivity</a>
+        <a href="vibe-coding.html" class="nav-link" style="font-size:1rem;padding:14px 16px">💻 Vibe Coding</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="page-hero" style="background:linear-gradient(135deg,#0a0f1e 0%,#1a0035 100%)">
+        <div class="page-hero-glow"
+            style="background:radial-gradient(ellipse,rgba(138,43,226,0.15) 0%,transparent 70%)"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="page-hero-icon"
+                    style="background:linear-gradient(135deg,rgba(138,43,226,0.2),rgba(0,212,168,0.1))">💻</div>
+                <h1 class="page-hero-title">Vibe <span
+                        style="background:linear-gradient(135deg,#8a2be2,#00d4a8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Coding</span>
+                </h1>
+                <p class="page-hero-subtitle">Tvořte interaktivní kvízy, hry a výukové aplikace
+                    pomocí AI – bez jediného řádku kódu. Stačí popsat, co chcete, a AI to vytvoří za vás.</p>
+                <div class="page-hero-stats">
+                    <div class="page-hero-stat"><span>🚀</span><strong>0</strong> kódu potřeba</div>
+                    <div class="page-hero-stat"><span>⚡</span>Za <strong>minuty</strong></div>
+                    <div class="page-hero-stat"><span>🎓</span>Pro <strong>učitele</strong></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Co je Vibe Coding -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🤔 Co je Vibe Coding?</h2>
+                <p class="section-subtitle">Když místo psaní kódu popíšete AI, co chcete – a ono to funguje</p>
+            </div>
+
+            <div class="reveal"
+                style="max-width:800px;margin:0 auto 40px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:36px;line-height:1.8;font-size:0.95rem;color:var(--text-secondary)">
+                <p style="margin-bottom:16px"><strong style="color:var(--text-primary);font-size:1.05rem">Vibe
+                        Coding</strong> je způsob tvorby aplikací, her a interaktivních nástrojů, kde <strong
+                        style="color:var(--text-primary)">nepíšete kód ručně</strong> – místo toho v přirozeném jazyce
+                    popíšete AI asistentovi, co má vytvořit. AI vygeneruje kompletní funkční kód.</p>
+                <p style="margin-bottom:16px">Termín poprvé použil <strong style="color:var(--text-primary)">Andrej
+                        Karpathy</strong> (spoluzakladatel OpenAI) v únoru 2025. Od té doby se stal fenoménem – lidé bez
+                    technického vzdělání vytvářejí funkční weby, hry a nástroje.</p>
+                <p>Pro učitele to znamená: můžete si <strong style="color:#8a2be2">sami vytvořit interaktivní výukový
+                        materiál</strong> – kvízy, procvičování, vzdělávací hry – přesně podle své výuky, svých žáků a
+                    svého ŠVP. Žádné kompromisy s hotovými řešeními.</p>
+            </div>
+
+            <!-- 3 kroky -->
+            <div class="vc-steps reveal">
+                <div class="vc-step">
+                    <div class="vc-step-number">1</div>
+                    <h3>📝 Popište</h3>
+                    <p>V češtině popíšete, co chcete vytvořit. Například: „Kvíz na vyjmenovaná slova po B pro 4.
+                        třídu."</p>
+                </div>
+                <div class="vc-step">
+                    <div class="vc-step-number">2</div>
+                    <h3>🤖 AI vytvoří</h3>
+                    <p>AI asistent vygeneruje kompletní funkční aplikaci – HTML, CSS, JavaScript. Vy ji jen
+                        zkontrolujete.</p>
+                </div>
+                <div class="vc-step">
+                    <div class="vc-step-number">3</div>
+                    <h3>🚀 Sdílejte</h3>
+                    <p>Výsledek nahrajete online (např. přes Netlify zdarma) a sdílíte odkaz žákům. Hotovo!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ukázkový prompt -->
+    <section class="section" style="padding-top:0">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">✨ Jak vypadá Vibe Coding v praxi?</h2>
+                <p class="section-subtitle">Ukázkový workflow s reálným promptem</p>
+            </div>
+
+            <div style="max-width:800px;margin:0 auto">
+                <div class="workflow-timeline reveal">
+                    <div class="wf-step">
+                        <h4>🎯 Definujete cíl</h4>
+                        <p>Chcete vytvořit interaktivní procvičování angličtiny – žáci vidí českou větu a píší anglický
+                            překlad.</p>
+                    </div>
+                    <div class="wf-step">
+                        <h4>💬 Napíšete prompt</h4>
+                        <p>Otevřete Claude, ChatGPT nebo Gemini a popíšete, co přesně potřebujete:</p>
+                    </div>
+                </div>
+
+                <div class="prompt-box reveal">
+                    <div class="prompt-box-label">Ukázkový prompt</div>
+                    <div class="prompt-box-text">
+                        <strong>Vytvoř mi webovou aplikaci</strong> pro procvičování angličtiny v 6. třídě ZŠ.<br><br>
+                        Funkcionalita: Žák vidí <strong>českou větu</strong> a do pole napíše <strong>anglický
+                            překlad</strong>. Po odeslání se zobrazí, jestli je odpověď správně (zelená) nebo špatně
+                        (červená + správná odpověď).<br><br>
+                        Témata vět: <strong>přítomný čas prostý</strong>, slovní zásoba z lekce 5 učebnice Project
+                        (rodina, domov).<br><br>
+                        Navrhni 15 vět od lehkých po těžší. Design by měl být <strong>moderní, tmavý</strong>, vhodný
+                        pro tablety. Na konci zobrazení <strong>skóre a možnost opakovat</strong>.<br><br>
+                        Kód mi dej jako <strong>jeden HTML soubor</strong>, který půjde otevřít v prohlížeči.
+                    </div>
+                </div>
+
+                <div class="workflow-timeline reveal" style="margin-top:32px">
+                    <div class="wf-step">
+                        <h4>✅ AI vygeneruje kód</h4>
+                        <p>Za 30–60 sekund máte kompletní funkční aplikaci. Zkopírujete kód, uložíte jako .html soubor a
+                            otevřete v prohlížeči.</p>
+                    </div>
+                    <div class="wf-step">
+                        <h4>🔧 Vyladíte detaily</h4>
+                        <p>Něco nesedí? Napíšete: „Přidej timer na 30 sekund na odpověď" nebo „Změň barvy na modrou".
+                            AI upraví kód podle vaší instrukce.</p>
+                    </div>
+                    <div class="wf-step">
+                        <h4>🌐 Publikujete</h4>
+                        <p>Nahrajete soubor na Netlify, GitHub Pages nebo školní server. Žáci otevřou odkaz na tabletu
+                            nebo mobilu – žádná instalace.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nástroje -->
+    <section class="section" style="padding-top:0">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🛠️ Nejlepší nástroje pro Vibe Coding</h2>
+                <p class="section-subtitle">Od úplných začátečníků po pokročilé</p>
+            </div>
+
+            <div class="tool-grid">
+                <div class="tool-card reveal">
+                    <div class="tool-card-header">
+                        <div class="tool-card-icon"
+                            style="background:linear-gradient(135deg,rgba(138,43,226,0.2),rgba(138,43,226,0.05))">🟣
+                        </div>
+                        <div>
+                            <div class="tool-card-name">Claude Artifacts</div>
+                            <div class="tool-card-sub">Anthropic · Zdarma</div>
+                        </div>
+                    </div>
+                    <div class="tool-card-desc">Nejlepší volba pro začátečníky. Napíšete prompt a Claude rovnou zobrazí
+                        funkční náhled aplikace vedle konverzace. Můžete klikáním testovat přímo v chatu. Výborný v
+                        češtině.</div>
+                    <div style="margin-bottom:12px">
+                        <span class="badge badge-purple">Začátečníci</span>
+                        <span class="badge badge-mint">Náhled v chatu</span>
+                        <span class="badge badge-green">Zdarma</span>
+                    </div>
+                    <div class="tool-card-footer">
+                        <div style="font-size:0.8rem;color:var(--text-muted)">⭐ Doporučeno pro učitele</div>
+                        <a href="https://claude.ai" target="_blank" class="btn btn-primary btn-sm">Otevřít →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card reveal">
+                    <div class="tool-card-header">
+                        <div class="tool-card-icon"
+                            style="background:linear-gradient(135deg,rgba(0,166,126,0.2),rgba(0,166,126,0.05))">🟢
+                        </div>
+                        <div>
+                            <div class="tool-card-name">ChatGPT Canvas</div>
+                            <div class="tool-card-sub">OpenAI · Zdarma / Plus</div>
+                        </div>
+                    </div>
+                    <div class="tool-card-desc">ChatGPT s funkcí Canvas umí generovat kód s živým náhledem. Skvělý pro
+                        matematické generátory a testovací aplikace. Zvládne i komplexnější projekty s více soubory.
+                    </div>
+                    <div style="margin-bottom:12px">
+                        <span class="badge badge-green">Univerzální</span>
+                        <span class="badge badge-blue">Canvas</span>
+                        <span class="badge badge-orange">GPT-4o</span>
+                    </div>
+                    <div class="tool-card-footer">
+                        <div style="font-size:0.8rem;color:var(--text-muted)">Zdarma · Plus $20/měs</div>
+                        <a href="https://chatgpt.com" target="_blank" class="btn btn-primary btn-sm">Otevřít →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card reveal">
+                    <div class="tool-card-header">
+                        <div class="tool-card-icon"
+                            style="background:linear-gradient(135deg,rgba(66,133,244,0.2),rgba(66,133,244,0.05))">🔵
+                        </div>
+                        <div>
+                            <div class="tool-card-name">Google Gemini</div>
+                            <div class="tool-card-sub">Google · Gemini 3 · Zdarma</div>
+                        </div>
+                    </div>
+                    <div class="tool-card-desc">Gemini 3 vygeneruje kód a zobrazí ho přímo v nástroji
+                        <strong>Canvas</strong> – interaktivním plátně vedle chatu, kde vidíte živý náhled
+                        a můžete aplikaci rovnou testovat a upravovat. Má přístup k internetu pro aktuální data.
+                        Skvěle propojený s Google Workspace pro školy.
+                    </div>
+                    <div style="margin-bottom:12px">
+                        <span class="badge badge-blue">Google ekosystém</span>
+                        <span class="badge badge-green">Zdarma</span>
+                        <span class="badge badge-gold">Canvas</span>
+                    </div>
+                    <div class="tool-card-footer">
+                        <div style="font-size:0.8rem;color:var(--text-muted)">Zdarma · Advanced za $20/měs</div>
+                        <a href="https://gemini.google.com" target="_blank" class="btn btn-primary btn-sm">Otevřít
+                            →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card reveal" style="position:relative">
+                    <div style="position:absolute;top:16px;right:16px"><span class="badge badge-gold">🏫 Pro
+                            školy</span></div>
+                    <div class="tool-card-header">
+                        <div class="tool-card-icon"
+                            style="background:linear-gradient(135deg,rgba(234,67,53,0.2),rgba(66,133,244,0.15))">🧪
+                        </div>
+                        <div>
+                            <div class="tool-card-name">Google AI Studio</div>
+                            <div class="tool-card-sub">Google · Zdarma · Builder</div>
+                        </div>
+                    </div>
+                    <div class="tool-card-desc">Google AI Studio nabízí funkci <strong>Builder</strong>, kde můžete
+                        vizuálně vytvářet interaktivní aplikace přímo v prohlížeči. Ideální pro učitele v Google
+                        Workspace prostředí – stačí popsat, co chcete, a Builder vygeneruje funkční aplikaci s
+                        náhledem. Výhoda: přímé propojení s Gemini modely a možnost sdílení přes Google účet školy.
+                    </div>
+                    <div style="margin-bottom:12px">
+                        <span class="badge badge-blue">Google Workspace</span>
+                        <span class="badge badge-green">Zdarma</span>
+                        <span class="badge badge-purple">Vizuální builder</span>
+                        <span class="badge badge-mint">Začátečníci</span>
+                    </div>
+                    <div class="tool-card-footer">
+                        <div style="font-size:0.8rem;color:var(--text-muted)">⭐ Ideální pro školní Google účty</div>
+                        <a href="https://aistudio.google.com" target="_blank" class="btn btn-primary btn-sm">Otevřít
+                            →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card reveal">
+                    <div class="tool-card-header">
+                        <div class="tool-card-icon"
+                            style="background:linear-gradient(135deg,rgba(0,112,243,0.2),rgba(0,112,243,0.05))">▲
+                        </div>
+                        <div>
+                            <div class="tool-card-name">v0 by Vercel</div>
+                            <div class="tool-card-sub">Vercel · Freemium</div>
+                        </div>
+                    </div>
+                    <div class="tool-card-desc">Specializovaný nástroj na generování webových aplikací z popisu. Výborný
+                        design, moderní UI. Ideální pokud chcete profesionálně vypadající výsledek. Generuje React kód.
+                    </div>
+                    <div style="margin-bottom:12px">
+                        <span class="badge badge-blue">Profi design</span>
+                        <span class="badge badge-purple">Pokročilé</span>
+                        <span class="badge badge-orange">React</span>
+                    </div>
+                    <div class="tool-card-footer">
+                        <div style="font-size:0.8rem;color:var(--text-muted)">Omezené zdarma</div>
+                        <a href="https://v0.dev" target="_blank" class="btn btn-primary btn-sm">Otevřít →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card reveal">
+                    <div class="tool-card-header">
+                        <div class="tool-card-icon"
+                            style="background:linear-gradient(135deg,rgba(255,107,53,0.2),rgba(255,107,53,0.05))">⚡
+                        </div>
+                        <div>
+                            <div class="tool-card-name">bolt.new</div>
+                            <div class="tool-card-sub">StackBlitz · Freemium</div>
+                        </div>
+                    </div>
+                    <div class="tool-card-desc">Kompletní vývojové prostředí v prohlížeči. Popíšete, co chcete, a
+                        bolt.new vytvoří celý projekt, který můžete rovnou nasadit online. Vhodný pro složitější
+                        projekty.</div>
+                    <div style="margin-bottom:12px">
+                        <span class="badge badge-orange">Full-stack</span>
+                        <span class="badge badge-mint">Nasazení jedním klikem</span>
+                    </div>
+                    <div class="tool-card-footer">
+                        <div style="font-size:0.8rem;color:var(--text-muted)">Omezené zdarma</div>
+                        <a href="https://bolt.new" target="_blank" class="btn btn-primary btn-sm">Otevřít →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card reveal">
+                    <div class="tool-card-header">
+                        <div class="tool-card-icon"
+                            style="background:linear-gradient(135deg,rgba(0,212,168,0.2),rgba(0,212,168,0.05))">🎨
+                        </div>
+                        <div>
+                            <div class="tool-card-name">Lovable</div>
+                            <div class="tool-card-sub">Lovable · Freemium</div>
+                        </div>
+                    </div>
+                    <div class="tool-card-desc">AI nástroj zaměřený na krásné webové aplikace. Velmi uživatelsky
+                        přívětivý – popíšete aplikaci a Lovable vytvoří profesionální web s možností okamžitého sdílení.
+                    </div>
+                    <div style="margin-bottom:12px">
+                        <span class="badge badge-mint">Krásný design</span>
+                        <span class="badge badge-green">Přátelské UI</span>
+                    </div>
+                    <div class="tool-card-footer">
+                        <div style="font-size:0.8rem;color:var(--text-muted)">Omezené zdarma</div>
+                        <a href="https://lovable.dev" target="_blank" class="btn btn-primary btn-sm">Otevřít →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Co mohu vytvořit -->
+    <section class="section" style="padding-top:0">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">💡 Co všechno můžete vytvořit?</h2>
+                <p class="section-subtitle">Příklady výukových nástrojů, které učitelé vytvořili pomocí Vibe Codingu
+                </p>
+            </div>
+
+            <div class="example-grid">
+                <div class="example-card reveal">
+                    <div class="example-card-top">
+                        <span class="example-card-emoji">📝</span>
+                        <div class="example-card-title">Kvízy a testy</div>
+                        <div class="example-card-desc">Interaktivní kvízy s okamžitou zpětnou vazbou. Multiple choice,
+                            doplňování, přiřazování. S časovým limitem, skóre a přehledem chyb.</div>
+                    </div>
+                    <div class="example-card-bottom">
+                        <span class="badge badge-mint">Všechny předměty</span>
+                        <span class="badge badge-blue">ZŠ · SŠ</span>
+                    </div>
+                </div>
+
+                <div class="example-card reveal">
+                    <div class="example-card-top">
+                        <span class="example-card-emoji">🎮</span>
+                        <div class="example-card-title">Vzdělávací hry</div>
+                        <div class="example-card-desc">Paměťové hry, pexeso s učivem, vědomostní závody. Gamifikace
+                            výuky motivuje žáky a plně odpovídá moderním didaktickým přístupům.</div>
+                    </div>
+                    <div class="example-card-bottom">
+                        <span class="badge badge-purple">Gamifikace</span>
+                        <span class="badge badge-green">1.–5. třída</span>
+                    </div>
+                </div>
+
+                <div class="example-card reveal">
+                    <div class="example-card-top">
+                        <span class="example-card-emoji">🔤</span>
+                        <div class="example-card-title">Procvičování jazyků</div>
+                        <div class="example-card-desc">Překlady vět, doplňování slov, diktáty, cvičení na gramatiku.
+                            Přesně dle učebnice, kterou používáte – ne genericle online materiály.</div>
+                    </div>
+                    <div class="example-card-bottom">
+                        <span class="badge badge-orange">ČJ · AJ</span>
+                        <span class="badge badge-mint">Dle učebnice</span>
+                    </div>
+                </div>
+
+                <div class="example-card reveal">
+                    <div class="example-card-top">
+                        <span class="example-card-emoji">📊</span>
+                        <div class="example-card-title">Matematické generátory</div>
+                        <div class="example-card-desc">Generátory příkladů s nastavitelnou obtížností. Násobení,
+                            dělení, zlomky, rovnice. Každý žák dostane jiné příklady – konec opisování.</div>
+                    </div>
+                    <div class="example-card-bottom">
+                        <span class="badge badge-blue">Matematika</span>
+                        <span class="badge badge-gold">Adaptivní</span>
+                    </div>
+                </div>
+
+                <div class="example-card reveal">
+                    <div class="example-card-top">
+                        <span class="example-card-emoji">🗺️</span>
+                        <div class="example-card-title">Interaktivní mapy a časové osy</div>
+                        <div class="example-card-desc">Vizualizace historických událostí, zeměpisné kvízy s mapou,
+                            časové osy s drag-and-drop řazením. Ideální pro dějepis a zeměpis.</div>
+                    </div>
+                    <div class="example-card-bottom">
+                        <span class="badge badge-purple">Dějepis</span>
+                        <span class="badge badge-green">Zeměpis</span>
+                    </div>
+                </div>
+
+                <div class="example-card reveal">
+                    <div class="example-card-top">
+                        <span class="example-card-emoji">🧪</span>
+                        <div class="example-card-title">Simulace a vizualizace</div>
+                        <div class="example-card-desc">Simulace fyzikálních jevů, chemických reakcí, biologických
+                            procesů. Interaktivní schémata, kde žáci mohou měnit parametry a sledovat výsledky.</div>
+                    </div>
+                    <div class="example-card-bottom">
+                        <span class="badge badge-mint">Přírodní vědy</span>
+                        <span class="badge badge-blue">Interaktivní</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tipy -->
+    <section class="section" style="padding-top:0">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🎓 Tipy pro lepší výsledky</h2>
+                <p class="section-subtitle">Jak psát prompty, aby AI vytvořila přesně to, co potřebujete</p>
+            </div>
+
+            <div style="max-width:800px;margin:0 auto">
+                <div class="info-box reveal"
+                    style="background:rgba(0,212,168,0.06);border-color:rgba(0,212,168,0.2);margin-bottom:16px">
+                    <span class="info-box-icon">✅</span>
+                    <div class="info-box-text">
+                        <strong>Buďte konkrétní:</strong> Místo „Udělej kvíz" napište „Udělej kvíz na vyjmenovaná slova
+                        po B, 10 otázek, pro 4. třídu, s obrázky a skóre na konci."
+                    </div>
+                </div>
+
+                <div class="info-box reveal"
+                    style="background:rgba(138,43,226,0.06);border-color:rgba(138,43,226,0.2);margin-bottom:16px">
+                    <span class="info-box-icon">🎨</span>
+                    <div class="info-box-text">
+                        <strong>Specifikujte design:</strong> Řekněte AI, jaký styl chcete – „moderní tmavý design",
+                        „barevný a hravý pro malé děti", „minimalistický pro SŠ studenty".
+                    </div>
+                </div>
+
+                <div class="info-box reveal"
+                    style="background:rgba(245,166,35,0.06);border-color:rgba(245,166,35,0.2);margin-bottom:16px">
+                    <span class="info-box-icon">📱</span>
+                    <div class="info-box-text">
+                        <strong>Myslete na zařízení:</strong> Dodejte „responsivní design pro tablety a mobily" – žáci
+                        často pracují na školních tabletech.
+                    </div>
+                </div>
+
+                <div class="info-box reveal"
+                    style="background:rgba(52,152,219,0.06);border-color:rgba(52,152,219,0.2);margin-bottom:16px">
+                    <span class="info-box-icon">📄</span>
+                    <div class="info-box-text">
+                        <strong>Jeden HTML soubor:</strong> Pro jednoduché věci požádejte o „jeden HTML soubor se vším
+                        uvnitř" – snáze se sdílí a hostuje.
+                    </div>
+                </div>
+
+                <div class="info-box reveal"
+                    style="background:rgba(231,76,60,0.06);border-color:rgba(231,76,60,0.2);margin-bottom:16px">
+                    <span class="info-box-icon">🔄</span>
+                    <div class="info-box-text">
+                        <strong>Iterujte:</strong> Nemusíte mít vše napoprvé. Řekněte AI: „Přidej animace", „Změň barvy
+                        na zelené", „Přidej nápovědu ke každé otázce". Postupně vylaďte.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kam umístit -->
+    <section class="section" style="padding-top:0">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🌐 Kam umístit hotovou aplikaci?</h2>
+                <p class="section-subtitle">Zdarma hostingové služby pro vaše výukové nástroje</p>
+            </div>
+
+            <div style="overflow-x:auto;max-width:800px;margin:0 auto">
+                <table class="reveal" style="width:100%;border-collapse:collapse;font-size:0.9rem">
+                    <thead>
+                        <tr style="background:rgba(255,255,255,0.05);text-align:left">
+                            <th
+                                style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.08);color:var(--text-secondary)">
+                                Služba</th>
+                            <th
+                                style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.08);color:var(--text-secondary)">
+                                Obtížnost</th>
+                            <th
+                                style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.08);color:var(--text-secondary)">
+                                Cena</th>
+                            <th
+                                style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.08);color:var(--text-secondary)">
+                                Ideální pro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
+                            <td style="padding:14px 16px;font-weight:600">🟢 Netlify</td>
+                            <td style="padding:14px 16px"><span class="badge badge-green">Snadné</span></td>
+                            <td style="padding:14px 16px;color:var(--text-secondary)">Zdarma</td>
+                            <td style="padding:14px 16px;color:var(--text-secondary)">Drag & drop upload, nejlepší
+                                pro začátečníky</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
+                            <td style="padding:14px 16px;font-weight:600">🔵 GitHub Pages</td>
+                            <td style="padding:14px 16px"><span class="badge badge-orange">Střední</span></td>
+                            <td style="padding:14px 16px;color:var(--text-secondary)">Zdarma</td>
+                            <td style="padding:14px 16px;color:var(--text-secondary)">Verzování, spolupráce</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
+                            <td style="padding:14px 16px;font-weight:600">▲ Vercel</td>
+                            <td style="padding:14px 16px"><span class="badge badge-green">Snadné</span></td>
+                            <td style="padding:14px 16px;color:var(--text-secondary)">Zdarma</td>
+                            <td style="padding:14px 16px;color:var(--text-secondary)">Projekty z v0.dev</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:14px 16px;font-weight:600">📁 Google Drive</td>
+                            <td style="padding:14px 16px"><span class="badge badge-green">Snadné</span></td>
+                            <td style="padding:14px 16px;color:var(--text-secondary)">Zdarma</td>
+                            <td style="padding:14px 16px;color:var(--text-secondary)">Sdílení HTML souboru přímo žákům
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" style="padding-top:0">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">❓ Časté otázky</h2>
+            </div>
+
+            <div style="max-width:800px;margin:0 auto" id="faq">
+                <div class="faq-item reveal">
+                    <div class="faq-question">Musím umět programovat?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">Ne! To je celý princip Vibe Codingu. Stačí popsat v češtině, co chcete
+                        vytvořit. AI se postará o technickou stránku. Pomáhá ale vědět, jak formulovat požadavky –
+                        viz sekce Tipy výše.</div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">Je to bezpečné pro školní prostředí?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">Ano – vygenerované aplikace jsou statické HTML soubory, které běží v
+                        prohlížeči žáka. Nesbírají data, nepotřebují registraci a neodesílají nic na server. Jsou
+                        to stejně bezpečné jako jakákoliv jiná webová stránka.</div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">Jaký AI nástroj je nejlepší pro začátečníky?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">Doporučujeme <strong>Claude</strong> s funkcí Artifacts – rovnou uvidíte
+                        náhled aplikace vedle chatu. Můžete ji hned testovat a upravovat. Alternativně Gemini,
+                        které má také vestavěný náhled a je propojené s Google účtem školy.</div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">Kolik to stojí?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">Základní verze všech zmíněných AI nástrojů jsou <strong>zdarma</strong>.
+                        Claude, ChatGPT i Gemini mají bezplatné verze, které pro Vibe Coding bohatě stačí. Hosting
+                        na Netlify je také zdarma. Celý workflow může být zcela bezplatný.</div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">Mohu výsledek použít komerčně nebo sdílet s kolegy?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">Ano – kód vygenerovaný AI je váš. Můžete ho volně sdílet, upravovat a
+                        používat. Doporučujeme ale uvést, že byl vytvořen s pomocí AI, v souladu s transparentností
+                        ve vzdělávání.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" style="padding-top:0">
+        <div class="container">
+            <div class="reveal"
+                style="background:linear-gradient(135deg,rgba(138,43,226,0.08) 0%,rgba(0,212,168,0.06) 100%);border:1px solid rgba(138,43,226,0.15);border-radius:var(--radius-xl);padding:64px 48px;text-align:center">
+                <h2 style="font-size:1.8rem;font-weight:800;margin-bottom:16px">Připraveni začít? 🚀</h2>
+                <p style="color:var(--text-secondary);max-width:500px;margin:0 auto 28px;line-height:1.7">Otevřete
+                    Claude nebo ChatGPT a napište svůj první prompt. Za 5 minut budete mít funkční výukový nástroj.</p>
+                <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+                    <a href="https://claude.ai" target="_blank" class="btn btn-primary">🟣 Otevřít Claude</a>
+                    <a href="https://chatgpt.com" target="_blank" class="btn btn-secondary">🟢 Otevřít ChatGPT</a>
+                    <a href="https://gemini.google.com" target="_blank" class="btn btn-secondary">🔵 Otevřít
+                        Gemini</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><a href="index.html" class="nav-logo"
+                        style="margin-bottom:12px;display:inline-flex">
+                        <div class="nav-logo-icon">🤖</div>AI ve <span>Výuce</span>
+                    </a>
+                    <p>Průvodce AI pro české učitele.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>🎯 Předměty</h4>
+                    <ul>
+                        <li><a href="matematika.html">🔢 Matematika</a></li>
+                        <li><a href="cestina.html">📖 Český jazyk</a></li>
+                        <li><a href="anglictina.html">🇬🇧 Angličtina</a></li>
+                        <li><a href="prirodoveda.html">🔬 Přírodní vědy</a></li>
+                        <li><a href="dejepis.html">🏛️ Dějepis</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>📚 Zdroje</h4>
+                    <ul>
+                        <li><a href="prompty.html">✨ Prompty</a></li>
+                        <li><a href="aktivity.html">🎯 Aktivity</a></li>
+                        <li><a href="asistenti.html">🤖 Asistenti</a></li>
+                        <li><a href="vibe-coding.html">💻 Vibe Coding</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>🔗 Navigace</h4>
+                    <ul>
+                        <li><a href="index.html">🏠 Domů</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><span>© 2026 AI ve Výuce · Pro české pedagogy</span></div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                const wasOpen = item.classList.contains('open');
+                // close all
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                // toggle current
+                if (!wasOpen) item.classList.add('open');
+            });
+        });
+    </script>
+</body>
+
+</html>

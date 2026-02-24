@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Přírodní vědy – AI Pomůcky pro Učitele</title>
+    <meta name="description"
+        content="AI aktivity a prompty pro výuku biologie, chemie a fyziky. Virtuální experimenty, vysvětlení jevů, kvízy." />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon">🤖</div>AI ve <span>Výuce</span>
+            </a>
+            <div class="nav-links">
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link active">📚 Předměty <i class="fa-solid fa-chevron-down"
+                            style="font-size:.65rem"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="matematika.html" class="nav-dropdown-item"><span class="item-icon">🔢</span>
+                            Matematika</a>
+                        <a href="cestina.html" class="nav-dropdown-item"><span class="item-icon">📖</span> Český
+                            jazyk</a>
+                        <a href="anglictina.html" class="nav-dropdown-item"><span class="item-icon">🇬🇧</span> Anglický
+                            jazyk</a>
+                        <a href="prirodoveda.html" class="nav-dropdown-item"><span class="item-icon">🔬</span> Přírodní
+                            vědy</a>
+                        <a href="dejepis.html" class="nav-dropdown-item"><span class="item-icon">🏛️</span> Dějepis</a>
+                    </div>
+                </div>
+                <a href="prompty.html" class="nav-link">✨ Prompty</a>
+                <a href="asistenti.html" class="nav-link">🤖 AI Asistenti</a>
+                <a href="aktivity.html" class="nav-link">🎯 Aktivity</a>
+                <a href="vibe-coding.html" class="nav-link">💻 Vibe Coding</a>
+            </div>
+            <a href="prompty.html" class="btn btn-primary btn-sm nav-cta">📋 Prompty</a>
+            <button class="nav-mobile-toggle"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+    <div class="mobile-menu">
+        <a href="index.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏠 Domů</a>
+        <a href="matematika.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔢 Matematika</a>
+        <a href="cestina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">📖 Český jazyk</a>
+        <a href="anglictina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🇬🇧 Angličtina</a>
+        <a href="prirodoveda.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔬 Přírodní vědy</a>
+        <a href="dejepis.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏛️ Dějepis</a>
+        <a href="prompty.html" class="nav-link" style="font-size:1rem;padding:14px 16px">✨ Prompty</a>
+        <a href="asistenti.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🤖 Asistenti</a>
+        <a href="aktivity.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🎯 Aktivity</a>
+        <a href="vibe-coding.html" class="nav-link" style="font-size:1rem;padding:14px 16px">💻 Vibe Coding</a>
+    </div>
+
+    <section class="page-hero" style="background:linear-gradient(135deg,#0a0f1e 0%,#001a08 100%)">
+        <div class="page-hero-glow" style="background:radial-gradient(ellipse,rgba(39,174,96,0.12) 0%,transparent 70%)">
+        </div>
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="page-hero-icon"
+                    style="background:linear-gradient(135deg,rgba(39,174,96,0.2),rgba(39,174,96,0.05))">🔬</div>
+                <h1 class="page-hero-title">Přírodní vědy <span
+                        style="background:var(--gradient-green);-webkit-background-clip:text;-webkit-text-fill-color:transparent">s
+                        AI</span></h1>
+                <p class="page-hero-subtitle">Biologie, chemie, fyzika – simulujte experimenty bez laboratoře,
+                    vysvětlujte složité přírodní jevy a generujte kvízy pro všechny ročníky.</p>
+                <div class="page-hero-stats">
+                    <div class="page-hero-stat"><span>🎯</span><strong>22</strong> aktivit</div>
+                    <div class="page-hero-stat"><span>✨</span><strong>40</strong> promptů</div>
+                    <div class="page-hero-stat"><span>⚗️</span>Bio · Che · Fyz</div>
+                    <div class="page-hero-stat"><span>🏫</span>ZŠ · SŠ</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="tabs-container">
+                <div class="tabs" role="tablist">
+                    <button class="tab-btn active" data-tab="aktivity">🎯 Aktivity</button>
+                    <button class="tab-btn" data-tab="prompty">✨ Prompty</button>
+                    <button class="tab-btn" data-tab="asistenti">🤖 Asistenti</button>
+                    <button class="tab-btn" data-tab="tipy">💡 Tipy</button>
+                </div>
+            </div>
+
+            <div id="tab-aktivity" class="tab-panel">
+                <div class="filter-bar">
+                    <span class="filter-label">Obor:</span>
+                    <div class="filter-group">
+                        <button class="filter-chip active" data-filter="all">Vše</button>
+                        <button class="filter-chip" data-filter="bio">🧬 Biologie</button>
+                        <button class="filter-chip" data-filter="che">⚗️ Chemie</button>
+                        <button class="filter-chip" data-filter="fyz">⚡ Fyzika</button>
+                    </div>
+                </div>
+                <div class="activity-grid">
+                    <div class="activity-card reveal" data-level="zs2" data-subject="bio">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-mint">Gemini</span><span
+                                    class="badge badge-gray">Biologie</span></div>
+                            <span style="font-size:1.8rem">🧬</span>
+                        </div>
+                        <div class="activity-title">Virtuální laboratorní experiment</div>
+                        <div class="activity-desc">Gemini jako virtuální laboratorní asistent simuluje průběh
+                            experimentu – popisuje kroky, výsledky a závěry bez fyzické laboratoře.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 20 min</span><span
+                                class="activity-meta-item">👥 Skupiny</span></div>
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span>
+                            <button class="btn btn-mint btn-sm"
+                                onclick="openModal({title:'Virtuální experiment',body:'<div style=\'background:rgba(0,0,0,0.3);padding:16px;border-radius:12px;font-size:0.875rem;color:var(--text-secondary);line-height:1.7\'>Simuluj laboratorní experiment: [NÁZEV EXPERIMENTU] pro žáky [ROČNÍK]. Popište: 1) Potřebné pomůcky a chemikálie, 2) Přesný postup krok za krokem, 3) Co žáci uvidí / jak reakce proběhne, 4) Vědecké vysvětlení jevu, 5) Bezpečnostní upozornění, 6) Otázky k zamyšlení po experimentu.</div><div style=\'margin-top:16px\'><button class=\'copy-btn btn btn-mint btn-sm\' data-copy=\'Simuluj laboratorní experiment: [NÁZEV] pro žáky [ROČNÍK]. Zahrň: pomůcky, postup, průběh reakce, vědecké vysvětlení, bezpečnostní upozornění a otázky k zamyšlení.\'>📋 Kopírovat</button></div>'})">Detail
+                                →</button>
+                        </div>
+                    </div>
+                    <div class="activity-card reveal" data-level="ss" data-subject="che">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span
+                                    class="badge badge-gray">Chemie</span></div>
+                            <span style="font-size:1.8rem">⚗️</span>
+                        </div>
+                        <div class="activity-title">Průvodce chemickými rovnicemi</div>
+                        <div class="activity-desc">AI krok za krokem vysvětlí postup vyčíslování chemických rovnic,
+                            jejich typy a aplikace v reálném světě.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 10 min</span><span
+                                class="activity-meta-item">👤 Individuální</span></div>
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><button
+                                class="btn btn-mint btn-sm">Detail →</button></div>
+                    </div>
+                    <div class="activity-card reveal" data-level="zs2" data-subject="fyz">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span
+                                    class="badge badge-gray">Fyzika</span></div>
+                            <span style="font-size:1.8rem">⚡</span>
+                        </div>
+                        <div class="activity-title">Vysvětlení fyzikálních jevů analogiemi</div>
+                        <div class="activity-desc">AI vysvětlí složité fyzikální pojmy pomocí analogií ze každodenního
+                            života, které žáci ihned pochopí a zapamatují si.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 5 min</span><span
+                                class="activity-meta-item">🏫 Třída</span></div>
+                        <div class="activity-footer"><span class="badge badge-gold">Oblíbené</span><button
+                                class="btn btn-mint btn-sm">Detail →</button></div>
+                    </div>
+                    <div class="activity-card reveal" data-level="zs1" data-subject="bio">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-mint">Gemini</span><span
+                                    class="badge badge-gray">Biologie</span></div>
+                            <span style="font-size:1.8rem">🐾</span>
+                        </div>
+                        <div class="activity-title">Encyklopedie živočichů na míru</div>
+                        <div class="activity-desc">Gemini vytvoří poutavý popis libovolného živočicha přizpůsobený věku
+                            žáků – výskyt, potravní řetězec, zajímavosti.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 8 min</span><span
+                                class="activity-meta-item">👤 Individuální</span></div>
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><button
+                                class="btn btn-mint btn-sm">Detail →</button></div>
+                    </div>
+                    <div class="activity-card reveal" data-level="ss" data-subject="fyz">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-purple">Claude</span><span
+                                    class="badge badge-gray">Fyzika</span></div>
+                            <span style="font-size:1.8rem">🔭</span>
+                        </div>
+                        <div class="activity-title">Řešení fyzikálních úloh s výkladem</div>
+                        <div class="activity-desc">Claude nejen vyřeší fyzikální úlohu, ale vysvětlí každý krok, použité
+                            vzorce a jejich odvození – jako soukromý tutor.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 5 min</span><span
+                                class="activity-meta-item">👤 Individuální</span></div>
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><button
+                                class="btn btn-mint btn-sm">Detail →</button></div>
+                    </div>
+                    <div class="activity-card reveal" data-level="zs2" data-subject="che">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span
+                                    class="badge badge-gray">Chemie</span></div>
+                            <span style="font-size:1.8rem">🧪</span>
+                        </div>
+                        <div class="activity-title">Kvíz – prvky a sloučeniny</div>
+                        <div class="activity-desc">Generátor opakovacích kvízů o prvcích periodické tabulky,
+                            sloučeninách a jejich vlastnostech s automatickým klíčem.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 6 min příprava</span><span
+                                class="activity-meta-item">🏫 Třída</span></div>
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><button
+                                class="btn btn-mint btn-sm">Detail →</button></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-prompty" class="tab-panel d-none">
+                <div class="prompt-grid">
+                    <div class="prompt-card reveal">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Simulace laboratorního experimentu</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span
+                                        class="badge badge-mint">Gemini</span><span
+                                        class="badge badge-gray">ZŠ/SŠ</span></div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">Simuluj laboratorní experiment „[NÁZEV]" pro žáky [ROČNÍK]. Zahrň:
+                            potřebné pomůcky, bezpečnostní pravidla, postup krok za krokem, popis průběhu reakce / jevu,
+                            vědecké vysvětlení, závěrečné otázky pro žáky a návrh protokolu, který si žáci mohou
+                            vyplnit.</div>
+                        <div class="prompt-footer">
+                            <span class="badge badge-green">Experimenty</span>
+                            <button class="copy-btn" data-copy="Simuluj laboratorní experiment „[NÁZEV]" pro žáky
+                                [ROČNÍK]. Zahrň: pomůcky, bezpečnostní pravidla, postup, průběh reakce, vědecké
+                                vysvětlení, závěrečné otázky a návrh protokolu.">📋 Kopírovat</button>
+                        </div>
+                    </div>
+                    <div class="prompt-card reveal">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Vysvětlení jevu analogiemi z praxe</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span
+                                        class="badge badge-gold">ChatGPT</span><span class="badge badge-gray">ZŠ</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">Vysvětli přírodovědný/fyzikální/chemický jev „[JEV]" žákům [ROČNÍK]
+                            pomocí 3 různých analogií z každodenního života. Pak uveď reálné příklady tohoto jevu v
+                            praxi. Zakončit 3 otázkami, které ověří porozumění. Vyvaruj se odborného žargonu bez
+                            vysvětlení.</div>
+                        <div class="prompt-footer">
+                            <span class="badge badge-blue">Vysvětlení</span>
+                            <button class="copy-btn" data-copy="Vysvětli přírodovědný jev „[JEV]" žákům [ROČNÍK] pomocí
+                                3 různých analogií z každodenního života. Přidej reálné příklady a 3 otázky ověřující
+                                porozumění.">📋 Kopírovat</button>
+                        </div>
+                    </div>
+                    <div class="prompt-card reveal">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Opakovací kvíz z přírodovědného tema</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span
+                                        class="badge badge-gold">ChatGPT</span><span
+                                        class="badge badge-gray">ZŠ/SŠ</span></div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">Vytvoř opakovací kvíz z [PŘEDMĚT: biologie/chemie/fyzika] na téma
+                            [TÉMA] pro žáky [ROČNÍK]. Formát: 5 testových otázek (ABCD), 3 otevřené otázky, 2 úlohy na
+                            přiřazení. Přidej správné odpovědi a stručné vysvětlení každé odpovědi.</div>
+                        <div class="prompt-footer">
+                            <span class="badge badge-orange">Kvízy</span>
+                            <button class="copy-btn"
+                                data-copy="Vytvoř opakovací kvíz z [PŘEDMĚT] na téma [TÉMA] pro žáky [ROČNÍK]. Formát: 5 testových otázek ABCD, 3 otevřené otázky, 2 přiřazovací úlohy. Přidej správné odpovědi s vysvětlením.">📋
+                                Kopírovat</button>
+                        </div>
+                    </div>
+                    <div class="prompt-card reveal">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Průvodce výzkumným projektem</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span
+                                        class="badge badge-purple">Claude</span><span class="badge badge-gray">SŠ</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">Pomoz mi navrhnout výzkumný projekt na téma [TÉMA] pro žáky [ROČNÍK]
+                            SŠ. Struktura: výzkumná otázka, hypotéza, metodologie (jak sbírat data), potřebné materiály,
+                            jak analyzovat výsledky, jak prezentovat závěry. Přizpůsob délce [POČET] týdnů výuky.</div>
+                        <div class="prompt-footer">
+                            <span class="badge badge-pink">Projekty</span>
+                            <button class="copy-btn"
+                                data-copy="Navrhni výzkumný projekt na téma [TÉMA] pro žáky [ROČNÍK] SŠ. Zahrň: výzkumnou otázku, hypotézu, metodologii, potřebné materiály, analýzu výsledků a formu prezentace. Délka projektu: [POČET] týdnů.">📋
+                                Kopírovat</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-asistenti" class="tab-panel d-none">
+                <div class="assistant-grid">
+                    <div class="assistant-card reveal">
+                        <div class="assistant-header">
+                            <div class="assistant-logo"
+                                style="background:linear-gradient(135deg,#4285f4,#34a853);font-size:1.8rem">🔵</div>
+                            <div>
+                                <div class="assistant-name">Gemini</div>
+                                <div class="assistant-provider">Google · Gemini 2.0</div>
+                            </div>
+                        </div>
+                        <div class="assistant-desc">Nejlepší volba pro přírodní vědy – propojuje vědecké informace s
+                            aktuálními daty z Google, zvládá analýzu grafů a experimentálních schémat.</div>
+                        <div class="assistant-tags"><span class="badge badge-mint">Experimenty</span><span
+                                class="badge badge-blue">Reálná data</span></div>
+                        <div class="assistant-footer">
+                            <div class="assistant-rating"><span class="stars">★★★★★</span></div><a
+                                href="https://gemini.google.com" target="_blank" class="btn btn-primary btn-sm">Otevřít
+                                →</a>
+                        </div>
+                    </div>
+                    <div class="assistant-card reveal">
+                        <div class="assistant-header">
+                            <div class="assistant-logo"
+                                style="background:linear-gradient(135deg,#7c3534,#5c1c1c);font-size:1.8rem">🟤</div>
+                            <div>
+                                <div class="assistant-name">Perplexity AI</div>
+                                <div class="assistant-provider">Perplexity</div>
+                            </div>
+                        </div>
+                        <div class="assistant-desc">Výzkumný asistent s citacemi – ideální pro vědecká témata. Odpověď
+                            vždy obsahuje zdroje, takže učitelé mohou ověřit fakta.</div>
+                        <div class="assistant-tags"><span class="badge badge-gold">Vědecké zdroje</span><span
+                                class="badge badge-green">Citace</span></div>
+                        <div class="assistant-footer">
+                            <div class="assistant-rating"><span class="stars">★★★★★</span></div><a
+                                href="https://perplexity.ai" target="_blank" class="btn btn-primary btn-sm">Otevřít
+                                →</a>
+                        </div>
+                    </div>
+                    <div class="assistant-card reveal">
+                        <div class="assistant-header">
+                            <div class="assistant-logo"
+                                style="background:linear-gradient(135deg,#00a67e,#008f6c);font-size:1.8rem">🟢</div>
+                            <div>
+                                <div class="assistant-name">ChatGPT</div>
+                                <div class="assistant-provider">OpenAI</div>
+                            </div>
+                        </div>
+                        <div class="assistant-desc">Skvělý pro tvorbu kvízů, vysvětlení analogiemi a tvorbu úloh z
+                            fyziky a chemie. Zvládá i analýzu obrázků (fotografie z tabule).</div>
+                        <div class="assistant-tags"><span class="badge badge-orange">Kvízy</span><span
+                                class="badge badge-purple">Fyzika</span></div>
+                        <div class="assistant-footer">
+                            <div class="assistant-rating"><span class="stars">★★★★☆</span></div><a
+                                href="https://chatgpt.com" target="_blank" class="btn btn-primary btn-sm">Otevřít →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-tipy" class="tab-panel d-none">
+                <div style="display:grid;gap:16px;max-width:860px">
+                    <div class="info-box reveal"><span class="info-box-icon">🔬</span>
+                        <div class="info-box-text"><strong>Tip: Perplexity pro fakta s citacemi</strong>Pro vědecká
+                            fakta používejte Perplexity AI – každá odpověď obsahuje zdroje, které si žáci i vy můžete
+                            ověřit. Vynikající pro projekt-based learning.</div>
+                    </div>
+                    <div class="info-box reveal"><span class="info-box-icon">💡</span>
+                        <div class="info-box-text"><strong>Tip: Fotografie z mikroskopu nebo tabule</strong>ChatGPT a
+                            Gemini dokáží analyzovat fotografie – vyfotografujte schéma buňky, graf nebo pokus z tabule
+                            a nechte AI vysvětlit, co vidí.</div>
+                    </div>
+                    <div class="info-box reveal"
+                        style="background:rgba(231,76,60,0.07);border-color:rgba(231,76,60,0.2)"><span
+                            class="info-box-icon">⚠️</span>
+                        <div class="info-box-text"><strong>Upozornění: Vždy ověřujte vědecká fakta</strong>AI může
+                            generovat nepřesné nebo zastaralé vědecké informace. Pro chemické reakce a biologické
+                            klasifikace vždy ověřte u odborného zdroje.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><a href="index.html" class="nav-logo"
+                        style="margin-bottom:12px;display:inline-flex">
+                        <div class="nav-logo-icon">🤖</div>AI ve <span>Výuce</span>
+                    </a>
+                    <p>Průvodce AI pro české učitele.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>🎯 Předměty</h4>
+                    <ul>
+                        <li><a href="matematika.html">🔢 Matematika</a></li>
+                        <li><a href="cestina.html">📖 Český jazyk</a></li>
+                        <li><a href="anglictina.html">🇬🇧 Angličtina</a></li>
+                        <li><a href="prirodoveda.html">🔬 Přírodní vědy</a></li>
+                        <li><a href="dejepis.html">🏛️ Dějepis</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>📚 Zdroje</h4>
+                    <ul>
+                        <li><a href="prompty.html">✨ Prompty</a></li>
+                        <li><a href="aktivity.html">🎯 Aktivity</a></li>
+                        <li><a href="asistenti.html">🤖 Asistenti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>🔗 Navigace</h4>
+                    <ul>
+                        <li><a href="index.html">🏠 Domů</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><span>© 2026 AI ve Výuce · Pro české pedagogy</span></div>
+        </div>
+    </footer>
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title"></h3><button class="modal-close"
+                    onclick="document.getElementById('modalOverlay').classList.remove('open')">✕</button>
+            </div>
+            <div class="modal-body"></div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

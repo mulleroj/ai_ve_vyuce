@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matematika – AI Pomůcky pro Učitele</title>
+    <meta name="description"
+        content="AI aktivity a prompty pro výuku matematiky. Generátory úloh, krok-za-krokem průvodci, vizualizace grafů." />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon">🤖</div>AI ve <span>Výuce</span>
+            </a>
+            <div class="nav-links">
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link active">📚 Předměty <i class="fa-solid fa-chevron-down"
+                            style="font-size:.65rem"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="matematika.html" class="nav-dropdown-item"><span class="item-icon">🔢</span>
+                            Matematika</a>
+                        <a href="cestina.html" class="nav-dropdown-item"><span class="item-icon">📖</span> Český
+                            jazyk</a>
+                        <a href="anglictina.html" class="nav-dropdown-item"><span class="item-icon">🇬🇧</span> Anglický
+                            jazyk</a>
+                        <a href="prirodoveda.html" class="nav-dropdown-item"><span class="item-icon">🔬</span> Přírodní
+                            vědy</a>
+                        <a href="dejepis.html" class="nav-dropdown-item"><span class="item-icon">🏛️</span> Dějepis</a>
+                    </div>
+                </div>
+                <a href="prompty.html" class="nav-link">✨ Prompty</a>
+                <a href="asistenti.html" class="nav-link">🤖 AI Asistenti</a>
+                <a href="aktivity.html" class="nav-link">🎯 Aktivity</a>
+                <a href="vibe-coding.html" class="nav-link">💻 Vibe Coding</a>
+            </div>
+            <a href="prompty.html" class="btn btn-primary btn-sm nav-cta">📋 Prompty</a>
+            <button class="nav-mobile-toggle"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+    <div class="mobile-menu">
+        <a href="index.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏠 Domů</a>
+        <a href="matematika.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔢 Matematika</a>
+        <a href="cestina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">📖 Český jazyk</a>
+        <a href="anglictina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🇬🇧 Angličtina</a>
+        <a href="prirodoveda.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔬 Přírodní vědy</a>
+        <a href="dejepis.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏛️ Dějepis</a>
+        <a href="prompty.html" class="nav-link" style="font-size:1rem;padding:14px 16px">✨ Prompty</a>
+        <a href="asistenti.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🤖 Asistenti</a>
+        <a href="aktivity.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🎯 Aktivity</a>
+        <a href="vibe-coding.html" class="nav-link" style="font-size:1rem;padding:14px 16px">💻 Vibe Coding</a>
+    </div>
+
+    <!-- Page Hero -->
+    <section class="page-hero" style="background:linear-gradient(135deg,#0a0f1e 0%,#1a1200 100%)">
+        <div class="page-hero-glow"
+            style="background:radial-gradient(ellipse,rgba(245,166,35,0.12) 0%,transparent 70%)"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="page-hero-icon"
+                    style="background:linear-gradient(135deg,rgba(245,166,35,0.2),rgba(245,166,35,0.05))">🔢</div>
+                <h1 class="page-hero-title">Matematika <span class="gradient-text">s AI</span></h1>
+                <p class="page-hero-subtitle">Generujte úlohy, vysvětlujte koncepty krok za krokem, vizualizujte grafy a
+                    tvořte testy přizpůsobené vašim žákům.</p>
+                <div class="page-hero-stats">
+                    <div class="page-hero-stat"><span>🎯</span><strong>18</strong> aktivit</div>
+                    <div class="page-hero-stat"><span>✨</span><strong>32</strong> promptů</div>
+                    <div class="page-hero-stat"><span>🤖</span><strong>4</strong> AI nástroje</div>
+                    <div class="page-hero-stat"><span>🏫</span>ZŠ · SŠ</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tabs -->
+    <section class="section">
+        <div class="container">
+            <div class="tabs-container">
+                <div class="tabs" role="tablist">
+                    <button class="tab-btn active" data-tab="aktivity">🎯 Aktivity</button>
+                    <button class="tab-btn" data-tab="prompty">✨ Prompty</button>
+                    <button class="tab-btn" data-tab="asistenti">🤖 Asistenti</button>
+                    <button class="tab-btn" data-tab="tipy">💡 Tipy</button>
+                </div>
+            </div>
+
+            <!-- AKTIVITY -->
+            <div id="tab-aktivity" class="tab-panel">
+                <div class="filter-bar">
+                    <span class="filter-label">Ročník:</span>
+                    <div class="filter-group">
+                        <button class="filter-chip active" data-filter="all">Vše</button>
+                        <button class="filter-chip" data-filter="zs1">1.–5. ročník</button>
+                        <button class="filter-chip" data-filter="zs2">6.–9. ročník</button>
+                        <button class="filter-chip" data-filter="ss">SŠ</button>
+                    </div>
+                </div>
+                <div class="activity-grid">
+                    <div class="activity-card reveal" data-level="zs1">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span
+                                    class="badge badge-gray">1.–5. ročník</span></div>
+                            <span style="font-size:1.8rem">📝</span>
+                        </div>
+                        <div class="activity-title">Generátor slovních úloh</div>
+                        <div class="activity-desc">AI vygeneruje sadu slovních úloh na téma přizpůsobených věku žáků s
+                            realistickými kontexty a správnými řešeními.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 10 min</span><span
+                                class="activity-meta-item">👥 Celá třída</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <button class="btn btn-mint btn-sm"
+                                onclick="openModal({title:'Generátor slovních úloh',body:'<p style=\'color:var(--text-secondary);line-height:1.7;margin-bottom:16px\'>Zadejte ChatGPT tento prompt a upravte hodnoty v závorkách:</p><div style=\'background:rgba(0,0,0,0.3);padding:16px;border-radius:12px;font-size:0.875rem;color:var(--text-secondary);line-height:1.7\'>Jsi zkušený učitel matematiky. Vygeneruj 10 slovních úloh na téma [TÉMA] pro žáky [ROČNÍK]. Každá úloha musí mít realistický kontext. Uveď správné řešení s postupem.</div><div style=\'margin-top:16px\'><button class=\'copy-btn btn btn-mint btn-sm\' data-copy=\'Jsi zkušený učitel matematiky. Vygeneruj 10 slovních úloh na téma [TÉMA] pro žáky [ROČNÍK]. Každá úloha musí mít realistický kontext. Uveď správné řešení s postupem.\'>📋 Kopírovat prompt</button></div>'})">Detail
+                                →</button>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-level="zs2">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-mint">Gemini</span><span
+                                    class="badge badge-gray">6.–9. ročník</span></div>
+                            <span style="font-size:1.8rem">📐</span>
+                        </div>
+                        <div class="activity-title">Krok-za-krokem průvodce</div>
+                        <div class="activity-desc">Gemini vysvětlí libovolný matematický postup srozumitelně s
+                            pojmenováním každého kroku, příklady a mnemotechnickými pomůckami.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 5 min</span><span
+                                class="activity-meta-item">👤 Individuální</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <button class="btn btn-mint btn-sm"
+                                onclick="openModal({title:'Krok-za-krokem průvodce',body:'<div style=\'background:rgba(0,0,0,0.3);padding:16px;border-radius:12px;font-size:0.875rem;color:var(--text-secondary);line-height:1.7\'>Vysvětli postup řešení [MATEMATICKÝ PROBLÉM] pro žáky [ROČNÍK] krok za krokem. Každý krok pojmenuj, vysvětli proč ho děláme a uveď příklad. Na konci přidej tip jak si postup zapamatovat.</div><div style=\'margin-top:16px\'><button class=\'copy-btn btn btn-mint btn-sm\' data-copy=\'Vysvětli postup řešení [MATEMATICKÝ PROBLÉM] pro žáky [ROČNÍK] krok za krokem. Každý krok pojmenuj, vysvětli proč ho děláme a uveď příklad. Na konci přidej tip jak si postup zapamatovat.\'>📋 Kopírovat prompt</button></div>'})">Detail
+                                →</button>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-level="ss">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-purple">Claude</span><span
+                                    class="badge badge-gray">SŠ</span></div>
+                            <span style="font-size:1.8rem">📋</span>
+                        </div>
+                        <div class="activity-title">Tvorba testů a písemek</div>
+                        <div class="activity-desc">Claude vytvoří kompletní písemné práce s bodovým hodnocením, různými
+                            typy úloh a vzorovou odpovědí i bodovacím klíčem.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 3 min</span><span
+                                class="activity-meta-item">🏫 Třída</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <button class="btn btn-mint btn-sm"
+                                onclick="openModal({title:'Tvorba testů',body:'<div style=\'background:rgba(0,0,0,0.3);padding:16px;border-radius:12px;font-size:0.875rem;color:var(--text-secondary);line-height:1.7\'>Vytvoř písemnou práci z matematiky pro [ROČNÍK] na téma [TÉMA]. Celkem [POČET] bodů. Přidej: vzorové řešení, bodovací klíč, hodnotící škálu (1–5).</div><div style=\'margin-top:16px\'><button class=\'copy-btn btn btn-mint btn-sm\' data-copy=\'Vytvoř písemnou práci z matematiky pro [ROČNÍK] na téma [TÉMA]. Celkem [POČET] bodů. Přidej: vzorové řešení, bodovací klíč, hodnotící škálu (1–5).\'>📋 Kopírovat prompt</button></div>'})">Detail
+                                →</button>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-level="zs2">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span
+                                    class="badge badge-gray">6.–9. ročník</span></div>
+                            <span style="font-size:1.8rem">🎯</span>
+                        </div>
+                        <div class="activity-title">Diferenciace úloh dle žáka</div>
+                        <div class="activity-desc">Zadejte standardní úlohu a AI vygeneruje 3 verze: pro podprůměrné,
+                            průměrné a nadprůměrné žáky.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 8 min</span><span
+                                class="activity-meta-item">👥 Skupiny</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <button class="btn btn-mint btn-sm"
+                                onclick="openModal({title:'Diferenciace úloh',body:'<div style=\'background:rgba(0,0,0,0.3);padding:16px;border-radius:12px;font-size:0.875rem;color:var(--text-secondary);line-height:1.7\'>Vezmi tuto matematickou úlohu: [ÚLOHA]. Přepracuj ji do 3 verzí: 1) Lehká – pro žáky ve SPO, 2) Standardní – původní, 3) Rozšiřující – pro nadané žáky.</div><div style=\'margin-top:16px\'><button class=\'copy-btn btn btn-mint btn-sm\' data-copy=\'Vezmi tuto matematickou úlohu: [ÚLOHA]. Přepracuj ji do 3 verzí: 1) Lehká – pro žáky ve SPO, 2) Standardní – původní, 3) Rozšiřující – pro nadané žáky.\'>📋 Kopírovat prompt</button></div>'})">Detail
+                                →</button>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-level="zs1">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-mint">Gemini</span><span
+                                    class="badge badge-gray">1.–5. ročník</span></div>
+                            <span style="font-size:1.8rem">🎮</span>
+                        </div>
+                        <div class="activity-title">Matematická hra – příběhové úlohy</div>
+                        <div class="activity-desc">Gemini vytvoří mini-příběh, ve kterém žáci musí vyřešit matematické
+                            problémy, aby postoupili dál v příběhu.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 15 min</span><span
+                                class="activity-meta-item">👥 Skupiny</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-gold">Oblíbené</span>
+                            <button class="btn btn-mint btn-sm">Detail →</button>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-level="ss">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span
+                                    class="badge badge-gray">SŠ</span></div>
+                            <span style="font-size:1.8rem">📊</span>
+                        </div>
+                        <div class="activity-title">Statistika a analýza dat</div>
+                        <div class="activity-desc">AI pomůže žákům interpretovat datové sady, vysvětlí statistické pojmy
+                            a navede je správnou interpretací výsledků.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 20 min</span><span
+                                class="activity-meta-item">👤 Individuální</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <button class="btn btn-mint btn-sm">Detail →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROMPTY -->
+            <div id="tab-prompty" class="tab-panel d-none">
+                <div class="prompt-grid">
+                    <div class="prompt-card reveal">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Generátor úloh – slovní</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span
+                                        class="badge badge-gold">ChatGPT</span></div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">Jsi zkušený učitel matematiky na [ZŠ/SŠ]. Vygeneruj 10 slovních úloh na
+                            téma [TÉMA] pro žáky [ROČNÍK]. Každá úloha musí mít realistický kontext z každodenního
+                            života žáků a být přiměřená věku. Za každou úlohou uveď správné řešení s podrobným postupem
+                            výpočtu.</div>
+                        <div class="prompt-footer">
+                            <span class="badge badge-blue">Generování</span>
+                            <button class="copy-btn"
+                                data-copy="Jsi zkušený učitel matematiky na [ZŠ/SŠ]. Vygeneruj 10 slovních úloh na téma [TÉMA] pro žáky [ROČNÍK]. Každá úloha musí mít realistický kontext z každodenního života žáků a být přiměřená věku. Za každou úlohou uveď správné řešení s podrobným postupem výpočtu.">📋
+                                Kopírovat</button>
+                        </div>
+                    </div>
+                    <div class="prompt-card reveal">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Srozumitelné vysvětlení konceptu</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span
+                                        class="badge badge-mint">Gemini</span></div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">Vysvětli mi matematický koncept [TÉMA] tak, jako bych byl žák [ROČNÍK].
+                            Použij přirovnání z každodenního života, uveď konkrétní příklady a ověř mé porozumění 3
+                            otázkami na konci. Vyhni se odborným termínům bez vysvětlení.</div>
+                        <div class="prompt-footer">
+                            <span class="badge badge-green">Vysvětlení</span>
+                            <button class="copy-btn"
+                                data-copy="Vysvětli mi matematický koncept [TÉMA] tak, jako bych byl žák [ROČNÍK]. Použij přirovnání z každodenního života, uveď konkrétní příklady a ověř mé porozumění 3 otázkami na konci. Vyhni se odborným termínům bez vysvětlení.">📋
+                                Kopírovat</button>
+                        </div>
+                    </div>
+                    <div class="prompt-card reveal">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Písemka s bodovacím klíčem</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span
+                                        class="badge badge-purple">Claude</span></div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">Vytvoř písemnou práci z matematiky pro [ROČNÍK] na téma [TÉMA].
+                            Struktura: A) výpočetní úlohy (40%), B) slovní úlohy (35%), C) grafické úlohy (25%). Celkem
+                            [POČET] bodů. Přidej vzorové řešení, bodovací klíč a hodnotící škálu.</div>
+                        <div class="prompt-footer">
+                            <span class="badge badge-orange">Testy</span>
+                            <button class="copy-btn"
+                                data-copy="Vytvoř písemnou práci z matematiky pro [ROČNÍK] na téma [TÉMA]. Struktura: A) výpočetní úlohy (40%), B) slovní úlohy (35%), C) grafické úlohy (25%). Celkem [POČET] bodů. Přidej vzorové řešení, bodovací klíč a hodnotící škálu.">📋
+                                Kopírovat</button>
+                        </div>
+                    </div>
+                    <div class="prompt-card reveal">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Diferenciace – 3 úrovně obtížnosti</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span
+                                        class="badge badge-gold">ChatGPT</span></div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">Vezmi tuto matematickou úlohu: [ÚLOHA]. Přepracuj ji do 3 verzí
+                            obtížnosti: 1) Lehká verze – pro žáky potřebující podporu, 2) Standardní verze – původní, 3)
+                            Rozšiřující verze – pro nadané žáky s dalšími podmínkami.</div>
+                        <div class="prompt-footer">
+                            <span class="badge badge-pink">Diferenciace</span>
+                            <button class="copy-btn"
+                                data-copy="Vezmi tuto matematickou úlohu: [ÚLOHA]. Přepracuj ji do 3 verzí obtížnosti: 1) Lehká verze – pro žáky potřebující podporu, 2) Standardní verze – původní, 3) Rozšiřující verze – pro nadané žáky s dalšími podmínkami.">📋
+                                Kopírovat</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ASISTENTI -->
+            <div id="tab-asistenti" class="tab-panel d-none">
+                <div class="assistant-grid">
+                    <div class="assistant-card reveal">
+                        <div class="assistant-header">
+                            <div class="assistant-logo"
+                                style="background:linear-gradient(135deg,#00a67e,#008f6c);font-size:1.8rem">🟢</div>
+                            <div>
+                                <div class="assistant-name">ChatGPT</div>
+                                <div class="assistant-provider">OpenAI · GPT-4o</div>
+                            </div>
+                        </div>
+                        <div class="assistant-desc">Nejpopulárnější AI pro generování matematických úloh, vysvětlení
+                            postupů a tvorbu testů.</div>
+                        <div class="assistant-tags"><span class="badge badge-gold">Generování</span><span
+                                class="badge badge-mint">Vysvětlení</span><span class="badge badge-blue">Testy</span>
+                        </div>
+                        <div class="assistant-footer">
+                            <div class="assistant-rating"><span class="stars">★★★★★</span></div>
+                            <a href="https://chatgpt.com" target="_blank" class="btn btn-primary btn-sm">Otevřít →</a>
+                        </div>
+                    </div>
+                    <div class="assistant-card reveal">
+                        <div class="assistant-header">
+                            <div class="assistant-logo"
+                                style="background:linear-gradient(135deg,#4285f4,#34a853);font-size:1.8rem">🔵</div>
+                            <div>
+                                <div class="assistant-name">Gemini</div>
+                                <div class="assistant-provider">Google</div>
+                            </div>
+                        </div>
+                        <div class="assistant-desc">Silný v multimodálních úlohách – dokáže číst fotografie z tabule a
+                            analyzovat grafy.</div>
+                        <div class="assistant-tags"><span class="badge badge-mint">Grafy</span><span
+                                class="badge badge-gold">Multimodální</span></div>
+                        <div class="assistant-footer">
+                            <div class="assistant-rating"><span class="stars">★★★★☆</span></div>
+                            <a href="https://gemini.google.com" target="_blank" class="btn btn-primary btn-sm">Otevřít
+                                →</a>
+                        </div>
+                    </div>
+                    <div class="assistant-card reveal">
+                        <div class="assistant-header">
+                            <div class="assistant-logo"
+                                style="background:linear-gradient(135deg,#de7c3c,#c9561a);font-size:1.8rem">🟠</div>
+                            <div>
+                                <div class="assistant-name">Claude</div>
+                                <div class="assistant-provider">Anthropic</div>
+                            </div>
+                        </div>
+                        <div class="assistant-desc">Vynikající pro tvorbu strukturovaných testů a podrobná vysvětlení
+                            přizpůsobená věku.</div>
+                        <div class="assistant-tags"><span class="badge badge-purple">Testy</span><span
+                                class="badge badge-pink">Diferenciace</span></div>
+                        <div class="assistant-footer">
+                            <div class="assistant-rating"><span class="stars">★★★★★</span></div>
+                            <a href="https://claude.ai" target="_blank" class="btn btn-primary btn-sm">Otevřít →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TIPY -->
+            <div id="tab-tipy" class="tab-panel d-none">
+                <div style="display:grid;gap:16px;max-width:860px">
+                    <div class="info-box reveal">
+                        <span class="info-box-icon">💡</span>
+                        <div class="info-box-text"><strong>Tip: Vždy specifikujte ročník</strong>Každý AI model generuje
+                            výstupy lépe, pokud přesně určíte ročník a obtížnost. Místo "pro žáky ZŠ" napište "pro žáky
+                            7. ročníku ZŠ, kteří právě probírají lineární rovnice".</div>
+                    </div>
+                    <div class="info-box reveal">
+                        <span class="info-box-icon">🎯</span>
+                        <div class="info-box-text"><strong>Tip: Požádejte o diferenciaci</strong>AI dokáže přizpůsobit
+                            úlohu více úrovním žáků najednou. Přidejte: "Vygeneruj 3 verze: pro slabší, průměrné a
+                            nadané žáky."</div>
+                    </div>
+                    <div class="info-box reveal"
+                        style="background:rgba(0,212,168,0.07);border-color:rgba(0,212,168,0.2)">
+                        <span class="info-box-icon">✅</span>
+                        <div class="info-box-text"><strong>Osvědčená praxe: Vždy ověřte výsledky</strong>Matematické
+                            výstupy AI mohou obsahovat chyby u složitějších výpočtů. Vždy zkontrolujte výsledky před
+                            rozdáním žákům.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo" style="margin-bottom:12px;display:inline-flex">
+                        <div class="nav-logo-icon">🤖</div>AI ve <span>Výuce</span>
+                    </a>
+                    <p>Moderní průvodce světem AI pro české učitele.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>🎯 Předměty</h4>
+                    <ul>
+                        <li><a href="matematika.html">🔢 Matematika</a></li>
+                        <li><a href="cestina.html">📖 Český jazyk</a></li>
+                        <li><a href="anglictina.html">🇬🇧 Angličtina</a></li>
+                        <li><a href="prirodoveda.html">🔬 Přírodní vědy</a></li>
+                        <li><a href="dejepis.html">🏛️ Dějepis</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>📚 Zdroje</h4>
+                    <ul>
+                        <li><a href="prompty.html">✨ Prompty</a></li>
+                        <li><a href="aktivity.html">🎯 Aktivity</a></li>
+                        <li><a href="asistenti.html">🤖 Asistenti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>🔗 Rychlé odkazy</h4>
+                    <ul>
+                        <li><a href="index.html">🏠 Domů</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><span>© 2026 AI ve Výuce · Pro české pedagogy</span></div>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title"></h3>
+                <button class="modal-close"
+                    onclick="document.getElementById('modalOverlay').classList.remove('open')">✕</button>
+            </div>
+            <div class="modal-body"></div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

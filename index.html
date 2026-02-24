@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI ve Výuce – Pomůcky pro Učitele | Aktivity, Prompty, Asistenti</title>
+  <meta name="description"
+    content="Komplexní průvodce AI nástroji pro učitele. Aktivity, prompty a AI asistenti pro výuku matematiky, češtiny, angličtiny, přírodovedy, dějepisu a dalších předmětů." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    @media(max-width:900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-subtitle,
+      .section-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-stats {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        display: none;
+      }
+    }
+
+    .latest-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .llm-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 48px;
+    }
+
+    .llm-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .llm-pill:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .llm-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    @media(max-width:768px) {
+      .how-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .llm-bar {
+        gap: 8px;
+      }
+    }
+
+    .latest-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .latest-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .latest-card-body {
+      padding: 22px 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .latest-card-footer {
+      padding: 14px 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .latest-card-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent-mint);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    .latest-card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .latest-card-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .cta-section {
+      background: linear-gradient(135deg, rgba(245, 166, 35, 0.08) 0%, rgba(0, 212, 168, 0.06) 100%);
+      border: 1px solid rgba(245, 166, 35, 0.15);
+      border-radius: var(--radius-xl);
+      padding: 64px 48px;
+      text-align: center;
+    }
+
+    @media(max-width:600px) {
+      .cta-section {
+        padding: 40px 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">🤖</div>
+        AI ve <span>Výuce</span>
+      </a>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <a href="#" class="nav-link">
+            📚 Předměty <i class="fa-solid fa-chevron-down" style="font-size:0.65rem"></i>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="matematika.html" class="nav-dropdown-item"><span class="item-icon">🔢</span> Matematika</a>
+            <a href="cestina.html" class="nav-dropdown-item"><span class="item-icon">📖</span> Český jazyk</a>
+            <a href="anglictina.html" class="nav-dropdown-item"><span class="item-icon">🇬🇧</span> Anglický jazyk</a>
+            <a href="prirodoveda.html" class="nav-dropdown-item"><span class="item-icon">🔬</span> Přírodní vědy</a>
+            <a href="dejepis.html" class="nav-dropdown-item"><span class="item-icon">🏛️</span> Dějepis</a>
+          </div>
+        </div>
+        <a href="prompty.html" class="nav-link">✨ Prompty</a>
+        <a href="asistenti.html" class="nav-link">🤖 AI Asistenti</a>
+        <a href="aktivity.html" class="nav-link">🎯 Aktivity</a>
+        <a href="vibe-coding.html" class="nav-link">💻 Vibe Coding</a>
+      </div>
+      <a href="prompty.html" class="btn btn-primary btn-sm nav-cta">📋 Knihovna Promptů</a>
+      <button class="nav-mobile-toggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏠 Domů</a>
+    <a href="matematika.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔢 Matematika</a>
+    <a href="cestina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">📖 Český jazyk</a>
+    <a href="anglictina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🇬🇧 Anglický jazyk</a>
+    <a href="prirodoveda.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔬 Přírodní vědy</a>
+    <a href="dejepis.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏛️ Dějepis</a>
+    <a href="prompty.html" class="nav-link" style="font-size:1rem;padding:14px 16px">✨ Prompty</a>
+    <a href="asistenti.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🤖 AI Asistenti</a>
+    <a href="aktivity.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🎯 Aktivity</a>
+    <a href="vibe-coding.html" class="nav-link" style="font-size:1rem;padding:14px 16px">💻 Vibe Coding</a>
+    <div style="margin-top:16px">
+      <a href="prompty.html" class="btn btn-primary" style="width:100%;justify-content:center">📋 Knihovna Promptů</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <canvas id="particles" class="hero-canvas"></canvas>
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    <div class="hero-glow-3"></div>
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            🎓 Vzdělávání s umělou inteligencí
+          </div>
+          <h1 class="hero-title">
+            AI Pomůcky<br />
+            pro <span class="gradient-text">Učitele</span>
+          </h1>
+          <p class="hero-subtitle">
+            Objevte stovky aktivit, promptů a AI asistentů pro moderní výuku.
+            Organizováno dle předmětů, vyzkoušeno v praxi, připraveno k použití.
+          </p>
+          <div class="hero-actions">
+            <a href="aktivity.html" class="btn btn-primary btn-lg">
+              🎯 Prozkoumat Aktivity
+            </a>
+            <a href="prompty.html" class="btn btn-secondary btn-lg">
+              ✨ Knihovna Promptů
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="hero-stat-number" data-target="85" data-suffix="+">0+</span>
+              <span class="hero-stat-label">Aktivit</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-number" data-target="150" data-suffix="+">0+</span>
+              <span class="hero-stat-label">Promptů</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-number" data-target="5">0</span>
+              <span class="hero-stat-label">Předmětů</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-number" data-target="8">0</span>
+              <span class="hero-stat-label">LLM Platforem</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-img-wrapper"
+            style="position:relative;border-radius:20px;overflow:hidden;box-shadow:0 0 60px rgba(245,166,35,0.18),0 0 120px rgba(0,212,168,0.08);border:1px solid rgba(255,255,255,0.1)">
+            <img src="images/hero_classroom.jpg" alt="Futuristická třída budoucnosti s AI – moderní výuka"
+              style="width:100%;max-width:540px;height:auto;display:block;border-radius:20px" />
+          </div>
+          <div class="hero-floating-card hero-floating-card-1">
+            <span class="floating-icon">🔢</span>
+            <div class="floating-text">
+              <strong>Matematika</strong>
+              <span>18 aktivit · ChatGPT, Gemini</span>
+            </div>
+          </div>
+          <div class="hero-floating-card hero-floating-card-2">
+            <span class="floating-icon">✨</span>
+            <div class="floating-text">
+              <strong>Prompt zkopírován!</strong>
+              <span>Připraven k použití v ChatGPT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section-sm" style="background:var(--bg-secondary)">
+    <div class="container">
+      <div class="text-center mb-48">
+        <div class="section-label">Jak to funguje</div>
+        <h2 class="section-title">Od nápadu ke <span class="gradient-text">výuce za 3 kroky</span></h2>
+      </div>
+      <div class="how-grid">
+        <div class="step-card reveal">
+          <div class="step-number">1</div>
+          <h3 class="step-title">Vyberte předmět</h3>
+          <p class="step-desc">Procházejte aktivity organizované dle předmětů – od matematiky po dějepis.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">2</div>
+          <h3 class="step-title">Zkopírujte prompt</h3>
+          <p class="step-desc">Jedním klikem zkopírujte připravený prompt do schránky a vložte do AI nástroje.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">3</div>
+          <h3 class="step-title">Použijte ve výuce</h3>
+          <p class="step-desc">Výstup z AI adaptujte pro svou třídu a ušetřete hodiny přípravy týdně.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subjects -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-48">
+        <div class="section-label">Předměty</div>
+        <h2 class="section-title">Vyberte svůj <span class="gradient-text">předmět</span></h2>
+        <p class="section-subtitle" style="margin:0 auto">Aktivity, prompty a AI asistenti speciálně připravené pro
+          každý předmět základní a střední školy.</p>
+      </div>
+      <div class="subject-grid">
+        <a href="matematika.html" class="subject-card reveal">
+          <div class="subject-card-header">
+            <div class="subject-icon"
+              style="background:linear-gradient(135deg,rgba(245,166,35,0.15),rgba(245,166,35,0.05));color:#f5a623">🔢
+            </div>
+            <div>
+              <div class="subject-title">Matematika</div>
+              <div class="subject-desc">Generátory úloh, krok-za-krokem řešení, vizualizace grafů a algebraické pomůcky.
+              </div>
+            </div>
+          </div>
+          <div class="subject-card-body">
+            <div class="subject-meta">
+              <span class="badge badge-gold">18 aktivit</span>
+              <span class="badge badge-gray">32 promptů</span>
+            </div>
+          </div>
+          <div class="subject-card-footer">
+            <span class="subject-count">ChatGPT · Gemini · Claude · Wolfram</span>
+            <span class="subject-arrow">→</span>
+          </div>
+        </a>
+
+        <a href="cestina.html" class="subject-card reveal">
+          <div class="subject-card-header">
+            <div class="subject-icon"
+              style="background:linear-gradient(135deg,rgba(74,144,226,0.15),rgba(74,144,226,0.05));color:#4a90e2">📖
+            </div>
+            <div>
+              <div class="subject-title">Český jazyk</div>
+              <div class="subject-desc">Opravování slohů, diktáty, rozbory, literární analýzy a gramatická cvičení.
+              </div>
+            </div>
+          </div>
+          <div class="subject-card-body">
+            <div class="subject-meta">
+              <span class="badge badge-blue">16 aktivit</span>
+              <span class="badge badge-gray">28 promptů</span>
+            </div>
+          </div>
+          <div class="subject-card-footer">
+            <span class="subject-count">ChatGPT · Claude · Gemini</span>
+            <span class="subject-arrow">→</span>
+          </div>
+        </a>
+
+        <a href="anglictina.html" class="subject-card reveal">
+          <div class="subject-card-header">
+            <div class="subject-icon"
+              style="background:linear-gradient(135deg,rgba(0,212,168,0.15),rgba(0,212,168,0.05));color:#00d4a8">🇬🇧
+            </div>
+            <div>
+              <div class="subject-title">Anglický jazyk</div>
+              <div class="subject-desc">Konverzační partner, gramatické opravné asistenty, slovní zásoba, překlady s
+                kontextem.</div>
+            </div>
+          </div>
+          <div class="subject-card-body">
+            <div class="subject-meta">
+              <span class="badge badge-mint">20 aktivit</span>
+              <span class="badge badge-gray">35 promptů</span>
+            </div>
+          </div>
+          <div class="subject-card-footer">
+            <span class="subject-count">ChatGPT · Claude · Copilot</span>
+            <span class="subject-arrow">→</span>
+          </div>
+        </a>
+
+        <a href="prirodoveda.html" class="subject-card reveal">
+          <div class="subject-card-header">
+            <div class="subject-icon"
+              style="background:linear-gradient(135deg,rgba(39,174,96,0.15),rgba(39,174,96,0.05));color:#27ae60">🔬
+            </div>
+            <div>
+              <div class="subject-title">Přírodní vědy</div>
+              <div class="subject-desc">Biologie, chemie, fyzika – experimenty, simulace, vysvětlení jevů a kvízové
+                otázky.</div>
+            </div>
+          </div>
+          <div class="subject-card-body">
+            <div class="subject-meta">
+              <span class="badge badge-green">22 aktivit</span>
+              <span class="badge badge-gray">40 promptů</span>
+            </div>
+          </div>
+          <div class="subject-card-footer">
+            <span class="subject-count">Gemini · ChatGPT · Perplexity</span>
+            <span class="subject-arrow">→</span>
+          </div>
+        </a>
+
+        <a href="dejepis.html" class="subject-card reveal">
+          <div class="subject-card-header">
+            <div class="subject-icon"
+              style="background:linear-gradient(135deg,rgba(155,89,182,0.15),rgba(155,89,182,0.05));color:#9b59b6">🏛️
+            </div>
+            <div>
+              <div class="subject-title">Dějepis</div>
+              <div class="subject-desc">Historické narativy, časové osy, debatní aktivity, výchova k občanství a
+                kritické myšlení.</div>
+            </div>
+          </div>
+          <div class="subject-card-body">
+            <div class="subject-meta">
+              <span class="badge badge-purple">14 aktivit</span>
+              <span class="badge badge-gray">24 promptů</span>
+            </div>
+          </div>
+          <div class="subject-card-footer">
+            <span class="subject-count">ChatGPT · Claude · Gemini</span>
+            <span class="subject-arrow">→</span>
+          </div>
+        </a>
+
+        <a href="aktivity.html" class="subject-card reveal"
+          style="background:linear-gradient(135deg,rgba(245,166,35,0.06),rgba(0,212,168,0.04));border-color:rgba(245,166,35,0.2)">
+          <div class="subject-card-header">
+            <div class="subject-icon" style="background:var(--gradient-gold);color:#0a0f1e">🎯</div>
+            <div>
+              <div class="subject-title">Všechny Aktivity</div>
+              <div class="subject-desc">Procházejte kompletní knihovnu aktivit napříč všemi předměty s pokročilými
+                filtry.</div>
+            </div>
+          </div>
+          <div class="subject-card-body">
+            <div class="subject-meta">
+              <span class="badge badge-gold">90+ aktivit</span>
+              <span class="badge badge-mint">150+ promptů</span>
+            </div>
+          </div>
+          <div class="subject-card-footer">
+            <span class="subject-count" style="color:var(--accent-gold)">Kompletní přehled</span>
+            <span class="subject-arrow">→</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LLM Platforms -->
+  <section class="section-sm" style="background:var(--bg-secondary)">
+    <div class="container text-center">
+      <div class="section-label" style="justify-content:center">Podporované platformy</div>
+      <h2 class="section-title">Aktivity pro <span class="gradient-text-mint">všechny hlavní AI nástroje</span></h2>
+      <div class="llm-bar">
+        <a href="asistenti.html" class="llm-pill">
+          <span style="font-size:1.3rem">🟢</span> ChatGPT
+        </a>
+        <a href="asistenti.html" class="llm-pill">
+          <span style="font-size:1.3rem">🔵</span> Gemini
+        </a>
+        <a href="asistenti.html" class="llm-pill">
+          <span style="font-size:1.3rem">🟠</span> Claude
+        </a>
+        <a href="asistenti.html" class="llm-pill">
+          <span style="font-size:1.3rem">🔷</span> Microsoft Copilot
+        </a>
+        <a href="asistenti.html" class="llm-pill">
+          <span style="font-size:1.3rem">🟣</span> Perplexity
+        </a>
+        <a href="asistenti.html" class="llm-pill">
+          <span style="font-size:1.3rem">📓</span> NotebookLM
+        </a>
+        <a href="asistenti.html" class="llm-pill">
+          <span style="font-size:1.3rem">⬛</span> Mistral
+        </a>
+        <a href="asistenti.html" class="llm-pill">
+          <span style="font-size:1.3rem">🟤</span> Meta AI
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Activities -->
+  <section class="section">
+    <div class="container">
+      <div
+        style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:40px">
+        <div>
+          <div class="section-label">Aktuality</div>
+          <h2 class="section-title mb-8">Nejnovější <span class="gradient-text">aktivity</span></h2>
+        </div>
+        <a href="aktivity.html" class="btn btn-secondary">Zobrazit vše →</a>
+      </div>
+      <div class="latest-grid">
+        <div class="latest-card reveal">
+          <div class="latest-card-body">
+            <div class="latest-card-tag">🔢 Matematika</div>
+            <div class="latest-card-title">Generátor slovních úloh dle věku žáků</div>
+            <div class="latest-card-desc">Nechte ChatGPT vygenerovat desítky různých slovních úloh přesně na míru věkové
+              skupině a probírané látce.</div>
+          </div>
+          <div class="latest-card-footer">
+            <div style="display:flex;gap:6px">
+              <span class="badge badge-gold">ChatGPT</span>
+              <span class="badge badge-gray">ZŠ</span>
+            </div>
+            <a href="matematika.html" class="btn btn-mint btn-sm">Otevřít →</a>
+          </div>
+        </div>
+        <div class="latest-card reveal">
+          <div class="latest-card-body">
+            <div class="latest-card-tag">🇬🇧 Angličtina</div>
+            <div class="latest-card-title">AI konverzační partner pro žáky</div>
+            <div class="latest-card-desc">Nastavte ChatGPT jako bezpečného konverzačního partnera na zadané téma a
+              jazykové úrovni CEFR.</div>
+          </div>
+          <div class="latest-card-footer">
+            <div style="display:flex;gap:6px">
+              <span class="badge badge-blue">Claude</span>
+              <span class="badge badge-gray">SŠ</span>
+            </div>
+            <a href="anglictina.html" class="btn btn-mint btn-sm">Otevřít →</a>
+          </div>
+        </div>
+        <div class="latest-card reveal">
+          <div class="latest-card-body">
+            <div class="latest-card-tag">🔬 Přírodní vědy</div>
+            <div class="latest-card-title">Simulace vědeckého experimentu</div>
+            <div class="latest-card-desc">Gemini jako virtuální laboratorní asistent – popis průběhu experimentu,
+              výsledků a závěrů bez fyzické laboratoře.</div>
+          </div>
+          <div class="latest-card-footer">
+            <div style="display:flex;gap:6px">
+              <span class="badge badge-mint">Gemini</span>
+              <span class="badge badge-gray">ZŠ/SŠ</span>
+            </div>
+            <a href="prirodoveda.html" class="btn btn-mint btn-sm">Otevřít →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="section-sm" style="background:var(--bg-secondary)">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <div class="stat-number gradient-text" data-target="90" data-suffix="+">0+</div>
+          <div class="stat-label">Vzdělávacích aktivit</div>
+          <div class="stat-sublabel">napříč 5 předměty</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-number gradient-text-mint" data-target="150" data-suffix="+">0+</div>
+          <div class="stat-label">Připravených promptů</div>
+          <div class="stat-sublabel">k okamžitému použití</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-number" style="color:var(--accent-blue)" data-target="8">0</div>
+          <div class="stat-label">AI platforem</div>
+          <div class="stat-sublabel">ChatGPT, Gemini, Claude…</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-number" style="color:var(--accent-purple)" data-target="3">0</div>
+          <div class="stat-label">Úrovně vzdělávání</div>
+          <div class="stat-sublabel">1.–5. · 6.–9. ročník · SŠ</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-section reveal">
+        <div style="font-size:3rem;margin-bottom:16px">🚀</div>
+        <h2 class="section-title" style="max-width:640px;margin:0 auto 16px">
+          Připravte si celý <span class="gradient-text">týden výuky</span> za hodinu
+        </h2>
+        <p class="section-subtitle" style="margin:0 auto 32px">
+          Stovky připravených promptů a aktivit čekají na vás. Začněte svůj první experiment s AI výukou ještě dnes.
+        </p>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+          <a href="prompty.html" class="btn btn-primary btn-lg">✨ Začít s Prompty</a>
+          <a href="asistenti.html" class="btn btn-secondary btn-lg">🤖 Vybrat AI Asistenta</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="margin-bottom:12px;display:inline-flex">
+            <div class="nav-logo-icon">🤖</div>
+            AI ve <span>Výuce</span>
+          </a>
+          <p>Moderní průvodce světem AI pro české učitele. Aktivity, prompty a asistenti pro efektivnější výuku.</p>
+          <div style="display:flex;gap:8px">
+            <span class="badge badge-gold">Zdarma</span>
+            <span class="badge badge-mint">Češtině</span>
+            <span class="badge badge-blue">Pro učitele</span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>🎯 Předměty</h4>
+          <ul>
+            <li><a href="matematika.html">🔢 Matematika</a></li>
+            <li><a href="cestina.html">📖 Český jazyk</a></li>
+            <li><a href="anglictina.html">🇬🇧 Anglický jazyk</a></li>
+            <li><a href="prirodoveda.html">🔬 Přírodní vědy</a></li>
+            <li><a href="dejepis.html">🏛️ Dějepis</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>📚 Zdroje</h4>
+          <ul>
+            <li><a href="prompty.html">✨ Knihovna promptů</a></li>
+            <li><a href="aktivity.html">🎯 Všechny aktivity</a></li>
+            <li><a href="asistenti.html">🤖 AI Asistenti</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>🤖 AI Nástroje</h4>
+          <ul>
+            <li><a href="https://chatgpt.com" target="_blank" rel="noopener">ChatGPT</a></li>
+            <li><a href="https://gemini.google.com" target="_blank" rel="noopener">Google Gemini</a></li>
+            <li><a href="https://claude.ai" target="_blank" rel="noopener">Claude (Anthropic)</a></li>
+            <li><a href="https://copilot.microsoft.com" target="_blank" rel="noopener">Microsoft Copilot</a></li>
+            <li><a href="https://notebooklm.google.com" target="_blank" rel="noopener">NotebookLM</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 AI ve Výuce · Vytvořeno s ❤️ pro české pedagogy</span>
+        <div class="footer-bottom-links">
+          <a href="index.html">Domů</a>
+          <a href="prompty.html">Prompty</a>
+          <a href="asistenti.html">Asistenti</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title"></h3>
+        <button class="modal-close"
+          onclick="document.getElementById('modalOverlay').classList.remove('open')">✕</button>
+      </div>
+      <div class="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

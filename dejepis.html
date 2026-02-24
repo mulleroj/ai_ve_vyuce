@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dějepis – AI Pomůcky pro Učitele</title>
+    <meta name="description"
+        content="AI aktivity a prompty pro výuku dějepisu a výchovy k občanství. Historické narativy, debatní aktivity, časové osy." />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon">🤖</div>AI ve <span>Výuce</span>
+            </a>
+            <div class="nav-links">
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link active">📚 Předměty <i class="fa-solid fa-chevron-down"
+                            style="font-size:.65rem"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="matematika.html" class="nav-dropdown-item"><span class="item-icon">🔢</span>
+                            Matematika</a>
+                        <a href="cestina.html" class="nav-dropdown-item"><span class="item-icon">📖</span> Český
+                            jazyk</a>
+                        <a href="anglictina.html" class="nav-dropdown-item"><span class="item-icon">🇬🇧</span> Anglický
+                            jazyk</a>
+                        <a href="prirodoveda.html" class="nav-dropdown-item"><span class="item-icon">🔬</span> Přírodní
+                            vědy</a>
+                        <a href="dejepis.html" class="nav-dropdown-item"><span class="item-icon">🏛️</span> Dějepis</a>
+                    </div>
+                </div>
+                <a href="prompty.html" class="nav-link">✨ Prompty</a>
+                <a href="asistenti.html" class="nav-link">🤖 AI Asistenti</a>
+                <a href="aktivity.html" class="nav-link">🎯 Aktivity</a>
+                <a href="vibe-coding.html" class="nav-link">💻 Vibe Coding</a>
+            </div>
+            <a href="prompty.html" class="btn btn-primary btn-sm nav-cta">📋 Prompty</a>
+            <button class="nav-mobile-toggle"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+    <div class="mobile-menu">
+        <a href="index.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏠 Domů</a>
+        <a href="matematika.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔢 Matematika</a>
+        <a href="cestina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">📖 Český jazyk</a>
+        <a href="anglictina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🇬🇧 Angličtina</a>
+        <a href="prirodoveda.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔬 Přírodní vědy</a>
+        <a href="dejepis.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏛️ Dějepis</a>
+        <a href="prompty.html" class="nav-link" style="font-size:1rem;padding:14px 16px">✨ Prompty</a>
+        <a href="asistenti.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🤖 Asistenti</a>
+        <a href="aktivity.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🎯 Aktivity</a>
+        <a href="vibe-coding.html" class="nav-link" style="font-size:1rem;padding:14px 16px">💻 Vibe Coding</a>
+    </div>
+
+    <section class="page-hero" style="background:linear-gradient(135deg,#0a0f1e 0%,#1a0030 100%)">
+        <div class="page-hero-glow"
+            style="background:radial-gradient(ellipse,rgba(155,89,182,0.12) 0%,transparent 70%)"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="page-hero-icon"
+                    style="background:linear-gradient(135deg,rgba(155,89,182,0.2),rgba(155,89,182,0.05))">🏛️</div>
+                <h1 class="page-hero-title">Dějepis <span
+                        style="background:var(--gradient-purple);-webkit-background-clip:text;-webkit-text-fill-color:transparent">s
+                        AI</span></h1>
+                <p class="page-hero-subtitle">Oživte historii – nechte žáky debatovat jako historické osobnosti,
+                    generujte časové osy, simulujte historické situace a rozvíjejte kritické myšlení.</p>
+                <div class="page-hero-stats">
+                    <div class="page-hero-stat"><span>🎯</span><strong>14</strong> aktivit</div>
+                    <div class="page-hero-stat"><span>✨</span><strong>24</strong> promptů</div>
+                    <div class="page-hero-stat"><span>🤖</span><strong>3</strong> AI nástroje</div>
+                    <div class="page-hero-stat"><span>📅</span>ZŠ · SŠ</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="tabs-container">
+                <div class="tabs" role="tablist">
+                    <button class="tab-btn active" data-tab="aktivity">🎯 Aktivity</button>
+                    <button class="tab-btn" data-tab="prompty">✨ Prompty</button>
+                    <button class="tab-btn" data-tab="asistenti">🤖 Asistenti</button>
+                    <button class="tab-btn" data-tab="tipy">💡 Tipy</button>
+                </div>
+            </div>
+
+            <div id="tab-aktivity" class="tab-panel">
+                <div class="activity-grid">
+                    <div class="activity-card reveal">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-purple">Claude</span><span
+                                    class="badge badge-gray">6.–9. ročník</span></div>
+                            <span style="font-size:1.8rem">🎭</span>
+                        </div>
+                        <div class="activity-title">Roleplay historické osobnosti</div>
+                        <div class="activity-desc">Claude hraje roli historické osobnosti – žáci mu mohou klást otázky
+                            jako novinář, soudce nebo spolučasník. Rozvíjí empii a historické myšlení.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 20 min</span><span
+                                class="activity-meta-item">👥 Třída</span></div>
+                        <div class="activity-footer"><span class="badge badge-gold">Oblíbené</span>
+                            <button class="btn btn-mint btn-sm"
+                                onclick="openModal({title:'Roleplay historické osobnosti',body:'<div style=\'background:rgba(0,0,0,0.3);padding:16px;border-radius:12px;font-size:0.875rem;color:var(--text-secondary);line-height:1.7\'>Budeš hrát roli [HISTORICKÁ OSOBNOST] v době [HISTORICKÉ OBDOBÍ]. Mluv v první osobě, přesně podle historických faktů. Odpovídej na otázky z pohledu této osoby s ohledem na její dobu, hodnoty a přesvědčení. Pokud nemáš historicky přesnou odpověď, odpověz v souladu s tím, co by tato osoba pravděpodobně řekla. Nezapomínej na kontext doby.</div><div style=\'margin-top:16px\'><button class=\'copy-btn btn btn-mint btn-sm\' data-copy=\'Budeš hrát roli [HISTORICKÁ OSOBNOST] v době [HISTORICKÉ OBDOBÍ]. Mluv v první osobě, přesně podle historických faktů. Odpovídej na otázky z pohledu této osoby s ohledem na její dobu a hodnoty.\'>📋 Kopírovat</button></div>'})">Detail
+                                →</button>
+                        </div>
+                    </div>
+                    <div class="activity-card reveal">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span
+                                    class="badge badge-gray">ZŠ/SŠ</span></div>
+                            <span style="font-size:1.8rem">📅</span>
+                        </div>
+                        <div class="activity-title">Generátor časových os</div>
+                        <div class="activity-desc">AI vytvoří přehlednou chronologickou osu klíčových událostí pro
+                            libovolné historické období s vysvětlením příčin a důsledků.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 5 min příprava</span><span
+                                class="activity-meta-item">🏫 Třída</span></div>
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span>
+                            <button class="btn btn-mint btn-sm"
+                                onclick="openModal({title:'Generátor časových os',body:'<div style=\'background:rgba(0,0,0,0.3);padding:16px;border-radius:12px;font-size:0.875rem;color:var(--text-secondary);line-height:1.7\'>Vytvoř chronologickou osu klíčových událostí pro [HISTORICKÉ OBDOBÍ] vhodnou pro žáky [ROČNÍK]. Pro každou událost uveď: datum, název události, stručný popis (2–3 věty), příčiny a důsledky, přesah do dalšího vývoje. Zvýrazni 3 nejdůležitější zlomové momenty.</div><div style=\'margin-top:16px\'><button class=\'copy-btn btn btn-mint btn-sm\' data-copy=\'Vytvoř chronologickou osu klíčových událostí pro [HISTORICKÉ OBDOBÍ] pro žáky [ROČNÍK]. Pro každou událost: datum, název, popis, příčiny, důsledky. Zvýrazni 3 nejdůležitější zlomové momenty.\'>📋 Kopírovat</button></div>'})">Detail
+                                →</button>
+                        </div>
+                    </div>
+                    <div class="activity-card reveal">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-mint">Gemini</span><span
+                                    class="badge badge-gray">SŠ</span></div>
+                            <span style="font-size:1.8rem">⚖️</span>
+                        </div>
+                        <div class="activity-title">Debatní aktivita – pro a proti</div>
+                        <div class="activity-desc">AI připraví argumenty na obě strany historického sporu nebo etické
+                            otázky. Žáci debatují, AI zodpovídá dotazy jako nestranný odborník.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 25 min</span><span
+                                class="activity-meta-item">👥 Skupiny</span></div>
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><button
+                                class="btn btn-mint btn-sm">Detail →</button></div>
+                    </div>
+                    <div class="activity-card reveal">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span
+                                    class="badge badge-gray">6.–9. ročník</span></div>
+                            <span style="font-size:1.8rem">🗞️</span>
+                        </div>
+                        <div class="activity-title">Dobový novinový článek</div>
+                        <div class="activity-desc">AI napíše fiktivní dobový novinový článek o historické události očima
+                            tehdejšího novináře. Vhodné jako ukázka přístupu dobové žurnalistiky.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 10 min příprava</span><span
+                                class="activity-meta-item">👤 Individuální</span></div>
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><button
+                                class="btn btn-mint btn-sm">Detail →</button></div>
+                    </div>
+                    <div class="activity-card reveal">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-purple">Claude</span><span
+                                    class="badge badge-gray">SŠ</span></div>
+                            <span style="font-size:1.8rem">🧠</span>
+                        </div>
+                        <div class="activity-title">Analýza historického pramene</div>
+                        <div class="activity-desc">Vložte text historického pramene – AI pomůže žákům pochopit kontext,
+                            identifikovat bias autora a interpretovat obsah kriticky.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 15 min</span><span
+                                class="activity-meta-item">👥 Skupiny</span></div>
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><button
+                                class="btn btn-mint btn-sm">Detail →</button></div>
+                    </div>
+                    <div class="activity-card reveal">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-mint">Gemini</span><span
+                                    class="badge badge-gray">ZŠ</span></div>
+                            <span style="font-size:1.8rem">🌍</span>
+                        </div>
+                        <div class="activity-title">Přehled historické mapy</div>
+                        <div class="activity-desc">AI vysvětlí geopolitické změny hranic, migrace a vliv zeměpisu na
+                            historický vývoj – vhodné doplnit fyzickou mapou.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 10 min</span><span
+                                class="activity-meta-item">🏫 Třída</span></div>
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><button
+                                class="btn btn-mint btn-sm">Detail →</button></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-prompty" class="tab-panel d-none">
+                <div class="prompt-grid">
+                    <div class="prompt-card reveal">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Roleplay historické osoby</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span
+                                        class="badge badge-purple">Claude</span><span
+                                        class="badge badge-gray">ZŠ/SŠ</span></div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">Budeš hrát roli [HISTORICKÁ OSOBNOST] v době [HISTORICKÉ OBDOBÍ]. Mluv
+                            v první osobě, přesně dle historických faktů. Odpovídej z pohledu této osobnosti s ohledem
+                            na její dobu, hodnoty a přesvědčení. Na konci každé odpovědi přidej poznámku v závorce pro
+                            učitele: (Historická poznámka: …) s ověřením fakticity.</div>
+                        <div class="prompt-footer">
+                            <span class="badge badge-purple">Roleplay</span>
+                            <button class="copy-btn"
+                                data-copy="Budeš hrát roli [HISTORICKÁ OSOBNOST] v době [HISTORICKÉ OBDOBÍ]. Mluv v první osobě dle historických faktů. Odpovídej z pohledu této osobnosti. Na konci přidej (Historická poznámka: ...) pro učitele s ověřením fakticity.">📋
+                                Kopírovat</button>
+                        </div>
+                    </div>
+                    <div class="prompt-card reveal">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Příčiny a důsledky události</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span
+                                        class="badge badge-gold">ChatGPT</span><span
+                                        class="badge badge-gray">ZŠ/SŠ</span></div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">Analyzuj historickou událost „[UDÁLOST]" pro žáky [ROČNÍK]. Struktura:
+                            1) Historický kontext (co jí předcházelo), 2) Bezprostřední příčiny, 3) Průběh události, 4)
+                            Krátkodobé důsledky, 5) Dlouhodobé důsledky a přesah do dnešní doby. Vyhni se
+                            zjednodušování, ale zachovej srozumitelnost pro daný ročník.</div>
+                        <div class="prompt-footer">
+                            <span class="badge badge-blue">Analýza</span>
+                            <button class="copy-btn" data-copy="Analyzuj historickou událost „[UDÁLOST]" pro žáky
+                                [ROČNÍK]. Zahrň: kontext, příčiny, průběh, krátkodobé a dlouhodobé důsledky, přesah do
+                                dnešní doby. Zachovej srozumitelnost pro daný ročník.">📋 Kopírovat</button>
+                        </div>
+                    </div>
+                    <div class="prompt-card reveal">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Debatní příprava – obě strany</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span
+                                        class="badge badge-mint">Gemini</span><span class="badge badge-gray">SŠ</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">Připrav podklady pro školní debatu na toto historické nebo aktuální
+                            téma: [TÉMA]. Pro každou stranu uveď: 4 klíčové argumenty s historickými nebo faktickými
+                            důkazy, 2 protiargumenty k anticipaci a 3 otázky, které může protistrana položit. Zachovej
+                            nestrannost a věcnost.</div>
+                        <div class="prompt-footer">
+                            <span class="badge badge-green">Debata</span>
+                            <button class="copy-btn"
+                                data-copy="Připrav podklady pro školní debatu: [TÉMA]. Pro každou stranu: 4 argumenty s důkazy, 2 protiargumenty k anticipaci, 3 předpokládané otázky protistrany. Zachovej nestrannost.">📋
+                                Kopírovat</button>
+                        </div>
+                    </div>
+                    <div class="prompt-card reveal">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Dobový fiktivní deník</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span
+                                        class="badge badge-gold">ChatGPT</span><span class="badge badge-gray">ZŠ</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">Napiš fiktivní deník [FIKTIVNÍ POSTAVA: obyčejný člověk / voják / žena
+                            / dítě] žijící v době [HISTORICKÉ OBDOBÍ – konkrétní rok]. Datum zápisů: [DATUM]. Zahrň
+                            každodenní život, historické události z perspektivy obyčejného člověka, jeho obavy, naděje.
+                            3–5 zápisů. Jazyk přizpůsob věku žáků [ROČNÍK].</div>
+                        <div class="prompt-footer">
+                            <span class="badge badge-orange">Kreativní psaní</span>
+                            <button class="copy-btn"
+                                data-copy="Napiš fiktivní deník [FIKTIVNÍ POSTAVA] žijící v době [HISTORICKÉ OBDOBÍ]. Zahrň každodenní život, historické události z perspektivy obyčejného člověka. 3–5 zápisů. Přizpůsob věku žáků [ROČNÍK].">📋
+                                Kopírovat</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-asistenti" class="tab-panel d-none">
+                <div class="assistant-grid">
+                    <div class="assistant-card reveal">
+                        <div class="assistant-header">
+                            <div class="assistant-logo"
+                                style="background:linear-gradient(135deg,#de7c3c,#c9561a);font-size:1.8rem">🟠</div>
+                            <div>
+                                <div class="assistant-name">Claude</div>
+                                <div class="assistant-provider">Anthropic</div>
+                            </div>
+                        </div>
+                        <div class="assistant-desc">Nejlepší pro roleplay historických osobností a analýzu historických
+                            pramenů. Výjimečně dobré porozumění historickému kontextu a nuancím.</div>
+                        <div class="assistant-tags"><span class="badge badge-purple">Roleplay</span><span
+                                class="badge badge-blue">Analýza</span></div>
+                        <div class="assistant-footer">
+                            <div class="assistant-rating"><span class="stars">★★★★★</span></div><a
+                                href="https://claude.ai" target="_blank" class="btn btn-primary btn-sm">Otevřít →</a>
+                        </div>
+                    </div>
+                    <div class="assistant-card reveal">
+                        <div class="assistant-header">
+                            <div class="assistant-logo"
+                                style="background:linear-gradient(135deg,#7c3534,#5c1c1c);font-size:1.8rem">🟤</div>
+                            <div>
+                                <div class="assistant-name">Perplexity AI</div>
+                                <div class="assistant-provider">Perplexity</div>
+                            </div>
+                        </div>
+                        <div class="assistant-desc">Výzkumný asistent s ověřenými citacemi – skvělý pro ověřování
+                            historických faktů a hledání primárních zdrojů online.</div>
+                        <div class="assistant-tags"><span class="badge badge-gold">Zdroje</span><span
+                                class="badge badge-green">Fakta</span></div>
+                        <div class="assistant-footer">
+                            <div class="assistant-rating"><span class="stars">★★★★★</span></div><a
+                                href="https://perplexity.ai" target="_blank" class="btn btn-primary btn-sm">Otevřít
+                                →</a>
+                        </div>
+                    </div>
+                    <div class="assistant-card reveal">
+                        <div class="assistant-header">
+                            <div class="assistant-logo"
+                                style="background:linear-gradient(135deg,#4285f4,#34a853);font-size:1.8rem">🔵</div>
+                            <div>
+                                <div class="assistant-name">Gemini</div>
+                                <div class="assistant-provider">Google</div>
+                            </div>
+                        </div>
+                        <div class="assistant-desc">Propojuje historické informace s aktuálním děním a geografickým
+                            kontextem. Vhodný pro analýzu map a geopolitických přesahů.</div>
+                        <div class="assistant-tags"><span class="badge badge-mint">Geografie</span><span
+                                class="badge badge-orange">Mapy</span></div>
+                        <div class="assistant-footer">
+                            <div class="assistant-rating"><span class="stars">★★★★☆</span></div><a
+                                href="https://gemini.google.com" target="_blank" class="btn btn-primary btn-sm">Otevřít
+                                →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-tipy" class="tab-panel d-none">
+                <div style="display:grid;gap:16px;max-width:860px">
+                    <div class="info-box reveal"><span class="info-box-icon">🎭</span>
+                        <div class="info-box-text"><strong>Tip: Roleplay jako motivátor</strong>Žáci jsou fascinovaně,
+                            když mohou "mluvit" s Napoleonem nebo Karlem IV. Roleplay aktivita výrazně zvyšuje zájem o
+                            historii a zapamatování si faktů.</div>
+                    </div>
+                    <div class="info-box reveal"><span class="info-box-icon">💡</span>
+                        <div class="info-box-text"><strong>Tip: Kritické myšlení pomocí "Co kdyby…"</strong>Zadejte
+                            otázku "Co kdyby [HISTORICKÁ UDÁLOST] nedopadla tak, jak dopadla?" – AI navede žáky k
+                            uvažování o historických příčinnostech.</div>
+                    </div>
+                    <div class="info-box reveal"
+                        style="background:rgba(231,76,60,0.07);border-color:rgba(231,76,60,0.2)"><span
+                            class="info-box-icon">⚠️</span>
+                        <div class="info-box-text"><strong>Upozornění: Fiktivní vs. historicky přesné</strong>Při
+                            roleplay vždy zdůrazněte žákům, že AI může historické osobnosti "vylepšovat" nebo zkreslit.
+                            Vždy doplňte ověřenými primárními zdroji.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><a href="index.html" class="nav-logo"
+                        style="margin-bottom:12px;display:inline-flex">
+                        <div class="nav-logo-icon">🤖</div>AI ve <span>Výuce</span>
+                    </a>
+                    <p>Průvodce AI pro české učitele.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>🎯 Předměty</h4>
+                    <ul>
+                        <li><a href="matematika.html">🔢 Matematika</a></li>
+                        <li><a href="cestina.html">📖 Český jazyk</a></li>
+                        <li><a href="anglictina.html">🇬🇧 Angličtina</a></li>
+                        <li><a href="prirodoveda.html">🔬 Přírodní vědy</a></li>
+                        <li><a href="dejepis.html">🏛️ Dějepis</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>📚 Zdroje</h4>
+                    <ul>
+                        <li><a href="prompty.html">✨ Prompty</a></li>
+                        <li><a href="aktivity.html">🎯 Aktivity</a></li>
+                        <li><a href="asistenti.html">🤖 Asistenti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>🔗 Navigace</h4>
+                    <ul>
+                        <li><a href="index.html">🏠 Domů</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><span>© 2026 AI ve Výuce · Pro české pedagogy</span></div>
+        </div>
+    </footer>
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title"></h3><button class="modal-close"
+                    onclick="document.getElementById('modalOverlay').classList.remove('open')">✕</button>
+            </div>
+            <div class="modal-body"></div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

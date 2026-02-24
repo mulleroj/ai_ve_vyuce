@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anglický jazyk – AI Pomůcky pro Učitele</title>
+    <meta name="description"
+        content="AI aktivity a prompty pro výuku anglického jazyka. Konverzační partner, gramatické opravy, slovní zásoba." />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon">🤖</div>AI ve <span>Výuce</span>
+            </a>
+            <div class="nav-links">
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link active">📚 Předměty <i class="fa-solid fa-chevron-down"
+                            style="font-size:.65rem"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="matematika.html" class="nav-dropdown-item"><span class="item-icon">🔢</span>
+                            Matematika</a>
+                        <a href="cestina.html" class="nav-dropdown-item"><span class="item-icon">📖</span> Český
+                            jazyk</a>
+                        <a href="anglictina.html" class="nav-dropdown-item"><span class="item-icon">🇬🇧</span> Anglický
+                            jazyk</a>
+                        <a href="prirodoveda.html" class="nav-dropdown-item"><span class="item-icon">🔬</span> Přírodní
+                            vědy</a>
+                        <a href="dejepis.html" class="nav-dropdown-item"><span class="item-icon">🏛️</span> Dějepis</a>
+                    </div>
+                </div>
+                <a href="prompty.html" class="nav-link">✨ Prompty</a>
+                <a href="asistenti.html" class="nav-link">🤖 AI Asistenti</a>
+                <a href="aktivity.html" class="nav-link">🎯 Aktivity</a>
+                <a href="vibe-coding.html" class="nav-link">💻 Vibe Coding</a>
+            </div>
+            <a href="prompty.html" class="btn btn-primary btn-sm nav-cta">📋 Prompty</a>
+            <button class="nav-mobile-toggle"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+    <div class="mobile-menu">
+        <a href="index.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏠 Domů</a>
+        <a href="matematika.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔢 Matematika</a>
+        <a href="cestina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">📖 Český jazyk</a>
+        <a href="anglictina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🇬🇧 Angličtina</a>
+        <a href="prirodoveda.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔬 Přírodní vědy</a>
+        <a href="dejepis.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏛️ Dějepis</a>
+        <a href="prompty.html" class="nav-link" style="font-size:1rem;padding:14px 16px">✨ Prompty</a>
+        <a href="asistenti.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🤖 Asistenti</a>
+        <a href="aktivity.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🎯 Aktivity</a>
+        <a href="vibe-coding.html" class="nav-link" style="font-size:1rem;padding:14px 16px">💻 Vibe Coding</a>
+    </div>
+
+    <section class="page-hero" style="background:linear-gradient(135deg,#0a0f1e 0%,#001a10 100%)">
+        <div class="page-hero-glow" style="background:radial-gradient(ellipse,rgba(0,212,168,0.12) 0%,transparent 70%)">
+        </div>
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="page-hero-icon"
+                    style="background:linear-gradient(135deg,rgba(0,212,168,0.2),rgba(0,212,168,0.05))">🇬🇧</div>
+                <h1 class="page-hero-title">Anglický jazyk <span class="gradient-text-mint">s AI</span></h1>
+                <p class="page-hero-subtitle">Vytvořte konverzačního partnera, opravujte gramatiku, budujte slovní
+                    zásobu a připravujte žáky na certifikáty. Skvělé pro všechny úrovně CEFR.</p>
+                <div class="page-hero-stats">
+                    <div class="page-hero-stat"><span>🎯</span><strong>20</strong> aktivit</div>
+                    <div class="page-hero-stat"><span>✨</span><strong>35</strong> promptů</div>
+                    <div class="page-hero-stat"><span>🤖</span><strong>4</strong> AI nástroje</div>
+                    <div class="page-hero-stat"><span>📊</span>A1–C2 CEFR</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="tabs-container">
+                <div class="tabs" role="tablist">
+                    <button class="tab-btn active" data-tab="aktivity">🎯 Aktivity</button>
+                    <button class="tab-btn" data-tab="prompty">✨ Prompty</button>
+                    <button class="tab-btn" data-tab="asistenti">🤖 Asistenti</button>
+                    <button class="tab-btn" data-tab="tipy">💡 Tipy</button>
+                </div>
+            </div>
+
+            <div id="tab-aktivity" class="tab-panel">
+                <div class="filter-bar">
+                    <span class="filter-label">Ročník:</span>
+                    <div class="filter-group">
+                        <button class="filter-chip active" data-filter="all">Vše</button>
+                        <button class="filter-chip" data-filter="zs1">1.–5. ročník</button>
+                        <button class="filter-chip" data-filter="zs2">6.–9. ročník</button>
+                        <button class="filter-chip" data-filter="ss">SŠ</button>
+                    </div>
+                </div>
+                <div class="activity-grid">
+                    <div class="activity-card reveal" data-level="zs2">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span
+                                    class="badge badge-gray">6.–9. ročník</span></div>
+                            <span style="font-size:1.8rem">💬</span>
+                        </div>
+                        <div class="activity-title">AI konverzační partner</div>
+                        <div class="activity-desc">Nastavte ChatGPT jako bezpečného konverzačního partnera na zadané
+                            téma a jazykové úrovni – žáci konverzují v angličtině bez strachu ze selhání.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 15 min aktivita</span><span
+                                class="activity-meta-item">👤 Individuální</span></div>
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span>
+                            <button class="btn btn-mint btn-sm"
+                                onclick="openModal({title:'AI konverzační partner',body:'<div style=\'background:rgba(0,0,0,0.3);padding:16px;border-radius:12px;font-size:0.875rem;color:var(--text-secondary);line-height:1.7\'>You are a friendly English conversation partner for a Czech student at [CEFR level] level. Speak only in English. The topic is: [TOPIC]. Start the conversation naturally, ask follow-up questions, gently correct grammar mistakes by repeating the corrected sentence, and encourage the student. If they don\'t understand, rephrase simply. Keep sentences short and clear.</div><div style=\'margin-top:16px\'><button class=\'copy-btn btn btn-mint btn-sm\' data-copy=\'You are a friendly English conversation partner for a Czech student at [CEFR level] level. Speak only in English. The topic is: [TOPIC]. Start the conversation naturally, ask follow-up questions, gently correct grammar mistakes by repeating the corrected sentence.\'>📋 Kopírovat</button></div>'})">Detail
+                                →</button>
+                        </div>
+                    </div>
+                    <div class="activity-card reveal" data-level="ss">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-purple">Claude</span><span
+                                    class="badge badge-gray">SŠ</span></div>
+                            <span style="font-size:1.8rem">✔️</span>
+                        </div>
+                        <div class="activity-title">Opravovač gramatiky a stylu</div>
+                        <div class="activity-desc">Claude opraví anglický text žáka, vysvětlí chyby v kontextu
+                            gramatických pravidel a navrhne stylistická zlepšení.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 3 min/text</span><span
+                                class="activity-meta-item">👤 Individuální</span></div>
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span>
+                            <button class="btn btn-mint btn-sm"
+                                onclick="openModal({title:'Opravovač gramatiky',body:'<div style=\'background:rgba(0,0,0,0.3);padding:16px;border-radius:12px;font-size:0.875rem;color:var(--text-secondary);line-height:1.7\'>Correct the following English text written by a Czech student at [CEFR] level. For each error: show original, corrected version, brief grammar rule. At the end: summary of main error patterns and 3 style improvement tips. TEXT: [STUDENT TEXT]</div><div style=\'margin-top:16px\'><button class=\'copy-btn btn btn-mint btn-sm\' data-copy=\'Correct the following English text written by a Czech student at [CEFR] level. For each error: show original, corrected version, brief grammar rule. Summary of main error patterns and 3 style improvement tips. TEXT: [STUDENT TEXT]\'>📋 Kopírovat</button></div>'})">Detail
+                                →</button>
+                        </div>
+                    </div>
+                    <div class="activity-card reveal" data-level="zs1">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-mint">Gemini</span><span
+                                    class="badge badge-gray">1.–5. ročník</span></div>
+                            <span style="font-size:1.8rem">📚</span>
+                        </div>
+                        <div class="activity-title">Slovní zásoba – tématikcé sety</div>
+                        <div class="activity-desc">AI vygeneruje tematické sety slovíček s příklady ve větách,
+                            obrázkovými popisy a pamětovými tipy pro mladší žáky.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 10 min příprava</span><span
+                                class="activity-meta-item">🏫 Třída</span></div>
+                        <div class="activity-footer"><span class="badge badge-gold">Oblíbené</span><button
+                                class="btn btn-mint btn-sm">Detail →</button></div>
+                    </div>
+                    <div class="activity-card reveal" data-level="ss">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span
+                                    class="badge badge-gray">SŠ</span></div>
+                            <span style="font-size:1.8rem">📝</span>
+                        </div>
+                        <div class="activity-title">Příprava na Cambridge / FCE / CAE</div>
+                        <div class="activity-desc">ChatGPT simuluje části zkoušek Cambridge – Use of English, Writing
+                            tasks – a dává podrobnou zpětnou vazbu s dosaženým skóre.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 30 min aktivita</span><span
+                                class="activity-meta-item">👤 Individuální</span></div>
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><button
+                                class="btn btn-mint btn-sm">Detail →</button></div>
+                    </div>
+                    <div class="activity-card reveal" data-level="zs2">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-mint">Gemini</span><span
+                                    class="badge badge-gray">6.–9. ročník</span></div>
+                            <span style="font-size:1.8rem">🔤</span>
+                        </div>
+                        <div class="activity-title">Gramatická cvičení na míru</div>
+                        <div class="activity-desc">Generujte cvičení na konkrétní gramatiku – časy, podmínkové věty,
+                            slovesa – s klíčem a doplňujícím vysvětlením pravidla.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 5 min příprava</span><span
+                                class="activity-meta-item">🏫 Třída</span></div>
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><button
+                                class="btn btn-mint btn-sm">Detail →</button></div>
+                    </div>
+                    <div class="activity-card reveal" data-level="ss">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-purple">Claude</span><span
+                                    class="badge badge-gray">SŠ</span></div>
+                            <span style="font-size:1.8rem">🌍</span>
+                        </div>
+                        <div class="activity-title">Překlad s kulturním kontextem</div>
+                        <div class="activity-desc">Překlad nejde jen o slova – Claude vysvětlí kulturní kontext, idiomy
+                            a nuance, které strojový překlad mine.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 10 min aktivita</span><span
+                                class="activity-meta-item">👥 Skupiny</span></div>
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><button
+                                class="btn btn-mint btn-sm">Detail →</button></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-prompty" class="tab-panel d-none">
+                <div class="prompt-grid">
+                    <div class="prompt-card reveal">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Konverzační partner (CEFR level)</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span
+                                        class="badge badge-gold">ChatGPT</span><span
+                                        class="badge badge-gray">A1–C1</span></div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">You are a friendly English conversation partner for a Czech student at
+                            [A1/A2/B1/B2/C1] level. Topic: [TOPIC]. Rules: speak only English, use vocabulary
+                            appropriate to their level, ask follow-up questions to keep conversation going, gently
+                            correct grammar by echoing corrected version, never criticize harshly. Start with a warm
+                            greeting and an opening question.</div>
+                        <div class="prompt-footer">
+                            <span class="badge badge-mint">Konverzace</span>
+                            <button class="copy-btn"
+                                data-copy="You are a friendly English conversation partner for a Czech student at [A1/A2/B1/B2/C1] level. Topic: [TOPIC]. Rules: speak only English, use vocabulary appropriate to their level, ask follow-up questions to keep conversation going, gently correct grammar by echoing corrected version, never criticize harshly. Start with a warm greeting and an opening question.">📋
+                                Kopírovat</button>
+                        </div>
+                    </div>
+                    <div class="prompt-card reveal">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Gramatická cvičení s klíčem</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span
+                                        class="badge badge-mint">Gemini</span><span
+                                        class="badge badge-gray">ZŠ/SŠ</span></div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">Create 15 grammar exercises for Czech students at [CEFR] level focusing
+                            on [GRAMMAR TOPIC, e.g. Present Perfect, Conditionals, Passive Voice]. Mix exercise types:
+                            gap-fill (5), sentence transformation (5), error correction (5). Add: answer key, brief
+                            grammar rule explanation in Czech, and 3 common Czech student mistakes to avoid.</div>
+                        <div class="prompt-footer">
+                            <span class="badge badge-blue">Gramatika</span>
+                            <button class="copy-btn"
+                                data-copy="Create 15 grammar exercises for Czech students at [CEFR] level focusing on [GRAMMAR TOPIC]. Mix: gap-fill (5), sentence transformation (5), error correction (5). Add: answer key, grammar rule in Czech, and 3 common Czech student mistakes to avoid.">📋
+                                Kopírovat</button>
+                        </div>
+                    </div>
+                    <div class="prompt-card reveal">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Opravovač eseje s rubrikou</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span
+                                        class="badge badge-purple">Claude</span><span class="badge badge-gray">SŠ</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">Grade this English essay by a Czech high school student ([CEFR] level)
+                            using Cambridge Writing rubric: Content (0–10), Organization (0–10), Grammar (0–10),
+                            Vocabulary (0–10), Style (0–10). For each criterion: score + 2-3 specific comments. Overall
+                            feedback in Czech. Suggested improved version of weakest paragraph. ESSAY: [TEXT]</div>
+                        <div class="prompt-footer">
+                            <span class="badge badge-orange">Eseje</span>
+                            <button class="copy-btn"
+                                data-copy="Grade this English essay by a Czech high school student ([CEFR] level) using Cambridge Writing rubric: Content (0–10), Organization (0–10), Grammar (0–10), Vocabulary (0–10), Style (0–10). For each criterion: score + 2-3 specific comments. Overall feedback in Czech. ESSAY: [TEXT]">📋
+                                Kopírovat</button>
+                        </div>
+                    </div>
+                    <div class="prompt-card reveal">
+                        <div class="prompt-header">
+                            <div>
+                                <div class="prompt-title">Tematické slovíčka s příklady</div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span
+                                        class="badge badge-gold">ChatGPT</span><span class="badge badge-gray">ZŠ</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="prompt-body">Create a vocabulary set of 20 words on the topic [TOPIC] for Czech
+                            students at [CEFR] level. For each word: English word, Czech translation, example sentence
+                            (simple, memorable), and a memory tip or word association. Format as a numbered table. Then
+                            add 5 practice sentences using random words from the list.</div>
+                        <div class="prompt-footer">
+                            <span class="badge badge-green">Slovíčka</span>
+                            <button class="copy-btn"
+                                data-copy="Create a vocabulary set of 20 words on topic [TOPIC] for Czech students at [CEFR] level. For each word: English word, Czech translation, example sentence, memory tip. Format as table. Add 5 practice sentences using random words from the list.">📋
+                                Kopírovat</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-asistenti" class="tab-panel d-none">
+                <div class="assistant-grid">
+                    <div class="assistant-card reveal">
+                        <div class="assistant-header">
+                            <div class="assistant-logo"
+                                style="background:linear-gradient(135deg,#00a67e,#008f6c);font-size:1.8rem">🟢</div>
+                            <div>
+                                <div class="assistant-name">ChatGPT</div>
+                                <div class="assistant-provider">OpenAI · GPT-4o</div>
+                            </div>
+                        </div>
+                        <div class="assistant-desc">Ideální konverzační partner – přirozeně komunikuje, koriguje chyby a
+                            přizpůsobí jazyk úrovni žáka. Zvládne i hlasové konverzace přes app.</div>
+                        <div class="assistant-tags"><span class="badge badge-mint">Konverzace</span><span
+                                class="badge badge-gold">Hlasový mód</span></div>
+                        <div class="assistant-footer">
+                            <div class="assistant-rating"><span class="stars">★★★★★</span></div><a
+                                href="https://chatgpt.com" target="_blank" class="btn btn-primary btn-sm">Otevřít →</a>
+                        </div>
+                    </div>
+                    <div class="assistant-card reveal">
+                        <div class="assistant-header">
+                            <div class="assistant-logo"
+                                style="background:linear-gradient(135deg,#de7c3c,#c9561a);font-size:1.8rem">🟠</div>
+                            <div>
+                                <div class="assistant-name">Claude</div>
+                                <div class="assistant-provider">Anthropic</div>
+                            </div>
+                        </div>
+                        <div class="assistant-desc">Nejpřesnější při opravování esejí a písemných projevů. Poskytuje
+                            detailní, pedagogicky hodnotnou zpětnou vazbu.</div>
+                        <div class="assistant-tags"><span class="badge badge-purple">Opravování</span><span
+                                class="badge badge-blue">Eseje</span></div>
+                        <div class="assistant-footer">
+                            <div class="assistant-rating"><span class="stars">★★★★★</span></div><a
+                                href="https://claude.ai" target="_blank" class="btn btn-primary btn-sm">Otevřít →</a>
+                        </div>
+                    </div>
+                    <div class="assistant-card reveal">
+                        <div class="assistant-header">
+                            <div class="assistant-logo"
+                                style="background:linear-gradient(135deg,#0078d4,#005fa3);font-size:1.8rem">🔷</div>
+                            <div>
+                                <div class="assistant-name">Microsoft Copilot</div>
+                                <div class="assistant-provider">Microsoft · GPT-4</div>
+                            </div>
+                        </div>
+                        <div class="assistant-desc">Integrovaný do školního prostředí Microsoft 365. Vhodný pro školy s
+                            Microsoft licencí – bezpečný pro žáky díky firemní politice.</div>
+                        <div class="assistant-tags"><span class="badge badge-blue">Microsoft 365</span><span
+                                class="badge badge-green">Školní licence</span></div>
+                        <div class="assistant-footer">
+                            <div class="assistant-rating"><span class="stars">★★★★☆</span></div><a
+                                href="https://copilot.microsoft.com" target="_blank"
+                                class="btn btn-primary btn-sm">Otevřít →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-tipy" class="tab-panel d-none">
+                <div style="display:grid;gap:16px;max-width:860px">
+                    <div class="info-box reveal"><span class="info-box-icon">💡</span>
+                        <div class="info-box-text"><strong>Tip: Specifikujte CEFR úroveň</strong>Vždy uveďte CEFR úroveň
+                            žáka (A1–C2). AI pak volí správnou slovní zásobu a gramatické struktury – výstupy jsou
+                            okamžitě použitelné.</div>
+                    </div>
+                    <div class="info-box reveal"><span class="info-box-icon">🎙️</span>
+                        <div class="info-box-text"><strong>Tip: Hlasový mód ChatGPT pro konverzaci</strong>ChatGPT app
+                            pro mobilní telefony má hlasový mód – žáci tak mohou opravdu mluvit anglicky s AI, nejen
+                            psát. Skvělé pro procvičování výslovnosti.</div>
+                    </div>
+                    <div class="info-box reveal"
+                        style="background:rgba(0,212,168,0.07);border-color:rgba(0,212,168,0.2)"><span
+                            class="info-box-icon">✅</span>
+                        <div class="info-box-text"><strong>Osvědčená praxe: Roleplay scénáře</strong>Nechte AI hrát roli
+                            – "Jsi recepční v hotelu / prodavač / průvodce." Žáci musí komunikovat v angličtině v
+                            konkrétní situaci. Motivuje více než cvičení z učebnice.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><a href="index.html" class="nav-logo"
+                        style="margin-bottom:12px;display:inline-flex">
+                        <div class="nav-logo-icon">🤖</div>AI ve <span>Výuce</span>
+                    </a>
+                    <p>Průvodce AI pro české učitele.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>🎯 Předměty</h4>
+                    <ul>
+                        <li><a href="matematika.html">🔢 Matematika</a></li>
+                        <li><a href="cestina.html">📖 Český jazyk</a></li>
+                        <li><a href="anglictina.html">🇬🇧 Angličtina</a></li>
+                        <li><a href="prirodoveda.html">🔬 Přírodní vědy</a></li>
+                        <li><a href="dejepis.html">🏛️ Dějepis</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>📚 Zdroje</h4>
+                    <ul>
+                        <li><a href="prompty.html">✨ Prompty</a></li>
+                        <li><a href="aktivity.html">🎯 Aktivity</a></li>
+                        <li><a href="asistenti.html">🤖 Asistenti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>🔗 Navigace</h4>
+                    <ul>
+                        <li><a href="index.html">🏠 Domů</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><span>© 2026 AI ve Výuce · Pro české pedagogy</span></div>
+        </div>
+    </footer>
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title"></h3><button class="modal-close"
+                    onclick="document.getElementById('modalOverlay').classList.remove('open')">✕</button>
+            </div>
+            <div class="modal-body"></div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

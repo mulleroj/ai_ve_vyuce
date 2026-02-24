@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aktivity – AI ve Výuce</title>
+    <meta name="description"
+        content="Všechny AI aktivity pro učitele na jednom místě. Filtrujte podle předmětu, ročníku nebo AI nástroje." />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon">🤖</div>AI ve <span>Výuce</span>
+            </a>
+            <div class="nav-links">
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link">📚 Předměty <i class="fa-solid fa-chevron-down"
+                            style="font-size:.65rem"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="matematika.html" class="nav-dropdown-item"><span class="item-icon">🔢</span>
+                            Matematika</a>
+                        <a href="cestina.html" class="nav-dropdown-item"><span class="item-icon">📖</span> Český
+                            jazyk</a>
+                        <a href="anglictina.html" class="nav-dropdown-item"><span class="item-icon">🇬🇧</span> Anglický
+                            jazyk</a>
+                        <a href="prirodoveda.html" class="nav-dropdown-item"><span class="item-icon">🔬</span> Přírodní
+                            vědy</a>
+                        <a href="dejepis.html" class="nav-dropdown-item"><span class="item-icon">🏛️</span> Dějepis</a>
+                    </div>
+                </div>
+                <a href="prompty.html" class="nav-link">✨ Prompty</a>
+                <a href="asistenti.html" class="nav-link">🤖 AI Asistenti</a>
+                <a href="aktivity.html" class="nav-link active">🎯 Aktivity</a>
+                <a href="vibe-coding.html" class="nav-link">💻 Vibe Coding</a>
+            </div>
+            <a href="prompty.html" class="btn btn-primary btn-sm nav-cta">📋 Prompty</a>
+            <button class="nav-mobile-toggle"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+    <div class="mobile-menu">
+        <a href="index.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏠 Domů</a>
+        <a href="matematika.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔢 Matematika</a>
+        <a href="cestina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">📖 Český jazyk</a>
+        <a href="anglictina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🇬🇧 Angličtina</a>
+        <a href="prirodoveda.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔬 Přírodní vědy</a>
+        <a href="dejepis.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏛️ Dějepis</a>
+        <a href="prompty.html" class="nav-link" style="font-size:1rem;padding:14px 16px">✨ Prompty</a>
+        <a href="asistenti.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🤖 Asistenti</a>
+        <a href="aktivity.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🎯 Aktivity</a>
+        <a href="vibe-coding.html" class="nav-link" style="font-size:1rem;padding:14px 16px">💻 Vibe Coding</a>
+    </div>
+
+    <section class="page-hero" style="background:linear-gradient(135deg,#0a0f1e 0%,#001530 100%)">
+        <div class="page-hero-glow"
+            style="background:radial-gradient(ellipse,rgba(52,152,219,0.12) 0%,transparent 70%)"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="page-hero-icon"
+                    style="background:linear-gradient(135deg,rgba(52,152,219,0.2),rgba(52,152,219,0.05))">🎯</div>
+                <h1 class="page-hero-title">Všechny <span
+                        style="background:linear-gradient(135deg,#3498db,#9b59b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Aktivity</span>
+                </h1>
+                <p class="page-hero-subtitle">Kompletní sbírka AI aktivit pro všechny předměty a ročníky. Filtrujte dle
+                    předmětu, ročníku nebo AI nástroje a najděte přesně to, co potřebujete.</p>
+                <div class="page-hero-stats">
+                    <div class="page-hero-stat"><span>🎯</span><strong>72+</strong> aktivit</div>
+                    <div class="page-hero-stat"><span>📚</span><strong>5</strong> předmětů</div>
+                    <div class="page-hero-stat"><span>🏫</span>ZŠ · SŠ</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <!-- Filters with search -->
+            <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start;margin-bottom:32px">
+                <div class="search-bar" style="flex:1;min-width:240px">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" class="search-input" id="activitySearch" placeholder="Hledat aktivity...">
+                </div>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:24px;margin-bottom:32px">
+                <div>
+                    <div
+                        style="font-size:0.8rem;color:var(--text-muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:.08em">
+                        Předmět</div>
+                    <div class="filter-group" id="subjectFilter">
+                        <button class="filter-chip active" data-filter-type="subject" data-filter="all">Vše</button>
+                        <button class="filter-chip" data-filter-type="subject" data-filter="mat">🔢 Matematika</button>
+                        <button class="filter-chip" data-filter-type="subject" data-filter="cj">📖 Čeština</button>
+                        <button class="filter-chip" data-filter-type="subject" data-filter="aj">🇬🇧 Angličtina</button>
+                        <button class="filter-chip" data-filter-type="subject" data-filter="pv">🔬 Přírodní
+                            vědy</button>
+                        <button class="filter-chip" data-filter-type="subject" data-filter="dej">🏛️ Dějepis</button>
+                        <button class="filter-chip" data-filter-type="subject" data-filter="obecne">🌐 Obecné</button>
+                    </div>
+                </div>
+                <div>
+                    <div
+                        style="font-size:0.8rem;color:var(--text-muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:.08em">
+                        Ročník</div>
+                    <div class="filter-group" id="levelFilter">
+                        <button class="filter-chip active" data-filter-type="level" data-filter="all">Vše</button>
+                        <button class="filter-chip" data-filter-type="level" data-filter="zs1">1.–5.</button>
+                        <button class="filter-chip" data-filter-type="level" data-filter="zs2">6.–9.</button>
+                        <button class="filter-chip" data-filter-type="level" data-filter="ss">SŠ</button>
+                    </div>
+                </div>
+                <div>
+                    <div
+                        style="font-size:0.8rem;color:var(--text-muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:.08em">
+                        AI Nástroj</div>
+                    <div class="filter-group" id="toolFilter">
+                        <button class="filter-chip active" data-filter-type="tool" data-filter="all">Vše</button>
+                        <button class="filter-chip" data-filter-type="tool" data-filter="chatgpt">ChatGPT</button>
+                        <button class="filter-chip" data-filter-type="tool" data-filter="claude">Claude</button>
+                        <button class="filter-chip" data-filter-type="tool" data-filter="gemini">Gemini</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- All activities grid -->
+            <div class="activity-grid" id="allActivities">
+
+                <!-- MATEMATIKA -->
+                <div class="activity-card reveal" data-subject="mat" data-level="zs2" data-tool="chatgpt">
+                    <div class="activity-card-top">
+                        <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span
+                                class="badge badge-blue">Matematika</span><span class="badge badge-gray">6.–9.</span>
+                        </div><span style="font-size:1.8rem">🔢</span>
+                    </div>
+                    <div class="activity-title">Generátor slovních úloh</div>
+                    <div class="activity-desc">ChatGPT vygeneruje originální slovní úlohy zasazené do reálných situací
+                        blízkých žákům – procenta, zlomky, rovnice a geometrie.</div>
+                    <div class="activity-meta"><span class="activity-meta-item">⏱ 5 min příprava</span><span
+                            class="activity-meta-item">🏫 Třída</span></div>
+                    <div class="activity-footer"><span class="badge badge-green">Připraveno</span><a
+                            href="matematika.html" class="btn btn-mint btn-sm">Detail →</a></div>
+                </div>
+                <div class="activity-card reveal" data-subject="mat" data-level="zs2" data-tool="claude">
+                    <div class="activity-card-top">
+                        <div class="activity-badges"><span class="badge badge-purple">Claude</span><span
+                                class="badge badge-blue">Matematika</span><span class="badge badge-gray">6.–9.</span>
+                        </div><span style="font-size:1.8rem">🧑‍🏫</span>
+                    </div>
+                    <div class="activity-title">AI Matematický Tutor</div>
+                    <div class="activity-desc">Claude jako trpělivý soukromý tutor – vysvětluje krok za krokem, klade
+                        otázky, povzbuzuje a dává nápovědy místo přímých odpovědí.</div>
+                    <div class="activity-meta"><span class="activity-meta-item">⏱ 15 min aktivita</span><span
+                            class="activity-meta-item">👤 Individuální</span></div>
+                    <div class="activity-footer"><span class="badge badge-green">Připraveno</span><a
+                            href="matematika.html" class="btn btn-mint btn-sm">Detail →</a></div>
+                </div>
+                <div class="activity-card reveal" data-subject="mat" data-level="ss" data-tool="gemini">
+                    <div class="activity-card-top">
+                        <div class="activity-badges"><span class="badge badge-mint">Gemini</span><span
+                                class="badge badge-blue">Matematika</span><span class="badge badge-gray">SŠ</span></div>
+                        <span style="font-size:1.8rem">📊</span>
+                    </div>
+                    <div class="activity-title">Analýza dat a statistika</div>
+                    <div class="activity-desc">Žáci vloží reálná data a Gemini pomůže s analýzou, tabulkami a
+                        interpretací výsledků. Propojení matematiky s reálným světem.</div>
+                    <div class="activity-meta"><span class="activity-meta-item">⏱ 20 min</span><span
+                            class="activity-meta-item">👥 Skupiny</span></div>
+                    <div class="activity-footer"><span class="badge badge-green">Připraveno</span><a
+                            href="matematika.html" class="btn btn-mint btn-sm">Detail →</a></div>
+                </div>
+
+                <!-- CEŠTINA -->
+                <div class="activity-card reveal" data-subject="cj" data-level="zs2" data-tool="claude">
+                    <div class="activity-card-top">
+                        <div class="activity-badges"><span class="badge badge-purple">Claude</span><span
+                                class="badge badge-blue">Čeština</span><span class="badge badge-gray">6.–9.</span></div>
+                        <span style="font-size:1.8rem">✍️</span>
+                    </div>
+                    <div class="activity-title">Opravovač slohových prací</div>
+                    <div class="activity-desc">Vložte slohy žáků do Claude – AI je opraví, navrhne zlepšení stylu,
+                        gramatiky a struktury. Šetří hodiny opravování.</div>
+                    <div class="activity-meta"><span class="activity-meta-item">⏱ 2 min/žák</span><span
+                            class="activity-meta-item">📝 Sloh</span></div>
+                    <div class="activity-footer"><span class="badge badge-green">Připraveno</span><a href="cestina.html"
+                            class="btn btn-mint btn-sm">Detail →</a></div>
+                </div>
+                <div class="activity-card reveal" data-subject="cj" data-level="zs2" data-tool="chatgpt">
+                    <div class="activity-card-top">
+                        <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span
+                                class="badge badge-blue">Čeština</span><span class="badge badge-gray">6.–9.</span></div>
+                        <span style="font-size:1.8rem">🎧</span>
+                    </div>
+                    <div class="activity-title">Generátor diktátů</div>
+                    <div class="activity-desc">AI vygeneruje diktáty zaměřené na konkrétní gramatické jevy s klíčem.
+                        Každý diktát je nový a originální.</div>
+                    <div class="activity-meta"><span class="activity-meta-item">⏱ 5 min příprava</span><span
+                            class="activity-meta-item">🏫 Třída</span></div>
+                    <div class="activity-footer"><span class="badge badge-green">Připraveno</span><a href="cestina.html"
+                            class="btn btn-mint btn-sm">Detail →</a></div>
+                </div>
+                <div class="activity-card reveal" data-subject="cj" data-level="ss" data-tool="gemini">
+                    <div class="activity-card-top">
+                        <div class="activity-badges"><span class="badge badge-mint">Gemini</span><span
+                                class="badge badge-blue">Čeština</span><span class="badge badge-gray">SŠ</span></div>
+                        <span style="font-size:1.8rem">📚</span>
+                    </div>
+                    <div class="activity-title">Literární rozbor díla</div>
+                    <div class="activity-desc">Gemini provede komplexní literární rozbor – žánr, téma, postavy,
+                        kompozici, jazykové prostředky a historický kontext.</div>
+                    <div class="activity-meta"><span class="activity-meta-item">⏱ 10 min příprava</span><span
+                            class="activity-meta-item">👤 Individuální</span></div>
+                    <div class="activity-footer"><span class="badge badge-green">Připraveno</span><a href="cestina.html"
+                            class="btn btn-mint btn-sm">Detail →</a></div>
+                </div>
+
+                <!-- ANGLIČTINA -->
+                <div class="activity-card reveal" data-subject="aj" data-level="zs2" data-tool="chatgpt">
+                    <div class="activity-card-top">
+                        <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span
+                                class="badge badge-blue">Angličtina</span><span class="badge badge-gray">6.–9.</span>
+                        </div><span style="font-size:1.8rem">💬</span>
+                    </div>
+                    <div class="activity-title">AI konverzační partner</div>
+                    <div class="activity-desc">Nastavte ChatGPT jako konverzačního partnera na zadané téma a jazykové
+                        úrovni – žáci konverzují v angličtině bez strachu.</div>
+                    <div class="activity-meta"><span class="activity-meta-item">⏱ 15 min</span><span
+                            class="activity-meta-item">👤 Individuální</span></div>
+                    <div class="activity-footer"><span class="badge badge-green">Připraveno</span><a
+                            href="anglictina.html" class="btn btn-mint btn-sm">Detail →</a></div>
+                </div>
+                <div class="activity-card reveal" data-subject="aj" data-level="ss" data-tool="claude">
+                    <div class="activity-card-top">
+                        <div class="activity-badges"><span class="badge badge-purple">Claude</span><span
+                                class="badge badge-blue">Angličtina</span><span class="badge badge-gray">SŠ</span></div>
+                        <span style="font-size:1.8rem">✔️</span>
+                    </div>
+                    <div class="activity-title">Opravovač anglické eseje</div>
+                    <div class="activity-desc">Claude opraví anglický text s rubrikou Cambridge Writing: Content,
+                        Organization, Grammar, Vocabulary, Style.</div>
+                    <div class="activity-meta"><span class="activity-meta-item">⏱ 3 min/text</span><span
+                            class="activity-meta-item">👤 Individuální</span></div>
+                    <div class="activity-footer"><span class="badge badge-green">Připraveno</span><a
+                            href="anglictina.html" class="btn btn-mint btn-sm">Detail →</a></div>
+                </div>
+
+                <!-- PŘÍRODNÍ VĚDY -->
+                <div class="activity-card reveal" data-subject="pv" data-level="zs2" data-tool="gemini">
+                    <div class="activity-card-top">
+                        <div class="activity-badges"><span class="badge badge-mint">Gemini</span><span
+                                class="badge badge-green">Přírodní vědy</span><span class="badge badge-gray">ZŠ</span>
+                        </div><span style="font-size:1.8rem">🧬</span>
+                    </div>
+                    <div class="activity-title">Virtuální laboratorní experiment</div>
+                    <div class="activity-desc">Gemini jako virtuální laboratorní asistent simuluje průběh experimentu –
+                        popisuje kroky, výsledky a závěry bez fyzické laboratoře.</div>
+                    <div class="activity-meta"><span class="activity-meta-item">⏱ 20 min</span><span
+                            class="activity-meta-item">👥 Skupiny</span></div>
+                    <div class="activity-footer"><span class="badge badge-green">Připraveno</span><a
+                            href="prirodoveda.html" class="btn btn-mint btn-sm">Detail →</a></div>
+                </div>
+                <div class="activity-card reveal" data-subject="pv" data-level="zs2" data-tool="chatgpt">
+                    <div class="activity-card-top">
+                        <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span
+                                class="badge badge-green">Přírodní vědy</span><span class="badge badge-gray">ZŠ</span>
+                        </div><span style="font-size:1.8rem">⚡</span>
+                    </div>
+                    <div class="activity-title">Vysvětlení fyzikálních jevů analogiemi</div>
+                    <div class="activity-desc">AI vysvětlí složité fyzikální pojmy pomocí analogií ze každodenního
+                        života, které žáci ihned pochopí.</div>
+                    <div class="activity-meta"><span class="activity-meta-item">⏱ 5 min</span><span
+                            class="activity-meta-item">🏫 Třída</span></div>
+                    <div class="activity-footer"><span class="badge badge-gold">Oblíbené</span><a
+                            href="prirodoveda.html" class="btn btn-mint btn-sm">Detail →</a></div>
+                </div>
+
+                <!-- DĚJEPIS -->
+                <div class="activity-card reveal" data-subject="dej" data-level="zs2" data-tool="claude">
+                    <div class="activity-card-top">
+                        <div class="activity-badges"><span class="badge badge-purple">Claude</span><span
+                                class="badge badge-purple">Dějepis</span><span class="badge badge-gray">6.–9.</span>
+                        </div><span style="font-size:1.8rem">🎭</span>
+                    </div>
+                    <div class="activity-title">Roleplay historické osobnosti</div>
+                    <div class="activity-desc">Claude hraje roli historické osobnosti – žáci mu mohou klást otázky jako
+                        novinář nebo spolučasník. Rozvíjí empatii a historické myšlení.</div>
+                    <div class="activity-meta"><span class="activity-meta-item">⏱ 20 min</span><span
+                            class="activity-meta-item">👥 Třída</span></div>
+                    <div class="activity-footer"><span class="badge badge-gold">Oblíbené</span><a href="dejepis.html"
+                            class="btn btn-mint btn-sm">Detail →</a></div>
+                </div>
+                <div class="activity-card reveal" data-subject="dej" data-level="zs2" data-tool="chatgpt">
+                    <div class="activity-card-top">
+                        <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span
+                                class="badge badge-purple">Dějepis</span><span class="badge badge-gray">ZŠ/SŠ</span>
+                        </div><span style="font-size:1.8rem">📅</span>
+                    </div>
+                    <div class="activity-title">Generátor časových os</div>
+                    <div class="activity-desc">AI vytvoří přehlednou chronologickou osu klíčových událostí pro libovolné
+                        historické období s příčinami a důsledky.</div>
+                    <div class="activity-meta"><span class="activity-meta-item">⏱ 5 min příprava</span><span
+                            class="activity-meta-item">🏫 Třída</span></div>
+                    <div class="activity-footer"><span class="badge badge-green">Připraveno</span><a href="dejepis.html"
+                            class="btn btn-mint btn-sm">Detail →</a></div>
+                </div>
+
+                <!-- OBECNÉ – Zahájení práce s AI -->
+                <div class="activity-card reveal" data-subject="obecne" data-level="zs2 ss" data-tool="chatgpt"
+                    style="border-color:rgba(245,166,35,0.3);background:rgba(245,166,35,0.03)">
+                    <div class="activity-card-top">
+                        <div class="activity-badges">
+                            <span class="badge badge-gold">⚡ Icebreaker</span>
+                            <span class="badge badge-gray">6.–9. · SŠ</span>
+                            <span class="badge badge-purple">Prompt skills</span>
+                        </div>
+                        <span style="font-size:1.8rem">🚀</span>
+                    </div>
+                    <div class="activity-title">Prompt Power-Up Relay</div>
+                    <div class="activity-desc">Žáci v týmech postupně vylepšují slabý AI prompt – přidávají roli,
+                        kontext, formát a omezení. Srovnají výstupy kola 0 a finále a hlasují o nejlepším výsledku.
+                    </div>
+                    <div class="activity-meta">
+                        <span class="activity-meta-item">⏱ 12–20 min</span>
+                        <span class="activity-meta-item">👥 Týmy 2–4</span>
+                        <span class="activity-meta-item">✏️ 2 min příprava</span>
+                    </div>
+                    <div class="activity-footer">
+                        <span class="badge badge-gold">⭐ Doporučeno</span>
+                        <button class="btn btn-primary btn-sm"
+                            onclick="document.getElementById('modalPowerUpRelay').classList.add('open')">Zobrazit detail
+                            →</button>
+                    </div>
+                </div>
+
+                <!-- OBECNÉ – AI Fakt nebo Finta -->
+                <div class="activity-card reveal" data-subject="obecne" data-level="zs2" data-tool="chatgpt"
+                    style="border-color:rgba(52,152,219,0.3);background:rgba(52,152,219,0.03)">
+                    <div class="activity-card-top">
+                        <div class="activity-badges">
+                            <span class="badge badge-blue">🎮 AI hra</span>
+                            <span class="badge badge-gray">6.–9.</span>
+                            <span class="badge badge-purple">Mediální gramotnost</span>
+                        </div>
+                        <span style="font-size:1.8rem">🔍</span>
+                    </div>
+                    <div class="activity-title">AI Fakt nebo Finta</div>
+                    <div class="activity-desc">Týmy použijí AI k vytvoření tří tvrzení (dvě pravdy a lež). Ostatní týmy
+                        fungují jako ověřovací detektivové a odhalují nepravdivé tvrzení pomocí důkazů.</div>
+                    <div class="activity-meta">
+                        <span class="activity-meta-item">⏱ 10–18 min</span>
+                        <span class="activity-meta-item">👥 Týmy 2–4</span>
+                        <span class="activity-meta-item">✏️ 2 min příprava</span>
+                    </div>
+                    <div class="activity-footer">
+                        <span class="badge badge-gold">⭐ Doporučeno</span>
+                        <button class="btn btn-primary btn-sm"
+                            onclick="document.getElementById('modalFaktFinta').classList.add('open')">Zobrazit detail
+                            →</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Empty state -->
+            <div id="emptyState" style="display:none;text-align:center;padding:60px 20px;color:var(--text-muted)">
+                <div style="font-size:3rem;margin-bottom:16px">🔍</div>
+                <p style="font-size:1.1rem">Žádné aktivity neodpovídají vybraným filtrům.</p>
+                <button class="btn btn-outline" style="margin-top:16px" onclick="resetFilters()">Zobrazit vše</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════ MODAL: Prompt Power-Up Relay ═══════════════════════════════════ -->
+    <div class="modal-overlay" id="modalPowerUpRelay" onclick="if(event.target===this)this.classList.remove('open')">
+        <div class="modal" style="max-width:780px">
+            <div class="modal-header">
+                <div>
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+                        <span style="font-size:2.2rem">🚀</span>
+                        <h2 class="modal-title">Prompt Power-Up Relay</h2>
+                    </div>
+                    <div style="display:flex;gap:8px;flex-wrap:wrap">
+                        <span class="badge badge-gold">⚡ AI Icebreaker</span>
+                        <span class="badge badge-gray">6.–9. ročník · SŠ</span>
+                        <span class="badge badge-purple">Rozvoj dovedností</span>
+                        <span class="badge badge-mint">Týmy 2–4</span>
+                    </div>
+                </div>
+                <button class="modal-close"
+                    onclick="document.getElementById('modalPowerUpRelay').classList.remove('open')">✕</button>
+            </div>
+
+            <!-- Quick stats -->
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px">
+                <div
+                    style="background:rgba(245,166,35,0.08);border:1px solid rgba(245,166,35,0.2);border-radius:10px;padding:12px;text-align:center">
+                    <div style="font-size:1.5rem">⏱</div>
+                    <div style="font-weight:700;font-size:0.95rem">12–20 min</div>
+                    <div style="font-size:0.75rem;color:var(--text-muted)">Celkový čas</div>
+                </div>
+                <div
+                    style="background:rgba(0,212,168,0.08);border:1px solid rgba(0,212,168,0.2);border-radius:10px;padding:12px;text-align:center">
+                    <div style="font-size:1.5rem">👥</div>
+                    <div style="font-weight:700;font-size:0.95rem">Týmy 2–4</div>
+                    <div style="font-size:0.75rem;color:var(--text-muted)">Velikost skupiny</div>
+                </div>
+                <div
+                    style="background:rgba(74,144,226,0.08);border:1px solid rgba(74,144,226,0.2);border-radius:10px;padding:12px;text-align:center">
+                    <div style="font-size:1.5rem">✏️</div>
+                    <div style="font-weight:700;font-size:0.95rem">2 min</div>
+                    <div style="font-size:0.75rem;color:var(--text-muted)">Příprava učitele</div>
+                </div>
+            </div>
+
+            <div style="font-size:0.9rem;color:var(--text-secondary);line-height:1.75">
+
+                <h3 style="color:var(--text-primary);font-size:1rem;margin:0 0 8px">📋 Přehled</h3>
+                <p style="margin-bottom:16px">Žáci pracují v týmech a během 3–4 rychlých kol „vylepšují" slabý AI
+                    prompt. V každém kole přidají jedno zlepšení (role, kontext, omezení, formát, příklady nebo kontrolu
+                    kvality). Týmy porovnají výstupy a hlasují o nejlepším finálním výsledku.</p>
+
+                <!-- Bezpečnost -->
+                <div
+                    style="background:rgba(231,76,60,0.07);border:1px solid rgba(231,76,60,0.22);border-radius:10px;padding:14px 18px;margin-bottom:20px">
+                    <strong style="color:#e74c3c;display:block;margin-bottom:6px">🔒 Bezpečnost a soukromí – říct
+                        žákům nahlas</strong>
+                    <ul style="padding-left:18px;list-style:disc;display:flex;flex-direction:column;gap:4px">
+                        <li>Nezadávejte skutečná jména žáků, adresy, známky, informace z IVP ani jiné osobní údaje.
+                        </li>
+                        <li>Pokud AI uvede tvrzení, které se zdá sporné, označte jej <strong>VERIFY</strong> a ověřte z
+                            důvěryhodného zdroje.</li>
+                    </ul>
+                </div>
+
+                <!-- Příprava -->
+                <h3 style="color:var(--text-primary);font-size:1rem;margin:0 0 8px">⚙️ Příprava (2 min)</h3>
+                <ul
+                    style="padding-left:18px;list-style:disc;margin-bottom:16px;display:flex;flex-direction:column;gap:4px">
+                    <li>Rozdělte žáky do týmů po 2–4.</li>
+                    <li>Vyberte jedno téma ze seznamu <em>Teacher Pick</em>.</li>
+                    <li>Začněte se <strong>Základním promptem</strong> (záměrně slabým).</li>
+                    <li>Vysvětlete: „Budete postupně vylepšovat prompt. Každé kolo přidává jedno vylepšení."</li>
+                </ul>
+
+                <!-- Teacher Pick -->
+                <h3 style="color:var(--text-primary);font-size:1rem;margin:0 0 8px">📚 Teacher Pick – vyberte 1 téma
+                </h3>
+                <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
+                    <span class="badge badge-blue">ELA: témata, postavy, obrazná vyjádření</span>
+                    <span class="badge badge-green">Přírodopis/Fyzika/Chemie: fotosyntéza, ekosystémy, bezpečnost v
+                        lab.</span>
+                    <span class="badge badge-purple">Společenské vědy: příčiny konfliktu, role vlády</span>
+                    <span class="badge badge-gold">Matematika: poměry, pravděpodobnost, rovnice</span>
+                    <span class="badge badge-gray">Obecné: studijní přehled k probíranému tématu</span>
+                </div>
+
+                <!-- Kolo 0 -->
+                <div
+                    style="background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin-bottom:20px;font-family:monospace;font-size:0.85rem">
+                    <div
+                        style="color:var(--text-muted);font-size:0.72rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px">
+                        Kolo 0 – Základní prompt (záměrně slabý)</div>
+                    „Vysvětli [TÉMA]."<br><span style="color:var(--text-muted)">Příklad: „Vysvětli fotosyntézu."</span>
+                    <div style="margin-top:8px;font-family:inherit;font-size:0.82rem;color:var(--text-muted)">Spusťte
+                        jednou, ukažte výstup. Zeptejte se: <em>„Je to užitečné? Co tam chybí?"</em></div>
+                </div>
+
+                <!-- Kola -->
+                <h3 style="color:var(--text-primary);font-size:1rem;margin:0 0 12px">🎮 Průběh kol (12–20 min)</h3>
+                <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px">
+
+                    <div
+                        style="background:rgba(245,166,35,0.07);border-left:3px solid var(--accent-gold);padding:12px 16px;border-radius:0 8px 8px 0">
+                        <strong style="color:var(--accent-gold)">Kolo 1 — Přidej ROLI (2 min)</strong>
+                        <div style="margin-top:6px">Cíl: říct AI, kým je.
+                            Šablona: <code
+                                style="background:rgba(255,255,255,0.07);padding:2px 6px;border-radius:4px">Jsi [ROLE]. Vysvětli [TÉMA].</code>
+                        </div>
+                        <div style="margin-top:4px;color:var(--text-muted)">Role: učitel 2. st. ZŠ · lektor · trenér
+                            kvízů · tvůrce studijních materiálů</div>
+                    </div>
+
+                    <div
+                        style="background:rgba(74,144,226,0.07);border-left:3px solid var(--accent-blue);padding:12px 16px;border-radius:0 8px 8px 0">
+                        <strong style="color:var(--accent-blue)">Kolo 2 — Přidej KONTEXT + ÚROVEŇ (2 min)</strong>
+                        <div style="margin-top:6px">Cíl: upřesnit věk a předchozí znalosti.
+                            Šablona: <code
+                                style="background:rgba(255,255,255,0.07);padding:2px 6px;border-radius:4px">Jsi [ROLE]. Vysvětli [TÉMA] pro 6.–8. ročník. Předpokládej, že žáci znají [PŘEDCHOZÍ ZNALOSTI].</code>
+                        </div>
+                    </div>
+
+                    <div
+                        style="background:rgba(0,212,168,0.07);border-left:3px solid var(--accent-mint);padding:12px 16px;border-radius:0 8px 8px 0">
+                        <strong style="color:var(--accent-mint)">Kolo 3 — Přidej FORMÁT + VÝSTUP (2 min)</strong>
+                        <div style="margin-top:6px">Cíl: přesně říct, co má AI vytvořit.
+                            Výstup: <strong>6 odrážek + 2 reálné příklady + 3 kontrolní otázky s odpověďmi</strong>.
+                            Nebo: krátký odstavec + mini lekce + exit ticket.
+                        </div>
+                    </div>
+
+                    <div
+                        style="background:rgba(155,89,182,0.07);border-left:3px solid var(--accent-purple);padding:12px 16px;border-radius:0 8px 8px 0">
+                        <strong style="color:var(--accent-purple)">Kolo 4 — Přidej OMEZENÍ + KONTROLU KVALITY (2
+                            min)</strong>
+                        <div style="margin-top:6px">Cíl: předejít chybám a zvýšit kvalitu.
+                            Přidejte: jednoduchá slovní zásoba · max 150 slov/sekci · nejistá tvrzení označ
+                            <strong>VERIFY</strong> · žádné příliš pokročilé termíny.
+                        </div>
+                    </div>
+
+                    <div
+                        style="background:rgba(231,76,60,0.07);border-left:3px solid var(--accent-red);padding:12px 16px;border-radius:0 8px 8px 0">
+                        <strong style="color:var(--accent-red)">⚡ Finální Power Move (2–5 min)</strong>
+                        <div style="margin-top:6px">Týmy si vyberou 1 „Power Move":
+                            přidat vyřešený příklad · přidat časté omyly s opravami · přidat větné začátky · přidat 3
+                            úrovně (Podpora / Základ / Výzva).
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bodování -->
+                <h3 style="color:var(--text-primary);font-size:1rem;margin:0 0 8px">🏆 Bodování</h3>
+                <ul
+                    style="padding-left:18px;list-style:disc;margin-bottom:16px;display:flex;flex-direction:column;gap:4px">
+                    <li>1 bod za každé dobře použité vylepšení</li>
+                    <li>+1 bonusový bod: výstup srozumitelný · přesný (nebo označuje nejistotu) · snadno použitelný pro
+                        žáka</li>
+                    <li>Volitelně: ocenění „Nejvíce vylepšený prompt"</li>
+                </ul>
+
+                <!-- Sdílení -->
+                <h3 style="color:var(--text-primary);font-size:1rem;margin:0 0 8px">💬 Sdílení (3–5 min)</h3>
+                <p style="margin-bottom:8px">Každý tým odpoví:</p>
+                <ul
+                    style="padding-left:18px;list-style:disc;margin-bottom:16px;display:flex;flex-direction:column;gap:4px">
+                    <li>Jaké vylepšení bylo nejdůležitější?</li>
+                    <li>Jak se změnil výstup od Kola 0 do finále?</li>
+                    <li>Co by bylo potřeba ještě ověřit?</li>
+                </ul>
+                <p style="margin-bottom:16px;color:var(--text-muted)">Volitelné hlasování: Největší srozumitelnost ·
+                    Nejvíce žákovsky přívětivé · Nejlepší kontrola porozumění · Největší posun</p>
+
+                <!-- Poznámky -->
+                <h3 style="color:var(--text-primary);font-size:1rem;margin:0 0 8px">📝 Poznámky pro učitele</h3>
+                <ul
+                    style="padding-left:18px;list-style:disc;margin-bottom:16px;display:flex;flex-direction:column;gap:4px">
+                    <li>Bez zařízení: vést frontálně se třemi dobrovolnickými týmy.</li>
+                    <li>Výstupy příliš dlouhé? Přidejte omezení „Do 200 slov."</li>
+                    <li>Žáci nevážní? Připomeňte: „Pouze školně vhodné příklady."</li>
+                </ul>
+
+                <!-- Kartičky kol -->
+                <div
+                    style="background:rgba(245,166,35,0.06);border:1px solid rgba(245,166,35,0.18);border-radius:10px;padding:14px 18px">
+                    <strong style="color:var(--accent-gold);display:block;margin-bottom:8px">🃏 Tisknutelné kartičky
+                        kol</strong>
+                    <div style="display:flex;flex-direction:column;gap:4px;font-size:0.85rem">
+                        <div><strong>Kolo 1: ROLE</strong> — Řekni AI, kým je.</div>
+                        <div><strong>Kolo 2: KONTEXT</strong> — Ročník + předchozí znalosti.</div>
+                        <div><strong>Kolo 3: FORMÁT</strong> — Přesná struktura výstupu (odrážky / otázky / příklady).
+                        </div>
+                        <div><strong>Kolo 4: OMEZENÍ</strong> — Limit slov + pravidlo VERIFY + jednoduchý jazyk.</div>
+                        <div><strong>Power Move:</strong> Časté omyly + vyřešený příklad NEBO diferenciace.</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════ MODAL: AI Fakt nebo Finta ═══════════════════════════════════ -->
+    <div class="modal-overlay" id="modalFaktFinta" onclick="if(event.target===this)this.classList.remove('open')">
+        <div class="modal" style="max-width:780px">
+            <div class="modal-header">
+                <div>
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+                        <span style="font-size:2.2rem">🔍</span>
+                        <h2 class="modal-title">AI Fakt nebo Finta: Dvě pravdy a lež</h2>
+                    </div>
+                    <div style="display:flex;gap:8px;flex-wrap:wrap">
+                        <span class="badge badge-blue">🎮 AI hra</span>
+                        <span class="badge badge-purple">Mediální gramotnost</span>
+                        <span class="badge badge-gold">Ověřování faktů</span>
+                        <span class="badge badge-gray">6.–9. ročník</span>
+                    </div>
+                </div>
+                <button class="modal-close"
+                    onclick="document.getElementById('modalFaktFinta').classList.remove('open')">✕</button>
+            </div>
+
+            <!-- Quick stats -->
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px">
+                <div
+                    style="background:rgba(52,152,219,0.08);border:1px solid rgba(52,152,219,0.2);border-radius:10px;padding:12px;text-align:center">
+                    <div style="font-size:1.5rem">⏱</div>
+                    <div style="font-weight:700;font-size:0.95rem">10–18 min</div>
+                    <div style="font-size:0.75rem;color:var(--text-muted)">Celkový čas</div>
+                </div>
+                <div
+                    style="background:rgba(0,212,168,0.08);border:1px solid rgba(0,212,168,0.2);border-radius:10px;padding:12px;text-align:center">
+                    <div style="font-size:1.5rem">👥</div>
+                    <div style="font-weight:700;font-size:0.95rem">Týmy 2–4</div>
+                    <div style="font-size:0.75rem;color:var(--text-muted)">Nebo celá třída</div>
+                </div>
+                <div
+                    style="background:rgba(155,89,182,0.08);border:1px solid rgba(155,89,182,0.2);border-radius:10px;padding:12px;text-align:center">
+                    <div style="font-size:1.5rem">✏️</div>
+                    <div style="font-weight:700;font-size:0.95rem">2 min</div>
+                    <div style="font-size:0.75rem;color:var(--text-muted)">Příprava učitele</div>
+                </div>
+            </div>
+
+            <div style="font-size:0.9rem;color:var(--text-secondary);line-height:1.75">
+
+                <h3 style="color:var(--text-primary);font-size:1rem;margin:0 0 8px">📋 Přehled</h3>
+                <p style="margin-bottom:8px">Týmy použijí AI k vytvoření tří tvrzení na dané téma: dvě jsou pravdivá,
+                    jedno nepravdivé. Poté si týmy sady vymění a fungují jako „ověřovací detektivové", kteří mají pomocí
+                    důkazů a logického uvažování odhalit lež.</p>
+                <p style="margin-bottom:16px;color:var(--accent-mint)"><strong>Proč to funguje:</strong> Je to zábavné,
+                    rychlé a učí žáky, že výstupy AI je nutné kontrolovat — zvlášť když znějí sebejistě.</p>
+
+                <!-- Bezpečnost -->
+                <div
+                    style="background:rgba(231,76,60,0.07);border:1px solid rgba(231,76,60,0.22);border-radius:10px;padding:14px 18px;margin-bottom:20px">
+                    <strong style="color:#e74c3c;display:block;margin-bottom:6px">🔒 Bezpečnost a soukromí – říct žákům
+                        nahlas</strong>
+                    <ul style="padding-left:18px;list-style:disc;display:flex;flex-direction:column;gap:4px">
+                        <li>Do promptů nezadávejte skutečná jména žáků ani osobní údaje.</li>
+                        <li>Pokud tvrzení nelze rychle ověřit, označte ho: <strong>NEJISTÉ</strong>.</li>
+                    </ul>
+                </div>
+
+                <!-- Nastavení -->
+                <h3 style="color:var(--text-primary);font-size:1rem;margin:0 0 8px">⚙️ Nastavení (2 min)</h3>
+                <ul
+                    style="padding-left:18px;list-style:disc;margin-bottom:8px;display:flex;flex-direction:column;gap:4px">
+                    <li>Rozdělte žáky do týmů po 2–4.</li>
+                    <li>Vyberte jedno téma (nejlépe zadané učitelem).</li>
+                    <li>Rozhodněte, jaký režim použijete:</li>
+                </ul>
+                <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px">
+                    <div
+                        style="flex:1;min-width:200px;background:rgba(0,212,168,0.06);border:1px solid rgba(0,212,168,0.18);border-radius:8px;padding:10px 14px">
+                        <strong style="color:var(--accent-mint)">Režim A (dopor.)</strong><br>
+                        <span style="font-size:0.85rem">Učitel schválí krátký seznam zdrojů.</span>
+                    </div>
+                    <div
+                        style="flex:1;min-width:200px;background:rgba(245,166,35,0.06);border:1px solid rgba(245,166,35,0.18);border-radius:8px;padding:10px 14px">
+                        <strong style="color:var(--accent-gold)">Režim B (rychlý)</strong><br>
+                        <span style="font-size:0.85rem">Ověřování jen podle poznámek / učebnice.</span>
+                    </div>
+                </div>
+
+                <!-- Banka témat -->
+                <h3 style="color:var(--text-primary);font-size:1rem;margin:0 0 8px">📚 Banka témat (vyberte 1)</h3>
+                <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
+                    <span class="badge badge-green">Přírodověda: ekosystémy, buňky, fotosyntéza, tektonika</span>
+                    <span class="badge badge-purple">Společenské vědy: civilizace, vláda, občanská práva</span>
+                    <span class="badge badge-blue">ČJ/literatura: obrazný jazyk, téma, stavba děje</span>
+                    <span class="badge badge-gold">Matematika: pravděpodobnost, poměry, geometrie</span>
+                </div>
+
+                <!-- Kola -->
+                <h3 style="color:var(--text-primary);font-size:1rem;margin:0 0 12px">🎮 Jak hrát (10–18 min)</h3>
+                <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px">
+
+                    <div
+                        style="background:rgba(52,152,219,0.07);border-left:3px solid var(--accent-blue);padding:12px 16px;border-radius:0 8px 8px 0">
+                        <strong style="color:var(--accent-blue)">1. kolo — Vytvořte sadu „Dvě pravdy a lež" (3
+                            min)</strong>
+                        <div style="margin-top:6px">Týmy pomocí AI vytvoří 3 tvrzení. Pravidla kvality:</div>
+                        <ul
+                            style="padding-left:18px;list-style:disc;margin-top:4px;display:flex;flex-direction:column;gap:2px">
+                            <li>Tvrzení musí být konkrétní, ne vágní.</li>
+                            <li>Lež musí být uvěřitelná (ne absurdní).</li>
+                            <li>Tvrzení musí odpovídat věku a souviset s tématem.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Prompt box -->
+                    <div
+                        style="background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:10px;padding:14px 18px;font-family:monospace;font-size:0.82rem">
+                        <div
+                            style="color:var(--text-muted);font-size:0.72rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px">
+                            📋 PROMPT (zkopírujte/vložte)</div>
+                        Pomáháš učiteli na druhém stupni připravit hru. Vytvoř 3 tvrzení o tématu
+                        <strong>[TÉMA]</strong> pro žáky 6.–8. ročníku:<br>
+                        • Dvě tvrzení musí být pravdivá a jedno nepravdivé.<br>
+                        • Nepravdivé tvrzení musí být uvěřitelné (ne očividné).<br>
+                        • Každé tvrzení napiš do 1 věty.<br>
+                        • Po třech tvrzeních přidej Klíč odpovědí (A/B/C) a krátké vysvětlení, proč je lež
+                        nepravdivá.<br>
+                        • Nepoužívej vtipy ani nevhodný obsah.
+                        <div style="margin-top:6px;font-family:inherit;color:var(--text-muted)">💡 Tip: Nechte žáky
+                            smazat klíč odpovědí před sdílením s jiným týmem.</div>
+                    </div>
+
+                    <div
+                        style="background:rgba(0,212,168,0.07);border-left:3px solid var(--accent-mint);padding:12px 16px;border-radius:0 8px 8px 0">
+                        <strong style="color:var(--accent-mint)">2. kolo — Výměna a detektivní práce (4 min)</strong>
+                        <div style="margin-top:6px">Týmy si vymění sady tvrzení. Cíl: najít lež a vysvětlit proč na
+                            základě důkazů.</div>
+                        <div style="margin-top:6px">Každý tým musí dodat:</div>
+                        <ul
+                            style="padding-left:18px;list-style:disc;margin-top:4px;display:flex;flex-direction:column;gap:2px">
+                            <li>Které tvrzení je lež (A/B/C)</li>
+                            <li>Důkaz (kde ho ověřili)</li>
+                            <li>Opravenou verzi lži (přepsat jako pravdivé tvrzení)</li>
+                        </ul>
+                    </div>
+
+                    <div
+                        style="background:rgba(155,89,182,0.07);border-left:3px solid var(--accent-purple);padding:12px 16px;border-radius:0 8px 8px 0">
+                        <strong style="color:var(--accent-purple)">3. kolo — Ověřovací souboj (3–6 min)</strong>
+                        <div style="margin-top:6px">Týmy odhalí: které tvrzení zvolily jako lež + důkaz + svou opravenou
+                            verzi. Původní tým odhalí klíč odpovědí a udělí bod.</div>
+                    </div>
+                </div>
+
+                <!-- Bodování -->
+                <h3 style="color:var(--text-primary);font-size:1rem;margin:0 0 8px">🏆 Bodování</h3>
+                <ul
+                    style="padding-left:18px;list-style:disc;margin-bottom:16px;display:flex;flex-direction:column;gap:4px">
+                    <li><strong>1 bod</strong> za správné odhalení lži</li>
+                    <li><strong>1 bod</strong> za uvedení důvěryhodného zdroje (poznámky / učebnice / schválený web)
+                    </li>
+                    <li><strong>1 bonusový bod</strong> za správné přepsání lži na pravdivé tvrzení</li>
+                </ul>
+
+                <!-- Mini checklist -->
+                <div
+                    style="background:rgba(52,152,219,0.06);border:1px solid rgba(52,152,219,0.18);border-radius:10px;padding:14px 18px;margin-bottom:20px">
+                    <strong style="color:var(--accent-blue);display:block;margin-bottom:8px">✅ Mini checklist „Ověřuj
+                        jako profík"</strong>
+                    <div style="display:flex;flex-direction:column;gap:4px;font-size:0.85rem">
+                        <div>1️⃣ <strong>Klíčová slova</strong> — Zkontroluj jména, data, čísla, definice</div>
+                        <div>2️⃣ <strong>Přesnost</strong> — Vágní tvrzení bývají podezřelá</div>
+                        <div>3️⃣ <strong>Zdroj</strong> — Porovnej alespoň s jedním důvěryhodným zdrojem</div>
+                        <div>4️⃣ <strong>Nejisté?</strong> — Pokud to nejde rychle potvrdit: označ jako NEJISTÉ</div>
+                    </div>
+                </div>
+
+                <!-- Varianty -->
+                <h3 style="color:var(--text-primary);font-size:1rem;margin:0 0 8px">🔄 Varianty (vyberte jednu)</h3>
+                <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:20px">
+                    <div
+                        style="background:rgba(0,212,168,0.06);border:1px solid rgba(0,212,168,0.15);border-radius:8px;padding:10px 14px">
+                        <strong style="color:var(--accent-mint);font-size:0.85rem">A — Kontrolované zdroje</strong>
+                        <div style="font-size:0.82rem;margin-top:4px">Učitel poskytne seznam povolených zdrojů. Žáci
+                            citují pouze z něj.</div>
+                    </div>
+                    <div
+                        style="background:rgba(245,166,35,0.06);border:1px solid rgba(245,166,35,0.15);border-radius:8px;padding:10px 14px">
+                        <strong style="color:var(--accent-gold);font-size:0.85rem">B — Past na čísla</strong>
+                        <div style="font-size:0.82rem;margin-top:4px">Alespoň 1 tvrzení musí obsahovat číslo. Ověřuje se
+                            konkrétně dané číslo.</div>
+                    </div>
+                    <div
+                        style="background:rgba(155,89,182,0.06);border:1px solid rgba(155,89,182,0.15);border-radius:8px;padding:10px 14px">
+                        <strong style="color:var(--accent-purple);font-size:0.85rem">C — Detektiv definic</strong>
+                        <div style="font-size:0.82rem;margin-top:4px">Tvrzení musí obsahovat odborné pojmy; žáci ověřují
+                            definice a příklady.</div>
+                    </div>
+                    <div
+                        style="background:rgba(52,152,219,0.06);border:1px solid rgba(52,152,219,0.15);border-radius:8px;padding:10px 14px">
+                        <strong style="color:var(--accent-blue);font-size:0.85rem">D — Rychlá třídní verze</strong>
+                        <div style="font-size:0.82rem;margin-top:4px">Učitel vytvoří 3 sady, promítne je, třída hlasuje
+                            a společně ověřuje.</div>
+                    </div>
+                </div>
+
+                <!-- Typické chyby AI -->
+                <div
+                    style="background:rgba(231,76,60,0.05);border:1px solid rgba(231,76,60,0.15);border-radius:10px;padding:14px 18px;margin-bottom:20px">
+                    <strong style="color:#e74c3c;display:block;margin-bottom:6px">⚠️ Typické chyby AI (řekněte
+                        žákům)</strong>
+                    <ul
+                        style="padding-left:18px;list-style:disc;display:flex;flex-direction:column;gap:3px;font-size:0.85rem">
+                        <li>Zaměňuje podobné pojmy</li>
+                        <li>Vymýšlí detaily, které zní věrohodně</li>
+                        <li>Plete příčinu a souvislost</li>
+                        <li>Prezentuje názory jako fakta</li>
+                    </ul>
+                    <div style="margin-top:8px;color:var(--accent-gold);font-weight:600;font-size:0.85rem">💡 Poučení:
+                        Sebevědomý tón ≠ správnost.</div>
+                </div>
+
+                <!-- Hotový příklad -->
+                <h3 style="color:var(--text-primary);font-size:1rem;margin:0 0 8px">🧪 Hotový příklad (Fotosyntéza)</h3>
+                <div
+                    style="background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin-bottom:20px;font-size:0.88rem">
+                    <div style="margin-bottom:6px"><strong>A)</strong> Fotosyntéza probíhá hlavně v chloroplastech
+                        rostlinných buněk. ✅</div>
+                    <div style="margin-bottom:6px"><strong>B)</strong> Fotosyntéza využívá sluneční světlo k tvorbě
+                        glukózy z CO₂ a vody. ✅</div>
+                    <div style="margin-bottom:6px;color:#e74c3c"><strong>C)</strong> Fotosyntéza probíhá v
+                        mitochondriích a hlavním produktem je kyslík. ❌</div>
+                    <div style="margin-top:8px;color:var(--text-muted);font-size:0.82rem">(Lež je C — mitochondrie
+                        souvisejí s buněčným dýcháním, ne fotosyntézou.)</div>
+                </div>
+
+                <!-- Tisknutelné kartičky -->
+                <div
+                    style="background:rgba(245,166,35,0.06);border:1px solid rgba(245,166,35,0.18);border-radius:10px;padding:14px 18px;margin-bottom:16px">
+                    <strong style="color:var(--accent-gold);display:block;margin-bottom:8px">🃏 Tisknutelné „Ověřovací
+                        kartičky"</strong>
+                    <div style="display:flex;flex-direction:column;gap:4px;font-size:0.85rem">
+                        <div><strong>Kartička 1: ZDROJ</strong> — Kde jsi to ověřil/a? (poznámky / učebnice / schválený
+                            web)</div>
+                        <div><strong>Kartička 2: KLÍČOVÁ SLOVA</strong> — Jaká klíčová slova jsi vyhledával/a?</div>
+                        <div><strong>Kartička 3: PŘESNOST</strong> — Je tvrzení dostatečně konkrétní? Pokud ne, přepiš
+                            ho.</div>
+                        <div><strong>Kartička 4: OPRAVA</strong> — Přepiš lež jako pravdivé tvrzení.</div>
+                        <div><strong>Kartička 5: NEJISTÉ</strong> — Pokud nelze rychle ověřit, označ jako NEJISTÉ a
+                            vysvětli proč.</div>
+                    </div>
+                </div>
+
+                <!-- Poznámky pro učitele -->
+                <h3 style="color:var(--text-primary);font-size:1rem;margin:0 0 8px">📝 Poznámky pro učitele</h3>
+                <ul style="padding-left:18px;list-style:disc;display:flex;flex-direction:column;gap:4px">
+                    <li>Pokud si žáci vybírají příliš exotická témata, předem je omezte.</li>
+                    <li>Vyžadujte alespoň jeden důkaz nad rámec „řekla to AI".</li>
+                    <li>Málo času? Udělejte jen 1. a 2. kolo a závěrečné shrnutí společně.</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><a href="index.html" class="nav-logo"
+                        style="margin-bottom:12px;display:inline-flex">
+                        <div class="nav-logo-icon">🤖</div>AI ve <span>Výuce</span>
+                    </a>
+                    <p>Průvodce AI pro české učitele.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>🎯 Předměty</h4>
+                    <ul>
+                        <li><a href="matematika.html">🔢 Matematika</a></li>
+                        <li><a href="cestina.html">📖 Český jazyk</a></li>
+                        <li><a href="anglictina.html">🇬🇧 Angličtina</a></li>
+                        <li><a href="prirodoveda.html">🔬 Přírodní vědy</a></li>
+                        <li><a href="dejepis.html">🏛️ Dějepis</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>📚 Zdroje</h4>
+                    <ul>
+                        <li><a href="prompty.html">✨ Prompty</a></li>
+                        <li><a href="aktivity.html">🎯 Aktivity</a></li>
+                        <li><a href="asistenti.html">🤖 Asistenti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>🔗 Navigace</h4>
+                    <ul>
+                        <li><a href="index.html">🏠 Domů</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><span>© 2026 AI ve Výuce · Pro české pedagogy</span></div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script>
+        // Multi-dimensional filtering
+        const filters = { subject: 'all', level: 'all', tool: 'all' };
+
+        document.querySelectorAll('#subjectFilter .filter-chip, #levelFilter .filter-chip, #toolFilter .filter-chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+                const type = chip.dataset.filterType;
+                const value = chip.dataset.filter;
+                filters[type] = value;
+                chip.closest('.filter-group').querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+                chip.classList.add('active');
+                applyFilters();
+            });
+        });
+
+        function applyFilters() {
+            const cards = document.querySelectorAll('#allActivities .activity-card');
+            let visible = 0;
+            cards.forEach(card => {
+                const matchSubject = filters.subject === 'all' || card.dataset.subject === filters.subject;
+                const matchLevel = filters.level === 'all' || card.dataset.level.split(' ').includes(filters.level);
+                const matchTool = filters.tool === 'all' || card.dataset.tool === filters.tool;
+                if (matchSubject && matchLevel && matchTool) {
+                    card.style.display = '';
+                    visible++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            document.getElementById('emptyState').style.display = visible === 0 ? 'block' : 'none';
+        }
+
+        function resetFilters() {
+            Object.keys(filters).forEach(k => filters[k] = 'all');
+            document.querySelectorAll('.filter-chip').forEach(c => {
+                c.classList.toggle('active', c.dataset.filter === 'all');
+            });
+            applyFilters();
+        }
+
+        // Search
+        document.getElementById('activitySearch').addEventListener('input', e => {
+            const q = e.target.value.toLowerCase();
+            document.querySelectorAll('#allActivities .activity-card').forEach(card => {
+                const text = card.textContent.toLowerCase();
+                card.style.display = text.includes(q) ? '' : 'none';
+            });
+        });
+
+        // Klávesa Escape zavře modál
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay.open').forEach(m => m.classList.remove('open'));
+            }
+        });
+    </script>
+
+</body>
+
+</html>
