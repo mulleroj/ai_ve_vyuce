@@ -17,3 +17,6 @@ node_modules/
 # Source images folder (not needed for deployment)
 pic/
 texty/
+
+# Local Netlify folder
+.netlify
