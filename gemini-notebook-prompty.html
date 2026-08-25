@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prompty pro Gemini Notebook – AI ve Výuce</title>
+    <meta name="description"
+        content="Přehled kopírovatelných promptů pro Gemini Notebook a práci s vlastními výukovými materiály." />
+    <link rel="stylesheet" href="css/style.css?v=20260823-gemini-notebook-prompts" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .gemini-notebook-prompt-page .prompt-body {
+            max-height: 440px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            scrollbar-color: var(--accent-gold) rgba(255, 255, 255, 0.06);
+        }
+
+        .gemini-notebook-prompt-page .prompt-body::after {
+            display: none;
+        }
+
+        .gemini-notebook-prompt-page .prompt-lead {
+            margin: 8px 0 0;
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+            line-height: 1.55;
+        }
+
+        .gemini-notebook-prompt-page .prompt-header {
+            align-items: flex-start;
+        }
+
+        .gemini-notebook-prompt-page .prompt-footer {
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .gemini-notebook-prompt-page .prompt-footer .copy-btn {
+            margin-left: auto;
+        }
+
+        @media (max-width: 520px) {
+            .gemini-notebook-prompt-page .prompt-footer .copy-btn {
+                margin-left: 0;
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body class="gemini-notebook-prompt-page">
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon">🤖</div>AI ve <span>Výuce</span>
+            </a>
+            <div class="nav-links">
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link">📚 Předměty <i class="fa-solid fa-chevron-down"
+                            style="font-size:.65rem"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="matematika.html" class="nav-dropdown-item"><span class="item-icon">🔢</span>
+                            Matematika</a>
+                        <a href="cestina.html" class="nav-dropdown-item"><span class="item-icon">📖</span> Český
+                            jazyk</a>
+                        <a href="anglictina.html" class="nav-dropdown-item"><span class="item-icon">🇬🇧</span>
+                            Anglický jazyk</a>
+                        <a href="prirodoveda.html" class="nav-dropdown-item"><span class="item-icon">🔬</span>
+                            Přírodní vědy</a>
+                        <a href="dejepis.html" class="nav-dropdown-item"><span class="item-icon">🏛️</span>
+                            Dějepis</a>
+                    </div>
+                </div>
+                <a href="prompty.html" class="nav-link">✨ Prompty</a>
+                <a href="asistenti.html" class="nav-link active">🤖 AI Asistenti</a>
+                <a href="aktivity.html" class="nav-link">🎯 Aktivity</a>
+                <a href="ai.html" class="nav-link">🧠 AI ve výuce</a>
+                <a href="vibe-coding.html" class="nav-link">💻 Vibe Coding</a>
+            </div>
+            <a href="asistenti.html" class="btn btn-primary btn-sm nav-cta">🤖 AI Asistenti</a>
+            <button class="nav-mobile-toggle"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu">
+        <a href="index.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏠 Domů</a>
+        <a href="matematika.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔢 Matematika</a>
+        <a href="cestina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">📖 Český jazyk</a>
+        <a href="anglictina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🇬🇧 Angličtina</a>
+        <a href="prirodoveda.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔬 Přírodní vědy</a>
+        <a href="dejepis.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏛️ Dějepis</a>
+        <a href="prompty.html" class="nav-link" style="font-size:1rem;padding:14px 16px">✨ Prompty</a>
+        <a href="asistenti.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🤖 Asistenti</a>
+        <a href="aktivity.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🎯 Aktivity</a>
+        <a href="ai.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🧠 AI ve výuce</a>
+        <a href="vibe-coding.html" class="nav-link" style="font-size:1rem;padding:14px 16px">💻 Vibe Coding</a>
+    </div>
+
+    <section class="page-hero" style="background:linear-gradient(135deg,#0a0f1e 0%,#0d0020 100%)">
+        <div class="page-hero-glow"
+            style="background:radial-gradient(ellipse,rgba(245,166,35,0.14) 0%,transparent 70%)"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="page-hero-icon"
+                    style="background:linear-gradient(135deg,rgba(245,166,35,0.2),rgba(245,166,35,0.05))">📓</div>
+                <h1 class="page-hero-title">Prompty pro <span class="gradient-text-gold">Gemini Notebook</span></h1>
+                <p class="page-hero-subtitle">Připravená zadání pro práci s učebnicemi, prezentacemi, poznámkami a dalšími
+                    vlastními výukovými materiály.</p>
+                <div class="page-hero-stats">
+                    <div class="page-hero-stat"><span>📋</span><strong>7</strong> promptů</div>
+                    <div class="page-hero-stat"><span>📚</span>Vlastní zdroje</div>
+                    <div class="page-hero-stat"><span>🇬🇧</span>Výuka angličtiny</div>
+                </div>
+                <a href="asistenti.html" class="btn btn-outline btn-sm" style="margin-top:24px">← Zpět na AI asistenty</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🧩 Prompty pro práci s vlastními materiály</h2>
+                <p class="section-subtitle">Začínáme prompty pro infografiky; stránku můžeme postupně rozšířit o další typy zadání.</p>
+            </div>
+
+            <div class="info-box reveal" style="margin-bottom:32px">
+                <strong>Tip pro přesnější výsledek:</strong> V každém promptu je důležité pravidlo, aby Gemini Notebook čerpal pouze z nahraných zdrojů. Díky tomu si nedoplňuje vlastní pravidla, příklady ani slovní zásobu.
+            </div>
+
+            <div class="prompt-grid">
+                <div class="prompt-card reveal" data-subject="gemini-notebook">
+                    <div class="prompt-header">
+                        <div>
+                            <div class="prompt-title">1. Gramatická infografika</div>
+                            <div class="prompt-lead">Present Simple, Past Simple, there is / there are, modal verbs, comparatives a další jevy.</div>
+                            <div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><span class="badge badge-mint">Gemini Notebook</span><span class="badge badge-blue">Grammar</span></div>
+                        </div>
+                    </div>
+                    <div class="prompt-body">Vystupuj jako zkušený učitel angličtiny a odborník na didaktický a vizuální design.
+
+Na základě POUZE zdrojů uložených v tomto Gemini Notebooku vytvoř přehlednou, vizuálně atraktivní a didakticky správnou výukovou infografiku na téma:
+
+[TÉMA GRAMATIKY]
+
+Cílová skupina:
+[TYP ŽÁKŮ – např. žáci střední školy / teenageři]
+
+Jazyková úroveň:
+[CEFR – např. A1, A2, B1]
+
+Jazyk infografiky:
+[JAZYK – např. vysvětlení česky, anglické příklady anglicky]
+
+Infografika má žákům pomoci gramatický jev rychle pochopit, zapamatovat si jej a později zopakovat.
+
+Zpracuj pouze informace doložené ve zdrojích. Pokud některá informace ve zdrojích není, nevymýšlej ji a raději ji vynech.
+
+Zahrň podle dostupných zdrojů:
+- jednoduché vysvětlení významu gramatického jevu,
+- kdy a proč se používá,
+- základní stavbu nebo vzorec,
+- kladnou větu,
+- zápornou větu,
+- otázku, pokud je relevantní,
+- několik krátkých příkladů v přirozeném kontextu,
+- typické signální výrazy, pokud jsou ve zdrojích,
+- nejčastější chyby žáků, pokud je zdroje uvádějí,
+- krátkou pomůcku nebo pravidlo k zapamatování, pouze pokud vychází ze zdrojů.
+
+Přizpůsob délku vět i slovní zásobu zadané úrovni CEFR. Používej krátké textové bloky, výrazné nadpisy, tabulky, šipky, symboly nebo jednoduchá vizuální schémata tam, kde pomohou porozumění.
+
+Důležité pravidlo zvýrazni vizuálně. Nevytvářej dlouhé odstavce. Infografika musí být čitelná na první pohled a nesmí působit přeplněně. Preferuj přibližně 5–8 hlavních obsahových bloků.
+
+Nevkládej žádná pravidla, příklady ani výjimky, které nejsou podloženy zdroji tohoto notebooku.</div>
+                    <div class="prompt-footer"><span class="badge badge-blue">Vysvětlení pravidla</span><button class="copy-btn">📋 Kopírovat</button></div>
+                </div>
+
+                <div class="prompt-card reveal" data-subject="gemini-notebook">
+                    <div class="prompt-header">
+                        <div>
+                            <div class="prompt-title">2. Infografika slovní zásoby</div>
+                            <div class="prompt-lead">Food, Travel, Jobs, Electrical Tools, Car Parts, Environment nebo Health.</div>
+                            <div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><span class="badge badge-mint">Gemini Notebook</span><span class="badge badge-green">Vocabulary</span></div>
+                        </div>
+                    </div>
+                    <div class="prompt-body">Vystupuj jako zkušený učitel angličtiny, specialista na výuku slovní zásoby a didaktický design.
+
+Na základě POUZE zdrojů uložených v tomto Gemini Notebooku vytvoř výukovou infografiku na téma:
+
+[TÉMA SLOVNÍ ZÁSOBY]
+
+Cílová skupina:
+[TYP ŽÁKŮ]
+
+Jazyková úroveň:
+[CEFR]
+
+Jazyk infografiky:
+[JAZYK VÝSTUPU]
+
+Vyber pouze nejdůležitější slovní zásobu pro zadané téma a úroveň. Nepokoušej se do infografiky umístit všechna slova ze zdrojů. Upřednostni výrazy, které jsou pro pochopení tématu a praktickou komunikaci nejdůležitější.
+
+U jednotlivých výrazů podle dostupných zdrojů uveď:
+- anglické slovo nebo slovní spojení,
+- stručný význam nebo český překlad,
+- podporu výslovnosti, pokud je vhodná a doložená,
+- krátký příklad použití,
+- užitečnou kolokaci nebo slovní spojení,
+- případně slovní rodinu nebo související výraz.
+
+Seskup slovní zásobu do logických kategorií. Pokud je to vhodné, použij vizuální spojení slova s předmětem, činností nebo situací.
+
+Příklady musí odpovídat zadané jazykové úrovni. Používej krátké texty a silnou vizuální hierarchii. Infografika má sloužit jako rychlá studijní pomůcka, nikoli jako slovník. Nevytvářej dlouhé seznamy.
+
+Nevkládej slovní zásobu, definice, překlady, kolokace ani příklady, které nejsou podloženy zdroji notebooku.</div>
+                    <div class="prompt-footer"><span class="badge badge-green">Praktická slovní zásoba</span><button class="copy-btn">📋 Kopírovat</button></div>
+                </div>
+
+                <div class="prompt-card reveal" data-subject="gemini-notebook">
+                    <div class="prompt-header">
+                        <div>
+                            <div class="prompt-title">3. Infografika k četbě</div>
+                            <div class="prompt-lead">Článek, příběh, učebnicový text nebo jiný materiál ke čtení.</div>
+                            <div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><span class="badge badge-mint">Gemini Notebook</span><span class="badge badge-purple">Reading</span></div>
+                        </div>
+                    </div>
+                    <div class="prompt-body">Vystupuj jako zkušený učitel angličtiny a odborník na rozvoj čtenářských dovedností.
+
+Na základě POUZE zdrojů uložených v tomto Gemini Notebooku vytvoř přehlednou výukovou infografiku k:
+
+[NÁZEV TEXTU / TÉMA TEXTU]
+
+Cílová skupina:
+[TYP ŽÁKŮ]
+
+Jazyková úroveň:
+[CEFR]
+
+Jazyk infografiky:
+[JAZYK VÝSTUPU]
+
+Cílem není text pouze převyprávět. Vytvoř vizuální studijní pomůcku, která žákům umožní rychle pochopit jeho strukturu a nejdůležitější informace.
+
+Podle zdrojů zobraz:
+- hlavní myšlenku textu,
+- 3–6 nejdůležitějších bodů,
+- důležité podpůrné informace,
+- osoby, místa nebo události, pokud jsou podstatné,
+- vztahy mezi jednotlivými myšlenkami,
+- klíčovou slovní zásobu potřebnou k porozumění textu,
+- případně časovou osu, proces nebo příčiny a následky, pokud se pro daný text hodí.
+
+Rozliš vizuálně hlavní informace od detailů. Používej hesla, krátké věty, šipky, časovou osu, diagram nebo jiné vhodné vizuální prvky.
+
+Přizpůsob jazyk zadané úrovni CEFR. Nevytvářej interpretace, které nejsou doloženy textem. Nepřidávej informace, slovní zásobu ani vysvětlení z jiných zdrojů.</div>
+                    <div class="prompt-footer"><span class="badge badge-purple">Porozumění textu</span><button class="copy-btn">📋 Kopírovat</button></div>
+                </div>
+
+                <div class="prompt-card reveal" data-subject="gemini-notebook">
+                    <div class="prompt-header">
+                        <div>
+                            <div class="prompt-title">4. Infografika k poslechu</div>
+                            <div class="prompt-lead">Nahrávka z učebnice, rozhovor, podcast nebo video.</div>
+                            <div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><span class="badge badge-mint">Gemini Notebook</span><span class="badge badge-orange">Listening</span></div>
+                        </div>
+                    </div>
+                    <div class="prompt-body">Vystupuj jako zkušený učitel angličtiny a odborník na rozvoj poslechových dovedností.
+
+Na základě POUZE zdrojů uložených v tomto Gemini Notebooku vytvoř přehlednou výukovou infografiku k:
+
+[TÉMA / POSLECHOVÝ MATERIÁL]
+
+Cílová skupina:
+[TYP ŽÁKŮ]
+
+Jazyková úroveň:
+[CEFR]
+
+Jazyk infografiky:
+[JAZYK VÝSTUPU]
+
+Infografika má žákům pomoci pochopit a následně si zopakovat obsah poslechu.
+
+Podle dostupných zdrojů zobraz:
+- hlavní téma nebo myšlenku,
+- nejdůležitější informace,
+- klíčové detaily,
+- jednotlivé mluvčí a jejich role nebo názory, pokud jsou relevantní,
+- vztahy mezi informacemi,
+- důležitou slovní zásobu a výrazy,
+- případně pořadí událostí nebo jednotlivé fáze rozhovoru.
+
+Pokud je materiál dialogický, můžeš použít jednoduché vizuální rozdělení podle jednotlivých mluvčích. Nepřepisuj celý poslech. Vyber pouze informace důležité pro pochopení.
+
+Používej krátké textové bloky a jasnou vizuální hierarchii. Přizpůsob jazyk zadané úrovni CEFR.
+
+Nevytvářej domněnky o názorech nebo záměrech mluvčích, pokud nejsou doloženy zdrojem. Nepřidávej informace, slovní zásobu ani interpretace, které ve zdrojích nejsou.</div>
+                    <div class="prompt-footer"><span class="badge badge-orange">Klíčové informace</span><button class="copy-btn">📋 Kopírovat</button></div>
+                </div>
+
+                <div class="prompt-card reveal" data-subject="gemini-notebook">
+                    <div class="prompt-header">
+                        <div>
+                            <div class="prompt-title">5. Infografika k psaní</div>
+                            <div class="prompt-lead">Email, formal letter, description, story, opinion essay, CV nebo invitation.</div>
+                            <div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><span class="badge badge-mint">Gemini Notebook</span><span class="badge badge-pink">Writing</span></div>
+                        </div>
+                    </div>
+                    <div class="prompt-body">Vystupuj jako zkušený učitel angličtiny a odborník na výuku písemného projevu.
+
+Na základě POUZE zdrojů uložených v tomto Gemini Notebooku vytvoř výukovou infografiku pro:
+
+[TYP TEXTU / SLOHOVÝ ÚTVAR]
+
+Cílová skupina:
+[TYP ŽÁKŮ]
+
+Jazyková úroveň:
+[CEFR]
+
+Jazyk infografiky:
+[JAZYK VÝSTUPU]
+
+Infografika má fungovat jako praktická pomůcka, podle které dokáže žák daný text naplánovat a napsat.
+
+Podle dostupných zdrojů zobraz:
+- účel daného typu textu,
+- komu je text určen,
+- základní strukturu,
+- doporučené pořadí jednotlivých částí,
+- charakteristické jazykové prvky,
+- užitečné fráze a větné vzorce,
+- krátké modelové příklady,
+- případně kontrolní body před odevzdáním textu.
+
+Strukturu znázorni vizuálně, například jako jednotlivé části textu, kroky nebo jednoduchou šablonu. Užitečné fráze rozděl podle jejich funkce, například: zahájení, vyjádření názoru, spojování myšlenek a ukončení.
+
+Používej pouze takové jazykové prostředky, které odpovídají zadané úrovni CEFR a jsou doloženy zdroji. Nevytvářej celý dlouhý vzorový text, pokud není součástí zdroje.
+
+Infografika má být praktická, stručná a použitelná při samotném psaní. Nepřidávej jazykové konvence, fráze ani pravidla, která nejsou ve zdrojích notebooku.</div>
+                    <div class="prompt-footer"><span class="badge badge-pink">Struktura textu</span><button class="copy-btn">📋 Kopírovat</button></div>
+                </div>
+
+                <div class="prompt-card reveal" data-subject="gemini-notebook">
+                    <div class="prompt-header">
+                        <div>
+                            <div class="prompt-title">6. Infografika k mluvení</div>
+                            <div class="prompt-lead">At a restaurant, Shopping, Introducing yourself, Job interview nebo Asking for directions.</div>
+                            <div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><span class="badge badge-mint">Gemini Notebook</span><span class="badge badge-blue">Speaking</span></div>
+                        </div>
+                    </div>
+                    <div class="prompt-body">Vystupuj jako zkušený učitel angličtiny se zaměřením na praktickou komunikaci.
+
+Na základě POUZE zdrojů uložených v tomto Gemini Notebooku vytvoř přehlednou výukovou infografiku pro komunikační situaci:
+
+[TÉMA MLUVENÍ]
+
+Cílová skupina:
+[TYP ŽÁKŮ]
+
+Jazyková úroveň:
+[CEFR]
+
+Jazyk infografiky:
+[JAZYK VÝSTUPU]
+
+Infografika má žákovi pomoci skutečně promluvit, nikoli pouze vysvětlit teorii.
+
+Podle zdrojů vyber:
+- nejdůležitější slovní zásobu,
+- užitečné fráze,
+- otázky,
+- možné odpovědi,
+- funkční jazyk pro danou situaci,
+- jednoduché konverzační vzorce,
+- krátké modelové výměny replik,
+- případně strategie, jak požádat o zopakování, vysvětlení nebo čas na rozmyšlenou.
+
+Uspořádej obsah podle průběhu skutečné komunikační situace. Pokud se to hodí, vytvoř jednoduchý model:
+1. Jak rozhovor začít
+2. Co říci během rozhovoru
+3. Jak reagovat
+4. Jak rozhovor ukončit
+
+Modelové věty musí odpovídat zadané jazykové úrovni. Preferuj krátké, přirozené a prakticky použitelné věty. Nevytvářej dlouhé dialogy.
+
+Infografika musí být snadno použitelná jako opora při mluvení ve dvojici nebo skupině. Nepřidávej fráze, dialogy ani komunikační strategie, které nejsou podloženy zdroji notebooku.</div>
+                    <div class="prompt-footer"><span class="badge badge-blue">Komunikační situace</span><button class="copy-btn">📋 Kopírovat</button></div>
+                </div>
+
+                <div class="prompt-card reveal" data-subject="gemini-notebook">
+                    <div class="prompt-header">
+                        <div>
+                            <div class="prompt-title">7. Infografika celé lekce</div>
+                            <div class="prompt-lead">Jednostránková „mapa lekce“ pro samostatné opakování žáka.</div>
+                            <div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><span class="badge badge-mint">Gemini Notebook</span><span class="badge badge-purple">Lesson map</span></div>
+                        </div>
+                    </div>
+                    <div class="prompt-body">Vystupuj jako zkušený učitel angličtiny a odborník na instructional design.
+
+Na základě POUZE zdrojů uložených v tomto Gemini Notebooku vytvoř jednostránkovou výukovou infografiku shrnující lekci:
+
+[TÉMA / NÁZEV LEKCE]
+
+Cílová skupina:
+[TYP ŽÁKŮ]
+
+Jazyková úroveň:
+[CEFR]
+
+Jazyk infografiky:
+[JAZYK VÝSTUPU]
+
+Cílem je vytvořit vizuální „mapu lekce“, kterou může žák použít při opakování. Nezpracovávej každý detail. Vyber pouze obsah, který je pro pochopení a zapamatování lekce zásadní.
+
+Podle dostupných zdrojů zahrň:
+- hlavní cíl lekce,
+- nejdůležitější slovní zásobu,
+- hlavní gramatický nebo jazykový jev,
+- klíčové fráze,
+- důležité příklady,
+- případně hlavní informace z četby nebo poslechu,
+- praktickou komunikační situaci,
+- několik hlavních bodů „Co si mám z této lekce pamatovat?“.
+
+Uspořádej obsah do jasně oddělených vizuálních bloků. Vizuálně odliš:
+- Vocabulary
+- Grammar
+- Useful English
+- Remember
+- Examples
+
+Použij pouze ty části, které mají oporu ve zdrojích. Přizpůsob množství informací zadané úrovni CEFR. Preferuj hesla, krátké věty, příklady a vizuální prvky před dlouhými odstavci.
+
+Pokud by bylo informací příliš mnoho, raději méně důležité části vynech. Infografika musí být pochopitelná i při samostatném opakování žáka.
+
+Nepřidávej žádné informace, vysvětlení ani příklady, které nejsou doloženy zdroji tohoto notebooku.</div>
+                    <div class="prompt-footer"><span class="badge badge-purple">Mapa lekce</span><button class="copy-btn">📋 Kopírovat</button></div>
+                </div>
+            </div>
+
+            <div class="info-box reveal" style="margin-top:32px">
+                <strong>Jak začít:</strong> Nahrajte do Gemini Notebooku učebnici, prezentaci, pracovní list nebo vlastní poznámky. Potom zkopírujte vybraný prompt, doplňte údaje v hranatých závorkách a výsledek zkontrolujte podle skutečných zdrojů.
+            </div>
+
+            <div style="text-align:center;margin-top:36px">
+                <a href="asistenti.html" class="btn btn-outline">← Zpět na AI asistenty</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <span>© 2026 AI ve Výuce</span>
+                <span>Prompty pro práci s vlastními výukovými materiály</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

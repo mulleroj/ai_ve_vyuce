@@ -964,6 +964,14 @@ select {
   justify-content: space-between;
 }
 
+.activity-footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
 /* ── Prompt Cards ── */
 .prompt-grid {
   display: grid;
@@ -982,6 +990,11 @@ select {
 .prompt-card:hover {
   border-color: var(--border-hover);
   box-shadow: var(--shadow);
+}
+
+.prompt-card.prompt-focus {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.16), var(--shadow);
 }
 
 .prompt-header {
@@ -1051,6 +1064,52 @@ select {
   background: rgba(0, 212, 168, 0.1);
   border-color: rgba(0, 212, 168, 0.25);
   color: var(--accent-mint);
+}
+
+/* ── Catalog role notes ── */
+.catalog-role-note {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 0 0 32px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.025);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.catalog-role-note strong {
+  color: var(--text-primary);
+}
+
+.catalog-role-note a {
+  color: var(--accent-blue);
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: auto;
+}
+
+.catalog-role-note a:hover {
+  color: var(--accent-mint);
+  text-decoration: underline;
+}
+
+.activity-template-link {
+  white-space: nowrap;
+}
+
+.activity-card .copy-btn {
+  background: rgba(0, 212, 168, 0.1);
+  border-color: rgba(0, 212, 168, 0.25);
+  color: var(--accent-mint);
+}
+
+.activity-card .copy-btn:hover {
+  background: rgba(0, 212, 168, 0.2);
 }
 
 /* ── Assistant Cards ── */
@@ -1606,6 +1665,15 @@ select {
   max-width: 600px;
   line-height: 1.7;
   margin-bottom: 28px;
+}
+
+/* Compact transition from the AI content hero to the article itself. */
+.page-hero-compact {
+  padding-bottom: 24px;
+}
+
+.page-hero-compact + .section {
+  padding-top: 24px;
 }
 
 .page-hero-stats {

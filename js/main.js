@@ -102,19 +102,45 @@ document.addEventListener('click', async (e) => {
     if (!btn) return;
     const text = btn.dataset.copy || btn.closest('.prompt-card')?.querySelector('.prompt-body')?.innerText || '';
     if (!text) return;
+    const defaultCopyLabel = btn.closest('.activity-card') ? '📋 Kopírovat zadání' : '📋 Kopírovat';
     try {
         await navigator.clipboard.writeText(text.trim());
         btn.innerHTML = '✅ Zkopírováno';
         btn.classList.add('copied');
         showToast('Prompt zkopírován do schránky!');
         setTimeout(() => {
-            btn.innerHTML = '📋 Kopírovat';
+            btn.innerHTML = defaultCopyLabel;
             btn.classList.remove('copied');
         }, 2000);
     } catch {
         showToast('Kopírování selhalo – zkuste manuálně.', '⚠️');
     }
 });
+
+document.querySelectorAll('.activity-card .copy-btn').forEach(btn => {
+    btn.innerHTML = '📋 Kopírovat zadání';
+});
+
+/* ── Prompt links from activity cards ── */
+function promptSlug(value) {
+    return value.normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-|-$/g, '');
+}
+
+function focusPromptFromHash() {
+    const target = window.location.hash.replace(/^#prompt-/, '');
+    if (!target || !document.querySelector('.prompt-title')) return;
+    const title = [...document.querySelectorAll('.prompt-title')]
+        .find(element => promptSlug(element.textContent) === target);
+    const card = title?.closest('.prompt-card');
+    if (!card) return;
+    card.classList.add('prompt-focus');
+    requestAnimationFrame(() => card.scrollIntoView({ behavior: 'smooth', block: 'center' }));
+}
+focusPromptFromHash();
 
 /* ── Modal ── */
 const modalOverlay = document.querySelector('.modal-overlay');
@@ -141,7 +167,15 @@ window.openModal = openModal;
 function initFilters(gridSelector, cardSelector, filterAttr = 'data-filter') {
     const filterChips = document.querySelectorAll(`.filter-chip[${filterAttr}]`);
     const cards = document.querySelectorAll(`${gridSelector} ${cardSelector}`);
+    const groupedSections = document.querySelectorAll('.subject-prompt-section');
     if (!filterChips.length) return;
+
+    const updateGroupedSections = () => {
+        groupedSections.forEach(section => {
+            const hasVisibleCard = [...section.querySelectorAll(cardSelector)].some(card => card.style.display !== 'none');
+            section.style.display = hasVisibleCard ? '' : 'none';
+        });
+    };
 
     filterChips.forEach(chip => {
         chip.addEventListener('click', () => {
@@ -152,6 +186,7 @@ function initFilters(gridSelector, cardSelector, filterAttr = 'data-filter') {
                 const match = val === 'all' || card.dataset.subject === val || card.dataset.level === val || card.dataset.llm === val || card.dataset.type === val;
                 card.style.display = match ? '' : 'none';
             });
+            updateGroupedSections();
         });
     });
 }
@@ -163,12 +198,17 @@ initFilters('.assistant-grid', '.assistant-card', 'data-filter');
 function initSearch(inputSelector, gridSelector, cardSelector) {
     const input = document.querySelector(inputSelector);
     const cards = document.querySelectorAll(`${gridSelector} ${cardSelector}`);
+    const groupedSections = document.querySelectorAll(`.subject-prompt-section`);
     if (!input) return;
     input.addEventListener('input', () => {
         const q = input.value.toLowerCase().trim();
         cards.forEach(card => {
             const text = card.textContent.toLowerCase();
             card.style.display = text.includes(q) ? '' : 'none';
+        });
+        groupedSections.forEach(section => {
+            const hasVisibleCard = [...section.querySelectorAll(cardSelector)].some(card => card.style.display !== 'none');
+            section.style.display = hasVisibleCard ? '' : 'none';
         });
     });
 }
@@ -180,11 +220,14 @@ initSearch('#search-assistants', '.assistant-grid', '.assistant-card');
 document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         const target = btn.dataset.tab;
-        const container = btn.closest('.tabs-container') || document;
-        container.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        container.querySelectorAll('.tab-panel').forEach(p => p.classList.add('d-none'));
+        // The buttons live inside .tabs-container, while the panels are its
+        // siblings in the surrounding section. Use the shared section as the
+        // scope instead of searching only inside the button wrapper.
+        const tabScope = btn.closest('.section') || document;
+        tabScope.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        tabScope.querySelectorAll('.tab-panel').forEach(p => p.classList.add('d-none'));
         btn.classList.add('active');
-        const panel = container.querySelector(`#tab-${target}`);
+        const panel = tabScope.querySelector(`#tab-${target}`);
         if (panel) panel.classList.remove('d-none');
     });
 });

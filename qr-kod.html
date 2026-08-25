@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QR kód z odkazu | AI ve Výuce</title>
+  <meta name="description" content="Vytvořte QR kód z webové adresy během několika sekund a stáhněte ho jako obrázek PNG." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .qr-page-hero {
+      padding-bottom: 44px;
+    }
+
+    .qr-page-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .qr-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+    }
+
+    .qr-card h2 {
+      margin-bottom: 10px;
+    }
+
+    .qr-card-intro {
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .qr-form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .qr-label {
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .qr-input {
+      width: 100%;
+      border: 1px solid var(--border-hover);
+      border-radius: var(--radius-md);
+      padding: 15px 17px;
+      background: rgba(10, 15, 30, 0.7);
+      color: var(--text-primary);
+      font: inherit;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .qr-input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .qr-input:focus {
+      border-color: var(--accent-mint);
+      box-shadow: 0 0 0 3px rgba(0, 212, 168, 0.14);
+    }
+
+    .qr-customize {
+      margin-top: 18px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .qr-customize-title {
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+
+    .qr-customize-hint {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      line-height: 1.55;
+      margin-bottom: 14px;
+    }
+
+    .qr-choice-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .qr-choice {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border: 1px solid var(--border-hover);
+      border-radius: 999px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: var(--transition);
+    }
+
+    .qr-choice:has(input:checked) {
+      border-color: var(--accent-mint);
+      color: var(--accent-mint);
+      background: rgba(0, 212, 168, 0.1);
+    }
+
+    .qr-choice input {
+      accent-color: var(--accent-mint);
+    }
+
+    .qr-option {
+      display: grid;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .qr-option[hidden] {
+      display: none;
+    }
+
+    .qr-option-label {
+      color: var(--text-primary);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .qr-file-input {
+      width: 100%;
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+    }
+
+    .qr-file-input::file-selector-button {
+      margin-right: 10px;
+      padding: 8px 12px;
+      border: 1px solid var(--border-hover);
+      border-radius: 999px;
+      color: var(--text-primary);
+      background: var(--bg-card-hover);
+      cursor: pointer;
+    }
+
+    .qr-form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .qr-hint,
+    .qr-error,
+    .qr-status {
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .qr-hint {
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .qr-error {
+      min-height: 1.5em;
+      color: #ff9a8f;
+    }
+
+    .qr-result-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(145deg, rgba(0, 212, 168, 0.08), rgba(74, 144, 226, 0.08));
+    }
+
+    .qr-result-card h2 {
+      align-self: stretch;
+      text-align: left;
+    }
+
+    .qr-code-frame {
+      min-width: 312px;
+      min-height: 312px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      margin: 12px 0 20px;
+      border-radius: var(--radius-lg);
+      background: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.22);
+    }
+
+    .qr-code-frame:empty::before {
+      content: 'QR kód se zobrazí zde';
+      color: #6d7890;
+      font-size: 0.95rem;
+    }
+
+    .qr-code-frame img,
+    .qr-code-frame canvas {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .qr-status {
+      min-height: 3.2em;
+      color: var(--text-secondary);
+      overflow-wrap: anywhere;
+    }
+
+    .qr-status strong {
+      color: var(--accent-mint);
+    }
+
+    .qr-feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .qr-feature {
+      padding: 20px;
+      border-radius: var(--radius-md);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+    }
+
+    .qr-feature-icon {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .qr-feature h3 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    .qr-feature p {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    @media (max-width: 800px) {
+      .qr-page-grid,
+      .qr-feature-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .qr-card {
+        padding: 22px;
+      }
+
+      .qr-code-frame {
+        min-width: 0;
+        width: 100%;
+        min-height: 0;
+        aspect-ratio: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">🤖</div>
+        AI ve <span>Výuce</span>
+      </a>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <a href="#" class="nav-link">📚 Předměty <i class="fa-solid fa-chevron-down" style="font-size:0.65rem"></i></a>
+          <div class="nav-dropdown-menu">
+            <a href="matematika.html" class="nav-dropdown-item"><span class="item-icon">🔢</span> Matematika</a>
+            <a href="cestina.html" class="nav-dropdown-item"><span class="item-icon">📖</span> Český jazyk</a>
+            <a href="anglictina.html" class="nav-dropdown-item"><span class="item-icon">🇬🇧</span> Anglický jazyk</a>
+            <a href="prirodoveda.html" class="nav-dropdown-item"><span class="item-icon">🔬</span> Přírodní vědy</a>
+            <a href="dejepis.html" class="nav-dropdown-item"><span class="item-icon">🏛️</span> Dějepis</a>
+          </div>
+        </div>
+        <a href="prompty.html" class="nav-link">✨ Prompty</a>
+        <a href="asistenti.html" class="nav-link">🤖 AI Asistenti</a>
+        <a href="aktivity.html" class="nav-link">🎯 Aktivity</a>
+        <a href="ai.html" class="nav-link">🧠 AI ve výuce</a>
+        <a href="vibe-coding.html" class="nav-link">💻 Vibe Coding</a>
+        <a href="qr-kod.html" class="nav-link active">🔳 QR kód</a>
+      </div>
+      <a href="prompty.html" class="btn btn-primary btn-sm nav-cta">📋 Knihovna Promptů</a>
+      <button class="nav-mobile-toggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏠 Domů</a>
+    <a href="matematika.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔢 Matematika</a>
+    <a href="cestina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">📖 Český jazyk</a>
+    <a href="anglictina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🇬🇧 Anglický jazyk</a>
+    <a href="prirodoveda.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔬 Přírodní vědy</a>
+    <a href="dejepis.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏛️ Dějepis</a>
+    <a href="prompty.html" class="nav-link" style="font-size:1rem;padding:14px 16px">✨ Prompty</a>
+    <a href="asistenti.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🤖 AI Asistenti</a>
+    <a href="aktivity.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🎯 Aktivity</a>
+    <a href="ai.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🧠 AI ve výuce</a>
+    <a href="vibe-coding.html" class="nav-link" style="font-size:1rem;padding:14px 16px">💻 Vibe Coding</a>
+    <a href="qr-kod.html" class="nav-link active" style="font-size:1rem;padding:14px 16px">🔳 QR kód</a>
+    <div style="margin-top:16px">
+      <a href="prompty.html" class="btn btn-primary" style="width:100%;justify-content:center">📋 Knihovna Promptů</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="page-hero qr-page-hero">
+      <div class="page-hero-glow"></div>
+      <div class="container">
+        <div class="page-hero-content">
+          <div class="page-hero-icon" style="background:rgba(0,212,168,0.12);border:1px solid rgba(0,212,168,0.25)">🔳</div>
+          <div class="section-label">Praktický nástroj</div>
+          <h1 class="page-hero-title">Vytvořte <span class="gradient-text">QR kód</span> z odkazu</h1>
+          <p class="page-hero-subtitle">Vložte adresu webu, vytvořte QR kód a stáhněte ho jako obrázek. Hodí se do pracovních listů, prezentací i třídních materiálů.</p>
+          <div class="page-hero-stats">
+            <div class="page-hero-stat">⚡ <strong>Rychle</strong> bez registrace</div>
+            <div class="page-hero-stat">🔒 <strong>Soukromě</strong> v prohlížeči</div>
+            <div class="page-hero-stat">⬇️ <strong>PNG</strong> ke stažení</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="qr-page-grid">
+          <section class="qr-card" aria-labelledby="qr-form-title">
+            <h2 id="qr-form-title" class="section-title">Zadejte adresu</h2>
+            <p class="qr-card-intro">Použijte úplný odkaz nebo napište doménu bez protokolu. Nástroj bezpečně doplní <strong>https://</strong>, pokud ho adresa neobsahuje.</p>
+            <form class="qr-form" id="qrForm">
+              <label class="qr-label" for="urlInput">Adresa webu</label>
+              <input class="qr-input" id="urlInput" name="url" type="text" inputmode="url" autocomplete="url" placeholder="např. https://ai-vezuce.cz" required />
+              <p class="qr-hint">QR kód může vést na web, dokument, formulář nebo libovolnou stránku s adresou HTTP/HTTPS.</p>
+              <div class="qr-customize">
+                <h3 class="qr-customize-title">Doplněk uprostřed QR kódu</h3>
+                <p class="qr-customize-hint">Odkaz zůstane zakódovaný. Volitelně můžete doprostřed vložit krátký nápis nebo obrázek/logo.</p>
+                <div class="qr-choice-group" role="radiogroup" aria-label="Doplněk QR kódu">
+                  <label class="qr-choice"><input type="radio" name="overlayType" value="none" checked /> Bez doplňku</label>
+                  <label class="qr-choice"><input type="radio" name="overlayType" value="text" /> Nápis</label>
+                  <label class="qr-choice"><input type="radio" name="overlayType" value="image" /> Obrázek</label>
+                </div>
+                <div class="qr-option" id="qrTextOption" hidden>
+                  <label class="qr-option-label" for="qrText">Krátký nápis</label>
+                  <input class="qr-input" id="qrText" type="text" maxlength="18" placeholder="např. OTEVŘÍT" />
+                </div>
+                <div class="qr-option" id="qrImageOption" hidden>
+                  <label class="qr-option-label" for="qrImage">Obrázek nebo logo</label>
+                  <input class="qr-file-input" id="qrImage" type="file" accept="image/png,image/jpeg,image/webp" />
+                  <span class="qr-hint">Použijte menší čtvercový obrázek PNG, JPG nebo WebP.</span>
+                </div>
+              </div>
+              <div class="qr-form-actions">
+                <button class="btn btn-primary" type="submit">🔳 Vytvořit QR kód</button>
+                <button class="btn btn-secondary" id="clearQr" type="button">Vymazat</button>
+              </div>
+              <p class="qr-error" id="qrError" role="alert"></p>
+            </form>
+          </section>
+
+          <section class="qr-card qr-result-card" aria-labelledby="qr-result-title">
+            <h2 id="qr-result-title" class="section-title">Náhled QR kódu</h2>
+            <div class="qr-code-frame" id="qrCode" aria-label="Náhled vygenerovaného QR kódu"></div>
+            <p class="qr-status" id="qrStatus" aria-live="polite">Po zadání adresy se zde zobrazí váš QR kód.</p>
+            <button class="btn btn-primary" id="downloadQr" type="button" disabled>⬇️ Stáhnout PNG</button>
+          </section>
+        </div>
+
+        <div class="qr-feature-grid">
+          <article class="qr-feature">
+            <span class="qr-feature-icon">🎓</span>
+            <h3>Pro výuku</h3>
+            <p>Odkaz na pracovní list, prezentaci, video nebo aktivitu můžete umístit přímo do materiálů pro žáky.</p>
+          </article>
+          <article class="qr-feature">
+            <span class="qr-feature-icon">🖨️</span>
+            <h3>Připravené k tisku</h3>
+            <p>Stáhněte obrázek PNG a vložte ho do pracovního listu, plakátu nebo prezentace.</p>
+          </article>
+          <article class="qr-feature">
+            <span class="qr-feature-icon">🔗</span>
+            <h3>Odkaz lze kdykoli změnit</h3>
+            <p>Potřebujete jinou stránku? Vložte nový odkaz a vytvořte nový QR kód během okamžiku.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="margin-bottom:12px;display:inline-flex">
+            <div class="nav-logo-icon">🤖</div>
+            AI ve <span>Výuce</span>
+          </a>
+          <p>Moderní průvodce světem AI pro české učitele. Aktivity, prompty a asistenti pro efektivnější výuku.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="badge badge-gold">Zdarma</span>
+            <span class="badge badge-mint">Bez registrace</span>
+            <span class="badge badge-blue">Pro učitele</span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>🎯 Předměty</h4>
+          <ul>
+            <li><a href="matematika.html">🔢 Matematika</a></li>
+            <li><a href="cestina.html">📖 Český jazyk</a></li>
+            <li><a href="anglictina.html">🇬🇧 Anglický jazyk</a></li>
+            <li><a href="prirodoveda.html">🔬 Přírodní vědy</a></li>
+            <li><a href="dejepis.html">🏛️ Dějepis</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>📚 Zdroje</h4>
+          <ul>
+            <li><a href="prompty.html">✨ Knihovna promptů</a></li>
+            <li><a href="aktivity.html">🎯 Všechny aktivity</a></li>
+            <li><a href="asistenti.html">🤖 AI Asistenti</a></li>
+            <li><a href="qr-kod.html">🔳 QR kód z odkazu</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>🤖 AI Nástroje</h4>
+          <ul>
+            <li><a href="https://chatgpt.com" target="_blank" rel="noopener">ChatGPT</a></li>
+            <li><a href="https://gemini.google.com" target="_blank" rel="noopener">Google Gemini</a></li>
+            <li><a href="https://claude.ai" target="_blank" rel="noopener">Claude (Anthropic)</a></li>
+            <li><a href="https://notebooklm.google.com" target="_blank" rel="noopener">NotebookLM</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 AI ve Výuce · Vytvořeno s ❤️ pro české pedagogy</span>
+        <div class="footer-bottom-links">
+          <a href="index.html">Domů</a>
+          <a href="prompty.html">Prompty</a>
+          <a href="asistenti.html">Asistenti</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+  <script src="js/qr-kod.js" defer></script>
+</body>
+
+</html>

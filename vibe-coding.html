@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vibe Coding – AI ve Výuce | Tvořte aplikace bez programování</title>
+    <title>Vibe Coding – AI ve Výuce | Tvořte výukové aplikace s AI</title>
     <meta name="description"
-        content="Vibe Coding pro učitele: vytvářejte kvízy, hry a interaktivní cvičení pomocí AI bez znalosti programování. Návody, nástroje a příklady." />
+        content="Vibe Coding pro učitele: vytvářejte kvízy, hry a interaktivní cvičení pomocí přirozeného jazyka a AI. Návody, nástroje a příklady." />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
@@ -379,11 +379,15 @@
                         style="background:linear-gradient(135deg,#8a2be2,#00d4a8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Coding</span>
                 </h1>
                 <p class="page-hero-subtitle">Tvořte interaktivní kvízy, hry a výukové aplikace
-                    pomocí AI – bez jediného řádku kódu. Stačí popsat, co chcete, a AI to vytvoří za vás.</p>
+                    pomocí AI – s minimem ručního kódu. Stačí popsat, co potřebujete, a výsledek potom otestovat a postupně upravit.</p>
                 <div class="page-hero-stats">
-                    <div class="page-hero-stat"><span>🚀</span><strong>0</strong> kódu potřeba</div>
+                    <div class="page-hero-stat"><span>💬</span><strong>Popisem</strong> místo kódu</div>
                     <div class="page-hero-stat"><span>⚡</span>Za <strong>minuty</strong></div>
                     <div class="page-hero-stat"><span>🎓</span>Pro <strong>učitele</strong></div>
+                </div>
+                <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
+                    <a href="vibe-coding-ucitele.html" class="btn btn-primary">📰 Články o Vibe Codingu</a>
+                    <a href="vibe-coding-prompty.html" class="btn btn-secondary">✨ Prompty pro Vibe Coding</a>
                 </div>
             </div>
         </div>
@@ -394,21 +398,21 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">🤔 Co je Vibe Coding?</h2>
-                <p class="section-subtitle">Když místo psaní kódu popíšete AI, co chcete – a ono to funguje</p>
+                <p class="section-subtitle">Když AI popíšete, co chcete vytvořit, a výsledek společně postupně ladíte</p>
             </div>
 
             <div class="reveal"
                 style="max-width:800px;margin:0 auto 40px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:36px;line-height:1.8;font-size:0.95rem;color:var(--text-secondary)">
                 <p style="margin-bottom:16px"><strong style="color:var(--text-primary);font-size:1.05rem">Vibe
                         Coding</strong> je způsob tvorby aplikací, her a interaktivních nástrojů, kde <strong
-                        style="color:var(--text-primary)">nepíšete kód ručně</strong> – místo toho v přirozeném jazyce
-                    popíšete AI asistentovi, co má vytvořit. AI vygeneruje kompletní funkční kód.</p>
-                <p style="margin-bottom:16px">Termín poprvé použil <strong style="color:var(--text-primary)">Andrej
-                        Karpathy</strong> (spoluzakladatel OpenAI) v únoru 2025. Od té doby se stal fenoménem – lidé bez
-                    technického vzdělání vytvářejí funkční weby, hry a nástroje.</p>
-                <p>Pro učitele to znamená: můžete si <strong style="color:#8a2be2">sami vytvořit interaktivní výukový
-                        materiál</strong> – kvízy, procvičování, vzdělávací hry – přesně podle své výuky, svých žáků a
-                    svého ŠVP. Žádné kompromisy s hotovými řešeními.</p>
+                        style="color:var(--text-primary)">nezačínáte psát kód od nuly</strong> – místo toho v přirozeném jazyce
+                    popíšete AI asistentovi, co má vytvořit. AI připraví první verzi kódu, kterou je potřeba otestovat a upravit.</p>
+                <p style="margin-bottom:16px">Pojem <strong style="color:var(--text-primary)">vibe coding</strong> v roce 2025 výrazně
+                    zpopularizoval Andrej Karpathy. Od té doby se rozšířil jako označení pro tvorbu webů, her a nástrojů
+                    pomocí přirozeného jazyka a generativní AI.</p>
+                <p>Pro učitele to znamená: můžete si s pomocí AI <strong style="color:#8a2be2">sami vytvořit interaktivní
+                        výukový materiál</strong> – kvízy, procvičování nebo vzdělávací hry – podle své výuky, svých žáků a
+                    svého ŠVP. Výsledek ale stále potřebujete pedagogicky, funkčně a bezpečnostně zkontrolovat.</p>
             </div>
 
             <!-- 3 kroky -->
@@ -422,8 +426,8 @@
                 <div class="vc-step">
                     <div class="vc-step-number">2</div>
                     <h3>🤖 AI vytvoří</h3>
-                    <p>AI asistent vygeneruje kompletní funkční aplikaci – HTML, CSS, JavaScript. Vy ji jen
-                        zkontrolujete.</p>
+                    <p>AI asistent připraví první verzi aplikace – HTML, CSS a JavaScript. Vy výsledek otestujete,
+                        zkontrolujete a podle potřeby necháte upravit.</p>
                 </div>
                 <div class="vc-step">
                     <div class="vc-step-number">3</div>
@@ -435,7 +439,7 @@
     </section>
 
     <!-- Ukázkový prompt -->
-    <section class="section" style="padding-top:0">
+    <section id="ukazkovy-prompt" class="section" style="padding-top:0">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">✨ Jak vypadá Vibe Coding v praxi?</h2>
@@ -473,8 +477,8 @@
                 <div class="workflow-timeline reveal" style="margin-top:32px">
                     <div class="wf-step">
                         <h4>✅ AI vygeneruje kód</h4>
-                        <p>Za 30–60 sekund máte kompletní funkční aplikaci. Zkopírujete kód, uložíte jako .html soubor a
-                            otevřete v prohlížeči.</p>
+                        <p>První funkční verzi můžete mít během několika minut. Zkopírujete kód, uložíte ho jako .html
+                            soubor a otestujete v prohlížeči.</p>
                     </div>
                     <div class="wf-step">
                         <h4>🔧 Vyladíte detaily</h4>
@@ -495,8 +499,8 @@
     <section class="section" style="padding-top:0">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">🛠️ Nejlepší nástroje pro Vibe Coding</h2>
-                <p class="section-subtitle">Od úplných začátečníků po pokročilé</p>
+                <h2 class="section-title">🛠️ Nástroje pro Vibe Coding</h2>
+                <p class="section-subtitle">Od návrhu rozhraní po práci s celým projektem</p>
             </div>
 
             <div class="tool-grid">
@@ -507,12 +511,13 @@
                         </div>
                         <div>
                             <div class="tool-card-name">Claude Artifacts</div>
-                            <div class="tool-card-sub">Anthropic · Zdarma</div>
+                            <div class="tool-card-sub">Anthropic · Zdarma / placené plány</div>
                         </div>
                     </div>
-                    <div class="tool-card-desc">Nejlepší volba pro začátečníky. Napíšete prompt a Claude rovnou zobrazí
-                        funkční náhled aplikace vedle konverzace. Můžete klikáním testovat přímo v chatu. Výborný v
-                        češtině.</div>
+                    <div class="tool-card-desc">Vhodná volba pro začátečníky. Artifacts jsou samostatné výstupy
+                        (například prototyp, vizualizace nebo jednoduchá aplikace) vedle chatu. Můžete je testovat
+                        přímo v chatu a postupně upravovat. Nejde o plnohodnotný editor pro práci s celým repozitářem;
+                        k tomu slouží Claude Code. Dostupnost funkcí se může lišit podle účtu a plánu.</div>
                     <div style="margin-bottom:12px">
                         <span class="badge badge-purple">Začátečníci</span>
                         <span class="badge badge-mint">Náhled v chatu</span>
@@ -531,19 +536,19 @@
                         </div>
                         <div>
                             <div class="tool-card-name">ChatGPT Canvas</div>
-                            <div class="tool-card-sub">OpenAI · Zdarma / Plus</div>
+                            <div class="tool-card-sub">OpenAI · Dostupnost dle účtu</div>
                         </div>
                     </div>
-                    <div class="tool-card-desc">ChatGPT s funkcí Canvas umí generovat kód s živým náhledem. Skvělý pro
-                        matematické generátory a testovací aplikace. Zvládne i komplexnější projekty s více soubory.
-                    </div>
+                    <div class="tool-card-desc">ChatGPT s funkcí Canvas může pomoci s generováním a úpravami kódu
+                        s náhledem. Hodí se pro matematické generátory, testovací aplikace a iterativní úpravy prototypu.
+                        Rozsah funkcí závisí na aktuálním účtu a plánu.</div>
                     <div style="margin-bottom:12px">
                         <span class="badge badge-green">Univerzální</span>
                         <span class="badge badge-blue">Canvas</span>
                         <span class="badge badge-orange">GPT-4o</span>
                     </div>
                     <div class="tool-card-footer">
-                        <div style="font-size:0.8rem;color:var(--text-muted)">Zdarma · Plus $20/měs</div>
+                        <div style="font-size:0.8rem;color:var(--text-muted)">Bezplatná a placená verze</div>
                         <a href="https://chatgpt.com" target="_blank" class="btn btn-primary btn-sm">Otevřít →</a>
                     </div>
                 </div>
@@ -555,21 +560,21 @@
                         </div>
                         <div>
                             <div class="tool-card-name">Google Gemini</div>
-                            <div class="tool-card-sub">Google · Gemini 3 · Zdarma</div>
+                            <div class="tool-card-sub">Google · Gemini · Dostupnost dle účtu</div>
                         </div>
                     </div>
-                    <div class="tool-card-desc">Gemini 3 vygeneruje kód a zobrazí ho přímo v nástroji
-                        <strong>Canvas</strong> – interaktivním plátně vedle chatu, kde vidíte živý náhled
-                        a můžete aplikaci rovnou testovat a upravovat. Má přístup k internetu pro aktuální data.
-                        Skvěle propojený s Google Workspace pro školy.
+                    <div class="tool-card-desc">Gemini může v <strong>Canvasu</strong> vytvářet, upravovat a zobrazovat
+                        náhled kódu nebo webového prototypu. Aplikaci tak můžete průběžně testovat a upravovat. Přístup
+                        k internetu, dostupnost Canvasu a propojení s dalšími službami se mohou lišit podle účtu, regionu
+                        a plánu.
                     </div>
                     <div style="margin-bottom:12px">
                         <span class="badge badge-blue">Google ekosystém</span>
-                        <span class="badge badge-green">Zdarma</span>
                         <span class="badge badge-gold">Canvas</span>
+                        <span class="badge badge-purple">Prototypy</span>
                     </div>
                     <div class="tool-card-footer">
-                        <div style="font-size:0.8rem;color:var(--text-muted)">Zdarma · Advanced za $20/měs</div>
+                        <div style="font-size:0.8rem;color:var(--text-muted)">Dostupnost a limity dle účtu</div>
                         <a href="https://gemini.google.com" target="_blank" class="btn btn-primary btn-sm">Otevřít
                             →</a>
                     </div>
@@ -584,24 +589,149 @@
                         </div>
                         <div>
                             <div class="tool-card-name">Google AI Studio</div>
-                            <div class="tool-card-sub">Google · Zdarma · Builder</div>
+                            <div class="tool-card-sub">Google · Build mode</div>
                         </div>
                     </div>
-                    <div class="tool-card-desc">Google AI Studio nabízí funkci <strong>Builder</strong>, kde můžete
-                        vizuálně vytvářet interaktivní aplikace přímo v prohlížeči. Ideální pro učitele v Google
-                        Workspace prostředí – stačí popsat, co chcete, a Builder vygeneruje funkční aplikaci s
-                        náhledem. Výhoda: přímé propojení s Gemini modely a možnost sdílení přes Google účet školy.
+                    <div class="tool-card-desc">Google AI Studio v režimu <strong>Build</strong> umožňuje vytvářet
+                        prototypy aplikací pomocí přirozeného jazyka a pracovat s jejich náhledem. Hodí se pro rychlé
+                        experimenty s modely Gemini. Při nasazení nebo použití externích služeb mohou být potřeba další
+                        technické kroky a případně vzniknout další náklady.
                     </div>
                     <div style="margin-bottom:12px">
-                        <span class="badge badge-blue">Google Workspace</span>
-                        <span class="badge badge-green">Zdarma</span>
-                        <span class="badge badge-purple">Vizuální builder</span>
+                        <span class="badge badge-blue">Google AI</span>
+                        <span class="badge badge-purple">Build mode</span>
+                        <span class="badge badge-gold">Prototypování</span>
                         <span class="badge badge-mint">Začátečníci</span>
                     </div>
                     <div class="tool-card-footer">
-                        <div style="font-size:0.8rem;color:var(--text-muted)">⭐ Ideální pro školní Google účty</div>
+                        <div style="font-size:0.8rem;color:var(--text-muted)">⭐ Pro rychlé prototypy</div>
                         <a href="https://aistudio.google.com" target="_blank" class="btn btn-primary btn-sm">Otevřít
                             →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card reveal">
+                    <div class="tool-card-header">
+                        <div class="tool-card-icon"
+                            style="background:linear-gradient(135deg,rgba(0,212,168,0.2),rgba(138,43,226,0.08))">🖥️
+                        </div>
+                        <div>
+                            <div class="tool-card-name">Claude Code</div>
+                            <div class="tool-card-sub">Anthropic · Coding agent</div>
+                        </div>
+                    </div>
+                    <div class="tool-card-desc">Agentní nástroj pro práci s repozitářem v terminálu nebo IDE. Umí číst
+                        projekt, plánovat změny, upravovat soubory a spouštět příkazy nebo testy. Hodí se pro systematické
+                        workflow, ale vyžaduje větší technickou orientaci než Claude Artifacts.</div>
+                    <div style="margin-bottom:12px">
+                        <span class="badge badge-mint">Coding agent</span>
+                        <span class="badge badge-blue">Terminál / IDE</span>
+                        <span class="badge badge-purple">Pokročilé</span>
+                    </div>
+                    <div class="tool-card-footer">
+                        <div style="font-size:0.8rem;color:var(--text-muted)">Pro práci s repozitářem</div>
+                        <a href="https://docs.anthropic.com/en/docs/claude-code/getting-started" target="_blank"
+                            rel="noopener noreferrer" class="btn btn-primary btn-sm">Otevřít →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card reveal">
+                    <div class="tool-card-header">
+                        <div class="tool-card-icon"
+                            style="background:linear-gradient(135deg,rgba(138,43,226,0.2),rgba(66,133,244,0.08))">🚀
+                        </div>
+                        <div>
+                            <div class="tool-card-name">Google Antigravity</div>
+                            <div class="tool-card-sub">Google · Agentní vývojová platforma</div>
+                        </div>
+                    </div>
+                    <div class="tool-card-desc">Agentní vývojová platforma od Googlu, ve které mohou AI agenti pomáhat
+                        s plánováním, tvorbou a ověřováním projektu. Hodí se spíše pro větší nebo techničtější úkoly.
+                        Před přijetím změn vždy zkontrolujte oprávnění, kód a výsledek.</div>
+                    <div style="margin-bottom:12px">
+                        <span class="badge badge-purple">AI agenti</span>
+                        <span class="badge badge-blue">Google</span>
+                        <span class="badge badge-orange">Pokročilé</span>
+                    </div>
+                    <div class="tool-card-footer">
+                        <div style="font-size:0.8rem;color:var(--text-muted)">Pro komplexnější projekty</div>
+                        <a href="https://antigravity.google/" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-primary btn-sm">Otevřít →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card reveal">
+                    <div class="tool-card-header">
+                        <div class="tool-card-icon"
+                            style="background:linear-gradient(135deg,rgba(233,30,140,0.2),rgba(138,43,226,0.08))">🎨
+                        </div>
+                        <div>
+                            <div class="tool-card-name">Google Stitch</div>
+                            <div class="tool-card-sub">Google Labs · Návrh UI</div>
+                        </div>
+                    </div>
+                    <div class="tool-card-desc">Z textového zadání nebo obrázku vytváří návrhy uživatelských rozhraní
+                        a frontendový kód. Je užitečný jako mezikrok mezi nápadem a Vibe Codingem — nejdříve navrhnete
+                        vzhled a potom ho necháte dále zpracovat v kódovacím nástroji.</div>
+                    <div style="margin-bottom:12px">
+                        <span class="badge badge-pink">Design</span>
+                        <span class="badge badge-purple">Frontend kód</span>
+                        <span class="badge badge-orange">Prototypy</span>
+                    </div>
+                    <div class="tool-card-footer">
+                        <div style="font-size:0.8rem;color:var(--text-muted)">Od nápadu k návrhu</div>
+                        <a href="https://stitch.withgoogle.com/" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-primary btn-sm">Otevřít →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card reveal">
+                    <div class="tool-card-header">
+                        <div class="tool-card-icon"
+                            style="background:linear-gradient(135deg,rgba(52,152,219,0.2),rgba(0,212,168,0.08))">⌨️
+                        </div>
+                        <div>
+                            <div class="tool-card-name">Cursor</div>
+                            <div class="tool-card-sub">Cursor · AI code editor</div>
+                        </div>
+                    </div>
+                    <div class="tool-card-desc">Editor kódu, který rozumí celému projektu a umožňuje zadávat úpravy
+                        přirozeným jazykem. Nabízí doplňování, práci s více soubory, agentní režim a kontrolu změn před
+                        jejich přijetím. Vhodnější je pro uživatele, kteří už pracují s lokálním projektem.</div>
+                    <div style="margin-bottom:12px">
+                        <span class="badge badge-blue">AI editor</span>
+                        <span class="badge badge-mint">Celý projekt</span>
+                        <span class="badge badge-purple">Agentní režim</span>
+                    </div>
+                    <div class="tool-card-footer">
+                        <div style="font-size:0.8rem;color:var(--text-muted)">Pro práci s kódem</div>
+                        <a href="https://cursor.com/" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-primary btn-sm">Otevřít →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card reveal">
+                    <div class="tool-card-header">
+                        <div class="tool-card-icon"
+                            style="background:linear-gradient(135deg,rgba(0,212,168,0.2),rgba(52,152,219,0.08))">🧑‍💻
+                        </div>
+                        <div>
+                            <div class="tool-card-name">OpenAI Codex</div>
+                            <div class="tool-card-sub">OpenAI · Coding agent</div>
+                        </div>
+                    </div>
+                    <div class="tool-card-desc">Coding agent pro práci na skutečném projektu. Pomáhá psát, upravovat,
+                        kontrolovat a testovat kód v rámci zadaného úkolu. Je silný pro systematické workflow, ale pro
+                        úplné začátečníky může být vhodnější nejdříve začít s jednodušším nástrojem a jedním HTML souborem.</div>
+                    <div style="margin-bottom:12px">
+                        <span class="badge badge-mint">Coding agent</span>
+                        <span class="badge badge-blue">Testování</span>
+                        <span class="badge badge-purple">Pokročilé</span>
+                    </div>
+                    <div class="tool-card-footer">
+                        <div style="font-size:0.8rem;color:var(--text-muted)">Pro systematické workflow</div>
+                        <a href="https://openai.com/codex/" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-primary btn-sm">Otevřít →</a>
                     </div>
                 </div>
 
@@ -770,7 +900,7 @@
     </section>
 
     <!-- Tipy -->
-    <section class="section" style="padding-top:0">
+    <section id="tipy" class="section" style="padding-top:0">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">🎓 Tipy pro lepší výsledky</h2>
@@ -831,7 +961,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">🌐 Kam umístit hotovou aplikaci?</h2>
-                <p class="section-subtitle">Zdarma hostingové služby pro vaše výukové nástroje</p>
+                <p class="section-subtitle">Možnosti, které mohou být zdarma nebo mají bezplatný limit</p>
             </div>
 
             <div style="overflow-x:auto;max-width:800px;margin:0 auto">
@@ -874,10 +1004,10 @@
                         </tr>
                         <tr>
                             <td style="padding:14px 16px;font-weight:600">📁 Google Drive</td>
-                            <td style="padding:14px 16px"><span class="badge badge-green">Snadné</span></td>
-                            <td style="padding:14px 16px;color:var(--text-secondary)">Zdarma</td>
-                            <td style="padding:14px 16px;color:var(--text-secondary)">Sdílení HTML souboru přímo žákům
-                            </td>
+                            <td style="padding:14px 16px"><span class="badge badge-orange">Omezené</span></td>
+                            <td style="padding:14px 16px;color:var(--text-secondary)">Zdarma pro uložení</td>
+                            <td style="padding:14px 16px;color:var(--text-secondary)">Sdílení souboru; ne spolehlivý
+                                hosting webové aplikace</td>
                         </tr>
                     </tbody>
                 </table>
@@ -897,41 +1027,42 @@
                     <div class="faq-question">Musím umět programovat?
                         <i class="fa-solid fa-chevron-down"></i>
                     </div>
-                    <div class="faq-answer">Ne! To je celý princip Vibe Codingu. Stačí popsat v češtině, co chcete
-                        vytvořit. AI se postará o technickou stránku. Pomáhá ale vědět, jak formulovat požadavky –
-                        viz sekce Tipy výše.</div>
+                    <div class="faq-answer">Ne nutně. Stačí začít popisem v češtině, co chcete vytvořit. AI může
+                        připravit technickou část, ale je užitečné umět výsledek otestovat, popsat chybu a postupně
+                        zpřesňovat požadavky – viz sekce Tipy výše.</div>
                 </div>
                 <div class="faq-item reveal">
                     <div class="faq-question">Je to bezpečné pro školní prostředí?
                         <i class="fa-solid fa-chevron-down"></i>
                     </div>
-                    <div class="faq-answer">Ano – vygenerované aplikace jsou statické HTML soubory, které běží v
-                        prohlížeči žáka. Nesbírají data, nepotřebují registraci a neodesílají nic na server. Jsou
-                        to stejně bezpečné jako jakákoliv jiná webová stránka.</div>
+                    <div class="faq-answer">Záleží na konkrétní aplikaci. Jednoduchý HTML soubor může běžet lokálně
+                        v prohlížeči a nemusí sbírat data, pokud neobsahuje externí služby, analytické skripty nebo
+                        odesílání formulářů. Před sdílením vždy zkontrolujte kód, odkazy, vložené služby a práci s údaji
+                        žáků.</div>
                 </div>
                 <div class="faq-item reveal">
                     <div class="faq-question">Jaký AI nástroj je nejlepší pro začátečníky?
                         <i class="fa-solid fa-chevron-down"></i>
                     </div>
-                    <div class="faq-answer">Doporučujeme <strong>Claude</strong> s funkcí Artifacts – rovnou uvidíte
-                        náhled aplikace vedle chatu. Můžete ji hned testovat a upravovat. Alternativně Gemini,
-                        které má také vestavěný náhled a je propojené s Google účtem školy.</div>
+                    <div class="faq-answer">Pro začátečníky může být praktický <strong>Claude</strong> s funkcí Artifacts,
+                        protože nabízí náhled vedle chatu a umožňuje výsledek průběžně upravovat. Alternativou je Gemini
+                        s funkcí Canvas. Dostupnost a podoba funkcí se mohou lišit podle účtu.</div>
                 </div>
                 <div class="faq-item reveal">
                     <div class="faq-question">Kolik to stojí?
                         <i class="fa-solid fa-chevron-down"></i>
                     </div>
-                    <div class="faq-answer">Základní verze všech zmíněných AI nástrojů jsou <strong>zdarma</strong>.
-                        Claude, ChatGPT i Gemini mají bezplatné verze, které pro Vibe Coding bohatě stačí. Hosting
-                        na Netlify je také zdarma. Celý workflow může být zcela bezplatný.</div>
+                    <div class="faq-answer">Některé nástroje nabízejí bezplatnou verzi nebo bezplatný limit, ale funkce,
+                        kvóty a ceny se mohou měnit. Stejně tak hosting může být zdarma jen v rámci konkrétního limitu.
+                        Před nasazením si proto ověřte aktuální podmínky vybrané služby.</div>
                 </div>
                 <div class="faq-item reveal">
                     <div class="faq-question">Mohu výsledek použít komerčně nebo sdílet s kolegy?
                         <i class="fa-solid fa-chevron-down"></i>
                     </div>
-                    <div class="faq-answer">Ano – kód vygenerovaný AI je váš. Můžete ho volně sdílet, upravovat a
-                        používat. Doporučujeme ale uvést, že byl vytvořen s pomocí AI, v souladu s transparentností
-                        ve vzdělávání.</div>
+                    <div class="faq-answer">Možnost použití závisí na podmínkách konkrétního AI nástroje a na licencích
+                        použitých knihoven, obrázků, písem nebo dalších materiálů. Před zveřejněním ověřte licence,
+                        odstraňte citlivá data a podle potřeby uveďte, že materiál vznikl s pomocí AI.</div>
                 </div>
             </div>
         </div>
@@ -944,7 +1075,8 @@
                 style="background:linear-gradient(135deg,rgba(138,43,226,0.08) 0%,rgba(0,212,168,0.06) 100%);border:1px solid rgba(138,43,226,0.15);border-radius:var(--radius-xl);padding:64px 48px;text-align:center">
                 <h2 style="font-size:1.8rem;font-weight:800;margin-bottom:16px">Připraveni začít? 🚀</h2>
                 <p style="color:var(--text-secondary);max-width:500px;margin:0 auto 28px;line-height:1.7">Otevřete
-                    Claude nebo ChatGPT a napište svůj první prompt. Za 5 minut budete mít funkční výukový nástroj.</p>
+                    jeden z nástrojů a napište svůj první prompt. První verzi můžete vytvořit rychle, ale před sdílením
+                    ji vždy otestujte se skutečným zadáním.</p>
                 <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
                     <a href="https://claude.ai" target="_blank" class="btn btn-primary">🟣 Otevřít Claude</a>
                     <a href="https://chatgpt.com" target="_blank" class="btn btn-secondary">🟢 Otevřít ChatGPT</a>
