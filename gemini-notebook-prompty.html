@@ -41,11 +41,39 @@
             margin-left: auto;
         }
 
+        .gemini-notebook-tool-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .gemini-notebook-tool-links .btn {
+            min-height: 46px;
+        }
+
+        .gemini-notebook-tool-label {
+            margin-top: 24px;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+
         @media (max-width: 520px) {
             .gemini-notebook-prompt-page .prompt-footer .copy-btn {
                 margin-left: 0;
                 width: 100%;
                 justify-content: center;
+            }
+
+            .gemini-notebook-tool-links {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .gemini-notebook-tool-links .btn {
+                width: 100%;
             }
         }
     </style>
@@ -113,6 +141,12 @@
                     <div class="page-hero-stat"><span>📋</span><strong>7</strong> promptů</div>
                     <div class="page-hero-stat"><span>📚</span>Vlastní zdroje</div>
                     <div class="page-hero-stat"><span>🇬🇧</span>Výuka angličtiny</div>
+                </div>
+                <div class="gemini-notebook-tool-label"><span class="gradient-text">Generátory promptů</span></div>
+                <div class="gemini-notebook-tool-links" aria-label="Další nástroje pro Gemini Notebook">
+                    <a href="https://generator-promptu.netlify.app/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">✨ Infografika</a>
+                    <a href="https://promptgenerator-audio-video.netlify.app/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">🎧 Audio Video</a>
+                    <a href="https://ntb-presentation-prompt.netlify.app/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">📊 Prezentace</a>
                 </div>
                 <a href="asistenti.html" class="btn btn-outline btn-sm" style="margin-top:24px">← Zpět na AI asistenty</a>
             </div>
