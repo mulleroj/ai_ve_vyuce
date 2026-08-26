@@ -239,6 +239,73 @@ document.querySelectorAll('.nav-link').forEach(link => {
     if (link.getAttribute('href') === currentPage) link.classList.add('active');
 });
 
+/* ── Latest articles on the home page ── */
+const latestArticlesMount = document.querySelector('#latest-articles');
+if (latestArticlesMount && Array.isArray(window.siteArticles)) {
+    const latestArticles = window.siteArticles
+        .map((article, index) => ({ article, index }))
+        .sort((left, right) => {
+            const leftDate = left.article.date || '';
+            const rightDate = right.article.date || '';
+            return rightDate.localeCompare(leftDate) || left.index - right.index;
+        })
+        .slice(0, 8)
+        .map(item => item.article);
+
+    latestArticlesMount.replaceChildren();
+
+    if (!latestArticles.length) {
+        const emptyState = document.createElement('p');
+        emptyState.className = 'section-subtitle latest-empty';
+        emptyState.textContent = 'Zatím zde nejsou žádné zveřejněné články.';
+        latestArticlesMount.appendChild(emptyState);
+    } else {
+        latestArticles.forEach(article => {
+            const card = document.createElement('article');
+            card.className = 'latest-card';
+
+            const body = document.createElement('div');
+            body.className = 'latest-card-body';
+
+            const tag = document.createElement('div');
+            tag.className = 'latest-card-tag';
+            tag.textContent = `${article.icon || '📰'} ${article.category || 'Článek'}${article.dateLabel ? ` · ${article.dateLabel}` : ''}`;
+
+            const title = document.createElement('a');
+            title.className = 'latest-card-title';
+            title.href = article.href;
+            title.textContent = article.title;
+
+            const description = document.createElement('div');
+            description.className = 'latest-card-desc';
+            description.textContent = article.summary || '';
+
+            body.append(tag, title, description);
+
+            const footer = document.createElement('div');
+            footer.className = 'latest-card-footer';
+
+            const badges = document.createElement('div');
+            badges.className = 'latest-card-badges';
+            (article.tags || []).forEach((tagLabel, tagIndex) => {
+                const badge = document.createElement('span');
+                badge.className = `badge ${tagIndex === 0 ? (article.badgeClass || 'badge-gray') : 'badge-gray'}`;
+                badge.textContent = tagLabel;
+                badges.appendChild(badge);
+            });
+
+            const readLink = document.createElement('a');
+            readLink.className = 'btn btn-mint btn-sm';
+            readLink.href = article.href;
+            readLink.textContent = 'Číst →';
+
+            footer.append(badges, readLink);
+            card.append(body, footer);
+            latestArticlesMount.appendChild(card);
+        });
+    }
+}
+
 /* ── Animated counters ── */
 function animateCounter(el) {
     const target = parseInt(el.dataset.target, 10);

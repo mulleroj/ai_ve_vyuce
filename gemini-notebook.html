@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemini Notebook na webu – AI ve Výuce</title>
+    <meta name="description"
+        content="Průvodce Gemini Notebookem na webu: vlastní zdroje, příprava výuky, studijní materiály a odkaz na oficiální aplikaci." />
+    <link rel="stylesheet" href="css/style.css?v=20260826-gemini-notebook-guide" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .gemini-notebook-guide-page .guide-hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .gemini-notebook-guide-page .guide-grid,
+        .gemini-notebook-guide-page .guide-steps,
+        .gemini-notebook-guide-page .guide-columns {
+            display: grid;
+            gap: 20px;
+        }
+
+        .gemini-notebook-guide-page .guide-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .gemini-notebook-guide-page .guide-card {
+            display: grid;
+            grid-template-columns: 52px minmax(0, 1fr);
+            grid-template-areas:
+                "icon title"
+                "icon text";
+            column-gap: 16px;
+            gap: 14px;
+        }
+
+        .gemini-notebook-guide-page .guide-card-icon {
+            grid-area: icon;
+            display: grid;
+            width: 52px;
+            height: 52px;
+            place-items: center;
+            border-radius: var(--radius-md);
+            background: rgba(245, 166, 35, 0.14);
+            color: var(--accent-gold);
+            font-size: 1.5rem;
+        }
+
+        .gemini-notebook-guide-page .guide-card h3 {
+            grid-area: title;
+            align-self: end;
+        }
+
+        .gemini-notebook-guide-page .guide-card p {
+            grid-area: text;
+        }
+
+        .gemini-notebook-guide-page .guide-card h3,
+        .gemini-notebook-guide-page .guide-step h3,
+        .gemini-notebook-guide-page .guide-panel h3 {
+            font-size: 1.15rem;
+        }
+
+        .gemini-notebook-guide-page .guide-card p,
+        .gemini-notebook-guide-page .guide-step p,
+        .gemini-notebook-guide-page .guide-panel p {
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+
+        .gemini-notebook-guide-page .guide-steps {
+            grid-template-columns: 1fr;
+        }
+
+        .gemini-notebook-guide-page .guide-step {
+            position: relative;
+            display: grid;
+            grid-template-columns: 34px minmax(0, 1fr);
+            grid-template-areas:
+                "number title"
+                "number text";
+            column-gap: 16px;
+            align-items: start;
+            padding: 24px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            background: var(--bg-card);
+        }
+
+        .gemini-notebook-guide-page .guide-step-number {
+            grid-area: number;
+            display: grid;
+            width: 34px;
+            height: 34px;
+            margin-bottom: 20px;
+            place-items: center;
+            border-radius: 50%;
+            background: var(--gradient-gold);
+            color: #0a0f1e;
+            font-weight: 800;
+        }
+
+        .gemini-notebook-guide-page .guide-step h3 {
+            grid-area: title;
+            align-self: end;
+        }
+
+        .gemini-notebook-guide-page .guide-step p {
+            grid-area: text;
+        }
+
+        .gemini-notebook-guide-page .guide-columns {
+            grid-template-columns: 1fr;
+        }
+
+        .gemini-notebook-guide-page .guide-article-list {
+            display: grid;
+            gap: 14px;
+        }
+
+        .gemini-notebook-guide-page .guide-article {
+            display: grid;
+            grid-template-columns: 52px minmax(0, 1fr) auto;
+            grid-template-areas: "icon body link";
+            gap: 18px;
+            align-items: center;
+            padding: 22px 24px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            background: var(--bg-card);
+            transition: var(--transition);
+        }
+
+        .gemini-notebook-guide-page .guide-article:hover {
+            border-color: var(--border-hover);
+            background: var(--bg-card-hover);
+            transform: translateY(-2px);
+        }
+
+        .gemini-notebook-guide-page .guide-article-icon {
+            display: grid;
+            grid-area: icon;
+            width: 52px;
+            height: 52px;
+            place-items: center;
+            border-radius: var(--radius-md);
+            background: rgba(0, 212, 168, 0.12);
+            color: var(--accent-mint);
+            font-size: 1.45rem;
+        }
+
+        .gemini-notebook-guide-page .guide-article-body {
+            grid-area: body;
+            min-width: 0;
+        }
+
+        .gemini-notebook-guide-page .guide-article-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+            margin-bottom: 6px;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+        }
+
+        .gemini-notebook-guide-page .guide-article-meta .badge {
+            font-size: 0.68rem;
+        }
+
+        .gemini-notebook-guide-page .guide-article h3 {
+            margin-bottom: 5px;
+            font-size: 1.18rem;
+        }
+
+        .gemini-notebook-guide-page .guide-article h3 a {
+            transition: color 180ms ease;
+        }
+
+        .gemini-notebook-guide-page .guide-article h3 a:hover,
+        .gemini-notebook-guide-page .guide-article h3 a:focus-visible {
+            color: var(--accent-gold);
+        }
+
+        .gemini-notebook-guide-page .guide-article p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.65;
+        }
+
+        .gemini-notebook-guide-page .guide-article-link {
+            grid-area: link;
+        }
+
+        .gemini-notebook-guide-page .guide-panel {
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .gemini-notebook-guide-page .guide-panel h3 {
+            margin-bottom: 16px;
+        }
+
+        .gemini-notebook-guide-page .guide-panel ul {
+            display: grid;
+            gap: 12px;
+        }
+
+        .gemini-notebook-guide-page .guide-panel li {
+            position: relative;
+            padding-left: 24px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .gemini-notebook-guide-page .guide-panel li::before {
+            position: absolute;
+            left: 0;
+            color: var(--accent-mint);
+            content: '✓';
+            font-weight: 800;
+        }
+
+        .gemini-notebook-guide-page .guide-cta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            margin-top: 32px;
+            padding: 28px;
+            border: 1px solid rgba(245, 166, 35, 0.28);
+            border-radius: var(--radius-lg);
+            background: linear-gradient(135deg, rgba(245, 166, 35, 0.12), rgba(0, 212, 168, 0.06));
+        }
+
+        .gemini-notebook-guide-page .guide-cta h3 {
+            margin-bottom: 6px;
+        }
+
+        .gemini-notebook-guide-page .guide-cta p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 640px) {
+            .gemini-notebook-guide-page .guide-grid,
+            .gemini-notebook-guide-page .guide-steps,
+            .gemini-notebook-guide-page .guide-columns {
+                grid-template-columns: 1fr;
+            }
+
+            .gemini-notebook-guide-page .guide-hero-actions,
+            .gemini-notebook-guide-page .guide-hero-actions .btn,
+            .gemini-notebook-guide-page .guide-cta,
+            .gemini-notebook-guide-page .guide-cta .btn {
+                width: 100%;
+            }
+
+            .gemini-notebook-guide-page .guide-cta {
+                display: block;
+            }
+
+            .gemini-notebook-guide-page .guide-article {
+                grid-template-columns: 44px minmax(0, 1fr);
+                grid-template-areas:
+                    "icon body"
+                    "link link";
+                gap: 14px;
+                padding: 18px;
+            }
+
+            .gemini-notebook-guide-page .guide-article-icon {
+                width: 44px;
+                height: 44px;
+            }
+
+            .gemini-notebook-guide-page .guide-article-link {
+                width: 100%;
+            }
+
+            .gemini-notebook-guide-page .guide-cta .btn {
+                margin-top: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body class="gemini-notebook-guide-page">
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon">🤖</div>AI ve <span>Výuce</span>
+            </a>
+            <div class="nav-links">
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link">📚 Předměty <i class="fa-solid fa-chevron-down"
+                            style="font-size:.65rem"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="matematika.html" class="nav-dropdown-item"><span class="item-icon">🔢</span>
+                            Matematika</a>
+                        <a href="cestina.html" class="nav-dropdown-item"><span class="item-icon">📖</span> Český
+                            jazyk</a>
+                        <a href="anglictina.html" class="nav-dropdown-item"><span class="item-icon">🇬🇧</span>
+                            Anglický jazyk</a>
+                        <a href="prirodoveda.html" class="nav-dropdown-item"><span class="item-icon">🔬</span>
+                            Přírodní vědy</a>
+                        <a href="dejepis.html" class="nav-dropdown-item"><span class="item-icon">🏛️</span> Dějepis</a>
+                    </div>
+                </div>
+                <a href="prompty.html" class="nav-link">✨ Prompty</a>
+                <a href="asistenti.html" class="nav-link active">🤖 AI Asistenti</a>
+                <a href="aktivity.html" class="nav-link">🎯 Aktivity</a>
+                <a href="ai.html" class="nav-link">🧠 AI pro školy</a>
+                <a href="vibe-coding.html" class="nav-link">💻 Vibe Coding</a>
+                <a href="qr-kod.html" class="nav-link">🔳 QR kód</a>
+            </div>
+            <button class="nav-mobile-toggle" aria-label="Otevřít menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu">
+        <a href="index.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏠 Domů</a>
+        <a href="matematika.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔢 Matematika</a>
+        <a href="cestina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">📖 Český jazyk</a>
+        <a href="anglictina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🇬🇧 Angličtina</a>
+        <a href="prirodoveda.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔬 Přírodní vědy</a>
+        <a href="dejepis.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏛️ Dějepis</a>
+        <a href="prompty.html" class="nav-link" style="font-size:1rem;padding:14px 16px">✨ Prompty</a>
+        <a href="asistenti.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🤖 Asistenti</a>
+        <a href="aktivity.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🎯 Aktivity</a>
+        <a href="ai.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🧠 AI pro školy</a>
+        <a href="vibe-coding.html" class="nav-link" style="font-size:1rem;padding:14px 16px">💻 Vibe Coding</a>
+        <a href="qr-kod.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔳 QR kód</a>
+    </div>
+
+    <section class="page-hero" style="background:linear-gradient(135deg,#0a0f1e 0%,#1b1205 100%)">
+        <div class="page-hero-glow"
+            style="background:radial-gradient(ellipse,rgba(245,166,35,0.16) 0%,transparent 70%)"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="page-hero-icon"
+                    style="background:linear-gradient(135deg,rgba(245,166,35,0.2),rgba(245,166,35,0.05))">📓</div>
+                <div class="section-label">AI asistent pro práci se zdroji</div>
+                <h1 class="page-hero-title">Gemini <span class="gradient-text">Notebook</span></h1>
+                <p class="page-hero-subtitle">Webový prostor, ve kterém můžete pracovat s vlastními materiály, ptát se nad nimi a připravovat z nich výukové podklady.</p>
+                <div class="page-hero-stats">
+                    <div class="page-hero-stat"><span>📚</span>Vlastní zdroje</div>
+                    <div class="page-hero-stat"><span>🧠</span>Výzkum a učení</div>
+                    <div class="page-hero-stat"><span>🌐</span>Webová aplikace</div>
+                </div>
+                <div class="guide-hero-actions">
+                    <a href="https://notebooklm.google.com/" class="btn btn-primary btn-lg" target="_blank"
+                        rel="noopener noreferrer">Otevřít Gemini Notebook →</a>
+                    <a href="asistenti.html" class="btn btn-outline btn-lg">← Zpět na AI asistenty</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="section" aria-labelledby="co-je-gemini-notebook">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <div class="section-label">Než začnete</div>
+                        <h2 class="section-title" id="co-je-gemini-notebook">Co je Gemini Notebook?</h2>
+                    </div>
+                    <p class="section-subtitle">Gemini Notebook je nové označení pro samostatný nástroj NotebookLM, zaměřený na práci s učením, výzkumem a vlastními zdroji.</p>
+                </div>
+
+                <div class="guide-grid">
+                    <article class="assistant-card guide-card reveal">
+                        <div class="guide-card-icon">📥</div>
+                        <h3>Vložte vlastní podklady</h3>
+                        <p>Do jednoho notebooku můžete soustředit například PDF, dokumenty, prezentace, poznámky nebo webové zdroje k jednomu tématu.</p>
+                    </article>
+                    <article class="assistant-card guide-card reveal">
+                        <div class="guide-card-icon">🔎</div>
+                        <h3>Ptejte se nad zdroji</h3>
+                        <p>Nechte si vysvětlit obtížnou část, najít klíčové myšlenky nebo porovnat informace. U odpovědí sledujte oporu v konkrétních zdrojích.</p>
+                    </article>
+                    <article class="assistant-card guide-card reveal">
+                        <div class="guide-card-icon">🧩</div>
+                        <h3>Připravujte výstupy</h3>
+                        <p>Z jednoho souboru materiálů můžete postupně vytvořit shrnutí, poznámky, otázky, studijní podklady nebo návrh aktivity.</p>
+                    </article>
+                </div>
+
+                <div class="info-box reveal" style="margin-top:32px">
+                    <span class="info-box-icon">💡</span>
+                    <div class="info-box-text"><strong>Jednoduchá myšlenka:</strong> Nezačínejte otázkou „Co všechno AI umí?“. Začněte tématem a kvalitními zdroji, které chcete společně projít.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background:rgba(13,21,48,0.38)" aria-labelledby="clanky-gemini-notebook">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <div class="section-label">Články v systému webu</div>
+                        <h2 class="section-title" id="clanky-gemini-notebook">Články o Gemini Notebooku</h2>
+                    </div>
+                    <p class="section-subtitle">Vybrané novinky, návody a workflow, které na webu AI ve Výuce rozvíjejí práci s Gemini Notebookem.</p>
+                </div>
+
+                <div class="guide-article-list">
+                    <article class="guide-article reveal">
+                        <div class="guide-article-icon">🧭</div>
+                        <div class="guide-article-body">
+                            <div class="guide-article-meta"><span>Praktický návod · 26. srpna 2026</span><span class="badge badge-blue">Gemini Notebook</span></div>
+                            <h3><a href="ai-navod-gemini-notebook-priprava.html">7 promptů pro Gemini Notebook: kompletní příprava na výuku</a></h3>
+                            <p>Jak z jedné sady materiálů vytvořit plán hodiny, aktivity, diferenciaci, test a audio přehled.</p>
+                        </div>
+                        <a href="ai-navod-gemini-notebook-priprava.html" class="btn btn-secondary btn-sm guide-article-link">Číst návod →</a>
+                    </article>
+
+                    <article class="guide-article reveal">
+                        <div class="guide-article-icon">📓</div>
+                        <div class="guide-article-body">
+                            <div class="guide-article-meta"><span>Praktický návod · 26. srpna 2026</span><span class="badge badge-blue">Gemini Notebook</span></div>
+                            <h3><a href="ai-navod-gemini-notebook-vyuka.html">Gemini Notebook ve výuce: interaktivní studijní prostředí</a></h3>
+                            <p>Jak z učebních materiálů vytvořit přehledy, kartičky, kvízy, audio, video a další cesty k učení.</p>
+                        </div>
+                        <a href="ai-navod-gemini-notebook-vyuka.html" class="btn btn-secondary btn-sm guide-article-link">Číst návod →</a>
+                    </article>
+
+                    <article class="guide-article reveal">
+                        <div class="guide-article-icon">🧩</div>
+                        <div class="guide-article-body">
+                            <div class="guide-article-meta"><span>Novinka · 24. srpna 2026</span><span class="badge badge-blue">Gemini Notebook</span></div>
+                            <h3><a href="ai-novinka-gemini-notebook-sablona.html">Gemini Notebook jako výuková šablona</a></h3>
+                            <p>Jak z jedné učitelské přípravy vytvořit opakovaně použitelný AI studijní balíček pro studenty.</p>
+                        </div>
+                        <a href="ai-novinka-gemini-notebook-sablona.html" class="btn btn-secondary btn-sm guide-article-link">Číst článek →</a>
+                    </article>
+
+                    <article class="guide-article reveal">
+                        <div class="guide-article-icon">✦</div>
+                        <div class="guide-article-body">
+                            <div class="guide-article-meta"><span>Praktický návod · 23. srpna 2026</span><span class="badge badge-blue">Gemini Notebook</span></div>
+                            <h3><a href="ai-navod-gemini-notebook-infografiky.html">7 promptů pro Gemini Notebook: přehledné infografiky</a></h3>
+                            <p>Jak z učebnic, prezentací a poznámek připravit infografiky pro gramatiku, slovní zásobu, četbu i celou lekci.</p>
+                        </div>
+                        <a href="ai-navod-gemini-notebook-infografiky.html" class="btn btn-secondary btn-sm guide-article-link">Číst návod →</a>
+                    </article>
+
+                    <article class="guide-article reveal">
+                        <div class="guide-article-icon">🔎</div>
+                        <div class="guide-article-body">
+                            <div class="guide-article-meta"><span>Workflow pro učitele · 26. srpna 2026</span><span class="badge badge-blue">Gemini Notebook</span></div>
+                            <h3><a href="ai-workflow-10-promptu-gemini.html">10 promptů pro Gemini Notebook, které mohou učiteli ušetřit hodiny práce</a></h3>
+                            <p>Praktický postup od práce s více zdroji přes ověření a tvorbu materiálů až po kritickou kontrolu.</p>
+                        </div>
+                        <a href="ai-workflow-10-promptu-gemini.html" class="btn btn-secondary btn-sm guide-article-link">Číst článek →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background:rgba(13,21,48,0.38)" aria-labelledby="jak-zacit">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <div class="section-label">První notebook</div>
+                        <h2 class="section-title" id="jak-zacit">Jak začít na webu</h2>
+                    </div>
+                    <p class="section-subtitle">Postup je jednoduchý. Důležité je držet v jednom notebooku materiály, které patří k tématu.</p>
+                </div>
+
+                <div class="guide-steps">
+                    <article class="guide-step reveal">
+                        <div class="guide-step-number">1</div>
+                        <h3>Otevřete web</h3>
+                        <p>Přejděte na <a href="https://notebooklm.google.com/" target="_blank" rel="noopener noreferrer" style="color:var(--accent-gold);font-weight:700">notebooklm.google.com</a> a přihlaste se účtem Google.</p>
+                    </article>
+                    <article class="guide-step reveal">
+                        <div class="guide-step-number">2</div>
+                        <h3>Vytvořte notebook</h3>
+                        <p>Zvolte jedno téma, předmět nebo projekt. Jasné vymezení pomůže udržet práci přehlednou.</p>
+                    </article>
+                    <article class="guide-step reveal">
+                        <div class="guide-step-number">3</div>
+                        <h3>Přidejte zdroje</h3>
+                        <p>Nahrajte nebo připojte podklady, ze kterých má notebook při odpovědích vycházet.</p>
+                    </article>
+                    <article class="guide-step reveal">
+                        <div class="guide-step-number">4</div>
+                        <h3>Ptejte se a ověřujte</h3>
+                        <p>Začněte shrnutím, pokračujte otázkami a každý důležitý výstup zkontrolujte proti materiálům.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="vyuziti-ve-vyuce">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <div class="section-label">Pro učitele</div>
+                        <h2 class="section-title" id="vyuziti-ve-vyuce">Kde může pomoci ve výuce</h2>
+                    </div>
+                    <p class="section-subtitle">Gemini Notebook dává největší smysl jako pracovní prostředí nad konkrétními zdroji, ne jako náhrada učitelova rozhodování.</p>
+                </div>
+
+                <div class="guide-columns">
+                    <div class="guide-panel reveal">
+                        <h3>Praktické použití</h3>
+                        <ul>
+                            <li>rychlá orientace v učebnici, metodice nebo sadě podkladů,</li>
+                            <li>příprava zápisu, shrnutí a výkladu pro konkrétní ročník,</li>
+                            <li>tvorba otázek, kvízů a podkladů pro opakování,</li>
+                            <li>převod stejného obsahu do jednodušší nebo rozšířené varianty.</li>
+                        </ul>
+                    </div>
+                    <div class="guide-panel reveal">
+                        <h3>Na co nezapomenout</h3>
+                        <ul>
+                            <li>ověřte důležitá tvrzení a výpočty proti původním materiálům,</li>
+                            <li>upozorněte na rozpory nebo mezery ve zdrojích,</li>
+                            <li>osobní údaje žáků před vložením anonymizujte,</li>
+                            <li>výstup AI před použitím ve třídě upravte a schvalte jako učitel.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="guide-cta reveal">
+                    <div>
+                        <h3>Chcete rovnou začít s připravenými zadáními?</h3>
+                        <p>Na stránce s prompty najdete šablony pro infografiky, slovní zásobu, četbu, poslech, psaní, mluvení i celou lekci.</p>
+                    </div>
+                    <a href="gemini-notebook-prompty.html" class="btn btn-secondary">Zobrazit prompty →</a>
+                </div>
+
+                <div class="guide-cta reveal" style="margin-top:20px">
+                    <div>
+                        <h3>Jste připraveni otevřít skutečný nástroj?</h3>
+                        <p>Odkaz vede na oficiální web Gemini Notebook. Otevře se v nové záložce.</p>
+                    </div>
+                    <a href="https://notebooklm.google.com/" class="btn btn-primary" target="_blank"
+                        rel="noopener noreferrer">Otevřít Gemini Notebook →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <span>© 2026 AI ve Výuce · Gemini Notebook</span>
+                <a href="asistenti.html">← Zpět na AI asistenty</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

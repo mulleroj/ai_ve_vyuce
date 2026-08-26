@@ -60,6 +60,73 @@
             letter-spacing: 0.04em;
         }
 
+        .gemini-notebook-prompt-page .prompt-collection-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 28px 0 12px;
+        }
+
+        .gemini-notebook-prompt-page .prompt-collection-nav a {
+            padding: 10px 14px;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .gemini-notebook-prompt-page .prompt-collection-nav a:hover,
+        .gemini-notebook-prompt-page .prompt-collection-nav a:focus-visible {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        .gemini-notebook-prompt-page .prompt-collection-heading {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 20px;
+            margin: 48px 0 20px;
+            padding-top: 28px;
+            border-top: 1px solid var(--border);
+        }
+
+        .gemini-notebook-prompt-page .prompt-collection-heading h3 {
+            margin: 0;
+            color: var(--text-primary);
+            font-family: 'Outfit', system-ui, sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            letter-spacing: -0.04em;
+        }
+
+        .gemini-notebook-prompt-page .prompt-collection-heading p {
+            max-width: 480px;
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            text-align: right;
+        }
+
+        .gemini-notebook-prompt-page .prompt-collection-heading p a {
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        @media (max-width: 640px) {
+            .gemini-notebook-prompt-page .prompt-collection-heading {
+                display: block;
+            }
+
+            .gemini-notebook-prompt-page .prompt-collection-heading p {
+                margin-top: 10px;
+                text-align: left;
+            }
+        }
+
         @media (max-width: 520px) {
             .gemini-notebook-prompt-page .prompt-footer .copy-btn {
                 margin-left: 0;
@@ -139,9 +206,9 @@
                 <p class="page-hero-subtitle">Připravená zadání pro práci s učebnicemi, prezentacemi, poznámkami a dalšími
                     vlastními výukovými materiály.</p>
                 <div class="page-hero-stats">
-                    <div class="page-hero-stat"><span>📋</span><strong>7</strong> promptů</div>
+                    <div class="page-hero-stat"><span>📋</span><strong>28</strong> promptů</div>
                     <div class="page-hero-stat"><span>📚</span>Vlastní zdroje</div>
-                    <div class="page-hero-stat"><span>🇬🇧</span>Výuka angličtiny</div>
+                    <div class="page-hero-stat"><span>🧩</span>3 kolekce</div>
                 </div>
                 <div class="gemini-notebook-tool-label"><span class="gradient-text">Generátory promptů</span></div>
                 <div class="gemini-notebook-tool-links" aria-label="Další nástroje pro Gemini Notebook">
@@ -158,11 +225,22 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">🧩 Prompty pro práci s vlastními materiály</h2>
-                <p class="section-subtitle">Začínáme prompty pro infografiky; stránku můžeme postupně rozšířit o další typy zadání.</p>
+                <p class="section-subtitle">28 kopírovatelných promptů sesbíraných ze tří článků o Gemini Notebooku: infografiky, kompletní příprava výuky a práce s více zdroji.</p>
             </div>
 
             <div class="info-box reveal" style="margin-bottom:32px">
                 <strong>Tip pro přesnější výsledek:</strong> V každém promptu je důležité pravidlo, aby Gemini Notebook čerpal pouze z nahraných zdrojů. Díky tomu si nedoplňuje vlastní pravidla, příklady ani slovní zásobu.
+            </div>
+
+            <nav class="prompt-collection-nav" aria-label="Kolekce promptů">
+                <a href="#infografiky">Infografiky · 11</a>
+                <a href="#priprava-vyuky">Příprava výuky · 7</a>
+                <a href="#workflow-zdroje">Workflow se zdroji · 10</a>
+            </nav>
+
+            <div class="prompt-collection-heading" id="infografiky">
+                <h3>1. Infografiky a jejich nastavení</h3>
+                <p>Prompty z článku <a href="ai-navod-gemini-notebook-infografiky.html">7 promptů pro Gemini Notebook: přehledné infografiky →</a></p>
             </div>
 
             <div class="prompt-grid">
@@ -474,6 +552,170 @@ Pokud by bylo informací příliš mnoho, raději méně důležité části vyn
 
 Nepřidávej žádné informace, vysvětlení ani příklady, které nejsou doloženy zdroji tohoto notebooku.</div>
                     <div class="prompt-footer"><span class="badge badge-purple">Mapa lekce</span><button class="copy-btn">📋 Kopírovat</button></div>
+                </div>
+
+                <div class="prompt-card reveal" data-subject="gemini-notebook">
+                    <div class="prompt-header">
+                        <div>
+                            <div class="prompt-title">8. Nastavení pro začátečníky</div>
+                            <div class="prompt-lead">Doplňující řádek pro jednodušší jazyk a kratší vysvětlení.</div>
+                            <div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><span class="badge badge-mint">Gemini Notebook</span><span class="badge badge-gold">Úroveň</span></div>
+                        </div>
+                    </div>
+                    <div class="prompt-body">Žáci jsou začátečníci. Používej maximálně krátké věty a jednoduchou slovní zásobu. Nevysvětluj jeden pojem pomocí dalšího obtížného anglického pojmu.</div>
+                    <div class="prompt-footer"><span class="badge badge-gold">Začátečníci</span><button class="copy-btn">📋 Kopírovat</button></div>
+                </div>
+
+                <div class="prompt-card reveal" data-subject="gemini-notebook">
+                    <div class="prompt-header">
+                        <div>
+                            <div class="prompt-title">9. Nastavení pro české žáky</div>
+                            <div class="prompt-lead">Oddělení českých vysvětlení od cílové angličtiny.</div>
+                            <div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><span class="badge badge-mint">Gemini Notebook</span><span class="badge badge-blue">Jazyk</span></div>
+                        </div>
+                    </div>
+                    <div class="prompt-body">Vysvětlení a instrukce piš česky. Cílovou anglickou slovní zásobu, fráze a modelové věty ponechávej v angličtině.</div>
+                    <div class="prompt-footer"><span class="badge badge-blue">Čeští žáci</span><button class="copy-btn">📋 Kopírovat</button></div>
+                </div>
+
+                <div class="prompt-card reveal" data-subject="gemini-notebook">
+                    <div class="prompt-header">
+                        <div>
+                            <div class="prompt-title">10. Nastavení pro žáky se SPU</div>
+                            <div class="prompt-lead">Přehlednější struktura, kratší bloky a méně dekorací.</div>
+                            <div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><span class="badge badge-mint">Gemini Notebook</span><span class="badge badge-purple">Přístupnost</span></div>
+                        </div>
+                    </div>
+                    <div class="prompt-body">Minimalizuj množství souvislého textu. Používej krátké bloky, jasné členění, dostatek vizuálního prostoru a zvýrazni pouze skutečně důležité informace. Nevkládej dekorativní prvky, které neslouží porozumění.</div>
+                    <div class="prompt-footer"><span class="badge badge-purple">SPU</span><button class="copy-btn">📋 Kopírovat</button></div>
+                </div>
+
+                <div class="prompt-card reveal" data-subject="gemini-notebook">
+                    <div class="prompt-header">
+                        <div>
+                            <div class="prompt-title">11. Nastavení pro tisk</div>
+                            <div class="prompt-lead">Jednostránkový materiál čitelný po vytištění na A4.</div>
+                            <div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><span class="badge badge-mint">Gemini Notebook</span><span class="badge badge-orange">Tisk</span></div>
+                        </div>
+                    </div>
+                    <div class="prompt-body">Navrhni infografiku jako přehledný jednostránkový materiál vhodný k tisku na A4. Text musí zůstat dobře čitelný i po vytištění.</div>
+                    <div class="prompt-footer"><span class="badge badge-orange">A4</span><button class="copy-btn">📋 Kopírovat</button></div>
+                </div>
+            </div>
+
+            <div class="prompt-collection-heading" id="priprava-vyuky">
+                <h3>2. Kompletní příprava na výuku</h3>
+                <p>Prompty z článku <a href="ai-navod-gemini-notebook-priprava.html">7 promptů pro Gemini Notebook: kompletní příprava na výuku →</a></p>
+            </div>
+
+            <div class="prompt-grid">
+                <div class="prompt-card reveal" data-subject="gemini-notebook">
+                    <div class="prompt-header"><div><div class="prompt-title">12. Kompletní plán vyučovací hodiny</div><div class="prompt-lead">Cíle, postup, procvičování, práce žáků a závěr v jednom návrhu.</div><div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><span class="badge badge-mint">Gemini Notebook</span><span class="badge badge-blue">Plán hodiny</span></div></div></div>
+                    <div class="prompt-body">Používej pouze výukové materiály, které jsem nahrál/a. Vytvoř kompletní plán vyučovací hodiny připravený k okamžitému použití ve třídě na téma <strong>[doplň předmět/téma]</strong>.<br /><br />Přizpůsob hodinu studentům ve věku <strong>[doplň věkovou skupinu]</strong>, na úrovni <strong>[doplň ročník nebo úroveň znalostí]</strong> a délce vyučovací hodiny <strong>[doplň čas]</strong>.<br /><br />Zahrň jasně formulované vzdělávací cíle, úvodní aktivitu, postup výuky krok za krokem, řízené procvičování, samostatnou nebo skupinovou práci, průběžnou kontrolu porozumění a závěrečnou aktivitu.<br /><br />Doporuč vhodné výukové strategie a u každé části uveď potřebné pomůcky a materiály. Uspořádej hodinu do jasné posloupnosti a navrhni časovou dotaci jednotlivých částí.<br /><br />Zajisti, aby všechny aktivity přímo podporovaly stanovené vzdělávací cíle.<br /><br /><strong>Nevkládej žádný obsah, který není podložen mými nahranými materiály.</strong></div>
+                    <div class="prompt-footer"><span class="badge badge-blue">Příprava hodiny</span><button class="copy-btn">📋 Kopírovat</button></div>
+                </div>
+
+                <div class="prompt-card reveal" data-subject="gemini-notebook">
+                    <div class="prompt-header"><div><div class="prompt-title">13. Vysvětlení obtížného učiva</div><div class="prompt-lead">Rozložení pojmu do kroků, příkladů a kontrolních otázek.</div><div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><span class="badge badge-mint">Gemini Notebook</span><span class="badge badge-purple">Vysvětlení</span></div></div></div>
+                    <div class="prompt-body">Používej pouze výukové materiály, které jsem nahrál/a. Vytvoř jasné a pro studenty srozumitelné vysvětlení pojmu <strong>[doplň pojem]</strong> pro studenty ve věku <strong>[doplň věkovou skupinu]</strong> na úrovni <strong>[doplň ročník nebo úroveň znalostí]</strong>.<br /><br />Rozděl vysvětlení do jednoduchých a zvládnutelných kroků, ale zachovej správný význam daného pojmu.<br /><br />Použij vhodné příklady, přirovnání, analogie a návrhy vizuálního vysvětlení, pokud jsou podloženy nahranými materiály.<br /><br />Předvídej nejčastější chyby, mylné představy nebo části, které mohou studentům působit problémy. Vysvětli, jak je mohu ve výuce řešit.<br /><br />Přidej několik otázek, pomocí kterých mohu ověřit, zda studenti látce skutečně porozuměli.<br /><br /><strong>Nevkládej žádný obsah, který není podložen mými nahranými materiály.</strong></div>
+                    <div class="prompt-footer"><span class="badge badge-purple">Osobní tutor</span><button class="copy-btn">📋 Kopírovat</button></div>
+                </div>
+
+                <div class="prompt-card reveal" data-subject="gemini-notebook">
+                    <div class="prompt-header"><div><div class="prompt-title">14. Výukové aktivity do hodiny</div><div class="prompt-lead">Individuální práce, dvojice, skupiny a ověření porozumění.</div><div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><span class="badge badge-mint">Gemini Notebook</span><span class="badge badge-green">Aktivity</span></div></div></div>
+                    <div class="prompt-body">Používej pouze výukové materiály, které jsem nahrál/a. Vytvoř poutavé výukové aktivity na téma <strong>[doplň předmět/téma]</strong> vhodné pro studenty ve věku <strong>[doplň věkovou skupinu]</strong> na úrovni <strong>[doplň ročník nebo úroveň znalostí]</strong>.<br /><br />Navrhni aktivity, které studenty aktivně zapojí do pochopení učiva, procvičování a praktického použití klíčových pojmů a znalostí z nahraných materiálů.<br /><br />Podle potřeby vytvoř vyváženou kombinaci individuální práce, práce ve dvojicích a skupinové práce.<br /><br />U každé aktivity uveď jasné instrukce, vzdělávací cíl, doporučený čas a potřebné materiály nebo pomůcky.<br /><br />Zařaď možnosti pro diskusi, řešení problémů, spolupráci a praktické použití učiva.<br /><br />Po každé aktivitě navrhni jednoduchý způsob, jak ověřit porozumění studentů.<br /><br /><strong>Nevkládej žádný obsah, který není podložen mými nahranými materiály.</strong></div>
+                    <div class="prompt-footer"><span class="badge badge-green">Aktivní výuka</span><button class="copy-btn">📋 Kopírovat</button></div>
+                </div>
+
+                <div class="prompt-card reveal" data-subject="gemini-notebook">
+                    <div class="prompt-header"><div><div class="prompt-title">15. Diferenciace výuky</div><div class="prompt-lead">Tři varianty pro podporu, očekávanou úroveň a větší výzvu.</div><div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><span class="badge badge-mint">Gemini Notebook</span><span class="badge badge-orange">Diferenciace</span></div></div></div>
+                    <div class="prompt-body">Používej pouze výukové materiály, které jsem nahrál/a. Uprav vyučovací hodinu na téma <strong>[doplň předmět/téma]</strong> pro studenty ve věku <strong>[doplň věkovou skupinu]</strong> s různou úrovní připravenosti a schopností.<br /><br />Vytvoř diferencované varianty aktivit pro:<br /><br />1. studenty, kteří potřebují větší podporu,<br />2. studenty pracující na očekávané úrovni,<br />3. studenty připravené na náročnější úkoly.<br /><br />U jednotlivých variant uprav obtížnost, míru podpory, instrukce, úkoly a očekávané výsledky.<br /><br />Všichni studenti však musí pracovat na stejných hlavních vzdělávacích cílech.<br /><br />Zahrň praktické podpůrné strategie, rozšiřující aktivity a vhodné způsoby ověřování porozumění pro každou skupinu.<br /><br />Navrhni diferenciaci tak, aby byla <strong>reálně zvládnutelná jedním učitelem v jedné třídě</strong>.<br /><br /><strong>Nevkládej žádný obsah, který není podložen mými nahranými materiály.</strong></div>
+                    <div class="prompt-footer"><span class="badge badge-orange">3 úrovně</span><button class="copy-btn">📋 Kopírovat</button></div>
+                </div>
+
+                <div class="prompt-card reveal" data-subject="gemini-notebook">
+                    <div class="prompt-header"><div><div class="prompt-title">16. Odhalení mezer ve znalostech</div><div class="prompt-lead">Diagnostika obtížných míst, signálů a cílené podpory.</div><div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><span class="badge badge-mint">Gemini Notebook</span><span class="badge badge-purple">Diagnostika</span></div></div></div>
+                    <div class="prompt-body">Používej pouze výukové materiály, které jsem nahrál/a. Analyzuj obsah tématu <strong>[doplň předmět/téma]</strong> pro studenty ve věku <strong>[doplň věkovou skupinu]</strong> na úrovni <strong>[doplň ročník nebo úroveň znalostí]</strong>.<br /><br />Identifikuj pojmy, potřebné předchozí znalosti, dovednosti nebo souvislosti mezi tématy, které mohou studenti obtížně chápat, špatně pochopit nebo si je nedostatečně osvojit.<br /><br />U každé možné mezery vysvětli:<br />• proč může studentům způsobovat problémy,<br />• jaké signály mám sledovat v jejich odpovědích nebo výkonu,<br />• jaké cílené výukové strategie mohu použít,<br />• jaké podpůrné aktivity mohu zařadit,<br />• jakými otázkami mohu problém diagnostikovat.<br /><br />Upřednostni zejména mezery, které mohou negativně ovlivnit pochopení následujícího učiva.<br /><br />U každé mezery navrhni také praktický způsob, jak ověřit, zda již byla úspěšně odstraněna.<br /><br /><strong>Nevkládej žádný obsah, který není podložen mými nahranými materiály.</strong></div>
+                    <div class="prompt-footer"><span class="badge badge-purple">Mezery ve znalostech</span><button class="copy-btn">📋 Kopírovat</button></div>
+                </div>
+
+                <div class="prompt-card reveal" data-subject="gemini-notebook">
+                    <div class="prompt-header"><div><div class="prompt-title">17. Test nebo jiné hodnocení</div><div class="prompt-lead">Otázky, bodování, klíč správných odpovědí a kritéria hodnocení.</div><div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><span class="badge badge-mint">Gemini Notebook</span><span class="badge badge-blue">Hodnocení</span></div></div></div>
+                    <div class="prompt-body">Používej pouze výukové materiály, které jsem nahrál/a. Vytvoř komplexní hodnocení nebo test na téma <strong>[doplň předmět/téma]</strong> vhodný pro studenty ve věku <strong>[doplň věkovou skupinu]</strong> na úrovni <strong>[doplň ročník nebo úroveň znalostí]</strong>.<br /><br />Vytvoř vyváženou kombinaci otázek a úloh, které ověřují znalosti, porozumění, aplikaci znalostí a vyšší úrovně myšlení tam, kde je to vhodné.<br /><br />Zařaď otázky s výběrem odpovědi, otázky s krátkou odpovědí, aplikační úlohy a otázky vyžadující rozsáhlejší odpověď.<br /><br />Uveď jasné instrukce a doporučené bodové hodnocení jednotlivých částí.<br /><br />Každou otázku propojuj s hlavními vzdělávacími cíli a obsahem nahraných materiálů.<br /><br />Přidej kompletní klíč správných odpovědí, vzorové odpovědi, kritéria hodnocení a stručný návod, jak výsledky studentů interpretovat.<br /><br /><strong>Nevkládej žádný obsah, který není podložen mými nahranými materiály.</strong></div>
+                    <div class="prompt-footer"><span class="badge badge-blue">Test a klíč</span><button class="copy-btn">📋 Kopírovat</button></div>
+                </div>
+
+                <div class="prompt-card reveal" data-subject="gemini-notebook">
+                    <div class="prompt-header"><div><div class="prompt-title">18. Audio studijní zdroj</div><div class="prompt-lead">Audio Overview pro učení, opakování a upevňování učiva.</div><div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><span class="badge badge-mint">Gemini Notebook</span><span class="badge badge-orange">Audio</span></div></div></div>
+                    <div class="prompt-body">Používej pouze výukové materiály, které jsem nahrál/a. Vytvoř poutavý <strong>Audio Overview</strong> na téma <strong>[doplň předmět/téma]</strong> vhodný pro studenty ve věku <strong>[doplň věkovou skupinu]</strong> na úrovni <strong>[doplň ročník nebo úroveň znalostí]</strong>.<br /><br />Přeměň hlavní obsah materiálů na jasnou a studentům srozumitelnou zvukovou diskusi, kterou mohou využít při učení nové látky, opakování nebo upevňování učiva.<br /><br />Zaměř se na nejdůležitější pojmy, vysvětlení, příklady a souvislosti mezi jednotlivými myšlenkami.<br /><br />Uspořádej obsah do logické posloupnosti tak, aby mu bylo možné snadno porozumět pouze poslechem.<br /><br />Přizpůsob jazyk a hloubku vysvětlení věku a úrovni studentů.<br /><br />Zdůrazni hlavní informace, kterým by studenti měli porozumět a které by si měli zapamatovat.<br /><br />Audio udržuj soustředěné, poutavé a vhodné pro samostatný poslech před vyučovací hodinou nebo po ní.<br /><br /><strong>Nevkládej žádný obsah, který není podložen mými nahranými materiály.</strong></div>
+                    <div class="prompt-footer"><span class="badge badge-orange">Audio Overview</span><button class="copy-btn">📋 Kopírovat</button></div>
+                </div>
+            </div>
+
+            <div class="prompt-collection-heading" id="workflow-zdroje">
+                <h3>3. Workflow pro práci se zdroji</h3>
+                <p>Prompty z článku <a href="ai-workflow-10-promptu-gemini.html">10 promptů pro Gemini Notebook →</a></p>
+            </div>
+
+            <div class="prompt-grid">
+                <div class="prompt-card reveal" data-subject="gemini-notebook">
+                    <div class="prompt-header"><div><div class="prompt-title">19. Srozumitelné shrnutí pro žáky</div><div class="prompt-lead">Rychlá orientace ve zdrojích a základ pro zápis nebo opakování.</div><div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><span class="badge badge-mint">Gemini Notebook</span><span class="badge badge-blue">Shrnutí</span></div></div></div>
+                    <div class="prompt-body">Prostuduj zdroje vložené v tomto notebooku k tématu <strong>[téma]</strong> a vytvoř z nich srozumitelné shrnutí pro <strong>[ročník / věk / úroveň žáků]</strong>.<br /><br />Zahrň:<br />• hlavní smysl tématu,<br />• 5 nejdůležitějších myšlenek,<br />• jednoduché vysvětlení každé z nich,<br />• důležitá fakta a příklady,<br />• klíčové pojmy s jednoduchou definicí,<br />• část <strong>„Co si z toho má žák zapamatovat“</strong>.<br /><br />Nepoužívej zbytečně odborný jazyk. Pokud je odborný termín nutný, okamžitě jej vysvětli jednoduchými slovy.<br /><br />Pracuj pouze s informacemi obsaženými ve zdrojích notebooku. U důležitých tvrzení uveď odkaz na příslušný zdroj.</div>
+                    <div class="prompt-footer"><span class="badge badge-blue">Orientace</span><button class="copy-btn">📋 Kopírovat</button></div>
+                </div>
+
+                <div class="prompt-card reveal" data-subject="gemini-notebook">
+                    <div class="prompt-header"><div><div class="prompt-title">20. Podrobné poznámky ze všech zdrojů</div><div class="prompt-lead">Strukturovaný učitelský přehled z většího množství podkladů.</div><div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><span class="badge badge-mint">Gemini Notebook</span><span class="badge badge-purple">Poznámky</span></div></div></div>
+                    <div class="prompt-body">Přeměň zdroje v tomto notebooku na přehledné studijní poznámky k tématu <strong>[téma]</strong> pro <strong>[třídu / úroveň]</strong>.<br /><br />Postupuj podle jednotlivých kapitol nebo tematických částí.<br /><br />U každé části uveď:<br />• hlavní myšlenku,<br />• důležité podpůrné informace,<br />• fakta, příklady, data nebo statistiky,<br />• klíčové pojmy a jejich jednoduché definice,<br />• praktický příklad nebo využití,<br />• jednu větu shrnující celou část.<br /><br />Nakonec vytvoř seznam <strong>10 nejdůležitějších poznatků z celého tématu</strong>.<br /><br />Odděl informace, které jsou zásadní pro zvládnutí učiva, od informací doplňkových.<br /><br />Vycházej pouze ze zdrojů notebooku.</div>
+                    <div class="prompt-footer"><span class="badge badge-purple">Více zdrojů</span><button class="copy-btn">📋 Kopírovat</button></div>
+                </div>
+
+                <div class="prompt-card reveal" data-subject="gemini-notebook">
+                    <div class="prompt-header"><div><div class="prompt-title">21. Nejdůležitější informace se zdroji</div><div class="prompt-lead">Výběr tvrzení, jejich opory a míry jistoty ve zdrojích.</div><div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><span class="badge badge-mint">Gemini Notebook</span><span class="badge badge-green">Ověření</span></div></div></div>
+                    <div class="prompt-body">Urči <strong>[10 / 15 / 20] nejdůležitějších tvrzení, poznatků nebo závěrů</strong> obsažených ve zdrojích tohoto notebooku k tématu <strong>[téma]</strong>.<br /><br />U každého bodu uveď:<br />• samotné tvrzení,<br />• jednoduché vysvětlení,<br />• proč je důležité,<br />• důkaz nebo informaci, která jej podporuje,<br />• odkaz na zdroj,<br />• míru opory ve zdrojích: <strong>silná / částečná / nejasná</strong>.<br /><br />Zařaď pouze informace, které lze skutečně doložit zdroji notebooku.<br /><br /><strong>Nevymýšlej chybějící informace a nedoplňuj znalosti zvenčí.</strong><br /><br />Pokud si zdroje odporují, upozorni na to.</div>
+                    <div class="prompt-footer"><span class="badge badge-green">Důkazy a odkazy</span><button class="copy-btn">📋 Kopírovat</button></div>
+                </div>
+
+                <div class="prompt-card reveal" data-subject="gemini-notebook">
+                    <div class="prompt-header"><div><div class="prompt-title">22. Obtížné části jako osobní tutor</div><div class="prompt-lead">Vysvětlení pojmů podle úrovně konkrétního žáka.</div><div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><span class="badge badge-mint">Gemini Notebook</span><span class="badge badge-purple">Tutor</span></div></div></div>
+                    <div class="prompt-body">Vystupuj jako trpělivý učitel a vysvětli nejobtížnější části zdrojů v tomto notebooku k tématu <strong>[téma]</strong>.<br /><br />Žák je na úrovni <strong>[začátečník / základní / středně pokročilý]</strong>.<br /><br />U každého obtížného pojmu nebo principu uveď:<br />• vysvětlení jednoduchým jazykem,<br />• přirovnání z běžného života,<br />• konkrétní příklad,<br />• vysvětlení krok za krokem,<br />• definici důležitých pojmů,<br />• nejčastější chybu nebo nedorozumění,<br />• jednu kontrolní otázku.<br /><br />Na závěr navrhni <strong>doporučené pořadí, v jakém by se měl žák jednotlivé pojmy učit</strong>.<br /><br />Přizpůsob vysvětlení věku a úrovni žáka a vycházej pouze ze zdrojů notebooku.</div>
+                    <div class="prompt-footer"><span class="badge badge-purple">Přizpůsobení</span><button class="copy-btn">📋 Kopírovat</button></div>
+                </div>
+
+                <div class="prompt-card reveal" data-subject="gemini-notebook">
+                    <div class="prompt-header"><div><div class="prompt-title">23. Přeměna informací na praktický plán</div><div class="prompt-lead">Převod doporučení a postupů ze zdrojů do konkrétních kroků.</div><div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><span class="badge badge-mint">Gemini Notebook</span><span class="badge badge-orange">Plán</span></div></div></div>
+                    <div class="prompt-body">Najdi ve zdrojích tohoto notebooku prakticky využitelné myšlenky a přeměň je na konkrétní plán pro <strong>[výuku / projekt / studium / školní aktivitu]</strong>.<br /><br />U každého kroku uveď:<br />• cíl,<br />• doporučenou činnost,<br />• postup krok za krokem,<br />• které informace ze zdrojů tento krok podporují,<br />• potřebné pomůcky nebo nástroje,<br />• možný problém,<br />• návrh řešení problému,<br />• prioritu: <strong>vysoká / střední / nízká</strong>,<br />• doporučený termín.<br /><br />Rozděl plán do částí:<br />• <strong>hned / první krok,</strong><br />• <strong>během tohoto týdne,</strong><br />• <strong>během tohoto měsíce,</strong><br />• <strong>dlouhodobě</strong>.<br /><br />Nevytvářej doporučení, která nemají oporu ve zdrojích; případné vlastní návrhy jasně označ jako návrh AI.</div>
+                    <div class="prompt-footer"><span class="badge badge-orange">Akční postup</span><button class="copy-btn">📋 Kopírovat</button></div>
+                </div>
+
+                <div class="prompt-card reveal" data-subject="gemini-notebook">
+                    <div class="prompt-header"><div><div class="prompt-title">24. Kompletní studijní balíček</div><div class="prompt-lead">Shrnutí, pojmy, otázky, praktické úlohy a checklist v jednom výstupu.</div><div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><span class="badge badge-mint">Gemini Notebook</span><span class="badge badge-blue">Studijní balíček</span></div></div></div>
+                    <div class="prompt-body">Zpracuj zdroje v tomto notebooku jako komplexní studijní materiál k tématu <strong>[téma]</strong> pro <strong>[ročník / předmět / úroveň]</strong>.<br /><br />Vytvoř:<br />• přehled tématu,<br />• shrnutí jednotlivých částí,<br />• seznam klíčových pojmů a definic,<br />• důležitá fakta, data, vzorce nebo principy,<br />• nejčastěji zaměňované pojmy,<br />• 10 otázek s krátkou odpovědí,<br />• 10 otázek s výběrem odpovědi A–D,<br />• 5 úloh založených na praktické situaci,<br />• správné odpovědi,<br />• stručné vysvětlení správných odpovědí,<br />• závěrečný checklist <strong>„Umím / musím ještě procvičit“</strong>.<br /><br />Větší důraz věnuj tématům <strong>[doplň témata]</strong>.<br /><br />Rozliš základní učivo, které by měl zvládnout každý žák, od rozšiřujícího učiva.<br /><br />Všechny otázky a odpovědi musí vycházet ze zdrojů notebooku.</div>
+                    <div class="prompt-footer"><span class="badge badge-blue">Výstup pro učení</span><button class="copy-btn">📋 Kopírovat</button></div>
+                </div>
+
+                <div class="prompt-card reveal" data-subject="gemini-notebook">
+                    <div class="prompt-header"><div><div class="prompt-title">25. Porovnání myšlenek, metod nebo možností</div><div class="prompt-lead">Tabulka rozdílů, výhod, omezení, rizik a vhodného použití.</div><div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><span class="badge badge-mint">Gemini Notebook</span><span class="badge badge-purple">Porovnání</span></div></div></div>
+                    <div class="prompt-body">Porovnej hlavní <strong>[myšlenky / teorie / metody / postupy / možnosti / technologie]</strong> popsané ve zdrojích tohoto notebooku.<br /><br />Výsledek nejprve zpracuj do přehledné tabulky.<br /><br />Porovnej:<br />• účel,<br />• princip fungování,<br />• výhody,<br />• nevýhody a omezení,<br />• důkazy nebo argumenty ze zdrojů,<br />• vhodné použití,<br />• rizika,<br />• cílovou skupinu,<br />• hlavní rozdíly.<br /><br />Poté vysvětli:<br />• která možnost má nejsilnější podporu ve zdrojích,<br />• která je nejjednodušší na použití,<br />• která má největší rizika,<br />• která je nejvhodnější pro <strong>[konkrétní situaci]</strong>.<br /><br />Každý závěr dolož zdrojem. Pokud zdroje neumožňují něco rozhodnout, napiš to otevřeně.</div>
+                    <div class="prompt-footer"><span class="badge badge-purple">Tabulka</span><button class="copy-btn">📋 Kopírovat</button></div>
+                </div>
+
+                <div class="prompt-card reveal" data-subject="gemini-notebook">
+                    <div class="prompt-header"><div><div class="prompt-title">26. Otázky, které má žák umět zodpovědět</div><div class="prompt-lead">Otázky s odpověďmi, zdroji, stavem a obtížností.</div><div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><span class="badge badge-mint">Gemini Notebook</span><span class="badge badge-green">Otázky</span></div></div></div>
+                    <div class="prompt-body">Na základě zdrojů tohoto notebooku vytvoř <strong>[20 / 30 / 40] důležitých otázek</strong> k tématu <strong>[téma]</strong>, které by měl žák po prostudování učiva umět zodpovědět.<br /><br />Rozděl je do kategorií:<br />• základní porozumění,<br />• vysvětlení vztahů a souvislostí,<br />• práce s důkazy,<br />• praktické použití,<br />• rizika a problémy,<br />• omezení,<br />• informace, které ve zdrojích chybí.<br /><br />U každé otázky uveď:<br />• správnou nebo očekávanou odpověď,<br />• zdroj, ze kterého odpověď vychází,<br />• stav: <strong>zodpovězeno / částečně zodpovězeno / zdroje neodpovídají</strong>,<br />• obtížnost: <strong>základní / střední / náročná</strong>.<br /><br />Nakonec vypiš <strong>5 nejdůležitějších otázek, na které zdroje neposkytují dostatečnou odpověď</strong>.<br /><br />Nevymýšlej odpovědi tam, kde ve zdrojích nejsou.</div>
+                    <div class="prompt-footer"><span class="badge badge-green">Diagnostika učiva</span><button class="copy-btn">📋 Kopírovat</button></div>
+                </div>
+
+                <div class="prompt-card reveal" data-subject="gemini-notebook">
+                    <div class="prompt-header"><div><div class="prompt-title">27. Přeměna zdrojů na další výukový obsah</div><div class="prompt-lead">Nadpisy, příspěvek, infografika, video, diskuse a další nápady.</div><div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><span class="badge badge-mint">Gemini Notebook</span><span class="badge badge-orange">Více formátů</span></div></div></div>
+                    <div class="prompt-body">Přeměň obsah zdrojů tohoto notebooku k tématu <strong>[téma]</strong> na několik různých forem obsahu.<br /><br />Cílová skupina: <strong>[žáci / učitelé / rodiče / veřejnost]</strong><br />Styl: <strong>[srozumitelný / přátelský / odborný / popularizační]</strong><br /><br />Vytvoř:<br />• 5 poutavých nadpisů nebo úvodních vět,<br />• návrh krátkého příspěvku na web nebo sociální sítě,<br />• osnovu 7–10bodové infografiky nebo carouselu,<br />• krátký 60sekundový scénář videa,<br />• 5 otázek podporujících diskusi,<br />• 3 výzvy k další aktivitě,<br />• 10 dalších nápadů na výukový nebo popularizační obsah.<br /><br />U obsahu určeného žákům přidej také návrh, <strong>jak jej využít během vyučovací hodiny</strong>.<br /><br />Zachovej věcnou přesnost a používej pouze tvrzení podporovaná zdroji notebooku.</div>
+                    <div class="prompt-footer"><span class="badge badge-orange">Další výstupy</span><button class="copy-btn">📋 Kopírovat</button></div>
+                </div>
+
+                <div class="prompt-card reveal" data-subject="gemini-notebook">
+                    <div class="prompt-header"><div><div class="prompt-title">28. Kritické zhodnocení zdrojů</div><div class="prompt-lead">Silné stránky, slabiny, rozpory, chybějící informace a verdikt.</div><div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><span class="badge badge-mint">Gemini Notebook</span><span class="badge badge-purple">Kritická analýza</span></div></div></div>
+                    <div class="prompt-body">Kriticky zhodnoť zdroje vložené v tomto notebooku k tématu <strong>[téma]</strong> spravedlivě, objektivně a vyváženě.<br /><br />Posuď:<br />• hlavní cíl,<br />• sílu argumentů,<br />• kvalitu důkazů,<br />• důvěryhodnost použitých zdrojů,<br />• jasnost a strukturu,<br />• předpoklady autorů,<br />• možné zkreslení nebo jednostrannost,<br />• chybějící informace,<br />• slabé nebo rozporné argumenty,<br />• praktickou využitelnost.<br /><br />Poté uveď:<br />• 3 hlavní silné stránky,<br />• 3 hlavní slabiny,<br />• tvrzení, která by bylo vhodné ověřit,<br />• otázky pro další zkoumání,<br />• pro koho jsou zdroje nejvhodnější,<br />• celkové hodnocení 1–10,<br />• krátký závěrečný verdikt.<br /><br /><strong>Striktně rozlišuj mezi tím, co skutečně uvádějí zdroje, a vlastním hodnocením.</strong><br /><br />Pokud nelze například důvěryhodnost nebo správnost některého tvrzení ověřit pouze z dostupných zdrojů, výslovně to napiš.</div>
+                    <div class="prompt-footer"><span class="badge badge-purple">Kontrola zdrojů</span><button class="copy-btn">📋 Kopírovat</button></div>
                 </div>
             </div>
 

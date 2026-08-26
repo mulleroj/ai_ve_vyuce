@@ -1,0 +1,260 @@
+/*
+ * Jediný katalog článků zobrazovaných na úvodní stránce.
+ * Nový článek stačí přidat jako další záznam; index ho zařadí podle data
+ * bez ohledu na jeho obsahovou kategorii.
+ */
+window.siteArticles = [
+  {
+    href: 'ai-workflow-vibe-coding.html',
+    title: 'Vibe coding krok za krokem',
+    summary: 'Jak si učitel může vytvořit vlastní aplikaci bez programování – od malého problému přes prototyp a testování až po další rozvoj.',
+    category: 'Workflow',
+    date: '2026-08-26',
+    dateLabel: '26. srpna 2026',
+    icon: '💻',
+    tags: ['Vibe Coding', '11 kroků'],
+    badgeClass: 'badge-gold'
+  },
+  {
+    href: 'ai-workflow-10-promptu-gemini.html',
+    title: '10 promptů pro Gemini Notebook',
+    summary: 'Od práce s více zdroji přes shrnutí a ověření až po studijní materiály, další výstupy a kritickou analýzu.',
+    category: 'Workflow',
+    date: '2026-08-26',
+    dateLabel: '26. srpna 2026',
+    icon: '📓',
+    tags: ['Gemini Notebook', '10 promptů'],
+    badgeClass: 'badge-blue'
+  },
+  {
+    href: 'ai-navod-gemini-notebook-priprava.html',
+    title: '7 promptů pro Gemini Notebook: kompletní příprava na výuku',
+    summary: 'Prompty pro plán hodiny, vysvětlení učiva, aktivity, diferenciaci, test, hodnocení a audio přehled.',
+    category: 'Návod',
+    date: '2026-08-26',
+    dateLabel: '26. srpna 2026',
+    icon: '📓',
+    tags: ['Gemini Notebook', '7 promptů'],
+    badgeClass: 'badge-blue'
+  },
+  {
+    href: 'ai-navod-gemini-notebook-vyuka.html',
+    title: 'Gemini Notebook ve výuce: interaktivní studijní prostředí',
+    summary: 'Jak z učebních materiálů připravit přehledy, kartičky, kvízy, audio, video a další cesty k učení.',
+    category: 'Návod',
+    date: '2026-08-26',
+    dateLabel: '26. srpna 2026',
+    icon: '📓',
+    tags: ['Gemini Notebook', 'Výuka'],
+    badgeClass: 'badge-blue'
+  },
+  {
+    href: 'gemini-notebook.html',
+    title: 'Gemini Notebook',
+    summary: 'Pracujte s vlastními PDF, prezentacemi a dokumenty a připravte z nich interaktivní studijní materiály.',
+    category: 'Nástroj',
+    date: '2026-08-26',
+    dateLabel: '26. srpna 2026',
+    icon: '📓',
+    tags: ['Gemini Notebook', 'Nástroj'],
+    badgeClass: 'badge-blue'
+  },
+  {
+    href: 'gemini-notebook-prompty.html',
+    title: 'Prompty pro Gemini Notebook',
+    summary: 'Připravená zadání pro práci se zdroji, shrnutí, studijní materiály, otázky a kritickou analýzu.',
+    category: 'Nástroj',
+    date: '2026-08-26',
+    dateLabel: '26. srpna 2026',
+    icon: '✨',
+    tags: ['Gemini Notebook', 'Prompty'],
+    badgeClass: 'badge-blue'
+  },
+  {
+    href: 'ai-novinka-pravidla-ve-skole.html',
+    title: 'AI pravidla ve škole',
+    summary: 'Co má obsahovat dobrá školní politika pro žáky, učitele, vedení školy a rodiče v roce 2026.',
+    category: 'Novinka',
+    date: '2026-08-25',
+    dateLabel: '25. srpna 2026',
+    icon: '🧠',
+    tags: ['Školní politika', 'Bezpečnost'],
+    badgeClass: 'badge-mint'
+  },
+  {
+    href: 'ai-workflow-prep-edit.html',
+    title: 'PREP + EDIT: Praktický workflow pro práci s AI',
+    summary: 'Šest kroků pro bezpečnější tvorbu školních materiálů: zdroj, zadání, návrh AI, kontrola, ověření a schválení.',
+    category: 'Workflow',
+    date: '2026-08-25',
+    dateLabel: '25. srpna 2026',
+    icon: '🧩',
+    tags: ['PREP + EDIT', '6 kroků'],
+    badgeClass: 'badge-gold'
+  },
+  {
+    href: 'ai-navod-edit-kontrola.html',
+    title: 'EDIT: Jak kriticky kontrolovat výstupy AI',
+    summary: 'Čtyřkrokový postup pro kontrolu srozumitelnosti, faktické správnosti, zkreslení a použitelnosti výstupu AI.',
+    category: 'Návod',
+    date: '2026-08-25',
+    dateLabel: '25. srpna 2026',
+    icon: '🔎',
+    tags: ['Kontrola', 'Bezpečnost'],
+    badgeClass: 'badge-mint'
+  },
+  {
+    href: 'ai-navod-prep-prompty.html',
+    title: 'PREP: Jak psát lepší prompty pro AI ve výuce',
+    summary: 'Framework pro přesnější zadání, která pomohou AI připravit použitelnější materiály, aktivity a hodiny.',
+    category: 'Návod',
+    date: '2026-08-25',
+    dateLabel: '25. srpna 2026',
+    icon: '✍️',
+    tags: ['Prompty', 'PREP'],
+    badgeClass: 'badge-gold'
+  },
+  {
+    href: 'ai-workflow-18-promptu.html',
+    title: '18 praktických AI promptů pro učitele',
+    summary: 'Šablony pro plánování hodin, pracovní listy, diferenciaci, testy, konverzaci, zpětnou vazbu a EDIT.',
+    category: 'Workflow',
+    date: '2026-08-25',
+    dateLabel: '25. srpna 2026',
+    icon: '🧰',
+    tags: ['Prompty', '18 šablon'],
+    badgeClass: 'badge-gold'
+  },
+  {
+    href: 'ai-workflow-8-otazek.html',
+    title: '8 otázek, které by si měl učitel položit při práci s AI',
+    summary: 'Rychlé otázky pro posouzení přínosu, spolupráce, učení žáků, bezpečnosti a lidské odpovědnosti.',
+    category: 'Workflow',
+    date: '2026-08-25',
+    dateLabel: '25. srpna 2026',
+    icon: '❓',
+    tags: ['Reflexe', 'Bezpečnost'],
+    badgeClass: 'badge-mint'
+  },
+  {
+    href: 'ai-workflow-udl-ai.html',
+    title: 'UDL + AI: Jak přizpůsobit výuku různým žákům',
+    summary: 'Jak připravit různé úrovně podpory, varianty materiálu a způsoby výstupu bez snížení vzdělávacího cíle.',
+    category: 'Workflow',
+    date: '2026-08-25',
+    dateLabel: '25. srpna 2026',
+    icon: '🧩',
+    tags: ['UDL', 'Diferenciace'],
+    badgeClass: 'badge-mint'
+  },
+  {
+    href: 'ai-workflow-usetri-praci.html',
+    title: 'Jak může AI skutečně ušetřit učiteli práci',
+    summary: 'Praktické rozdělení práce mezi AI a učitele: návrhy, varianty, převody, kontrola a rozhodování.',
+    category: 'Workflow',
+    date: '2026-08-25',
+    dateLabel: '25. srpna 2026',
+    icon: '⏱️',
+    tags: ['Efektivita', 'Workflow'],
+    badgeClass: 'badge-gold'
+  },
+  {
+    href: 'ai-novinka-gemini-notebook-sablona.html',
+    title: 'Gemini Notebook jako výuková šablona',
+    summary: 'Jak z učitelské přípravy vytvořit kopírovatelný AI studijní balíček pro každého studenta.',
+    category: 'Novinka',
+    date: '2026-08-24',
+    dateLabel: '24. srpna 2026',
+    icon: '📓',
+    tags: ['Gemini Notebook', 'Šablona'],
+    badgeClass: 'badge-blue'
+  },
+  {
+    href: 'ai-navod-gemini-notebook-infografiky.html',
+    title: '7 promptů pro Gemini Notebook: přehledné infografiky',
+    summary: 'Prompty pro tvorbu infografik ke gramatice, slovní zásobě, četbě, poslechu, psaní, mluvení i celé lekci.',
+    category: 'Návod',
+    date: '2026-08-23',
+    dateLabel: '23. srpna 2026',
+    icon: '🎨',
+    tags: ['Gemini Notebook', '7 promptů'],
+    badgeClass: 'badge-blue'
+  },
+  {
+    href: 'ai-navod-commands-chatgpt.html',
+    title: 'Commands v ChatGPT: jak si zkrátit práci',
+    summary: 'Přehled commands pro učení, psaní, obrázky, video, organizaci práce a kritické myšlení.',
+    category: 'Návod',
+    date: '2026-08-23',
+    dateLabel: '23. srpna 2026',
+    icon: '⌨️',
+    tags: ['ChatGPT', 'Commands'],
+    badgeClass: 'badge-green'
+  },
+  {
+    href: 'ai-novinka-microsoft-ai-workflow.html',
+    title: 'Microsoft skládá celý AI workflow pro učitele',
+    summary: 'Jak propojit přípravu učitele, tvorbu aktivity, zadání studentům, práci žáka a výsledky.',
+    category: 'Novinka',
+    date: '2026-08-21',
+    dateLabel: '21. srpna 2026',
+    icon: '🔗',
+    tags: ['Workflow', 'Microsoft'],
+    badgeClass: 'badge-gray'
+  },
+  {
+    href: 'ai-novinka-chatgpt-interaktivni-kvizy.html',
+    title: 'ChatGPT přidává interaktivní kvízy',
+    summary: 'Jak využít interaktivní kvízy, vlastní zdroje a průběžnou zpětnou vazbu pro učení.',
+    category: 'Novinka',
+    date: '2026-08-19',
+    dateLabel: '19. srpna 2026',
+    icon: '🎯',
+    tags: ['ChatGPT', 'Kvízy'],
+    badgeClass: 'badge-green'
+  },
+  {
+    href: 'ai-novinka-microsoft-gemini.html',
+    title: 'Microsoft skládá AI do jednoho pracovního prostředí',
+    summary: 'Jak integrace AI s účty, dokumenty, tabulkami a nástroji mění každodenní práci školy.',
+    category: 'Novinka',
+    date: '2026-08-17',
+    dateLabel: '17. srpna 2026',
+    icon: '🧠',
+    tags: ['Gemini', 'Copilot'],
+    badgeClass: 'badge-blue'
+  },
+  {
+    href: 'ai-novinka-vykonnejsi-ai.html',
+    title: 'Výkonnější AI se stává běžně dostupnou',
+    summary: 'Proč dostupnější výkonná AI mění školní zadání, detekci AI, bezpečnost i práci učitele.',
+    category: 'Novinka',
+    date: '2026-08-14',
+    dateLabel: '14. srpna 2026',
+    icon: '⚡',
+    tags: ['AI ve škole', 'Bezpečnost'],
+    badgeClass: 'badge-gold'
+  },
+  {
+    href: 'ai-novinka-gemini-classroom.html',
+    title: 'Gemini v Google Classroom míří i k mladším studentům',
+    summary: 'Co znamená rozšiřování Gemini v Google Classroom pro mladší studenty, učitele a AI gramotnost.',
+    category: 'Novinka',
+    date: '2026-08-12',
+    dateLabel: '12. srpna 2026',
+    icon: '🏫',
+    tags: ['Gemini', 'Google Classroom'],
+    badgeClass: 'badge-blue'
+  },
+  {
+    href: 'ai-workflow.html',
+    title: 'Workflow: ChatGPT → Claude',
+    summary: 'Workflow pro vytvoření vizuálních poznámek, kontrolu faktů v Claude a opravu chyb v ChatGPT.',
+    category: 'Workflow',
+    date: '',
+    dateLabel: '',
+    icon: '🔄',
+    tags: ['ChatGPT', 'Claude'],
+    badgeClass: 'badge-gray'
+  }
+];
