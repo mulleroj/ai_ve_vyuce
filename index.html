@@ -44,55 +44,6 @@
       gap: 20px;
     }
 
-    .llm-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: center;
-      margin-top: 48px;
-    }
-
-    .llm-pill {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 20px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 50px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      transition: var(--transition);
-    }
-
-    .llm-pill:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow);
-    }
-
-    .llm-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-    }
-
-    .how-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    @media(max-width:768px) {
-      .how-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .llm-bar {
-        gap: 8px;
-      }
-    }
-
     .latest-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
@@ -443,23 +394,23 @@
         <p class="section-subtitle" style="margin:0 auto">Vyberte si nástroj podle toho, co právě připravujete, procvičujete nebo řešíte.</p>
       </div>
       <div class="teacher-tools-grid">
-        <a href="aktivity.html" class="teacher-tool-card reveal">
-          <div class="teacher-tool-icon">🎯</div>
-          <div class="teacher-tool-title">Aktivity do výuky</div>
-          <p class="teacher-tool-desc">Hotové nápady na hodiny, procvičování, skupinovou práci, projekty a závěrečné ověření.</p>
-          <span class="teacher-tool-link">Prozkoumat aktivity →</span>
+        <a href="https://ntb-presentation-prompt.netlify.app/" class="teacher-tool-card reveal" target="_blank" rel="noopener noreferrer">
+          <div class="teacher-tool-icon">📊</div>
+          <div class="teacher-tool-title">Generátor prezentací Gemini Notebook</div>
+          <p class="teacher-tool-desc">Připravte si prezentaci z vlastních zdrojů a proměňte podklady v přehledný výukový materiál.</p>
+          <span class="teacher-tool-link">Otevřít generátor →</span>
         </a>
-        <a href="prompty.html" class="teacher-tool-card reveal">
+        <a href="https://ai-ve-vyuce.netlify.app/gemini-notebook-prompty" class="teacher-tool-card reveal" target="_blank" rel="noopener noreferrer">
           <div class="teacher-tool-icon">✨</div>
-          <div class="teacher-tool-title">Knihovna promptů</div>
-          <p class="teacher-tool-desc">Připravená zadání pro plánování hodin, tvorbu materiálů, diferenciaci, hodnocení i zpětnou vazbu.</p>
+          <div class="teacher-tool-title">Prompty Gemini Notebook</div>
+          <p class="teacher-tool-desc">Připravená zadání pro práci se zdroji, shrnutí, studijní materiály, otázky a kritickou analýzu.</p>
           <span class="teacher-tool-link">Vybrat prompt →</span>
         </a>
-        <a href="asistenti.html" class="teacher-tool-card reveal">
+        <a href="https://gemforge.netlify.app/" class="teacher-tool-card reveal" target="_blank" rel="noopener noreferrer">
           <div class="teacher-tool-icon">🤖</div>
-          <div class="teacher-tool-title">AI asistenti</div>
-          <p class="teacher-tool-desc">Průvodci a specializovaní pomocníci pro přípravu, vysvětlování, jazyky, předměty i organizaci práce.</p>
-          <span class="teacher-tool-link">Najít asistenta →</span>
+          <div class="teacher-tool-title">Katalog Gemini Gems</div>
+          <p class="teacher-tool-desc">Vyberte si specializovaného Gemini Gema pro plánování, tvorbu materiálů a další učitelskou práci.</p>
+          <span class="teacher-tool-link">Prohlédnout katalog →</span>
         </a>
         <a href="ai.html" class="teacher-tool-card reveal">
           <div class="teacher-tool-icon">🧠</div>
@@ -478,190 +429,6 @@
           <div class="teacher-tool-title">QR kód pro materiály</div>
           <p class="teacher-tool-desc">Rychle připravte QR kód k odkazu, pracovnímu listu, prezentaci nebo online aktivitě.</p>
           <span class="teacher-tool-link">Vytvořit QR kód →</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Subjects -->
-  <section class="section">
-    <div class="container">
-      <div class="text-center mb-48">
-        <div class="section-label">Předměty</div>
-        <h2 class="section-title">Vyberte svůj <span class="gradient-text">předmět</span></h2>
-        <p class="section-subtitle" style="margin:0 auto">Aktivity, prompty a AI asistenti speciálně připravené pro
-          každý předmět základní a střední školy.</p>
-      </div>
-      <div class="subject-grid">
-        <a href="matematika.html" class="subject-card reveal">
-          <div class="subject-card-header">
-            <div class="subject-icon"
-              style="background:linear-gradient(135deg,rgba(245,166,35,0.15),rgba(245,166,35,0.05));color:#f5a623">🔢
-            </div>
-            <div>
-              <div class="subject-title">Matematika</div>
-              <div class="subject-desc">Generátory úloh, krok-za-krokem řešení, vizualizace grafů a algebraické pomůcky.
-              </div>
-            </div>
-          </div>
-          <div class="subject-card-body">
-            <div class="subject-meta">
-              <span class="badge badge-gold">18 aktivit</span>
-              <span class="badge badge-gray">32 promptů</span>
-            </div>
-          </div>
-          <div class="subject-card-footer">
-            <span class="subject-count">ChatGPT · Gemini · Claude · Wolfram</span>
-            <span class="subject-arrow">→</span>
-          </div>
-        </a>
-
-        <a href="cestina.html" class="subject-card reveal">
-          <div class="subject-card-header">
-            <div class="subject-icon"
-              style="background:linear-gradient(135deg,rgba(74,144,226,0.15),rgba(74,144,226,0.05));color:#4a90e2">📖
-            </div>
-            <div>
-              <div class="subject-title">Český jazyk</div>
-              <div class="subject-desc">Opravování slohů, diktáty, rozbory, literární analýzy a gramatická cvičení.
-              </div>
-            </div>
-          </div>
-          <div class="subject-card-body">
-            <div class="subject-meta">
-              <span class="badge badge-blue">16 aktivit</span>
-              <span class="badge badge-gray">28 promptů</span>
-            </div>
-          </div>
-          <div class="subject-card-footer">
-            <span class="subject-count">ChatGPT · Claude · Gemini</span>
-            <span class="subject-arrow">→</span>
-          </div>
-        </a>
-
-        <a href="anglictina.html" class="subject-card reveal">
-          <div class="subject-card-header">
-            <div class="subject-icon"
-              style="background:linear-gradient(135deg,rgba(0,212,168,0.15),rgba(0,212,168,0.05));color:#00d4a8">🇬🇧
-            </div>
-            <div>
-              <div class="subject-title">Anglický jazyk</div>
-              <div class="subject-desc">Konverzační partner, gramatické opravné asistenty, slovní zásoba, překlady s
-                kontextem.</div>
-            </div>
-          </div>
-          <div class="subject-card-body">
-            <div class="subject-meta">
-              <span class="badge badge-mint">20 aktivit</span>
-              <span class="badge badge-gray">35 promptů</span>
-            </div>
-          </div>
-          <div class="subject-card-footer">
-            <span class="subject-count">ChatGPT · Claude · Copilot</span>
-            <span class="subject-arrow">→</span>
-          </div>
-        </a>
-
-        <a href="prirodoveda.html" class="subject-card reveal">
-          <div class="subject-card-header">
-            <div class="subject-icon"
-              style="background:linear-gradient(135deg,rgba(39,174,96,0.15),rgba(39,174,96,0.05));color:#27ae60">🔬
-            </div>
-            <div>
-              <div class="subject-title">Přírodní vědy</div>
-              <div class="subject-desc">Biologie, chemie, fyzika – experimenty, simulace, vysvětlení jevů a kvízové
-                otázky.</div>
-            </div>
-          </div>
-          <div class="subject-card-body">
-            <div class="subject-meta">
-              <span class="badge badge-green">22 aktivit</span>
-              <span class="badge badge-gray">40 promptů</span>
-            </div>
-          </div>
-          <div class="subject-card-footer">
-            <span class="subject-count">Gemini · ChatGPT · Perplexity</span>
-            <span class="subject-arrow">→</span>
-          </div>
-        </a>
-
-        <a href="dejepis.html" class="subject-card reveal">
-          <div class="subject-card-header">
-            <div class="subject-icon"
-              style="background:linear-gradient(135deg,rgba(155,89,182,0.15),rgba(155,89,182,0.05));color:#9b59b6">🏛️
-            </div>
-            <div>
-              <div class="subject-title">Dějepis</div>
-              <div class="subject-desc">Historické narativy, časové osy, debatní aktivity, výchova k občanství a
-                kritické myšlení.</div>
-            </div>
-          </div>
-          <div class="subject-card-body">
-            <div class="subject-meta">
-              <span class="badge badge-purple">14 aktivit</span>
-              <span class="badge badge-gray">24 promptů</span>
-            </div>
-          </div>
-          <div class="subject-card-footer">
-            <span class="subject-count">ChatGPT · Claude · Gemini</span>
-            <span class="subject-arrow">→</span>
-          </div>
-        </a>
-
-        <a href="aktivity.html" class="subject-card reveal"
-          style="background:linear-gradient(135deg,rgba(245,166,35,0.06),rgba(0,212,168,0.04));border-color:rgba(245,166,35,0.2)">
-          <div class="subject-card-header">
-            <div class="subject-icon" style="background:var(--gradient-gold);color:#0a0f1e">🎯</div>
-            <div>
-              <div class="subject-title">Všechny Aktivity</div>
-              <div class="subject-desc">Procházejte kompletní knihovnu aktivit napříč všemi předměty s pokročilými
-                filtry.</div>
-            </div>
-          </div>
-          <div class="subject-card-body">
-            <div class="subject-meta">
-              <span class="badge badge-gold">90+ aktivit</span>
-              <span class="badge badge-mint">150+ promptů</span>
-            </div>
-          </div>
-          <div class="subject-card-footer">
-            <span class="subject-count" style="color:var(--accent-gold)">Kompletní přehled</span>
-            <span class="subject-arrow">→</span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- LLM Platforms -->
-  <section class="section-sm" style="background:var(--bg-secondary)">
-    <div class="container text-center">
-      <div class="section-label" style="justify-content:center">Podporované platformy</div>
-      <h2 class="section-title">Aktivity pro <span class="gradient-text-mint">všechny hlavní AI nástroje</span></h2>
-      <div class="llm-bar">
-        <a href="asistenti.html" class="llm-pill">
-          <span style="font-size:1.3rem">🟢</span> ChatGPT
-        </a>
-        <a href="asistenti.html" class="llm-pill">
-          <span style="font-size:1.3rem">🔵</span> Gemini
-        </a>
-        <a href="asistenti.html" class="llm-pill">
-          <span style="font-size:1.3rem">🟠</span> Claude
-        </a>
-        <a href="asistenti.html" class="llm-pill">
-          <span style="font-size:1.3rem">🔷</span> Microsoft Copilot
-        </a>
-        <a href="asistenti.html" class="llm-pill">
-          <span style="font-size:1.3rem">🟣</span> Perplexity
-        </a>
-        <a href="asistenti.html" class="llm-pill">
-          <span style="font-size:1.3rem">📓</span> NotebookLM
-        </a>
-        <a href="asistenti.html" class="llm-pill">
-          <span style="font-size:1.3rem">⬛</span> Mistral
-        </a>
-        <a href="asistenti.html" class="llm-pill">
-          <span style="font-size:1.3rem">🟤</span> Meta AI
         </a>
       </div>
     </div>
