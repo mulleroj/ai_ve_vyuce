@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vibe coding krok za krokem: jak si učitel může vytvořit vlastní aplikaci | AI ve Výuce</title>
+    <meta name="description" content="Praktický workflow pro učitele: od problému a zadání přes prototyp a testování až po bezpečnost, nasazení a další rozvoj vlastní aplikace pomocí AI." />
+    <link rel="stylesheet" href="css/workflow.css?v=20260826-workflow-vibe-coding" />
+</head>
+
+<body class="workflow-page">
+    <header class="workflow-shell">
+        <div class="workflow-topbar">
+            <a class="workflow-brand" href="index.html"><span class="workflow-brand-mark">✦</span>AI ve Výuce</a>
+            <a class="workflow-back" href="ai.html#workflow">← Workflow pro učitele</a>
+        </div>
+        <div class="workflow-hero">
+            <div>
+                <div class="workflow-eyebrow">Workflow pro učitele · 26. srpna 2026</div>
+                <h1>Vibe coding<br /><span>krok za krokem</span></h1>
+                <p class="workflow-hero-lead">Jak si učitel může vytvořit vlastní aplikaci bez programování: od malého problému přes první prototyp a testování až po bezpečné použití ve výuce.</p>
+                <div class="workflow-meta"><span>11 kroků</span><span>Vlastní aplikace</span><span>Testování</span><span>Bez programování</span></div>
+            </div>
+            <div class="workflow-route" aria-label="Čtyři hlavní fáze vibe codingu">
+                <div class="workflow-stage"><span class="workflow-stage-number">01</span><div><strong>Problém a zadání</strong><small>Co má aplikace řešit a kdo ji bude používat</small></div></div>
+                <div class="workflow-stage"><span class="workflow-stage-number">02</span><div><strong>Návrh a prototyp</strong><small>Obrazovky, funkce a první jednoduchá verze</small></div></div>
+                <div class="workflow-stage"><span class="workflow-stage-number">03</span><div><strong>Test a úpravy</strong><small>Vyzkoušení jako běžný uživatel a jedna změna najednou</small></div></div>
+                <div class="workflow-stage"><span class="workflow-stage-number">04</span><div><strong>Bezpečnost a rozvoj</strong><small>Data, nasazení ve výuce a další vylepšování</small></div></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="workflow-main">
+        <article class="workflow-article">
+            <div class="workflow-article-intro">
+                <div class="workflow-article-kicker"><span class="workflow-step">08</span> Workflow pro AI ve výuce</div>
+                <h2 class="workflow-article-title">Vibe coding krok za krokem: jak si učitel může vytvořit vlastní aplikaci bez programování</h2>
+                <p class="workflow-article-summary">Praktický postup od pojmenování problému přes návrh a první prototyp až po testování, bezpečnost, nasazení a další rozvoj jednoduché učitelské aplikace.</p>
+                <div class="workflow-article-meta"><span>26. srpna 2026</span><span>Vibe coding</span><span>Výukové aplikace</span></div>
+            </div>
+
+            <div class="article-content">
+                <p class="article-lead">Vibe coding je způsob tvorby aplikací, při kterém nemusíte začínat učením programovacího jazyka.</p>
+                <p>Místo ručního psaní každého řádku kódu popisujete umělé inteligenci, <strong>co má aplikace dělat</strong>, jak má vypadat a jak se má chovat. AI potom navrhuje strukturu, vytváří kód a pomáhá s opravami.</p>
+                <p>Pro učitele je to zajímavé hlavně proto, že při tvorbě aplikace využívá dovednosti, které už běžně používá: plánování, formulování zadání, testování, úpravy podle výsledku a přemýšlení nad tím, co bude pro uživatele skutečně praktické.</p>
+                <p>Vibe coding ale není kouzelné tlačítko „Vytvoř aplikaci“. Nejlépe funguje jako <strong>opakovaný pracovní cyklus</strong>.</p>
+
+                <figure class="article-figure">
+                    <img src="images/vibe-coding-krok-za-krokem.png" alt="Infografika s jedenácti kroky vibe codingu pro učitele od problému přes prototyp a testování až po nasazení a další rozvoj" />
+                    <figcaption>Vibe coding krok za krokem: od malého učitelského problému k otestované a postupně vylepšované aplikaci.</figcaption>
+                </figure>
+
+                <h2>Celý workflow ve zkratce</h2>
+                <div class="article-prompt"><strong>Problém → nápad → zadání → návrh → prototyp → testování → úpravy → data → bezpečnost → nasazení → další rozvoj</strong></div>
+                <p>Nemusíte všechny kroky řešit hned. U první jednoduché aplikace často stačí vytvořit základní funkční verzi a postupně ji rozšiřovat.</p>
+
+                <h2>1. Začněte problémem, ne aplikací</h2>
+                <p>Nejdříve si položte otázku:</p>
+                <blockquote><strong>Co mi ve výuce nebo při přípravě zabírá čas a šlo by to zjednodušit?</strong></blockquote>
+                <p>Například:</p>
+                <ul>
+                    <li>příprava pracovních listů,</li>
+                    <li>generování otázek k textu,</li>
+                    <li>náhodné rozdělování žáků do skupin,</li>
+                    <li>procvičování slovní zásoby,</li>
+                    <li>tvorba kartiček,</li>
+                    <li>příprava krátkých testů,</li>
+                    <li>plánování vyučovací hodiny,</li>
+                    <li>jednoduché procvičovací hry.</li>
+                </ul>
+                <p>Místo zadání:</p>
+                <blockquote>Vytvoř mi aplikaci pro učitele.</blockquote>
+                <p>je mnohem lepší říct:</p>
+                <blockquote>Vytvoř jednoduchou aplikaci, ve které učitel zadá téma hodiny, ročník a délku hodiny a aplikace vytvoří návrh 45minutové vyučovací hodiny.</blockquote>
+                <p>Čím přesněji problém popíšete, tím použitelnější bude výsledek.</p>
+
+                <h2>2. Popište, co má aplikace umět</h2>
+                <p>Ještě před samotným programováním si připravte jednoduché zadání.</p>
+                <p>Stačí odpovědět na několik otázek:</p>
+                <ul>
+                    <li>Kdo bude aplikaci používat?</li>
+                    <li>Co do ní uživatel zadá?</li>
+                    <li>Co má aplikace vytvořit?</li>
+                    <li>Jaké funkce jsou opravdu nutné?</li>
+                    <li>Co zatím můžeme vynechat?</li>
+                </ul>
+                <p>Například:</p>
+                <div class="article-prompt"><strong>Aplikace: Generátor přípravy hodiny</strong><br /><br />Uživatel zadá:<br />• předmět,<br />• třídu,<br />• téma,<br />• délku hodiny,<br />• úroveň žáků.<br /><br />Aplikace vytvoří:<br />• cíl hodiny,<br />• časový plán,<br />• úvodní aktivitu,<br />• hlavní úkol,<br />• závěrečné ověření.</div>
+                <p>Pro první verzi je lepší mít <strong>pět dobře fungujících funkcí než dvacet rozpracovaných</strong>.</p>
+
+                <h2>3. Nechte AI navrhnout workflow aplikace</h2>
+                <p>Než necháte AI programovat, můžete ji požádat, aby nejdříve navrhla samotnou strukturu.</p>
+                <p>Například:</p>
+                <blockquote>Navrhni jednoduchou webovou aplikaci podle tohoto zadání. Nejdříve popiš jednotlivé obrazovky, funkce a cestu uživatele aplikací. Zatím nepiš kód.</blockquote>
+                <p>Výsledkem může být například:</p>
+                <div class="article-prompt"><strong>Úvodní stránka → výběr předmětu → výběr třídy → zadání tématu → generování → výsledek → export</strong></div>
+                <p>Tento krok je velmi užitečný. Často už při něm zjistíte, že některá část aplikace chybí nebo je zbytečně složitá.</p>
+
+                <h2>4. Vytvořte první jednoduchý prototyp</h2>
+                <p>Teď přichází samotný vibe coding.</p>
+                <p>Můžete použít nástroj, který dokáže z běžného textového zadání vytvořit webovou aplikaci nebo její kód.</p>
+                <p>Pro první pokus je dobré AI říct:</p>
+                <blockquote>Vytvoř funkční prototyp této aplikace. Začni co nejjednodušší verzí. Zatím bez přihlašování, databáze a dalších pokročilých funkcí.</blockquote>
+                <p>První verze nemusí být krásná ani dokonalá.</p>
+                <p>Jejím cílem je zjistit:</p>
+                <blockquote><strong>Funguje vůbec náš nápad?</strong></blockquote>
+
+                <h2>5. Testujte jako běžný uživatel</h2>
+                <p>Jakmile aplikace vznikne, začněte ji používat.</p>
+                <ul>
+                    <li>Klikněte na všechna tlačítka.</li>
+                    <li>Vyplňujte pole.</li>
+                    <li>Zadávejte nesmyslné hodnoty.</li>
+                    <li>Nechte některá pole prázdná.</li>
+                    <li>Vyzkoušejte aplikaci na telefonu.</li>
+                </ul>
+                <p>Právě při používání většinou rychle zjistíte, co je potřeba změnit.</p>
+                <p>Například:</p>
+                <div class="article-prompt">Tlačítko Generovat je málo výrazné.<br /><br />Přidej možnost zvolit délku hodiny 45 nebo 90 minut.<br /><br />Výstup je příliš dlouhý. Zkrať jej.<br /><br />Pokud uživatel nevyplní téma, zobraz upozornění.</div>
+                <p>Toto je základní princip vibe codingu.</p>
+
+                <h2>6. Pracujte v krátkých cyklech</h2>
+                <p>Nesnažte se vytvořit celou aplikaci jedním obrovským promptem.</p>
+                <p>Mnohem lépe funguje tento postup:</p>
+                <div class="article-prompt"><strong>zadání → výsledek → test → jedna změna → nový test</strong></div>
+                <p>Například:</p>
+                <ol>
+                    <li>vytvoř formulář,</li>
+                    <li>vyzkoušej ho,</li>
+                    <li>uprav vzhled,</li>
+                    <li>vyzkoušej,</li>
+                    <li>přidej další funkci,</li>
+                    <li>znovu testuj.</li>
+                </ol>
+                <p>Čím větší změny zadáváte najednou, tím větší je riziko, že AI opraví jednu věc a rozbije tři další.</p>
+
+                <h2>7. Teprve potom řešte ukládání dat</h2>
+                <p>Spousta prvních učitelských aplikací databázi vůbec nepotřebuje.</p>
+                <p>Pokud ale chcete například ukládat:</p>
+                <ul>
+                    <li>vytvořené přípravy,</li>
+                    <li>seznamy tříd,</li>
+                    <li>nastavení,</li>
+                    <li>výsledky,</li>
+                    <li>uživatelské účty,</li>
+                </ul>
+                <p>budete potřebovat úložiště nebo databázi.</p>
+                <p>Tady už začíná být aplikace technicky složitější.</p>
+                <p>Proto je dobré nejdříve ověřit, že základní aplikace opravdu dává smysl.</p>
+
+                <h2>8. Pokud má aplikace používat AI, přidejte ji až jako další vrstvu</h2>
+                <p>Vibe coding a AI aplikace nejsou totéž.</p>
+                <p><strong>Vibe coding</strong> znamená, že vám AI pomáhá aplikaci vytvořit.</p>
+                <p><strong>AI aplikace</strong> znamená, že samotná vytvořená aplikace používá nějaký AI model.</p>
+                <p>Například generátor přípravy hodiny může fungovat takto:</p>
+                <div class="article-prompt"><strong>uživatel → aplikace → prompt → AI model → odpověď → aplikace</strong></div>
+                <p>V takovém případě je potřeba řešit také například API, cenu používání modelu a bezpečné uložení přístupových klíčů.</p>
+                <p>Pro první aplikaci to ale vůbec nemusí být nutné.</p>
+
+                <h2>9. Myslete na bezpečnost</h2>
+                <p>U jednoduché aplikace na procvičování slovíček není bezpečnost příliš složitá.</p>
+                <p>Situace se ale výrazně mění ve chvíli, kdy aplikace pracuje například s:</p>
+                <ul>
+                    <li>jmény žáků,</li>
+                    <li>známkami,</li>
+                    <li>docházkou,</li>
+                    <li>podpůrnými opatřeními,</li>
+                    <li>osobními údaji.</li>
+                </ul>
+                <p>Takovou aplikaci není dobré vytvářet stylem:</p>
+                <blockquote>Nějak tam přidej databázi a zabezpečení.</blockquote>
+                <p>Je potřeba řešit přístupová práva, způsob ukládání dat, přihlášení uživatelů, ochranu přístupových klíčů a GDPR.</p>
+                <p>Pro začátek proto doporučuji vytvářet aplikace, které pracují s <strong>anonymními nebo neosobními daty</strong>.</p>
+
+                <h2>10. Vyzkoušejte aplikaci v reálném prostředí</h2>
+                <p>Když už aplikace funguje, použijte ji při skutečné přípravě nebo ve výuce.</p>
+                <p>Teprve tady často zjistíte věci, které při vývoji vůbec nebyly vidět.</p>
+                <p>Například:</p>
+                <ul>
+                    <li>žáci nevědí, kam kliknout,</li>
+                    <li>text je na mobilu příliš malý,</li>
+                    <li>učitel potřebuje jiný typ exportu,</li>
+                    <li>jedna funkce je zbytečná,</li>
+                    <li>chybí jednoduché tlačítko Reset.</li>
+                </ul>
+                <p>Reálné používání je nejlepší test.</p>
+
+                <h2>11. Aplikaci postupně rozšiřujte</h2>
+                <p>Dobrá aplikace většinou nevznikne během jednoho večera.</p>
+                <p>Vzniká postupně:</p>
+                <div class="article-prompt"><strong>používání → problém → úprava → test → nová verze</strong></div>
+                <p>Můžete například postupně přidat:</p>
+                <ul>
+                    <li>export do PDF,</li>
+                    <li>ukládání výsledků,</li>
+                    <li>více typů aktivit,</li>
+                    <li>vlastní šablony,</li>
+                    <li>AI generování,</li>
+                    <li>uživatelské účty,</li>
+                    <li>přístup z mobilu.</li>
+                </ul>
+                <p>Tím se z jednoduchého prototypu může postupně stát skutečný pracovní nástroj.</p>
+
+                <h2>Doporučený postup pro první učitelskou aplikaci</h2>
+                <p>Pokud s vibe codingem začínáte, držte se jednoduchého pravidla:</p>
+                <blockquote><strong>Nezačínejte školním informačním systémem.</strong></blockquote>
+                <p>Vytvořte něco malého, například:</p>
+                <ul>
+                    <li>losovač žáků,</li>
+                    <li>generátor otázek,</li>
+                    <li>kartičky na slovíčka,</li>
+                    <li>časovač aktivit,</li>
+                    <li>generátor exit ticketů,</li>
+                    <li>jednoduchý kvíz,</li>
+                    <li>generátor struktury vyučovací hodiny.</li>
+                </ul>
+                <p>Na takovém projektu se naučíte celý proces bez toho, abyste se utopili v databázích, přihlášení a bezpečnosti.</p>
+
+                <h2>Co je při vibe codingu úkolem učitele?</h2>
+                <p>AI může napsat kód.</p>
+                <p>To ale neznamená, že rozhoduje o aplikaci.</p>
+                <p>Úkolem člověka zůstává:</p>
+                <ul>
+                    <li>správně popsat problém,</li>
+                    <li>rozhodnout, co aplikace potřebuje,</li>
+                    <li>kontrolovat výsledek,</li>
+                    <li>testovat,</li>
+                    <li>hledat chyby,</li>
+                    <li>rozhodovat o dalších úpravách.</li>
+                </ul>
+                <p>Proto je možná přesnější chápat vibe coding ne jako „programování bez programování“, ale jako <strong>navrhování aplikací pomocí konverzace s AI</strong>.</p>
+                <p>A právě v tom může mít učitel překvapivou výhodu.</p>
+                <p>Učitel totiž celý pracovní den vytváří zadání, plánuje proces, sleduje výsledky a podle nich mění další postup.</p>
+                <p>To je vlastně velmi podobný způsob práce.</p>
+
+                <h2>Jednoduché pravidlo na závěr</h2>
+                <p>Při prvním projektu si pamatujte:</p>
+                <div class="article-prompt"><strong>Začněte malým problémem. Vytvořte jednoduchou verzi. Otestujte ji. Změňte jednu věc. Znovu testujte.</strong></div>
+                <p>Vibe coding není o tom vytvořit vše na první pokus.</p>
+                <p>Je to proces, ve kterém se aplikace postupně zpřesňuje, dokud nezačne opravdu řešit problém, kvůli kterému jste ji začali vytvářet.</p>
+            </div>
+        </article>
+
+        <section class="workflow-related" aria-labelledby="dalsi-workflow">
+            <div class="workflow-related-heading">
+                <h2 id="dalsi-workflow">Další workflow a návody</h2>
+                <p>Navazující články pro tvorbu výukových aplikací, práci s AI a bezpečné testování výsledků.</p>
+            </div>
+            <div class="workflow-related-grid">
+                <article class="workflow-related-card">
+                    <span class="workflow-card-number">01</span>
+                    <h3><a href="vibe-coding-ucitele.html">Vibe coding pro učitele</a></h3>
+                    <p>První praktický průvodce tvorbou jednoduchých výukových aplikací pomocí přirozeného jazyka a AI.</p>
+                </article>
+                <article class="workflow-related-card">
+                    <span class="workflow-card-number">02</span>
+                    <h3><a href="vibe-coding-prompty.html">Vibe Coding prompty</a></h3>
+                    <p>Praktické šablony pro zadání, úpravy, testování a postupné vylepšování aplikace.</p>
+                </article>
+                <article class="workflow-related-card">
+                    <span class="workflow-card-number">03</span>
+                    <h3><a href="ai-workflow-prep-edit.html">PREP + EDIT workflow</a></h3>
+                    <p>Od zdroje přes návrh AI až po kontrolu, ověření a schválení člověkem.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai.html">Zpět na AI pro výuku</a></footer>
+</body>
+
+</html>
