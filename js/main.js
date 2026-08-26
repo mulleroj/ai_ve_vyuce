@@ -37,7 +37,8 @@ function initParticles(canvasId) {
     canvas.width = W; canvas.height = H;
 
     const symbols = ['∑', '√', '∫', 'π', 'Δ', '∞', 'α', 'β', '⚛', '🧬', 'A', 'B', 'C', '?', '!', '📚', '✏️', '🔬', '🌍', '🎓'];
-    const particles = Array.from({ length: 55 }, () => ({
+    const particleCount = 80;
+    const particles = Array.from({ length: particleCount }, () => ({
         x: Math.random() * W, y: Math.random() * H,
         vx: (Math.random() - 0.5) * 0.4, vy: (Math.random() - 0.5) * 0.4,
         size: Math.random() * 14 + 8,

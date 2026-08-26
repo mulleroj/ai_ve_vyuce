@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Články o Vibe Codingu | AI ve Výuce</title>
+    <meta name="description"
+        content="Rozcestník článků, workflow a promptů pro Vibe Coding ve výuce. Vyberte si úvodní návod, praktický workflow nebo připravená zadání." />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .vc-article-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .vc-article-card {
+            display: grid;
+            grid-template-columns: 54px minmax(210px, 0.8fr) minmax(280px, 1.5fr) auto;
+            gap: 20px;
+            align-items: center;
+            padding: 18px 24px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            background: var(--bg-card);
+            transition: var(--transition);
+        }
+
+        .vc-article-card:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-4px);
+        }
+
+        .vc-article-kicker {
+            margin-bottom: 6px;
+            color: var(--accent-mint);
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .vc-article-icon {
+            display: grid;
+            width: 54px;
+            height: 54px;
+            margin: 0;
+            place-items: center;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.22), rgba(0, 212, 168, 0.14));
+            font-size: 1.6rem;
+        }
+
+        .vc-article-card h2 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .vc-article-card p {
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 0.86rem;
+            line-height: 1.65;
+        }
+
+        .vc-article-meta {
+            margin-top: 8px;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+        }
+
+        .vc-article-card .btn {
+            white-space: nowrap;
+        }
+
+        .vc-topic-note {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 18px;
+            align-items: start;
+            max-width: 900px;
+            margin: 32px auto 0;
+            padding: 24px;
+            border: 1px solid rgba(0, 212, 168, 0.2);
+            border-radius: var(--radius-lg);
+            background: rgba(0, 212, 168, 0.06);
+        }
+
+        .vc-topic-note-icon {
+            font-size: 1.7rem;
+        }
+
+        .vc-topic-note h2 {
+            margin-bottom: 6px;
+            font-size: 1.05rem;
+        }
+
+        .vc-topic-note p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 900px) {
+            .vc-article-card {
+                grid-template-columns: 54px minmax(0, 1fr) auto;
+            }
+
+            .vc-article-summary {
+                grid-column: 2;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .vc-article-card {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .vc-article-summary {
+                grid-column: auto;
+            }
+
+            .vc-topic-note {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon">🤖</div>AI ve <span>Výuce</span>
+            </a>
+            <div class="nav-links">
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link">📚 Předměty <i class="fa-solid fa-chevron-down" style="font-size:.65rem"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="matematika.html" class="nav-dropdown-item"><span class="item-icon">🔢</span> Matematika</a>
+                        <a href="cestina.html" class="nav-dropdown-item"><span class="item-icon">📖</span> Český jazyk</a>
+                        <a href="anglictina.html" class="nav-dropdown-item"><span class="item-icon">🇬🇧</span> Anglický jazyk</a>
+                        <a href="prirodoveda.html" class="nav-dropdown-item"><span class="item-icon">🔬</span> Přírodní vědy</a>
+                        <a href="dejepis.html" class="nav-dropdown-item"><span class="item-icon">🏛️</span> Dějepis</a>
+                    </div>
+                </div>
+                <a href="prompty.html" class="nav-link">✨ Prompty</a>
+                <a href="asistenti.html" class="nav-link">🤖 AI Asistenti</a>
+                <a href="aktivity.html" class="nav-link">🎯 Aktivity</a>
+                <a href="ai.html" class="nav-link">🧠 AI pro školy</a>
+                <a href="vibe-coding.html" class="nav-link active">💻 Vibe Coding</a>
+                <a href="qr-kod.html" class="nav-link">🔳 QR kód</a>
+            </div>
+            <button class="nav-mobile-toggle" aria-label="Otevřít menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu">
+        <a href="index.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏠 Domů</a>
+        <a href="matematika.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔢 Matematika</a>
+        <a href="cestina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">📖 Český jazyk</a>
+        <a href="anglictina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🇬🇧 Angličtina</a>
+        <a href="prirodoveda.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔬 Přírodní vědy</a>
+        <a href="dejepis.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏛️ Dějepis</a>
+        <a href="prompty.html" class="nav-link" style="font-size:1rem;padding:14px 16px">✨ Prompty</a>
+        <a href="asistenti.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🤖 Asistenti</a>
+        <a href="aktivity.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🎯 Aktivity</a>
+        <a href="ai.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🧠 AI pro školy</a>
+        <a href="vibe-coding.html" class="nav-link active" style="font-size:1rem;padding:14px 16px">💻 Vibe Coding</a>
+        <a href="qr-kod.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔳 QR kód</a>
+    </div>
+
+    <section class="page-hero" style="background:linear-gradient(135deg,#0a0f1e 0%,#1a0035 100%)">
+        <div class="page-hero-glow" style="background:radial-gradient(ellipse,rgba(138,43,226,0.15) 0%,transparent 70%)"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="page-hero-icon" style="background:linear-gradient(135deg,rgba(138,43,226,0.2),rgba(0,212,168,0.1))">💻</div>
+                <h1 class="page-hero-title">Články o <span style="background:linear-gradient(135deg,#8a2be2,#00d4a8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Vibe Codingu</span></h1>
+                <p class="page-hero-subtitle">Rozcestník návodů, workflow a promptů pro tvorbu vlastních výukových aplikací pomocí AI.</p>
+                <div class="page-hero-stats">
+                    <div class="page-hero-stat"><span>🧭</span>Vyberte si téma</div>
+                    <div class="page-hero-stat"><span>🧩</span>Postup krok za krokem</div>
+                    <div class="page-hero-stat"><span>🎓</span>Pro učitele</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="section" aria-labelledby="vibe-clanky">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">Vibe Coding podle tématu</div>
+                    <h2 id="vibe-clanky" class="section-title">Vyberte si, <span class="gradient-text">kde začít</span></h2>
+                    <p class="section-subtitle">Jednotlivé texty a materiály jsou rozdělené podle toho, jestli hledáte úvod, opakovatelný workflow nebo hotová zadání.</p>
+                </div>
+
+                <div class="vc-article-grid">
+                    <article class="vc-article-card reveal">
+                        <div class="vc-article-icon">🚀</div>
+                        <div>
+                            <div class="vc-article-kicker">Začínáme</div>
+                            <h2>Vibe coding pro učitele</h2>
+                        </div>
+                        <div class="vc-article-summary">
+                            <p>První praktický průvodce tvorbou jednoduchých kvízů, her, pracovních listů a dalších výukových nástrojů pomocí přirozeného jazyka a AI.</p>
+                            <div class="vc-article-meta">23. srpna 2026 · Výukové aplikace</div>
+                        </div>
+                        <a href="vibe-coding-ucitele.html" class="btn btn-primary">Otevřít článek →</a>
+                    </article>
+
+                    <article class="vc-article-card reveal">
+                        <div class="vc-article-icon">🔁</div>
+                        <div>
+                            <div class="vc-article-kicker">Workflow</div>
+                            <h2>Vibe coding krok za krokem</h2>
+                        </div>
+                        <div class="vc-article-summary">
+                            <p>Od problému a zadání přes návrh, prototyp a testování až po bezpečnost, nasazení a další rozvoj vlastní učitelské aplikace.</p>
+                            <div class="vc-article-meta">26. srpna 2026 · 11 kroků · Vlastní aplikace</div>
+                        </div>
+                        <a href="ai-workflow-vibe-coding.html" class="btn btn-primary">Otevřít workflow →</a>
+                    </article>
+
+                    <article class="vc-article-card reveal">
+                        <div class="vc-article-icon">✨</div>
+                        <div>
+                            <div class="vc-article-kicker">Praktická zadání</div>
+                            <h2>Vibe Coding prompty</h2>
+                        </div>
+                        <div class="vc-article-summary">
+                            <p>Připravené šablony pro tvorbu kvízů, her, pracovních listů a dalších interaktivních výukových aplikací.</p>
+                            <div class="vc-article-meta">Prompty · Příklady · Testování</div>
+                        </div>
+                        <a href="vibe-coding-prompty.html" class="btn btn-primary">Otevřít prompty →</a>
+                    </article>
+                </div>
+
+                <div class="vc-topic-note">
+                    <div class="vc-topic-note-icon">💡</div>
+                    <div>
+                        <h2>Jak se v tématu orientovat?</h2>
+                        <p>Začínáte-li úplně od začátku, otevřete úvodní článek. Pokud chcete promyšlený postup práce, pokračujte do workflow. Pro rychlé vyzkoušení použijte připravené prompty.</p>
+                    </div>
+                </div>
+
+                <div style="display:flex;justify-content:center;margin-top:32px">
+                    <a href="vibe-coding.html" class="btn btn-secondary">← Zpět na Vibe Coding</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom"><span>© 2026 AI ve Výuce · Vibe Coding pro učitele</span></div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
