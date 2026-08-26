@@ -160,6 +160,80 @@
         padding: 40px 24px;
       }
     }
+
+    .teacher-tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .teacher-tool-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 220px;
+      padding: 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .teacher-tool-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-4px);
+    }
+
+    .teacher-tool-card:focus-visible {
+      outline: 3px solid var(--accent-mint);
+      outline-offset: 3px;
+    }
+
+    .teacher-tool-icon {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 20px;
+      place-items: center;
+      border-radius: 15px;
+      background: var(--gradient-blue);
+      font-size: 1.45rem;
+    }
+
+    .teacher-tool-title {
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    .teacher-tool-desc {
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    .teacher-tool-link {
+      margin-top: auto;
+      padding-top: 18px;
+      color: var(--accent-mint);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    @media(max-width:900px) {
+      .teacher-tools-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media(max-width:600px) {
+      .teacher-tools-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
@@ -225,22 +299,22 @@
         <div class="hero-content">
           <div class="hero-badge">
             <span class="hero-badge-dot"></span>
-            🎓 Vzdělávání s umělou inteligencí
+            🆕 Novinky a pomůcky pro učitele
           </div>
           <h1 class="hero-title">
             AI Pomůcky<br />
             pro <span class="gradient-text">Učitele</span>
           </h1>
           <p class="hero-subtitle">
-            Objevte stovky aktivit, promptů a AI asistentů pro moderní výuku.
-            Organizováno dle předmětů, vyzkoušeno v praxi, připraveno k použití.
+            Na jednom místě najdete nové články, praktické workflow, aktivity, prompty a AI asistenty
+            pro každodenní přípravu i výuku.
           </p>
           <div class="hero-actions">
-            <a href="aktivity.html" class="btn btn-primary btn-lg">
-              🎯 Prozkoumat Aktivity
+            <a href="#novinky" class="btn btn-primary btn-lg">
+              🆕 Co je nového
             </a>
-            <a href="prompty.html" class="btn btn-secondary btn-lg">
-              ✨ Knihovna Promptů
+            <a href="#pomucky" class="btn btn-secondary btn-lg">
+              🧰 Pomůcky pro učitele
             </a>
           </div>
           <div class="hero-stats">
@@ -269,17 +343,17 @@
               style="width:100%;max-width:540px;height:auto;display:block;border-radius:20px" />
           </div>
           <div class="hero-floating-card hero-floating-card-1">
-            <span class="floating-icon">🔢</span>
+            <span class="floating-icon">🧰</span>
             <div class="floating-text">
-              <strong>Matematika</strong>
-              <span>18 aktivit · ChatGPT, Gemini</span>
+              <strong>Pomůcky pro učitele</strong>
+              <span>Aktivity · Prompty · Asistenti</span>
             </div>
           </div>
           <div class="hero-floating-card hero-floating-card-2">
-            <span class="floating-icon">✨</span>
+            <span class="floating-icon">🆕</span>
             <div class="floating-text">
-              <strong>Prompt zkopírován!</strong>
-              <span>Připraven k použití v ChatGPT</span>
+              <strong>Novinky na webu</strong>
+              <span>Články · Návody · Workflow</span>
             </div>
           </div>
         </div>
@@ -287,29 +361,124 @@
     </div>
   </section>
 
-  <!-- How it works -->
-  <section class="section-sm" style="background:var(--bg-secondary)">
+  <!-- Latest news -->
+  <section id="novinky" class="section">
+    <div class="container">
+      <div
+        style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:40px">
+        <div>
+          <div class="section-label">Novinky na webu</div>
+          <h2 class="section-title mb-8">Co je právě <span class="gradient-text">nového?</span></h2>
+          <p class="section-subtitle" style="margin:0">Nejnovější články, návody a workflow pro učitele na jednom místě.</p>
+        </div>
+        <a href="ai.html#novinky" class="btn btn-secondary">Všechny novinky →</a>
+      </div>
+      <div class="latest-grid">
+        <div class="latest-card reveal">
+          <div class="latest-card-body">
+            <div class="latest-card-tag">💻 Workflow · 26. srpna 2026</div>
+            <div class="latest-card-title">Vibe coding krok za krokem</div>
+            <div class="latest-card-desc">Jak si učitel může vytvořit vlastní aplikaci bez programování – od malého problému přes prototyp a testování až po další rozvoj.</div>
+          </div>
+          <div class="latest-card-footer">
+            <div style="display:flex;gap:6px">
+              <span class="badge badge-gold">Vibe Coding</span>
+              <span class="badge badge-gray">11 kroků</span>
+            </div>
+            <a href="ai-workflow-vibe-coding.html" class="btn btn-mint btn-sm">Číst →</a>
+          </div>
+        </div>
+        <div class="latest-card reveal">
+          <div class="latest-card-body">
+            <div class="latest-card-tag">📓 Workflow · 26. srpna 2026</div>
+            <div class="latest-card-title">10 promptů pro Gemini Notebook</div>
+            <div class="latest-card-desc">Od práce s více zdroji přes shrnutí a ověření až po studijní materiály, další výstupy a kritickou analýzu.</div>
+          </div>
+          <div class="latest-card-footer">
+            <div style="display:flex;gap:6px">
+              <span class="badge badge-blue">Gemini Notebook</span>
+              <span class="badge badge-gray">10 promptů</span>
+            </div>
+            <a href="ai-workflow-10-promptu-gemini.html" class="btn btn-mint btn-sm">Číst →</a>
+          </div>
+        </div>
+        <div class="latest-card reveal">
+          <div class="latest-card-body">
+            <div class="latest-card-tag">🧠 AI ve vzdělávání · 25. srpna 2026</div>
+            <div class="latest-card-title">AI pravidla ve škole</div>
+            <div class="latest-card-desc">Co má obsahovat dobrá školní politika pro žáky, učitele, vedení školy a rodiče v roce 2026.</div>
+          </div>
+          <div class="latest-card-footer">
+            <div style="display:flex;gap:6px">
+              <span class="badge badge-mint">Školní politika</span>
+              <span class="badge badge-gray">Bezpečnost</span>
+            </div>
+            <a href="ai-novinka-pravidla-ve-skole.html" class="btn btn-mint btn-sm">Číst →</a>
+          </div>
+        </div>
+        <div class="latest-card reveal">
+          <div class="latest-card-body">
+            <div class="latest-card-tag">🧩 Workflow · 25. srpna 2026</div>
+            <div class="latest-card-title">PREP + EDIT: Praktický workflow pro práci s AI</div>
+            <div class="latest-card-desc">Šest kroků pro bezpečnější tvorbu školních materiálů: zdroj, zadání, návrh AI, kontrola, ověření a schválení.</div>
+          </div>
+          <div class="latest-card-footer">
+            <div style="display:flex;gap:6px">
+              <span class="badge badge-gold">PREP + EDIT</span>
+              <span class="badge badge-gray">6 kroků</span>
+            </div>
+            <a href="ai-workflow-prep-edit.html" class="btn btn-mint btn-sm">Číst →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teacher tools -->
+  <section id="pomucky" class="section-sm" style="background:var(--bg-secondary)">
     <div class="container">
       <div class="text-center mb-48">
-        <div class="section-label">Jak to funguje</div>
-        <h2 class="section-title">Od nápadu ke <span class="gradient-text">výuce za 3 kroky</span></h2>
+        <div class="section-label">Pomůcky pro učitele</div>
+        <h2 class="section-title">Vše potřebné <span class="gradient-text-mint">na jednom místě</span></h2>
+        <p class="section-subtitle" style="margin:0 auto">Vyberte si nástroj podle toho, co právě připravujete, procvičujete nebo řešíte.</p>
       </div>
-      <div class="how-grid">
-        <div class="step-card reveal">
-          <div class="step-number">1</div>
-          <h3 class="step-title">Vyberte předmět</h3>
-          <p class="step-desc">Procházejte aktivity organizované dle předmětů – od matematiky po dějepis.</p>
-        </div>
-        <div class="step-card reveal">
-          <div class="step-number">2</div>
-          <h3 class="step-title">Zkopírujte prompt</h3>
-          <p class="step-desc">Jedním klikem zkopírujte připravený prompt do schránky a vložte do AI nástroje.</p>
-        </div>
-        <div class="step-card reveal">
-          <div class="step-number">3</div>
-          <h3 class="step-title">Použijte ve výuce</h3>
-          <p class="step-desc">Výstup z AI adaptujte pro svou třídu a ušetřete hodiny přípravy týdně.</p>
-        </div>
+      <div class="teacher-tools-grid">
+        <a href="aktivity.html" class="teacher-tool-card reveal">
+          <div class="teacher-tool-icon">🎯</div>
+          <div class="teacher-tool-title">Aktivity do výuky</div>
+          <p class="teacher-tool-desc">Hotové nápady na hodiny, procvičování, skupinovou práci, projekty a závěrečné ověření.</p>
+          <span class="teacher-tool-link">Prozkoumat aktivity →</span>
+        </a>
+        <a href="prompty.html" class="teacher-tool-card reveal">
+          <div class="teacher-tool-icon">✨</div>
+          <div class="teacher-tool-title">Knihovna promptů</div>
+          <p class="teacher-tool-desc">Připravená zadání pro plánování hodin, tvorbu materiálů, diferenciaci, hodnocení i zpětnou vazbu.</p>
+          <span class="teacher-tool-link">Vybrat prompt →</span>
+        </a>
+        <a href="asistenti.html" class="teacher-tool-card reveal">
+          <div class="teacher-tool-icon">🤖</div>
+          <div class="teacher-tool-title">AI asistenti</div>
+          <p class="teacher-tool-desc">Průvodci a specializovaní pomocníci pro přípravu, vysvětlování, jazyky, předměty i organizaci práce.</p>
+          <span class="teacher-tool-link">Najít asistenta →</span>
+        </a>
+        <a href="ai.html" class="teacher-tool-card reveal">
+          <div class="teacher-tool-icon">🧠</div>
+          <div class="teacher-tool-title">Novinky a workflow</div>
+          <p class="teacher-tool-desc">Čerstvé články, praktické návody a opakovatelné postupy pro smysluplné zapojení AI do výuky.</p>
+          <span class="teacher-tool-link">Číst novinky →</span>
+        </a>
+        <a href="vibe-coding.html" class="teacher-tool-card reveal">
+          <div class="teacher-tool-icon">💻</div>
+          <div class="teacher-tool-title">Vibe Coding</div>
+          <p class="teacher-tool-desc">Vytvořte si vlastní jednoduchou výukovou aplikaci pomocí přirozeného jazyka a postupného testování.</p>
+          <span class="teacher-tool-link">Začít s aplikací →</span>
+        </a>
+        <a href="qr-kod.html" class="teacher-tool-card reveal">
+          <div class="teacher-tool-icon">🔳</div>
+          <div class="teacher-tool-title">QR kód pro materiály</div>
+          <p class="teacher-tool-desc">Rychle připravte QR kód k odkazu, pracovnímu listu, prezentaci nebo online aktivitě.</p>
+          <span class="teacher-tool-link">Vytvořit QR kód →</span>
+        </a>
       </div>
     </div>
   </section>
@@ -494,67 +663,6 @@
         <a href="asistenti.html" class="llm-pill">
           <span style="font-size:1.3rem">🟤</span> Meta AI
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Latest Activities -->
-  <section class="section">
-    <div class="container">
-      <div
-        style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:40px">
-        <div>
-          <div class="section-label">Aktuality</div>
-          <h2 class="section-title mb-8">Nejnovější <span class="gradient-text">aktivity</span></h2>
-        </div>
-        <a href="aktivity.html" class="btn btn-secondary">Zobrazit vše →</a>
-      </div>
-      <div class="latest-grid">
-        <div class="latest-card reveal">
-          <div class="latest-card-body">
-            <div class="latest-card-tag">🔢 Matematika</div>
-            <div class="latest-card-title">Generátor slovních úloh dle věku žáků</div>
-            <div class="latest-card-desc">Nechte ChatGPT vygenerovat desítky různých slovních úloh přesně na míru věkové
-              skupině a probírané látce.</div>
-          </div>
-          <div class="latest-card-footer">
-            <div style="display:flex;gap:6px">
-              <span class="badge badge-gold">ChatGPT</span>
-              <span class="badge badge-gray">ZŠ</span>
-            </div>
-            <a href="matematika.html" class="btn btn-mint btn-sm">Otevřít →</a>
-          </div>
-        </div>
-        <div class="latest-card reveal">
-          <div class="latest-card-body">
-            <div class="latest-card-tag">🇬🇧 Angličtina</div>
-            <div class="latest-card-title">AI konverzační partner pro žáky</div>
-            <div class="latest-card-desc">Nastavte ChatGPT jako bezpečného konverzačního partnera na zadané téma a
-              jazykové úrovni CEFR.</div>
-          </div>
-          <div class="latest-card-footer">
-            <div style="display:flex;gap:6px">
-              <span class="badge badge-blue">Claude</span>
-              <span class="badge badge-gray">SŠ</span>
-            </div>
-            <a href="anglictina.html" class="btn btn-mint btn-sm">Otevřít →</a>
-          </div>
-        </div>
-        <div class="latest-card reveal">
-          <div class="latest-card-body">
-            <div class="latest-card-tag">🔬 Přírodní vědy</div>
-            <div class="latest-card-title">Simulace vědeckého experimentu</div>
-            <div class="latest-card-desc">Gemini jako virtuální laboratorní asistent – popis průběhu experimentu,
-              výsledků a závěrů bez fyzické laboratoře.</div>
-          </div>
-          <div class="latest-card-footer">
-            <div style="display:flex;gap:6px">
-              <span class="badge badge-mint">Gemini</span>
-              <span class="badge badge-gray">ZŠ/SŠ</span>
-            </div>
-            <a href="prirodoveda.html" class="btn btn-mint btn-sm">Otevřít →</a>
-          </div>
-        </div>
       </div>
     </div>
   </section>
