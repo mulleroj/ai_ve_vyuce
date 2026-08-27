@@ -169,7 +169,7 @@ function initFilters(gridSelector, cardSelector, filterAttr = 'data-filter') {
     const filterChips = document.querySelectorAll(`.filter-chip[${filterAttr}]`);
     const cards = document.querySelectorAll(`${gridSelector} ${cardSelector}`);
     const groupedSections = document.querySelectorAll('.subject-prompt-section');
-    if (!filterChips.length) return;
+    if (!filterChips.length || !cards.length) return;
 
     const updateGroupedSections = () => {
         groupedSections.forEach(section => {

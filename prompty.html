@@ -78,10 +78,10 @@
                 <div class="page-hero-icon"
                     style="background:linear-gradient(135deg,rgba(243,156,18,0.2),rgba(243,156,18,0.05))">✨</div>
                 <h1 class="page-hero-title">Knihovna <span class="gradient-text-gold">Promptů</span></h1>
-                <p class="page-hero-subtitle">138 praktických promptů pro ChatGPT, Claude a Gemini. Zkopírujte
+                <p class="page-hero-subtitle">145 praktických promptů pro ChatGPT, Claude a Gemini. Zkopírujte
                     prompt, doplňte mezery v závorkách a používejte ihned ve výuce.</p>
                 <div class="page-hero-stats">
-                    <div class="page-hero-stat"><span>✨</span><strong>138</strong> promptů</div>
+                    <div class="page-hero-stat"><span>✨</span><strong>145</strong> promptů</div>
                     <div class="page-hero-stat"><span>📚</span><strong>5</strong> předmětů</div>
                     <div class="page-hero-stat"><span>🤖</span>ChatGPT · Claude · Gemini</div>
                 </div>
@@ -95,7 +95,7 @@
             <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-bottom:32px">
                 <div class="search-bar" style="flex:1;min-width:240px">
                     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                    <input type="text" class="search-input" id="promptSearch" placeholder="Hledat prompty...">
+                    <input type="text" class="search-input" id="search-prompts" placeholder="Hledat prompty...">
                 </div>
                 <div class="filter-group">
                     <button class="filter-chip active" data-filter="all">Vše</button>
@@ -105,6 +105,7 @@
                     <button class="filter-chip" data-filter="pv">🔬 Přírodní vědy</button>
                     <button class="filter-chip" data-filter="dej">🏛️ Dějepis</button>
                     <button class="filter-chip" data-filter="gen">🎯 Obecné</button>
+                    <button class="filter-chip" data-filter="chatgpt-vizualni">🎨 ChatGPT vizuály</button>
                 </div>
             </div>
 
@@ -112,6 +113,163 @@
                 <span class="badge badge-gold">✨ Šablona promptu</span>
                 <span><strong>Prompty</strong> jsou znovu použitelné textové šablony. Doplňte údaje v hranatých závorkách a zkopírujte je do svého AI nástroje.</span>
                 <a href="aktivity.html">Hledám hotovou aktivitu →</a>
+            </div>
+
+            <!-- ChatGPT prompty pro vizuální výukové materiály -->
+            <div id="chatgpt-vizualni-materialy" class="subject-prompt-section" style="margin-bottom:40px">
+                <div class="section-header">
+                    <h2 class="section-title">🎨 ChatGPT: vizuální výukové materiály</h2>
+                    <p class="section-subtitle">Sedm promptů z článku, každý samostatně s vlastním kopírováním.</p>
+                </div>
+                <div class="prompt-grid">
+                    <div id="prompt-vzdelavaci-infografika" class="prompt-card reveal" data-subject="chatgpt-vizualni">
+                        <div class="prompt-header"><div><div class="prompt-title">1. Vzdělávací infografika z vlastního podkladu</div><div class="prompt-lead">Z učebnice, poznámek, PDF nebo pracovního listu vytvoří přehledný vizuál.</div></div></div>
+                        <div class="prompt-body">Použij přiložený materiál jako hlavní zdroj informací a vytvoř z něj přehlednou, vizuálně poutavou vzdělávací infografiku připravenou pro použití ve výuce.
+
+Materiál je určen pro [doplň ročník / věk / úroveň žáků].
+
+Nejprve identifikuj nejdůležitější pojmy, fakta, terminologii, vysvětlení a příklady obsažené v podkladu.
+
+Vyber pouze informace důležité pro pochopení tématu a rozděl je do logických částí.
+
+Zkrať dlouhé texty, ale zachovej jejich původní význam.
+
+Použij vhodné vizuální prvky, například ilustrace, ikony, jednoduché diagramy, popisky nebo zvýrazněné informační bloky.
+
+Vytvoř výrazný nadpis, jasnou vizuální hierarchii a snadno čitelné rozložení.
+
+Nepřeplňuj materiál textem.
+
+Nevymýšlej nové údaje, které nejsou v podkladu, pokud nejsou nezbytné pro pochopení tématu.
+
+Výstup vytvoř jako [A4 na výšku / A4 na šířku / jiný formát], v češtině a vhodný pro tisk i digitální použití.
+
+Před vytvořením finálního vizuálu zkontroluj, že obsah odpovídá přiloženému podkladu.</div>
+                        <div class="prompt-footer"><span class="badge badge-green">Infografika</span><button class="copy-btn">📋 Kopírovat</button></div>
+                    </div>
+                    <div id="prompt-pojmova-mapa" class="prompt-card reveal" data-subject="chatgpt-vizualni">
+                        <div class="prompt-header"><div><div class="prompt-title">2. Pojmová mapa z vlastního materiálu</div><div class="prompt-lead">Propojí hlavní pojem, kategorie, podtémata a vztahy z přiloženého zdroje.</div></div></div>
+                        <div class="prompt-body">Analyzuj přiložený materiál a vytvoř z něj přehlednou pojmovou mapu pro výuku.
+
+Urči hlavní pojem nebo téma dokumentu a umísti jej do centra mapy.
+
+Kolem něj uspořádej nejdůležitější související pojmy, kategorie, podtémata a vztahy, které vyplývají z přiloženého materiálu.
+
+Používej především klíčová slova a krátká vysvětlení.
+
+Propoj související informace pomocí jasně označených větví, čar a šipek.
+
+Pokud to pomůže pochopení, použij jednoduché ikony nebo symboly.
+
+Mapa musí studentům umožnit rychle pochopit, jak spolu jednotlivé části tématu souvisejí.
+
+Nepřidávej zbytečné informace mimo přiložený zdroj.
+
+Výslednou mapu vytvoř pro [doplň věk nebo ročník žáků] a ve formátu [doplň formát].</div>
+                        <div class="prompt-footer"><span class="badge badge-purple">Pojmová mapa</span><button class="copy-btn">📋 Kopírovat</button></div>
+                    </div>
+                    <div id="prompt-casova-osa" class="prompt-card reveal" data-subject="chatgpt-vizualni">
+                        <div class="prompt-header"><div><div class="prompt-title">3. Časová osa z nahraného materiálu</div><div class="prompt-lead">Seřadí data, etapy, události a jejich význam podle dodaného zdroje.</div></div></div>
+                        <div class="prompt-body">Použij přiložený materiál a vytvoř z něj vzdělávací časovou osu.
+
+Vyhledej v podkladu nejdůležitější události, data, etapy, změny a zlomové okamžiky.
+
+Seřaď je chronologicky.
+
+Ke každé položce vytvoř krátké vysvětlení:
+
+co se stalo,
+
+proč je to důležité,
+
+a případně jaký to mělo následek.
+
+Používej pouze informace, které lze doložit z přiloženého podkladu.
+
+Časovou osu vytvoř tak, aby byla snadno čitelná žáky [doplň ročník nebo věk].
+
+Použij výrazná data, krátké popisky, ilustrace, ikony a vizuální propojení jednotlivých událostí.
+
+Výstup vytvoř jako [A4 / A3 / jiný formát].</div>
+                        <div class="prompt-footer"><span class="badge badge-gold">Časová osa</span><button class="copy-btn">📋 Kopírovat</button></div>
+                    </div>
+                    <div id="prompt-proces-cyklus" class="prompt-card reveal" data-subject="chatgpt-vizualni">
+                        <div class="prompt-header"><div><div class="prompt-title">4. Proces nebo cyklus z vlastního podkladu</div><div class="prompt-lead">Převede odborný postup nebo přírodovědný cyklus do srozumitelného diagramu.</div></div></div>
+                        <div class="prompt-body">Analyzuj přiložený materiál a vyhledej v něm popsaný proces, postup nebo cyklus.
+
+Vytvoř z něj přehledný vzdělávací diagram.
+
+Rozděl proces na jeho hlavní fáze a seřaď je ve správném pořadí podle přiloženého zdroje.
+
+Ke každé fázi vytvoř krátké a srozumitelné vysvětlení.
+
+Zvýrazni důležité vstupy, výstupy, změny, příčiny nebo následky.
+
+Použij šipky, jednoduché symboly, ikony a ilustrace.
+
+Pokud se jedná o cyklus, musí být z grafiky jasné, že se poslední fáze znovu propojuje s první.
+
+Nevkládej do diagramu informace, které nejsou obsaženy v podkladu.
+
+Výsledek přizpůsob žákům [doplň ročník nebo věk].</div>
+                        <div class="prompt-footer"><span class="badge badge-blue">Proces</span><button class="copy-btn">📋 Kopírovat</button></div>
+                    </div>
+                    <div id="prompt-srovnavaci-vizual" class="prompt-card reveal" data-subject="chatgpt-vizualni">
+                        <div class="prompt-header"><div><div class="prompt-title">5. Srovnávací vizuál</div><div class="prompt-lead">Zpracuje společné znaky a rozdíly jako tabulku, Vennův diagram nebo jiný přehled.</div></div></div>
+                        <div class="prompt-body">Analyzuj přiložený materiál a vyhledej v něm informace vhodné ke srovnání [doplň, co má být porovnáno].
+
+Urči jejich nejdůležitější společné znaky a rozdíly.
+
+Rozděl je do smysluplných kategorií.
+
+Zvol nejvhodnější vizuální formu – například srovnání vedle sebe, Vennův diagram, srovnávací tabulku nebo jiný přehledný diagram.
+
+Používej krátké texty, zvýrazněná klíčová slova, jednoduché ikony a vizuální symboly.
+
+Srovnání musí být možné pochopit na první pohled.
+
+Vycházej primárně z informací v přiloženém podkladu a nevymýšlej vlastnosti nebo fakta, která v něm nejsou uvedena.</div>
+                        <div class="prompt-footer"><span class="badge badge-mint">Srovnání</span><button class="copy-btn">📋 Kopírovat</button></div>
+                    </div>
+                    <div id="prompt-studijni-prehled" class="prompt-card reveal" data-subject="chatgpt-vizualni">
+                        <div class="prompt-header"><div><div class="prompt-title">6. Studijní přehled z učebních materiálů</div><div class="prompt-lead">Z několika stran učebnice nebo vlastní přípravy vytvoří jednostránkový materiál k opakování.</div></div></div>
+                        <div class="prompt-body">Použij přiložený materiál a vytvoř z něj jednostránkový studijní přehled pro žáky.
+
+Vyber informace, které jsou nejdůležitější pro pochopení a zapamatování učiva.
+
+Zahrň klíčové pojmy, důležitá fakta, definice, pravidla, vzorce nebo příklady, pokud jsou v podkladu obsaženy.
+
+Obsah rozděl do několika přehledných tematických částí.
+
+Použij krátké texty, zvýrazněná klíčová slova, ikony, jednoduché ilustrace nebo diagramy.
+
+Jasně rozliš informace, které je nutné znát, od doplňujících informací.
+
+Materiál vytvoř tak, aby jej bylo možné použít při opakování před testem nebo při samostatném studiu.
+
+Výstup vytvoř jako A4 a přizpůsob jej žákům [doplň ročník nebo úroveň].</div>
+                        <div class="prompt-footer"><span class="badge badge-green">Studijní přehled</span><button class="copy-btn">📋 Kopírovat</button></div>
+                    </div>
+                    <div id="prompt-vzdelavaci-komiks" class="prompt-card reveal" data-subject="chatgpt-vizualni">
+                        <div class="prompt-header"><div><div class="prompt-title">7. Vzdělávací komiks z učiva</div><div class="prompt-lead">Převede odborné nebo teoretické učivo do krátkého vizuálního příběhu.</div></div></div>
+                        <div class="prompt-body">Použij informace z přiloženého materiálu a vytvoř z nich krátký vzdělávací komiks nebo vizuální příběh.
+
+Hlavním cílem je vysvětlit [doplň téma nebo pojem].
+
+Rozděl příběh do několika logicky navazujících panelů.
+
+Použij postavy, jednoduché situace, krátké dialogy a vizuální vysvětlení.
+
+Každý panel musí posouvat příběh a zároveň vysvětlovat část učiva.
+
+Veškeré odborné informace musí odpovídat přiloženému podkladu.
+
+Zábavné prvky mohou pomoci zapamatování, ale nesmí zkreslovat učivo.
+
+Text udržuj stručný a přizpůsob jej žákům [doplň věk nebo ročník].</div>
+                        <div class="prompt-footer"><span class="badge badge-orange">Komiks</span><button class="copy-btn">📋 Kopírovat</button></div>
+                    </div>
+                </div>
             </div>
 
             <!-- Obecné prompty box -->
@@ -552,7 +710,7 @@
             <div class="modal-body"></div>
         </div>
     </div>
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=20260827-chatgpt-prompts"></script>
 </body>
 
 </html>

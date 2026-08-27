@@ -549,6 +549,65 @@ body.workflow-page {
   line-height: 1.7;
 }
 
+.chatgpt-articles-grid .workflow-related-card {
+  display: flex;
+  min-height: 265px;
+  flex-direction: column;
+}
+
+.chatgpt-article-meta {
+  margin: -8px 0 14px;
+  color: var(--workflow-teal);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.chatgpt-article-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 20px;
+  color: var(--workflow-yellow);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.chatgpt-article-link:hover {
+  color: var(--workflow-teal);
+}
+
+.chatgpt-empty {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--workflow-muted);
+}
+
+.chatgpt-launch-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 28px;
+  padding: 13px 17px;
+  border: 1px solid rgba(0, 212, 168, 0.42);
+  border-radius: 12px;
+  background: rgba(0, 212, 168, 0.12);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.chatgpt-launch-link:hover {
+  transform: translateY(-2px);
+  border-color: var(--workflow-teal);
+  background: rgba(0, 212, 168, 0.2);
+}
+
 .workflow-footer {
   padding: 28px 32px;
   border-top: 1px solid var(--workflow-line);

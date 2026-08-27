@@ -5,6 +5,42 @@
  */
 window.siteArticles = [
   {
+    href: 'ai-novinka-ai-ve-vzdelavani-srpen-2026.html',
+    title: 'AI ve vzdělávání: co je nového na konci srpna 2026',
+    platforms: ['chatgpt'],
+    summary: 'Přehled novinek od Microsoftu, Googlu a OpenAI: AI jako tutor, práce se zdroji a postupné začleňování do školního prostředí.',
+    category: 'Novinka',
+    date: '2026-08-27',
+    dateLabel: '27. srpna 2026',
+    icon: '📰',
+    tags: ['AI ve vzdělávání', 'Microsoft', 'Gemini', 'ChatGPT'],
+    badgeClass: 'badge-mint'
+  },
+  {
+    href: 'ai-navod-chatgpt-vizualni-materialy.html',
+    title: '7 promptů pro ChatGPT: vizuální výukové materiály',
+    platforms: ['chatgpt'],
+    summary: 'Jak z vlastních dokumentů, fotografií, skenů a tabulek připravit v ChatGPT infografiku, mapu, diagram, pracovní list nebo komiks.',
+    category: 'Návod',
+    date: '2026-08-27',
+    dateLabel: '27. srpna 2026',
+    icon: '🎨',
+    tags: ['ChatGPT', '7 promptů'],
+    badgeClass: 'badge-green'
+  },
+  {
+    href: 'ai-workflow-fotografie-ucebnice.html',
+    title: 'Fotografii učebnice už nemusíte ručně přepisovat',
+    platforms: ['chatgpt'],
+    summary: 'Jak z fotografie nebo skenu stránky učebnice připravit v ChatGPT infografiku, pracovní list, pojmovou mapu nebo další výukový materiál.',
+    category: 'Workflow',
+    date: '2026-08-27',
+    dateLabel: '27. srpna 2026',
+    icon: '📷',
+    tags: ['OCR', 'Výukové materiály'],
+    badgeClass: 'badge-green'
+  },
+  {
     href: 'ai-workflow-vibe-coding.html',
     title: 'Vibe coding krok za krokem',
     summary: 'Jak si učitel může vytvořit vlastní aplikaci bez programování – od malého problému přes prototyp a testování až po další rozvoj.',
@@ -73,6 +109,7 @@ window.siteArticles = [
   {
     href: 'ai-novinka-pravidla-ve-skole.html',
     title: 'AI pravidla ve škole',
+    platforms: ['chatgpt'],
     summary: 'Co má obsahovat dobrá školní politika pro žáky, učitele, vedení školy a rodiče v roce 2026.',
     category: 'Novinka',
     date: '2026-08-25',
@@ -84,6 +121,7 @@ window.siteArticles = [
   {
     href: 'ai-workflow-prep-edit.html',
     title: 'PREP + EDIT: Praktický workflow pro práci s AI',
+    platforms: ['chatgpt'],
     summary: 'Šest kroků pro bezpečnější tvorbu školních materiálů: zdroj, zadání, návrh AI, kontrola, ověření a schválení.',
     category: 'Workflow',
     date: '2026-08-25',
@@ -95,6 +133,7 @@ window.siteArticles = [
   {
     href: 'ai-navod-edit-kontrola.html',
     title: 'EDIT: Jak kriticky kontrolovat výstupy AI',
+    platforms: ['chatgpt'],
     summary: 'Čtyřkrokový postup pro kontrolu srozumitelnosti, faktické správnosti, zkreslení a použitelnosti výstupu AI.',
     category: 'Návod',
     date: '2026-08-25',
@@ -106,6 +145,7 @@ window.siteArticles = [
   {
     href: 'ai-navod-prep-prompty.html',
     title: 'PREP: Jak psát lepší prompty pro AI ve výuce',
+    platforms: ['chatgpt'],
     summary: 'Framework pro přesnější zadání, která pomohou AI připravit použitelnější materiály, aktivity a hodiny.',
     category: 'Návod',
     date: '2026-08-25',
@@ -117,6 +157,7 @@ window.siteArticles = [
   {
     href: 'ai-workflow-18-promptu.html',
     title: '18 praktických AI promptů pro učitele',
+    platforms: ['chatgpt'],
     summary: 'Šablony pro plánování hodin, pracovní listy, diferenciaci, testy, konverzaci, zpětnou vazbu a EDIT.',
     category: 'Workflow',
     date: '2026-08-25',
@@ -128,6 +169,7 @@ window.siteArticles = [
   {
     href: 'ai-workflow-8-otazek.html',
     title: '8 otázek, které by si měl učitel položit při práci s AI',
+    platforms: ['chatgpt'],
     summary: 'Rychlé otázky pro posouzení přínosu, spolupráce, učení žáků, bezpečnosti a lidské odpovědnosti.',
     category: 'Workflow',
     date: '2026-08-25',
@@ -139,6 +181,7 @@ window.siteArticles = [
   {
     href: 'ai-workflow-udl-ai.html',
     title: 'UDL + AI: Jak přizpůsobit výuku různým žákům',
+    platforms: ['chatgpt'],
     summary: 'Jak připravit různé úrovně podpory, varianty materiálu a způsoby výstupu bez snížení vzdělávacího cíle.',
     category: 'Workflow',
     date: '2026-08-25',
@@ -150,6 +193,7 @@ window.siteArticles = [
   {
     href: 'ai-workflow-usetri-praci.html',
     title: 'Jak může AI skutečně ušetřit učiteli práci',
+    platforms: ['chatgpt'],
     summary: 'Praktické rozdělení práce mezi AI a učitele: návrhy, varianty, převody, kontrola a rozhodování.',
     category: 'Workflow',
     date: '2026-08-25',
@@ -183,6 +227,7 @@ window.siteArticles = [
   {
     href: 'ai-navod-commands-chatgpt.html',
     title: 'Commands v ChatGPT: jak si zkrátit práci',
+    platforms: ['chatgpt'],
     summary: 'Přehled commands pro učení, psaní, obrázky, video, organizaci práce a kritické myšlení.',
     category: 'Návod',
     date: '2026-08-23',
@@ -194,6 +239,7 @@ window.siteArticles = [
   {
     href: 'ai-novinka-microsoft-ai-workflow.html',
     title: 'Microsoft skládá celý AI workflow pro učitele',
+    platforms: ['chatgpt'],
     summary: 'Jak propojit přípravu učitele, tvorbu aktivity, zadání studentům, práci žáka a výsledky.',
     category: 'Novinka',
     date: '2026-08-21',
@@ -205,6 +251,7 @@ window.siteArticles = [
   {
     href: 'ai-novinka-chatgpt-interaktivni-kvizy.html',
     title: 'ChatGPT přidává interaktivní kvízy',
+    platforms: ['chatgpt'],
     summary: 'Jak využít interaktivní kvízy, vlastní zdroje a průběžnou zpětnou vazbu pro učení.',
     category: 'Novinka',
     date: '2026-08-19',
@@ -216,6 +263,7 @@ window.siteArticles = [
   {
     href: 'ai-novinka-microsoft-gemini.html',
     title: 'Microsoft skládá AI do jednoho pracovního prostředí',
+    platforms: ['chatgpt'],
     summary: 'Jak integrace AI s účty, dokumenty, tabulkami a nástroji mění každodenní práci školy.',
     category: 'Novinka',
     date: '2026-08-17',
@@ -227,6 +275,7 @@ window.siteArticles = [
   {
     href: 'ai-novinka-vykonnejsi-ai.html',
     title: 'Výkonnější AI se stává běžně dostupnou',
+    platforms: ['chatgpt'],
     summary: 'Proč dostupnější výkonná AI mění školní zadání, detekci AI, bezpečnost i práci učitele.',
     category: 'Novinka',
     date: '2026-08-14',
@@ -249,6 +298,7 @@ window.siteArticles = [
   {
     href: 'ai-workflow.html',
     title: 'Workflow: ChatGPT → Claude',
+    platforms: ['chatgpt'],
     summary: 'Workflow pro vytvoření vizuálních poznámek, kontrolu faktů v Claude a opravu chyb v ChatGPT.',
     category: 'Workflow',
     date: '',
