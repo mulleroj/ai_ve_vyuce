@@ -5,9 +5,11 @@ if (chatgptArticlesMount && Array.isArray(window.siteArticles)) {
         .map((article, index) => ({ article, index }))
         .filter(item => item.article.platforms?.includes('chatgpt'))
         .sort((left, right) => {
+            const leftFeatured = left.article.featured ? 1 : 0;
+            const rightFeatured = right.article.featured ? 1 : 0;
             const leftDate = left.article.date || '';
             const rightDate = right.article.date || '';
-            return rightDate.localeCompare(leftDate) || left.index - right.index;
+            return rightFeatured - leftFeatured || rightDate.localeCompare(leftDate) || left.index - right.index;
         })
         .map(item => item.article);
 

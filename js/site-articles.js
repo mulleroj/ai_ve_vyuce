@@ -5,6 +5,19 @@
  */
 window.siteArticles = [
   {
+    href: 'ai-navod-chatgpt-zacatek-bezpecne.html',
+    title: 'ChatGPT pro učitele: jak začít bezpečně a co zvládnete i zdarma',
+    platforms: ['chatgpt'],
+    featured: true,
+    summary: 'Praktický začátečnický návod k bezpečnému nastavení účtu, ochraně dat žáků a možnostem bezplatného ChatGPT.',
+    category: 'Návod',
+    date: '2026-08-27',
+    dateLabel: '27. srpna 2026',
+    icon: '🔐',
+    tags: ['ChatGPT', 'Bezpečnost', 'Zdarma'],
+    badgeClass: 'badge-green'
+  },
+  {
     href: 'ai-novinka-ai-ve-vzdelavani-srpen-2026.html',
     title: 'AI ve vzdělávání: co je nového na konci srpna 2026',
     platforms: ['chatgpt'],
