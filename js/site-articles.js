@@ -5,6 +5,28 @@
  */
 window.siteArticles = [
   {
+    href: 'ai-navod-7-univerzalnich-promptu.html',
+    title: '7 univerzálních AI promptů pro učitele',
+    summary: 'Sedm upravitelných šablon pro pracovní listy, studijní materiály, prezentace, aktivity a diferenciaci v ChatGPT, Gemini i Claude.',
+    category: 'Návod',
+    date: '2026-08-29',
+    dateLabel: '29. srpna 2026',
+    icon: '7️⃣',
+    tags: ['7 promptů', 'Výukové materiály'],
+    badgeClass: 'badge-mint'
+  },
+  {
+    href: 'ai-workflow-7-kroku-gemini-notebook.html',
+    title: 'Gemini Notebook jako kompletní příprava výuky',
+    summary: 'Opakovatelný workflow od vlastních zdrojů přes plán hodiny a materiály až po aktualizaci a AI tutora.',
+    category: 'Workflow',
+    date: '2026-08-29',
+    dateLabel: '29. srpna 2026',
+    icon: '📓',
+    tags: ['Gemini Notebook', '7 kroků'],
+    badgeClass: 'badge-blue'
+  },
+  {
     href: 'ai-navod-chatgpt-zacatek-bezpecne.html',
     title: 'ChatGPT pro učitele: jak začít bezpečně a co zvládnete i zdarma',
     platforms: ['chatgpt'],

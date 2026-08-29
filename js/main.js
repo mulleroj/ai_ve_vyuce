@@ -242,6 +242,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
 /* ── Latest articles on the home page ── */
 const latestArticlesMount = document.querySelector('#latest-articles');
 if (latestArticlesMount && Array.isArray(window.siteArticles)) {
+    const latestArticleCount = 6;
     const latestArticles = window.siteArticles
         .map((article, index) => ({ article, index }))
         .sort((left, right) => {
@@ -249,7 +250,7 @@ if (latestArticlesMount && Array.isArray(window.siteArticles)) {
             const rightDate = right.article.date || '';
             return rightDate.localeCompare(leftDate) || left.index - right.index;
         })
-        .slice(0, 8)
+        .slice(0, latestArticleCount)
         .map(item => item.article);
 
     latestArticlesMount.replaceChildren();
@@ -264,9 +265,6 @@ if (latestArticlesMount && Array.isArray(window.siteArticles)) {
             const card = document.createElement('article');
             card.className = 'latest-card';
 
-            const body = document.createElement('div');
-            body.className = 'latest-card-body';
-
             const tag = document.createElement('div');
             tag.className = 'latest-card-tag';
             tag.textContent = `${article.icon || '📰'} ${article.category || 'Článek'}${article.dateLabel ? ` · ${article.dateLabel}` : ''}`;
@@ -280,11 +278,6 @@ if (latestArticlesMount && Array.isArray(window.siteArticles)) {
             description.className = 'latest-card-desc';
             description.textContent = article.summary || '';
 
-            body.append(tag, title, description);
-
-            const footer = document.createElement('div');
-            footer.className = 'latest-card-footer';
-
             const badges = document.createElement('div');
             badges.className = 'latest-card-badges';
             (article.tags || []).forEach((tagLabel, tagIndex) => {
@@ -295,12 +288,11 @@ if (latestArticlesMount && Array.isArray(window.siteArticles)) {
             });
 
             const readLink = document.createElement('a');
-            readLink.className = 'btn btn-mint btn-sm';
+            readLink.className = 'btn btn-mint btn-sm latest-card-link';
             readLink.href = article.href;
             readLink.textContent = 'Číst →';
 
-            footer.append(badges, readLink);
-            card.append(body, footer);
+            card.append(tag, title, description, badges, readLink);
             latestArticlesMount.appendChild(card);
         });
     }

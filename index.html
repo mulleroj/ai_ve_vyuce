@@ -62,9 +62,9 @@
     }
 
     .latest-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
     .latest-card {
@@ -73,8 +73,11 @@
       border-radius: var(--radius-lg);
       overflow: hidden;
       transition: var(--transition);
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: minmax(160px, 0.9fr) minmax(230px, 1.25fr) minmax(280px, 2fr) minmax(150px, 0.9fr) auto;
+      align-items: center;
+      column-gap: 20px;
+      padding: 18px 20px;
     }
 
     .latest-card:hover {
@@ -84,20 +87,11 @@
     }
 
     .latest-card-body {
-      padding: 22px 24px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
+      display: contents;
     }
 
     .latest-card-footer {
-      padding: 14px 24px;
-      border-top: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      flex-wrap: wrap;
+      display: contents;
     }
 
     .latest-card-tag {
@@ -106,13 +100,13 @@
       color: var(--accent-mint);
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      margin-bottom: 8px;
+      margin: 0;
     }
 
     .latest-card-title {
       font-size: 1rem;
       font-weight: 700;
-      margin-bottom: 8px;
+      margin: 0;
       line-height: 1.4;
     }
 
@@ -124,13 +118,38 @@
       font-size: 0.85rem;
       color: var(--text-secondary);
       line-height: 1.6;
-      flex: 1;
+      margin: 0;
     }
 
     .latest-card-badges {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
+    }
+
+    .latest-card-link {
+      justify-self: end;
+      white-space: nowrap;
+    }
+
+    @media(max-width:900px) {
+      .latest-card {
+        grid-template-columns: minmax(0, 1fr) auto;
+        row-gap: 10px;
+      }
+
+      .latest-card-tag,
+      .latest-card-title,
+      .latest-card-desc,
+      .latest-card-badges {
+        grid-column: 1;
+      }
+
+      .latest-card-link {
+        grid-column: 2;
+        grid-row: 1 / span 4;
+        align-self: center;
+      }
     }
 
     .latest-empty {
@@ -713,8 +732,8 @@
       });
     })();
   </script>
-  <script src="js/site-articles.js?v=20260826-articles"></script>
-  <script src="js/main.js?v=20260826-articles"></script>
+  <script src="js/site-articles.js?v=20260829-latest-6-rows"></script>
+  <script src="js/main.js?v=20260829-latest-6-rows"></script>
 </body>
 
 </html>
