@@ -564,14 +564,20 @@ body.workflow-page {
 }
 
 .chatgpt-articles-grid,
-.gemini-articles-grid {
+.gemini-articles-grid,
+.claude-articles-grid,
+.perplexity-articles-grid,
+.copilot-articles-grid {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
 .chatgpt-articles-grid .workflow-related-card,
-.gemini-articles-grid .workflow-related-card {
+.gemini-articles-grid .workflow-related-card,
+.claude-articles-grid .workflow-related-card,
+.perplexity-articles-grid .workflow-related-card,
+.copilot-articles-grid .workflow-related-card {
   display: grid;
   grid-template-columns: 40px minmax(150px, 0.85fr) minmax(220px, 1.25fr) minmax(280px, 2fr) auto;
   align-items: center;
@@ -581,21 +587,36 @@ body.workflow-page {
 }
 
 .chatgpt-articles-grid .workflow-related-card .workflow-card-number,
-.gemini-articles-grid .workflow-related-card .workflow-card-number {
+.gemini-articles-grid .workflow-related-card .workflow-card-number,
+.claude-articles-grid .workflow-related-card .workflow-card-number,
+.perplexity-articles-grid .workflow-related-card .workflow-card-number,
+.copilot-articles-grid .workflow-related-card .workflow-card-number {
   margin: 0;
 }
 
 .chatgpt-articles-grid .chatgpt-article-meta,
 .gemini-articles-grid .gemini-article-meta,
+.claude-articles-grid .claude-article-meta,
+.perplexity-articles-grid .perplexity-article-meta,
+.copilot-articles-grid .copilot-article-meta,
 .chatgpt-articles-grid .workflow-related-card h3,
 .gemini-articles-grid .workflow-related-card h3,
+.claude-articles-grid .workflow-related-card h3,
+.perplexity-articles-grid .workflow-related-card h3,
+.copilot-articles-grid .workflow-related-card h3,
 .chatgpt-articles-grid .workflow-related-card p,
-.gemini-articles-grid .workflow-related-card p {
+.gemini-articles-grid .workflow-related-card p,
+.claude-articles-grid .workflow-related-card p,
+.perplexity-articles-grid .workflow-related-card p,
+.copilot-articles-grid .workflow-related-card p {
   margin: 0;
 }
 
 .chatgpt-article-meta,
-.gemini-article-meta {
+.gemini-article-meta,
+.claude-article-meta,
+.perplexity-article-meta,
+.copilot-article-meta {
   margin: -8px 0 14px;
   color: var(--workflow-teal);
   font-size: 0.7rem;
@@ -605,7 +626,10 @@ body.workflow-page {
 }
 
 .chatgpt-article-link,
-.gemini-article-link {
+.gemini-article-link,
+.claude-article-link,
+.perplexity-article-link,
+.copilot-article-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -619,12 +643,18 @@ body.workflow-page {
 }
 
 .chatgpt-articles-grid .chatgpt-article-link,
-.gemini-articles-grid .gemini-article-link {
+.gemini-articles-grid .gemini-article-link,
+.claude-articles-grid .claude-article-link,
+.perplexity-articles-grid .perplexity-article-link,
+.copilot-articles-grid .copilot-article-link {
   justify-self: end;
 }
 
 .chatgpt-article-link:hover,
-.gemini-article-link:hover {
+.gemini-article-link:hover,
+.claude-article-link:hover,
+.perplexity-article-link:hover,
+.copilot-article-link:hover {
   color: var(--workflow-teal);
 }
 
@@ -696,30 +726,50 @@ body.workflow-page {
   }
 
   .chatgpt-articles-grid .workflow-related-card,
-  .gemini-articles-grid .workflow-related-card {
+  .gemini-articles-grid .workflow-related-card,
+  .claude-articles-grid .workflow-related-card,
+  .perplexity-articles-grid .workflow-related-card,
+  .copilot-articles-grid .workflow-related-card {
     grid-template-columns: 40px minmax(0, 1fr);
     row-gap: 8px;
   }
 
   .chatgpt-articles-grid .workflow-card-number,
-  .gemini-articles-grid .workflow-card-number {
+  .gemini-articles-grid .workflow-card-number,
+  .perplexity-articles-grid .workflow-card-number,
+  .copilot-articles-grid .workflow-card-number {
     grid-row: 1 / span 4;
     align-self: start;
   }
 
   .chatgpt-articles-grid .chatgpt-article-meta,
   .gemini-articles-grid .gemini-article-meta,
+  .claude-articles-grid .claude-article-meta,
+  .perplexity-articles-grid .perplexity-article-meta,
+  .copilot-articles-grid .copilot-article-meta,
   .chatgpt-articles-grid .workflow-related-card h3,
   .gemini-articles-grid .workflow-related-card h3,
+  .claude-articles-grid .workflow-related-card h3,
+  .perplexity-articles-grid .workflow-related-card h3,
+  .copilot-articles-grid .workflow-related-card h3,
   .chatgpt-articles-grid .workflow-related-card p,
   .gemini-articles-grid .workflow-related-card p,
+  .claude-articles-grid .workflow-related-card p,
+  .perplexity-articles-grid .workflow-related-card p,
+  .copilot-articles-grid .workflow-related-card p,
   .chatgpt-articles-grid .chatgpt-article-link,
-  .gemini-articles-grid .gemini-article-link {
+  .gemini-articles-grid .gemini-article-link,
+  .claude-articles-grid .claude-article-link,
+  .perplexity-articles-grid .perplexity-article-link,
+  .copilot-articles-grid .copilot-article-link {
     grid-column: 2;
   }
 
   .chatgpt-articles-grid .chatgpt-article-link,
-  .gemini-articles-grid .gemini-article-link {
+  .gemini-articles-grid .gemini-article-link,
+  .claude-articles-grid .claude-article-link,
+  .perplexity-articles-grid .perplexity-article-link,
+  .copilot-articles-grid .copilot-article-link {
     justify-self: start;
   }
 }
