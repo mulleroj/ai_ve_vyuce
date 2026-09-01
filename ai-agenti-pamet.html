@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paměť AI agentů: co si AI skutečně pamatuje | AI ve Výuce</title>
+    <meta name="description"
+        content="Jak funguje paměť AI agentů: kontext, pracovní a dlouhodobá paměť, externí znalostní zdroje, RAG, soukromí, aktuálnost a rozdíl proti trénování modelu." />
+    <link rel="stylesheet" href="css/workflow.css?v=20260901-ai-agenti-pamet" />
+</head>
+
+<body class="workflow-page">
+    <header class="workflow-shell">
+        <div class="workflow-topbar">
+            <a class="workflow-brand" href="index.html"><span class="workflow-brand-mark">✦</span>AI ve Výuce</a>
+            <a class="workflow-back" href="ai-agenti.html">← AI agenti</a>
+        </div>
+        <div class="workflow-hero">
+            <div>
+                <div class="workflow-eyebrow">AI agenti · 1. září 2026</div>
+                <h1>Paměť AI agentů:<br /><span>co si AI skutečně pamatuje</span></h1>
+                <p class="workflow-hero-lead">Jak agent pracuje s kontextem, pracovní a dlouhodobou pamětí, externími znalostmi a proč paměť není totéž jako nové trénování modelu.</p>
+                <div class="workflow-meta"><span>Kontext</span><span>Dlouhodobá paměť</span><span>RAG</span><span>Soukromí</span></div>
+            </div>
+            <div class="workflow-route" aria-label="Hlavní témata článku o paměti AI agentů">
+                <div class="workflow-stage"><span class="workflow-stage-number">01</span><div><strong>Kontext</strong><small>Co má model právě před sebou</small></div></div>
+                <div class="workflow-stage"><span class="workflow-stage-number">02</span><div><strong>Pracovní paměť</strong><small>Co agent potřebuje během úkolu</small></div></div>
+                <div class="workflow-stage"><span class="workflow-stage-number">03</span><div><strong>Dlouhodobá paměť</strong><small>Co může využít při další práci</small></div></div>
+                <div class="workflow-stage"><span class="workflow-stage-number">04</span><div><strong>Externí zdroje</strong><small>Jak agent vyhledává relevantní znalosti</small></div></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="workflow-main">
+        <article class="workflow-article">
+            <div class="workflow-article-intro">
+                <div class="workflow-article-kicker"><span class="workflow-step">04</span> AI agenti v praxi</div>
+                <h2 class="workflow-article-title">Paměť AI agentů: co si AI skutečně pamatuje</h2>
+                <p class="workflow-article-summary">Agent může pracovat s informacemi z minulosti, ale paměť AI není lidská paměť a neznamená automatické nové trénování modelu.</p>
+                <div class="workflow-article-meta"><span>1. září 2026</span><span>AI agenti</span><span>Paměť a RAG</span></div>
+            </div>
+
+            <div class="article-content">
+                <p class="article-lead">V předchozích dílech jsme si ukázali, že AI agent pracuje v cyklu a může používat různé nástroje. Aby ale mohl pracovat dlouhodobě, potřebuje ještě jednu důležitou schopnost: pracovat s informacemi z minulosti.</p>
+                <p>Právě tomu se říká paměť. Jenže paměť AI není totéž jako lidská paměť a už vůbec neznamená, že se model pokaždé „něco nového naučí“.</p>
+
+                <figure class="article-figure">
+                    <img src="images/ai-agenti-pamet.png" alt="Infografika vysvětlující kontext, pracovní a dlouhodobou paměť AI agentů, externí zdroje, RAG a rozdíl proti trénování modelu" />
+                    <figcaption>Paměť AI agentů: od kontextu aktuální konverzace přes pracovní a dlouhodobou paměť až po externí znalostní zdroje.</figcaption>
+                </figure>
+
+                <h2>Proč agent potřebuje paměť</h2>
+                <p>Představme si asistenta, kterému každý den zadáváme podobné úkoly.</p>
+                <p>V pondělí mu řekneme:</p>
+                <blockquote>„Připravuji pracovní listy pro druhý ročník na úrovni B1. Preferuji krátké úkoly a jasné instrukce.“</blockquote>
+                <p>V úterý:</p>
+                <blockquote>„Připrav mi pracovní list na minulý čas.“</blockquote>
+                <p>Pokud si agent předchozí informaci nijak neuchoval, nemusí vědět, pro koho pracovní list připravuje, jaká je jazyková úroveň ani jaký styl materiálů preferujeme.</p>
+                <p>Budeme mu tedy muset všechno zopakovat.</p>
+                <p>To není příliš praktické.</p>
+                <p>Agent s pamětí může naopak využít informace z předchozí práce a nemusí začínat pokaždé od nuly.</p>
+
+                <h2>AI nemá jednu paměť</h2>
+                <p>Když se řekne „AI si něco pamatuje“, může to znamenat několik různých věcí.</p>
+                <p>Je dobré rozlišovat alespoň čtyři základní vrstvy:</p>
+                <ol>
+                    <li>kontext aktuální konverzace,</li>
+                    <li>pracovní paměť,</li>
+                    <li>dlouhodobá paměť,</li>
+                    <li>externí znalostní zdroje.</li>
+                </ol>
+                <p>A pak existuje ještě jedna věc, která se s pamětí často plete:</p>
+                <div class="article-prompt"><strong>trénování modelu</strong></div>
+                <p>To je ale něco úplně jiného.</p>
+
+                <h2>1. Kontext: co má model právě před sebou</h2>
+                <p>Nejjednodušší formou „paměti“ je aktuální kontext.</p>
+                <p>Píšeme například:</p>
+                <blockquote>Připrav mi pracovní list o Evropské unii.</blockquote>
+                <p>Potom doplníme:</p>
+                <blockquote>Udělej ho pro druhý ročník.</blockquote>
+                <p>A následně:</p>
+                <blockquote>Přidej řešení.</blockquote>
+                <p>Model nemusíme pokaždé znovu informovat, že mluvíme o stejném pracovním listu.</p>
+                <p>Předchozí zprávy jsou stále součástí kontextu konverzace.</p>
+                <p>Můžeme si to představit jako papíry rozložené na stole.</p>
+                <p>Dokud je má model před sebou, může z nich čerpat.</p>
+
+                <h3>Kontext má ale omezenou velikost</h3>
+                <p>Do kontextového okna se nevejde nekonečné množství informací.</p>
+                <p>Každý model má určitou kapacitu.</p>
+                <p>Jakmile je konverzace nebo souborů příliš mnoho, systém musí nějak rozhodnout, co model dostane k dispozici.</p>
+                <p>Může například:</p>
+                <ul>
+                    <li>starší informace vynechat,</li>
+                    <li>shrnout je,</li>
+                    <li>načíst pouze relevantní části,</li>
+                    <li>získat informace z externí paměti.</li>
+                </ul>
+                <p>Proto není dobré uvažovat:</p>
+                <blockquote>„Řekl jsem AI něco před třemi měsíci, takže to určitě ví.“</blockquote>
+                <p>Nemusí.</p>
+                <p>Záleží na tom, jak je konkrétní aplikace postavená.</p>
+
+                <h2>2. Pracovní paměť: co agent potřebuje během úkolu</h2>
+                <p>Agent často řeší úkol, který má několik kroků.</p>
+                <p>Například:</p>
+                <blockquote>„Porovnej tři nástroje pro tvorbu testů, zjisti jejich ceny, možnosti pro školy a vytvoř tabulku.“</blockquote>
+                <p>Agent během práce získá řadu mezivýsledků.</p>
+                <p>Například:</p>
+                <ul>
+                    <li>cenu prvního nástroje,</li>
+                    <li>cenu druhého nástroje,</li>
+                    <li>dostupnost školní licence,</li>
+                    <li>omezení bezplatné verze.</li>
+                </ul>
+                <p>Tyto informace potřebuje zachovat, aby je mohl na konci porovnat.</p>
+                <p>To můžeme označit jako pracovní paměť.</p>
+                <p>Je určena především pro právě probíhající úkol.</p>
+                <p>Po jeho dokončení nemusí být nutně zachována.</p>
+
+                <h2>3. Dlouhodobá paměť</h2>
+                <p>Dlouhodobá paměť funguje jinak.</p>
+                <p>Do ní může systém ukládat informace, které budou užitečné i při budoucích úkolech.</p>
+                <p>Například:</p>
+                <ul>
+                    <li>Uživatel preferuje materiály na A4.</li>
+                    <li>V angličtině používá úroveň B1.</li>
+                    <li>Při tvorbě testů chce vždy také řešení.</li>
+                    <li>Projekt používá určitou strukturu složek.</li>
+                </ul>
+                <p>Při další práci systém relevantní informace z paměti načte a vloží je modelu do kontextu.</p>
+                <p>To je důležitý detail.</p>
+                <p>Model většinou informaci nemá trvale uloženou uvnitř sebe.</p>
+                <p>Aplikace ji uloží někam mimo jazykový model a později ji znovu poskytne.</p>
+                <p>Zjednodušeně:</p>
+                <div class="article-prompt"><strong>uživatel → informace → databáze paměti</strong><br /><br /><strong>později:</strong><br /><br />nový úkol → vyhledání relevantní paměti → model</div>
+
+                <h2>Paměť není totéž jako trénování</h2>
+                <p>Tohle je asi nejdůležitější část celého článku.</p>
+                <p>Pokud si AI aplikace uloží:</p>
+                <blockquote>„Uživatel preferuje stručné pracovní listy.“</blockquote>
+                <p>neznamená to, že se změnil samotný jazykový model.</p>
+                <p>Model nebyl znovu natrénován.</p>
+                <p>Systém si pouze uložil informaci a při další práci ji může znovu předat.</p>
+                <p>Je to podobné, jako kdyby měl člověk poznámkový blok.</p>
+                <p>Do poznámkového bloku si zapíše:</p>
+                <blockquote>Jan chce vždy PDF.</blockquote>
+                <p>A při příští práci se do poznámky podívá.</p>
+                <p>Nevytvořil si nový mozek.</p>
+                <p>Jen použil uloženou informaci.</p>
+
+                <h2>Trénování modelu je něco jiného</h2>
+                <p>Při trénování se mění samotné parametry modelu.</p>
+                <p>Je to výpočetně velmi náročný proces a běžný AI agent jej při každém rozhovoru rozhodně neprovádí.</p>
+                <p>Proto je tvrzení:</p>
+                <blockquote>„Agent se z každého úkolu učí.“</blockquote>
+                <p>příliš zjednodušené.</p>
+                <p>Přesnější je říct:</p>
+                <blockquote>Agent může ukládat zkušenosti nebo informace a později je znovu používat.</blockquote>
+                <p>To může navenek působit jako učení.</p>
+                <p>Technicky ale často jde o práci s pamětí, nikoliv o nové trénování modelu.</p>
+
+                <h2>Co může agent ukládat</h2>
+                <p>Do dlouhodobé paměti lze ukládat mnoho druhů informací.</p>
+
+                <h3>Preference uživatele</h3>
+                <ul>
+                    <li>Preferuje stručné odpovědi.</li>
+                    <li>Dokumenty chce na A4.</li>
+                    <li>Při výuce používá britskou angličtinu.</li>
+                </ul>
+
+                <h3>Informace o projektu</h3>
+                <ul>
+                    <li>Aplikace používá React.</li>
+                    <li>Zdrojové soubory jsou ve složce <code>/src</code>.</li>
+                    <li>Testy se spouštějí určitým příkazem.</li>
+                </ul>
+
+                <h3>Výsledky předchozí práce</h3>
+                <ul>
+                    <li>Tento problém už byl řešen.</li>
+                    <li>Uživatel zamítl variantu A.</li>
+                    <li>Poslední úspěšný postup byl B.</li>
+                </ul>
+
+                <h3>Důležité události</h3>
+                <ul>
+                    <li>Tento dokument byl aktualizován 15. května.</li>
+                    <li>Poslední verze pracovního listu byla schválena.</li>
+                </ul>
+                <p>Taková paměť může výrazně zlepšit kontinuitu práce.</p>
+
+                <h2>Epizodická a sémantická paměť</h2>
+                <p>U pokročilejších agentních systémů se někdy používají pojmy převzaté z psychologie.</p>
+
+                <h3>Epizodická paměť</h3>
+                <p>Pamatuje si konkrétní události.</p>
+                <p>Například:</p>
+                <blockquote>Minulý týden jsme vytvářeli pracovní list o Evropské unii.</blockquote>
+
+                <h3>Sémantická paměť</h3>
+                <p>Uchovává obecné informace a fakta.</p>
+                <p>Například:</p>
+                <blockquote>Uživatel učí druhý ročník angličtiny na úrovni B1.</blockquote>
+
+                <p>Rozdělení není vždy technicky úplně ostré, ale pro návrh agentů je užitečné.</p>
+                <p>Jedna věc je totiž:</p>
+                <blockquote>„Co se stalo?“</blockquote>
+                <p>A jiná:</p>
+                <blockquote>„Co o uživateli nebo projektu víme?“</blockquote>
+
+                <h2>Procedurální paměť: jak něco dělat</h2>
+                <p>Existuje ještě třetí typ informace:</p>
+                <div class="article-prompt"><strong>postupy</strong></div>
+                <p>Například:</p>
+                <blockquote>Při tvorbě pracovního listu vždy nejprve zjisti téma, potom jazykovou úroveň a nakonec vytvoř žákovskou a učitelskou verzi.</blockquote>
+                <p>To už není fakt o uživateli.</p>
+                <p>Je to návod:</p>
+                <div class="article-prompt"><strong>jak určitý úkol provádět.</strong></div>
+                <p>V agentních systémech mohou být podobné postupy uložené jako:</p>
+                <ul>
+                    <li>instrukce,</li>
+                    <li>šablony,</li>
+                    <li>workflow,</li>
+                    <li>skills,</li>
+                    <li>příkazy.</li>
+                </ul>
+                <p>A právě tady se paměť začíná prolínat s dalšími částmi agentní architektury.</p>
+
+                <h2>Musí si agent pamatovat všechno?</h2>
+                <p>Rozhodně ne.</p>
+                <p>A dokonce by to byl špatný nápad.</p>
+                <p>Čím více informací systém ukládá, tím větší vznikají problémy:</p>
+                <ul>
+                    <li>zbytečné množství dat,</li>
+                    <li>horší vyhledávání,</li>
+                    <li>riziko zastaralých informací,</li>
+                    <li>bezpečnostní problémy,</li>
+                    <li>ochrana soukromí.</li>
+                </ul>
+                <p>Dobrý systém musí rozhodovat nejen:</p>
+                <blockquote>Co si zapamatovat?</blockquote>
+                <p>ale také:</p>
+                <blockquote>Co zapomenout?</blockquote>
+                <p>To je kupodivu jedna z nejtěžších částí práce s pamětí AI.</p>
+
+                <h2>Paměť může být zastaralá</h2>
+                <p>Představme si, že má agent uloženou informaci:</p>
+                <blockquote>Uživatel učí třídu 1A.</blockquote>
+                <p>Další školní rok už ale učí 2A.</p>
+                <p>Pokud agent stále používá starou informaci, začne dělat chyby.</p>
+                <p>Paměť tedy musí mít určitou správu.</p>
+                <p>Je užitečné například ukládat:</p>
+                <ul>
+                    <li>datum informace,</li>
+                    <li>zdroj,</li>
+                    <li>prioritu,</li>
+                    <li>možnost aktualizace.</li>
+                </ul>
+                <p>Agent pak může poznat:</p>
+                <blockquote>Tato informace je rok stará. Měl bych ověřit, zda stále platí.</blockquote>
+
+                <h2>Konfliktní informace</h2>
+                <p>Další problém nastane, když má agent uložené dvě různé informace.</p>
+                <p>Například:</p>
+                <div class="article-prompt"><strong>starší paměť</strong><br />Materiály mají být na A4 na výšku.<br /><br /><strong>novější paměť</strong><br />Materiály mají být na A4 na šířku.</div>
+                <p>Co má agent udělat?</p>
+                <p>Ideálně by měl dát přednost:</p>
+                <ul>
+                    <li>novější informaci,</li>
+                    <li>výslovnému aktuálnímu zadání,</li>
+                    <li>důvěryhodnějšímu zdroji.</li>
+                </ul>
+                <p>Aktuální pokyn uživatele by měl zpravidla mít přednost před starší uloženou preferencí.</p>
+                <p>Paměť tedy nesmí být chápána jako absolutní pravda.</p>
+                <p>Je to jen další zdroj informací.</p>
+
+                <h2>Paměť a soukromí</h2>
+                <p>S dlouhodobou pamětí přichází také otázka:</p>
+                <blockquote>Co vůbec smíme ukládat?</blockquote>
+                <p>Pokud agent pracuje například ve škole, může narazit na osobní údaje.</p>
+                <p>Není rozumné ukládat do obecné paměti agenta všechno, co během práce uvidí.</p>
+                <p>Je potřeba rozlišovat:</p>
+                <div class="article-prompt"><strong>běžné pracovní preference</strong><br /><br />a<br /><br /><strong>citlivá data.</strong></div>
+                <p>Agent například může potřebovat vědět:</p>
+                <blockquote>Pracovní listy mají mít jednodušší instrukce.</blockquote>
+                <p>Ale nemusí mít v dlouhodobé obecné paměti uložené osobní nebo citlivé informace o konkrétním žákovi.</p>
+                <p>Taková data mají být uložena v odpovídajícím bezpečném systému a načtena pouze tehdy, když jsou pro konkrétní úkol oprávněně potřeba.</p>
+
+                <h2>Paměť versus databáze</h2>
+                <p>Možná vás teď napadne:</p>
+                <blockquote>Není AI paměť prostě databáze?</blockquote>
+                <p>Často ano.</p>
+                <p>Technicky může být dlouhodobá paměť uložená například v:</p>
+                <ul>
+                    <li>klasické databázi,</li>
+                    <li>dokumentovém úložišti,</li>
+                    <li>vektorové databázi,</li>
+                    <li>souborech,</li>
+                    <li>specializovaném paměťovém systému.</li>
+                </ul>
+                <p>Rozdíl není ani tak v tom, kde je informace uložená.</p>
+                <p>Důležité je:</p>
+                <blockquote>jak agent pozná, co má uložit a co má při další práci znovu načíst.</blockquote>
+
+                <h2>Jak agent hledá v paměti</h2>
+                <p>Představme si, že má uložených deset tisíc poznámek.</p>
+                <p>Nemůže pokaždé všechny poslat jazykovému modelu.</p>
+                <p>Místo toho musí vybrat pouze relevantní informace.</p>
+                <p>Uživatel například zadá:</p>
+                <blockquote>„Připrav pracovní list z angličtiny.“</blockquote>
+                <p>Systém může v paměti vyhledat:</p>
+                <ul>
+                    <li>úroveň B1,</li>
+                    <li>druhý ročník,</li>
+                    <li>preferovaný formát A4,</li>
+                    <li>pracovní list má obsahovat řešení.</li>
+                </ul>
+                <p>Naopak nemusí načíst:</p>
+                <ul>
+                    <li>preference týkající se cestování,</li>
+                    <li>informace o jiném projektu,</li>
+                    <li>starý rozhovor o počítačích.</li>
+                </ul>
+                <p>To je jeden ze základních principů práce s agentní pamětí:</p>
+                <div class="article-prompt"><strong>ukládat → vyhledávat → vybírat relevantní informace → vložit je do kontextu modelu.</strong></div>
+
+                <h2>A tady se dostáváme k RAG</h2>
+                <p>Mechanismus právě popsaného vyhledávání velmi připomíná další důležitou technologii:</p>
+                <div class="article-prompt"><strong>RAG – Retrieval-Augmented Generation</strong></div>
+                <p>U RAG systém nejprve vyhledá relevantní informace v externím zdroji a potom je poskytne jazykovému modelu.</p>
+                <p>Například:</p>
+                <div class="article-prompt"><strong>dotaz<br />↓<br />vyhledání relevantních dokumentů<br />↓<br />předání pasáží modelu<br />↓<br />vytvoření odpovědi</strong></div>
+                <p>Stejný princip lze použít také u některých typů paměti.</p>
+                <p>Proto se hranice mezi:</p>
+                <div class="article-prompt"><strong>pamětí agenta</strong><br /><br />a<br /><br /><strong>znalostní databází</strong></div>
+                <p>může v praxi částečně překrývat.</p>
+
+                <h2>Příklad ze školy</h2>
+                <p>Představme si učitelského agenta.</p>
+                <p>Má připravit:</p>
+                <blockquote>„Pracovní list na zítřejší hodinu angličtiny.“</blockquote>
+                <p>Z dlouhodobé paměti může získat:</p>
+                <ul>
+                    <li>učitel preferuje stručné instrukce,</li>
+                    <li>pracovní listy mají mít řešení,</li>
+                    <li>materiály se tisknou na A4.</li>
+                </ul>
+                <p>Z tematického plánu zjistí:</p>
+                <blockquote>aktuální téma je Past Simple.</blockquote>
+                <p>Z učebnice nebo znalostní databáze získá:</p>
+                <blockquote>slovní zásobu a gramatiku z konkrétní lekce.</blockquote>
+                <p>Agent tedy pracuje s několika různými druhy informací:</p>
+                <div class="article-prompt"><strong>paměť uživatele + aktuální data + výukové zdroje.</strong></div>
+                <p>A právě jejich správné rozlišení je důležité.</p>
+
+                <h2>Paměť ve vibe codingu</h2>
+                <p>U coding agentů je dlouhodobý kontext obzvlášť užitečný.</p>
+                <p>Agent může potřebovat vědět:</p>
+                <ul>
+                    <li>jak je projekt postavený,</li>
+                    <li>jaké technologie používá,</li>
+                    <li>jaké jsou konvence,</li>
+                    <li>jaké příkazy spouštějí testy,</li>
+                    <li>jaká architektonická rozhodnutí už byla provedena.</li>
+                </ul>
+                <p>Bez těchto informací by při každém novém úkolu znovu zkoumal celý projekt.</p>
+                <p>S vhodnou pamětí nebo projektovými instrukcemi může navázat mnohem rychleji.</p>
+                <p>Například:</p>
+                <div class="article-prompt">V tomto projektu nepoužívej novou databázi.<br /><br />Používej již existující API.<br /><br />Před každou změnou spusť testy.</div>
+                <p>To je praktická forma „paměti“ projektu.</p>
+
+                <h2>Kdy je paměť nebezpečná</h2>
+                <p>Paměť agenta může práci velmi usnadnit.</p>
+                <p>Může ale také způsobovat chyby.</p>
+                <p>Typické problémy jsou:</p>
+                <ul>
+                    <li><strong>Zastaralá informace</strong> – agent používá něco, co už neplatí.</li>
+                    <li><strong>Nesprávná informace</strong> – jednou si něco špatně uloží a potom chybu opakuje.</li>
+                    <li><strong>Příliš mnoho paměti</strong> – relevantní informace se ztratí mezi stovkami nepodstatných.</li>
+                    <li><strong>Špatně zvolená informace</strong> – agent si při řešení úkolu načte nesouvisející vzpomínku.</li>
+                    <li><strong>Citlivé informace</strong> – systém uchovává něco, co vůbec uchovávat neměl.</li>
+                </ul>
+                <p>Paměť proto není funkce typu:</p>
+                <blockquote>„zapneme a je hotovo.“</blockquote>
+                <p>Musí být navržena stejně pečlivě jako ostatní části agentního systému.</p>
+
+                <h2>Agent se tedy „učí“, nebo ne?</h2>
+                <p>Nejrozumnější odpověď je:</p>
+                <blockquote>Záleží na tom, co slovem učí myslíme.</blockquote>
+                <p>Pokud tím myslíme:</p>
+                <blockquote>mění při každém úkolu parametry samotného jazykového modelu,</blockquote>
+                <p>pak obvykle ne.</p>
+                <p>Pokud tím myslíme:</p>
+                <blockquote>ukládá informace, zkušenosti nebo postupy a později je využívá,</blockquote>
+                <p>pak ano, tak může agentní systém fungovat.</p>
+                <p>Je ale dobré tyto dva procesy nezaměňovat.</p>
+
+                <h2>Zapamatujte si</h2>
+                <p>AI agent může používat několik druhů paměti.</p>
+                <ul>
+                    <li><strong>Kontext</strong> – obsahuje informace, které má model právě k dispozici.</li>
+                    <li><strong>Pracovní paměť</strong> – uchovává informace potřebné během právě řešeného úkolu.</li>
+                    <li><strong>Dlouhodobá paměť</strong> – ukládá vybrané informace pro budoucí práci.</li>
+                    <li><strong>Znalostní zdroje</strong> – obsahují dokumenty, databáze a další informace, které může agent podle potřeby vyhledávat.</li>
+                </ul>
+                <p>A to nejdůležitější:</p>
+                <blockquote><strong>Paměť AI není totéž jako nové trénování jazykového modelu.</strong></blockquote>
+                <p>Ve většině případů se informace ukládá mimo model a při další práci se mu znovu předloží.</p>
+
+                <h2>Co bude následovat</h2>
+                <p>Teď už máme agenta, který:</p>
+                <div class="article-prompt"><strong>plánuje, používá nástroje a dokáže pracovat s informacemi z minulosti.</strong></div>
+                <p>Zbývá ale důležitá otázka.</p>
+                <p>Jak může odpovídat podle našich vlastních dokumentů, například školního řádu, metodiky, učebnice nebo firemní databáze, když tyto informace nemusely být vůbec součástí jeho tréninku?</p>
+                <p>Právě zde přichází na scénu:</p>
+                <div class="article-prompt"><strong>RAG: když AI pracuje s vašimi vlastními dokumenty</strong></div>
+                <p>V příštím díle si ukážeme, jak funguje princip:</p>
+                <div class="article-prompt"><strong>dotaz → vyhledání relevantních informací → předání modelu → odpověď</strong></div>
+                <p>a proč je RAG jednou z nejpraktičtějších technologií pro tvorbu skutečně užitečných AI agentů.</p>
+            </div>
+        </article>
+
+        <section class="workflow-related" aria-labelledby="dalsi-ai-pamet">
+            <div class="workflow-related-heading">
+                <h2 id="dalsi-ai-pamet">Další články a workflow</h2>
+                <p>Navazující texty k AI agentům, nástrojům, paměti a tvorbě aplikací ve výuce.</p>
+            </div>
+            <div class="workflow-related-grid">
+                <article class="workflow-related-card">
+                    <span class="workflow-card-number">01</span>
+                    <h3><a href="ai-agenti-agentni-smycka.html">Jak funguje agentní smyčka</a></h3>
+                    <p>Pochop, naplánuj, proveď a zkontroluj: jak agent opakuje kroky až k výsledku.</p>
+                </article>
+                <article class="workflow-related-card">
+                    <span class="workflow-card-number">02</span>
+                    <h3><a href="ai-agenti-nastroje-function-calling.html">Nástroje a Function Calling</a></h3>
+                    <p>Jak model používá externí nástroje, získává aktuální data a provádí akce.</p>
+                </article>
+                <article class="workflow-related-card">
+                    <span class="workflow-card-number">03</span>
+                    <h3><a href="ai-agenti.html">AI agenti: rozcestník témat</a></h3>
+                    <p>Zpět na přehled článků o základech, nástrojích, paměti a bezpečnosti AI agentů.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai-agenti.html">Zpět na AI agenty</a></footer>
+</body>
+
+</html>

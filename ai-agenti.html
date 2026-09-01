@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI agenti | AI ve Výuce</title>
+    <meta name="description"
+        content="Rozcestník článků o AI agentech: jak fungují, kde pomáhají při tvorbě a jak s nimi pracovat bezpečně ve škole." />
+    <link rel="stylesheet" href="css/style.css?v=20260901-ai-agenti" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .agent-article-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .agent-article-card {
+            display: grid;
+            grid-template-columns: 54px minmax(210px, 0.8fr) minmax(280px, 1.5fr) auto;
+            gap: 20px;
+            align-items: center;
+            padding: 18px 24px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            background: var(--bg-card);
+            transition: var(--transition);
+        }
+
+        .agent-article-card:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-4px);
+        }
+
+        .agent-article-kicker {
+            margin-bottom: 6px;
+            color: var(--accent-mint);
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .agent-article-icon {
+            display: grid;
+            width: 54px;
+            height: 54px;
+            margin: 0;
+            place-items: center;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(0, 212, 168, 0.2), rgba(74, 144, 226, 0.14));
+            font-size: 1.6rem;
+        }
+
+        .agent-article-card h2 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .agent-article-card p {
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 0.86rem;
+            line-height: 1.65;
+        }
+
+        .agent-article-meta {
+            margin-top: 8px;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+        }
+
+        .agent-article-status {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 132px;
+            padding: 10px 14px;
+            border: 1px solid rgba(0, 212, 168, 0.25);
+            border-radius: 999px;
+            color: var(--accent-mint);
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-align: center;
+        }
+
+        .agent-topic-note {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 18px;
+            align-items: start;
+            max-width: 900px;
+            margin: 32px auto 0;
+            padding: 24px;
+            border: 1px solid rgba(0, 212, 168, 0.2);
+            border-radius: var(--radius-lg);
+            background: rgba(0, 212, 168, 0.06);
+        }
+
+        .agent-topic-note-icon {
+            font-size: 1.7rem;
+        }
+
+        .agent-topic-note h2 {
+            margin-bottom: 6px;
+            font-size: 1.05rem;
+        }
+
+        .agent-topic-note p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 900px) {
+            .agent-article-card {
+                grid-template-columns: 54px minmax(0, 1fr) auto;
+            }
+
+            .agent-article-summary {
+                grid-column: 2;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .agent-article-card {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .agent-article-summary {
+                grid-column: auto;
+            }
+
+            .agent-article-status {
+                justify-self: start;
+            }
+
+            .agent-topic-note {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon">🤖</div>AI ve <span>Výuce</span>
+            </a>
+            <div class="nav-links">
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link">📚 Předměty <i class="fa-solid fa-chevron-down" style="font-size:.65rem"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="matematika.html" class="nav-dropdown-item"><span class="item-icon">🔢</span> Matematika</a>
+                        <a href="cestina.html" class="nav-dropdown-item"><span class="item-icon">📖</span> Český jazyk</a>
+                        <a href="anglictina.html" class="nav-dropdown-item"><span class="item-icon">🇬🇧</span> Anglický jazyk</a>
+                        <a href="prirodoveda.html" class="nav-dropdown-item"><span class="item-icon">🔬</span> Přírodní vědy</a>
+                        <a href="dejepis.html" class="nav-dropdown-item"><span class="item-icon">🏛️</span> Dějepis</a>
+                    </div>
+                </div>
+                <a href="prompty.html" class="nav-link">✨ Prompty</a>
+                <a href="asistenti.html" class="nav-link">🤖 AI Asistenti</a>
+                <a href="aktivity.html" class="nav-link">🎯 Aktivity</a>
+                <a href="ai.html" class="nav-link">🧠 AI pro školy</a>
+                <a href="vibe-coding.html" class="nav-link active">💻 Vibe Coding</a>
+                <a href="qr-kod.html" class="nav-link">🔳 QR kód</a>
+            </div>
+            <button class="nav-mobile-toggle" aria-label="Otevřít menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu">
+        <a href="index.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏠 Domů</a>
+        <a href="matematika.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔢 Matematika</a>
+        <a href="cestina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">📖 Český jazyk</a>
+        <a href="anglictina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🇬🇧 Angličtina</a>
+        <a href="prirodoveda.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔬 Přírodní vědy</a>
+        <a href="dejepis.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏛️ Dějepis</a>
+        <a href="prompty.html" class="nav-link" style="font-size:1rem;padding:14px 16px">✨ Prompty</a>
+        <a href="asistenti.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🤖 Asistenti</a>
+        <a href="aktivity.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🎯 Aktivity</a>
+        <a href="ai.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🧠 AI pro školy</a>
+        <a href="vibe-coding.html" class="nav-link active" style="font-size:1rem;padding:14px 16px">💻 Vibe Coding</a>
+        <a href="qr-kod.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔳 QR kód</a>
+    </div>
+
+    <section class="page-hero page-hero-compact" style="background:linear-gradient(135deg,#0a0f1e 0%,#10133a 100%)">
+        <div class="page-hero-glow" style="background:radial-gradient(ellipse,rgba(0,212,168,0.2) 0%,transparent 70%)"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="page-hero-icon" style="background:linear-gradient(135deg,rgba(0,212,168,0.22),rgba(74,144,226,0.1))">🤖</div>
+                <h1 class="page-hero-title">AI <span class="gradient-text-mint">agenti</span></h1>
+                <p class="page-hero-subtitle">Rozcestník článků o AI agentech: jak fungují, kde mohou pomoci při tvorbě a jak s nimi pracovat bezpečně ve škole.</p>
+                <div class="page-hero-stats">
+                    <div class="page-hero-stat"><span>🧭</span>Od základů</div>
+                    <div class="page-hero-stat"><span>⚙️</span>Prakticky</div>
+                    <div class="page-hero-stat"><span>🎓</span>Pro učitele</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">AI agenti podle tématu</div>
+                <h2 class="section-title">Vyberte si, <span class="gradient-text">kde začít</span></h2>
+                <p class="section-subtitle">Články postupně doplní základní orientaci, agentní smyčku, práci s nástroji, paměť, RAG, MCP, multi-agentní systémy, coding agenty, školní praxi, návrh prvního agenta, praktické úkoly pro učitele, skills, celkovou agentní architekturu a bezpečné použití.</p>
+            </div>
+
+            <div class="agent-article-grid">
+                <article class="agent-article-card reveal">
+                    <div class="agent-article-icon">🧭</div>
+                    <div>
+                        <div class="agent-article-kicker">Základy</div>
+                        <h2>Co je AI agent?</h2>
+                    </div>
+                    <div class="agent-article-summary">
+                        <p>Jednoduché vysvětlení rozdílu mezi chatbotem, AI nástrojem a agentem, který umí plánovat další kroky a pracovat s úkolem.</p>
+                        <div class="agent-article-meta">Úvodní článek · Základní orientace</div>
+                    </div>
+                    <a href="ai-agenti-co-je-ai-agent.html" class="btn btn-primary">Číst článek →</a>
+                </article>
+
+                <article class="agent-article-card reveal">
+                    <div class="agent-article-icon">💻</div>
+                    <div>
+                        <div class="agent-article-kicker">Nástroje</div>
+                        <h2>Nástroje a Function Calling</h2>
+                    </div>
+                    <div class="agent-article-summary">
+                        <p>Jak jazykový model používá nástroje, pracuje s aktuálními daty a bezpečně provádí jednotlivé akce.</p>
+                        <div class="agent-article-meta">Navazující článek · Function Calling · Bezpečnost</div>
+                    </div>
+                    <a href="ai-agenti-nastroje-function-calling.html" class="btn btn-primary">Číst článek →</a>
+                </article>
+
+                <article class="agent-article-card reveal">
+                    <div class="agent-article-icon">🔁</div>
+                    <div>
+                        <div class="agent-article-kicker">Agentní smyčka</div>
+                        <h2>Jak funguje AI agent</h2>
+                    </div>
+                    <div class="agent-article-summary">
+                        <p>Jak agent pochopí cíl, naplánuje postup, použije nástroje, zkontroluje výsledek a podle potřeby pokračuje dalším krokem.</p>
+                        <div class="agent-article-meta">Navazující článek · Agentní smyčka · Kontrola</div>
+                    </div>
+                    <a href="ai-agenti-agentni-smycka.html" class="btn btn-primary">Číst článek →</a>
+                </article>
+
+                <article class="agent-article-card reveal">
+                    <div class="agent-article-icon">🧠</div>
+                    <div>
+                        <div class="agent-article-kicker">Paměť</div>
+                        <h2>Paměť AI agentů</h2>
+                    </div>
+                    <div class="agent-article-summary">
+                        <p>Co si AI skutečně pamatuje, jak se liší kontext, pracovní a dlouhodobá paměť od trénování modelu a proč záleží na aktuálnosti dat.</p>
+                        <div class="agent-article-meta">Navazující článek · Paměť · RAG</div>
+                    </div>
+                    <a href="ai-agenti-pamet.html" class="btn btn-primary">Číst článek →</a>
+                </article>
+
+                <article class="agent-article-card reveal">
+                    <div class="agent-article-icon">📚</div>
+                    <div>
+                        <div class="agent-article-kicker">Vlastní dokumenty</div>
+                        <h2>RAG: vlastní dokumenty</h2>
+                    </div>
+                    <div class="agent-article-summary">
+                        <p>Jak AI vyhledá relevantní části vašich dokumentů a předá je modelu, aby odpovídal podle konkrétních zdrojů.</p>
+                        <div class="agent-article-meta">Navazující článek · RAG · Vlastní zdroje</div>
+                    </div>
+                    <a href="ai-agenti-rag.html" class="btn btn-primary">Číst článek →</a>
+                </article>
+
+                <article class="agent-article-card reveal">
+                    <div class="agent-article-icon">🔌</div>
+                    <div>
+                        <div class="agent-article-kicker">Propojení</div>
+                        <h2>MCP: univerzální konektor</h2>
+                    </div>
+                    <div class="agent-article-summary">
+                        <p>Jak otevřený standard propojuje AI aplikace s nástroji, databázemi a dalšími systémy a proč je důležitá bezpečnost.</p>
+                        <div class="agent-article-meta">Navazující článek · MCP · Integrace</div>
+                    </div>
+                    <a href="ai-agenti-mcp.html" class="btn btn-primary">Číst článek →</a>
+                </article>
+
+                <article class="agent-article-card reveal">
+                    <div class="agent-article-icon">👥</div>
+                    <div>
+                        <div class="agent-article-kicker">Tým AI</div>
+                        <h2>Multi-agentní systémy</h2>
+                    </div>
+                    <div class="agent-article-summary">
+                        <p>Jak si více specializovaných agentů může rozdělit role, spolupracovat na úkolu a proč více agentů neznamená automaticky lepší výsledek.</p>
+                        <div class="agent-article-meta">Navazující článek · Orchestrace · Kontrola</div>
+                    </div>
+                    <a href="ai-agenti-multi-agentni.html" class="btn btn-primary">Číst článek →</a>
+                </article>
+
+                <article class="agent-article-card reveal">
+                    <div class="agent-article-icon">💻</div>
+                    <div>
+                        <div class="agent-article-kicker">Vibe Coding</div>
+                        <h2>Od vibe codingu ke coding agentům</h2>
+                    </div>
+                    <div class="agent-article-summary">
+                        <p>Jak AI přechází od psaní jednotlivých ukázek kódu k práci s celým projektem, testování a opravám.</p>
+                        <div class="agent-article-meta">Navazující článek · Coding agent · Projekt</div>
+                    </div>
+                    <a href="ai-agenti-coding-agenti.html" class="btn btn-primary">Číst článek →</a>
+                </article>
+
+                <article class="agent-article-card reveal">
+                    <div class="agent-article-icon">🎓</div>
+                    <div>
+                        <div class="agent-article-kicker">Školní praxe</div>
+                        <h2>AI agent ve škole</h2>
+                    </div>
+                    <div class="agent-article-summary">
+                        <p>Co může AI agent skutečně dělat učiteli, kde pomáhá s přípravou a administrativou a kde musí zůstat člověk u rozhodování.</p>
+                        <div class="agent-article-meta">Praktický díl · Učitel · Odpovědnost</div>
+                    </div>
+                    <a href="ai-agenti-ve-skole.html" class="btn btn-primary">Číst článek →</a>
+                </article>
+
+                <article class="agent-article-card reveal">
+                    <div class="agent-article-icon">🛠️</div>
+                    <div>
+                        <div class="agent-article-kicker">První projekt</div>
+                        <h2>Jak navrhnout prvního AI agenta</h2>
+                    </div>
+                    <div class="agent-article-summary">
+                        <p>Praktický návod, jak začít jedním konkrétním úkolem, určit vstupy, zdroje, nástroje, kontrolu a bezpečné hranice.</p>
+                        <div class="agent-article-meta">Praktický návod · Workflow · Bezpečný start</div>
+                    </div>
+                    <a href="ai-agenti-prvni-agent.html" class="btn btn-primary">Číst článek →</a>
+                </article>
+
+                <article class="agent-article-card reveal">
+                    <div class="agent-article-icon">📋</div>
+                    <div>
+                        <div class="agent-article-kicker">Školní praxe</div>
+                        <h2>10 úkolů pro AI agenta</h2>
+                    </div>
+                    <div class="agent-article-summary">
+                        <p>Praktický přehled činností, které může agent učiteli převzít nebo zjednodušit — od přípravy materiálů po analýzu výsledků a denní přehled.</p>
+                        <div class="agent-article-meta">Praktický díl · Učitel · Autonomie</div>
+                    </div>
+                    <a href="ai-agenti-10-ukolu.html" class="btn btn-primary">Číst článek →</a>
+                </article>
+
+                <article class="agent-article-card reveal">
+                    <div class="agent-article-icon">🛡️</div>
+                    <div>
+                        <div class="agent-article-kicker">Bezpečnost</div>
+                        <h2>Kdy AI agenta ve škole nepoužívat</h2>
+                    </div>
+                    <div class="agent-article-summary">
+                        <p>Kde končí užitečná automatizace: známky, kázeňská rozhodnutí, citlivá data, oprávnění, zastaralé zdroje a úkoly bez lidské kontroly.</p>
+                        <div class="agent-article-meta">Bezpečný provoz · Školní praxe · AI Act</div>
+                    </div>
+                    <a href="ai-agenti-kdy-nepouzivat.html" class="btn btn-primary">Číst článek →</a>
+                </article>
+
+                <article class="agent-article-card reveal">
+                    <div class="agent-article-icon">🧩</div>
+                    <div>
+                        <div class="agent-article-kicker">Rozhodování</div>
+                        <h2>AI agent, automatizace, workflow nebo chatbot?</h2>
+                    </div>
+                    <div class="agent-article-summary">
+                        <p>Jak vybrat správný typ řešení podle toho, zda potřebujete odpověď, pevné pravidlo, známý proces nebo rozhodování podle situace.</p>
+                        <div class="agent-article-meta">Praktický přehled · Workflow · Volba nástroje</div>
+                    </div>
+                    <a href="ai-agenti-chatbot-automatizace-workflow.html" class="btn btn-primary">Číst článek →</a>
+                </article>
+
+                <article class="agent-article-card reveal">
+                    <div class="agent-article-icon">⚙️</div>
+                    <div>
+                        <div class="agent-article-kicker">Opakovatelnost</div>
+                        <h2>Skills pro AI agenty</h2>
+                    </div>
+                    <div class="agent-article-summary">
+                        <p>Jak uložit osvědčený pracovní postup jako opakovaně použitelnou schopnost a proč skill není jen další dlouhý prompt.</p>
+                        <div class="agent-article-meta">Praktický díl · Skills · Workflow</div>
+                    </div>
+                    <a href="ai-agenti-skills.html" class="btn btn-primary">Číst článek →</a>
+                </article>
+
+                <article class="agent-article-card reveal">
+                    <div class="agent-article-icon">🧠</div>
+                    <div>
+                        <div class="agent-article-kicker">Architektura</div>
+                        <h2>Jak spolu souvisí části AI agenta</h2>
+                    </div>
+                    <div class="agent-article-summary">
+                        <p>Jedna mapa pro LLM, tools, RAG, memory, skills, workflow, MCP a agenta — včetně příkladu, jak spolupracují při přípravě výuky.</p>
+                        <div class="agent-article-meta">Souhrnný díl · Architektura · Agentní systém</div>
+                    </div>
+                    <a href="ai-agenti-llm-tools-rag-memory-skills-workflow-mcp.html" class="btn btn-primary">Číst článek →</a>
+                </article>
+            </div>
+
+            <div class="agent-topic-note">
+                <div class="agent-topic-note-icon">💡</div>
+                <div>
+                    <h2>Jak se v tématu orientovat?</h2>
+                    <p>Začněte úvodním článkem o základních pojmech. Potom pokračujte přes agentní smyčku, nástroje, paměť, RAG, MCP, multi-agentní systémy, coding agenty, školní praxi, návrh prvního agenta, praktické úkoly pro učitele, skills, celkovou agentní architekturu a bezpečné použití. Rozcestník budeme doplňovat o další praktické příklady.</p>
+                </div>
+            </div>
+
+            <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:32px">
+                <a href="vibe-coding.html" class="btn btn-secondary">← Zpět na Vibe Coding</a>
+                <a href="vibe-coding-clanky.html" class="btn btn-primary">📰 Články o Vibe Codingu</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom"><span>© 2026 AI ve Výuce · AI agenti pro učitele</span></div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

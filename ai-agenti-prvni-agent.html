@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jak navrhnout svého prvního jednoduchého AI agenta | AI ve Výuce</title>
+    <meta name="description"
+        content="Praktický návod, jak navrhnout prvního jednoduchého AI agenta: vyberte úkol, definujte vstupy, zdroje, nástroje, workflow, kontrolu a bezpečné hranice." />
+    <link rel="stylesheet" href="css/workflow.css?v=20260901-ai-agenti-prvni-agent" />
+</head>
+
+<body class="workflow-page">
+    <header class="workflow-shell">
+        <div class="workflow-topbar">
+            <a class="workflow-brand" href="index.html"><span class="workflow-brand-mark">✦</span>AI ve Výuce</a>
+            <a class="workflow-back" href="ai-agenti.html">← AI agenti</a>
+        </div>
+        <div class="workflow-hero">
+            <div>
+                <div class="workflow-eyebrow">AI agenti · 1. září 2026</div>
+                <h1>Jak navrhnout svého<br /><span>prvního jednoduchého AI agenta</span></h1>
+                <p class="workflow-hero-lead">Začněte malým, jasně definovaným úkolem. Určete vstupy, zdroje, nástroje, postup a místo, kde výsledek zkontroluje člověk.</p>
+                <div class="workflow-meta"><span>Jeden úkol</span><span>Jednoduchý workflow</span><span>Omezená oprávnění</span><span>Kontrola člověkem</span></div>
+            </div>
+            <div class="workflow-route" aria-label="Hlavní kroky návrhu prvního AI agenta">
+                <div class="workflow-stage"><span class="workflow-stage-number">01</span><div><strong>Vyber problém</strong><small>Začni konkrétní ruční prací</small></div></div>
+                <div class="workflow-stage"><span class="workflow-stage-number">02</span><div><strong>Popiš výsledek</strong><small>Definuj vstupy a kritéria kvality</small></div></div>
+                <div class="workflow-stage"><span class="workflow-stage-number">03</span><div><strong>Navrhni postup</strong><small>Přidej jen potřebné zdroje a nástroje</small></div></div>
+                <div class="workflow-stage"><span class="workflow-stage-number">04</span><div><strong>Testuj a rozšiřuj</strong><small>Začni read-only a přidávej schopnosti postupně</small></div></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="workflow-main">
+        <article class="workflow-article">
+            <div class="workflow-article-intro">
+                <div class="workflow-article-kicker"><span class="workflow-step">10</span> AI agenti v praxi</div>
+                <h2 class="workflow-article-title">Jak navrhnout svého prvního jednoduchého AI agenta</h2>
+                <p class="workflow-article-summary">První agent nemusí být velký systém. Nejlepší začátek je jeden konkrétní problém, jasná pravidla, málo nástrojů a člověk u důležitých rozhodnutí.</p>
+                <div class="workflow-article-meta"><span>1. září 2026</span><span>AI agenti</span><span>První projekt</span></div>
+            </div>
+
+            <div class="article-content">
+                <p class="article-lead">AI agent nemusí být složitý systém napojený na deset databází, několik modelů a půl internetu. Pro první pokus je naopak lepší začít velmi malým úkolem. Dobrý první agent má jasný cíl, několik pravidel, omezený počet nástrojů a přesně určené místo, kde musí výsledek zkontrolovat člověk.</p>
+
+                <figure class="article-figure">
+                    <img src="images/ai-agenti-prvni-agent.png" alt="Infografika s deseti kroky návrhu prvního jednoduchého AI agenta od výběru úkolu přes vstupy, zdroje, nástroje a workflow až po testování a kontrolu člověkem" />
+                    <figcaption>První agent může začít malým úkolem: jasně definujte cíl, vstupy, zdroje, nástroje, postup, stop pravidla a kontrolu.</figcaption>
+                </figure>
+
+                <h2>Nejdřív zapomeňte na technologii</h2>
+                <p>Když člověk začne číst o AI agentech, velmi rychle narazí na pojmy jako MCP, RAG, function calling, memory, orchestration nebo multi-agentní systémy.</p>
+                <p>To všechno může být užitečné.</p>
+                <p>Ale při návrhu prvního agenta bych nezačínala otázkou:</p>
+                <blockquote>„Jakou technologii použiji?“</blockquote>
+                <p>Začala bych otázkou:</p>
+                <blockquote>„Jakou konkrétní práci chci přestat dělat ručně?“</blockquote>
+                <p>To je mnohem důležitější.</p>
+                <p>Agent totiž není cíl.</p>
+                <p>Je to nástroj pro řešení určitého pracovního problému.</p>
+
+                <h2>Vyberte jeden konkrétní úkol</h2>
+                <p>Špatné zadání pro prvního agenta je například:</p>
+                <blockquote>„Chci AI asistenta pro učitele.“</blockquote>
+                <p>To je příliš široké.</p>
+                <p>Co má dělat?</p>
+                <p>Připravovat hodiny? Opravovat testy? Hlídát termíny? Hledat ve školním řádu? Psát e-maily?</p>
+                <p>Mnohem lepší je:</p>
+                <ul>
+                    <li>„Chci agenta, který mi z připraveného textu vytvoří pracovní list a řešení.“</li>
+                    <li>„Chci agenta, který vyhledá odpověď ve školních směrnicích a ukáže mi zdroj.“</li>
+                    <li>„Chci agenta, který před hodinou zkontroluje tematický plán a navrhne aktivitu k aktuálnímu tématu.“</li>
+                </ul>
+                <p>Čím užší první úkol zvolíme, tím snadněji poznáme, zda agent skutečně funguje.</p>
+
+                <h2>Popište výsledek, ne osobnost</h2>
+                <p>U klasického promptování jsme si zvykli na formulace typu:</p>
+                <div class="article-prompt"><strong>Jsi zkušený učitel s dvacetiletou praxí…</strong></div>
+                <p>To někdy může pomoci nastavit styl odpovědi.</p>
+                <p>Při návrhu agenta je ale mnohem důležitější definovat výsledek práce.</p>
+                <p>Například:</p>
+                <div class="article-prompt"><strong>Úkolem agenta je vytvořit z dodaného výukového textu pracovní list pro 45minutovou hodinu. Výstup musí obsahovat žákovskou verzi, řešení pro učitele a odhad času potřebného na jednotlivé aktivity.</strong></div>
+                <p>To už je skutečná pracovní instrukce.</p>
+                <p>Agent přesněji ví:</p>
+                <div class="article-prompt"><strong>co má vzniknout a podle čeho poznáme, že je práce hotová</strong></div>
+
+                <h2>Definujte vstupy</h2>
+                <p>Další otázka zní:</p>
+                <blockquote>Co agent potřebuje vědět, aby mohl úkol provést?</blockquote>
+                <p>Pro agenta, který vytváří pracovní list, to může být například:</p>
+                <div class="article-prompt"><strong>téma · ročník · jazyková úroveň · délka hodiny · zdrojový materiál</strong></div>
+                <p>Pokud některá informace chybí, musíme rozhodnout, co má agent udělat.</p>
+                <p>Může se zeptat:</p>
+                <blockquote>„Pro jaký ročník je materiál určen?“</blockquote>
+                <p>Nebo může použít výchozí pravidlo:</p>
+                <div class="article-prompt"><strong>Pokud není uvedeno jinak, připrav materiál pro 45 minut.</strong></div>
+                <p>Dobrý agent by neměl důležité informace jednoduše hádat.</p>
+
+                <h2>Určete, odkud smí čerpat</h2>
+                <p>Tohle je velmi důležité.</p>
+                <p>Představme si agenta:</p>
+                <blockquote>„Připrav pracovní list podle mé učebnice.“</blockquote>
+                <p>Pokud učebnici vůbec nemá k dispozici, model pravděpodobně vytvoří nějaký obecný materiál.</p>
+                <p>Výsledek může vypadat dobře, ale nebude odpovídat vašemu skutečnému zdroji.</p>
+                <p>Proto musíme jasně určit:</p>
+                <blockquote>Z čeho má agent vycházet?</blockquote>
+                <p>Může mít například:</p>
+                <ul>
+                    <li>uživatelem vložený dokument,</li>
+                    <li>přístup ke znalostní databázi,</li>
+                    <li>vyhledávání ve vybrané složce,</li>
+                    <li>nebo jednoduše pravidlo: Pokud nemáš k dispozici zdrojový materiál, požádej uživatele o jeho dodání.</li>
+                </ul>
+                <p>To poslední je někdy nejlepší bezpečnostní pojistka.</p>
+
+                <h2>Pak teprve přidejte nástroje</h2>
+                <p>Teď se můžeme vrátit k technologii.</p>
+                <p>Agent potřebuje nástroj pouze tehdy, pokud ho potřebuje ke splnění svého úkolu.</p>
+                <ul>
+                    <li>Pokud má pouze přepracovat vložený text, možná žádný externí nástroj nepotřebuje.</li>
+                    <li>Pokud má zjistit aktuální informace, potřebuje web.</li>
+                    <li>Pokud má vyhledávat ve vlastních dokumentech, potřebuje přístup k těmto dokumentům.</li>
+                    <li>Pokud má ukládat výsledky, potřebuje nástroj pro práci se soubory.</li>
+                    <li>Pokud má kontrolovat kalendář, potřebuje kalendář.</li>
+                </ul>
+                <p>Platí jednoduché pravidlo:</p>
+                <div class="article-prompt"><strong>Nedávejte agentovi nástroj jen proto, že ho můžete připojit.</strong></div>
+                <p>Každý další nástroj zvyšuje možnosti systému, ale zároveň jeho složitost a riziko.</p>
+
+                <h2>Navrhněte jednoduchý pracovní postup</h2>
+                <p>První agent nepotřebuje komplikovanou architekturu.</p>
+                <p>Stačí mu několik jasných kroků.</p>
+                <p>Představme si agenta pro přípravu pracovního listu.</p>
+                <div class="article-prompt"><strong>Pochop zadání</strong><br /><br />↓<br /><br /><strong>zkontroluj dostupné podklady</strong><br /><br />↓<br /><br /><strong>navrhni strukturu</strong><br /><br />↓<br /><br /><strong>vytvoř pracovní list</strong><br /><br />↓<br /><br /><strong>vytvoř řešení</strong><br /><br />↓<br /><br /><strong>zkontroluj obtížnost a čas</strong><br /><br />↓<br /><br /><strong>předlož výsledek učiteli</strong></div>
+                <p>To už je jednoduchý agentní workflow.</p>
+                <p>Nemusíme kvůli tomu vytvářet šest samostatných agentů.</p>
+
+                <h2>Naučte agenta zastavit se</h2>
+                <p>Tohle je překvapivě důležité.</p>
+                <p>Agent by měl vědět nejen:</p>
+                <div class="article-prompt"><strong>co má dělat</strong></div>
+                <p>ale také:</p>
+                <div class="article-prompt"><strong>kdy nemá pokračovat</strong></div>
+                <p>Například:</p>
+                <ul>
+                    <li>Pokud chybí zdrojový text, nevymýšlej jeho obsah. Požádej uživatele o dokument.</li>
+                    <li>Pokud nelze spolehlivě určit správnou odpověď, označ položku ke kontrole.</li>
+                    <li>Pokud úkol vyžaduje odeslání zprávy, nejprve připrav návrh a požádej uživatele o schválení.</li>
+                </ul>
+                <p>Agent, který umí říct „tady potřebuji člověka“, je často mnohem užitečnější než agent, který se snaží za každou cenu dokončit všechno.</p>
+
+                <h2>Definujte kritéria kvality</h2>
+                <p>Agent musí vědět, podle čeho svůj vlastní výstup zkontrolovat.</p>
+                <p>Například u pracovního listu můžeme stanovit:</p>
+                <ul>
+                    <li>Instrukce musí být jednoznačné.</li>
+                    <li>Každá úloha musí mít správné řešení.</li>
+                    <li>Obtížnost musí odpovídat zadané úrovni.</li>
+                    <li>Materiál musí být možné dokončit během přibližně 25 minut.</li>
+                </ul>
+                <p>Agent pak může před předáním výsledku provést kontrolní krok.</p>
+                <p>To je malá věc, ale zásadně mění kvalitu práce.</p>
+                <p>Místo:</p>
+                <div class="article-prompt"><strong>vytvoř → hotovo</strong></div>
+                <p>dostáváme:</p>
+                <div class="article-prompt"><strong>vytvoř → zkontroluj → oprav → předlož</strong></div>
+                <p>A to už je skutečný agentní princip.</p>
+
+                <h2>První agent by měl mít omezená oprávnění</h2>
+                <p>Představme si dvě možnosti.</p>
+                <p>První agent umí:</p>
+                <div class="article-prompt"><strong>číst dokumenty a připravovat návrhy</strong></div>
+                <p>Druhý umí:</p>
+                <div class="article-prompt"><strong>číst dokumenty, mazat je, posílat e-maily, měnit kalendář a zapisovat do databáze</strong></div>
+                <p>Který je vhodnější jako první experiment?</p>
+                <p>Jednoznačně první.</p>
+                <p>Začněte read-only, tedy schopnostmi založenými převážně na čtení a tvorbě návrhů.</p>
+                <p>Zápisové operace přidávejte až ve chvíli, kdy přesně víte, proč je agent potřebuje.</p>
+
+                <h2>Jeden jednoduchý příklad</h2>
+                <p>Navrhněme společně agenta:</p>
+                <div class="article-prompt"><strong>Agent pro pracovní listy</strong></div>
+                <p>Jeho úkol:</p>
+                <blockquote>Z dodaného materiálu vytvořit pracovní list a učitelské řešení.</blockquote>
+
+                <h3>Vstup</h3>
+                <p>Uživatel dodá:</p>
+                <div class="article-prompt"><strong>téma, cílovou skupinu a zdrojový materiál</strong></div>
+
+                <h3>Instrukce</h3>
+                <p>Agent má používat pouze dodaný obsah.</p>
+                <p>Nemá doplňovat konkrétní fakta, která ve zdroji nejsou, pokud je neoznačí jako vlastní doplnění.</p>
+
+                <h3>Workflow</h3>
+                <ol>
+                    <li>Agent nejprve analyzuje text.</li>
+                    <li>Určí hlavní pojmy.</li>
+                    <li>Navrhne kombinaci úloh.</li>
+                    <li>Vytvoří žákovskou verzi.</li>
+                    <li>Vytvoří řešení.</li>
+                    <li>Provede kontrolu.</li>
+                </ol>
+
+                <h3>Výstup</h3>
+                <p>Výsledkem je:</p>
+                <div class="article-prompt"><strong>pracovní list + řešení + stručná poznámka pro učitele</strong></div>
+
+                <h3>Human in the loop</h3>
+                <p>Učitel výsledek před tiskem schválí.</p>
+                <p>A máme prvního agenta.</p>
+                <p>Žádných deset databází.</p>
+                <p>Žádný multi-agentní roj.</p>
+                <p>Žádný technický cirkus.</p>
+                <p>Přesto už systém vykonává jasně definovaný pracovní proces.</p>
+
+                <h2>Kdy přidat paměť</h2>
+                <p>Až agent spolehlivě funguje, můžeme začít přidávat další schopnosti.</p>
+                <p>Například zjistíme, že mu stále opakujeme:</p>
+                <ul>
+                    <li>Materiály chci na A4.</li>
+                    <li>Instrukce musí být stručné.</li>
+                    <li>Vždy vytvoř také řešení.</li>
+                </ul>
+                <p>Pak má smysl uvažovat o paměti.</p>
+                <p>Agent si může tyto preference uchovat a při příští práci je znovu použít.</p>
+                <p>Ale paměť bych nepřidávala jen proto, že zní chytře.</p>
+                <p>Má řešit konkrétní problém:</p>
+                <div class="article-prompt"><strong>opakovaně zadáváme stejné informace</strong></div>
+
+                <h2>Kdy přidat RAG</h2>
+                <p>Další krok může nastat ve chvíli, kdy agent potřebuje pracovat s větší sadou dokumentů.</p>
+                <p>Například:</p>
+                <blockquote>„Připrav pracovní list podle mých materiálů k Evropské unii.“</blockquote>
+                <p>Máme ale stovky dokumentů.</p>
+                <p>Nemůžeme všechny poslat modelu.</p>
+                <p>Tehdy může dávat smysl RAG.</p>
+                <p>Agent vyhledá pouze relevantní části a použije je jako podklady.</p>
+                <p>Znovu platí:</p>
+                <div class="article-prompt"><strong>technologie přidáváme až tehdy, když řeší reálný problém</strong></div>
+
+                <h2>Kdy přidat MCP</h2>
+                <p>Podobné je to s MCP.</p>
+                <p>První agent ho vůbec nemusí potřebovat.</p>
+                <p>MCP začne být zajímavé například tehdy, když chceme stejného agenta propojit s více systémy:</p>
+                <div class="article-prompt"><strong>dokumenty + kalendář + databáze + další služby</strong></div>
+                <p>Pak dává standardizované propojení větší smysl.</p>
+                <p>Nezačínejte tedy:</p>
+                <blockquote>Potřebuji MCP server.</blockquote>
+                <p>Začněte:</p>
+                <blockquote>Potřebuji, aby agent získal informace z tohoto systému.</blockquote>
+                <p>Technický způsob přijde potom.</p>
+
+                <h2>A kdy přidat dalšího agenta?</h2>
+                <p>Až když existuje dobrý důvod.</p>
+                <p>Například zjistíme, že tvorba materiálu funguje dobře, ale chceme nezávislou kontrolu.</p>
+                <p>Pak můžeme přidat:</p>
+                <div class="article-prompt"><strong>Tvůrce</strong><br /><br />↓<br /><br /><strong>Revizor</strong></div>
+                <p>Tvůrce vytvoří pracovní list.</p>
+                <p>Revizor dostane jinou instrukci:</p>
+                <blockquote>Neopravuj automaticky. Nejprve najdi chyby, nejasnosti a problémy s obtížností.</blockquote>
+                <p>Teprve potom se výstup vrátí k opravě.</p>
+                <p>To je mnohem rozumnější než začít rovnou s pěti agenty.</p>
+
+                <h2>Testujte agenta na špatných případech</h2>
+                <p>Při testování často děláme jednu chybu.</p>
+                <p>Zadáme agentovi krásně formulovaný úkol a radujeme se, že funguje.</p>
+                <p>Jenže skutečný uživatel může napsat:</p>
+                <blockquote>„Udělej mi něco na Evropu.“</blockquote>
+                <p>Co agent udělá?</p>
+                <ul>
+                    <li>Zeptá se?</li>
+                    <li>Začne hádat?</li>
+                    <li>Představí si Evropskou unii?</li>
+                    <li>Geografii?</li>
+                    <li>Historii?</li>
+                </ul>
+                <p>Dobrého agenta je potřeba testovat také na:</p>
+                <div class="article-prompt"><strong>neúplném zadání · chybějícím souboru · nesmyslném požadavku · konfliktních instrukcích · nedostupném nástroji</strong></div>
+                <p>Právě tam se ukáže kvalita návrhu.</p>
+
+                <h2>Neposuzujte jen krásu výsledku</h2>
+                <p>Velký jazykový model umí vytvořit velmi působivý výstup.</p>
+                <p>To může být zrádné.</p>
+                <p>Při testování agenta je potřeba sledovat také:</p>
+                <ul>
+                    <li>Použil správný zdroj?</li>
+                    <li>Nevymyslel si informace?</li>
+                    <li>Dodržel omezení?</li>
+                    <li>Použil správný nástroj?</li>
+                    <li>Poznal, kdy neměl pokračovat?</li>
+                    <li>Dokázal přiznat nejistotu?</li>
+                </ul>
+                <p>To jsou často důležitější ukazatele než vzhled konečného textu.</p>
+
+                <h2>Dobrý agent má být předvídatelný</h2>
+                <p>U kreativního chatbota může být překvapení příjemné.</p>
+                <p>U pracovního agenta už méně.</p>
+                <p>Pokud agent dnes zpracuje pracovní list jedním způsobem a zítra úplně jinak, vzniká problém.</p>
+                <p>Pracovní agent by měl mít:</p>
+                <div class="article-prompt"><strong>jasné instrukce · stabilní postup · předvídatelný výstup</strong></div>
+                <p>Kreativitu můžeme povolit tam, kde ji chceme.</p>
+                <p>Proces by ale měl zůstat kontrolovatelný.</p>
+
+                <h2>První verze nemusí být autonomní</h2>
+                <p>Možná nejjednodušší první agent funguje takto:</p>
+                <div class="article-prompt"><strong>agent navrhne plán</strong><br /><br />↓<br /><br /><strong>člověk jej schválí</strong><br /><br />↓<br /><br /><strong>agent provede práci</strong><br /><br />↓<br /><br /><strong>člověk zkontroluje výsledek</strong></div>
+                <p>To je pořád agentní systém.</p>
+                <p>Nemusíme se snažit odstranit člověka z každého kroku.</p>
+                <p>Cílem není maximální autonomie.</p>
+                <p>Cílem je užitečná automatizace s rozumnou kontrolou.</p>
+
+                <h2>Jednoduchý návrhový vzorec</h2>
+                <p>Pro svého prvního agenta si můžete připravit jedinou krátkou kartu:</p>
+                <div class="article-prompt">
+                    <strong>Cíl:</strong> Jakou jednu práci má agent převzít?<br /><br />
+                    <strong>Vstupy:</strong> Co musí dostat, aby ji zvládl?<br /><br />
+                    <strong>Zdroje:</strong> Z čeho smí čerpat?<br /><br />
+                    <strong>Nástroje:</strong> Jaké schopnosti opravdu potřebuje?<br /><br />
+                    <strong>Postup:</strong> V jakých základních krocích má pracovat?<br /><br />
+                    <strong>Kontrola:</strong> Jak pozná, že výsledek splňuje požadavky?<br /><br />
+                    <strong>Stop pravidla:</strong> Kdy se má zastavit a požádat člověka?<br /><br />
+                    <strong>Oprávnění:</strong> Co smí pouze číst a co případně měnit?<br /><br />
+                    <strong>Výstup:</strong> Co přesně má na konci odevzdat?
+                </div>
+                <p>Pokud tuto kartu dokážete vyplnit, máte velmi slušný návrh prvního agenta.</p>
+
+                <h2>Co bych jako prvního agenta nestavěla</h2>
+                <p>Určitě bych nezačínala systémem:</p>
+                <blockquote>„Spravuj mi kompletně školní administrativu.“</blockquote>
+                <p>Stejně tak bych jako první projekt nevolila agenta, který:</p>
+                <div class="article-prompt"><strong>automaticky komunikuje s rodiči, rozhoduje o hodnocení, pracuje s citlivými údaji nebo má právo měnit důležitá školní data</strong></div>
+                <p>Technicky mohou být takové systémy možné.</p>
+                <p>Jako první projekt jsou ale zbytečně rizikové.</p>
+
+                <h2>Lepší první projekty</h2>
+                <p>Mnohem vhodnější jsou úkoly, kde případnou chybu jednoduše zachytí člověk před použitím.</p>
+                <p>Například agent pro:</p>
+                <div class="article-prompt"><strong>tvorbu pracovních listů · kontrolu textu · rešerši · shrnutí dokumentů · převod materiálu do jiné formy · přípravu návrhu hodiny</strong></div>
+                <p>Takový agent může ušetřit čas a současně způsobit jen malou škodu, pokud se někde splete.</p>
+
+                <h2>Zapamatujte si</h2>
+                <p>První AI agent nemusí být technicky složitý.</p>
+                <p>Ve skutečnosti bych doporučila přesný opak:</p>
+                <div class="article-prompt"><strong>jeden úkol · jasný vstup · málo nástrojů · jednoduchý workflow · člověk u důležitých rozhodnutí</strong></div>
+                <p>Začněte problémem.</p>
+                <div class="article-prompt"><strong>Ne technologií.</strong></div>
+                <p>Nejdřív vytvořte agenta, který jednu konkrétní věc dělá spolehlivě.</p>
+                <p>Teprve potom přidávejte:</p>
+                <div class="article-prompt"><strong>paměť → další nástroje → RAG → MCP → případně další agenty</strong></div>
+                <p>Dobrý agentní systém totiž nevzniká tak, že do něj nasypeme všechny moderní AI technologie.</p>
+                <p>Vzniká tak, že postupně automatizujeme dobře pochopený pracovní proces.</p>
+
+                <h2>Co můžeme zkusit jako první</h2>
+                <p>Pokud si chcete návrh agenta vyzkoušet bez programování, vezměte jednu činnost, kterou děláte opakovaně, a popište ji pomocí předchozí karty.</p>
+                <p>Třeba:</p>
+                <blockquote>„Pokaždé, když připravuji pracovní list, dělám těchto šest kroků…“</blockquote>
+                <p>To je pravděpodobně mnohem lepší začátek stavby AI agenta než otázka:</p>
+                <blockquote>„Jak naprogramuji agenta?“</blockquote>
+                <p>Protože pokud neumíme popsat proces, který má agent vykonávat, nepomůže nám ani nejlepší model, MCP server nebo sebedražší agentní platforma.</p>
+            </div>
+        </article>
+
+        <section class="workflow-related" aria-labelledby="related-title">
+            <div class="workflow-related-heading">
+                <div class="workflow-article-kicker"><span class="workflow-step">Série</span> Pokračujte ve čtení</div>
+                <h2 id="related-title">Další články o AI agentech</h2>
+            </div>
+            <div class="workflow-related-grid">
+                <a class="workflow-related-card" href="ai-agenti-ve-skole.html"><span>← Předchozí článek</span><strong>AI agent ve škole</strong><small>Praktické využití agentů ve výuce, administrativě a práci s materiály.</small></a>
+                <a class="workflow-related-card" href="ai-agenti-coding-agenti.html"><span>Související téma</span><strong>Coding agenti</strong><small>Jak AI přechází od psaní kódu k práci s celým projektem.</small></a>
+                <a class="workflow-related-card" href="ai-agenti.html"><span>Rozcestník</span><strong>Všechny články o AI agentech</strong><small>Vraťte se na přehled témat a vyberte si další krok.</small></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="workflow-footer">
+        <span>© 2026 AI ve Výuce · AI agenti pro učitele</span>
+        <a href="ai-agenti.html">Zpět na AI agenty</a>
+    </footer>
+</body>
+
+</html>

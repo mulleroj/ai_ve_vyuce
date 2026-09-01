@@ -298,6 +298,13 @@ if (latestArticlesMount && Array.isArray(window.siteArticles)) {
     }
 }
 
+/* ── Catalog-backed counters ── */
+document.querySelectorAll('[data-count-source="articles"]').forEach(el => {
+    const articleCount = Array.isArray(window.siteArticles) ? window.siteArticles.length : 0;
+    el.dataset.target = String(articleCount);
+    el.textContent = `${articleCount}${el.dataset.suffix || ''}`;
+});
+
 /* ── Animated counters ── */
 function animateCounter(el) {
     const target = parseInt(el.dataset.target, 10);

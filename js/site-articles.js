@@ -5,6 +5,171 @@
  */
 window.siteArticles = [
   {
+    href: 'ai-agenti-llm-tools-rag-memory-skills-workflow-mcp.html',
+    title: 'Jak spolu souvisí LLM, Tools, RAG, Memory, Skills, Workflow a MCP',
+    summary: 'Přehledná mapa agentního systému: jak spolu souvisí LLM, tools, Function Calling, memory, RAG, skills, workflow, MCP a samotný AI agent.',
+    category: 'AI agenti',
+    date: '2026-09-01',
+    dateLabel: '1. září 2026',
+    icon: '🧠',
+    tags: ['Agentní architektura', 'LLM · RAG · MCP'],
+    badgeClass: 'badge-blue'
+  },
+  {
+    href: 'ai-agenti-skills.html',
+    title: 'Skills: jak naučit AI agenta opakovat osvědčený pracovní postup',
+    summary: 'Co jsou skills, jak se liší od promptu, nástroje, workflow a paměti a jak vytvořit první opakovatelnou schopnost pro AI agenta ve škole.',
+    category: 'AI agenti',
+    date: '2026-09-01',
+    dateLabel: '1. září 2026',
+    icon: '⚙️',
+    tags: ['Skills', 'Workflow'],
+    badgeClass: 'badge-gold'
+  },
+  {
+    href: 'ai-agenti-chatbot-automatizace-workflow.html',
+    title: 'AI agent, automatizace, workflow nebo chatbot?',
+    summary: 'Jak vybrat mezi chatbotem, klasickou automatizací, workflow a AI agentem. Praktické příklady ze školy, srovnání a otázky pro rychlé rozhodnutí.',
+    category: 'AI agenti',
+    date: '2026-09-01',
+    dateLabel: '1. září 2026',
+    icon: '🧩',
+    tags: ['Volba nástroje', 'Workflow'],
+    badgeClass: 'badge-mint'
+  },
+  {
+    href: 'ai-agenti-kdy-nepouzivat.html',
+    title: 'Kdy AI agenta ve škole raději nepoužívat',
+    summary: 'Kdy AI agenta ve škole raději nepoužívat: známky, kázeňská rozhodnutí, citlivá data, oprávnění, kontrola výsledků a praktický semafor autonomie.',
+    category: 'AI agenti',
+    date: '2026-09-01',
+    dateLabel: '1. září 2026',
+    icon: '🛡️',
+    tags: ['Bezpečnost', 'Human in the loop'],
+    badgeClass: 'badge-green'
+  },
+  {
+    href: 'ai-agenti-10-ukolu.html',
+    title: '10 úkolů, které může AI agent převzít učiteli',
+    summary: 'Deset konkrétních školních úkolů, které může AI agent převzít nebo zjednodušit — od pracovních listů přes dokumenty až po denní pracovní přehled.',
+    category: 'AI agenti',
+    date: '2026-09-01',
+    dateLabel: '1. září 2026',
+    icon: '📋',
+    tags: ['Školní praxe', '10 úkolů'],
+    badgeClass: 'badge-blue'
+  },
+  {
+    href: 'ai-agenti-prvni-agent.html',
+    title: 'Jak navrhnout svého prvního jednoduchého AI agenta',
+    summary: 'Praktický návod, jak navrhnout prvního jednoduchého AI agenta: vyberte úkol, definujte vstupy, zdroje, nástroje, workflow, kontrolu a bezpečné hranice.',
+    category: 'AI agenti',
+    date: '2026-09-01',
+    dateLabel: '1. září 2026',
+    icon: '🎯',
+    tags: ['První projekt', 'Bezpečný start'],
+    badgeClass: 'badge-gold'
+  },
+  {
+    href: 'ai-agenti-ve-skole.html',
+    title: 'AI agent ve škole: co může skutečně dělat učiteli',
+    summary: 'Praktický průvodce využitím AI agenta ve škole: příprava výuky, vlastní materiály, diferenciace, administrativa, školní dokumenty, bezpečnost a lidská kontrola.',
+    category: 'AI agenti',
+    date: '2026-09-01',
+    dateLabel: '1. září 2026',
+    icon: '🎓',
+    tags: ['Školní praxe', 'Učitel'],
+    badgeClass: 'badge-mint'
+  },
+  {
+    href: 'ai-agenti-coding-agenti.html',
+    title: 'Od vibe codingu ke coding agentům: když AI pracuje na projektu',
+    summary: 'Jak se vibe coding potkává s coding agenty: AI může prohlédnout projekt, navrhnout změnu, upravit kód, spustit testy a opravit chyby.',
+    category: 'AI agenti',
+    date: '2026-09-01',
+    dateLabel: '1. září 2026',
+    icon: '💻',
+    tags: ['Coding agent', 'Vibe Coding'],
+    badgeClass: 'badge-blue'
+  },
+  {
+    href: 'ai-agenti-multi-agentni.html',
+    title: 'Multi-agentní systémy: když na jednom úkolu pracuje tým AI',
+    summary: 'Jak fungují multi-agentní systémy, orchestrátor, specializované role, sekvenční a paralelní spolupráce a proč více AI agentů neznamená automaticky lepší řešení.',
+    category: 'AI agenti',
+    date: '2026-09-01',
+    dateLabel: '1. září 2026',
+    icon: '👥',
+    tags: ['Multi-agentní systémy', 'Orchestrace'],
+    badgeClass: 'badge-gold'
+  },
+  {
+    href: 'ai-agenti-mcp.html',
+    title: 'MCP: univerzální konektor pro svět AI agentů',
+    summary: 'Jak funguje Model Context Protocol: otevřený standard pro propojení AI aplikací s nástroji, databázemi, dokumenty a dalšími systémy.',
+    category: 'AI agenti',
+    date: '2026-09-01',
+    dateLabel: '1. září 2026',
+    icon: '🔌',
+    tags: ['MCP', 'Integrace'],
+    badgeClass: 'badge-mint'
+  },
+  {
+    href: 'ai-agenti-rag.html',
+    title: 'RAG: když AI pracuje s vašimi vlastními dokumenty',
+    summary: 'Jak funguje RAG: AI vyhledá relevantní části školních, interních nebo vlastních dokumentů a předá je modelu pro přesnější odpověď podle zdrojů.',
+    category: 'AI agenti',
+    date: '2026-09-01',
+    dateLabel: '1. září 2026',
+    icon: '📚',
+    tags: ['RAG', 'Vlastní zdroje'],
+    badgeClass: 'badge-green'
+  },
+  {
+    href: 'ai-agenti-pamet.html',
+    title: 'Paměť AI agentů: co si AI skutečně pamatuje',
+    summary: 'Jak funguje paměť AI agentů: kontext, pracovní a dlouhodobá paměť, externí znalostní zdroje, RAG, soukromí, aktuálnost a rozdíl proti trénování modelu.',
+    category: 'AI agenti',
+    date: '2026-09-01',
+    dateLabel: '1. září 2026',
+    icon: '🧠',
+    tags: ['Paměť', 'RAG'],
+    badgeClass: 'badge-gold'
+  },
+  {
+    href: 'ai-agenti-nastroje-function-calling.html',
+    title: 'Nástroje a Function Calling: jak dostane AI „ruce“',
+    summary: 'Jak AI agent používá nástroje a Function Calling: aktuální data, soubory, databáze, API, minimální oprávnění, human in the loop a nástroje ve vibe codingu.',
+    category: 'AI agenti',
+    date: '2026-09-01',
+    dateLabel: '1. září 2026',
+    icon: '🛠️',
+    tags: ['Function Calling', 'Nástroje'],
+    badgeClass: 'badge-blue'
+  },
+  {
+    href: 'ai-agenti-agentni-smycka.html',
+    title: 'Jak funguje AI agent: agentní smyčka krok za krokem',
+    summary: 'Jak funguje agentní smyčka krok za krokem: pochop, naplánuj, proveď a zkontroluj. Praktický příklad ze školy, nástroje, autonomie a human in the loop.',
+    category: 'AI agenti',
+    date: '2026-09-01',
+    dateLabel: '1. září 2026',
+    icon: '🔁',
+    tags: ['Agentní smyčka', 'Workflow'],
+    badgeClass: 'badge-mint'
+  },
+  {
+    href: 'ai-agenti-co-je-ai-agent.html',
+    title: 'AI agenti: když AI přestane jen odpovídat a začne pracovat',
+    summary: 'Úvod do AI agentů: od chatbotu k plnění celých pracovních úkolů, agentní smyčka, nástroje, paměť, bezpečnost a souvislost s vibe codingem.',
+    category: 'AI agenti',
+    date: '2026-09-01',
+    dateLabel: '1. září 2026',
+    icon: '🧭',
+    tags: ['Základy', 'Agentní smyčka'],
+    badgeClass: 'badge-blue'
+  },
+  {
     href: 'ai-navod-7-univerzalnich-promptu.html',
     title: '7 univerzálních AI promptů pro učitele',
     summary: 'Sedm upravitelných šablon pro pracovní listy, studijní materiály, prezentace, aktivity a diferenciaci v ChatGPT, Gemini i Claude.',

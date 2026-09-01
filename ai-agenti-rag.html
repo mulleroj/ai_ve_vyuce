@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAG: když AI pracuje s vašimi vlastními dokumenty | AI ve Výuce</title>
+    <meta name="description"
+        content="Jak funguje RAG: AI vyhledá relevantní části školních, interních nebo vlastních dokumentů a předá je modelu pro přesnější odpověď podle zdrojů." />
+    <link rel="stylesheet" href="css/workflow.css?v=20260901-ai-agenti-rag" />
+</head>
+
+<body class="workflow-page">
+    <header class="workflow-shell">
+        <div class="workflow-topbar">
+            <a class="workflow-brand" href="index.html"><span class="workflow-brand-mark">✦</span>AI ve Výuce</a>
+            <a class="workflow-back" href="ai-agenti.html">← AI agenti</a>
+        </div>
+        <div class="workflow-hero">
+            <div>
+                <div class="workflow-eyebrow">AI agenti · 1. září 2026</div>
+                <h1>RAG: když AI pracuje<br /><span>s vašimi vlastními dokumenty</span></h1>
+                <p class="workflow-hero-lead">Jak může AI pracovat s informacemi, které nejsou součástí jejího původního tréninku: od školního řádu přes učebnice až po interní databáze.</p>
+                <div class="workflow-meta"><span>RAG</span><span>Vlastní dokumenty</span><span>Embeddings</span><span>Citace a zdroje</span></div>
+            </div>
+            <div class="workflow-route" aria-label="Hlavní témata článku o RAG">
+                <div class="workflow-stage"><span class="workflow-stage-number">01</span><div><strong>Připrav zdroje</strong><small>Dokumenty, weby a databáze</small></div></div>
+                <div class="workflow-stage"><span class="workflow-stage-number">02</span><div><strong>Najdi relevantní části</strong><small>Vyhledávání podle slov i významu</small></div></div>
+                <div class="workflow-stage"><span class="workflow-stage-number">03</span><div><strong>Předej kontext</strong><small>Nech model pracovat se zdrojem</small></div></div>
+                <div class="workflow-stage"><span class="workflow-stage-number">04</span><div><strong>Odpověz se zdrojem</strong><small>Kontrola, citace a aktuálnost</small></div></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="workflow-main">
+        <article class="workflow-article">
+            <div class="workflow-article-intro">
+                <div class="workflow-article-kicker"><span class="workflow-step">05</span> AI agenti v praxi</div>
+                <h2 class="workflow-article-title">RAG: když AI pracuje s vašimi vlastními dokumenty</h2>
+                <p class="workflow-article-summary">RAG umožní agentovi vyhledat relevantní informace ve vašich dokumentech a předat je modelu právě ve chvíli, kdy je potřebuje.</p>
+                <div class="workflow-article-meta"><span>1. září 2026</span><span>AI agenti</span><span>RAG a vlastní zdroje</span></div>
+            </div>
+
+            <div class="article-content">
+                <p class="article-lead">V předchozím článku jsme si ukázali, že AI agent může využívat různé druhy paměti. Jenže co když potřebujeme, aby pracoval s informacemi, které nejsou součástí jeho původního tréninku? Třeba se školním řádem, interní směrnicí, učebnicí, firemní dokumentací nebo vlastní databází. Právě k tomu slouží RAG.</p>
+
+                <figure class="article-figure">
+                    <img src="images/ai-agenti-rag.png" alt="Infografika vysvětlující RAG: vyhledání relevantních částí vlastních dokumentů, předání kontextu modelu, výhody, rizika a využití ve škole" />
+                    <figcaption>RAG propojí AI s vašimi vlastními zdroji: dokumenty rozdělí, vyhledá relevantní části a předá je modelu pro odpověď podle konkrétního kontextu.</figcaption>
+                </figure>
+
+                <h2>Co znamená RAG</h2>
+                <p>Zkratka RAG znamená:</p>
+                <div class="article-prompt"><strong>Retrieval-Augmented Generation</strong></div>
+                <p>Česky přibližně:</p>
+                <div class="article-prompt"><strong>generování rozšířené o vyhledávání informací</strong></div>
+                <p>Název zní poněkud technicky, ale princip je překvapivě jednoduchý.</p>
+                <p>Místo aby jazykový model odpovídal pouze podle toho, co se naučil během tréninku, systém před odpovědí nejprve:</p>
+                <ol>
+                    <li>vyhledá relevantní informace,</li>
+                    <li>předá je modelu,</li>
+                    <li>model podle nich vytvoří odpověď.</li>
+                </ol>
+                <p>Zjednodušeně tedy:</p>
+                <div class="article-prompt"><strong>dotaz → vyhledání → relevantní informace → AI → odpověď</strong></div>
+                <p>A právě to je RAG.</p>
+
+                <h2>Proč vůbec RAG potřebujeme</h2>
+                <p>Jazykový model nezná všechno.</p>
+                <p>A už vůbec nemůže automaticky znát:</p>
+                <ul>
+                    <li>vaše interní dokumenty,</li>
+                    <li>školní směrnice,</li>
+                    <li>firemní databáze,</li>
+                    <li>soukromé poznámky,</li>
+                    <li>nové dokumenty vytvořené po jeho tréninku,</li>
+                    <li>obsah uložený ve vašem vlastním systému.</li>
+                </ul>
+                <p>Představme si dotaz:</p>
+                <blockquote>„Kolik dní mají naši žáci na omluvení absence?“</blockquote>
+                <p>Obecný AI chatbot může odpovědět podle běžné praxe nebo podle toho, co zná z jiných škol.</p>
+                <p>Jenže vy se neptáte na běžnou praxi.</p>
+                <p>Ptáte se na pravidla konkrétní školy.</p>
+                <p>Správná odpověď je tedy ukrytá například ve školním řádu.</p>
+                <p>RAG umožní systému nejprve tento dokument vyhledat, najít příslušnou část a teprve potom odpovědět.</p>
+
+                <h2>Bez RAG a s RAG</h2>
+                <p>Rozdíl si můžeme ukázat jednoduše.</p>
+
+                <h3>Bez RAG</h3>
+                <p><strong>Uživatel:</strong></p>
+                <blockquote>„Jak se omlouvá absence?“</blockquote>
+                <p><strong>AI:</strong></p>
+                <blockquote>Obvykle je třeba omluvit nepřítomnost do několika dnů…</blockquote>
+                <p>To může být pravda.</p>
+                <p>Ale nemusí.</p>
+                <p>Model odpovídá obecně.</p>
+
+                <h3>S RAG</h3>
+                <p><strong>Uživatel:</strong></p>
+                <blockquote>„Jak se podle našeho školního řádu omlouvá absence?“</blockquote>
+                <p><strong>Systém:</strong></p>
+                <ol>
+                    <li>vyhledá školní řád,</li>
+                    <li>najde část o omlouvání absence,</li>
+                    <li>předá ji modelu,</li>
+                    <li>model vytvoří odpověď podle dokumentu.</li>
+                </ol>
+                <p>Výsledkem může být například:</p>
+                <blockquote>Podle školního řádu musí zákonný zástupce oznámit důvod nepřítomnosti nejpozději do…</blockquote>
+                <p>To je zásadní rozdíl.</p>
+                <p>AI už neodpovídá jen podle obecných znalostí.</p>
+                <p>Pracuje s konkrétním zdrojem.</p>
+
+                <h2>Jak RAG funguje</h2>
+                <p>Celý proces můžeme rozdělit do několika kroků.</p>
+
+                <h3>1. Připravíme zdroje</h3>
+                <p>Nejprve musíme systému zpřístupnit dokumenty.</p>
+                <p>Mohou to být například:</p>
+                <ul>
+                    <li>PDF,</li>
+                    <li>dokumenty Word,</li>
+                    <li>webové stránky,</li>
+                    <li>databázové záznamy,</li>
+                    <li>tabulky,</li>
+                    <li>poznámky,</li>
+                    <li>učebnice,</li>
+                    <li>metodické materiály.</li>
+                </ul>
+                <p>Dokumenty jsou následně zpracovány tak, aby v nich systém mohl efektivně hledat.</p>
+
+                <h3>2. Dokument se rozdělí na menší části</h3>
+                <p>Dlouhý dokument se obvykle neposílá modelu celý.</p>
+                <p>Představme si školní řád o 60 stranách.</p>
+                <p>Pokud se uživatel ptá:</p>
+                <blockquote>„Jaká jsou pravidla používání mobilních telefonů?“</blockquote>
+                <p>nemá smysl posílat modelu všech 60 stran.</p>
+                <p>Dokument se proto rozdělí na menší části, kterým se často říká:</p>
+                <div class="article-prompt"><strong>chunks</strong><br /><br />tedy jednoduše úseky</div>
+                <p>Například:</p>
+                <ul>
+                    <li>část o docházce,</li>
+                    <li>část o klasifikaci,</li>
+                    <li>část o chování,</li>
+                    <li>část o používání mobilních telefonů.</li>
+                </ul>
+                <p>Systém potom hledá pouze ty úseky, které souvisejí s dotazem.</p>
+
+                <h3>3. Text se převede na číselnou reprezentaci</h3>
+                <p>A tady přichází trochu techniky.</p>
+                <p>Aby bylo možné hledat podle významu, text se často převádí na takzvané:</p>
+                <div class="article-prompt"><strong>embeddings</strong></div>
+                <p>Embedding je číselná reprezentace významu textu.</p>
+                <p>Můžeme si to velmi zjednodušeně představit jako:</p>
+                <blockquote>Každý text dostane svou pozici v obrovské matematické mapě významů.</blockquote>
+                <p>Texty, které mají podobný význam, budou v této mapě blízko sebe.</p>
+                <p>Například:</p>
+                <blockquote>„omlouvání absence“</blockquote>
+                <p>bude významově blízko textu:</p>
+                <blockquote>„způsob omluvení nepřítomnosti žáka“</blockquote>
+                <p>i když nejsou použita stejná slova.</p>
+                <p>To je důležité, protože systém nemusí hledat jen přesnou shodu slov.</p>
+                <p>Může hledat podle významové podobnosti.</p>
+
+                <h3>4. Uživatel položí otázku</h3>
+                <p>Například:</p>
+                <blockquote>„Co má žák udělat, když chybí ve škole?“</blockquote>
+                <p>Systém vytvoří embedding také z tohoto dotazu.</p>
+                <p>Potom porovná jeho význam s uloženými částmi dokumentů.</p>
+                <p>Najde například:</p>
+                <ul>
+                    <li>pravidla omlouvání absence,</li>
+                    <li>oznamování nepřítomnosti,</li>
+                    <li>povinnosti zákonného zástupce.</li>
+                </ul>
+                <p>Tyto části jsou označeny jako nejrelevantnější.</p>
+
+                <h3>5. Relevantní text se předá jazykovému modelu</h3>
+                <p>Model potom nedostane pouze otázku.</p>
+                <p>Dostane například:</p>
+                <div class="article-prompt"><strong>Dotaz uživatele:</strong><br /><br />Co má žák udělat, když chybí ve škole?<br /><br /><strong>Relevantní část školního řádu:</strong><br /><br />Zákonný zástupce je povinen…</div>
+                <p>Model tedy odpovídá na základě dodaného kontextu.</p>
+                <p>To je podstata RAG.</p>
+
+                <h3>6. Model vytvoří odpověď</h3>
+                <p>Teprve nyní nastupuje generativní AI.</p>
+                <p>Model přečte:</p>
+                <ul>
+                    <li>dotaz,</li>
+                    <li>nalezené pasáže,</li>
+                    <li>případně další instrukce,</li>
+                </ul>
+                <p>a vytvoří srozumitelnou odpověď.</p>
+                <p>Ideálně může také uvést, ze kterého dokumentu informace pochází.</p>
+                <p>To je pro důvěryhodnost velmi důležité.</p>
+
+                <h2>RAG není totéž co „nahrát PDF do ChatGPT“</h2>
+                <p>Na první pohled to může vypadat stejně.</p>
+                <p>Nahrajeme dokument a zeptáme se na něj.</p>
+                <p>Rozdíl je především ve způsobu, jak je systém navržen.</p>
+                <p>U jednoduchého chatu může být dokument jednorázově vložen do kontextu.</p>
+                <p>U RAG systému jsou dokumenty obvykle:</p>
+                <ul>
+                    <li>dlouhodobě uložené,</li>
+                    <li>indexované,</li>
+                    <li>rozdělené na části,</li>
+                    <li>průběžně vyhledávané podle relevance.</li>
+                </ul>
+                <p>Díky tomu může systém pracovat i s velmi rozsáhlými znalostními databázemi.</p>
+
+                <h2>RAG není databáze sama o sobě</h2>
+                <p>Tohle je dobré rozlišovat.</p>
+                <p>RAG není místo, kde jsou informace uloženy.</p>
+                <p>RAG je způsob práce s informacemi.</p>
+                <p>Data mohou být uložená například:</p>
+                <ul>
+                    <li>v databázi,</li>
+                    <li>ve vektorové databázi,</li>
+                    <li>v cloudovém úložišti,</li>
+                    <li>v dokumentovém systému.</li>
+                </ul>
+                <p>RAG pak řeší:</p>
+                <div class="article-prompt"><strong>jak najít relevantní informace a dostat je k modelu ve správnou chvíli</strong></div>
+
+                <h2>Co je vektorová databáze</h2>
+                <p>V souvislosti s RAG se často setkáme s pojmem:</p>
+                <div class="article-prompt"><strong>vector database</strong><br /><br />tedy vektorová databáze</div>
+                <p>Je navržena tak, aby efektivně ukládala a vyhledávala embeddings.</p>
+                <p>Místo otázky:</p>
+                <blockquote>Obsahuje tento dokument přesně slovo „absence“?</blockquote>
+                <p>se může ptát:</p>
+                <blockquote>Které části dokumentů mají významově nejblíže k tématu omlouvání nepřítomnosti?</blockquote>
+                <p>To umožňuje mnohem chytřejší vyhledávání.</p>
+
+                <h2>Příklad ze školy</h2>
+                <p>Představme si školního AI asistenta.</p>
+                <p>Má přístup k:</p>
+                <ul>
+                    <li>školnímu řádu,</li>
+                    <li>klasifikačnímu řádu,</li>
+                    <li>organizačnímu řádu,</li>
+                    <li>metodickým pokynům,</li>
+                    <li>interním směrnicím.</li>
+                </ul>
+                <p>Učitel se zeptá:</p>
+                <blockquote>„Může být žák klasifikován, pokud má vysokou absenci?“</blockquote>
+                <p>Agent nemusí odpověď znát.</p>
+                <p>Může:</p>
+                <ol>
+                    <li>vyhledat relevantní dokument,</li>
+                    <li>najít část o podmínkách klasifikace,</li>
+                    <li>předat text modelu,</li>
+                    <li>vytvořit odpověď,</li>
+                    <li>uvést zdroj.</li>
+                </ol>
+                <p>To je praktická ukázka RAG.</p>
+
+                <h2>RAG v učitelových materiálech</h2>
+                <p>RAG může být zajímavý i přímo při přípravě výuky.</p>
+                <p>Představme si, že máme uložené:</p>
+                <ul>
+                    <li>učebnici,</li>
+                    <li>pracovní sešit,</li>
+                    <li>metodickou příručku,</li>
+                    <li>tematický plán,</li>
+                    <li>vlastní pracovní listy.</li>
+                </ul>
+                <p>Učitel zadá:</p>
+                <blockquote>„Připrav mi opakování Unit 5 pro druhý ročník.“</blockquote>
+                <p>Systém může:</p>
+                <ol>
+                    <li>zjistit z tematického plánu, co patří do Unit 5,</li>
+                    <li>najít odpovídající části učebnice,</li>
+                    <li>vyhledat předchozí pracovní listy,</li>
+                    <li>předat relevantní obsah modelu,</li>
+                    <li>vytvořit nový materiál.</li>
+                </ol>
+                <p>Model tedy nepracuje pouze s obecnou angličtinou.</p>
+                <p>Pracuje s konkrétním učebním obsahem.</p>
+
+                <h2>RAG a aktuální informace</h2>
+                <p>RAG je užitečný také tam, kde se informace mění.</p>
+                <p>Představme si produktovou dokumentaci.</p>
+                <p>Model byl trénován před rokem.</p>
+                <p>Od té doby se software změnil.</p>
+                <p>Místo dalšího trénování celého modelu jednoduše aktualizujeme dokumentaci.</p>
+                <p>RAG pak při odpovědi načte aktuální verzi.</p>
+                <p>To je mnohem praktičtější.</p>
+
+                <h2>Výhody RAG</h2>
+                <p>RAG přináší několik zásadních výhod.</p>
+
+                <h3>Práce s vlastními daty</h3>
+                <p>Model může používat informace, které nebyly součástí jeho původního tréninku.</p>
+
+                <h3>Aktuálnost</h3>
+                <p>Dokumenty lze aktualizovat bez nového trénování modelu.</p>
+
+                <h3>Menší riziko halucinací</h3>
+                <p>Pokud model dostane správné podklady, má větší šanci odpovědět správně.</p>
+
+                <h3>Citace</h3>
+                <p>Systém může ukázat, z jakého zdroje odpověď vychází.</p>
+
+                <h3>Kontrola znalostí</h3>
+                <p>Organizace může přesně určit, které dokumenty smí AI používat.</p>
+
+                <h2>Ale RAG nezaručuje pravdu</h2>
+                <p>Tohle je důležité.</p>
+                <p>RAG není kouzelná technologie, která automaticky odstraní chyby.</p>
+                <p>Může selhat hned v několika bodech.</p>
+
+                <h3>Špatný dokument</h3>
+                <p>Pokud je ve znalostní databázi zastaralý nebo chybný dokument, RAG může velmi přesvědčivě odpovědět podle něj.</p>
+                <p>Platí klasické:</p>
+                <div class="article-prompt"><strong>garbage in → garbage out</strong></div>
+                <p>Pokud jsou špatné zdroje, bude špatný i výsledek.</p>
+
+                <h3>Špatné vyhledání</h3>
+                <p>Systém může najít nesprávnou část dokumentu.</p>
+                <p>Například se uživatel ptá na:</p>
+                <blockquote>omlouvání absence</blockquote>
+                <p>ale systém najde část o:</p>
+                <blockquote>neomluvené absenci a kázeňských opatřeních</blockquote>
+                <p>Témata spolu souvisejí, ale nejsou stejná.</p>
+                <p>Model pak může vytvořit zavádějící odpověď.</p>
+
+                <h3>Příliš malé nebo velké chunks</h3>
+                <p>Kvalita RAG závisí i na tom, jak se dokumenty rozdělí.</p>
+                <p>Pokud jsou části příliš malé, může se ztratit kontext.</p>
+                <p>Pokud jsou příliš velké, může systém načítat spoustu nepotřebného textu.</p>
+                <p>Rozdělování dokumentů je proto překvapivě důležitá část návrhu.</p>
+
+                <h3>Špatně formulovaný dotaz</h3>
+                <p>Uživatel může položit velmi obecnou otázku:</p>
+                <blockquote>„Jak to máme s absencí?“</blockquote>
+                <p>Systém nemusí poznat, zda se ptá na:</p>
+                <ul>
+                    <li>omlouvání,</li>
+                    <li>klasifikaci,</li>
+                    <li>neomluvené hodiny,</li>
+                    <li>maximální absenci,</li>
+                    <li>povinnosti třídního učitele.</li>
+                </ul>
+                <p>Někdy je proto potřeba dotaz přeformulovat nebo uživateli položit doplňující otázku.</p>
+
+                <h3>Model může i přes správné zdroje udělat chybu</h3>
+                <p>Ani když vyhledávání proběhne správně, nemusí být odpověď stoprocentní.</p>
+                <p>Model může:</p>
+                <ul>
+                    <li>špatně interpretovat text,</li>
+                    <li>spojit dvě různá pravidla,</li>
+                    <li>přehlédnout výjimku,</li>
+                    <li>formulovat závěr příliš sebejistě.</li>
+                </ul>
+                <p>Proto jsou u důležitých informací stále důležité:</p>
+                <div class="article-prompt"><strong>citace a možnost kontroly zdroje</strong></div>
+
+                <h2>Hybridní vyhledávání</h2>
+                <p>Moderní RAG systémy často nepoužívají pouze jeden způsob hledání.</p>
+                <p>Mohou kombinovat:</p>
+                <ul>
+                    <li>klasické fulltextové vyhledávání</li>
+                    <li>vektorové vyhledávání podle významu.</li>
+                </ul>
+                <p>Tomu se říká:</p>
+                <div class="article-prompt"><strong>hybrid search</strong></div>
+                <p>Je to velmi praktické.</p>
+                <p>Přesné názvy, čísla nebo zákonné paragrafy se často lépe hledají klasicky.</p>
+                <p>Významově podobné formulace zase pomocí embeddings.</p>
+                <p>Kombinace obou přístupů bývá silnější.</p>
+
+                <h2>Reranking</h2>
+                <p>Dalším pojmem, na který můžeme narazit, je:</p>
+                <div class="article-prompt"><strong>reranking</strong></div>
+                <p>Systém nejprve najde například 20 potenciálně vhodných částí dokumentů.</p>
+                <p>Potom další model nebo algoritmus rozhodne:</p>
+                <blockquote>Kterých pět je pro tento dotaz skutečně nejrelevantnější?</blockquote>
+                <p>Teprve ty pošle jazykovému modelu.</p>
+                <p>To může výrazně zlepšit kvalitu odpovědí.</p>
+
+                <h2>RAG a agent nejsou totéž</h2>
+                <p>Tady je důležité nezaměnit dva pojmy.</p>
+                <p>RAG je metoda získávání relevantních informací.</p>
+                <p>AI agent je systém, který může rozhodovat, plánovat a používat nástroje.</p>
+                <p>Agent může RAG využívat jako jeden ze svých nástrojů.</p>
+                <div class="article-prompt"><strong>Agent:</strong> Potřebuji zjistit pravidla klasifikace.<br /><br /><strong>RAG nástroj:</strong> Najdu relevantní části školních dokumentů.<br /><br /><strong>Agent:</strong> Na základě nalezených informací vytvořím odpověď.</div>
+                <p>RAG tedy může být jednou ze schopností agenta.</p>
+
+                <h2>RAG versus paměť</h2>
+                <p>Tyto dvě věci mohou vypadat podobně.</p>
+                <p>Rozdíl můžeme zjednodušit takto:</p>
+
+                <h3>Paměť</h3>
+                <p>Obsahuje například informace o uživateli a předchozí práci.</p>
+                <blockquote>Učitel preferuje pracovní listy na A4.</blockquote>
+
+                <h3>RAG znalostní báze</h3>
+                <p>Obsahuje zdrojové dokumenty.</p>
+                <blockquote>Školní řád stanovuje…</blockquote>
+                <p>Obě technologie mohou používat podobné techniky vyhledávání.</p>
+                <p>Jejich účel je ale jiný.</p>
+
+                <h2>RAG ve vibe codingu</h2>
+                <p>RAG lze použít i u coding agentů.</p>
+                <p>Agent může například vyhledávat v:</p>
+                <ul>
+                    <li>dokumentaci projektu,</li>
+                    <li>starých issue,</li>
+                    <li>technických rozhodnutích,</li>
+                    <li>dokumentaci knihoven,</li>
+                    <li>interních pravidlech vývoje.</li>
+                </ul>
+                <p>Uživatel zadá:</p>
+                <blockquote>„Přidej do aplikace přihlášení.“</blockquote>
+                <p>Agent si může nejprve vyhledat:</p>
+                <ul>
+                    <li>jaké autentizační řešení projekt používá,</li>
+                    <li>jaké jsou bezpečnostní požadavky,</li>
+                    <li>kde je dokumentována architektura.</li>
+                </ul>
+                <p>Teprve potom začne upravovat kód.</p>
+                <p>To je mnohem bezpečnější než improvizovat od nuly.</p>
+
+                <h2>Kdy RAG dává smysl</h2>
+                <p>RAG je velmi vhodný, pokud:</p>
+                <ul>
+                    <li>máte vlastní dokumenty,</li>
+                    <li>informace se často mění,</li>
+                    <li>potřebujete citace,</li>
+                    <li>chcete odpovídat podle konkrétních zdrojů,</li>
+                    <li>nechcete model znovu trénovat.</li>
+                </ul>
+                <p>Naopak nemusí mít smysl kvůli každému jednoduchému dotazu.</p>
+                <p>Pokud se ptáme:</p>
+                <blockquote>„Kolik je 2 + 2?“</blockquote>
+                <p>RAG opravdu nepotřebujeme.</p>
+                <p>Technologie není cílem.</p>
+                <p>Má smysl pouze tam, kde řeší konkrétní problém.</p>
+
+                <h2>Zapamatujte si</h2>
+                <p>RAG funguje podle jednoduchého principu:</p>
+                <div class="article-prompt"><strong>nejprve najdi správnou informaci, potom generuj odpověď</strong></div>
+                <p>Typický proces:</p>
+                <ol>
+                    <li>dotaz,</li>
+                    <li>vyhledání relevantních částí,</li>
+                    <li>předání modelu,</li>
+                    <li>odpověď založená na zdrojích.</li>
+                </ol>
+                <p>Díky RAG může AI pracovat s vlastními, aktuálními a interními informacemi, aniž by bylo nutné jazykový model znovu trénovat.</p>
+                <p>RAG ale není zárukou správnosti.</p>
+                <p>Kvalita výsledku závisí na:</p>
+                <div class="article-prompt"><strong>kvalitě zdrojů, vyhledávání i samotného jazykového modelu</strong></div>
+
+                <h2>Co bude následovat</h2>
+                <p>Teď už máme skoro všechny základní díly skládačky.</p>
+                <p>Agent dokáže:</p>
+                <div class="article-prompt"><strong>plánovat, používat nástroje, využívat paměť a vyhledávat ve vlastních dokumentech</strong></div>
+                <p>Jenže stále zbývá jeden praktický problém.</p>
+                <p>Každá aplikace, databáze nebo služba může mít úplně jiný způsob propojení.</p>
+                <p>Pokud chceme připojit k AI deset různých nástrojů, můžeme skončit s deseti různými integracemi.</p>
+                <p>A právě tento problém se snaží řešit:</p>
+                <div class="article-prompt"><strong>MCP: univerzální konektor pro svět AI agentů</strong><br /><br />V příštím díle se podíváme na Model Context Protocol, proč kolem něj vznikl takový rozruch a proč se o něm často mluví jako o „USB-C pro AI“.</div>
+            </div>
+        </article>
+
+        <section class="workflow-related" aria-labelledby="related-title">
+            <div class="workflow-related-heading">
+                <div class="workflow-article-kicker"><span class="workflow-step">Série</span> Pokračujte ve čtení</div>
+                <h2 id="related-title">Další články o AI agentech</h2>
+            </div>
+            <div class="workflow-related-grid">
+                <a class="workflow-related-card" href="ai-agenti-pamet.html"><span>← Předchozí článek</span><strong>Paměť AI agentů</strong><small>Co si AI skutečně pamatuje a jak se liší paměť od trénování.</small></a>
+                <a class="workflow-related-card" href="ai-agenti-nastroje-function-calling.html"><span>Navazující téma</span><strong>Nástroje a Function Calling</strong><small>Jak AI získá „ruce“ a může pracovat s aktuálními daty a službami.</small></a>
+                <a class="workflow-related-card" href="ai-agenti.html"><span>Rozcestník</span><strong>Všechny články o AI agentech</strong><small>Vraťte se na přehled témat a vyberte si další krok.</small></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="workflow-footer">
+        <span>© 2026 AI ve Výuce · AI agenti pro učitele</span>
+        <a href="ai-agenti.html">Zpět na AI agenty</a>
+    </footer>
+</body>
+
+</html>

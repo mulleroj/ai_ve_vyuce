@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nástroje a Function Calling: jak dostane AI „ruce“ | AI ve Výuce</title>
+    <meta name="description"
+        content="Jak AI agent používá nástroje a Function Calling: aktuální data, soubory, databáze, API, minimální oprávnění, human in the loop a nástroje ve vibe codingu." />
+    <link rel="stylesheet" href="css/workflow.css?v=20260901-ai-agenti-nastroje" />
+</head>
+
+<body class="workflow-page">
+    <header class="workflow-shell">
+        <div class="workflow-topbar">
+            <a class="workflow-brand" href="index.html"><span class="workflow-brand-mark">✦</span>AI ve Výuce</a>
+            <a class="workflow-back" href="ai-agenti.html">← AI agenti</a>
+        </div>
+        <div class="workflow-hero">
+            <div>
+                <div class="workflow-eyebrow">AI agenti · 1. září 2026</div>
+                <h1>Nástroje a Function Calling:<br /><span>jak dostane AI „ruce“</span></h1>
+                <p class="workflow-hero-lead">Jak agent používá externí nástroje, získává aktuální data, pracuje se soubory a bezpečně provádí skutečné akce.</p>
+                <div class="workflow-meta"><span>Nástroje</span><span>Function Calling</span><span>API</span><span>Bezpečnost</span></div>
+            </div>
+            <div class="workflow-route" aria-label="Hlavní témata článku o nástrojích AI agentů">
+                <div class="workflow-stage"><span class="workflow-stage-number">01</span><div><strong>Model není celý agent</strong><small>Co jazykový model umí a co bez nástroje nedokáže</small></div></div>
+                <div class="workflow-stage"><span class="workflow-stage-number">02</span><div><strong>Function Calling</strong><small>Jak model požádá systém o použití funkce</small></div></div>
+                <div class="workflow-stage"><span class="workflow-stage-number">03</span><div><strong>Čtení a zápis</strong><small>Rozdíl mezi získáním dat a provedením akce</small></div></div>
+                <div class="workflow-stage"><span class="workflow-stage-number">04</span><div><strong>Bezpečná oprávnění</strong><small>Minimální přístup a člověk v procesu</small></div></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="workflow-main">
+        <article class="workflow-article">
+            <div class="workflow-article-intro">
+                <div class="workflow-article-kicker"><span class="workflow-step">03</span> AI agenti v praxi</div>
+                <h2 class="workflow-article-title">Nástroje a Function Calling: jak dostane AI „ruce“</h2>
+                <p class="workflow-article-summary">Jazykový model umí skvěle pracovat s textem. Aby mohl agent něco skutečně udělat, potřebuje nástroje, jasné parametry a bezpečná pravidla.</p>
+                <div class="workflow-article-meta"><span>1. září 2026</span><span>AI agenti</span><span>Nástroje a API</span></div>
+            </div>
+
+            <div class="article-content">
+                <p class="article-lead">V předchozím článku jsme si ukázali agentní smyčku: AI agent pochopí zadání, naplánuje další krok, provede akci a zkontroluje výsledek.</p>
+                <p>Jenže samotný jazykový model toho ve skutečném světě mnoho „neudělá“. Umí velmi dobře pracovat s textem, ale neumí sám od sebe otevřít kalendář, zjistit aktuální počasí nebo změnit soubor. K tomu potřebuje nástroje.</p>
+
+                <figure class="article-figure">
+                    <img src="images/ai-agentni-nastroje-function-calling.png" alt="Infografika vysvětlující nástroje a Function Calling, rozdíl mezi jazykovým modelem a agentem a bezpečné používání nástrojů" />
+                    <figcaption>Nástroje a Function Calling: jak model požádá o akci, získá výsledek a vytvoří odpověď pro uživatele.</figcaption>
+                </figure>
+
+                <h2>Jazykový model není celý agent</h2>
+                <p>Když se bavíme s běžným chatbotem, snadno získáme dojem, že AI „něco dělá“.</p>
+                <p>Ve skutečnosti jazykový model především vytváří další text podle zadání a dostupného kontextu.</p>
+                <p>Dokáže například:</p>
+                <ul>
+                    <li>vysvětlit pojem,</li>
+                    <li>vytvořit pracovní list,</li>
+                    <li>přepsat text,</li>
+                    <li>shrnout dokument,</li>
+                    <li>navrhnout postup,</li>
+                    <li>napsat programový kód.</li>
+                </ul>
+                <p>Ale pokud nemá k dispozici vhodný nástroj, nemůže například skutečně:</p>
+                <ul>
+                    <li>zjistit aktuální cenu produktu,</li>
+                    <li>přečíst soubor uložený v určité službě,</li>
+                    <li>zapsat něco do databáze,</li>
+                    <li>vytvořit událost v kalendáři,</li>
+                    <li>odeslat e-mail,</li>
+                    <li>spustit program,</li>
+                    <li>upravit soubor v projektu.</li>
+                </ul>
+                <p>Právě zde vstupují do hry <em>tools</em>, tedy nástroje.</p>
+
+                <h2>Co je nástroj</h2>
+                <p>Nástroj je externí funkce nebo služba, kterou může AI systém použít při řešení úkolu.</p>
+                <p>Můžeme si to představit velmi jednoduše:</p>
+                <div class="article-prompt"><strong>jazykový model = mozek<br /><br />nástroje = ruce</strong></div>
+                <p>Není to technicky úplně přesná analogie, ale pro pochopení funguje dobře.</p>
+                <p>Model může rozhodnout:</p>
+                <blockquote>Potřebuji zjistit aktuální počasí.</blockquote>
+                <p>A místo toho, aby si údaj vymyslel nebo spoléhal na zastaralé informace, použije nástroj:</p>
+                <div class="article-prompt"><strong>Weather API</strong></div>
+                <p>Ten vrátí aktuální data a model je následně zpracuje do odpovědi.</p>
+
+                <h2>Jaké nástroje může agent používat</h2>
+                <p>Možností je celá řada.</p>
+                <p>Typické nástroje zahrnují například:</p>
+                <ul>
+                    <li><strong>Vyhledávání na webu</strong> – agent může hledat aktuální informace.</li>
+                    <li><strong>Databáze</strong> – může číst nebo zapisovat strukturovaná data.</li>
+                    <li><strong>Soubory</strong> – může otevřít dokument, načíst tabulku nebo vytvořit nový soubor.</li>
+                    <li><strong>Výpočty</strong> – může použít kalkulačku nebo spustit programový kód.</li>
+                    <li><strong>Kalendář</strong> – může zjistit volné termíny nebo vytvořit událost.</li>
+                    <li><strong>E-mail</strong> – může připravit nebo odeslat zprávu.</li>
+                    <li><strong>API služeb</strong> – může komunikovat s různými aplikacemi.</li>
+                    <li><strong>Vývojářské nástroje</strong> – může číst zdrojový kód, upravovat soubory, spouštět testy nebo pracovat s verzovacím systémem.</li>
+                </ul>
+                <p>A právě kombinace více nástrojů je jedním z důvodů, proč jsou agentní systémy tak zajímavé.</p>
+
+                <h2>Co je Function Calling</h2>
+                <p>Pojem <em>Function Calling</em> označuje způsob, jakým může jazykový model požádat systém o spuštění určité funkce.</p>
+                <p>Důležité je pochopit jednu věc:</p>
+                <blockquote>Model obvykle nástroj přímo nespouští.</blockquote>
+                <p>Místo toho vytvoří strukturovaný požadavek.</p>
+                <p>Například uživatel napíše:</p>
+                <blockquote>„Jaké bude zítra počasí v Praze?“</blockquote>
+                <p>Model vyhodnotí:</p>
+                <blockquote>Potřebuji aktuální informace o počasí.</blockquote>
+                <p>A vytvoří požadavek přibližně ve smyslu:</p>
+                <div class="article-prompt"><strong>použij funkci: get_weather<br />město: Praha<br />datum: zítra</strong></div>
+                <p>Aplikace potom tuto funkci skutečně zavolá.</p>
+                <p>Výsledek se vrátí modelu.</p>
+                <p>Model z něj vytvoří běžnou odpověď:</p>
+                <blockquote>Zítra má být v Praze…</blockquote>
+                <p>Celý proces tedy vypadá asi takto:</p>
+                <div class="article-prompt"><strong>uživatel → model → požadavek na nástroj → nástroj → výsledek → model → odpověď</strong></div>
+
+                <h2>Proč je to lepší než „hádat“</h2>
+                <p>Jazykové modely mají jeden zásadní problém.</p>
+                <p>Umějí velmi přesvědčivě vytvořit odpověď, i když nemají správná data.</p>
+                <p>To vede k takzvaným halucinacím.</p>
+                <p>Nástroje mohou tento problém výrazně omezit.</p>
+                <p>Místo toho, aby model hádal:</p>
+                <blockquote>„Vlak jede v 8:13.“</blockquote>
+                <p>může agent použít službu s aktuálním jízdním řádem.</p>
+                <p>Místo:</p>
+                <blockquote>„Kurz eura je přibližně…“</blockquote>
+                <p>může použít aktuální finanční data.</p>
+                <p>Místo:</p>
+                <blockquote>„Podle vašich dokumentů…“</blockquote>
+                <p>může dokument skutečně otevřít a najít relevantní část.</p>
+                <p>To ale neznamená, že použití nástroje automaticky zaručuje správnost.</p>
+                <p>Agent může:</p>
+                <ul>
+                    <li>zvolit špatný nástroj,</li>
+                    <li>zadat špatné parametry,</li>
+                    <li>nesprávně interpretovat výsledek,</li>
+                    <li>pracovat s nekvalitním zdrojem.</li>
+                </ul>
+                <p>Proto je stále důležitá kontrola.</p>
+
+                <h2>Jak model pozná, jaký nástroj použít</h2>
+                <p>Aby mohl agent nástroje používat, musí vědět, jaké nástroje má k dispozici.</p>
+                <p>Každý nástroj bývá popsán například pomocí:</p>
+                <ul>
+                    <li>názvu,</li>
+                    <li>popisu,</li>
+                    <li>vstupních parametrů,</li>
+                    <li>očekávaného výsledku.</li>
+                </ul>
+                <p>Představme si nástroj:</p>
+                <div class="article-prompt"><strong>search_web</strong></div>
+                <p>Popis:</p>
+                <blockquote>Vyhledá aktuální informace na internetu.</blockquote>
+                <p>Parametry:</p>
+                <div class="article-prompt"><strong>dotaz<br />jazyk<br />případně omezení zdrojů</strong></div>
+                <p>Model dostane tento popis jako součást svého kontextu.</p>
+                <p>Když potom uživatel napíše:</p>
+                <blockquote>„Jaké nové změny jsou tento týden v ChatGPT?“</blockquote>
+                <p>model může vyhodnotit:</p>
+                <blockquote>Potřebuji aktuální informace. Použiji webové vyhledávání.</blockquote>
+
+                <h2>Dobře popsaný nástroj je zásadní</h2>
+                <p>Pokud je popis nástroje nejasný, agent jej může používat špatně.</p>
+                <p>Například:</p>
+                <div class="article-prompt"><strong>Nástroj A: search</strong></div>
+                <p>To není příliš užitečné.</p>
+                <p>Co hledá? Kde hledá? Jaký výsledek vrací?</p>
+                <p>Lepší je:</p>
+                <div class="article-prompt"><strong>search_school_documents</strong><br /><br />Vyhledá relevantní pasáže ve školních směrnicích a interních dokumentech. Používej jej pouze pro dotazy týkající se školních pravidel, procesů a interních postupů.</div>
+                <p>Agent tak lépe pozná, kdy má nástroj použít.</p>
+                <p>To je velmi důležité při tvorbě vlastních agentů.</p>
+
+                <h2>Příklad ze školy</h2>
+                <p>Představme si zadání:</p>
+                <blockquote>„Zjisti, jaké povinnosti má třídní učitel při omlouvání absence.“</blockquote>
+                <p>Běžný chatbot může odpovědět podle obecných znalostí.</p>
+                <p>Agent s přístupem ke školním dokumentům může postupovat jinak.</p>
+
+                <h3>1. Vyhodnotí zadání</h3>
+                <p>Jde o otázku na interní pravidla školy.</p>
+
+                <h3>2. Vybere nástroj</h3>
+                <p>Použije například:</p>
+                <div class="article-prompt"><strong>search_school_documents</strong></div>
+
+                <h3>3. Nástroj vyhledá dokumenty</h3>
+                <p>Najde například:</p>
+                <ul>
+                    <li>školní řád,</li>
+                    <li>organizační směrnici,</li>
+                    <li>klasifikační řád.</li>
+                </ul>
+
+                <h3>4. Vrátí relevantní části</h3>
+                <p>Agent je přečte.</p>
+
+                <h3>5. Vytvoří odpověď</h3>
+                <p>A může uvést:</p>
+                <blockquote>Podle školního řádu…</blockquote>
+                <p>To je zásadně lepší než odpověď založená pouze na obecných znalostech modelu.</p>
+
+                <h2>Nástroje mohou také provádět akce</h2>
+                <p>Doposud jsme mluvili hlavně o získávání informací.</p>
+                <p>Nástroje ale mohou dělat mnohem víc.</p>
+                <p>Například:</p>
+                <div class="article-prompt"><strong>read_document</strong><br /><br />přečte dokument.</div>
+                <p>Ale:</p>
+                <div class="article-prompt"><strong>update_document</strong><br /><br />už jej změní.</div>
+                <p>Další příklady:</p>
+                <ul>
+                    <li><strong>find_calendar_event</strong> najde událost, ale <strong>create_calendar_event</strong> událost vytvoří.</li>
+                    <li><strong>search_email</strong> vyhledá zprávu, ale <strong>send_email</strong> zprávu odešle.</li>
+                </ul>
+                <p>A právě v tomto okamžiku se významně mění otázka bezpečnosti.</p>
+
+                <h2>Čtení není totéž co zápis</h2>
+                <p>U nástrojů je velmi užitečné rozlišovat:</p>
+
+                <h3>Read</h3>
+                <p>Agent pouze získává informace.</p>
+                <p>Například:</p>
+                <ul>
+                    <li>čte dokument,</li>
+                    <li>hledá v databázi,</li>
+                    <li>kontroluje kalendář.</li>
+                </ul>
+                <p>Riziko bývá nižší.</p>
+
+                <h3>Write</h3>
+                <p>Agent něco mění.</p>
+                <p>Například:</p>
+                <ul>
+                    <li>upravuje dokument,</li>
+                    <li>zapisuje do databáze,</li>
+                    <li>odesílá zprávu,</li>
+                    <li>maže soubor.</li>
+                </ul>
+                <p>Riziko je výrazně vyšší.</p>
+                <p>A právě zde by měl být často zapojen člověk.</p>
+
+                <h2>Human in the loop</h2>
+                <p>U důležitých akcí může agent pracovat například takto:</p>
+                <blockquote>Připravil jsem e-mail pro rodiče. Chcete jej odeslat?</blockquote>
+                <p>Teprve po potvrzení uživatelem agent použije nástroj <strong>send_email</strong>.</p>
+                <p>Stejný princip lze použít při:</p>
+                <ul>
+                    <li>publikování obsahu,</li>
+                    <li>mazání souborů,</li>
+                    <li>objednávkách,</li>
+                    <li>změnách dat,</li>
+                    <li>odesílání formulářů,</li>
+                    <li>finančních operacích.</li>
+                </ul>
+                <p>Rozumný agent tedy není ten, který může všechno.</p>
+                <p>Rozumný agent je ten, který má právě tolik oprávnění, kolik potřebuje.</p>
+
+                <h2>Princip minimálních oprávnění</h2>
+                <p>V informatice se používá princip:</p>
+                <div class="article-prompt"><strong>Principle of Least Privilege</strong></div>
+                <p>tedy princip minimálních oprávnění.</p>
+                <p>Znamená to, že systém dostane pouze taková oprávnění, která skutečně potřebuje ke své práci.</p>
+                <p>Pokud agent potřebuje pouze číst dokumenty, nemá důvod mít oprávnění je mazat.</p>
+                <p>Pokud má připravovat koncepty e-mailů, nemusí mít právo je automaticky odesílat.</p>
+                <p>To je jeden z nejdůležitějších bezpečnostních principů agentních systémů.</p>
+
+                <h2>Nástroj nemusí být internetová služba</h2>
+                <p>Když se řekne „tool“, člověk si často představí nějaké API.</p>
+                <p>Ale nástrojem může být prakticky jakákoli funkce, kterou systém agentovi zpřístupní.</p>
+                <p>Například:</p>
+                <ul>
+                    <li><strong>calculate_grade</strong> – spočítá známku podle bodového hodnocení.</li>
+                    <li><strong>generate_pdf</strong> – vytvoří PDF.</li>
+                    <li><strong>get_current_topic</strong> – zjistí aktuální téma z tematického plánu.</li>
+                    <li><strong>create_student_version</strong> – vytvoří žákovskou verzi pracovního listu.</li>
+                    <li><strong>check_accessibility</strong> – zkontroluje srozumitelnost materiálu.</li>
+                </ul>
+                <p>Z jednotlivých malých nástrojů potom můžeme stavět mnohem složitější pracovní postupy.</p>
+
+                <h2>A tady začíná být agent opravdu zajímavý</h2>
+                <p>Představme si, že má k dispozici pět nástrojů:</p>
+                <ol>
+                    <li>vyhledej téma v tematickém plánu,</li>
+                    <li>vyhledej materiály,</li>
+                    <li>vytvoř dokument,</li>
+                    <li>zkontroluj materiál,</li>
+                    <li>ulož soubor.</li>
+                </ol>
+                <p>Uživatel nemusí říkat:</p>
+                <div class="article-prompt">Použij nástroj 1.<br />Teď nástroj 2.<br />Teď vytvoř dokument.<br />Teď ho zkontroluj.</div>
+                <p>Může zadat pouze:</p>
+                <blockquote>„Připrav mi materiály na zítřejší hodinu.“</blockquote>
+                <p>Agent sám rozhodne, které nástroje a v jakém pořadí použije.</p>
+                <p>A právě to je podstata agentní práce.</p>
+
+                <h2>Tools versus automatizace</h2>
+                <p>Možná vás napadne:</p>
+                <blockquote>Není to jednoduše automatizace?</blockquote>
+                <p>Částečně ano.</p>
+                <p>Rozdíl je hlavně v tom, kdo rozhoduje o postupu.</p>
+                <p>Klasická automatizace bývá pevně naprogramovaná:</p>
+                <div class="article-prompt"><strong>pokud nastane A → proveď B → potom C</strong></div>
+                <p>Agentní systém může rozhodovat dynamicky:</p>
+                <blockquote>Mám tento cíl. Který z dostupných nástrojů je teď nejvhodnější?</blockquote>
+                <p>To umožňuje řešit úkoly, jejichž přesný průběh nemusíme znát předem.</p>
+
+                <h2>Nástroje ve vibe codingu</h2>
+                <p>V coding agentech je používání nástrojů vidět velmi názorně.</p>
+                <p>Coding agent může mít například nástroje:</p>
+                <ul>
+                    <li>číst soubory,</li>
+                    <li>zapisovat do souborů,</li>
+                    <li>vyhledávat v projektu,</li>
+                    <li>spustit terminál,</li>
+                    <li>spustit testy,</li>
+                    <li>zobrazit chyby,</li>
+                    <li>pracovat s verzovacím systémem.</li>
+                </ul>
+                <p>Uživatel zadá:</p>
+                <blockquote>„Přidej na stránku možnost přepnout mezi světlým a tmavým režimem.“</blockquote>
+                <p>Agent:</p>
+                <ol>
+                    <li>prohledá projekt,</li>
+                    <li>najde správné soubory,</li>
+                    <li>upraví kód,</li>
+                    <li>spustí aplikaci,</li>
+                    <li>zjistí chybu,</li>
+                    <li>upraví řešení,</li>
+                    <li>znovu otestuje.</li>
+                </ol>
+                <p>Nástroje jsou tedy praktickým prostředkem, kterým agent provádí jednotlivé kroky agentní smyčky.</p>
+
+                <h2>Co jsou API</h2>
+                <p>V souvislosti s nástroji velmi často narazíme na další zkratku:</p>
+                <div class="article-prompt"><strong>API – Application Programming Interface</strong></div>
+                <p>API je rozhraní, přes které spolu mohou komunikovat různé aplikace.</p>
+                <p>Můžeme si jej představit jako předem dohodnutý způsob, jak jedna služba požádá jinou službu o určitou informaci nebo akci.</p>
+                <p>Například:</p>
+                <div class="article-prompt"><strong>AI aplikace:</strong><br />Dej mi aktuální předpověď počasí pro Prahu.<br /><br /><strong>API počasí:</strong><br />Zde jsou aktuální data.<br /><br /><strong>AI aplikace:</strong><br />Vytvořím z nich odpověď pro uživatele.</div>
+                <p>API tedy často funguje jako most mezi agentem a externí službou.</p>
+
+                <h2>A jak s tím souvisí MCP?</h2>
+                <p>Tady se dostáváme k problému.</p>
+                <p>Představme si, že chceme propojit AI s:</p>
+                <ul>
+                    <li>Google Drive,</li>
+                    <li>databází,</li>
+                    <li>GitHubem,</li>
+                    <li>kalendářem,</li>
+                    <li>interním systémem,</li>
+                    <li>vyhledávačem,</li>
+                    <li>několika vlastními nástroji.</li>
+                </ul>
+                <p>Každou integraci můžeme vytvořit zvlášť.</p>
+                <p>Jenže brzy vznikne pěkná technická džungle.</p>
+                <p>Každý systém má jiné rozhraní.</p>
+                <p>Každá integrace se musí samostatně vytvořit a udržovat.</p>
+                <p>Právě proto vznikají standardy, které se snaží propojení AI s nástroji sjednotit.</p>
+                <p>A jedním z nejdůležitějších je dnes:</p>
+                <div class="article-prompt"><strong>MCP – Model Context Protocol.</strong></div>
+                <p>K němu se dostaneme v samostatném článku.</p>
+                <p>Nejdřív si ale ještě musíme vysvětlit dvě věci, bez kterých agenti nedávají úplný smysl:</p>
+                <div class="article-prompt"><strong>paměť a práce s vlastními znalostmi.</strong></div>
+
+                <h2>Zapamatujte si</h2>
+                <p>Samotný jazykový model hlavně vytváří a zpracovává informace.</p>
+                <p>Nástroje mu umožňují získávat aktuální data a provádět skutečné akce.</p>
+                <p>Function Calling je mechanismus, kterým model sdělí systému:</p>
+                <blockquote>„Pro tento úkol potřebuji použít právě tento nástroj s těmito parametry.“</blockquote>
+                <p>A právě kombinace:</p>
+                <div class="article-prompt"><strong>jazykový model + agentní smyčka + nástroje</strong></div>
+                <p>je základem velké části dnešních AI agentů.</p>
+
+                <h2>Co bude následovat</h2>
+                <p>Nástroje jsme agentovi dali.</p>
+                <p>Jenže vzniká další problém.</p>
+                <p>Co když potřebujeme, aby věděl, co jsme řešili minulý týden? Co když má znát preference uživatele? A jak může pracovat s informacemi, které vůbec nejsou součástí jeho původního tréninku?</p>
+                <p>V příštím díle se proto podíváme na:</p>
+                <div class="article-prompt"><strong>Paměť AI agentů: co si AI skutečně pamatuje</strong></div>
+                <p>A tady bude potřeba rozlišit několik věcí, které se dnes velmi často házejí do jednoho pytle: kontext, historie konverzace, dlouhodobá paměť, databáze a skutečné učení modelu.</p>
+            </div>
+        </article>
+
+        <section class="workflow-related" aria-labelledby="dalsi-ai-nastroje">
+            <div class="workflow-related-heading">
+                <h2 id="dalsi-ai-nastroje">Další články a workflow</h2>
+                <p>Navazující texty k AI agentům, agentní smyčce a tvorbě aplikací ve výuce.</p>
+            </div>
+            <div class="workflow-related-grid">
+                <article class="workflow-related-card">
+                    <span class="workflow-card-number">01</span>
+                    <h3><a href="ai-agenti-co-je-ai-agent.html">AI agenti: od chatbotu k pracovnímu procesu</a></h3>
+                    <p>Úvod do rozdílu mezi chatbotem a agentem, který plánuje kroky a používá nástroje.</p>
+                </article>
+                <article class="workflow-related-card">
+                    <span class="workflow-card-number">02</span>
+                    <h3><a href="ai-agenti-agentni-smycka.html">Jak funguje agentní smyčka</a></h3>
+                    <p>Pochop, naplánuj, proveď a zkontroluj: jak agent opakuje kroky až k výsledku.</p>
+                </article>
+                <article class="workflow-related-card">
+                    <span class="workflow-card-number">03</span>
+                    <h3><a href="ai-agenti.html">AI agenti: rozcestník témat</a></h3>
+                    <p>Zpět na přehled článků o základech, nástrojích a bezpečnosti AI agentů.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai-agenti.html">Zpět na AI agenty</a></footer>
+</body>
+
+</html>

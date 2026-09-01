@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi-agentní systémy: když na jednom úkolu pracuje tým AI | AI ve Výuce</title>
+    <meta name="description"
+        content="Jak fungují multi-agentní systémy, orchestrátor, specializované role, sekvenční a paralelní spolupráce a proč více AI agentů neznamená automaticky lepší řešení." />
+    <link rel="stylesheet" href="css/workflow.css?v=20260901-ai-agenti-multi-agentni" />
+</head>
+
+<body class="workflow-page">
+    <header class="workflow-shell">
+        <div class="workflow-topbar">
+            <a class="workflow-brand" href="index.html"><span class="workflow-brand-mark">✦</span>AI ve Výuce</a>
+            <a class="workflow-back" href="ai-agenti.html">← AI agenti</a>
+        </div>
+        <div class="workflow-hero">
+            <div>
+                <div class="workflow-eyebrow">AI agenti · 1. září 2026</div>
+                <h1>Multi-agentní systémy:<br /><span>když na jednom úkolu pracuje tým AI</span></h1>
+                <p class="workflow-hero-lead">Jak si více specializovaných agentů může rozdělit práci, předávat si výsledky a společně řešit složitější úkoly — a proč je někdy lepší zůstat u jednoho dobře navrženého agenta.</p>
+                <div class="workflow-meta"><span>Orchestrace</span><span>Specializace</span><span>Paralelní práce</span><span>Kontrola</span></div>
+            </div>
+            <div class="workflow-route" aria-label="Hlavní témata článku o multi-agentních systémech">
+                <div class="workflow-stage"><span class="workflow-stage-number">01</span><div><strong>Rozděl role</strong><small>Plánovač, rešeršér, tvůrce a kontrolor</small></div></div>
+                <div class="workflow-stage"><span class="workflow-stage-number">02</span><div><strong>Koordinuj práci</strong><small>Orchestrátor předává části úkolu</small></div></div>
+                <div class="workflow-stage"><span class="workflow-stage-number">03</span><div><strong>Propoj výsledky</strong><small>Agenti pracují postupně i současně</small></div></div>
+                <div class="workflow-stage"><span class="workflow-stage-number">04</span><div><strong>Kontroluj systém</strong><small>Oprávnění, náklady a podmínky ukončení</small></div></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="workflow-main">
+        <article class="workflow-article">
+            <div class="workflow-article-intro">
+                <div class="workflow-article-kicker"><span class="workflow-step">07</span> AI agenti v praxi</div>
+                <h2 class="workflow-article-title">Multi-agentní systémy: když na jednom úkolu pracuje tým AI</h2>
+                <p class="workflow-article-summary">Jeden agent nemusí být vždy nejlepší odpověď. U složitějších úkolů mohou práci převzít specialisté s různými rolemi, nástroji a oprávněními.</p>
+                <div class="workflow-article-meta"><span>1. září 2026</span><span>AI agenti</span><span>Multi-agentní systémy</span></div>
+            </div>
+
+            <div class="article-content">
+                <p class="article-lead">V předchozích článcích jsme si ukázali, jak funguje jeden AI agent: dostane cíl, plánuje, používá nástroje, pracuje s pamětí a podle potřeby si vyhledává informace. Co když je ale úkol příliš složitý pro jeden systém? Jednou z možností je rozdělit práci mezi více specializovaných agentů. Tak vzniká multi-agentní systém.</p>
+
+                <figure class="article-figure">
+                    <img src="images/ai-agenti-multi-agentni.png" alt="Infografika vysvětlující multi-agentní systémy, role specializovaných agentů, orchestrátora, sekvenční a paralelní spolupráci a bezpečnost" />
+                    <figcaption>Multi-agentní systém rozdělí složitý úkol mezi specializované agenty, kteří mohou pracovat postupně nebo paralelně a společně vytvořit kontrolovatelný výsledek.</figcaption>
+                </figure>
+
+                <h2>Co je multi-agentní systém</h2>
+                <p>Multi-agentní systém je prostředí, ve kterém na jednom úkolu spolupracuje více AI agentů.</p>
+                <p>Každý může mít vlastní:</p>
+                <ul>
+                    <li>roli,</li>
+                    <li>instrukce,</li>
+                    <li>nástroje,</li>
+                    <li>paměť,</li>
+                    <li>oprávnění,</li>
+                    <li>oblast odpovědnosti.</li>
+                </ul>
+                <p>Místo jednoho univerzálního agenta tak můžeme mít několik specialistů.</p>
+                <p>Například:</p>
+                <ul>
+                    <li><strong>Plánovač</strong> – rozdělí úkol na jednotlivé kroky.</li>
+                    <li><strong>Rešeršér</strong> – vyhledá potřebné informace.</li>
+                    <li><strong>Tvůrce</strong> – připraví výsledný text nebo jiný výstup.</li>
+                    <li><strong>Kontrolor</strong> – hledá chyby a ověřuje kvalitu.</li>
+                </ul>
+                <p>Zjednodušeně:</p>
+                <div class="article-prompt"><strong>uživatel → koordinátor → několik agentů → společný výsledek</strong></div>
+
+                <h2>Proč vůbec používat více agentů</h2>
+                <p>Na první pohled může vypadat jednodušší vytvořit jednoho velmi schopného agenta, který zvládne všechno.</p>
+                <p>A často je to skutečně nejlepší řešení.</p>
+                <p>Jenže u složitějších úloh může být výhodnější práci rozdělit.</p>
+                <p>Je to podobné jako mezi lidmi.</p>
+                <p>Jeden člověk může:</p>
+                <ul>
+                    <li>napsat text,</li>
+                    <li>udělat grafiku,</li>
+                    <li>zkontrolovat fakta,</li>
+                    <li>připravit tabulku,</li>
+                    <li>provést jazykovou korekturu.</li>
+                </ul>
+                <p>Ale tým specialistů může být v některých situacích efektivnější.</p>
+                <p>Stejná myšlenka se používá u AI agentů.</p>
+
+                <h2>Specializace agentů</h2>
+                <p>Jednou z hlavních výhod multi-agentního systému je specializace.</p>
+                <p>Každý agent může dostat přesně definovanou roli.</p>
+                <p>Představme si úkol:</p>
+                <blockquote>„Připrav článek o umělé inteligenci ve vzdělávání.“</blockquote>
+                <p>Jeden agent může fungovat jako:</p>
+                <ul>
+                    <li><strong>Rešeršér</strong> – jeho jediným úkolem je najít aktuální a důvěryhodné zdroje.</li>
+                    <li><strong>Autor</strong> – použije podklady a vytvoří čtivý text.</li>
+                    <li><strong>Fakt-checker</strong> – kontroluje tvrzení a hledá nepřesnosti.</li>
+                    <li><strong>Editor</strong> – zkrátí příliš dlouhé části, sjednotí styl a odstraní opakování.</li>
+                    <li><strong>Grafik</strong> – připraví návrh doprovodné infografiky.</li>
+                </ul>
+                <p>Každý tedy řeší jinou část problému.</p>
+
+                <h2>Jeden agent může řídit ostatní</h2>
+                <p>Multi-agentní systém potřebuje nějaký způsob koordinace.</p>
+                <p>Jednou z možností je:</p>
+                <div class="article-prompt"><strong>orchestrátor</strong><br /><br />nebo<br /><br /><strong>manager agent</strong></div>
+                <p>Ten dostane hlavní úkol a rozhodne:</p>
+                <ul>
+                    <li>Tuto část pošlu rešeršnímu agentovi.</li>
+                    <li>Tuto část předám autorovi.</li>
+                    <li>Výsledek nechám zkontrolovat revizorem.</li>
+                </ul>
+                <p>Můžeme si ho představit trochu jako vedoucího týmu.</p>
+                <p>Zjednodušeně:</p>
+                <div class="article-prompt"><strong>uživatel</strong><br /><br />↓<br /><br /><strong>orchestrátor</strong><br /><br />↙ &nbsp; ↓ &nbsp; ↘<br /><br /><strong>rešeršér – tvůrce – kontrolor</strong><br /><br />↓<br /><br /><strong>výsledný výstup</strong></div>
+
+                <h2>Sekvenční spolupráce</h2>
+                <p>Nejjednodušší model je, když agenti pracují postupně.</p>
+                <p>Například:</p>
+                <div class="article-prompt"><strong>Agent 1 – výzkum</strong><br /><br />↓<br /><br /><strong>Agent 2 – návrh</strong><br /><br />↓<br /><br /><strong>Agent 3 – kontrola</strong><br /><br />↓<br /><br /><strong>Agent 4 – finální úprava</strong></div>
+                <p>Výstup jednoho agenta se stane vstupem pro dalšího.</p>
+                <p>Tomu můžeme říkat sekvenční workflow.</p>
+                <p>Je přehledné a poměrně snadno kontrolovatelné.</p>
+
+                <h2>Paralelní spolupráce</h2>
+                <p>Jinou možností je, že několik agentů pracuje současně.</p>
+                <p>Například chceme porovnat pět AI nástrojů.</p>
+                <p>Můžeme vytvořit pět agentů:</p>
+                <ul>
+                    <li>Agent A → nástroj 1</li>
+                    <li>Agent B → nástroj 2</li>
+                    <li>Agent C → nástroj 3</li>
+                    <li>Agent D → nástroj 4</li>
+                    <li>Agent E → nástroj 5</li>
+                </ul>
+                <p>Každý připraví svou analýzu.</p>
+                <p>Další agent potom výsledky spojí do jedné tabulky.</p>
+                <p>To může výrazně urychlit práci.</p>
+
+                <h2>Agenti mohou výsledek vzájemně kontrolovat</h2>
+                <p>Velmi zajímavou možností je použití agentů jako vzájemných kritiků.</p>
+                <p>Například:</p>
+                <p><strong>Agent A</strong> vytvoří řešení.</p>
+                <p><strong>Agent B</strong> dostane instrukci:</p>
+                <blockquote>Najdi chyby, slabá místa a neověřená tvrzení.</blockquote>
+                <p><strong>Agent A</strong> potom dostane připomínky a výsledek upraví.</p>
+                <p>Tak může vzniknout cyklus:</p>
+                <div class="article-prompt"><strong>návrh → kritika → oprava → kontrola</strong></div>
+                <p>To může zlepšit kvalitu výsledku.</p>
+                <p>Ale pozor.</p>
+                <p>Dva AI agenti nejsou automaticky dvakrát chytřejší.</p>
+                <p>Pokud používají podobné modely a podobné informace, mohou oba udělat stejnou chybu.</p>
+
+                <h2>„Debata“ mezi AI agenty</h2>
+                <p>Některé systémy nechávají více agentů navrhnout různá řešení.</p>
+                <p>Například:</p>
+                <div class="article-prompt"><strong>Agent A</strong><br /><br />Doporučuji řešení X.<br /><br /><strong>Agent B</strong><br /><br />Doporučuji řešení Y.<br /><br /><strong>Agent C</strong><br /><br />Obě varianty mají tyto slabiny…</div>
+                <p>Nakonec rozhodne další agent nebo člověk.</p>
+                <p>To může být užitečné například při:</p>
+                <ul>
+                    <li>plánování,</li>
+                    <li>analýze možností,</li>
+                    <li>hledání chyb,</li>
+                    <li>řešení složitějších problémů.</li>
+                </ul>
+                <p>Není ale dobré předpokládat, že „diskuse AI“ automaticky vede k pravdě.</p>
+                <p>Někdy se pouze několik modelů velmi kultivovaně dohodne na stejné hlouposti.</p>
+
+                <h2>Příklad ze školy</h2>
+                <p>Představme si systém, který připravuje materiály na výuku.</p>
+                <p>Učitel zadá:</p>
+                <blockquote>„Připrav mi kompletní hodinu angličtiny na téma Travel pro úroveň B1.“</blockquote>
+                <p>Multi-agentní systém může pracovat takto:</p>
+                <ul>
+                    <li><strong>Agent plánovač</strong> rozdělí hodinu na warm-up, slovní zásobu, čtení, gramatiku, komunikaci a závěr.</li>
+                    <li><strong>Agent pro obsah</strong> vybere vhodnou slovní zásobu a připraví text.</li>
+                    <li><strong>Agent metodik</strong> zkontroluje, zda aktivity dávají pedagogický smysl.</li>
+                    <li><strong>Agent pro diferenciaci</strong> připraví jednodušší variantu některých úkolů.</li>
+                    <li><strong>Agent kontrolor</strong> zkontroluje správnost angličtiny, časovou náročnost, instrukce a řešení.</li>
+                    <li><strong>Agent grafik</strong> připraví výsledný pracovní list.</li>
+                </ul>
+                <p>Jeden požadavek tak může spustit celý řetězec specializovaných činností.</p>
+
+                <h2>Multi-agentní systém neznamená nutně různé AI modely</h2>
+                <p>Tohle je časté nedorozumění.</p>
+                <p>Když řekneme:</p>
+                <blockquote>„pět agentů“</blockquote>
+                <p>nemusí to znamenat pět různých jazykových modelů.</p>
+                <p>Může jít klidně o stejný model, který je spuštěn několikrát s různými instrukcemi.</p>
+                <div class="article-prompt"><strong>stejný LLM</strong><br />instrukce „jsi rešeršér“<br />=<br /><strong>Agent 1</strong><br /><br /><strong>stejný LLM</strong><br />instrukce „jsi kritik“<br />=<br /><strong>Agent 2</strong><br /><br /><strong>stejný LLM</strong><br />instrukce „jsi editor“<br />=<br /><strong>Agent 3</strong></div>
+                <p>Rozdíl tedy může spočívat hlavně v roli, nástrojích a kontextu.</p>
+
+                <h2>Agenti mohou používat různé modely</h2>
+                <p>Naopak je také možné využít rozdílné modely podle úlohy.</p>
+                <ul>
+                    <li>levnější a rychlejší model pro jednoduchou klasifikaci dokumentů,</li>
+                    <li>výkonnější model pro komplexní analýzu,</li>
+                    <li>specializovaný model pro práci s obrazem,</li>
+                    <li>jiný model pro programování.</li>
+                </ul>
+                <p>Orchestrátor potom může rozhodovat:</p>
+                <blockquote>Na tento jednoduchý krok nepotřebuji nejsilnější model.</blockquote>
+                <p>To může snížit náklady.</p>
+
+                <h2>Multi-agentní systémy a nástroje</h2>
+                <p>Každý agent nemusí mít přístup ke všem nástrojům.</p>
+                <p>A často by ani neměl.</p>
+                <ul>
+                    <li><strong>Rešeršní agent</strong> má přístup k webu.</li>
+                    <li><strong>Dokumentový agent</strong> má přístup ke školním dokumentům.</li>
+                    <li><strong>Autor</strong> pracuje pouze s nalezenými podklady.</li>
+                    <li><strong>Publikační agent</strong> může ukládat nebo zveřejňovat výstup.</li>
+                </ul>
+                <p>Tím lze lépe kontrolovat oprávnění.</p>
+
+                <h2>Proč není dobrý nápad dát všem všechno</h2>
+                <p>Představme si pět agentů.</p>
+                <p>Každý má přístup k:</p>
+                <ul>
+                    <li>e-mailům,</li>
+                    <li>databázi,</li>
+                    <li>souborům,</li>
+                    <li>webu,</li>
+                    <li>kalendáři,</li>
+                    <li>publikačnímu systému.</li>
+                </ul>
+                <p>To výrazně zvětšuje počet míst, kde může nastat chyba.</p>
+                <p>Lepší je pravidlo:</p>
+                <div class="article-prompt"><strong>Každý agent dostane pouze nástroje, které potřebuje pro svou roli.</strong></div>
+                <p>Znovu se tedy vrací princip minimálních oprávnění.</p>
+
+                <h2>Sdílená paměť</h2>
+                <p>Agenti mohou používat společnou paměť.</p>
+                <p>Například rešeršér najde informace a uloží je do sdíleného prostoru.</p>
+                <p>Autor je následně načte.</p>
+                <p>Kontrolor k nim přidá připomínky.</p>
+                <p>Můžeme si to představit jako společnou pracovní tabuli.</p>
+                <div class="article-prompt"><strong>Agent A → sdílená paměť ← Agent B</strong><br /><br />↓<br /><br /><strong>Agent C</strong></div>
+                <p>Tím nemusí každý agent dostávat kompletní historii práce všech ostatních.</p>
+
+                <h2>Ale sdílená paměť může být také problém</h2>
+                <p>Pokud jeden agent uloží chybnou informaci, mohou ji ostatní převzít.</p>
+                <p>Například:</p>
+                <div class="article-prompt"><strong>Agent A</strong><br /><br />Zdroj tvrdí, že datum je 2024.<br /><br />Jenže zdroj byl špatně interpretován.<br /><br />Informace se uloží do společné paměti.<br /><br /><strong>Agent B</strong> ji použije v článku.<br /><br /><strong>Agent C</strong> ji převezme do tabulky.<br /><br /><strong>Agent D</strong> ji považuje za již ověřenou.</div>
+                <p>Jedna chyba se tak může rozšířit celým systémem.</p>
+                <p>Proto je důležité uchovávat také:</p>
+                <ul>
+                    <li>zdroj informace,</li>
+                    <li>čas,</li>
+                    <li>míru důvěry,</li>
+                    <li>kdo informaci vytvořil.</li>
+                </ul>
+
+                <h2>Co když se agenti zaseknou</h2>
+                <p>Multi-agentní systém může narazit také na velmi praktický problém.</p>
+                <p>Agenti si začnou práci předávat.</p>
+                <div class="article-prompt"><strong>Agent A:</strong> To musí rozhodnout Agent B.<br /><br /><strong>Agent B:</strong> Potřebuji další informace od Agenta C.<br /><br /><strong>Agent C:</strong> Nejdříve musí Agent A rozhodnout…</div>
+                <p>A máme digitální poradu, kterou by nám záviděla leckterá instituce. 🙂</p>
+                <p>Proto musí být jasně definováno:</p>
+                <ul>
+                    <li>kdo rozhoduje,</li>
+                    <li>kdy práce končí,</li>
+                    <li>kolik kroků je povoleno,</li>
+                    <li>co se děje při chybě.</li>
+                </ul>
+
+                <h2>Kdy úkol skončil?</h2>
+                <p>U jednoho jednoduchého agenta je to relativně snadné.</p>
+                <p>U multi-agentního systému může každý agent chtít výsledek ještě vylepšit.</p>
+                <p>Vznikne:</p>
+                <div class="article-prompt"><strong>návrh</strong><br /><br />↓<br /><br /><strong>kritika</strong><br /><br />↓<br /><br /><strong>oprava</strong><br /><br />↓<br /><br /><strong>nová kritika</strong><br /><br />↓<br /><br /><strong>další oprava</strong><br /><br />↓<br /><br /><strong>…</strong></div>
+                <p>Systém proto potřebuje stopping conditions, tedy podmínky ukončení.</p>
+                <p>Například:</p>
+                <ul>
+                    <li>maximálně dvě kola kontroly,</li>
+                    <li>nebo pokud kontrolor nenajde závažné chyby, proces končí.</li>
+                </ul>
+                <p>Bez těchto pravidel může systém zbytečně spotřebovávat čas i peníze.</p>
+
+                <h2>Cena multi-agentních systémů</h2>
+                <p>Každý agent používá model.</p>
+                <p>Každá jeho akce něco stojí.</p>
+                <p>Pokud jeden úkol řeší:</p>
+                <ul>
+                    <li>plánovač,</li>
+                    <li>tři specialisté,</li>
+                    <li>dva kontroloři,</li>
+                    <li>editor,</li>
+                </ul>
+                <p>může být počet volání modelu mnohonásobně vyšší než u jednoho agenta.</p>
+                <p>Multi-agentní architektura tedy může znamenat:</p>
+                <div class="article-prompt"><strong>vyšší kvalitu</strong><br /><br />ale také:<br /><br /><strong>vyšší náklady, delší dobu zpracování a větší složitost</strong></div>
+                <p>Proto není více agentů automaticky lepší.</p>
+
+                <h2>Jeden dobře navržený agent může být lepší</h2>
+                <p>Tohle je možná nejdůležitější pravidlo celého článku.</p>
+                <p>Pokud úkol zvládne:</p>
+                <div class="article-prompt"><strong>jeden agent + několik dobrých nástrojů + jasný workflow</strong></div>
+                <p>není důvod vytvářet sedm agentů jen proto, že to zní moderněji.</p>
+                <p>Velmi často je lepší:</p>
+                <div class="article-prompt"><strong>jednoduchý systém, kterému rozumíme</strong><br /><br />než:<br /><br /><strong>složitý multi-agentní orchestr, který nikdo nedokáže pořádně kontrolovat</strong></div>
+
+                <h2>Workflow versus multi-agentní systém</h2>
+                <p>Další důležitý rozdíl.</p>
+                <p>Představme si:</p>
+                <div class="article-prompt"><strong>krok 1 → vyhledej dokument</strong><br /><br /><strong>krok 2 → vytvoř shrnutí</strong><br /><br /><strong>krok 3 → zkontroluj</strong></div>
+                <p>Nemusíme kvůli tomu automaticky vytvářet tři agenty.</p>
+                <p>Může to být pouze jeden agent s několika kroky.</p>
+                <p>Multi-agentní řešení má smysl zejména tehdy, když jednotlivé role skutečně potřebují:</p>
+                <ul>
+                    <li>jiné instrukce,</li>
+                    <li>jiný kontext,</li>
+                    <li>jiné nástroje,</li>
+                    <li>jiná oprávnění,</li>
+                    <li>nezávislé rozhodování.</li>
+                </ul>
+
+                <h2>Multi-agentní systémy ve vibe codingu</h2>
+                <p>Tento princip se objevuje také při vývoji aplikací.</p>
+                <p>Představme si zadání:</p>
+                <blockquote>„Vytvoř jednoduchou webovou aplikaci pro rezervaci učeben.“</blockquote>
+                <p>Jeden agent může mít roli:</p>
+                <ul>
+                    <li><strong>Architekt</strong> – navrhne strukturu aplikace.</li>
+                    <li><strong>Frontend agent</strong> – vytvoří uživatelské rozhraní.</li>
+                    <li><strong>Backend agent</strong> – připraví serverovou část.</li>
+                    <li><strong>Testovací agent</strong> – spustí testy a hledá chyby.</li>
+                    <li><strong>Security agent</strong> – kontroluje bezpečnost.</li>
+                    <li><strong>Reviewer</strong> – provede závěrečnou kontrolu kódu.</li>
+                </ul>
+                <p>To už se velmi podobá běžnému softwarovému týmu.</p>
+                <p>Jen jeho členové jsou AI agenti.</p>
+
+                <h2>Ale kdo nese odpovědnost?</h2>
+                <p>A tady přichází věc, kterou marketingové obrázky často neukazují.</p>
+                <p>Pokud pět agentů vytvoří chybný výsledek, žádný z nich nenese skutečnou odpovědnost.</p>
+                <p>Tu stále nese:</p>
+                <div class="article-prompt"><strong>člověk nebo organizace, která systém používá</strong></div>
+                <p>Multi-agentní systém proto neodstraňuje potřebu lidské kontroly.</p>
+                <p>U důležitých úloh ji může naopak ještě zvyšovat.</p>
+
+                <h2>Multi-agentní systémy ve škole</h2>
+                <p>Ve školním prostředí by mohl například existovat:</p>
+                <ul>
+                    <li><strong>Agent pro přípravu výuky</strong> – vytváří materiály.</li>
+                    <li><strong>Agent pro kontrolu kvality</strong> – kontroluje správnost a obtížnost.</li>
+                    <li><strong>Agent pro přístupnost</strong> – kontroluje čitelnost a srozumitelnost.</li>
+                    <li><strong>Agent pro administrativu</strong> – pracuje s nepedagogickými úkoly.</li>
+                    <li><strong>Koordinátor</strong> – rozhoduje, který agent má konkrétní úkol řešit.</li>
+                </ul>
+                <p>To už se blíží představě digitálního učitelského asistenta, který není jedním obrovským chatbotem, ale soustavou specializovaných schopností.</p>
+
+                <h2>Kdy multi-agentní systém dává smysl</h2>
+                <p>Je vhodný především tehdy, když:</p>
+                <ul>
+                    <li>je úkol složitý,</li>
+                    <li>lze jej přirozeně rozdělit na role,</li>
+                    <li>jednotlivé role potřebují různé nástroje,</li>
+                    <li>části práce mohou probíhat paralelně,</li>
+                    <li>potřebujeme nezávislou kontrolu,</li>
+                    <li>chceme oddělit oprávnění.</li>
+                </ul>
+
+                <h2>Kdy je zbytečný</h2>
+                <p>Naopak bych ho nepoužíval, pokud:</p>
+                <ul>
+                    <li>jde o jednoduchý úkol,</li>
+                    <li>jednotlivé role nedávají smysl,</li>
+                    <li>jeden agent zvládne celý proces dobře,</li>
+                    <li>režie komunikace je větší než přínos,</li>
+                    <li>přidáváme agenty pouze proto, že můžeme.</li>
+                </ul>
+                <p>Pokud potřebujete tři AI agenty, aby vám spočítali průměr pěti známek, někde se návrh systému poněkud utrhl ze řetězu.</p>
+
+                <h2>Zapamatujte si</h2>
+                <p>Multi-agentní systém je prostředí, ve kterém spolupracuje více AI agentů.</p>
+                <p>Mohou si rozdělit například role:</p>
+                <div class="article-prompt"><strong>plánování → rešerše → tvorba → kontrola</strong></div>
+                <p>Mohou pracovat:</p>
+                <ul>
+                    <li>postupně</li>
+                    <li>nebo současně.</li>
+                </ul>
+                <p>Mohou mít:</p>
+                <div class="article-prompt"><strong>vlastní instrukce, nástroje, paměť a oprávnění</strong></div>
+                <p>Více agentů ale automaticky neznamená lepší systém.</p>
+                <p>Přináší také:</p>
+                <ul>
+                    <li>větší složitost,</li>
+                    <li>vyšší náklady,</li>
+                    <li>nové možnosti chyb,</li>
+                    <li>náročnější kontrolu.</li>
+                </ul>
+                <p>Proto platí jednoduché pravidlo:</p>
+                <div class="article-prompt"><strong>Pokud úkol dobře zvládne jeden agent, začněte jedním agentem.</strong></div>
+
+                <h2>Co bude následovat</h2>
+                <p>Tím jsme prošli hlavní technické stavební kameny agentní AI:</p>
+                <div class="article-prompt"><strong>agentní smyčku, nástroje, paměť, RAG, MCP a multi-agentní systémy</strong></div>
+                <p>Teď je čas spojit je s tématem, ze kterého jsme k celé sérii vlastně přišli:</p>
+                <div class="article-prompt"><strong>Od vibe codingu ke coding agentům: když AI už nepíše jen kód, ale pracuje na projektu</strong></div>
+                <p>V dalším díle si ukážeme rozdíl mezi:</p>
+                <blockquote>„napiš mi kus kódu“</blockquote>
+                <p>a</p>
+                <blockquote>„tady je můj projekt, udělej tuto změnu, otestuj ji a oprav chyby.“</blockquote>
+                <p>A právě tam se nejlépe ukáže, že vibe coding a agentní AI už dnes nejsou dvě oddělená témata, ale dost přirozeně do sebe zapadají.</p>
+            </div>
+        </article>
+
+        <section class="workflow-related" aria-labelledby="related-title">
+            <div class="workflow-related-heading">
+                <div class="workflow-article-kicker"><span class="workflow-step">Série</span> Pokračujte ve čtení</div>
+                <h2 id="related-title">Další články o AI agentech</h2>
+            </div>
+            <div class="workflow-related-grid">
+                <a class="workflow-related-card" href="ai-agenti-mcp.html"><span>← Předchozí článek</span><strong>MCP: univerzální konektor</strong><small>Jak otevřený standard propojuje AI aplikace s nástroji, daty a službami.</small></a>
+                <a class="workflow-related-card" href="ai-agenti-rag.html"><span>Navazující téma</span><strong>RAG a vlastní dokumenty</strong><small>Jak AI vyhledává relevantní části vašich zdrojů a předává je modelu.</small></a>
+                <a class="workflow-related-card" href="ai-agenti.html"><span>Rozcestník</span><strong>Všechny články o AI agentech</strong><small>Vraťte se na přehled témat a vyberte si další krok.</small></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="workflow-footer">
+        <span>© 2026 AI ve Výuce · AI agenti pro učitele</span>
+        <a href="ai-agenti.html">Zpět na AI agenty</a>
+    </footer>
+</body>
+
+</html>
