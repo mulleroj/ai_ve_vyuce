@@ -5,6 +5,17 @@
  */
 window.siteArticles = [
   {
+    href: 'ai-novinka-google-ai-vzdelavani-zari-2026.html',
+    title: 'AI ve vzdělávání: Google posiluje tvorbu materiálů i bezpečnost práce s daty',
+    summary: 'Novinky v AI pro vzdělávání: editace existujících materiálů, klasifikace dokumentů, řízení oprávnění a praktické tipy pro učitele.',
+    category: 'Novinka',
+    date: '2026-09-02',
+    dateLabel: '2. září 2026',
+    icon: '🌐',
+    tags: ['Google', 'Bezpečnost dat', 'AI ve vzdělávání'],
+    badgeClass: 'badge-blue'
+  },
+  {
     href: 'ai-workflow-prezentace-webova-stranka.html',
     title: 'Od prezentace k webové stránce: jak může AI pomoci vytvořit výukový materiál',
     platforms: ['gemini'],
