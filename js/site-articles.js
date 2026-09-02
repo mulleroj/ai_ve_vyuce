@@ -5,6 +5,18 @@
  */
 window.siteArticles = [
   {
+    href: 'ai-workflow-prezentace-webova-stranka.html',
+    title: 'Od prezentace k webové stránce: jak může AI pomoci vytvořit výukový materiál',
+    platforms: ['gemini'],
+    summary: 'Jak propojit výukový cíl, vlastní zdroje, Gemini Notebook, Gemini a vibe coding při tvorbě webové stránky, ke které se žáci mohou vracet.',
+    category: 'Workflow',
+    date: '2026-09-02',
+    dateLabel: '2. září 2026',
+    icon: '🌐',
+    tags: ['Výukové materiály', 'Gemini Notebook'],
+    badgeClass: 'badge-blue'
+  },
+  {
     href: 'ai-agenti-llm-tools-rag-memory-skills-workflow-mcp.html',
     title: 'Jak spolu souvisí LLM, Tools, RAG, Memory, Skills, Workflow a MCP',
     summary: 'Přehledná mapa agentního systému: jak spolu souvisí LLM, tools, Function Calling, memory, RAG, skills, workflow, MCP a samotný AI agent.',
