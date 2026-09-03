@@ -5,6 +5,17 @@
  */
 window.siteArticles = [
   {
+    href: 'ai-workflow-css-grid-vibe-coding.html',
+    title: 'CSS Grid: proč se vám při vibe codingu vyplatí vědět, co znamenají řádky a sloupce',
+    summary: 'Praktické vysvětlení CSS Gridu při vibe codingu: řádky, sloupce, fr, gap, repeat() a rozdíl mezi Gridem a Flexboxem.',
+    category: 'Vibe Coding',
+    date: '2026-09-03',
+    dateLabel: '3. září 2026',
+    icon: '🧱',
+    tags: ['CSS Grid', 'Vibe Coding', 'Layout'],
+    badgeClass: 'badge-purple'
+  },
+  {
     href: 'ai-novinka-google-ai-vzdelavani-zari-2026.html',
     title: 'AI ve vzdělávání: Google posiluje tvorbu materiálů i bezpečnost práce s daty',
     summary: 'Novinky v AI pro vzdělávání: editace existujících materiálů, klasifikace dokumentů, řízení oprávnění a praktické tipy pro učitele.',
