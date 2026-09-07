@@ -160,6 +160,12 @@ body.workflow-page {
   color: var(--workflow-orange);
 }
 
+.workflow-news-roundup .workflow-hero h1 {
+  font-size: clamp(2.2rem, 4.5vw, 4rem);
+  letter-spacing: -0.045em;
+  line-height: 1.08;
+}
+
 .workflow-hero-lead {
   max-width: 620px;
   margin: 0;

@@ -5,6 +5,17 @@
  */
 window.siteArticles = [
   {
+    href: 'ai-novinka-agenti-onenote-pruvodce-ucenim.html',
+    title: 'AI ve vzdělávání: chytřejší agenti, OneNote v ChatGPT a AI jako průvodce učením',
+    summary: 'Chytřejší agenti, propojení ChatGPT s OneNotem a AI jako průvodce učením. Tři směry vývoje a praktické tipy pro učitele.',
+    category: 'Novinka',
+    date: '2026-09-07',
+    dateLabel: '7. září 2026',
+    icon: '📰',
+    tags: ['AI agenti', 'OneNote', 'Guided Learning'],
+    badgeClass: 'badge-blue'
+  },
+  {
     href: 'ai-workflow-css-grid-vibe-coding.html',
     title: 'CSS Grid: proč se vám při vibe codingu vyplatí vědět, co znamenají řádky a sloupce',
     summary: 'Praktické vysvětlení CSS Gridu při vibe codingu: řádky, sloupce, fr, gap, repeat() a rozdíl mezi Gridem a Flexboxem.',
