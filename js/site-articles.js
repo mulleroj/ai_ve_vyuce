@@ -5,6 +5,42 @@
  */
 window.siteArticles = [
   {
+    href: 'ai-navod-ai-agent-v-prohlizeci.html',
+    title: 'AI agent v prohlížeči: když AI nejen radí, ale také pracuje',
+    platforms: ['claude', 'chatgpt', 'gemini'],
+    summary: 'Co umí browserový agent, jak může učiteli pomoci s webovým workflow a proč je nutná kontrola oprávnění, osobních údajů a výsledků.',
+    category: 'Návod',
+    date: '2026-09-08',
+    dateLabel: '8. září 2026',
+    icon: '🌐',
+    tags: ['AI agenti', 'Prohlížeč', 'Bezpečnost'],
+    badgeClass: 'badge-blue'
+  },
+  {
+    href: 'ai-workflow-gemini-notebook-ai-agent.html',
+    title: 'Jak vytvořit chytrý učitelský sešit v Gemini Notebooku pomocí AI agenta',
+    platforms: ['gemini', 'claude'],
+    summary: 'Praktický workflow od účelu a hierarchie zdrojů přes rešerši a ověření až po nastavení, testování a aktualizaci tematického sešitu.',
+    category: 'Workflow',
+    date: '2026-09-08',
+    dateLabel: '8. září 2026',
+    icon: '📓',
+    tags: ['Gemini Notebook', 'AI agent', 'Claude'],
+    badgeClass: 'badge-blue'
+  },
+  {
+    href: 'ai-navod-lepsi-prompty-10-zasad.html',
+    title: 'Jak psát lepší prompty pro AI: 10 zásad pro učitele',
+    platforms: ['chatgpt', 'gemini', 'copilot'],
+    summary: 'Deset jednoduchých zásad pro přesnější zadání, která pomohou AI připravit použitelnější materiály pro konkrétní žáky a výuku.',
+    category: 'Návod',
+    date: '2026-09-08',
+    dateLabel: '8. září 2026',
+    icon: '✍️',
+    tags: ['Prompty', '10 zásad', 'Učitel'],
+    badgeClass: 'badge-gold'
+  },
+  {
     href: 'ai-novinka-agenti-onenote-pruvodce-ucenim.html',
     title: 'AI ve vzdělávání: chytřejší agenti, OneNote v ChatGPT a AI jako průvodce učením',
     summary: 'Chytřejší agenti, propojení ChatGPT s OneNotem a AI jako průvodce učením. Tři směry vývoje a praktické tipy pro učitele.',

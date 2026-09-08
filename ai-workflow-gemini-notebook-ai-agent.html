@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jak vytvořit chytrý učitelský sešit v Gemini Notebooku pomocí AI agenta | AI ve Výuce</title>
+    <meta name="description"
+        content="Praktický workflow pro vytvoření tematického učitelského sešitu v Gemini Notebooku pomocí Claude, Claude in Chrome a AI agenta: od účelu a zdrojů až po kontrolu a aktualizaci." />
+    <link rel="stylesheet" href="css/workflow.css?v=20260908-gemini-ai-agent" />
+</head>
+
+<body class="workflow-page">
+    <header class="workflow-shell">
+        <div class="workflow-topbar">
+            <a class="workflow-brand" href="index.html"><span class="workflow-brand-mark">✦</span>AI ve Výuce</a>
+            <a class="workflow-back" href="ai.html#workflow">← Workflow pro učitele</a>
+        </div>
+        <div class="workflow-hero">
+            <div>
+                <div class="workflow-eyebrow">Workflow pro učitele · 8. září 2026</div>
+                <h1>Chytrý učitelský sešit<br /><span>v Gemini Notebooku</span></h1>
+                <p class="workflow-hero-lead">Využijte sílu AI agenta pro tvorbu tematického sešitu z důvěryhodných zdrojů — od prvního záměru až po pravidelnou aktualizaci.</p>
+                <div class="workflow-meta"><span>Gemini Notebook</span><span>AI agent</span><span>Claude</span><span>Ověřené zdroje</span></div>
+            </div>
+            <div class="workflow-route" aria-label="Čtyři hlavní části workflow">
+                <div class="workflow-stage"><span class="workflow-stage-number">01</span><div><strong>Definujte účel</strong><small>Ujasněte si, s čím má sešit pomáhat</small></div></div>
+                <div class="workflow-stage"><span class="workflow-stage-number">02</span><div><strong>Vyberte zdroje</strong><small>Stanovte hierarchii, aktuálnost a pravidla</small></div></div>
+                <div class="workflow-stage"><span class="workflow-stage-number">03</span><div><strong>Zapojte agenta</strong><small>Rešerše, ověření, organizace a nastavení sešitu</small></div></div>
+                <div class="workflow-stage"><span class="workflow-stage-number">04</span><div><strong>Testujte a udržujte</strong><small>Kontrola odpovědí, zdrojů a pravidelné aktualizace</small></div></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="workflow-main">
+        <article class="workflow-article">
+            <div class="workflow-article-intro">
+                <div class="workflow-article-kicker"><span class="workflow-step">13</span> Workflow pro učitele</div>
+                <h2 class="workflow-article-title">Jak vytvořit chytrý učitelský sešit v Gemini Notebooku pomocí AI agenta</h2>
+                <p class="workflow-article-summary">Místo ručního hledání, stahování, nahrávání a nastavování instrukcí může AI agent připravit tematický sešit z důvěryhodných zdrojů.</p>
+                <div class="workflow-article-meta"><span>8. září 2026</span><span>Gemini Notebook</span><span>Claude · AI agent</span></div>
+            </div>
+
+            <div class="article-content">
+                <p class="article-lead">Gemini Notebook, respektive NotebookLM, používám stále častěji jako prostředí, ve kterém si mohu vytvořit vlastního odborného pomocníka nad konkrétními zdroji. Samotné založení sešitu je jednoduché. Mnohem zajímavější ale začíná být situace, kdy přípravu celého sešitu svěříme AI agentovi.</p>
+                <p>Místo ručního hledání desítek dokumentů, jejich stahování, nahrávání, kontroly a nastavování instrukcí může agent velkou část této práce udělat za nás.</p>
+                <p>Výsledkem není jen složka dokumentů. Vzniká tematický sešit, nad kterým se můžeme ptát, hledat souvislosti, připravovat podklady pro výuku nebo rychle dohledávat informace.</p>
+
+                <figure class="article-figure">
+                    <img src="images/chytry-ucitelsky-sesit-gemini-ai-agent.png" alt="Infografika o vytvoření chytrého učitelského sešitu v Gemini Notebooku pomocí AI agenta, Claude in Chrome a Claude Cowork" />
+                    <figcaption>Vizuální shrnutí workflow od výběru zdrojů přes nastavení Gemini Notebooku až po hotový tematický sešit.</figcaption>
+                </figure>
+
+                <h2>K čemu takový sešit může učitel použít</h2>
+                <p>Možností je překvapivě hodně.</p>
+                <p>Může vzniknout například:</p>
+                <ul>
+                    <li>metodický poradce pro učitele,</li>
+                    <li>sešit k jednomu vyučovacímu předmětu,</li>
+                    <li>školní legislativní poradce,</li>
+                    <li>databáze metodických doporučení MŠMT,</li>
+                    <li>podpora pro práci s rizikovým chováním žáků,</li>
+                    <li>sešit k podpůrným opatřením,</li>
+                    <li>odborný sešit k určitému oboru,</li>
+                    <li>průvodce školním informačním systémem,</li>
+                    <li>databáze školních směrnic a interních dokumentů.</li>
+                </ul>
+                <p>Velkou výhodou je, že odpovědi vznikají především nad zdroji, které do sešitu sami vložíme.</p>
+                <p>To je ve školním prostředí podstatně bezpečnější než spoléhat pouze na obecné znalosti chatbotu.</p>
+
+                <h2>Jakého AI agenta jsme použili</h2>
+                <p>Pro tento pracovní postup jsme využili <strong>Claude od společnosti Anthropic</strong> a jeho agentní funkce.</p>
+                <p>Běžný chatbot především odpovídá na otázky. Agent dokáže dostat širší úkol a potom provádět více navazujících kroků: otevřít webové stránky, procházet odkazy, kontrolovat dokumenty, přepínat mezi kartami nebo pracovat přímo ve webových aplikacích.</p>
+                <p>Pro práci přímo v internetovém prohlížeči slouží <strong>Claude in Chrome</strong>.</p>
+                <p>Jde o oficiální rozšíření pro Google Chrome, které umožňuje Claudovi vidět obsah právě otevřené stránky a podle udělených oprávnění na ní také klikat, psát, vyplňovat formuláře nebo přecházet mezi stránkami.</p>
+                <p>To je zásadní rozdíl.</p>
+                <p>Místo instrukce:</p>
+                <blockquote>Najdi mi dokumenty, které bych měla nahrát do NotebookLM.</blockquote>
+                <p>můžeme agentovi zadat například:</p>
+                <blockquote>Vyhledej oficiální metodické dokumenty MŠMT k rizikovému chování, každý zdroj otevři, ověř, zda jde o aktuální dokument, a připrav z nich nový tematický sešit.</blockquote>
+                <p>Agent pak může postupovat webem podobně jako člověk.</p>
+
+                <h2>Kde Claude najdu</h2>
+                <p>Základní službu Claude najdete na webu <strong>Claude.ai</strong>.</p>
+                <p>Pro skutečně agentní práci je zajímavý především režim <strong>Claude Cowork</strong>, který je určený právě pro vícekrokové pracovní úkoly. Anthropic jej nabízí v placených tarifech Claude a v současnosti jej zpřístupňuje přes webovou aplikaci i desktopovou aplikaci.</p>
+                <p>Pokud ale chcete, aby Claude pracoval přímo s webovými stránkami otevřenými ve vašem prohlížeči, potřebujete <strong>Claude in Chrome</strong>.</p>
+
+                <h2>Jak dostat Claude do prohlížeče</h2>
+                <p>Instalace je podobná jako u jiných rozšíření pro Chrome.</p>
+                <h3>1. Otevřete Google Chrome</h3>
+                <p>Claude in Chrome je určený pro desktopovou verzi <strong>Google Chrome</strong>.</p>
+                <p>Anthropic aktuálně upozorňuje, že není podporován na mobilních zařízeních ani v jiných prohlížečích založených na Chromiu.</p>
+                <h3>2. Otevřete Chrome Web Store</h3>
+                <p>Vyhledejte:</p>
+                <blockquote><strong>Claude in Chrome</strong></blockquote>
+                <p>Doporučuji vždy zkontrolovat, že instalujete oficiální rozšíření Claude od Anthropic, nikoli jiné rozšíření s podobným názvem.</p>
+                <h3>3. Klikněte na „Přidat do Chromu“</h3>
+                <p>Chrome zobrazí oprávnění, která rozšíření požaduje.</p>
+                <p>Po jejich potvrzení se Claude nainstaluje do prohlížeče.</p>
+                <h3>4. Přihlaste se ke svému účtu Claude</h3>
+                <p>Po otevření rozšíření vás Claude požádá o přihlášení.</p>
+                <p>Claude in Chrome je v současnosti dostupný pro placené tarify <strong>Pro, Max, Team a Enterprise</strong>.</p>
+                <h3>5. Připněte Claude na horní lištu</h3>
+                <p>V Chrome klikněte na symbol rozšíření – malou „skládačku“.</p>
+                <p>Vedle Claude zvolte připnutí.</p>
+                <p>Ikona Claude pak zůstane stále viditelná v horní části prohlížeče.</p>
+                <h3>6. Otevřete boční panel</h3>
+                <p>Po kliknutí na ikonu Claude se vedle právě otevřené stránky objeví panel.</p>
+                <p>Na jedné straně tedy například vidíte NotebookLM a vedle něj svého AI agenta.</p>
+                <p>A právě zde můžete zadat:</p>
+                <blockquote>Otevři tento zdroj, zjisti, zda jde o aktuální metodiku, a pokud ano, použij jej při přípravě sešitu.</blockquote>
+                <p>Claude může stránku číst a podle nastavených oprávnění s ní také pracovat.</p>
+
+                <h2>Ještě jedna možnost: Cowork</h2>
+                <p>Claude dnes nabízí také režim <strong>Cowork</strong>, který je pro podobnou práci velmi zajímavý.</p>
+                <p>Je navržený právě pro situace, kdy nechceme s AI pouze konverzovat, ale chceme jí předat celý pracovní úkol.</p>
+                <p>Například:</p>
+                <blockquote>Vytvoř metodický sešit pro učitele střední školy o rizikovém chování. Používej především aktuální dokumenty MŠMT a platné právní předpisy. Každý dokument před použitím ověř.</blockquote>
+                <p>Cowork potom může jednotlivé části úkolu zpracovávat postupně.</p>
+                <p>Claude Cowork může pracovat buď s vlastním vestavěným prohlížečem, nebo prostřednictvím Claude in Chrome s vaším běžným Chrome. Vestavěný prohlížeč má jednu zajímavou výhodu: pracuje odděleně od běžných otevřených karet a přihlášení uživatele.</p>
+                <p>Pro začátečníka bych ale celý princip popsala jednoduše:</p>
+                <div class="article-prompt"><strong>Claude</strong> = AI<br /><br /><strong>Cowork</strong> = režim pro předání větší práce<br /><br /><strong>Claude in Chrome</strong> = ruce a oči Claude uvnitř vašeho prohlížeče</div>
+
+                <h2>Pozor na školní účty a citlivá data</h2>
+                <p>Tady bych doporučila určitou opatrnost.</p>
+                <p>Claude in Chrome není obyčejné rozšíření, které pouze shrnuje text stránky. Dokáže s webem skutečně pracovat.</p>
+                <p>Pokud jste například přihlášeni do:</p>
+                <ul>
+                    <li>Google Disku,</li>
+                    <li>Microsoft 365,</li>
+                    <li>školního informačního systému,</li>
+                    <li>e-mailu,</li>
+                    <li>interních školních aplikací,</li>
+                </ul>
+                <p>může se agent dostat k obsahu stránky, ke které mu dáte přístup.</p>
+                <p>Anthropic samo upozorňuje na bezpečnostní rizika browserových agentů, včetně tzv. <strong>prompt injection</strong>, kdy se škodlivé instrukce mohou skrývat přímo v obsahu navštívené stránky.</p>
+                <p>Ve školním prostředí bych proto dodržovala několik jednoduchých pravidel:</p>
+                <ul>
+                    <li>neposkytovat agentovi přístup k osobním údajům žáků,</li>
+                    <li>nepracovat tímto způsobem s citlivou dokumentací,</li>
+                    <li>kontrolovat, ke kterým stránkám má Claude oprávnění,</li>
+                    <li>používat agenta především pro veřejné odborné zdroje,</li>
+                    <li>důležité kroky před jejich provedením kontrolovat.</li>
+                </ul>
+                <p>Pro podobnou rešerši, jakou jsme dělali při vytváření metodických notebooků, je to ideální: agent pracuje především s veřejnými metodikami, právními předpisy a odbornými stránkami.</p>
+
+                <h2>Workflow: od nápadu k hotovému sešitu</h2>
+                <h3>1. Nejprve určete účel sešitu</h3>
+                <p>Nejdůležitější otázka není:</p>
+                <blockquote>„Jaké dokumenty tam nahraju?“</blockquote>
+                <p>Ale:</p>
+                <blockquote>„S čím mi má tento sešit pomáhat?“</blockquote>
+                <p>Například:</p>
+                <blockquote>Chci vytvořit metodického poradce pro učitele, který pomůže při řešení rizikového chování žáků a bude vycházet z oficiálních metodik a platných právních předpisů.</blockquote>
+                <p>Dobře definovaný účel později pomůže AI agentovi rozhodnout:</p>
+                <ul>
+                    <li>jaké zdroje hledat,</li>
+                    <li>které zdroje jsou důvěryhodné,</li>
+                    <li>co do sešitu nepatří,</li>
+                    <li>jak mají být nastaveny instrukce notebooku.</li>
+                </ul>
+
+                <h3>2. Určete hierarchii zdrojů</h3>
+                <p>Ne všechny internetové zdroje mají stejnou hodnotu.</p>
+                <p>U školních témat je vhodné předem stanovit, které zdroje mají přednost.</p>
+                <p>Například:</p>
+                <ol>
+                    <li>platná legislativa,</li>
+                    <li>ministerstva a další státní instituce,</li>
+                    <li>oficiální metodiky,</li>
+                    <li>odborné instituce,</li>
+                    <li>odborné publikace,</li>
+                    <li>ostatní ověřené zdroje.</li>
+                </ol>
+                <p>U právních nebo metodických témat bych byla velmi opatrná s blogy, diskusemi nebo články bez jasného autora.</p>
+                <p>AI agent umí najít obrovské množství materiálů. To ale ještě neznamená, že všechny patří do odborného sešitu.</p>
+
+                <h3>3. Připravte agentovi přesné zadání</h3>
+                <p>AI agent potřebuje vědět nejen <strong>co má hledat</strong>, ale také <strong>jak má postupovat</strong>.</p>
+                <p>Zadání proto může obsahovat například:</p>
+                <ul>
+                    <li>téma sešitu,</li>
+                    <li>cílového uživatele,</li>
+                    <li>požadované typy zdrojů,</li>
+                    <li>důvěryhodné weby,</li>
+                    <li>požadavek na ověřování odkazů,</li>
+                    <li>požadavek na kontrolu aktuálnosti dokumentů,</li>
+                    <li>pravidla pro vyřazování duplicit,</li>
+                    <li>požadovaný způsob organizace sešitu.</li>
+                </ul>
+                <p>Agentovi můžeme například zadat:</p>
+                <div class="article-prompt">Vyhledej oficiální metodické dokumenty vztahující se k tématu. Preferuj dokumenty MŠMT, státních institucí a platné právní předpisy. Každý zdroj před vložením otevři a ověř, že skutečně obsahuje požadovaný dokument. Nezařazuj pouze stránku s odkazem na dokument, pokud lze získat původní PDF.</div>
+                <p>Tahle část je důležitější, než se může zdát.</p>
+                <p>Agent totiž jinak velmi ochotně sesbírá spoustu věcí, které vypadají správně, ale po otevření zjistíte, že některý odkaz vede pouze na rozcestník, starší verzi dokumentu nebo úplně jiný soubor.</p>
+
+                <h3>4. Agent provede rešerši</h3>
+                <p>Tady začíná část práce, která by učiteli ručně zabrala nejvíce času.</p>
+                <p>Agent může:</p>
+                <ul>
+                    <li>prohledávat web,</li>
+                    <li>otevírat jednotlivé zdroje,</li>
+                    <li>hledat originální dokumenty,</li>
+                    <li>kontrolovat jejich obsah,</li>
+                    <li>porovnávat verze,</li>
+                    <li>hledat související dokumenty,</li>
+                    <li>odstraňovat duplicity.</li>
+                </ul>
+                <p>U většího tématu může vzniknout například několik desítek relevantních zdrojů.</p>
+                <p>A právě tady začíná být agent skutečně užitečný.</p>
+                <p>Není to jen chatbot, který odpovídá na otázku. Dokáže projít celý pracovní postup.</p>
+
+                <h3>5. Každý zdroj je potřeba ověřit</h3>
+                <p>Tohle je krok, který bych rozhodně nepřeskakovala.</p>
+                <p>U našich sešitů jsme požadovali, aby agent každý zdroj skutečně otevřel.</p>
+                <p>Kontrolujeme například:</p>
+                <ul>
+                    <li>zda URL funguje,</li>
+                    <li>zda jde opravdu o očekávaný dokument,</li>
+                    <li>zda dokument není zastaralý,</li>
+                    <li>zda nejde o jinou verzi,</li>
+                    <li>zda PDF obsahuje skutečný text dokumentu,</li>
+                    <li>zda není dokument pouze příloha bez potřebného kontextu.</li>
+                </ul>
+                <p>Pokud jde o legislativu, je vhodné kontrolovat také aktuální znění.</p>
+                <p>AI může při rešerši udělat chybu stejně jako člověk.</p>
+                <p>Rozdíl je pouze v tom, že ji dokáže udělat mnohem rychleji a ve větším množství.</p>
+                <blockquote><strong>Automatizujeme práci, ne odpovědnost.</strong></blockquote>
+
+                <h3>6. Agent vytvoří sešit</h3>
+                <p>Jakmile jsou zdroje připravené, může agent přejít přímo do Gemini Notebooku / NotebookLM a vytvořit nový sešit.</p>
+                <p>Následně:</p>
+                <ol>
+                    <li>založí sešit,</li>
+                    <li>pojmenuje ho,</li>
+                    <li>vloží ověřené zdroje,</li>
+                    <li>odstraní případné chybné importy,</li>
+                    <li>zkontroluje, zda byly zdroje správně načtené.</li>
+                </ol>
+                <p>U větších sešitů doporučuji udržovat jasnou tematickou hranici.</p>
+                <p>Je lákavé vytvořit jeden obrovský „školní notebook na všechno“.</p>
+                <p>V praxi ale bývá lepší mít několik menších odborných sešitů.</p>
+                <p>Například:</p>
+                <ul>
+                    <li>legislativa školy,</li>
+                    <li>rizikové chování,</li>
+                    <li>podpůrná opatření,</li>
+                    <li>Bakaláři,</li>
+                    <li>metodika hodnocení,</li>
+                    <li>konkrétní vyučovací předmět.</li>
+                </ul>
+
+                <h3>7. Nastavte instrukce sešitu</h3>
+                <p>Toto je podle mě jedna z nejdůležitějších částí celého workflow.</p>
+                <p>Notebook nemusí být pouze vyhledávač dokumentů.</p>
+                <p>Můžeme mu určit, <strong>jakou roli má plnit</strong>.</p>
+                <p>Například:</p>
+                <div class="article-prompt">Jsi metodický poradce pro učitele střední školy. Odpovídej pouze na základě zdrojů uložených v tomto sešitu. Pokud odpověď ve zdrojích není, jasně to sděl. U právních otázek rozlišuj mezi právním předpisem, metodickým doporučením a doporučenou pedagogickou praxí.</div>
+                <p>Můžeme také určit:</p>
+                <ul>
+                    <li>styl odpovědí,</li>
+                    <li>míru podrobnosti,</li>
+                    <li>cílovou skupinu,</li>
+                    <li>strukturu doporučení,</li>
+                    <li>způsob práce s citacemi,</li>
+                    <li>upozorňování na nejistotu.</li>
+                </ul>
+                <p>Dobré instrukce z obyčejné databáze dokumentů udělají skutečného tematického poradce.</p>
+
+                <h3>8. Sešit otestujte</h3>
+                <p>Hotový notebook ještě nemusí být dobrý notebook.</p>
+                <p>Proto mu položte několik typických otázek, které budete později skutečně používat.</p>
+                <p>Například:</p>
+                <blockquote>Co má učitel udělat při podezření na šikanu?</blockquote>
+                <blockquote>Jaký je rozdíl mezi doporučeným postupem školy a právní povinností?</blockquote>
+                <blockquote>Který dokument tuto situaci upravuje?</blockquote>
+                <blockquote>Existují ve zdrojích dvě rozdílná doporučení?</blockquote>
+                <p>Sledujeme především:</p>
+                <ul>
+                    <li>zda odpověď skutečně vychází ze zdrojů,</li>
+                    <li>zda notebook správně cituje,</li>
+                    <li>zda nerozšiřuje odpověď o něco, co ve zdrojích není,</li>
+                    <li>zda používá aktuální dokument,</li>
+                    <li>zda správně rozlišuje různé typy zdrojů.</li>
+                </ul>
+                <p>Pokud se objeví problém, můžeme upravit zdroje nebo instrukce.</p>
+
+                <h3>9. Myslete také na aktualizaci</h3>
+                <p>Tohle je část, na kterou se při vytváření podobných systémů často zapomíná.</p>
+                <p>Dokument, který je správný dnes, nemusí být správný za rok.</p>
+                <p>Proto je dobré už při tvorbě notebooku vytvořit jednoduché pravidlo údržby.</p>
+                <p>Například:</p>
+                <blockquote>Jednou za tři měsíce zkontroluj všechny internetové zdroje a zjisti, zda nebyla vydána novější verze dokumentu.</blockquote>
+                <p>Nebo:</p>
+                <blockquote>Porovnej seznam zdrojů notebooku s aktuálními dokumenty zveřejněnými na webu MŠMT.</blockquote>
+                <p>Právě tady se znovu velmi dobře uplatní AI agent.</p>
+                <p>Nemusí celý notebook vytvářet znovu. Může pouze kontrolovat změny.</p>
+
+                <h2>Jednoduchý model celého procesu</h2>
+                <div class="article-prompt"><strong>Téma</strong><br />↓<br /><strong>Definice účelu</strong><br />↓<br /><strong>Pravidla pro zdroje</strong><br />↓<br /><strong>Claude / AI agent</strong><br />↓<br /><strong>Rešerše a ověření zdrojů</strong><br />↓<br /><strong>Gemini Notebook / NotebookLM</strong><br />↓<br /><strong>Nastavení instrukcí</strong><br />↓<br /><strong>Testovací otázky</strong><br />↓<br /><strong>Používání</strong><br />↓<br /><strong>Pravidelná aktualizace</strong></div>
+
+                <h2>Co na tomto způsobu práce považuji za nejzajímavější</h2>
+                <p>Největší změnou podle mě není samotný Gemini Notebook.</p>
+                <p>Zajímavější je propojení notebooku s AI agentem.</p>
+                <p>Notebook se stará o práci se znalostmi.</p>
+                <p>Agent se stará o práci kolem něj.</p>
+                <p>Může vyhledávat, kontrolovat, porovnávat, organizovat a aktualizovat zdroje.</p>
+                <p>Učitel potom nemusí trávit hodiny technickou přípravou systému a může se soustředit na to nejdůležitější: <strong>co od svého odborného pomocníka vlastně potřebuje</strong>.</p>
+
+                <h2>Kde bych byla opatrná</h2>
+                <p>Ani tento postup není bez rizik.</p>
+                <p>AI agent může:</p>
+                <ul>
+                    <li>vybrat chybný dokument,</li>
+                    <li>přehlédnout novější verzi,</li>
+                    <li>špatně interpretovat stránku,</li>
+                    <li>zaměnit metodické doporučení za právní povinnost,</li>
+                    <li>vložit duplicitu,</li>
+                    <li>pracovat s neaktuálním zdrojem.</li>
+                </ul>
+                <p>Proto bych u důležitých školních témat vždy zachovala lidskou kontrolu.</p>
+                <p>Zvlášť u:</p>
+                <ul>
+                    <li>legislativy,</li>
+                    <li>GDPR,</li>
+                    <li>podpůrných opatření,</li>
+                    <li>bezpečnosti žáků,</li>
+                    <li>pracovněprávních otázek,</li>
+                    <li>krizových situací.</li>
+                </ul>
+                <p>AI je zde výborný pomocník.</p>
+                <p>Neměla by ale být posledním článkem rozhodování.</p>
+
+                <h2>Praktický závěr</h2>
+                <p>Pokud už NotebookLM nebo Gemini Notebook používáte, zkuste příště nezačínat ručním nahráváním dokumentů.</p>
+                <p>Nejprve si napište:</p>
+                <blockquote>„Jakého odborného pomocníka bych chtěl vytvořit?“</blockquote>
+                <p>Potom nechte AI agenta připravit podklady, ověřit zdroje a notebook sestavit.</p>
+                <p>Pro začátek potřebujete v zásadě jen tři věci:</p>
+                <div class="article-prompt"><strong>Claude → Claude in Chrome → Gemini Notebook / NotebookLM</strong></div>
+                <p>Právě spojení <strong>AI agenta + ověřených zdrojů + tematického notebooku</strong> může být pro učitele mnohem zajímavější než samotné používání běžného chatbotu.</p>
+                <p>A možná je to také dobrá ukázka toho, kam se práce s AI ve škole postupně posouvá.</p>
+                <p>Ne od jednotlivých promptů.</p>
+                <p>Ale k promyšleným pracovním postupům.</p>
+            </div>
+        </article>
+
+        <section class="workflow-related" aria-labelledby="dalsi-gemini-workflow">
+            <div class="workflow-related-heading">
+                <h2 id="dalsi-gemini-workflow">Další články o Gemini Notebooku</h2>
+                <p>Navazující články pro práci s vlastními zdroji, prompty a výukovými výstupy.</p>
+            </div>
+            <div class="workflow-related-grid">
+                <a class="workflow-related-card" href="gemini-notebook.html">
+                    <span class="workflow-card-number">01</span>
+                    <h3>Gemini Notebook: centrální rozcestník</h3>
+                    <p>Vlastní zdroje, výukové materiály, prompty a související workflow na jednom místě.</p>
+                </a>
+                <a class="workflow-related-card" href="ai-workflow-7-kroku-gemini-notebook.html">
+                    <span class="workflow-card-number">02</span>
+                    <h3>Gemini Notebook jako příprava výuky</h3>
+                    <p>Opakovatelný postup od vlastních zdrojů přes plán hodiny až po AI tutora.</p>
+                </a>
+                <a class="workflow-related-card" href="gemini-notebook-prompty.html">
+                    <span class="workflow-card-number">03</span>
+                    <h3>Prompty pro Gemini Notebook</h3>
+                    <p>Připravené šablony pro shrnutí, materiály, otázky a kritickou analýzu.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="gemini-notebook.html">Gemini Notebook</a> · <a href="ai.html">Zpět na rozcestník AI</a></footer>
+</body>
+
+</html>
