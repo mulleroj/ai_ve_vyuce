@@ -5,6 +5,17 @@
  */
 window.siteArticles = [
   {
+    href: 'ai-novinka-ai-ve-vzdelavani-zari-2026.html',
+    title: 'AI ve vzdělávání: přesnější práce s obrázky, bezpečnější přístup k AI a nové zázemí pro školy',
+    summary: 'Přesnější editace existujících materiálů, kontextové zabezpečení Gemini a specializované AI nástroje pro učitele.',
+    category: 'Novinka',
+    date: '2026-09-09',
+    dateLabel: '9. září 2026',
+    icon: '📰',
+    tags: ['Obrázky', 'Bezpečnost', 'AI ve vzdělávání'],
+    badgeClass: 'badge-blue'
+  },
+  {
     href: 'ai-navod-ai-agent-v-prohlizeci.html',
     title: 'AI agent v prohlížeči: když AI nejen radí, ale také pracuje',
     platforms: ['claude', 'chatgpt', 'gemini'],
