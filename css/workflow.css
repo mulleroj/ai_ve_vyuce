@@ -563,6 +563,29 @@ body.workflow-page {
   object-position: top center;
 }
 
+.workflow-project-list {
+  display: grid;
+  gap: 12px;
+  margin: 24px 0 30px;
+}
+
+.workflow-project-list .workflow-related-card {
+  display: grid;
+  grid-template-columns: 40px minmax(180px, 0.85fr) minmax(0, 1.45fr);
+  align-items: center;
+  column-gap: 20px;
+  padding: 18px 20px;
+}
+
+.workflow-project-list .workflow-card-number {
+  margin: 0;
+}
+
+.workflow-project-list .workflow-related-card h3,
+.workflow-project-list .workflow-related-card p {
+  margin: 0;
+}
+
 .workflow-related-card .workflow-card-number {
   display: inline-grid;
   width: 32px;
@@ -868,5 +891,21 @@ body.workflow-page {
   .workflow-page .article-content blockquote,
   .workflow-page .article-prompt {
     padding: 20px;
+  }
+
+  .workflow-project-list .workflow-related-card {
+    grid-template-columns: 40px minmax(0, 1fr);
+    row-gap: 8px;
+    column-gap: 14px;
+  }
+
+  .workflow-project-list .workflow-card-number {
+    grid-row: 1 / span 2;
+    align-self: start;
+  }
+
+  .workflow-project-list .workflow-related-card h3,
+  .workflow-project-list .workflow-related-card p {
+    grid-column: 2;
   }
 }
