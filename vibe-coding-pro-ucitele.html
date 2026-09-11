@@ -39,30 +39,9 @@
             overflow-wrap: anywhere;
         }
 
-        .workflow-cta {
-            margin: 34px 0 40px;
-            padding: 28px;
-            border: 1px solid rgba(245, 166, 35, 0.3);
-            border-radius: 20px;
-            background: linear-gradient(135deg, rgba(245, 166, 35, 0.11), rgba(0, 212, 168, 0.08));
-        }
-
-        .workflow-cta h3 {
-            margin-top: 0 !important;
-            color: #fff;
-        }
-
-        .workflow-cta p:last-child {
-            margin-bottom: 0;
-        }
-
         @media (max-width: 640px) {
             .workflow-project-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .workflow-cta {
-                padding: 22px;
             }
         }
     </style>
@@ -116,8 +95,15 @@
                 </div>
                 <p>Tento seznam není uzavřený. Rozhodující otázka zní: <strong>Jakou konkrétní činnost má žák po otevření stránky provést?</strong> Pokud na ni neumíte odpovědět jednou větou, je zadání zatím příliš široké.</p>
 
-                <h2>Ukázky skutečných projektů ze SchoolLabu</h2>
-                <p>SchoolLab je veřejný prostor s hotovými digitálními školními projekty. Následující ukázky vycházejí z jeho aktuálně dostupného rozcestníku; uvádím názvy, popisy a náhledy příslušných veřejných stránek.</p>
+                <h2>Ukázky projektů</h2>
+                <article class="workflow-related-card">
+                    <figure class="workflow-project-preview"><img src="images/schoollab-home.jpg" alt="Náhled úvodní stránky SchoolLab" loading="lazy" /></figure>
+                    <span class="workflow-card-number">S</span>
+                    <h3>SchoolLab</h3>
+                    <p>Digitální prostor pro výuku, experimentování a objevování.</p>
+                    <a class="workflow-inline-link" href="https://schoollab-stsul.netlify.app/" target="_blank" rel="noopener noreferrer">Otevřít projekt ↗</a>
+                </article>
+
                 <div class="workflow-project-grid">
                     <article class="workflow-related-card">
                         <figure class="workflow-project-preview"><img src="images/schoollab-english-workshop.jpg" alt="Náhled veřejné stránky The English Workshop" loading="lazy" /></figure>
@@ -182,12 +168,6 @@
                         <p>Generátor optimalizovaných promptů pro Gemini Notebook a modul Slide Deck.</p>
                         <a class="workflow-inline-link" href="https://ntb-presentation-prompt.netlify.app/" target="_blank" rel="noopener noreferrer">Otevřít projekt ↗</a>
                     </article>
-                </div>
-
-                <div class="workflow-cta">
-                    <h3>Prohlédnout všechny projekty</h3>
-                    <p>SchoolLab sdružuje veřejné digitální školní projekty pro výuku, procvičování i vlastní objevování.</p>
-                    <p><strong>Adresa:</strong> <a class="workflow-inline-link" href="https://schoollab-stsul.netlify.app/" target="_blank" rel="noopener noreferrer">https://schoollab-stsul.netlify.app/</a></p>
                 </div>
 
                 <h2>Jak vypadá první zadání</h2>
