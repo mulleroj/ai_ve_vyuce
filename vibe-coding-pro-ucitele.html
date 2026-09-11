@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vibe coding pro učitele: co si můžete vytvořit do výuky | AI ve vzdělávání</title>
+    <meta name="description"
+        content="Praktický průvodce pro učitele: co si můžete pomocí vibe codingu vytvořit do výuky, jak zadat první návrh a proč výsledek vždy testovat a ověřit." />
+    <link rel="stylesheet" href="css/workflow.css?v=20260823-site-palette" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/vibe-coding-pro-ucitele" />
+    <meta property="og:title" content="Vibe coding pro učitele: co si můžete vytvořit do výuky" />
+    <meta property="og:description" content="Praktický průvodce pro učitele: co si můžete pomocí vibe codingu vytvořit do výuky, jak zadat první návrh a proč výsledek vždy testovat a ověřit." />
+    <meta property="og:url" content="https://ai-ve-vyuce.netlify.app/vibe-coding-pro-ucitele" />
+    <meta property="og:type" content="article" />
+    <style>
+        .workflow-project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            margin: 24px 0 30px;
+        }
+
+        .workflow-project-grid .workflow-related-card {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        .workflow-project-grid .workflow-inline-link {
+            display: inline-block;
+            margin-top: auto;
+            padding-top: 18px;
+        }
+
+        .workflow-inline-link {
+            overflow-wrap: anywhere;
+        }
+
+        .workflow-cta {
+            margin: 34px 0 40px;
+            padding: 28px;
+            border: 1px solid rgba(245, 166, 35, 0.3);
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(245, 166, 35, 0.11), rgba(0, 212, 168, 0.08));
+        }
+
+        .workflow-cta h3 {
+            margin-top: 0 !important;
+            color: #fff;
+        }
+
+        .workflow-cta p:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 640px) {
+            .workflow-project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .workflow-cta {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body class="workflow-page">
+    <header class="workflow-shell">
+        <div class="workflow-topbar">
+            <a class="workflow-brand" href="index.html"><span class="workflow-brand-mark">✦</span>AI ve Výuce</a>
+            <a class="workflow-back" href="ai.html">← Rozcestník AI</a>
+        </div>
+        <div class="workflow-hero">
+            <div>
+                <div class="workflow-eyebrow">Vibe coding pro učitele · Praktický průvodce</div>
+                <h1>Co si můžete<br /><span>vytvořit do výuky</span></h1>
+                <p class="workflow-hero-lead">Vibe coding není hotová aplikace na první pokus. Je to způsob, jak s pomocí AI popsat konkrétní potřebu, získat první návrh a společně ho postupně otestovat a upravit.</p>
+                <div class="workflow-meta"><span>Pro učitele</span><span>Výukové aplikace</span><span>Praktické příklady</span></div>
+            </div>
+            <div class="workflow-route" aria-label="Čtyři kroky tvorby výukového nástroje">
+                <div class="workflow-stage"><span class="workflow-stage-number">01</span><div><strong>Začněte potřebou</strong><small>Vyberte jeden konkrétní problém nebo cíl hodiny</small></div></div>
+                <div class="workflow-stage"><span class="workflow-stage-number">02</span><div><strong>Popište první návrh</strong><small>Řekněte AI, pro koho nástroj je a co v něm má žák dělat</small></div></div>
+                <div class="workflow-stage"><span class="workflow-stage-number">03</span><div><strong>Testujte po částech</strong><small>Kontrolujte obsah, ovládání, zařízení i srozumitelnost</small></div></div>
+                <div class="workflow-stage"><span class="workflow-stage-number">04</span><div><strong>Ověřte před výukou</strong><small>Učitel rozhoduje, co je pedagogicky i technicky připravené</small></div></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="workflow-main">
+        <article id="vibe-coding-pro-ucitele" class="workflow-article">
+            <div class="workflow-article-intro">
+                <div class="workflow-article-kicker"><span class="workflow-step">01</span> Výukové aplikace podle skutečné potřeby</div>
+                <h2 class="workflow-article-title">Vibe coding pro učitele: co si můžete vytvořit do výuky</h2>
+                <p class="workflow-article-summary">Nejde o to stát se programátorem. Jde o to umět popsat, jakou činnost má žák provést, jak má vypadat dobrá odpověď a co musí učitel před použitím zkontrolovat.</p>
+                <div class="workflow-article-meta"><span>Potřeba</span><span>Prototyp</span><span>Testování</span><span>Ověření</span></div>
+            </div>
+
+            <div class="article-content">
+                <p class="article-lead">S pomocí vibe codingu může vzniknout malá webová pomůcka přesně pro jednu hodinu, skupinu nebo opakující se učitelský úkol. AI připraví první verzi, ale <strong>učitel zůstává autorem zadání, kontrolorem výsledku a člověkem, který rozhoduje o použití ve výuce</strong>.</p>
+
+                <blockquote><strong>Praktická zkratka:</strong><br />Nejdřív pojmenujte, co má student s nástrojem dělat. Teprve potom řešte barvy, animace a další vzhled.</blockquote>
+
+                <h2>Co si může učitel vytvořit</h2>
+                <p>Nemusíte začínat velkým systémem. Vhodný první projekt bývá malý, samostatný a snadno ověřitelný v prohlížeči. Podle cíle hodiny může jít například o:</p>
+                <div class="workflow-project-grid">
+                    <article class="workflow-related-card"><span class="workflow-card-number">01</span><h3>Interaktivní pracovní list</h3><p>Otázky, doplňování, třídění nebo krátké úkoly s okamžitou zpětnou vazbou.</p></article>
+                    <article class="workflow-related-card"><span class="workflow-card-number">02</span><h3>Procvičovací aplikaci</h3><p>Opakování slovní zásoby, pojmů, vzorců nebo kroků pracovního postupu.</p></article>
+                    <article class="workflow-related-card"><span class="workflow-card-number">03</span><h3>Jazykovou hru</h3><p>Například párování, překlad, třídění vět nebo krátkou konverzační aktivitu.</p></article>
+                    <article class="workflow-related-card"><span class="workflow-card-number">04</span><h3>Generátor a kvíz</h3><p>Varianty příkladů, otázek, kartiček nebo testu pro samostatnou práci i opakování.</p></article>
+                    <article class="workflow-related-card"><span class="workflow-card-number">05</span><h3>QR aktivitu</h3><p>Jednoduchou stanovištní aktivitu, která žáka po načtení provede úkolem.</p></article>
+                    <article class="workflow-related-card"><span class="workflow-card-number">06</span><h3>Simulaci nebo model</h3><p>Bezpečný náhled situace, procesu či technického principu, který lze zkoumat krok za krokem.</p></article>
+                </div>
+                <p>Tento seznam není uzavřený. Rozhodující otázka zní: <strong>Jakou konkrétní činnost má žák po otevření stránky provést?</strong> Pokud na ni neumíte odpovědět jednou větou, je zadání zatím příliš široké.</p>
+
+                <h2>Ukázky skutečných projektů ze SchoolLabu</h2>
+                <p>SchoolLab je veřejný prostor s hotovými digitálními školními projekty. Následující ukázky vycházejí z jeho aktuálně dostupného rozcestníku; uvádím pouze názvy a popisy, které jsou u projektů veřejně uvedené.</p>
+                <div class="workflow-project-grid">
+                    <article class="workflow-related-card"><span class="workflow-card-number">A</span><h3>The English Workshop</h3><p>Slovní zásoba, praktické procvičování a příprava k maturitě na jednom místě.</p><a class="workflow-inline-link" href="https://englishworkshops.netlify.app/" target="_blank" rel="noopener noreferrer">Otevřít projekt ↗</a></article>
+                    <article class="workflow-related-card"><span class="workflow-card-number">B</span><h3>English Playground</h3><p>Procvičuj angličtinu prostřednictvím interaktivních úloh, her a okamžité praxe.</p><a class="workflow-inline-link" href="https://cviceni-anj.netlify.app/" target="_blank" rel="noopener noreferrer">Otevřít projekt ↗</a></article>
+                    <article class="workflow-related-card"><span class="workflow-card-number">C</span><h3>Volt &amp; Amper Kingdom</h3><p>Sbírka praktických aplikací, nástrojů a výzev pro budoucí elektrikáře.</p><a class="workflow-inline-link" href="https://elektrikar-apps.netlify.app/" target="_blank" rel="noopener noreferrer">Otevřít projekt ↗</a></article>
+                    <article class="workflow-related-card"><span class="workflow-card-number">D</span><h3>ElektroLab</h3><p>Prozkoumej, vyzkoušej a pochop elektrické principy ve virtuální laboratoři.</p><a class="workflow-inline-link" href="https://elektro-lab.netlify.app/" target="_blank" rel="noopener noreferrer">Otevřít projekt ↗</a></article>
+                </div>
+
+                <div class="workflow-cta">
+                    <h3>Prohlédnout všechny projekty</h3>
+                    <p>SchoolLab sdružuje veřejné digitální školní projekty pro výuku, procvičování i vlastní objevování.</p>
+                    <p><strong>Adresa:</strong> <a class="workflow-inline-link" href="https://schoollab-stsul.netlify.app/" target="_blank" rel="noopener noreferrer">https://schoollab-stsul.netlify.app/</a></p>
+                </div>
+
+                <h2>Jak vypadá první zadání</h2>
+                <p>Dobré zadání popisuje vzdělávací cíl i hranice. Například místo obecného „udělej mi aplikaci na angličtinu“ zkuste:</p>
+                <div class="article-prompt"><strong>Vytvoř jednoduchou webovou aktivitu pro 6. třídu.</strong><br /><br />Cíl: žák procvičí překlad krátkých vět v přítomném čase prostém.<br /><br />Požaduji 15 vět od lehkých po těžší, textové pole pro odpověď, možnost odeslání, zobrazení správného řešení a skóre na konci. Aplikace musí fungovat v mobilním prohlížeči, bez přihlášení a bez ukládání osobních údajů. Připrav nejprve návrh obrazovek a dat, potom první HTML prototyp.</div>
+                <p>Takové zadání AI pomůže rozdělit na menší kroky. Učitel může po každém kroku říct, co je správně, co chybí a co je potřeba změnit.</p>
+
+                <h2>Co musí učitel hlídat</h2>
+                <p>První výstup může vypadat přesvědčivě a přesto být pro výuku nepoužitelný. Před sdílením ověřte alespoň:</p>
+                <ul>
+                    <li><strong>Obsah:</strong> jsou otázky, řešení, pojmy a příklady správně?</li>
+                    <li><strong>Pedagogiku:</strong> odpovídá aktivita věku, cíli hodiny a času, který máte?</li>
+                    <li><strong>Ovládání:</strong> pozná žák, co má udělat, a funguje to na mobilu i počítači?</li>
+                    <li><strong>Techniku:</strong> fungují všechny odpovědi, tlačítka, odkazy a případné náhodné varianty?</li>
+                    <li><strong>Soukromí:</strong> nepotřebuje nástroj zbytečné osobní údaje nebo účet?</li>
+                </ul>
+                <p>Čím větší roli hraje faktická přesnost nebo bezpečnost, tím méně stačí rychlý náhled. Nástroj nejdřív projděte sami a pokud je to možné, vyzkoušejte ho s kolegou nebo malou skupinou.</p>
+
+                <h2>Od prvního prototypu k použitelnému materiálu</h2>
+                <ol>
+                    <li>Vyberte malý, opakující se problém z vlastní výuky.</li>
+                    <li>Popište žáka, cíl, vstupy, očekávaný výstup a omezení.</li>
+                    <li>Nechte AI vytvořit nejprve jednoduchý prototyp.</li>
+                    <li>Testujte jednu věc po druhé a zadávejte konkrétní opravy.</li>
+                    <li>Ověřte obsah, funkčnost, přístupnost a chování na zařízení, které budou používat žáci.</li>
+                    <li>Teprve potom nástroj sdílejte nebo publikujte.</li>
+                </ol>
+                <blockquote><strong>Vibe coding není automat na dokonalé aplikace.</strong><br />Je to rychlejší cesta od učitelské potřeby k prototypu, který musí projít lidskou kontrolou.</blockquote>
+
+                <h2>Kam pokračovat</h2>
+                <p>Pokud chcete začít od základního vysvětlení pojmu a nástrojů, vraťte se na <a class="workflow-inline-link" href="/vibe-coding">stránku Vibe Coding</a>. Najdete tam úvod, příklady zadání i odkazy na nástroje.</p>
+            </div>
+        </article>
+
+        <section class="workflow-related" aria-labelledby="souvisejici-vibe-coding">
+            <div class="workflow-related-heading">
+                <h2 id="souvisejici-vibe-coding">Související čtení</h2>
+                <p>Další materiály pro bezpečný návrh, čtení a postupné ladění výukových aplikací.</p>
+            </div>
+            <div class="workflow-related-grid">
+                <article class="workflow-related-card"><span class="workflow-card-number">01</span><h3>Vibe coding krok za krokem</h3><p>Od problému a zadání přes prototyp, testování a bezpečnost až po nasazení.</p><a class="workflow-inline-link" href="ai-workflow-vibe-coding.html">Otevřít workflow →</a></article>
+                <article class="workflow-related-card"><span class="workflow-card-number">02</span><h3>CSS Grid při vibe codingu</h3><p>Jak rozumět řádkům, sloupcům a mezerám, když AI připravuje rozložení stránky.</p><a class="workflow-inline-link" href="ai-workflow-css-grid-vibe-coding.html">Otevřít článek →</a></article>
+                <article class="workflow-related-card"><span class="workflow-card-number">03</span><h3>Vibe Coding prompty</h3><p>Připravené šablony pro první zadání, iterace a kontrolu výukového nástroje.</p><a class="workflow-inline-link" href="vibe-coding-prompty.html">Otevřít prompty →</a></article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai.html">Zpět na rozcestník AI</a></footer>
+</body>
+
+</html>
