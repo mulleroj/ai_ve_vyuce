@@ -5,6 +5,28 @@
  */
 window.siteArticles = [
   {
+    href: 'ai-workflow-chatgpt-images-2-5.html',
+    title: 'ChatGPT Images 2.5 ve výuce: od jednoduchého obrázku k výukovému materiálu',
+    summary: 'Praktický workflow od výukového cíle přes první návrh a cílené úpravy až k sadě materiálů, kontrole a použití ve výuce.',
+    category: 'Workflow',
+    date: '2026-09-11',
+    dateLabel: '11. září 2026',
+    icon: '🎨',
+    tags: ['ChatGPT Images 2.5', 'Výukové materiály', 'Workflow'],
+    badgeClass: 'badge-blue'
+  },
+  {
+    href: 'ai-novinka-sdilene-zdroje-propojene-aplikace-2026.html',
+    title: 'AI ve vzdělávání: sdílené zdroje, propojené aplikace a bezpečnější práce s daty',
+    summary: 'AI se mění z osobního chatbota na součást společné informační infrastruktury školy. Důležitá jsou data, oprávnění, audit a lidská kontrola.',
+    category: 'Novinka',
+    date: '2026-09-11',
+    dateLabel: '11. září 2026',
+    icon: '📰',
+    tags: ['Sdílené zdroje', 'Bezpečnost dat', 'AI ve vzdělávání'],
+    badgeClass: 'badge-blue'
+  },
+  {
     href: 'ai-novinka-ai-ve-vzdelavani-zari-2026.html',
     title: 'AI ve vzdělávání: přesnější práce s obrázky, bezpečnější přístup k AI a nové zázemí pro školy',
     summary: 'Přesnější editace existujících materiálů, kontextové zabezpečení Gemini a specializované AI nástroje pro učitele.',
