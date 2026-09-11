@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">AI ve Výuce</title>
+  <desc id="desc">Mintová hvězda na tmavém pozadí</desc>
+  <rect width="64" height="64" rx="16" fill="#0a0f1e"/>
+  <path d="m32 9 5.5 17.5L55 32l-17.5 5.5L32 55l-5.5-17.5L9 32l17.5-5.5L32 9Z" fill="#00d4a8"/>
+  <path d="m32 18 2.8 11.2L46 32l-11.2 2.8L32 46l-2.8-11.2L18 32l11.2-2.8L32 18Z" fill="#eaf0fb"/>
+</svg>
