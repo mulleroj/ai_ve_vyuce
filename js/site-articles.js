@@ -5,6 +5,17 @@
  */
 window.siteArticles = [
   {
+    href: 'vibe-coding-pro-ucitele.html',
+    title: 'Vibe coding pro učitele: co si můžete vytvořit do výuky',
+    summary: 'Praktický průvodce typy výukových nástrojů, skutečnými projekty ze SchoolLabu a kontrolou prvního prototypu.',
+    category: 'Vibe Coding',
+    date: '2026-09-11',
+    dateLabel: '11. září 2026',
+    icon: '💻',
+    tags: ['Vibe Coding', 'Výukové aplikace', 'SchoolLab'],
+    badgeClass: 'badge-purple'
+  },
+  {
     href: 'ai-workflow-chatgpt-images-2-5.html',
     title: 'ChatGPT Images 2.5 ve výuce: od jednoduchého obrázku k výukovému materiálu',
     summary: 'Praktický workflow od výukového cíle přes první návrh a cílené úpravy až k sadě materiálů, kontrole a použití ve výuce.',
