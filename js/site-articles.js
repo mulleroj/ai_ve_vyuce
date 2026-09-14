@@ -5,6 +5,17 @@
  */
 window.siteArticles = [
   {
+    href: 'ai-novinka-datovi-agenti-lidske-schvaleni.html',
+    title: 'AI ve vzdělávání: datoví agenti, lidské schvalování a bezpečnější automatizace',
+    summary: 'Datoví agenti, lidské schvalování akcí a principy bezpečnější automatizace pro školy. Praktické souvislosti pro učitele.',
+    category: 'Novinka',
+    date: '2026-09-14',
+    dateLabel: '14. září 2026',
+    icon: '📰',
+    tags: ['AI agenti', 'Bezpečnost', 'Lidské schválení'],
+    badgeClass: 'badge-blue'
+  },
+  {
     href: 'vibe-coding-pro-ucitele.html',
     title: 'Vibe coding pro učitele: co si můžete vytvořit do výuky',
     summary: 'Praktický průvodce typy výukových nástrojů, skutečnými projekty ze SchoolLabu a kontrolou prvního prototypu.',
