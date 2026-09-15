@@ -5,6 +5,20 @@
  */
 window.siteArticles = [
   {
+    href: 'ai-novinka-filozofovani-s-ai-kriticke-mysleni.html',
+    title: 'Kritické myšlení už nestačí? Human in the Loop jako další krok v době AI',
+    summary: 'První díl autorské série o kritickém myšlení, Human in the Loop a další roli člověka v době AI.',
+    category: 'Filozofování s AI',
+    series: 'Filozofování s AI',
+    seriesNumber: 1,
+    contentType: 'philosophy',
+    date: '2026-09-15',
+    dateLabel: '15. září 2026',
+    icon: '💬',
+    tags: ['Filozofování s AI · #1', 'Human in the Loop', 'Kritické myšlení'],
+    badgeClass: 'badge-gold'
+  },
+  {
     href: 'ai-novinka-datovi-agenti-lidske-schvaleni.html',
     title: 'AI ve vzdělávání: datoví agenti, lidské schvalování a bezpečnější automatizace',
     summary: 'Datoví agenti, lidské schvalování akcí a principy bezpečnější automatizace pro školy. Praktické souvislosti pro učitele.',

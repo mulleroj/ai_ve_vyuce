@@ -383,6 +383,30 @@ select {
   border: 1px solid var(--border);
 }
 
+.philosophy-series-badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 5px 9px;
+  border: 1px solid rgba(245, 166, 35, 0.38);
+  border-radius: 999px;
+  background: rgba(245, 166, 35, 0.1);
+  color: var(--accent-gold);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.assistant-header .philosophy-series-badge {
+  margin-bottom: 8px;
+}
+
+.directory-topic .philosophy-series-badge {
+  margin-bottom: 7px;
+}
+
 /* ── Navigation ── */
 .nav {
   position: fixed;

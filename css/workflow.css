@@ -753,6 +753,147 @@ body.workflow-page {
   text-decoration: none;
 }
 
+/* ── Philosophy series: a restrained editorial layer on the shared workflow shell ── */
+.workflow-philosophy {
+  --philosophy-line: rgba(245, 166, 35, 0.28);
+  --philosophy-soft: rgba(245, 166, 35, 0.08);
+}
+
+.workflow-philosophy .workflow-shell {
+  padding-top: var(--nav-height);
+}
+
+.workflow-philosophy .workflow-topbar {
+  justify-content: flex-end;
+}
+
+.workflow-philosophy .workflow-hero {
+  grid-template-columns: minmax(0, 0.88fr) minmax(360px, 1.12fr);
+}
+
+.workflow-philosophy .workflow-eyebrow {
+  color: var(--workflow-yellow);
+}
+
+.workflow-philosophy .workflow-eyebrow::before {
+  background: var(--workflow-yellow);
+}
+
+.workflow-philosophy .workflow-hero h1 span {
+  color: var(--workflow-teal);
+}
+
+.workflow-philosophy .workflow-article {
+  border-color: var(--philosophy-line);
+}
+
+.workflow-philosophy .workflow-article-kicker {
+  color: var(--workflow-yellow);
+}
+
+.workflow-philosophy .workflow-step {
+  background: var(--workflow-teal);
+}
+
+.workflow-philosophy .workflow-article-summary {
+  max-width: 790px;
+  font-size: clamp(1.12rem, 2vw, 1.28rem);
+}
+
+.workflow-philosophy .article-content {
+  padding-top: 28px;
+}
+
+.workflow-philosophy .article-content blockquote {
+  position: relative;
+  border-left-color: var(--workflow-yellow);
+  background: linear-gradient(90deg, var(--philosophy-soft), rgba(0, 212, 168, 0.035));
+}
+
+.workflow-philosophy .article-content blockquote::before {
+  position: absolute;
+  top: 12px;
+  right: 22px;
+  color: rgba(245, 166, 35, 0.38);
+  content: '“';
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 3.4rem;
+  line-height: 1;
+}
+
+.philosophy-hero-cover {
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid var(--philosophy-line);
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(0, 212, 168, 0.09), rgba(245, 166, 35, 0.09));
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.3);
+}
+
+.philosophy-cover-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.philosophy-origin {
+  position: relative;
+  margin: 64px 0 12px;
+  padding: 28px clamp(24px, 4vw, 38px);
+  border: 1px solid var(--philosophy-line);
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(0, 212, 168, 0.07), rgba(245, 166, 35, 0.06));
+}
+
+.philosophy-origin::before {
+  position: absolute;
+  top: 20px;
+  right: 26px;
+  width: 34px;
+  height: 22px;
+  border-top: 1px solid rgba(0, 212, 168, 0.5);
+  border-bottom: 1px solid rgba(245, 166, 35, 0.5);
+  content: '';
+  opacity: 0.8;
+}
+
+.philosophy-origin h2 {
+  margin: 0 0 12px;
+  padding: 0;
+  border: 0;
+  color: var(--workflow-yellow);
+  font-size: clamp(1.45rem, 3vw, 2rem);
+}
+
+.philosophy-origin p {
+  max-width: 720px;
+  margin: 0;
+  color: #c4d2e7;
+}
+
+@media (max-width: 900px) {
+  .workflow-philosophy .workflow-hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .workflow-philosophy .workflow-shell {
+    padding-top: var(--nav-height);
+  }
+
+  .philosophy-hero-cover {
+    border-radius: 18px;
+  }
+
+  .philosophy-origin {
+    margin-top: 48px;
+    padding: 24px 20px;
+  }
+}
+
 @media (max-width: 900px) {
   .workflow-hero {
     grid-template-columns: 1fr;

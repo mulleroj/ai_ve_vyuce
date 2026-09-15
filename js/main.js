@@ -267,7 +267,10 @@ if (latestArticlesMount && Array.isArray(window.siteArticles)) {
 
             const tag = document.createElement('div');
             tag.className = 'latest-card-tag';
-            tag.textContent = `${article.icon || '📰'} ${article.category || 'Článek'}${article.dateLabel ? ` · ${article.dateLabel}` : ''}`;
+            const articleLabel = article.series && article.seriesNumber
+                ? `${article.series} · #${article.seriesNumber}`
+                : (article.category || 'Článek');
+            tag.textContent = `${article.icon || '📰'} ${articleLabel}${article.dateLabel ? ` · ${article.dateLabel}` : ''}`;
 
             const title = document.createElement('a');
             title.className = 'latest-card-title';
