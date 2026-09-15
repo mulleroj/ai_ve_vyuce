@@ -5,6 +5,19 @@
  */
 window.siteArticles = [
   {
+    href: 'gemini-storybook-navod-pro-ucitele.html',
+    title: 'Gemini Storybook: jak vytvořit ilustrovaný příběh pro výuku',
+    platforms: ['gemini'],
+    summary: 'Praktický návod od výukového cíle přes zadání a kontrolu až po použití ilustrovaného příběhu ve třídě.',
+    category: 'Nástroj krok za krokem',
+    contentType: 'tool-guide',
+    date: '2026-09-15',
+    dateLabel: '15. září 2026',
+    icon: '📚',
+    tags: ['Gemini Storybook', 'Nástroj krok za krokem', 'Výuka'],
+    badgeClass: 'badge-blue'
+  },
+  {
     href: 'ai-novinka-filozofovani-s-ai-kriticke-mysleni.html',
     title: 'Kritické myšlení už nestačí? Human in the Loop jako další krok v době AI',
     summary: 'První díl autorské série o kritickém myšlení, Human in the Loop a další roli člověka v době AI.',
