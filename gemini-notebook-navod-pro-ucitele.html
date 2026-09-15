@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemini Notebook: jak si vytvořit sešit, který opravdu šetří práci | AI ve Výuce</title>
+    <meta name="description" content="Praktický návod pro učitele: jak v Gemini Notebooku nastavit instrukce, metodiku, tematický plán, zdroje a vzorové materiály pro opakovanou přípravu výuky." />
+    <link rel="stylesheet" href="css/workflow.css?v=20260915-tool-guide-notebook" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/gemini-notebook-navod-pro-ucitele" />
+    <meta property="og:title" content="Gemini Notebook: jak si vytvořit sešit, který opravdu šetří práci | AI ve Výuce" />
+    <meta property="og:description" content="Jak správně nastavit instrukce, metodiku, tematický plán, zdroje a vzorové materiály, aby Notebook pomáhal s přípravou výuky." />
+    <meta property="og:url" content="https://ai-ve-vyuce.netlify.app/gemini-notebook-navod-pro-ucitele" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://ai-ve-vyuce.netlify.app/images/gemini-notebook-nastroj-krok-za-krokem.png" />
+    <meta property="og:image:width" content="1672" />
+    <meta property="og:image:height" content="941" />
+    <meta property="og:image:alt" content="Gemini Notebook – jak si vytvořit učitelský sešit krok za krokem" />
+</head>
+
+<body class="workflow-page tool-guide-page">
+    <header class="workflow-shell tool-guide-shell">
+        <div class="workflow-topbar">
+            <a class="workflow-brand" href="index.html"><span class="workflow-brand-mark">✦</span>AI ve Výuce</a>
+            <a class="workflow-back" href="gemini-notebook.html">← Gemini Notebook</a>
+        </div>
+        <div class="workflow-hero tool-guide-hero">
+            <div class="tool-guide-hero-copy">
+                <div class="tool-guide-eyebrow">NÁSTROJ KROK ZA KROKEM</div>
+                <h1>Gemini Notebook:<br /><span>jak si vytvořit sešit, který opravdu šetří práci</span></h1>
+                <p class="workflow-hero-lead">Praktický návod pro učitele – od promyšlení účelu a konfigurace sešitu přes výběr zdrojů až po pracovní listy a přípravy hodin.</p>
+                <div class="tool-guide-meta" aria-label="Rychlé informace o návodu">
+                    <div class="tool-guide-meta-card"><span>Nástroj</span><strong>Gemini Notebook</strong></div>
+                    <div class="tool-guide-meta-card"><span>Pro koho</span><strong>učitelé</strong></div>
+                    <div class="tool-guide-meta-card"><span>Využití</span><strong>příprava hodin · pracovní listy · metodická podpora</strong></div>
+                    <div class="tool-guide-meta-card"><span>Obtížnost</span><strong>začátečník / mírně pokročilý</strong></div>
+                    <div class="tool-guide-meta-card"><span>Princip</span><strong>nastavte jednou, používejte opakovaně</strong></div>
+                </div>
+            </div>
+            <div class="tool-guide-hero-visual" aria-label="Pracovní postup: účel, instrukce, zdroje, výstup">
+                <div class="tool-guide-hero-icon" aria-hidden="true">📓</div>
+                <span class="tool-guide-hero-label">Pracovní návod pro učitele</span>
+                <div class="tool-guide-mini-flow">
+                    <span>Účel</span><b>→</b><span>Instrukce</span><b>→</b><span>Zdroje</span><b>→</b><span>Výstup</span>
+                </div>
+                <p>Nejdříve sešit nastavte. Potom jej nechte pracovat pro vás.</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="workflow-main tool-guide-main">
+        <article class="workflow-article tool-guide-article">
+            <div class="workflow-article-intro">
+                <div class="workflow-article-kicker"><span class="workflow-step">02</span> Nástroj krok za krokem · 15. září 2026</div>
+                <h2 class="workflow-article-title">Gemini Notebook: jak si vytvořit sešit, který opravdu šetří práci</h2>
+                <p class="workflow-article-summary">Dobře nastavený sešit šetří učiteli opakované vysvětlování, co má AI dělat, z jakých podkladů má vycházet a jak mají výsledné materiály vypadat.</p>
+                <div class="workflow-article-meta"><span>Gemini Notebook</span><span>Praktický návod</span><span>Příprava výuky</span></div>
+            </div>
+
+            <figure class="tool-guide-cover">
+                <img src="images/gemini-notebook-nastroj-krok-za-krokem.png" alt="Gemini Notebook – praktický návod pro učitele, jak si vytvořit sešit, který opravdu šetří práci" width="1672" height="941" loading="lazy" decoding="async" />
+                <figcaption>Gemini Notebook jako pracovní prostředí pro opakovanou přípravu výuky.</figcaption>
+            </figure>
+
+            <div class="article-content">
+                <p class="article-lead">Gemini Notebook může fungovat jako místo, kam učitel nahraje učebnici, metodiku nebo několik dokumentů a následně se na jejich obsah ptá.</p>
+                <p>To je ale pouze základní způsob použití.</p>
+                <p>Mnohem zajímavější začíná být ve chvíli, kdy si učitel vytvoří <strong>dobře promyšlený sešit pro konkrétní předmět, lekci nebo tematický celek</strong>, nakonfiguruje jeho způsob práce a poskytne mu správné zdroje.</p>
+                <p>Potom nemusí při každé přípravě znovu vysvětlovat:</p>
+                <ul>
+                    <li>koho učí,</li><li>jak mají materiály vypadat,</li><li>podle jaké metodiky pracuje,</li><li>jakou úroveň mají žáci,</li><li>co patří do tematického plánu,</li><li>jak má vypadat pracovní list,</li><li>nebo z jakých materiálů má AI čerpat.</li>
+                </ul>
+                <blockquote><strong>Dobře připravený sešit není pouze úložiště dokumentů. Je to pracovní prostředí vytvořené pro konkrétní učitelský úkol.</strong></blockquote>
+                <p><a class="workflow-inline-link" href="gemini-notebook.html">← Zpět na hlavní stránku Gemini Notebooku</a></p>
+
+                <section aria-labelledby="ucel-potom-zdroje">
+                    <h2 id="ucel-potom-zdroje">Nejdříve účel, potom zdroje</h2>
+                    <p>Častý první krok při zakládání sešitu vypadá jednoduše:</p>
+                    <div class="tool-guide-output-flow" aria-label="Častý postup založení sešitu"><span>Vytvořit sešit</span><b>→</b><span>Nahrát dokumenty</span><b>→</b><span>Začít se ptát</span></div>
+                    <p>Pro systematickou práci je lepší pořadí obrátit:</p>
+                    <p class="tool-guide-conclusion-highlight"><strong>Účel → konfigurace → zdroje → kontrola → běžná práce</strong></p>
+                    <p>Nejdříve si proto odpovězte:</p>
+                    <blockquote><strong>K čemu bude tento sešit sloužit?</strong></blockquote>
+                    <p>Jeden sešit může například:</p>
+                    <ul><li>pomáhat s přípravou jedné lekce angličtiny,</li><li>sloužit jako podklad pro tematický celek občanské nauky,</li><li>vytvářet pracovní listy,</li><li>připravovat otázky a kvízy,</li><li>pomáhat s diferenciací materiálů,</li><li>fungovat jako metodický poradce,</li><li>pracovat s konkrétní sadou školních předpisů nebo metodik.</li></ul>
+                    <p>Gemini Notebook pracuje se sešity jako se samostatnými projekty. Proto má smysl vytvářet je podle skutečných pracovních celků místo toho, aby učitel veškeré materiály za několik let shromáždil do jediného obrovského sešitu.</p>
+                </section>
+
+                <section aria-labelledby="jeden-sesit-ucel">
+                    <h2 id="jeden-sesit-ucel">Jeden sešit = jeden jasný účel</h2>
+                    <p>Pro učitele může být velmi praktické rozdělit materiály podle témat.</p>
+                    <p>Například místo jediného sešitu <strong>Angličtina</strong> může vzniknout:</p>
+                    <ul><li>Introduction Unit</li><li>Unit 1</li><li>Unit 2</li><li>Unit 3</li><li>Unit 4</li></ul>
+                    <p>Každý sešit potom obsahuje pouze zdroje potřebné pro konkrétní lekci.</p>
+                    <p>Stejný princip lze použít také v dalších předmětech:</p>
+                    <div class="tool-guide-examples">
+                        <article class="teaching-example"><div class="teaching-example-heading"><span class="tool-guide-example-label">OBČANSKÁ NAUKA</span><h3>Tematické celky</h3></div><ul class="tool-guide-activity-list"><li>pracovní právo</li><li>lidská práva</li><li>finanční gramotnost</li><li>stát a demokracie</li></ul></article>
+                        <article class="teaching-example"><div class="teaching-example-heading"><span class="tool-guide-example-label">EKONOMIKA</span><h3>Praktická témata</h3></div><ul class="tool-guide-activity-list"><li>mzda</li><li>pracovní smlouva</li><li>daně</li><li>podnikání</li></ul></article>
+                    </div>
+                    <p><strong>Méně nerelevantních zdrojů znamená přesnější kontext pro práci sešitu.</strong></p>
+                </section>
+
+                <section aria-labelledby="konfigurace-sesitu">
+                    <h2 id="konfigurace-sesitu">Konfigurace sešitu: nejdůležitější krok</h2>
+                    <p>Samotné dokumenty říkají Notebooku, <strong>z čeho má čerpat</strong>.</p>
+                    <p>Konfigurace mu říká, <strong>jak má pracovat</strong>.</p>
+                    <p>A právě tuto část není dobré přeskočit.</p>
+                    <p>Notebook může používat vlastní instrukce, které určují způsob jeho práce. Tyto instrukce je možné nastavit jednou a následně je používat při dalších požadavcích.</p>
+                    <p>Místo toho, aby učitel při každém promptu znovu psal:</p>
+                    <blockquote>Jsem učitel střední školy.<br />Je to pro šestnáctileté žáky.<br />Použij jednoduchý jazyk.<br />Vycházej z nahraných materiálů.<br />Udělej pracovní list a řešení zvlášť.</blockquote>
+                    <p>může základní pravidla vložit přímo do instrukcí sešitu.</p>
+                    <p>Potom může být běžný požadavek mnohem kratší:</p>
+                    <blockquote><strong>Připrav pracovní list k dnešnímu tématu na 25 minut.</strong></blockquote>
+                </section>
+
+                <section class="prompt-card tool-guide-prompt-card" aria-labelledby="vzor-instrukci">
+                    <div class="prompt-card-header">
+                        <div><span class="tool-guide-callout-label">PROVOZNÍ MANUÁL SEŠITU</span><h2 id="vzor-instrukci">Vzor instrukcí pro učitele</h2></div>
+                        <button class="prompt-copy-button" type="button" data-copy-prompt="notebook-instructions" data-copy-label="Kopírovat instrukce" aria-describedby="notebook-instructions-feedback">Kopírovat instrukce</button>
+                    </div>
+                    <p class="prompt-card-intro">Vložte text do vlastních instrukcí sešitu a upravte jej podle své školy, předmětu a žáků.</p>
+                    <pre class="prompt-body" id="notebook-instructions">Jsi pedagogický asistent pro učitele střední školy.
+
+Pracuj především s informacemi obsaženými ve zdrojích tohoto sešitu.
+
+Pomáhej mi připravovat:
+
+* vyučovací hodiny,
+* pracovní listy,
+* otázky,
+* shrnutí,
+* kvízy,
+* diferencované materiály.
+
+Při tvorbě materiálů vždy zohledni:
+
+* věk a úroveň žáků,
+* délku vyučovací hodiny,
+* výukový cíl,
+* srozumitelný jazyk,
+* praktické použití ve třídě.
+
+Pokud požadovaná informace není ve zdrojích, jasně to uveď a nevymýšlej si ji.
+
+Při tvorbě pracovních listů odděluj zadání pro žáka a řešení pro učitele.
+
+Pokud jsou úlohy bodované, uváděj počet bodů.
+
+Při diferenciaci zachovej stejný vzdělávací cíl, ale podle potřeby uprav:
+
+* obtížnost jazyka,
+* množství podpory,
+* rozsah textu,
+* náročnost úkolu.
+
+Pokud pracuješ s konkrétní informací ze zdrojů, umožni učiteli dohledat, z jakého zdroje vychází.</pre>
+                    <span class="prompt-copy-feedback" id="notebook-instructions-feedback" aria-live="polite"></span>
+                </section>
+
+                <section aria-labelledby="co-patri-do-instrukci">
+                    <h2 id="co-patri-do-instrukci">Co může být v instrukcích</h2>
+                    <p>Do instrukcí je vhodné uložit zejména informace, které se mají při práci opakovat:</p>
+                    <ul><li>typ školy,</li><li>věk žáků,</li><li>úroveň žáků,</li><li>způsob komunikace,</li><li>používaný jazyk,</li><li>pravidla práce se zdroji,</li><li>požadovanou strukturu příprav,</li><li>podobu pracovních listů,</li><li>pravidla diferenciace,</li><li>způsob tvorby řešení,</li><li>způsob citování nebo odkazování na zdroje.</li></ul>
+                    <p>Instrukce tedy mohou fungovat jako <strong>provozní manuál sešitu</strong>.</p>
+                </section>
+
+                <aside class="tool-guide-goal" aria-labelledby="instrukce-versus-zdroje">
+                    <span class="tool-guide-callout-label">JEDNODUCHÉ PRAVIDLO</span>
+                    <h2 id="instrukce-versus-zdroje">Instrukce nejsou skladiště dokumentů</h2>
+                    <p>Je důležité nerozumět konfiguraci tak, že do instrukcí vložíme několikastránkovou metodiku.</p>
+                    <p>Instrukce mají být stručným provozním manuálem. Delší dokumenty patří mezi <strong>zdroje</strong>.</p>
+                    <div class="tool-guide-teacher-workflow" aria-label="Rozdělení role instrukcí a zdrojů"><strong>Instrukce říkají, JAK</strong><span>→</span><strong>Zdroje říkají, Z ČEHO</strong></div>
+                </aside>
+
+                <section aria-labelledby="metodika-jako-zdroj">
+                    <h2 id="metodika-jako-zdroj">Metodika jako zdroj</h2>
+                    <p>Pokud učitel pracuje podle určité metodiky, může ji vložit mezi zdroje sešitu.</p>
+                    <p><strong>Metodika tvorby výukových materiálů</strong> může obsahovat:</p>
+                    <ul><li>pravidla formulace úloh,</li><li>práci s výukovými cíli,</li><li>zásady diferenciace,</li><li>doporučení pro práci se žáky se speciálními vzdělávacími potřebami,</li><li>požadovanou strukturu pracovního listu,</li><li>zásady hodnocení,</li><li>příklady správně vytvořených materiálů.</li></ul>
+                    <p>V instrukcích pak může stačit například:</p>
+                    <blockquote>Při tvorbě výukových materiálů se řiď dokumentem „Metodika tvorby výukových materiálů“, který je součástí zdrojů tohoto sešitu.</blockquote>
+                </section>
+
+                <section aria-labelledby="vzorovy-pracovni-list">
+                    <h2 id="vzorovy-pracovni-list">Vzorový pracovní list je také zdroj</h2>
+                    <p>Někdy je jednodušší AI <strong>ukázat výsledek</strong>, než jí dlouze vysvětlovat, jak má vypadat.</p>
+                    <p>Učitel proto může mezi zdroje vložit například:</p>
+                    <ul><li>Vzor pracovního listu</li><li>Vzor testu</li><li>Vzor přípravy hodiny</li><li>Vzor řešení</li><li>Pravidla hodnocení</li><li>Metodiku diferenciace</li></ul>
+                    <p>A do instrukcí napsat:</p>
+                    <blockquote>Při tvorbě pracovních listů dodržuj strukturu a způsob členění vzorového pracovního listu, který je součástí zdrojů. Obsah vždy přizpůsob aktuálnímu tématu a cílové skupině.</blockquote>
+                </section>
+
+                <section aria-labelledby="tematicky-plan">
+                    <h2 id="tematicky-plan">Tematický plán jako zdroj</h2>
+                    <p>Mezi nejzajímavější zdroje pro učitelský sešit může patřit také <strong>tematický plán</strong>.</p>
+                    <p>Nemusí být nutné vkládat celý plán na celý školní rok. Pokud je sešit zaměřen pouze na jednu lekci nebo tematický celek, je často užitečnější vložit pouze část tematického plánu, která se tohoto tématu týká.</p>
+                    <div class="teaching-example">
+                        <div class="teaching-example-heading"><span class="tool-guide-example-label">PŘÍKLAD</span><h3>Angličtina – Unit 2</h3></div>
+                        <p><strong>Zdroje:</strong></p>
+                        <ul class="tool-guide-activity-list"><li>Student's Book – Unit 2</li><li>Workbook – Unit 2</li><li>Teacher's Book – Unit 2</li><li>slovní zásoba Unit 2</li><li>vlastní pracovní materiály</li><li>metodika tvorby materiálů</li><li>vzor pracovního listu</li><li>část tematického plánu vztahující se k Unit 2</li></ul>
+                    </div>
+                    <p>Notebook tak nepracuje pouze s učebnicí. Zároveň dostává informaci, co má být v daném období probráno, jaká slovní zásoba patří k tématu, jaké gramatické jevy mají být procvičeny, jaké cíle mají být splněny a případně kolik času je na tematický celek vyhrazeno.</p>
+                    <p>Učitel potom může zadat například:</p>
+                    <blockquote>Připrav 45minutovou hodinu k tomuto tématu. Vycházej z materiálů v sešitu a respektuj požadavky uvedené v tematickém plánu.</blockquote>
+                    <blockquote>Zkontroluj, zda navržená hodina pokrývá učivo a cíle uvedené v tematickém plánu.</blockquote>
+                    <blockquote>Podle tematického plánu a materiálů v sešitu navrhni rozdělení této lekce do čtyř vyučovacích hodin.</blockquote>
+                </section>
+
+                <section aria-labelledby="pet-vrstev-sesitu">
+                    <h2 id="pet-vrstev-sesitu">Pět vrstev dobře připraveného učitelského sešitu</h2>
+                    <div class="tool-guide-use-grid">
+                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">01</span><h3>Instrukce</h3><p><strong>Jak má AI pracovat?</strong></p></article>
+                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">02</span><h3>Metodika</h3><p><strong>Podle jakých pedagogických pravidel má pracovat?</strong></p></article>
+                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">03</span><h3>Tematický plán</h3><p><strong>Co má být probráno?</strong></p></article>
+                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">04</span><h3>Učební zdroje</h3><p><strong>Z čeho má čerpat?</strong></p></article>
+                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">05</span><h3>Vzorové materiály</h3><p><strong>Jak má výsledek vypadat?</strong></p></article>
+                    </div>
+                    <div class="tool-guide-output-flow" aria-label="Od krátkého požadavku k odpovídajícímu výstupu"><span>Krátký požadavek učitele</span><b>↓</b><span>Výstup odpovídající předmětu, žákům, plánu a způsobu práce</span></div>
+                    <blockquote><strong>Připrav mi pracovní list na 30 minut k tomuto tématu.</strong></blockquote>
+                </section>
+
+                <section aria-labelledby="zdroje-vice-neznamena-lepe">
+                    <h2 id="zdroje-vice-neznamena-lepe">Zdroje: více neznamená automaticky lépe</h2>
+                    <p>Gemini Notebook podporuje řadu typů zdrojů – například dokumenty, PDF, prezentace, tabulky, obrázky, webové stránky, vložený text a další formáty.</p>
+                    <p>To ale neznamená, že je vhodné naplnit každý sešit maximálním možným množstvím dokumentů.</p>
+                    <blockquote><strong>Do jednoho sešitu dávejte zdroje, které spolu skutečně souvisejí.</strong></blockquote>
+                    <p>Sešit věnovaný jedné lekci angličtiny nepotřebuje učebnice ze všech tří ročníků, všechny tematické plány, maturitní materiály ani desítky nesouvisejících pracovních listů. Potřebuje především zdroje relevantní k aktuálnímu tématu.</p>
+                    <p>Pokud je zdrojů více, Gemini Notebook umožňuje jejich organizaci a seskupování. U většího počtu zdrojů proto věnujte pozornost také jejich názvům a uspořádání.</p>
+                </section>
+
+                <section aria-labelledby="pojmenovani-zdroju">
+                    <h2 id="pojmenovani-zdroju">Pojmenovávejte zdroje tak, aby jim rozuměl i člověk</h2>
+                    <p>Místo názvů:</p>
+                    <pre class="prompt-body">scan0045.pdf
+document-final-2.pdf
+material.pdf</pre>
+                    <p>používejte například:</p>
+                    <pre class="prompt-body">Student's Book – Unit 2
+Teacher's Book – Unit 2
+Tematický plán – Unit 2
+Metodika pracovních listů
+Vzor pracovního listu</pre>
+                    <p>Správné názvy pomohou nejen Notebooku, ale především vám samotným, až se k sešitu vrátíte za několik měsíců.</p>
+                </section>
+
+                <section aria-labelledby="workflow-sesit">
+                    <h2 id="workflow-sesit">Workflow krok za krokem</h2>
+                    <p>Jednotlivé kroky můžete použít jako rychlý checklist při přípravě vlastního učitelského sešitu.</p>
+                    <ol class="tool-guide-steps">
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">1</span><div><h3>Určete účel sešitu</h3><p>Rozhodněte, pro jaký předmět, lekci, téma nebo činnost má sloužit.</p></div></li>
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">2</span><div><h3>Vymezte cílovou skupinu</h3><p>Věk, ročník, typ školy, úroveň znalostí nebo jazykovou úroveň.</p></div></li>
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">3</span><div><h3>Nastavte instrukce</h3><p>Určete způsob práce, pravidla a požadované výstupy.</p></div></li>
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">4</span><div><h3>Přidejte metodiku</h3><p>Pokud podle nějaké pracujete, vložte ji jako zdroj.</p></div></li>
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">5</span><div><h3>Přidejte tematický plán</h3><p>Ideálně pouze část relevantní pro danou lekci nebo tematický celek.</p></div></li>
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">6</span><div><h3>Přidejte učební materiály</h3><p>Učebnice, pracovní sešity, vlastní texty, prezentace nebo jiné relevantní zdroje.</p></div></li>
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">7</span><div><h3>Přidejte vzorové výstupy</h3><p>Například pracovní list nebo přípravu hodiny, jejíž strukturu chcete opakovaně používat.</p></div></li>
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">8</span><div><h3>Uspořádejte zdroje</h3><p>Používejte jasné názvy a logické skupiny.</p></div></li>
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">9</span><div><h3>Otestujte sešit</h3><p>Nezačínejte rovnou tvorbou celé přípravy. Nejdříve ověřte, zda Notebook správně chápe své zdroje a účel.</p></div></li>
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">10</span><div><h3>Teprve potom jej používejte pro běžnou přípravu</h3><p>Po správném nastavení mohou být každodenní požadavky mnohem kratší.</p></div></li>
+                    </ol>
+                </section>
+
+                <section class="prompt-card tool-guide-prompt-card" aria-labelledby="prvni-test">
+                    <div class="prompt-card-header">
+                        <div><span class="tool-guide-callout-label">KONTROLNÍ PROMPT</span><h2 id="prvni-test">První test nakonfigurovaného sešitu</h2></div>
+                        <button class="prompt-copy-button" type="button" data-copy-prompt="notebook-test" aria-describedby="notebook-test-feedback">Kopírovat prompt</button>
+                    </div>
+                    <p class="prompt-card-intro">Položte sešitu několik kontrolních otázek ještě před běžným používáním.</p>
+                    <pre class="prompt-body" id="notebook-test">Popiš, k jakému účelu je podle instrukcí a zdrojů tento sešit připraven.
+
+Jaké typy výukových materiálů mi z dostupných zdrojů můžeš připravovat?
+
+Jaká omezení nebo mezery vidíš v dostupných zdrojích?
+
+Shrň požadavky tematického plánu pro toto téma.
+
+Popiš pravidla, podle kterých máš vytvářet pracovní listy.
+
+Navrhni osnovu 45minutové hodiny a uveď, ze kterých zdrojů při návrhu vycházíš.</pre>
+                    <span class="prompt-copy-feedback" id="notebook-test-feedback" aria-live="polite"></span>
+                </section>
+
+                <section aria-labelledby="prakticky-priklad">
+                    <h2 id="prakticky-priklad">Praktický příklad: sešit pro jednu lekci angličtiny</h2>
+                    <div class="teaching-example">
+                        <div class="teaching-example-heading"><span class="tool-guide-example-label">ANGLIČTINA · UNIT 2</span><h3>Samostatný sešit pro jednu lekci</h3></div>
+                        <p><strong>Instrukce</strong></p>
+                        <ul><li>Sešit je určen k přípravě angličtiny pro studenty střední odborné školy.</li><li>Jazyková úroveň: A1–A2.</li><li>Materiály mají být praktické, přehledné a vhodné pro teenagery.</li><li>Pracovní listy mají obsahovat zadání pro žáka a samostatné řešení pro učitele.</li></ul>
+                        <p><strong>Zdroje</strong></p>
+                        <ul class="tool-guide-activity-list"><li>Student's Book – Unit 2</li><li>Workbook – Unit 2</li><li>Teacher's Book – Unit 2</li><li>slovní zásoba</li><li>tematický plán – část Unit 2</li><li>metodika tvorby pracovních listů</li><li>vzor pracovního listu</li></ul>
+                        <p><strong>Běžný požadavek</strong></p>
+                        <blockquote>Připrav mi 25minutové opakování této lekce. Začni krátkým warm-upem, potom vytvoř tři úkoly od jednoduššího ke složitějšímu a nakonec exit ticket.</blockquote>
+                        <p>Učitel již nemusí znovu vysvětlovat celý kontext. Sešit jej má připravený.</p>
+                    </div>
+                </section>
+
+                <aside class="tool-guide-goal" aria-labelledby="nastavte-jednou">
+                    <span class="tool-guide-callout-label">ÚSPORA OPAKOVANÉ PRÁCE</span>
+                    <h2 id="nastavte-jednou">⚙️ Nastavte jednou, používejte pořád</h2>
+                    <p>Největší úspora času nepřichází z jednoho rychle vygenerovaného pracovního listu.</p>
+                    <p>Přichází z toho, že učitel nemusí při každé přípravě znovu vysvětlovat stejné požadavky.</p>
+                    <p>Pokud má sešit dobře nastavené instrukce, metodiku, tematický plán, učební zdroje a vzorové materiály, může se běžný prompt zkrátit například na:</p>
+                    <div class="tool-guide-output-flow" aria-label="Příklady krátkých opakovatelných požadavků"><span>Připrav pracovní list na 25 minut.</span><span>Navrhni další hodinu této lekce.</span><span>Připrav jednodušší variantu dnešního materiálu.</span></div>
+                    <p>To je rozdíl mezi jednorázovým používáním AI a vytvořením skutečného pracovního systému.</p>
+                </aside>
+
+                <aside class="tool-guide-warning" aria-labelledby="na-co-pozor">
+                    <span class="tool-guide-callout-label">DŮLEŽITÉ PŘED POUŽITÍM</span>
+                    <h2 id="na-co-pozor">Na co si dát pozor</h2>
+                    <p>Gemini Notebook může výrazně zrychlit práci se zdroji, ale stále jde o AI nástroj.</p>
+                    <p>Učitel by měl kontrolovat:</p>
+                    <ul><li>věcnou správnost výstupů,</li><li>správné pochopení tematického plánu,</li><li>vhodnost materiálu pro konkrétní třídu,</li><li>jazykovou obtížnost,</li><li>řešení úloh,</li><li>případné stereotypy nebo nevhodné formulace.</li></ul>
+                    <p>U odborných, právních, zdravotních, historických nebo jiných citlivých témat je kontrola zdrojů zvlášť důležitá.</p>
+                    <p class="tool-guide-warning-quote">Dobrá konfigurace snižuje množství chyb a opakované práce. Nenahrazuje kontrolu učitele.</p>
+                </aside>
+
+                <section aria-labelledby="zmena-zdroju">
+                    <h2 id="zmena-zdroju">Když se změní zdroje, zkontrolujte i sešit</h2>
+                    <p>Učebnice, tematický plán nebo metodika se mohou změnit.</p>
+                    <p>Proto je vhodné se k sešitu čas od času vrátit a zkontrolovat:</p>
+                    <ul><li>zda jsou zdroje stále aktuální,</li><li>zda instrukce odpovídají současnému způsobu práce,</li><li>zda některý dokument není zastaralý,</li><li>zda vzorové materiály stále odpovídají požadované podobě.</li></ul>
+                    <p>Dobře připravený sešit není jednou provždy uzavřený produkt. Je to pracovní prostředí, které lze postupně vylepšovat.</p>
+                </section>
+
+                <section aria-labelledby="co-ziskate">
+                    <h2 id="co-ziskate">Co z dobře nastaveného sešitu můžete získat</h2>
+                    <div class="tool-guide-use-grid">
+                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">01</span><h3>Příprava hodiny</h3><p>Cíl, struktura, aktivity, otázky a závěr.</p></article>
+                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">02</span><h3>Pracovní list</h3><p>Materiál odpovídající tématu a úrovni žáků.</p></article>
+                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">03</span><h3>Diferenciace</h3><p>Jednodušší nebo náročnější varianta stejného učiva.</p></article>
+                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">04</span><h3>Kvíz</h3><p>Otázky vycházející přímo ze zdrojů.</p></article>
+                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">05</span><h3>Shrnutí</h3><p>Přehled tématu pro učitele nebo žáky.</p></article>
+                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">06</span><h3>Kontrola plánu</h3><p>Porovnání připravené výuky s tematickým plánem.</p></article>
+                    </div>
+                </section>
+
+                <section class="tool-guide-conclusion" aria-labelledby="zaver-notebook">
+                    <h2 id="zaver-notebook">Gemini Notebook jako pracovní systém</h2>
+                    <p>Gemini Notebook není zajímavý jen tím, že dokáže odpovídat na otázky nad nahranými dokumenty.</p>
+                    <p>Pro učitele je mnohem důležitější jiná možnost:</p>
+                    <p class="tool-guide-conclusion-highlight"><strong>vytvořit si pracovní prostředí, které už zná jeho předmět, zdroje, metodiku, tematický plán a způsob práce.</strong></p>
+                    <p>Pak se z dlouhého promptu:</p>
+                    <blockquote>Jsem učitel střední školy, pracuji se žáky A1, použij tuto učebnici, respektuj tematický plán, vytvoř pracovní list…</blockquote>
+                    <p>může stát:</p>
+                    <blockquote><strong>Připrav pracovní list k další hodině.</strong></blockquote>
+                    <p>A právě v tomto rozdílu se skrývá největší úspora času.</p>
+                    <p><strong>Nejdříve sešit nastavte. Potom jej nechte pracovat pro vás.</strong></p>
+                </section>
+            </div>
+        </article>
+
+        <section class="workflow-related tool-guide-related" aria-labelledby="dalsi-navody">
+            <div class="workflow-related-heading"><div><span class="tool-guide-callout-label">STEJNÝ FORMÁT</span><h2 id="dalsi-navody">Další praktické návody</h2></div><p>Projděte další návody z řady Nástroj krok za krokem a praktické workflow pro učitele.</p></div>
+            <div class="workflow-related-grid">
+                <a class="workflow-related-card tool-guide-related-card" href="gemini-storybook-navod-pro-ucitele.html"><span class="workflow-card-number">01</span><h3>Gemini Storybook</h3><p>Jak vytvořit ilustrovaný příběh pro výuku.</p></a>
+                <a class="workflow-related-card tool-guide-related-card" href="gemini-notebook.html"><span class="workflow-card-number">NB</span><h3>Gemini Notebook</h3><p>Hlavní rozcestník článků, návodů a workflow.</p></a>
+                <a class="workflow-related-card tool-guide-related-card" href="ai.html#navody"><span class="workflow-card-number">→</span><h3>Všechny návody</h3><p>Projděte další praktické postupy pro učitele.</p></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="gemini-notebook.html">Zpět na Gemini Notebook</a></footer>
+    <script src="js/tool-guide.js?v=20260915-tool-guide-notebook" defer></script>
+</body>
+
+</html>

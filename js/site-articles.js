@@ -5,6 +5,19 @@
  */
 window.siteArticles = [
   {
+    href: 'gemini-notebook-navod-pro-ucitele.html',
+    title: 'Gemini Notebook: jak si vytvořit sešit, který opravdu šetří práci',
+    platforms: ['gemini'],
+    summary: 'Jak správně nastavit instrukce, metodiku, tematický plán, zdroje a vzorové materiály, aby Notebook pomáhal s přípravou výuky místo opakovaného zadávání stejných promptů.',
+    category: 'Nástroj krok za krokem',
+    contentType: 'tool-guide',
+    date: '2026-09-15',
+    dateLabel: '15. září 2026',
+    icon: '📓',
+    tags: ['Gemini Notebook', 'Nástroj krok za krokem', 'Příprava výuky'],
+    badgeClass: 'badge-blue'
+  },
+  {
     href: 'gemini-storybook-navod-pro-ucitele.html',
     title: 'Gemini Storybook: jak vytvořit ilustrovaný příběh pro výuku',
     platforms: ['gemini'],

@@ -1,6 +1,6 @@
 (() => {
   const setCopiedState = (button, feedback, copied) => {
-    button.textContent = copied ? 'Zkopírováno' : 'Kopírovat prompt';
+    button.textContent = copied ? 'Zkopírováno' : (button.dataset.copyLabel || 'Kopírovat prompt');
     button.classList.toggle('copied', copied);
     if (feedback) feedback.textContent = copied ? 'Zkopírováno' : '';
   };
