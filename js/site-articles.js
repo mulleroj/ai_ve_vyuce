@@ -5,6 +5,20 @@
  */
 window.siteArticles = [
   {
+    href: 'ai-novinka-filozofovani-s-ai-chybejici-role.html',
+    title: 'AI možná nevezme učitelům práci. Možná nám ukáže, kolik lidí nám celou dobu chybělo',
+    summary: 'Druhý díl autorské série o tom, jak AI odhaluje práci a podpůrné role, které lidé vykonávali bez podpory a pro které jsme nikdy nevytvořili samostatné místo.',
+    category: 'Filozofování s AI',
+    series: 'Filozofování s AI',
+    seriesNumber: 2,
+    contentType: 'philosophy',
+    date: '2026-09-16',
+    dateLabel: '16. září 2026',
+    icon: '💬',
+    tags: ['Filozofování s AI · #2', 'Práce a role', 'Budoucnost práce'],
+    badgeClass: 'badge-gold'
+  },
+  {
     href: 'gemini-notebook-navod-pro-ucitele.html',
     title: 'Gemini Notebook: jak si vytvořit sešit, který opravdu šetří práci',
     platforms: ['gemini'],
