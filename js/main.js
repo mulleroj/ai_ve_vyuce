@@ -32,12 +32,17 @@ if (mobileToggle && mobileMenu) {
 function initParticles(canvasId) {
     const canvas = document.getElementById(canvasId);
     if (!canvas) return;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reducedMotion) {
+        canvas.style.display = 'none';
+        return;
+    }
     const ctx = canvas.getContext('2d');
     let W = canvas.offsetWidth, H = canvas.offsetHeight;
     canvas.width = W; canvas.height = H;
 
     const symbols = ['∑', '√', '∫', 'π', 'Δ', '∞', 'α', 'β', '⚛', '🧬', 'A', 'B', 'C', '?', '!', '📚', '✏️', '🔬', '🌍', '🎓'];
-    const particleCount = 80;
+    const particleCount = window.matchMedia('(max-width: 600px)').matches ? 18 : 80;
     const particles = Array.from({ length: particleCount }, () => ({
         x: Math.random() * W, y: Math.random() * H,
         vx: (Math.random() - 0.5) * 0.4, vy: (Math.random() - 0.5) * 0.4,

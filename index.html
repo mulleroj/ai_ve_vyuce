@@ -4,374 +4,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI ve Výuce – Pomůcky pro Učitele | Aktivity, Prompty, Asistenti</title>
+  <title>AI ve Výuce – nástroje, návody a AI pomůcky pro učitele</title>
   <meta name="description"
-    content="Komplexní průvodce AI nástroji pro učitele. Aktivity, prompty a AI asistenti pro výuku matematiky, češtiny, angličtiny, přírodovedy, dějepisu a dalších předmětů." />
+    content="Praktický rozcestník AI pro učitele: články, návody, workflow, prompty, aktivity, asistenti a nástroje pro přípravu i výuku." />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/home.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <style>
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      column-gap: 60px;
-      row-gap: 24px;
-      align-items: start;
-      position: relative;
-      z-index: 2;
-      padding-top: 28px;
-    }
-
-    .hero {
-      align-items: flex-start;
-    }
-
-    .hero-canvas {
-      z-index: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0.8;
-    }
-
-    .hero-glow-1,
-    .hero-glow-2,
-    .hero-glow-3 {
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    @media(max-width:900px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .hero-subtitle,
-      .section-subtitle {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-stats {
-        justify-content: center;
-      }
-
-      .hero-visual {
-        display: flex;
-        margin-top: 24px;
-      }
-    }
-
-    .latest-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .latest-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      transition: var(--transition);
-      display: grid;
-      grid-template-columns: minmax(160px, 0.9fr) minmax(230px, 1.25fr) minmax(280px, 2fr) minmax(150px, 0.9fr) auto;
-      align-items: center;
-      column-gap: 20px;
-      padding: 18px 20px;
-    }
-
-    .latest-card:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .latest-card-body {
-      display: contents;
-    }
-
-    .latest-card-footer {
-      display: contents;
-    }
-
-    .latest-card-tag {
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--accent-mint);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin: 0;
-    }
-
-    .latest-card-title {
-      font-size: 1rem;
-      font-weight: 700;
-      margin: 0;
-      line-height: 1.4;
-    }
-
-    .latest-card-title:hover {
-      color: var(--accent-mint);
-    }
-
-    .latest-card-desc {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-      margin: 0;
-    }
-
-    .latest-card-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .latest-card-link {
-      justify-self: end;
-      white-space: nowrap;
-    }
-
-    @media(max-width:900px) {
-      .latest-card {
-        grid-template-columns: minmax(0, 1fr) auto;
-        row-gap: 10px;
-      }
-
-      .latest-card-tag,
-      .latest-card-title,
-      .latest-card-desc,
-      .latest-card-badges {
-        grid-column: 1;
-      }
-
-      .latest-card-link {
-        grid-column: 2;
-        grid-row: 1 / span 4;
-        align-self: center;
-      }
-    }
-
-    .latest-empty {
-      grid-column: 1 / -1;
-      margin: 0;
-    }
-
-    .cta-section {
-      background: linear-gradient(135deg, rgba(245, 166, 35, 0.08) 0%, rgba(0, 212, 168, 0.06) 100%);
-      border: 1px solid rgba(245, 166, 35, 0.15);
-      border-radius: var(--radius-xl);
-      padding: 64px 48px;
-      text-align: center;
-    }
-
-    @media(max-width:600px) {
-      .cta-section {
-        padding: 40px 24px;
-      }
-    }
-
-    .teacher-tools-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .teacher-tool-card {
-      display: flex;
-      flex-direction: column;
-      min-height: 220px;
-      padding: 24px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      color: inherit;
-      text-decoration: none;
-      transition: var(--transition);
-    }
-
-    .teacher-tool-card:hover {
-      border-color: var(--border-hover);
-      box-shadow: var(--shadow-hover);
-      transform: translateY(-4px);
-    }
-
-    .teacher-tool-card:focus-visible {
-      outline: 3px solid var(--accent-mint);
-      outline-offset: 3px;
-    }
-
-    .teacher-tool-icon {
-      display: grid;
-      width: 48px;
-      height: 48px;
-      margin-bottom: 20px;
-      place-items: center;
-      border-radius: 15px;
-      background: var(--gradient-blue);
-      font-size: 1.45rem;
-    }
-
-    .teacher-tool-title {
-      margin-bottom: 8px;
-      font-size: 1.1rem;
-      font-weight: 800;
-    }
-
-    .teacher-tool-desc {
-      margin: 0;
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      line-height: 1.65;
-    }
-
-    .teacher-tool-link {
-      margin-top: auto;
-      padding-top: 18px;
-      color: var(--accent-mint);
-      font-size: 0.82rem;
-      font-weight: 700;
-    }
-
-    .hero-visual {
-      grid-column: 2;
-      grid-row: 1;
-      flex-direction: column;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .hero-choice-panel {
-      grid-column: 1 / -1;
-      width: 100%;
-      padding: 24px 28px;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: var(--radius-lg);
-      background: rgba(13, 21, 48, 0.88);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(16px);
-    }
-
-    .hero-choice-kicker {
-      margin-bottom: 6px;
-      color: var(--accent-mint);
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .hero-choice-title {
-      margin: 0;
-      font-size: 1.35rem;
-      font-weight: 800;
-    }
-
-    .hero-choice-options {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 8px;
-      margin: 16px 0;
-    }
-
-    .hero-choice-button {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      min-height: 46px;
-      padding: 10px 12px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--text-primary);
-      cursor: pointer;
-      font: inherit;
-      font-size: 0.82rem;
-      font-weight: 700;
-      text-align: left;
-      transition: var(--transition);
-    }
-
-    .hero-choice-button:hover,
-    .hero-choice-button[aria-pressed="true"] {
-      border-color: var(--accent-mint);
-      background: rgba(0, 212, 168, 0.13);
-      color: #fff;
-      transform: translateY(-2px);
-    }
-
-    .hero-choice-button:focus-visible {
-      outline: 3px solid var(--accent-gold);
-      outline-offset: 2px;
-    }
-
-    .hero-choice-icon {
-      flex: 0 0 auto;
-      font-size: 1.1rem;
-    }
-
-    .hero-choice-detail {
-      padding: 14px 16px;
-      border-left: 3px solid var(--accent-gold);
-      border-radius: 0 12px 12px 0;
-      background: rgba(245, 166, 35, 0.08);
-    }
-
-    .hero-choice-detail strong {
-      display: block;
-      margin-bottom: 5px;
-      font-size: 0.95rem;
-    }
-
-    .hero-choice-detail p {
-      margin: 0 0 10px;
-      color: var(--text-secondary);
-      font-size: 0.82rem;
-      line-height: 1.55;
-    }
-
-    .hero-choice-link {
-      color: var(--accent-mint);
-      font-size: 0.82rem;
-      font-weight: 800;
-      text-decoration: none;
-    }
-
-    .hero-choice-link:hover {
-      color: #fff;
-    }
-
-    @media(max-width:900px) {
-      .hero-visual,
-      .hero-choice-panel {
-        grid-column: 1;
-        grid-row: auto;
-      }
-
-      .teacher-tools-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .hero-choice-options {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media(max-width:600px) {
-      .teacher-tools-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-choice-options {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/" />
-    <meta property="og:title" content="AI ve V&#253;uce – Pomůcky pro Učitele | Aktivity, Prompty, Asistenti" />
-    <meta property="og:description" content="Komplexn&#237; průvodce AI n&#225;stroji pro učitele. Aktivity, prompty a AI asistenti pro v&#253;uku matematiky, češtiny, angličtiny, př&#237;rodovedy, dějepisu a dalš&#237;ch předmětů." />
+    <meta property="og:title" content="AI ve Výuce – nástroje, návody a AI pomůcky pro učitele" />
+    <meta property="og:description" content="Praktický rozcestník AI pro učitele: články, návody, workflow, prompty, aktivity, asistenti a nástroje pro přípravu i výuku." />
     <meta property="og:url" content="https://ai-ve-vyuce.netlify.app/" />
     <meta property="og:type" content="website" />    <meta property="og:image" content="https://ai-ve-vyuce.netlify.app/images/hero_classroom.jpg" /></head>
 
@@ -444,80 +87,65 @@
             pro <span class="gradient-text">Učitele</span>
           </h1>
           <p class="hero-subtitle">
-            Na jednom místě najdete nové články, praktické workflow, aktivity, prompty a AI asistenty
-            pro každodenní přípravu i výuku.
+            Novinky, návody, workflow a praktické nástroje pro přípravu i výuku.
           </p>
           <div class="hero-actions">
-            <a href="#novinky" class="btn btn-primary btn-lg">
+            <a href="#co-dnes" class="btn btn-primary btn-lg">
+              🧰 Najít pomůcku
+            </a>
+            <a href="#novinky" class="btn btn-secondary btn-lg">
               🆕 Co je nového
             </a>
-            <a href="#pomucky" class="btn btn-secondary btn-lg">
-              🧰 Pomůcky pro učitele
-            </a>
-          </div>
-          <div class="hero-stats">
-            <div class="hero-stat">
-              <span class="hero-stat-number" data-target="85" data-suffix="+">0+</span>
-              <span class="hero-stat-label">Aktivit</span>
-            </div>
-            <div class="hero-stat">
-              <span class="hero-stat-number" data-target="150" data-suffix="+">0+</span>
-              <span class="hero-stat-label">Promptů</span>
-            </div>
-            <div class="hero-stat">
-              <span class="hero-stat-number" data-count-source="articles" data-target="0" data-suffix="+">0+</span>
-              <span class="hero-stat-label">Článků</span>
-            </div>
-            <div class="hero-stat">
-              <span class="hero-stat-number" data-target="8">0</span>
-              <span class="hero-stat-label">LLM Platforem</span>
-            </div>
           </div>
         </div>
         <div class="hero-visual">
-          <div class="hero-img-wrapper"
-            style="position:relative;border-radius:20px;overflow:hidden;box-shadow:0 0 60px rgba(245,166,35,0.18),0 0 120px rgba(0,212,168,0.08);border:1px solid rgba(255,255,255,0.1)">
-            <img src="images/hero_classroom.jpg" alt="Futuristická třída budoucnosti s AI – moderní výuka"
-              style="width:100%;max-width:540px;height:auto;display:block;border-radius:20px" />
+          <div class="hero-img-wrapper">
+            <img src="images/hero_classroom.jpg" alt="Futuristická třída budoucnosti s AI – moderní výuka" />
           </div>
         </div>
-        <div class="hero-choice-panel" data-hero-choices>
-            <div class="hero-choice-kicker">Rychlá cesta k pomůcce</div>
-            <h2 class="hero-choice-title">Co dnes potřebujete?</h2>
-            <div class="hero-choice-options" role="group" aria-label="Vyberte oblast, se kterou chcete začít">
-              <button type="button" class="hero-choice-button" aria-pressed="true"
-                data-hero-choice data-title="Nejnovější články a workflow"
-                data-description="Podívejte se, co je na webu právě nové: články, návody a workflow pro učitele."
-                data-href="#novinky" data-cta="Přejít na novinky →">
-                <span class="hero-choice-icon">🆕</span><span>Chci novinky</span>
-              </button>
-              <button type="button" class="hero-choice-button" aria-pressed="false"
-                data-hero-choice data-title="Prompty Gemini Notebook"
-                data-description="Připravená zadání pro práci se zdroji, shrnutí, studijní materiály, otázky a kritickou analýzu."
-                data-href="https://ai-ve-vyuce.netlify.app/gemini-notebook-prompty"
-                data-cta="Otevřít prompty →" data-external="true">
-                <span class="hero-choice-icon">✨</span><span>Potřebuji prompt</span>
-              </button>
-              <button type="button" class="hero-choice-button" aria-pressed="false"
-                data-hero-choice data-title="Generátor prezentací Gemini Notebook"
-                data-description="Proměňte vlastní zdroje v přehledný výukový materiál a začněte s prezentací."
-                data-href="https://ntb-presentation-prompt.netlify.app/"
-                data-cta="Otevřít generátor →" data-external="true">
-                <span class="hero-choice-icon">📊</span><span>Tvořím prezentaci</span>
-              </button>
-              <button type="button" class="hero-choice-button" aria-pressed="false"
-                data-hero-choice data-title="Vibe coding pro učitele"
-                data-description="Vytvořte si vlastní jednoduchou výukovou aplikaci pomocí přirozeného jazyka a postupného testování."
-                data-href="ai-workflow-vibe-coding.html" data-cta="Začít s aplikací →">
-                <span class="hero-choice-icon">💻</span><span>Chci vlastní aplikaci</span>
-              </button>
-            </div>
-            <div class="hero-choice-detail" aria-live="polite">
-              <strong data-hero-detail-title>Nejnovější články a workflow</strong>
-              <p data-hero-detail-description>Podívejte se, co je na webu právě nové: články, návody a workflow pro učitele.</p>
-              <a class="hero-choice-link" data-hero-detail-link href="#novinky">Přejít na novinky →</a>
-            </div>
-          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Task-based navigation -->
+  <section id="co-dnes" class="section-sm home-choice-section">
+    <div class="container">
+      <div class="text-center mb-48">
+        <div class="section-label">Rychlá cesta k obsahu</div>
+        <h2 class="section-title">Co dnes potřebujete?</h2>
+        <p class="section-subtitle home-section-subtitle-centered">Vyberte si cestu podle konkrétního úkolu, který právě řešíte.</p>
+      </div>
+      <div class="hero-choice-panel" data-hero-choices>
+        <div class="hero-choice-options" role="group" aria-label="Vyberte úkol, se kterým chcete začít">
+          <button type="button" class="hero-choice-button" aria-pressed="true"
+            data-hero-choice data-title="Nejnovější články a workflow"
+            data-description="Podívejte se, co je na webu právě nové: články, návody a workflow pro učitele."
+            data-href="#novinky" data-cta="Přejít na novinky →">
+            <span class="hero-choice-icon">🆕</span><span>Chci zjistit, co je nového</span>
+          </button>
+          <button type="button" class="hero-choice-button" aria-pressed="false"
+            data-hero-choice data-title="Gemini Notebook pro přípravu výuky"
+            data-description="Projít si můžete workflow a návody pro přípravu hodiny, práci se zdroji a plánování výuky."
+            data-href="gemini-notebook.html" data-cta="Připravit hodinu →">
+            <span class="hero-choice-icon">📓</span><span>Potřebuji připravit hodinu</span>
+          </button>
+          <button type="button" class="hero-choice-button" aria-pressed="false"
+            data-hero-choice data-title="Prompty a výukové materiály"
+            data-description="Vyberte si prompt nebo nástroj pro tvorbu pracovních listů, prezentací a dalších výukových materiálů."
+            data-href="prompty.html" data-cta="Vytvořit materiál →">
+            <span class="hero-choice-icon">✨</span><span>Potřebuji vytvořit materiál</span>
+          </button>
+          <button type="button" class="hero-choice-button" aria-pressed="false"
+            data-hero-choice data-title="Vibe Coding pro učitele"
+            data-description="Vytvořte si vlastní jednoduchý výukový nástroj pomocí přirozeného jazyka a postupného testování."
+            data-href="vibe-coding.html" data-cta="Začít s Vibe Coding →">
+            <span class="hero-choice-icon">💻</span><span>Chci si vytvořit vlastní nástroj</span>
+          </button>
+        </div>
+        <div class="hero-choice-detail" aria-live="polite">
+          <strong data-hero-detail-title>Nejnovější články a workflow</strong>
+          <p data-hero-detail-description>Podívejte se, co je na webu právě nové: články, návody a workflow pro učitele.</p>
+          <a class="hero-choice-link" data-hero-detail-link href="#novinky">Přejít na novinky →</a>
         </div>
       </div>
     </div>
@@ -526,28 +154,30 @@
   <!-- Latest news -->
   <section id="novinky" class="section">
     <div class="container">
-      <div
-        style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:40px">
+      <div class="home-section-heading">
         <div>
           <div class="section-label">Novinky na webu</div>
           <h2 class="section-title mb-8">Co je právě <span class="gradient-text">nového?</span></h2>
-          <p class="section-subtitle" style="margin:0">Nejnovější články napříč novinkami, návody, nástroji a workflow pro učitele.</p>
+          <p class="section-subtitle home-section-subtitle">Nejnovější články napříč novinkami, návody, nástroji a workflow pro učitele.</p>
         </div>
         <a href="ai.html" class="btn btn-secondary">Všechny články →</a>
       </div>
       <div id="latest-articles" class="latest-grid" aria-live="polite">
         <p class="section-subtitle">Načítám nejnovější články…</p>
+        <noscript>
+          <p class="section-subtitle latest-empty">Nejnovější články najdete na stránce <a href="ai.html">AI pro školy →</a>.</p>
+        </noscript>
       </div>
     </div>
   </section>
 
   <!-- Teacher tools -->
-  <section id="pomucky" class="section-sm" style="background:var(--bg-secondary)">
+  <section id="pomucky" class="section-sm home-tools-section">
     <div class="container">
       <div class="text-center mb-48">
         <div class="section-label">Pomůcky pro učitele</div>
         <h2 class="section-title">Vše potřebné <span class="gradient-text-mint">na jednom místě</span></h2>
-        <p class="section-subtitle" style="margin:0 auto">Vyberte si nástroj podle toho, co právě připravujete, procvičujete nebo řešíte.</p>
+        <p class="section-subtitle home-section-subtitle-centered">Konkrétní nástroje a zdroje pro přípravu, tvorbu materiálů a každodenní práci.</p>
       </div>
       <div class="teacher-tools-grid">
         <a href="https://ntb-presentation-prompt.netlify.app/" class="teacher-tool-card reveal" target="_blank" rel="noopener noreferrer">
@@ -591,26 +221,26 @@
   </section>
 
   <!-- Stats -->
-  <section class="section-sm" style="background:var(--bg-secondary)">
+  <section class="section-sm home-stats-section">
     <div class="container">
       <div class="stats-grid">
         <div class="stat-card reveal">
-          <div class="stat-number gradient-text" data-target="90" data-suffix="+">0+</div>
+          <div class="stat-number gradient-text" data-target="90" data-suffix="+">90+</div>
           <div class="stat-label">Vzdělávacích aktivit</div>
           <div class="stat-sublabel">napříč 5 předměty</div>
         </div>
         <div class="stat-card reveal">
-          <div class="stat-number gradient-text-mint" data-target="150" data-suffix="+">0+</div>
+          <div class="stat-number gradient-text-mint" data-target="150" data-suffix="+">150+</div>
           <div class="stat-label">Připravených promptů</div>
           <div class="stat-sublabel">k okamžitému použití</div>
         </div>
         <div class="stat-card reveal">
-          <div class="stat-number" style="color:var(--accent-blue)" data-target="8">0</div>
+          <div class="stat-number home-stat-blue" data-target="8">8</div>
           <div class="stat-label">AI platforem</div>
           <div class="stat-sublabel">ChatGPT, Gemini, Claude…</div>
         </div>
         <div class="stat-card reveal">
-          <div class="stat-number" style="color:var(--accent-purple)" data-target="3">0</div>
+          <div class="stat-number home-stat-purple" data-target="3">3</div>
           <div class="stat-label">Úrovně vzdělávání</div>
           <div class="stat-sublabel">1.–5. · 6.–9. ročník · SŠ</div>
         </div>
@@ -622,16 +252,16 @@
   <section class="section">
     <div class="container">
       <div class="cta-section reveal">
-        <div style="font-size:3rem;margin-bottom:16px">🚀</div>
-        <h2 class="section-title" style="max-width:640px;margin:0 auto 16px">
-          Připravte si celý <span class="gradient-text">týden výuky</span> za hodinu
+        <div class="home-cta-icon">🧭</div>
+        <h2 class="section-title home-cta-title">
+          Začněte jedním <span class="gradient-text">konkrétním úkolem</span>
         </h2>
-        <p class="section-subtitle" style="margin:0 auto 32px">
-          Stovky připravených promptů a aktivit čekají na vás. Začněte svůj první experiment s AI výukou ještě dnes.
+        <p class="section-subtitle home-cta-copy">
+          Nemusíte měnit celou výuku. Vyberte si prompt, aktivitu nebo nástroj a vyzkoušejte AI tam, kde vám dnes může skutečně ušetřit práci.
         </p>
-        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-          <a href="prompty.html" class="btn btn-primary btn-lg">✨ Začít s Prompty</a>
-          <a href="asistenti.html" class="btn btn-secondary btn-lg">🤖 Vybrat AI Asistenta</a>
+        <div class="home-cta-actions">
+          <a href="prompty.html" class="btn btn-primary btn-lg">✨ Najít prompt</a>
+          <a href="aktivity.html" class="btn btn-secondary btn-lg">🎯 Vybrat aktivitu</a>
         </div>
       </div>
     </div>
@@ -647,9 +277,9 @@
             AI ve <span>Výuce</span>
           </a>
           <p>Moderní průvodce světem AI pro české učitele. Aktivity, prompty a asistenti pro efektivnější výuku.</p>
-          <div style="display:flex;gap:8px">
+          <div class="home-footer-badges">
             <span class="badge badge-gold">Zdarma</span>
-            <span class="badge badge-mint">Češtině</span>
+            <span class="badge badge-mint">V češtině</span>
             <span class="badge badge-blue">Pro učitele</span>
           </div>
         </div>
@@ -674,11 +304,11 @@
         <div class="footer-links">
           <h4>🤖 AI Nástroje</h4>
           <ul>
-            <li><a href="https://chatgpt.com" target="_blank" rel="noopener">ChatGPT</a></li>
-            <li><a href="https://gemini.google.com" target="_blank" rel="noopener">Google Gemini</a></li>
-            <li><a href="https://claude.ai" target="_blank" rel="noopener">Claude (Anthropic)</a></li>
-            <li><a href="https://copilot.microsoft.com" target="_blank" rel="noopener">Microsoft Copilot</a></li>
-            <li><a href="https://notebooklm.google.com" target="_blank" rel="noopener">NotebookLM</a></li>
+            <li><a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer">ChatGPT</a></li>
+            <li><a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer">Google Gemini</a></li>
+            <li><a href="https://claude.ai" target="_blank" rel="noopener noreferrer">Claude (Anthropic)</a></li>
+            <li><a href="https://copilot.microsoft.com" target="_blank" rel="noopener noreferrer">Microsoft Copilot</a></li>
+            <li><a href="https://notebooklm.google.com" target="_blank" rel="noopener noreferrer">NotebookLM</a></li>
           </ul>
         </div>
       </div>
@@ -704,42 +334,9 @@
     </div>
   </div>
 
-  <script>
-    (() => {
-      const panel = document.querySelector('[data-hero-choices]');
-      if (!panel) return;
-
-      const buttons = [...panel.querySelectorAll('[data-hero-choice]')];
-      const title = panel.querySelector('[data-hero-detail-title]');
-      const description = panel.querySelector('[data-hero-detail-description]');
-      const link = panel.querySelector('[data-hero-detail-link]');
-
-      const selectChoice = (button) => {
-        buttons.forEach((item) => {
-          item.setAttribute('aria-pressed', item === button ? 'true' : 'false');
-        });
-
-        title.textContent = button.dataset.title;
-        description.textContent = button.dataset.description;
-        link.href = button.dataset.href;
-        link.textContent = button.dataset.cta;
-
-        if (button.dataset.external === 'true') {
-          link.target = '_blank';
-          link.rel = 'noopener noreferrer';
-        } else {
-          link.removeAttribute('target');
-          link.removeAttribute('rel');
-        }
-      };
-
-      buttons.forEach((button) => {
-        button.addEventListener('click', () => selectChoice(button));
-      });
-    })();
-  </script>
   <script src="js/site-articles.js?v=20260916-philosophy-series-2"></script>
   <script src="js/main.js?v=20260916-philosophy-series-2"></script>
+  <script src="js/home.js?v=20260916-home"></script>
 </body>
 
 </html>
