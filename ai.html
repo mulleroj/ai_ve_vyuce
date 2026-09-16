@@ -7,7 +7,7 @@
     <title>AI pro vzdělávání – AI ve vzdělávání: co opravdu stojí za pozornost | AI ve Výuce</title>
     <meta name="description"
         content="AI ve vzdělávání: co opravdu stojí za pozornost, praktické návody a workflow pro učitele. Objevujte možnosti umělé inteligence ve výuce krok za krokem." />
-    <link rel="stylesheet" href="css/style.css?v=20260823-compact-hero" />
+    <link rel="stylesheet" href="css/style.css?v=20260916-ai-directory-3" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -17,7 +17,7 @@
     <meta property="og:url" content="https://ai-ve-vyuce.netlify.app/ai" />
     <meta property="og:type" content="website" /></head>
 
-<body>
+<body class="ai-directory-page">
     <nav class="nav" id="nav">
         <div class="nav-inner">
             <a href="index.html" class="nav-logo">
@@ -77,20 +77,50 @@
                 </h1>
                 <p class="page-hero-subtitle">Praktický prostor pro novinky v umělé inteligenci, srozumitelné návody
                     a workflow, která učitelům pomáhají využít AI smysluplně ve výuce.</p>
-                <div class="page-hero-stats">
-                    <div class="page-hero-stat"><span>📰</span>AI ve vzdělávání</div>
-                    <div class="page-hero-stat"><span>🛠️</span>Praktické návody</div>
-                    <div class="page-hero-stat"><span>🔁</span>Workflow pro učitele</div>
-                </div>
-                <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
-                    <a href="#novinky" class="btn btn-primary">📰 Číst novinky</a>
-                    <a href="#workflow" class="btn btn-secondary">🔁 Prozkoumat workflow</a>
+                <div class="page-hero-stats" aria-label="Přejít na obsahovou sekci">
+                    <a href="#novinky" class="page-hero-stat"><span>📰</span>AI ve vzdělávání</a>
+                    <a href="#navody" class="page-hero-stat"><span>🛠️</span>Praktické návody</a>
+                    <a href="#workflow" class="page-hero-stat"><span>🔁</span>Workflow pro učitele</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="novinky" class="section">
+    <section class="ai-directory-tools" aria-label="Vyhledávání a filtry">
+        <div class="container">
+            <form class="ai-directory-search" role="search" data-ai-directory-search>
+                <label for="ai-directory-search-input">Hledat v článcích, návodech a workflow…</label>
+                <div class="ai-directory-search-row">
+                    <input id="ai-directory-search-input" type="search"
+                        placeholder="Hledat v článcích, návodech a workflow…" autocomplete="off"
+                        data-ai-directory-query>
+                    <button type="button" class="btn btn-secondary ai-directory-clear" data-ai-directory-clear
+                        hidden>Vymazat</button>
+                </div>
+            </form>
+            <div class="ai-directory-filter-row" role="group" aria-label="Rychlé tematické filtry">
+                <span class="ai-directory-filter-label">Rychlé filtry</span>
+                <div class="ai-directory-filters">
+                    <button type="button" class="ai-directory-filter is-active" data-ai-directory-filter="all"
+                        aria-pressed="true">Vše</button>
+                    <button type="button" class="ai-directory-filter" data-ai-directory-filter="chatgpt"
+                        aria-pressed="false">ChatGPT</button>
+                    <button type="button" class="ai-directory-filter" data-ai-directory-filter="gemini"
+                        aria-pressed="false">Gemini</button>
+                    <button type="button" class="ai-directory-filter" data-ai-directory-filter="microsoft"
+                        aria-pressed="false">Microsoft</button>
+                    <button type="button" class="ai-directory-filter" data-ai-directory-filter="vibe-coding"
+                        aria-pressed="false">Vibe Coding</button>
+                    <button type="button" class="ai-directory-filter" data-ai-directory-filter="philosophy"
+                        aria-pressed="false">Filozofování s AI</button>
+                </div>
+            </div>
+            <p class="ai-directory-status" data-ai-directory-status role="status" aria-live="polite"></p>
+            <p class="ai-directory-no-results" data-ai-directory-no-results hidden>Pro tento dotaz nebyl nalezen žádný obsah.</p>
+        </div>
+    </section>
+
+    <section id="novinky" class="section ai-directory-section" data-ai-directory-section>
         <div class="container">
             <div class="section-header">
                 <div class="section-label">Co sledovat</div>
@@ -202,10 +232,15 @@
                     </tbody>
                 </table>
             </div>
+            <p class="ai-directory-empty" data-ai-directory-empty hidden>Žádné odpovídající položky v této sekci.</p>
+            <div class="ai-directory-controls">
+                <button type="button" class="btn btn-secondary ai-directory-toggle" data-ai-directory-toggle
+                    aria-expanded="false" hidden>Zobrazit všechny</button>
+            </div>
         </div>
     </section>
 
-    <section id="navody" class="section-sm" style="background:var(--bg-secondary)">
+    <section id="navody" class="section-sm ai-directory-section" style="background:var(--bg-secondary)" data-ai-directory-section>
         <div class="container">
             <div class="section-header">
                 <div class="section-label">Krok za krokem</div>
@@ -311,10 +346,15 @@
                     </tbody>
                 </table>
             </div>
+            <p class="ai-directory-empty" data-ai-directory-empty hidden>Žádné odpovídající položky v této sekci.</p>
+            <div class="ai-directory-controls">
+                <button type="button" class="btn btn-secondary ai-directory-toggle" data-ai-directory-toggle
+                    aria-expanded="false" hidden>Zobrazit všechny</button>
+            </div>
         </div>
     </section>
 
-    <section id="workflow" class="section">
+    <section id="workflow" class="section ai-directory-section" data-ai-directory-section>
         <div class="container">
             <div class="section-header">
                 <div class="section-label">Opakovatelný postup</div>
@@ -426,6 +466,11 @@
                     </tbody>
                 </table>
             </div>
+            <p class="ai-directory-empty" data-ai-directory-empty hidden>Žádné odpovídající položky v této sekci.</p>
+            <div class="ai-directory-controls">
+                <button type="button" class="btn btn-secondary ai-directory-toggle" data-ai-directory-toggle
+                    aria-expanded="false" hidden>Zobrazit všechny</button>
+            </div>
         </div>
     </section>
 
@@ -470,6 +515,7 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/ai-page.js"></script>
 </body>
 
 </html>
