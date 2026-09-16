@@ -1,7 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
   <title id="title">AI ve Výuce</title>
-  <desc id="desc">Mintová hvězda na tmavém pozadí</desc>
-  <rect width="64" height="64" rx="16" fill="#0a0f1e"/>
-  <path d="m32 9 5.5 17.5L55 32l-17.5 5.5L32 55l-5.5-17.5L9 32l17.5-5.5L32 9Z" fill="#00d4a8"/>
-  <path d="m32 18 2.8 11.2L46 32l-11.2 2.8L32 46l-2.8-11.2L18 32l11.2-2.8L32 18Z" fill="#eaf0fb"/>
+  <desc id="desc">Žlutý robot v zaobleném čtverci</desc>
+  <defs>
+    <linearGradient id="brand" x1="8" y1="6" x2="56" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f7c56b" />
+      <stop offset="1" stop-color="#f5a623" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#brand)" />
+  <path d="M32 12v7" fill="none" stroke="#0a0f1e" stroke-linecap="round" stroke-width="3" />
+  <circle cx="32" cy="10" r="3" fill="#0a0f1e" />
+  <rect x="15" y="19" width="34" height="28" rx="9" fill="#0a0f1e" />
+  <circle cx="25" cy="31" r="3" fill="#f7c56b" />
+  <circle cx="39" cy="31" r="3" fill="#f7c56b" />
+  <path d="M24 39c4 3 12 3 16 0" fill="none" stroke="#f7c56b" stroke-linecap="round" stroke-width="3" />
+  <path d="M11 30h4M49 30h4" fill="none" stroke="#0a0f1e" stroke-linecap="round" stroke-width="3" />
 </svg>
