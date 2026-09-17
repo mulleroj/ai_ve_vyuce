@@ -198,86 +198,61 @@
 
             <div id="tab-prompty" class="tab-panel d-none">
                 <div class="prompt-grid">
-                    <div class="prompt-card reveal">
+                    <!-- DO NOT EDIT MANUALLY. Source: data/prompts.json. Run: node scripts/generate-prompts.js -->
+                    <!-- GENERATED:PROMPTS:START -->
+                    <div id="prompt-history-roleplay-person" class="prompt-card reveal">
                         <div class="prompt-header">
                             <div>
                                 <div class="prompt-title">Roleplay historické osoby</div>
-                                <div style="display:flex;gap:6px;margin-top:6px"><span
-                                        class="badge badge-purple">Claude</span><span
-                                        class="badge badge-gray">ZŠ/SŠ</span></div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span class="badge badge-purple">Claude</span><span class="badge badge-gray">ZŠ/SŠ</span></div>
                             </div>
                         </div>
-                        <div class="prompt-body">Budeš hrát roli [HISTORICKÁ OSOBNOST] v době [HISTORICKÉ OBDOBÍ]. Mluv
-                            v první osobě, přesně dle historických faktů. Odpovídej z pohledu této osobnosti s ohledem
-                            na její dobu, hodnoty a přesvědčení. Na konci každé odpovědi přidej poznámku v závorce pro
-                            učitele: (Historická poznámka: …) s ověřením fakticity.</div>
+                        <div class="prompt-body">Budeš hrát roli [HISTORICKÁ OSOBNOST] v době [HISTORICKÉ OBDOBÍ]. Mluv v první osobě, přesně dle historických faktů. Odpovídej z pohledu této osobnosti s ohledem na její dobu, hodnoty a přesvědčení. Na konci každé odpovědi přidej poznámku v závorce pro učitele: (Historická poznámka: …) s ověřením fakticity.</div>
                         <div class="prompt-footer">
                             <span class="badge badge-purple">Roleplay</span>
-                            <button class="copy-btn"
-                                data-copy="Budeš hrát roli [HISTORICKÁ OSOBNOST] v době [HISTORICKÉ OBDOBÍ]. Mluv v první osobě dle historických faktů. Odpovídej z pohledu této osobnosti. Na konci přidej (Historická poznámka: ...) pro učitele s ověřením fakticity.">📋
-                                Kopírovat</button>
+                            <button class="copy-btn" type="button" data-copy="Budeš hrát roli [HISTORICKÁ OSOBNOST] v době [HISTORICKÉ OBDOBÍ]. Mluv v první osobě, přesně dle historických faktů. Odpovídej z pohledu této osobnosti s ohledem na její dobu, hodnoty a přesvědčení. Na konci každé odpovědi přidej poznámku v závorce pro učitele: (Historická poznámka: …) s ověřením fakticity.">📋 Kopírovat</button>
                         </div>
                     </div>
-                    <div class="prompt-card reveal">
+                    <div id="prompt-history-event-causes-effects" class="prompt-card reveal">
                         <div class="prompt-header">
                             <div>
                                 <div class="prompt-title">Příčiny a důsledky události</div>
-                                <div style="display:flex;gap:6px;margin-top:6px"><span
-                                        class="badge badge-gold">ChatGPT</span><span
-                                        class="badge badge-gray">ZŠ/SŠ</span></div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span class="badge badge-gold">ChatGPT</span><span class="badge badge-gray">ZŠ/SŠ</span></div>
                             </div>
                         </div>
-                        <div class="prompt-body">Analyzuj historickou událost „[UDÁLOST]" pro žáky [ROČNÍK]. Struktura:
-                            1) Historický kontext (co jí předcházelo), 2) Bezprostřední příčiny, 3) Průběh události, 4)
-                            Krátkodobé důsledky, 5) Dlouhodobé důsledky a přesah do dnešní doby. Vyhni se
-                            zjednodušování, ale zachovej srozumitelnost pro daný ročník.</div>
+                        <div class="prompt-body">Analyzuj historickou událost „[UDÁLOST]&quot; pro žáky [ROČNÍK]. Struktura: 1) Historický kontext (co jí předcházelo), 2) Bezprostřední příčiny, 3) Průběh události, 4) Krátkodobé důsledky, 5) Dlouhodobé důsledky a přesah do dnešní doby. Vyhni se zjednodušování, ale zachovej srozumitelnost pro daný ročník.</div>
                         <div class="prompt-footer">
                             <span class="badge badge-blue">Analýza</span>
-                            <button class="copy-btn" data-copy="Analyzuj historickou událost „[UDÁLOST]" pro žáky
-                                [ROČNÍK]. Zahrň: kontext, příčiny, průběh, krátkodobé a dlouhodobé důsledky, přesah do
-                                dnešní doby. Zachovej srozumitelnost pro daný ročník.">📋 Kopírovat</button>
+                            <button class="copy-btn" type="button" data-copy="Analyzuj historickou událost „[UDÁLOST]&quot; pro žáky [ROČNÍK]. Struktura: 1) Historický kontext (co jí předcházelo), 2) Bezprostřední příčiny, 3) Průběh události, 4) Krátkodobé důsledky, 5) Dlouhodobé důsledky a přesah do dnešní doby. Vyhni se zjednodušování, ale zachovej srozumitelnost pro daný ročník.">📋 Kopírovat</button>
                         </div>
                     </div>
-                    <div class="prompt-card reveal">
+                    <div id="prompt-history-debate-preparation" class="prompt-card reveal">
                         <div class="prompt-header">
                             <div>
                                 <div class="prompt-title">Debatní příprava – obě strany</div>
-                                <div style="display:flex;gap:6px;margin-top:6px"><span
-                                        class="badge badge-mint">Gemini</span><span class="badge badge-gray">SŠ</span>
-                                </div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span class="badge badge-mint">Gemini</span><span class="badge badge-gray">SŠ</span></div>
                             </div>
                         </div>
-                        <div class="prompt-body">Připrav podklady pro školní debatu na toto historické nebo aktuální
-                            téma: [TÉMA]. Pro každou stranu uveď: 4 klíčové argumenty s historickými nebo faktickými
-                            důkazy, 2 protiargumenty k anticipaci a 3 otázky, které může protistrana položit. Zachovej
-                            nestrannost a věcnost.</div>
+                        <div class="prompt-body">Připrav podklady pro školní debatu na toto historické nebo aktuální téma: [TÉMA]. Pro každou stranu uveď: 4 klíčové argumenty s historickými nebo faktickými důkazy, 2 protiargumenty k anticipaci a 3 otázky, které může protistrana položit. Zachovej nestrannost a věcnost.</div>
                         <div class="prompt-footer">
                             <span class="badge badge-green">Debata</span>
-                            <button class="copy-btn"
-                                data-copy="Připrav podklady pro školní debatu: [TÉMA]. Pro každou stranu: 4 argumenty s důkazy, 2 protiargumenty k anticipaci, 3 předpokládané otázky protistrany. Zachovej nestrannost.">📋
-                                Kopírovat</button>
+                            <button class="copy-btn" type="button" data-copy="Připrav podklady pro školní debatu na toto historické nebo aktuální téma: [TÉMA]. Pro každou stranu uveď: 4 klíčové argumenty s historickými nebo faktickými důkazy, 2 protiargumenty k anticipaci a 3 otázky, které může protistrana položit. Zachovej nestrannost a věcnost.">📋 Kopírovat</button>
                         </div>
                     </div>
-                    <div class="prompt-card reveal">
+                    <div id="prompt-history-period-diary" class="prompt-card reveal">
                         <div class="prompt-header">
                             <div>
                                 <div class="prompt-title">Dobový fiktivní deník</div>
-                                <div style="display:flex;gap:6px;margin-top:6px"><span
-                                        class="badge badge-gold">ChatGPT</span><span class="badge badge-gray">ZŠ</span>
-                                </div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span class="badge badge-gold">ChatGPT</span><span class="badge badge-gray">ZŠ</span></div>
                             </div>
                         </div>
-                        <div class="prompt-body">Napiš fiktivní deník [FIKTIVNÍ POSTAVA: obyčejný člověk / voják / žena
-                            / dítě] žijící v době [HISTORICKÉ OBDOBÍ – konkrétní rok]. Datum zápisů: [DATUM]. Zahrň
-                            každodenní život, historické události z perspektivy obyčejného člověka, jeho obavy, naděje.
-                            3–5 zápisů. Jazyk přizpůsob věku žáků [ROČNÍK].</div>
+                        <div class="prompt-body">Napiš fiktivní deník [FIKTIVNÍ POSTAVA: obyčejný člověk / voják / žena / dítě] žijící v době [HISTORICKÉ OBDOBÍ – konkrétní rok]. Datum zápisů: [DATUM]. Zahrň každodenní život, historické události z perspektivy obyčejného člověka, jeho obavy, naděje. 3–5 zápisů. Jazyk přizpůsob věku žáků [ROČNÍK].</div>
                         <div class="prompt-footer">
                             <span class="badge badge-orange">Kreativní psaní</span>
-                            <button class="copy-btn"
-                                data-copy="Napiš fiktivní deník [FIKTIVNÍ POSTAVA] žijící v době [HISTORICKÉ OBDOBÍ]. Zahrň každodenní život, historické události z perspektivy obyčejného člověka. 3–5 zápisů. Přizpůsob věku žáků [ROČNÍK].">📋
-                                Kopírovat</button>
+                            <button class="copy-btn" type="button" data-copy="Napiš fiktivní deník [FIKTIVNÍ POSTAVA: obyčejný člověk / voják / žena / dítě] žijící v době [HISTORICKÉ OBDOBÍ – konkrétní rok]. Datum zápisů: [DATUM]. Zahrň každodenní život, historické události z perspektivy obyčejného člověka, jeho obavy, naděje. 3–5 zápisů. Jazyk přizpůsob věku žáků [ROČNÍK].">📋 Kopírovat</button>
                         </div>
                     </div>
+                    <!-- GENERATED:PROMPTS:END -->
                 </div>
             </div>
 

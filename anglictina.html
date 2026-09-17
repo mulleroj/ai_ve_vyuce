@@ -205,87 +205,61 @@
 
             <div id="tab-prompty" class="tab-panel d-none">
                 <div class="prompt-grid">
-                    <div class="prompt-card reveal">
+                    <!-- DO NOT EDIT MANUALLY. Source: data/prompts.json. Run: node scripts/generate-prompts.js -->
+                    <!-- GENERATED:PROMPTS:START -->
+                    <div id="prompt-english-conversation-partner" class="prompt-card reveal">
                         <div class="prompt-header">
                             <div>
                                 <div class="prompt-title">Konverzační partner (CEFR level)</div>
-                                <div style="display:flex;gap:6px;margin-top:6px"><span
-                                        class="badge badge-gold">ChatGPT</span><span
-                                        class="badge badge-gray">A1–C1</span></div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span class="badge badge-gold">ChatGPT</span><span class="badge badge-gray">A1–C1</span></div>
                             </div>
                         </div>
-                        <div class="prompt-body">You are a friendly English conversation partner for a Czech student at
-                            [A1/A2/B1/B2/C1] level. Topic: [TOPIC]. Rules: speak only English, use vocabulary
-                            appropriate to their level, ask follow-up questions to keep conversation going, gently
-                            correct grammar by echoing corrected version, never criticize harshly. Start with a warm
-                            greeting and an opening question.</div>
+                        <div class="prompt-body">You are a friendly English conversation partner for a Czech student at [A1/A2/B1/B2/C1] level. Topic: [TOPIC]. Rules: speak only English, use vocabulary appropriate to their level, ask follow-up questions to keep conversation going, gently correct grammar by echoing corrected version, never criticize harshly. Start with a warm greeting and an opening question.</div>
                         <div class="prompt-footer">
                             <span class="badge badge-mint">Konverzace</span>
-                            <button class="copy-btn"
-                                data-copy="You are a friendly English conversation partner for a Czech student at [A1/A2/B1/B2/C1] level. Topic: [TOPIC]. Rules: speak only English, use vocabulary appropriate to their level, ask follow-up questions to keep conversation going, gently correct grammar by echoing corrected version, never criticize harshly. Start with a warm greeting and an opening question.">📋
-                                Kopírovat</button>
+                            <button class="copy-btn" type="button" data-copy="You are a friendly English conversation partner for a Czech student at [A1/A2/B1/B2/C1] level. Topic: [TOPIC]. Rules: speak only English, use vocabulary appropriate to their level, ask follow-up questions to keep conversation going, gently correct grammar by echoing corrected version, never criticize harshly. Start with a warm greeting and an opening question.">📋 Kopírovat</button>
                         </div>
                     </div>
-                    <div class="prompt-card reveal">
+                    <div id="prompt-english-grammar-exercises" class="prompt-card reveal">
                         <div class="prompt-header">
                             <div>
                                 <div class="prompt-title">Gramatická cvičení s klíčem</div>
-                                <div style="display:flex;gap:6px;margin-top:6px"><span
-                                        class="badge badge-mint">Gemini</span><span
-                                        class="badge badge-gray">ZŠ/SŠ</span></div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span class="badge badge-mint">Gemini</span><span class="badge badge-gray">ZŠ/SŠ</span></div>
                             </div>
                         </div>
-                        <div class="prompt-body">Create 15 grammar exercises for Czech students at [CEFR] level focusing
-                            on [GRAMMAR TOPIC, e.g. Present Perfect, Conditionals, Passive Voice]. Mix exercise types:
-                            gap-fill (5), sentence transformation (5), error correction (5). Add: answer key, brief
-                            grammar rule explanation in Czech, and 3 common Czech student mistakes to avoid.</div>
+                        <div class="prompt-body">Create 15 grammar exercises for Czech students at [CEFR] level focusing on [GRAMMAR TOPIC, e.g. Present Perfect, Conditionals, Passive Voice]. Mix exercise types: gap-fill (5), sentence transformation (5), error correction (5). Add: answer key, brief grammar rule explanation in Czech, and 3 common Czech student mistakes to avoid.</div>
                         <div class="prompt-footer">
                             <span class="badge badge-blue">Gramatika</span>
-                            <button class="copy-btn"
-                                data-copy="Create 15 grammar exercises for Czech students at [CEFR] level focusing on [GRAMMAR TOPIC]. Mix: gap-fill (5), sentence transformation (5), error correction (5). Add: answer key, grammar rule in Czech, and 3 common Czech student mistakes to avoid.">📋
-                                Kopírovat</button>
+                            <button class="copy-btn" type="button" data-copy="Create 15 grammar exercises for Czech students at [CEFR] level focusing on [GRAMMAR TOPIC, e.g. Present Perfect, Conditionals, Passive Voice]. Mix exercise types: gap-fill (5), sentence transformation (5), error correction (5). Add: answer key, brief grammar rule explanation in Czech, and 3 common Czech student mistakes to avoid.">📋 Kopírovat</button>
                         </div>
                     </div>
-                    <div class="prompt-card reveal">
+                    <div id="prompt-english-essay-grader" class="prompt-card reveal">
                         <div class="prompt-header">
                             <div>
                                 <div class="prompt-title">Opravovač eseje s rubrikou</div>
-                                <div style="display:flex;gap:6px;margin-top:6px"><span
-                                        class="badge badge-purple">Claude</span><span class="badge badge-gray">SŠ</span>
-                                </div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span class="badge badge-purple">Claude</span><span class="badge badge-gray">SŠ</span></div>
                             </div>
                         </div>
-                        <div class="prompt-body">Grade this English essay by a Czech high school student ([CEFR] level)
-                            using Cambridge Writing rubric: Content (0–10), Organization (0–10), Grammar (0–10),
-                            Vocabulary (0–10), Style (0–10). For each criterion: score + 2-3 specific comments. Overall
-                            feedback in Czech. Suggested improved version of weakest paragraph. ESSAY: [TEXT]</div>
+                        <div class="prompt-body">Grade this English essay by a Czech high school student ([CEFR] level) using Cambridge Writing rubric: Content (0–10), Organization (0–10), Grammar (0–10), Vocabulary (0–10), Style (0–10). For each criterion: score + 2-3 specific comments. Overall feedback in Czech. Suggested improved version of weakest paragraph. ESSAY: [TEXT]</div>
                         <div class="prompt-footer">
                             <span class="badge badge-orange">Eseje</span>
-                            <button class="copy-btn"
-                                data-copy="Grade this English essay by a Czech high school student ([CEFR] level) using Cambridge Writing rubric: Content (0–10), Organization (0–10), Grammar (0–10), Vocabulary (0–10), Style (0–10). For each criterion: score + 2-3 specific comments. Overall feedback in Czech. ESSAY: [TEXT]">📋
-                                Kopírovat</button>
+                            <button class="copy-btn" type="button" data-copy="Grade this English essay by a Czech high school student ([CEFR] level) using Cambridge Writing rubric: Content (0–10), Organization (0–10), Grammar (0–10), Vocabulary (0–10), Style (0–10). For each criterion: score + 2-3 specific comments. Overall feedback in Czech. Suggested improved version of weakest paragraph. ESSAY: [TEXT]">📋 Kopírovat</button>
                         </div>
                     </div>
-                    <div class="prompt-card reveal">
+                    <div id="prompt-english-vocabulary-set" class="prompt-card reveal">
                         <div class="prompt-header">
                             <div>
                                 <div class="prompt-title">Tematické slovíčka s příklady</div>
-                                <div style="display:flex;gap:6px;margin-top:6px"><span
-                                        class="badge badge-gold">ChatGPT</span><span class="badge badge-gray">ZŠ</span>
-                                </div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span class="badge badge-gold">ChatGPT</span><span class="badge badge-gray">ZŠ</span></div>
                             </div>
                         </div>
-                        <div class="prompt-body">Create a vocabulary set of 20 words on the topic [TOPIC] for Czech
-                            students at [CEFR] level. For each word: English word, Czech translation, example sentence
-                            (simple, memorable), and a memory tip or word association. Format as a numbered table. Then
-                            add 5 practice sentences using random words from the list.</div>
+                        <div class="prompt-body">Create a vocabulary set of 20 words on the topic [TOPIC] for Czech students at [CEFR] level. For each word: English word, Czech translation, example sentence (simple, memorable), and a memory tip or word association. Format as a numbered table. Then add 5 practice sentences using random words from the list.</div>
                         <div class="prompt-footer">
                             <span class="badge badge-green">Slovíčka</span>
-                            <button class="copy-btn"
-                                data-copy="Create a vocabulary set of 20 words on topic [TOPIC] for Czech students at [CEFR] level. For each word: English word, Czech translation, example sentence, memory tip. Format as table. Add 5 practice sentences using random words from the list.">📋
-                                Kopírovat</button>
+                            <button class="copy-btn" type="button" data-copy="Create a vocabulary set of 20 words on the topic [TOPIC] for Czech students at [CEFR] level. For each word: English word, Czech translation, example sentence (simple, memorable), and a memory tip or word association. Format as a numbered table. Then add 5 practice sentences using random words from the list.">📋 Kopírovat</button>
                         </div>
                     </div>
+                    <!-- GENERATED:PROMPTS:END -->
                 </div>
             </div>
 

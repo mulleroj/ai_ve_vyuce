@@ -205,84 +205,61 @@
 
             <div id="tab-prompty" class="tab-panel d-none">
                 <div class="prompt-grid">
-                    <div class="prompt-card reveal">
+                    <!-- DO NOT EDIT MANUALLY. Source: data/prompts.json. Run: node scripts/generate-prompts.js -->
+                    <!-- GENERATED:PROMPTS:START -->
+                    <div id="prompt-science-lab-experiment" class="prompt-card reveal">
                         <div class="prompt-header">
                             <div>
                                 <div class="prompt-title">Simulace laboratorního experimentu</div>
-                                <div style="display:flex;gap:6px;margin-top:6px"><span
-                                        class="badge badge-mint">Gemini</span><span
-                                        class="badge badge-gray">ZŠ/SŠ</span></div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span class="badge badge-mint">Gemini</span><span class="badge badge-gray">ZŠ/SŠ</span></div>
                             </div>
                         </div>
-                        <div class="prompt-body">Simuluj laboratorní experiment „[NÁZEV]" pro žáky [ROČNÍK]. Zahrň:
-                            potřebné pomůcky, bezpečnostní pravidla, postup krok za krokem, popis průběhu reakce / jevu,
-                            vědecké vysvětlení, závěrečné otázky pro žáky a návrh protokolu, který si žáci mohou
-                            vyplnit.</div>
+                        <div class="prompt-body">Simuluj laboratorní experiment „[NÁZEV]&quot; pro žáky [ROČNÍK]. Zahrň: potřebné pomůcky, bezpečnostní pravidla, postup krok za krokem, popis průběhu reakce / jevu, vědecké vysvětlení, závěrečné otázky pro žáky a návrh protokolu, který si žáci mohou vyplnit.</div>
                         <div class="prompt-footer">
                             <span class="badge badge-green">Experimenty</span>
-                            <button class="copy-btn" data-copy="Simuluj laboratorní experiment „[NÁZEV]" pro žáky
-                                [ROČNÍK]. Zahrň: pomůcky, bezpečnostní pravidla, postup, průběh reakce, vědecké
-                                vysvětlení, závěrečné otázky a návrh protokolu.">📋 Kopírovat</button>
+                            <button class="copy-btn" type="button" data-copy="Simuluj laboratorní experiment „[NÁZEV]&quot; pro žáky [ROČNÍK]. Zahrň: potřebné pomůcky, bezpečnostní pravidla, postup krok za krokem, popis průběhu reakce / jevu, vědecké vysvětlení, závěrečné otázky pro žáky a návrh protokolu, který si žáci mohou vyplnit.">📋 Kopírovat</button>
                         </div>
                     </div>
-                    <div class="prompt-card reveal">
+                    <div id="prompt-science-phenomenon-analogies" class="prompt-card reveal">
                         <div class="prompt-header">
                             <div>
                                 <div class="prompt-title">Vysvětlení jevu analogiemi z praxe</div>
-                                <div style="display:flex;gap:6px;margin-top:6px"><span
-                                        class="badge badge-gold">ChatGPT</span><span class="badge badge-gray">ZŠ</span>
-                                </div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span class="badge badge-gold">ChatGPT</span><span class="badge badge-gray">ZŠ</span></div>
                             </div>
                         </div>
-                        <div class="prompt-body">Vysvětli přírodovědný/fyzikální/chemický jev „[JEV]" žákům [ROČNÍK]
-                            pomocí 3 různých analogií z každodenního života. Pak uveď reálné příklady tohoto jevu v
-                            praxi. Zakončit 3 otázkami, které ověří porozumění. Vyvaruj se odborného žargonu bez
-                            vysvětlení.</div>
+                        <div class="prompt-body">Vysvětli přírodovědný/fyzikální/chemický jev „[JEV]&quot; žákům [ROČNÍK] pomocí 3 různých analogií z každodenního života. Pak uveď reálné příklady tohoto jevu v praxi. Zakončit 3 otázkami, které ověří porozumění. Vyvaruj se odborného žargonu bez vysvětlení.</div>
                         <div class="prompt-footer">
-                            <span class="badge badge-blue">Vysvětlení</span>
-                            <button class="copy-btn" data-copy="Vysvětli přírodovědný jev „[JEV]" žákům [ROČNÍK] pomocí
-                                3 různých analogií z každodenního života. Přidej reálné příklady a 3 otázky ověřující
-                                porozumění.">📋 Kopírovat</button>
+                            <span class="badge badge-green">Vysvětlení</span>
+                            <button class="copy-btn" type="button" data-copy="Vysvětli přírodovědný/fyzikální/chemický jev „[JEV]&quot; žákům [ROČNÍK] pomocí 3 různých analogií z každodenního života. Pak uveď reálné příklady tohoto jevu v praxi. Zakončit 3 otázkami, které ověří porozumění. Vyvaruj se odborného žargonu bez vysvětlení.">📋 Kopírovat</button>
                         </div>
                     </div>
-                    <div class="prompt-card reveal">
+                    <div id="prompt-science-review-quiz" class="prompt-card reveal">
                         <div class="prompt-header">
                             <div>
                                 <div class="prompt-title">Opakovací kvíz z přírodovědného tema</div>
-                                <div style="display:flex;gap:6px;margin-top:6px"><span
-                                        class="badge badge-gold">ChatGPT</span><span
-                                        class="badge badge-gray">ZŠ/SŠ</span></div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span class="badge badge-gold">ChatGPT</span><span class="badge badge-gray">ZŠ/SŠ</span></div>
                             </div>
                         </div>
-                        <div class="prompt-body">Vytvoř opakovací kvíz z [PŘEDMĚT: biologie/chemie/fyzika] na téma
-                            [TÉMA] pro žáky [ROČNÍK]. Formát: 5 testových otázek (ABCD), 3 otevřené otázky, 2 úlohy na
-                            přiřazení. Přidej správné odpovědi a stručné vysvětlení každé odpovědi.</div>
+                        <div class="prompt-body">Vytvoř opakovací kvíz z [PŘEDMĚT: biologie/chemie/fyzika] na téma [TÉMA] pro žáky [ROČNÍK]. Formát: 5 testových otázek (ABCD), 3 otevřené otázky, 2 úlohy na přiřazení. Přidej správné odpovědi a stručné vysvětlení každé odpovědi.</div>
                         <div class="prompt-footer">
                             <span class="badge badge-orange">Kvízy</span>
-                            <button class="copy-btn"
-                                data-copy="Vytvoř opakovací kvíz z [PŘEDMĚT] na téma [TÉMA] pro žáky [ROČNÍK]. Formát: 5 testových otázek ABCD, 3 otevřené otázky, 2 přiřazovací úlohy. Přidej správné odpovědi s vysvětlením.">📋
-                                Kopírovat</button>
+                            <button class="copy-btn" type="button" data-copy="Vytvoř opakovací kvíz z [PŘEDMĚT: biologie/chemie/fyzika] na téma [TÉMA] pro žáky [ROČNÍK]. Formát: 5 testových otázek (ABCD), 3 otevřené otázky, 2 úlohy na přiřazení. Přidej správné odpovědi a stručné vysvětlení každé odpovědi.">📋 Kopírovat</button>
                         </div>
                     </div>
-                    <div class="prompt-card reveal">
+                    <div id="prompt-science-research-project" class="prompt-card reveal">
                         <div class="prompt-header">
                             <div>
                                 <div class="prompt-title">Průvodce výzkumným projektem</div>
-                                <div style="display:flex;gap:6px;margin-top:6px"><span
-                                        class="badge badge-purple">Claude</span><span class="badge badge-gray">SŠ</span>
-                                </div>
+                                <div style="display:flex;gap:6px;margin-top:6px"><span class="badge badge-purple">Claude</span><span class="badge badge-gray">SŠ</span></div>
                             </div>
                         </div>
-                        <div class="prompt-body">Pomoz mi navrhnout výzkumný projekt na téma [TÉMA] pro žáky [ROČNÍK]
-                            SŠ. Struktura: výzkumná otázka, hypotéza, metodologie (jak sbírat data), potřebné materiály,
-                            jak analyzovat výsledky, jak prezentovat závěry. Přizpůsob délce [POČET] týdnů výuky.</div>
+                        <div class="prompt-body">Pomoz mi navrhnout výzkumný projekt na téma [TÉMA] pro žáky [ROČNÍK] SŠ. Struktura: výzkumná otázka, hypotéza, metodologie (jak sbírat data), potřebné materiály, jak analyzovat výsledky, jak prezentovat závěry. Přizpůsob délce [POČET] týdnů výuky.</div>
                         <div class="prompt-footer">
                             <span class="badge badge-pink">Projekty</span>
-                            <button class="copy-btn"
-                                data-copy="Navrhni výzkumný projekt na téma [TÉMA] pro žáky [ROČNÍK] SŠ. Zahrň: výzkumnou otázku, hypotézu, metodologii, potřebné materiály, analýzu výsledků a formu prezentace. Délka projektu: [POČET] týdnů.">📋
-                                Kopírovat</button>
+                            <button class="copy-btn" type="button" data-copy="Pomoz mi navrhnout výzkumný projekt na téma [TÉMA] pro žáky [ROČNÍK] SŠ. Struktura: výzkumná otázka, hypotéza, metodologie (jak sbírat data), potřebné materiály, jak analyzovat výsledky, jak prezentovat závěry. Přizpůsob délce [POČET] týdnů výuky.">📋 Kopírovat</button>
                         </div>
                     </div>
+                    <!-- GENERATED:PROMPTS:END -->
                 </div>
             </div>
 
