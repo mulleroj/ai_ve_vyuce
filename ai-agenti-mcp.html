@@ -41,12 +41,20 @@
     <main class="workflow-main">
         <article class="workflow-article">
             <div class="workflow-article-intro">
-                <div class="workflow-article-kicker"><span class="workflow-step">06</span> AI agenti v praxi</div>
-                <h2 class="workflow-article-title">MCP: univerzální konektor pro svět AI agentů</h2>
                 <p class="workflow-article-summary">Agent může mít mnoho nástrojů, ale bez společného komunikačního standardu se každá integrace rychle komplikuje. MCP se snaží tento problém řešit.</p>
-                <div class="workflow-article-meta"><span>1. září 2026</span><span>AI agenti</span><span>MCP a integrace</span></div>
             </div>
 
+            <nav class="article-toc" aria-labelledby="toc-heading-ai-agenti-mcp-html">
+                <p class="article-toc-label" id="toc-heading-ai-agenti-mcp-html">V tomto článku</p>
+                <ul>
+                    <li><a href="#toc-01">Problém: každý nástroj mluví trochu jiným jazykem</a></li>
+                    <li><a href="#toc-02">Co je MCP</a></li>
+                    <li><a href="#toc-03">„USB-C pro AI“</a></li>
+                    <li><a href="#toc-04">MCP není samotný AI agent</a></li>
+                    <li><a href="#toc-05">MCP není ani náhrada API</a></li>
+                    <li><a href="#toc-06">Jak MCP funguje</a></li>
+                </ul>
+            </nav>
             <div class="article-content">
                 <p class="article-lead">V předchozích článcích jsme AI agentovi postupně přidali schopnost plánovat, používat nástroje, pracovat s pamětí a vyhledávat ve vlastních dokumentech. Jenže vzniká další problém. Každý nástroj, databáze nebo služba může mít úplně jiné rozhraní. Pokud chceme AI propojit s desítkami různých systémů, potřebujeme nějaký společný způsob komunikace. A právě zde přichází Model Context Protocol – MCP.</p>
 
@@ -55,7 +63,7 @@
                     <figcaption>MCP vytváří společný komunikační jazyk mezi AI aplikacemi a nástroji, zdroji dat a službami, které agent potřebuje využívat.</figcaption>
                 </figure>
 
-                <h2>Problém: každý nástroj mluví trochu jiným jazykem</h2>
+                <h2 id="toc-01">Problém: každý nástroj mluví trochu jiným jazykem</h2>
                 <p>Představme si AI asistenta, kterému chceme umožnit pracovat s:</p>
                 <ul>
                     <li>Google Drive,</li>
@@ -74,14 +82,14 @@
                 <p>Přesně tento problém se snaží řešit:</p>
                 <div class="article-prompt"><strong>MCP – Model Context Protocol</strong></div>
 
-                <h2>Co je MCP</h2>
+                <h2 id="toc-02">Co je MCP</h2>
                 <p>MCP je otevřený standard pro propojení AI aplikací s externími nástroji a zdroji dat.</p>
                 <p>Původně jej v listopadu 2024 představil Anthropic jako otevřený protokol. Od té doby se z něj stal širší ekosystém používaný v řadě AI a vývojářských aplikací. Současná dokumentace jej popisuje jako standard, který propojuje AI aplikace se systémy, kde žijí jejich data a nástroje.</p>
                 <p>Velmi zjednodušeně:</p>
                 <div class="article-prompt"><strong>AI aplikace</strong><br /><br />↕<br /><br /><strong>MCP</strong><br /><br />↕<br /><br /><strong>nástroje a data</strong></div>
                 <p>MCP tedy určuje společná pravidla komunikace.</p>
 
-                <h2>„USB-C pro AI“</h2>
+                <h2 id="toc-03">„USB-C pro AI“</h2>
                 <p>MCP bývá někdy přirovnáván k:</p>
                 <div class="article-prompt"><strong>USB-C pro AI aplikace</strong></div>
                 <p>Není to technicky dokonalé přirovnání, ale pro základní pochopení funguje výborně.</p>
@@ -95,7 +103,7 @@
                 <div class="article-prompt"><strong>AI aplikace ↔ MCP ↔ nástroj</strong></div>
                 <p>Pokud obě strany podporují stejný standard, jejich propojení je výrazně jednodušší.</p>
 
-                <h2>MCP není samotný AI agent</h2>
+                <h2 id="toc-04">MCP není samotný AI agent</h2>
                 <p>Tohle je důležité.</p>
                 <p>MCP není agent.</p>
                 <p>Není to ani jazykový model.</p>
@@ -103,7 +111,7 @@
                 <p>Je to protokol, tedy soubor pravidel, podle kterých spolu různé části systému komunikují.</p>
                 <p>Podobně jako webový prohlížeč používá standardní protokoly pro komunikaci s webovými servery, může AI aplikace používat MCP pro komunikaci se systémy poskytujícími data a nástroje.</p>
 
-                <h2>MCP není ani náhrada API</h2>
+                <h2 id="toc-05">MCP není ani náhrada API</h2>
                 <p>Další častý omyl:</p>
                 <blockquote>„Když máme MCP, už nepotřebujeme API.“</blockquote>
                 <p>Tak jednoduché to není.</p>
@@ -118,7 +126,7 @@
                 <div class="article-prompt"><strong>AI</strong><br /><br />↓<br /><br /><strong>MCP</strong><br /><br />↓<br /><br /><strong>MCP server</strong><br /><br />↓<br /><br /><strong>API služby</strong><br /><br />↓<br /><br /><strong>data</strong></div>
                 <p>MCP tedy často funguje jako standardizovaná vrstva mezi AI aplikací a různými systémy.</p>
 
-                <h2>Jak MCP funguje</h2>
+                <h2 id="toc-06">Jak MCP funguje</h2>
                 <p>Pro základní pochopení nám stačí tři pojmy:</p>
                 <div class="article-prompt"><strong>host · client · server</strong></div>
                 <p>Nebojte se, není to tak hrozné, jak to na první pohled vypadá.</p>

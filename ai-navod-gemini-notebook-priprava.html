@@ -42,12 +42,21 @@
     <main class="workflow-main">
         <article class="workflow-article">
             <div class="workflow-article-intro">
-                <div class="workflow-article-kicker"><span class="workflow-step">08</span> Praktické návody pro AI ve výuce</div>
-                <h2 class="workflow-article-title">7 promptů pro Gemini Notebook, které promění vaše materiály v kompletní přípravu na výuku</h2>
                 <p class="workflow-article-summary">Z jedné sady učebních materiálů můžete připravit plán vyučovací hodiny, aktivity, vysvětlení obtížného učiva, diferenciované úkoly, test i podklady pro audio studijní materiál.</p>
-                <div class="workflow-article-meta"><span>26. srpna 2026</span><span>7 promptů</span><span>Gemini Notebook</span></div>
+                <p class="article-editorial-title">7 promptů pro Gemini Notebook, které promění vaše materiály v kompletní přípravu na výuku</p>
             </div>
 
+            <nav class="article-toc" aria-labelledby="toc-heading-ai-navod-gemini-notebook-priprava-html">
+                <p class="article-toc-label" id="toc-heading-ai-navod-gemini-notebook-priprava-html">V tomto článku</p>
+                <ul>
+                    <li><a href="#toc-01">1. Vytvoření kompletního plánu vyučovací hodiny</a></li>
+                    <li><a href="#toc-02">2. Vysvětlení obtížného učiva</a></li>
+                    <li><a href="#toc-03">3. Vytvoření aktivit do hodiny</a></li>
+                    <li><a href="#toc-04">4. Diferenciace výuky podle potřeb studentů</a></li>
+                    <li><a href="#toc-05">5. Odhalení možných mezer ve znalostech</a></li>
+                    <li><a href="#toc-06">6. Vytvoření testu nebo jiného hodnocení</a></li>
+                </ul>
+            </nav>
             <div class="article-content">
                 <p class="article-lead">Gemini Notebook / NotebookLM nemusí sloužit jen ke shrnutí dokumentů nebo hledání informací v nahraných zdrojích. Pokud mu dáme dobře formulované instrukce, může se z něj stát velmi praktický pomocník při přípravě výuky.</p>
                 <p>Z jedné sady učebních materiálů dokáže připravit <strong>plán vyučovací hodiny, aktivity, vysvětlení obtížného učiva, diferenciované úkoly, test nebo dokonce podklady pro audio studijní materiál</strong>.</p>
@@ -59,7 +68,7 @@
                     <figcaption>Sedm promptů pro učitele: od nahrání zdrojů a analýzy mezer až po test, hodnocení a audio přehled.</figcaption>
                 </figure>
 
-                <h2>1. Vytvoření kompletního plánu vyučovací hodiny</h2>
+                <h2 id="toc-01">1. Vytvoření kompletního plánu vyučovací hodiny</h2>
                 <p>Místo jednoduchého příkazu „vytvoř přípravu na hodinu“ můžeme Notebooku přesně říct, jak má výsledná hodina vypadat.</p>
                 <p>Prompt pracuje s věkem studentů, jejich úrovní i délkou vyučovací hodiny a požaduje jasně strukturovanou přípravu od úvodní aktivity až po závěrečné ověření porozumění.</p>
                 <h3>Prompt</h3>
@@ -67,20 +76,20 @@
                 <h3>K čemu se hodí</h3>
                 <p>Výborně funguje například tehdy, když do Notebooku nahrajeme kapitolu z učebnice, vlastní poznámky, prezentaci nebo metodické materiály a potřebujeme z nich rychle vytvořit použitelnou 45minutovou hodinu.</p>
 
-                <h2>2. Vysvětlení obtížného učiva</h2>
+                <h2 id="toc-02">2. Vysvětlení obtížného učiva</h2>
                 <p>Jedna věc je znát odborné vysvětlení. Druhá věc je vysvětlit stejný problém studentovi tak, aby mu skutečně porozuměl.</p>
                 <p>Notebook můžeme požádat, aby složitější pojem rozložil do menších kroků, vytvořil příklady a zároveň upozornil na místa, kde studenti pravděpodobně začnou chybovat.</p>
                 <h3>Prompt</h3>
                 <div class="article-prompt">Používej pouze výukové materiály, které jsem nahrál/a. Vytvoř jasné a pro studenty srozumitelné vysvětlení pojmu <strong>[doplň pojem]</strong> pro studenty ve věku <strong>[doplň věkovou skupinu]</strong> na úrovni <strong>[doplň ročník nebo úroveň znalostí]</strong>.<br /><br />Rozděl vysvětlení do jednoduchých a zvládnutelných kroků, ale zachovej správný význam daného pojmu.<br /><br />Použij vhodné příklady, přirovnání, analogie a návrhy vizuálního vysvětlení, pokud jsou podloženy nahranými materiály.<br /><br />Předvídej nejčastější chyby, mylné představy nebo části, které mohou studentům působit problémy. Vysvětli, jak je mohu ve výuce řešit.<br /><br />Přidej několik otázek, pomocí kterých mohu ověřit, zda studenti látce skutečně porozuměli.<br /><br /><strong>Nevkládej žádný obsah, který není podložen mými nahranými materiály.</strong></div>
                 <p>Tohle je zajímavé například u odborných předmětů, gramatiky, fyziky nebo občanské nauky, kde studenti často zvládnou definici zopakovat, ale samotnému principu ještě nerozumějí.</p>
 
-                <h2>3. Vytvoření aktivit do hodiny</h2>
+                <h2 id="toc-03">3. Vytvoření aktivit do hodiny</h2>
                 <p>Notebook nemusí vytvářet pouze obsah výkladu. Může z materiálů navrhnout také aktivity, při kterých budou studenti s učivem skutečně pracovat.</p>
                 <h3>Prompt</h3>
                 <div class="article-prompt">Používej pouze výukové materiály, které jsem nahrál/a. Vytvoř poutavé výukové aktivity na téma <strong>[doplň předmět/téma]</strong> vhodné pro studenty ve věku <strong>[doplň věkovou skupinu]</strong> na úrovni <strong>[doplň ročník nebo úroveň znalostí]</strong>.<br /><br />Navrhni aktivity, které studenty aktivně zapojí do pochopení učiva, procvičování a praktického použití klíčových pojmů a znalostí z nahraných materiálů.<br /><br />Podle potřeby vytvoř vyváženou kombinaci individuální práce, práce ve dvojicích a skupinové práce.<br /><br />U každé aktivity uveď jasné instrukce, vzdělávací cíl, doporučený čas a potřebné materiály nebo pomůcky.<br /><br />Zařaď možnosti pro diskusi, řešení problémů, spolupráci a praktické použití učiva.<br /><br />Po každé aktivitě navrhni jednoduchý způsob, jak ověřit porozumění studentů.<br /><br /><strong>Nevkládej žádný obsah, který není podložen mými nahranými materiály.</strong></div>
                 <p>Výhodou je, že nemusíme přijmout celý návrh. Klidně si vybereme dvě aktivity z pěti a zakomponujeme je do vlastní hodiny.</p>
 
-                <h2>4. Diferenciace výuky podle potřeb studentů</h2>
+                <h2 id="toc-04">4. Diferenciace výuky podle potřeb studentů</h2>
                 <p>Tohle je podle mě jedna z nejzajímavějších možností.</p>
                 <p>Ve stejné třídě máme často studenty, kteří potřebují výraznou podporu, studenty pracující běžným tempem i ty, kteří mají úkol hotový dříve než ostatní.</p>
                 <p>Místo vytváření tří úplně rozdílných hodin můžeme zachovat společný vzdělávací cíl a upravit pouze způsob práce.</p>
@@ -89,7 +98,7 @@
                 <p>Právě poslední požadavek je důležitý. AI totiž umí navrhnout pedagogicky krásné řešení, které by v reálné třídě vyžadovalo asi tři učitele, dva asistenty a menší štáb České televize.</p>
                 <p>Proto je dobré rovnou požadovat <strong>prakticky zvládnutelnou diferenciaci</strong>.</p>
 
-                <h2>5. Odhalení možných mezer ve znalostech</h2>
+                <h2 id="toc-05">5. Odhalení možných mezer ve znalostech</h2>
                 <p>Velmi zajímavé využití AI začíná ve chvíli, kdy ji nepoužíváme pouze jako generátor materiálů, ale jako nástroj pro analýzu učiva.</p>
                 <p>Notebook může projít naše zdroje a hledat místa, která budou pro studenty pravděpodobně problematická.</p>
                 <h3>Prompt</h3>
@@ -97,7 +106,7 @@
                 <p>Tím se z Notebooku stává něco jako <strong>druhá pedagogická sada očí</strong>.</p>
                 <p>Neříká nám samozřejmě, co konkrétní student skutečně umí. Dokáže ale upozornit na místa, kde bychom měli během výuky zpozornět.</p>
 
-                <h2>6. Vytvoření testu nebo jiného hodnocení</h2>
+                <h2 id="toc-06">6. Vytvoření testu nebo jiného hodnocení</h2>
                 <p>Test vytvořený AI nemusí být jen deset automaticky vygenerovaných otázek ABCD.</p>
                 <p>Můžeme požadovat kombinaci různých typů úloh, několik úrovní obtížnosti, bodování i kompletní klíč správných odpovědí.</p>
                 <h3>Prompt</h3>

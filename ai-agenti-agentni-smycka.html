@@ -41,12 +41,20 @@
     <main class="workflow-main">
         <article class="workflow-article">
             <div class="workflow-article-intro">
-                <div class="workflow-article-kicker"><span class="workflow-step">02</span> AI agenti v praxi</div>
-                <h2 class="workflow-article-title">Jak funguje AI agent: agentní smyčka krok za krokem</h2>
                 <p class="workflow-article-summary">Od jedné odpovědi k pracovnímu procesu: jak agent rozumí cíli, plánuje, používá nástroje, kontroluje výsledek a rozhoduje o dalším kroku.</p>
-                <div class="workflow-article-meta"><span>1. září 2026</span><span>AI agenti</span><span>Agentní smyčka</span></div>
             </div>
 
+            <nav class="article-toc" aria-labelledby="toc-heading-ai-agenti-agentni-smycka-html">
+                <p class="article-toc-label" id="toc-heading-ai-agenti-agentni-smycka-html">V tomto článku</p>
+                <ul>
+                    <li><a href="#toc-01">Od jedné odpovědi k pracovnímu procesu</a></li>
+                    <li><a href="#toc-02">Co je agentní smyčka</a></li>
+                    <li><a href="#toc-03">1. Pochop: Co po mně vlastně uživatel chce?</a></li>
+                    <li><a href="#toc-04">2. Naplánuj: Jak se k cíli dostanu?</a></li>
+                    <li><a href="#toc-05">3. Proveď: Agent použije nástroj</a></li>
+                    <li><a href="#toc-06">4. Zkontroluj: Co se po provedení akce stalo?</a></li>
+                </ul>
+            </nav>
             <div class="article-content">
                 <p class="article-lead">V prvním článku jsme si ukázali, že AI agent není jen chatbot, který umí odpovídat na otázky. Dostane cíl, rozdělí si práci do několika kroků, použije dostupné nástroje a průběžně kontroluje, jestli se k výsledku skutečně blíží.</p>
                 <p>Jak ale taková práce probíhá uvnitř? Základním principem je takzvaná agentní smyčka.</p>
@@ -56,7 +64,7 @@
                     <figcaption>Agentní smyčka krok za krokem: agent pochopí cíl, naplánuje postup, provede akci a zkontroluje výsledek.</figcaption>
                 </figure>
 
-                <h2>Od jedné odpovědi k pracovnímu procesu</h2>
+                <h2 id="toc-01">Od jedné odpovědi k pracovnímu procesu</h2>
                 <p>Klasická práce s generativní AI často vypadá jednoduše:</p>
                 <div class="article-prompt"><strong>uživatel → prompt → odpověď</strong></div>
                 <p>Napíšeme:</p>
@@ -76,7 +84,7 @@
                 </ul>
                 <p>A právě toto opakování kroků nazýváme agentní smyčkou.</p>
 
-                <h2>Co je agentní smyčka</h2>
+                <h2 id="toc-02">Co je agentní smyčka</h2>
                 <p>Agentní smyčka je pracovní cyklus, ve kterém agent opakovaně vyhodnocuje situaci, rozhoduje o dalším kroku, provede akci a následně zkontroluje výsledek.</p>
                 <p>Často se setkáme se schématem:</p>
                 <div class="article-prompt"><strong>Think → Plan → Act → Observe</strong></div>
@@ -86,7 +94,7 @@
                 <div class="article-prompt"><strong>Pochop → Naplánuj → Proveď → Zkontroluj → uprav plán → proveď další krok…</strong></div>
                 <p>Smyčka končí ve chvíli, kdy agent vyhodnotí, že byl cíl splněn, nebo když narazí na situaci, ve které potřebuje zásah člověka.</p>
 
-                <h2>1. Pochop: Co po mně vlastně uživatel chce?</h2>
+                <h2 id="toc-03">1. Pochop: Co po mně vlastně uživatel chce?</h2>
                 <p>První částí je porozumění zadání a dostupnému kontextu.</p>
                 <p>Agent si musí například vyjasnit:</p>
                 <ul>
@@ -114,7 +122,7 @@
                 <p>Ve skutečnosti model zpracovává informace, vyhodnocuje souvislosti a vytváří další vhodný krok na základě svého modelu a dostupného kontextu.</p>
                 <p>Proto je pro běžného uživatele přesnější překládat Think spíše jako pochop zadání a vyhodnoť situaci.</p>
 
-                <h2>2. Naplánuj: Jak se k cíli dostanu?</h2>
+                <h2 id="toc-04">2. Naplánuj: Jak se k cíli dostanu?</h2>
                 <p>Jakmile agent pochopí cíl, musí rozhodnout, jakým způsobem jej splní.</p>
                 <p>Může si například vytvořit postup:</p>
                 <ol>
@@ -142,7 +150,7 @@
                 <p>Dobrý agent by měl plánovat pouze tolik, kolik konkrétní úkol skutečně potřebuje.</p>
                 <p>Příliš mnoho plánování může práci paradoxně zpomalit a prodražit.</p>
 
-                <h2>3. Proveď: Agent použije nástroj</h2>
+                <h2 id="toc-05">3. Proveď: Agent použije nástroj</h2>
                 <p>Tady se agentní AI zásadně odlišuje od obyčejného jazykového modelu.</p>
                 <p>Agent může dostat k dispozici nástroje.</p>
                 <p>Podle konkrétní aplikace může například:</p>
@@ -164,7 +172,7 @@
                 <p>Tuto schopnost označujeme často jako <em>tool use</em> nebo <em>function calling</em>.</p>
                 <p>Tomu se budeme podrobně věnovat v dalším článku.</p>
 
-                <h2>4. Zkontroluj: Co se po provedení akce stalo?</h2>
+                <h2 id="toc-06">4. Zkontroluj: Co se po provedení akce stalo?</h2>
                 <p>Po každé důležitější akci musí agent zjistit její výsledek.</p>
                 <p>To je fáze Observe.</p>
                 <p>Příklad:</p>

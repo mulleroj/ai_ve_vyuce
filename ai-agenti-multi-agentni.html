@@ -41,12 +41,20 @@
     <main class="workflow-main">
         <article class="workflow-article">
             <div class="workflow-article-intro">
-                <div class="workflow-article-kicker"><span class="workflow-step">07</span> AI agenti v praxi</div>
-                <h2 class="workflow-article-title">Multi-agentní systémy: když na jednom úkolu pracuje tým AI</h2>
                 <p class="workflow-article-summary">Jeden agent nemusí být vždy nejlepší odpověď. U složitějších úkolů mohou práci převzít specialisté s různými rolemi, nástroji a oprávněními.</p>
-                <div class="workflow-article-meta"><span>1. září 2026</span><span>AI agenti</span><span>Multi-agentní systémy</span></div>
             </div>
 
+            <nav class="article-toc" aria-labelledby="toc-heading-ai-agenti-multi-agentni-html">
+                <p class="article-toc-label" id="toc-heading-ai-agenti-multi-agentni-html">V tomto článku</p>
+                <ul>
+                    <li><a href="#toc-01">Co je multi-agentní systém</a></li>
+                    <li><a href="#toc-02">Proč vůbec používat více agentů</a></li>
+                    <li><a href="#toc-03">Specializace agentů</a></li>
+                    <li><a href="#toc-04">Jeden agent může řídit ostatní</a></li>
+                    <li><a href="#toc-05">Sekvenční spolupráce</a></li>
+                    <li><a href="#toc-06">Paralelní spolupráce</a></li>
+                </ul>
+            </nav>
             <div class="article-content">
                 <p class="article-lead">V předchozích článcích jsme si ukázali, jak funguje jeden AI agent: dostane cíl, plánuje, používá nástroje, pracuje s pamětí a podle potřeby si vyhledává informace. Co když je ale úkol příliš složitý pro jeden systém? Jednou z možností je rozdělit práci mezi více specializovaných agentů. Tak vzniká multi-agentní systém.</p>
 
@@ -55,7 +63,7 @@
                     <figcaption>Multi-agentní systém rozdělí složitý úkol mezi specializované agenty, kteří mohou pracovat postupně nebo paralelně a společně vytvořit kontrolovatelný výsledek.</figcaption>
                 </figure>
 
-                <h2>Co je multi-agentní systém</h2>
+                <h2 id="toc-01">Co je multi-agentní systém</h2>
                 <p>Multi-agentní systém je prostředí, ve kterém na jednom úkolu spolupracuje více AI agentů.</p>
                 <p>Každý může mít vlastní:</p>
                 <ul>
@@ -77,7 +85,7 @@
                 <p>Zjednodušeně:</p>
                 <div class="article-prompt"><strong>uživatel → koordinátor → několik agentů → společný výsledek</strong></div>
 
-                <h2>Proč vůbec používat více agentů</h2>
+                <h2 id="toc-02">Proč vůbec používat více agentů</h2>
                 <p>Na první pohled může vypadat jednodušší vytvořit jednoho velmi schopného agenta, který zvládne všechno.</p>
                 <p>A často je to skutečně nejlepší řešení.</p>
                 <p>Jenže u složitějších úloh může být výhodnější práci rozdělit.</p>
@@ -93,7 +101,7 @@
                 <p>Ale tým specialistů může být v některých situacích efektivnější.</p>
                 <p>Stejná myšlenka se používá u AI agentů.</p>
 
-                <h2>Specializace agentů</h2>
+                <h2 id="toc-03">Specializace agentů</h2>
                 <p>Jednou z hlavních výhod multi-agentního systému je specializace.</p>
                 <p>Každý agent může dostat přesně definovanou roli.</p>
                 <p>Představme si úkol:</p>
@@ -108,7 +116,7 @@
                 </ul>
                 <p>Každý tedy řeší jinou část problému.</p>
 
-                <h2>Jeden agent může řídit ostatní</h2>
+                <h2 id="toc-04">Jeden agent může řídit ostatní</h2>
                 <p>Multi-agentní systém potřebuje nějaký způsob koordinace.</p>
                 <p>Jednou z možností je:</p>
                 <div class="article-prompt"><strong>orchestrátor</strong><br /><br />nebo<br /><br /><strong>manager agent</strong></div>
@@ -122,7 +130,7 @@
                 <p>Zjednodušeně:</p>
                 <div class="article-prompt"><strong>uživatel</strong><br /><br />↓<br /><br /><strong>orchestrátor</strong><br /><br />↙ &nbsp; ↓ &nbsp; ↘<br /><br /><strong>rešeršér – tvůrce – kontrolor</strong><br /><br />↓<br /><br /><strong>výsledný výstup</strong></div>
 
-                <h2>Sekvenční spolupráce</h2>
+                <h2 id="toc-05">Sekvenční spolupráce</h2>
                 <p>Nejjednodušší model je, když agenti pracují postupně.</p>
                 <p>Například:</p>
                 <div class="article-prompt"><strong>Agent 1 – výzkum</strong><br /><br />↓<br /><br /><strong>Agent 2 – návrh</strong><br /><br />↓<br /><br /><strong>Agent 3 – kontrola</strong><br /><br />↓<br /><br /><strong>Agent 4 – finální úprava</strong></div>
@@ -130,7 +138,7 @@
                 <p>Tomu můžeme říkat sekvenční workflow.</p>
                 <p>Je přehledné a poměrně snadno kontrolovatelné.</p>
 
-                <h2>Paralelní spolupráce</h2>
+                <h2 id="toc-06">Paralelní spolupráce</h2>
                 <p>Jinou možností je, že několik agentů pracuje současně.</p>
                 <p>Například chceme porovnat pět AI nástrojů.</p>
                 <p>Můžeme vytvořit pět agentů:</p>

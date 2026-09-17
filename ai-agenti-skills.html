@@ -41,12 +41,20 @@
     <main class="workflow-main">
         <article class="workflow-article">
             <div class="workflow-article-intro">
-                <div class="workflow-article-kicker"><span class="workflow-step">15</span> Opakovatelné schopnosti</div>
-                <h2 class="workflow-article-title">Skills: jak naučit AI agenta opakovat osvědčený pracovní postup</h2>
                 <p class="workflow-article-summary">Skill zachycuje způsob, jak určitý druh práce provádět. Agent tak nemusí pokaždé dostávat celý návod znovu a znovu.</p>
-                <div class="workflow-article-meta"><span>1. září 2026</span><span>AI agenti</span><span>Skills</span></div>
             </div>
 
+            <nav class="article-toc" aria-labelledby="toc-heading-ai-agenti-skills-html">
+                <p class="article-toc-label" id="toc-heading-ai-agenti-skills-html">V tomto článku</p>
+                <ul>
+                    <li><a href="#toc-01">Problém nekonečně dlouhých promptů</a></li>
+                    <li><a href="#toc-02">Co je skill</a></li>
+                    <li><a href="#toc-03">Skill není jen další prompt</a></li>
+                    <li><a href="#toc-04">Prompt versus skill</a></li>
+                    <li><a href="#toc-05">Jednoduchý příklad školního skillu</a></li>
+                    <li><a href="#toc-06">Proč jsou skills důležité pro agenty</a></li>
+                </ul>
+            </nav>
             <div class="article-content">
                 <p class="article-lead">Při běžné práci s AI často znovu a znovu vysvětlujeme stejné věci: jak má vypadat pracovní list, jak má model zkontrolovat text nebo jakým způsobem má postupovat při rešerši. U AI agenta ale můžeme takový postup uložit jako opakovaně použitelnou schopnost – skill. Agent pak nemusí pokaždé dostávat celý návod znovu.</p>
 
@@ -55,7 +63,7 @@
                     <figcaption>Skill zachycuje opakovatelný pracovní postup: jeho účel, vstupy, kroky, kontrolu kvality i situace, kdy se má agent zastavit.</figcaption>
                 </figure>
 
-                <h2>Problém nekonečně dlouhých promptů</h2>
+                <h2 id="toc-01">Problém nekonečně dlouhých promptů</h2>
                 <p>Představme si, že pravidelně vytváříme pracovní listy.</p>
                 <p>Pokaždé AI napíšeme něco podobného:</p>
                 <div class="article-prompt"><strong>Vytvoř pracovní list na A4.<br /><br />Používej krátké a jednoznačné instrukce.<br /><br />Kombinuj několik typů úloh.<br /><br />Připrav žákovskou a učitelskou verzi.<br /><br />Zkontroluj správnost řešení.<br /><br />Odhadni časovou náročnost.<br /><br />Pokud chybí důležitý údaj, nevymýšlej si ho a zeptej se.</strong></div>
@@ -64,7 +72,7 @@
                 <blockquote>Opravdu musím celý tento návod zadávat pokaždé znovu?</blockquote>
                 <p>Právě tady začínají být zajímavé skills.</p>
 
-                <h2>Co je skill</h2>
+                <h2 id="toc-02">Co je skill</h2>
                 <p>Skill můžeme česky chápat jako:</p>
                 <div class="article-prompt"><strong>schopnost, dovednost nebo opakovatelný pracovní postup, který má agent k dispozici.</strong></div>
                 <p>Například:</p>
@@ -73,7 +81,7 @@
                 <blockquote>Když potřebuješ udělat tento typ práce, postupuj tímto způsobem.</blockquote>
                 <p>Místo dlouhého návodu v každém promptu máme jednou připravený postup.</p>
 
-                <h2>Skill není jen další prompt</h2>
+                <h2 id="toc-03">Skill není jen další prompt</h2>
                 <p>Na první pohled může skill vypadat jako uložený prompt.</p>
                 <p>A někdy může být velmi jednoduchý.</p>
                 <p>Ale užitečný skill bývá strukturovanější.</p>
@@ -85,7 +93,7 @@
                 <blockquote>Pokud máš vytvořit pracovní list, nejprve zjisti cílovou skupinu a učební cíl. Potom analyzuj zdrojový materiál. Vytvoř žákovskou verzi, řešení a nakonec proveď kontrolu podle těchto kritérií.</blockquote>
                 <p>To už je pracovní metoda.</p>
 
-                <h2>Prompt versus skill</h2>
+                <h2 id="toc-04">Prompt versus skill</h2>
                 <p>Rozdíl si můžeme ukázat jednoduše.</p>
                 <h3>Prompt</h3>
                 <div class="article-prompt"><strong>Vytvoř mi pracovní list k Evropské unii.</strong></div>
@@ -97,7 +105,7 @@
                 <div class="article-prompt"><strong>Prompt</strong><br /><br />Připrav pracovní list k Evropské unii pro druhý ročník.<br /><br /><strong>Skill „Tvorba pracovního listu“</strong><br /><br />↓<br /><br />agent už ví:<br /><br />jak materiál strukturovat,<br /><br />co musí obsahovat,<br /><br />co má zkontrolovat,<br /><br />v jakém formátu má výsledek odevzdat.</div>
                 <p>Uživatel nemusí všechna pravidla znovu vypisovat.</p>
 
-                <h2>Jednoduchý příklad školního skillu</h2>
+                <h2 id="toc-05">Jednoduchý příklad školního skillu</h2>
                 <p>Představme si skill:</p>
                 <div class="article-prompt"><strong>TVORBA PRACOVNÍHO LISTU</strong></div>
                 <p>Jeho instrukce mohou říkat:</p>
@@ -113,7 +121,7 @@
                 <div class="article-prompt"><strong>Žákovská verze + učitelské řešení + krátká metodická poznámka.</strong></div>
                 <p>Tohle už lze používat stále dokola.</p>
 
-                <h2>Proč jsou skills důležité pro agenty</h2>
+                <h2 id="toc-06">Proč jsou skills důležité pro agenty</h2>
                 <p>Agent má obvykle několik možností, jak splnit úkol.</p>
                 <p>Pokud má pouze obecné instrukce, může pokaždé improvizovat.</p>
                 <p>To vede k problému:</p>

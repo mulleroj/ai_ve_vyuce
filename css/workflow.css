@@ -341,6 +341,67 @@ body.workflow-page {
   border-bottom: 1px solid var(--workflow-line);
 }
 
+.workflow-article-intro:has(.workflow-article-summary:only-child) {
+  padding: 24px clamp(28px, 7vw, 92px) 26px;
+}
+
+.article-editorial-title {
+  max-width: 54rem;
+  margin: 14px 0 0;
+  color: var(--workflow-text);
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.article-toc {
+  margin: 0 clamp(28px, 7vw, 92px);
+  padding: 22px 0 6px;
+  border-bottom: 1px solid var(--workflow-line);
+}
+
+.article-toc-label {
+  margin: 0 0 10px;
+  color: var(--workflow-teal);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.article-toc ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.article-toc a {
+  color: var(--workflow-muted);
+  font-size: 0.86rem;
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 212, 168, 0.35);
+  text-underline-offset: 3px;
+}
+
+.article-toc a:hover,
+.article-toc a:focus-visible {
+  color: var(--workflow-teal);
+}
+
+.article-toc a:focus-visible {
+  outline: 2px solid var(--workflow-yellow);
+  outline-offset: 3px;
+}
+
+.workflow-page .article-content h2[id] {
+  scroll-margin-top: 24px;
+}
+
 .workflow-article-kicker {
   display: flex;
   align-items: center;

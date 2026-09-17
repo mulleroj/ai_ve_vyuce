@@ -41,12 +41,20 @@
     <main class="workflow-main">
         <article class="workflow-article">
             <div class="workflow-article-intro">
-                <div class="workflow-article-kicker"><span class="workflow-step">03</span> AI agenti v praxi</div>
-                <h2 class="workflow-article-title">Nástroje a Function Calling: jak dostane AI „ruce“</h2>
                 <p class="workflow-article-summary">Jazykový model umí skvěle pracovat s textem. Aby mohl agent něco skutečně udělat, potřebuje nástroje, jasné parametry a bezpečná pravidla.</p>
-                <div class="workflow-article-meta"><span>1. září 2026</span><span>AI agenti</span><span>Nástroje a API</span></div>
             </div>
 
+            <nav class="article-toc" aria-labelledby="toc-heading-ai-agenti-nastroje-function-calling-html">
+                <p class="article-toc-label" id="toc-heading-ai-agenti-nastroje-function-calling-html">V tomto článku</p>
+                <ul>
+                    <li><a href="#toc-01">Jazykový model není celý agent</a></li>
+                    <li><a href="#toc-02">Co je nástroj</a></li>
+                    <li><a href="#toc-03">Jaké nástroje může agent používat</a></li>
+                    <li><a href="#toc-04">Co je Function Calling</a></li>
+                    <li><a href="#toc-05">Proč je to lepší než „hádat“</a></li>
+                    <li><a href="#toc-06">Jak model pozná, jaký nástroj použít</a></li>
+                </ul>
+            </nav>
             <div class="article-content">
                 <p class="article-lead">V předchozím článku jsme si ukázali agentní smyčku: AI agent pochopí zadání, naplánuje další krok, provede akci a zkontroluje výsledek.</p>
                 <p>Jenže samotný jazykový model toho ve skutečném světě mnoho „neudělá“. Umí velmi dobře pracovat s textem, ale neumí sám od sebe otevřít kalendář, zjistit aktuální počasí nebo změnit soubor. K tomu potřebuje nástroje.</p>
@@ -56,7 +64,7 @@
                     <figcaption>Nástroje a Function Calling: jak model požádá o akci, získá výsledek a vytvoří odpověď pro uživatele.</figcaption>
                 </figure>
 
-                <h2>Jazykový model není celý agent</h2>
+                <h2 id="toc-01">Jazykový model není celý agent</h2>
                 <p>Když se bavíme s běžným chatbotem, snadno získáme dojem, že AI „něco dělá“.</p>
                 <p>Ve skutečnosti jazykový model především vytváří další text podle zadání a dostupného kontextu.</p>
                 <p>Dokáže například:</p>
@@ -80,7 +88,7 @@
                 </ul>
                 <p>Právě zde vstupují do hry <em>tools</em>, tedy nástroje.</p>
 
-                <h2>Co je nástroj</h2>
+                <h2 id="toc-02">Co je nástroj</h2>
                 <p>Nástroj je externí funkce nebo služba, kterou může AI systém použít při řešení úkolu.</p>
                 <p>Můžeme si to představit velmi jednoduše:</p>
                 <div class="article-prompt"><strong>jazykový model = mozek<br /><br />nástroje = ruce</strong></div>
@@ -91,7 +99,7 @@
                 <div class="article-prompt"><strong>Weather API</strong></div>
                 <p>Ten vrátí aktuální data a model je následně zpracuje do odpovědi.</p>
 
-                <h2>Jaké nástroje může agent používat</h2>
+                <h2 id="toc-03">Jaké nástroje může agent používat</h2>
                 <p>Možností je celá řada.</p>
                 <p>Typické nástroje zahrnují například:</p>
                 <ul>
@@ -106,7 +114,7 @@
                 </ul>
                 <p>A právě kombinace více nástrojů je jedním z důvodů, proč jsou agentní systémy tak zajímavé.</p>
 
-                <h2>Co je Function Calling</h2>
+                <h2 id="toc-04">Co je Function Calling</h2>
                 <p>Pojem <em>Function Calling</em> označuje způsob, jakým může jazykový model požádat systém o spuštění určité funkce.</p>
                 <p>Důležité je pochopit jednu věc:</p>
                 <blockquote>Model obvykle nástroj přímo nespouští.</blockquote>
@@ -124,7 +132,7 @@
                 <p>Celý proces tedy vypadá asi takto:</p>
                 <div class="article-prompt"><strong>uživatel → model → požadavek na nástroj → nástroj → výsledek → model → odpověď</strong></div>
 
-                <h2>Proč je to lepší než „hádat“</h2>
+                <h2 id="toc-05">Proč je to lepší než „hádat“</h2>
                 <p>Jazykové modely mají jeden zásadní problém.</p>
                 <p>Umějí velmi přesvědčivě vytvořit odpověď, i když nemají správná data.</p>
                 <p>To vede k takzvaným halucinacím.</p>
@@ -148,7 +156,7 @@
                 </ul>
                 <p>Proto je stále důležitá kontrola.</p>
 
-                <h2>Jak model pozná, jaký nástroj použít</h2>
+                <h2 id="toc-06">Jak model pozná, jaký nástroj použít</h2>
                 <p>Aby mohl agent nástroje používat, musí vědět, jaké nástroje má k dispozici.</p>
                 <p>Každý nástroj bývá popsán například pomocí:</p>
                 <ul>

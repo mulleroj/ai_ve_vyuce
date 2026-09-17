@@ -41,12 +41,20 @@
     <main class="workflow-main">
         <article class="workflow-article">
             <div class="workflow-article-intro">
-                <div class="workflow-article-kicker"><span class="workflow-step">04</span> AI agenti v praxi</div>
-                <h2 class="workflow-article-title">Paměť AI agentů: co si AI skutečně pamatuje</h2>
                 <p class="workflow-article-summary">Agent může pracovat s informacemi z minulosti, ale paměť AI není lidská paměť a neznamená automatické nové trénování modelu.</p>
-                <div class="workflow-article-meta"><span>1. září 2026</span><span>AI agenti</span><span>Paměť a RAG</span></div>
             </div>
 
+            <nav class="article-toc" aria-labelledby="toc-heading-ai-agenti-pamet-html">
+                <p class="article-toc-label" id="toc-heading-ai-agenti-pamet-html">V tomto článku</p>
+                <ul>
+                    <li><a href="#toc-01">Proč agent potřebuje paměť</a></li>
+                    <li><a href="#toc-02">AI nemá jednu paměť</a></li>
+                    <li><a href="#toc-03">Paměť není totéž jako trénování</a></li>
+                    <li><a href="#toc-04">Trénování modelu je něco jiného</a></li>
+                    <li><a href="#toc-05">Co může agent ukládat</a></li>
+                    <li><a href="#toc-06">Epizodická a sémantická paměť</a></li>
+                </ul>
+            </nav>
             <div class="article-content">
                 <p class="article-lead">V předchozích dílech jsme si ukázali, že AI agent pracuje v cyklu a může používat různé nástroje. Aby ale mohl pracovat dlouhodobě, potřebuje ještě jednu důležitou schopnost: pracovat s informacemi z minulosti.</p>
                 <p>Právě tomu se říká paměť. Jenže paměť AI není totéž jako lidská paměť a už vůbec neznamená, že se model pokaždé „něco nového naučí“.</p>
@@ -56,7 +64,7 @@
                     <figcaption>Paměť AI agentů: od kontextu aktuální konverzace přes pracovní a dlouhodobou paměť až po externí znalostní zdroje.</figcaption>
                 </figure>
 
-                <h2>Proč agent potřebuje paměť</h2>
+                <h2 id="toc-01">Proč agent potřebuje paměť</h2>
                 <p>Představme si asistenta, kterému každý den zadáváme podobné úkoly.</p>
                 <p>V pondělí mu řekneme:</p>
                 <blockquote>„Připravuji pracovní listy pro druhý ročník na úrovni B1. Preferuji krátké úkoly a jasné instrukce.“</blockquote>
@@ -67,7 +75,7 @@
                 <p>To není příliš praktické.</p>
                 <p>Agent s pamětí může naopak využít informace z předchozí práce a nemusí začínat pokaždé od nuly.</p>
 
-                <h2>AI nemá jednu paměť</h2>
+                <h2 id="toc-02">AI nemá jednu paměť</h2>
                 <p>Když se řekne „AI si něco pamatuje“, může to znamenat několik různých věcí.</p>
                 <p>Je dobré rozlišovat alespoň čtyři základní vrstvy:</p>
                 <ol>
@@ -143,7 +151,7 @@
                 <p>Zjednodušeně:</p>
                 <div class="article-prompt"><strong>uživatel → informace → databáze paměti</strong><br /><br /><strong>později:</strong><br /><br />nový úkol → vyhledání relevantní paměti → model</div>
 
-                <h2>Paměť není totéž jako trénování</h2>
+                <h2 id="toc-03">Paměť není totéž jako trénování</h2>
                 <p>Tohle je asi nejdůležitější část celého článku.</p>
                 <p>Pokud si AI aplikace uloží:</p>
                 <blockquote>„Uživatel preferuje stručné pracovní listy.“</blockquote>
@@ -157,7 +165,7 @@
                 <p>Nevytvořil si nový mozek.</p>
                 <p>Jen použil uloženou informaci.</p>
 
-                <h2>Trénování modelu je něco jiného</h2>
+                <h2 id="toc-04">Trénování modelu je něco jiného</h2>
                 <p>Při trénování se mění samotné parametry modelu.</p>
                 <p>Je to výpočetně velmi náročný proces a běžný AI agent jej při každém rozhovoru rozhodně neprovádí.</p>
                 <p>Proto je tvrzení:</p>
@@ -168,7 +176,7 @@
                 <p>To může navenek působit jako učení.</p>
                 <p>Technicky ale často jde o práci s pamětí, nikoliv o nové trénování modelu.</p>
 
-                <h2>Co může agent ukládat</h2>
+                <h2 id="toc-05">Co může agent ukládat</h2>
                 <p>Do dlouhodobé paměti lze ukládat mnoho druhů informací.</p>
 
                 <h3>Preference uživatele</h3>
@@ -199,7 +207,7 @@
                 </ul>
                 <p>Taková paměť může výrazně zlepšit kontinuitu práce.</p>
 
-                <h2>Epizodická a sémantická paměť</h2>
+                <h2 id="toc-06">Epizodická a sémantická paměť</h2>
                 <p>U pokročilejších agentních systémů se někdy používají pojmy převzaté z psychologie.</p>
 
                 <h3>Epizodická paměť</h3>

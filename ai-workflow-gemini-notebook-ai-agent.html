@@ -41,12 +41,20 @@
     <main class="workflow-main">
         <article class="workflow-article">
             <div class="workflow-article-intro">
-                <div class="workflow-article-kicker"><span class="workflow-step">13</span> Workflow pro učitele</div>
-                <h2 class="workflow-article-title">Jak vytvořit chytrý učitelský sešit v Gemini Notebooku pomocí AI agenta</h2>
                 <p class="workflow-article-summary">Místo ručního hledání, stahování, nahrávání a nastavování instrukcí může AI agent připravit tematický sešit z důvěryhodných zdrojů.</p>
-                <div class="workflow-article-meta"><span>8. září 2026</span><span>Gemini Notebook</span><span>Claude · AI agent</span></div>
             </div>
 
+            <nav class="article-toc" aria-labelledby="toc-heading-ai-workflow-gemini-notebook-ai-agent-html">
+                <p class="article-toc-label" id="toc-heading-ai-workflow-gemini-notebook-ai-agent-html">V tomto článku</p>
+                <ul>
+                    <li><a href="#toc-01">K čemu takový sešit může učitel použít</a></li>
+                    <li><a href="#toc-02">Jakého AI agenta jsme použili</a></li>
+                    <li><a href="#toc-03">Kde Claude najdu</a></li>
+                    <li><a href="#toc-04">Jak dostat Claude do prohlížeče</a></li>
+                    <li><a href="#toc-05">Ještě jedna možnost: Cowork</a></li>
+                    <li><a href="#toc-06">Pozor na školní účty a citlivá data</a></li>
+                </ul>
+            </nav>
             <div class="article-content">
                 <p class="article-lead">Gemini Notebook, respektive NotebookLM, používám stále častěji jako prostředí, ve kterém si mohu vytvořit vlastního odborného pomocníka nad konkrétními zdroji. Samotné založení sešitu je jednoduché. Mnohem zajímavější ale začíná být situace, kdy přípravu celého sešitu svěříme AI agentovi.</p>
                 <p>Místo ručního hledání desítek dokumentů, jejich stahování, nahrávání, kontroly a nastavování instrukcí může agent velkou část této práce udělat za nás.</p>
@@ -57,7 +65,7 @@
                     <figcaption>Vizuální shrnutí workflow od výběru zdrojů přes nastavení Gemini Notebooku až po hotový tematický sešit.</figcaption>
                 </figure>
 
-                <h2>K čemu takový sešit může učitel použít</h2>
+                <h2 id="toc-01">K čemu takový sešit může učitel použít</h2>
                 <p>Možností je překvapivě hodně.</p>
                 <p>Může vzniknout například:</p>
                 <ul>
@@ -74,7 +82,7 @@
                 <p>Velkou výhodou je, že odpovědi vznikají především nad zdroji, které do sešitu sami vložíme.</p>
                 <p>To je ve školním prostředí podstatně bezpečnější než spoléhat pouze na obecné znalosti chatbotu.</p>
 
-                <h2>Jakého AI agenta jsme použili</h2>
+                <h2 id="toc-02">Jakého AI agenta jsme použili</h2>
                 <p>Pro tento pracovní postup jsme využili <strong>Claude od společnosti Anthropic</strong> a jeho agentní funkce.</p>
                 <p>Běžný chatbot především odpovídá na otázky. Agent dokáže dostat širší úkol a potom provádět více navazujících kroků: otevřít webové stránky, procházet odkazy, kontrolovat dokumenty, přepínat mezi kartami nebo pracovat přímo ve webových aplikacích.</p>
                 <p>Pro práci přímo v internetovém prohlížeči slouží <strong>Claude in Chrome</strong>.</p>
@@ -86,12 +94,12 @@
                 <blockquote>Vyhledej oficiální metodické dokumenty MŠMT k rizikovému chování, každý zdroj otevři, ověř, zda jde o aktuální dokument, a připrav z nich nový tematický sešit.</blockquote>
                 <p>Agent pak může postupovat webem podobně jako člověk.</p>
 
-                <h2>Kde Claude najdu</h2>
+                <h2 id="toc-03">Kde Claude najdu</h2>
                 <p>Základní službu Claude najdete na webu <strong>Claude.ai</strong>.</p>
                 <p>Pro skutečně agentní práci je zajímavý především režim <strong>Claude Cowork</strong>, který je určený právě pro vícekrokové pracovní úkoly. Anthropic jej nabízí v placených tarifech Claude a v současnosti jej zpřístupňuje přes webovou aplikaci i desktopovou aplikaci.</p>
                 <p>Pokud ale chcete, aby Claude pracoval přímo s webovými stránkami otevřenými ve vašem prohlížeči, potřebujete <strong>Claude in Chrome</strong>.</p>
 
-                <h2>Jak dostat Claude do prohlížeče</h2>
+                <h2 id="toc-04">Jak dostat Claude do prohlížeče</h2>
                 <p>Instalace je podobná jako u jiných rozšíření pro Chrome.</p>
                 <h3>1. Otevřete Google Chrome</h3>
                 <p>Claude in Chrome je určený pro desktopovou verzi <strong>Google Chrome</strong>.</p>
@@ -117,7 +125,7 @@
                 <blockquote>Otevři tento zdroj, zjisti, zda jde o aktuální metodiku, a pokud ano, použij jej při přípravě sešitu.</blockquote>
                 <p>Claude může stránku číst a podle nastavených oprávnění s ní také pracovat.</p>
 
-                <h2>Ještě jedna možnost: Cowork</h2>
+                <h2 id="toc-05">Ještě jedna možnost: Cowork</h2>
                 <p>Claude dnes nabízí také režim <strong>Cowork</strong>, který je pro podobnou práci velmi zajímavý.</p>
                 <p>Je navržený právě pro situace, kdy nechceme s AI pouze konverzovat, ale chceme jí předat celý pracovní úkol.</p>
                 <p>Například:</p>
@@ -127,7 +135,7 @@
                 <p>Pro začátečníka bych ale celý princip popsala jednoduše:</p>
                 <div class="article-prompt"><strong>Claude</strong> = AI<br /><br /><strong>Cowork</strong> = režim pro předání větší práce<br /><br /><strong>Claude in Chrome</strong> = ruce a oči Claude uvnitř vašeho prohlížeče</div>
 
-                <h2>Pozor na školní účty a citlivá data</h2>
+                <h2 id="toc-06">Pozor na školní účty a citlivá data</h2>
                 <p>Tady bych doporučila určitou opatrnost.</p>
                 <p>Claude in Chrome není obyčejné rozšíření, které pouze shrnuje text stránky. Dokáže s webem skutečně pracovat.</p>
                 <p>Pokud jste například přihlášeni do:</p>

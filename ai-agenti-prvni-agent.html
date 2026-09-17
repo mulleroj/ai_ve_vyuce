@@ -41,12 +41,20 @@
     <main class="workflow-main">
         <article class="workflow-article">
             <div class="workflow-article-intro">
-                <div class="workflow-article-kicker"><span class="workflow-step">10</span> AI agenti v praxi</div>
-                <h2 class="workflow-article-title">Jak navrhnout svého prvního jednoduchého AI agenta</h2>
                 <p class="workflow-article-summary">První agent nemusí být velký systém. Nejlepší začátek je jeden konkrétní problém, jasná pravidla, málo nástrojů a člověk u důležitých rozhodnutí.</p>
-                <div class="workflow-article-meta"><span>1. září 2026</span><span>AI agenti</span><span>První projekt</span></div>
             </div>
 
+            <nav class="article-toc" aria-labelledby="toc-heading-ai-agenti-prvni-agent-html">
+                <p class="article-toc-label" id="toc-heading-ai-agenti-prvni-agent-html">V tomto článku</p>
+                <ul>
+                    <li><a href="#toc-01">Nejdřív zapomeňte na technologii</a></li>
+                    <li><a href="#toc-02">Vyberte jeden konkrétní úkol</a></li>
+                    <li><a href="#toc-03">Popište výsledek, ne osobnost</a></li>
+                    <li><a href="#toc-04">Definujte vstupy</a></li>
+                    <li><a href="#toc-05">Určete, odkud smí čerpat</a></li>
+                    <li><a href="#toc-06">Pak teprve přidejte nástroje</a></li>
+                </ul>
+            </nav>
             <div class="article-content">
                 <p class="article-lead">AI agent nemusí být složitý systém napojený na deset databází, několik modelů a půl internetu. Pro první pokus je naopak lepší začít velmi malým úkolem. Dobrý první agent má jasný cíl, několik pravidel, omezený počet nástrojů a přesně určené místo, kde musí výsledek zkontrolovat člověk.</p>
 
@@ -55,7 +63,7 @@
                     <figcaption>První agent může začít malým úkolem: jasně definujte cíl, vstupy, zdroje, nástroje, postup, stop pravidla a kontrolu.</figcaption>
                 </figure>
 
-                <h2>Nejdřív zapomeňte na technologii</h2>
+                <h2 id="toc-01">Nejdřív zapomeňte na technologii</h2>
                 <p>Když člověk začne číst o AI agentech, velmi rychle narazí na pojmy jako MCP, RAG, function calling, memory, orchestration nebo multi-agentní systémy.</p>
                 <p>To všechno může být užitečné.</p>
                 <p>Ale při návrhu prvního agenta bych nezačínala otázkou:</p>
@@ -66,7 +74,7 @@
                 <p>Agent totiž není cíl.</p>
                 <p>Je to nástroj pro řešení určitého pracovního problému.</p>
 
-                <h2>Vyberte jeden konkrétní úkol</h2>
+                <h2 id="toc-02">Vyberte jeden konkrétní úkol</h2>
                 <p>Špatné zadání pro prvního agenta je například:</p>
                 <blockquote>„Chci AI asistenta pro učitele.“</blockquote>
                 <p>To je příliš široké.</p>
@@ -80,7 +88,7 @@
                 </ul>
                 <p>Čím užší první úkol zvolíme, tím snadněji poznáme, zda agent skutečně funguje.</p>
 
-                <h2>Popište výsledek, ne osobnost</h2>
+                <h2 id="toc-03">Popište výsledek, ne osobnost</h2>
                 <p>U klasického promptování jsme si zvykli na formulace typu:</p>
                 <div class="article-prompt"><strong>Jsi zkušený učitel s dvacetiletou praxí…</strong></div>
                 <p>To někdy může pomoci nastavit styl odpovědi.</p>
@@ -91,7 +99,7 @@
                 <p>Agent přesněji ví:</p>
                 <div class="article-prompt"><strong>co má vzniknout a podle čeho poznáme, že je práce hotová</strong></div>
 
-                <h2>Definujte vstupy</h2>
+                <h2 id="toc-04">Definujte vstupy</h2>
                 <p>Další otázka zní:</p>
                 <blockquote>Co agent potřebuje vědět, aby mohl úkol provést?</blockquote>
                 <p>Pro agenta, který vytváří pracovní list, to může být například:</p>
@@ -103,7 +111,7 @@
                 <div class="article-prompt"><strong>Pokud není uvedeno jinak, připrav materiál pro 45 minut.</strong></div>
                 <p>Dobrý agent by neměl důležité informace jednoduše hádat.</p>
 
-                <h2>Určete, odkud smí čerpat</h2>
+                <h2 id="toc-05">Určete, odkud smí čerpat</h2>
                 <p>Tohle je velmi důležité.</p>
                 <p>Představme si agenta:</p>
                 <blockquote>„Připrav pracovní list podle mé učebnice.“</blockquote>
@@ -120,7 +128,7 @@
                 </ul>
                 <p>To poslední je někdy nejlepší bezpečnostní pojistka.</p>
 
-                <h2>Pak teprve přidejte nástroje</h2>
+                <h2 id="toc-06">Pak teprve přidejte nástroje</h2>
                 <p>Teď se můžeme vrátit k technologii.</p>
                 <p>Agent potřebuje nástroj pouze tehdy, pokud ho potřebuje ke splnění svého úkolu.</p>
                 <ul>

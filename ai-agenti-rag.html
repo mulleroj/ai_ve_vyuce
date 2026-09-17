@@ -41,12 +41,20 @@
     <main class="workflow-main">
         <article class="workflow-article">
             <div class="workflow-article-intro">
-                <div class="workflow-article-kicker"><span class="workflow-step">05</span> AI agenti v praxi</div>
-                <h2 class="workflow-article-title">RAG: když AI pracuje s vašimi vlastními dokumenty</h2>
                 <p class="workflow-article-summary">RAG umožní agentovi vyhledat relevantní informace ve vašich dokumentech a předat je modelu právě ve chvíli, kdy je potřebuje.</p>
-                <div class="workflow-article-meta"><span>1. září 2026</span><span>AI agenti</span><span>RAG a vlastní zdroje</span></div>
             </div>
 
+            <nav class="article-toc" aria-labelledby="toc-heading-ai-agenti-rag-html">
+                <p class="article-toc-label" id="toc-heading-ai-agenti-rag-html">V tomto článku</p>
+                <ul>
+                    <li><a href="#toc-01">Co znamená RAG</a></li>
+                    <li><a href="#toc-02">Proč vůbec RAG potřebujeme</a></li>
+                    <li><a href="#toc-03">Bez RAG a s RAG</a></li>
+                    <li><a href="#toc-04">Jak RAG funguje</a></li>
+                    <li><a href="#toc-05">RAG není totéž co „nahrát PDF do ChatGPT“</a></li>
+                    <li><a href="#toc-06">RAG není databáze sama o sobě</a></li>
+                </ul>
+            </nav>
             <div class="article-content">
                 <p class="article-lead">V předchozím článku jsme si ukázali, že AI agent může využívat různé druhy paměti. Jenže co když potřebujeme, aby pracoval s informacemi, které nejsou součástí jeho původního tréninku? Třeba se školním řádem, interní směrnicí, učebnicí, firemní dokumentací nebo vlastní databází. Právě k tomu slouží RAG.</p>
 
@@ -55,7 +63,7 @@
                     <figcaption>RAG propojí AI s vašimi vlastními zdroji: dokumenty rozdělí, vyhledá relevantní části a předá je modelu pro odpověď podle konkrétního kontextu.</figcaption>
                 </figure>
 
-                <h2>Co znamená RAG</h2>
+                <h2 id="toc-01">Co znamená RAG</h2>
                 <p>Zkratka RAG znamená:</p>
                 <div class="article-prompt"><strong>Retrieval-Augmented Generation</strong></div>
                 <p>Česky přibližně:</p>
@@ -71,7 +79,7 @@
                 <div class="article-prompt"><strong>dotaz → vyhledání → relevantní informace → AI → odpověď</strong></div>
                 <p>A právě to je RAG.</p>
 
-                <h2>Proč vůbec RAG potřebujeme</h2>
+                <h2 id="toc-02">Proč vůbec RAG potřebujeme</h2>
                 <p>Jazykový model nezná všechno.</p>
                 <p>A už vůbec nemůže automaticky znát:</p>
                 <ul>
@@ -90,7 +98,7 @@
                 <p>Správná odpověď je tedy ukrytá například ve školním řádu.</p>
                 <p>RAG umožní systému nejprve tento dokument vyhledat, najít příslušnou část a teprve potom odpovědět.</p>
 
-                <h2>Bez RAG a s RAG</h2>
+                <h2 id="toc-03">Bez RAG a s RAG</h2>
                 <p>Rozdíl si můžeme ukázat jednoduše.</p>
 
                 <h3>Bez RAG</h3>
@@ -118,7 +126,7 @@
                 <p>AI už neodpovídá jen podle obecných znalostí.</p>
                 <p>Pracuje s konkrétním zdrojem.</p>
 
-                <h2>Jak RAG funguje</h2>
+                <h2 id="toc-04">Jak RAG funguje</h2>
                 <p>Celý proces můžeme rozdělit do několika kroků.</p>
 
                 <h3>1. Připravíme zdroje</h3>
@@ -201,7 +209,7 @@
                 <p>Ideálně může také uvést, ze kterého dokumentu informace pochází.</p>
                 <p>To je pro důvěryhodnost velmi důležité.</p>
 
-                <h2>RAG není totéž co „nahrát PDF do ChatGPT“</h2>
+                <h2 id="toc-05">RAG není totéž co „nahrát PDF do ChatGPT“</h2>
                 <p>Na první pohled to může vypadat stejně.</p>
                 <p>Nahrajeme dokument a zeptáme se na něj.</p>
                 <p>Rozdíl je především ve způsobu, jak je systém navržen.</p>
@@ -215,7 +223,7 @@
                 </ul>
                 <p>Díky tomu může systém pracovat i s velmi rozsáhlými znalostními databázemi.</p>
 
-                <h2>RAG není databáze sama o sobě</h2>
+                <h2 id="toc-06">RAG není databáze sama o sobě</h2>
                 <p>Tohle je dobré rozlišovat.</p>
                 <p>RAG není místo, kde jsou informace uloženy.</p>
                 <p>RAG je způsob práce s informacemi.</p>

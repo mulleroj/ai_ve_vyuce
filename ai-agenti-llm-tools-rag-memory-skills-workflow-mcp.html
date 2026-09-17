@@ -41,12 +41,20 @@
     <main class="workflow-main">
         <article class="workflow-article">
             <div class="workflow-article-intro">
-                <div class="workflow-article-kicker"><span class="workflow-step">16</span> Agentní stavebnice</div>
-                <h2 class="workflow-article-title">Jak spolu souvisí LLM, Tools, RAG, Memory, Skills, Workflow a MCP</h2>
                 <p class="workflow-article-summary">Když člověk začne číst o AI agentech, může mít pocit, že každý týden vznikne další zkratka. Ve skutečnosti většina pojmů řeší jinou část stejného problému.</p>
-                <div class="workflow-article-meta"><span>1. září 2026</span><span>AI agenti</span><span>Architektura</span></div>
             </div>
 
+            <nav class="article-toc" aria-labelledby="toc-heading-ai-agenti-llm-tools-rag-memory-skills-workflow-mcp-html">
+                <p class="article-toc-label" id="toc-heading-ai-agenti-llm-tools-rag-memory-skills-workflow-mcp-html">V tomto článku</p>
+                <ul>
+                    <li><a href="#toc-01">Začněme od úplného základu: LLM</a></li>
+                    <li><a href="#toc-02">Tools: co může agent skutečně udělat</a></li>
+                    <li><a href="#toc-03">Function Calling: jak model o nástroj požádá</a></li>
+                    <li><a href="#toc-04">Memory: co si má systém uchovat</a></li>
+                    <li><a href="#toc-05">RAG: kde najít potřebné znalosti</a></li>
+                    <li><a href="#toc-06">Skills: jak má agent určitou práci dělat</a></li>
+                </ul>
+            </nav>
             <div class="article-content">
                 <p class="article-lead">Jazykový model, nástroje, paměť, RAG, skills, workflow, MCP… Když člověk začne číst o AI agentech, může mít velmi rychle pocit, že každý týden vznikne další zkratka, kterou musí znát. Ve skutečnosti ale většina těchto pojmů řeší jinou část stejného problému. Jak vytvořit AI systém, který nejen odpovídá, ale dokáže spolehlivě vykonávat práci.</p>
 
@@ -55,7 +63,7 @@
                     <figcaption>LLM, tools, RAG, memory, skills, workflow a MCP nejsou soupeři. Každá část řeší jinou potřebu agentního systému.</figcaption>
                 </figure>
 
-                <h2>Začněme od úplného základu: LLM</h2>
+                <h2 id="toc-01">Začněme od úplného základu: LLM</h2>
                 <p>Uprostřed většiny dnešních agentních systémů stojí LLM – Large Language Model, tedy velký jazykový model.</p>
                 <p>Je to část systému, která dokáže pracovat s přirozeným jazykem.</p>
                 <p>Může například porozumět zadání, vytvářet text, analyzovat informace, navrhovat postup nebo rozhodnout, který nástroj by měl být použit.</p>
@@ -74,7 +82,7 @@
                 <p>To všechno musí dodat další vrstvy systému.</p>
                 <p>A právě tam se začínají objevovat ostatní pojmy.</p>
 
-                <h2>Tools: co může agent skutečně udělat</h2>
+                <h2 id="toc-02">Tools: co může agent skutečně udělat</h2>
                 <p>Tools, tedy nástroje, rozšiřují možnosti jazykového modelu.</p>
                 <p>Bez nich může model například napsat:</p>
                 <div class="article-prompt"><strong>Doporučuji zkontrolovat kalendář.</strong></div>
@@ -87,7 +95,7 @@
                 <p>Zjednodušeně:</p>
                 <div class="article-prompt"><strong>LLM = rozhodování a práce s jazykem<br /><br />Tool = konkrétní schopnost něco udělat</strong></div>
 
-                <h2>Function Calling: jak model o nástroj požádá</h2>
+                <h2 id="toc-03">Function Calling: jak model o nástroj požádá</h2>
                 <p>S tools velmi úzce souvisí Function Calling.</p>
                 <p>Model může například dojít k závěru:</p>
                 <div class="article-prompt"><strong>Potřebuji zjistit počasí v Praze.</strong></div>
@@ -97,7 +105,7 @@
                 <p>Function Calling tedy řeší:</p>
                 <div class="article-prompt"><strong>jak model sdělí systému, který nástroj chce použít a s jakými parametry.</strong></div>
 
-                <h2>Memory: co si má systém uchovat</h2>
+                <h2 id="toc-04">Memory: co si má systém uchovat</h2>
                 <p>Další problém vznikne ve chvíli, kdy chceme pracovat dlouhodobě.</p>
                 <p>Řekněme, že agent už ví:</p>
                 <div class="article-prompt"><strong>Pracovní listy chceme na A4.<br /><br />Vždy mají obsahovat řešení.<br /><br />Uživatel preferuje stručné instrukce.</strong></div>
@@ -109,7 +117,7 @@
                 <div class="article-prompt"><strong>Paměť většinou neznamená, že se samotný LLM znovu natrénoval.</strong></div>
                 <p>Informace je obvykle uložena mimo model a v pravou chvíli se mu znovu poskytne.</p>
 
-                <h2>RAG: kde najít potřebné znalosti</h2>
+                <h2 id="toc-05">RAG: kde najít potřebné znalosti</h2>
                 <p>Paměť ale není totéž jako znalostní databáze.</p>
                 <p>Představme si, že potřebujeme odpovědět:</p>
                 <blockquote>„Jak naše škola řeší neklasifikaci?“</blockquote>
@@ -134,7 +142,7 @@
                 <div class="article-prompt"><strong>co potřebujeme zjistit ze zdrojů.</strong></div>
                 <p>Technicky mohou používat podobné metody vyhledávání, ale jejich účel je jiný.</p>
 
-                <h2>Skills: jak má agent určitou práci dělat</h2>
+                <h2 id="toc-06">Skills: jak má agent určitou práci dělat</h2>
                 <p>Teď agent ví:</p>
                 <div class="article-prompt"><strong>co může udělat, co si pamatuje a kde hledat informace.</strong></div>
                 <p>Pořád ale zbývá otázka:</p>
