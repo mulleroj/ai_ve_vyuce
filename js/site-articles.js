@@ -393,6 +393,17 @@ window.siteArticles = [
     badgeClass: 'badge-blue'
   },
   {
+    href: 'ai-navod-gemini-notebook-prezentace.html',
+    title: '7 promptů pro lepší výukovou prezentaci',
+    summary: 'Sedm promptů, které z vlastních materiálů v Gemini Notebooku vytvoří smysluplnější výukovou prezentaci a celou promyšlenou hodinu.',
+    category: 'Návod',
+    date: '2026-08-28',
+    dateLabel: '28. srpna 2026',
+    icon: '📓',
+    tags: ['Gemini Notebook', '7 promptů', 'Výuková prezentace'],
+    badgeClass: 'badge-blue'
+  },
+  {
     href: 'ai-navod-chatgpt-zacatek-bezpecne.html',
     title: 'ChatGPT pro učitele: jak začít bezpečně a co zvládnete i zdarma',
     platforms: ['chatgpt'],
@@ -702,8 +713,8 @@ window.siteArticles = [
     platforms: ['chatgpt'],
     summary: 'Workflow pro vytvoření vizuálních poznámek, kontrolu faktů v Claude a opravu chyb v ChatGPT.',
     category: 'Workflow',
-    date: '',
-    dateLabel: '',
+    date: '2026-08-23',
+    dateLabel: '23. srpna 2026',
     icon: '🔄',
     tags: ['ChatGPT', 'Claude'],
     badgeClass: 'badge-gray'
