@@ -353,12 +353,6 @@ select {
   border: 1px solid rgba(155, 89, 182, 0.3);
 }
 
-.badge-red {
-  background: rgba(231, 76, 60, 0.15);
-  color: var(--accent-red);
-  border: 1px solid rgba(231, 76, 60, 0.3);
-}
-
 .badge-green {
   background: rgba(39, 174, 96, 0.15);
   color: var(--accent-green);
@@ -537,10 +531,6 @@ select {
 
 .nav-dropdown-item .item-icon {
   font-size: 1.2rem;
-}
-
-.nav-cta {
-  margin-left: 12px;
 }
 
 .nav-mobile-toggle {
@@ -816,100 +806,6 @@ select {
 .floating-text span {
   font-size: 0.75rem;
   color: var(--text-secondary);
-}
-
-/* ── Subject Cards ── */
-.subject-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 20px;
-}
-
-.subject-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  transition: var(--transition);
-  cursor: pointer;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-.subject-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-hover);
-  border-color: var(--border-hover);
-}
-
-.subject-card-header {
-  padding: 32px 28px 24px;
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-}
-
-.subject-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.8rem;
-  flex-shrink: 0;
-}
-
-.subject-card-body {
-  padding: 0 28px 28px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.subject-title {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.subject-desc {
-  font-size: 0.88rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 16px;
-  flex: 1;
-}
-
-.subject-meta {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.subject-card-footer {
-  margin-top: 16px;
-  padding: 16px 28px;
-  border-top: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.subject-count {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-.subject-arrow {
-  color: var(--accent-gold);
-  font-size: 1.1rem;
-  transition: var(--transition);
-}
-
-.subject-card:hover .subject-arrow {
-  transform: translateX(6px);
 }
 
 /* ── Activity Cards ── */
@@ -1604,12 +1500,6 @@ select {
 }
 
 /* ── Search Bar ── */
-.search-wrap {
-  position: relative;
-  max-width: 480px;
-  width: 100%;
-}
-
 .search-bar {
   position: relative;
   display: flex;
@@ -1922,54 +1812,6 @@ select {
   margin-bottom: 4px;
 }
 
-/* ── Step Cards ── */
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-}
-
-.step-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 28px;
-  text-align: center;
-  transition: var(--transition);
-}
-
-.step-card:hover {
-  border-color: var(--border-hover);
-  transform: translateY(-3px);
-}
-
-.step-number {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: var(--gradient-gold);
-  color: #0a0f1e;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Outfit', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 800;
-  margin: 0 auto 16px;
-}
-
-.step-title {
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.step-desc {
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
 /* ── Stats Section ── */
 .stats-grid {
   display: grid;
@@ -2114,34 +1956,6 @@ select {
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0
-  }
-
-  100% {
-    background-position: 200% 0
-  }
-}
-
-.fade-in {
-  animation: fadeIn 0.6s ease both;
-}
-
-.fade-in-up {
-  animation: fadeInUp 0.6s ease both;
-}
-
 /* Observe-based reveal */
 .reveal {
   opacity: 0;
@@ -2174,8 +1988,7 @@ select {
 
 @media (max-width: 768px) {
 
-  .nav-links,
-  .nav-cta {
+  .nav-links {
     display: none;
   }
 
@@ -2216,10 +2029,6 @@ select {
 
   .directory-table {
     min-width: 760px;
-  }
-
-  .subject-grid {
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   }
 
   .modal {

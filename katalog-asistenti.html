@@ -168,34 +168,6 @@
             overflow: hidden;
         }
 
-        .hero-particle {
-            position: absolute;
-            border-radius: 50%;
-            pointer-events: none;
-            opacity: 0;
-            animation: particleFloat linear infinite;
-        }
-
-        @keyframes particleFloat {
-            0% {
-                opacity: 0;
-                transform: translateY(0) scale(0);
-            }
-
-            15% {
-                opacity: 0.8;
-            }
-
-            85% {
-                opacity: 0.3;
-            }
-
-            100% {
-                opacity: 0;
-                transform: translateY(-400px) scale(1);
-            }
-        }
-
         @keyframes fadeSlideUp {
             from {
                 opacity: 0;
@@ -220,30 +192,6 @@
             }
         }
 
-        @keyframes pulseGlow {
-
-            0%,
-            100% {
-                box-shadow: 0 0 20px rgba(138, 43, 226, 0.2), 0 0 60px rgba(0, 212, 168, 0.05);
-            }
-
-            50% {
-                box-shadow: 0 0 30px rgba(138, 43, 226, 0.35), 0 0 80px rgba(0, 212, 168, 0.15);
-            }
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
         .hero-img-wrap {
             animation: fadeSlideRight 0.8s ease 0.4s both;
             border-radius: var(--radius-lg);
@@ -256,10 +204,6 @@
 
         .hero-img-wrap img {
             border-radius: var(--radius-lg);
-        }
-
-        #heroParticles {
-            display: none;
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -365,7 +309,6 @@
         style="background:linear-gradient(135deg,#0a0f1e 0%,#0d1a30 100%)">
         <div class="page-hero-glow"
             style="background:radial-gradient(ellipse,rgba(138,43,226,0.12) 0%,transparent 70%)"></div>
-        <div id="heroParticles"></div>
         <div class="container" style="position:relative;z-index:2">
             <div style="display:flex;align-items:center;gap:48px;flex-wrap:wrap">
                 <div class="page-hero-content" style="flex:1;min-width:280px">
