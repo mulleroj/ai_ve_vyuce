@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aktivity – AI ve Výuce</title>
     <meta name="description"
-        content="Všechny AI aktivity pro učitele na jednom místě. Filtrujte podle předmětu, ročníku nebo AI nástroje." />
+        content="Vybrané AI aktivity pro učitele. Filtrujte podle předmětu, ročníku nebo AI nástroje a další scénáře objevte na předmětových stránkách." />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/aktivity" />
     <meta property="og:title" content="Aktivity – AI ve V&#253;uce" />
-    <meta property="og:description" content="Všechny AI aktivity pro učitele na jednom m&#237;stě. Filtrujte podle předmětu, ročn&#237;ku nebo AI n&#225;stroje." />
+    <meta property="og:description" content="Vybrané AI aktivity pro učitele. Filtrujte podle předmětu, ročn&#237;ku nebo AI n&#225;stroje a další scénáře objevte na předmětových stránkách." />
     <meta property="og:url" content="https://ai-ve-vyuce.netlify.app/aktivity" />
     <meta property="og:type" content="website" /></head>
 
@@ -71,13 +71,13 @@
             <div class="page-hero-content">
                 <div class="page-hero-icon"
                     style="background:linear-gradient(135deg,rgba(52,152,219,0.2),rgba(52,152,219,0.05))">🎯</div>
-                <h1 class="page-hero-title">Všechny <span
+                <h1 class="page-hero-title">Vybrané <span
                         style="background:linear-gradient(135deg,#3498db,#9b59b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Aktivity</span>
                 </h1>
-                <p class="page-hero-subtitle">Kompletní sbírka AI aktivit pro všechny předměty a ročníky. Filtrujte dle
-                    předmětu, ročníku nebo AI nástroje a najděte přesně to, co potřebujete.</p>
+                <p class="page-hero-subtitle">Kurátorovaný výběr AI aktivit pro všechny předměty a ročníky. Filtrujte dle
+                    předmětu, ročníku nebo AI nástroje a najděte scénář, který potřebujete. Další aktivity najdete na předmětových stránkách.</p>
                 <div class="page-hero-stats">
-                    <div class="page-hero-stat"><span>🎯</span><strong>14</strong> aktivit</div>
+                    <div class="page-hero-stat"><span>🎯</span><strong>14</strong> vybraných aktivit</div>
                     <div class="page-hero-stat"><span>📚</span><strong>5</strong> předmětů</div>
                     <div class="page-hero-stat"><span>🏫</span>ZŠ · SŠ</div>
                 </div>
@@ -91,7 +91,7 @@
             <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start;margin-bottom:32px">
                 <div class="search-bar" style="flex:1;min-width:240px">
                     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                    <input type="text" class="search-input" id="activitySearch" placeholder="Hledat aktivity...">
+                    <input type="text" class="search-input" id="activitySearch" placeholder="Hledat aktivity..." aria-label="Hledat aktivity">
                 </div>
             </div>
             <div style="display:flex;flex-wrap:wrap;gap:24px;margin-bottom:32px">
@@ -134,9 +134,11 @@
                 </div>
             </div>
 
+            <p id="activityResults" class="catalog-results-status" aria-live="polite" aria-atomic="true"></p>
+
             <div class="catalog-role-note">
                 <span class="badge badge-blue">🎯 Hotová aktivita</span>
-                <span><strong>Aktivity</strong> jsou konkrétní scénáře do výuky s časem, ročníkem, organizací práce a doporučeným nástrojem. Tlačítko „Kopírovat zadání“ zkopíruje prompt připravený pro danou aktivitu.</span>
+                <span><strong>Aktivity</strong> jsou konkrétní scénáře do výuky s časem, ročníkem, organizací práce a doporučeným nástrojem. Tato stránka obsahuje 14 vybraných scénářů; další najdete podle předmětu. Tlačítko „Kopírovat zadání“ zkopíruje prompt připravený pro danou aktivitu.</span>
                 <a href="prompty.html">Hledám univerzální šablonu →</a>
             </div>
 
@@ -900,26 +902,35 @@
     <script>
         // Multi-dimensional filtering
         const filters = { subject: 'all', level: 'all', tool: 'all' };
+        const activityCards = [...document.querySelectorAll('#allActivities .activity-card')];
+        const activityResults = document.getElementById('activityResults');
+        const activitySearch = document.getElementById('activitySearch');
 
         document.querySelectorAll('#subjectFilter .filter-chip, #levelFilter .filter-chip, #toolFilter .filter-chip').forEach(chip => {
+            chip.setAttribute('aria-pressed', chip.classList.contains('active') ? 'true' : 'false');
             chip.addEventListener('click', () => {
                 const type = chip.dataset.filterType;
                 const value = chip.dataset.filter;
                 filters[type] = value;
-                chip.closest('.filter-group').querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+                chip.closest('.filter-group').querySelectorAll('.filter-chip').forEach(c => {
+                    c.classList.remove('active');
+                    c.setAttribute('aria-pressed', 'false');
+                });
                 chip.classList.add('active');
+                chip.setAttribute('aria-pressed', 'true');
                 applyFilters();
             });
         });
 
         function applyFilters() {
-            const cards = document.querySelectorAll('#allActivities .activity-card');
+            const query = activitySearch.value.toLowerCase().trim();
             let visible = 0;
-            cards.forEach(card => {
+            activityCards.forEach(card => {
                 const matchSubject = filters.subject === 'all' || card.dataset.subject === filters.subject;
                 const matchLevel = filters.level === 'all' || card.dataset.level.split(' ').includes(filters.level);
                 const matchTool = filters.tool === 'all' || card.dataset.tool === filters.tool;
-                if (matchSubject && matchLevel && matchTool) {
+                const matchQuery = query === '' || card.textContent.toLowerCase().includes(query);
+                if (matchSubject && matchLevel && matchTool && matchQuery) {
                     card.style.display = '';
                     visible++;
                 } else {
@@ -927,24 +938,23 @@
                 }
             });
             document.getElementById('emptyState').style.display = visible === 0 ? 'block' : 'none';
+            activityResults.textContent = `Nalezeno ${visible} ${visible === 1 ? 'aktivita' : (visible >= 2 && visible <= 4 ? 'aktivity' : 'aktivit')}`;
         }
 
         function resetFilters() {
             Object.keys(filters).forEach(k => filters[k] = 'all');
-            document.querySelectorAll('.filter-chip').forEach(c => {
-                c.classList.toggle('active', c.dataset.filter === 'all');
+            document.querySelectorAll('#subjectFilter .filter-chip, #levelFilter .filter-chip, #toolFilter .filter-chip').forEach(c => {
+                const isActive = c.dataset.filter === 'all';
+                c.classList.toggle('active', isActive);
+                c.setAttribute('aria-pressed', isActive ? 'true' : 'false');
             });
+            activitySearch.value = '';
             applyFilters();
         }
 
         // Search
-        document.getElementById('activitySearch').addEventListener('input', e => {
-            const q = e.target.value.toLowerCase();
-            document.querySelectorAll('#allActivities .activity-card').forEach(card => {
-                const text = card.textContent.toLowerCase();
-                card.style.display = text.includes(q) ? '' : 'none';
-            });
-        });
+        activitySearch.addEventListener('input', applyFilters);
+        applyFilters();
 
         // Klávesa Escape zavře modál
         document.addEventListener('keydown', e => {

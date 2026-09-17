@@ -20,6 +20,15 @@
         .subject-prompt-section .prompt-body::after {
             display: none;
         }
+
+        .prompt-card[hidden],
+        .prompt-expand[hidden] {
+            display: none !important;
+        }
+
+        .prompt-expand {
+            margin-top: 20px;
+        }
     </style>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -101,7 +110,7 @@
             <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-bottom:32px">
                 <div class="search-bar" style="flex:1;min-width:240px">
                     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                    <input type="text" class="search-input" id="search-prompts" placeholder="Hledat prompty...">
+                    <input type="text" class="search-input" id="search-prompts" placeholder="Hledat prompty..." aria-label="Hledat prompty">
                 </div>
                 <div class="filter-group">
                     <button class="filter-chip active" data-filter="all">Vše</button>
@@ -279,7 +288,7 @@ Text udržuj stručný a přizpůsob jej žákům [doplň věk nebo ročník].</
             </div>
 
             <!-- Obecné prompty box -->
-            <div style="margin-bottom:40px">
+            <div class="subject-prompt-section" style="margin-bottom:40px">
                 <div class="section-header">
                     <h2 class="section-title">🎯 Obecné prompty pro každý předmět</h2>
                     <p class="section-subtitle">Šablony, které fungují pro jakýkoliv předmět nebo ročník</p>
@@ -394,7 +403,7 @@ Text udržuj stručný a přizpůsob jej žákům [doplň věk nebo ročník].</
             </div>
 
             <!-- Matematika prompty -->
-            <div style="margin-bottom:40px">
+            <div class="subject-prompt-section" style="margin-bottom:40px">
                 <div class="section-header">
                     <h2 class="section-title">🔢 Matematika</h2><a href="matematika.html"
                         class="btn btn-outline btn-sm">Více →</a>
@@ -437,7 +446,7 @@ Text udržuj stručný a přizpůsob jej žákům [doplň věk nebo ročník].</
             </div>
 
             <!-- Jazyky prompty section -->
-            <div style="margin-bottom:40px">
+            <div class="subject-prompt-section" style="margin-bottom:40px">
                 <div class="section-header">
                     <h2 class="section-title">🌍 Jazyky (ČJ + AJ)</h2>
                 </div>

@@ -171,10 +171,12 @@ window.openModal = openModal;
 
 /* ── Filter chips ── */
 function initFilters(gridSelector, cardSelector, filterAttr = 'data-filter') {
-    const filterChips = document.querySelectorAll(`.filter-chip[${filterAttr}]`);
+    const filterChips = document.querySelectorAll(`.filter-chip[${filterAttr}]:not([data-filter-type])`);
     const cards = document.querySelectorAll(`${gridSelector} ${cardSelector}`);
     const groupedSections = document.querySelectorAll('.subject-prompt-section');
     if (!filterChips.length || !cards.length) return;
+
+    filterChips.forEach(chip => chip.setAttribute('aria-pressed', chip.classList.contains('active') ? 'true' : 'false'));
 
     const updateGroupedSections = () => {
         groupedSections.forEach(section => {
@@ -185,8 +187,12 @@ function initFilters(gridSelector, cardSelector, filterAttr = 'data-filter') {
 
     filterChips.forEach(chip => {
         chip.addEventListener('click', () => {
-            filterChips.forEach(c => c.classList.remove('active'));
+            filterChips.forEach(c => {
+                c.classList.remove('active');
+                c.setAttribute('aria-pressed', 'false');
+            });
             chip.classList.add('active');
+            chip.setAttribute('aria-pressed', 'true');
             const val = chip.getAttribute(filterAttr);
             cards.forEach(card => {
                 const match = val === 'all' || card.dataset.subject === val || card.dataset.level === val || card.dataset.llm === val || card.dataset.type === val;
@@ -197,8 +203,85 @@ function initFilters(gridSelector, cardSelector, filterAttr = 'data-filter') {
     });
 }
 initFilters('.activity-grid', '.activity-card', 'data-filter');
-initFilters('.prompt-grid', '.prompt-card', 'data-filter');
 initFilters('.assistant-grid', '.assistant-card', 'data-filter');
+
+/* ── Prompt catalog: compact sections with accessible progressive reveal ── */
+function initPromptCatalog() {
+    const sections = [...document.querySelectorAll('.subject-prompt-section')];
+    const input = document.querySelector('#search-prompts');
+    if (!sections.length || !input) return;
+
+    const chips = [...document.querySelectorAll('.filter-group .filter-chip[data-filter]')];
+    const state = { filter: 'all', query: '' };
+    const limit = 5;
+
+    sections.forEach((section, index) => {
+        section.dataset.expanded = 'false';
+        const grid = section.querySelector('.prompt-grid');
+        if (!grid) return;
+        if (!grid.id) grid.id = `prompt-section-${index + 1}`;
+        let toggle = section.querySelector('.prompt-expand');
+        if (!toggle) {
+            toggle = document.createElement('button');
+            toggle.type = 'button';
+            toggle.className = 'prompt-expand btn btn-outline btn-sm';
+            toggle.setAttribute('aria-controls', grid.id);
+            grid.after(toggle);
+        }
+        toggle.addEventListener('click', () => {
+            section.dataset.expanded = section.dataset.expanded !== 'true' ? 'true' : 'false';
+            update();
+        });
+    });
+
+    const collapseAll = () => sections.forEach(section => { section.dataset.expanded = 'false'; });
+
+    const update = () => {
+        const filtered = state.filter !== 'all' || state.query !== '';
+        sections.forEach(section => {
+            const cards = [...section.querySelectorAll('.prompt-card')];
+            const matches = cards.filter(card => {
+                const subjectMatch = state.filter === 'all' || card.dataset.subject === state.filter;
+                const textMatch = state.query === '' || card.textContent.toLowerCase().includes(state.query);
+                return subjectMatch && textMatch;
+            });
+            const expanded = section.dataset.expanded === 'true';
+            cards.forEach((card, index) => {
+                card.hidden = !matches.includes(card) || (!filtered && !expanded && index >= limit);
+            });
+            section.style.display = matches.length ? '' : 'none';
+            const toggle = section.querySelector('.prompt-expand');
+            if (toggle) {
+                toggle.hidden = filtered || matches.length <= limit;
+                toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+                toggle.textContent = expanded ? 'Zobrazit méně ↑' : `Zobrazit všechny (${cards.length}) ↓`;
+            }
+        });
+    };
+
+    chips.forEach(chip => {
+        chip.setAttribute('aria-pressed', chip.classList.contains('active') ? 'true' : 'false');
+        chip.addEventListener('click', () => {
+            chips.forEach(item => {
+                item.classList.remove('active');
+                item.setAttribute('aria-pressed', 'false');
+            });
+            chip.classList.add('active');
+            chip.setAttribute('aria-pressed', 'true');
+            state.filter = chip.dataset.filter;
+            collapseAll();
+            update();
+        });
+    });
+
+    input.addEventListener('input', () => {
+        state.query = input.value.toLowerCase().trim();
+        collapseAll();
+        update();
+    });
+    update();
+}
+initPromptCatalog();
 
 /* ── Search ── */
 function initSearch(inputSelector, gridSelector, cardSelector) {
@@ -219,7 +302,6 @@ function initSearch(inputSelector, gridSelector, cardSelector) {
     });
 }
 initSearch('#search-activities', '.activity-grid', '.activity-card');
-initSearch('#search-prompts', '.prompt-grid', '.prompt-card');
 initSearch('#search-assistants', '.assistant-grid', '.assistant-card');
 
 /* ── Tabs ── */
