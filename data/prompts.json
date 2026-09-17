@@ -3,11 +3,17 @@
     "id": "math-word-problems-generator",
     "title": "Generátor úloh – slovní",
     "prompt": "Jsi zkušený učitel matematiky na [ZŠ/SŠ]. Vygeneruj 10 slovních úloh na téma [TÉMA] pro žáky [ROČNÍK]. Každá úloha musí mít realistický kontext z každodenního života žáků a být přiměřená věku. Za každou úlohou uveď správné řešení s podrobným postupem výpočtu.",
-    "subjects": ["matematika"],
+    "subjects": [
+      "matematika"
+    ],
     "levels": [],
-    "tools": ["ChatGPT"],
+    "tools": [
+      "ChatGPT"
+    ],
     "category": "Generování",
-    "collections": ["matematika"],
+    "collections": [
+      "matematika"
+    ],
     "tags": [],
     "sourcePage": "matematika.html"
   },
@@ -15,11 +21,17 @@
     "id": "math-concept-explanation",
     "title": "Srozumitelné vysvětlení konceptu",
     "prompt": "Vysvětli mi matematický koncept [TÉMA] tak, jako bych byl žák [ROČNÍK]. Použij přirovnání z každodenního života, uveď konkrétní příklady a ověř mé porozumění 3 otázkami na konci. Vyhni se odborným termínům bez vysvětlení.",
-    "subjects": ["matematika"],
+    "subjects": [
+      "matematika"
+    ],
     "levels": [],
-    "tools": ["Gemini"],
+    "tools": [
+      "Gemini"
+    ],
     "category": "Vysvětlení",
-    "collections": ["matematika"],
+    "collections": [
+      "matematika"
+    ],
     "tags": [],
     "sourcePage": "matematika.html"
   },
@@ -27,11 +39,17 @@
     "id": "math-test-with-rubric",
     "title": "Písemka s bodovacím klíčem",
     "prompt": "Vytvoř písemnou práci z matematiky pro [ROČNÍK] na téma [TÉMA]. Struktura: A) výpočetní úlohy (40%), B) slovní úlohy (35%), C) grafické úlohy (25%). Celkem [POČET] bodů. Přidej vzorové řešení, bodovací klíč a hodnotící škálu.",
-    "subjects": ["matematika"],
+    "subjects": [
+      "matematika"
+    ],
     "levels": [],
-    "tools": ["Claude"],
+    "tools": [
+      "Claude"
+    ],
     "category": "Testy",
-    "collections": ["matematika"],
+    "collections": [
+      "matematika"
+    ],
     "tags": [],
     "sourcePage": "matematika.html"
   },
@@ -39,11 +57,17 @@
     "id": "math-differentiation-levels",
     "title": "Diferenciace – 3 úrovně obtížnosti",
     "prompt": "Vezmi tuto matematickou úlohu: [ÚLOHA]. Přepracuj ji do 3 verzí obtížnosti: 1) Lehká verze – pro žáky potřebující podporu, 2) Standardní verze – původní, 3) Rozšiřující verze – pro nadané žáky s dalšími podmínkami.",
-    "subjects": ["matematika"],
+    "subjects": [
+      "matematika"
+    ],
     "levels": [],
-    "tools": ["ChatGPT"],
+    "tools": [
+      "ChatGPT"
+    ],
     "category": "Diferenciace",
-    "collections": ["matematika"],
+    "collections": [
+      "matematika"
+    ],
     "tags": [],
     "sourcePage": "matematika.html"
   },
@@ -51,11 +75,19 @@
     "id": "czech-essay-feedback",
     "title": "Opravovač slohu s konstruktivní zpětnou vazbou",
     "prompt": "Oprav tuto slohovou práci žáka [ROČNÍK]. Zaměř se na: 1) gramatiku a pravopis, 2) stavbu vět a odstavců, 3) vhodnost slovní zásoby, 4) splnění zadání. Pro každou skupinu chyb uveď počet, příklady a správnou variantu. Na závěr: celkové zhodnocení (2–3 věty) a 3 konkrétní tipy na zlepšení. TEXT: [VLOŽTE TEXT]",
-    "subjects": ["čeština"],
-    "levels": ["6.–9. ročník"],
-    "tools": ["Claude"],
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [
+      "6.–9. ročník"
+    ],
+    "tools": [
+      "Claude"
+    ],
     "category": "Opravování",
-    "collections": ["cestina"],
+    "collections": [
+      "cestina"
+    ],
     "tags": [],
     "sourcePage": "cestina.html"
   },
@@ -63,11 +95,19 @@
     "id": "czech-dictation-generator",
     "title": "Generátor diktátu s klíčem",
     "prompt": "Vytvoř diktát pro žáky [ROČNÍK] zaměřený na [GRAMATICKÝ JEV]. Délka: cca [POČET] slov. Text musí být tematicky zajímavý pro žáky. Přidej: opravný klíč (označení správných písmen), seznam klíčových slov s pravidlem a 3 cvičné věty jako rozcvičení před diktátem.",
-    "subjects": ["čeština"],
-    "levels": ["ZŠ"],
-    "tools": ["ChatGPT"],
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [
+      "ZŠ"
+    ],
+    "tools": [
+      "ChatGPT"
+    ],
     "category": "Diktáty",
-    "collections": ["cestina"],
+    "collections": [
+      "cestina"
+    ],
     "tags": [],
     "sourcePage": "cestina.html"
   },
@@ -75,11 +115,19 @@
     "id": "czech-literary-analysis",
     "title": "Literární rozbor – kompletní šablona",
     "prompt": "Proveď literární rozbor díla „[NÁZEV]“ od [AUTOR]. Struktura: 1) Bibliografické údaje, 2) Literární druh a žánr, 3) Téma, motiv, hlavní myšlenka, 4) Charakteristika postav, 5) Kompozice a struktura, 6) Jazykové prostředky, 7) Historický a společenský kontext, 8) Osobní hodnocení díla. Vhodné pro přípravu na maturitu.",
-    "subjects": ["čeština"],
-    "levels": ["SŠ"],
-    "tools": ["Gemini"],
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [
+      "SŠ"
+    ],
+    "tools": [
+      "Gemini"
+    ],
     "category": "Literatura",
-    "collections": ["cestina"],
+    "collections": [
+      "cestina"
+    ],
     "tags": [],
     "sourcePage": "cestina.html"
   },
@@ -87,11 +135,19 @@
     "id": "czech-writing-guide",
     "title": "Průvodce psaním slohového útvaru",
     "prompt": "Pomoz mi napsat [SLOHOVÝ ÚTVAR: líčení/popis/vypravování/charakteristika/úvaha] na téma [TÉMA] pro žáka [ROČNÍK]. Nejprve vysvětli strukturu tohoto útvaru, pak uveď osnovu, klíčová jazyková spojení typická pro tento útvar a nakonec ukázkový odstavec jako inspiraci. Nestyl za mě celý text.",
-    "subjects": ["čeština"],
-    "levels": ["ZŠ/SŠ"],
-    "tools": ["Claude"],
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [
+      "ZŠ/SŠ"
+    ],
+    "tools": [
+      "Claude"
+    ],
     "category": "Sloh",
-    "collections": ["cestina"],
+    "collections": [
+      "cestina"
+    ],
     "tags": [],
     "sourcePage": "cestina.html"
   },
@@ -99,11 +155,19 @@
     "id": "english-conversation-partner",
     "title": "Konverzační partner (CEFR level)",
     "prompt": "You are a friendly English conversation partner for a Czech student at [A1/A2/B1/B2/C1] level. Topic: [TOPIC]. Rules: speak only English, use vocabulary appropriate to their level, ask follow-up questions to keep conversation going, gently correct grammar by echoing corrected version, never criticize harshly. Start with a warm greeting and an opening question.",
-    "subjects": ["angličtina"],
-    "levels": ["A1–C1"],
-    "tools": ["ChatGPT"],
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [
+      "A1–C1"
+    ],
+    "tools": [
+      "ChatGPT"
+    ],
     "category": "Konverzace",
-    "collections": ["anglictina"],
+    "collections": [
+      "anglictina"
+    ],
     "tags": [],
     "sourcePage": "anglictina.html"
   },
@@ -111,11 +175,19 @@
     "id": "english-grammar-exercises",
     "title": "Gramatická cvičení s klíčem",
     "prompt": "Create 15 grammar exercises for Czech students at [CEFR] level focusing on [GRAMMAR TOPIC, e.g. Present Perfect, Conditionals, Passive Voice]. Mix exercise types: gap-fill (5), sentence transformation (5), error correction (5). Add: answer key, brief grammar rule explanation in Czech, and 3 common Czech student mistakes to avoid.",
-    "subjects": ["angličtina"],
-    "levels": ["ZŠ/SŠ"],
-    "tools": ["Gemini"],
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [
+      "ZŠ/SŠ"
+    ],
+    "tools": [
+      "Gemini"
+    ],
     "category": "Gramatika",
-    "collections": ["anglictina"],
+    "collections": [
+      "anglictina"
+    ],
     "tags": [],
     "sourcePage": "anglictina.html"
   },
@@ -123,11 +195,19 @@
     "id": "english-essay-grader",
     "title": "Opravovač eseje s rubrikou",
     "prompt": "Grade this English essay by a Czech high school student ([CEFR] level) using Cambridge Writing rubric: Content (0–10), Organization (0–10), Grammar (0–10), Vocabulary (0–10), Style (0–10). For each criterion: score + 2-3 specific comments. Overall feedback in Czech. Suggested improved version of weakest paragraph. ESSAY: [TEXT]",
-    "subjects": ["angličtina"],
-    "levels": ["SŠ"],
-    "tools": ["Claude"],
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [
+      "SŠ"
+    ],
+    "tools": [
+      "Claude"
+    ],
     "category": "Eseje",
-    "collections": ["anglictina"],
+    "collections": [
+      "anglictina"
+    ],
     "tags": [],
     "sourcePage": "anglictina.html"
   },
@@ -135,11 +215,19 @@
     "id": "english-vocabulary-set",
     "title": "Tematické slovíčka s příklady",
     "prompt": "Create a vocabulary set of 20 words on the topic [TOPIC] for Czech students at [CEFR] level. For each word: English word, Czech translation, example sentence (simple, memorable), and a memory tip or word association. Format as a numbered table. Then add 5 practice sentences using random words from the list.",
-    "subjects": ["angličtina"],
-    "levels": ["ZŠ"],
-    "tools": ["ChatGPT"],
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [
+      "ZŠ"
+    ],
+    "tools": [
+      "ChatGPT"
+    ],
     "category": "Slovíčka",
-    "collections": ["anglictina"],
+    "collections": [
+      "anglictina"
+    ],
     "tags": [],
     "sourcePage": "anglictina.html"
   },
@@ -147,11 +235,19 @@
     "id": "science-lab-experiment",
     "title": "Simulace laboratorního experimentu",
     "prompt": "Simuluj laboratorní experiment „[NÁZEV]\" pro žáky [ROČNÍK]. Zahrň: potřebné pomůcky, bezpečnostní pravidla, postup krok za krokem, popis průběhu reakce / jevu, vědecké vysvětlení, závěrečné otázky pro žáky a návrh protokolu, který si žáci mohou vyplnit.",
-    "subjects": ["přírodní vědy"],
-    "levels": ["ZŠ/SŠ"],
-    "tools": ["Gemini"],
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [
+      "ZŠ/SŠ"
+    ],
+    "tools": [
+      "Gemini"
+    ],
     "category": "Experimenty",
-    "collections": ["prirodoveda"],
+    "collections": [
+      "prirodoveda"
+    ],
     "tags": [],
     "sourcePage": "prirodoveda.html"
   },
@@ -159,11 +255,19 @@
     "id": "science-phenomenon-analogies",
     "title": "Vysvětlení jevu analogiemi z praxe",
     "prompt": "Vysvětli přírodovědný/fyzikální/chemický jev „[JEV]\" žákům [ROČNÍK] pomocí 3 různých analogií z každodenního života. Pak uveď reálné příklady tohoto jevu v praxi. Zakončit 3 otázkami, které ověří porozumění. Vyvaruj se odborného žargonu bez vysvětlení.",
-    "subjects": ["přírodní vědy"],
-    "levels": ["ZŠ"],
-    "tools": ["ChatGPT"],
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [
+      "ZŠ"
+    ],
+    "tools": [
+      "ChatGPT"
+    ],
     "category": "Vysvětlení",
-    "collections": ["prirodoveda"],
+    "collections": [
+      "prirodoveda"
+    ],
     "tags": [],
     "sourcePage": "prirodoveda.html"
   },
@@ -171,11 +275,19 @@
     "id": "science-review-quiz",
     "title": "Opakovací kvíz z přírodovědného tema",
     "prompt": "Vytvoř opakovací kvíz z [PŘEDMĚT: biologie/chemie/fyzika] na téma [TÉMA] pro žáky [ROČNÍK]. Formát: 5 testových otázek (ABCD), 3 otevřené otázky, 2 úlohy na přiřazení. Přidej správné odpovědi a stručné vysvětlení každé odpovědi.",
-    "subjects": ["přírodní vědy"],
-    "levels": ["ZŠ/SŠ"],
-    "tools": ["ChatGPT"],
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [
+      "ZŠ/SŠ"
+    ],
+    "tools": [
+      "ChatGPT"
+    ],
     "category": "Kvízy",
-    "collections": ["prirodoveda"],
+    "collections": [
+      "prirodoveda"
+    ],
     "tags": [],
     "sourcePage": "prirodoveda.html"
   },
@@ -183,11 +295,19 @@
     "id": "science-research-project",
     "title": "Průvodce výzkumným projektem",
     "prompt": "Pomoz mi navrhnout výzkumný projekt na téma [TÉMA] pro žáky [ROČNÍK] SŠ. Struktura: výzkumná otázka, hypotéza, metodologie (jak sbírat data), potřebné materiály, jak analyzovat výsledky, jak prezentovat závěry. Přizpůsob délce [POČET] týdnů výuky.",
-    "subjects": ["přírodní vědy"],
-    "levels": ["SŠ"],
-    "tools": ["Claude"],
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [
+      "SŠ"
+    ],
+    "tools": [
+      "Claude"
+    ],
     "category": "Projekty",
-    "collections": ["prirodoveda"],
+    "collections": [
+      "prirodoveda"
+    ],
     "tags": [],
     "sourcePage": "prirodoveda.html"
   },
@@ -195,11 +315,19 @@
     "id": "history-roleplay-person",
     "title": "Roleplay historické osoby",
     "prompt": "Budeš hrát roli [HISTORICKÁ OSOBNOST] v době [HISTORICKÉ OBDOBÍ]. Mluv v první osobě, přesně dle historických faktů. Odpovídej z pohledu této osobnosti s ohledem na její dobu, hodnoty a přesvědčení. Na konci každé odpovědi přidej poznámku v závorce pro učitele: (Historická poznámka: …) s ověřením fakticity.",
-    "subjects": ["dějepis"],
-    "levels": ["ZŠ/SŠ"],
-    "tools": ["Claude"],
+    "subjects": [
+      "dějepis"
+    ],
+    "levels": [
+      "ZŠ/SŠ"
+    ],
+    "tools": [
+      "Claude"
+    ],
     "category": "Roleplay",
-    "collections": ["dejepis"],
+    "collections": [
+      "dejepis"
+    ],
     "tags": [],
     "sourcePage": "dejepis.html"
   },
@@ -207,11 +335,19 @@
     "id": "history-event-causes-effects",
     "title": "Příčiny a důsledky události",
     "prompt": "Analyzuj historickou událost „[UDÁLOST]\" pro žáky [ROČNÍK]. Struktura: 1) Historický kontext (co jí předcházelo), 2) Bezprostřední příčiny, 3) Průběh události, 4) Krátkodobé důsledky, 5) Dlouhodobé důsledky a přesah do dnešní doby. Vyhni se zjednodušování, ale zachovej srozumitelnost pro daný ročník.",
-    "subjects": ["dějepis"],
-    "levels": ["ZŠ/SŠ"],
-    "tools": ["ChatGPT"],
+    "subjects": [
+      "dějepis"
+    ],
+    "levels": [
+      "ZŠ/SŠ"
+    ],
+    "tools": [
+      "ChatGPT"
+    ],
     "category": "Analýza",
-    "collections": ["dejepis"],
+    "collections": [
+      "dejepis"
+    ],
     "tags": [],
     "sourcePage": "dejepis.html"
   },
@@ -219,11 +355,19 @@
     "id": "history-debate-preparation",
     "title": "Debatní příprava – obě strany",
     "prompt": "Připrav podklady pro školní debatu na toto historické nebo aktuální téma: [TÉMA]. Pro každou stranu uveď: 4 klíčové argumenty s historickými nebo faktickými důkazy, 2 protiargumenty k anticipaci a 3 otázky, které může protistrana položit. Zachovej nestrannost a věcnost.",
-    "subjects": ["dějepis"],
-    "levels": ["SŠ"],
-    "tools": ["Gemini"],
+    "subjects": [
+      "dějepis"
+    ],
+    "levels": [
+      "SŠ"
+    ],
+    "tools": [
+      "Gemini"
+    ],
     "category": "Debata",
-    "collections": ["dejepis"],
+    "collections": [
+      "dejepis"
+    ],
     "tags": [],
     "sourcePage": "dejepis.html"
   },
@@ -231,12 +375,2747 @@
     "id": "history-period-diary",
     "title": "Dobový fiktivní deník",
     "prompt": "Napiš fiktivní deník [FIKTIVNÍ POSTAVA: obyčejný člověk / voják / žena / dítě] žijící v době [HISTORICKÉ OBDOBÍ – konkrétní rok]. Datum zápisů: [DATUM]. Zahrň každodenní život, historické události z perspektivy obyčejného člověka, jeho obavy, naděje. 3–5 zápisů. Jazyk přizpůsob věku žáků [ROČNÍK].",
-    "subjects": ["dějepis"],
-    "levels": ["ZŠ"],
-    "tools": ["ChatGPT"],
+    "subjects": [
+      "dějepis"
+    ],
+    "levels": [
+      "ZŠ"
+    ],
+    "tools": [
+      "ChatGPT"
+    ],
     "category": "Kreativní psaní",
-    "collections": ["dejepis"],
+    "collections": [
+      "dejepis"
+    ],
     "tags": [],
     "sourcePage": "dejepis.html"
+  },
+  {
+    "id": "prompt-vzdelavaci-infografika",
+    "title": "1. Vzdělávací infografika z vlastního podkladu",
+    "prompt": "Použij přiložený materiál jako hlavní zdroj informací a vytvoř z něj přehlednou, vizuálně poutavou vzdělávací infografiku připravenou pro použití ve výuce.\n\nMateriál je určen pro [doplň ročník / věk / úroveň žáků].\n\nNejprve identifikuj nejdůležitější pojmy, fakta, terminologii, vysvětlení a příklady obsažené v podkladu.\n\nVyber pouze informace důležité pro pochopení tématu a rozděl je do logických částí.\n\nZkrať dlouhé texty, ale zachovej jejich původní význam.\n\nPoužij vhodné vizuální prvky, například ilustrace, ikony, jednoduché diagramy, popisky nebo zvýrazněné informační bloky.\n\nVytvoř výrazný nadpis, jasnou vizuální hierarchii a snadno čitelné rozložení.\n\nNepřeplňuj materiál textem.\n\nNevymýšlej nové údaje, které nejsou v podkladu, pokud nejsou nezbytné pro pochopení tématu.\n\nVýstup vytvoř jako [A4 na výšku / A4 na šířku / jiný formát], v češtině a vhodný pro tisk i digitální použití.\n\nPřed vytvořením finálního vizuálu zkontroluj, že obsah odpovídá přiloženému podkladu.",
+    "subjects": [],
+    "levels": [],
+    "tools": [],
+    "category": "Infografika",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CHATGPT_VISUAL",
+    "filterKey": "chatgpt-vizualni",
+    "lead": "Z učebnice, poznámek, PDF nebo pracovního listu vytvoří přehledný vizuál."
+  },
+  {
+    "id": "prompt-pojmova-mapa",
+    "title": "2. Pojmová mapa z vlastního materiálu",
+    "prompt": "Analyzuj přiložený materiál a vytvoř z něj přehlednou pojmovou mapu pro výuku.\n\nUrči hlavní pojem nebo téma dokumentu a umísti jej do centra mapy.\n\nKolem něj uspořádej nejdůležitější související pojmy, kategorie, podtémata a vztahy, které vyplývají z přiloženého materiálu.\n\nPoužívej především klíčová slova a krátká vysvětlení.\n\nPropoj související informace pomocí jasně označených větví, čar a šipek.\n\nPokud to pomůže pochopení, použij jednoduché ikony nebo symboly.\n\nMapa musí studentům umožnit rychle pochopit, jak spolu jednotlivé části tématu souvisejí.\n\nNepřidávej zbytečné informace mimo přiložený zdroj.\n\nVýslednou mapu vytvoř pro [doplň věk nebo ročník žáků] a ve formátu [doplň formát].",
+    "subjects": [],
+    "levels": [],
+    "tools": [],
+    "category": "Pojmová mapa",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CHATGPT_VISUAL",
+    "filterKey": "chatgpt-vizualni",
+    "lead": "Propojí hlavní pojem, kategorie, podtémata a vztahy z přiloženého zdroje."
+  },
+  {
+    "id": "prompt-casova-osa",
+    "title": "3. Časová osa z nahraného materiálu",
+    "prompt": "Použij přiložený materiál a vytvoř z něj vzdělávací časovou osu.\n\nVyhledej v podkladu nejdůležitější události, data, etapy, změny a zlomové okamžiky.\n\nSeřaď je chronologicky.\n\nKe každé položce vytvoř krátké vysvětlení:\n\nco se stalo,\n\nproč je to důležité,\n\na případně jaký to mělo následek.\n\nPoužívej pouze informace, které lze doložit z přiloženého podkladu.\n\nČasovou osu vytvoř tak, aby byla snadno čitelná žáky [doplň ročník nebo věk].\n\nPoužij výrazná data, krátké popisky, ilustrace, ikony a vizuální propojení jednotlivých událostí.\n\nVýstup vytvoř jako [A4 / A3 / jiný formát].",
+    "subjects": [],
+    "levels": [],
+    "tools": [],
+    "category": "Časová osa",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CHATGPT_VISUAL",
+    "filterKey": "chatgpt-vizualni",
+    "lead": "Seřadí data, etapy, události a jejich význam podle dodaného zdroje."
+  },
+  {
+    "id": "prompt-proces-cyklus",
+    "title": "4. Proces nebo cyklus z vlastního podkladu",
+    "prompt": "Analyzuj přiložený materiál a vyhledej v něm popsaný proces, postup nebo cyklus.\n\nVytvoř z něj přehledný vzdělávací diagram.\n\nRozděl proces na jeho hlavní fáze a seřaď je ve správném pořadí podle přiloženého zdroje.\n\nKe každé fázi vytvoř krátké a srozumitelné vysvětlení.\n\nZvýrazni důležité vstupy, výstupy, změny, příčiny nebo následky.\n\nPoužij šipky, jednoduché symboly, ikony a ilustrace.\n\nPokud se jedná o cyklus, musí být z grafiky jasné, že se poslední fáze znovu propojuje s první.\n\nNevkládej do diagramu informace, které nejsou obsaženy v podkladu.\n\nVýsledek přizpůsob žákům [doplň ročník nebo věk].",
+    "subjects": [],
+    "levels": [],
+    "tools": [],
+    "category": "Proces",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CHATGPT_VISUAL",
+    "filterKey": "chatgpt-vizualni",
+    "lead": "Převede odborný postup nebo přírodovědný cyklus do srozumitelného diagramu."
+  },
+  {
+    "id": "prompt-srovnavaci-vizual",
+    "title": "5. Srovnávací vizuál",
+    "prompt": "Analyzuj přiložený materiál a vyhledej v něm informace vhodné ke srovnání [doplň, co má být porovnáno].\n\nUrči jejich nejdůležitější společné znaky a rozdíly.\n\nRozděl je do smysluplných kategorií.\n\nZvol nejvhodnější vizuální formu – například srovnání vedle sebe, Vennův diagram, srovnávací tabulku nebo jiný přehledný diagram.\n\nPoužívej krátké texty, zvýrazněná klíčová slova, jednoduché ikony a vizuální symboly.\n\nSrovnání musí být možné pochopit na první pohled.\n\nVycházej primárně z informací v přiloženém podkladu a nevymýšlej vlastnosti nebo fakta, která v něm nejsou uvedena.",
+    "subjects": [],
+    "levels": [],
+    "tools": [],
+    "category": "Srovnání",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CHATGPT_VISUAL",
+    "filterKey": "chatgpt-vizualni",
+    "lead": "Zpracuje společné znaky a rozdíly jako tabulku, Vennův diagram nebo jiný přehled."
+  },
+  {
+    "id": "prompt-studijni-prehled",
+    "title": "6. Studijní přehled z učebních materiálů",
+    "prompt": "Použij přiložený materiál a vytvoř z něj jednostránkový studijní přehled pro žáky.\n\nVyber informace, které jsou nejdůležitější pro pochopení a zapamatování učiva.\n\nZahrň klíčové pojmy, důležitá fakta, definice, pravidla, vzorce nebo příklady, pokud jsou v podkladu obsaženy.\n\nObsah rozděl do několika přehledných tematických částí.\n\nPoužij krátké texty, zvýrazněná klíčová slova, ikony, jednoduché ilustrace nebo diagramy.\n\nJasně rozliš informace, které je nutné znát, od doplňujících informací.\n\nMateriál vytvoř tak, aby jej bylo možné použít při opakování před testem nebo při samostatném studiu.\n\nVýstup vytvoř jako A4 a přizpůsob jej žákům [doplň ročník nebo úroveň].",
+    "subjects": [],
+    "levels": [],
+    "tools": [],
+    "category": "Studijní přehled",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CHATGPT_VISUAL",
+    "filterKey": "chatgpt-vizualni",
+    "lead": "Z několika stran učebnice nebo vlastní přípravy vytvoří jednostránkový materiál k opakování."
+  },
+  {
+    "id": "prompt-vzdelavaci-komiks",
+    "title": "7. Vzdělávací komiks z učiva",
+    "prompt": "Použij informace z přiloženého materiálu a vytvoř z nich krátký vzdělávací komiks nebo vizuální příběh.\n\nHlavním cílem je vysvětlit [doplň téma nebo pojem].\n\nRozděl příběh do několika logicky navazujících panelů.\n\nPoužij postavy, jednoduché situace, krátké dialogy a vizuální vysvětlení.\n\nKaždý panel musí posouvat příběh a zároveň vysvětlovat část učiva.\n\nVeškeré odborné informace musí odpovídat přiloženému podkladu.\n\nZábavné prvky mohou pomoci zapamatování, ale nesmí zkreslovat učivo.\n\nText udržuj stručný a přizpůsob jej žákům [doplň věk nebo ročník].",
+    "subjects": [],
+    "levels": [],
+    "tools": [],
+    "category": "Komiks",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CHATGPT_VISUAL",
+    "filterKey": "chatgpt-vizualni",
+    "lead": "Převede odborné nebo teoretické učivo do krátkého vizuálního příběhu."
+  },
+  {
+    "id": "library-general-generator-testovych-otazek",
+    "title": "Generátor testových otázek",
+    "prompt": "Vytvoř test z předmětu [PŘEDMĚT] na téma [TÉMA] pro žáky [ROČNÍK].\nFormát: 5 otázek s výběrem odpovědi (A–D), 3 doplňovací otázky, 2 otevřené otázky. Přidej:\nopravný klíč, časový limit na každou část a bodové ohodnocení.",
+    "subjects": [],
+    "levels": [
+      "Obecný"
+    ],
+    "tools": [
+      "Jakýkoli LLM"
+    ],
+    "category": "Testování",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "GENERAL",
+    "filterKey": "gen"
+  },
+  {
+    "id": "library-general-plan-hodiny-45-minut",
+    "title": "Plán hodiny (45 minut)",
+    "prompt": "Připrav plán vyučovací hodiny (45 minut) z [PŘEDMĚT] pro [ROČNÍK] na\ntéma [TÉMA]. Struktura: Zahřívací aktivita (5 min), Výklad / prezentace (15 min), Skupinová\naktivita (10 min), Samostatná práce (10 min), Reflexe a shrnutí (5 min). Přidej pomůcky,\ncíle hodiny a způsob hodnocení.",
+    "subjects": [],
+    "levels": [],
+    "tools": [],
+    "category": "Plánování",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "GENERAL",
+    "filterKey": "gen"
+  },
+  {
+    "id": "library-general-diferenciace-pro-ruzne-urovne",
+    "title": "Diferenciace pro různé úrovně",
+    "prompt": "Vezmi toto zadání: [PŮVODNÍ ÚLOHA]. Vytvoř 3 verze pro různé úrovně\nžáků ve třídě [ROČNÍK]: 1) Verze pro žáky se speciálními vzdělávacími potřebami\n(zjednodušená), 2) Standardní verze, 3) Verze pro nadané žáky (rozšiřující). Zachovej stejné\ntéma, jen upravuj náročnost.",
+    "subjects": [],
+    "levels": [],
+    "tools": [],
+    "category": "Diferenciace",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "GENERAL",
+    "filterKey": "gen"
+  },
+  {
+    "id": "library-general-zpetna-vazba-k-zakovskemu-vytvoru",
+    "title": "Zpětná vazba k žákovskému výtvoru",
+    "prompt": "Napíš konstruktivní zpětnou vazbu k tomuto žákovskému výtvoru [PŘEDMĚT,\nROČNÍK]: [TEXT/POPIS]. Zpětná vazba musí: být pozitivní celkově, uvést 3 silné stránky,\nnabídnout 3 konkrétní návrhy na zlepšení, být srozumitelná pro daný věk. Tón: přátelský,\npovzbuzující.",
+    "subjects": [],
+    "levels": [],
+    "tools": [],
+    "category": "Zpětná vazba",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "GENERAL",
+    "filterKey": "gen"
+  },
+  {
+    "id": "library-general-skupinove-projektove-zadani",
+    "title": "Skupinové projektové zadání",
+    "prompt": "Navrhni skupinový projekt pro žáky [ROČNÍK] na téma [TÉMA]. Obsahuje:\ncíle projektu, rozdělení rolí ve skupině (4–5 členů), harmonogram (celkem [POČET] týdnů),\nformu prezentace výsledků, způsob hodnocení (učitel + sebehodnocení), a propojení s ŠVP /\nRVP.",
+    "subjects": [],
+    "levels": [],
+    "tools": [],
+    "category": "Projekty",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "GENERAL",
+    "filterKey": "gen"
+  },
+  {
+    "id": "library-general-komunikace-s-rodici-sablona-dopisu",
+    "title": "Komunikace s rodiči – šablona dopisu",
+    "prompt": "Napiš dopis/email rodičům žáka [ROČNÍK] ohledně: [TÉMA: např. pokroku v\nučení / chování / nadcházející akce / třídní výlet]. Tón: profesionální, ale přátelský.\nDélka: cca 150 slov. Přidej konkrétní příklady nebo informace: [DETAILY].",
+    "subjects": [],
+    "levels": [
+      "Pro učitele"
+    ],
+    "tools": [],
+    "category": "Komunikace",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "GENERAL",
+    "filterKey": "gen"
+  },
+  {
+    "id": "prompt-generator-slovnich-uloh",
+    "title": "Generátor slovních úloh",
+    "prompt": "Vytvoř 5 slovních úloh z matematiky pro žáky [ROČNÍK] zaměřených na\n[TÉMA: procenta/zlomky/rovnice/geometrie]. Každá úloha musí: být zasazena do reálné situace\nblízké žákům, mít jasné zadání, přiměřenou obtížnost a podrobný postup řešení s odpovědí.",
+    "subjects": [
+      "matematika"
+    ],
+    "levels": [
+      "ZŠ"
+    ],
+    "tools": [],
+    "category": "Úlohy",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "MATH_BASIC",
+    "filterKey": "mat"
+  },
+  {
+    "id": "library-math-krok-za-krokem-vyklad-tematu",
+    "title": "Krok za krokem – výklad tématu",
+    "prompt": "Vysvětli matematické téma [TÉMA] žákům [ROČNÍK] krok za krokem. Začni\nod základů, použij jednoduché příklady a vizuální analogie. Přidej: definici, vzorce (pokud\nexistují), 2 ukázkové příklady (od lehčího k těžšímu) a 3 cvičné úlohy s klíčem.",
+    "subjects": [
+      "matematika"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Výklad",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "MATH_BASIC",
+    "filterKey": "mat"
+  },
+  {
+    "id": "prompt-opravovac-slohu-s-rubrikou",
+    "title": "Opravovač slohu s rubrikou",
+    "prompt": "Oprav tuto slohovou práci žáka [ROČNÍK] dle kritérií: 1) Gramatika a\npravopis (0–25b), 2) Stavba vět a odstavců (0–25b), 3) Slovní zásoba (0–25b), 4) Splnění\nzadání (0–25b). U každého kritéria: bodové hodnocení + komentář. Celkové shrnutí. Sloh:\n[TEXT]",
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Sloh",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "LANGUAGES_BASIC",
+    "filterKey": "cj"
+  },
+  {
+    "id": "prompt-konverzacni-partner-v-anglictine",
+    "title": "Konverzační partner v angličtině",
+    "prompt": "You are a patient English conversation partner for a Czech student at\n[CEFR] level. Topic: [TOPIC]. Only speak English. Correct mistakes gently by echoing the\ncorrect version. Ask follow-up questions. If they don't understand, rephrase using simpler\nvocabulary. Start with an engaging opening question about the topic.",
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Konverzace",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "LANGUAGES_BASIC",
+    "filterKey": "aj"
+  },
+  {
+    "id": "library-math-zlomky-porovnani-a-operace",
+    "title": "Zlomky – porovnání a operace",
+    "prompt": "Vytvoř sadu úloh na téma [ZLOMKY] pro žáky [ROČNÍK]. Začni krátkým vysvětlením pomocí obrázku nebo číselné osy, potom připrav [POČET] úloh na porovnávání, krácení, rozšiřování a [SČÍTÁNÍ / ODČÍTÁNÍ / NÁSOBENÍ]. U každé úlohy uveď řešení krok za krokem a upozorni na jednu častou chybu. Obtížnost přizpůsob [ÚROVEŇ].",
+    "subjects": [
+      "matematika"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Zlomky",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "MATH_EXTENDED",
+    "filterKey": "mat",
+    "lead": "Procvičování zlomků s vizuálním vysvětlením a kontrolou typických chyb."
+  },
+  {
+    "id": "library-math-procenta-v-kazdodennim-zivote",
+    "title": "Procenta v každodenním životě",
+    "prompt": "Připrav [POČET] slovních úloh na procenta pro [ROČNÍK]. Zařaď situace z běžného života: sleva, zdražení, část z celku, procentové body a jednoduché úročení. U každé úlohy uveď, co je základ, procentová část a počet procent. Přidej podrobný postup, výsledek a jednu kontrolní otázku. Nepoužívej zbytečně složité údaje.",
+    "subjects": [
+      "matematika"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Procenta",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "MATH_EXTENDED",
+    "filterKey": "mat",
+    "lead": "Slovní úlohy na slevy, zdražení, úroky a procentovou část."
+  },
+  {
+    "id": "library-math-rovnice-krok-za-krokem",
+    "title": "Rovnice krok za krokem",
+    "prompt": "Vysvětli žákům [ROČNÍK] řešení lineárních rovnic na příkladu [ROVNICE]. Každý krok zdůvodni jednoduchým jazykem a ukaž, jak zachovat rovnost. Potom vytvoř [POČET] podobných úloh od lehkých po náročnější. U každé uveď výsledek, ale nejprve nabídni nápovědu. Na konci přidej kontrolu dosazením a seznam tří typických chyb.",
+    "subjects": [
+      "matematika"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Algebra",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "MATH_EXTENDED",
+    "filterKey": "mat",
+    "lead": "Výklad lineárních rovnic s postupným odhalováním jednotlivých kroků."
+  },
+  {
+    "id": "library-math-slovni-ulohy-s-kontrolou",
+    "title": "Slovní úlohy s kontrolou",
+    "prompt": "Vytvoř [POČET] slovních úloh z [TÉMA] pro [ROČNÍK]. U každé odděl: důležité údaje, otázku, neznámou, matematický model, výpočet, odpověď větou a kontrolu smysluplnosti. Přidej také jednu úlohu s nadbytečným údajem. Nepřidávej odborné předpoklady, které nejsou v zadání.",
+    "subjects": [
+      "matematika"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Modelování",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "MATH_EXTENDED",
+    "filterKey": "mat",
+    "lead": "Převod textu na matematický model a ověření, zda výsledek dává smysl."
+  },
+  {
+    "id": "library-math-prevody-jednotek",
+    "title": "Převody jednotek",
+    "prompt": "Připrav pracovní list na převody jednotek pro [ROČNÍK]. Zaměř se na [TYP JEDNOTEK]. Zařaď převody bez desetinných čísel i s nimi, doplňování do tabulky a dvě slovní úlohy. Ukaž žákům převodní vztah, ale výsledky ukryj do řešení na konci. Přidej krátký tip, jak odhadnout, zda výsledek nemá špatný řád.",
+    "subjects": [
+      "matematika"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Jednotky",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "MATH_EXTENDED",
+    "filterKey": "mat",
+    "lead": "Procvičení délky, obsahu, objemu, času, hmotnosti nebo rychlosti."
+  },
+  {
+    "id": "library-math-obvod-a-obsah-geometrickych-utvaru",
+    "title": "Obvod a obsah geometrických útvarů",
+    "prompt": "Vysvětli obvod a obsah útvarů [ČTVEREC / OBDÉLNÍK / TROJÚHELNÍK / KRUH] žákům [ROČNÍK]. Použij jednoduchý nákres, označ známé veličiny a odvoď použitý vzorec. Připrav [POČET] úloh včetně jedné s neznámou stranou a jedné slovní úlohy. Upozorni na rozdíl mezi jednotkami délky a obsahu.",
+    "subjects": [
+      "matematika"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Geometrie",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "MATH_EXTENDED",
+    "filterKey": "mat",
+    "lead": "Výklad vzorců, nákres, výpočet a práce s chybou v jednotkách."
+  },
+  {
+    "id": "library-math-pythagorova-veta",
+    "title": "Pythagorova věta",
+    "prompt": "Připrav výklad Pythagorovy věty pro [ROČNÍK]. Začni rozpoznáním pravoúhlého trojúhelníku a přepony, potom ukaž výpočet neznámé strany na příkladu [ZADÁNÍ]. Přidej [POČET] cvičných úloh včetně úlohy z praxe. U každé vyžaduj nákres, vzorec, dosazení, jednotky a kontrolu, zda výsledek odpovídá obrázku.",
+    "subjects": [
+      "matematika"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Geometrie",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "MATH_EXTENDED",
+    "filterKey": "mat",
+    "lead": "Nákres pravoúhlého trojúhelníku, výpočet i ověření výsledku."
+  },
+  {
+    "id": "library-math-desetinna-cisla-a-zaokrouhlovani",
+    "title": "Desetinná čísla a zaokrouhlování",
+    "prompt": "Vytvoř krátkou lekci na desetinná čísla pro [ROČNÍK]. Vysvětli hodnotu řádů pomocí číselné osy a připrav úlohy na porovnávání, zaokrouhlování na [ŘÁD] a [OPERACE]. U každé úlohy přidej odhad výsledku před výpočtem. Zahrň tři příklady, kde žák musí najít a opravit chybu.",
+    "subjects": [
+      "matematika"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Čísla",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "MATH_EXTENDED",
+    "filterKey": "mat",
+    "lead": "Číselná osa, porovnávání, početní operace a odhad výsledku."
+  },
+  {
+    "id": "library-math-pomer-a-umernost",
+    "title": "Poměr a úměrnost",
+    "prompt": "Připrav výukový materiál na poměr a [PŘÍMOU / NEPŘÍMOU] úměrnost pro [ROČNÍK]. Vysvětli, jak poznat typ vztahu, vytvoř tabulku hodnot a znázorni postup výpočtu. Přidej [POČET] slovních úloh z vaření, mapy, rychlosti nebo práce. U každého řešení uveď, proč byla zvolena právě tato úměrnost.",
+    "subjects": [
+      "matematika"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Úměrnost",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "MATH_EXTENDED",
+    "filterKey": "mat",
+    "lead": "Přímá a nepřímá úměrnost v praktických situacích."
+  },
+  {
+    "id": "library-math-funkce-z-tabulky-do-grafu",
+    "title": "Funkce z tabulky do grafu",
+    "prompt": "Vysvětli pojem funkce žákům [ROČNÍK] na jednoduchém příkladu [PŘEDPIS NEBO SITUACE]. Vytvoř tabulku hodnot, popiš souřadnice a ukaž, jak vznikne graf. Přidej [POČET] úloh, ve kterých žák doplňuje tabulku, čte hodnotu z grafu a slovně interpretuje změnu. Nezaměňuj osu x a y.",
+    "subjects": [
+      "matematika"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Funkce",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "MATH_EXTENDED",
+    "filterKey": "mat",
+    "lead": "Vztah mezi předpisem, tabulkou hodnot a grafem."
+  },
+  {
+    "id": "library-math-cteni-a-tvorba-grafu",
+    "title": "Čtení a tvorba grafů",
+    "prompt": "Vytvoř aktivitu na čtení grafů pro [ROČNÍK]. Použij data o [TÉMA] a připrav otázky na nejvyšší a nejnižší hodnotu, rozdíl, součet, trend a odhad. Nejdříve žákům vysvětli popisky os, jednotky a legendu. Přidej jeden graf s chybějícím popiskem, který mají doplnit, a řešení.",
+    "subjects": [
+      "matematika"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Data",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "MATH_EXTENDED",
+    "filterKey": "mat",
+    "lead": "Interpretace sloupcového, spojnicového nebo kruhového grafu."
+  },
+  {
+    "id": "library-math-pravdepodobnost-v-jednoduchych-pokusech",
+    "title": "Pravděpodobnost v jednoduchých pokusech",
+    "prompt": "Připrav hodinu o pravděpodobnosti pro [ROČNÍK] pomocí pokusů s [KOSTKA / MINCE / KARTY]. Vysvětli pojmy pokus, výsledek a příznivý výsledek. Nech žáky nejprve odhadnout výsledek, potom jej vypočítat a případně porovnat s opakováním pokusu. Přidej otázky, které odhalí záměnu pravděpodobnosti a jistoty.",
+    "subjects": [
+      "matematika"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Pravděpodobnost",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "MATH_EXTENDED",
+    "filterKey": "mat",
+    "lead": "Rozdíl mezi možnými výsledky, příznivým výsledkem a odhadem."
+  },
+  {
+    "id": "prompt-statistika-ze-tridnich-dat",
+    "title": "Statistika ze třídních dat",
+    "prompt": "Navrhni aktivitu, ve které žáci [ROČNÍK] zpracují data o [TÉMA]. Připrav tabulku, otázky na průměr, medián, modus a rozpětí a návrh vhodného grafu. Vysvětli, že průměr nemusí popisovat typickou hodnotu. Použij pouze data, která vložím, a všechny výpočty zkontroluj.",
+    "subjects": [
+      "matematika"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Statistika",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "MATH_EXTENDED",
+    "filterKey": "mat",
+    "lead": "Průměr, medián, modus, rozsah a interpretace vlastního malého souboru."
+  },
+  {
+    "id": "library-math-ciselne-rady-a-vzory",
+    "title": "Číselné řady a vzory",
+    "prompt": "Vytvoř sadu úloh na číselné řady pro [ROČNÍK]. Použij řady s pravidlem [PŘIČÍTÁNÍ / NÁSOBENÍ / STŘÍDÁNÍ / JINÉ]. Žák má doplnit další členy a slovně popsat pravidlo. Zařaď i dvě řady, u kterých může existovat více pravidel, a vysvětli, jak zadání zpřesnit.",
+    "subjects": [
+      "matematika"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Vzory",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "MATH_EXTENDED",
+    "filterKey": "mat",
+    "lead": "Hledání pravidla, doplňování členů a vysvětlení postupu."
+  },
+  {
+    "id": "library-math-algebraicke-vyrazy",
+    "title": "Algebraické výrazy",
+    "prompt": "Připrav výklad a procvičení algebraických výrazů pro [ROČNÍK]. Zařaď dosazování za proměnnou, sčítání podobných členů, distributivní zákon a pořadí operací. Každý postup vysvětli na jednom příkladu. Potom vytvoř [POČET] úloh se samostatným řešením a jednu úlohu, kde žák hledá chybný krok.",
+    "subjects": [
+      "matematika"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Algebra",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "MATH_EXTENDED",
+    "filterKey": "mat",
+    "lead": "Dosazování, zjednodušování výrazů a práce s pořadím operací."
+  },
+  {
+    "id": "library-math-uhly-a-konstrukce",
+    "title": "Úhly a konstrukce",
+    "prompt": "Vytvoř pracovní list na úhly a základní konstrukce pro [ROČNÍK]. Přidej rozpoznávání typů úhlů, výpočty neznámých úhlů v trojúhelníku a čtyřúhelníku a postup konstrukce [ÚTVAR]. Každý postup napiš tak, aby jej žák mohl provést pravítkem a kružítkem. Přidej kontrolní body.",
+    "subjects": [
+      "matematika"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Geometrie",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "MATH_EXTENDED",
+    "filterKey": "mat",
+    "lead": "Rozpoznání typů úhlů, výpočet a slovní popis konstrukce."
+  },
+  {
+    "id": "library-math-telesa-a-objem",
+    "title": "Tělesa a objem",
+    "prompt": "Vysvětli povrch a objem tělesa [KRYCHLE / KVÁDR / VÁLEC / HRANOL] pro [ROČNÍK]. Ukaž nákres a význam každé veličiny. Připrav [POČET] úloh od dosazení do vzorce po slovní úlohu z praxe. Vyžaduj správné jednotky, odhad velikosti výsledku a zaokrouhlení podle zadání.",
+    "subjects": [
+      "matematika"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Tělesa",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "MATH_EXTENDED",
+    "filterKey": "mat",
+    "lead": "Síť tělesa, povrch, objem a převody jednotek."
+  },
+  {
+    "id": "library-math-financni-matematika-pro-skolu",
+    "title": "Finanční matematika pro školu",
+    "prompt": "Navrhni matematickou aktivitu na téma [ROZPOČET / SLEVA / ÚROK / PŘÍJMY A VÝDAJE] pro [ROČNÍK]. Použij částky odpovídající věku žáků. Každá úloha musí uvádět jednotky, postup a kontrolu výsledku. Odděl matematický výpočet od finanční interpretace a nepoužívej aktuální sazby bez mého zadání.",
+    "subjects": [
+      "matematika"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Finance",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "MATH_EXTENDED",
+    "filterKey": "mat",
+    "lead": "Rozpočet, sleva, úrok, příjem a výdaj v realistických úlohách."
+  },
+  {
+    "id": "library-math-najdi-chybu-v-reseni",
+    "title": "Najdi chybu v řešení",
+    "prompt": "Vytvoř diagnostickou aktivitu pro [ROČNÍK] na téma [TÉMA]. Ke každé z [POČET] úloh ukaž záměrně chybné řešení žáka. Chyba musí být jednoznačná a přiměřená tématu. Neprozrazuj ji předem. Přidej otázky: V kterém kroku chyba vznikla? Proč je chybný? Jak bys postup opravil/a? Na konci uveď řešení pro učitele.",
+    "subjects": [
+      "matematika"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Chyby",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "MATH_EXTENDED",
+    "filterKey": "mat",
+    "lead": "Diagnostická aktivita, kde žák opravuje konkrétní matematický postup."
+  },
+  {
+    "id": "prompt-napoveda-bez-prozrazeni-vysledku",
+    "title": "Nápověda bez prozrazení výsledku",
+    "prompt": "Pomoz žákovi vyřešit úlohu [ÚLOHA] tak, že nebudeš hned uvádět výsledek. Nejprve polož jednu otázku, která pomůže určit známé údaje a cíl. Potom nabízej postupně nejvýše [POČET] nápověd od obecné po konkrétní. Po každém kroku počkej na odpověď žáka a oprav jen jeho poslední krok. Výsledek ukaž až na požádání.",
+    "subjects": [
+      "matematika"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Podpora",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "MATH_EXTENDED",
+    "filterKey": "mat",
+    "lead": "Systém postupných nápověd pro samostatné řešení úlohy."
+  },
+  {
+    "id": "library-math-tri-urovne-stejneho-cile",
+    "title": "Tři úrovně stejného cíle",
+    "prompt": "Vezmi původní úlohu [ÚLOHA] pro [ROČNÍK] a vytvoř tři verze se stejným výukovým cílem: podpůrnou, standardní a rozšiřující. U podpůrné přidej vhodnou vizuální oporu a menší počet kroků, u rozšiřující otevřenou otázku nebo více cest řešení. Zachovej matematickou správnost a přidej řešení pro učitele.",
+    "subjects": [
+      "matematika"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Diferenciace",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "MATH_EXTENDED",
+    "filterKey": "mat",
+    "lead": "Diferenciace jedné matematické úlohy bez změny výukového cíle."
+  },
+  {
+    "id": "library-math-strategie-pro-cermat",
+    "title": "Strategie pro CERMAT",
+    "prompt": "Analyzuj úlohu ve stylu CERMAT: [VLOŽ ÚLOHU]. Urči, jaký typ znalosti ověřuje, co je v zadání důležité a jaké strategie může žák použít. Ukaž řešení krok za krokem, ale také rychlou kontrolu výsledku. Přidej dvě podobné úlohy a upozorni na typické pasti. Nevymýšlej informace mimo zadání.",
+    "subjects": [
+      "matematika"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Příprava na test",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "MATH_EXTENDED",
+    "filterKey": "mat",
+    "lead": "Rozbor typu úlohy, plán řešení a kontrola času bez hádání odpovědi."
+  },
+  {
+    "id": "library-math-matematicky-exit-ticket",
+    "title": "Matematický exit ticket",
+    "prompt": "Vytvoř exit ticket na téma [TÉMA] pro [ROČNÍK] na 5 minut. Připrav jednu úlohu na základní dovednost, jednu na vysvětlení postupu a jednu otázku: Co mi dnes ještě není jasné? Přidej očekávané odpovědi a jednoduché rozdělení podle toho, zda žák potřebuje opakování, další procvičení nebo rozšíření.",
+    "subjects": [
+      "matematika"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Reflexe",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "MATH_EXTENDED",
+    "filterKey": "mat",
+    "lead": "Krátké ověření porozumění na konci hodiny."
+  },
+  {
+    "id": "library-math-matematicky-projekt-z-realnych-dat",
+    "title": "Matematický projekt z reálných dat",
+    "prompt": "Navrhni [POČET]-hodinový matematický projekt pro [ROČNÍK] na téma [TÉMA]. Žáci mají získat nebo dostat data, provést výpočty, vytvořit tabulku či graf a formulovat závěr. Uveď cíle, role, postup, pomůcky, bezpečnostní nebo etická omezení a hodnoticí kritéria. Rozliš část pro žáky a metodickou poznámku pro učitele.",
+    "subjects": [
+      "matematika"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Projekt",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "MATH_EXTENDED",
+    "filterKey": "mat",
+    "lead": "Projekt, ve kterém žáci měří, počítají, zobrazují a interpretují."
+  },
+  {
+    "id": "library-math-hodnotici-rubrika-pro-matematiku",
+    "title": "Hodnoticí rubrika pro matematiku",
+    "prompt": "Vytvoř hodnoticí rubriku pro matematickou práci na téma [TÉMA] pro [ROČNÍK]. Kritéria: porozumění zadání, volba postupu, přesnost výpočtu, práce s jednotkami, vysvětlení a kontrola výsledku. Použij čtyři úrovně výkonu s konkrétními popisy, ne obecná slova. Přidej verzi srozumitelnou žákům a místo pro sebehodnocení.",
+    "subjects": [
+      "matematika"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Hodnocení",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "MATH_EXTENDED",
+    "filterKey": "mat",
+    "lead": "Transparentní hodnocení postupu, přesnosti, vysvětlení a kontroly."
+  },
+  {
+    "id": "library-czech-vyjmenovana-slova-v-kontextu",
+    "title": "Vyjmenovaná slova v kontextu",
+    "prompt": "Vytvoř pro žáky [ROČNÍK] cvičení na vyjmenovaná slova po [B / L / M / P / S / V / Z]. Použij pouze běžná a srozumitelná slova. Připrav doplňování i krátké věty, ve kterých žák musí volbu zdůvodnit. Přidej řešení s vysvětlením a jednu kreativní aktivitu, která nespočívá jen v doplňování i/y.",
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Pravopis",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CZECH_EXTENDED",
+    "filterKey": "cj",
+    "lead": "Procvičení pravopisu pomocí vět, příběhu a zdůvodnění."
+  },
+  {
+    "id": "library-czech-i-y-v-koncovkach",
+    "title": "I/Y v koncovkách",
+    "prompt": "Připrav výklad a procvičení na [TÉMA: podstatná jména / přídavná jména / slovesa] pro [ROČNÍK]. Nejprve vysvětli rozhodovací postup, potom vytvoř [POČET] vět s doplňováním. U každé odpovědi přidej krátké zdůvodnění podle vzoru nebo pravidla. Zařaď také tři věty, kde žák opraví chybný postup.",
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Mluvnice",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CZECH_EXTENDED",
+    "filterKey": "cj",
+    "lead": "Rozlišování vzorů, shody a koncovek podle věty."
+  },
+  {
+    "id": "library-czech-interpunkce-v-souveti",
+    "title": "Interpunkce v souvětí",
+    "prompt": "Vytvoř pracovní list na interpunkci v souvětí pro [ROČNÍK]. Použij souvětí s [VEDLEJŠÍ VĚTY / POMĚRY MEZI VĚTAMI / VLOŽENÉ VĚTY]. Žák má doplnit čárky, určit vztah a své rozhodnutí zdůvodnit. Přidej správně vyřešenou verzi, přehled pravidel a upozornění na případy, které nelze rozhodnout bez znalosti významu věty.",
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Interpunkce",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CZECH_EXTENDED",
+    "filterKey": "cj",
+    "lead": "Určování vztahů mezi větami a odůvodnění čárky."
+  },
+  {
+    "id": "library-czech-slovni-druhy",
+    "title": "Slovní druhy",
+    "prompt": "Vytvoř [POČET] vět pro určování slovních druhů pro [ROČNÍK]. Vyber slova, která mohou být v různém kontextu nejednoznačná, a vysvětli, podle čeho se rozhoduje. Přidej tabulku s řešením a tři úlohy, ve kterých žák sám vytvoří větu s určeným slovním druhem. Nepoužívej příliš archaická nebo nejasná slova.",
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Mluvnice",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CZECH_EXTENDED",
+    "filterKey": "cj",
+    "lead": "Rozpoznávání slovních druhů v celých větách, ne izolovaně."
+  },
+  {
+    "id": "library-czech-vetne-cleny-v-nakresu",
+    "title": "Větné členy v nákresu",
+    "prompt": "Vysvětli žákům [ROČNÍK] určování větných členů na větách o tématu [TÉMA]. U každé věty ukaž postup od přísudku přes podmět až k rozvíjejícím větným členům. Přidej jednoduchý větný nákres, [POČET] cvičných vět a jednu větu s více možnými otázkami, kde vysvětlíš správné řešení.",
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Syntax",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CZECH_EXTENDED",
+    "filterKey": "cj",
+    "lead": "Podmět, přísudek a rozvíjející větné členy v přehledném postupu."
+  },
+  {
+    "id": "library-czech-druhy-vedlejsich-vet",
+    "title": "Druhy vedlejších vět",
+    "prompt": "Připrav výklad druhů vedlejších vět pro [ROČNÍK]. U každého druhu uveď význam, otázku, typické spojovací výrazy a jeden příklad. Potom vytvoř [POČET] souvětí, kde žák určí druh a své řešení zdůvodní. Zařaď i příklady, kde stejný spojovací výraz neznamená vždy stejný druh věty.",
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Souvětí",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CZECH_EXTENDED",
+    "filterKey": "cj",
+    "lead": "Rozpoznání podle významu, otázky a spojovacího výrazu."
+  },
+  {
+    "id": "library-czech-prima-a-neprima-rec",
+    "title": "Přímá a nepřímá řeč",
+    "prompt": "Vytvoř cvičení na přímou a nepřímou řeč pro [ROČNÍK]. Připrav krátký dialog na téma [TÉMA], ukaž správné uvozovky a interpunkci a potom vytvoř úlohy na převod oběma směry. U každého řešení vysvětli změnu zájmen, časových výrazů a sloves. Zachovej přirozený význam výpovědi.",
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Gramatika",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CZECH_EXTENDED",
+    "filterKey": "cj",
+    "lead": "Převod dialogu, interpunkce a zachování významu."
+  },
+  {
+    "id": "prompt-pravopisna-korektura",
+    "title": "Pravopisná korektura",
+    "prompt": "Oprav tento text žáka [ROČNÍK]: [TEXT]. Nejdříve ukaž původní chybná místa, potom opravenou verzi. Každou změnu zařaď do kategorie: i/y, koncovky, interpunkce, velká písmena, shoda, psaní slov nebo stylistika. Uveď krátké vysvětlení pravidla. Neměň styl textu ani jeho obsah, pokud to není nutné.",
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Korektura",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CZECH_EXTENDED",
+    "filterKey": "cj",
+    "lead": "Oprava textu s rozdělením chyb podle typu a vysvětlením."
+  },
+  {
+    "id": "library-czech-synonyma-a-antonyma",
+    "title": "Synonyma a antonyma",
+    "prompt": "Připrav pro [ROČNÍK] aktivitu na synonyma a antonyma k tématu [TÉMA]. Ke každému slovu nabídni několik možností, označ nejpřesnější a vysvětli rozdíl v kontextu. Vytvoř také věty, ve kterých žák slovo nahradí vhodným synonymem, aniž by změnil význam. Vyhni se výrazům, které nejsou pro věk žáků srozumitelné.",
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Slovní zásoba",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CZECH_EXTENDED",
+    "filterKey": "cj",
+    "lead": "Rozšiřování slovní zásoby s rozlišením významu a kontextu."
+  },
+  {
+    "id": "library-czech-frazeologie-a-ustalena-spojeni",
+    "title": "Frazeologie a ustálená spojení",
+    "prompt": "Vysvětli [POČET] českých rčení nebo ustálených spojení pro [ROČNÍK]. U každého uveď význam jednoduchým jazykem, vhodnou větu a případně původ jen tehdy, pokud jej dodám. Přidej úkol na přiřazení rčení k významu a úkol, ve kterém žák vytvoří vlastní větu. Nezaměňuj doslovný a přenesený význam.",
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Frazeologie",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CZECH_EXTENDED",
+    "filterKey": "cj",
+    "lead": "Význam rčení a použití v přirozeném kontextu."
+  },
+  {
+    "id": "library-czech-shrnuti-odborneho-textu",
+    "title": "Shrnutí odborného textu",
+    "prompt": "Zpracuj tento text pro žáky [ROČNÍK]: [TEXT]. Nejprve formuluj hlavní myšlenku jednou větou, potom vyber [POČET] klíčových informací. Odděl fakta, příklady a vedlejší detaily. Vytvoř také tři otázky na porozumění a jednu otázku, která vyžaduje vlastní vysvětlení. Nepřidávej informace mimo text.",
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Čtení",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CZECH_EXTENDED",
+    "filterKey": "cj",
+    "lead": "Hlavní myšlenka, klíčové informace a oddělení faktů od detailů."
+  },
+  {
+    "id": "library-czech-ctenarska-gramotnost",
+    "title": "Čtenářská gramotnost",
+    "prompt": "Navrhni čtenářskou aktivitu k textu [TEXT] pro [ROČNÍK]. Připrav otázky před čtením na předvídání, během čtení na vyhledání a propojení informací a po čtení na interpretaci a hodnocení. U každé otázky uveď, zda má odpověď přímo v textu, nebo vyžaduje závěr. Přidej řešení pouze tam, kde je jednoznačné.",
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Porozumění",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CZECH_EXTENDED",
+    "filterKey": "cj",
+    "lead": "Otázky před čtením, během čtení i po čtení."
+  },
+  {
+    "id": "prompt-literarni-rozbor-dila",
+    "title": "Literární rozbor díla",
+    "prompt": "Připrav osnovu literárního rozboru díla [NÁZEV] pro [ROČNÍK]. Zpracuj autora a kontext jen podle dodaných podkladů, dále žánr, téma, motivy, kompozici, postavy, vypravěče, jazykové prostředky a vlastní interpretaci. Jasně odděl údaje doložené textem od možného výkladu. Na konci přidej otázky pro ústní zkoušení.",
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Literatura",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CZECH_EXTENDED",
+    "filterKey": "cj",
+    "lead": "Žánr, téma, motivy, postavy, kompozice a jazykové prostředky."
+  },
+  {
+    "id": "library-czech-postavy-motivy-a-vztahy",
+    "title": "Postavy, motivy a vztahy",
+    "prompt": "Zpracuj z textu [DÍLO] přehled postav, jejich vztahů, cílů a změn v průběhu děje. Použij pouze informace, které jsou v textu nebo mých poznámkách. Rozliš přímou charakteristiku od vlastního závěru. Navrhni jednoduchý diagram vztahů a [POČET] otázek, které vedou žáka k práci s konkrétní pasáží.",
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Interpretace",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CZECH_EXTENDED",
+    "filterKey": "cj",
+    "lead": "Vizuální přehled literárního textu bez vymýšlení vlastností."
+  },
+  {
+    "id": "library-czech-porovnani-dvou-literarnich-del",
+    "title": "Porovnání dvou literárních děl",
+    "prompt": "Porovnej díla [DÍLO A] a [DÍLO B] pro žáky [ROČNÍK]. Vytvoř tabulku podle kritérií: žánr, téma, prostředí, postavy, kompozice, vypravěč a jazyk. U každého tvrzení uveď, zda vychází z textu A, textu B nebo z obou. Přidej osnovu srovnávacího odstavce a otázku, která vyžaduje citaci nebo konkrétní odkaz na text.",
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Srovnání",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CZECH_EXTENDED",
+    "filterKey": "cj",
+    "lead": "Srovnávací tabulka, podobnosti, rozdíly a důkazy z textu."
+  },
+  {
+    "id": "library-czech-slohovy-utvar-krok-za-krokem",
+    "title": "Slohový útvar krok za krokem",
+    "prompt": "Vysvětli žákům [ROČNÍK], jak napsat slohový útvar [ÚTVAR] na téma [TÉMA]. Uveď účel, adresáta, doporučenou strukturu, vhodný postup plánování, typické jazykové prostředky a kontrolní seznam před odevzdáním. Přidej krátký modelový odstavec, ne však celý vzorový text, pokud jej výslovně nepožaduji.",
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Sloh",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CZECH_EXTENDED",
+    "filterKey": "cj",
+    "lead": "Praktická šablona pro popis, vypravování, úvahu, žádost nebo zprávu."
+  },
+  {
+    "id": "library-czech-osnova-slohove-prace",
+    "title": "Osnova slohové práce",
+    "prompt": "Navrhni osnovu slohové práce na téma [TÉMA] pro [ÚTVAR] a [ROČNÍK]. Připrav několik možných úhlů pohledu, doporuč pořadí odstavců a ke každému napiš účel a otázky, na které má žák odpovědět. Nepsat hotovou práci. Přidej kontrolu, zda osnova odpovídá zadání a zamýšlenému adresátovi.",
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Psaní",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CZECH_EXTENDED",
+    "filterKey": "cj",
+    "lead": "Převod tématu na úvod, hlavní část, závěr a klíčové body."
+  },
+  {
+    "id": "library-czech-zpetna-vazba-k-textu-bez-prepsani",
+    "title": "Zpětná vazba k textu bez přepsání",
+    "prompt": "Posuď text žáka [ROČNÍK]: [TEXT]. Nejdříve uveď dvě silné stránky. Potom nabídni nejvýše [POČET] konkrétních doporučení podle kritérií [KRITÉRIA]. U každého vysvětli proč a ukaž krátký příklad, ale nepřepisuj celý text za žáka. Zachovej povzbudivý tón a odděl pravopis od obsahu a stylu.",
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Zpětná vazba",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CZECH_EXTENDED",
+    "filterKey": "cj",
+    "lead": "Konkrétní doporučení, která zachovají autorství žákovského textu."
+  },
+  {
+    "id": "library-czech-argumentacni-text",
+    "title": "Argumentační text",
+    "prompt": "Pomoz žákům [ROČNÍK] připravit argumentační text na téma [TÉMA]. Navrhni neutrální otázku, uveď možné teze, argumenty a protiargumenty a rozliš fakta od názorů. Připrav organizér pro plánování a kontrolní seznam: tvrzení, důkaz, vysvětlení, námitka a závěr. Nepřesvědčuj žáka o vlastním názoru.",
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Argumentace",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CZECH_EXTENDED",
+    "filterKey": "cj",
+    "lead": "Tvrzení, důkazy, námitka a závěr v přehledné struktuře."
+  },
+  {
+    "id": "library-czech-kreativni-psani-s-omezenim",
+    "title": "Kreativní psaní s omezením",
+    "prompt": "Navrhni kreativní psací aktivitu pro [ROČNÍK] na téma [TÉMA]. Zadej žákům omezení: [POČET] slov, [POČET] povinných slov, [VYPRAVĚČ / ČAS / PROSTŘEDÍ] a jeden zvrat. Přidej kritéria úspěchu a otázky pro sebehodnocení. Nehodnoť kreativitu jako správnou či špatnou; hodnoť splnění zadání, srozumitelnost a práci s jazykem.",
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Tvoření",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CZECH_EXTENDED",
+    "filterKey": "cj",
+    "lead": "Příběh, dialog nebo popis podle několika jasných podmínek."
+  },
+  {
+    "id": "library-czech-medialni-gramotnost",
+    "title": "Mediální gramotnost",
+    "prompt": "Připrav aktivitu na mediální gramotnost pro [ROČNÍK] s materiálem [ČLÁNEK / PŘÍSPĚVEK / REKLAMA]. Nejdříve žáci označí tvrzení, názor, emoci a výzvu k jednání. Potom posoudí autora, zdroj, datum, důkazy a možný záměr. Přidej otázky, které vedou k ověřování, ale neoznač text jako pravdivý bez podkladů.",
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Média",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CZECH_EXTENDED",
+    "filterKey": "cj",
+    "lead": "Oddělení tvrzení, názoru, reklamy a ověřitelné informace."
+  },
+  {
+    "id": "library-czech-mluvni-cviceni",
+    "title": "Mluvní cvičení",
+    "prompt": "Navrhni desetiminutové mluvní cvičení pro [ROČNÍK] na téma [TÉMA]. Urči cíl projevu, délku, adresáta a strukturu. Přidej přípravné otázky, doporučení k hlasitosti, tempu a očnímu kontaktu a jednoduchou rubriku pro spolužáckou zpětnou vazbu. Nehodnoť osobnost žáka, pouze pozorovatelné projevy.",
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Mluvení",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CZECH_EXTENDED",
+    "filterKey": "cj",
+    "lead": "Krátká příprava projevu, práce s hlasem a sebehodnocení."
+  },
+  {
+    "id": "library-czech-priprava-na-ustni-zkousku",
+    "title": "Příprava na ústní zkoušku",
+    "prompt": "Připrav žáka [ROČNÍK] na ústní zkoušení z [PŘEDMĚT / OKRUH]. Použij pouze mé podklady [VLOŽTE PODKLADY]. Vytvoř [POČET] otázek, ke každé osnovu dobré odpovědi, možné doplňující otázky a upozornění na nejčastější chybu. Potom mě zkoušej po jedné otázce a čekej na mou odpověď.",
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Zkoušení",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CZECH_EXTENDED",
+    "filterKey": "cj",
+    "lead": "Otázky, osnovy odpovědí a doplňující zkoušení bez vymýšlení faktů."
+  },
+  {
+    "id": "library-czech-kviz-z-cetby",
+    "title": "Kvíz z četby",
+    "prompt": "Vytvoř kvíz k dílu [NÁZEV] pro [ROČNÍK]. Použij pouze text nebo poznámky, které vložím. Připrav otázky na děj, postavy, motivy, vypravěče, jazyk a hlavní myšlenku. Kombinuj výběr z možností, krátké odpovědi a jednu otázku s citací nebo odkazem na pasáž. Přidej řešení a označ případné nejednoznačnosti.",
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Četba",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CZECH_EXTENDED",
+    "filterKey": "cj",
+    "lead": "Ověření porozumění ději, postavám, tématu i konkrétním pasážím."
+  },
+  {
+    "id": "library-czech-diferencovany-pracovni-list-z-cestiny",
+    "title": "Diferencovaný pracovní list z češtiny",
+    "prompt": "Z tohoto zadání [ÚLOHA] vytvoř tři verze pro [ROČNÍK]: podpůrnou s nápovědou a kratším textem, standardní a rozšiřující s otevřenou otázkou. Zachovej stejný cíl [CÍL], správné řešení i obsahové jádro. Uveď, jakou podporu která verze poskytuje, a připrav klíč pouze k jednoznačným úlohám.",
+    "subjects": [
+      "čeština"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Diferenciace",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "CZECH_EXTENDED",
+    "filterKey": "cj",
+    "lead": "Tři úrovně podpory se stejným jazykovým cílem."
+  },
+  {
+    "id": "library-english-tematicka-slovni-zasoba",
+    "title": "Tematická slovní zásoba",
+    "prompt": "Act as an experienced English teacher. Create a vocabulary set about [TOPIC] for Czech students at [CEFR] level. Use only the words I provide: [WORDS]. Group them into useful categories, add Czech meanings, pronunciation support if appropriate, one short example sentence and one common collocation. Finish with a five-minute retrieval activity. Do not add advanced words beyond the level.",
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Vocabulary",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "ENGLISH_EXTENDED",
+    "filterKey": "aj",
+    "lead": "Slovíčka, kolokace, příklady a krátké procvičení pro úroveň CEFR."
+  },
+  {
+    "id": "library-english-opakovani-slovni-zasoby-v-case",
+    "title": "Opakování slovní zásoby v čase",
+    "prompt": "Create a short spaced-retrieval plan for [TOPIC] for Czech learners at [CEFR]. Use only this vocabulary: [WORDS]. Prepare activities for today, after two days and after one week. Mix recognition, recall, sentence completion and a short speaking task. Give the teacher answer keys. Keep tasks short and do not introduce new vocabulary.",
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Opakování",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "ENGLISH_EXTENDED",
+    "filterKey": "aj",
+    "lead": "Krátké opakovací bloky s návratem k dříve procvičeným slovům."
+  },
+  {
+    "id": "library-english-gramatika-s-jednoduchym-vysvetlenim",
+    "title": "Gramatika s jednoduchým vysvětlením",
+    "prompt": "Explain [GRAMMAR TOPIC] to Czech students at [CEFR] level. Use Czech for the explanation and English for examples. Show meaning, form, affirmative, negative and question forms where relevant. Add signal words, three examples in context, five controlled exercises and an answer key. Mention common Czech-speaker errors. Keep the explanation short and do not use grammar not needed for this level.",
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Grammar",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "ENGLISH_EXTENDED",
+    "filterKey": "aj",
+    "lead": "Význam, použití, stavba, příklady, typické chyby a procvičení."
+  },
+  {
+    "id": "library-english-porovnani-anglickych-casu",
+    "title": "Porovnání anglických časů",
+    "prompt": "Create a comparison lesson for [TENSE A] and [TENSE B] for Czech learners at [CEFR]. Use the situation [CONTEXT]. Explain the difference in meaning, form, signal words and typical mistakes. Include a clear comparison table, a choice exercise, a transformation exercise and a short communicative task. Add answers and explain why each answer is correct.",
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Tenses",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "ENGLISH_EXTENDED",
+    "filterKey": "aj",
+    "lead": "Rozlišení významu, signálních výrazů a použití ve větě."
+  },
+  {
+    "id": "library-english-oprava-chyb-bez-preruseni-komunikace",
+    "title": "Oprava chyb bez přerušení komunikace",
+    "prompt": "You are a patient English conversation partner for a Czech student at [CEFR] level. Topic: [TOPIC]. Let the student speak without interrupting. After each answer, first respond naturally, then list no more than [NUMBER] important errors with the correct version and a short explanation in Czech. Focus on errors that block meaning or repeat often. Ask one follow-up question each time.",
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Feedback",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "ENGLISH_EXTENDED",
+    "filterKey": "aj",
+    "lead": "Jemná korekce, která zachová motivaci a umožní další mluvení."
+  },
+  {
+    "id": "library-english-doplnovani-podle-pravidla",
+    "title": "Doplňování podle pravidla",
+    "prompt": "Create a gap-fill worksheet on [GRAMMAR / VOCABULARY] for [CEFR] learners. Use these words or forms only: [CONTENT]. Prepare three levels: guided with a word bank, standard without the word bank and challenge with a short open response. Add an answer key and one sentence explaining the rule or meaning behind each answer. Do not make the gaps ambiguous.",
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Practice",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "ENGLISH_EXTENDED",
+    "filterKey": "aj",
+    "lead": "Cvičení s postupným přechodem od řízené k samostatné odpovědi."
+  },
+  {
+    "id": "library-english-cteni-s-porozumenim",
+    "title": "Čtení s porozuměním",
+    "prompt": "Create a reading lesson for Czech students at [CEFR] using this text: [TEXT]. Keep the text unchanged unless I ask for adaptation. Add pre-reading prediction questions, while-reading scanning and inference questions, and post-reading discussion. Mark whether an answer is directly stated or inferred. Include an answer key and vocabulary support for only the most important words.",
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Reading",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "ENGLISH_EXTENDED",
+    "filterKey": "aj",
+    "lead": "Text, otázky před čtením, během čtení a po čtení pro danou úroveň."
+  },
+  {
+    "id": "library-english-poslechovy-pracovni-list",
+    "title": "Poslechový pracovní list",
+    "prompt": "Create a listening worksheet for [CEFR] students based on this transcript or audio description: [MATERIAL]. Prepare a pre-listening prediction, first-listening gist task, second-listening detail task and post-listening speaking task. Use only information present in the material. Provide answers where possible and identify questions that depend on the actual audio rather than the transcript.",
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Listening",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "ENGLISH_EXTENDED",
+    "filterKey": "aj",
+    "lead": "Před poslechem, během poslechu i po poslechu bez domýšlení obsahu."
+  },
+  {
+    "id": "library-english-popis-obrazku",
+    "title": "Popis obrázku",
+    "prompt": "Create a speaking activity for describing an image for Czech learners at [CEFR]. The image shows: [IMAGE DESCRIPTION]. Provide a simple structure: overview, people or objects, location, actions, details and personal reaction. Add useful sentence starters appropriate for the level, five follow-up questions and a peer-feedback checklist. Do not require students to invent details that cannot be seen.",
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Speaking",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "ENGLISH_EXTENDED",
+    "filterKey": "aj",
+    "lead": "Struktura pro popis, užitečné fráze a otázky pro mluvení."
+  },
+  {
+    "id": "library-english-role-play-v-anglictine",
+    "title": "Role-play v angličtině",
+    "prompt": "Design a role-play for [CEFR] learners in the situation [SITUATION]. Give each student a clear role, goal and information gap. Provide useful phrases, but do not write the whole dialogue. Include a simpler support version and a challenge version. Add a short reflection: What did you manage to say? Which phrase do you want to use next time?",
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Role-play",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "ENGLISH_EXTENDED",
+    "filterKey": "aj",
+    "lead": "Komunikační situace s rolí, cílem, oporou a postupným omezením."
+  },
+  {
+    "id": "library-english-classroom-english",
+    "title": "Classroom English",
+    "prompt": "Create a classroom-English phrase sheet for [AGE / CEFR] students. Group phrases by function: asking for clarification, agreeing, disagreeing politely, working in pairs, presenting, asking for time and reflecting on learning. Use short natural phrases and provide a Czech meaning. Add a mini-dialogue and a five-minute practice activity. Avoid expressions too advanced for the target level.",
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Classroom English",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "ENGLISH_EXTENDED",
+    "filterKey": "aj",
+    "lead": "Praktické výrazy pro pokyny, žádost o pomoc, práci ve dvojici a reflexi."
+  },
+  {
+    "id": "library-english-vyslovnost-a-rytmus-vety",
+    "title": "Výslovnost a rytmus věty",
+    "prompt": "Create a pronunciation practice for Czech learners at [CEFR] focused on [SOUND / WORDS / SENTENCES]. Identify the target sound, show minimal pairs if useful and mark word stress or sentence stress in a clear way. Add a listen-and-repeat sequence, a short contrast exercise and a communicative sentence task. Do not use phonetic symbols without a simple explanation.",
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Pronunciation",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "ENGLISH_EXTENDED",
+    "filterKey": "aj",
+    "lead": "Práce s přízvukem, redukcí, problematickými hláskami a nácvikem."
+  },
+  {
+    "id": "library-english-email-v-anglictine",
+    "title": "Email v angličtině",
+    "prompt": "Teach Czech students at [CEFR] how to write a [FORMAL / INFORMAL] email about [PURPOSE]. Explain audience, greeting, paragraph structure, useful phrases and closing. Create an outline and a short model paragraph, not a complete answer to copy. Add a checklist for tone, grammar, clarity and task completion. Include a differentiated support version.",
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Writing",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "ENGLISH_EXTENDED",
+    "filterKey": "aj",
+    "lead": "Adresát, účel, struktura, zdvořilost a kontrolní seznam."
+  },
+  {
+    "id": "prompt-opinion-essay",
+    "title": "Opinion essay",
+    "prompt": "Prepare a lesson on writing an opinion essay for [CEFR] students. Topic: [TOPIC]. Help students formulate a clear opinion, two arguments, examples and one counterargument. Provide a paragraph plan, linking phrases suitable for the level and a self-checklist. Do not write the whole essay for them. Make clear which ideas are examples and which must come from the student.",
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Essay",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "ENGLISH_EXTENDED",
+    "filterKey": "aj",
+    "lead": "Tvrzení, argumenty, příklady, protiargument a závěr."
+  },
+  {
+    "id": "library-english-cambridge-fce-cae-uloha",
+    "title": "Cambridge / FCE / CAE úloha",
+    "prompt": "Act as an experienced English exam tutor. Analyse this [CAMBRIDGE / FCE / CAE] task: [TASK]. Explain what the task requires, how to plan time, which language features matter and what a strong answer should contain. Then create a practice task of the same type with an answer key. Give feedback on my answer using clear criteria, but do not invent an official score boundary.",
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Exam prep",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "ENGLISH_EXTENDED",
+    "filterKey": "aj",
+    "lead": "Strategie, čas, rozbor zadání a zpětná vazba k odpovědi."
+  },
+  {
+    "id": "library-english-preklad-s-kulturnim-kontextem",
+    "title": "Překlad s kulturním kontextem",
+    "prompt": "Translate this text from [CZECH / ENGLISH] into [TARGET LANGUAGE]: [TEXT]. Preserve the meaning and register. Mark idioms, culture-specific references and places where a literal translation would sound unnatural. For each marked place, give one alternative and explain the choice in Czech. Do not add facts or rewrite the author’s position.",
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Translation",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "ENGLISH_EXTENDED",
+    "filterKey": "aj",
+    "lead": "Překlad, idiomy, registr a místa, kde doslovnost nefunguje."
+  },
+  {
+    "id": "library-english-adaptace-textu-podle-cefr",
+    "title": "Adaptace textu podle CEFR",
+    "prompt": "Adapt this English text for Czech learners at [A1 / A2 / B1 / B2]: [TEXT]. Preserve the main meaning, remove unnecessary complexity and keep these required words: [WORDS]. After the adapted text, list the main changes in vocabulary and grammar. Add three comprehension questions and do not introduce new factual information.",
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "CEFR",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "ENGLISH_EXTENDED",
+    "filterKey": "aj",
+    "lead": "Zjednodušení jazyka při zachování významu, struktury a klíčové slovní zásoby."
+  },
+  {
+    "id": "library-english-speaking-cards",
+    "title": "Speaking cards",
+    "prompt": "Create [NUMBER] speaking cards for [CEFR] students about [TOPIC]. Each card should contain one clear question, two useful sentence starters and one optional follow-up. Include a support word bank and a challenge instruction for stronger students. Avoid yes/no questions unless the student must explain the answer. Provide teacher notes for grouping and timing.",
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Speaking",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "ENGLISH_EXTENDED",
+    "filterKey": "aj",
+    "lead": "Karty pro dvojice nebo skupiny s otázkou, oporou a rozšířením."
+  },
+  {
+    "id": "library-english-debata-s-rolemi",
+    "title": "Debata s rolemi",
+    "prompt": "Design a classroom debate for [CEFR] students on [QUESTION]. Give students balanced roles and a short evidence pack: [SOURCES / FACTS]. Prepare planning questions, useful phrases for agreeing and disagreeing, speaking rules and a reflection rubric. Do not present one side as objectively correct when the topic is a value question. Separate facts from opinions.",
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Debata",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "ENGLISH_EXTENDED",
+    "filterKey": "aj",
+    "lead": "Příprava názoru, důkazu, reakce a respektujícího nesouhlasu."
+  },
+  {
+    "id": "library-english-projekt-v-anglictine",
+    "title": "Projekt v angličtině",
+    "prompt": "Plan an English project for [AGE / CEFR] about [TOPIC] lasting [NUMBER] lessons. Include a language goal, content goal, final product, group roles, milestones, source-use rules and a short presentation. Add support phrases and a rubric for English, content, collaboration and reflection. Do not require students to copy AI-generated text as their final work.",
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Project",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "ENGLISH_EXTENDED",
+    "filterKey": "aj",
+    "lead": "Výzkum, výstup, jazykové cíle, role a průběžná kontrola."
+  },
+  {
+    "id": "library-english-diktat-se-zpetnou-vazbou",
+    "title": "Diktát se zpětnou vazbou",
+    "prompt": "Create a short English dictation for Czech students at [CEFR] about [TOPIC]. Use only grammar and vocabulary appropriate for the level. After the dictation, provide a correction activity grouped by error type: spelling, grammar, word order and punctuation. Add a second attempt and a reflection question. Do not make the text longer than [NUMBER] words.",
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Dictation",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "ENGLISH_EXTENDED",
+    "filterKey": "aj",
+    "lead": "Krátký text, cílené jevy a následná práce s chybou."
+  },
+  {
+    "id": "library-english-exit-ticket-v-anglictine",
+    "title": "Exit ticket v angličtině",
+    "prompt": "Create a five-minute English exit ticket for [CEFR] students after a lesson on [TOPIC]. Include one recall task, one use-in-context task and one self-assessment sentence starter: “I can…”, “I still need help with…”. Add an answer key and a simple teacher sorting rule for students who need reteaching, practice or extension.",
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Reflexe",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "ENGLISH_EXTENDED",
+    "filterKey": "aj",
+    "lead": "Rychlé ověření cíle hodiny, jistoty a dalšího kroku."
+  },
+  {
+    "id": "library-english-vocabulary-quiz",
+    "title": "Vocabulary quiz",
+    "prompt": "Create a vocabulary quiz for Czech students at [CEFR] on [TOPIC]. Use only these words: [WORDS]. Include meaning recognition, translation in context, collocation, sentence completion and one short production task. Mix easy and challenging items, add an answer key and explain any answer that could be ambiguous. Do not test words that are not in my list.",
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Vocabulary",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "ENGLISH_EXTENDED",
+    "filterKey": "aj",
+    "lead": "Kvíz, který ověřuje význam, použití i vybavení slova z paměti."
+  },
+  {
+    "id": "library-english-priprava-na-ustni-zkouseni",
+    "title": "Příprava na ústní zkoušení",
+    "prompt": "Act as an English oral-exam tutor for a Czech student at [CEFR]. Exam topic: [TOPIC]. Ask one question at a time, wait for my answer and give brief feedback on content, grammar, vocabulary and fluency. Ask follow-up questions when appropriate. At the end, summarise strengths, three priorities and useful phrases. Do not write my answer for me.",
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Oral exam",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "ENGLISH_EXTENDED",
+    "filterKey": "aj",
+    "lead": "Otázky, osnovy odpovědí, follow-up otázky a nácvik pod tlakem času."
+  },
+  {
+    "id": "library-english-diferencovany-anglicky-pracovni-list",
+    "title": "Diferencovaný anglický pracovní list",
+    "prompt": "Create three versions of a worksheet about [TOPIC] for Czech students at [AGE]. Keep the same learning objective [OBJECTIVE] and key content. Version A should include visuals, a word bank and sentence starters; version B should be standard; version C should add an open-ended challenge. Include answers and mark which tasks cannot be auto-graded.",
+    "subjects": [
+      "angličtina"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Diferenciace",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "ENGLISH_EXTENDED",
+    "filterKey": "aj",
+    "lead": "Jedna jazyková dovednost, tři úrovně podpory a společný cíl."
+  },
+  {
+    "id": "prompt-plan-laboratorniho-experimentu",
+    "title": "Plán laboratorního experimentu",
+    "prompt": "Navrhni laboratorní experiment na téma [TÉMA] pro [ROČNÍK]. Uveď výukový cíl, hypotézu, pomůcky, bezpečný postup, nezávislou a závislou proměnnou, kontrolní podmínky, tabulku pro data a otázky k závěru. Použij pouze běžně dostupné pomůcky [POMŮCKY] a jasně označ rizika. Nevytvářej postup, který vyžaduje nebezpečné látky.",
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Experiment",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "SCIENCE_EXTENDED",
+    "filterKey": "pv",
+    "lead": "Cíl, hypotéza, pomůcky, postup, proměnné, bezpečnost a závěr."
+  },
+  {
+    "id": "library-science-hypoteza-a-vyzkumna-otazka",
+    "title": "Hypotéza a výzkumná otázka",
+    "prompt": "Pomoz žákům [ROČNÍK] převést téma [TÉMA] na dobrou výzkumnou otázku. Navrhni několik variant, u každé ukaž, co lze měřit a co by bylo potřeba držet stejné. Potom formuluj ověřitelnou hypotézu ve tvaru „Pokud…, potom…, protože…“. Přidej, jaké výsledky by hypotézu podpořily nebo zpochybnily.",
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Bádání",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "SCIENCE_EXTENDED",
+    "filterKey": "pv",
+    "lead": "Převod zajímavého jevu na ověřitelnou otázku a předpoklad."
+  },
+  {
+    "id": "library-science-promenne-v-experimentu",
+    "title": "Proměnné v experimentu",
+    "prompt": "Vysvětli proměnné v experimentu na téma [EXPERIMENT] pro [ROČNÍK]. Urči nezávislou, závislou a kontrolované proměnné. Vytvoř tři krátké scénáře, ve kterých žák proměnné označí, a přidej řešení s vysvětlením. Upozorni na to, proč změna více věcí najednou ztěžuje závěr.",
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Metoda",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "SCIENCE_EXTENDED",
+    "filterKey": "pv",
+    "lead": "Nezávislá, závislá a kontrolované proměnné na konkrétním příkladu."
+  },
+  {
+    "id": "library-science-bezpecnost-v-laboratori",
+    "title": "Bezpečnost v laboratoři",
+    "prompt": "Vytvoř bezpečnostní checklist pro školní experiment [EXPERIMENT] pro [ROČNÍK]. Uveď rizika, potřebné ochranné pomůcky, bezpečné zacházení, zakázané postupy a co dělat při rozlití nebo zasažení. Použij pravidla školy a informace, které zadám [PRAVIDLA]. Nezlehčuj rizika a nenahrazuj pokyny učitele.",
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Bezpečnost",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "SCIENCE_EXTENDED",
+    "filterKey": "pv",
+    "lead": "Rozpoznání rizik, ochranné pomůcky, postup při nehodě a odpovědnost."
+  },
+  {
+    "id": "library-science-pozorovani-bez-domnenek",
+    "title": "Pozorování bez domněnek",
+    "prompt": "Připrav aktivitu na rozlišení pozorování a vysvětlení pro [ROČNÍK] s jevem [JEV]. Uveď několik vět, z nichž žáci označí přímé pozorování, měření, domněnku a závěr. Potom vytvoř tabulku, do které zapíšou vlastní pozorování. Nepřidávej výsledek experimentu, pokud jej neposkytnu.",
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Pozorování",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "SCIENCE_EXTENDED",
+    "filterKey": "pv",
+    "lead": "Rozlišení toho, co vidíme, měříme a teprve vysvětlujeme."
+  },
+  {
+    "id": "library-science-tabulka-laboratornich-dat",
+    "title": "Tabulka laboratorních dat",
+    "prompt": "Navrhni tabulku pro záznam dat z experimentu [EXPERIMENT]. Urči názvy veličin, jednotky, počet měření a místo pro průměr nebo odchylku, pokud je to vhodné. Přidej instrukci, jak zapisovat nejistý údaj a jak data zkontrolovat. Neprováděj výpočty bez skutečných hodnot, které dodám.",
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Data",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "SCIENCE_EXTENDED",
+    "filterKey": "pv",
+    "lead": "Návrh sloupců, jednotek, opakování měření a kontroly chyb."
+  },
+  {
+    "id": "library-science-cteni-grafu-z-experimentu",
+    "title": "Čtení grafu z experimentu",
+    "prompt": "Analyzuj tabulku nebo graf z experimentu [DATA / GRAF] pro [ROČNÍK]. Nejprve popiš osy a jednotky, potom trend, nejvyšší a nejnižší hodnotu, případnou odlehlou hodnotu a vztah mezi veličinami. Formuluj závěr pouze z dat a uveď, co z nich nelze rozhodnout. Přidej tři otázky pro žáky.",
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Grafy",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "SCIENCE_EXTENDED",
+    "filterKey": "pv",
+    "lead": "Osy, trend, odlehlá hodnota, závěr a limity dat."
+  },
+  {
+    "id": "library-science-vysledek-zaver-a-omezeni",
+    "title": "Výsledek, závěr a omezení",
+    "prompt": "Pomoz žákům napsat závěr k experimentu [EXPERIMENT] podle těchto dat [DATA]. Odděl výsledek, odpověď na výzkumnou otázku, podporu nebo odmítnutí hypotézy a možné zdroje chyby. Nech žáka formulovat vlastní závěr; nabídni větné začátky a kontrolní otázky, ne hotový text, který by pouze opsal.",
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Závěr",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "SCIENCE_EXTENDED",
+    "filterKey": "pv",
+    "lead": "Jak napsat věcný závěr, který odpovídá výsledkům měření."
+  },
+  {
+    "id": "library-science-bunka-jako-system",
+    "title": "Buňka jako systém",
+    "prompt": "Vysvětli stavbu a funkci [ROSTLINNÉ / ŽIVOČIŠNÉ] buňky pro [ROČNÍK]. Použij pouze organely [SEZNAM] a připrav přehled: název, umístění nebo výskyt, funkce a vztah k ostatním částem. Navrhni jednoduchý nákres s popisky, přiřazovací aktivitu a tři otázky, které ověří porozumění systému.",
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Biologie",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "SCIENCE_EXTENDED",
+    "filterKey": "pv",
+    "lead": "Organely, jejich funkce a vztahy bez memorování izolovaných pojmů."
+  },
+  {
+    "id": "library-science-trideni-organismu",
+    "title": "Třídění organismů",
+    "prompt": "Připrav pro [ROČNÍK] aktivitu na třídění organismů podle [KRITÉRIUM]. Použij pouze seznam [ORGANISMY] a podklady [ZDROJ]. Nejdříve vysvětli třídicí znak, potom vytvoř rozhodovací klíč nebo tabulku. Přidej nové příklady k samostatnému zařazení a řešení. Pokud je organismus sporný, upozorni na to.",
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Klasifikace",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "SCIENCE_EXTENDED",
+    "filterKey": "pv",
+    "lead": "Klíčové znaky, třídicí kritérium a práce s příklady."
+  },
+  {
+    "id": "library-science-potravni-retezec-a-sit",
+    "title": "Potravní řetězec a síť",
+    "prompt": "Vytvoř aktivitu o potravních řetězcích a sítích v ekosystému [EKOSYSTÉM] pro [ROČNÍK]. Použij pouze organismy [SEZNAM]. Žáci sestaví řetězce, označí producenta, konzumenty a rozkladače a vysvětlí, co se může stát po úbytku [ORGANISMUS]. Rozliš zjednodušený model od skutečné složitosti ekosystému.",
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Ekologie",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "SCIENCE_EXTENDED",
+    "filterKey": "pv",
+    "lead": "Producenti, konzumenti, rozkladači a změna v ekosystému."
+  },
+  {
+    "id": "library-science-ekosystem-a-lidsky-zasah",
+    "title": "Ekosystém a lidský zásah",
+    "prompt": "Připrav případovou studii o změně ekosystému [EKOSYSTÉM] pro [ROČNÍK]. Použij podklady [ZDROJE]. Žáci mají určit příčiny, přímé a nepřímé dopady, koho se změna týká a jaké řešení má možné výhody a nevýhody. Odděl doložená data od návrhů a názorů. Přidej otázku na ověřování zdroje.",
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Životní prostředí",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "SCIENCE_EXTENDED",
+    "filterKey": "pv",
+    "lead": "Příčiny, dopady, nejistota a možné způsoby ochrany."
+  },
+  {
+    "id": "library-science-lidske-telo-a-organove-soustavy",
+    "title": "Lidské tělo a orgánové soustavy",
+    "prompt": "Vysvětli orgánovou soustavu [SOUSTAVA] pro [ROČNÍK]. Použij pouze části a funkce z podkladů [TEXT]. Vytvoř schéma toku nebo spolupráce, jednoduchou případovou otázku a [POČET] úloh na přiřazení orgánu k funkci. Upozorni na zjednodušení modelu a neuváděj zdravotní rady.",
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Člověk",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "SCIENCE_EXTENDED",
+    "filterKey": "pv",
+    "lead": "Funkce, propojení a vysvětlení podle konkrétní situace."
+  },
+  {
+    "id": "library-science-chemicka-rovnice-s-kontrolou-atomu",
+    "title": "Chemická rovnice s kontrolou atomů",
+    "prompt": "Vysvětli vyčíslování této chemické rovnice [ROVNICE] žákům [ROČNÍK]. Urči reaktanty a produkty, vypiš počty atomů na obou stranách a postupně doplň koeficienty. Chemické vzorce neměň. Přidej [POČET] podobných rovnic k procvičení, řešení a kontrolu zachování počtu atomů.",
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Chemie",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "SCIENCE_EXTENDED",
+    "filterKey": "pv",
+    "lead": "Vyčíslování rovnic krok za krokem bez měnění chemických vzorců."
+  },
+  {
+    "id": "library-science-periodicka-tabulka-jako-mapa",
+    "title": "Periodická tabulka jako mapa",
+    "prompt": "Připrav výukovou aktivitu o periodické tabulce pro [ROČNÍK]. Zaměř se na [SKUPINY / PERIODY / ZNAČKY / VLASTNOSTI]. Vysvětli, jak z tabulky vyčíst zadané informace, a vytvoř [POČET] úloh s prvky [SEZNAM]. Přidej jednu úlohu, kde žák vysvětlí, co z tabulky nelze bezpečně určit.",
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Chemie",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "SCIENCE_EXTENDED",
+    "filterKey": "pv",
+    "lead": "Skupiny, periody, značky a vlastnosti v kontextu."
+  },
+  {
+    "id": "library-science-roztoky-a-koncentrace",
+    "title": "Roztoky a koncentrace",
+    "prompt": "Vysvětli roztoky a koncentraci pro [ROČNÍK] na příkladu [SITUACE]. Rozliš rozpouštědlo a rozpuštěnou látku, popiš zadané veličiny a ukaž výpočet podle vzorce, který dodám [VZOREC]. Připrav [POČET] úloh s jednotkami a kontrolou řádu. Pokud chybí údaj, nejdříve na něj upozorni.",
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Chemie",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "SCIENCE_EXTENDED",
+    "filterKey": "pv",
+    "lead": "Rozpouštědlo, rozpuštěná látka, koncentrace a praktický výpočet."
+  },
+  {
+    "id": "library-science-kyseliny-zasady-a-ph",
+    "title": "Kyseliny, zásady a pH",
+    "prompt": "Připrav výklad kyselin, zásad a pH pro [ROČNÍK] podle podkladů [ZDROJ]. Vysvětli význam stupnice, rozdíl mezi kyselým, neutrálním a zásaditým prostředím a použití indikátorů. Přidej přiřazování běžných látek podle dodaných údajů. Nezaměňuj školní model s bezpečnostním návodem k zacházení s látkami.",
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Chemie",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "SCIENCE_EXTENDED",
+    "filterKey": "pv",
+    "lead": "Bezpečný model, indikátory a interpretace stupnice bez laboratorních zkratek."
+  },
+  {
+    "id": "library-science-sila-a-pohyb",
+    "title": "Síla a pohyb",
+    "prompt": "Vysvětli vztah mezi silou, hmotností a pohybem pro [ROČNÍK] podle tohoto modelu nebo vzorce [VZOREC]. Ukaž známé a neznámé veličiny, jednotky, diagram sil a postup řešení. Připrav [POČET] úloh od kvalitativních po početní. Po každém výpočtu zkontroluj jednotky, znaménko a smysluplnost výsledku.",
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Fyzika",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "SCIENCE_EXTENDED",
+    "filterKey": "pv",
+    "lead": "Veličiny, jednotky, diagram sil a kontrola výpočtu."
+  },
+  {
+    "id": "library-science-elektricky-obvod",
+    "title": "Elektrický obvod",
+    "prompt": "Připrav aktivitu o elektrickém obvodu pro [ROČNÍK]. Použij součástky [SEZNAM] a vysvětli jejich funkci. Žáci mají rozpoznat uzavřený a otevřený obvod, číst jednoduché schéma a předpovědět, co se stane po změně [SOUČÁSTKA]. Přidej bezpečnostní pravidla a neuváděj pokyny pro práci s nebezpečným napětím.",
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Fyzika",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "SCIENCE_EXTENDED",
+    "filterKey": "pv",
+    "lead": "Schéma, součástky, proud, napětí a bezpečná práce s modelem."
+  },
+  {
+    "id": "library-science-premeny-energie",
+    "title": "Přeměny energie",
+    "prompt": "Navrhni aktivitu na přeměny energie pro [ROČNÍK] s příklady [PŘÍKLADY]. U každého zařízení nebo jevu označ počáteční formu energie, hlavní přeměnu, užitečný výstup a případné ztráty podle podkladů. Přidej diagram šipek a otázky na to, co se mění a co se neztrácí. Nepoužívej absolutní tvrzení mimo zadaný model.",
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Energie",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "SCIENCE_EXTENDED",
+    "filterKey": "pv",
+    "lead": "Vstupní energie, výstup, užitek, ztráty a systémové myšlení."
+  },
+  {
+    "id": "library-science-skupenstvi-a-zmeny-skupenstvi",
+    "title": "Skupenství a změny skupenství",
+    "prompt": "Vysvětli skupenství a změny skupenství pro [ROČNÍK] na příkladu [JEV]. Ukaž pevnou, kapalnou a plynnou fázi pomocí jednoduchého částicového modelu. Připrav přiřazování názvů k dějům, otázky na dodávání a odebírání energie a jednu otázku na rozdíl mezi pozorováním a modelem.",
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Fyzika",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "SCIENCE_EXTENDED",
+    "filterKey": "pv",
+    "lead": "Částicový model, teplota a pozorovatelné projevy."
+  },
+  {
+    "id": "library-science-horniny-a-geologicky-proces",
+    "title": "Horniny a geologický proces",
+    "prompt": "Připrav pracovní list o [HORNINY / MINERÁLY / GEOLOGICKÝ PROCES] pro [ROČNÍK]. Použij pouze fotografie, popisy a názvy, které dodám. Žáci mají určit pozorovatelné znaky, přiřadit vznik nebo využití a sestavit jednoduché schéma procesu. Jasně odliš jisté určení od odhadu podle fotografie.",
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Geologie",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "SCIENCE_EXTENDED",
+    "filterKey": "pv",
+    "lead": "Vznik, znaky, cyklus a práce se vzorkem nebo fotografií."
+  },
+  {
+    "id": "library-science-astronomie-a-meritko",
+    "title": "Astronomie a měřítko",
+    "prompt": "Vytvoř výukovou aktivitu o [TÉMA Z ASTRONOMIE] pro [ROČNÍK]. Použij pouze údaje [ZDROJ]. Připrav tabulku nebo model, který žákům ukáže rozdíl mezi velikostí, vzdáleností a časem. Uveď, co je ve vizualizaci zjednodušeno. Přidej otázky na interpretaci a neuváděj čísla, která nejsou v podkladech.",
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Astronomie",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "SCIENCE_EXTENDED",
+    "filterKey": "pv",
+    "lead": "Planety, pohyb, vzdálenost a rozdíl mezi modelem a realitou."
+  },
+  {
+    "id": "library-science-environmentalni-problem-jako-pripadova-studie",
+    "title": "Environmentální problém jako případová studie",
+    "prompt": "Zpracuj případovou studii o [PROBLÉM] pro [ROČNÍK] z dodaných zdrojů [ZDROJE]. Odděl fakta, data, možné příčiny, dopady a názory aktérů. Připrav otázky, ve kterých žáci ověřují tvrzení, čtou graf a navrhnou řešení s uvedením možných kompromisů. Nezobecňuj jeden příklad na celý svět.",
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Ekologie",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "SCIENCE_EXTENDED",
+    "filterKey": "pv",
+    "lead": "Data, příčiny, důsledky, aktéři a možné reakce."
+  },
+  {
+    "id": "prompt-vedecky-text-pro-zaky",
+    "title": "Vědecký text pro žáky",
+    "prompt": "Převyprávěj tento vědecký text pro [ROČNÍK]: [TEXT]. Zachovej fakta, vztahy a nejistotu. Nejdříve napiš krátké shrnutí, potom vysvětli [POČET] klíčových pojmů, přidej schéma příčin a důsledků a tři otázky na porozumění. Jasně označ, co je zjednodušení pro výuku, a nic nedoplňuj mimo zdroj.",
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Odborný text",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "SCIENCE_EXTENDED",
+    "filterKey": "pv",
+    "lead": "Srozumitelné zpracování odborného textu bez ztráty přesnosti."
+  },
+  {
+    "id": "library-science-odhaleni-mylne-predstavy",
+    "title": "Odhalení mylné představy",
+    "prompt": "Navrhni diagnostickou aktivitu k mylné představě [MYLNÁ PŘEDSTAVA] v tématu [TÉMA] pro [ROČNÍK]. Vytvoř krátkou otázku, předpověď, prostor pro zdůvodnění a následné vysvětlení pomocí modelu nebo experimentu. Nezesměšňuj chybnou odpověď. Uveď, jak učitel pozná, že žák změně opravdu porozuměl.",
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Diagnostika",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "SCIENCE_EXTENDED",
+    "filterKey": "pv",
+    "lead": "Diagnostika typické chyby a aktivita, která vede k opravě."
+  },
+  {
+    "id": "library-science-protokol-z-laboratorni-prace",
+    "title": "Protokol z laboratorní práce",
+    "prompt": "Vytvoř šablonu protokolu pro experiment [EXPERIMENT] pro [ROČNÍK]. Části: název, výzkumná otázka, hypotéza, pomůcky, bezpečnost, postup, tabulka dat, výpočet, výsledek, závěr, zdroje chyb a reflexe. Přidej jednoduchou rubriku. Nevyplňuj naměřené hodnoty a nepředstírej výsledek.",
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Laboratoř",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "SCIENCE_EXTENDED",
+    "filterKey": "pv",
+    "lead": "Struktura pro záznam cíle, postupu, dat, závěru a reflexe."
+  },
+  {
+    "id": "library-science-badatelsky-projekt",
+    "title": "Badatelský projekt",
+    "prompt": "Navrhni badatelský projekt pro [ROČNÍK] na téma [TÉMA] v délce [POČET HODIN]. Žáci mají formulovat otázku, naplánovat bezpečný postup, získat nebo analyzovat data a představit závěr. Uveď role, milníky, kontrolní body, kritéria hodnocení a možnosti diferenciace. Rozliš, co musí žáci zjistit sami a co dostanou jako podklad.",
+    "subjects": [
+      "přírodní vědy"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Projekt",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "SCIENCE_EXTENDED",
+    "filterKey": "pv",
+    "lead": "Od otázky přes plán a data k prezentaci výsledku."
+  },
+  {
+    "id": "prompt-casova-osa-udalosti",
+    "title": "Časová osa událostí",
+    "prompt": "Vytvoř přehlednou časovou osu k tématu [TÉMA] pro [ROČNÍK] z těchto událostí [SEZNAM]. U každé uveď datum nebo období, název, krátký popis a význam podle podkladů. Vizuálně odliš hlavní a vedlejší události. Přidej úlohy na řazení, doplňování a vysvětlení, proč pořadí některých událostí souvisí.",
+    "subjects": [
+      "dějepis"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Chronologie",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "HISTORY_EXTENDED",
+    "filterKey": "dej",
+    "lead": "Chronologie, období, vztahy a otázky nad pořadím událostí."
+  },
+  {
+    "id": "library-history-priciny-a-dusledky",
+    "title": "Příčiny a důsledky",
+    "prompt": "Analyzuj událost [UDÁLOST] pro [ROČNÍK]. Rozděl příčiny na dlouhodobé a bezprostřední a důsledky na krátkodobé a dlouhodobé. U každého tvrzení uveď, z jakého podkladu vychází. Vytvoř diagram příčin a důsledků a tři otázky, které žáka vedou k vysvětlení vztahu, nikoli pouze k vyjmenování bodů.",
+    "subjects": [
+      "dějepis"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Souvislosti",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "HISTORY_EXTENDED",
+    "filterKey": "dej",
+    "lead": "Krátkodobé, dlouhodobé, přímé a nepřímé souvislosti."
+  },
+  {
+    "id": "library-history-prace-s-primarnim-pramenem",
+    "title": "Práce s primárním pramenem",
+    "prompt": "Připrav analýzu primárního pramene [PRAMEN] pro [ROČNÍK]. Veď žáka otázkami: Kdo, kdy a proč pramen vytvořil? Komu byl určen? Co tvrdí nebo ukazuje? Co z něj můžeme zjistit a co ne? Odděl doslovný obsah od interpretace. Přidej krátkou aktivitu, kde žák své tvrzení podloží konkrétní částí pramene.",
+    "subjects": [
+      "dějepis"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Prameny",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "HISTORY_EXTENDED",
+    "filterKey": "dej",
+    "lead": "Autor, doba, účel, obsah, perspektiva a otázky k důkazu."
+  },
+  {
+    "id": "library-history-kritika-historickeho-zdroje",
+    "title": "Kritika historického zdroje",
+    "prompt": "Porovnej zdroje [ZDROJ A] a [ZDROJ B] k tématu [TÉMA]. U každého posuď autora, dobu, účel, publikum, typ důkazů a možné zkreslení. Vytvoř tabulku shod a rozdílů a navrhni, co dalšího by historik potřeboval ověřit. Nevydávej svůj odhad za jistý historický fakt.",
+    "subjects": [
+      "dějepis"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Kritické čtení",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "HISTORY_EXTENDED",
+    "filterKey": "dej",
+    "lead": "Ověřitelnost, účel, omezení a porovnání s druhým zdrojem."
+  },
+  {
+    "id": "library-history-historicka-perspektiva",
+    "title": "Historická perspektiva",
+    "prompt": "Navrhni aktivitu, ve které žáci zkoumají událost [UDÁLOST] z perspektivy [AKTÉŘI]. Použij pouze podklady [ZDROJE]. U každé perspektivy uveď zájmy, dostupné informace a omezení. Žáci mají rozlišit, co je doložený fakt, co dobový názor a co tvůrčí doplnění. Přidej reflexi, jak perspektiva ovlivňuje vyprávění.",
+    "subjects": [
+      "dějepis"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Perspektiva",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "HISTORY_EXTENDED",
+    "filterKey": "dej",
+    "lead": "Stejná událost očima různých aktérů bez falešné rovnosti faktů."
+  },
+  {
+    "id": "library-history-srovnani-historickych-obdobi",
+    "title": "Srovnání historických období",
+    "prompt": "Porovnej období [OBDOBÍ A] a [OBDOBÍ B] pro [ROČNÍK] podle kritérií: moc a správa, společnost, hospodářství, náboženství, kultura a každodenní život. Použij pouze dodané podklady. Vytvoř tabulku, potom vyber tři nejvýznamnější rozdíly a dvě podobnosti. U každého tvrzení označ konkrétní důkaz nebo zdroj.",
+    "subjects": [
+      "dějepis"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Srovnání",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "HISTORY_EXTENDED",
+    "filterKey": "dej",
+    "lead": "Politika, společnost, ekonomika, kultura a kontinuita změny."
+  },
+  {
+    "id": "prompt-historicka-osobnost",
+    "title": "Historická osobnost",
+    "prompt": "Připrav profil osobnosti [JMÉNO] pro [ROČNÍK] podle zdrojů [ZDROJE]. Uveď základní životní údaje, historický kontext, rozhodnutí, cíle, důsledky jednání a různé způsoby hodnocení. Rozliš doložená fakta od interpretace. Přidej časovou osu a otázku: Co by bez znalosti kontextu mohlo vést k mylnému hodnocení?",
+    "subjects": [
+      "dějepis"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Osobnost",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "HISTORY_EXTENDED",
+    "filterKey": "dej",
+    "lead": "Život, rozhodnutí, kontext, vliv a limity hodnocení."
+  },
+  {
+    "id": "library-history-historicke-pojmy-a-slovnicek",
+    "title": "Historické pojmy a slovníček",
+    "prompt": "Vytvoř slovníček pojmů z tématu [TÉMA] pro [ROČNÍK] pouze z podkladů [ZDROJE]. Ke každému pojmu napiš krátkou definici, období nebo kontext, příklad použití a jeden podobný pojem, od kterého jej odlišíš. Přidej přiřazovací aktivitu a pět vět s doplňováním. Pokud si nejsi jistý/á, pojem označ k ověření.",
+    "subjects": [
+      "dějepis"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Pojmy",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "HISTORY_EXTENDED",
+    "filterKey": "dej",
+    "lead": "Krátké definice, příklad v kontextu a rozlišení podobných pojmů."
+  },
+  {
+    "id": "library-history-historicka-mapa",
+    "title": "Historická mapa",
+    "prompt": "Připrav aktivitu s historickou mapou [MAPA / OBDOBÍ] pro [ROČNÍK]. Uveď, co mapa zobrazuje, z jaké doby je, jak číst legendu a co lze z mapy přímo zjistit. Navrhni otázky na území, hranice, pohyb a změnu. Nezaměňuj dnešní hranice s historickými a upozorni na chybějící údaje.",
+    "subjects": [
+      "dějepis"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Mapy",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "HISTORY_EXTENDED",
+    "filterKey": "dej",
+    "lead": "Území, hranice, pohyb a interpretace mapového zdroje."
+  },
+  {
+    "id": "library-history-chronologicke-razeni",
+    "title": "Chronologické řazení",
+    "prompt": "Vytvoř úlohu na chronologické řazení pro téma [TÉMA] a [ROČNÍK]. Použij události [SEZNAM]. Žák je nejprve seřadí, potom ke každé doplní období a jednu souvislost. Přidej správné řešení, ale také vysvětli, proč je pořadí důležité pro pochopení tématu. Nepřidávej události mimo seznam.",
+    "subjects": [
+      "dějepis"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Časová osa",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "HISTORY_EXTENDED",
+    "filterKey": "dej",
+    "lead": "Události, které žák seřadí a propojí s časovou osou."
+  },
+  {
+    "id": "library-history-historicka-debata",
+    "title": "Historická debata",
+    "prompt": "Navrhni historickou debatu pro [ROČNÍK] na otázku [TEZE]. Připrav kontext, vyvážený balíček zdrojů, role a pravidla. Žáci musí odlišit fakt od interpretace, uvést konkrétní důkaz a reagovat na protiargument. Přidej hodnoticí rubriku pro práci se zdroji, argumentaci a respektující diskusi. Neurčuj vítěze podle hlasitosti projevu.",
+    "subjects": [
+      "dějepis"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Debata",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "HISTORY_EXTENDED",
+    "filterKey": "dej",
+    "lead": "Teze, důkazy, protiargumenty, pravidla a reflexe."
+  },
+  {
+    "id": "library-history-propaganda-a-historicke-sdeleni",
+    "title": "Propaganda a historické sdělení",
+    "prompt": "Analyzuj materiál [PLAKÁT / PROJEV / ČLÁNEK] pro [ROČNÍK]. Veď žáka k určení autora, cílového publika, záměru, hlavní emoce, výběru slov a vynechaných informací. Odděl, co materiál tvrdí, od toho, co je historicky doloženo v dalších zdrojích. Přidej srovnání s neutrálnějším popisem a otázku na ověření.",
+    "subjects": [
+      "dějepis"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Média",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "HISTORY_EXTENDED",
+    "filterKey": "dej",
+    "lead": "Adresát, záměr, emoce, výběr informací a ověřování."
+  },
+  {
+    "id": "library-history-oralni-historie",
+    "title": "Orální historie",
+    "prompt": "Navrhni školní projekt orální historie pro [ROČNÍK] na téma [TÉMA]. Připrav etická pravidla, informovaný souhlas, otevřené otázky, způsob záznamu a anonymizace. Vysvětli, že vzpomínka je cenný pramen, ale nemusí být úplná nebo přesná. Přidej postup pro porovnání výpovědi s dalšími zdroji a návrh výstupu.",
+    "subjects": [
+      "dějepis"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Projekt",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "HISTORY_EXTENDED",
+    "filterKey": "dej",
+    "lead": "Příprava rozhovoru, souhlas, otázky, paměť a práce s výpovědí."
+  },
+  {
+    "id": "library-history-mistni-dejiny",
+    "title": "Místní dějiny",
+    "prompt": "Navrhni badatelskou aktivitu o místních dějinách [MÍSTO] pro [ROČNÍK]. Použij zdroje [ARCHIV / MAPA / PAMĚTNÍK / FOTOGRAFIE]. Připrav výzkumnou otázku, postup ověřování, bezpečnou práci s osobními údaji a možný výstup. Jasně odděl doloženou historii od rodinné vzpomínky nebo hypotézy.",
+    "subjects": [
+      "dějepis"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Regionální dějiny",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "HISTORY_EXTENDED",
+    "filterKey": "dej",
+    "lead": "Převod historie obce nebo regionu na badatelskou aktivitu."
+  },
+  {
+    "id": "library-history-muzejni-vystava-ve-tride",
+    "title": "Muzejní výstava ve třídě",
+    "prompt": "Pomoz žákům vytvořit malou třídní výstavu na téma [TÉMA]. Navrhni [POČET] exponátů pouze z nabídky [SEZNAM]. Ke každému připrav otázky: Co vidíme? Z jaké doby je? Co dokládá? Co nevíme? Přidej šablonu popisku s názvem, datem, původem, významem a zdrojem. Nezaměňuj dekoraci za historický důkaz.",
+    "subjects": [
+      "dějepis"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Výstava",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "HISTORY_EXTENDED",
+    "filterKey": "dej",
+    "lead": "Kurátorský výběr, popisek, příběh exponátu a práce se zdroji."
+  },
+  {
+    "id": "library-history-dobovy-novinovy-clanek",
+    "title": "Dobový novinový článek",
+    "prompt": "Napiš fiktivní dobový novinový článek o události [UDÁLOST] z roku [ROK] očima [ROLE]. Použij pouze historická fakta z podkladů [ZDROJE]. Zachovej dobový jazyk jen v přiměřené míře, uveď titulek, místo, datum a popis události. Nakonec odděl historicky doložená fakta od tvůrčího doplnění a uveď, co by novinář tehdy nemohl vědět.",
+    "subjects": [
+      "dějepis"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Tvoření",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "HISTORY_EXTENDED",
+    "filterKey": "dej",
+    "lead": "Tvůrčí psaní s jasným oddělením faktů a domyšlené perspektivy."
+  },
+  {
+    "id": "library-history-analyza-historickeho-obrazu",
+    "title": "Analýza historického obrazu",
+    "prompt": "Připrav otázky k historickému obrazu nebo fotografii [OBRAZ] pro [ROČNÍK]. Veď žáka od popisu viditelných prvků k interpretaci. Uveď autora, dobu a účel pouze z dodaných údajů. Rozliš, co je přímo vidět a co je odhad. Přidej otázku na porovnání s jiným pramenem a krátkou reflexi perspektivy.",
+    "subjects": [
+      "dějepis"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Vizuální pramen",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "HISTORY_EXTENDED",
+    "filterKey": "dej",
+    "lead": "Co obraz zobrazuje, kdo jej vytvořil, komu sloužil a co vynechává."
+  },
+  {
+    "id": "library-history-historicka-data-a-graf",
+    "title": "Historická data a graf",
+    "prompt": "Vytvoř aktivitu nad historickou tabulkou nebo grafem [DATA] pro [ROČNÍK]. Žáci mají popsat osy a jednotky, najít trend, změnu, maximum a minimum a navrhnout možné vysvětlení. Jasně odděl to, co data přímo ukazují, od hypotézy. Přidej otázku na původ dat a jejich možné zkreslení.",
+    "subjects": [
+      "dějepis"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Data",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "HISTORY_EXTENDED",
+    "filterKey": "dej",
+    "lead": "Čtení tabulky, trendu, změny a omezení statistického pramene."
+  },
+  {
+    "id": "library-history-teze-historicke-eseje",
+    "title": "Teze historické eseje",
+    "prompt": "Pomoz žákům [ROČNÍK] připravit historickou esej na otázku [OTÁZKA]. Navrhni několik možných tezí, ke každé uveď potřebné důkazy a možný protiargument. Připrav osnovu odstavce: tvrzení, důkaz, vysvětlení, propojení. Nepiš hotovou esej a upozorni, které části musí žák ověřit ve zdrojích.",
+    "subjects": [
+      "dějepis"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Esej",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "HISTORY_EXTENDED",
+    "filterKey": "dej",
+    "lead": "Otázka, stanovisko, důkazy, odstavce a závěr bez psaní za žáka."
+  },
+  {
+    "id": "library-history-otazky-k-maturite-nebo-testu",
+    "title": "Otázky k maturitě nebo testu",
+    "prompt": "Vytvoř [POČET] otázek k tématu [TÉMA] pro [ROČNÍK]. Kombinuj: definici pojmu, chronologii, příčiny a důsledky, srovnání, interpretaci pramene a krátkou argumentaci. Přidej bodovací kritéria a vzor odpovědi jen podle podkladů [ZDROJE]. Označ otázky, kde existuje více obhajitelných odpovědí.",
+    "subjects": [
+      "dějepis"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Testování",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "HISTORY_EXTENDED",
+    "filterKey": "dej",
+    "lead": "Od znalosti pojmu přes souvislost až po práci s pramenem."
+  },
+  {
+    "id": "library-history-historicky-kviz-s-vysvetlenim",
+    "title": "Historický kvíz s vysvětlením",
+    "prompt": "Vytvoř kvíz z dějepisu pro [ROČNÍK] na téma [TÉMA] pouze z textu [PODKLAD]. Připrav [POČET] otázek různých typů: volba odpovědi, řazení, přiřazování a krátká odpověď. U každé správné odpovědi přidej vysvětlení a u chybných možností napiš, proč jsou chybné. Nepoužívej záludnosti založené na nepřesném zadání.",
+    "subjects": [
+      "dějepis"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Kvíz",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "HISTORY_EXTENDED",
+    "filterKey": "dej",
+    "lead": "Nejen správná odpověď, ale i krátké vysvětlení významu."
+  },
+  {
+    "id": "library-history-historicky-projekt-s-prameny",
+    "title": "Historický projekt s prameny",
+    "prompt": "Navrhni projekt pro [ROČNÍK] na téma [TÉMA] v délce [POČET HODIN]. Žáci budou pracovat s nejméně [POČET] různými prameny. Uveď výzkumnou otázku, role, postup, kontrolní body, způsob citování, podobu výstupu a rubriku pro hodnocení. Přidej pravidlo, že AI může pomáhat s organizací, ale ne nahrazovat čtení a ověřování pramenů.",
+    "subjects": [
+      "dějepis"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Projekt",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "HISTORY_EXTENDED",
+    "filterKey": "dej",
+    "lead": "Výzkumná otázka, role, zdroje, milníky, výstup a citování."
+  },
+  {
+    "id": "library-history-co-kdyby-v-historii",
+    "title": "Co kdyby v historii?",
+    "prompt": "Navrhni myšlenkový experiment „co kdyby“ k události [UDÁLOST] pro [ROČNÍK]. Nejdříve shrň doložený historický průběh, potom jasně označ hypotetické předpoklady a možné důsledky. Upozorni, které části jsou spekulace a které vycházejí z faktů. Cílem je přemýšlet o příčinách a podmínkách, ne vytvářet nový historický fakt.",
+    "subjects": [
+      "dějepis"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Myšlenkový experiment",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "HISTORY_EXTENDED",
+    "filterKey": "dej",
+    "lead": "Bezpečná práce s alternativním scénářem a návrat k doloženým faktům."
+  },
+  {
+    "id": "library-history-karticky-pro-opakovani-dejepisu",
+    "title": "Kartičky pro opakování dějepisu",
+    "prompt": "Vytvoř kartičky pro opakování tématu [TÉMA] pro [ROČNÍK]. Použij pouze seznam [POJMY A UDÁLOSTI]. Přední strana obsahuje otázku nebo pojem, zadní odpověď, datum či období, krátký význam a jednu souvislost. Rozděl kartičky na základní a rozšiřující a přidej návod k samostatnému procvičování.",
+    "subjects": [
+      "dějepis"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Opakování",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "HISTORY_EXTENDED",
+    "filterKey": "dej",
+    "lead": "Pojem, datum, osobnost, událost a souvislost na jedné kartě."
+  },
+  {
+    "id": "library-history-diferenciace-v-dejepisu",
+    "title": "Diferenciace v dějepisu",
+    "prompt": "Vytvoř tři verze aktivity k tématu [TÉMA] pro [ROČNÍK]. Všechny mají stejný cíl [CÍL] a pracují se stejným pramenem. Podpůrná verze nabídne slovníček a vodicí otázky, standardní verze běžné zadání a rozšiřující verze více pramenů nebo argumentaci. Přidej klíč a vysvětli, jak podpora neodstraňuje historické myšlení.",
+    "subjects": [
+      "dějepis"
+    ],
+    "levels": [],
+    "tools": [],
+    "category": "Diferenciace",
+    "collections": [
+      "prompty"
+    ],
+    "tags": [],
+    "sourcePage": "prompty.html",
+    "librarySection": "HISTORY_EXTENDED",
+    "filterKey": "dej",
+    "lead": "Různé úrovně podpory při práci se stejným pramenem nebo tématem."
   }
 ]
