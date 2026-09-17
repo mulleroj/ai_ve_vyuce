@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Asistenti pro Učitele – Přehled</title>
     <meta name="description"
-        content="Srovnání AI asistentů pro výuku: ChatGPT, Claude, Gemini, Copilot, Perplexity. Zjistěte, který AI je nejlepší pro váš předmět." />
+        content="Orientační rozcestník AI platforem a hotových specializovaných asistentů pro učitele: ChatGPT, Gemini, Claude, Copilot, Perplexity a Gemini Notebook." />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/asistenti" />
     <meta property="og:title" content="AI Asistenti pro Učitele – Přehled" />
-    <meta property="og:description" content="Srovn&#225;n&#237; AI asistentů pro v&#253;uku: ChatGPT, Claude, Gemini, Copilot, Perplexity. Zjistěte, kter&#253; AI je nejlepš&#237; pro v&#225;š předmět." />
+    <meta property="og:description" content="Orientačn&#237; rozcestn&#237;k AI platforem a hotov&#253;ch specializovan&#253;ch asistentů pro učitele." />
     <meta property="og:url" content="https://ai-ve-vyuce.netlify.app/asistenti" />
     <meta property="og:type" content="website" /></head>
 
@@ -46,7 +46,7 @@
                 <a href="vibe-coding.html" class="nav-link">💻 Vibe Coding</a>
                 <a href="qr-kod.html" class="nav-link">🔳 QR kód</a>
             </div>
-            <button class="nav-mobile-toggle"><span></span><span></span><span></span></button>
+            <button class="nav-mobile-toggle" type="button" aria-label="Otevřít navigaci" aria-expanded="false"><span></span><span></span><span></span></button>
         </div>
     </nav>
     <div class="mobile-menu">
@@ -74,14 +74,39 @@
                 <h1 class="page-hero-title">AI <span
                         style="background:linear-gradient(135deg,#3498db,#00d4a8);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Asistenti</span>
                 </h1>
-                <p class="page-hero-subtitle">Který AI použít pro jaký předmět? Srovnali jsme nejlepší AI asistenty z
-                    pohledu učitele. Zjistěte, který se hodí pro vaše potřeby.</p>
+                <p class="page-hero-subtitle">Nejdříve si vyberte, zda hledáte obecnou AI platformu, nebo hotového specializovaného asistenta pro konkrétní učitelský úkol.</p>
                 <div class="page-hero-stats">
-                    <div class="page-hero-stat"><span>🤖</span><strong>6</strong> AI nástrojů</div>
+                    <div class="page-hero-stat"><span>🤖</span><strong>6</strong> AI platforem</div>
                     <div class="page-hero-stat"><span>✅</span>Bezplatné i placené</div>
-                    <div class="page-hero-stat"><span>👩‍🏫</span>Review od učitelů</div>
+                    <div class="page-hero-stat"><span>🧭</span>Orientační výběr</div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top:0" aria-labelledby="asistenti-cesta">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <div class="section-label">Co hledáte?</div>
+                    <h2 id="asistenti-cesta" class="section-title">Vyberte si cestu</h2>
+                    <p class="section-subtitle">Platforma je obecné prostředí pro různé úkoly. Specializovaný asistent má předem připravené zaměření, instrukce nebo prompt pro konkrétní práci.</p>
+                </div>
+            </div>
+            <div class="assistant-grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));margin-bottom:48px">
+                <article class="assistant-card reveal">
+                    <div class="assistant-header"><div class="assistant-logo" style="background:linear-gradient(135deg,#3498db,#00d4a8);font-size:2rem">🧭</div><div><div class="assistant-name">Chci vybrat AI platformu</div><div class="assistant-provider">ChatGPT · Gemini · Claude · Copilot · Perplexity · Gemini Notebook</div></div></div>
+                    <div class="assistant-desc">Porovnejte obecná prostředí podle toho, s čím vám mohou pomoci při přípravě, tvorbě materiálů, práci se zdroji nebo ve školním ekosystému.</div>
+                    <a href="#rychle-srovnani" class="btn btn-primary btn-sm" style="align-self:flex-start">Prohlédnout platformy ↓</a>
+                </article>
+                <article class="assistant-card reveal">
+                    <div class="assistant-header"><div class="assistant-logo" style="background:linear-gradient(135deg,#8a2be2,#00d4a8);font-size:2rem">🧩</div><div><div class="assistant-name">Chci hotového AI asistenta</div><div class="assistant-provider">Custom GPTs · Gemini Gems · Claude projekty</div></div></div>
+                    <div class="assistant-desc">Projděte katalog připravených specializovaných asistentů s popisem, promptem a odkazem pro použití nebo vlastní vytvoření.</div>
+                    <a href="katalog-asistenti.html" class="btn btn-secondary btn-sm" style="align-self:flex-start">Hledám hotového AI asistenta →</a>
+                </article>
+            </div>
+
+            <div id="rychle-srovnani"></div>
         </div>
     </section>
 
@@ -90,7 +115,7 @@
 
             <!-- Quick comparison table -->
             <div class="section-header">
-                <h2 class="section-title">⚡ Rychlé srovnání</h2>
+                <h2 class="section-title">⚡ Rychlé srovnání platforem</h2>
                 <p class="section-subtitle">Přehled dle hlavního použití ve výuce</p>
             </div>
             <div class="reveal" style="overflow-x:auto;margin-bottom:48px">
@@ -99,16 +124,16 @@
                         <tr style="background:rgba(255,255,255,0.05);text-align:left">
                             <th
                                 style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.08);color:var(--text-secondary)">
-                                AI Asistent</th>
+                                Platforma</th>
                             <th
                                 style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.08);color:var(--text-secondary)">
-                                Silné stránky</th>
+                                Klíčové použití</th>
                             <th
                                 style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.08);color:var(--text-secondary)">
                                 Zdarma?</th>
                             <th
                                 style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.08);color:var(--text-secondary)">
-                                Nejlepší pro</th>
+                                Hodí se pro</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -160,13 +185,11 @@
 
             <!-- Detailed cards -->
             <div class="section-header">
-                <h2 class="section-title">📋 Podrobný přehled</h2>
+                <h2 class="section-title">📋 Platformy podle použití</h2>
             </div>
-            <div class="assistant-grid" style="grid-template-columns:repeat(auto-fill,minmax(360px,1fr))">
+            <div class="assistant-grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))">
 
-                <div class="assistant-card reveal" style="position:relative">
-                    <div style="position:absolute;top:16px;right:16px"><span class="badge badge-gold">⭐
-                            Nejoblíbenější</span></div>
+                <div class="assistant-card reveal">
                     <div class="assistant-header">
                         <div class="assistant-logo"
                             style="background:linear-gradient(135deg,#00a67e,#008f6c);font-size:2rem">🟢</div>
@@ -175,26 +198,13 @@
                             <div class="assistant-provider">OpenAI · GPT-4o · 2026</div>
                         </div>
                     </div>
-                    <div class="assistant-desc">Nejrozšířenější AI asistent s výbornou rovnováhou schopností. Ideální
-                        pro začínající uživatele i pokročilé. Zvládá text, obrázky (nahrání fotek) a nově i hlasový mód
-                        pro konverzaci v cizím jazyce.</div>
-                    <div style="margin:12px 0;font-size:0.875rem;color:var(--text-secondary)">
-                        <div style="margin-bottom:6px"><strong style="color:var(--text-primary)">✅ Silné
-                                stránky:</strong> Tvorba úloh a testů, konverzační partner, obecné úkoly, slovní úlohy
-                        </div>
-                        <div><strong style="color:var(--text-primary)">⚠️ Omezení:</strong> Bezplatná verze má limity
-                            zpráv, slabší při opravování literárních textů</div>
-                    </div>
+                    <div class="assistant-desc">Obecná platforma pro tvorbu úloh, práci s obrázky a konverzaci. Hodí se pro rychlé návrhy i iterativní úpravy zadání.</div>
                     <div class="assistant-tags"><span class="badge badge-mint">Tvorba úloh</span><span
                             class="badge badge-blue">Konverzace</span><span class="badge badge-orange">Matematika</span>
                     </div>
                     <div class="assistant-footer">
-                        <div>
-                            <div class="assistant-rating"><span class="stars">★★★★★</span></div>
-                            <div style="font-size:0.8rem;color:var(--text-muted);margin-top:4px">Zdarma · Plus za
-                                $20/měs</div>
-                        </div>
-                        <a href="chatgpt-pro-ucitele.html" class="btn btn-primary btn-sm">Otevřít →</a>
+                        <span style="font-size:0.8rem;color:var(--text-muted)">Zdarma · placené rozšíření</span>
+                        <a href="chatgpt-pro-ucitele.html" class="btn btn-primary btn-sm">Více pro učitele →</a>
                     </div>
                 </div>
 
@@ -207,26 +217,13 @@
                             <div class="assistant-provider">Anthropic · Claude 3.5 Sonnet</div>
                         </div>
                     </div>
-                    <div class="assistant-desc">Výjimečně schopný v úkolech vyžadujících nuanced porozumění textu.
-                        Nejlepší volba pro opravování slohů, psaní komentářů k žákovským pracím a analýzu literatury.
-                        Velmi dlouhý kontext – zvládne celý učební plán najednou.</div>
-                    <div style="margin:12px 0;font-size:0.875rem;color:var(--text-secondary)">
-                        <div style="margin-bottom:6px"><strong style="color:var(--text-primary)">✅ Silné
-                                stránky:</strong> Opravování textů, detailní zpětná vazba, historický roleplay, psaní
-                        </div>
-                        <div><strong style="color:var(--text-primary)">⚠️ Omezení:</strong> Nemá přístup k internetu ve
-                            free verzi, límity zpráv</div>
-                    </div>
+                    <div class="assistant-desc">Platforma vhodná pro práci s delšími texty, zpětnou vazbou, psaním a literárními úkoly.</div>
                     <div class="assistant-tags"><span class="badge badge-purple">Opravování</span><span
                             class="badge badge-mint">Zpětná vazba</span><span class="badge badge-blue">Literatura</span>
                     </div>
                     <div class="assistant-footer">
-                        <div>
-                            <div class="assistant-rating"><span class="stars">★★★★★</span></div>
-                            <div style="font-size:0.8rem;color:var(--text-muted);margin-top:4px">Zdarma · Pro za $20/měs
-                            </div>
-                        </div>
-                        <a href="claude-pro-ucitele.html" class="btn btn-primary btn-sm" aria-label="Otevřít rozcestník Claude pro učitele">Otevřít →</a>
+                        <span style="font-size:0.8rem;color:var(--text-muted)">Zdarma · placené rozšíření</span>
+                        <a href="claude-pro-ucitele.html" class="btn btn-primary btn-sm" aria-label="Otevřít rozcestník Claude pro učitele">Více pro učitele →</a>
                     </div>
                 </div>
 
@@ -239,30 +236,15 @@
                             <div class="assistant-provider">Google · Gemini 2.0</div>
                         </div>
                     </div>
-                    <div class="assistant-desc">Propojený s Googlem, má přístup k aktuálním informacím z internetu.
-                        Vynikající pro přírodní vědy, kde je důležitá aktuálnost dat. Zvládá analyzovat fotografie –
-                        ideální pro práci s mikroskopem nebo laboratorními schématy.</div>
-                    <div style="margin:12px 0;font-size:0.875rem;color:var(--text-secondary)">
-                        <div style="margin-bottom:6px"><strong style="color:var(--text-primary)">✅ Silné
-                                stránky:</strong> Aktuální informace, analýza obrázků, vědecká témata, integrace s
-                            Google Workspace</div>
-                        <div><strong style="color:var(--text-primary)">⚠️ Omezení:</strong> Místy slabší kreativní psaní
-                            než Claude</div>
-                    </div>
+                    <div class="assistant-desc">Platforma pro práci s aktuálními informacemi, obrázky a nástroji Google. Hodí se pro přírodovědná témata i multimodální zadání.</div>
                     <div class="assistant-tags"><span class="badge badge-green">Přírodní vědy</span><span
                             class="badge badge-gold">Obrázky</span><span class="badge badge-blue">Aktuální data</span>
                     </div>
                     <div class="assistant-footer">
-                        <div>
-                            <div class="assistant-rating"><span class="stars">★★★★☆</span></div>
-                            <div style="font-size:0.8rem;color:var(--text-muted);margin-top:4px">Zdarma · Advanced za
-                                $20/měs</div>
-                        </div>
+                        <span style="font-size:0.8rem;color:var(--text-muted)">Zdarma · placené rozšíření</span>
                         <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end">
-                            <a href="https://gemforge.netlify.app/" target="_blank" rel="noopener noreferrer"
-                                class="btn btn-secondary btn-sm">Katalog Gems pro výuku →</a>
                             <a href="gemini-pro-ucitele.html" class="btn btn-primary btn-sm"
-                                aria-label="Otevřít rozcestník Google Gemini pro učitele">Otevřít →</a>
+                                aria-label="Otevřít rozcestník Google Gemini pro učitele">Více pro učitele →</a>
                         </div>
                     </div>
                 </div>
@@ -276,27 +258,14 @@
                             <div class="assistant-provider">Microsoft · GPT-4 Turbo</div>
                         </div>
                     </div>
-                    <div class="assistant-desc">Integrovaný do Microsoft 365 – Word, Teams, Outlook. Pro školy s
-                        Microsoft licencí je to nejbezpečnější varianta, protože data žáků zůstávají v rámci školního
-                        tenantu. Splňuje GDPR pro vzdělávání.</div>
-                    <div style="margin:12px 0;font-size:0.875rem;color:var(--text-secondary)">
-                        <div style="margin-bottom:6px"><strong style="color:var(--text-primary)">✅ Silné
-                                stránky:</strong> Bezpečnost dat, integrace do Word/Teams, GDPR comformance, školní
-                            licence</div>
-                        <div><strong style="color:var(--text-primary)">⚠️ Omezení:</strong> Vyžaduje M365 licenci pro
-                            plné funkce</div>
-                    </div>
+                    <div class="assistant-desc">Platforma propojená s Microsoft 365, například Wordem a Teams. Hodí se pro školy, které už používají školní Microsoft prostředí.</div>
                     <div class="assistant-tags"><span class="badge badge-blue">Microsoft 365</span><span
                             class="badge badge-green">GDPR</span><span class="badge badge-purple">Školní
                             prostředí</span></div>
                     <div class="assistant-footer">
-                        <div>
-                            <div class="assistant-rating"><span class="stars">★★★★☆</span></div>
-                            <div style="font-size:0.8rem;color:var(--text-muted);margin-top:4px">Zdarma s M365 licencí
-                            </div>
-                        </div>
+                        <span style="font-size:0.8rem;color:var(--text-muted)">Závisí na školní licenci</span>
                         <a href="copilot-pro-ucitele.html" class="btn btn-primary btn-sm"
-                            aria-label="Otevřít rozcestník Microsoft Copilot pro učitele">Otevřít →</a>
+                            aria-label="Otevřít rozcestník Microsoft Copilot pro učitele">Více pro učitele →</a>
                     </div>
                 </div>
 
@@ -309,25 +278,13 @@
                             <div class="assistant-provider">Perplexity</div>
                         </div>
                     </div>
-                    <div class="assistant-desc">Výzkumný asistent s citacemi – každá odpověď obsahuje zdroje. Ideální
-                        pro fakticky náročné předměty jako dějepis a přírodní vědy. Žáci i učitelé mohou snadno ověřit
-                        fakticitu odpovědí.</div>
-                    <div style="margin:12px 0;font-size:0.875rem;color:var(--text-secondary)">
-                        <div style="margin-bottom:6px"><strong style="color:var(--text-primary)">✅ Silné
-                                stránky:</strong> Citace zdrojů, aktuální data, výzkumné úkoly, vědecká fakta</div>
-                        <div><strong style="color:var(--text-primary)">⚠️ Omezení:</strong> Méně vhodný pro kreativní
-                            úkoly, slabší v generování obsahu</div>
-                    </div>
+                    <div class="assistant-desc">Platforma zaměřená na práci s webovými zdroji a citacemi. Hodí se pro rešerše, ověřování informací a badatelská zadání.</div>
                     <div class="assistant-tags"><span class="badge badge-orange">Citace</span><span
                             class="badge badge-mint">Výzkum</span><span class="badge badge-blue">Fakta</span></div>
                     <div class="assistant-footer">
-                        <div>
-                            <div class="assistant-rating"><span class="stars">★★★★★</span></div>
-                            <div style="font-size:0.8rem;color:var(--text-muted);margin-top:4px">Zdarma · Pro za $20/měs
-                            </div>
-                        </div>
+                        <span style="font-size:0.8rem;color:var(--text-muted)">Zdarma · placené rozšíření</span>
                         <a href="perplexity-pro-ucitele.html" class="btn btn-primary btn-sm"
-                            aria-label="Otevřít rozcestník Perplexity pro učitele">Otevřít →</a>
+                            aria-label="Otevřít rozcestník Perplexity pro učitele">Více pro učitele →</a>
                     </div>
                 </div>
 
@@ -340,28 +297,16 @@
                             <div class="assistant-provider">Google · Gemini Notebook</div>
                         </div>
                     </div>
-                    <div class="assistant-desc">Nahrávejte PDF, prezentace a dokumenty – Gemini Notebook analyzuje váš obsah
-                        a odpovídá pouze na základě vašich dokumentů. Skvělé pro přípravu hodin z vlastních materiálů
-                        nebo kurikula.</div>
-                    <div style="margin:12px 0;font-size:0.875rem;color:var(--text-secondary)">
-                        <div style="margin-bottom:6px"><strong style="color:var(--text-primary)">✅ Silné
-                                stránky:</strong> Analýza vlastních dokumentů, příprava hodin z PDF, sumarizace, kvízy z
-                            vašich materiálů</div>
-                        <div><strong style="color:var(--text-primary)">⚠️ Omezení:</strong> Nemá obecné znalosti mimo
-                            nahrané dokumenty</div>
-                    </div>
+                    <div class="assistant-desc">Pracovní prostor pro analýzu vlastních PDF, prezentací a dalších zdrojů. Hodí se pro přípravu hodin, sumarizaci a otázky nad dodanými materiály.</div>
                     <div class="assistant-tags"><span class="badge badge-gold">PDF analýza</span><span
                             class="badge badge-green">Příprava hodin</span><span
                             class="badge badge-purple">Sumarizace</span></div>
                     <div class="assistant-footer">
-                        <div>
-                            <div class="assistant-rating"><span class="stars">★★★★★</span></div>
-                            <div style="font-size:0.8rem;color:var(--text-muted);margin-top:4px">Zdarma</div>
-                        </div>
+                        <span style="font-size:0.8rem;color:var(--text-muted)">Dostupnost podle účtu</span>
                         <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end">
                             <a href="gemini-notebook-prompty.html" class="btn btn-secondary btn-sm">Prompty pro Gemini Notebook →</a>
                             <a href="gemini-notebook.html" class="btn btn-primary btn-sm"
-                                aria-label="Otevřít průvodce Gemini Notebook">Otevřít →</a>
+                                aria-label="Otevřít průvodce Gemini Notebook">Více pro učitele →</a>
                         </div>
                     </div>
                 </div>
@@ -373,8 +318,8 @@
                 <span class="info-box-icon">⚠️</span>
                 <div class="info-box-text">
                     <strong>GDPR a ochrana dat žáků:</strong> Před vložením jakýchkoliv dat žáků do AI asistentů vždy
-                    anonymizujte osobní údaje. Pro nejbezpečnější variantu v rámci školního prostředí použijte Microsoft
-                    Copilot s M365 školní licencí – data zůstávají v uzavřeném školním tenantu.
+                    anonymizujte osobní údaje. Pokud škola používá Microsoft 365, může být užitečné ověřit nastavení
+                    Copilotu a školního tenantu podle konkrétní licence.
                 </div>
             </div>
         </div>

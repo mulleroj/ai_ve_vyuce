@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Katalog AI Asistentů – Hotové GPTs, Gems a Projekty pro Učitele</title>
+    <title>Hotoví AI asistenti pro učitele | Katalog GPTs, Gems a projektů</title>
     <meta name="description"
-        content="Katalog předpřipravených AI asistentů pro učitele. Custom GPTs, Gemini Gems a Claude projekty s prompty ke zkopírování a odkazy na sdílení." />
+        content="Hotoví AI asistenti pro učitele: Custom GPTs, Gemini Gems, Claude projekty a další specializované nástroje s popisem, promptem a odkazy." />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
@@ -245,7 +245,7 @@
         }
 
         .hero-img-wrap {
-            animation: fadeSlideRight 0.8s ease 0.4s both, float 4s ease-in-out infinite;
+            animation: fadeSlideRight 0.8s ease 0.4s both;
             border-radius: var(--radius-lg);
             transition: transform 0.3s ease;
         }
@@ -255,8 +255,21 @@
         }
 
         .hero-img-wrap img {
-            animation: pulseGlow 3s ease-in-out infinite;
             border-radius: var(--radius-lg);
+        }
+
+        #heroParticles {
+            display: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-text-animated,
+            .hero-img-wrap,
+            .hero-img-wrap img,
+            .page-hero-stat {
+                animation: none !important;
+                transition: none !important;
+            }
         }
 
         .hero-text-animated {
@@ -294,8 +307,8 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/katalog-asistenti" />
-    <meta property="og:title" content="Katalog AI Asistentů – Hotov&#233; GPTs, Gems a Projekty pro Učitele" />
-    <meta property="og:description" content="Katalog předpřipraven&#253;ch AI asistentů pro učitele. Custom GPTs, Gemini Gems a Claude projekty s prompty ke zkop&#237;rov&#225;n&#237; a odkazy na sd&#237;len&#237;." />
+    <meta property="og:title" content="Hotov&#237; AI asistenti pro učitele | Katalog GPTs, Gems a projektů" />
+    <meta property="og:description" content="Hotov&#237; specializovan&#237; AI asistenti pro učitele: Custom GPTs, Gemini Gems a Claude projekty s prompty a odkazy." />
     <meta property="og:url" content="https://ai-ve-vyuce.netlify.app/katalog-asistenti" />
     <meta property="og:type" content="website" />    <meta property="og:image" content="https://ai-ve-vyuce.netlify.app/images/asistent-hero.png" /></head>
 
@@ -329,7 +342,7 @@
                 <a href="vibe-coding.html" class="nav-link">💻 Vibe Coding</a>
                 <a href="qr-kod.html" class="nav-link">🔳 QR kód</a>
             </div>
-            <button class="nav-mobile-toggle"><span></span><span></span><span></span></button>
+            <button class="nav-mobile-toggle" type="button" aria-label="Otevřít navigaci" aria-expanded="false"><span></span><span></span><span></span></button>
         </div>
     </nav>
     <div class="mobile-menu">
@@ -358,10 +371,10 @@
                 <div class="page-hero-content" style="flex:1;min-width:280px">
                     <div class="page-hero-icon hero-text-animated"
                         style="background:linear-gradient(135deg,rgba(138,43,226,0.2),rgba(0,212,168,0.1))">🚀</div>
-                    <h1 class="page-hero-title hero-text-animated">Katalog <span
+                    <h1 class="page-hero-title hero-text-animated">Hotoví <span
                             style="background:linear-gradient(135deg,#8a2be2,#00d4a8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">AI
-                            Asistentů</span></h1>
-                    <p class="page-hero-subtitle hero-text-animated" id="heroSubtitle"></p>
+                            asistenti</span> pro učitele</h1>
+                    <p class="page-hero-subtitle hero-text-animated" id="heroSubtitle">Nejde o srovnání ChatGPT, Gemini a dalších platforem. Tady najdete hotové specializované asistenty, například Custom GPTs, Gemini Gems a Claude projekty.</p>
                     <div class="page-hero-stats hero-text-animated">
                         <div class="page-hero-stat"><span>🟢</span>Custom <strong>GPTs</strong></div>
                         <div class="page-hero-stat"><span>🔵</span>Gemini <strong>Gems</strong></div>
@@ -391,12 +404,16 @@
                 </div>
             </div>
 
+            <div class="reveal" style="max-width:800px;margin:0 auto 32px;text-align:center">
+                <a href="asistenti.html" class="btn btn-secondary">← Chci nejprve vybrat AI platformu</a>
+            </div>
+
             <!-- Filter -->
             <div class="filter-bar reveal">
-                <button class="filter-btn active" data-platform="all">🚀 Všichni</button>
-                <button class="filter-btn" data-platform="gpt">🟢 ChatGPT GPTs</button>
-                <button class="filter-btn" data-platform="gem">🔵 Gemini Gems</button>
-                <button class="filter-btn" data-platform="claude">🟠 Claude Projekty</button>
+                <button type="button" class="filter-btn active" data-platform="all" aria-pressed="true">🚀 Všichni</button>
+                <button type="button" class="filter-btn" data-platform="gpt" aria-pressed="false">🟢 ChatGPT GPTs</button>
+                <button type="button" class="filter-btn" data-platform="gem" aria-pressed="false">🔵 Gemini Gems</button>
+                <button type="button" class="filter-btn" data-platform="claude" aria-pressed="false">🟠 Claude Projekty</button>
             </div>
 
             <!-- Katalog grid -->
@@ -527,6 +544,7 @@
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
+                document.querySelectorAll('.filter-btn').forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
                 const platform = btn.dataset.platform;
                 document.querySelectorAll('.catalog-card').forEach(card => {
                     const cardPlatforms = card.dataset.platform.split(' ');
@@ -566,46 +584,6 @@
             setTimeout(type, 600);
         })();
 
-        // 2. Floating particles
-        (function () {
-            const container = document.getElementById('heroParticles');
-            if (!container) return;
-            const colors = ['rgba(138,43,226,0.6)', 'rgba(0,212,168,0.5)', 'rgba(66,133,244,0.5)', 'rgba(255,165,0,0.4)'];
-            function createParticle() {
-                const p = document.createElement('div');
-                p.classList.add('hero-particle');
-                const size = Math.random() * 6 + 3;
-                const x = Math.random() * 100;
-                const dur = Math.random() * 4 + 5;
-                const delay = Math.random() * 2;
-                p.style.cssText = `
-                    width:${size}px;height:${size}px;
-                    left:${x}%;bottom:-10px;
-                    background:${colors[Math.floor(Math.random() * colors.length)]};
-                    animation-duration:${dur}s;animation-delay:${delay}s;
-                `;
-                container.appendChild(p);
-                setTimeout(() => { p.remove(); }, (dur + delay) * 1000);
-            }
-            setInterval(createParticle, 400);
-            for (let j = 0; j < 8; j++) setTimeout(createParticle, j * 200);
-        })();
-
-        // 3. Mouse parallax on image
-        (function () {
-            const hero = document.getElementById('heroSection');
-            const imgWrap = hero ? hero.querySelector('.hero-img-wrap') : null;
-            if (!hero || !imgWrap) return;
-            hero.addEventListener('mousemove', (e) => {
-                const rect = hero.getBoundingClientRect();
-                const x = (e.clientX - rect.left) / rect.width - 0.5;
-                const y = (e.clientY - rect.top) / rect.height - 0.5;
-                imgWrap.style.transform = `translateX(${x * 15}px) translateY(${y * 10 - 5}px)`;
-            });
-            hero.addEventListener('mouseleave', () => {
-                imgWrap.style.transform = '';
-            });
-        })();
     </script>
 </body>
 

@@ -81,6 +81,17 @@ window.siteArticles = [
     badgeClass: 'badge-purple'
   },
   {
+    href: 'vibe-coding-ucitele.html',
+    title: 'Úvod do Vibe Codingu pro učitele',
+    summary: 'Základní orientace ve Vibe Codingu: první zadání, role učitele, testování a bezpečné hranice při tvorbě výukové aplikace pomocí AI.',
+    category: 'Vibe Coding',
+    date: '2026-08-23',
+    dateLabel: '23. srpna 2026',
+    icon: '💻',
+    tags: ['Vibe Coding', 'Úvod', 'Pro učitele'],
+    badgeClass: 'badge-purple'
+  },
+  {
     href: 'ai-workflow-chatgpt-images-2-5.html',
     title: 'ChatGPT Images 2.5 ve výuce: od jednoduchého obrázku k výukovému materiálu',
     summary: 'Praktický workflow od výukového cíle přes první návrh a cílené úpravy až k sadě materiálů, kontrole a použití ve výuce.',

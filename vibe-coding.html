@@ -227,6 +227,12 @@
             justify-content: space-between;
             align-items: center;
             transition: var(--transition);
+            width: 100%;
+            border: 0;
+            color: inherit;
+            background: transparent;
+            text-align: left;
+            font: inherit;
         }
 
         .faq-question:hover {
@@ -326,6 +332,81 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        .vc-directory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+            gap: 18px;
+        }
+
+        .vc-directory-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+            padding: 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+        }
+
+        .vc-directory-card h3 {
+            margin: 12px 0 8px;
+            font-size: 1.1rem;
+        }
+
+        .vc-directory-card p {
+            margin: 0 0 20px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: .9rem;
+        }
+
+        .vc-directory-card .btn {
+            align-self: flex-start;
+            margin-top: auto;
+        }
+
+        .vc-directory-kicker {
+            color: var(--accent-mint);
+            font-size: .75rem;
+            font-weight: 800;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .vc-legacy-content {
+            margin-top: 16px;
+        }
+
+        .vc-legacy-content > summary {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 16px 20px;
+            color: var(--text-primary);
+            background: rgba(255,255,255,.03);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .vc-legacy-content > summary:focus-visible {
+            outline: 3px solid var(--accent-mint);
+            outline-offset: 3px;
+        }
+
+        .vc-legacy-content[open] > summary {
+            margin-bottom: 24px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal,
+            .vc-directory-card,
+            .faq-answer,
+            .faq-question i {
+                transition: none !important;
+            }
+        }
     </style>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -364,7 +445,7 @@
                 <a href="vibe-coding.html" class="nav-link active">💻 Vibe Coding</a>
                 <a href="qr-kod.html" class="nav-link">🔳 QR kód</a>
             </div>
-            <button class="nav-mobile-toggle"><span></span><span></span><span></span></button>
+            <button class="nav-mobile-toggle" type="button" aria-label="Otevřít navigaci" aria-expanded="false"><span></span><span></span><span></span></button>
         </div>
     </nav>
     <div class="mobile-menu">
@@ -401,13 +482,58 @@
                     <div class="page-hero-stat"><span>🎓</span>Pro <strong>učitele</strong></div>
                 </div>
                 <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
-                    <a href="vibe-coding-clanky.html" class="btn btn-primary">📰 Články o Vibe Codingu</a>
-                    <a href="vibe-coding-prompty.html" class="btn btn-secondary">✨ Prompty pro Vibe Coding</a>
-                    <a href="ai-agenti.html" class="btn btn-secondary">🤖 AI agent</a>
+                    <a href="#vibe-coding-rozcesti" class="btn btn-primary">Vybrat cestu ↓</a>
                 </div>
             </div>
         </div>
     </section>
+
+    <section class="section" style="padding-top:0" aria-labelledby="vibe-coding-rozcesti">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <div class="section-label">Vibe Coding podle toho, co hledáte</div>
+                    <h2 id="vibe-coding-rozcesti" class="section-title">Jak chcete pokračovat?</h2>
+                    <p class="section-subtitle">Vibe Coding znamená popsat AI, co má vzniknout, první verzi vyzkoušet a postupně ji upravovat. Vyberte si cestu podle svého cíle.</p>
+                </div>
+            </div>
+            <div class="vc-directory-grid">
+                <article class="vc-directory-card reveal">
+                    <div class="vc-directory-kicker">Začínám</div>
+                    <h3>Úvod pro učitele</h3>
+                    <p>Co je vibe coding, jak formulovat první zadání a co před použitím výukové aplikace ověřit.</p>
+                    <a href="vibe-coding-ucitele.html" class="btn btn-primary">Otevřít úvod →</a>
+                </article>
+                <article class="vc-directory-card reveal">
+                    <div class="vc-directory-kicker">Postup</div>
+                    <h3>Chci postup krok za krokem</h3>
+                    <p>Praktický workflow od problému přes prototyp a testování až po bezpečnost, nasazení a další rozvoj.</p>
+                    <a href="ai-workflow-vibe-coding.html" class="btn btn-primary">Otevřít workflow →</a>
+                </article>
+                <article class="vc-directory-card reveal">
+                    <div class="vc-directory-kicker">Hotová zadání</div>
+                    <h3>Chci hotové prompty</h3>
+                    <p>Kopírovatelné šablony pro kvízy, hry, pracovní listy a další jednoduché výukové aplikace.</p>
+                    <a href="vibe-coding-prompty.html" class="btn btn-primary">Otevřít prompty →</a>
+                </article>
+                <article class="vc-directory-card reveal">
+                    <div class="vc-directory-kicker">Ukázky</div>
+                    <h3>Chci vidět skutečné projekty</h3>
+                    <p>Konkrétní typy nástrojů, SchoolLab projekty a kontrolní seznam pro první prototyp.</p>
+                    <a href="vibe-coding-pro-ucitele.html" class="btn btn-primary">Prohlédnout projekty →</a>
+                </article>
+                <article class="vc-directory-card reveal">
+                    <div class="vc-directory-kicker">Čtení</div>
+                    <h3>Chci další články</h3>
+                    <p>Tematický přehled Vibe Codingu včetně článku o CSS Gridu a dalších praktických materiálů.</p>
+                    <a href="vibe-coding-clanky.html" class="btn btn-secondary">Otevřít články →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <details class="vc-legacy-content">
+        <summary>Podrobnější vysvětlení, nástroje, tipy, publikování a FAQ</summary>
 
     <section class="section" style="padding-top:0" aria-labelledby="vibe-coding-pro-ucitele">
         <div class="container">
@@ -1053,43 +1179,43 @@
 
             <div style="max-width:800px;margin:0 auto" id="faq">
                 <div class="faq-item reveal">
-                    <div class="faq-question">Musím umět programovat?
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-programovani">Musím umět programovat?
                         <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">Ne nutně. Stačí začít popisem v češtině, co chcete vytvořit. AI může
+                    </button>
+                    <div class="faq-answer" id="faq-programovani">Ne nutně. Stačí začít popisem v češtině, co chcete vytvořit. AI může
                         připravit technickou část, ale je užitečné umět výsledek otestovat, popsat chybu a postupně
                         zpřesňovat požadavky – viz sekce Tipy výše.</div>
                 </div>
                 <div class="faq-item reveal">
-                    <div class="faq-question">Je to bezpečné pro školní prostředí?
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-bezpecnost">Je to bezpečné pro školní prostředí?
                         <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">Záleží na konkrétní aplikaci. Jednoduchý HTML soubor může běžet lokálně
+                    </button>
+                    <div class="faq-answer" id="faq-bezpecnost">Záleží na konkrétní aplikaci. Jednoduchý HTML soubor může běžet lokálně
                         v prohlížeči a nemusí sbírat data, pokud neobsahuje externí služby, analytické skripty nebo
                         odesílání formulářů. Před sdílením vždy zkontrolujte kód, odkazy, vložené služby a práci s údaji
                         žáků.</div>
                 </div>
                 <div class="faq-item reveal">
-                    <div class="faq-question">Jaký AI nástroj je nejlepší pro začátečníky?
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-nastroj">Jaký AI nástroj se hodí pro začátečníky?
                         <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">Pro začátečníky může být praktický <strong>Claude</strong> s funkcí Artifacts,
+                    </button>
+                    <div class="faq-answer" id="faq-nastroj">Pro začátečníky může být praktický <strong>Claude</strong> s funkcí Artifacts,
                         protože nabízí náhled vedle chatu a umožňuje výsledek průběžně upravovat. Alternativou je Gemini
                         s funkcí Canvas. Dostupnost a podoba funkcí se mohou lišit podle účtu.</div>
                 </div>
                 <div class="faq-item reveal">
-                    <div class="faq-question">Kolik to stojí?
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-cena">Kolik to stojí?
                         <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">Některé nástroje nabízejí bezplatnou verzi nebo bezplatný limit, ale funkce,
+                    </button>
+                    <div class="faq-answer" id="faq-cena">Některé nástroje nabízejí bezplatnou verzi nebo bezplatný limit, ale funkce,
                         kvóty a ceny se mohou měnit. Stejně tak hosting může být zdarma jen v rámci konkrétního limitu.
                         Před nasazením si proto ověřte aktuální podmínky vybrané služby.</div>
                 </div>
                 <div class="faq-item reveal">
-                    <div class="faq-question">Mohu výsledek použít komerčně nebo sdílet s kolegy?
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-licence">Mohu výsledek použít komerčně nebo sdílet s kolegy?
                         <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">Možnost použití závisí na podmínkách konkrétního AI nástroje a na licencích
+                    </button>
+                    <div class="faq-answer" id="faq-licence">Možnost použití závisí na podmínkách konkrétního AI nástroje a na licencích
                         použitých knihoven, obrázků, písem nebo dalších materiálů. Před zveřejněním ověřte licence,
                         odstraňte citlivá data a podle potřeby uveďte, že materiál vznikl s pomocí AI.</div>
                 </div>
@@ -1115,6 +1241,8 @@
             </div>
         </div>
     </section>
+
+    </details>
 
     <footer class="footer">
         <div class="container">
@@ -1163,9 +1291,15 @@
                 const item = q.parentElement;
                 const wasOpen = item.classList.contains('open');
                 // close all
-                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.classList.remove('open');
+                    i.querySelector('.faq-question')?.setAttribute('aria-expanded', 'false');
+                });
                 // toggle current
-                if (!wasOpen) item.classList.add('open');
+                if (!wasOpen) {
+                    item.classList.add('open');
+                    q.setAttribute('aria-expanded', 'true');
+                }
             });
         });
     </script>

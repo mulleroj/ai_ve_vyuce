@@ -1608,6 +1608,8 @@ body.workflow-page {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .workflow-page,
+  .workflow-page *,
   .tool-guide-page,
   .tool-guide-page * {
     scroll-behavior: auto !important;
