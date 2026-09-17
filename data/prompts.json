@@ -1,0 +1,50 @@
+[
+  {
+    "id": "math-word-problems-generator",
+    "title": "Generátor úloh – slovní",
+    "prompt": "Jsi zkušený učitel matematiky na [ZŠ/SŠ]. Vygeneruj 10 slovních úloh na téma [TÉMA] pro žáky [ROČNÍK]. Každá úloha musí mít realistický kontext z každodenního života žáků a být přiměřená věku. Za každou úlohou uveď správné řešení s podrobným postupem výpočtu.",
+    "subjects": ["matematika"],
+    "levels": [],
+    "tools": ["ChatGPT"],
+    "category": "Generování",
+    "collections": ["matematika"],
+    "tags": [],
+    "sourcePage": "matematika.html"
+  },
+  {
+    "id": "math-concept-explanation",
+    "title": "Srozumitelné vysvětlení konceptu",
+    "prompt": "Vysvětli mi matematický koncept [TÉMA] tak, jako bych byl žák [ROČNÍK]. Použij přirovnání z každodenního života, uveď konkrétní příklady a ověř mé porozumění 3 otázkami na konci. Vyhni se odborným termínům bez vysvětlení.",
+    "subjects": ["matematika"],
+    "levels": [],
+    "tools": ["Gemini"],
+    "category": "Vysvětlení",
+    "collections": ["matematika"],
+    "tags": [],
+    "sourcePage": "matematika.html"
+  },
+  {
+    "id": "math-test-with-rubric",
+    "title": "Písemka s bodovacím klíčem",
+    "prompt": "Vytvoř písemnou práci z matematiky pro [ROČNÍK] na téma [TÉMA]. Struktura: A) výpočetní úlohy (40%), B) slovní úlohy (35%), C) grafické úlohy (25%). Celkem [POČET] bodů. Přidej vzorové řešení, bodovací klíč a hodnotící škálu.",
+    "subjects": ["matematika"],
+    "levels": [],
+    "tools": ["Claude"],
+    "category": "Testy",
+    "collections": ["matematika"],
+    "tags": [],
+    "sourcePage": "matematika.html"
+  },
+  {
+    "id": "math-differentiation-levels",
+    "title": "Diferenciace – 3 úrovně obtížnosti",
+    "prompt": "Vezmi tuto matematickou úlohu: [ÚLOHA]. Přepracuj ji do 3 verzí obtížnosti: 1) Lehká verze – pro žáky potřebující podporu, 2) Standardní verze – původní, 3) Rozšiřující verze – pro nadané žáky s dalšími podmínkami.",
+    "subjects": ["matematika"],
+    "levels": [],
+    "tools": ["ChatGPT"],
+    "category": "Diferenciace",
+    "collections": ["matematika"],
+    "tags": [],
+    "sourcePage": "matematika.html"
+  }
+]
