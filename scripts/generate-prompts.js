@@ -48,6 +48,9 @@ const GEMINI_SECTION_BY_KEY = new Map(GEMINI_SECTIONS.map((section) => [section.
 
 const SUBJECT_START_MARKER = '<!-- GENERATED:PROMPTS:START -->';
 const SUBJECT_END_MARKER = '<!-- GENERATED:PROMPTS:END -->';
+const PROMPT_COUNT_PAGE = 'index.html';
+const PROMPT_COUNT_START_MARKER = '<!-- GENERATED:PROMPT_COUNT:START -->';
+const PROMPT_COUNT_END_MARKER = '<!-- GENERATED:PROMPT_COUNT:END -->';
 
 const TOOL_BADGE_CLASSES = {
     ChatGPT: 'badge-gold',
@@ -633,6 +636,21 @@ function markerPair(sectionKey) {
     };
 }
 
+function buildPromptCountRegion(promptCount, parts) {
+    return `${parts.newline}${parts.endIndent}<div class="stat-number gradient-text-mint" data-target="${promptCount}">${promptCount}</div>${parts.newline}${parts.endIndent}`;
+}
+
+function inspectPromptCount(promptCount) {
+    const htmlPath = path.join(ROOT, PROMPT_COUNT_PAGE);
+    const html = fs.readFileSync(htmlPath, 'utf8');
+    const parts = getParts(html, PROMPT_COUNT_PAGE, {
+        start: PROMPT_COUNT_START_MARKER,
+        end: PROMPT_COUNT_END_MARKER
+    });
+    const expectedRegion = buildPromptCountRegion(promptCount, parts);
+    return { page: PROMPT_COUNT_PAGE, htmlPath, html, parts, expectedRegion, drift: parts.currentRegion !== expectedRegion };
+}
+
 function inspectTarget(page, markers, cards, variant) {
     const htmlPath = path.join(ROOT, page);
     const html = fs.readFileSync(htmlPath, 'utf8');
@@ -672,8 +690,10 @@ function main() {
         ));
         inspections.push(inspectTarget(GEMINI_PAGE, markerPair(section.marker), cards, 'gemini'));
     });
+    const promptCountInspection = inspectPromptCount(prompts.length);
 
-    const driftCount = inspections.filter((inspection) => inspection.drift).length;
+    const driftCount = inspections.filter((inspection) => inspection.drift).length +
+        (promptCountInspection.drift ? 1 : 0);
     const subjectInspections = inspections.slice(0, SUBJECT_TARGETS.length);
     const libraryStart = SUBJECT_TARGETS.length;
     const libraryEnd = libraryStart + LIBRARY_SECTIONS.length;
@@ -709,6 +729,8 @@ function main() {
         const section = GEMINI_SECTIONS[index];
         console.log(`  ${section.marker}: ${inspection.drift ? 'DRIFT' : 'OK'} (${inspection.cards.length})`);
     });
+    console.log('Homepage prompt count:');
+    console.log(`${promptCountInspection.page}: ${promptCountInspection.drift ? 'DRIFT' : 'OK'} (${prompts.length})`);
     console.log('Summary:');
     console.log(`Registry prompts: ${prompts.length}`);
     console.log(`Subject prompts: ${subjectInspections.reduce((sum, inspection) => sum + inspection.cards.length, 0)}`);
@@ -724,6 +746,15 @@ function main() {
     if (checkOnly) {
         if (driftCount) process.exitCode = 1;
         return;
+    }
+    if (promptCountInspection.drift) {
+        const updated = replaceRegion(
+            promptCountInspection.html,
+            promptCountInspection.parts,
+            { start: PROMPT_COUNT_START_MARKER, end: PROMPT_COUNT_END_MARKER },
+            promptCountInspection.expectedRegion
+        );
+        fs.writeFileSync(promptCountInspection.htmlPath, updated, 'utf8');
     }
     const inspectionsByPath = new Map();
     inspections.forEach((inspection, index) => {
