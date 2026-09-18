@@ -3127,8 +3127,14 @@
     "levels": [],
     "tools": [],
     "category": "Procvičování",
-    "collections": ["vibe-coding", "vibe-coding-main"],
-    "tags": ["Kvíz", "Všechny předměty"],
+    "collections": [
+      "vibe-coding",
+      "vibe-coding-main"
+    ],
+    "tags": [
+      "Kvíz",
+      "Všechny předměty"
+    ],
     "sourcePage": "vibe-coding-prompty.html"
   },
   {
@@ -3140,8 +3146,14 @@
     "levels": [],
     "tools": [],
     "category": "Opakování",
-    "collections": ["vibe-coding", "vibe-coding-main"],
-    "tags": ["Flashcards", "Opakování"],
+    "collections": [
+      "vibe-coding",
+      "vibe-coding-main"
+    ],
+    "tags": [
+      "Flashcards",
+      "Opakování"
+    ],
     "sourcePage": "vibe-coding-prompty.html"
   },
   {
@@ -3153,8 +3165,14 @@
     "levels": [],
     "tools": [],
     "category": "Gamifikace",
-    "collections": ["vibe-coding", "vibe-coding-main"],
-    "tags": ["Hra", "Přiřazování"],
+    "collections": [
+      "vibe-coding",
+      "vibe-coding-main"
+    ],
+    "tags": [
+      "Hra",
+      "Přiřazování"
+    ],
     "sourcePage": "vibe-coding-prompty.html"
   },
   {
@@ -3166,8 +3184,14 @@
     "levels": [],
     "tools": [],
     "category": "Přiřazování",
-    "collections": ["vibe-coding", "vibe-coding-main"],
-    "tags": ["Drag & drop", "Dotykové ovládání"],
+    "collections": [
+      "vibe-coding",
+      "vibe-coding-main"
+    ],
+    "tags": [
+      "Drag & drop",
+      "Dotykové ovládání"
+    ],
     "sourcePage": "vibe-coding-prompty.html"
   },
   {
@@ -3179,8 +3203,14 @@
     "levels": [],
     "tools": [],
     "category": "Otázky",
-    "collections": ["vibe-coding", "vibe-coding-main"],
-    "tags": ["Generátor", "Interaktivní tabule"],
+    "collections": [
+      "vibe-coding",
+      "vibe-coding-main"
+    ],
+    "tags": [
+      "Generátor",
+      "Interaktivní tabule"
+    ],
     "sourcePage": "vibe-coding-prompty.html"
   },
   {
@@ -3192,8 +3222,14 @@
     "levels": [],
     "tools": [],
     "category": "Chronologie",
-    "collections": ["vibe-coding", "vibe-coding-main"],
-    "tags": ["Časová osa", "Dějepis"],
+    "collections": [
+      "vibe-coding",
+      "vibe-coding-main"
+    ],
+    "tags": [
+      "Časová osa",
+      "Dějepis"
+    ],
     "sourcePage": "vibe-coding-prompty.html"
   },
   {
@@ -3205,8 +3241,14 @@
     "levels": [],
     "tools": [],
     "category": "Procvičování",
-    "collections": ["vibe-coding", "vibe-coding-main"],
-    "tags": ["Pracovní list", "Vyhodnocení"],
+    "collections": [
+      "vibe-coding",
+      "vibe-coding-main"
+    ],
+    "tags": [
+      "Pracovní list",
+      "Vyhodnocení"
+    ],
     "sourcePage": "vibe-coding-prompty.html"
   },
   {
@@ -3218,8 +3260,14 @@
     "levels": [],
     "tools": [],
     "category": "Gamifikace",
-    "collections": ["vibe-coding", "vibe-coding-main"],
-    "tags": ["Úniková hra", "Příběh"],
+    "collections": [
+      "vibe-coding",
+      "vibe-coding-main"
+    ],
+    "tags": [
+      "Úniková hra",
+      "Příběh"
+    ],
     "sourcePage": "vibe-coding-prompty.html"
   },
   {
@@ -3231,8 +3279,14 @@
     "levels": [],
     "tools": [],
     "category": "Modelování",
-    "collections": ["vibe-coding", "vibe-coding-main"],
-    "tags": ["Simulace", "Experimentování"],
+    "collections": [
+      "vibe-coding",
+      "vibe-coding-main"
+    ],
+    "tags": [
+      "Simulace",
+      "Experimentování"
+    ],
     "sourcePage": "vibe-coding-prompty.html"
   },
   {
@@ -3244,8 +3298,14 @@
     "levels": [],
     "tools": [],
     "category": "Gamifikace",
-    "collections": ["vibe-coding", "vibe-coding-main"],
-    "tags": ["Výuková hra", "Body"],
+    "collections": [
+      "vibe-coding",
+      "vibe-coding-main"
+    ],
+    "tags": [
+      "Výuková hra",
+      "Body"
+    ],
     "sourcePage": "vibe-coding-prompty.html"
   },
   {
@@ -3257,8 +3317,969 @@
     "levels": [],
     "tools": [],
     "category": "Bezpečnost",
-    "collections": ["vibe-coding", "vibe-coding-appendix"],
+    "collections": [
+      "vibe-coding",
+      "vibe-coding-appendix"
+    ],
     "tags": [],
     "sourcePage": "vibe-coding-prompty.html"
+  },
+  {
+    "id": "gemini-notebook-grammar-infographic",
+    "title": "1. Gramatická infografika",
+    "lead": "Present Simple, Past Simple, there is / there are, modal verbs, comparatives a další jevy.",
+    "prompt": "Vystupuj jako zkušený učitel angličtiny a odborník na didaktický a vizuální design.\n\nNa základě POUZE zdrojů uložených v tomto Gemini Notebooku vytvoř přehlednou, vizuálně atraktivní a didakticky správnou výukovou infografiku na téma:\n\n[TÉMA GRAMATIKY]\n\nCílová skupina:\n[TYP ŽÁKŮ – např. žáci střední školy / teenageři]\n\nJazyková úroveň:\n[CEFR – např. A1, A2, B1]\n\nJazyk infografiky:\n[JAZYK – např. vysvětlení česky, anglické příklady anglicky]\n\nInfografika má žákům pomoci gramatický jev rychle pochopit, zapamatovat si jej a později zopakovat.\n\nZpracuj pouze informace doložené ve zdrojích. Pokud některá informace ve zdrojích není, nevymýšlej ji a raději ji vynech.\n\nZahrň podle dostupných zdrojů:\n- jednoduché vysvětlení významu gramatického jevu,\n- kdy a proč se používá,\n- základní stavbu nebo vzorec,\n- kladnou větu,\n- zápornou větu,\n- otázku, pokud je relevantní,\n- několik krátkých příkladů v přirozeném kontextu,\n- typické signální výrazy, pokud jsou ve zdrojích,\n- nejčastější chyby žáků, pokud je zdroje uvádějí,\n- krátkou pomůcku nebo pravidlo k zapamatování, pouze pokud vychází ze zdrojů.\n\nPřizpůsob délku vět i slovní zásobu zadané úrovni CEFR. Používej krátké textové bloky, výrazné nadpisy, tabulky, šipky, symboly nebo jednoduchá vizuální schémata tam, kde pomohou porozumění.\n\nDůležité pravidlo zvýrazni vizuálně. Nevytvářej dlouhé odstavce. Infografika musí být čitelná na první pohled a nesmí působit přeplněně. Preferuj přibližně 5–8 hlavních obsahových bloků.\n\nNevkládej žádná pravidla, příklady ani výjimky, které nejsou podloženy zdroji tohoto notebooku.",
+    "subjects": [],
+    "levels": [],
+    "tools": [
+      "Gemini Notebook"
+    ],
+    "category": "Vysvětlení pravidla",
+    "collections": [
+      "gemini-notebook"
+    ],
+    "tags": [
+      "Grammar"
+    ],
+    "sourcePage": "gemini-notebook-prompty.html",
+    "geminiSection": "infografiky"
+  },
+  {
+    "id": "gemini-notebook-vocabulary-infographic",
+    "title": "2. Infografika slovní zásoby",
+    "lead": "Food, Travel, Jobs, Electrical Tools, Car Parts, Environment nebo Health.",
+    "prompt": "Vystupuj jako zkušený učitel angličtiny, specialista na výuku slovní zásoby a didaktický design.\n\nNa základě POUZE zdrojů uložených v tomto Gemini Notebooku vytvoř výukovou infografiku na téma:\n\n[TÉMA SLOVNÍ ZÁSOBY]\n\nCílová skupina:\n[TYP ŽÁKŮ]\n\nJazyková úroveň:\n[CEFR]\n\nJazyk infografiky:\n[JAZYK VÝSTUPU]\n\nVyber pouze nejdůležitější slovní zásobu pro zadané téma a úroveň. Nepokoušej se do infografiky umístit všechna slova ze zdrojů. Upřednostni výrazy, které jsou pro pochopení tématu a praktickou komunikaci nejdůležitější.\n\nU jednotlivých výrazů podle dostupných zdrojů uveď:\n- anglické slovo nebo slovní spojení,\n- stručný význam nebo český překlad,\n- podporu výslovnosti, pokud je vhodná a doložená,\n- krátký příklad použití,\n- užitečnou kolokaci nebo slovní spojení,\n- případně slovní rodinu nebo související výraz.\n\nSeskup slovní zásobu do logických kategorií. Pokud je to vhodné, použij vizuální spojení slova s předmětem, činností nebo situací.\n\nPříklady musí odpovídat zadané jazykové úrovni. Používej krátké texty a silnou vizuální hierarchii. Infografika má sloužit jako rychlá studijní pomůcka, nikoli jako slovník. Nevytvářej dlouhé seznamy.\n\nNevkládej slovní zásobu, definice, překlady, kolokace ani příklady, které nejsou podloženy zdroji notebooku.",
+    "subjects": [],
+    "levels": [],
+    "tools": [
+      "Gemini Notebook"
+    ],
+    "category": "Praktická slovní zásoba",
+    "collections": [
+      "gemini-notebook"
+    ],
+    "tags": [
+      "Vocabulary"
+    ],
+    "sourcePage": "gemini-notebook-prompty.html",
+    "geminiSection": "infografiky"
+  },
+  {
+    "id": "gemini-notebook-reading-infographic",
+    "title": "3. Infografika k četbě",
+    "lead": "Článek, příběh, učebnicový text nebo jiný materiál ke čtení.",
+    "prompt": "Vystupuj jako zkušený učitel angličtiny a odborník na rozvoj čtenářských dovedností.\n\nNa základě POUZE zdrojů uložených v tomto Gemini Notebooku vytvoř přehlednou výukovou infografiku k:\n\n[NÁZEV TEXTU / TÉMA TEXTU]\n\nCílová skupina:\n[TYP ŽÁKŮ]\n\nJazyková úroveň:\n[CEFR]\n\nJazyk infografiky:\n[JAZYK VÝSTUPU]\n\nCílem není text pouze převyprávět. Vytvoř vizuální studijní pomůcku, která žákům umožní rychle pochopit jeho strukturu a nejdůležitější informace.\n\nPodle zdrojů zobraz:\n- hlavní myšlenku textu,\n- 3–6 nejdůležitějších bodů,\n- důležité podpůrné informace,\n- osoby, místa nebo události, pokud jsou podstatné,\n- vztahy mezi jednotlivými myšlenkami,\n- klíčovou slovní zásobu potřebnou k porozumění textu,\n- případně časovou osu, proces nebo příčiny a následky, pokud se pro daný text hodí.\n\nRozliš vizuálně hlavní informace od detailů. Používej hesla, krátké věty, šipky, časovou osu, diagram nebo jiné vhodné vizuální prvky.\n\nPřizpůsob jazyk zadané úrovni CEFR. Nevytvářej interpretace, které nejsou doloženy textem. Nepřidávej informace, slovní zásobu ani vysvětlení z jiných zdrojů.",
+    "subjects": [],
+    "levels": [],
+    "tools": [
+      "Gemini Notebook"
+    ],
+    "category": "Porozumění textu",
+    "collections": [
+      "gemini-notebook"
+    ],
+    "tags": [
+      "Reading"
+    ],
+    "sourcePage": "gemini-notebook-prompty.html",
+    "geminiSection": "infografiky"
+  },
+  {
+    "id": "gemini-notebook-listening-infographic",
+    "title": "4. Infografika k poslechu",
+    "lead": "Nahrávka z učebnice, rozhovor, podcast nebo video.",
+    "prompt": "Vystupuj jako zkušený učitel angličtiny a odborník na rozvoj poslechových dovedností.\n\nNa základě POUZE zdrojů uložených v tomto Gemini Notebooku vytvoř přehlednou výukovou infografiku k:\n\n[TÉMA / POSLECHOVÝ MATERIÁL]\n\nCílová skupina:\n[TYP ŽÁKŮ]\n\nJazyková úroveň:\n[CEFR]\n\nJazyk infografiky:\n[JAZYK VÝSTUPU]\n\nInfografika má žákům pomoci pochopit a následně si zopakovat obsah poslechu.\n\nPodle dostupných zdrojů zobraz:\n- hlavní téma nebo myšlenku,\n- nejdůležitější informace,\n- klíčové detaily,\n- jednotlivé mluvčí a jejich role nebo názory, pokud jsou relevantní,\n- vztahy mezi informacemi,\n- důležitou slovní zásobu a výrazy,\n- případně pořadí událostí nebo jednotlivé fáze rozhovoru.\n\nPokud je materiál dialogický, můžeš použít jednoduché vizuální rozdělení podle jednotlivých mluvčích. Nepřepisuj celý poslech. Vyber pouze informace důležité pro pochopení.\n\nPoužívej krátké textové bloky a jasnou vizuální hierarchii. Přizpůsob jazyk zadané úrovni CEFR.\n\nNevytvářej domněnky o názorech nebo záměrech mluvčích, pokud nejsou doloženy zdrojem. Nepřidávej informace, slovní zásobu ani interpretace, které ve zdrojích nejsou.",
+    "subjects": [],
+    "levels": [],
+    "tools": [
+      "Gemini Notebook"
+    ],
+    "category": "Klíčové informace",
+    "collections": [
+      "gemini-notebook"
+    ],
+    "tags": [
+      "Listening"
+    ],
+    "sourcePage": "gemini-notebook-prompty.html",
+    "geminiSection": "infografiky"
+  },
+  {
+    "id": "gemini-notebook-writing-infographic",
+    "title": "5. Infografika k psaní",
+    "lead": "Email, formal letter, description, story, opinion essay, CV nebo invitation.",
+    "prompt": "Vystupuj jako zkušený učitel angličtiny a odborník na výuku písemného projevu.\n\nNa základě POUZE zdrojů uložených v tomto Gemini Notebooku vytvoř výukovou infografiku pro:\n\n[TYP TEXTU / SLOHOVÝ ÚTVAR]\n\nCílová skupina:\n[TYP ŽÁKŮ]\n\nJazyková úroveň:\n[CEFR]\n\nJazyk infografiky:\n[JAZYK VÝSTUPU]\n\nInfografika má fungovat jako praktická pomůcka, podle které dokáže žák daný text naplánovat a napsat.\n\nPodle dostupných zdrojů zobraz:\n- účel daného typu textu,\n- komu je text určen,\n- základní strukturu,\n- doporučené pořadí jednotlivých částí,\n- charakteristické jazykové prvky,\n- užitečné fráze a větné vzorce,\n- krátké modelové příklady,\n- případně kontrolní body před odevzdáním textu.\n\nStrukturu znázorni vizuálně, například jako jednotlivé části textu, kroky nebo jednoduchou šablonu. Užitečné fráze rozděl podle jejich funkce, například: zahájení, vyjádření názoru, spojování myšlenek a ukončení.\n\nPoužívej pouze takové jazykové prostředky, které odpovídají zadané úrovni CEFR a jsou doloženy zdroji. Nevytvářej celý dlouhý vzorový text, pokud není součástí zdroje.\n\nInfografika má být praktická, stručná a použitelná při samotném psaní. Nepřidávej jazykové konvence, fráze ani pravidla, která nejsou ve zdrojích notebooku.",
+    "subjects": [],
+    "levels": [],
+    "tools": [
+      "Gemini Notebook"
+    ],
+    "category": "Struktura textu",
+    "collections": [
+      "gemini-notebook"
+    ],
+    "tags": [
+      "Writing"
+    ],
+    "sourcePage": "gemini-notebook-prompty.html",
+    "geminiSection": "infografiky"
+  },
+  {
+    "id": "gemini-notebook-speaking-infographic",
+    "title": "6. Infografika k mluvení",
+    "lead": "At a restaurant, Shopping, Introducing yourself, Job interview nebo Asking for directions.",
+    "prompt": "Vystupuj jako zkušený učitel angličtiny se zaměřením na praktickou komunikaci.\n\nNa základě POUZE zdrojů uložených v tomto Gemini Notebooku vytvoř přehlednou výukovou infografiku pro komunikační situaci:\n\n[TÉMA MLUVENÍ]\n\nCílová skupina:\n[TYP ŽÁKŮ]\n\nJazyková úroveň:\n[CEFR]\n\nJazyk infografiky:\n[JAZYK VÝSTUPU]\n\nInfografika má žákovi pomoci skutečně promluvit, nikoli pouze vysvětlit teorii.\n\nPodle zdrojů vyber:\n- nejdůležitější slovní zásobu,\n- užitečné fráze,\n- otázky,\n- možné odpovědi,\n- funkční jazyk pro danou situaci,\n- jednoduché konverzační vzorce,\n- krátké modelové výměny replik,\n- případně strategie, jak požádat o zopakování, vysvětlení nebo čas na rozmyšlenou.\n\nUspořádej obsah podle průběhu skutečné komunikační situace. Pokud se to hodí, vytvoř jednoduchý model:\n1. Jak rozhovor začít\n2. Co říci během rozhovoru\n3. Jak reagovat\n4. Jak rozhovor ukončit\n\nModelové věty musí odpovídat zadané jazykové úrovni. Preferuj krátké, přirozené a prakticky použitelné věty. Nevytvářej dlouhé dialogy.\n\nInfografika musí být snadno použitelná jako opora při mluvení ve dvojici nebo skupině. Nepřidávej fráze, dialogy ani komunikační strategie, které nejsou podloženy zdroji notebooku.",
+    "subjects": [],
+    "levels": [],
+    "tools": [
+      "Gemini Notebook"
+    ],
+    "category": "Komunikační situace",
+    "collections": [
+      "gemini-notebook"
+    ],
+    "tags": [
+      "Speaking"
+    ],
+    "sourcePage": "gemini-notebook-prompty.html",
+    "geminiSection": "infografiky"
+  },
+  {
+    "id": "gemini-notebook-lesson-map",
+    "title": "7. Infografika celé lekce",
+    "lead": "Jednostránková „mapa lekce“ pro samostatné opakování žáka.",
+    "prompt": "Vystupuj jako zkušený učitel angličtiny a odborník na instructional design.\n\nNa základě POUZE zdrojů uložených v tomto Gemini Notebooku vytvoř jednostránkovou výukovou infografiku shrnující lekci:\n\n[TÉMA / NÁZEV LEKCE]\n\nCílová skupina:\n[TYP ŽÁKŮ]\n\nJazyková úroveň:\n[CEFR]\n\nJazyk infografiky:\n[JAZYK VÝSTUPU]\n\nCílem je vytvořit vizuální „mapu lekce“, kterou může žák použít při opakování. Nezpracovávej každý detail. Vyber pouze obsah, který je pro pochopení a zapamatování lekce zásadní.\n\nPodle dostupných zdrojů zahrň:\n- hlavní cíl lekce,\n- nejdůležitější slovní zásobu,\n- hlavní gramatický nebo jazykový jev,\n- klíčové fráze,\n- důležité příklady,\n- případně hlavní informace z četby nebo poslechu,\n- praktickou komunikační situaci,\n- několik hlavních bodů „Co si mám z této lekce pamatovat?“.\n\nUspořádej obsah do jasně oddělených vizuálních bloků. Vizuálně odliš:\n- Vocabulary\n- Grammar\n- Useful English\n- Remember\n- Examples\n\nPoužij pouze ty části, které mají oporu ve zdrojích. Přizpůsob množství informací zadané úrovni CEFR. Preferuj hesla, krátké věty, příklady a vizuální prvky před dlouhými odstavci.\n\nPokud by bylo informací příliš mnoho, raději méně důležité části vynech. Infografika musí být pochopitelná i při samostatném opakování žáka.\n\nNepřidávej žádné informace, vysvětlení ani příklady, které nejsou doloženy zdroji tohoto notebooku.",
+    "subjects": [],
+    "levels": [],
+    "tools": [
+      "Gemini Notebook"
+    ],
+    "category": "Mapa lekce",
+    "collections": [
+      "gemini-notebook"
+    ],
+    "tags": [
+      "Lesson map"
+    ],
+    "sourcePage": "gemini-notebook-prompty.html",
+    "geminiSection": "infografiky"
+  },
+  {
+    "id": "gemini-notebook-beginner-language",
+    "title": "8. Nastavení pro začátečníky",
+    "lead": "Doplňující řádek pro jednodušší jazyk a kratší vysvětlení.",
+    "prompt": "Žáci jsou začátečníci. Používej maximálně krátké věty a jednoduchou slovní zásobu. Nevysvětluj jeden pojem pomocí dalšího obtížného anglického pojmu.",
+    "subjects": [],
+    "levels": [],
+    "tools": [
+      "Gemini Notebook"
+    ],
+    "category": "Začátečníci",
+    "collections": [
+      "gemini-notebook"
+    ],
+    "tags": [
+      "Úroveň"
+    ],
+    "sourcePage": "gemini-notebook-prompty.html",
+    "geminiSection": "infografiky"
+  },
+  {
+    "id": "gemini-notebook-czech-learner-language",
+    "title": "9. Nastavení pro české žáky",
+    "lead": "Oddělení českých vysvětlení od cílové angličtiny.",
+    "prompt": "Vysvětlení a instrukce piš česky. Cílovou anglickou slovní zásobu, fráze a modelové věty ponechávej v angličtině.",
+    "subjects": [],
+    "levels": [],
+    "tools": [
+      "Gemini Notebook"
+    ],
+    "category": "Čeští žáci",
+    "collections": [
+      "gemini-notebook"
+    ],
+    "tags": [
+      "Jazyk"
+    ],
+    "sourcePage": "gemini-notebook-prompty.html",
+    "geminiSection": "infografiky"
+  },
+  {
+    "id": "gemini-notebook-accessible-design",
+    "title": "10. Nastavení pro žáky se SPU",
+    "lead": "Přehlednější struktura, kratší bloky a méně dekorací.",
+    "prompt": "Minimalizuj množství souvislého textu. Používej krátké bloky, jasné členění, dostatek vizuálního prostoru a zvýrazni pouze skutečně důležité informace. Nevkládej dekorativní prvky, které neslouží porozumění.",
+    "subjects": [],
+    "levels": [],
+    "tools": [
+      "Gemini Notebook"
+    ],
+    "category": "SPU",
+    "collections": [
+      "gemini-notebook"
+    ],
+    "tags": [
+      "Přístupnost"
+    ],
+    "sourcePage": "gemini-notebook-prompty.html",
+    "geminiSection": "infografiky"
+  },
+  {
+    "id": "gemini-notebook-a4-print",
+    "title": "11. Nastavení pro tisk",
+    "lead": "Jednostránkový materiál čitelný po vytištění na A4.",
+    "prompt": "Navrhni infografiku jako přehledný jednostránkový materiál vhodný k tisku na A4. Text musí zůstat dobře čitelný i po vytištění.",
+    "subjects": [],
+    "levels": [],
+    "tools": [
+      "Gemini Notebook"
+    ],
+    "category": "A4",
+    "collections": [
+      "gemini-notebook"
+    ],
+    "tags": [
+      "Tisk"
+    ],
+    "sourcePage": "gemini-notebook-prompty.html",
+    "geminiSection": "infografiky"
+  },
+  {
+    "id": "gemini-notebook-lesson-plan",
+    "title": "12. Kompletní plán vyučovací hodiny",
+    "lead": "Cíle, postup, procvičování, práce žáků a závěr v jednom návrhu.",
+    "prompt": "Používej pouze výukové materiály, které jsem nahrál/a. Vytvoř kompletní plán vyučovací hodiny připravený k okamžitému použití ve třídě na téma [doplň předmět/téma].\n\nPřizpůsob hodinu studentům ve věku [doplň věkovou skupinu], na úrovni [doplň ročník nebo úroveň znalostí] a délce vyučovací hodiny [doplň čas].\n\nZahrň jasně formulované vzdělávací cíle, úvodní aktivitu, postup výuky krok za krokem, řízené procvičování, samostatnou nebo skupinovou práci, průběžnou kontrolu porozumění a závěrečnou aktivitu.\n\nDoporuč vhodné výukové strategie a u každé části uveď potřebné pomůcky a materiály. Uspořádej hodinu do jasné posloupnosti a navrhni časovou dotaci jednotlivých částí.\n\nZajisti, aby všechny aktivity přímo podporovaly stanovené vzdělávací cíle.\n\nNevkládej žádný obsah, který není podložen mými nahranými materiály.",
+    "subjects": [],
+    "levels": [],
+    "tools": [
+      "Gemini Notebook"
+    ],
+    "category": "Příprava hodiny",
+    "collections": [
+      "gemini-notebook"
+    ],
+    "tags": [
+      "Plán hodiny"
+    ],
+    "sourcePage": "gemini-notebook-prompty.html",
+    "geminiSection": "priprava-vyuky",
+    "presentation": {
+      "emphasis": [
+        {
+          "type": "strong",
+          "text": "[doplň předmět/téma]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "[doplň věkovou skupinu]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "[doplň ročník nebo úroveň znalostí]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "[doplň čas]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "Nevkládej žádný obsah, který není podložen mými nahranými materiály.",
+          "occurrence": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "gemini-notebook-explain-difficult-topic",
+    "title": "13. Vysvětlení obtížného učiva",
+    "lead": "Rozložení pojmu do kroků, příkladů a kontrolních otázek.",
+    "prompt": "Používej pouze výukové materiály, které jsem nahrál/a. Vytvoř jasné a pro studenty srozumitelné vysvětlení pojmu [doplň pojem] pro studenty ve věku [doplň věkovou skupinu] na úrovni [doplň ročník nebo úroveň znalostí].\n\nRozděl vysvětlení do jednoduchých a zvládnutelných kroků, ale zachovej správný význam daného pojmu.\n\nPoužij vhodné příklady, přirovnání, analogie a návrhy vizuálního vysvětlení, pokud jsou podloženy nahranými materiály.\n\nPředvídej nejčastější chyby, mylné představy nebo části, které mohou studentům působit problémy. Vysvětli, jak je mohu ve výuce řešit.\n\nPřidej několik otázek, pomocí kterých mohu ověřit, zda studenti látce skutečně porozuměli.\n\nNevkládej žádný obsah, který není podložen mými nahranými materiály.",
+    "subjects": [],
+    "levels": [],
+    "tools": [
+      "Gemini Notebook"
+    ],
+    "category": "Osobní tutor",
+    "collections": [
+      "gemini-notebook"
+    ],
+    "tags": [
+      "Vysvětlení"
+    ],
+    "sourcePage": "gemini-notebook-prompty.html",
+    "geminiSection": "priprava-vyuky",
+    "presentation": {
+      "emphasis": [
+        {
+          "type": "strong",
+          "text": "[doplň pojem]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "[doplň věkovou skupinu]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "[doplň ročník nebo úroveň znalostí]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "Nevkládej žádný obsah, který není podložen mými nahranými materiály.",
+          "occurrence": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "gemini-notebook-lesson-activities",
+    "title": "14. Výukové aktivity do hodiny",
+    "lead": "Individuální práce, dvojice, skupiny a ověření porozumění.",
+    "prompt": "Používej pouze výukové materiály, které jsem nahrál/a. Vytvoř poutavé výukové aktivity na téma [doplň předmět/téma] vhodné pro studenty ve věku [doplň věkovou skupinu] na úrovni [doplň ročník nebo úroveň znalostí].\n\nNavrhni aktivity, které studenty aktivně zapojí do pochopení učiva, procvičování a praktického použití klíčových pojmů a znalostí z nahraných materiálů.\n\nPodle potřeby vytvoř vyváženou kombinaci individuální práce, práce ve dvojicích a skupinové práce.\n\nU každé aktivity uveď jasné instrukce, vzdělávací cíl, doporučený čas a potřebné materiály nebo pomůcky.\n\nZařaď možnosti pro diskusi, řešení problémů, spolupráci a praktické použití učiva.\n\nPo každé aktivitě navrhni jednoduchý způsob, jak ověřit porozumění studentů.\n\nNevkládej žádný obsah, který není podložen mými nahranými materiály.",
+    "subjects": [],
+    "levels": [],
+    "tools": [
+      "Gemini Notebook"
+    ],
+    "category": "Aktivní výuka",
+    "collections": [
+      "gemini-notebook"
+    ],
+    "tags": [
+      "Aktivity"
+    ],
+    "sourcePage": "gemini-notebook-prompty.html",
+    "geminiSection": "priprava-vyuky",
+    "presentation": {
+      "emphasis": [
+        {
+          "type": "strong",
+          "text": "[doplň předmět/téma]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "[doplň věkovou skupinu]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "[doplň ročník nebo úroveň znalostí]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "Nevkládej žádný obsah, který není podložen mými nahranými materiály.",
+          "occurrence": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "gemini-notebook-differentiation",
+    "title": "15. Diferenciace výuky",
+    "lead": "Tři varianty pro podporu, očekávanou úroveň a větší výzvu.",
+    "prompt": "Používej pouze výukové materiály, které jsem nahrál/a. Uprav vyučovací hodinu na téma [doplň předmět/téma] pro studenty ve věku [doplň věkovou skupinu] s různou úrovní připravenosti a schopností.\n\nVytvoř diferencované varianty aktivit pro:\n\n1. studenty, kteří potřebují větší podporu,\n2. studenty pracující na očekávané úrovni,\n3. studenty připravené na náročnější úkoly.\n\nU jednotlivých variant uprav obtížnost, míru podpory, instrukce, úkoly a očekávané výsledky.\n\nVšichni studenti však musí pracovat na stejných hlavních vzdělávacích cílech.\n\nZahrň praktické podpůrné strategie, rozšiřující aktivity a vhodné způsoby ověřování porozumění pro každou skupinu.\n\nNavrhni diferenciaci tak, aby byla reálně zvládnutelná jedním učitelem v jedné třídě.\n\nNevkládej žádný obsah, který není podložen mými nahranými materiály.",
+    "subjects": [],
+    "levels": [],
+    "tools": [
+      "Gemini Notebook"
+    ],
+    "category": "3 úrovně",
+    "collections": [
+      "gemini-notebook"
+    ],
+    "tags": [
+      "Diferenciace"
+    ],
+    "sourcePage": "gemini-notebook-prompty.html",
+    "geminiSection": "priprava-vyuky",
+    "presentation": {
+      "emphasis": [
+        {
+          "type": "strong",
+          "text": "[doplň předmět/téma]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "[doplň věkovou skupinu]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "reálně zvládnutelná jedním učitelem v jedné třídě",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "Nevkládej žádný obsah, který není podložen mými nahranými materiály.",
+          "occurrence": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "gemini-notebook-knowledge-gaps",
+    "title": "16. Odhalení mezer ve znalostech",
+    "lead": "Diagnostika obtížných míst, signálů a cílené podpory.",
+    "prompt": "Používej pouze výukové materiály, které jsem nahrál/a. Analyzuj obsah tématu [doplň předmět/téma] pro studenty ve věku [doplň věkovou skupinu] na úrovni [doplň ročník nebo úroveň znalostí].\n\nIdentifikuj pojmy, potřebné předchozí znalosti, dovednosti nebo souvislosti mezi tématy, které mohou studenti obtížně chápat, špatně pochopit nebo si je nedostatečně osvojit.\n\nU každé možné mezery vysvětli:\n• proč může studentům způsobovat problémy,\n• jaké signály mám sledovat v jejich odpovědích nebo výkonu,\n• jaké cílené výukové strategie mohu použít,\n• jaké podpůrné aktivity mohu zařadit,\n• jakými otázkami mohu problém diagnostikovat.\n\nUpřednostni zejména mezery, které mohou negativně ovlivnit pochopení následujícího učiva.\n\nU každé mezery navrhni také praktický způsob, jak ověřit, zda již byla úspěšně odstraněna.\n\nNevkládej žádný obsah, který není podložen mými nahranými materiály.",
+    "subjects": [],
+    "levels": [],
+    "tools": [
+      "Gemini Notebook"
+    ],
+    "category": "Mezery ve znalostech",
+    "collections": [
+      "gemini-notebook"
+    ],
+    "tags": [
+      "Diagnostika"
+    ],
+    "sourcePage": "gemini-notebook-prompty.html",
+    "geminiSection": "priprava-vyuky",
+    "presentation": {
+      "emphasis": [
+        {
+          "type": "strong",
+          "text": "[doplň předmět/téma]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "[doplň věkovou skupinu]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "[doplň ročník nebo úroveň znalostí]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "Nevkládej žádný obsah, který není podložen mými nahranými materiály.",
+          "occurrence": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "gemini-notebook-assessment-test",
+    "title": "17. Test nebo jiné hodnocení",
+    "lead": "Otázky, bodování, klíč správných odpovědí a kritéria hodnocení.",
+    "prompt": "Používej pouze výukové materiály, které jsem nahrál/a. Vytvoř komplexní hodnocení nebo test na téma [doplň předmět/téma] vhodný pro studenty ve věku [doplň věkovou skupinu] na úrovni [doplň ročník nebo úroveň znalostí].\n\nVytvoř vyváženou kombinaci otázek a úloh, které ověřují znalosti, porozumění, aplikaci znalostí a vyšší úrovně myšlení tam, kde je to vhodné.\n\nZařaď otázky s výběrem odpovědi, otázky s krátkou odpovědí, aplikační úlohy a otázky vyžadující rozsáhlejší odpověď.\n\nUveď jasné instrukce a doporučené bodové hodnocení jednotlivých částí.\n\nKaždou otázku propojuj s hlavními vzdělávacími cíli a obsahem nahraných materiálů.\n\nPřidej kompletní klíč správných odpovědí, vzorové odpovědi, kritéria hodnocení a stručný návod, jak výsledky studentů interpretovat.\n\nNevkládej žádný obsah, který není podložen mými nahranými materiály.",
+    "subjects": [],
+    "levels": [],
+    "tools": [
+      "Gemini Notebook"
+    ],
+    "category": "Test a klíč",
+    "collections": [
+      "gemini-notebook"
+    ],
+    "tags": [
+      "Hodnocení"
+    ],
+    "sourcePage": "gemini-notebook-prompty.html",
+    "geminiSection": "priprava-vyuky",
+    "presentation": {
+      "emphasis": [
+        {
+          "type": "strong",
+          "text": "[doplň předmět/téma]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "[doplň věkovou skupinu]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "[doplň ročník nebo úroveň znalostí]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "Nevkládej žádný obsah, který není podložen mými nahranými materiály.",
+          "occurrence": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "gemini-notebook-audio-overview",
+    "title": "18. Audio studijní zdroj",
+    "lead": "Audio Overview pro učení, opakování a upevňování učiva.",
+    "prompt": "Používej pouze výukové materiály, které jsem nahrál/a. Vytvoř poutavý Audio Overview na téma [doplň předmět/téma] vhodný pro studenty ve věku [doplň věkovou skupinu] na úrovni [doplň ročník nebo úroveň znalostí].\n\nPřeměň hlavní obsah materiálů na jasnou a studentům srozumitelnou zvukovou diskusi, kterou mohou využít při učení nové látky, opakování nebo upevňování učiva.\n\nZaměř se na nejdůležitější pojmy, vysvětlení, příklady a souvislosti mezi jednotlivými myšlenkami.\n\nUspořádej obsah do logické posloupnosti tak, aby mu bylo možné snadno porozumět pouze poslechem.\n\nPřizpůsob jazyk a hloubku vysvětlení věku a úrovni studentů.\n\nZdůrazni hlavní informace, kterým by studenti měli porozumět a které by si měli zapamatovat.\n\nAudio udržuj soustředěné, poutavé a vhodné pro samostatný poslech před vyučovací hodinou nebo po ní.\n\nNevkládej žádný obsah, který není podložen mými nahranými materiály.",
+    "subjects": [],
+    "levels": [],
+    "tools": [
+      "Gemini Notebook"
+    ],
+    "category": "Audio Overview",
+    "collections": [
+      "gemini-notebook"
+    ],
+    "tags": [
+      "Audio"
+    ],
+    "sourcePage": "gemini-notebook-prompty.html",
+    "geminiSection": "priprava-vyuky",
+    "presentation": {
+      "emphasis": [
+        {
+          "type": "strong",
+          "text": "Audio Overview",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "[doplň předmět/téma]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "[doplň věkovou skupinu]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "[doplň ročník nebo úroveň znalostí]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "Nevkládej žádný obsah, který není podložen mými nahranými materiály.",
+          "occurrence": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "gemini-notebook-student-summary",
+    "title": "19. Srozumitelné shrnutí pro žáky",
+    "lead": "Rychlá orientace ve zdrojích a základ pro zápis nebo opakování.",
+    "prompt": "Prostuduj zdroje vložené v tomto notebooku k tématu [téma] a vytvoř z nich srozumitelné shrnutí pro [ročník / věk / úroveň žáků].\n\nZahrň:\n• hlavní smysl tématu,\n• 5 nejdůležitějších myšlenek,\n• jednoduché vysvětlení každé z nich,\n• důležitá fakta a příklady,\n• klíčové pojmy s jednoduchou definicí,\n• část „Co si z toho má žák zapamatovat“.\n\nNepoužívej zbytečně odborný jazyk. Pokud je odborný termín nutný, okamžitě jej vysvětli jednoduchými slovy.\n\nPracuj pouze s informacemi obsaženými ve zdrojích notebooku. U důležitých tvrzení uveď odkaz na příslušný zdroj.",
+    "subjects": [],
+    "levels": [],
+    "tools": [
+      "Gemini Notebook"
+    ],
+    "category": "Orientace",
+    "collections": [
+      "gemini-notebook"
+    ],
+    "tags": [
+      "Shrnutí"
+    ],
+    "sourcePage": "gemini-notebook-prompty.html",
+    "geminiSection": "workflow-zdroje",
+    "presentation": {
+      "emphasis": [
+        {
+          "type": "strong",
+          "text": "[téma]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "[ročník / věk / úroveň žáků]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "„Co si z toho má žák zapamatovat“",
+          "occurrence": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "gemini-notebook-source-notes",
+    "title": "20. Podrobné poznámky ze všech zdrojů",
+    "lead": "Strukturovaný učitelský přehled z většího množství podkladů.",
+    "prompt": "Přeměň zdroje v tomto notebooku na přehledné studijní poznámky k tématu [téma] pro [třídu / úroveň].\n\nPostupuj podle jednotlivých kapitol nebo tematických částí.\n\nU každé části uveď:\n• hlavní myšlenku,\n• důležité podpůrné informace,\n• fakta, příklady, data nebo statistiky,\n• klíčové pojmy a jejich jednoduché definice,\n• praktický příklad nebo využití,\n• jednu větu shrnující celou část.\n\nNakonec vytvoř seznam 10 nejdůležitějších poznatků z celého tématu.\n\nOdděl informace, které jsou zásadní pro zvládnutí učiva, od informací doplňkových.\n\nVycházej pouze ze zdrojů notebooku.",
+    "subjects": [],
+    "levels": [],
+    "tools": [
+      "Gemini Notebook"
+    ],
+    "category": "Více zdrojů",
+    "collections": [
+      "gemini-notebook"
+    ],
+    "tags": [
+      "Poznámky"
+    ],
+    "sourcePage": "gemini-notebook-prompty.html",
+    "geminiSection": "workflow-zdroje",
+    "presentation": {
+      "emphasis": [
+        {
+          "type": "strong",
+          "text": "[téma]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "[třídu / úroveň]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "10 nejdůležitějších poznatků z celého tématu",
+          "occurrence": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "gemini-notebook-key-information",
+    "title": "21. Nejdůležitější informace se zdroji",
+    "lead": "Výběr tvrzení, jejich opory a míry jistoty ve zdrojích.",
+    "prompt": "Urči [10 / 15 / 20] nejdůležitějších tvrzení, poznatků nebo závěrů obsažených ve zdrojích tohoto notebooku k tématu [téma].\n\nU každého bodu uveď:\n• samotné tvrzení,\n• jednoduché vysvětlení,\n• proč je důležité,\n• důkaz nebo informaci, která jej podporuje,\n• odkaz na zdroj,\n• míru opory ve zdrojích: silná / částečná / nejasná.\n\nZařaď pouze informace, které lze skutečně doložit zdroji notebooku.\n\nNevymýšlej chybějící informace a nedoplňuj znalosti zvenčí.\n\nPokud si zdroje odporují, upozorni na to.",
+    "subjects": [],
+    "levels": [],
+    "tools": [
+      "Gemini Notebook"
+    ],
+    "category": "Důkazy a odkazy",
+    "collections": [
+      "gemini-notebook"
+    ],
+    "tags": [
+      "Ověření"
+    ],
+    "sourcePage": "gemini-notebook-prompty.html",
+    "geminiSection": "workflow-zdroje",
+    "presentation": {
+      "emphasis": [
+        {
+          "type": "strong",
+          "text": "[10 / 15 / 20] nejdůležitějších tvrzení, poznatků nebo závěrů",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "[téma]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "silná / částečná / nejasná",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "Nevymýšlej chybějící informace a nedoplňuj znalosti zvenčí.",
+          "occurrence": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "gemini-notebook-personal-tutor",
+    "title": "22. Obtížné části jako osobní tutor",
+    "lead": "Vysvětlení pojmů podle úrovně konkrétního žáka.",
+    "prompt": "Vystupuj jako trpělivý učitel a vysvětli nejobtížnější části zdrojů v tomto notebooku k tématu [téma].\n\nŽák je na úrovni [začátečník / základní / středně pokročilý].\n\nU každého obtížného pojmu nebo principu uveď:\n• vysvětlení jednoduchým jazykem,\n• přirovnání z běžného života,\n• konkrétní příklad,\n• vysvětlení krok za krokem,\n• definici důležitých pojmů,\n• nejčastější chybu nebo nedorozumění,\n• jednu kontrolní otázku.\n\nNa závěr navrhni doporučené pořadí, v jakém by se měl žák jednotlivé pojmy učit.\n\nPřizpůsob vysvětlení věku a úrovni žáka a vycházej pouze ze zdrojů notebooku.",
+    "subjects": [],
+    "levels": [],
+    "tools": [
+      "Gemini Notebook"
+    ],
+    "category": "Přizpůsobení",
+    "collections": [
+      "gemini-notebook"
+    ],
+    "tags": [
+      "Tutor"
+    ],
+    "sourcePage": "gemini-notebook-prompty.html",
+    "geminiSection": "workflow-zdroje",
+    "presentation": {
+      "emphasis": [
+        {
+          "type": "strong",
+          "text": "[téma]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "[začátečník / základní / středně pokročilý]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "doporučené pořadí, v jakém by se měl žák jednotlivé pojmy učit",
+          "occurrence": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "gemini-notebook-action-plan",
+    "title": "23. Přeměna informací na praktický plán",
+    "lead": "Převod doporučení a postupů ze zdrojů do konkrétních kroků.",
+    "prompt": "Najdi ve zdrojích tohoto notebooku prakticky využitelné myšlenky a přeměň je na konkrétní plán pro [výuku / projekt / studium / školní aktivitu].\n\nU každého kroku uveď:\n• cíl,\n• doporučenou činnost,\n• postup krok za krokem,\n• které informace ze zdrojů tento krok podporují,\n• potřebné pomůcky nebo nástroje,\n• možný problém,\n• návrh řešení problému,\n• prioritu: vysoká / střední / nízká,\n• doporučený termín.\n\nRozděl plán do částí:\n• hned / první krok,\n• během tohoto týdne,\n• během tohoto měsíce,\n• dlouhodobě.\n\nNevytvářej doporučení, která nemají oporu ve zdrojích; případné vlastní návrhy jasně označ jako návrh AI.",
+    "subjects": [],
+    "levels": [],
+    "tools": [
+      "Gemini Notebook"
+    ],
+    "category": "Akční postup",
+    "collections": [
+      "gemini-notebook"
+    ],
+    "tags": [
+      "Plán"
+    ],
+    "sourcePage": "gemini-notebook-prompty.html",
+    "geminiSection": "workflow-zdroje",
+    "presentation": {
+      "emphasis": [
+        {
+          "type": "strong",
+          "text": "[výuku / projekt / studium / školní aktivitu]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "vysoká / střední / nízká",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "hned / první krok,",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "během tohoto týdne,",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "během tohoto měsíce,",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "dlouhodobě",
+          "occurrence": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "gemini-notebook-study-pack",
+    "title": "24. Kompletní studijní balíček",
+    "lead": "Shrnutí, pojmy, otázky, praktické úlohy a checklist v jednom výstupu.",
+    "prompt": "Zpracuj zdroje v tomto notebooku jako komplexní studijní materiál k tématu [téma] pro [ročník / předmět / úroveň].\n\nVytvoř:\n• přehled tématu,\n• shrnutí jednotlivých částí,\n• seznam klíčových pojmů a definic,\n• důležitá fakta, data, vzorce nebo principy,\n• nejčastěji zaměňované pojmy,\n• 10 otázek s krátkou odpovědí,\n• 10 otázek s výběrem odpovědi A–D,\n• 5 úloh založených na praktické situaci,\n• správné odpovědi,\n• stručné vysvětlení správných odpovědí,\n• závěrečný checklist „Umím / musím ještě procvičit“.\n\nVětší důraz věnuj tématům [doplň témata].\n\nRozliš základní učivo, které by měl zvládnout každý žák, od rozšiřujícího učiva.\n\nVšechny otázky a odpovědi musí vycházet ze zdrojů notebooku.",
+    "subjects": [],
+    "levels": [],
+    "tools": [
+      "Gemini Notebook"
+    ],
+    "category": "Výstup pro učení",
+    "collections": [
+      "gemini-notebook"
+    ],
+    "tags": [
+      "Studijní balíček"
+    ],
+    "sourcePage": "gemini-notebook-prompty.html",
+    "geminiSection": "workflow-zdroje",
+    "presentation": {
+      "emphasis": [
+        {
+          "type": "strong",
+          "text": "[téma]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "[ročník / předmět / úroveň]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "„Umím / musím ještě procvičit“",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "[doplň témata]",
+          "occurrence": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "gemini-notebook-compare-options",
+    "title": "25. Porovnání myšlenek, metod nebo možností",
+    "lead": "Tabulka rozdílů, výhod, omezení, rizik a vhodného použití.",
+    "prompt": "Porovnej hlavní [myšlenky / teorie / metody / postupy / možnosti / technologie] popsané ve zdrojích tohoto notebooku.\n\nVýsledek nejprve zpracuj do přehledné tabulky.\n\nPorovnej:\n• účel,\n• princip fungování,\n• výhody,\n• nevýhody a omezení,\n• důkazy nebo argumenty ze zdrojů,\n• vhodné použití,\n• rizika,\n• cílovou skupinu,\n• hlavní rozdíly.\n\nPoté vysvětli:\n• která možnost má nejsilnější podporu ve zdrojích,\n• která je nejjednodušší na použití,\n• která má největší rizika,\n• která je nejvhodnější pro [konkrétní situaci].\n\nKaždý závěr dolož zdrojem. Pokud zdroje neumožňují něco rozhodnout, napiš to otevřeně.",
+    "subjects": [],
+    "levels": [],
+    "tools": [
+      "Gemini Notebook"
+    ],
+    "category": "Tabulka",
+    "collections": [
+      "gemini-notebook"
+    ],
+    "tags": [
+      "Porovnání"
+    ],
+    "sourcePage": "gemini-notebook-prompty.html",
+    "geminiSection": "workflow-zdroje",
+    "presentation": {
+      "emphasis": [
+        {
+          "type": "strong",
+          "text": "[myšlenky / teorie / metody / postupy / možnosti / technologie]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "[konkrétní situaci]",
+          "occurrence": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "gemini-notebook-student-questions",
+    "title": "26. Otázky, které má žák umět zodpovědět",
+    "lead": "Otázky s odpověďmi, zdroji, stavem a obtížností.",
+    "prompt": "Na základě zdrojů tohoto notebooku vytvoř [20 / 30 / 40] důležitých otázek k tématu [téma], které by měl žák po prostudování učiva umět zodpovědět.\n\nRozděl je do kategorií:\n• základní porozumění,\n• vysvětlení vztahů a souvislostí,\n• práce s důkazy,\n• praktické použití,\n• rizika a problémy,\n• omezení,\n• informace, které ve zdrojích chybí.\n\nU každé otázky uveď:\n• správnou nebo očekávanou odpověď,\n• zdroj, ze kterého odpověď vychází,\n• stav: zodpovězeno / částečně zodpovězeno / zdroje neodpovídají,\n• obtížnost: základní / střední / náročná.\n\nNakonec vypiš 5 nejdůležitějších otázek, na které zdroje neposkytují dostatečnou odpověď.\n\nNevymýšlej odpovědi tam, kde ve zdrojích nejsou.",
+    "subjects": [],
+    "levels": [],
+    "tools": [
+      "Gemini Notebook"
+    ],
+    "category": "Diagnostika učiva",
+    "collections": [
+      "gemini-notebook"
+    ],
+    "tags": [
+      "Otázky"
+    ],
+    "sourcePage": "gemini-notebook-prompty.html",
+    "geminiSection": "workflow-zdroje",
+    "presentation": {
+      "emphasis": [
+        {
+          "type": "strong",
+          "text": "[20 / 30 / 40] důležitých otázek",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "[téma]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "zodpovězeno / částečně zodpovězeno / zdroje neodpovídají",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "základní / střední / náročná",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "5 nejdůležitějších otázek, na které zdroje neposkytují dostatečnou odpověď",
+          "occurrence": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "gemini-notebook-content-repurposing",
+    "title": "27. Přeměna zdrojů na další výukový obsah",
+    "lead": "Nadpisy, příspěvek, infografika, video, diskuse a další nápady.",
+    "prompt": "Přeměň obsah zdrojů tohoto notebooku k tématu [téma] na několik různých forem obsahu.\n\nCílová skupina: [žáci / učitelé / rodiče / veřejnost]\nStyl: [srozumitelný / přátelský / odborný / popularizační]\n\nVytvoř:\n• 5 poutavých nadpisů nebo úvodních vět,\n• návrh krátkého příspěvku na web nebo sociální sítě,\n• osnovu 7–10bodové infografiky nebo carouselu,\n• krátký 60sekundový scénář videa,\n• 5 otázek podporujících diskusi,\n• 3 výzvy k další aktivitě,\n• 10 dalších nápadů na výukový nebo popularizační obsah.\n\nU obsahu určeného žákům přidej také návrh, jak jej využít během vyučovací hodiny.\n\nZachovej věcnou přesnost a používej pouze tvrzení podporovaná zdroji notebooku.",
+    "subjects": [],
+    "levels": [],
+    "tools": [
+      "Gemini Notebook"
+    ],
+    "category": "Další výstupy",
+    "collections": [
+      "gemini-notebook"
+    ],
+    "tags": [
+      "Více formátů"
+    ],
+    "sourcePage": "gemini-notebook-prompty.html",
+    "geminiSection": "workflow-zdroje",
+    "presentation": {
+      "emphasis": [
+        {
+          "type": "strong",
+          "text": "[téma]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "[žáci / učitelé / rodiče / veřejnost]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "[srozumitelný / přátelský / odborný / popularizační]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "jak jej využít během vyučovací hodiny",
+          "occurrence": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "gemini-notebook-source-critique",
+    "title": "28. Kritické zhodnocení zdrojů",
+    "lead": "Silné stránky, slabiny, rozpory, chybějící informace a verdikt.",
+    "prompt": "Kriticky zhodnoť zdroje vložené v tomto notebooku k tématu [téma] spravedlivě, objektivně a vyváženě.\n\nPosuď:\n• hlavní cíl,\n• sílu argumentů,\n• kvalitu důkazů,\n• důvěryhodnost použitých zdrojů,\n• jasnost a strukturu,\n• předpoklady autorů,\n• možné zkreslení nebo jednostrannost,\n• chybějící informace,\n• slabé nebo rozporné argumenty,\n• praktickou využitelnost.\n\nPoté uveď:\n• 3 hlavní silné stránky,\n• 3 hlavní slabiny,\n• tvrzení, která by bylo vhodné ověřit,\n• otázky pro další zkoumání,\n• pro koho jsou zdroje nejvhodnější,\n• celkové hodnocení 1–10,\n• krátký závěrečný verdikt.\n\nStriktně rozlišuj mezi tím, co skutečně uvádějí zdroje, a vlastním hodnocením.\n\nPokud nelze například důvěryhodnost nebo správnost některého tvrzení ověřit pouze z dostupných zdrojů, výslovně to napiš.",
+    "subjects": [],
+    "levels": [],
+    "tools": [
+      "Gemini Notebook"
+    ],
+    "category": "Kontrola zdrojů",
+    "collections": [
+      "gemini-notebook"
+    ],
+    "tags": [
+      "Kritická analýza"
+    ],
+    "sourcePage": "gemini-notebook-prompty.html",
+    "geminiSection": "workflow-zdroje",
+    "presentation": {
+      "emphasis": [
+        {
+          "type": "strong",
+          "text": "[téma]",
+          "occurrence": 1
+        },
+        {
+          "type": "strong",
+          "text": "Striktně rozlišuj mezi tím, co skutečně uvádějí zdroje, a vlastním hodnocením.",
+          "occurrence": 1
+        }
+      ]
+    }
   }
 ]

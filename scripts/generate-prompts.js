@@ -31,11 +31,19 @@ const SUBJECT_PAGE_BY_PAGE = new Map(SUBJECT_TARGETS.map((target) => [target.pag
 const LIBRARY_SECTION_BY_KEY = new Map(LIBRARY_SECTIONS.map((section) => [section.key, section]));
 const LIBRARY_PAGE = 'prompty.html';
 const VIBE_PAGE = 'vibe-coding-prompty.html';
+const GEMINI_PAGE = 'gemini-notebook-prompty.html';
+
+const GEMINI_SECTIONS = [
+    { key: 'infografiky', marker: 'GEMINI_INFOGRAFIKY', count: 11 },
+    { key: 'priprava-vyuky', marker: 'GEMINI_PRIPRAVA', count: 7 },
+    { key: 'workflow-zdroje', marker: 'GEMINI_WORKFLOW', count: 10 }
+];
 
 const VIBE_SECTIONS = [
     { key: 'VIBE_MAIN', collection: 'vibe-coding-main', count: 10 },
     { key: 'VIBE_APPENDIX', collection: 'vibe-coding-appendix', count: 1 }
 ];
+const GEMINI_SECTION_BY_KEY = new Map(GEMINI_SECTIONS.map((section) => [section.key, section]));
 
 
 const SUBJECT_START_MARKER = '<!-- GENERATED:PROMPTS:START -->';
@@ -45,7 +53,29 @@ const TOOL_BADGE_CLASSES = {
     ChatGPT: 'badge-gold',
     Gemini: 'badge-mint',
     Claude: 'badge-purple',
-    'Jakýkoli LLM': 'badge-gold'
+    'Jakýkoli LLM': 'badge-gold',
+    'Gemini Notebook': 'badge-mint'
+};
+
+const GEMINI_TAG_BADGE_CLASSES = {
+    Grammar: 'badge-blue', Vocabulary: 'badge-green', Reading: 'badge-purple', Listening: 'badge-orange',
+    Writing: 'badge-pink', Speaking: 'badge-blue', 'Lesson map': 'badge-purple', Úroveň: 'badge-gold',
+    Jazyk: 'badge-blue', Přístupnost: 'badge-purple', Tisk: 'badge-orange', 'Plán hodiny': 'badge-blue',
+    Vysvětlení: 'badge-purple', Aktivity: 'badge-green', Diferenciace: 'badge-orange', Diagnostika: 'badge-purple',
+    Hodnocení: 'badge-blue', 'Audio Overview': 'badge-orange', Orientace: 'badge-blue', 'Více zdrojů': 'badge-purple',
+    'Důkazy a odkazy': 'badge-green', Tutor: 'badge-purple', Plán: 'badge-orange', 'Studijní balíček': 'badge-blue',
+    Porovnání: 'badge-purple', Otázky: 'badge-green', 'Více formátů': 'badge-orange', 'Kritická analýza': 'badge-purple'
+};
+
+const GEMINI_CATEGORY_BADGE_CLASSES = {
+    'Vysvětlení pravidla': 'badge-blue', 'Praktická slovní zásoba': 'badge-green', 'Porozumění textu': 'badge-purple',
+    'Klíčové informace': 'badge-orange', 'Struktura textu': 'badge-pink', 'Komunikační situace': 'badge-blue',
+    'Mapa lekce': 'badge-purple', Začátečníci: 'badge-gold', 'Čeští žáci': 'badge-blue', SPU: 'badge-purple',
+    A4: 'badge-orange', 'Příprava hodiny': 'badge-blue', 'Osobní tutor': 'badge-purple', 'Aktivní výuka': 'badge-green',
+    '3 úrovně': 'badge-orange', 'Mezery ve znalostech': 'badge-purple', 'Test a klíč': 'badge-blue',
+    'Audio Overview': 'badge-orange', Orientace: 'badge-blue', 'Více zdrojů': 'badge-purple', 'Důkazy a odkazy': 'badge-green',
+    Přizpůsobení: 'badge-purple', 'Akční postup': 'badge-orange', 'Výstup pro učení': 'badge-blue', Tabulka: 'badge-purple',
+    'Diagnostika učiva': 'badge-green', 'Další výstupy': 'badge-orange', 'Kontrola zdrojů': 'badge-purple'
 };
 
 const CATEGORY_BADGE_CLASSES = {
@@ -274,6 +304,18 @@ function escapeHtml(value) {
     }[character]));
 }
 
+function decodeHtml(value) {
+    return value
+        .replace(/&nbsp;/g, ' ')
+        .replace(/&amp;/g, '&')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&quot;/g, '"')
+        .replace(/&#39;/g, "'")
+        .replace(/&#x([0-9a-f]+);/gi, (_, hex) => String.fromCodePoint(parseInt(hex, 16)))
+        .replace(/&#(\d+);/g, (_, dec) => String.fromCodePoint(Number(dec)));
+}
+
 function normalizePromptText(value) {
     return String(value).replace(/\r\n?/g, '\n').replace(/\u00a0/g, ' ')
         .split('\n').map((line) => line.replace(/[ \t]+/g, ' ').trim()).join('\n')
@@ -283,6 +325,48 @@ function normalizePromptText(value) {
 function fail(message) {
     console.error(`Prompt generation ERROR: ${message}`);
     process.exitCode = 1;
+}
+
+function emphasisRanges(prompt, label) {
+    if (prompt.presentation === undefined) return [];
+    if (!prompt.presentation || typeof prompt.presentation !== 'object' || Array.isArray(prompt.presentation)) {
+        throw new Error(`${label} presentation must be an object`);
+    }
+    if (Object.keys(prompt.presentation).some((key) => key !== 'emphasis')) {
+        throw new Error(`${label} presentation allows only emphasis`);
+    }
+    if (!Array.isArray(prompt.presentation.emphasis)) {
+        throw new Error(`${label} presentation emphasis must be an array`);
+    }
+    const ranges = [];
+    prompt.presentation.emphasis.forEach((item, index) => {
+        if (!item || typeof item !== 'object' || Array.isArray(item)) {
+            throw new Error(`${label} emphasis ${index + 1} must be an object`);
+        }
+        if (item.type !== 'strong') throw new Error(`${label} emphasis ${index + 1} has invalid type`);
+        if (typeof item.text !== 'string' || !item.text.trim()) {
+            throw new Error(`${label} emphasis ${index + 1} requires non-empty text`);
+        }
+        if (!Number.isInteger(item.occurrence) || item.occurrence < 1) {
+            throw new Error(`${label} emphasis ${index + 1} requires occurrence >= 1`);
+        }
+        let from = 0;
+        let start = -1;
+        for (let occurrence = 0; occurrence < item.occurrence; occurrence += 1) {
+            start = prompt.prompt.indexOf(item.text, from);
+            if (start === -1) break;
+            from = start + item.text.length;
+        }
+        if (start === -1) throw new Error(`${label} emphasis ${index + 1} occurrence not found`);
+        ranges.push({ start, end: start + item.text.length, item });
+    });
+    ranges.sort((left, right) => left.start - right.start || left.end - right.end);
+    ranges.forEach((range, index) => {
+        if (index > 0 && range.start < ranges[index - 1].end) {
+            throw new Error(`${label} emphasis ranges overlap`);
+        }
+    });
+    return ranges;
 }
 
 function readPrompts() {
@@ -311,11 +395,25 @@ function readPrompts() {
         if (seenIds.has(prompt.id)) throw new Error(`duplicate prompt id: ${prompt.id}`);
         seenIds.add(prompt.id);
         if (!SUBJECT_PAGE_BY_PAGE.has(prompt.sourcePage) &&
-            prompt.sourcePage !== LIBRARY_PAGE && prompt.sourcePage !== VIBE_PAGE) {
+            prompt.sourcePage !== LIBRARY_PAGE && prompt.sourcePage !== VIBE_PAGE && prompt.sourcePage !== GEMINI_PAGE) {
             throw new Error(`${label} has unknown sourcePage: ${prompt.sourcePage}`);
         }
         if (prompt.lead !== undefined && typeof prompt.lead !== 'string') {
             throw new Error(`${label} lead must be a string when present`);
+        }
+        if (prompt.sourcePage === GEMINI_PAGE) {
+            if (typeof prompt.lead !== 'string' || !prompt.lead.trim()) throw new Error(`${label} requires non-empty lead`);
+            if (typeof prompt.category !== 'string' || !prompt.category.trim()) throw new Error(`${label} requires category`);
+            if (typeof prompt.geminiSection !== 'string' || !GEMINI_SECTION_BY_KEY.has(prompt.geminiSection)) {
+                throw new Error(`${label} requires valid geminiSection`);
+            }
+        } else {
+            if (prompt.geminiSection !== undefined) {
+                throw new Error(`${label} geminiSection is only valid for Gemini Notebook prompts`);
+            }
+            if (prompt.presentation !== undefined) {
+                throw new Error(`${label} presentation is only valid for Gemini Notebook prompts`);
+            }
         }
         ['subjects', 'levels', 'tools', 'collections', 'tags'].forEach((field) => {
             if (!Array.isArray(prompt[field]) || prompt[field].some((value) => typeof value !== 'string')) {
@@ -327,6 +425,7 @@ function readPrompts() {
             throw new Error(`exact duplicate prompt text: ${prompt.id} and ${seenTexts.get(normalized)}`);
         }
         seenTexts.set(normalized, prompt.id);
+        emphasisRanges(prompt, label);
 
         if (prompt.sourcePage === LIBRARY_PAGE) {
             if (typeof prompt.librarySection !== 'string' || !LIBRARY_SECTION_BY_KEY.has(prompt.librarySection)) {
@@ -357,13 +456,15 @@ function readPrompts() {
         if (count !== 4) throw new Error(`expected exactly 4 prompts for ${target.page}, found ${count}`);
     });
 
-    if (prompts.length !== 176) throw new Error(`expected exactly 176 prompts, found ${prompts.length}`);
+    if (prompts.length !== 204) throw new Error(`expected exactly 204 prompts, found ${prompts.length}`);
     const subjectCount = prompts.filter((prompt) => SUBJECT_PAGE_BY_PAGE.has(prompt.sourcePage)).length;
     const libraryCount = prompts.filter((prompt) => prompt.sourcePage === LIBRARY_PAGE).length;
     const vibeCount = prompts.filter((prompt) => prompt.sourcePage === VIBE_PAGE).length;
+    const geminiCount = prompts.filter((prompt) => prompt.sourcePage === GEMINI_PAGE).length;
     if (subjectCount !== 20) throw new Error(`expected exactly 20 subject prompts, found ${subjectCount}`);
     if (libraryCount !== 145) throw new Error(`expected exactly 145 library prompts, found ${libraryCount}`);
     if (vibeCount !== 11) throw new Error(`expected exactly 11 Vibe Coding prompts, found ${vibeCount}`);
+    if (geminiCount !== 28) throw new Error(`expected exactly 28 Gemini Notebook prompts, found ${geminiCount}`);
     LIBRARY_SECTIONS.forEach((section) => {
         const cards = prompts.filter((prompt) => prompt.librarySection === section.key);
         if (cards.length !== section.count) {
@@ -381,6 +482,14 @@ function readPrompts() {
             throw new Error(`expected ${section.count} prompts in ${section.key}, found ${cards.length}`);
         }
     });
+    GEMINI_SECTIONS.forEach((section) => {
+        const cards = prompts.filter((prompt) => (
+            prompt.sourcePage === GEMINI_PAGE && prompt.geminiSection === section.key
+        ));
+        if (cards.length !== section.count) {
+            throw new Error(`expected ${section.count} prompts in Gemini section ${section.key}, found ${cards.length}`);
+        }
+    });
     return prompts;
 }
 
@@ -392,7 +501,62 @@ function htmlId(prompt) {
     return prompt.id.startsWith('prompt-') ? prompt.id : `prompt-${prompt.id}`;
 }
 
+function renderPromptText(value) {
+    return escapeHtml(value).replace(/\r\n?/g, '\n').replace(/\n/g, '<br>');
+}
+
+function renderGeminiPromptBody(prompt) {
+    const ranges = emphasisRanges(prompt, prompt.id);
+    let rendered;
+    if (!ranges.length) {
+        rendered = renderPromptText(prompt.prompt);
+    } else {
+        const parts = [];
+        let cursor = 0;
+        ranges.forEach((range) => {
+            parts.push(renderPromptText(prompt.prompt.slice(cursor, range.start)));
+            parts.push(`<strong>${renderPromptText(prompt.prompt.slice(range.start, range.end))}</strong>`);
+            cursor = range.end;
+        });
+        parts.push(renderPromptText(prompt.prompt.slice(cursor)));
+        rendered = parts.join('');
+    }
+    if (/<(?!\/?(?:strong|br)\b)[^>]+>/i.test(rendered)) {
+        throw new Error(`${prompt.id} generated unsupported HTML`);
+    }
+    const plain = decodeHtml(rendered.replace(/<strong>|<\/strong>/gi, '').replace(/<br>/gi, '\n'));
+    if (plain !== prompt.prompt.replace(/\r\n?/g, '\n')) {
+        throw new Error(`${prompt.id} rendered text does not match canonical prompt`);
+    }
+    return rendered;
+}
+
+function renderGeminiCard(prompt, newline) {
+    const metadataBadges = [
+        renderBadge('Gemini Notebook', TOOL_BADGE_CLASSES['Gemini Notebook']),
+        ...prompt.tags.map((tag) => renderBadge(tag, GEMINI_TAG_BADGE_CLASSES[tag] || 'badge-gray'))
+    ].join('');
+    const lines = [
+        `                    <div id="${escapeHtml(htmlId(prompt))}" class="prompt-card reveal">`,
+        '                        <div class="prompt-header">',
+        '                            <div>',
+        `                                <div class="prompt-title">${escapeHtml(prompt.title)}</div>`,
+        `                                <div class="prompt-lead">${escapeHtml(prompt.lead)}</div>`,
+        `                                <div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap">${metadataBadges}</div>`,
+        '                            </div>',
+        '                        </div>',
+        `                        <div class="prompt-body">${renderGeminiPromptBody(prompt)}</div>`,
+        '                        <div class="prompt-footer">',
+        `                            <span class="badge ${GEMINI_CATEGORY_BADGE_CLASSES[prompt.category] || 'badge-gray'}">${escapeHtml(prompt.category)}</span>`,
+        `                            <button class="copy-btn" type="button" data-copy="${escapeHtml(prompt.prompt)}">📋 Kopírovat</button>`,
+        '                        </div>',
+        '                    </div>'
+    ];
+    return lines.join(newline);
+}
+
 function renderCard(prompt, newline, variant) {
+    if (variant === 'gemini') return renderGeminiCard(prompt, newline);
     const metadataBadges = variant === 'vibe'
         ? prompt.tags.map((tag) => renderBadge(
             tag,
@@ -502,13 +666,22 @@ function main() {
         ));
         inspections.push(inspectTarget(VIBE_PAGE, markerPair(section.key), cards, 'vibe'));
     });
+    GEMINI_SECTIONS.forEach((section) => {
+        const cards = prompts.filter((prompt) => (
+            prompt.sourcePage === GEMINI_PAGE && prompt.geminiSection === section.key
+        ));
+        inspections.push(inspectTarget(GEMINI_PAGE, markerPair(section.marker), cards, 'gemini'));
+    });
 
     const driftCount = inspections.filter((inspection) => inspection.drift).length;
     const subjectInspections = inspections.slice(0, SUBJECT_TARGETS.length);
     const libraryStart = SUBJECT_TARGETS.length;
     const libraryEnd = libraryStart + LIBRARY_SECTIONS.length;
+    const vibeStart = libraryEnd;
+    const vibeEnd = vibeStart + VIBE_SECTIONS.length;
     const libraryInspections = inspections.slice(libraryStart, libraryEnd);
-    const vibeInspections = inspections.slice(libraryEnd);
+    const vibeInspections = inspections.slice(vibeStart, vibeEnd);
+    const geminiInspections = inspections.slice(vibeEnd);
     console.log('Prompt generation check');
     console.log('-----------------------');
     console.log('Subject pages:');
@@ -528,14 +701,24 @@ function main() {
         const section = VIBE_SECTIONS[index];
         console.log(`  ${section.key}: ${inspection.drift ? 'DRIFT' : 'OK'} (${inspection.cards.length})`);
     });
+    console.log('Gemini Notebook:');
+    const geminiDrift = geminiInspections.some((inspection) => inspection.drift);
+    const geminiCount = geminiInspections.reduce((sum, inspection) => sum + inspection.cards.length, 0);
+    console.log(`${GEMINI_PAGE}: ${geminiDrift ? 'DRIFT' : 'OK'} (${geminiCount})`);
+    geminiInspections.forEach((inspection, index) => {
+        const section = GEMINI_SECTIONS[index];
+        console.log(`  ${section.marker}: ${inspection.drift ? 'DRIFT' : 'OK'} (${inspection.cards.length})`);
+    });
     console.log('Summary:');
     console.log(`Registry prompts: ${prompts.length}`);
     console.log(`Subject prompts: ${subjectInspections.reduce((sum, inspection) => sum + inspection.cards.length, 0)}`);
     console.log(`Library prompts: ${libraryInspections.reduce((sum, inspection) => sum + inspection.cards.length, 0)}`);
     console.log(`Vibe Coding prompts: ${vibeCount}`);
-    console.log(`Pages: ${SUBJECT_TARGETS.length + 2}`);
+    console.log(`Gemini Notebook prompts: ${geminiCount}`);
+    console.log(`Pages: ${SUBJECT_TARGETS.length + 3}`);
     console.log(`Library sections: ${LIBRARY_SECTIONS.length}`);
     console.log(`Vibe Coding sections: ${VIBE_SECTIONS.length}`);
+    console.log(`Gemini sections: ${GEMINI_SECTIONS.length}`);
     console.log(`Drift: ${driftCount}`);
 
     if (checkOnly) {
@@ -550,8 +733,10 @@ function main() {
             markers = { start: SUBJECT_START_MARKER, end: SUBJECT_END_MARKER };
         } else if (index < libraryEnd) {
             markers = markerPair(LIBRARY_SECTIONS[index - libraryStart].key);
+        } else if (index < vibeEnd) {
+            markers = markerPair(VIBE_SECTIONS[index - vibeStart].key);
         } else {
-            markers = markerPair(VIBE_SECTIONS[index - libraryEnd].key);
+            markers = markerPair(GEMINI_SECTIONS[index - vibeEnd].marker);
         }
         if (!inspectionsByPath.has(inspection.htmlPath)) inspectionsByPath.set(inspection.htmlPath, []);
         inspectionsByPath.get(inspection.htmlPath).push({ inspection, markers });
