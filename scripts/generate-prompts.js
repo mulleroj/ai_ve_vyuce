@@ -30,6 +30,13 @@ const FILTER_KEYS = new Set([
 const SUBJECT_PAGE_BY_PAGE = new Map(SUBJECT_TARGETS.map((target) => [target.page, target]));
 const LIBRARY_SECTION_BY_KEY = new Map(LIBRARY_SECTIONS.map((section) => [section.key, section]));
 const LIBRARY_PAGE = 'prompty.html';
+const VIBE_PAGE = 'vibe-coding-prompty.html';
+
+const VIBE_SECTIONS = [
+    { key: 'VIBE_MAIN', collection: 'vibe-coding-main', count: 10 },
+    { key: 'VIBE_APPENDIX', collection: 'vibe-coding-appendix', count: 1 }
+];
+
 
 const SUBJECT_START_MARKER = '<!-- GENERATED:PROMPTS:START -->';
 const SUBJECT_END_MARKER = '<!-- GENERATED:PROMPTS:END -->';
@@ -234,6 +241,33 @@ const LIBRARY_BADGE_CLASSES = {
     "library-history-diferenciace-v-dejepisu": "badge-orange",
 };
 
+const VIBE_BADGE_CLASSES = {
+    'vibe-interaktivni-kviz': 'badge-mint',
+    'vibe-flashcards': 'badge-purple',
+    'vibe-vyukove-pexeso': 'badge-orange',
+    'vibe-drag-drop-prirazovani': 'badge-blue',
+    'vibe-generator-nahodnych-otazek': 'badge-gold',
+    'vibe-interaktivni-casova-osa': 'badge-purple',
+    'vibe-interaktivni-pracovni-list': 'badge-orange',
+    'vibe-vyukova-unikova-hra': 'badge-purple',
+    'vibe-vyukova-simulace': 'badge-blue',
+    'vibe-vyukova-hra-s-postupem-a-body': 'badge-gold',
+    'vibe-univerzalni-dodatek-bezpecnost': 'badge-mint'
+};
+
+const VIBE_TAG_BADGE_CLASSES = {
+    'vibe-interaktivni-kviz': { 'Kvíz': 'badge-mint', 'Všechny předměty': 'badge-blue' },
+    'vibe-flashcards': { Flashcards: 'badge-purple', 'Opakování': 'badge-green' },
+    'vibe-vyukove-pexeso': { Hra: 'badge-orange', 'Přiřazování': 'badge-mint' },
+    'vibe-drag-drop-prirazovani': { 'Drag & drop': 'badge-blue', 'Dotykové ovládání': 'badge-green' },
+    'vibe-generator-nahodnych-otazek': { Generátor: 'badge-gold', 'Interaktivní tabule': 'badge-purple' },
+    'vibe-interaktivni-casova-osa': { 'Časová osa': 'badge-mint', Dějepis: 'badge-purple' },
+    'vibe-interaktivni-pracovni-list': { 'Pracovní list': 'badge-orange', Vyhodnocení: 'badge-blue' },
+    'vibe-vyukova-unikova-hra': { 'Úniková hra': 'badge-purple', Příběh: 'badge-gold' },
+    'vibe-vyukova-simulace': { Simulace: 'badge-blue', Experimentování: 'badge-mint' },
+    'vibe-vyukova-hra-s-postupem-a-body': { 'Výuková hra': 'badge-gold', Body: 'badge-green' }
+};
+
 function escapeHtml(value) {
     return String(value).replace(/[&<>"']/g, (character) => ({
         '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
@@ -276,7 +310,8 @@ function readPrompts() {
         }
         if (seenIds.has(prompt.id)) throw new Error(`duplicate prompt id: ${prompt.id}`);
         seenIds.add(prompt.id);
-        if (!SUBJECT_PAGE_BY_PAGE.has(prompt.sourcePage) && prompt.sourcePage !== LIBRARY_PAGE) {
+        if (!SUBJECT_PAGE_BY_PAGE.has(prompt.sourcePage) &&
+            prompt.sourcePage !== LIBRARY_PAGE && prompt.sourcePage !== VIBE_PAGE) {
             throw new Error(`${label} has unknown sourcePage: ${prompt.sourcePage}`);
         }
         if (prompt.lead !== undefined && typeof prompt.lead !== 'string') {
@@ -304,6 +339,15 @@ function readPrompts() {
                 throw new Error(`${label} must belong to the prompty collection`);
             }
         }
+        if (prompt.sourcePage === VIBE_PAGE) {
+            if (!prompt.collections.includes('vibe-coding')) {
+                throw new Error(`${label} must belong to the vibe-coding collection`);
+            }
+            const vibeSections = VIBE_SECTIONS.filter((section) => prompt.collections.includes(section.collection));
+            if (vibeSections.length !== 1) {
+                throw new Error(`${label} requires exactly one valid Vibe Coding section collection`);
+            }
+        }
     });
 
     SUBJECT_TARGETS.forEach((target) => {
@@ -313,11 +357,13 @@ function readPrompts() {
         if (count !== 4) throw new Error(`expected exactly 4 prompts for ${target.page}, found ${count}`);
     });
 
-    if (prompts.length !== 165) throw new Error(`expected exactly 165 prompts, found ${prompts.length}`);
-    const subjectCount = prompts.filter((prompt) => prompt.sourcePage !== LIBRARY_PAGE).length;
+    if (prompts.length !== 176) throw new Error(`expected exactly 176 prompts, found ${prompts.length}`);
+    const subjectCount = prompts.filter((prompt) => SUBJECT_PAGE_BY_PAGE.has(prompt.sourcePage)).length;
     const libraryCount = prompts.filter((prompt) => prompt.sourcePage === LIBRARY_PAGE).length;
+    const vibeCount = prompts.filter((prompt) => prompt.sourcePage === VIBE_PAGE).length;
     if (subjectCount !== 20) throw new Error(`expected exactly 20 subject prompts, found ${subjectCount}`);
     if (libraryCount !== 145) throw new Error(`expected exactly 145 library prompts, found ${libraryCount}`);
+    if (vibeCount !== 11) throw new Error(`expected exactly 11 Vibe Coding prompts, found ${vibeCount}`);
     LIBRARY_SECTIONS.forEach((section) => {
         const cards = prompts.filter((prompt) => prompt.librarySection === section.key);
         if (cards.length !== section.count) {
@@ -325,6 +371,14 @@ function readPrompts() {
         }
         if (section.filterKey && cards.some((prompt) => prompt.filterKey !== section.filterKey)) {
             throw new Error(`unexpected filterKey in ${section.key}`);
+        }
+    });
+    VIBE_SECTIONS.forEach((section) => {
+        const cards = prompts.filter((prompt) => (
+            prompt.sourcePage === VIBE_PAGE && prompt.collections.includes(section.collection)
+        ));
+        if (cards.length !== section.count) {
+            throw new Error(`expected ${section.count} prompts in ${section.key}, found ${cards.length}`);
         }
     });
     return prompts;
@@ -339,10 +393,15 @@ function htmlId(prompt) {
 }
 
 function renderCard(prompt, newline, variant) {
-    const metadataBadges = [
-        ...prompt.tools.map((tool) => renderBadge(tool, TOOL_BADGE_CLASSES[tool] || 'badge-gray')),
-        ...prompt.levels.map((level) => renderBadge(level, 'badge-gray'))
-    ].join('');
+    const metadataBadges = variant === 'vibe'
+        ? prompt.tags.map((tag) => renderBadge(
+            tag,
+            VIBE_TAG_BADGE_CLASSES[prompt.id]?.[tag] || 'badge-gray'
+        )).join('')
+        : [
+            ...prompt.tools.map((tool) => renderBadge(tool, TOOL_BADGE_CLASSES[tool] || 'badge-gray')),
+            ...prompt.levels.map((level) => renderBadge(level, 'badge-gray'))
+        ].join('');
     const lead = prompt.lead
         ? `${newline}                                <div class="prompt-lead">${escapeHtml(prompt.lead)}</div>`
         : '';
@@ -352,7 +411,9 @@ function renderCard(prompt, newline, variant) {
     const filterAttribute = prompt.filterKey ? ` data-subject="${escapeHtml(prompt.filterKey)}"` : '';
     const categoryClass = variant === 'library'
         ? (LIBRARY_BADGE_CLASSES[prompt.id] || CATEGORY_BADGE_CLASSES[prompt.category] || 'badge-gray')
-        : (CATEGORY_BADGE_CLASSES[prompt.category] || 'badge-gray');
+        : variant === 'vibe'
+            ? (VIBE_BADGE_CLASSES[prompt.id] || 'badge-gray')
+            : (CATEGORY_BADGE_CLASSES[prompt.category] || 'badge-gray');
     const lines = [
         `                    <div id="${escapeHtml(htmlId(prompt))}" class="prompt-card reveal"${filterAttribute}>`,
         '                        <div class="prompt-header">',
@@ -435,10 +496,19 @@ function main() {
         const cards = prompts.filter((prompt) => prompt.librarySection === section.key);
         inspections.push(inspectTarget(LIBRARY_PAGE, markerPair(section.key), cards, 'library'));
     });
+    VIBE_SECTIONS.forEach((section) => {
+        const cards = prompts.filter((prompt) => (
+            prompt.sourcePage === VIBE_PAGE && prompt.collections.includes(section.collection)
+        ));
+        inspections.push(inspectTarget(VIBE_PAGE, markerPair(section.key), cards, 'vibe'));
+    });
 
     const driftCount = inspections.filter((inspection) => inspection.drift).length;
     const subjectInspections = inspections.slice(0, SUBJECT_TARGETS.length);
-    const libraryInspections = inspections.slice(SUBJECT_TARGETS.length);
+    const libraryStart = SUBJECT_TARGETS.length;
+    const libraryEnd = libraryStart + LIBRARY_SECTIONS.length;
+    const libraryInspections = inspections.slice(libraryStart, libraryEnd);
+    const vibeInspections = inspections.slice(libraryEnd);
     console.log('Prompt generation check');
     console.log('-----------------------');
     console.log('Subject pages:');
@@ -450,12 +520,22 @@ function main() {
         const section = LIBRARY_SECTIONS[index];
         console.log(`${section.key}: ${inspection.drift ? 'DRIFT' : 'OK'} (${inspection.cards.length})`);
     });
+    console.log('Vibe Coding:');
+    const vibeDrift = vibeInspections.some((inspection) => inspection.drift);
+    const vibeCount = vibeInspections.reduce((sum, inspection) => sum + inspection.cards.length, 0);
+    console.log(`${VIBE_PAGE}: ${vibeDrift ? 'DRIFT' : 'OK'} (${vibeCount})`);
+    vibeInspections.forEach((inspection, index) => {
+        const section = VIBE_SECTIONS[index];
+        console.log(`  ${section.key}: ${inspection.drift ? 'DRIFT' : 'OK'} (${inspection.cards.length})`);
+    });
     console.log('Summary:');
     console.log(`Registry prompts: ${prompts.length}`);
     console.log(`Subject prompts: ${subjectInspections.reduce((sum, inspection) => sum + inspection.cards.length, 0)}`);
     console.log(`Library prompts: ${libraryInspections.reduce((sum, inspection) => sum + inspection.cards.length, 0)}`);
-    console.log(`Pages: ${SUBJECT_TARGETS.length + 1}`);
+    console.log(`Vibe Coding prompts: ${vibeCount}`);
+    console.log(`Pages: ${SUBJECT_TARGETS.length + 2}`);
     console.log(`Library sections: ${LIBRARY_SECTIONS.length}`);
+    console.log(`Vibe Coding sections: ${VIBE_SECTIONS.length}`);
     console.log(`Drift: ${driftCount}`);
 
     if (checkOnly) {
@@ -465,9 +545,14 @@ function main() {
     const inspectionsByPath = new Map();
     inspections.forEach((inspection, index) => {
         if (!inspection.drift) return;
-        const markers = index < SUBJECT_TARGETS.length
-            ? { start: SUBJECT_START_MARKER, end: SUBJECT_END_MARKER }
-            : markerPair(LIBRARY_SECTIONS[index - SUBJECT_TARGETS.length].key);
+        let markers;
+        if (index < SUBJECT_TARGETS.length) {
+            markers = { start: SUBJECT_START_MARKER, end: SUBJECT_END_MARKER };
+        } else if (index < libraryEnd) {
+            markers = markerPair(LIBRARY_SECTIONS[index - libraryStart].key);
+        } else {
+            markers = markerPair(VIBE_SECTIONS[index - libraryEnd].key);
+        }
         if (!inspectionsByPath.has(inspection.htmlPath)) inspectionsByPath.set(inspection.htmlPath, []);
         inspectionsByPath.get(inspection.htmlPath).push({ inspection, markers });
     });
