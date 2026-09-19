@@ -46,6 +46,9 @@ function markerPair(collection) {
 }
 const START_MARKER = markerPair(COLLECTIONS[0]).start;
 const END_MARKER = markerPair(COLLECTIONS[0]).end;
+const ACTIVITY_COUNT_PAGE = 'index.html';
+const ACTIVITY_COUNT_START_MARKER = '<!-- GENERATED:ACTIVITY_COUNT:START -->';
+const ACTIVITY_COUNT_END_MARKER = '<!-- GENERATED:ACTIVITY_COUNT:END -->';
 
 function fail(message) { throw new Error(`ERROR: ${message}`); }
 function hasOwn(object, key) { return Object.prototype.hasOwnProperty.call(object, key); }
@@ -307,6 +310,43 @@ function replaceGeneratedRegion(html, region, startMarker = START_MARKER, endMar
     const contentStart = start + startMarker.length;
     return `${html.slice(0, contentStart)}\n${region}\n                    ${html.slice(end)}`;
 }
+
+function getActivityCountParts(html) {
+    const start = html.indexOf(ACTIVITY_COUNT_START_MARKER);
+    const end = html.indexOf(ACTIVITY_COUNT_END_MARKER);
+    if (start === -1 || end === -1 || end < start) fail(`generated activity count markers are missing or out of order in ${ACTIVITY_COUNT_PAGE}`);
+    if (html.indexOf(ACTIVITY_COUNT_START_MARKER, start + ACTIVITY_COUNT_START_MARKER.length) !== -1 ||
+        html.indexOf(ACTIVITY_COUNT_END_MARKER, end + ACTIVITY_COUNT_END_MARKER.length) !== -1) {
+        fail(`generated activity count markers must occur exactly once in ${ACTIVITY_COUNT_PAGE}`);
+    }
+    const lastNewline = html.lastIndexOf('\n', end);
+    const endIndent = html.slice(lastNewline + 1, end);
+    if (!/^\s*$/.test(endIndent)) fail(`activity count end marker must be on its own indented line in ${ACTIVITY_COUNT_PAGE}`);
+    return {
+        newline: html.includes('\r\n') ? '\r\n' : '\n',
+        endIndent,
+        currentRegion: html.slice(start + ACTIVITY_COUNT_START_MARKER.length, end),
+        start,
+        end
+    };
+}
+
+function buildActivityCountRegion(activityCount, parts) {
+    return `${parts.newline}${parts.endIndent}<div class="stat-number home-stat-blue" data-target="${activityCount}">${activityCount}</div>${parts.newline}${parts.endIndent}`;
+}
+
+function inspectActivityCount(activityCount) {
+    const htmlPath = path.join(ROOT, ACTIVITY_COUNT_PAGE);
+    const html = fs.readFileSync(htmlPath, 'utf8');
+    const parts = getActivityCountParts(html);
+    const expectedRegion = buildActivityCountRegion(activityCount, parts);
+    return { page: ACTIVITY_COUNT_PAGE, htmlPath, html, parts, expectedRegion, drift: parts.currentRegion !== expectedRegion };
+}
+
+function replaceActivityCountRegion(inspection) {
+    const { html, parts, expectedRegion } = inspection;
+    return `${html.slice(0, parts.start + ACTIVITY_COUNT_START_MARKER.length)}${expectedRegion}${html.slice(parts.end)}`;
+}
 function readJson(filePath) {
     try { return JSON.parse(fs.readFileSync(filePath, 'utf8')); }
     catch (error) { fail(`cannot read valid JSON from ${filePath}: ${error.message}`); }
@@ -322,6 +362,7 @@ function main() {
     const records = readJson(DATA_PATH);
     const promptRegistry = readJson(PROMPTS_PATH);
     validateActivities(records, promptRegistry);
+    const activityCountInspection = inspectActivityCount(records.length);
     const targets = getTargets();
     let totalDrift = 0;
     console.log('Activity generation check');
@@ -345,11 +386,35 @@ function main() {
             console.log('Drift: 0');
         }
     });
+    console.log('Homepage activity count:');
+    console.log(`${activityCountInspection.page}: ${activityCountInspection.drift ? 'DRIFT' : 'OK'} (${records.length})`);
+    if (checkOnly) {
+        totalDrift += activityCountInspection.drift ? 1 : 0;
+        if (activityCountInspection.drift) fail('homepage activity count is out of date');
+    }
+    if (!checkOnly && activityCountInspection.drift) {
+        fs.writeFileSync(activityCountInspection.htmlPath, replaceActivityCountRegion(activityCountInspection), 'utf8');
+        console.log(`Updated: ${path.relative(ROOT, activityCountInspection.htmlPath)}`);
+    }
     console.log(`Collections: ${targets.length}`);
     console.log(`Total activities: ${records.length}`);
+    console.log(`Registry activities: ${records.length}`);
     console.log(`Drift: ${totalDrift}`);
 }
 if (require.main === module) {
     try { main(); } catch (error) { console.error(error.message); process.exitCode = 1; }
 }
-module.exports = { COLLECTIONS, EXPECTED_IDS, START_MARKER, END_MARKER, buildRegion, replaceGeneratedRegion, validateActivities };
+module.exports = {
+    COLLECTIONS,
+    EXPECTED_IDS,
+    START_MARKER,
+    END_MARKER,
+    ACTIVITY_COUNT_PAGE,
+    ACTIVITY_COUNT_START_MARKER,
+    ACTIVITY_COUNT_END_MARKER,
+    buildRegion,
+    replaceGeneratedRegion,
+    buildActivityCountRegion,
+    inspectActivityCount,
+    validateActivities
+};
