@@ -12,11 +12,12 @@ const COLLECTIONS = [
     { id: 'cestina', file: 'cestina.html', marker: 'CESTINA', expectedIds: ['czech-essay-feedback', 'czech-dictation-generator', 'czech-literary-analysis', 'czech-spelling-word-exercises', 'czech-matura-oral-exam', 'czech-writing-form-guide'] },
     { id: 'anglictina', file: 'anglictina.html', marker: 'ANGLICTINA', expectedIds: ['english-conversation-partner', 'english-grammar-feedback', 'english-vocabulary-builder', 'english-cambridge-exam-practice', 'english-grammar-exercises', 'english-contextual-translation'] },
     { id: 'prirodoveda', file: 'prirodoveda.html', marker: 'PRIRODOVEDA', expectedIds: ['biology-virtual-lab-experiment', 'chemistry-equation-guide', 'physics-phenomenon-analogies-explainer', 'biology-animal-encyclopedia', 'physics-problem-solver', 'chemistry-elements-compounds-quiz'] },
-    { id: 'dejepis', file: 'dejepis.html', marker: 'DEJEPIS', expectedIds: ['history-roleplay-historical-person', 'history-timeline-generator', 'history-debate-pro-con', 'history-period-newspaper', 'history-source-analysis', 'history-map-analysis'] }
+    { id: 'dejepis', file: 'dejepis.html', marker: 'DEJEPIS', expectedIds: ['history-roleplay-historical-person', 'history-timeline-generator', 'history-debate-pro-con', 'history-period-newspaper', 'history-source-analysis', 'history-map-analysis'] },
+    { id: 'activities-main', file: 'aktivity.html', marker: 'MAIN', expectedIds: ['math-real-life-word-problems', 'math-ai-tutor', 'math-data-analysis', 'czech-essay-workshop', 'czech-dictation-activity', 'czech-literary-analysis-class', 'english-conversation-activity', 'english-essay-feedback', 'science-virtual-lab-simulation', 'physics-phenomenon-analogies-class', 'history-roleplay-classroom', 'history-class-timeline', 'general-prompt-power-up-relay', 'general-fact-or-fiction'] }
 ];
 const COLLECTION_BY_ID = new Map(COLLECTIONS.map(collection => [collection.id, collection]));
 const EXPECTED_IDS = COLLECTIONS.flatMap(collection => collection.expectedIds);
-const ALLOWED_SUBJECTS = new Set(['mat', 'cj', 'aj', 'pv', 'dej']);
+const ALLOWED_SUBJECTS = new Set(['mat', 'cj', 'aj', 'pv', 'dej', 'obecne']);
 const ALLOWED_SUBSUBJECTS = new Set(['bio', 'che', 'fyz']);
 const ALLOWED_LEVELS = new Set(['zs1', 'zs2', 'ss']);
 const ALLOWED_TOOLS = new Set(['chatgpt', 'claude', 'gemini']);
@@ -26,6 +27,10 @@ const FORMAT_LABELS = new Map([
 ]);
 const LEVEL_LABELS = new Map([['zs1', '1.–5. ročník'], ['zs2', '6.–9. ročník'], ['ss', 'SŠ']]);
 const SUBJECT_LABELS = new Map([['bio', 'Biologie'], ['che', 'Chemie'], ['fyz', 'Fyzika']]);
+const MAIN_SUBJECT_LABELS = new Map([
+    ['mat', ['Matematika', 'badge-blue']], ['cj', ['Čeština', 'badge-blue']], ['aj', ['Angličtina', 'badge-blue']],
+    ['pv', ['Přírodní vědy', 'badge-green']], ['dej', ['Dějepis', 'badge-purple']]
+]);
 const TOOL_BADGES = new Map([
     ['chatgpt', ['ChatGPT', 'badge-gold']], ['claude', ['Claude', 'badge-purple']], ['gemini', ['Gemini', 'badge-mint']]
 ]);
@@ -69,12 +74,37 @@ function validateDetail(detail, index) {
     if (detail === undefined) return;
     if (!detail || typeof detail !== 'object' || Array.isArray(detail)) fail(`record ${index + 1}: detail must be an object`);
     Object.keys(detail).forEach(key => {
-        if (!['intro', 'modalTitle'].includes(key)) fail(`record ${index + 1}: unsupported detail field ${key}`);
+        if (!['intro', 'modalTitle', 'modalId', 'ctaLabel', 'levelLabel'].includes(key)) fail(`record ${index + 1}: unsupported detail field ${key}`);
         assertNonEmptyString(detail[key], `detail.${key}`, index);
     });
 }
 
-function validateActivities(records, promptRegistry) {
+function validateModalReferences(records, html) {
+    const modalIds = new Set();
+    records.filter(record => record.collections?.[0]?.id === 'activities-main').forEach((record, index) => {
+        const modalId = record.detail && record.detail.modalId;
+        if (modalId === undefined) return;
+        if (!/^[A-Za-z][A-Za-z0-9_-]*$/.test(modalId)) fail(`main record ${index + 1}: invalid detail.modalId ${JSON.stringify(modalId)}`);
+        if (modalIds.has(modalId)) fail(`duplicate modalId ${modalId}`);
+        modalIds.add(modalId);
+        const targetPattern = new RegExp(`(?:id|name)=["']${modalId.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}["']`);
+        if (!targetPattern.test(html)) fail(`main record ${index + 1}: modalId ${modalId} does not exist in aktivity.html`);
+    });
+}
+
+function validateRelatedPromptReferences(records, promptRegistry) {
+    const prompts = promptMap(promptRegistry);
+    const promptyPath = path.join(ROOT, 'prompty.html');
+    const promptyHtml = fs.readFileSync(promptyPath, 'utf8');
+    records.filter(record => record.collections?.[0]?.id === 'activities-main' && hasOwn(record, 'relatedPromptId')).forEach((record, index) => {
+        const prompt = prompts.get(record.relatedPromptId);
+        if (!prompt || prompt.sourcePage !== 'prompty.html') fail(`main record ${index + 1}: relatedPromptId ${record.relatedPromptId} must target prompty.html`);
+        const fragmentPattern = new RegExp(`(?:id|name)=["']${record.relatedPromptId.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}["']`);
+        if (!fragmentPattern.test(promptyHtml)) fail(`main record ${index + 1}: related prompt fragment ${record.relatedPromptId} is missing from prompty.html`);
+    });
+}
+
+function validateActivities(records, promptRegistry, mainHtml = fs.readFileSync(path.join(ROOT, 'aktivity.html'), 'utf8')) {
     if (!Array.isArray(records)) fail('data/activities.json must contain an array');
     if (records.length !== EXPECTED_IDS.length) fail(`expected exactly ${EXPECTED_IDS.length} activities, got ${records.length}`);
     const prompts = promptMap(promptRegistry);
@@ -94,13 +124,14 @@ function validateActivities(records, promptRegistry) {
         assertNonEmptyString(record.description, 'description', index);
         assertAllowedArray(record.subjects, 'subjects', ALLOWED_SUBJECTS, index);
         if (record.subjects.length !== 1) fail(`record ${index + 1}: exactly one main subject is required`);
+        if (record.collections?.[0]?.id !== 'activities-main' && record.subjects[0] === 'obecne') fail(`record ${index + 1}: obecne subject is only valid in activities-main`);
         assertAllowedArray(record.levels, 'levels', ALLOWED_LEVELS, index);
         assertAllowedArray(record.tools, 'tools', ALLOWED_TOOLS, index);
         if (record.tools.length !== 1) fail(`record ${index + 1}: exactly one tool is required`);
         if (hasOwn(record, 'subsubjects')) {
             assertAllowedArray(record.subsubjects, 'subsubjects', ALLOWED_SUBSUBJECTS, index);
             if (record.subjects[0] !== 'pv') fail(`record ${index + 1}: subsubjects are only valid for subject pv`);
-        } else if (record.subjects[0] === 'pv') fail(`record ${index + 1}: subject pv requires subsubjects`);
+        } else if (record.subjects[0] === 'pv' && record.collections?.[0]?.id !== 'activities-main') fail(`record ${index + 1}: subject pv requires subsubjects`);
         assertNonEmptyString(record.duration, 'duration', index);
         if (!FORMAT_LABELS.has(record.format)) fail(`record ${index + 1}: invalid format ${JSON.stringify(record.format)}`);
         if (!STATUS_BADGES.has(record.status)) fail(`record ${index + 1}: invalid status ${JSON.stringify(record.status)}`);
@@ -137,6 +168,13 @@ function validateActivities(records, promptRegistry) {
             record.badges.forEach(badge => assertNonEmptyString(badge, 'badges[]', index));
         }
         validateDetail(record.detail, index);
+        if (record.collections[0].id === 'activities-main') {
+            if (!hasPrompt || hasPromptId) fail(`record ${index + 1}: main activities must use their own prompt`);
+            if (!record.detail || !hasOwn(record.detail, 'ctaLabel')) fail(`record ${index + 1}: main activities require detail.ctaLabel`);
+            if (record.relatedPromptId === undefined && !record.detail.modalId) fail(`record ${index + 1}: main activity needs relatedPromptId or detail.modalId`);
+            if (record.relatedPromptId !== undefined && record.detail.modalId !== undefined) fail(`record ${index + 1}: main activity cannot combine relatedPromptId and detail.modalId`);
+        }
+        if (hasOwn(record, 'tags')) assertAllowedArray(record.tags, 'tags', new Set(record.tags), index);
         const exactRecord = JSON.stringify(record);
         if (serialized.has(exactRecord)) fail(`duplicate activity record at position ${index + 1}`);
         serialized.add(exactRecord);
@@ -146,6 +184,12 @@ function validateActivities(records, promptRegistry) {
         if (collectionOrders.get(collection.id).size !== collection.expectedIds.length) fail(`collection ${collection.id} orders must be unique`);
     });
     if (ids.size !== EXPECTED_IDS.length) fail('activity ids must be unique');
+    const promptIdCount = records.filter(record => hasOwn(record, 'promptId')).length;
+    const relatedPromptCount = records.filter(record => hasOwn(record, 'relatedPromptId')).length;
+    if (promptIdCount !== 0) fail(`expected 0 promptId references, got ${promptIdCount}`);
+    if (relatedPromptCount !== 12) fail(`expected 12 relatedPromptId references, got ${relatedPromptCount}`);
+    validateRelatedPromptReferences(records, promptRegistry);
+    validateModalReferences(records, mainHtml);
     return records;
 }
 
@@ -196,9 +240,63 @@ function buildCard(record, prompts) {
                         </div>
                     </div>`;
 }
+const MAIN_BADGE_CLASSES = new Map([
+    ['⚡ Icebreaker', 'badge-gold'], ['6.–9. · SŠ', 'badge-gray'], ['Prompt skills', 'badge-purple'],
+    ['🎮 AI hra', 'badge-blue'], ['6.–9.', 'badge-gray'], ['Mediální gramotnost', 'badge-purple']
+]);
+const MAIN_CARD_STYLES = new Map([
+    ['general-prompt-power-up-relay', ' style="border-color:rgba(245,166,35,0.3);background:rgba(245,166,35,0.03)"'],
+    ['general-fact-or-fiction', ' style="border-color:rgba(52,152,219,0.3);background:rgba(52,152,219,0.03)"']
+]);
+const MAIN_EXTRA_META = new Map([
+    ['general-prompt-power-up-relay', '✏️ 2 min příprava'], ['general-fact-or-fiction', '✏️ 2 min příprava']
+]);
+function mainLevelLabel(record) {
+    if (record.detail && record.detail.levelLabel) return record.detail.levelLabel;
+    return levelLabel(record.levels).replace(' ročník', '').replace(' / ', ' · ');
+}
+function mainSubjectBadge(record) {
+    const subject = MAIN_SUBJECT_LABELS.get(record.subjects[0]);
+    return subject ? `<span class="badge ${subject[1]}">${escapeHtml(subject[0])}</span>` : '';
+}
+function mainBadgeMarkup(record) {
+    if (record.subjects[0] !== 'obecne') {
+        return `${mainSubjectBadge(record)}<span class="badge badge-gray">${escapeHtml(mainLevelLabel(record))}</span>`;
+    }
+    return (record.badges || []).map(label => `<span class="badge ${MAIN_BADGE_CLASSES.get(label) || 'badge-gray'}">${escapeHtml(label)}</span>`).join('');
+}
+function mainCtaMarkup(record) {
+    const ctaLabel = record.detail.ctaLabel;
+    if (record.relatedPromptId) {
+        return `<a href="${escapeAttribute(`prompty.html#${record.relatedPromptId}`)}" class="activity-template-link btn btn-outline btn-sm">${escapeHtml(ctaLabel)}</a>`;
+    }
+    const modalId = record.detail.modalId;
+    const onclick = `document.getElementById(${JSON.stringify(modalId)}).classList.add('open')`;
+    const modalLabel = ctaLabel.replace(' →', '\n                                →');
+    return `<button class="btn btn-primary btn-sm" onclick="${escapeAttribute(onclick)}">${escapeHtml(modalLabel)}</button>`;
+}
+function buildMainCard(record) {
+    const tool = TOOL_BADGES.get(record.tools[0]);
+    const status = STATUS_BADGES.get(record.status);
+    const style = MAIN_CARD_STYLES.get(record.id) || '';
+    const cardAttributes = `data-subject="${escapeAttribute(record.subjects[0])}" data-level="${escapeAttribute(record.levels.join(' '))}" data-tool="${escapeAttribute(record.tools[0])}"`;
+    return `                    <div class="activity-card reveal" ${cardAttributes}${style}>
+                        <div class="activity-card-top">
+                            <div class="activity-badges">${record.subjects[0] === 'obecne' ? '' : `<span class="badge ${tool[1]}">${escapeHtml(tool[0])}</span>`}${mainBadgeMarkup(record)}</div>
+                            <span style="font-size:1.8rem">${escapeHtml(record.icon)}</span>
+                        </div>
+                        <div class="activity-title">${escapeHtml(record.title)}</div>
+                        <div class="activity-desc">${escapeHtml(record.description)}</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ ${escapeHtml(record.duration)}</span><span
+                                class="activity-meta-item">${escapeHtml(formatLabel(record))}</span>${MAIN_EXTRA_META.has(record.id) ? `<span class="activity-meta-item">${escapeHtml(MAIN_EXTRA_META.get(record.id))}</span>` : ''}</div>
+                        <div class="activity-footer"><span class="badge ${status[1]}">${escapeHtml(status[0])}</span><div class="activity-footer-actions">${mainCtaMarkup(record)}<button class="copy-btn btn btn-mint btn-sm"
+                                data-copy="${escapeAttribute(record.prompt)}">📋 Kopírovat</button></div></div>
+                    </div>`;
+}
 function buildRegion(records, promptRegistry, collectionId) {
     const prompts = promptMap(promptRegistry);
     const selectedRecords = collectionId ? records.filter(record => record.collections[0].id === collectionId).sort((a, b) => a.collections[0].order - b.collections[0].order) : records;
+    if (collectionId === 'activities-main') return selectedRecords.map(buildMainCard).join('\n\n');
     return selectedRecords.map(record => buildCard(record, prompts)).join('\n\n');
 }
 function replaceGeneratedRegion(html, region, startMarker = START_MARKER, endMarker = END_MARKER) {
