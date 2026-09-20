@@ -5,6 +5,43 @@
  */
 window.siteArticles = [
   {
+    href: 'ai-novinka-gemini-desktop-chatgpt-word-agenti.html',
+    title: 'AI ve vzdělávání: Gemini na Windows, ChatGPT ve Wordu a nové hranice pro AI agenty',
+    summary: 'Gemini přichází na Windows, ChatGPT do Wordu a Gemini Notebook rozšiřuje studijní možnosti. Praktické souvislosti pro učitele, oprávnění a ochranu školních dat.',
+    category: 'Novinka',
+    date: '2026-09-18',
+    dateLabel: '18. září 2026',
+    icon: '📰',
+    tags: ['Gemini', 'ChatGPT ve Wordu', 'AI agenti'],
+    badgeClass: 'badge-blue'
+  },
+  {
+    href: 'gemini-desktop-navod-pro-ucitele.html',
+    title: 'Gemini Desktop pro učitele: instalace a první kroky ve Windows',
+    platforms: ['gemini'],
+    summary: 'Praktický návod na instalaci Gemini pro Windows, použití zkratky Alt + Space a první učitelské workflow včetně školního účtu a bezpečnosti.',
+    category: 'Návod',
+    contentType: 'tool-guide',
+    date: '2026-09-18',
+    dateLabel: '18. září 2026',
+    icon: '📱',
+    tags: ['Gemini Desktop', 'Windows', 'Alt + Space'],
+    badgeClass: 'badge-blue'
+  },
+  {
+    href: 'google-ai-studio-2026-vibe-coding.html',
+    title: 'Google AI Studio 2026: od jednoduchého promptu k celé aplikaci',
+    platforms: ['gemini'],
+    summary: 'Praktický pohled na Build mode, vibe coding, GitHub, Google Workspace, API klíče a bezpečný vývoj vlastní výukové aplikace.',
+    category: 'Vibe Coding',
+    contentType: 'workflow',
+    date: '2026-09-18',
+    dateLabel: '18. září 2026',
+    icon: '💻',
+    tags: ['Google AI Studio', 'Vibe Coding', 'GitHub'],
+    badgeClass: 'badge-purple'
+  },
+  {
     href: 'ai-novinka-filozofovani-s-ai-chybejici-role.html',
     title: 'AI možná nevezme učitelům práci. Možná nám ukáže, kolik lidí nám celou dobu chybělo',
     summary: 'Druhý díl autorské série o tom, jak AI odhaluje práci a podpůrné role, které lidé vykonávali bez podpory a pro které jsme nikdy nevytvořili samostatné místo.',
