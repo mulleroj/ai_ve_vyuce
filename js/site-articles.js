@@ -5,6 +5,17 @@
  */
 window.siteArticles = [
   {
+    href: 'ai-ziva-hlasova-ai-ve-vyuce.html',
+    title: 'Když AI začne skutečně naslouchat: živá hlasová umělá inteligence ve výuce',
+    summary: 'Praktické aktivity pro cizí jazyky, pracovní pohovor, odbornou komunikaci, argumentaci, vysvětlování i nácvik obtížných situací.',
+    category: 'AI ve vzdělávání',
+    date: '2026-09-21',
+    dateLabel: '21. září 2026',
+    icon: '🎙️',
+    tags: ['Hlasová AI', 'Komunikace', 'Výuka'],
+    badgeClass: 'badge-blue'
+  },
+  {
     href: 'ai-novinka-gemini-desktop-chatgpt-word-agenti.html',
     title: 'AI ve vzdělávání: Gemini na Windows, ChatGPT ve Wordu a nové hranice pro AI agenty',
     summary: 'Gemini přichází na Windows, ChatGPT do Wordu a Gemini Notebook rozšiřuje studijní možnosti. Praktické souvislosti pro učitele, oprávnění a ochranu školních dat.',
