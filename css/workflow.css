@@ -566,6 +566,79 @@ body.workflow-page {
   font-size: 0.7rem;
 }
 
+.workflow-page .article-table-wrap {
+  margin: 28px 0 34px;
+  overflow-x: auto;
+  border: 1px solid var(--workflow-line);
+  border-radius: 14px;
+}
+
+.workflow-page .article-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  color: var(--workflow-ink);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.workflow-page .article-table th,
+.workflow-page .article-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--workflow-line);
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.workflow-page .article-table th {
+  background: rgba(0, 212, 168, 0.08);
+  color: var(--workflow-teal);
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.workflow-page .article-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.workflow-page .article-bonus {
+  margin: 64px 0 0;
+  padding: 6px 26px 26px;
+  border: 1px solid rgba(167, 122, 255, 0.42);
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(111, 74, 180, 0.18), rgba(10, 15, 30, 0.72));
+}
+
+.workflow-page .article-bonus summary {
+  padding: 20px 0;
+  color: #dfd3ff;
+  cursor: pointer;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: clamp(1.25rem, 2.6vw, 1.8rem);
+  font-weight: 800;
+  list-style-position: outside;
+}
+
+.workflow-page .article-bonus summary::marker {
+  color: #b892ff;
+}
+
+.workflow-page .article-bonus summary:focus-visible {
+  outline: 2px solid var(--workflow-yellow);
+  outline-offset: 4px;
+}
+
+.workflow-page .article-bonus[open] summary {
+  border-bottom: 1px solid rgba(167, 122, 255, 0.28);
+  margin-bottom: 26px;
+}
+
+.workflow-page .article-bonus h2 {
+  margin-top: 34px;
+}
+
 .workflow-related {
   padding-top: 86px;
 }

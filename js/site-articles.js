@@ -5,6 +5,17 @@
  */
 window.siteArticles = [
   {
+    href: 'neplytvej-inteligenci-ai-modely.html',
+    title: 'Neplýtvej inteligencí: Proč nemusí každý úkol řešit nejsilnější AI model',
+    summary: 'Šest principů efektivnější práce s AI, rozdělení úkolů podle náročnosti a praktické prompty pro učitele i pokročilé uživatele.',
+    category: 'AI V PRAXI',
+    date: '2026-09-23',
+    dateLabel: '23. září 2026',
+    icon: '🧠',
+    tags: ['Efektivita', 'Prompty', 'AI agenti'],
+    badgeClass: 'badge-gold'
+  },
+  {
     href: 'ai-ziva-hlasova-ai-ve-vyuce.html',
     title: 'Když AI začne skutečně naslouchat: živá hlasová umělá inteligence ve výuce',
     summary: 'Praktické aktivity pro cizí jazyky, pracovní pohovor, odbornou komunikaci, argumentaci, vysvětlování i nácvik obtížných situací.',
