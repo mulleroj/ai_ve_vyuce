@@ -5,6 +5,33 @@
  */
 window.siteArticles = [
   {
+    href: 'notebooklm-hlasovy-rozhovor-nad-zdroji.html',
+    title: 'Když AI zná naše učivo: hlasový rozhovor nad zdroji v NotebookLM',
+    summary: 'Jak se liší obecný rozhovor s AI od studijního rozhovoru nad materiály, které vybral učitel, a jak připravit bezpečný pilot ve výuce.',
+    platforms: ['gemini'],
+    category: 'Gemini Notebook',
+    contentType: 'workflow',
+    date: '2026-09-23',
+    dateLabel: '23. září 2026',
+    icon: '📓',
+    tags: ['Gemini Notebook', 'Vlastní zdroje', 'Hlasový rozhovor'],
+    badgeClass: 'badge-blue'
+  },
+  {
+    href: 'uci-se-zak-nebo-za-nej-premysli-ai.html',
+    title: 'Učí se žák, nebo za něj přemýšlí AI?',
+    summary: 'Jak poznat, kdy umělá inteligence podporuje učení a kdy už přebírá práci studenta.',
+    category: 'Filozofování s AI',
+    series: 'Filozofování s AI',
+    seriesNumber: 3,
+    contentType: 'philosophy',
+    date: '2026-09-23',
+    dateLabel: '23. září 2026',
+    icon: '💬',
+    tags: ['Filozofování s AI · #3', 'Učení', 'Kognitivní odlehčení'],
+    badgeClass: 'badge-gold'
+  },
+  {
     href: 'neplytvej-inteligenci-ai-modely.html',
     title: 'Neplýtvej inteligencí: Proč nemusí každý úkol řešit nejsilnější AI model',
     summary: 'Šest principů efektivnější práce s AI, rozdělení úkolů podle náročnosti a praktické prompty pro učitele i pokročilé uživatele.',
