@@ -18,6 +18,12 @@
   box-sizing: border-box;
 }
 
+html,
+* {
+  scrollbar-color: var(--workflow-orange) var(--workflow-night);
+  scrollbar-width: thin;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -33,6 +39,28 @@ body.workflow-page {
 
 .workflow-page a {
   color: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--workflow-night);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--workflow-orange);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--workflow-yellow);
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--workflow-night);
 }
 
 .workflow-shell {

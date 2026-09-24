@@ -61,6 +61,12 @@
   padding: 0;
 }
 
+html,
+* {
+  scrollbar-color: var(--accent-gold) var(--bg-primary);
+  scrollbar-width: thin;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -119,6 +125,7 @@ select {
 /* ── Scrollbar ── */
 ::-webkit-scrollbar {
   width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -128,6 +135,14 @@ select {
 ::-webkit-scrollbar-thumb {
   background: var(--accent-gold);
   border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f7c56b;
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--bg-primary);
 }
 
 /* ── Layout ── */
