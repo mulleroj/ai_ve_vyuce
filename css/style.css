@@ -1934,6 +1934,30 @@ select {
   color: var(--text-primary);
 }
 
+/* ── Shared HUMAN IN THE LOOP footer mark ── */
+.site-footer-mark {
+  display: block;
+  max-width: 100%;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: clamp(0.64rem, 1.5vw, 0.72rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.footer-bottom .site-footer-mark {
+  flex: 0 1 auto;
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+  text-align: right;
+}
+
 /* ── Animations ── */
 @keyframes fadeInDown {
   from {
@@ -2027,6 +2051,10 @@ select {
   .footer-bottom {
     flex-direction: column;
     gap: 12px;
+    text-align: center;
+  }
+
+  .footer-bottom .site-footer-mark {
     text-align: center;
   }
 

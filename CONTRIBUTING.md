@@ -37,18 +37,24 @@ Počet promptů se odvozuje z délky `data/prompts.json` a počet aktivit z dél
 
 `node scripts/validate-content.js` kontroluje strukturu katalogu, lokální cíle, duplicity, odkazy a možné opomenutí článku. Nenahrazuje redakční porovnání metadat s detailní stránkou. Pro články proto nevytvářejte nový generátor.
 
+## Společná patička
+
+Každá veřejná HTML stránka musí před `</body>` načítat `js/site-footer.js` (u stránek v podsložce odpovídající relativní cestu, například `../js/site-footer.js`). Skript centrálně vykresluje označení `AI + 👤 | HUMAN IN THE LOOP` do existující patičky a u workflow stránky bez patičky ji vytvoří. Novou stránku založte podle tohoto standardu a ověřte ji příkazem `node scripts/check-site-footer.js`.
+
 ## Kontrola před commitem
 
 ```bash
 node scripts/generate-prompts.js --check
 node scripts/generate-activities.js --check
 node scripts/validate-content.js
+node scripts/check-site-footer.js
 
 node --check scripts/generate-prompts.js
 node --check scripts/generate-activities.js
 node --check scripts/validate-content.js
 node --check js/main.js
 node --check js/site-articles.js
+node --check js/site-footer.js
 
 git diff --check
 git status --short
