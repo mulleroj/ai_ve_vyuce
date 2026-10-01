@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Gemini Skills pro učitele: návod krok za krokem | AI ve výuce</title>
+<meta name="description" content="Co jsou Gemini Skills, jak si učitel vytvoří první Skill a jak jej použít při práci s výukovými materiály a Gemini Notebookem. Praktický návod krok za krokem.">
+<link rel="stylesheet" href="css/workflow.css?v=20261001-skills">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ai-ve-vyuce.netlify.app/gemini-skills-pro-ucitele">
+<meta property="og:title" content="Gemini Skills pro učitele: jednou nastavíte, pak už Gemini ví, jak má pracovat">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ai-ve-vyuce.netlify.app/gemini-skills-pro-ucitele">
+<meta property="og:image" content="https://ai-ve-vyuce.netlify.app/images/gemini-skills-pro-ucitele.png">
+<meta property="article:published_time" content="2026-10-01">
+</head>
+<body class="workflow-page tool-guide-page gemini-skills-page">
+<header class="workflow-shell">
+<div class="workflow-topbar"><a href="index.html" class="nav-logo">
+<div class="nav-logo-icon">🤖</div>AI ve <span>Výuce</span></a><a class="workflow-back" href="ai.html">← Rozcestník AI</a>
+</div>
+<div class="workflow-hero">
+<div>
+<div class="workflow-eyebrow">Nástroj krok za krokem · pro učitele ZŠ a SŠ</div>
+<h1>Gemini Skills pro učitele: jednou nastavíte, pak už Gemini ví, jak má pracovat</h1>
+<p class="workflow-hero-lead">Uložte pravidla jednou. Potom zadejte jen aktuální úkol a zkontrolujte výsledek.</p>
+<div class="workflow-meta"><span>Začátečník</span><span>Gemini</span><span><time datetime="2026-10-01">1. října 2026</time></span>
+</div>
+</div>
+<div class="workflow-route">
+<div class="workflow-stage"><span class="workflow-stage-number">01</span>
+<div><strong>Zdroj</strong><small>Obsah a fakta</small>
+</div>
+</div>
+<div class="workflow-stage"><span class="workflow-stage-number">02</span>
+<div><strong>Skill</strong><small>Uložená pravidla práce</small>
+</div>
+</div>
+<div class="workflow-stage"><span class="workflow-stage-number">03</span>
+<div><strong>Prompt a kontrola</strong><small>Aktuální zadání a rozhodnutí učitele</small>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="workflow-main">
+<article class="workflow-article">
+<div class="workflow-article-intro">
+<p class="workflow-article-summary">První Skill vytvoříte bez programování. Níže najdete celý postup i tři texty ke zkopírování.</p>
+</div>
+<figure class="article-figure"><img src="images/gemini-skills-pro-ucitele.png" width="1536" height="1024" alt="Notebook poskytuje zdroje, Skill pravidla práce a prompt aktuální úkol; učitel výsledný materiál zkontroluje." decoding="async"><figcaption>Princip práce se zdroji, pravidly a aktuálním úkolem. Infografika vysvětluje role, nikoli dostupnost tlačítek na každém účtu.</figcaption>
+</figure>
+<nav class="article-toc" aria-labelledby="toc-title">
+<p class="article-toc-label" id="toc-title">V tomto článku</p>
+<ul>
+<li><a href="#co-je-skill">Co je Gemini Skill</a></li>
+<li><a href="#tri-casti">Prompt, Skill a Notebook: tři různé role</a></li>
+<li><a href="#dostupnost">Stav k 1. 10. 2026</a></li>
+<li><a href="#prvni-skill">Vytvoříme první Skill: Pracuj pouze ze zdrojů</a></li>
+<li><a href="#hotovy-skill">Hotový Skill: Pracuj pouze ze zdrojů</a></li>
+<li><a href="#popis">Proč je popis tak důležitý</a></li>
+<li><a href="#pouziti">Jak Skill použít</a></li>
+<li><a href="#workflow">Celý postup: pracovní list na present simple</a></li>
+<li><a href="#notebook">Gemini Notebook + Skills</a></li>
+<li><a href="#kombinace">Skills jako stavebnice</a></li>
+<li><a href="#chyby">Pět častých chyb</a></li>
+<li><a href="#kam-co">Co patří do Skillu a co do Notebooku</a></li>
+<li><a href="#data">Bezpečnost a školní data</a></li>
+<li><a href="#checklist">Můj první Skill – kontrolní seznam</a></li>
+<li><a href="#co-dal">Co dál?</a></li>
+<li><a href="#zdroje">Zdroje a další informace</a></li>
+</ul>
+</nav>
+<div class="article-content">
+<p class="article-lead">Možná Gemini při přípravě výuky pořád píšete: „Pracuj pouze s přiloženými materiály. Nic si nevymýšlej. Pokud odpověď ve zdrojích není, přiznej to.“</p>
+<p><strong>A co kdybychom to Gemini řekli jen jednou?</strong> Uložený Skill umožňuje stejný pracovní postup používat opakovaně. Ukážeme si jeden, který využijete v různých předmětech.</p>
+<section aria-labelledby="co-je-skill">
+<h2 id="co-je-skill">Co je Gemini Skill</h2>
+<p>Skill (dovednost) je uložená sada instrukcí, pravidel, pracovního postupu a požadavků na podobu výstupu. Může zahrnovat i referenční soubory. <strong>Říká Gemini hlavně JAK má pracovat:</strong> třeba jak kontrolovat fakta, sestavit test nebo naplánovat 45minutovou hodinu.</p>
+<p>Není to samostatná AI, nový model, databáze znalostí ani ochrana proti všem chybám.</p><blockquote>Prompt je lístek s instrukcí, který někomu pokaždé znovu podáte. Skill je pracovní postup uložený v šanonu, který může používat opakovaně.</blockquote>
+</section>
+<section aria-labelledby="tri-casti">
+<h2 id="tri-casti">Prompt, Skill a Notebook: tři různé role</h2>
+<div class="tool-guide-use-grid">
+<div class="tool-guide-use-card">
+<h3>Prompt</h3>
+<p>Co chci právě teď.</p>
+<p>„Vytvoř pracovní list na present simple.“</p>
+</div>
+<div class="tool-guide-use-card">
+<h3>Skill</h3>
+<p>Jak chci, aby Gemini tento druh práce provádělo pokaždé.</p>
+<p>„Pracovní list musí mít jasné instrukce, postupnou obtížnost a řešení pro učitele.“</p>
+</div>
+<div class="tool-guide-use-card">
+<h3>Gemini Notebook</h3>
+<p>Z jakých podkladů má Gemini vycházet.</p>
+<p>Student’s Book, Workbook, vlastní poznámky a metodické materiály.</p>
+</div>
+</div><blockquote><strong>Notebook = CO Gemini ví pro tento projekt.<br>Skill = JAK má s tímto obsahem pracovat.<br>Prompt = CO po něm chci právě teď.</strong></blockquote>
+<p>„Ví“ zde znamená poskytnutý kontext, nikoli záruku správné odpovědi.</p>
+</section>
+<section aria-labelledby="dostupnost">
+<h2 id="dostupnost">Stav k 1. 10. 2026</h2>
+<div class="prompt-card">
+<p>Skills jsou zaváděny postupně. Google Help uvádí osobní Google účet, věk 18+ a zapnuté uchovávání aktivity (Keep Activity). Na pracovním či školním účtu je zatím nemusíte mít.</p>
+<p>Google oznámil zahájení Workspace rolloutu na <strong>5. října 2026</strong> s očekávaným dokončením v polovině listopadu. Chybějící položka <strong>Skills / Dovednosti</strong> proto nemusí být chyba zařízení. Názvy a funkce se mohou měnit.</p>
+<p>Gem je dosavadní vlastní asistent s uloženými pokyny. Přechod Gems na Skills bude postupný; pro vzdělávací Workspace účty Google uvádí červen 2027. Není nutné dnes rušit vaše Gems.</p>
+<p><a href="https://support.google.com/gemini/answer/17094296?hl=en">Podmínky v Google Help</a> · <a href="https://workspaceupdates.googleblog.com/2026/09/skills-gemini-app-workspace.html?hl=en_PA">Oznámení Workspace rolloutu</a> · <a href="https://support.google.com/gemini/answer/18560919?hl=en">Přechod z Gems</a></p>
+</div>
+</section>
+<section aria-labelledby="prvni-skill">
+<h2 id="prvni-skill">Vytvoříme první Skill: Pracuj pouze ze zdrojů</h2>
+<p><code>work-only-from-sources</code> se hodí pro pracovní listy, prezentace, testy i přípravu hodin. Neváže se na jednu učebnici. Pravidla pro doložené informace, přiznání nejistoty a rozlišení faktů od vlastních návrhů už nebudete pokaždé opisovat.</p>
+<p><strong>Skill výrazně zpřesní pravidla práce Gemini, ale stále nenahrazuje kontrolu učitele.</strong> Název ani instrukce nezaručují, že Gemini nikdy nevytvoří nedoložené tvrzení.</p>
+<h3>Varianta A: vytvoření ručně</h3>
+<ol>
+<li>Otevřete <a href="https://gemini.google.com/">Gemini ve webovém prohlížeči</a>.</li>
+<li>V postranní nabídce otevřete <strong>Nastavení → Skills / Dovednosti</strong>. Pokud položku nemáte, vraťte se k boxu o dostupnosti.</li>
+<li>Zvolte <strong>Create manually / Vytvořit ručně</strong>.</li>
+<li>Vyplňte <strong>Name / Název</strong> (co Skill dělá), <strong>Description / Popis</strong> (kdy se hodí) a <strong>Instructions / Instrukce</strong> (vlastní pracovní postup). Použijte tři bloky níže.</li>
+<li>Klikněte na <strong>Create / Vytvořit</strong>. Ověřte, že nový Skill vidíte v seznamu a že je aktivní.</li>
+</ol>
+<p>Název pište malými písmeny a slova oddělte spojovníky. Anglický název usnadňuje přesné vyvolání; instrukce mohou být česky.</p>
+<h3>Varianta B: s pomocí Gemini</h3>
+<p>Na stránce Skills zvolte <strong>Create with Gemini</strong> a popište opakovanou činnost. Nebo v chatu požádejte: „Vytvoř Skill podle těchto instrukcí“ a připojte text níže. Před použitím zkontrolujte uložený název, popis i instrukce.</p>
+<p><a href="https://support.google.com/gemini/answer/17094296?hl=en">Oficiální postup vytvoření</a></p>
+</section>
+<section aria-labelledby="hotovy-skill">
+<h2 id="hotovy-skill">Hotový Skill: Pracuj pouze ze zdrojů</h2>
+<p>Každý blok vložte do stejnojmenného pole. Anglický popis říká, že Skill ověřuje tvrzení v dostupných podkladech a má se použít tam, kde záleží na věrnosti zdrojům. Slovo „prevents“ vyjadřuje zamýšlené pravidlo, nikoli záruku bezchybnosti.</p>
+<div class="prompt-card">
+<div class="prompt-card-header">
+<h3>NAME / Název</h3><button type="button" class="prompt-copy-button" data-copy-prompt="skill-name" data-copy-label="Kopírovat" aria-label="Kopírovat: NAME / Název">Kopírovat</button>
+</div><pre class="prompt-body" id="skill-name">work-only-from-sources</pre><span class="prompt-copy-feedback" role="status" aria-live="polite"></span>
+</div>
+<div class="prompt-card">
+<div class="prompt-card-header">
+<h3>DESCRIPTION / Popis</h3><button type="button" class="prompt-copy-button" data-copy-prompt="skill-description" data-copy-label="Kopírovat" aria-label="Kopírovat: DESCRIPTION / Popis">Kopírovat</button>
+</div><pre class="prompt-body" id="skill-description">Verifies claims against the sources available in the current notebook, files or conversation and prevents unsupported information from being presented as fact. Use when accuracy, source fidelity, curriculum alignment, legal correctness, or faithful processing of supplied teaching materials is important.</pre><span class="prompt-copy-feedback" role="status" aria-live="polite"></span>
+</div>
+<div class="prompt-card">
+<div class="prompt-card-header">
+<h3>INSTRUCTIONS / Instrukce</h3><button type="button" class="prompt-copy-button" data-copy-prompt="skill-instructions" data-copy-label="Kopírovat instrukce" aria-label="Kopírovat instrukce: INSTRUCTIONS / Instrukce">Kopírovat instrukce</button>
+</div><pre class="prompt-body" id="skill-instructions">Pracuj přednostně pouze s informacemi obsaženými v dostupných zdrojích, přiložených dokumentech nebo aktuálním notebooku.
+
+### Základní pravidla
+
+1. Nevydávej vlastní znalost modelu za informaci pocházející ze zdrojů.
+2. Nevymýšlej chybějící fakta, příklady, citace, čísla stránek, ustanovení ani obsah dokumentu.
+3. Pokud odpověď ze zdrojů nevyplývá, napiš jasně:
+   „Tuto informaci nelze z dostupných zdrojů spolehlivě doložit.“
+4. Pokud jsou zdroje ve vzájemném rozporu, upozorni na rozpor a popiš obě varianty.
+5. Rozlišuj:
+   - doloženou informaci,
+   - interpretaci,
+   - návrh vytvořený AI.
+6. Pokud uživatel požaduje věrné zpracování konkrétního zdroje, nezaváděj informace mimo něj.
+7. Nikdy nedoplňuj chybějící obsah pouze proto, aby byl výstup úplnější.
+
+### Kontrola před odevzdáním
+
+Před odpovědí ověř:
+
+- Je každé faktické tvrzení doložitelné?
+- Nevložil jsem něco pouze na základě obecné znalosti?
+- Nezměnil jsem význam původního materiálu?
+- Neschovávám nejistotu za sebejistou formulaci?
+
+Pokud ano, výstup oprav.</pre><span class="prompt-copy-feedback" role="status" aria-live="polite"></span>
+</div>
+<p>Zápis <code>###</code> označuje nadpis a pomlčky položky seznamu. Nemusíte znát Markdown (jednoduchý zápis formátování textu); zkopírujte celý blok.</p>
+<p><code>SKILL.md</code> je textový soubor s definicí Skillu pro pokročilejší import. Pro tento první postup žádný soubor vytvářet nemusíte.</p>
+</section>
+<section aria-labelledby="popis">
+<h2 id="popis">Proč je popis tak důležitý</h2>
+<p>Gemini nejprve posoudí název a popis. Podrobné instrukce načte, když je Skill relevantní. Popis proto musí říkat, kdy jej použít.</p>
+<p>Neurčité názvy <code>teacher-helper</code>, <code>my-ai</code> či <code>school</code> nahradíte konkrétními: <code>create-student-worksheet</code>, <code>plan-45-minute-lesson</code> nebo <code>work-only-from-sources</code>.</p><blockquote>Špatně: <code>teacher-helper</code><br>Lépe: <code>create-student-worksheet</code> — vytváří pracovní listy pro žáky.</blockquote>
+<p><a href="https://support.google.com/gemini/answer/17102773?hl=en">Doporučení Googlu k názvu a popisu</a></p>
+</section>
+<section aria-labelledby="pouziti">
+<h2 id="pouziti">Jak Skill použít</h2>
+<h3>1. Automaticky</h3>
+<p>Napište: „Z přiložených materiálů připrav stručné vysvětlení rozdílu mezi present simple a present continuous.“ Pokud Gemini rozpozná relevantní aktivní Skill, může jej použít automaticky.</p>
+<h3>2. Přímým výběrem</h3>
+<p>V chatu začněte psát <code>/</code> a vyberte Skill z nabídky. Příklad: <code>/work-only-from-sources</code>, potom „Vytvoř pracovní list z přiložené lekce.“ Google avizuje přechod na <code>@</code>; řiďte se nabídkou ve svém rozhraní. Podstatné je vybrat uložený Skill, ne jen vložit jeho název jako běžný text.</p>
+<p><a href="https://support.google.com/gemini/answer/18560919?hl=en">Přímé vyvolání podle Googlu</a></p>
+</section>
+<section aria-labelledby="workflow">
+<h2 id="workflow">Celý postup: pracovní list na present simple</h2>
+<ol>
+<li><strong>Přidejte zdroje:</strong> kapitolu učebnice, pracovní sešit a vlastní poznámky. Pro první test stačí přiložit soubory k chatu, v němž je Skill dostupný.</li>
+<li><strong>Vyberte Skill</strong> <code>work-only-from-sources</code> pomocí nabídky pro <code>/</code> (po změně rozhraní <code>@</code>).</li>
+<li><strong>Zadejte úkol:</strong><blockquote>„Z těchto zdrojů vytvoř pracovní list pro 1. ročník SŠ. Procvič present simple. Nevkládej gramatiku, která v podkladech není.“</blockquote></li>
+<li>Gemini připraví návrh podle dodaných podkladů a zvolených pravidel.</li>
+<li><strong>Výsledek zkontrolujte:</strong> porovnejte zadání a řešení s lekcí, ověřte obtížnost, rozsah i případné citace. Teprve potom pracovní list použijte.</li>
+</ol>
+<p>Vyzkoušejte i otázku na něco, co v lekci není. Správným výsledkem je přiznání, že informaci nelze doložit. Pokud Gemini něco doplní, neberte použití Skillu jako důkaz správnosti.</p>
+</section>
+<section aria-labelledby="notebook">
+<h2 id="notebook">Gemini Notebook + Skills</h2>
+<p>Notebook je dlouhodobější pracovní prostor: uchovává zdroje, instrukce a kontext průběžné práce. V Gemini tak lze sešit používat jako projekt, například pro jednu lekci.</p>
+<div class="tool-guide-output-flow" aria-label="Role zdrojů, pravidel a úkolu"><span>ZDROJE / NOTEBOOK<br>obsah a fakta</span><b aria-hidden="true">→</b><span>SKILL<br>pravidla práce</span><b aria-hidden="true">→</b><span>PROMPT<br>aktuální úkol</span>
+</div>
+<p>To je vysvětlení rolí, nikoli sled tlačítek v aplikaci. Integrace se rozšiřuje: Google uvádí přidávání notebooků z Gemini Notebooku ke Skills mezi možnostmi připravovanými na následující týdny. Nečekejte proto na každém účtu tlačítko Skill uvnitř sešitu.</p>
+<p>Pro začátek použijte dostupný chat s přiloženými dokumenty. Notebook připojte, až tuto možnost vaše rozhraní nabízí; samotný název sešitu v promptu zdroje nezpřístupní.</p>
+<p><a href="https://support.google.com/gemini/answer/16972047?hl=en">Notebooky v Gemini</a> · <a href="https://support.google.com/gemininotebook/answer/16215270">Přidávání zdrojů</a> · <a href="https://support.google.com/gemini/answer/18560919?hl=en">Plánované propojení se Skills</a></p>
+</section>
+<section aria-labelledby="kombinace">
+<h2 id="kombinace">Skills jako stavebnice</h2>
+<p>Můžete kombinovat několik malých postupů pro jeden úkol:</p><pre class="prompt-body">work-only-from-sources
++ create-student-worksheet
++ adapt-learning-material</pre>
+<p>První určí pravidla práce se zdroji, druhý podobu pracovního listu a třetí úpravu pro konkrétní potřebu žáků. Další dva názvy jsou příklady budoucí knihovny; nejprve byste si příslušné Skills museli vytvořit. Zkontrolujte, že si jejich pravidla neodporují.</p>
+</section>
+<section aria-labelledby="chyby">
+<h2 id="chyby">Pět častých chyb</h2>
+<ol>
+<li><strong>Jeden Skill obsahuje všechno.</strong> Rozdělte jej podle jednotlivých činností.</li>
+<li><strong>Neurčitý název.</strong> Pojmenujte konkrétní práci.</li>
+<li><strong>Popis neříká, kdy Skill použít.</strong> Doplňte typické situace.</li>
+<li><strong>Deset stran obecné teorie.</strong> Pište stručný pracovní tahák, jak doporučuje Google.</li>
+<li><strong>Věřím výsledku bez kontroly.</strong> Ověřte výstup vůči skutečným zdrojům.</li>
+</ol>
+</section>
+<section aria-labelledby="kam-co">
+<h2 id="kam-co">Co patří do Skillu a co do Notebooku</h2>
+<table>
+<thead>
+<tr>
+<th scope="col">Do Skillu</th>
+<th scope="col">Do Notebooku</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pravidla pracovního postupu</td>
+<td>učebnice</td>
+</tr>
+<tr>
+<td>struktura pracovního listu</td>
+<td>metodika</td>
+</tr>
+<tr>
+<td>pravidla kontroly</td>
+<td>školní dokument</td>
+</tr>
+<tr>
+<td>požadovaný formát</td>
+<td>konkrétní lekce</td>
+</tr>
+<tr>
+<td>typické chyby, kterým se vyhnout</td>
+<td>poznámky a zdroje k tématu</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Jednoduché pravidlo:</strong> použijete to v deseti různých projektech? Pravděpodobně to patří do Skillu. Platí to jen pro konkrétní lekci, předmět nebo projekt? Pravděpodobně do Notebooku.</p>
+</section>
+<section aria-labelledby="data">
+<h2 id="data">Bezpečnost a školní data</h2><blockquote>Obecná metodika ano. Citlivé údaje ne.</blockquote>
+<p>Do Skillu automaticky neukládejte osobní údaje žáků, zdravotní informace, individuální podpůrná opatření, kázeňské informace ani citlivé školní údaje. Pro první pokus použijte materiál bez těchto údajů a respektujte pravidla své školy.</p>
+</section>
+<section aria-labelledby="checklist">
+<h2 id="checklist">Můj první Skill – kontrolní seznam</h2>
+<ul>
+<li><label><input type="checkbox"> Skill řeší jednu opakovanou činnost.</label></li>
+<li><label><input type="checkbox"> Má jasný název.</label></li>
+<li><label><input type="checkbox"> Popis říká, kdy se má použít.</label></li>
+<li><label><input type="checkbox"> Instrukce popisují konkrétní pracovní postup.</label></li>
+<li><label><input type="checkbox"> Obsahuje pravidla výstupu.</label></li>
+<li><label><input type="checkbox"> Upozorňuje na chyby, kterým se má Gemini vyhnout.</label></li>
+<li><label><input type="checkbox"> Vyzkoušel/a jsem ho na několika různých zadáních.</label></li>
+<li><label><input type="checkbox"> Výsledky stále kontroluji jako člověk.</label></li>
+</ul>
+</section>
+<section aria-labelledby="co-dal">
+<h2 id="co-dal">Co dál?</h2>
+<p>Skills pomáhají přestat stále dokola vysvětlovat stejný pracovní postup. Kontrolu výsledku si ponechává učitel.</p><blockquote>Dobře vytvořený Skill neříká Gemini, co si má myslet. Říká mu, jak má udělat práci, kterou bychom mu jinak museli pokaždé znovu vysvětlovat.</blockquote>
+<h3>Teacher Skill Library: 8 praktických Skills pro učitele</h3>
+<p>Možný další díl: pracovní list, příprava hodiny, test, kontrola zdrojů, úprava materiálu, prezentace, extrakce lekce (vybrání potřebného obsahu) a QA materiálu (kontrola kvality). Dalším krokem může být vlastní knihovna několika malých Skills.</p>
+</section>
+<section aria-labelledby="zdroje">
+<h2 id="zdroje">Zdroje a další informace</h2>
+<p>Oficiální dokumentace Google, ověřeno 1. října 2026. Rozhraní se během zavádění může lišit podle účtu.</p>
+<ul>
+<li><a href="https://support.google.com/gemini/answer/17094296?hl=en">Create &amp; manage skills for Gemini Apps</a></li>
+<li><a href="https://support.google.com/gemini/answer/17102773?hl=en">Write effective skills for Gemini Apps</a></li>
+<li><a href="https://support.google.com/gemini/answer/18560919?hl=en">About the transition from Gems to skills</a></li>
+<li><a href="https://workspaceupdates.googleblog.com/2026/09/skills-gemini-app-workspace.html?hl=en_PA">Introducing skills in the Gemini app and Workspace</a></li>
+<li><a href="https://support.google.com/gemini/answer/16972047?hl=en">Organize your projects with notebooks in Gemini Apps</a></li>
+<li><a href="https://support.google.com/gemininotebook/answer/16215270">Add or discover new sources for your notebook</a></li>
+</ul>
+</section>
+</div>
+</article>
+<section class="workflow-related" aria-labelledby="related-title">
+<h2 id="related-title">Související návody</h2>
+<div class="workflow-related-grid"><a class="workflow-related-card" href="gemini-notebook-navod-pro-ucitele.html">
+<h3>První Gemini Notebook</h3>
+<p>Účel, instrukce a zdroje sešitu.</p></a><a class="workflow-related-card" href="gemini-pro-ucitele.html">
+<h3>Gemini pro učitele</h3>
+<p>Další články a praktické postupy.</p></a>
+</div>
+</section>
+</main>
+<footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai.html">Rozcestník AI</a>
+</footer>
+<script src="js/tool-guide.js?v=20260915-tool-guide-notebook" defer></script>
+<script src="js/site-footer.js?v=20260927-human-loop"></script>
+</body></html>

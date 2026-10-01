@@ -5,6 +5,19 @@
  */
 window.siteArticles = [
   {
+    href: 'gemini-skills-pro-ucitele.html',
+    title: 'Gemini Skills pro učitele: jednou nastavíte, pak už Gemini ví, jak má pracovat',
+    summary: 'První Gemini Skill krok za krokem: uložená pravidla práce se zdroji, kopírovatelné instrukce a kontrola výsledku učitelem.',
+    platforms: ['gemini'],
+    category: 'Google Gemini',
+    contentType: 'guide',
+    date: '2026-10-01',
+    dateLabel: '1. října 2026',
+    icon: '⚙️',
+    tags: ['Gemini Skills', 'Vlastní zdroje', 'Návod'],
+    badgeClass: 'badge-blue'
+  },
+  {
     href: 'notebooklm-hlasovy-rozhovor-nad-zdroji.html',
     title: 'Když AI zná naše učivo: hlasový rozhovor nad zdroji v NotebookLM',
     summary: 'Jak se liší obecný rozhovor s AI od studijního rozhovoru nad materiály, které vybral učitel, a jak připravit bezpečný pilot ve výuce.',
