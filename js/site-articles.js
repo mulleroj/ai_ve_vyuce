@@ -7,7 +7,7 @@ window.siteArticles = [
   {
     href: 'gemini-skills-pro-ucitele.html',
     title: 'Gemini Skills pro učitele: jednou nastavíte, pak už Gemini ví, jak má pracovat',
-    summary: 'První Gemini Skill krok za krokem: uložená pravidla práce se zdroji, kopírovatelné instrukce a kontrola výsledku učitelem.',
+    summary: 'První Gemini Skill krok za krokem a Teacher Skill Library: osm hotových pracovních postupů ke zkopírování, jejich kombinace a kontrola výsledku.',
     platforms: ['gemini'],
     category: 'Google Gemini',
     contentType: 'guide',

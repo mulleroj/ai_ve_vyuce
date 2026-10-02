@@ -1,8 +1,9 @@
 (() => {
   const setCopiedState = (button, feedback, copied) => {
-    button.textContent = copied ? 'Zkopírováno' : (button.dataset.copyLabel || 'Kopírovat prompt');
+    const successLabel = button.dataset.copySuccessLabel || 'Zkopírováno';
+    button.textContent = copied ? successLabel : (button.dataset.copyLabel || 'Kopírovat prompt');
     button.classList.toggle('copied', copied);
-    if (feedback) feedback.textContent = copied ? 'Zkopírováno' : '';
+    if (feedback) feedback.textContent = copied ? successLabel : '';
   };
 
   const fallbackCopy = (value) => {

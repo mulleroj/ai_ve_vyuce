@@ -1959,3 +1959,9 @@ body.workflow-page {
 .gemini-skills-page th, .gemini-skills-page td { overflow-wrap: anywhere; }
 .gemini-skills-page input:focus-visible { outline: 2px solid #f7c56b; outline-offset: 3px; }
 .gemini-skills-page .workflow-hero h1 { font-size: clamp(2rem, 3.5vw, 3.4rem); line-height: 1.15; letter-spacing: -0.035em; }
+
+/* Teacher Skill Library uses the existing article disclosure and copy styles. */
+.gemini-skills-page .teacher-skill { margin-top: 22px; }
+.gemini-skills-page .teacher-skill summary { overflow-wrap: anywhere; }
+.gemini-skills-page .teacher-skill summary span { color: var(--workflow-muted); font-size: 0.9rem; }
+.gemini-skills-page .teacher-skill .prompt-card { margin: 12px 0 0; }

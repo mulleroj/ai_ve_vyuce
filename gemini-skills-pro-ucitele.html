@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"><title>Gemini Skills pro učitele: návod krok za krokem | AI ve výuce</title>
 <meta name="description" content="Co jsou Gemini Skills, jak si učitel vytvoří první Skill a jak jej použít při práci s výukovými materiály a Gemini Notebookem. Praktický návod krok za krokem.">
-<link rel="stylesheet" href="css/workflow.css?v=20261001-skills">
+<link rel="stylesheet" href="css/workflow.css?v=20261001-skill-library">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/gemini-skills-pro-ucitele">
 <meta property="og:title" content="Gemini Skills pro učitele: jednou nastavíte, pak už Gemini ví, jak má pracovat">
@@ -61,7 +61,8 @@
 <li><a href="#pouziti">Jak Skill použít</a></li>
 <li><a href="#workflow">Celý postup: pracovní list na present simple</a></li>
 <li><a href="#notebook">Gemini Notebook + Skills</a></li>
-<li><a href="#kombinace">Skills jako stavebnice</a></li>
+<li><a href="#teacher-skill-library">Teacher Skill Library – 8 hotových Skills</a></li>
+<li><a href="#kombinace">Jak Skills kombinovat</a></li>
 <li><a href="#chyby">Pět častých chyb</a></li>
 <li><a href="#kam-co">Co patří do Skillu a co do Notebooku</a></li>
 <li><a href="#data">Bezpečnost a školní data</a></li>
@@ -73,6 +74,7 @@
 <div class="article-content">
 <p class="article-lead">Možná Gemini při přípravě výuky pořád píšete: „Pracuj pouze s přiloženými materiály. Nic si nevymýšlej. Pokud odpověď ve zdrojích není, přiznej to.“</p>
 <p><strong>A co kdybychom to Gemini řekli jen jednou?</strong> Uložený Skill umožňuje stejný pracovní postup používat opakovaně. Ukážeme si jeden, který využijete v různých předmětech.</p>
+<aside class="article-bonus" aria-labelledby="gemini-zaklady"><h2 id="gemini-zaklady">Začínáte s Gemini?</h2><p>Pokud s Gemini teprve začínáte, doporučujeme nejprve projít úvodní stránku <strong>Google Gemini pro učitele</strong>. Tento článek na ni navazuje a zaměřuje se konkrétně na opakovaně použitelné Skills.</p><p><a class="workflow-inline-link" href="gemini-pro-ucitele.html">← Nejprve: Google Gemini pro učitele</a></p></aside>
 <section aria-labelledby="co-je-skill">
 <h2 id="co-je-skill">Co je Gemini Skill</h2>
 <p>Skill (dovednost) je uložená sada instrukcí, pravidel, pracovního postupu a požadavků na podobu výstupu. Může zahrnovat i referenční soubory. <strong>Říká Gemini hlavně JAK má pracovat:</strong> třeba jak kontrolovat fakta, sestavit test nebo naplánovat 45minutovou hodinu.</p>
@@ -205,12 +207,530 @@ Pokud ano, výstup oprav.</pre><span class="prompt-copy-feedback" role="status" 
 <p>Pro začátek použijte dostupný chat s přiloženými dokumenty. Notebook připojte, až tuto možnost vaše rozhraní nabízí; samotný název sešitu v promptu zdroje nezpřístupní.</p>
 <p><a href="https://support.google.com/gemini/answer/16972047?hl=en">Notebooky v Gemini</a> · <a href="https://support.google.com/gemininotebook/answer/16215270">Přidávání zdrojů</a> · <a href="https://support.google.com/gemini/answer/18560919?hl=en">Plánované propojení se Skills</a></p>
 </section>
+<section aria-labelledby="teacher-skill-library">
+<h2 id="teacher-skill-library">Teacher Skill Library – 8 hotových Skills pro učitele</h2>
+<p>Jeden Skill pomůže s jednou opakovanou činností. Největší užitek vznikne tehdy, když si učitel postupně vytvoří malou knihovnu několika jednoduchých Skills. Nemusíte je vytvářet všechny. Začněte tím, který řeší činnost, kterou Gemini vysvětlujete nejčastěji.</p>
+<!-- Místo pro infografiku: images/teacher-skill-library.png. Po dodání assetu odkomentujte tento figure.
+<figure class="article-figure">
+<img src="images/teacher-skill-library.png" alt="Přehled osmi Gemini Skills pro učitele a příklady jejich kombinování" loading="lazy" decoding="async">
+<figcaption>Notebook poskytuje obsah, Skill pracovní postup a prompt aktuální úkol.</figcaption>
+</figure>
+-->
+<details class="article-bonus teacher-skill" id="library-work-only-from-sources">
+<summary><strong>1. Pracuj pouze ze zdrojů</strong><br><code>work-only-from-sources</code><br><span>Věrné zpracování materiálů a kontrola doložitelnosti informací.</span></summary>
+<div class="prompt-card">
+<div class="prompt-card-header"><h3>Pracuj pouze ze zdrojů</h3><button type="button" class="prompt-copy-button" data-copy-prompt="library-text-1" data-copy-label="Kopírovat celý Skill" data-copy-success-label="Zkopírováno ✓" aria-label="Kopírovat celý Skill: Pracuj pouze ze zdrojů">Kopírovat celý Skill</button></div>
+<pre class="prompt-body" id="library-text-1">NAME
+work-only-from-sources
+
+DESCRIPTION
+Verifies claims against the sources available in the current notebook, files or conversation and prevents unsupported information from being presented as fact. Use when accuracy, source fidelity, curriculum alignment, legal correctness, or faithful processing of supplied teaching materials is important.
+
+INSTRUCTIONS
+Pracuj přednostně pouze s informacemi obsaženými v dostupných zdrojích, přiložených dokumentech nebo aktuálním notebooku.
+
+### Základní pravidla
+
+1. Nevydávej vlastní znalost modelu za informaci pocházející ze zdrojů.
+2. Nevymýšlej chybějící fakta, příklady, citace, čísla stránek, ustanovení ani obsah dokumentu.
+3. Pokud odpověď ze zdrojů nevyplývá, napiš jasně:
+   „Tuto informaci nelze z dostupných zdrojů spolehlivě doložit.“
+4. Pokud jsou zdroje ve vzájemném rozporu, upozorni na rozpor a popiš obě varianty.
+5. Rozlišuj:
+   - doloženou informaci,
+   - interpretaci,
+   - návrh vytvořený AI.
+6. Pokud uživatel požaduje věrné zpracování konkrétního zdroje, nezaváděj informace mimo něj.
+7. Nikdy nedoplňuj chybějící obsah pouze proto, aby byl výstup úplnější.
+
+### Kontrola před odevzdáním
+
+Před odpovědí ověř:
+
+- Je každé faktické tvrzení doložitelné?
+- Nevložil jsem něco pouze na základě obecné znalosti?
+- Nezměnil jsem význam původního materiálu?
+- Neschovávám nejistotu za sebejistou formulaci?
+
+Pokud ano, výstup oprav.</pre>
+<span class="prompt-copy-feedback" role="status" aria-live="polite"></span>
+</div>
+</details>
+<details class="article-bonus teacher-skill" id="library-plan-45-minute-lesson">
+<summary><strong>2. Naplánuj 45minutovou hodinu</strong><br><code>plan-45-minute-lesson</code><br><span>Struktura hodiny, aktivity a rozvržení času.</span></summary>
+<div class="prompt-card">
+<div class="prompt-card-header"><h3>Naplánuj 45minutovou hodinu</h3><button type="button" class="prompt-copy-button" data-copy-prompt="library-text-2" data-copy-label="Kopírovat celý Skill" data-copy-success-label="Zkopírováno ✓" aria-label="Kopírovat celý Skill: Naplánuj 45minutovou hodinu">Kopírovat celý Skill</button></div>
+<pre class="prompt-body" id="library-text-2">NAME
+plan-45-minute-lesson
+
+DESCRIPTION
+Creates practical 45-minute secondary-school lesson plans from the topic and available teaching sources. Use when preparing a complete lesson, deciding lesson structure, selecting activities, or turning notebook materials into classroom instruction.
+
+INSTRUCTIONS
+Vytvoř prakticky realizovatelnou vyučovací hodinu v délce 45 minut.
+
+Pokud jsou k dispozici zdroje notebooku, vycházej především z nich.
+
+### Struktura
+
+**Téma:**&#32;&#32;
+**Cíl hodiny:** formuluj 1–3 konkrétní výsledky učení.&#32;&#32;
+**Co má žák na konci umět:**&#32;&#32;
+**Pomůcky:**
+
+### Průběh
+
+Rozděl hodinu na fáze:
+
+1. Aktivace / úvod
+2. Výklad nebo objevování
+3. Řízené procvičení
+4. Samostatná nebo párová práce
+5. Kontrola a zpětná vazba
+6. Krátké závěrečné ověření
+
+U každé fáze uveď:
+
+- čas,
+- činnost učitele,
+- činnost žáků,
+- potřebný materiál.
+
+Součet času musí být přibližně 45 minut.
+
+### Pedagogická pravidla
+
+- Nepřeplňuj hodinu aktivitami.
+- Preferuj méně činností provedených pořádně.
+- Výklad udržuj přiměřeně krátký.
+- Aktivizuj žáky co nejdříve.
+- Po nové látce musí následovat procvičení.
+- Na konci musí být ověřitelné, zda byl cíl splněn.
+- Přizpůsob obtížnost věku, oboru a jazykové úrovni uvedené uživatelem.
+- Pro učňovské obory preferuj konkrétní, praktické a srozumitelné úlohy.
+
+Pokud důležitá informace o třídě chybí, vytvoř rozumnou základní variantu a předpoklad stručně označ.</pre>
+<span class="prompt-copy-feedback" role="status" aria-live="polite"></span>
+</div>
+</details>
+<details class="article-bonus teacher-skill" id="library-create-student-worksheet">
+<summary><strong>3. Vytvoř pracovní list</strong><br><code>create-student-worksheet</code><br><span>Pracovní listy, opakování, domácí úkoly a procvičování.</span></summary>
+<div class="prompt-card">
+<div class="prompt-card-header"><h3>Vytvoř pracovní list</h3><button type="button" class="prompt-copy-button" data-copy-prompt="library-text-3" data-copy-label="Kopírovat celý Skill" data-copy-success-label="Zkopírováno ✓" aria-label="Kopírovat celý Skill: Vytvoř pracovní list">Kopírovat celý Skill</button></div>
+<pre class="prompt-body" id="library-text-3">NAME
+create-student-worksheet
+
+DESCRIPTION
+Creates clear printable worksheets for secondary-school students from supplied lesson content or notebook sources. Use when producing classroom practice sheets, revision materials, homework, language exercises, or worksheets based on a textbook unit.
+
+INSTRUCTIONS
+Vytvoř pracovní list použitelný přímo se žáky.
+
+### Hlavička
+
+Vždy začni:
+
+**Jméno a příjmení:** __________________________&#32;&#32;
+**Třída:** __________&#32;&#32;
+**Datum:** __________
+
+Pokud jsou úlohy bodované:
+
+**Body:** ______ / ______
+
+### Pravidla pracovního listu
+
+- Zadání musí být krátká a jednoznačná.
+- Jedna úloha má testovat především jednu dovednost.
+- Obtížnost postupně zvyšuj.
+- Nezahlcuj stránku dlouhým souvislým textem.
+- Vytvoř dostatek prostoru pro odpovědi.
+- Nepoužívej záludné formulace.
+- Obsah musí odpovídat zadanému tématu a úrovni.
+- Pokud se pracuje ze zdrojů, zachovej jejich terminologii.
+
+### Doporučená struktura
+
+1. krátké zopakování,
+2. základní procvičení,
+3. aplikace,
+4. samostatnější úloha,
+5. krátký závěrečný úkol.
+
+U jazykové výuky kombinuj podle tématu například:
+
+- doplňování,
+- výběr možnosti,
+- řazení,
+- opravu chyby,
+- krátké psaní,
+- práci s větou nebo textem.
+
+Nevytvářej automaticky 15 různých typů cvičení. Důležitější je didaktická návaznost.
+
+Na konci vytvoř samostatnou část:
+
+## ŘEŠENÍ PRO UČITELE
+
+U každého uzavřeného úkolu uveď správné řešení.</pre>
+<span class="prompt-copy-feedback" role="status" aria-live="polite"></span>
+</div>
+</details>
+<details class="article-bonus teacher-skill" id="library-create-assessment">
+<summary><strong>4. Vytvoř test nebo ověření</strong><br><code>create-assessment</code><br><span>Testy, kvízy, bodování a klíče pro učitele.</span></summary>
+<div class="prompt-card">
+<div class="prompt-card-header"><h3>Vytvoř test nebo ověření</h3><button type="button" class="prompt-copy-button" data-copy-prompt="library-text-4" data-copy-label="Kopírovat celý Skill" data-copy-success-label="Zkopírováno ✓" aria-label="Kopírovat celý Skill: Vytvoř test nebo ověření">Kopírovat celý Skill</button></div>
+<pre class="prompt-body" id="library-text-4">NAME
+create-assessment
+
+DESCRIPTION
+Creates fair classroom tests, quizzes, revision checks, and answer keys aligned with supplied teaching content. Use when assessing knowledge after a topic, lesson or textbook unit, creating parallel test variants, or preparing questions for Forms.
+
+INSTRUCTIONS
+Vytvoř hodnocení pouze z látky, kterou měli žáci podle dostupných podkladů možnost procvičit.
+
+### Nejdříve stanov
+
+- co test skutečně ověřuje,
+- očekávanou úroveň,
+- celkový počet bodů.
+
+### Konstrukce testu
+
+Kombinuj podle potřeby:
+
+- vybírání odpovědi,
+- přiřazování,
+- doplňování,
+- krátkou odpověď,
+- aplikaci znalosti,
+- práci s krátkým textem nebo situací.
+
+Nedovol, aby většinu výsledku určovala jedna jediná úloha.
+
+### Obtížnost
+
+Přibližně:
+
+- 50–60 % základní zvládnutí,
+- 25–35 % aplikace,
+- 10–20 % náročnější úkoly.
+
+### Pravidla
+
+- Netestuj něco, co není obsaženo v zadaném učivu.
+- Nevytvářej zavádějící distraktory jen proto, aby byl test obtížnější.
+- Jedna chyba v zadání nesmí automaticky znehodnotit několik dalších odpovědí.
+- U jazykových testů rozlišuj, zda hodnotíš gramatiku, slovní zásobu, porozumění nebo produkci.
+
+### Výstup
+
+Vytvoř:
+
+**VERZE PRO ŽÁKA**
+
+a samostatně:
+
+**KLÍČ PRO UČITELE**
+
+Klíč musí obsahovat:
+
+- správné odpovědi,
+- bodování,
+- maximální počet bodů.
+
+Pokud o to uživatel požádá, připrav také:
+
+- variantu A/B,
+- převod bodů na známky,
+- podobu vhodnou pro Microsoft Forms nebo Google Forms.</pre>
+<span class="prompt-copy-feedback" role="status" aria-live="polite"></span>
+</div>
+</details>
+<details class="article-bonus teacher-skill" id="library-adapt-learning-material">
+<summary><strong>5. Uprav výukový materiál</strong><br><code>adapt-learning-material</code><br><span>Srozumitelnější a přístupnější podoba materiálu.</span></summary>
+<div class="prompt-card">
+<div class="prompt-card-header"><h3>Uprav výukový materiál</h3><button type="button" class="prompt-copy-button" data-copy-prompt="library-text-5" data-copy-label="Kopírovat celý Skill" data-copy-success-label="Zkopírováno ✓" aria-label="Kopírovat celý Skill: Uprav výukový materiál">Kopírovat celý Skill</button></div>
+<pre class="prompt-body" id="library-text-5">NAME
+adapt-learning-material
+
+DESCRIPTION
+Adapts existing teaching materials to make them clearer and more accessible while preserving the learning objective. Use when simplifying materials, differentiating difficulty, reducing cognitive load, or preparing a more accessible version for students with differing learning needs.
+
+INSTRUCTIONS
+Uprav materiál tak, aby zůstal zachován původní vzdělávací cíl.
+
+Nezaměňuj zpřístupnění učiva za jeho obsahové ochuzení.
+
+### Při úpravě můžeš
+
+- zkrátit věty,
+- rozdělit složité instrukce do kroků,
+- zvýraznit klíčová slova,
+- odstranit zbytečnou jazykovou složitost,
+- doplnit příklad způsobu řešení,
+- rozdělit velký úkol na menší části,
+- omezit množství informací zobrazovaných současně,
+- přidat přehlednou strukturu.
+
+### Nesmíš
+
+- změnit správnou odpověď,
+- vypustit klíčový vzdělávací obsah,
+- snížit náročnost automaticky bez požadavku,
+- diagnostikovat žáka,
+- odvozovat zdravotní nebo speciální vzdělávací potřeby z jeho výkonu.
+
+Pokud uživatel požaduje konkrétní typ podpory, aplikuj pouze opatření, která popsal.
+
+Na konci stručně uveď:
+
+**Co bylo upraveno:**&#32;&#32;
+**Co zůstalo obsahově stejné:**</pre>
+<span class="prompt-copy-feedback" role="status" aria-live="polite"></span>
+</div>
+</details>
+<details class="article-bonus teacher-skill" id="library-create-teaching-presentation">
+<summary><strong>6. Vytvoř výukovou prezentaci</strong><br><code>create-teaching-presentation</code><br><span>Obsah snímků, poznámky pro učitele a návrhy vizuálů.</span></summary>
+<div class="prompt-card">
+<div class="prompt-card-header"><h3>Vytvoř výukovou prezentaci</h3><button type="button" class="prompt-copy-button" data-copy-prompt="library-text-6" data-copy-label="Kopírovat celý Skill" data-copy-success-label="Zkopírováno ✓" aria-label="Kopírovat celý Skill: Vytvoř výukovou prezentaci">Kopírovat celý Skill</button></div>
+<pre class="prompt-body" id="library-text-6">NAME
+create-teaching-presentation
+
+DESCRIPTION
+Creates concise classroom presentation content from a lesson topic or notebook sources. Use when preparing slides for direct teaching, explaining new concepts, reviewing a topic, or converting source material into a student-facing presentation.
+
+INSTRUCTIONS
+Navrhni prezentaci určenou k promítání ve třídě, nikoli učebnici vloženou do PowerPointu.
+
+### Pravidla
+
+- Jeden snímek = jedna hlavní myšlenka.
+- Preferuj krátké body před dlouhými odstavci.
+- Na snímku obvykle maximálně 5–6 hlavních bodů.
+- Nepřepisuj celé zdrojové texty.
+- Vysvětli odborné pojmy jednoduchým jazykem.
+- Používej konkrétní příklady.
+- Po několika informačních snímcích zařaď otázku nebo aktivitu.
+
+### Struktura
+
+1. název tématu,
+2. co se dnes naučíme,
+3. aktivace předchozí znalosti,
+4. hlavní obsah v logických blocích,
+5. konkrétní příklady,
+6. krátké průběžné otázky,
+7. shrnutí,
+8. závěrečné ověření.
+
+Pro každý snímek vytvoř:
+
+**Snímek X – Název**
+
+Obsah na snímku:
+- …
+
+Poznámka pro učitele:
+- …
+
+Návrh vizuálu:
+- …
+
+Nevkládej dekorativní obrázky, které nepomáhají pochopení látky.</pre>
+<span class="prompt-copy-feedback" role="status" aria-live="polite"></span>
+</div>
+</details>
+<details class="article-bonus teacher-skill" id="library-extract-lesson-content">
+<summary><strong>7. Vytěž obsah lekce ze zdroje</strong><br><code>extract-lesson-content</code><br><span>Věrný převod lekce do strukturovaného textu.</span></summary>
+<div class="prompt-card">
+<div class="prompt-card-header"><h3>Vytěž obsah lekce ze zdroje</h3><button type="button" class="prompt-copy-button" data-copy-prompt="library-text-7" data-copy-label="Kopírovat celý Skill" data-copy-success-label="Zkopírováno ✓" aria-label="Kopírovat celý Skill: Vytěž obsah lekce ze zdroje">Kopírovat celý Skill</button></div>
+<pre class="prompt-body" id="library-text-7">NAME
+extract-lesson-content
+
+DESCRIPTION
+Extracts and restructures teaching content from textbooks and other supplied materials without losing instructional information. Use when preparing textbook units for Gemini Notebook, separating books into lessons, converting PDFs to structured text, or building source packs for teaching notebooks.
+
+INSTRUCTIONS
+Zpracuj zdroj co nejvěrněji.
+
+Cílem není shrnutí, ale přenos výukového obsahu do dobře čitelné textové struktury.
+
+### Zachovej
+
+- všechny nadpisy,
+- vysvětlení,
+- zadání,
+- příklady,
+- otázky,
+- slovní zásobu,
+- gramatická pravidla,
+- tabulky převeditelné do textu,
+- odkazy mezi jednotlivými částmi lekce,
+- čísla cvičení.
+
+### Můžeš odstranit
+
+- čistě dekorativní grafiku,
+- obrázky bez výukové informace,
+- grafické prvky stránky,
+- opakující se záhlaví a zápatí.
+
+### Obrázky
+
+Pokud obrázek obsahuje informaci nutnou k vyřešení úkolu, nenahrazuj ji vlastní domněnkou.
+
+Označ:
+
+**[OBRÁZEK NUTNÝ K ÚLOZE – obsah nebyl převeden]**
+
+Pokud lze podstatnou informaci z obrázku jednoznačně převést do textu, uveď ji.
+
+### Struktura výstupu
+
+# Unit / Lesson
+
+## Learning content
+
+## Vocabulary
+
+## Grammar / Language focus
+
+## Exercises
+
+### Exercise 1
+Instruction:
+Content:
+
+### Exercise 2
+…
+
+## Reading / Listening
+
+## Reference material
+
+Nikdy neshrnuj nebo nepřeformulovávej obsah, pokud by se tím mohla změnit didaktická informace.</pre>
+<span class="prompt-copy-feedback" role="status" aria-live="polite"></span>
+</div>
+</details>
+<details class="article-bonus teacher-skill" id="library-quality-check-teaching-material">
+<summary><strong>8. Zkontroluj výukový materiál</strong><br><code>quality-check-teaching-material</code><br><span>Audit obsahu, zadání, řešení a použitelnosti.</span></summary>
+<div class="prompt-card">
+<div class="prompt-card-header"><h3>Zkontroluj výukový materiál</h3><button type="button" class="prompt-copy-button" data-copy-prompt="library-text-8" data-copy-label="Kopírovat celý Skill" data-copy-success-label="Zkopírováno ✓" aria-label="Kopírovat celý Skill: Zkontroluj výukový materiál">Kopírovat celý Skill</button></div>
+<pre class="prompt-body" id="library-text-8">NAME
+quality-check-teaching-material
+
+DESCRIPTION
+Reviews a finished teaching material for factual accuracy, instructional coherence, clarity, answer-key consistency, and classroom usability. Use before printing, publishing, sharing with students, or importing a worksheet, test, presentation, or lesson into another system.
+
+INSTRUCTIONS
+Proveď kontrolu hotového výukového materiálu.
+
+Materiál nepřepisuj automaticky. Nejprve proveď audit.
+
+### A. Obsah
+
+Zkontroluj:
+
+- faktické chyby,
+- nepodložená tvrzení,
+- rozpory se zdroji,
+- chybějící důležité informace.
+
+### B. Didaktika
+
+Zkontroluj:
+
+- odpovídají úlohy cíli?
+- navazuje obtížnost logicky?
+- mají žáci informace potřebné k řešení?
+- nejsou některé úlohy zbytečně komplikované?
+
+### C. Zadání
+
+Zkontroluj:
+
+- jsou jednoznačná?
+- lze je pochopit bez vysvětlování učitele?
+- neobsahují dvě různé instrukce skryté v jedné větě?
+
+### D. Řešení
+
+Zkontroluj:
+
+- odpovídá klíč skutečným úlohám?
+- nejsou možné další správné odpovědi?
+- sedí bodování a celkový součet?
+
+### E. Použitelnost
+
+Zkontroluj:
+
+- vejde se reálně práce do plánovaného času?
+- není materiál přeplněný?
+- nechybí prostor pro odpovědi?
+- odpovídá jazyk cílové skupině?
+
+### Výstup
+
+Použij tři kategorie:
+
+**NUTNÉ OPRAVIT**&#32;&#32;
+Chyby, které mohou způsobit nesprávný výsledek nebo problém při výuce.
+
+**DOPORUČENO UPRAVIT**&#32;&#32;
+Změny zlepšující srozumitelnost nebo použitelnost.
+
+**V POŘÁDKU**&#32;&#32;
+Prvky, které kontrolou prošly.
+
+Nakonec uveď:
+
+**Stav materiálu:**
+
+- připraven k použití,
+- připraven po drobných úpravách,
+- vyžaduje opravu.</pre>
+<span class="prompt-copy-feedback" role="status" aria-live="polite"></span>
+</div>
+</details>
+</section>
 <section aria-labelledby="kombinace">
-<h2 id="kombinace">Skills jako stavebnice</h2>
-<p>Můžete kombinovat několik malých postupů pro jeden úkol:</p><pre class="prompt-body">work-only-from-sources
+<h2 id="kombinace">Jak Skills kombinovat</h2>
+<p>Nejprve si příslušné Skills vytvořte a potom je vyberte pro společný úkol. Pokud si pravidla odporují, upřesněte zadání.</p>
+<h3>Pracovní list z učebnice</h3>
+<pre class="prompt-body">work-only-from-sources
++ create-student-worksheet</pre>
+<p>Pravidla věrnosti zdrojům doplní jasnou strukturu pracovního listu.</p>
+<h3>Test po lekci</h3>
+<pre class="prompt-body">work-only-from-sources
++ create-assessment</pre>
+<p>Test vychází z dodané látky a zahrnuje bodování i klíč.</p>
+<h3>Příprava hodiny</h3>
+<pre class="prompt-body">work-only-from-sources
++ plan-45-minute-lesson</pre>
+<p>Z podkladů vznikne plán hodiny s aktivitami a rozvržením času.</p>
+<h3>Přístupnější pracovní list</h3>
+<pre class="prompt-body">work-only-from-sources
 + create-student-worksheet
 + adapt-learning-material</pre>
-<p>První určí pravidla práce se zdroji, druhý podobu pracovního listu a třetí úpravu pro konkrétní potřebu žáků. Další dva názvy jsou příklady budoucí knihovny; nejprve byste si příslušné Skills museli vytvořit. Zkontrolujte, že si jejich pravidla neodporují.</p>
+<p>Pracovní list se zpřístupní při zachování obsahu a vzdělávacího cíle.</p>
+<h3>Výuková prezentace</h3>
+<pre class="prompt-body">work-only-from-sources
++ create-teaching-presentation</pre>
+<p>Zdrojový obsah se promění ve stručné snímky pro výuku.</p>
+<h3>Zpracování lekce z učebnice</h3>
+<pre class="prompt-body">extract-lesson-content
++ work-only-from-sources</pre>
+<p>Lekce se převede do strukturovaného textu bez domýšlení chybějícího obsahu.</p>
+<h3>Finální kontrola</h3>
+<pre class="prompt-body">work-only-from-sources
++ quality-check-teaching-material</pre>
+<p>Audit porovná materiál se zdroji a prověří zadání, řešení i použitelnost.</p>
+<blockquote><strong>Notebook obsahuje CO je pravda a CO se učí.<br>Skill určuje JAK má Gemini s tímto obsahem pracovat.<br>Prompt říká CO chcete udělat právě teď.</strong></blockquote>
+<p>Notebook zde znamená vybrané podklady; jejich správnost stále ověřuje učitel.</p>
+<p>Do Notebooku patří učebnice, pracovní sešit, metodika, konkrétní lekce, školní dokumenty a zdrojové materiály. Do Skillu patří pracovní postup, pravidla kvality, struktura výstupu, kontrolní mechanismus a opakovaná pravidla.</p>
+<p><strong>Začněte jedním nebo dvěma Skills. Nemusíte jich mít dvacet.</strong></p>
 </section>
 <section aria-labelledby="chyby">
 <h2 id="chyby">Pět častých chyb</h2>
@@ -276,8 +796,8 @@ Pokud ano, výstup oprav.</pre><span class="prompt-copy-feedback" role="status" 
 <section aria-labelledby="co-dal">
 <h2 id="co-dal">Co dál?</h2>
 <p>Skills pomáhají přestat stále dokola vysvětlovat stejný pracovní postup. Kontrolu výsledku si ponechává učitel.</p><blockquote>Dobře vytvořený Skill neříká Gemini, co si má myslet. Říká mu, jak má udělat práci, kterou bychom mu jinak museli pokaždé znovu vysvětlovat.</blockquote>
-<h3>Teacher Skill Library: 8 praktických Skills pro učitele</h3>
-<p>Možný další díl: pracovní list, příprava hodiny, test, kontrola zdrojů, úprava materiálu, prezentace, extrakce lekce (vybrání potřebného obsahu) a QA materiálu (kontrola kvality). Dalším krokem může být vlastní knihovna několika malých Skills.</p>
+<p>Začněte dvojicí <code>work-only-from-sources</code> + <code>create-student-worksheet</code>. Není cílem vytvořit dvacet Skills. Smyslem je uložit několik pracovních postupů, které skutečně opakujete.</p>
+<p><a class="workflow-inline-link" href="gemini-pro-ucitele.html">← Zpět na Google Gemini pro učitele</a></p>
 </section>
 <section aria-labelledby="zdroje">
 <h2 id="zdroje">Zdroje a další informace</h2>
@@ -305,6 +825,6 @@ Pokud ano, výstup oprav.</pre><span class="prompt-copy-feedback" role="status" 
 </main>
 <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai.html">Rozcestník AI</a>
 </footer>
-<script src="js/tool-guide.js?v=20260915-tool-guide-notebook" defer></script>
+<script src="js/tool-guide.js?v=20261001-skill-library" defer></script>
 <script src="js/site-footer.js?v=20260927-human-loop"></script>
 </body></html>
