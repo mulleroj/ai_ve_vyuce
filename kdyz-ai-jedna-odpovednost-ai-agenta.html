@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Když AI už nejen radí, ale jedná: kdo nese odpovědnost za AI agenta? | AI ve Výuce</title>
+    <meta name="description" content="Co se změní, když AI nejen odpovídá, ale také jedná? Tři úrovně autonomie AI agentů, lidský dohled, oprávnění a odpovědnost ve škole." />
+    <link rel="stylesheet" href="css/style.css?v=20260915-philosophy-series" />
+    <link rel="stylesheet" href="css/workflow.css?v=20261002-agent-responsibility" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/kdyz-ai-jedna-odpovednost-ai-agenta" />
+    <meta property="og:title" content="Když AI už nejen radí, ale jedná: kdo nese odpovědnost za AI agenta? | AI ve Výuce" />
+    <meta property="og:description" content="Co se změní, když AI nejen odpovídá, ale také jedná? Tři úrovně autonomie AI agentů, lidský dohled, oprávnění a odpovědnost ve škole." />
+    <meta property="og:url" content="https://ai-ve-vyuce.netlify.app/kdyz-ai-jedna-odpovednost-ai-agenta" />
+    <meta property="og:type" content="article" />
+</head>
+
+<body class="workflow-page workflow-news-roundup workflow-philosophy">
+    <header class="workflow-shell">
+        <nav class="nav" id="nav">
+            <div class="nav-inner">
+                <a href="index.html" class="nav-logo">
+                    <div class="nav-logo-icon">🤖</div>AI ve <span>Výuce</span>
+                </a>
+                <div class="nav-links">
+                    <div class="nav-dropdown">
+                        <a href="#" class="nav-link">📚 Předměty <i class="fa-solid fa-chevron-down" style="font-size:.65rem"></i></a>
+                        <div class="nav-dropdown-menu">
+                            <a href="matematika.html" class="nav-dropdown-item"><span class="item-icon">🔢</span> Matematika</a>
+                            <a href="cestina.html" class="nav-dropdown-item"><span class="item-icon">📖</span> Český jazyk</a>
+                            <a href="anglictina.html" class="nav-dropdown-item"><span class="item-icon">🇬🇧</span> Anglický jazyk</a>
+                            <a href="prirodoveda.html" class="nav-dropdown-item"><span class="item-icon">🔬</span> Přírodní vědy</a>
+                            <a href="dejepis.html" class="nav-dropdown-item"><span class="item-icon">🏛️</span> Dějepis</a>
+                        </div>
+                    </div>
+                    <a href="prompty.html" class="nav-link">✨ Prompty</a>
+                    <a href="asistenti.html" class="nav-link">🤖 AI Asistenti</a>
+                    <a href="aktivity.html" class="nav-link">🎯 Aktivity</a>
+                    <a href="ai.html" class="nav-link active">🧠 AI pro školy</a>
+                    <a href="vibe-coding.html" class="nav-link">💻 Vibe Coding</a>
+                    <a href="qr-kod.html" class="nav-link">🔳 QR kód</a>
+                </div>
+                <button class="nav-mobile-toggle" aria-label="Otevřít menu" aria-expanded="false"><span></span><span></span><span></span></button>
+            </div>
+        </nav>
+
+        <div class="mobile-menu">
+            <a href="index.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏠 Domů</a>
+            <a href="matematika.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔢 Matematika</a>
+            <a href="cestina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">📖 Český jazyk</a>
+            <a href="anglictina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🇬🇧 Angličtina</a>
+            <a href="prirodoveda.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔬 Přírodní vědy</a>
+            <a href="dejepis.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏛️ Dějepis</a>
+            <a href="prompty.html" class="nav-link" style="font-size:1rem;padding:14px 16px">✨ Prompty</a>
+            <a href="asistenti.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🤖 Asistenti</a>
+            <a href="aktivity.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🎯 Aktivity</a>
+            <a href="ai.html" class="nav-link active" style="font-size:1rem;padding:14px 16px">🧠 AI pro školy</a>
+            <a href="vibe-coding.html" class="nav-link" style="font-size:1rem;padding:14px 16px">💻 Vibe Coding</a>
+            <a href="qr-kod.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔳 QR kód</a>
+        </div>
+
+        <div class="workflow-topbar">
+            <a class="workflow-back" href="ai-novinky.html#filozofovani-s-ai-4">← Filozofování s AI</a>
+        </div>
+
+        <div class="workflow-hero">
+            <div>
+                <div class="workflow-eyebrow">FILOZOFOVÁNÍ S AI · #4</div>
+                <h1>Když AI už nejen radí, ale jedná:<br /><span>kdo nese odpovědnost za AI agenta?</span></h1>
+                <p class="workflow-hero-lead">Co se mění ve chvíli, kdy umělá inteligence dostane nástroje, oprávnění a možnost jednat za člověka</p>
+                <div class="workflow-meta"><span>30. září 2026</span><span>Autorská série</span><span>AI agenti · Odpovědnost</span></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="workflow-main">
+        <article class="workflow-article">
+            <div class="workflow-article-intro">
+                <p class="workflow-article-summary">Chatbot nám může něco poradit. AI agent ale může otevřít dokument, použít nástroj, změnit data nebo odeslat zprávu. Co se mění ve chvíli, kdy AI nejen odpovídá, ale také jedná? A kde má ve škole zůstat poslední rozhodnutí na člověku?</p>
+            </div>
+
+            <div class="article-content">
+                <p>Je rozdíl mezi větami:</p>
+
+                <blockquote>„Navrhni mi e-mail rodičům.“</blockquote>
+
+                <p>a</p>
+
+                <blockquote>„Pošli tento e-mail rodičům.“</blockquote>
+
+                <p>Na první pohled je mezi nimi jen jedno sloveso.</p>
+
+                <p>Z pohledu odpovědnosti je mezi nimi ale obrovský rozdíl.</p>
+
+                <p>V prvním případě umělá inteligence vytvoří návrh. Člověk si ho přečte, rozhodne se, zda je správný, případně ho upraví a teprve potom ho odešle.</p>
+
+                <p>Ve druhém případě AI nejen radí.</p>
+
+                <p>Jedná.</p>
+
+                <p>A právě tím se dostáváme k jedné z nejdůležitějších otázek další etapy umělé inteligence:</p>
+
+                <p>Co se změní, když AI přestane být pouze poradcem a dostane možnost dělat věci naším jménem?</p>
+
+                <h2>Od chatbotu k agentovi</h2>
+
+                <p>Na začátku generativní AI jsme si zvykli na jednoduchý model:</p>
+
+                <p>Člověk zadá otázku → AI odpoví.</p>
+
+                <p>Potom přišly nástroje, které dokázaly pracovat se soubory, vyhledávat informace, analyzovat data nebo vytvářet dokumenty.</p>
+
+                <p>A dnes se posouváme ještě dál.</p>
+
+                <p>AI agent může dostat cíl, nástroje a určitá oprávnění a následně sám rozhodovat o dílčích krocích potřebných k dokončení úkolu.</p>
+
+                <p>Může například:</p>
+
+                <ul><li>projít několik webových stránek;</li><li>otevřít dokumenty;</li><li>zpracovat data;</li><li>vytvořit soubor;</li><li>používat propojené aplikace;</li><li>připravit další kroky;</li><li>v některých případech také něco odeslat, změnit nebo zveřejnit.</li></ul>
+
+                <p>Oficiální materiály OpenAI popisují agenty, kteří kombinují práci s webem, soubory a počítačem; Microsoft u autonomních agentů v Copilot Studiu popisuje reakce na události a provádění pracovních postupů v rámci nastavených oprávnění a hranic.</p>
+
+
+
+                <p>Nejdůležitější ale nejsou názvy produktů.</p>
+
+                <p>Podstatná je změna role AI.</p>
+
+                <p>Z nástroje, který něco navrhuje, se může stát nástroj, který něco vykonává.</p>
+
+                <h2>Proč je to jiný typ problému?</h2>
+
+                <p>Když chatbot vytvoří chybnou odpověď, člověk ji může přečíst a odmítnout.</p>
+
+                <p>Když agent provede chybnou akci, chyba už může mít skutečný dopad.</p>
+
+                <p>Představme si několik situací.</p>
+
+                <p>AI vytvoří nepovedený pracovní list.</p>
+
+                <p>Nepříjemné, ale snadno opravitelné.</p>
+
+                <p>AI vytvoří návrh e-mailu rodiči, ve kterém je nepřesná informace.</p>
+
+                <p>Učitel ho může před odesláním opravit.</p>
+
+                <p>AI sama rozešle e-mail rodičům.</p>
+
+                <p>Teď už nestačí říct:</p>
+
+                <blockquote>„Model se spletl.“</blockquote>
+
+                <p>E-mail byl skutečně odeslán.</p>
+
+                <p>Někdo rozhodl, že agent takové oprávnění dostane.</p>
+
+                <p>A někdo musí nést odpovědnost za systém, který tuto akci umožnil.</p>
+
+                <h2>Kdo tedy nese odpovědnost?</h2>
+
+                <p>Jednoduchá odpověď zní:</p>
+
+                <p>Ne agent.</p>
+
+                <p>Umělá inteligence není kolega, kterému můžeme na poradě říct:</p>
+
+                <blockquote>„Tohle byla tvoje chyba, příště si dej pozor.“</blockquote>
+
+                <p>Agent nemá profesní odpovědnost učitele, ředitele, správce systému ani organizace.</p>
+
+                <p>V praktickém a institucionálním smyslu proto odpovědnost za nastavení a použití systému nesou lidé a instituce, které:</p>
+
+                <ul>
+    <li>stanovily jeho účel;</li>
+    <li>vybraly nástroje;</li>
+    <li>nastavily oprávnění;</li>
+    <li>rozhodly, kde může jednat autonomně;</li>
+    <li>určily, kdy musí požádat člověka o souhlas.</li>
+</ul>
+
+                <p>To je možná méně futuristické než debata o tom, zda AI jednou získá vlastní vědomí.</p>
+
+                <p>Pro školy je to ale mnohem praktičtější otázka:</p>
+
+                <p>Kdo dovolil agentovi udělat právě tuto věc?</p>
+
+                <h2>Nejdůležitější není, co agent umí</h2>
+
+                <p>Při představování nových AI systémů často slyšíme otázku:</p>
+
+                <p>Co všechno to dokáže?</p>
+
+                <p>Ve škole bychom měli přidat ještě jednu:</p>
+
+                <p>Co z toho mu vůbec dovolíme dělat?</p>
+
+                <p>To jsou dvě různé věci.</p>
+
+                <p>Agent může technicky umět:</p>
+
+                <ul>
+    <li>otevřít e-mail;</li>
+    <li>vytvořit dokument;</li>
+    <li>změnit záznam;</li>
+    <li>prohledat databázi;</li>
+    <li>poslat zprávu;</li>
+    <li>aktualizovat kalendář.</li>
+</ul>
+
+                <p>To ale neznamená, že má mít všechna tato oprávnění.</p>
+
+                <p>Stejně jako zaměstnanec školy nemá automaticky přístup ke všem informačním systémům jen proto, že by je dokázal používat, ani AI agent nepotřebuje získat všechna dostupná oprávnění.</p>
+
+                <p>V kybernetické bezpečnosti se používá princip nejmenšího nutného oprávnění.</p>
+
+                <p>Agent dostane pouze to, co skutečně potřebuje pro svůj úkol.</p>
+
+                <p>Pro školy bude tento princip stále důležitější.</p>
+
+                <h2>Tři úrovně autonomie</h2>
+
+                <p>Pro praktické použití si můžeme činnosti AI rozdělit do tří skupin.</p>
+
+                <h3>Zelená: agent může jednat samostatně</h3>
+
+                <p>Jde o činnosti s malým dopadem a snadnou možností opravy.</p>
+
+                <p>Například:</p>
+
+                <ul>
+    <li>připravit návrh pracovního listu;</li>
+    <li>vytvořit několik variant cvičení;</li>
+    <li>uspořádat veřejné zdroje;</li>
+    <li>vytvořit návrh prezentace;</li>
+    <li>připravit seznam otázek;</li>
+    <li>zpracovat anonymizovaná data pro učitele.</li>
+</ul>
+
+                <p>Pokud agent udělá chybu, nic zásadního se nestane.</p>
+
+                <p>Člověk výsledek jednoduše nepoužije.</p>
+
+                <h3>Žlutá: agent připraví, člověk schválí</h3>
+
+                <p>Sem patří činnosti, které mají skutečný dopad, ale AI může připravit jejich návrh.</p>
+
+                <p>Například:</p>
+
+                <ul>
+    <li>návrh e-mailu rodiči;</li>
+    <li>návrh změny termínu;</li>
+    <li>návrh zápisu;</li>
+    <li>návrh odpovědi studentovi;</li>
+    <li>návrh dokumentu pro vedení;</li>
+    <li>návrh individuálního výukového postupu.</li>
+</ul>
+
+                <p>AI připravuje.</p>
+
+                <p>Člověk rozhoduje.</p>
+
+                <h3>Červená: agent nesmí rozhodovat sám</h3>
+
+                <p>Sem patří citlivé nebo obtížně vratné činnosti.</p>
+
+                <p>Například:</p>
+
+                <ul><li>změna známky;</li><li>rozhodnutí o kázeňském opatření;</li><li>změna údajů žáka;</li><li>rozhodování o podpůrném opatření;</li><li>práce se zdravotními nebo jinými zvlášť citlivými údaji;</li><li>automatické odeslání závažného sdělení rodičům;</li><li>rozhodnutí, které má právní nebo významný osobní dopad.</li></ul>
+
+                <p>Tady by AI mohla maximálně pomoci s přípravou podkladů.</p>
+
+                <p>Poslední rozhodnutí musí zůstat na člověku.</p>
+
+                <figure class="article-figure article-figure-infographic">
+                    <a href="images/tri-pasma-autonomie-ai-agenta-ve-skole.png" target="_blank" rel="noopener">
+                        <img src="images/tri-pasma-autonomie-ai-agenta-ve-skole.png" width="1122" height="1402" alt="Infografika se třemi pásmy autonomie AI agenta ve škole: zelené činnosti může agent vykonat samostatně, žluté vyžadují schválení člověka a červené nesmí rozhodovat autonomně." loading="lazy" />
+                    </a>
+                    <figcaption>Tři pásma autonomie AI agenta ve škole: co může udělat sám, co musí schválit člověk a co nemá rozhodovat autonomně. Kliknutím otevřete celý obrázek.</figcaption>
+                </figure>
+
+                <h2>Human in the loop není ozdoba v patičce</h2>
+
+                <p>Na řadě školních materiálů dnes vidíme formulace typu:</p>
+
+                <p>AI + 👤 | HUMAN IN THE LOOP</p>
+
+                <p>Takové označení má smysl jen tehdy, pokud popisuje skutečný způsob práce.</p>
+
+                <p>Lidský dohled totiž neznamená:</p>
+
+                <blockquote>„Člověk se někde v procesu vyskytoval.“</blockquote>
+
+                <p>Znamená:</p>
+
+                <p>V důležitém okamžiku existoval člověk, který mohl akci zastavit, změnit nebo odmítnout.</p>
+
+                <p>Pokud agent sám vytvoří, schválí a odešle citlivý dokument a učitel se o něm dozví až později, člověk ve skutečnosti nebyl „in the loop“.</p>
+
+                <p>Byl až after the loop.</p>
+
+                <p>A to je velký rozdíl.</p>
+
+                <h2>Co by měl mít každý školní AI agent?</h2>
+
+                <p>Pro vlastní projekty může být užitečná jednoduchá karta agenta.</p>
+
+                <p>Nemusí být technická.</p>
+
+                <p>Stačí pět otázek.</p>
+
+                <h3>1. Jaký je jeho účel?</h3>
+
+                <p>Jednou větou.</p>
+
+                <p>Například:</p>
+
+                <blockquote>„Pomáhá učiteli připravovat varianty pracovních listů.“</blockquote>
+
+                <p>Ne:</p>
+
+                <blockquote>„Pomáhá se vším.“</blockquote>
+
+                <p>Čím širší účel, tím obtížněji se nastavují bezpečné hranice.</p>
+
+                <h3>2. Z jakých zdrojů může čerpat?</h3>
+
+                <p>Veřejný web?</p>
+
+                <p>Učitelovy dokumenty?</p>
+
+                <p>Školní směrnice?</p>
+
+                <p>Data žáků?</p>
+
+                <p>Každý další zdroj mění rizikovost systému.</p>
+
+                <h3>3. Jaká má oprávnění?</h3>
+
+                <p>Může pouze číst?</p>
+
+                <p>Může vytvořit soubor?</p>
+
+                <p>Může něco změnit?</p>
+
+                <p>Může něco odeslat?</p>
+
+                <p>Tady bývá největší rozdíl mezi chatbotem a agentem.</p>
+
+                <h3>4. Co může udělat bez člověka?</h3>
+
+                <p>Tato část má být konkrétní.</p>
+
+                <p>Například:</p>
+
+                <blockquote>„Může vytvořit návrh pracovního listu a uložit ho do pracovní složky.“</blockquote>
+
+                <h3>5. Co musí vždy schválit člověk?</h3>
+
+                <p>Například:</p>
+
+                <blockquote>„Jakoukoli komunikaci směrem k žákům nebo rodičům.“</blockquote>
+
+                <blockquote>„Jakoukoli změnu dat.“</blockquote>
+
+                <blockquote>„Jakékoli rozhodnutí týkající se jednotlivého žáka.“</blockquote>
+
+                <p>Taková karta může být mnohem užitečnější než desetistránkový seznam obecných zásad.</p>
+
+                <h2>Co když agent dostane dobrý pokyn?</h2>
+
+                <p>Může nás napadnout:</p>
+
+                <blockquote>„Stačí mu přece napsat, že nemá dělat nic nebezpečného.“</blockquote>
+
+                <p>Jenže instrukce a oprávnění nejsou totéž.</p>
+
+                <p>Pokud napíšeme:</p>
+
+                <blockquote>„Nikdy neposílej e-mail bez mého svolení,“</blockquote>
+
+                <p>ale zároveň agentovi technicky umožníme e-maily samostatně odesílat, spoléháme pouze na to, že instrukci vždy správně pochopí a dodrží.</p>
+
+                <p>Bezpečnější systém nastaví pravidlo také technicky.</p>
+
+                <p>Agent například:</p>
+
+                <ol><li>připraví e-mail;</li><li>zobrazí jeho návrh;</li><li>zastaví se;</li><li>čeká na potvrzení člověka;</li><li>teprve potom může dojít k odeslání.</li></ol>
+
+                <p>Dobrá instrukce je užitečná.</p>
+
+                <p>Dobré omezení je spolehlivější.</p>
+
+                <h2>Co když agent pracuje dlouho?</h2>
+
+                <p>Další změnu přinášejí dlouhodobě běžící agenti.</p>
+
+                <p>Běžný chatbot dostane otázku a během několika sekund nebo minut odpoví.</p>
+
+                <p>Agent nastavený pro dlouhodobější nebo opakované workflow se může vracet k úkolu, sledovat změny nebo pokračovat mezi jednotlivými konverzacemi.</p>
+
+                <p>To má velkou výhodu.</p>
+
+                <p>Nemusíme mu stále znovu vysvětlovat stejný úkol.</p>
+
+                <p>Zároveň ale vzniká nový problém:</p>
+
+                <p>Čím déle agent pracuje bez člověka, tím více dílčích rozhodnutí může udělat.</p>
+
+                <p>Každé z nich může být samo o sobě malé.</p>
+
+                <p>Jejich kombinace ale může systém postupně odvést jinam, než uživatel původně zamýšlel.</p>
+
+                <p>Proto je důležité nejen schválení na začátku.</p>
+
+                <p>Potřebujeme také:</p>
+
+                <ul>
+    <li>možnost kontrolovat průběh;</li>
+    <li>historii provedených akcí;</li>
+    <li>možnost zastavit práci;</li>
+    <li>jasné hranice;</li>
+    <li>kontrolní body během delších úkolů.</li>
+</ul>
+
+                <p>Autonomie totiž není jednorázová vlastnost.</p>
+
+                <p>Je to rozsah prostoru, ve kterém jsme systému dovolili rozhodovat bez nás.</p>
+
+                <h2>Jak to vysvětlit studentům?</h2>
+
+                <p>Debata o AI agentech je výborným tématem pro občanskou nauku, informatiku i třídnickou hodinu.</p>
+
+                <p>Není potřeba vysvětlovat API nebo programování.</p>
+
+                <p>Stačí jednoduchá situace.</p>
+
+                <h3>Školní agent</h3>
+
+                <p>Představte si AI, která pomáhá ve škole.</p>
+
+                <p>Může:</p>
+
+                <ul>
+    <li>připravovat pracovní listy;</li>
+    <li>kontrolovat kalendář;</li>
+    <li>navrhovat e-maily;</li>
+    <li>připomínat termíny;</li>
+    <li>pracovat se školními dokumenty;</li>
+    <li>komunikovat se studenty.</li>
+</ul>
+
+                <p>Úkolem žáků je každou činnost zařadit:</p>
+
+                <p>Může udělat sám</p>
+
+                <p>Musí požádat člověka o potvrzení</p>
+
+                <p>Nesmí dělat</p>
+
+                <p>Pak přidáme nové situace:</p>
+
+                <blockquote>„Může agent omluvit absenci?“</blockquote>
+
+                <blockquote>„Může doporučit známku?“</blockquote>
+
+                <blockquote>„Může poslat rodiči upozornění?“</blockquote>
+
+                <blockquote>„Může pracovat s lékařskou zprávou?“</blockquote>
+
+                <blockquote>„Může studentovi automaticky změnit termín zkoušení?“</blockquote>
+
+                <p>Velmi rychle zjistíme, že hranice nejsou vždy samozřejmé.</p>
+
+                <p>A právě o tom diskuse je.</p>
+
+                <h2>Kdo odpovídá za chybu?</h2>
+
+                <p>Představme si situaci:</p>
+
+                <p>Škola používá AI agenta.</p>
+
+                <p>Agent odešle rodičům nesprávnou informaci.</p>
+
+                <p>Kdo je odpovědný?</p>
+
+                <p>Vývojář modelu?</p>
+
+                <p>Firma, která vytvořila aplikaci?</p>
+
+                <p>Správce systému?</p>
+
+                <p>Učitel, který agenta spustil?</p>
+
+                <p>Škola?</p>
+
+                <p>Jednoduchá univerzální odpověď neexistuje.</p>
+
+                <p>Záleží na konkrétním systému, právním rámci, nastavení oprávnění a způsobu použití.</p>
+
+                <p>Z pedagogického hlediska je ale důležitější jiná otázka:</p>
+
+                <p>Měli jsme systém navržený tak, aby člověk mohl chybu zachytit ještě předtím, než způsobí škodu?</p>
+
+                <p>Pokud ano, technologie podporovala lidské rozhodování.</p>
+
+                <p>Pokud ne, možná jsme agentovi dali větší autonomii, než bylo potřeba.</p>
+
+                <h2>Čím schopnější AI, tím důležitější jsou hranice</h2>
+
+                <p>U méně schopného systému se často ptáme:</p>
+
+                <blockquote>„Zvládne to?“</blockquote>
+
+                <p>U velmi schopného systému se čím dál častěji budeme ptát:</p>
+
+                <blockquote>„Chceme vůbec, aby to dělal sám?“</blockquote>
+
+                <p>To je zásadní změna.</p>
+
+                <p>Technologický vývoj nás může velmi rychle dostat do situace, kdy problémem nebude nedostatek schopností AI.</p>
+
+                <p>Problémem bude rozhodnout:</p>
+
+                <ul>
+    <li>které schopnosti použít;</li>
+    <li>komu je zpřístupnit;</li>
+    <li>na jaká data;</li>
+    <li>s jakými oprávněními;</li>
+    <li>pod jakým dohledem.</li>
+</ul>
+
+                <p>Možná tedy vstupujeme do období, kdy se jedna z nejdůležitějších digitálních dovedností nebude jmenovat „promptování“.</p>
+
+                <p>Bude se jmenovat:</p>
+
+                <p>nastavování hranic.</p>
+
+                <h2>Závěr: odpovědnost nelze delegovat stejně snadno jako úkol</h2>
+
+                <p>Umělá inteligence může převzít stále větší část práce.</p>
+
+                <p>Může hledat informace.</p>
+
+                <p>Může vytvářet dokumenty.</p>
+
+                <p>Může ovládat software.</p>
+
+                <p>Může plánovat další kroky.</p>
+
+                <p>A stále častěji může také jednat.</p>
+
+                <p>Ale existuje jedna věc, kterou jí nemůžeme jednoduše předat spolu s přístupovým oprávněním.</p>
+
+                <p>Odpovědnost.</p>
+
+                <p>Pokud chceme AI agenty využívat smysluplně, nestačí řešit, zda jsou dostatečně inteligentní.</p>
+
+                <p>Musíme také vědět:</p>
+
+                <p>Co mohou dělat?</p>
+
+                <p>Co mohou dělat sami?</p>
+
+                <p>Kdy se musí zastavit?</p>
+
+                <p>Kdo jejich práci kontroluje?</p>
+
+                <p>A kdo může říct:</p>
+
+                <blockquote>„Ne. Tohle rozhodnutí zůstává na člověku.“</blockquote>
+
+                <p>Možná právě tato schopnost nebude v době autonomních AI systémů známkou technologické zaostalosti.</p>
+
+                <p>Možná bude známkou toho, že technologii skutečně používáme rozumně.</p>
+
+                <h2>Námět do výuky: Nakreslete hranice agentovi</h2>
+
+                <p>Čas: 15–20 minut</p>
+
+                <p>Předmět: občanská nauka, informatika nebo třídnická hodina</p>
+
+                <p>Dejte studentům fiktivního školního AI agenta a deset činností.</p>
+
+                <p>Studenti je rozdělí do tří kategorií:</p>
+
+                <ul>
+    <li>může udělat sám;</li>
+    <li>musí požádat člověka o potvrzení;</li>
+    <li>nesmí dělat.</li>
+</ul>
+
+                <p>Poté musí u dvou sporných případů své rozhodnutí obhájit.</p>
+
+                <p>Na závěr položte otázku:</p>
+
+                <blockquote>„Je důležitější, co AI umí, nebo co jí dovolíme dělat?“</blockquote>
+
+                <p>Cílem není najít jednu správnou hranici.</p>
+
+                <p>Cílem je pochopit, že s rostoucí schopností AI roste také význam oprávnění, kontroly a lidské odpovědnosti.</p>
+
+
+
+                <section class="article-sources" aria-labelledby="souvisejici-cteni">
+                    <h2 id="souvisejici-cteni">Související čtení</h2>
+                    <ul>
+                        <li><a href="ai-novinka-filozofovani-s-ai-kriticke-mysleni.html">Human in the Loop jako další krok v době AI</a> – první díl série.</li>
+                        <li><a href="ai-novinka-filozofovani-s-ai-chybejici-role.html">AI a role, které ve škole chyběly</a> – druhý díl série.</li>
+                        <li><a href="uci-se-zak-nebo-za-nej-premysli-ai.html">Učí se žák, nebo za něj přemýšlí AI?</a> – třetí díl série o učení a přemýšlení.</li>
+                        <li><a href="ai-agenti-co-je-ai-agent.html">Co je AI agent?</a> – základní pojmy a principy agentů.</li>
+                        <li><a href="ai-novinka-datovi-agenti-lidske-schvaleni.html">Datoví agenti a lidské schvalování</a> – bezpečnější automatizace ve škole.</li>
+                    </ul>
+                    <h2>Oficiální zdroje</h2>
+                    <ul>
+                        <li><a href="https://openai.com/index/new-tools-for-building-agents/" target="_blank" rel="noopener noreferrer">OpenAI: New tools for building agents</a> – nástroje a agentní workflow.</li>
+                        <li><a href="https://openai.com/index/introducing-chatgpt-agent/" target="_blank" rel="noopener noreferrer">OpenAI: Introducing ChatGPT agent</a> – práce s nástroji, potvrzování akcí a aktivní dohled.</li>
+                        <li><a href="https://learn.microsoft.com/en-us/azure/security/fundamentals/shared-responsibility-ai-agent" target="_blank" rel="noopener noreferrer">Microsoft Learn: AI agent shared responsibility model</a> – oprávnění, lidský dohled a odpovědnost.</li>
+                        <li><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/autonomous-agents" target="_blank" rel="noopener noreferrer">Microsoft Learn: Design autonomous agent capabilities</a> – hranice autonomie, schvalování a nejmenší oprávnění.</li>
+                    </ul>
+                </section>
+            </div>
+        </article>
+
+        <section class="workflow-related" aria-labelledby="dalsi-novinky">
+            <div class="workflow-related-heading">
+                <h2 id="dalsi-novinky">Pokračujte v sérii Filozofování s AI</h2>
+                <p>Další úvahy o učení, práci a odpovědnosti ve světě umělé inteligence.</p>
+            </div>
+            <div class="workflow-related-grid">
+                <article class="workflow-related-card"><span class="workflow-card-number">01</span><h3><a href="ai-novinka-filozofovani-s-ai-kriticke-mysleni.html">Kritické myšlení a Human in the Loop</a></h3><p>První díl série o aktivní roli člověka při práci s AI.</p></article>
+                <article class="workflow-related-card"><span class="workflow-card-number">02</span><h3><a href="ai-novinka-filozofovani-s-ai-chybejici-role.html">Role, které nám ve škole chyběly</a></h3><p>Druhý díl série o AI a podpoře učitelské práce.</p></article>
+                <article class="workflow-related-card"><span class="workflow-card-number">03</span><h3><a href="uci-se-zak-nebo-za-nej-premysli-ai.html">Učí se žák, nebo za něj přemýšlí AI?</a></h3><p>Třetí díl série o učení, přemýšlení a roli AI.</p></article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai-novinky.html#filozofovani-s-ai-4">Zpět k sérii Filozofování s AI</a> · <a href="ai.html#novinky">AI ve vzdělávání</a></footer>
+
+    <script src="js/main.js?v=20261002-agent-responsibility"></script>
+    <script src="js/site-footer.js?v=20260927-human-loop"></script>
+</body>
+
+</html>

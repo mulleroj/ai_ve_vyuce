@@ -18,6 +18,20 @@ window.siteArticles = [
     badgeClass: 'badge-blue'
   },
   {
+    href: 'kdyz-ai-jedna-odpovednost-ai-agenta.html',
+    title: 'Když AI už nejen radí, ale jedná: kdo nese odpovědnost za AI agenta?',
+    summary: 'Tři úrovně autonomie AI agenta, lidský dohled, oprávnění a odpovědnost ve škole.',
+    category: 'Filozofování s AI',
+    series: 'Filozofování s AI',
+    seriesNumber: 4,
+    contentType: 'philosophy',
+    date: '2026-09-30',
+    dateLabel: '30. září 2026',
+    icon: '💬',
+    tags: ['Filozofování s AI · #4', 'AI agenti', 'Odpovědnost'],
+    badgeClass: 'badge-gold'
+  },
+  {
     href: 'notebooklm-hlasovy-rozhovor-nad-zdroji.html',
     title: 'Když AI zná naše učivo: hlasový rozhovor nad zdroji v NotebookLM',
     summary: 'Jak se liší obecný rozhovor s AI od studijního rozhovoru nad materiály, které vybral učitel, a jak připravit bezpečný pilot ve výuce.',
