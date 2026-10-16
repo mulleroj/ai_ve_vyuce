@@ -5,6 +5,17 @@
  */
 window.siteArticles = [
   {
+    href: 'co-se-muze-ucitel-naucit-od-youtube.html',
+    title: 'Co se může učitel naučit od YouTube? Pozornost žáků není samozřejmost',
+    summary: 'Co si mohou učitelé odnést z postupů profesionálních tvůrců videí? Praktický pohled na pozornost, scénáře, interaktivitu a využití AI při tvorbě výukových materiálů – bez zbytečných marketingových triků.',
+    category: 'AI ve vzdělávání',
+    date: '2026-10-16',
+    dateLabel: '16. října 2026',
+    icon: '🎓',
+    tags: ['AI ve výuce', 'Didaktika', 'Výuková videa', 'Pozornost žáků'],
+    badgeClass: 'badge-blue'
+  },
+  {
     href: 'gemini-skills-pro-ucitele.html',
     title: 'Gemini Skills pro učitele: jednou nastavíte, pak už Gemini ví, jak má pracovat',
     summary: 'První Gemini Skill krok za krokem a Teacher Skill Library: osm hotových pracovních postupů ke zkopírování, jejich kombinace a kontrola výsledku.',
