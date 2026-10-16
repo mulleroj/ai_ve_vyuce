@@ -78,15 +78,20 @@ function initParticles(canvasId) {
 initParticles('particles');
 
 /* ── Scroll reveal ── */
-const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-            setTimeout(() => entry.target.classList.add('visible'), i * 80);
-            revealObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+const revealEls = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => entry.target.classList.add('visible'), i * 80);
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => revealObserver.observe(el));
+} else {
+    revealEls.forEach(el => el.classList.add('visible'));
+}
 
 /* ── Toast ── */
 function showToast(msg, icon = '✅') {
@@ -410,12 +415,20 @@ function animateCounter(el) {
     };
     requestAnimationFrame(step);
 }
-const counterObserver = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-        if (e.isIntersecting) {
-            animateCounter(e.target);
-            counterObserver.unobserve(e.target);
-        }
+const counterEls = document.querySelectorAll('[data-target]');
+if ('IntersectionObserver' in window) {
+    const counterObserver = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                animateCounter(e.target);
+                counterObserver.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    counterEls.forEach(el => counterObserver.observe(el));
+} else {
+    counterEls.forEach(el => {
+        const target = parseInt(el.dataset.target, 10);
+        if (!isNaN(target)) el.textContent = target + (el.dataset.suffix || '');
     });
-}, { threshold: 0.5 });
-document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
+}
