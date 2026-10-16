@@ -767,6 +767,7 @@ select {
 .hero-img-wrapper img {
   width: 100%;
   max-width: 560px;
+  height: auto;
   display: block;
 }
 
