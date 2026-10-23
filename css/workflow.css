@@ -1969,3 +1969,62 @@ body.workflow-page {
 .gemini-skills-page .teacher-skill summary { overflow-wrap: anywhere; }
 .gemini-skills-page .teacher-skill summary span { color: var(--workflow-muted); font-size: 0.9rem; }
 .gemini-skills-page .teacher-skill .prompt-card { margin: 12px 0 0; }
+
+/* Insight Summaries: scoped editorial cards and classroom example. */
+.insight-summaries-page .workflow-shell { padding-top: var(--nav-height); }
+.insight-summaries-page .workflow-hero {
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr);
+  gap: clamp(28px, 5vw, 72px);
+}
+.insight-summaries-page .workflow-hero > *,
+.insight-summaries-page .insight-feature {
+  min-width: 0;
+}
+.insight-summaries-page .workflow-hero h1 {
+  font-size: clamp(2rem, 3.9vw, 3.6rem);
+  overflow-wrap: break-word;
+}
+.insight-summaries-page .workflow-hero-lead { max-width: 760px; }
+.insight-summaries-page .article-content { padding-top: 20px; }
+.insight-summaries-page .insight-features {
+  display: grid;
+  gap: 18px;
+  margin: 26px 0;
+}
+.insight-summaries-page .insight-feature,
+.insight-summaries-page .insight-example,
+.insight-summaries-page .insight-privacy {
+  padding: clamp(18px, 4vw, 30px);
+  border: 1px solid var(--workflow-line);
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+}
+.insight-summaries-page .insight-feature { border-left: 3px solid var(--workflow-teal); }
+.insight-summaries-page .insight-example {
+  margin-top: 42px;
+  background: rgba(0, 212, 168, 0.06);
+}
+.insight-summaries-page .insight-privacy {
+  margin: 36px 0;
+  border-left: 3px solid var(--workflow-orange);
+  background: rgba(245, 166, 35, 0.06);
+}
+.insight-summaries-page .insight-feature h3,
+.insight-summaries-page .insight-example h2,
+.insight-summaries-page .insight-privacy h2 {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+.insight-summaries-page .insight-feature p:last-child,
+.insight-summaries-page .insight-example p:last-child,
+.insight-summaries-page .insight-privacy p:last-child { margin-bottom: 0; }
+.insight-summaries-page .workflow-inline-link { overflow-wrap: anywhere; }
+.insight-summaries-page a:focus-visible,
+.insight-summaries-page button:focus-visible {
+  outline: 2px solid var(--workflow-yellow);
+  outline-offset: 4px;
+}
+@media (max-width: 900px) {
+  .insight-summaries-page .workflow-hero { grid-template-columns: minmax(0, 1fr); }
+}

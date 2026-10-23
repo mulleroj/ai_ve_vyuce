@@ -5,6 +5,18 @@
  */
 window.siteArticles = [
   {
+    href: 'gemini-notebook-ucitel-vidi-chaty-zaku.html',
+    title: 'Učitel nově uvidí, jak se žáci učí s AI. Google Gemini Notebook otevírá novou kapitolu výuky',
+    summary: 'Insight Summaries v Gemini Notebooku a Google Classroom: přehled práce žáků, individuální rozhovory, formativní hodnocení a otázky soukromí.',
+    category: 'AI ve vzdělávání',
+    platforms: ['gemini'],
+    date: '2026-10-23',
+    dateLabel: '23. října 2026',
+    icon: '📓',
+    tags: ['Gemini Notebook', 'Google Classroom', 'Formativní hodnocení', 'Soukromí žáků'],
+    badgeClass: 'badge-blue'
+  },
+  {
     href: 'co-se-muze-ucitel-naucit-od-youtube.html',
     title: 'Co se může učitel naučit od YouTube? Pozornost žáků není samozřejmost',
     summary: 'Co si mohou učitelé odnést z postupů profesionálních tvůrců videí? Praktický pohled na pozornost, scénáře, interaktivitu a využití AI při tvorbě výukových materiálů – bez zbytečných marketingových triků.',
