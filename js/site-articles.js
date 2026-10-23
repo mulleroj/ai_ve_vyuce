@@ -7,7 +7,7 @@ window.siteArticles = [
   {
     href: 'gemini-notebook-ucitel-vidi-chaty-zaku.html',
     title: 'Učitel nově uvidí, jak se žáci učí s AI. Google Gemini Notebook otevírá novou kapitolu výuky',
-    summary: 'Insight Summaries v Gemini Notebooku a Google Classroom: přehled práce žáků, individuální rozhovory, formativní hodnocení a otázky soukromí.',
+    summary: 'Insight Summaries v Gemini Notebooku a Google Classroom: přehled práce žáků, individuální rozhovory, formativní hodnocení a otázky soukromí. Praktický příklad a přehledná infografika.',
     category: 'AI ve vzdělávání',
     platforms: ['gemini'],
     date: '2026-10-23',

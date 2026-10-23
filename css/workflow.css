@@ -2028,3 +2028,25 @@ body.workflow-page {
 @media (max-width: 900px) {
   .insight-summaries-page .workflow-hero { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Supplied Insight Summaries illustrations use the shared article palette. */
+.insight-summaries-page .insight-hero-figure { margin: 0; }
+.insight-summaries-page .insight-hero-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--workflow-line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--workflow-shadow);
+}
+.insight-summaries-page .insight-hero-figure figcaption {
+  margin-top: 12px;
+  color: var(--workflow-muted);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+.insight-summaries-page .insight-infographic { margin: 40px 0; }
+.insight-summaries-page .insight-infographic img {
+  width: 100%;
+  border-radius: var(--radius-sm);
+}
