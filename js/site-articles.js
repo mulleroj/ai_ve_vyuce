@@ -5,6 +5,17 @@
  */
 window.siteArticles = [
   {
+    href: 'asistent-ucitele-osobni-ai-asistent.html',
+    title: 'Asistent učitele: Pomocník, který pedagogům dosud chyběl',
+    summary: 'Každý učitel si zaslouží vlastního asistenta. Ukazujeme, čím se osobní AI asistent liší od běžného chatbota, jak může pomáhat s přípravami, plánováním a administrativou – a proč o důležitých krocích musí dál rozhodovat učitel.',
+    category: 'AI asistenti',
+    date: '2026-10-25',
+    dateLabel: '25. října 2026',
+    icon: '🤖',
+    tags: ['AI asistenti', 'Osobní asistent učitele', 'Příprava na výuku', 'AI agenti', 'GDPR'],
+    badgeClass: 'badge-blue'
+  },
+  {
     href: 'vibe-coding-bezpecnost-kodu-php2shell.html',
     title: 'Vibe Coding: AI ti naprogramuje aplikaci. Ale kdo zkontroluje její bezpečnost?',
     summary: 'Funkční aplikace z vibe codingu ještě nemusí být bezpečná. Dvě vrstvy kontroly, nástroj OpenAI php2shell-checker a deset kroků před zveřejněním včetně lidského dohledu.',
