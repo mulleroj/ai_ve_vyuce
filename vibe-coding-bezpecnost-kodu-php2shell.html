@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vibe Coding: AI ti naprogramuje aplikaci. Ale kdo zkontroluje její bezpečnost? | AI ve Výuce</title>
+    <meta name="description" content="S umělou inteligencí dnes můžeme vytvářet weby, hry i výukové aplikace bez hlubokých znalostí programování. Funkční aplikace ale ještě nemusí být bezpečná. Jak ji kontrolovat a co nám může ukázat nový nástroj OpenAI?" />
+    <link rel="stylesheet" href="css/workflow.css?v=20261025-vibe-coding-security" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/vibe-coding-bezpecnost-kodu-php2shell.html" />
+    <meta property="og:title" content="Vibe Coding: AI ti naprogramuje aplikaci. Ale kdo zkontroluje její bezpečnost? | AI ve Výuce" />
+    <meta property="og:description" content="Funkční aplikace z vibe codingu ještě nemusí být bezpečná. Dvě vrstvy kontroly, nástroj php2shell-checker a deset kroků před zveřejněním." />
+    <meta property="og:url" content="https://ai-ve-vyuce.netlify.app/vibe-coding-bezpecnost-kodu-php2shell.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://ai-ve-vyuce.netlify.app/images/vibe-coding-bezpecnost-kodu-php2shell.png" />
+    <meta property="og:image:alt" content="Infografika Vibe coding a bezpečnost kódu: co je vibe coding, dvě vrstvy kontroly, php2shell-checker, výsledky OK, POTENTIALLY VULNERABLE a UNKNOWN a Human in the Loop" />
+</head>
+<body class="workflow-page">
+    <header class="workflow-shell">
+        <div class="workflow-topbar">
+            <a href="index.html" class="nav-logo"><div class="nav-logo-icon">🤖</div>AI ve <span>Výuce</span></a>
+            <a class="workflow-back" href="vibe-coding.html">← Vibe Coding</a>
+        </div>
+        <div class="workflow-hero">
+            <div>
+                <div class="workflow-eyebrow">Vibe coding pro učitele · 25. října 2026</div>
+                <h1>Vibe Coding:<br /><span>AI ti naprogramuje aplikaci. Ale kdo zkontroluje její bezpečnost?</span></h1>
+                <p class="workflow-hero-lead">S umělou inteligencí dnes můžeme vytvářet weby, hry i výukové aplikace bez hlubokých znalostí programování. Funkční aplikace ale ještě nemusí být bezpečná. Jak ji kontrolovat a co nám může ukázat nový nástroj OpenAI?</p>
+                <div class="workflow-meta"><span>Bezpečnost kódu</span><span>PHP2Shell</span><span>Human in the Loop</span></div>
+            </div>
+            <div class="workflow-route" aria-label="Čtyři oblasti bezpečného vibe codingu">
+                <div class="workflow-stage"><span class="workflow-stage-number">01</span><div><strong>Od nápadu k aplikaci</strong><small>Popis potřeby, prototyp a iterace s AI</small></div></div>
+                <div class="workflow-stage"><span class="workflow-stage-number">02</span><div><strong>Funguje to. Je to bezpečné?</strong><small>Skrytá rizika za fungujícím rozhraním</small></div></div>
+                <div class="workflow-stage"><span class="workflow-stage-number">03</span><div><strong>Dvě vrstvy kontroly</strong><small>Kód aplikace a prostředí serveru</small></div></div>
+                <div class="workflow-stage"><span class="workflow-stage-number">04</span><div><strong>Člověk rozhoduje</strong><small>Ověřené výsledky a lidský dohled</small></div></div>
+            </div>
+        </div>
+    </header>
+    <main class="workflow-main">
+        <article class="workflow-article" id="vibe-coding-bezpecnost-kodu-php2shell">
+            <div class="workflow-article-intro">
+                <p class="workflow-article-summary">Vibe coding zrychluje tvorbu výukových aplikací, ale funkční rozhraní ještě neznamená bezpečné nasazení. Praktický pohled na dvě vrstvy kontroly, nástroj OpenAI php2shell-checker a deset kroků před zveřejněním.</p>
+                <div class="workflow-article-meta"><time datetime="2026-10-25">25. října 2026</time><span>Bezpečnost · Vibe Coding</span></div>
+            </div>
+            <div class="article-content">
+                <p class="article-lead">Ještě nedávno znamenalo vytvořit vlastní aplikaci naučit se programovací jazyk, orientovat se ve vývojových nástrojích a strávit hodiny psaním kódu. Dnes mnohdy stačí popsat, co chceme vytvořit. To je obrovská příležitost. Ale také důvod začít více přemýšlet o bezpečnosti.</p>
+
+                <figure class="article-figure">
+                    <a href="images/vibe-coding-bezpecnost-kodu-php2shell.png" aria-label="Otevřít infografiku Vibe coding a bezpečnost kódu v plné velikosti"><img src="images/vibe-coding-bezpecnost-kodu-php2shell.png" width="1122" height="1402" alt="Infografika Vibe coding a bezpečnost kódu: co je vibe coding, dvě vrstvy kontroly (kód aplikace a prostředí serveru), příklad nástroje OpenAI php2shell-checker, výsledky OK, POTENTIALLY VULNERABLE a UNKNOWN, kontrolní otázky před zveřejněním a princip Human in the Loop." loading="eager" decoding="async" /></a>
+                    <figcaption>Od vibe codingu přes dvě vrstvy bezpečnosti až po lidský dohled před zveřejněním. Kliknutím otevřete infografiku v plné velikosti.</figcaption>
+                </figure>
+
+                <h2>Od nápadu k vlastní aplikaci</h2>
+                <p>Vibe coding mění způsob, jakým vzniká software. Člověk nemusí začínat zdrojovým kódem. Začíná potřebou.</p>
+                <p>Může například umělé inteligenci zadat:</p>
+                <div class="article-prompt">„Vytvoř jednoduchou webovou aplikaci, ve které si žáci procvičí anglická nepravidelná slovesa. Chci tři úrovně obtížnosti, okamžitou zpětnou vazbu a možnost opakování chybných odpovědí.“</div>
+                <p>AI navrhne strukturu aplikace, vytvoří její rozhraní a naprogramuje požadované funkce. Člověk výsledek zkouší, připomínkuje a postupně vylepšuje.</p>
+                <p>Tak mohou vznikat interaktivní pracovní listy, procvičovací hry, vědomostní kvízy, simulace, jednoduché výukové aplikace nebo nástroje pro organizaci práce.</p>
+                <p>Přínos je zřejmý: učitel se může více soustředit na vzdělávací cíl a méně na technické detaily.</p>
+                <p>Jenže právě tady začíná otázka, na kterou bychom neměli zapomínat.</p>
+
+                <h2>Funguje to. Ale je to bezpečné?</h2>
+                <p>Představme si, že nám AI vytvoří webovou aplikaci. Má příjemný vzhled, tlačítka fungují, odpovědi se vyhodnocují a při prvním vyzkoušení nenajdeme žádnou chybu.</p>
+                <p>Znamená to, že ji můžeme bez obav zveřejnit?</p>
+                <p>Ne nutně.</p>
+                <p>Za fungujícím rozhraním se mohou skrývat problémy, které běžný uživatel nepozná.</p>
+                <p>Aplikace může například nesprávně zpracovávat vstupní údaje, ukládat citlivé informace na nevhodné místo, obsahovat veřejně dostupný API klíč nebo používat zastaralou a zranitelnou součást systému.</p>
+                <p>U aplikací s přihlašováním může být problém také v nedostatečném ověřování uživatelů a jejich oprávnění.</p>
+                <p>To není důvod vibe coding odmítat. Je to důvod změnit náš pracovní postup.</p>
+                <p>Vytvoření aplikace a ověření její bezpečnosti musí být dvě samostatné činnosti.</p>
+
+                <h2>Dvě vrstvy bezpečnosti</h2>
+                <p>Při kontrole webové aplikace je užitečné rozlišovat dvě oblasti.</p>
+                <p><strong>První vrstva: samotný kód aplikace.</strong></p>
+                <p>Zajímá nás, jak aplikace pracuje s uživatelskými vstupy, zda chrání údaje, jak ověřuje přístup, jestli nezveřejňuje přístupové klíče a zda používá bezpečné knihovny.</p>
+                <p>S tím může pomoci kontrola zdrojového kódu, specializované nástroje, automatické testy a nezávislá odborná revize.</p>
+                <p><strong>Druhá vrstva: prostředí, ve kterém aplikace běží.</strong></p>
+                <p>I správně napsaná aplikace může být ohrožená, pokud ji provozujeme na zastaralém serveru nebo na softwaru se známou bezpečnostní zranitelností.</p>
+                <p>A právě zde se dostáváme k zajímavému příkladu od OpenAI.</p>
+
+                <h2>OpenAI a kontrola zranitelností PHP</h2>
+                <p>OpenAI zveřejnila na GitHubu nástroj <a class="workflow-inline-link" href="https://github.com/openai/php2shell-checker" target="_blank" rel="noopener noreferrer">php2shell-checker</a>.</p>
+                <p>Jeho účel je poměrně úzce vymezený: zjistit, zda používaná verze PHP může být zranitelná vůči konkrétním bezpečnostním problémům označovaným jako PHP2Shell.</p>
+                <p>PHP je programovací jazyk využívaný na mnoha webových serverech. Na rozdíl od jednoduché statické stránky může PHP na serveru zpracovávat požadavky, pracovat s databází a vytvářet dynamický obsah.</p>
+                <p>Pokud server používá zranitelnou verzi PHP, může představovat bezpečnostní riziko bez ohledu na to, zda aplikaci napsal člověk, nebo umělá inteligence.</p>
+                <p>Nástroj OpenAI nabízí dvě základní možnosti kontroly.</p>
+                <p><strong>Kontrola podle adresy webu:</strong> Pokud máme k dispozici pouze URL, můžeme se pokusit zjistit verzi PHP z informací, které server veřejně poskytuje.</p>
+                <p><strong>Kontrola na serveru:</strong> Pokud máme oprávněný přístup k serveru, lze zjistit, který balíček PHP web skutečně obsluhuje (například PHP-FPM nebo modul Apache), a porovnat jeho přesnou verzi s bezpečnostními oznámeními dodavatele (Debian, Ubuntu, RHEL) nebo s opravenými verzemi PHP. Rozhoduje skutečně běžící instalace, přesná verze balíčku a opravy od dodavatele.</p>
+                <p>OpenAI k nástroji poskytuje také dva SKILLy pro Codex: <a class="workflow-inline-link" href="https://github.com/openai/php2shell-checker/blob/main/skills/phpcheck-url/SKILL.md" target="_blank" rel="noopener noreferrer">phpcheck-url</a> a <a class="workflow-inline-link" href="https://github.com/openai/php2shell-checker/blob/main/skills/phpcheck-server/SKILL.md" target="_blank" rel="noopener noreferrer">phpcheck-server</a>. Ty pomáhají AI agentovi provést příslušný typ kontroly. Kontrola na serveru je přitom postup pro agenta podle SKILLu phpcheck-server, nikoli samostatný příkaz skriptu.</p>
+                <p>Nejde o nástroj, který automaticky opraví celý web nebo zkontroluje všechny chyby v jeho zdrojovém kódu.</p>
+                <p>A to je důležité.</p>
+
+                <h2>Co znamenají výsledky kontroly?</h2>
+                <p>Nástroj rozlišuje tři základní výsledky.</p>
+                <p><strong>OK:</strong> Verze PHP, kterou server o sobě uvádí, odpovídá opravenému vydání nebo je novější. Podle dokumentace nástroje ověřené k 25. 10. 2026 jde o verze 8.2.35, 8.3.36, 8.4.27 a 8.5.12; tento seznam se může v čase měnit. Výsledek OK neověřuje skutečně instalovanou verzi PHP na serveru a neprokazuje bezpečnost celé aplikace.</p>
+                <p><strong>POTENTIALLY VULNERABLE (potenciálně zranitelné):</strong> Uvedená verze je v ohrožené řadě (nižší než opravené vydání, nebo jde o starou větev 5.4–8.1). Je to varování podle verze, nikoli potvrzení zranitelnosti. Je potřeba ověřit stav balíčku podle oznámení dodavatele a případně zajistit nápravu.</p>
+                <p><strong>UNKNOWN:</strong> Nástroj nedokázal stav určit. Server například nemusí veřejně poskytovat potřebnou informaci. Neznámý výsledek nelze považovat za potvrzení bezpečnosti.</p>
+                <p>Výsledek je nutné porovnat s aktuálními bezpečnostními informacemi od PHP nebo dodavatele serverové instalace. Někteří dodavatelé totiž bezpečnostní opravy přenášejí i do balíčků, jejichž viditelné číslo verze zůstalo starší.</p>
+                <p>Stejně tak je důležité vědět, že samotná kontrola podle HTTP hlaviček neposkytuje úplný obraz o konfiguraci serveru.</p>
+                <p>Žádný jednotlivý nástroj nenahrazuje komplexní bezpečnostní kontrolu.</p>
+
+                <h2>Týká se to i učitele, který si vytváří vlastní aplikaci?</h2>
+                <p>Ano, ale záleží na tom, jaký nástroj vytváří.</p>
+                <p>Jednoduchá hra naprogramovaná v HTML, CSS a JavaScriptu, která běží pouze v prohlížeči a nepracuje se školními osobními údaji, má jiná rizika než systém s přihlašováním, databází a serverovým zpracováním dat.</p>
+                <p>Statická stránka například nemusí používat PHP vůbec. V takovém případě nebude kontrola PHP2Shell správným nástrojem pro posouzení její bezpečnosti.</p>
+                <p>Pokud ale provozujeme aplikaci na PHP serveru, může být kontrola verze PHP jedním z užitečných kroků.</p>
+                <p>A jestliže tvoříme aplikaci, která zpracovává žákovské účty, hodnocení nebo jiné osobní údaje, nestačí běžná kontrola funkčnosti. Je nutné zapojit také odborné posouzení bezpečnosti a ochrany údajů.</p>
+
+                <h2>Deset věcí, které zkontrolovat před zveřejněním AI aplikace</h2>
+                <ol>
+                    <li><strong>Víme, co aplikace skutečně dělá?</strong> Rozumíme alespoň jejím základním funkcím, toku dat a tomu, zda komunikuje s externími službami?</li>
+                    <li><strong>Pracuje s osobními údaji?</strong> Pokud to není nezbytné, navrhněme aplikaci tak, aby je vůbec nepotřebovala.</li>
+                    <li><strong>Neobsahuje přístupové klíče?</strong> Hesla, tokeny ani soukromé API klíče nesmí být veřejně dostupné ve zdrojovém kódu.</li>
+                    <li><strong>Používá aktuální technologie?</strong> Ověřme používané knihovny, závislosti, frameworky a případný serverový software.</li>
+                    <li><strong>Správně zpracovává vstupy?</strong> Formuláře a textová pole musí počítat i s nečekanými nebo škodlivými vstupy.</li>
+                    <li><strong>Jsou správně nastavená oprávnění?</strong> Pokud má aplikace přihlašování, musí bezpečně oddělovat uživatele a jejich data.</li>
+                    <li><strong>Komunikuje bezpečně?</strong> Veřejná aplikace má používat HTTPS a chránit přenášené informace.</li>
+                    <li><strong>Prověřili jsme prostředí?</strong> Pokud používáme PHP, ověřme jeho aktuálnost a známé zranitelnosti. U jiných technologií použijme odpovídající kontroly.</li>
+                    <li><strong>Testovali jsme i chybné situace?</strong> Nestačí zjistit, že běžný postup funguje. Vyzkoušejme neplatné vstupy, chybějící údaje a nečekané chování.</li>
+                    <li><strong>Schválil výsledek člověk?</strong> Před zveřejněním musí někdo zkontrolovat změněné soubory, výsledky testů a případná rizika. U citlivých systémů je potřebná také nezávislá odborná kontrola.</li>
+                </ol>
+
+                <h2>Můžeme požádat AI, aby zkontrolovala práci jiné AI?</h2>
+                <p>Ano. A je to velmi užitečný krok, pokud nepřeceníme jeho spolehlivost.</p>
+                <p>Po vytvoření aplikace můžeme druhému AI agentovi zadat například:</p>
+                <div class="article-prompt">„Proveď bezpečnostní revizi této webové aplikace. Zaměř se na zpracování uživatelských vstupů, přístupová oprávnění, ukládání dat, závislosti, přístupové klíče a bezpečnostní rizika při nasazení. Odděl potvrzené problémy od podezření. U každého zjištění uveď konkrétní soubor, vysvětlení rizika a doporučenou opravu. Nic automaticky neměň a nevydávej úspěšné testy za důkaz úplné bezpečnosti.“</div>
+                <p>Taková revize může odhalit řadu problémů. Neměli bychom ji ale považovat za bezpečnostní certifikát.</p>
+                <p>Důležité je i to, aby AI dostala pouze údaje, které smí zpracovávat, a aby odeslání kódu do externí služby neporušovalo pravidla organizace.</p>
+
+                <h2>Human in the Loop: člověk zůstává odpovědný</h2>
+                <p>Vibe coding nám umožňuje vytvářet digitální nástroje, na které bychom si dříve možná netroufli. Díky AI se z nápadu může stát funkční aplikace výrazně rychleji.</p>
+                <p>Rychlost však nemění odpovědnost.</p>
+                <p>AI může kód napsat. Jiná AI může upozornit na jeho slabiny. Specializovaný nástroj může prověřit konkrétní zranitelnost.</p>
+                <p>Ale rozhodnutí, zda je aplikace připravena pro skutečné uživatele, musí vycházet z ověřených výsledků a odpovídajícího lidského dohledu.</p>
+                <p>Budoucnost vibe codingu není jen v tom, že dokážeme programovat rychleji. Je také v tom, že se naučíme mnohem lépe kontrolovat, co jsme s pomocí AI vytvořili.</p>
+
+                <h2>Zdroje a další čtení</h2>
+                <ul>
+                    <li><a class="workflow-inline-link" href="https://github.com/openai/php2shell-checker" target="_blank" rel="noopener noreferrer">OpenAI – php2shell-checker</a></li>
+                    <li><a class="workflow-inline-link" href="https://github.com/openai/php2shell-checker/blob/main/skills/phpcheck-url/SKILL.md" target="_blank" rel="noopener noreferrer">OpenAI – phpcheck-url SKILL</a></li>
+                    <li><a class="workflow-inline-link" href="https://github.com/openai/php2shell-checker/blob/main/skills/phpcheck-server/SKILL.md" target="_blank" rel="noopener noreferrer">OpenAI – phpcheck-server SKILL</a></li>
+                    <li><a class="workflow-inline-link" href="https://cheatsheetseries.owasp.org/cheatsheets/Secure_Code_Review_Cheat_Sheet.html" target="_blank" rel="noopener noreferrer">OWASP – Secure Code Review Cheat Sheet</a></li>
+                    <li><a class="workflow-inline-link" href="https://cheatsheetseries.owasp.org/cheatsheets/Secure_Coding_with_AI_Cheat_Sheet.html" target="_blank" rel="noopener noreferrer">OWASP – Secure Coding with AI Cheat Sheet</a></li>
+                    <li><a class="workflow-inline-link" href="https://www.php.net/manual/en/introduction.php" target="_blank" rel="noopener noreferrer">PHP – Introduction (PHP Manual)</a></li>
+                    <li><a class="workflow-inline-link" href="https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Security_Cheat_Sheet.html" target="_blank" rel="noopener noreferrer">OWASP – Transport Layer Security Cheat Sheet</a></li>
+                </ul>
+            </div>
+        </article>
+        <section class="workflow-related" aria-labelledby="related-vibe-security">
+            <div class="workflow-related-heading">
+                <div><span class="workflow-article-kicker">SOUVISEJÍCÍ ČTENÍ</span><h2 id="related-vibe-security">Pokračujte ve Vibe Codingu</h2></div>
+                <p>Workflow, úvod a praktické projekty pro bezpečnější tvorbu výukových aplikací.</p>
+            </div>
+            <div class="workflow-related-grid">
+                <a class="workflow-related-card" href="ai-workflow-vibe-coding.html"><span class="workflow-card-number">01</span><h3>Vibe coding krok za krokem</h3><p>Od problému přes prototyp a testování až po bezpečnost a nasazení.</p></a>
+                <a class="workflow-related-card" href="vibe-coding-pro-ucitele.html"><span class="workflow-card-number">02</span><h3>Vibe coding pro učitele</h3><p>Co si můžete vytvořit do výuky a jak ověřit první prototyp.</p></a>
+                <a class="workflow-related-card" href="vibe-coding-ucitele.html"><span class="workflow-card-number">03</span><h3>Úvod do Vibe Codingu</h3><p>První zadání, testování a bezpečné hranice při tvorbě výukové aplikace.</p></a>
+            </div>
+        </section>
+    </main>
+    <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="vibe-coding.html">Zpět na Vibe Coding</a></footer>
+    <script src="js/site-footer.js?v=20260927-human-loop"></script>
+</body>
+</html>

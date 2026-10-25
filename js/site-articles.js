@@ -5,6 +5,17 @@
  */
 window.siteArticles = [
   {
+    href: 'vibe-coding-bezpecnost-kodu-php2shell.html',
+    title: 'Vibe Coding: AI ti naprogramuje aplikaci. Ale kdo zkontroluje její bezpečnost?',
+    summary: 'Funkční aplikace z vibe codingu ještě nemusí být bezpečná. Dvě vrstvy kontroly, nástroj OpenAI php2shell-checker a deset kroků před zveřejněním včetně lidského dohledu.',
+    category: 'Vibe Coding',
+    date: '2026-10-25',
+    dateLabel: '25. října 2026',
+    icon: '💻',
+    tags: ['Vibe Coding', 'Bezpečnost', 'PHP2Shell'],
+    badgeClass: 'badge-purple'
+  },
+  {
     href: 'gemini-notebook-ucitel-vidi-chaty-zaku.html',
     title: 'Učitel nově uvidí, jak se žáci učí s AI. Google Gemini Notebook otevírá novou kapitolu výuky',
     summary: 'Insight Summaries v Gemini Notebooku a Google Classroom: přehled práce žáků, individuální rozhovory, formativní hodnocení a otázky soukromí. Praktický příklad a přehledná infografika.',
