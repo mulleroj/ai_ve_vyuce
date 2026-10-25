@@ -16,6 +16,25 @@
     <meta property="og:image" content="https://ai-ve-vyuce.netlify.app/images/asistent-hero.png" />
     <meta property="og:image:alt" content="AI asistenti pro učitele – rozcestník platforem a vlastních pomocníků" />
     <meta property="article:published_time" content="2026-10-25" />
+    <style>
+        .article-content ul.checklist {
+            list-style: none;
+            padding-left: 0;
+            margin: 1rem 0 1.5rem;
+        }
+        .article-content ul.checklist li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.65rem;
+            line-height: 1.6;
+        }
+        .article-content ul.checklist li::before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            color: var(--text-secondary, #94a3b8);
+        }
+    </style>
 </head>
 <body class="workflow-page">
     <header class="workflow-shell">
@@ -70,7 +89,7 @@
                 <p>Asistent nepozná vaše zvyklosti sám od sebe. Musíte mu je předat. Slouží k tomu tři nástroje:</p>
                 <ul>
                     <li><strong>Trvalé pokyny</strong> 🟢 – text, který asistent dostane na začátku každé práce: kdo jste, co učíte, jaký tón a formát chcete. Mají je např. Projekty v ChatGPT, Projekty v Claude nebo poznámkové bloky Microsoft Copilot.</li>
-                    <li><strong>Paměť</strong> 🟢 – některé nástroje si samy ukládají užitečné informace z rozhovorů (např. paměť v ChatGPT, kterou lze prohlížet, upravovat i vypnout). U projektů lze často nastavit, aby paměť zůstala jen uvnitř projektu.</li>
+                    <li><strong>Paměť</strong> 🟢 – některé nástroje si pamatují užitečné informace z rozhovorů a dalších zdrojů. V ChatGPT ji spravujete v Nastavení → Personalizace → Paměť. V novějším rozhraní tam najdete přehled <em>Memory summary</em> – souhrn toho, co si o vás ChatGPT pamatuje (nemusí obsahovat úplně všechno). Souhrn můžete opravit, u některé informace zvolit „Uiž to nezmiňuj“ (Don’t mention this again), nebo paměť smazat a vypnout. Vypnutí paměti nemaže staré konverzace a dostupné volby se liší podle tarifu, regionu a nastavení školy. U projektů lze často nastavit, aby paměť zůstala jen uvnitř projektu.</li>
                     <li>
                         <strong>Opakovatelné postupy (skills)</strong> 🟢/🟡 – uložený „recept“ na konkrétní úkol, třeba „vytvoř pracovní list podle mé šablony“. Samotnou možnost takový postup definovat dnes často najdete přímo v nástroji (🟢). Jestli ale postup umí pracovat s externími aplikacemi – kalendářem, diskem nebo e-mailem – závisí na konkrétním nástroji, typu účtu a oprávněních, která vám povolí škola nebo správce (🟡).
                         <p><em>Aktuálně probíhající změny (stav k 25. 10. 2026):</em></p>
@@ -162,15 +181,15 @@
                 </ol>
 
                 <h3>✅ Checklist: Jak začít</h3>
-                <ul>
-                    <li>[ ] Znám pravidla své školy pro používání AI.</li>
-                    <li>[ ] Používám schválený (ideálně školní) účet.</li>
-                    <li>[ ] Mám napsané trvalé pokyny: předmět, ročník, úroveň, tón, formát.</li>
-                    <li>[ ] Nahrál(a) jsem jen vlastní materiály bez údajů o žácích.</li>
-                    <li>[ ] Vím, kde v nástroji zobrazit a smazat paměť.</li>
-                    <li>[ ] Mám jeden uložený postup pro nejčastější úkol.</li>
-                    <li>[ ] Odesílání, mazání a hodnocení vždy schvaluji sám/sama.</li>
-                    <li>[ ] Výstupy ověřuji před použitím ve výuce.</li>
+                <ul class="checklist">
+                    <li>Znám pravidla své školy pro používání AI.</li>
+                    <li>Používám schválený (ideálně školní) účet.</li>
+                    <li>Mám napsané trvalé pokyny: předmět, ročník, úroveň, tón, formát.</li>
+                    <li>Nahrál(a) jsem jen vlastní materiály bez údajů o žácích.</li>
+                    <li>Vím, kde v nástroji zobrazit a smazat paměť.</li>
+                    <li>Mám jeden uložený postup pro nejčastější úkol.</li>
+                    <li>Odesílání, mazání a hodnocení vždy schvaluji sám/sama.</li>
+                    <li>Výstupy ověřuji před použitím ve výuce.</li>
                 </ul>
 
                 <h2>Závěr</h2>
