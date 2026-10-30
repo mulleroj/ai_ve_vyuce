@@ -5,6 +5,18 @@
  */
 window.siteArticles = [
   {
+    href: 'ai-novinka-ai-duvod-premyslet.html',
+    title: 'AI nemá za žáka přemýšlet. Má mu dát důvod přemýšlet.',
+    summary: 'Jak využít umělou inteligenci k probuzení zvídavosti, samostatnosti a skutečného zájmu o učení. Sedm principů, ukázka hodiny, tři prompty a infografika pro učitele.',
+    category: 'AI ve vzdělávání',
+    contentType: 'guide',
+    date: '2026-10-30',
+    dateLabel: '30. října 2026',
+    icon: '🎓',
+    tags: ['Didaktika', 'Prompty', 'Human in the Loop', 'Praktický návod'],
+    badgeClass: 'badge-blue'
+  },
+  {
     href: 'asistent-ucitele-osobni-ai-asistent.html',
     title: 'Asistent učitele: Pomocník, který pedagogům dosud chyběl',
     summary: 'Každý učitel si zaslouží vlastního asistenta. Ukazujeme, čím se osobní AI asistent liší od běžného chatbota, jak může pomáhat s přípravami, plánováním a administrativou – a proč o důležitých krocích musí dál rozhodovat učitel.',
