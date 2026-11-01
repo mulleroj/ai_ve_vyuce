@@ -5,6 +5,17 @@
  */
 window.siteArticles = [
   {
+    href: 'skill-anglictina-vyukove-materialy.html',
+    title: 'Jeden SKILL, sedm výukových materiálů: AI pomocník pro angličtinu',
+    summary: 'Otevřený English Teaching Materials SKILL pro učitele angličtiny: sedm formátů materiálů, postupy pro ChatGPT, Claude a Gemini i bezplatný ZIP ke stažení.',
+    category: 'Angličtina',
+    date: '2026-11-01',
+    dateLabel: '1. listopadu 2026',
+    icon: '🇬🇧',
+    tags: ['Angličtina', 'Agent Skills', 'Výukové materiály'],
+    badgeClass: 'badge-blue'
+  },
+  {
     href: 'ai-novinka-ai-duvod-premyslet.html',
     title: 'AI nemá za žáka přemýšlet. Má mu dát důvod přemýšlet.',
     summary: 'Jak využít umělou inteligenci k probuzení zvídavosti, samostatnosti a skutečného zájmu o učení. Sedm principů, ukázka hodiny, tři prompty a infografika pro učitele.',
