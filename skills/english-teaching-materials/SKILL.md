@@ -1,6 +1,6 @@
 ---
 name: english-teaching-materials
-description: Vytváří sedm typů názorných, jazykově správných a didakticky kvalitních materiálů pro angličtinu A1–C1. Použij při tvorbě gramatického plakátu, obrázkové slovní zásoby, pracovního listu, vizuální podpory čtení či poslechu, konverzace, infografiky nebo univerzální výukové pomůcky.
+description: Vytváří sedm typů materiálů pro výuku angličtiny A1–C1: plakáty, slovní zásobu, pracovní listy, čtení, poslech, mluvení a infografiky.
 license: CC-BY-4.0
 metadata:
   author: AI ve Výuce
