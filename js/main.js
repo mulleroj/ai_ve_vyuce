@@ -445,6 +445,7 @@ if (latestArticlesMount && Array.isArray(window.siteArticles)) {
             latestArticlesMount.appendChild(card);
         });
     }
+    latestArticlesMount.setAttribute('aria-busy', 'false');
 }
 
 /* ── Catalog-backed counters ── */
