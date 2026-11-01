@@ -13,7 +13,9 @@ window.siteArticles = [
     dateLabel: '1. listopadu 2026',
     icon: '🇬🇧',
     tags: ['Angličtina', 'Agent Skills', 'Výukové materiály'],
-    badgeClass: 'badge-blue'
+    badgeClass: 'badge-blue',
+    image: 'images/home-article-english-materials.jpg',
+    imageAlt: 'Učitelka a studenti společně připravují materiály k výuce angličtiny.'
   },
   {
     href: 'ai-novinka-ai-duvod-premyslet.html',
@@ -25,7 +27,9 @@ window.siteArticles = [
     dateLabel: '30. října 2026',
     icon: '🎓',
     tags: ['Didaktika', 'Prompty', 'Human in the Loop', 'Praktický návod'],
-    badgeClass: 'badge-blue'
+    badgeClass: 'badge-blue',
+    image: 'images/ai-duvod-premyslet-hero.webp',
+    imageAlt: 'Učitelka se studenty zkoumá školní projekt a přemýšlí nad jeho řešením.'
   },
   {
     href: 'asistent-ucitele-osobni-ai-asistent.html',
@@ -36,7 +40,9 @@ window.siteArticles = [
     dateLabel: '25. října 2026',
     icon: '🤖',
     tags: ['AI asistenti', 'Osobní asistent učitele', 'Příprava na výuku', 'AI agenti', 'GDPR'],
-    badgeClass: 'badge-blue'
+    badgeClass: 'badge-blue',
+    image: 'images/home-article-teacher-assistant.jpg',
+    imageAlt: 'Učitelka plánuje výuku u notebooku v učebně.'
   },
   {
     href: 'vibe-coding-bezpecnost-kodu-php2shell.html',
@@ -47,7 +53,9 @@ window.siteArticles = [
     dateLabel: '25. října 2026',
     icon: '💻',
     tags: ['Vibe Coding', 'Bezpečnost', 'PHP2Shell'],
-    badgeClass: 'badge-purple'
+    badgeClass: 'badge-purple',
+    image: 'images/home-article-security.webp',
+    imageAlt: 'Bezpečnostní výstraha na notebooku při kontrole kódu.'
   },
   {
     href: 'gemini-notebook-ucitel-vidi-chaty-zaku.html',
@@ -59,7 +67,9 @@ window.siteArticles = [
     dateLabel: '23. října 2026',
     icon: '📓',
     tags: ['Gemini Notebook', 'Google Classroom', 'Formativní hodnocení', 'Soukromí žáků'],
-    badgeClass: 'badge-blue'
+    badgeClass: 'badge-blue',
+    image: 'images/gemini-notebook-insight-summaries-hero.webp',
+    imageAlt: 'Učitelka sleduje studijní práci žáků u notebooku.'
   },
   {
     href: 'co-se-muze-ucitel-naucit-od-youtube.html',
@@ -70,7 +80,9 @@ window.siteArticles = [
     dateLabel: '16. října 2026',
     icon: '🎓',
     tags: ['AI ve výuce', 'Didaktika', 'Výuková videa', 'Pozornost žáků'],
-    badgeClass: 'badge-blue'
+    badgeClass: 'badge-blue',
+    image: 'images/home-article-video-attention.jpg',
+    imageAlt: 'Studenti se soustředí na výukové video na notebooku.'
   },
   {
     href: 'gemini-skills-pro-ucitele.html',

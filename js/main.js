@@ -363,17 +363,7 @@ if (latestArticlesMount && Array.isArray(window.siteArticles)) {
         emptyState.textContent = 'Zatím zde nejsou žádné zveřejněné články.';
         latestArticlesMount.appendChild(emptyState);
     } else {
-        const articleImageByHref = {
-            'skill-anglictina-vyukove-materialy.html': ['images/english-teaching-materials-infografika.webp', 'Sedm typů výukových materiálů pro angličtinu'],
-            'ai-novinka-ai-duvod-premyslet.html': ['images/ai-duvod-premyslet-hero.webp', 'Učitelka a studenti společně zkoumají výukovou otázku'],
-            'asistent-ucitele-osobni-ai-asistent.html': ['images/asistent-ucitele-osobni-ai-asistent.webp', 'Přehled osobního AI asistenta pro učitele'],
-            'vibe-coding-bezpecnost-kodu-php2shell.html': ['images/home-article-security.webp', 'Výstraha při bezpečnostní kontrole kódu na notebooku'],
-            'gemini-notebook-ucitel-vidi-chaty-zaku.html': ['images/gemini-notebook-insight-summaries-hero.webp', 'Učitel sleduje studijní práci v Gemini Notebooku'],
-            'co-se-muze-ucitel-naucit-od-youtube.html': ['images/od-pozornosti-k-porozumeni.webp', 'Pozornost a porozumění ve výuce'],
-            'ai-ziva-hlasova-ai-ve-vyuce.html': ['images/home-article-voice.webp', 'Studentka vede hlasový rozhovor s AI'],
-            'kdyz-ai-jedna-odpovednost-ai-agenta.html': ['images/home-article-philosophy.webp', 'Člověk a robot rozvažují společnou odpovědnost']
-        };
-        const fallbackArticleImage = new URL('images/home-hero-teacher.webp', window.location.href).href;
+        const fallbackArticleImage = new URL('images/home-hero-teacher-v2.jpg', window.location.href).href;
         latestArticles.forEach(article => {
             const card = document.createElement('article');
             card.className = 'latest-card';
@@ -383,30 +373,19 @@ if (latestArticlesMount && Array.isArray(window.siteArticles)) {
             imageLink.href = article.href;
             imageLink.setAttribute('aria-label', `Otevřít článek: ${article.title}`);
             const image = document.createElement('img');
-            const imageDetails = articleImageByHref[article.href];
-            const metadataImage = article.image || article.imageUrl || article.thumbnail;
+            const metadataImage = article.image;
             image.className = 'latest-card-image';
-            image.alt = imageDetails?.[1] || article.imageAlt || article.title;
+            image.alt = article.imageAlt || article.title;
             image.width = 640;
             image.height = 360;
             image.loading = 'lazy';
             image.decoding = 'async';
-            image.src = imageDetails?.[0] || (metadataImage ? new URL(metadataImage, window.location.href).href : fallbackArticleImage);
             image.addEventListener('error', () => {
                 if (image.src !== fallbackArticleImage) {
                     image.src = fallbackArticleImage;
                 }
             });
-            if (!imageDetails && !metadataImage) {
-                fetch(article.href).then(response => response.ok ? response.text() : '').then(markup => {
-                    const articleDocument = new DOMParser().parseFromString(markup, 'text/html');
-                    const imageUrl = articleDocument.querySelector('meta[property="og:image"]')?.content
-                        || articleDocument.querySelector('article img, main img')?.getAttribute('src');
-                    if (imageUrl && image.src === fallbackArticleImage) {
-                        image.src = new URL(imageUrl, new URL(article.href, window.location.href)).href;
-                    }
-                }).catch(() => {});
-            }
+            image.src = metadataImage ? new URL(metadataImage, window.location.href).href : fallbackArticleImage;
             imageLink.appendChild(image);
 
             const tag = document.createElement('div');
