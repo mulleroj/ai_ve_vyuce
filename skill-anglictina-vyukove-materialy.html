@@ -88,14 +88,19 @@
                 <li>Ověřte, že se Skill načetl, a vyzkoušejte konkrétní zadání.</li>
                 </ol>
                 <p>Dostupnost správy vlastních Skills se může lišit podle prostředí, účtu či pracovního prostoru. Pokud funkci nemáte, přidejte <code>SKILL.md</code> a potřebné reference do Projektu nebo konverzace jako běžné podklady; tím se z nich nestane nativně instalovaný Skill. <a class="workflow-inline-link" href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills" target="_blank" rel="noopener noreferrer">Představení Agent Skills od Anthropic</a>.</p>
-                <h3>Gemini: vlastní Gem</h3>
+                <h3>Gemini: import vlastního SKILLu</h3>
+                <p>Gemini umožňuje vytvářet a importovat vlastní Skills založené na souboru <code>SKILL.md</code>. V podporovaných účtech tedy není nutné převádět náš balíček na Gem. Nahrávání Skills je dostupné v aplikaci Gemini na webu <code>gemini.google.com</code>; nabídka a dostupnost funkce se mohou lišit podle účtu, věku uživatele, nastavení organizace a fáze zavádění.</p>
                 <ol>
-                <li>V Gemini, pokud máte funkci Gems dostupnou, vytvořte nový Gem.</li>
-                <li>Vložte hlavní pravidla z <code>SKILL.md</code> do instrukcí.</li>
-                <li>Pokud rozhraní nabízí přidání znalostních souborů, připojte také relevantní reference.</li>
-                <li>Gem uložte a vyzkoušejte na konkrétním zadání.</li>
+                <li>Otevřete <a class="workflow-inline-link" href="https://gemini.google.com" target="_blank" rel="noopener noreferrer"><code>gemini.google.com</code></a> pod osobním Google účtem (18+), pokud je funkce Skills ve vašem účtu dostupná.</li>
+                <li>V postranní nabídce otevřete <strong>Přizpůsobit / Nastavení → Skills</strong>. Pokud položku nevidíte, může být rozhraní jiné nebo funkce ve vašem účtu ještě není dostupná.</li>
+                <li>Na stránce Skills zvolte vytvoření Skillu a možnost nahrání souboru či složky.</li>
+                <li>Vyberte soubor <code>SKILL.md</code>, složku s tímto souborem nebo ZIP archiv, který jej obsahuje.</li>
+                <li>Zkontrolujte importované instrukce a případné podpůrné soubory; vytvoření potvrďte volbou <strong>Vytvořit</strong>.</li>
+                <li>Vyzkoušejte SKILL zadáním konkrétního výukového materiálu a ověřte výsledek.</li>
                 </ol>
-                <p>Gem používá vlastní instrukce a případné připojené zdroje; nejde o nativní instalaci Agent Skills. Dostupnost Gemů, nahrávání souborů a jejich limity se mohou lišit. <a class="workflow-inline-link" href="https://support.google.com/gemini/answer/15235603?hl=cs" target="_blank" rel="noopener noreferrer">Nápověda Google k vlastním Gemům</a>.</p>
+                <p>Distribuční ZIP English Teaching Materials obsahuje jedinou složku <code>english-teaching-materials</code> s <code>SKILL.md</code> v její hlavní složce a podpůrnými soubory v <code>references</code> a <code>examples</code>. Tato struktura odpovídá pokynům Google pro ZIP či složku obsahující <code>SKILL.md</code>; archiv je možné při importu vybrat. Pokud jej vaše rozhraní nepřijme, rozbalte ZIP a nahrajte složku <code>english-teaching-materials</code>, případně samotný soubor <code>SKILL.md</code>. Import v konkrétním účtu se může lišit a zde není potvrzován jako provedený.</p>
+                <p><strong>Co se stane s Gems?</strong> Google je postupně nahrazuje systémem Skills. Podle aktuální nápovědy budou Gems u osobních Google účtů uživatelů 18+ od 17. listopadu 2026 pouze pro čtení a 17. prosince 2026 odstraněny. U firemních, enterprise a neziskových účtů Google Workspace k tomu dojde nejdříve 1. března 2027; u Google Workspace for Education nejdříve 1. června 2027. Google uvádí, že existující Gems automaticky převede na Skills, ale některé typy přiložených souborů se přenést nemusí. Dostupnost importu a správy Skills se liší podle typu účtu; ve školním Workspace nemusí být stejný postup jako v osobní aplikaci Gemini dostupný, případně jej může omezit správce.</p>
+                <p>Oficiální informace: <a class="workflow-inline-link" href="https://support.google.com/gemini/answer/17094296" target="_blank" rel="noopener noreferrer">vytváření a import Skills v Gemini</a>, <a class="workflow-inline-link" href="https://support.google.com/gemini/answer/18560919" target="_blank" rel="noopener noreferrer">přechod z Gems na Skills</a> a <a class="workflow-inline-link" href="https://workspaceupdates.googleblog.com/2026/09/skills-gemini-app-workspace.html" target="_blank" rel="noopener noreferrer">oznámení Google Workspace k přechodu a termínům</a>.</p>
                 <h3>Další agenti s podporou Agent Skills</h3><p>U nástroje, který tento otevřený formát přímo podporuje, se instaluje celá složka s <code>SKILL.md</code> a souvisejícími soubory. Konkrétní umístění a postup určuje daná aplikace; viz <a class="workflow-inline-link" href="https://agentskills.io/specification" target="_blank" rel="noopener noreferrer">specifikace Agent Skills</a>.</p>
 
                 <h2>Vyzkoušejte si ho na jedné lekci</h2><p>Pokud má váš asistent k dispozici SKILL nebo jeho instrukce, můžete zadat například:</p>
@@ -140,3 +145,4 @@
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
 </body>
 </html>
+
