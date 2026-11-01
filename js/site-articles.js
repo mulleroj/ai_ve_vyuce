@@ -54,7 +54,7 @@ window.siteArticles = [
     icon: '💻',
     tags: ['Vibe Coding', 'Bezpečnost', 'PHP2Shell'],
     badgeClass: 'badge-purple',
-    image: 'images/home-article-security.webp',
+    image: 'images/home-article-security-v2.jpg',
     imageAlt: 'Bezpečnostní výstraha na notebooku při kontrole kódu.'
   },
   {
