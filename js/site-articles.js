@@ -7,7 +7,7 @@ window.siteArticles = [
   {
     href: 'skill-anglictina-vyukove-materialy.html',
     title: 'Jeden SKILL, sedm výukových materiálů: AI pomocník pro angličtinu',
-    summary: 'Otevřený English Teaching Materials SKILL pro učitele angličtiny: sedm formátů materiálů, postupy pro ChatGPT, Claude a Gemini a kompletní ZIP balíček ke stažení.',
+    summary: 'Jeden otevřený SKILL pro učitele angličtiny, který pomáhá připravit sedm druhů materiálů. Obsahuje návody pro ChatGPT, Claude a Gemini a kompletní ZIP ke stažení.',
     category: 'Angličtina',
     date: '2026-11-01',
     dateLabel: '1. listopadu 2026',
