@@ -11,19 +11,29 @@ if (nav) {
 }
 
 /* ── Mobile menu ── */
-const mobileToggle = document.querySelector('.nav-mobile-toggle');
-const mobileMenu = document.querySelector('.mobile-menu');
+const mobileToggle = document.querySelector('.nav-mobile-toggle, .menu-toggle');
+const mobileMenu = document.querySelector('.mobile-menu, #primary-menu');
 if (mobileToggle && mobileMenu) {
     mobileToggle.addEventListener('click', () => {
-        mobileMenu.classList.toggle('open');
-        const isOpen = mobileMenu.classList.contains('open');
+        const openClass = mobileMenu.id === 'primary-menu' ? 'is-open' : 'open';
+        mobileMenu.classList.toggle(openClass);
+        const isOpen = mobileMenu.classList.contains(openClass);
         mobileToggle.setAttribute('aria-expanded', isOpen);
+        mobileToggle.setAttribute('aria-label', isOpen ? 'Zavřít navigaci' : 'Otevřít navigaci');
         document.body.style.overflow = isOpen ? 'hidden' : '';
     });
-    document.querySelectorAll('.mobile-menu a').forEach(a => {
+    mobileMenu.querySelectorAll('a').forEach(a => {
         a.addEventListener('click', () => {
-            mobileMenu.classList.remove('open');
+            mobileMenu.classList.remove('open', 'is-open');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            mobileToggle.setAttribute('aria-label', 'Otevřít navigaci');
             document.body.style.overflow = '';
+        });
+    });
+    mobileMenu.querySelectorAll('details').forEach(details => {
+        details.addEventListener('toggle', () => {
+            if (!details.open) return;
+            mobileMenu.querySelectorAll('details').forEach(other => { if (other !== details) other.open = false; });
         });
     });
 }
@@ -353,16 +363,50 @@ if (latestArticlesMount && Array.isArray(window.siteArticles)) {
         emptyState.textContent = 'Zatím zde nejsou žádné zveřejněné články.';
         latestArticlesMount.appendChild(emptyState);
     } else {
+        const articleImageByHref = {
+            'skill-anglictina-vyukove-materialy.html': ['images/english-teaching-materials-infografika.webp', 'Sedm typů výukových materiálů pro angličtinu'],
+            'ai-novinka-ai-duvod-premyslet.html': ['images/ai-duvod-premyslet-hero.webp', 'Učitelka a studenti společně zkoumají výukovou otázku'],
+            'asistent-ucitele-osobni-ai-asistent.html': ['images/asistent-ucitele-osobni-ai-asistent.webp', 'Přehled osobního AI asistenta pro učitele'],
+            'vibe-coding-bezpecnost-kodu-php2shell.html': ['images/home-article-security.webp', 'Výstraha při bezpečnostní kontrole kódu na notebooku'],
+            'gemini-notebook-ucitel-vidi-chaty-zaku.html': ['images/gemini-notebook-insight-summaries-hero.webp', 'Učitel sleduje studijní práci v Gemini Notebooku'],
+            'co-se-muze-ucitel-naucit-od-youtube.html': ['images/od-pozornosti-k-porozumeni.webp', 'Pozornost a porozumění ve výuce'],
+            'ai-ziva-hlasova-ai-ve-vyuce.html': ['images/home-article-voice.webp', 'Studentka vede hlasový rozhovor s AI'],
+            'kdyz-ai-jedna-odpovednost-ai-agenta.html': ['images/home-article-philosophy.webp', 'Člověk a robot rozvažují společnou odpovědnost']
+        };
         latestArticles.forEach(article => {
             const card = document.createElement('article');
             card.className = 'latest-card';
+
+            const imageLink = document.createElement('a');
+            imageLink.className = 'latest-card-image-link';
+            imageLink.href = article.href;
+            imageLink.setAttribute('aria-label', `Otevřít článek: ${article.title}`);
+            const image = document.createElement('img');
+            const imageDetails = articleImageByHref[article.href];
+            image.className = 'latest-card-image';
+            image.alt = imageDetails?.[1] || article.title;
+            image.width = 640;
+            image.height = 360;
+            image.loading = 'lazy';
+            image.decoding = 'async';
+            if (imageDetails) {
+                image.src = imageDetails[0];
+            } else {
+                fetch(article.href).then(response => response.ok ? response.text() : '').then(markup => {
+                    const articleDocument = new DOMParser().parseFromString(markup, 'text/html');
+                    const imageUrl = articleDocument.querySelector('meta[property="og:image"]')?.content
+                        || articleDocument.querySelector('article img, main img')?.getAttribute('src');
+                    if (imageUrl) image.src = new URL(imageUrl, new URL(article.href, window.location.href)).href;
+                }).catch(() => {});
+            }
+            imageLink.appendChild(image);
 
             const tag = document.createElement('div');
             tag.className = 'latest-card-tag';
             const articleLabel = article.series && article.seriesNumber
                 ? `${article.series} · #${article.seriesNumber}`
                 : (article.category || 'Článek');
-            tag.textContent = `${article.icon || '📰'} ${articleLabel}${article.dateLabel ? ` · ${article.dateLabel}` : ''}`;
+            tag.textContent = `${article.icon || '📰'} ${articleLabel}`;
 
             const title = document.createElement('a');
             title.className = 'latest-card-title';
@@ -382,12 +426,22 @@ if (latestArticlesMount && Array.isArray(window.siteArticles)) {
                 badges.appendChild(badge);
             });
 
+            const footer = document.createElement('div');
+            footer.className = 'latest-card-footer';
+            const date = document.createElement('span');
+            date.className = 'latest-card-date';
+            date.textContent = `▢  ${article.dateLabel || article.date || ''}`;
             const readLink = document.createElement('a');
-            readLink.className = 'btn btn-mint btn-sm latest-card-link';
+            readLink.className = 'latest-card-link';
             readLink.href = article.href;
-            readLink.textContent = 'Číst →';
+            readLink.setAttribute('aria-label', `Přečíst článek: ${article.title}`);
+            readLink.textContent = '→';
+            footer.append(date, readLink);
 
-            card.append(tag, title, description, badges, readLink);
+            const body = document.createElement('div');
+            body.className = 'latest-card-body';
+            body.append(tag, title, description, badges, footer);
+            card.append(imageLink, body);
             latestArticlesMount.appendChild(card);
         });
     }

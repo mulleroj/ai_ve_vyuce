@@ -17,6 +17,9 @@
 
     if (!sections.length || !queryInput || !filterButtons.length) return;
 
+    const initialQuery = new URLSearchParams(window.location.search).get('q');
+    if (initialQuery) queryInput.value = initialQuery;
+
     const normalize = value => String(value || '')
         .toLocaleLowerCase('cs-CZ')
         .normalize('NFD')
