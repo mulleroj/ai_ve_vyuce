@@ -45,7 +45,7 @@
       "imageSrc": "images/gemini-notebook-7-kroku-priprava-vyuky.png",
       "eyebrowHtml": "<div class=\"workflow-eyebrow\">Workflow pro učitele · 29. srpna 2026</div>",
       "titleHtml": "<h1>7 kroků:<br /><span>od zdrojů k AI tutorovi</span></h1>",
-      "leadHtml": "<p class=\"workflow-hero-lead\">Jak v Gemini Notebooku postupně projít zdroje, naplánovat výuku, připravit materiály, aktualizovat obsah a nabídnout žákům průvodce učením.</p>",
+      "leadHtml": "<p class=\"guide-hero-lead\">Jak v Gemini Notebooku postupně projít zdroje, naplánovat výuku, připravit materiály, aktualizovat obsah a nabídnout žákům průvodce učením.</p>",
       "metaHtml": "<div class=\"workflow-meta\"><span>Gemini Notebook</span><span>7 kroků</span><span>Práce se zdroji</span><span>AI tutor</span></div>",
       "overviewFile": "content/guides/gemini-notebook-7-kroku/overview.inc"
     },
@@ -113,7 +113,7 @@
       "imageSrc": "images/chatgpt-pro-ucitele-zacatek-bezpecne.png",
       "eyebrowHtml": "<div class=\"workflow-eyebrow\">Praktický návod · 27. srpna 2026</div>",
       "titleHtml": "<h1>ChatGPT pro učitele:<br /><span>jak začít bezpečně</span></h1>",
-      "leadHtml": "<p class=\"workflow-hero-lead\">Základní nastavení účtu, ochrana dat žáků a přehled toho, co zvládnete s ChatGPT i bez placeného předplatného.</p>",
+      "leadHtml": "<p class=\"guide-hero-lead\">Základní nastavení účtu, ochrana dat žáků a přehled toho, co zvládnete s ChatGPT i bez placeného předplatného.</p>",
       "metaHtml": "<div class=\"workflow-meta\"><span>ChatGPT</span><span>Bezpečnost</span><span>Ochrana dat</span><span>Free vs. Plus</span></div>",
       "overviewFile": "content/guides/chatgpt-zacatek-bezpecne/overview.inc"
     },
