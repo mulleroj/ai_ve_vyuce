@@ -18,6 +18,7 @@ body.magazine-article-page {
 
 .magazine-article-page a { color: inherit; }
 .magazine-article-page :focus-visible { outline: 3px solid #087d6c; outline-offset: 3px; }
+.magazine-article-page .visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 .magazine-article-page .skip-link { position: fixed; z-index: 100; top: -5rem; left: 1rem; padding: .7rem 1rem; border-radius: 8px; background: #fff; color: #173b35; box-shadow: 0 4px 18px #102d2b30; }
 .magazine-article-page .skip-link:focus { top: 1rem; }
 
@@ -155,6 +156,7 @@ body.magazine-article-page {
   .magazine-category { margin-bottom: 9px; font-size: 10px; }
   .magazine-article-page .workflow-hero h1 { font-size: clamp(2.15rem, 9.4vw, 2.7rem); letter-spacing: -.04em; line-height: 1.08; }
   .magazine-article-page .workflow-hero h1 br { display: none; }
+  .magazine-article-page .workflow-hero h1 span { display: block; }
   .magazine-article-page .workflow-hero-lead { margin-top: 13px; font-size: 1rem; line-height: 1.55; }
   .magazine-article-page .workflow-meta { gap: 7px; margin-top: 14px; }
   .magazine-article-page .workflow-meta span { padding: 6px 9px; font-size: 10px; }
