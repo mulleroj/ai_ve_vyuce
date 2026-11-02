@@ -64,12 +64,12 @@ body.magazine-article-page {
 .magazine-article-page .workflow-hero-lead { max-width: 760px; margin: 18px 0 0; color: #50675e; font-size: clamp(1.05rem, 1.6vw, 1.3rem); line-height: 1.65; }
 .magazine-article-page .workflow-meta { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 20px; }
 .magazine-article-page .workflow-meta span { padding: 7px 12px; border: 1px solid #d8e6dc; border-radius: 99px; background: #fffdf9; color: #446158; font-size: 12px; letter-spacing: 0; text-transform: none; }
-.magazine-article-page .philosophy-hero-cover { width: 100%; margin: 0; overflow: hidden; border: 1px solid #e4e9df; border-radius: 20px; background: #e8eee7; box-shadow: 0 16px 38px #183b2d18; }
+.magazine-article-page .philosophy-hero-cover { width: 100%; max-width: none; margin: 0; overflow: hidden; border: 1px solid #e4e9df; border-radius: 20px; background: #e8eee7; box-shadow: 0 16px 38px #183b2d18; }
 .magazine-article-page .philosophy-hero-cover > a { display: block; }
 .magazine-article-page .philosophy-cover-image { display: block; width: 100%; height: auto; max-height: 590px; object-fit: cover; object-position: center 48%; }
 
 .magazine-main { width: min(1150px, calc(100% - 48px)); margin: 0 auto; padding: 48px 0 70px; }
-.magazine-reading-grid { display: grid; grid-template-columns: minmax(0, 760px) 235px; align-items: start; justify-content: space-between; gap: clamp(32px, 5vw, 76px); }
+.magazine-reading-grid { display: grid; grid-template-columns: 235px minmax(0, 760px); align-items: start; justify-content: space-between; gap: clamp(32px, 5vw, 76px); }
 .magazine-toc { position: sticky; top: 24px; max-height: calc(100vh - 48px); overflow: auto; padding: 20px; border: 1px solid var(--magazine-line); border-radius: 15px; background: #f4f7f2; }
 .magazine-toc h2 { margin: 0 0 12px; color: var(--magazine-ink); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
 .magazine-toc ol { margin: 0; padding-left: 19px; }
@@ -118,7 +118,7 @@ body.magazine-article-page {
   .magazine-article-page .site-nav { gap: 16px; }
   .magazine-article-page .nav-content { gap: 14px; }
   .magazine-article-page .brand-copy small { display: none; }
-  .magazine-reading-grid { grid-template-columns: minmax(0, 1fr) 220px; gap: 34px; }
+  .magazine-reading-grid { grid-template-columns: 220px minmax(0, 1fr); gap: 34px; }
 }
 
 @media (max-width: 800px) {
