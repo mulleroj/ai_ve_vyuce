@@ -22,7 +22,7 @@ window.siteArticles = [
     title: 'AI nemá za žáka přemýšlet. Má mu dát důvod přemýšlet.',
     summary: 'Jak využít umělou inteligenci k probuzení zvídavosti, samostatnosti a skutečného zájmu o učení. Sedm principů, ukázka hodiny, tři prompty a infografika pro učitele.',
     category: 'AI ve vzdělávání',
-    contentType: 'guide',
+    contentType: 'magazine',
     date: '2026-10-30',
     dateLabel: '30. října 2026',
     icon: '🎓',
