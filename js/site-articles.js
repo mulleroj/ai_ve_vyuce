@@ -311,6 +311,7 @@ window.siteArticles = [
     title: 'AI ve vzdělávání: přesnější práce s obrázky, bezpečnější přístup k AI a nové zázemí pro školy',
     summary: 'Přesnější editace existujících materiálů, kontextové zabezpečení Gemini a specializované AI nástroje pro učitele.',
     category: 'Novinka',
+    contentType: 'magazine',
     date: '2026-09-09',
     dateLabel: '9. září 2026',
     icon: '📰',

@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html lang="cs">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI nemá za žáka přemýšlet. Má mu dát důvod přemýšlet. | AI ve Výuce</title>
-    <meta name="description" content="Jak využít umělou inteligenci k probuzení zvídavosti, samostatnosti a skutečného zájmu o učení. Sedm principů, praktická ukázka hodiny a tři prompty pro učitele." />
-    <meta property="article:published_time" content="2026-10-30" />
-    <link rel="stylesheet" href="css/workflow.css?v=20261030-ai-duvod-premyslet" />
-    <link rel="stylesheet" href="css/magazine-article.css?v=20261102-magazine-v2" />
-    <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/ai-novinka-ai-duvod-premyslet" />
-    <meta property="og:title" content="AI nemá za žáka přemýšlet. Má mu dát důvod přemýšlet. | AI ve Výuce" />
-    <meta property="og:description" content="Jak využít umělou inteligenci k probuzení zvídavosti, samostatnosti a skutečného zájmu o učení." />
-    <meta property="og:url" content="https://ai-ve-vyuce.netlify.app/ai-novinka-ai-duvod-premyslet" />
-    <meta property="og:type" content="article" />
-    <meta property="og:locale" content="cs_CZ" />
-    <meta property="og:image" content="https://ai-ve-vyuce.netlify.app/images/ai-duvod-premyslet-hero.png" />
-    <meta property="og:image:alt" content="Učitelka a středoškoláci v technické dílně zkoumají zapojení jističů; na notebooku je vzdělávací aplikace s otázkou o fungování jističe." />
-
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=robot-20261103" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI nemá za žáka přemýšlet. Má mu dát důvod přemýšlet. | AI ve Výuce</title>
+  <meta name="description" content="Jak využít umělou inteligenci k probuzení zvídavosti, samostatnosti a skutečného zájmu o učení. Sedm principů, praktická ukázka hodiny a tři prompty pro učitele." />
+  <meta property="article:published_time" content="2026-10-30" />
+  <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/ai-novinka-ai-duvod-premyslet" />
+  <meta property="og:title" content="AI nemá za žáka přemýšlet. Má mu dát důvod přemýšlet. | AI ve Výuce" />
+  <meta property="og:description" content="Jak využít umělou inteligenci k probuzení zvídavosti, samostatnosti a skutečného zájmu o učení." />
+  <meta property="og:url" content="https://ai-ve-vyuce.netlify.app/ai-novinka-ai-duvod-premyslet" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="cs_CZ" />
+  <meta property="og:image" content="https://ai-ve-vyuce.netlify.app/images/ai-duvod-premyslet-hero.png" />
+  <meta property="og:image:alt" content="Učitelka a středoškoláci v technické dílně zkoumají zapojení jističů; na notebooku je vzdělávací aplikace s otázkou o fungování jističe." />
+  <link rel="stylesheet" href="css/magazine-article.css?v=20261102-magazine-shared-v1" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=robot-20261103" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=robot-20261103" />
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png?v=robot-20261103" />
   <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64x64.png?v=robot-20261103" />
@@ -27,51 +24,54 @@
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
 </head>
-
-<body class="workflow-page workflow-news-roundup magazine-article-page">
-    <a class="skip-link" href="#main-content">Přeskočit na obsah</a>
-    <header class="site-header" id="top">
-    <nav class="site-nav" aria-label="Hlavní navigace">
-        <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
-        <div class="nav-content" id="primary-menu">
-            <a class="nav-home" href="index.html">Domů</a>
-            <details class="nav-dropdown"><summary>Články</summary><div class="dropdown-panel"><a href="ai-novinky.html">Nejnovější články</a><a href="ai.html">Všechny články</a><a href="ai.html?filter=philosophy">Filozofování s AI</a></div></details>
-            <details class="nav-dropdown"><summary>Návody a workflow</summary><div class="dropdown-panel"><a href="ai-navody.html">Praktické návody</a><a href="ai-workflow.html">Workflow</a><a href="prompty.html">Knihovna promptů</a></div></details>
-            <a href="asistenti.html">AI nástroje</a>
-            <details class="nav-dropdown"><summary>Pro školy</summary><div class="dropdown-panel"><a href="ai.html">AI ve vzdělávání</a><a href="aktivity.html">Aktivity do výuky</a><a href="anglictina.html">Předměty</a></div></details>
-            <a href="ai.html?filter=philosophy">Filozofování s AI</a>
-            <form class="site-search" role="search" action="ai.html" method="get"><label class="visually-hidden" for="site-search-input">Hledat na webu</label><input id="site-search-input" name="q" type="search" placeholder="Hledat články…" /><button aria-label="Hledat" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg><span>Hledat</span></button></form>
-        </div>
-    </nav>
+<body class="magazine-article-page">
+  <a class="skip-link" href="#main-content">Přeskočit na obsah</a>
+  <header class="site-header" id="top">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu">
+      <a class="nav-home" href="index.html">Domů</a>
+      <details class="nav-dropdown"><summary>Články</summary><div class="dropdown-panel"><a href="ai-novinky.html">Nejnovější články</a><a href="ai.html">Všechny články</a><a href="ai.html?filter=philosophy">Filozofování s AI</a></div></details>
+      <details class="nav-dropdown"><summary>Návody a workflow</summary><div class="dropdown-panel"><a href="ai-navody.html">Praktické návody</a><a href="ai-workflow.html">Workflow</a><a href="prompty.html">Knihovna promptů</a></div></details>
+      <a href="asistenti.html">AI nástroje</a>
+      <details class="nav-dropdown"><summary>Pro školy</summary><div class="dropdown-panel"><a href="ai.html">AI ve vzdělávání</a><a href="aktivity.html">Aktivity do výuky</a><a href="anglictina.html">Předměty</a></div></details>
+      <a href="ai.html?filter=philosophy">Filozofování s AI</a>
+      <form class="site-search" role="search" action="ai.html" method="get"><label class="visually-hidden" for="site-search-input">Hledat na webu</label><input id="site-search-input" name="q" type="search" placeholder="Hledat články…" /><button aria-label="Hledat" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg><span>Hledat</span></button></form>
+    </div>
+  </nav>
 </header>
-<header class="workflow-shell magazine-article-hero"><div class="magazine-hero-inner"><nav class="magazine-breadcrumb" aria-label="Drobečková navigace"><a href="index.html">Domů</a><span aria-hidden="true">/</span><a href="ai.html">AI ve vzdělávání</a><span aria-hidden="true">/</span><span aria-current="page">Didaktika</span></nav>
-            <div class="workflow-hero magazine-hero"><div class="magazine-hero-copy">
-                <div class="workflow-eyebrow magazine-category">AI ve vzdělávání · Praktický návod</div>
-                <h1>AI nemá za žáka přemýšlet.<br /><span>Má mu dát důvod přemýšlet.</span></h1>
-                <p class="workflow-hero-lead"><em>Jak využít umělou inteligenci k probuzení zvídavosti, samostatnosti a skutečného zájmu o učení.</em></p>
-                <div class="workflow-meta"><span><time datetime="2026-10-30">30. října 2026</time></span><span>Didaktika</span><span>Prompty</span><span>Human in the Loop</span></div>
-            </div>
-            <figure class="philosophy-hero-cover">
-                <a href="images/ai-duvod-premyslet-hero-full.png" aria-label="Otevřít úvodní ilustraci v plné velikosti">
-                    <picture>
-                        <source srcset="images/ai-duvod-premyslet-hero.webp" type="image/webp" />
-                        <img class="philosophy-cover-image" src="images/ai-duvod-premyslet-hero.png" width="1200" height="675" alt="Učitelka a tři středoškoláci v technické dílně společně zkoumají zapojení jističů na pracovním stole. Na obrazovce notebooku je vidět vzdělávací aplikace s otázkou, jak funguje jistič a kdy se používá." fetchpriority="high" decoding="async" />
-                    </picture>
-                </a>
-            </figure>
-        </div></div></header>
 
-    <main id="main-content" class="magazine-main">
-        <div class="magazine-reading-grid">
-            <nav class="magazine-toc" aria-label="V tomto článku"><h2>V tomto článku</h2><ol><li><a href="#princip-1">Začněme otázkou, ne definicí</a></li><li><a href="#princip-2">AI jako průvodce, který se nejprve ptá</a></li><li><a href="#princip-3">Chyba nemusí znamenat neúspěch</a></li><li><a href="#princip-4">Každý žák potřebuje jinou míru podpory</a></li><li><a href="#princip-5">Propojujme učivo se skutečným životem</a></li><li><a href="#princip-6">Ne všechno musí být zábavné</a></li><li><a href="#princip-7">Nejdůležitější okamžik přichází po vypnutí AI</a></li><li><a href="#prakticka-ukazka">Praktická ukázka: 25 minut výuky s AI</a></li><li><a href="#prompty">Tři prompty, které může učitel ihned vyzkoušet</a></li><li><a href="#pohlidat">Co si musí učitel pohlídat</a></li><li><a href="#zaver">Závěr: Technologie může pomoci. Zájem musí vzniknout u žáka.</a></li><li><a href="#odborne-zdroje">Odborné zdroje</a></li></ol></nav>
-        <article class="workflow-article" id="ai-duvod-premyslet">
-            <div class="workflow-article-intro">
-                <p class="workflow-article-summary"><em>Jak využít umělou inteligenci k probuzení zvídavosti, samostatnosti a skutečného zájmu o učení.</em></p>
-                <div class="workflow-article-meta"><time datetime="2026-10-30">30. října 2026</time><span>AI ve vzdělávání · Praktický návod</span></div>
-            </div>
+  <header class="magazine-article-hero">
+  <div class="magazine-hero-inner">
+    <nav class="magazine-breadcrumb" aria-label="Drobečková navigace"><a href="index.html">Domů</a><span aria-hidden="true">/</span><a href="ai.html">AI ve vzdělávání</a><span aria-hidden="true">/</span><span aria-current="page">Didaktika</span></nav>
+    <div class="workflow-hero magazine-hero">
+      <div class="magazine-hero-copy">
+        <div class="workflow-eyebrow magazine-category">AI ve vzdělávání · Praktický návod</div>
+        <h1>AI nemá za žáka přemýšlet.<br /><span>Má mu dát důvod přemýšlet.</span></h1>
+        <p class="workflow-hero-lead">Jak využít umělou inteligenci k probuzení zvídavosti, samostatnosti a skutečného zájmu o učení.</p>
+        <div class="workflow-meta"><span><time datetime="2026-10-30">30. října 2026</time></span><span>Didaktika</span><span>Prompty</span><span>Human in the Loop</span></div>
 
-            <div class="article-content">
+      </div>
+      <figure class="philosophy-hero-cover"><a href="images/ai-duvod-premyslet-hero-full.png" aria-label="Otevřít úvodní ilustraci v plné velikosti"><picture><source srcset="images/ai-duvod-premyslet-hero.webp" type="image/webp" /><img class="philosophy-cover-image" src="images/ai-duvod-premyslet-hero.png" width="1200" height="675" alt="Učitelka a tři středoškoláci v technické dílně společně zkoumají zapojení jističů na pracovním stole. Na obrazovce notebooku je vidět vzdělávací aplikace s otázkou, jak funguje jistič a kdy se používá." fetchpriority="high" decoding="async" /></picture></a></figure>
+    </div>
+  </div>
+</header>
+
+  <main id="main-content" class="magazine-main">
+    <div class="magazine-reading-grid">
+      <nav class="magazine-toc" aria-label="V tomto článku">
+  <h2>V tomto článku</h2>
+  <ol><li><a href="#princip-1">Začněme otázkou, ne definicí</a></li><li><a href="#princip-2">AI jako průvodce, který se nejprve ptá</a></li><li><a href="#princip-3">Chyba nemusí znamenat neúspěch</a></li><li><a href="#princip-4">Každý žák potřebuje jinou míru podpory</a></li><li><a href="#princip-5">Propojujme učivo se skutečným životem</a></li><li><a href="#princip-6">Ne všechno musí být zábavné</a></li><li><a href="#princip-7">Nejdůležitější okamžik přichází po vypnutí AI</a></li><li><a href="#prakticka-ukazka">Praktická ukázka: 25 minut výuky s AI</a><ol><li><a href="#1-problem-ze-zivota-3-minuty">Problém ze života – 3 minuty</a></li><li><a href="#2-vlastni-hypotezy-5-minut">Vlastní hypotézy – 5 minut</a></li><li><a href="#3-prace-s-ai-7-minut">Práce s AI – 7 minut</a></li><li><a href="#4-vysvetleni-spoluzakovi-5-minut">Vysvětlení spolužákovi – 5 minut</a></li><li><a href="#5-overeni-bez-ai-5-minut">Ověření bez AI – 5 minut</a></li></ol></li><li><a href="#prompty">Tři prompty, které může učitel ihned vyzkoušet</a><ol><li><a href="#prompt-1-title">Probuď zvídavost</a></li><li><a href="#prompt-2-title">Buď průvodcem, ne strojem na odpovědi</a></li><li><a href="#prompt-3-title">Ověř skutečné porozumění</a></li></ol></li><li><a href="#pohlidat">Co si musí učitel pohlídat</a></li><li><a href="#zaver">Závěr: Technologie může pomoci. Zájem musí vzniknout u žáka.</a></li><li><a href="#odborne-zdroje">Odborné zdroje</a></li></ol>
+</nav>
+
+      <article class="workflow-article" id="ai-duvod-premyslet">
+        <div class="workflow-article-intro">
+  <p class="workflow-article-summary">Jak využít umělou inteligenci k probuzení zvídavosti, samostatnosti a skutečného zájmu o učení.</p>
+  <div class="workflow-article-meta"><time datetime="2026-10-30">30. října 2026</time><span>AI ve vzdělávání · Praktický návod</span></div>
+</div>
+
+        <div class="article-content">
                 <p><em>Představme si dvě hodiny elektrotechniky.</em></p>
 
                 <p>V první učitel oznámí: „Dnes budeme probírat elektrické jištění.“ Následuje výklad, zápis do sešitu a několik kontrolních otázek.</p>
@@ -241,23 +241,23 @@
                 <em>Téma:</em> Elektrické jištění<br />
                 <em>Cíl:</em> Žák vlastními slovy vysvětlí, k čemu slouží jistič a proč je důležité chránit elektrické vedení před nadproudem.</p>
 
-                <h3>1. Problém ze života – 3 minuty</h3>
+                <h3 id="1-problem-ze-zivota-3-minuty">1. Problém ze života – 3 minuty</h3>
 
                 <p>Učitel představí situaci: „V domácnosti se po zapnutí několika spotřebičů vypnul jistič. Proč se to mohlo stát?“</p>
 
-                <h3>2. Vlastní hypotézy – 5 minut</h3>
+                <h3 id="2-vlastni-hypotezy-5-minut">2. Vlastní hypotézy – 5 minut</h3>
 
                 <p>Žáci navrhnou vysvětlení. Učitel jejich odpovědi zaznamená, ale zatím neposkytuje úplné řešení.</p>
 
-                <h3>3. Práce s AI – 7 minut</h3>
+                <h3 id="3-prace-s-ai-7-minut">3. Práce s AI – 7 minut</h3>
 
                 <p>Žáci pomocí řízených otázek prozkoumají souvislost mezi elektrickým proudem, zatížením obvodu a funkcí jističe. Použijí pouze učitelem ověřené zadání a podklady.</p>
 
-                <h3>4. Vysvětlení spolužákovi – 5 minut</h3>
+                <h3 id="4-vysvetleni-spoluzakovi-5-minut">4. Vysvětlení spolužákovi – 5 minut</h3>
 
                 <p>Ve dvojicích si vysvětlí, co zjistili. Učitel opraví případné nepřesnosti a doplní odborný výklad.</p>
 
-                <h3>5. Ověření bez AI – 5 minut</h3>
+                <h3 id="5-overeni-bez-ai-5-minut">5. Ověření bez AI – 5 minut</h3>
 
                 <p>Každý žák samostatně odpoví na tři krátké otázky. Učitel získá přehled o skutečném porozumění a rozhodne, zda je potřeba další procvičení.</p>
 
@@ -334,30 +334,27 @@
                     <li><a class="workflow-inline-link" href="https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research" target="_blank" rel="noopener noreferrer">UNESCO – Guidance for Generative AI in Education and Research</a></li>
                     <li><a class="workflow-inline-link" href="https://educationendowmentfoundation.org.uk/education-evidence/guidance-reports/digital" target="_blank" rel="noopener noreferrer">EEF – Using Digital Technology to Improve Learning</a></li>
                 </ul>
-            </div>
-            <div class="magazine-back-to-top-wrap">
-                <a class="magazine-back-to-top" href="#top">↑ Zpět nahoru</a>
-            </div>
-        </article>
+</div>
+        <div class="magazine-back-to-top-wrap">
+  <a class="magazine-back-to-top" href="#top">↑ Zpět nahoru</a>
+</div>
 
-        </div>
-        <section class="workflow-related" aria-labelledby="dalsi-clanky-duvod">
-            <div class="workflow-related-heading">
-                <div><span class="workflow-article-kicker">SOUVISÍ</span><h2 id="dalsi-clanky-duvod">Další články o učení s AI</h2></div>
-                <p>Postupy a úvahy, které doplňují práci s AI ve třídě.</p>
-            </div>
-            <div class="workflow-related-grid">
-                <a class="workflow-related-card" href="uci-se-zak-nebo-za-nej-premysli-ai.html"><span class="workflow-card-number">01</span><h3>Učí se žák, nebo za něj přemýšlí AI?</h3><p>Jak poznat, kdy AI podporuje učení a kdy přebírá práci studenta.</p></a>
-                <a class="workflow-related-card" href="neplytvej-inteligenci-ai-modely.html"><span class="workflow-card-number">02</span><h3>Neplýtvej inteligencí</h3><p>Praktické prompty a principy smysluplné práce s AI.</p></a>
-                <a class="workflow-related-card" href="ai.html"><span class="workflow-card-number">→</span><h3>Rozcestník AI pro školy</h3><p>Novinky, návody a workflow na jednom místě.</p></a>
-            </div>
-        </section>
-    </main>
+      </article>
+    </div>
+    <section class="workflow-related" aria-labelledby="ai-duvod-premyslet-related">
+  <div class="workflow-related-heading">
+    <div><span class="workflow-article-kicker">SOUVISÍ</span><h2 id="ai-duvod-premyslet-related">Další články o učení s AI</h2></div>
+    <p>Postupy a úvahy, které doplňují práci s AI ve třídě.</p>
+  </div>
+  <div class="workflow-related-grid"><a class="workflow-related-card" href="uci-se-zak-nebo-za-nej-premysli-ai.html"><span class="workflow-card-number">01</span><h3>Učí se žák, nebo za něj přemýšlí AI?</h3><p>Jak poznat, kdy AI podporuje učení a kdy přebírá práci studenta.</p></a>
+<a class="workflow-related-card" href="neplytvej-inteligenci-ai-modely.html"><span class="workflow-card-number">02</span><h3>Neplýtvej inteligencí</h3><p>Praktické prompty a principy smysluplné práce s AI.</p></a>
+<a class="workflow-related-card" href="ai.html"><span class="workflow-card-number">→</span><h3>Rozcestník AI pro školy</h3><p>Novinky, návody a workflow na jednom místě.</p></a></div>
+</section>
 
-    <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai-novinky.html">AI ve vzdělávání</a> · <a href="ai-navody.html">Praktické návody</a></footer>
-    <script src="js/main.js?v=20261102-pr19-visual" defer></script>
-    <script src="js/tool-guide.js?v=20261030-ai-duvod-prompty" defer></script>
-    <script src="js/site-footer.js?v=20260927-human-loop"></script>
+  </main>
+  <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai-novinky.html">AI ve vzdělávání</a> · <a href="ai-navody.html">Praktické návody</a><span class="site-footer-mark" data-site-footer-mark="" role="note">AI + 👤 | HUMAN IN THE LOOP</span></footer>
+
+  <script src="js/main.js?v=20261102-magazine-shared-v1" defer></script>
+  <script src="js/tool-guide.js?v=20261030-ai-duvod-prompty" defer></script>
 </body>
-
 </html>

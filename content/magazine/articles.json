@@ -1,0 +1,85 @@
+[
+  {
+    "file": "ai-novinka-ai-duvod-premyslet.html",
+    "bodySource": "content/magazine/ai-novinka-ai-duvod-premyslet.body",
+    "articleId": "ai-duvod-premyslet",
+    "canonical": "https://ai-ve-vyuce.netlify.app/ai-novinka-ai-duvod-premyslet",
+    "seo": {
+      "description": "Jak využít umělou inteligenci k probuzení zvídavosti, samostatnosti a skutečného zájmu o učení. Sedm principů, praktická ukázka hodiny a tři prompty pro učitele.",
+      "ogDescription": "Jak využít umělou inteligenci k probuzení zvídavosti, samostatnosti a skutečného zájmu o učení.",
+      "ogImage": "https://ai-ve-vyuce.netlify.app/images/ai-duvod-premyslet-hero.png",
+      "ogImageAlt": "Učitelka a středoškoláci v technické dílně zkoumají zapojení jističů; na notebooku je vzdělávací aplikace s otázkou o fungování jističe."
+    },
+    "breadcrumbs": [
+      { "label": "Domů", "href": "index.html" },
+      { "label": "AI ve vzdělávání", "href": "ai.html" },
+      { "label": "Didaktika", "current": true }
+    ],
+    "eyebrow": "AI ve vzdělávání · Praktický návod",
+    "heroTitleHtml": "<h1>AI nemá za žáka přemýšlet.<br /><span>Má mu dát důvod přemýšlet.</span></h1>",
+    "heroLead": "Jak využít umělou inteligenci k probuzení zvídavosti, samostatnosti a skutečného zájmu o učení.",
+    "introSummary": "Jak využít umělou inteligenci k probuzení zvídavosti, samostatnosti a skutečného zájmu o učení.",
+    "introCategory": "AI ve vzdělávání · Praktický návod",
+    "metaLabels": ["Didaktika", "Prompty", "Human in the Loop"],
+    "heroImage": {
+      "href": "images/ai-duvod-premyslet-hero-full.png",
+      "src": "images/ai-duvod-premyslet-hero.png",
+      "srcSet": "images/ai-duvod-premyslet-hero.webp",
+      "alt": "Učitelka a tři středoškoláci v technické dílně společně zkoumají zapojení jističů na pracovním stole. Na obrazovce notebooku je vidět vzdělávací aplikace s otázkou, jak funguje jistič a kdy se používá.",
+      "width": 1200,
+      "height": 675,
+      "label": "Otevřít úvodní ilustraci v plné velikosti"
+    },
+    "relatedHeading": "Další články o učení s AI",
+    "relatedLead": "Postupy a úvahy, které doplňují práci s AI ve třídě.",
+    "related": [
+      { "number": "01", "href": "uci-se-zak-nebo-za-nej-premysli-ai.html", "title": "Učí se žák, nebo za něj přemýšlí AI?", "summary": "Jak poznat, kdy AI podporuje učení a kdy přebírá práci studenta." },
+      { "number": "02", "href": "neplytvej-inteligenci-ai-modely.html", "title": "Neplýtvej inteligencí", "summary": "Praktické prompty a principy smysluplné práce s AI." },
+      { "number": "→", "href": "ai.html", "title": "Rozcestník AI pro školy", "summary": "Novinky, návody a workflow na jednom místě." }
+    ],
+    "footerLinks": [
+      { "label": "AI ve vzdělávání", "href": "ai-novinky.html" },
+      { "label": "Praktické návody", "href": "ai-navody.html" }
+    ],
+    "articleScripts": ["js/tool-guide.js?v=20261030-ai-duvod-prompty"]
+  },
+  {
+    "file": "ai-novinka-ai-ve-vzdelavani-zari-2026.html",
+    "bodySource": "content/magazine/ai-novinka-ai-ve-vzdelavani-zari-2026.body",
+    "articleId": "ai-ve-vzdelavani-zari-2026",
+    "canonical": "https://ai-ve-vyuce.netlify.app/ai-novinka-ai-ve-vzdelavani-zari-2026",
+    "seo": {
+      "description": "Přesnější editace obrázků, kontextové zabezpečení Gemini a nové vzdělávací zázemí pro školy. Praktické souvislosti pro učitele.",
+      "ogDescription": "Přesnější editace obrázků, kontextové zabezpečení Gemini a nové vzdělávací zázemí pro školy. Praktické souvislosti pro učitele."
+    },
+    "breadcrumbs": [
+      { "label": "Domů", "href": "index.html" },
+      { "label": "AI ve vzdělávání", "href": "ai.html" },
+      { "label": "Novinky", "href": "ai-novinky.html" }
+    ],
+    "eyebrow": "AI ve vzdělávání · 9. září 2026",
+    "heroTitleHtml": "<h1>AI ve vzdělávání:<br /><span>přesnější práce s obrázky, bezpečnější přístup k AI a nové zázemí pro školy</span></h1>",
+    "heroLead": "AI se posouvá od jednorázového generování k přesnější editaci, řízenému přístupu ke školním datům a specializovaným nástrojům pro učitele.",
+    "introSummary": "Začátek září ukazuje tři důležité směry: přesnější úpravy existujících materiálů, bezpečnost řízenou podle kontextu a specializované AI nástroje pro školní praxi.",
+    "introCategory": "Novinka",
+    "metaLabels": ["OpenAI", "Google Workspace", "Microsoft 365"],
+    "heroHighlightsLabel": "Tři směry vývoje AI ve vzdělávání",
+    "heroHighlights": [
+      { "title": "Přesnější práce s obrázky", "summary": "Editace existujících materiálů a zachování stylu" },
+      { "title": "Bezpečnější přístup k AI", "summary": "Kontext, zařízení a podmínky použití" },
+      { "title": "Nové zázemí pro školy", "summary": "Specializované nástroje a pedagogické workflow" }
+    ],
+    "relatedHeading": "Další články k tématu",
+    "relatedLead": "Novinky a souvislosti pro práci s AI ve škole.",
+    "related": [
+      { "number": "01", "href": "ai-novinka-google-ai-vzdelavani-zari-2026.html", "title": "Google posiluje tvorbu materiálů i bezpečnost práce s daty", "summary": "Editace hotových materiálů, vlastní dokumenty a řízení přístupu." },
+      { "number": "02", "href": "ai-novinka-agenti-onenote-pruvodce-ucenim.html", "title": "Chytřejší agenti, OneNote a AI jako průvodce učením", "summary": "Delší workflow, školní nástroje a vedení žáka k řešení." },
+      { "number": "03", "href": "ai-agenti-kdy-nepouzivat.html", "title": "Kdy AI agenta ve škole raději nepoužívat", "summary": "Oprávnění, citlivá data a rozhodnutí, která patří člověku." }
+    ],
+    "footerLinks": [
+      { "label": "Další novinky", "href": "ai-novinky.html" },
+      { "label": "Zpět na AI ve vzdělávání", "href": "ai.html#novinky" }
+    ],
+    "articleScripts": []
+  }
+]
