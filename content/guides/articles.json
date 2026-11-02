@@ -42,6 +42,7 @@
       "<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/apple-touch-icon.png?v=robot-20261103\" />"
     ],
     "hero": {
+      "imageSrc": "images/gemini-notebook-7-kroku-priprava-vyuky.png",
       "eyebrowHtml": "<div class=\"workflow-eyebrow\">Workflow pro učitele · 29. srpna 2026</div>",
       "titleHtml": "<h1>7 kroků:<br /><span>od zdrojů k AI tutorovi</span></h1>",
       "leadHtml": "<p class=\"workflow-hero-lead\">Jak v Gemini Notebooku postupně projít zdroje, naplánovat výuku, připravit materiály, aktualizovat obsah a nabídnout žákům průvodce učením.</p>",
@@ -109,6 +110,7 @@
       "<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/apple-touch-icon.png?v=robot-20261103\" />"
     ],
     "hero": {
+      "imageSrc": "images/chatgpt-pro-ucitele-zacatek-bezpecne.png",
       "eyebrowHtml": "<div class=\"workflow-eyebrow\">Praktický návod · 27. srpna 2026</div>",
       "titleHtml": "<h1>ChatGPT pro učitele:<br /><span>jak začít bezpečně</span></h1>",
       "leadHtml": "<p class=\"workflow-hero-lead\">Základní nastavení účtu, ochrana dat žáků a přehled toho, co zvládnete s ChatGPT i bez placeného předplatného.</p>",

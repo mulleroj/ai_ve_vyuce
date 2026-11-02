@@ -22,8 +22,11 @@
     if (!button) return;
     const prompt = document.getElementById(button.dataset.copyPrompt);
     const feedback = button.closest('.prompt-card')?.querySelector('.prompt-copy-feedback');
-    const value = button.dataset.copyFormat === 'rendered' ? prompt?.innerText.trim() : prompt?.textContent.trim();
-    if (!value) return;
+    const value = (button.dataset.copyFormat === 'rendered' ? prompt?.innerText : prompt?.textContent)?.trim();
+    if (!value) {
+      if (feedback) feedback.textContent = 'Prompt nenalezen – označte text ručně.';
+      return;
+    }
     try {
       if (navigator.clipboard?.writeText) await navigator.clipboard.writeText(value);
       else if (!fallbackCopy(value)) throw new Error('Copy command failed');
@@ -31,6 +34,7 @@
       window.clearTimeout(button._copyTimer);
       button._copyTimer = window.setTimeout(() => setCopiedState(button, feedback, false), 2200);
     } catch {
+      setCopiedState(button, feedback, false);
       if (feedback) feedback.textContent = 'Kopírování selhalo – označte text ručně.';
     }
   });
