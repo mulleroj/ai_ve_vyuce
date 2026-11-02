@@ -9,6 +9,7 @@ body.magazine-article-page {
   --magazine-paper: #fffdf7;
   --magazine-line: #dfe8e1;
   margin: 0;
+  overflow-x: clip;
   background: var(--magazine-paper);
   color: #293b37;
   font-family: "DM Sans", "Segoe UI", sans-serif;
