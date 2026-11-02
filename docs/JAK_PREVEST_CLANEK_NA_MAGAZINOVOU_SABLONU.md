@@ -16,4 +16,4 @@ Magazínové stránky se skládají lokálně příkazem `node scripts/build-mag
 
 Generátor sestaví „V tomto článku“ z nadpisů H2/H3 v těle článku. Zachová existující ID, chybějícím vytvoří stabilní kotvy, upraví kolize a vypíše dostupné odkazy přímo do HTML. Viditelná čísla z textu nadpisů odstraní pouze v odkazech obsahu, takže se nezdvojují se značkami seznamu. Článek bez nadpisů H2/H3 dostane jednosloupcový rozvrh a žádné prázdné menu.
 
-Obsah těla se načítá z `content/magazine/*.body.html`; stránky v kořeni jsou publikované výstupy a neupravují se ručně. Netlify nadále servíruje běžné statické HTML; pro náhled stačí commitnout znovu vygenerované stránky.
+Obsah těla se načítá z `content/magazine/*.body`; stránky v kořeni jsou publikované výstupy a neupravují se ručně. Netlify nadále servíruje běžné statické HTML; pro náhled stačí commitnout znovu vygenerované stránky.
