@@ -113,6 +113,10 @@ body.magazine-article-page {
 .magazine-article-page .workflow-related-card { border: 1px solid var(--magazine-line); border-radius: 14px; background: #fff; }
 .magazine-article-page .workflow-related-card h3 { color: var(--magazine-ink); }
 .magazine-article-page .workflow-related-card p { color: var(--magazine-muted); }
+.magazine-article-page { scroll-behavior: smooth; }
+.magazine-back-to-top-wrap { display: flex; justify-content: flex-end; margin: 28px 0 0; }
+.magazine-back-to-top { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; padding: 0 20px; border: 1px solid #07584f; border-radius: 999px; background: #07584f; color: #fffdf7 !important; font-size: 14px; font-weight: 700; line-height: 1.2; text-decoration: none; transition: background-color .18s ease, border-color .18s ease, transform .18s ease; }
+.magazine-back-to-top:hover { transform: translateY(-1px); border-color: #06483f; background: #06483f; }
 .magazine-article-page .workflow-footer { margin: 0; padding: 26px 24px; background: #173b35; color: #edf5f0; text-align: center; }
 .magazine-article-page .workflow-footer a { color: #c9e8da; }
 
@@ -172,9 +176,12 @@ body.magazine-article-page {
   .magazine-article-page .prompt-copy-button { align-self: flex-start; min-height: 42px; }
   .magazine-article-page .prompt-body { padding: 14px; font-size: 12px; }
   .magazine-article-page .workflow-related-grid { grid-template-columns: minmax(0, 1fr); }
+  .magazine-back-to-top-wrap { margin-top: 22px; }
+  .magazine-back-to-top { width: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .magazine-article-page { scroll-behavior: auto !important; }
   .magazine-article-page *,
   .magazine-article-page *::before,
   .magazine-article-page *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
