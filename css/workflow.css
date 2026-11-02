@@ -9,8 +9,7 @@
   --workflow-night: #0a0f1e;
   --workflow-night-soft: #0d1530;
   --workflow-teal: #00d4a8;
-  --workflow-orange: #f5a623;
-  --workflow-yellow: #f7c56b;
+  --workflow-mint: #45deb5;
   --workflow-shadow: 0 24px 70px rgba(0, 0, 0, 0.4);
 }
 
@@ -20,7 +19,7 @@
 
 html,
 * {
-  scrollbar-color: var(--workflow-orange) var(--workflow-night);
+  scrollbar-color: #087f70 #e6f1ed;
   scrollbar-width: thin;
 }
 
@@ -47,20 +46,20 @@ body.workflow-page {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--workflow-night);
+  background: #e6f1ed;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--workflow-orange);
+  background: #087f70;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--workflow-yellow);
+  background: #07584f;
 }
 
 ::-webkit-scrollbar-corner {
-  background: var(--workflow-night);
+  background: #e6f1ed;
 }
 
 .workflow-shell {
@@ -69,7 +68,7 @@ body.workflow-page {
   color: #f7fbfa;
   background:
     radial-gradient(circle at 86% 18%, rgba(0, 212, 168, 0.16), transparent 28rem),
-    radial-gradient(circle at 8% 90%, rgba(245, 166, 35, 0.14), transparent 30rem),
+    radial-gradient(circle at 8% 90%, rgba(0, 212, 168, 0.14), transparent 30rem),
     linear-gradient(135deg, #0a0f1e 0%, #0d1b40 50%, #0a1628 100%);
 }
 
@@ -115,16 +114,17 @@ body.workflow-page {
   display: grid;
   width: 38px;
   height: 38px;
+  flex: 0 0 38px;
   place-items: center;
   border: 0;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #f7c56b, #f5a623);
-  color: #0a0f1e;
-  font-size: 1.1rem;
+  border-radius: 0;
+  background: transparent url('/images/ai-assistant-book-logo.png?v=robot-20261103') center / contain no-repeat;
+  color: transparent;
+  font-size: 0;
 }
 
 .nav-logo span {
-  color: var(--workflow-yellow);
+  color: var(--workflow-mint);
 }
 
 .workflow-back {
@@ -190,7 +190,7 @@ body.workflow-page {
 }
 
 .workflow-hero h1 span {
-  color: var(--workflow-orange);
+  color: var(--workflow-teal);
 }
 
 .workflow-news-roundup .workflow-hero h1 {
@@ -265,7 +265,7 @@ body.workflow-page {
 }
 
 .workflow-stage:nth-child(even)::before {
-  background: var(--workflow-orange);
+  background: var(--workflow-teal);
 }
 
 .workflow-stage-number {
@@ -281,8 +281,8 @@ body.workflow-page {
 }
 
 .workflow-stage:nth-child(even) .workflow-stage-number {
-  background: rgba(245, 166, 35, 0.15);
-  color: var(--workflow-orange);
+  background: rgba(0, 212, 168, 0.15);
+  color: var(--workflow-teal);
 }
 
 .workflow-stage strong {
@@ -311,8 +311,8 @@ body.workflow-page {
   display: inline-flex;
   padding: 8px 11px;
   border-radius: 999px;
-  background: rgba(245, 166, 35, 0.14);
-  color: var(--workflow-yellow);
+  background: rgba(0, 212, 168, 0.14);
+  color: var(--workflow-mint);
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -422,7 +422,7 @@ body.workflow-page {
 }
 
 .article-toc a:focus-visible {
-  outline: 2px solid var(--workflow-yellow);
+  outline: 2px solid var(--workflow-mint);
   outline-offset: 3px;
 }
 
@@ -444,7 +444,7 @@ body.workflow-page {
   height: 38px;
   place-items: center;
   border-radius: 12px;
-  background: var(--workflow-orange);
+  background: var(--workflow-teal);
   color: var(--workflow-night);
   font-weight: 700;
 }
@@ -534,10 +534,10 @@ body.workflow-page {
 }
 
 .workflow-page .article-content .workflow-inline-link {
-  color: var(--workflow-yellow);
+  color: var(--workflow-mint);
   font-weight: 800;
   text-decoration: underline;
-  text-decoration-color: rgba(247, 197, 107, 0.5);
+  text-decoration-color: rgba(69, 222, 181, 0.5);
   text-underline-offset: 3px;
 }
 
@@ -560,7 +560,7 @@ body.workflow-page {
   margin: 26px 0 32px;
   padding: 24px 28px;
   border: 0;
-  border-left: 4px solid var(--workflow-orange);
+  border-left: 4px solid var(--workflow-teal);
   border-radius: 0 16px 16px 0;
   background: rgba(10, 15, 30, 0.86);
   color: rgba(247, 251, 250, 0.88);
@@ -570,7 +570,7 @@ body.workflow-page {
 }
 
 .workflow-page .article-prompt strong {
-  color: var(--workflow-yellow);
+  color: var(--workflow-mint);
 }
 
 .workflow-page .article-figure {
@@ -658,7 +658,7 @@ body.workflow-page {
 }
 
 .workflow-page .article-bonus summary:focus-visible {
-  outline: 2px solid var(--workflow-yellow);
+  outline: 2px solid var(--workflow-mint);
   outline-offset: 4px;
 }
 
@@ -856,7 +856,7 @@ body.workflow-page {
   gap: 8px;
   margin-top: 0;
   padding-top: 0;
-  color: var(--workflow-yellow);
+  color: var(--workflow-mint);
   font-size: 0.82rem;
   font-weight: 800;
   text-decoration: none;
@@ -941,8 +941,8 @@ body.workflow-page {
 
 /* ── Philosophy series: a restrained editorial layer on the shared workflow shell ── */
 .workflow-philosophy {
-  --philosophy-line: rgba(245, 166, 35, 0.28);
-  --philosophy-soft: rgba(245, 166, 35, 0.08);
+  --philosophy-line: rgba(0, 212, 168, 0.28);
+  --philosophy-soft: rgba(0, 212, 168, 0.08);
 }
 
 .workflow-philosophy .workflow-shell {
@@ -958,11 +958,11 @@ body.workflow-page {
 }
 
 .workflow-philosophy .workflow-eyebrow {
-  color: var(--workflow-yellow);
+  color: var(--workflow-mint);
 }
 
 .workflow-philosophy .workflow-eyebrow::before {
-  background: var(--workflow-yellow);
+  background: var(--workflow-mint);
 }
 
 .workflow-philosophy .workflow-hero h1 span {
@@ -974,7 +974,7 @@ body.workflow-page {
 }
 
 .workflow-philosophy .workflow-article-kicker {
-  color: var(--workflow-yellow);
+  color: var(--workflow-mint);
 }
 
 .workflow-philosophy .workflow-step {
@@ -992,7 +992,7 @@ body.workflow-page {
 
 .workflow-philosophy .article-content blockquote {
   position: relative;
-  border-left-color: var(--workflow-yellow);
+  border-left-color: var(--workflow-mint);
   background: linear-gradient(90deg, var(--philosophy-soft), rgba(0, 212, 168, 0.035));
 }
 
@@ -1000,7 +1000,7 @@ body.workflow-page {
   position: absolute;
   top: 12px;
   right: 22px;
-  color: rgba(245, 166, 35, 0.38);
+  color: rgba(0, 212, 168, 0.38);
   content: '“';
   font-family: 'Outfit', system-ui, sans-serif;
   font-size: 3.4rem;
@@ -1014,7 +1014,7 @@ body.workflow-page {
   overflow: hidden;
   border: 1px solid var(--philosophy-line);
   border-radius: 24px;
-  background: linear-gradient(145deg, rgba(0, 212, 168, 0.09), rgba(245, 166, 35, 0.09));
+  background: linear-gradient(145deg, rgba(0, 212, 168, 0.09), rgba(0, 212, 168, 0.09));
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.3);
 }
 
@@ -1030,7 +1030,7 @@ body.workflow-page {
   padding: 28px clamp(24px, 4vw, 38px);
   border: 1px solid var(--philosophy-line);
   border-radius: 18px;
-  background: linear-gradient(135deg, rgba(0, 212, 168, 0.07), rgba(245, 166, 35, 0.06));
+  background: linear-gradient(135deg, rgba(0, 212, 168, 0.07), rgba(0, 212, 168, 0.06));
 }
 
 .philosophy-origin::before {
@@ -1040,7 +1040,7 @@ body.workflow-page {
   width: 34px;
   height: 22px;
   border-top: 1px solid rgba(0, 212, 168, 0.5);
-  border-bottom: 1px solid rgba(245, 166, 35, 0.5);
+  border-bottom: 1px solid rgba(0, 212, 168, 0.5);
   content: '';
   opacity: 0.8;
 }
@@ -1049,7 +1049,7 @@ body.workflow-page {
   margin: 0 0 12px;
   padding: 0;
   border: 0;
-  color: var(--workflow-yellow);
+  color: var(--workflow-mint);
   font-size: clamp(1.45rem, 3vw, 2rem);
 }
 
@@ -1084,14 +1084,14 @@ body.workflow-page {
 .tool-guide-page {
   --tool-guide-accent: #00d4a8;
   --tool-guide-accent-soft: rgba(0, 212, 168, 0.1);
-  --tool-guide-warm: #f5a623;
-  --tool-guide-warm-soft: rgba(245, 166, 35, 0.1);
+  --tool-guide-warm: #00d4a8;
+  --tool-guide-warm-soft: rgba(0, 212, 168, 0.1);
 }
 
 .tool-guide-shell {
   background:
     radial-gradient(circle at 82% 18%, rgba(0, 212, 168, 0.2), transparent 25rem),
-    radial-gradient(circle at 10% 86%, rgba(245, 166, 35, 0.16), transparent 28rem),
+    radial-gradient(circle at 10% 86%, rgba(0, 212, 168, 0.16), transparent 28rem),
     linear-gradient(135deg, #0a0f1e 0%, #101d43 53%, #0a1628 100%);
 }
 
@@ -1184,7 +1184,7 @@ body.workflow-page {
   padding: clamp(28px, 5vw, 58px) clamp(22px, 4vw, 46px);
   border: 1px solid rgba(0, 212, 168, 0.3);
   border-radius: 28px;
-  background: linear-gradient(145deg, rgba(0, 212, 168, 0.13), rgba(13, 21, 48, 0.7) 58%, rgba(245, 166, 35, 0.1));
+  background: linear-gradient(145deg, rgba(0, 212, 168, 0.13), rgba(13, 21, 48, 0.7) 58%, rgba(0, 212, 168, 0.1));
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
 }
 
@@ -1202,7 +1202,7 @@ body.workflow-page {
 
 .tool-guide-hero-label {
   margin-top: 25px;
-  color: var(--workflow-yellow);
+  color: var(--workflow-mint);
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -1336,14 +1336,14 @@ body.workflow-page {
 .tool-guide-warning {
   margin: 42px 0 50px;
   padding: 28px clamp(22px, 4vw, 38px);
-  border: 1px solid rgba(245, 166, 35, 0.36);
+  border: 1px solid rgba(0, 212, 168, 0.36);
   border-radius: 18px;
-  background: linear-gradient(135deg, rgba(245, 166, 35, 0.11), rgba(0, 212, 168, 0.045));
+  background: linear-gradient(135deg, rgba(0, 212, 168, 0.11), rgba(0, 212, 168, 0.045));
 }
 
 .tool-guide-callout-label {
   display: inline-block;
-  color: var(--workflow-yellow);
+  color: var(--workflow-mint);
 }
 
 .tool-guide-goal h2,
@@ -1392,7 +1392,7 @@ body.workflow-page {
 }
 
 .tool-guide-step:nth-child(even) {
-  border-color: rgba(245, 166, 35, 0.22);
+  border-color: rgba(0, 212, 168, 0.22);
 }
 
 .tool-guide-step-number {
@@ -1497,7 +1497,7 @@ body.workflow-page {
 }
 
 .prompt-copy-button:focus-visible {
-  outline: 2px solid var(--workflow-yellow);
+  outline: 2px solid var(--workflow-mint);
   outline-offset: 3px;
 }
 
@@ -1505,7 +1505,7 @@ body.workflow-page {
   display: block;
   min-height: 1.3em;
   margin-top: 9px;
-  color: var(--workflow-yellow);
+  color: var(--workflow-mint);
   font-size: 0.78rem;
   font-weight: 700;
 }
@@ -1533,7 +1533,7 @@ body.workflow-page {
 }
 
 .tool-guide-example-label {
-  color: var(--workflow-yellow);
+  color: var(--workflow-mint);
 }
 
 .teaching-example .prompt-card {
@@ -1586,8 +1586,8 @@ body.workflow-page {
 }
 
 .tool-guide-warning {
-  border-color: rgba(245, 166, 35, 0.42);
-  background: linear-gradient(145deg, rgba(245, 166, 35, 0.14), rgba(30, 21, 12, 0.3));
+  border-color: rgba(0, 212, 168, 0.42);
+  background: linear-gradient(145deg, rgba(0, 212, 168, 0.14), rgba(30, 21, 12, 0.3));
 }
 
 .tool-guide-warning h3 {
@@ -1612,7 +1612,7 @@ body.workflow-page {
   gap: 9px;
   margin: 20px 0;
   padding: 16px;
-  border: 1px solid rgba(245, 166, 35, 0.23);
+  border: 1px solid rgba(0, 212, 168, 0.23);
   border-radius: 13px;
   background: rgba(10, 15, 30, 0.48);
   text-align: center;
@@ -1622,19 +1622,19 @@ body.workflow-page {
 .tool-guide-output-flow span {
   padding: 9px 11px;
   border-radius: 8px;
-  background: rgba(245, 166, 35, 0.14);
+  background: rgba(0, 212, 168, 0.14);
   color: #fff;
   font-size: 0.84rem;
 }
 
 .tool-guide-teacher-workflow span,
 .tool-guide-output-flow b {
-  color: var(--workflow-yellow);
+  color: var(--workflow-mint);
 }
 
 .tool-guide-warning-quote {
   margin-top: 22px !important;
-  color: var(--workflow-yellow);
+  color: var(--workflow-mint);
   font-size: 1.08rem;
   font-weight: 800;
 }
@@ -1695,7 +1695,7 @@ body.workflow-page {
 }
 
 .tool-guide-related-card:focus-visible {
-  outline: 2px solid var(--workflow-yellow);
+  outline: 2px solid var(--workflow-mint);
   outline-offset: 3px;
 }
 
@@ -1961,7 +1961,7 @@ body.workflow-page {
 .gemini-skills-page code { overflow-wrap: anywhere; }
 .gemini-skills-page table { width: 100%; table-layout: fixed; }
 .gemini-skills-page th, .gemini-skills-page td { overflow-wrap: anywhere; }
-.gemini-skills-page input:focus-visible { outline: 2px solid #f7c56b; outline-offset: 3px; }
+.gemini-skills-page input:focus-visible { outline: 2px solid #45deb5; outline-offset: 3px; }
 .gemini-skills-page .workflow-hero h1 { font-size: clamp(2rem, 3.5vw, 3.4rem); line-height: 1.15; letter-spacing: -0.035em; }
 
 /* Teacher Skill Library uses the existing article disclosure and copy styles. */
@@ -2006,8 +2006,8 @@ body.workflow-page {
 }
 .insight-summaries-page .insight-privacy {
   margin: 36px 0;
-  border-left: 3px solid var(--workflow-orange);
-  background: rgba(245, 166, 35, 0.06);
+  border-left: 3px solid var(--workflow-teal);
+  background: rgba(0, 212, 168, 0.06);
 }
 .insight-summaries-page .insight-feature h3,
 .insight-summaries-page .insight-example h2,
@@ -2022,7 +2022,7 @@ body.workflow-page {
 .insight-summaries-page .workflow-inline-link { overflow-wrap: anywhere; }
 .insight-summaries-page a:focus-visible,
 .insight-summaries-page button:focus-visible {
-  outline: 2px solid var(--workflow-yellow);
+  outline: 2px solid var(--workflow-mint);
   outline-offset: 4px;
 }
 @media (max-width: 900px) {

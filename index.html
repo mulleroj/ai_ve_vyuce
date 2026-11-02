@@ -1,347 +1,106 @@
 <!DOCTYPE html>
-<html lang="cs">
-
+<html lang="cs" class="home-redesign-document">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI ve Výuce – nástroje, návody a AI pomůcky pro učitele</title>
-  <meta name="description"
-    content="Praktický rozcestník AI pro učitele: články, návody, workflow, prompty, aktivity, asistenti a nástroje pro přípravu i výuku." />
-  <link rel="stylesheet" href="css/style.css?v=20261016-hero-dimensions" />
-  <link rel="stylesheet" href="css/home.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/" />
-    <meta property="og:title" content="AI ve Výuce – nástroje, návody a AI pomůcky pro učitele" />
-    <meta property="og:description" content="Praktický rozcestník AI pro učitele: články, návody, workflow, prompty, aktivity, asistenti a nástroje pro přípravu i výuku." />
-    <meta property="og:url" content="https://ai-ve-vyuce.netlify.app/" />
-    <meta property="og:type" content="website" />    <meta property="og:image" content="https://ai-ve-vyuce.netlify.app/images/hero_classroom.jpg" /></head>
+  <title>AI ve výuce – inspirace, nástroje a praxe pro učitele</title>
+  <meta name="description" content="Inspirace do výuky, ověřené postupy, návody krok za krokem a aktuální novinky pro učitele středních škol." />
+  <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/" />
+  <meta property="og:title" content="AI ve výuce – inspirace, nástroje a praxe pro učitele" />
+  <meta property="og:description" content="Praktický průvodce světem AI pro učitele: inspirace, ověřené postupy, návody a novinky." />
+  <meta property="og:url" content="https://ai-ve-vyuce.netlify.app/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://ai-ve-vyuce.netlify.app/images/home-hero-teacher-v2.jpg" />
+<meta name="theme-color" content="#07584f" />
+  <link rel="stylesheet" href="css/style.css?v=pr19-robot-brand-20261103" />
+  <link rel="stylesheet" href="css/home.css?v=pr19-robot-brand-20261103" />
 
-<body>
-
-  <!-- Navigation -->
-  <nav class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <div class="nav-logo-icon">🤖</div>
-        AI ve <span>Výuce</span>
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=robot-20261103" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=robot-20261103" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png?v=robot-20261103" />
+  <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64x64.png?v=robot-20261103" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=robot-20261103" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
+  <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+</head>
+<body class="home-redesign">
+  <a class="skip-link" href="#main-content">Přeskočit na obsah</a>
+  <header class="site-header" id="top">
+    <nav class="site-nav" aria-label="Hlavní navigace">
+      <a class="brand" href="index.html" aria-label="AI ve výuce – domů">
+        <img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" />
+        <span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span>
       </a>
-      <div class="nav-links">
-        <div class="nav-dropdown">
-          <a href="#" class="nav-link">
-            📚 Předměty <i class="fa-solid fa-chevron-down" style="font-size:0.65rem"></i>
-          </a>
-          <div class="nav-dropdown-menu">
-            <a href="matematika.html" class="nav-dropdown-item"><span class="item-icon">🔢</span> Matematika</a>
-            <a href="cestina.html" class="nav-dropdown-item"><span class="item-icon">📖</span> Český jazyk</a>
-            <a href="anglictina.html" class="nav-dropdown-item"><span class="item-icon">🇬🇧</span> Anglický jazyk</a>
-            <a href="prirodoveda.html" class="nav-dropdown-item"><span class="item-icon">🔬</span> Přírodní vědy</a>
-            <a href="dejepis.html" class="nav-dropdown-item"><span class="item-icon">🏛️</span> Dějepis</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu"><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+      <div class="nav-content" id="primary-menu">
+        <a class="nav-home" href="#top" aria-current="page">Domů</a>
+        <details class="nav-dropdown"><summary>Články</summary><div class="dropdown-panel"><a href="#articles">Nejnovější články</a><a href="ai.html">Všechny články</a><a href="#philosophy">Filozofování s AI</a></div></details>
+        <details class="nav-dropdown"><summary>Návody a workflow</summary><div class="dropdown-panel"><a href="ai-navody.html">Praktické návody</a><a href="ai-workflow.html">Workflow</a><a href="prompty.html">Knihovna promptů</a></div></details>
+        <a href="#tools">AI nástroje</a>
+        <details class="nav-dropdown"><summary>Pro školy</summary><div class="dropdown-panel"><a href="ai.html">AI ve vzdělávání</a><a href="aktivity.html">Aktivity do výuky</a><a href="anglictina.html">Předměty</a></div></details>
+        <a href="#philosophy">Filozofování s AI</a>
+        <form class="site-search" role="search" action="ai.html" method="get"><label class="visually-hidden" for="home-search">Hledat na webu</label><input id="home-search" name="q" type="search" placeholder="Hledat články…" /><button aria-label="Hledat" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg><span>Hledat</span></button></form>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy"><div class="eyebrow"><span></span> PRAKTICKÝ PRŮVODCE SVĚTEM AI</div>
+        <h1 id="hero-title">Umělá inteligence<br />ve škole, která má smysl.</h1>
+        <p>Inspirace do výuky, ověřené postupy, návody krok za krokem a aktuální novinky pro učitele středních škol.</p>
+        <div class="hero-actions"><a class="button button-primary" href="ai-navody.html">Prozkoumat návody <span aria-hidden="true">→</span></a><a class="button button-outline" href="#articles"><span aria-hidden="true">▤</span> Nejnovější články</a></div>
+      </div>
+      <img class="hero-image" src="images/home-hero-teacher-v2.jpg" width="2172" height="724" alt="Učitelka připravuje výuku u notebooku ve světlé školní třídě." fetchpriority="high" decoding="async" />
+    </section>
+
+    <section class="needs section-wrap" id="needs" aria-labelledby="needs-title"><h2 class="section-kicker" id="needs-title"><span></span> CO DNES POTŘEBUJETE?</h2>
+      <div class="need-grid">
+        <a class="need-card" href="gemini-notebook.html"><img src="images/home-need-lesson.webp" width="640" height="360" alt="Učebnice a jablko na stole ve třídě" loading="lazy" decoding="async"/><span class="need-card-copy"><strong>Připravit hodinu</strong><small>Nápady, podklady a postupy</small></span><span class="round-arrow" aria-hidden="true">→</span></a>
+        <a class="need-card" href="prompty.html"><img src="images/home-need-material.webp" width="640" height="360" alt="Umělá inteligence pomáhá vytvořit digitální výukové materiály" loading="lazy" decoding="async"/><span class="need-card-copy"><strong>Vytvořit materiál</strong><small>Pracovní listy, testy, prezentace</small></span><span class="round-arrow" aria-hidden="true">→</span></a>
+        <a class="need-card" href="ai-novinky.html"><img src="images/home-need-news.webp" width="640" height="360" alt="Glóbus a noviny na stole ve slunečném světle" loading="lazy" decoding="async"/><span class="need-card-copy"><strong>Zjistit, co je nového</strong><small>AI, školství, legislativa, trendy</small></span><span class="round-arrow" aria-hidden="true">→</span></a>
+        <a class="need-card" href="aktivity.html"><img src="images/home-need-inspiration.webp" width="640" height="360" alt="Studenti pracují na společném technickém projektu" loading="lazy" decoding="async"/><span class="need-card-copy"><strong>Inspirace do výuky</strong><small>Konkrétní příklady z praxe</small></span><span class="round-arrow" aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section class="editorial section-wrap" id="articles" aria-labelledby="articles-title">
+      <div class="article-column"><div class="section-heading"><h2 id="articles-title">Nejnovější články</h2><a href="ai.html">Zobrazit všechny články <span aria-hidden="true">→</span></a></div>
+        <div class="magazine-grid" id="latest-articles" aria-live="polite" aria-busy="true"><p class="loading-copy">Načítám nejnovější články…</p><noscript><p>Články najdete na stránce <a href="ai.html">AI pro školy</a>.</p></noscript></div>
+      </div>
+      <aside class="tools-panel" id="tools" aria-labelledby="tools-title"><h2 id="tools-title">Osvědčené nástroje<br/>pro učitele</h2>
+        <div class="tools-list" aria-label="Hlavní AI nástroje">
+          <a href="chatgpt-pro-ucitele.html" class="tool-link"><span class="tool-mark chatgpt" aria-hidden="true">✳</span><span><strong>ChatGPT</strong><small>Přípravy, materiály, nápady</small></span></a>
+          <a href="gemini-pro-ucitele.html" class="tool-link"><span class="tool-mark gemini" aria-hidden="true">✦</span><span><strong>Gemini</strong><small>Tvorba, analýza, studium</small></span></a>
+          <a href="copilot-pro-ucitele.html" class="tool-link"><span class="tool-mark copilot" aria-hidden="true">▦</span><span><strong>Copilot (Microsoft 365)</strong><small>Dokumenty a Microsoft 365</small></span></a>
+          <a href="gemini-notebook.html" class="tool-link"><span class="tool-mark notebook" aria-hidden="true">▤</span><span><strong>Gemini Notebook</strong><small>Učení a práce s vlastními zdroji</small></span></a>
+          <a href="claude-pro-ucitele.html" class="tool-link"><span class="tool-mark claude" aria-hidden="true">✣</span><span><strong>Claude</strong><small>Tvorba textů, analýzy a materiály</small></span></a>
+          <a href="perplexity-pro-ucitele.html" class="tool-link"><span class="tool-mark perplexity" aria-hidden="true">⌕</span><span><strong>Perplexity</strong><small>Rešerše, aktuální informace a zdroje</small></span></a>
+        </div>
+        <section class="tools-advanced" aria-labelledby="tools-advanced-title">
+          <h3 id="tools-advanced-title">Pro pokročilé</h3>
+          <div class="tools-advanced-grid">
+            <a href="vibe-coding.html" class="tool-link tool-link-advanced"><span class="tool-mark cursor" aria-hidden="true">⌘</span><span><strong>Cursor</strong><small>Tvorba webů a aplikací s AI</small></span></a>
+            <a href="asistenti.html" class="tool-link tool-link-advanced"><span class="tool-mark grok-bot" aria-hidden="true">◉</span><span><strong>Grok Bot</strong><small>AI asistenti, automatizace a rutiny</small></span></a>
           </div>
-        </div>
-        <a href="prompty.html" class="nav-link">✨ Prompty</a>
-        <a href="asistenti.html" class="nav-link">🤖 AI Asistenti</a>
-        <a href="aktivity.html" class="nav-link">🎯 Aktivity</a>
-        <a href="ai.html" class="nav-link">🧠 AI pro školy</a>
-        <a href="vibe-coding.html" class="nav-link">💻 Vibe Coding</a>
-        <a href="qr-kod.html" class="nav-link">🔳 QR kód</a>
-      </div>
-      <button class="nav-mobile-toggle" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+        </section>
+        <a href="asistenti.html" class="tools-more">Více nástrojů a tipů <span aria-hidden="true">→</span></a>
+      </aside>
+    </section>
+
+    <div class="midrow section-wrap">
+      <section class="philosophy" id="philosophy" aria-labelledby="philosophy-title"><img src="images/home-philosophy-banner-v2.jpg" width="2048" height="683" alt="Malý robot sedí na knihách pod teplým světlem lampy v tmavě zelené knihovně" loading="lazy" decoding="async"/><div class="philosophy-copy"><span class="eyebrow">— SÉRIE</span><h2 id="philosophy-title">Filozofování s AI</h2><p>Otázky, které technologie otevírá. A odpovědi, které musíme hledat sami.</p><a class="button button-light" href="ai.html?filter=philosophy">Prozkoumat sérii <span aria-hidden="true">→</span></a></div></section>
+      <section class="subjects" id="subjects" aria-labelledby="subjects-title"><div class="section-heading"><h2 id="subjects-title">AI ve vybraných předmětech</h2><a href="aktivity.html">Aktivity podle předmětu <span aria-hidden="true">→</span></a></div><div class="subject-grid">
+        <a href="anglictina.html"><img src="images/home-subject-english.webp" width="300" height="180" alt="Britská vlajka" loading="lazy"/><strong>Angličtina</strong></a><a href="dejepis.html"><img src="images/home-subject-history.webp" width="300" height="180" alt="Historická knihovna" loading="lazy"/><strong>Dějepis</strong></a><a href="prirodoveda.html"><img src="images/home-subject-science.webp" width="300" height="180" alt="Měřicí přístroj pro přírodovědný pokus" loading="lazy"/><strong>Přírodní vědy</strong></a><a href="matematika.html"><img src="images/home-subject-math.webp" width="300" height="180" alt="Převody a technická součástka" loading="lazy"/><strong>Matematika</strong></a><a href="cestina.html"><img src="images/home-subject-czech.webp" width="300" height="180" alt="Socha spravedlnosti s vahami" loading="lazy"/><strong>Český jazyk</strong></a>
+      </div></section>
     </div>
-  </nav>
+    <section class="value-strip section-wrap" aria-label="Co na webu najdete"><a href="ai-navody.html"><span aria-hidden="true">♧</span><span><strong>Praktické návody</strong><small>Krok za krokem, do výuky hned</small></span></a><a href="asistenti.html"><span aria-hidden="true">♧</span><span><strong>Ověřené nástroje</strong><small>Co skutečně funguje</small></span></a><a href="prompty.html"><span aria-hidden="true">▱</span><span><strong>Materiály ke stažení</strong><small>Pracovní listy, šablony, prompty</small></span></a><a href="aktivity.html"><span aria-hidden="true">♧</span><span><strong>Zkušenosti z praxe</strong><small>Tipy, postupy a reálné příklady</small></span></a></section>
+  </main>
 
-  <!-- Mobile menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏠 Domů</a>
-    <a href="matematika.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔢 Matematika</a>
-    <a href="cestina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">📖 Český jazyk</a>
-    <a href="anglictina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🇬🇧 Anglický jazyk</a>
-    <a href="prirodoveda.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔬 Přírodní vědy</a>
-    <a href="dejepis.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏛️ Dějepis</a>
-    <a href="prompty.html" class="nav-link" style="font-size:1rem;padding:14px 16px">✨ Prompty</a>
-    <a href="asistenti.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🤖 AI Asistenti</a>
-    <a href="aktivity.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🎯 Aktivity</a>
-    <a href="ai.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🧠 AI pro školy</a>
-    <a href="vibe-coding.html" class="nav-link" style="font-size:1rem;padding:14px 16px">💻 Vibe Coding</a>
-    <a href="qr-kod.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔳 QR kód</a>
-  </div>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <canvas id="particles" class="hero-canvas"></canvas>
-    <div class="hero-glow-1"></div>
-    <div class="hero-glow-2"></div>
-    <div class="hero-glow-3"></div>
-    <div class="container">
-      <div class="hero-grid">
-        <div class="hero-content">
-          <div class="hero-badge">
-            <span class="hero-badge-dot"></span>
-            🆕 Novinky a pomůcky pro učitele
-          </div>
-          <h1 class="hero-title">
-            AI Pomůcky<br />
-            pro <span class="gradient-text">Učitele</span>
-          </h1>
-          <p class="hero-subtitle">
-            Novinky, návody, workflow a praktické nástroje pro přípravu i výuku.
-          </p>
-          <div class="hero-actions">
-            <a href="#co-dnes" class="btn btn-primary btn-lg">
-              🧰 Najít pomůcku
-            </a>
-            <a href="#novinky" class="btn btn-secondary btn-lg">
-              🆕 Co je nového
-            </a>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <div class="hero-img-wrapper">
-            <img src="images/hero_classroom.jpg" width="1024" height="1024" alt="Futuristická třída budoucnosti s AI – moderní výuka" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Task-based navigation -->
-  <section id="co-dnes" class="section-sm home-choice-section">
-    <div class="container">
-      <div class="text-center mb-48">
-        <div class="section-label">Rychlá cesta k obsahu</div>
-        <h2 class="section-title">Co dnes potřebujete?</h2>
-        <p class="section-subtitle home-section-subtitle-centered">Vyberte si cestu podle konkrétního úkolu, který právě řešíte.</p>
-      </div>
-      <div class="hero-choice-panel" data-hero-choices>
-        <div class="hero-choice-options" role="group" aria-label="Vyberte úkol, se kterým chcete začít">
-          <button type="button" class="hero-choice-button" aria-pressed="true"
-            data-hero-choice data-title="Nejnovější články a workflow"
-            data-description="Podívejte se, co je na webu právě nové: články, návody a workflow pro učitele."
-            data-href="#novinky" data-cta="Přejít na novinky →">
-            <span class="hero-choice-icon">🆕</span><span>Chci zjistit, co je nového</span>
-          </button>
-          <button type="button" class="hero-choice-button" aria-pressed="false"
-            data-hero-choice data-title="Gemini Notebook pro přípravu výuky"
-            data-description="Projít si můžete workflow a návody pro přípravu hodiny, práci se zdroji a plánování výuky."
-            data-href="gemini-notebook.html" data-cta="Připravit hodinu →">
-            <span class="hero-choice-icon">📓</span><span>Potřebuji připravit hodinu</span>
-          </button>
-          <button type="button" class="hero-choice-button" aria-pressed="false"
-            data-hero-choice data-title="Prompty a výukové materiály"
-            data-description="Vyberte si prompt nebo nástroj pro tvorbu pracovních listů, prezentací a dalších výukových materiálů."
-            data-href="prompty.html" data-cta="Vytvořit materiál →">
-            <span class="hero-choice-icon">✨</span><span>Potřebuji vytvořit materiál</span>
-          </button>
-          <button type="button" class="hero-choice-button" aria-pressed="false"
-            data-hero-choice data-title="Vibe Coding pro učitele"
-            data-description="Vytvořte si vlastní jednoduchý výukový nástroj pomocí přirozeného jazyka a postupného testování."
-            data-href="vibe-coding.html" data-cta="Začít s Vibe Coding →">
-            <span class="hero-choice-icon">💻</span><span>Chci si vytvořit vlastní nástroj</span>
-          </button>
-        </div>
-        <div class="hero-choice-detail" aria-live="polite">
-          <strong data-hero-detail-title>Nejnovější články a workflow</strong>
-          <p data-hero-detail-description>Podívejte se, co je na webu právě nové: články, návody a workflow pro učitele.</p>
-          <a class="hero-choice-link" data-hero-detail-link href="#novinky">Přejít na novinky →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Latest news -->
-  <section id="novinky" class="section">
-    <div class="container">
-      <div class="home-section-heading">
-        <div>
-          <div class="section-label">Novinky na webu</div>
-          <h2 class="section-title mb-8">Co je právě <span class="gradient-text">nového?</span></h2>
-          <p class="section-subtitle home-section-subtitle">Nejnovější články napříč novinkami, návody, nástroji a workflow pro učitele.</p>
-        </div>
-        <a href="ai.html" class="btn btn-secondary">Všechny články →</a>
-      </div>
-      <div id="latest-articles" class="latest-grid" aria-live="polite">
-        <p class="section-subtitle">Načítám nejnovější články…</p>
-        <noscript>
-          <p class="section-subtitle latest-empty">Nejnovější články najdete na stránce <a href="ai.html">AI pro školy →</a>.</p>
-        </noscript>
-      </div>
-    </div>
-  </section>
-
-  <!-- Teacher tools -->
-  <section id="pomucky" class="section-sm home-tools-section">
-    <div class="container">
-      <div class="text-center mb-48">
-        <div class="section-label">Pomůcky pro učitele</div>
-        <h2 class="section-title">Vše potřebné <span class="gradient-text-mint">na jednom místě</span></h2>
-        <p class="section-subtitle home-section-subtitle-centered">Konkrétní nástroje a zdroje pro přípravu, tvorbu materiálů a každodenní práci.</p>
-      </div>
-      <div class="teacher-tools-grid">
-        <a href="https://ntb-presentation-prompt.netlify.app/" class="teacher-tool-card reveal" target="_blank" rel="noopener noreferrer">
-          <div class="teacher-tool-icon">📊</div>
-          <div class="teacher-tool-title">Generátor prezentací Gemini Notebook</div>
-          <p class="teacher-tool-desc">Připravte si prezentaci z vlastních zdrojů a proměňte podklady v přehledný výukový materiál.</p>
-          <span class="teacher-tool-link">Otevřít generátor →</span>
-        </a>
-        <a href="https://ai-ve-vyuce.netlify.app/gemini-notebook-prompty" class="teacher-tool-card reveal" target="_blank" rel="noopener noreferrer">
-          <div class="teacher-tool-icon">✨</div>
-          <div class="teacher-tool-title">Prompty Gemini Notebook</div>
-          <p class="teacher-tool-desc">Připravená zadání pro práci se zdroji, shrnutí, studijní materiály, otázky a kritickou analýzu.</p>
-          <span class="teacher-tool-link">Vybrat prompt →</span>
-        </a>
-        <a href="https://gemforge.netlify.app/" class="teacher-tool-card reveal" target="_blank" rel="noopener noreferrer">
-          <div class="teacher-tool-icon">🤖</div>
-          <div class="teacher-tool-title">Katalog Gemini Gems</div>
-          <p class="teacher-tool-desc">Vyberte si specializovaného Gemini Gema pro plánování, tvorbu materiálů a další učitelskou práci.</p>
-          <span class="teacher-tool-link">Prohlédnout katalog →</span>
-        </a>
-        <a href="ai.html" class="teacher-tool-card reveal">
-          <div class="teacher-tool-icon">🧠</div>
-          <div class="teacher-tool-title">Novinky a workflow</div>
-          <p class="teacher-tool-desc">Čerstvé články, praktické návody a opakovatelné postupy pro smysluplné zapojení AI do výuky.</p>
-          <span class="teacher-tool-link">Číst novinky →</span>
-        </a>
-        <a href="vibe-coding.html" class="teacher-tool-card reveal">
-          <div class="teacher-tool-icon">💻</div>
-          <div class="teacher-tool-title">Vibe Coding</div>
-          <p class="teacher-tool-desc">Vytvořte si vlastní jednoduchou výukovou aplikaci pomocí přirozeného jazyka a postupného testování.</p>
-          <span class="teacher-tool-link">Začít s aplikací →</span>
-        </a>
-        <a href="qr-kod.html" class="teacher-tool-card reveal">
-          <div class="teacher-tool-icon">🔳</div>
-          <div class="teacher-tool-title">QR kód pro materiály</div>
-          <p class="teacher-tool-desc">Rychle připravte QR kód k odkazu, pracovnímu listu, prezentaci nebo online aktivitě.</p>
-          <span class="teacher-tool-link">Vytvořit QR kód →</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats -->
-  <section class="section-sm home-stats-section">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-card reveal">
-          <div class="stat-number gradient-text" data-count-source="articles">—</div>
-          <div class="stat-label">Článků, návodů a workflow</div>
-          <div class="stat-sublabel">prakticky pro učitele</div>
-        </div>
-        <div class="stat-card reveal">
-          <!-- GENERATED:PROMPT_COUNT:START -->
-          <div class="stat-number gradient-text-mint" data-target="204">204</div>
-          <!-- GENERATED:PROMPT_COUNT:END -->
-          <div class="stat-label">Připravených promptů</div>
-          <div class="stat-sublabel">znovu použitelné šablony pro učitele</div>
-        </div>
-        <div class="stat-card reveal">
-          <!-- GENERATED:ACTIVITY_COUNT:START -->
-          <div class="stat-number home-stat-blue" data-target="44">44</div>
-          <!-- GENERATED:ACTIVITY_COUNT:END -->
-          <div class="stat-label">Výukových aktivit</div>
-          <div class="stat-sublabel">napříč katalogem a předmětovými stránkami</div>
-        </div>
-        <div class="stat-card reveal">
-          <div class="stat-number home-stat-purple" data-target="5">5</div>
-          <div class="stat-label">Předmětů</div>
-          <div class="stat-sublabel">od jazyků po přírodní vědy</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="section">
-    <div class="container">
-      <div class="cta-section reveal">
-        <div class="home-cta-icon">🧭</div>
-        <h2 class="section-title home-cta-title">
-          Začněte jedním <span class="gradient-text">konkrétním úkolem</span>
-        </h2>
-        <p class="section-subtitle home-cta-copy">
-          Nemusíte měnit celou výuku. Vyberte si prompt, aktivitu nebo nástroj a vyzkoušejte AI tam, kde vám dnes může skutečně ušetřit práci.
-        </p>
-        <div class="home-cta-actions">
-          <a href="prompty.html" class="btn btn-primary btn-lg">✨ Najít prompt</a>
-          <a href="aktivity.html" class="btn btn-secondary btn-lg">🎯 Vybrat aktivitu</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="nav-logo" style="margin-bottom:12px;display:inline-flex">
-            <div class="nav-logo-icon">🤖</div>
-            AI ve <span>Výuce</span>
-          </a>
-          <p>Moderní průvodce světem AI pro české učitele. Aktivity, prompty a asistenti pro efektivnější výuku.</p>
-          <div class="home-footer-badges">
-            <span class="badge badge-gold">Zdarma</span>
-            <span class="badge badge-mint">V češtině</span>
-            <span class="badge badge-blue">Pro učitele</span>
-          </div>
-        </div>
-        <div class="footer-links">
-          <h4>🎯 Předměty</h4>
-          <ul>
-            <li><a href="matematika.html">🔢 Matematika</a></li>
-            <li><a href="cestina.html">📖 Český jazyk</a></li>
-            <li><a href="anglictina.html">🇬🇧 Anglický jazyk</a></li>
-            <li><a href="prirodoveda.html">🔬 Přírodní vědy</a></li>
-            <li><a href="dejepis.html">🏛️ Dějepis</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h4>📚 Zdroje</h4>
-          <ul>
-            <li><a href="prompty.html">✨ Knihovna promptů</a></li>
-            <li><a href="aktivity.html">🎯 Vybrané aktivity</a></li>
-            <li><a href="asistenti.html">🤖 AI Asistenti</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h4>🤖 AI Nástroje</h4>
-          <ul>
-            <li><a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer">ChatGPT</a></li>
-            <li><a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer">Google Gemini</a></li>
-            <li><a href="https://claude.ai" target="_blank" rel="noopener noreferrer">Claude (Anthropic)</a></li>
-            <li><a href="https://copilot.microsoft.com" target="_blank" rel="noopener noreferrer">Microsoft Copilot</a></li>
-            <li><a href="https://notebooklm.google.com" target="_blank" rel="noopener noreferrer">NotebookLM</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2026 AI ve Výuce · Vytvořeno s ❤️ pro české pedagogy</span>
-        <div class="footer-bottom-links">
-          <a href="index.html">Domů</a>
-          <a href="prompty.html">Prompty</a>
-          <a href="asistenti.html">Asistenti</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <div class="modal-overlay" id="modalOverlay">
-    <div class="modal">
-      <div class="modal-header">
-        <h3 class="modal-title"></h3>
-        <button class="modal-close"
-          onclick="document.getElementById('modalOverlay').classList.remove('open')">✕</button>
-      </div>
-      <div class="modal-body"></div>
-    </div>
-  </div>
-
-  <script src="js/site-articles.js?v=20261101-english-teaching-skill"></script>
-  <script src="js/main.js?v=20261016-defensive-fallbacks"></script>
-  <script src="js/home.js?v=20260916-home"></script>
-    <script src="js/site-footer.js?v=20260927-human-loop"></script>
+  <footer class="footer home-footer"><div class="footer-inner"><a class="brand" href="index.html"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>Inspirace · nástroje · praxe pro učitele</small></span></a><p>Moderní průvodce světem AI pro české učitele.</p><div class="footer-links"><a href="ai-navody.html">Návody</a><a href="prompty.html">Prompty</a><a href="aktivity.html">Aktivity</a><a href="asistenti.html">AI nástroje</a></div><small>© 2026 AI ve výuce</small></div></footer>
+  <script src="js/site-articles.js?v=20261102-pr19-visual"></script>
+  <script src="js/main.js?v=20261102-pr19-visual"></script>
+  <script src="js/home.js?v=20261101-home-redesign"></script>
+  <script src="js/site-footer.js?v=20260927-human-loop"></script>
 </body>
-
 </html>

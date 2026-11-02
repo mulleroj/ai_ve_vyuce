@@ -17,6 +17,10 @@
 
     if (!sections.length || !queryInput || !filterButtons.length) return;
 
+    const initialQuery = new URLSearchParams(window.location.search).get('q');
+    const requestedFilter = new URLSearchParams(window.location.search).get('filter');
+    if (initialQuery) queryInput.value = initialQuery;
+
     const normalize = value => String(value || '')
         .toLocaleLowerCase('cs-CZ')
         .normalize('NFD')
@@ -44,7 +48,12 @@
         }
     });
 
-    let activeFilter = 'all';
+    let activeFilter = filters[requestedFilter] ? requestedFilter : 'all';
+    filterButtons.forEach(button => {
+        const isActive = button.dataset.aiDirectoryFilter === activeFilter;
+        button.classList.toggle('is-active', isActive);
+        button.setAttribute('aria-pressed', String(isActive));
+    });
 
     function update() {
         const query = normalize(queryInput.value);
