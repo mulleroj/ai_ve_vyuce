@@ -1,0 +1,134 @@
+[
+  {
+    "file": "ai-workflow-7-kroku-gemini-notebook.html",
+    "slug": "gemini-notebook-7-kroku",
+    "contentType": "workflow",
+    "sourceDate": "2026-08-29",
+    "sourceDateLabel": "29. srpna 2026",
+    "sourceCategory": "Workflow",
+    "sourceCatalogTitle": "Gemini Notebook jako kompletní příprava výuky",
+    "sourceCatalogSummary": "Opakovatelný workflow od vlastních zdrojů přes plán hodiny a materiály až po aktualizaci a AI tutora.",
+    "sourceBodyTextSha256": "4f23d73b522ace0172b4856d64a9a0c82a92e74763b2ee78bd2b594e26d44ef7",
+    "sourceBodyLength": 11713,
+    "sourceBodyLinks": [],
+    "sourceBodyImages": [
+      {
+        "src": "images/gemini-notebook-7-kroku-priprava-vyuky.png",
+        "alt": "Infografika Gemini Notebooku jako kompletní přípravy výuky v sedmi krocích od zdrojů až k AI tutorovi",
+        "width": 1122,
+        "height": 1402
+      }
+    ],
+    "sourceRelatedTextSha256": "486a5bc4802061c45b7481276739de048aa23ec2be3594fe14b7deecf4f2148e",
+    "sourceRelatedLinks": [
+      "ai-workflow-10-promptu-gemini.html",
+      "ai-navod-gemini-notebook-prezentace.html",
+      "gemini-notebook.html"
+    ],
+    "sourceFooterTextSha256": "85bca2bafd11a0d83fa3e409e0f43baa3e69fd0e122be11de19c7ce0f26f00da",
+    "headTags": [
+      "<meta name=\"description\"\r\n        content=\"Sedm kroků, jak v Gemini Notebooku propojit vlastní zdroje, plánování výuky, tvorbu materiálů, aktualizaci obsahu a AI tutora pro žáky.\" />",
+      "<link rel=\"canonical\" href=\"https://ai-ve-vyuce.netlify.app/ai-workflow-7-kroku-gemini-notebook\" />",
+      "<meta property=\"og:title\" content=\"Gemini Notebook jako kompletn&#237; př&#237;prava v&#253;uky: 7 kroků | AI ve V&#253;uce\" />",
+      "<meta property=\"og:description\" content=\"Sedm kroků, jak v Gemini Notebooku propojit vlastn&#237; zdroje, pl&#225;nov&#225;n&#237; v&#253;uky, tvorbu materi&#225;lů, aktualizaci obsahu a AI tutora pro ž&#225;ky.\" />",
+      "<meta property=\"og:url\" content=\"https://ai-ve-vyuce.netlify.app/ai-workflow-7-kroku-gemini-notebook\" />",
+      "<link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/favicon-16x16.png?v=robot-20261103\" />",
+      "<link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/favicon-32x32.png?v=robot-20261103\" />",
+      "<link rel=\"icon\" type=\"image/png\" sizes=\"48x48\" href=\"/favicon-48x48.png?v=robot-20261103\" />",
+      "<link rel=\"icon\" type=\"image/png\" sizes=\"64x64\" href=\"/favicon-64x64.png?v=robot-20261103\" />",
+      "<link rel=\"icon\" type=\"image/png\" sizes=\"192x192\" href=\"/icon-192.png?v=robot-20261103\" />",
+      "<link rel=\"icon\" type=\"image/png\" sizes=\"512x512\" href=\"/favicon-512.png?v=robot-20261103\" />",
+      "<link rel=\"shortcut icon\" href=\"/favicon.ico?v=robot-20261103\" />",
+      "<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/apple-touch-icon.png?v=robot-20261103\" />"
+    ],
+    "hero": {
+      "eyebrowHtml": "<div class=\"workflow-eyebrow\">Workflow pro učitele · 29. srpna 2026</div>",
+      "titleHtml": "<h1>7 kroků:<br /><span>od zdrojů k AI tutorovi</span></h1>",
+      "leadHtml": "<p class=\"workflow-hero-lead\">Jak v Gemini Notebooku postupně projít zdroje, naplánovat výuku, připravit materiály, aktualizovat obsah a nabídnout žákům průvodce učením.</p>",
+      "metaHtml": "<div class=\"workflow-meta\"><span>Gemini Notebook</span><span>7 kroků</span><span>Práce se zdroji</span><span>AI tutor</span></div>",
+      "overviewFile": "content/guides/gemini-notebook-7-kroku/overview.inc"
+    },
+    "intro": {
+      "summaryHtml": "<p class=\"workflow-article-summary\">Gemini Notebook nemusí být jen nástroj pro shrnutí dokumentů. Může spojit zdroje, plánování, konkrétní hodinu, materiály pro žáky, aktualizaci obsahu i individuální podporu při učení.</p>",
+      "editorialTitleHtml": "<p class=\"article-editorial-title\">Gemini Notebook jako kompletní příprava výuky: 7 kroků od zdrojů až k AI tutorovi</p>"
+    },
+    "parent": {
+      "href": "ai.html#workflow",
+      "label": "Workflow pro učitele"
+    },
+    "bodySource": "content/guides/gemini-notebook-7-kroku/body.inc",
+    "relatedSource": "content/guides/gemini-notebook-7-kroku/related.inc",
+    "footerSource": "content/guides/gemini-notebook-7-kroku/footer.inc",
+    "originalPromptBlockCount": 11,
+    "copyablePromptBlockCount": 8,
+    "sourceBodyImageCount": 1,
+    "sourceTitle": "Gemini Notebook jako kompletní příprava výuky: 7 kroků | AI ve Výuce"
+  },
+  {
+    "file": "ai-navod-chatgpt-zacatek-bezpecne.html",
+    "slug": "chatgpt-zacatek-bezpecne",
+    "contentType": "guide",
+    "sourceDate": "2026-08-27",
+    "sourceDateLabel": "27. srpna 2026",
+    "sourceCategory": "Návod",
+    "sourceCatalogTitle": "ChatGPT pro učitele: jak začít bezpečně a co zvládnete i zdarma",
+    "sourceCatalogSummary": "Praktický začátečnický návod k bezpečnému nastavení účtu, ochraně dat žáků a možnostem bezplatného ChatGPT.",
+    "sourceBodyTextSha256": "312cb09461f2979916d368ff63dfcb003595e2527b99613d2e4c488b4f3aa2a3",
+    "sourceBodyLength": 8021,
+    "sourceBodyLinks": [
+      "https://chatgpt.com"
+    ],
+    "sourceBodyImages": [
+      {
+        "src": "images/chatgpt-pro-ucitele-zacatek-bezpecne.png",
+        "alt": "Infografika ChatGPT pro učitele s pěti kroky po přihlášení, bezpečností dat, možnostmi bezplatné verze a porovnáním Free a Plus",
+        "width": 1055,
+        "height": 1491
+      }
+    ],
+    "sourceRelatedTextSha256": "aa60fcb34b4d9c173bc7ad27c91b0a3da52af92a38d3af1e9fe8002d0f0d9fed",
+    "sourceRelatedLinks": [
+      "ai-navod-chatgpt-vizualni-materialy.html",
+      "ai-workflow-fotografie-ucebnice.html",
+      "ai-navod-edit-kontrola.html"
+    ],
+    "sourceFooterTextSha256": "2d8bb12217de590e99e329f879ea3a9ed1af8150f8a1cbf9149a0f0e88ac04aa",
+    "headTags": [
+      "<meta name=\"description\" content=\"Praktický začátečnický návod k bezpečnému nastavení ChatGPT, ochraně dat žáků a možnostem bezplatné verze pro učitele.\" />",
+      "<link rel=\"canonical\" href=\"https://ai-ve-vyuce.netlify.app/ai-navod-chatgpt-zacatek-bezpecne\" />",
+      "<meta property=\"og:title\" content=\"ChatGPT pro učitele: jak zač&#237;t bezpečně a co zvl&#225;dnete i zdarma | AI ve V&#253;uce\" />",
+      "<meta property=\"og:description\" content=\"Praktick&#253; zač&#225;tečnick&#253; n&#225;vod k bezpečn&#233;mu nastaven&#237; ChatGPT, ochraně dat ž&#225;ků a možnostem bezplatn&#233; verze pro učitele.\" />",
+      "<meta property=\"og:url\" content=\"https://ai-ve-vyuce.netlify.app/ai-navod-chatgpt-zacatek-bezpecne\" />",
+      "<link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/favicon-16x16.png?v=robot-20261103\" />",
+      "<link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/favicon-32x32.png?v=robot-20261103\" />",
+      "<link rel=\"icon\" type=\"image/png\" sizes=\"48x48\" href=\"/favicon-48x48.png?v=robot-20261103\" />",
+      "<link rel=\"icon\" type=\"image/png\" sizes=\"64x64\" href=\"/favicon-64x64.png?v=robot-20261103\" />",
+      "<link rel=\"icon\" type=\"image/png\" sizes=\"192x192\" href=\"/icon-192.png?v=robot-20261103\" />",
+      "<link rel=\"icon\" type=\"image/png\" sizes=\"512x512\" href=\"/favicon-512.png?v=robot-20261103\" />",
+      "<link rel=\"shortcut icon\" href=\"/favicon.ico?v=robot-20261103\" />",
+      "<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/apple-touch-icon.png?v=robot-20261103\" />"
+    ],
+    "hero": {
+      "eyebrowHtml": "<div class=\"workflow-eyebrow\">Praktický návod · 27. srpna 2026</div>",
+      "titleHtml": "<h1>ChatGPT pro učitele:<br /><span>jak začít bezpečně</span></h1>",
+      "leadHtml": "<p class=\"workflow-hero-lead\">Základní nastavení účtu, ochrana dat žáků a přehled toho, co zvládnete s ChatGPT i bez placeného předplatného.</p>",
+      "metaHtml": "<div class=\"workflow-meta\"><span>ChatGPT</span><span>Bezpečnost</span><span>Ochrana dat</span><span>Free vs. Plus</span></div>",
+      "overviewFile": "content/guides/chatgpt-zacatek-bezpecne/overview.inc"
+    },
+    "intro": {
+      "summaryHtml": "<p class=\"workflow-article-summary\">ChatGPT může učiteli výrazně ušetřit čas. Než ale začnete nahrávat první materiály, vyplatí se věnovat několik minut základnímu nastavení účtu a ochraně dat.</p>",
+      "editorialTitleHtml": ""
+    },
+    "parent": {
+      "href": "chatgpt-pro-ucitele.html",
+      "label": "ChatGPT pro učitele"
+    },
+    "bodySource": "content/guides/chatgpt-zacatek-bezpecne/body.inc",
+    "relatedSource": "content/guides/chatgpt-zacatek-bezpecne/related.inc",
+    "footerSource": "content/guides/chatgpt-zacatek-bezpecne/footer.inc",
+    "originalPromptBlockCount": 7,
+    "copyablePromptBlockCount": 2,
+    "sourceBodyImageCount": 1,
+    "sourceTitle": "ChatGPT pro učitele: jak začít bezpečně a co zvládnete i zdarma | AI ve Výuce"
+  }
+]
