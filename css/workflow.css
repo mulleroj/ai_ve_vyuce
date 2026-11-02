@@ -19,7 +19,7 @@
 
 html,
 * {
-  scrollbar-color: var(--workflow-teal) var(--workflow-night);
+  scrollbar-color: #087f70 #e6f1ed;
   scrollbar-width: thin;
 }
 
@@ -46,20 +46,20 @@ body.workflow-page {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--workflow-night);
+  background: #e6f1ed;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--workflow-teal);
+  background: #087f70;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--workflow-mint);
+  background: #07584f;
 }
 
 ::-webkit-scrollbar-corner {
-  background: var(--workflow-night);
+  background: #e6f1ed;
 }
 
 .workflow-shell {
@@ -118,7 +118,7 @@ body.workflow-page {
   place-items: center;
   border: 0;
   border-radius: 0;
-  background: transparent url('/images/ai-assistant-book-logo.png') center / contain no-repeat;
+  background: transparent url('/images/ai-assistant-book-logo.png?v=robot-20261103') center / contain no-repeat;
   color: transparent;
   font-size: 0;
 }

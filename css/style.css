@@ -59,7 +59,7 @@
 
 html,
 * {
-  scrollbar-color: var(--accent-mint) var(--bg-primary);
+  scrollbar-color: #087f70 #e6f1ed;
   scrollbar-width: thin;
 }
 
@@ -125,20 +125,20 @@ select {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-primary);
+  background: #e6f1ed;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--accent-mint);
+  background: #087f70;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #45deb5;
+  background: #07584f;
 }
 
 ::-webkit-scrollbar-corner {
-  background: var(--bg-primary);
+  background: #e6f1ed;
 }
 
 /* ── Layout ── */
@@ -457,7 +457,7 @@ select {
   height: 38px;
   flex: 0 0 38px;
   border-radius: 0;
-  background: transparent url('/images/ai-assistant-book-logo.png') center / contain no-repeat;
+  background: transparent url('/images/ai-assistant-book-logo.png?v=robot-20261103') center / contain no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
