@@ -280,8 +280,8 @@
   .subject-page .page-hero-title { font-size: clamp(2.3rem, 11vw, 3.25rem); }
   .subject-page .page-hero-stats { grid-template-columns: minmax(0, 1fr); }
   .subject-page .section { padding: 38px 0; }
-  .subject-page .tabs { width: 100%; flex-wrap: nowrap; overflow-x: auto; }
-  .subject-page .tab-btn { flex: 0 0 auto; padding-inline: 12px; font-size: .84rem; }
+  .subject-page .tabs { width: 100%; flex-wrap: wrap; overflow: visible; }
+  .subject-page .tab-btn { flex: 1 1 auto; padding-inline: 12px; font-size: .84rem; }
   .subject-page .filter-bar { align-items: flex-start; padding: 15px; }
   .subject-page .filter-group { width: 100%; }
   .subject-page .filter-chip { flex: 1 1 auto; padding-inline: 10px; }
