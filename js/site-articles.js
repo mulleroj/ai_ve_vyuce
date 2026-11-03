@@ -122,6 +122,10 @@ window.siteArticles = [
     dateLabel: '23. září 2026',
     icon: '📓',
     tags: ['Gemini Notebook', 'Vlastní zdroje', 'Hlasový rozhovor'],
+    topics: ['gemini-notebook'],
+    directoryOrder: 1,
+    directoryTitle: "Když AI zná naše učivo: hlasový rozhovor nad zdroji",
+    directorySummary: "Jak vést studijní rozhovor nad materiály, které vybral učitel, a ověřit, co student po vypnutí AI skutečně umí.",
     badgeClass: 'badge-blue'
   },
   {
@@ -222,6 +226,10 @@ window.siteArticles = [
     dateLabel: '15. září 2026',
     icon: '📓',
     tags: ['Gemini Notebook', 'Nástroj krok za krokem', 'Příprava výuky'],
+    topics: ['gemini-notebook'],
+    directoryOrder: 2,
+    directoryTitle: "Gemini Notebook: jak si vytvořit sešit, který opravdu šetří práci",
+    directorySummary: "Jak správně nastavit instrukce, metodiku, tematický plán, zdroje a vzorové materiály, aby Notebook skutečně šetřil čas při přípravě výuky.",
     badgeClass: 'badge-blue'
   },
   {
@@ -340,6 +348,10 @@ window.siteArticles = [
     dateLabel: '8. září 2026',
     icon: '📓',
     tags: ['Gemini Notebook', 'AI agent', 'Claude'],
+    topics: ['gemini-notebook'],
+    directoryOrder: 3,
+    directoryTitle: "Chytrý učitelský sešit pomocí AI agenta",
+    directorySummary: "Jak pomocí Claude a AI agenta vyhledat, ověřit a uspořádat zdroje pro tematický sešit v Gemini Notebooku.",
     badgeClass: 'badge-blue'
   },
   {
@@ -397,6 +409,10 @@ window.siteArticles = [
     dateLabel: '2. září 2026',
     icon: '🌐',
     tags: ['Výukové materiály', 'Gemini Notebook'],
+    topics: ['gemini-notebook'],
+    directoryOrder: 4,
+    directoryTitle: "Od prezentace k webové stránce",
+    directorySummary: "Jak z výukového cíle, vlastních zdrojů a Gemini vytvořit webový materiál s možností interaktivity.",
     badgeClass: 'badge-blue'
   },
   {
@@ -408,6 +424,11 @@ window.siteArticles = [
     dateLabel: '1. září 2026',
     icon: '🧠',
     tags: ['Agentní architektura', 'LLM · RAG · MCP'],
+    topics: ['ai-agents'],
+    directoryOrder: 15,
+    directoryTitle: "Jak spolu souvisí části AI agenta",
+    directorySummary: "Jedna mapa pro LLM, tools, RAG, memory, skills, workflow, MCP a agenta — včetně příkladu, jak spolupracují při přípravě výuky.",
+    directoryGroup: "Architektura",
     badgeClass: 'badge-blue'
   },
   {
@@ -419,6 +440,11 @@ window.siteArticles = [
     dateLabel: '1. září 2026',
     icon: '⚙️',
     tags: ['Skills', 'Workflow'],
+    topics: ['ai-agents'],
+    directoryOrder: 14,
+    directoryTitle: "Skills pro AI agenty",
+    directorySummary: "Jak uložit osvědčený pracovní postup jako opakovaně použitelnou schopnost a proč skill není jen další dlouhý prompt.",
+    directoryGroup: "Praxe",
     badgeClass: 'badge-gold'
   },
   {
@@ -430,6 +456,11 @@ window.siteArticles = [
     dateLabel: '1. září 2026',
     icon: '🧩',
     tags: ['Volba nástroje', 'Workflow'],
+    topics: ['ai-agents'],
+    directoryOrder: 13,
+    directoryTitle: "AI agent, automatizace, workflow nebo chatbot?",
+    directorySummary: "Jak vybrat správný typ řešení podle toho, zda potřebujete odpověď, pevné pravidlo, známý proces nebo rozhodování podle situace.",
+    directoryGroup: "Základy",
     badgeClass: 'badge-mint'
   },
   {
@@ -441,6 +472,11 @@ window.siteArticles = [
     dateLabel: '1. září 2026',
     icon: '🛡️',
     tags: ['Bezpečnost', 'Human in the loop'],
+    topics: ['ai-agents'],
+    directoryOrder: 12,
+    directoryTitle: "Kdy AI agenta ve škole nepoužívat",
+    directorySummary: "Kde končí užitečná automatizace: známky, kázeňská rozhodnutí, citlivá data, oprávnění, zastaralé zdroje a úkoly bez lidské kontroly.",
+    directoryGroup: "Bezpečnost",
     badgeClass: 'badge-green'
   },
   {
@@ -452,6 +488,11 @@ window.siteArticles = [
     dateLabel: '1. září 2026',
     icon: '📋',
     tags: ['Školní praxe', '10 úkolů'],
+    topics: ['ai-agents'],
+    directoryOrder: 11,
+    directoryTitle: "10 úkolů pro AI agenta",
+    directorySummary: "Praktický přehled činností, které může agent učiteli převzít nebo zjednodušit — od přípravy materiálů po analýzu výsledků a denní přehled.",
+    directoryGroup: "Praxe",
     badgeClass: 'badge-blue'
   },
   {
@@ -463,6 +504,11 @@ window.siteArticles = [
     dateLabel: '1. září 2026',
     icon: '🎯',
     tags: ['První projekt', 'Bezpečný start'],
+    topics: ['ai-agents'],
+    directoryOrder: 10,
+    directoryTitle: "Jak navrhnout prvního AI agenta",
+    directorySummary: "Praktický návod, jak začít jedním konkrétním úkolem, určit vstupy, zdroje, nástroje, kontrolu a bezpečné hranice.",
+    directoryGroup: "Praxe",
     badgeClass: 'badge-gold'
   },
   {
@@ -474,6 +520,11 @@ window.siteArticles = [
     dateLabel: '1. září 2026',
     icon: '🎓',
     tags: ['Školní praxe', 'Učitel'],
+    topics: ['ai-agents'],
+    directoryOrder: 9,
+    directoryTitle: "AI agent ve škole",
+    directorySummary: "Co může AI agent skutečně dělat učiteli, kde pomáhá s přípravou a administrativou a kde musí zůstat člověk u rozhodování.",
+    directoryGroup: "Praxe",
     badgeClass: 'badge-mint'
   },
   {
@@ -485,6 +536,11 @@ window.siteArticles = [
     dateLabel: '1. září 2026',
     icon: '💻',
     tags: ['Coding agent', 'Vibe Coding'],
+    topics: ['ai-agents'],
+    directoryOrder: 8,
+    directoryTitle: "Od vibe codingu ke coding agentům",
+    directorySummary: "Jak AI přechází od psaní jednotlivých ukázek kódu k práci s celým projektem, testování a opravám.",
+    directoryGroup: "Architektura",
     badgeClass: 'badge-blue'
   },
   {
@@ -496,6 +552,11 @@ window.siteArticles = [
     dateLabel: '1. září 2026',
     icon: '👥',
     tags: ['Multi-agentní systémy', 'Orchestrace'],
+    topics: ['ai-agents'],
+    directoryOrder: 7,
+    directoryTitle: "Multi-agentní systémy",
+    directorySummary: "Jak si více specializovaných agentů může rozdělit role, spolupracovat na úkolu a proč více agentů neznamená automaticky lepší výsledek.",
+    directoryGroup: "Architektura",
     badgeClass: 'badge-gold'
   },
   {
@@ -507,6 +568,11 @@ window.siteArticles = [
     dateLabel: '1. září 2026',
     icon: '🔌',
     tags: ['MCP', 'Integrace'],
+    topics: ['ai-agents'],
+    directoryOrder: 6,
+    directoryTitle: "MCP: univerzální konektor",
+    directorySummary: "Jak otevřený standard propojuje AI aplikace s nástroji, databázemi a dalšími systémy a proč je důležitá bezpečnost.",
+    directoryGroup: "Architektura",
     badgeClass: 'badge-mint'
   },
   {
@@ -518,6 +584,11 @@ window.siteArticles = [
     dateLabel: '1. září 2026',
     icon: '📚',
     tags: ['RAG', 'Vlastní zdroje'],
+    topics: ['ai-agents'],
+    directoryOrder: 5,
+    directoryTitle: "RAG: vlastní dokumenty",
+    directorySummary: "Jak AI vyhledá relevantní části vašich dokumentů a předá je modelu, aby odpovídal podle konkrétních zdrojů.",
+    directoryGroup: "Architektura",
     badgeClass: 'badge-green'
   },
   {
@@ -529,6 +600,11 @@ window.siteArticles = [
     dateLabel: '1. září 2026',
     icon: '🧠',
     tags: ['Paměť', 'RAG'],
+    topics: ['ai-agents'],
+    directoryOrder: 4,
+    directoryTitle: "Paměť AI agentů",
+    directorySummary: "Co si AI skutečně pamatuje, jak se liší kontext, pracovní a dlouhodobá paměť od trénování modelu a proč záleží na aktuálnosti dat.",
+    directoryGroup: "Architektura",
     badgeClass: 'badge-gold'
   },
   {
@@ -540,6 +616,11 @@ window.siteArticles = [
     dateLabel: '1. září 2026',
     icon: '🛠️',
     tags: ['Function Calling', 'Nástroje'],
+    topics: ['ai-agents'],
+    directoryOrder: 2,
+    directoryTitle: "Nástroje a Function Calling",
+    directorySummary: "Jak jazykový model používá nástroje, pracuje s aktuálními daty a bezpečně provádí jednotlivé akce.",
+    directoryGroup: "Architektura",
     badgeClass: 'badge-blue'
   },
   {
@@ -551,6 +632,11 @@ window.siteArticles = [
     dateLabel: '1. září 2026',
     icon: '🔁',
     tags: ['Agentní smyčka', 'Workflow'],
+    topics: ['ai-agents'],
+    directoryOrder: 3,
+    directoryTitle: "Jak funguje AI agent",
+    directorySummary: "Jak agent pochopí cíl, naplánuje postup, použije nástroje, zkontroluje výsledek a podle potřeby pokračuje dalším krokem.",
+    directoryGroup: "Architektura",
     badgeClass: 'badge-mint'
   },
   {
@@ -562,6 +648,11 @@ window.siteArticles = [
     dateLabel: '1. září 2026',
     icon: '🧭',
     tags: ['Základy', 'Agentní smyčka'],
+    topics: ['ai-agents'],
+    directoryOrder: 1,
+    directoryTitle: "Co je AI agent?",
+    directorySummary: "Jednoduché vysvětlení rozdílu mezi chatbotem, AI nástrojem a agentem, který umí plánovat další kroky a pracovat s úkolem.",
+    directoryGroup: "Základy",
     badgeClass: 'badge-blue'
   },
   {
@@ -585,6 +676,10 @@ window.siteArticles = [
     dateLabel: '29. srpna 2026',
     icon: '📓',
     tags: ['Gemini Notebook', '7 kroků'],
+    topics: ['gemini-notebook'],
+    directoryOrder: 5,
+    directoryTitle: "Gemini Notebook jako kompletní příprava výuky",
+    directorySummary: "Opakovatelný postup od vlastních zdrojů přes plánování a materiály až po aktualizaci a AI tutora.",
     badgeClass: 'badge-blue'
   },
   {
@@ -596,6 +691,10 @@ window.siteArticles = [
     dateLabel: '28. srpna 2026',
     icon: '📓',
     tags: ['Gemini Notebook', '7 promptů', 'Výuková prezentace'],
+    topics: ['gemini-notebook'],
+    directoryOrder: 6,
+    directoryTitle: "7 promptů pro lepší výukovou prezentaci",
+    directorySummary: "Jak z vlastních materiálů připravit kompletní výklad, interaktivní hodinu, procvičování i ověření porozumění.",
     badgeClass: 'badge-blue'
   },
   {
@@ -668,6 +767,10 @@ window.siteArticles = [
     dateLabel: '26. srpna 2026',
     icon: '📓',
     tags: ['Gemini Notebook', '10 promptů'],
+    topics: ['gemini-notebook'],
+    directoryOrder: 11,
+    directoryTitle: "10 promptů pro Gemini Notebook, které mohou učiteli ušetřit hodiny práce",
+    directorySummary: "Praktický postup od práce s více zdroji přes ověření a tvorbu materiálů až po kritickou kontrolu.",
     badgeClass: 'badge-blue'
   },
   {
@@ -679,6 +782,10 @@ window.siteArticles = [
     dateLabel: '26. srpna 2026',
     icon: '📓',
     tags: ['Gemini Notebook', '7 promptů'],
+    topics: ['gemini-notebook'],
+    directoryOrder: 7,
+    directoryTitle: "7 promptů pro Gemini Notebook: kompletní příprava na výuku",
+    directorySummary: "Jak z jedné sady materiálů vytvořit plán hodiny, aktivity, diferenciaci, test a audio přehled.",
     badgeClass: 'badge-blue'
   },
   {
@@ -690,19 +797,13 @@ window.siteArticles = [
     dateLabel: '26. srpna 2026',
     icon: '📓',
     tags: ['Gemini Notebook', 'Výuka'],
+    topics: ['gemini-notebook'],
+    directoryOrder: 8,
+    directoryTitle: "Gemini Notebook ve výuce: interaktivní studijní prostředí",
+    directorySummary: "Jak z učebních materiálů vytvořit přehledy, kartičky, kvízy, audio, video a další cesty k učení.",
     badgeClass: 'badge-blue'
   },
-  {
-    href: 'gemini-notebook.html',
-    title: 'Gemini Notebook',
-    summary: 'Pracujte s vlastními PDF, prezentacemi a dokumenty a připravte z nich interaktivní studijní materiály.',
-    category: 'Nástroj',
-    date: '2026-08-26',
-    dateLabel: '26. srpna 2026',
-    icon: '📓',
-    tags: ['Gemini Notebook', 'Nástroj'],
-    badgeClass: 'badge-blue'
-  },
+
   {
     href: 'gemini-notebook-prompty.html',
     title: 'Prompty pro Gemini Notebook',
@@ -819,6 +920,10 @@ window.siteArticles = [
     dateLabel: '24. srpna 2026',
     icon: '📓',
     tags: ['Gemini Notebook', 'Šablona'],
+    topics: ['gemini-notebook'],
+    directoryOrder: 9,
+    directoryTitle: "Gemini Notebook jako výuková šablona",
+    directorySummary: "Jak z jedné učitelské přípravy vytvořit opakovaně použitelný AI studijní balíček pro studenty.",
     badgeClass: 'badge-blue'
   },
   {
@@ -830,6 +935,10 @@ window.siteArticles = [
     dateLabel: '23. srpna 2026',
     icon: '🎨',
     tags: ['Gemini Notebook', '7 promptů'],
+    topics: ['gemini-notebook'],
+    directoryOrder: 10,
+    directoryTitle: "7 promptů pro Gemini Notebook: přehledné infografiky",
+    directorySummary: "Jak z učebnic, prezentací a poznámek připravit infografiky pro gramatiku, slovní zásobu, četbu i celou lekci.",
     badgeClass: 'badge-blue'
   },
   {
