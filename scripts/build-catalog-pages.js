@@ -5,11 +5,12 @@ const path = require('node:path');
 const vm = require('node:vm');
 const root = path.resolve(__dirname, '..');
 const check = process.argv.includes('--check');
+const normalizeLineEndings = value => value.replace(/\r\n?/g, '\n');
 const read = p => fs.readFileSync(path.join(root, p), 'utf8');
 const write = (p, value) => {
   const target = path.join(root, p);
   if (check) {
-    if (!fs.existsSync(target) || fs.readFileSync(target, 'utf8') !== value) throw new Error(`${p} is stale; run node scripts/build-catalog-pages.js`);
+    if (!fs.existsSync(target) || normalizeLineEndings(fs.readFileSync(target, 'utf8')) !== normalizeLineEndings(value)) throw new Error(`${p} is stale; run node scripts/build-catalog-pages.js`);
     console.log(`OK ${p}`);
   } else fs.writeFileSync(target, value);
 };
