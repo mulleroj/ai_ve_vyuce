@@ -25,3 +25,9 @@
 .guide-hero-illustration img{display:block;width:100%;max-width:620px;height:auto;object-fit:contain;background:transparent}
 @media(max-width:900px){.guide-hero{grid-template-columns:minmax(0,1fr);gap:12px}.guide-hero-illustration{width:min(100%,520px);max-width:520px;justify-self:center}}
 @media(max-width:600px){.guide-hero{gap:8px}.guide-hero-illustration{width:min(100%,380px)}}
+
+/* Keep the robot immediately after the lead on compact screens. */
+.guide-hero-copy{display:contents}
+.guide-hero>:not(.guide-hero-illustration){grid-column:1}
+.guide-hero-illustration{grid-column:2;grid-row:1 / span 6}
+@media(max-width:900px){.guide-hero-illustration{grid-column:1;grid-row:4}}
