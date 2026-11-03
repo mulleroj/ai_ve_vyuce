@@ -8,6 +8,7 @@ const vm = require('node:vm');
 
 const ROOT = path.resolve(__dirname, '..');
 const checkOnly = process.argv.includes('--check');
+const normalizeLineEndings = value => value.replace(/\r\n?/g, '\n');
 const read = relative => fs.readFileSync(path.join(ROOT, relative), 'utf8');
 const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const plainText = html => decodeEntities(String(html).replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim());
@@ -154,7 +155,7 @@ function main() {
     validateHtml(output, a.file);
     const target = path.join(ROOT, a.file);
     if (checkOnly) {
-      if (!fs.existsSync(target) || fs.readFileSync(target, 'utf8') !== output) { console.error(`${a.file}: generated page is stale`); stale = true; }
+      if (!fs.existsSync(target) || normalizeLineEndings(fs.readFileSync(target, 'utf8')) !== normalizeLineEndings(output)) { console.error(`${a.file}: generated page is stale`); stale = true; }
     } else fs.writeFileSync(target, output, 'utf8');
   }
   if (stale) process.exitCode = 1;
