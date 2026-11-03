@@ -294,6 +294,14 @@
   .subject-page .nav-link { padding-inline: 9px; font-size: .84rem; }
 }
 
+@media (max-width: 900px) {
+  .subject-page .nav,
+  .subject-page .nav-inner { height: 66px; }
+  .subject-page .nav-links { display: none; }
+  .subject-page .nav-mobile-toggle { display: flex; }
+  .subject-page .mobile-menu { top: 66px; padding: 18px 20px 26px; }
+}
+
 @media (max-width: 768px) {
   .subject-page .nav { height: 66px; }
   .subject-page .nav-inner { height: 66px; }
