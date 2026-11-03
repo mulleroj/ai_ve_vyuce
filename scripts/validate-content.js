@@ -21,12 +21,18 @@ const OPTIONAL_FIELDS = [
   'featured',
   'series',
   'seriesNumber',
-  'contentType'
+  'contentType',
+  'topics',
+  'directoryOrder',
+  'directoryTitle',
+  'directorySummary',
+  'directoryGroup'
 ];
 
 const DIRECTORY_PAGES = new Set([
   'ai.html',
   'ai-agenti.html',
+  'gemini-notebook.html',
   'ai-navody.html',
   'ai-novinky.html',
   'ai-workflow.html'
@@ -157,6 +163,20 @@ function main() {
         error(`Record ${index + 1}: 'tags' must be an array`);
       } else if (record.tags.some((tag) => !isNonEmptyString(tag))) {
         error(`Record ${index + 1}: 'tags' must contain only non-empty strings`);
+      }
+    }
+
+    if ('topics' in record && (!Array.isArray(record.topics) || record.topics.some((topic) => !isNonEmptyString(topic)) || new Set(record.topics).size !== record.topics.length)) {
+      error(`Record ${index + 1} (${record.href || 'unknown'}): 'topics' must be an array of unique non-empty strings`);
+    }
+
+    if ('directoryOrder' in record && (!Number.isInteger(record.directoryOrder) || record.directoryOrder < 1)) {
+      error(`Record ${index + 1} (${record.href || 'unknown'}): 'directoryOrder' must be a positive integer`);
+    }
+
+    for (const field of ['directoryTitle', 'directorySummary', 'directoryGroup']) {
+      if (field in record && !isNonEmptyString(record[field])) {
+        error(`Record ${index + 1} (${record.href || 'unknown'}): '${field}' must be a non-empty string`);
       }
     }
 

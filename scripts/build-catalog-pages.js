@@ -5,10 +5,12 @@ const path = require('node:path');
 const vm = require('node:vm');
 const root = path.resolve(__dirname, '..');
 const check = process.argv.includes('--check');
+const option = name => { const index=process.argv.indexOf(name); return index<0?null:process.argv[index+1]||null; };
+const outputRoot = path.resolve(option('--output-dir') || root);
 const normalizeLineEndings = value => value.replace(/\r\n?/g, '\n');
 const read = p => fs.readFileSync(path.join(root, p), 'utf8');
 const write = (p, value) => {
-  const target = path.join(root, p);
+  const target = path.join(outputRoot, p);
   if (check) {
     const actual = fs.existsSync(target) ? normalizeLineEndings(fs.readFileSync(target, 'utf8')).replace(/\n+$/, '') : null;
     const expected = normalizeLineEndings(value).replace(/\n+$/, '');
@@ -18,10 +20,11 @@ const write = (p, value) => {
 };
 const escape = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const context = { window: {} };
-vm.runInNewContext(read('js/site-articles.js'), context);
+vm.runInNewContext(option('--catalog-file') ? fs.readFileSync(path.resolve(option('--catalog-file')),'utf8') : read('js/site-articles.js'), context);
 const articles = context.window.siteArticles;
 if (!Array.isArray(articles)) throw new Error('Catalog must be an array of articles');
 const hrefs = new Set();
+const directoryOrders = new Map();
 for (const a of articles) {
   for (const field of ['href','title','summary','category','date','dateLabel','icon','badgeClass']) {
     if (typeof a[field] !== 'string' || !a[field].trim()) throw new Error(`${a.href || '(no href)'} missing or invalid ${field}`);
@@ -32,6 +35,16 @@ for (const a of articles) {
   if (!/^\S+\.html(?:[?#].*)?$/.test(a.href) || /^(?:[a-z]+:|\/|\\)/i.test(a.href)) throw new Error(`${a.href}: href must be a relative HTML page URL`);
   if (hrefs.has(a.href)) throw new Error(`Duplicate catalog href ${a.href}`);
   hrefs.add(a.href);
+  if (a.topics !== undefined && (!Array.isArray(a.topics) || a.topics.some(topic=>typeof topic!=='string'||!topic.trim()) || new Set(a.topics).size!==a.topics.length)) throw new Error(`${a.href}: topics must be unique non-empty strings`);
+  if (a.directoryOrder !== undefined) {
+    if (!Number.isInteger(a.directoryOrder) || a.directoryOrder < 1) throw new Error(`${a.href}: directoryOrder must be a positive integer`);
+    for (const topic of a.topics || []) {
+      const key=`${topic}:${a.directoryOrder}`;
+      if(directoryOrders.has(key)) throw new Error(`Duplicate directoryOrder ${a.directoryOrder} in ${topic}: ${directoryOrders.get(key)} and ${a.href}`);
+      directoryOrders.set(key,a.href);
+    }
+  }
+  for (const field of ['directoryTitle','directorySummary','directoryGroup']) if(a[field]!==undefined&&(!['directoryTitle','directorySummary','directoryGroup'].includes(field)||typeof a[field]!=='string'||!a[field].trim())) throw new Error(`${a.href}: ${field} must be a non-empty string`);
   const target = path.resolve(root, a.href.split(/[?#]/, 1)[0]);
   if (!target.startsWith(root + path.sep) || !fs.existsSync(target)) throw new Error(`Missing or invalid article target ${a.href}`);
 }
@@ -64,10 +77,27 @@ const header = (title, desc, isGuide=false) => {
 };
 const robot = `<div class="catalog-hero-art" aria-hidden="true"><img src="images/ai-ve-vyuce-robot-navody-transparentni.webp" alt="" width="1754" height="897" fetchpriority="high"></div>`;
 const hero = (title, lead, isGuide=false) => `<section class="catalog-hero"><div class="catalog-hero-copy"><p class="eyebrow">AI ve výuce 2.0 · ${isGuide?'Prakticky a krok za krokem':'Rozcestník obsahu'}</p><h1>${title}</h1><p class="hero-lead">${lead}</p><div class="hero-links"><a href="#${isGuide?'katalog-navodu':'novinky'}">Prohlédnout obsah <span aria-hidden="true">↓</span></a>${isGuide?'<a class="subtle-link" href="ai.html">Všechny články AI</a>':''}</div></div>${robot}</section>`;
-const card = a => {
+const articleImage = article => {
+ if(article.image&&fs.existsSync(path.join(root,article.image))) return {src:article.image,alt:article.imageAlt||article.directoryTitle||article.title};
+ const html=read(article.href);
+ for(const match of html.matchAll(/<img\b[^>]*>/gi)){
+  const tag=match[0]; const src=tag.match(/\bsrc=["']([^"']+)["']/i)?.[1];
+  if(!src||/^(?:https?:)?\/\//i.test(src)||/(?:logo|favicon|icon|robot-navody|ai-ve-vyuce-robot)/i.test(src)) continue;
+  const local=src.replace(/^\//,''); if(!fs.existsSync(path.join(root,local))) continue;
+  const alt=tag.match(/\balt=["']([^"']*)["']/i)?.[1];
+  return {src:local,alt:alt&&alt.trim()?alt:article.directoryTitle||article.title};
+ }
+ return null;
+};
+const card = (a,directoryCopyFlag=false) => {
+ const useDirectoryCopy = directoryCopyFlag === true;
+ const title = useDirectoryCopy ? (a.directoryTitle || a.title) : a.title;
+ const summary = useDirectoryCopy ? (a.directorySummary || a.summary) : a.summary;
+ const searchable = [title,summary,...(title===a.title?[]:[a.title]),...(summary===a.summary?[]:[a.summary]),a.category,a.tags.join(' '),a.href];
  const tags = (a.tags || []).slice(0,3).map(tag => `<span class="tag-chip">${escape(tag)}</span>`).join('');
- const image = a.image && fs.existsSync(path.join(root,a.image)) ? `<div class="card-media"><img src="${escape(a.image)}" alt="${escape(a.imageAlt||a.title)}" loading="lazy"></div>` : `<div class="card-media card-fallback" aria-hidden="true"><span>${escape(a.icon)}</span></div>`;
- return `<article class="article-card" data-card data-href="${escape(a.href)}" data-category="${escape(a.category)}" data-content-type="${escape(a.contentType||'')}" data-search="${escape([a.title,a.summary,a.category,a.tags.join(' '),a.href].join(' '))}"><a class="card-link" href="${escape(a.href)}">${image}<div class="card-copy"><div class="card-meta"><span class="category-pill">${escape(a.category)}</span><time datetime="${escape(a.date)}">${escape(a.dateLabel)}</time></div><div class="card-tags" aria-label="Štítky">${tags}</div><h3>${escape(a.title)}</h3><p>${escape(a.summary)}</p><span class="card-cta">${a.contentType==='workflow'||a.category==='Workflow'?'Otevřít workflow':'Číst článek'} <span aria-hidden="true">→</span></span></div></a></article>`;
+ const resolvedImage = useDirectoryCopy ? articleImage({...a,directoryTitle:title}) : a.image&&fs.existsSync(path.join(root,a.image)) ? {src:a.image,alt:a.imageAlt||title} : null;
+ const image = resolvedImage ? `<div class="card-media"><img src="${escape(resolvedImage.src)}" alt="${escape(resolvedImage.alt||title)}" loading="lazy"></div>` : `<div class="card-media card-fallback" aria-hidden="true"><span>${escape(a.icon)}</span></div>`;
+ return `<article class="article-card" data-card data-href="${escape(a.href)}" data-category="${escape(a.category)}" data-content-type="${escape(a.contentType||'')}"${a.directoryGroup?` data-directory-group="${escape(a.directoryGroup)}"`:''} data-search="${escape(searchable.join(' '))}"><a class="card-link" href="${escape(a.href)}">${image}<div class="card-copy"><div class="card-meta"><span class="category-pill">${escape(a.category)}</span><time datetime="${escape(a.date)}">${escape(a.dateLabel)}</time></div><div class="card-tags" aria-label="Štítky">${tags}</div><h3>${escape(title)}</h3><p>${escape(summary)}</p><span class="card-cta">${a.contentType==='workflow'||a.category==='Workflow'?'Otevřít workflow':'Číst článek'} <span aria-hidden="true">→</span></span></div></a></article>`;
 };
 const inferredContentType = article => article.contentType || (
  ['Novinka','AI ve vzdělávání','Filozofování s AI'].includes(article.category) ? 'magazine' :
@@ -77,6 +107,7 @@ const inferredContentType = article => article.contentType || (
 );
 const end = `</main><footer class="site-footer"><div class="footer-inner"><a class="brand" href="index.html"><img class="brand-logo" src="images/ai-assistant-book-logo.png" width="44" height="42" alt=""><span>AI ve Výuce</span></a><p>Praktické a srozumitelné využití AI ve vzdělávání.</p><a href="#obsah">Zpět nahoru ↑</a></div></footer><script src="js/catalog-directory.js?v=20261103-catalog" defer></script><script src="js/site-footer.js?v=20260927-human-loop" defer></script></body></html>\n`;
 function filters() { return `<section class="catalog-controls" aria-label="Vyhledávání a filtrování"><div class="controls-inner"><label class="search-label" for="catalog-search">Hledat články, návody a workflow</label><div class="search-row"><input id="catalog-search" type="search" data-query placeholder="Např. Gemini Notebook nebo bezpečnost" autocomplete="off"><button type="button" class="clear-button" data-clear hidden>Vymazat</button></div><div class="filter-block"><span class="filter-label" id="filter-label">Témata</span><div class="filter-list" role="group" aria-labelledby="filter-label"><button type="button" data-filter="all" aria-pressed="true">Vše</button><button type="button" data-filter="chatgpt" aria-pressed="false">ChatGPT</button><button type="button" data-filter="gemini" aria-pressed="false">Gemini</button><button type="button" data-filter="microsoft" aria-pressed="false">Microsoft</button><button type="button" data-filter="vibe-coding" aria-pressed="false">Vibe Coding</button><button type="button" data-filter="philosophy" aria-pressed="false">Filozofování s AI</button></div></div><p class="result-status" data-status role="status" aria-live="polite"></p><p class="empty-state" data-empty hidden>Nenašli jsme žádné články. Zkuste upravit hledaný výraz nebo filtr.</p></div></section>`; }
+const directoryControls = ({label,placeholder,filterLabel,filters}) => `<section class="catalog-controls" data-js-enhancement hidden aria-label="Vyhledávání a filtrování"><div class="controls-inner"><label class="search-label" for="catalog-search">${escape(label)}</label><div class="search-row"><input id="catalog-search" type="search" data-query placeholder="${escape(placeholder)}" autocomplete="off"><button type="button" class="clear-button" data-clear hidden>Vymazat</button></div><div class="filter-block"><span class="filter-label" id="filter-label">${escape(filterLabel)}</span><div class="filter-list" role="group" aria-labelledby="filter-label">${filters.map((filter,index)=>`<button type="button" data-filter="${escape(filter.value)}"${filter.group?` data-filter-directory-group="${escape(filter.group)}"`:''}${filter.contentType?` data-filter-content-type="${escape(filter.contentType)}"`:''} aria-pressed="${index===0?'true':'false'}">${escape(filter.label)}</button>`).join('')}</div></div><p class="result-status" data-status role="status" aria-live="polite"></p><p class="empty-state" data-empty hidden>Nenašli jsme žádné články. Zkuste upravit hledaný výraz nebo filtr.</p></div></section>`;
 const mainHtml = () => {
  const groups = mainGroups.map(g=>{const items=articles.filter(g.match); return `<section id="${g.id}" class="catalog-section" data-section><div class="section-heading"><div><p class="eyebrow">${g.id==='novinky'?'Co stojí za pozornost':g.id==='navody'?'Použitelné hned':'Osvědčené postupy'}</p><h2>${g.title}</h2><p>${g.lead}</p></div><span class="section-count">${items.length} položek</span></div><div class="card-grid">${items.map(card).join('')}</div></section>`;}).join('');
  return header('AI pro vzdělávání – rozcestník článků | AI ve Výuce','Přehled článků, praktických návodů a workflow o využití AI ve vzdělávání.')+hero('AI ve vzdělávání: co opravdu stojí za pozornost','Objevujte novinky, praktické návody a ověřené pracovní postupy pro smysluplné využití AI ve škole.')+`<nav class="catalog-jump" aria-label="Tematické sekce">${mainGroups.map(g=>`<a href="#${g.id}">${g.title}</a>`).join('')}</nav>`+filters()+`<div class="catalog-content">${groups}<noscript><p class="noscript-note">Všechny články jsou zobrazené. Vyhledávání a filtrování vyžaduje JavaScript.</p></noscript></div>`+end;
@@ -115,5 +146,39 @@ const chatgptHtml = () => {
  const output=template.replace(new RegExp(`${start}[\\s\\S]*?${finish}`),`${start}\n${generated}\n${finish}`);
  write('chatgpt-pro-ucitele.html',output);
 };
-write('ai.html',mainHtml()); write('ai-navody.html',guideHtml()); write('ai-novinky.html',newsHtml()); chatgptHtml();
+const orderedTopicArticles = topic => articles
+ .map((article,index)=>({article,index}))
+ .filter(item=>item.article.topics?.includes(topic)&&item.article.href!==`${topic==='ai-agents'?'ai-agenti':'gemini-notebook'}.html`)
+ .sort((left,right)=>(left.article.directoryOrder??Number.MAX_SAFE_INTEGER)-(right.article.directoryOrder??Number.MAX_SAFE_INTEGER)||(right.article.date||'').localeCompare(left.article.date||'')||left.index-right.index)
+ .map(item=>({...item.article,contentType:inferredContentType(item.article)}));
+const aiAgentsHtml = () => {
+ const selected=orderedTopicArticles('ai-agents');
+ const metadata={title:'AI agenti: studijní průvodce | AI ve Výuce',description:'Tematický průvodce AI agenty: od základů a agentní architektury po využití, návrh a bezpečnost ve škole.',ogTitle:'AI agenti: studijní průvodce | AI ve Výuce',ogDescription:'Články o AI agentech ve výuce, jejich architektuře, možnostech a bezpečném použití.',canonical:'https://ai-ve-vyuce.netlify.app/ai-agenti'};
+ const groups=['Základy','Architektura','Praxe','Bezpečnost'];
+ const controls=directoryControls({label:'Hledat články o AI agentech',placeholder:'Např. paměť, nástroje nebo bezpečnost',filterLabel:'Tematická část',filters:[{value:'all',label:'Všechna témata'},...groups.map(group=>({value:group.toLocaleLowerCase('cs'),label:group,group}))]});
+ return thematicHeader(metadata).replace('catalog-directory.css?v=20261103-catalog','catalog-directory.css?v=20261103-ai-agents-hero')+`<section class="catalog-hero catalog-hero-compact ai-agents-hero"><div class="catalog-hero-copy"><p class="eyebrow">AI ve výuce 2.0 · Studijní průvodce</p><h1>AI agenti</h1><p class="hero-lead">Rozcestník článků o AI agentech: jak fungují, kde mohou pomoci při tvorbě a jak s nimi pracovat bezpečně ve škole.</p><div class="hero-links"><a href="#ai-agenti-katalog">Prohlédnout průvodce <span aria-hidden="true">↓</span></a><a class="subtle-link" href="vibe-coding.html">Související téma: vibe coding</a></div></div><div class="ai-agents-hero-art" aria-hidden="true"><img src="images/ai-ve-vyuce-robot-agenti-transparentni.webp" alt="" width="2172" height="724" fetchpriority="high"></div></section><section id="ai-agenti-katalog" class="catalog-content guide-content"><div class="section-heading"><div><p class="eyebrow">AI agenti podle tématu</p><h2>Vyberte si, kde začít</h2><p>Články postupně doplní základní orientaci, agentní smyčku, práci s nástroji, paměť, RAG, MCP, multi-agentní systémy, coding agenty, školní praxi, návrh prvního agenta, praktické úkoly pro učitele, skills, celkovou agentní architekturu a bezpečné použití.</p></div><span class="section-count">${selected.length} článků</span></div>${controls}<div class="card-grid">${selected.map(article=>card(article,true)).join('')}</div><noscript><p class="noscript-note">Všechny články jsou dostupné níže. Vyhledávání a filtrování vyžaduje JavaScript.</p></noscript><aside class="starter-notes"><h2>Jak se v tématu orientovat?</h2><p>Začněte úvodním článkem o základních pojmech. Potom pokračujte přes agentní smyčku, nástroje, paměť, RAG, MCP, multi-agentní systémy, coding agenty, školní praxi, návrh prvního agenta, praktické úkoly pro učitele, skills, celkovou agentní architekturu a bezpečné použití. Rozcestník budeme doplňovat o další praktické příklady.</p><div class="hero-links"><a href="vibe-coding.html">← Zpět na Vibe Coding</a><a class="subtle-link" href="vibe-coding-clanky.html">Články o Vibe Codingu</a></div></aside></section>${end}`;
+};
+const geminiNotebookHtml = () => {
+ const start='<!-- GEMINI-NOTEBOOK-CARDS:START -->';
+ const finish='<!-- GEMINI-NOTEBOOK-CARDS:END -->';
+ let template=read('templates/catalog/gemini-notebook.tpl');
+ if(template.split(start).length!==2||template.split(finish).length!==2) throw new Error('Gemini Notebook card markers must each appear exactly once');
+ const selected=orderedTopicArticles('gemini-notebook');
+ if(selected.some(article=>article.href==='gemini-notebook.html')) throw new Error('Gemini Notebook directory cannot include itself');
+ const controls=directoryControls({label:'Hledat články o Gemini Notebooku',placeholder:'Např. vlastní zdroje, prompty nebo příprava výuky',filterLabel:'Typ obsahu',filters:[{value:'all',label:'Všechny články'},{value:'guides',label:'Návody',contentType:'guide,tool-guide'},{value:'workflow',label:'Workflow',contentType:'workflow'},{value:'news',label:'Novinky',contentType:'magazine'}]});
+ const cards=`${controls}<div class="card-grid gemini-articles-grid">${selected.map(article=>card(article,true)).join('\n')}</div><noscript><p class="noscript-note">Všech ${selected.length} článků je dostupných níže. Vyhledávání a filtrování vyžaduje JavaScript.</p></noscript>`;
+ const chrome=thematicHeader({title:'Gemini Notebook pro učitele – články, návody a workflow | AI ve Výuce',description:'Praktický rozcestník pro Gemini Notebook: vlastní zdroje, příprava výuky, studijní materiály a související články.',ogTitle:'Gemini Notebook pro učitele | AI ve Výuce',ogDescription:'Návody a workflow pro výuku s vlastními zdroji v Gemini Notebooku.',canonical:'https://ai-ve-vyuce.netlify.app/gemini-notebook'});
+ const chromeStart=chrome.indexOf('<a class="skip-link"'); const chromeEnd=chrome.indexOf('<main id="obsah">');
+ const sharedHeader=chrome.slice(chromeStart,chromeEnd);
+ const hero=`<section class="catalog-hero chatgpt-hero"><div class="catalog-hero-copy"><p class="eyebrow">AI asistent pro práci se zdroji · Gemini Notebook</p><h1>Gemini Notebook</h1><p class="hero-lead">Praktický rozcestník pro práci s vlastními materiály, přípravu výuky a tvorbu interaktivních studijních podkladů.</p><div class="hero-links"><a href="#gemini-articles-heading">Prohlédnout články <span aria-hidden="true">↓</span></a><a class="subtle-link" href="gemini-notebook-prompty.html">Prompty pro Gemini Notebook</a></div></div><aside class="product-callout"><p class="eyebrow">Centrální rozcestník</p><h2>Od zdrojů k výukovým výstupům</h2><p>Na jednom místě najdete články o Gemini Notebooku napříč návody, novinkami, workflow a připravenými prompty.</p><div class="product-callout-meta"><span>Vlastní zdroje</span><span>Studijní materiály</span><span>Výuka</span></div><a class="chatgpt-launch-link" href="https://notebooklm.google.com/" target="_blank" rel="noopener noreferrer">Otevřít skutečný Gemini Notebook →</a></aside></section>`;
+ template=template.replace('<link rel="stylesheet" href="css/workflow.css?v=20260827-gemini-notebook-workflow" />','<link rel="stylesheet" href="css/catalog-directory.css?v=20261103-catalog" />');
+ template=template.replace('<body class="workflow-page">','<body class="workflow-page catalog-product-page">');
+ template=template.replace(/<header class="workflow-shell">[\s\S]*?<\/header>/,sharedHeader+hero);
+ template=template.replace('<main class="workflow-main">','<main id="obsah" class="workflow-main">');
+ template=template.replace(new RegExp(`${start}[\\s\\S]*?${finish}`),`${start}\n${cards}\n${finish}`);
+ template=template.replace(/<\/main>\s*<footer class="workflow-footer">[\s\S]*?<\/footer>\s*<script src="js\/site-footer\.js[^\"]*"><\/script>\s*<\/body>\s*<\/html>\s*$/,end);
+ if((template.match(/<\/html>/g)||[]).length!==1||(template.match(/<\/body>/g)||[]).length!==1||(template.match(/<main\b/g)||[]).length!==1) throw new Error('Gemini Notebook output has duplicate or missing document structure');
+ write('gemini-notebook.html',template);
+};
+write('ai.html',mainHtml()); write('ai-navody.html',guideHtml()); write('ai-novinky.html',newsHtml()); chatgptHtml(); write('ai-agenti.html',aiAgentsHtml()); geminiNotebookHtml();
 
