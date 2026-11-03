@@ -3,6 +3,7 @@
   const normalise = value => String(value || '').toLocaleLowerCase('cs').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   const queryInput = document.querySelector('[data-query]');
   if (!queryInput) return;
+  queryInput.closest('[data-js-enhancement]')?.removeAttribute('hidden');
   const cards = [...document.querySelectorAll('[data-card]')];
   const filterButtons = [...document.querySelectorAll('[data-filter]')];
   const status = document.querySelector('[data-status]');
