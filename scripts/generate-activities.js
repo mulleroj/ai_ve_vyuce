@@ -225,13 +225,14 @@ function buildCard(record, prompts) {
     const modalTitle = record.detail && record.detail.modalTitle ? record.detail.modalTitle : record.title;
     const modalPayload = JSON.stringify({title: modalTitle, body});
     const subjectAttribute = record.subsubjects ? ` data-subject="${escapeAttribute(record.subsubjects[0])}"` : '';
+    const titleTag = ['anglictina', 'matematika'].includes(record.collections[0].id) ? 'h3' : 'div';
     return `                    <div class="activity-card reveal" data-level="${escapeAttribute(record.levels.join(' '))}"${subjectAttribute}>
                         <div class="activity-card-top">
                             <div class="activity-badges"><span class="badge ${toolClass}">${escapeHtml(toolLabel)}</span><span
                                     class="badge badge-gray">${escapeHtml(secondaryLabel)}</span>${extraBadges}</div>
                             <span style="font-size:1.8rem">${escapeHtml(record.icon)}</span>
                         </div>
-                        <div class="activity-title">${escapeHtml(record.title)}</div>
+                        <${titleTag} class="activity-title">${escapeHtml(record.title)}</${titleTag}>
                         <div class="activity-desc">${escapeHtml(record.description)}</div>
                         <div class="activity-meta"><span class="activity-meta-item">⏱ ${escapeHtml(record.duration)}</span><span
                                 class="activity-meta-item">${escapeHtml(formatLabel(record))}</span></div>
