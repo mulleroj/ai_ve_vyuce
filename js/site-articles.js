@@ -577,6 +577,7 @@ window.siteArticles = [
   },
   {
     href: 'ai-workflow-7-kroku-gemini-notebook.html',
+    contentType: 'workflow',
     title: 'Gemini Notebook jako kompletní příprava výuky',
     summary: 'Opakovatelný workflow od vlastních zdrojů přes plán hodiny a materiály až po aktualizaci a AI tutora.',
     category: 'Workflow',
@@ -599,6 +600,7 @@ window.siteArticles = [
   },
   {
     href: 'ai-navod-chatgpt-zacatek-bezpecne.html',
+    contentType: 'guide',
     title: 'ChatGPT pro učitele: jak začít bezpečně a co zvládnete i zdarma',
     platforms: ['chatgpt'],
     featured: true,

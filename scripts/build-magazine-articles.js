@@ -261,7 +261,8 @@ function main() {
     const { html, headingCount } = renderArticle(article, catalogEntry);
     const destination = path.join(ROOT, article.file);
     if (checkOnly) {
-      if (!fs.existsSync(destination) || fs.readFileSync(destination, 'utf8') !== html) {
+      const currentHtml = fs.existsSync(destination) ? fs.readFileSync(destination, 'utf8').replace(/\r\n/g, '\n') : null;
+      if (currentHtml !== html.replace(/\r\n/g, '\n')) {
         throw new Error(`${article.file}: generated HTML is out of date; run node scripts/build-magazine-articles.js`);
       }
       console.log(`OK ${article.file}: ${headingCount} headings, static body and generated table of contents`);
