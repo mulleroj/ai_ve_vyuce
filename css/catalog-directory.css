@@ -5,3 +5,4 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.article-card{transition:none}}
 
 .catalog-jump{max-width:1184px;margin:-22px auto 28px;padding:0 28px;display:flex;gap:10px;flex-wrap:wrap}.catalog-jump a{padding:.52rem .86rem;border-radius:999px;background:#fffefa;border:1px solid #e5e6da;text-decoration:none;color:#075c3f;font-weight:700;font-size:.9rem}.catalog-jump a:hover{background:#e3f2e7}@media(max-width:620px){.catalog-jump{padding:0 18px;margin:-4px auto 18px}}
+.card-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}.tag-chip{display:inline-flex;max-width:100%;overflow-wrap:anywhere;padding:.18rem .48rem;border:1px solid #e6e9de;border-radius:999px;color:#607368;background:#fafaf4;font-size:.72rem;line-height:1.35}
