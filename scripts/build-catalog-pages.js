@@ -35,17 +35,23 @@ const guides = articles.filter(a => ['guide','tool-guide','workflow'].includes(a
 const guideHrefSet = new Set(guides.map(a=>a.href));
 const preservedGuideLinks=['ai-novinka-ai-duvod-premyslet.html','ai-navod-gemini-notebook-priprava.html','ai-navod-gemini-notebook-vyuka.html','ai-navod-commands-chatgpt.html','ai-navod-gemini-notebook-infografiky.html','ai-navod-prep-prompty.html','ai-navod-edit-kontrola.html','ai-navod-chatgpt-vizualni-materialy.html','ai-navod-7-univerzalnich-promptu.html'];
 for (const href of preservedGuideLinks) if(!hrefs.has(href)) throw new Error(`Old guide target missing from central catalog: ${href}`);
-const header = (title, desc, isGuide=false) => `<!DOCTYPE html>
-<html lang="cs"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${escape(title)}</title><meta name="description" content="${escape(desc)}">
-<link rel="canonical" href="https://ai-ve-vyuce.netlify.app/${isGuide?'ai-navody':'ai'}">
-<link rel="stylesheet" href="css/catalog-directory.css?v=20261103-catalog">
-<link rel="icon" href="/favicon.ico">
-</head><body>
-<a class="skip-link" href="#obsah">Přejít na obsah</a>
-<header class="site-header"><div class="site-header-inner"><a class="brand" href="index.html" aria-label="AI ve Výuce – úvodní stránka"><span class="brand-mark" aria-hidden="true">AI</span><span>AI ve Výuce</span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button><nav id="primary-nav" class="primary-nav" aria-label="Hlavní navigace"><a href="index.html">Úvod</a><a href="ai.html"${isGuide?'':' aria-current="page"'}>AI obsah</a><a href="ai-navody.html"${isGuide?' aria-current="page"':''}>Praktické návody</a><a href="ai-novinky.html">Novinky</a></nav></div></header>
-<main id="obsah">`;
+const header = (title, desc, isGuide=false) => {
+ const metadata = isGuide ? {
+   title:'Praktické návody pro AI ve výuce | AI ve Výuce',
+   description:'Praktické návody pro učitele: jak začít s AI, psát dobrá zadání a kontrolovat výstupy.',
+   ogTitle:'Praktick&#233; n&#225;vody pro AI ve v&#253;uce | AI ve V&#253;uce',
+   ogDescription:'Praktick&#233; n&#225;vody pro učitele: jak zač&#237;t s AI, ps&#225;t dobr&#225; zad&#225;n&#237; a kontrolovat v&#253;stupy.'
+ } : {
+   title:'AI pro vzdělávání – AI ve vzdělávání: co opravdu stojí za pozornost | AI ve Výuce',
+   description:'AI ve vzdělávání: co opravdu stojí za pozornost, praktické návody a workflow pro učitele. Objevujte možnosti umělé inteligence ve výuce krok za krokem.',
+   ogTitle:'AI pro vzděl&#225;v&#225;n&#237; – AI ve vzděl&#225;v&#225;n&#237;: co opravdu stoj&#237; za pozornost | AI ve V&#253;uce',
+   ogDescription:'AI ve vzděl&#225;v&#225;n&#237;: co opravdu stoj&#237; za pozornost, praktick&#233; n&#225;vody a workflow pro učitele. Objevujte možnosti uměl&#233; inteligence ve v&#253;uce krok za krokem.'
+ };
+ const canonical = 'https://ai-ve-vyuce.netlify.app/'+(isGuide?'ai-navody':'ai');
+ const icons = [[16,'favicon-16x16.png'],[32,'favicon-32x32.png'],[48,'favicon-48x48.png'],[64,'favicon-64x64.png'],[192,'icon-192.png'],[512,'favicon-512.png']].map(([size,src]) => '<link rel="icon" type="image/png" sizes="'+size+'px" href="/'+src+'?v=robot-20261103">').join('\n  ');
+ const nav = '<nav id="primary-nav" class="primary-nav" aria-label="Hlavní navigace"><a href="index.html">Úvod</a><a href="ai.html"'+(isGuide?'':' aria-current="page"')+'>AI obsah</a><a href="ai-navody.html"'+(isGuide?' aria-current="page"':'')+'>Praktické návody</a><a href="ai-novinky.html">Novinky</a></nav>';
+ return ['<!DOCTYPE html>','<html lang="cs"><head>','<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">','<title>'+escape(metadata.title)+'</title><meta name="description" content="'+escape(metadata.description)+'">','<link rel="canonical" href="'+canonical+'"><meta property="og:title" content="'+metadata.ogTitle+'"><meta property="og:description" content="'+metadata.ogDescription+'"><meta property="og:url" content="'+canonical+'">',icons,'<link rel="shortcut icon" href="/favicon.ico?v=robot-20261103">','<link rel="stylesheet" href="css/catalog-directory.css?v=20261103-catalog">','</head><body>','<a class="skip-link" href="#obsah">Přejít na obsah</a>','<header class="site-header"><div class="site-header-inner"><a class="brand" href="index.html" aria-label="AI ve Výuce – úvodní stránka"><span class="brand-mark" aria-hidden="true">AI</span><span>AI ve Výuce</span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>'+nav+'</div></header>','<main id="obsah">'].join('\n');
+};
 const robot = `<div class="catalog-hero-art" aria-hidden="true"><img src="images/ai-ve-vyuce-robot-navody-transparentni.webp" alt="" width="1754" height="897" fetchpriority="high"></div>`;
 const hero = (title, lead, isGuide=false) => `<section class="catalog-hero"><div class="catalog-hero-copy"><p class="eyebrow">AI ve výuce 2.0 · ${isGuide?'Prakticky a krok za krokem':'Rozcestník obsahu'}</p><h1>${title}</h1><p class="hero-lead">${lead}</p><div class="hero-links"><a href="#${isGuide?'katalog-navodu':'novinky'}">Prohlédnout obsah <span aria-hidden="true">↓</span></a>${isGuide?'<a class="subtle-link" href="ai.html">Všechny články AI</a>':''}</div></div>${robot}</section>`;
 const card = a => {
