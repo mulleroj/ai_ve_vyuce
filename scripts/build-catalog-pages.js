@@ -161,7 +161,7 @@ const aiAgentsHtml = () => {
 const geminiNotebookHtml = () => {
  const start='<!-- GEMINI-NOTEBOOK-CARDS:START -->';
  const finish='<!-- GEMINI-NOTEBOOK-CARDS:END -->';
- let template=read('gemini-notebook.html');
+ let template=read('templates/catalog/gemini-notebook.tpl');
  if(template.split(start).length!==2||template.split(finish).length!==2) throw new Error('Gemini Notebook card markers must each appear exactly once');
  const selected=orderedTopicArticles('gemini-notebook');
  if(selected.some(article=>article.href==='gemini-notebook.html')) throw new Error('Gemini Notebook directory cannot include itself');
@@ -176,7 +176,8 @@ const geminiNotebookHtml = () => {
  template=template.replace(/<header class="workflow-shell">[\s\S]*?<\/header>/,sharedHeader+hero);
  template=template.replace('<main class="workflow-main">','<main id="obsah" class="workflow-main">');
  template=template.replace(new RegExp(`${start}[\\s\\S]*?${finish}`),`${start}\n${cards}\n${finish}`);
- template=template.replace(/<\/main>\s*<footer class="workflow-footer">[\s\S]*?<\/footer>\s*<script src="js\/site-footer\.js[^\"]*"><\/script>\s*<\/body>/,end);
+ template=template.replace(/<\/main>\s*<footer class="workflow-footer">[\s\S]*?<\/footer>\s*<script src="js\/site-footer\.js[^\"]*"><\/script>\s*<\/body>\s*<\/html>\s*$/,end);
+ if((template.match(/<\/html>/g)||[]).length!==1||(template.match(/<\/body>/g)||[]).length!==1||(template.match(/<main\b/g)||[]).length!==1) throw new Error('Gemini Notebook output has duplicate or missing document structure');
  write('gemini-notebook.html',template);
 };
 write('ai.html',mainHtml()); write('ai-navody.html',guideHtml()); write('ai-novinky.html',newsHtml()); chatgptHtml(); write('ai-agenti.html',aiAgentsHtml()); geminiNotebookHtml();
