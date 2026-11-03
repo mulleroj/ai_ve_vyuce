@@ -8,7 +8,7 @@
     <meta name="description"
         content="AI aktivity a prompty pro výuku matematiky. Generátory úloh, krok-za-krokem průvodci, vizualizace grafů." />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/subject-pages.css?v=20261103-stage5a" />
+    <link rel="stylesheet" href="css/subject-pages.css?v=20261104-stage5a-english-hero-nav" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/matematika" />
     <meta property="og:title" content="Matematika – AI Pomůcky pro Učitele" />
@@ -27,25 +27,20 @@
 
 <body class="subject-page subject-page--mathematics">
     <!-- Navigation -->
-    <nav class="nav" id="nav">
+    <nav class="nav" id="nav" aria-label="Hlavní navigace">
         <div class="nav-inner">
-            <a href="index.html" class="nav-logo">
+            <a href="index.html" class="nav-logo" aria-label="AI ve Výuce – úvodní stránka">
                 <span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span>
             </a>
             <div class="nav-links">
                 <div class="nav-dropdown">
-                    <a href="#" class="nav-link active">📚 Předměty <i class="fa-solid fa-chevron-down"
-                            style="font-size:.65rem"></i></a>
-                    <div class="nav-dropdown-menu">
-                        <a href="matematika.html" class="nav-dropdown-item"><span class="item-icon">🔢</span>
-                            Matematika</a>
-                        <a href="cestina.html" class="nav-dropdown-item"><span class="item-icon">📖</span> Český
-                            jazyk</a>
-                        <a href="anglictina.html" class="nav-dropdown-item"><span class="item-icon">🇬🇧</span> Anglický
-                            jazyk</a>
-                        <a href="prirodoveda.html" class="nav-dropdown-item"><span class="item-icon">🔬</span> Přírodní
-                            vědy</a>
-                        <a href="dejepis.html" class="nav-dropdown-item"><span class="item-icon">🏛️</span> Dějepis</a>
+                    <button type="button" class="nav-link active subject-nav-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="subject-desktop-subjects">📚 Předměty <i class="fa-solid fa-chevron-down" aria-hidden="true" style="font-size:.65rem"></i></button>
+                    <div class="nav-dropdown-menu" id="subject-desktop-subjects" aria-label="Předmětové stránky">
+                        <a href="matematika.html" class="nav-dropdown-item active" aria-current="page"><span class="item-icon" aria-hidden="true">🔢</span>Matematika</a>
+                        <a href="cestina.html" class="nav-dropdown-item"><span class="item-icon" aria-hidden="true">📖</span>Český jazyk</a>
+                        <a href="anglictina.html" class="nav-dropdown-item"><span class="item-icon" aria-hidden="true">🇬🇧</span>Anglický jazyk</a>
+                        <a href="prirodoveda.html" class="nav-dropdown-item"><span class="item-icon" aria-hidden="true">🔬</span>Přírodní vědy</a>
+                        <a href="dejepis.html" class="nav-dropdown-item"><span class="item-icon" aria-hidden="true">🏛️</span>Dějepis</a>
                     </div>
                 </div>
                 <a href="prompty.html" class="nav-link">✨ Prompty</a>
@@ -58,21 +53,25 @@
             <button type="button" class="nav-mobile-toggle" aria-expanded="false" aria-label="Otevřít navigaci" aria-controls="subject-mobile-menu"><span></span><span></span><span></span></button>
         </div>
     </nav>
-    <div class="mobile-menu" id="subject-mobile-menu">
-        <a href="index.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏠 Domů</a>
-        <a href="matematika.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔢 Matematika</a>
-        <a href="cestina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">📖 Český jazyk</a>
-        <a href="anglictina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🇬🇧 Angličtina</a>
-        <a href="prirodoveda.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔬 Přírodní vědy</a>
-        <a href="dejepis.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏛️ Dějepis</a>
-        <a href="prompty.html" class="nav-link" style="font-size:1rem;padding:14px 16px">✨ Prompty</a>
-        <a href="asistenti.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🤖 Asistenti</a>
-        <a href="aktivity.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🎯 Aktivity</a>
-        <a href="ai.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🧠 AI pro školy</a>
-        <a href="vibe-coding.html" class="nav-link" style="font-size:1rem;padding:14px 16px">💻 Vibe Coding</a>
-        <a href="qr-kod.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔳 QR kód</a>
+    <div class="mobile-menu subject-mobile-menu" id="subject-mobile-menu" role="navigation" aria-label="Mobilní navigace">
+        <a href="index.html" class="nav-link">🏠 Domů</a>
+        <details class="subject-mobile-group">
+            <summary class="nav-link">📚 Předměty</summary>
+            <div class="subject-mobile-links">
+                <a href="matematika.html" class="nav-link active" aria-current="page"><span class="item-icon" aria-hidden="true">🔢</span>Matematika</a>
+                <a href="cestina.html" class="nav-link"><span class="item-icon" aria-hidden="true">📖</span>Český jazyk</a>
+                <a href="anglictina.html" class="nav-link"><span class="item-icon" aria-hidden="true">🇬🇧</span>Anglický jazyk</a>
+                <a href="prirodoveda.html" class="nav-link"><span class="item-icon" aria-hidden="true">🔬</span>Přírodní vědy</a>
+                <a href="dejepis.html" class="nav-link"><span class="item-icon" aria-hidden="true">🏛️</span>Dějepis</a>
+            </div>
+        </details>
+        <a href="prompty.html" class="nav-link">✨ Prompty</a>
+        <a href="asistenti.html" class="nav-link">🤖 AI Asistenti</a>
+        <a href="aktivity.html" class="nav-link">🎯 Aktivity</a>
+        <a href="ai.html" class="nav-link">🧠 AI pro školy</a>
+        <a href="vibe-coding.html" class="nav-link">💻 Vibe Coding</a>
+        <a href="qr-kod.html" class="nav-link">🔳 QR kód</a>
     </div>
-
     <!-- Page Hero -->
     <section class="page-hero" style="background:linear-gradient(135deg,#0a0f1e 0%,#1a1200 100%)">
         <div class="page-hero-glow"
@@ -434,6 +433,7 @@
             <div class="modal-body"></div>
         </div>
     </div>
+    <script src="js/subject-navigation.js"></script>
     <script src="js/main.js"></script>
     <script src="js/subject-pages.js?v=20261103-stage5a"></script>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
