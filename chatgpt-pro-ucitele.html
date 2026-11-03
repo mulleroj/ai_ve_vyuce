@@ -7,6 +7,7 @@
     <title>ChatGPT pro učitele – články, návody a workflow | AI ve Výuce</title>
     <meta name="description" content="Články, praktické návody a workflow o ChatGPT pro učitele. Vyberte si téma a pokračujte přímo do skutečného ChatGPT." />
     <link rel="stylesheet" href="css/workflow.css?v=20260827-chatgpt-directory-rows" />
+    <link rel="stylesheet" href="css/catalog-directory.css?v=20261103-catalog-cta" />
     <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/chatgpt-pro-ucitele" />
     <meta property="og:title" content="ChatGPT pro učitele – čl&#225;nky, n&#225;vody a workflow | AI ve V&#253;uce" />
     <meta property="og:description" content="Čl&#225;nky, praktick&#233; n&#225;vody a workflow o ChatGPT pro učitele. Vyberte si t&#233;ma a pokračujte př&#237;mo do skutečn&#233;ho ChatGPT." />
@@ -22,36 +23,41 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-            <a class="workflow-back" href="asistenti.html">← AI Asistenti</a>
-        </div>
-        <div class="workflow-hero">
-            <div>
-                <div class="workflow-eyebrow">AI asistent pro učitele · ChatGPT</div>
-                <h1>ChatGPT<br /><span>pro učitele</span></h1>
-                <p class="workflow-hero-lead">Praktický rozcestník pro tvorbu úloh, promptů, výukových materiálů a bezpečnou kontrolu výstupů AI.</p>
-                <div class="workflow-meta"><span>Prompty</span><span>Výuka</span><span>Kontrola výstupů</span><span>Workflow</span></div>
-            </div>
-            <div class="workflow-news-panel">
-                <span class="workflow-news-panel-label">Centrální rozcestník</span>
-                <h2>Najděte správný postup pro svůj úkol</h2>
-                <p>Na jednom místě najdete články o ChatGPT napříč novinkami, praktickými návody i workflow pro učitele.</p>
-                <div class="workflow-news-panel-meta"><span>Články</span><span>Návody</span><span>Workflow</span></div>
-                <a class="chatgpt-launch-link" href="https://chatgpt.com" target="_blank" rel="noopener noreferrer">Otevřít skutečný ChatGPT →</a>
-            </div>
+<body class="workflow-page catalog-product-page">
+    <a class="skip-link" href="#obsah">Přejít na obsah</a>
+    <header class="site-header">
+        <div class="site-header-inner">
+            <a class="brand" href="index.html" aria-label="AI ve Výuce – úvodní stránka"><img class="brand-logo" src="images/ai-assistant-book-logo.png" width="44" height="42" alt=""><span>AI ve Výuce</span></a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Navigace</button>
+            <nav id="primary-nav" class="primary-nav" aria-label="Hlavní navigace">
+                <a href="index.html">Úvod</a><a href="ai.html">AI obsah</a><a href="ai-navody.html">Praktické návody</a><a href="ai-novinky.html">Novinky</a>
+                <details class="nav-group"><summary>Předměty</summary><div class="nav-panel"><a href="matematika.html">Matematika</a><a href="cestina.html">Čeština</a><a href="anglictina.html">Angličtina</a><a href="prirodoveda.html">Přírodní vědy</a><a href="dejepis.html">Dějepis</a></div></details>
+                <details class="nav-group"><summary>Nástroje a aktivity</summary><div class="nav-panel"><a href="prompty.html">Knihovna promptů</a><a href="asistenti.html" aria-current="page">AI asistenti</a><a href="aktivity.html">Výukové aktivity</a><a href="vibe-coding.html">Vibe coding</a><a href="qr-kod.html">Generátor QR kódů</a></div></details>
+            </nav>
         </div>
     </header>
+    <section class="catalog-hero catalog-hero-compact chatgpt-hero">
+        <div class="catalog-hero-copy">
+            <p class="eyebrow">AI asistent pro učitele · ChatGPT</p>
+            <h1>ChatGPT pro učitele</h1>
+            <p class="hero-lead">Praktický rozcestník pro tvorbu úloh, promptů, výukových materiálů a bezpečnou kontrolu výstupů AI.</p>
+            <div class="hero-links"><span>Prompty</span><span>Výuka</span><span>Kontrola výstupů</span><span>Workflow</span></div>
+        </div>
+        <aside class="product-callout"><p class="eyebrow">Centrální rozcestník</p><h2>Najděte správný postup pro svůj úkol</h2><p>Na jednom místě najdete články o ChatGPT napříč novinkami, praktickými návody i workflow pro učitele.</p><div class="product-callout-meta"><span>Články</span><span>Návody</span><span>Workflow</span></div><a class="chatgpt-launch-link" href="https://chatgpt.com" target="_blank" rel="noopener noreferrer">Otevřít skutečný ChatGPT →</a></aside>
+    </section>
 
-    <main class="workflow-main">
+    <main id="obsah" class="workflow-main">
         <section class="workflow-related" aria-labelledby="chatgpt-articles-heading">
             <div class="workflow-related-heading">
                 <h2 id="chatgpt-articles-heading">Články o ChatGPT</h2>
                 <p>Výběr všech článků z webu, které jsou označené pro ChatGPT – bez ohledu na to, zda patří mezi novinky, návody nebo workflow.</p>
             </div>
-            <div id="chatgpt-articles-grid" class="workflow-related-grid chatgpt-articles-grid" aria-live="polite">
+            <section class="catalog-controls" aria-label="Vyhledávání a filtrování článků ChatGPT"><div class="controls-inner">
+                <label class="search-label" for="catalog-search">Hledat články o ChatGPT</label><div class="search-row"><input id="catalog-search" type="search" data-query placeholder="Např. prompty, pracovní list nebo bezpečnost" autocomplete="off"><button type="button" class="clear-button" data-clear hidden>Vymazat</button></div>
+                <div class="filter-block"><span class="filter-label" id="filter-label">Typ obsahu</span><div class="filter-list" role="group" aria-labelledby="filter-label"><button type="button" data-filter="all" aria-pressed="true">Vše</button><button type="button" data-filter="guides" data-filter-content-type="guide,tool-guide" aria-pressed="false">Návody</button><button type="button" data-filter="workflow" data-filter-content-type="workflow" aria-pressed="false">Workflow</button><button type="button" data-filter="news" data-filter-content-type="magazine" aria-pressed="false">Novinky</button></div></div>
+                <p class="result-status" data-status role="status" aria-live="polite"></p><p class="empty-state" data-empty hidden>Nenašli jsme žádné články. Zkuste upravit hledaný výraz nebo filtr.</p>
+            </div></section>
+            <div id="chatgpt-articles-grid" class="card-grid chatgpt-articles-grid" aria-live="polite">
                 <p class="chatgpt-empty">Načítám články o ChatGPT…</p>
             </div>
         </section>
@@ -91,6 +97,7 @@
 
     <script src="js/site-articles.js?v=20260827-chatgpt-directory"></script>
     <script src="js/chatgpt-page.js?v=20260827-chatgpt-directory-pinned"></script>
+    <script src="js/catalog-directory.js?v=20261103-catalog" defer></script>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
 </body>
 

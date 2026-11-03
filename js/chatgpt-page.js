@@ -1,54 +1,89 @@
-/* ── ChatGPT article directory ── */
-const chatgptArticlesMount = document.querySelector('#chatgpt-articles-grid');
-if (chatgptArticlesMount && Array.isArray(window.siteArticles)) {
-    const chatgptArticles = window.siteArticles
+/* ChatGPT product directory. Selection and featured/date ordering stay catalog driven. */
+(() => {
+    const mount = document.querySelector('#chatgpt-articles-grid');
+    if (!mount || !Array.isArray(window.siteArticles)) return;
+
+    const articles = window.siteArticles
         .map((article, index) => ({ article, index }))
         .filter(item => item.article.platforms?.includes('chatgpt'))
         .sort((left, right) => {
-            const leftFeatured = left.article.featured ? 1 : 0;
-            const rightFeatured = right.article.featured ? 1 : 0;
-            const leftDate = left.article.date || '';
-            const rightDate = right.article.date || '';
-            return rightFeatured - leftFeatured || rightDate.localeCompare(leftDate) || left.index - right.index;
+            const featured = Number(Boolean(right.article.featured)) - Number(Boolean(left.article.featured));
+            const date = (right.article.date || '').localeCompare(left.article.date || '');
+            return featured || date || left.index - right.index;
         })
         .map(item => item.article);
 
-    chatgptArticlesMount.replaceChildren();
+    const text = value => String(value ?? '');
+    const make = (tag, className, value) => {
+        const node = document.createElement(tag);
+        if (className) node.className = className;
+        if (value !== undefined) node.textContent = value;
+        return node;
+    };
+    mount.replaceChildren();
 
-    if (!chatgptArticles.length) {
-        const emptyState = document.createElement('p');
-        emptyState.className = 'chatgpt-empty';
-        emptyState.textContent = 'Zatím zde nejsou žádné články označené pro ChatGPT.';
-        chatgptArticlesMount.appendChild(emptyState);
-    } else {
-        chatgptArticles.forEach((article, index) => {
-            const card = document.createElement('article');
-            card.className = 'workflow-related-card';
-
-            const number = document.createElement('span');
-            number.className = 'workflow-card-number';
-            number.textContent = String(index + 1).padStart(2, '0');
-
-            const meta = document.createElement('div');
-            meta.className = 'chatgpt-article-meta';
-            meta.textContent = `${article.category || 'Článek'}${article.dateLabel ? ` · ${article.dateLabel}` : ''}`;
-
-            const title = document.createElement('h3');
-            const titleLink = document.createElement('a');
-            titleLink.href = article.href;
-            titleLink.textContent = article.title;
-            title.appendChild(titleLink);
-
-            const summary = document.createElement('p');
-            summary.textContent = article.summary || '';
-
-            const readLink = document.createElement('a');
-            readLink.className = 'chatgpt-article-link';
-            readLink.href = article.href;
-            readLink.textContent = 'Číst článek →';
-
-            card.append(number, meta, title, summary, readLink);
-            chatgptArticlesMount.appendChild(card);
-        });
+    if (!articles.length) {
+        const empty = make('p', 'empty-state', 'Zatím zde nejsou žádné články označené pro ChatGPT.');
+        empty.dataset.empty = '';
+        mount.appendChild(empty);
+        return;
     }
-}
+
+    articles.forEach((article, index) => {
+        const category = text(article.category || 'Článek');
+        const contentType = article.contentType || (
+            ['Novinka', 'AI ve vzdělávání', 'Filozofování s AI'].includes(category) ? 'magazine' :
+                ['Návod'].includes(category) ? 'guide' :
+                    category === 'Nástroj krok za krokem' ? 'tool-guide' :
+                        ['Workflow', 'AI V PRAXI'].includes(category) ? 'workflow' : ''
+        );
+        const searchText = [article.title, article.summary, category, article.dateLabel, ...(article.tags || [])].map(text).join(' ');
+        const card = make('article', 'article-card');
+        card.dataset.card = '';
+        card.dataset.category = category;
+        card.dataset.contentType = contentType;
+        card.dataset.search = searchText;
+
+        const link = make('a', 'card-link');
+        link.href = article.href;
+        if (article.image) {
+            const media = make('div', 'card-media');
+            const img = make('img');
+            img.src = article.image;
+            img.alt = text(article.imageAlt || article.title);
+            img.loading = 'lazy';
+            media.appendChild(img);
+            link.appendChild(media);
+        } else {
+            const media = make('div', 'card-media card-fallback');
+            media.setAttribute('aria-hidden', 'true');
+            media.appendChild(make('span', '', text(article.icon || '✦')));
+            link.appendChild(media);
+        }
+
+        const copy = make('div', 'card-copy');
+        const meta = make('div', 'card-meta');
+        meta.append(make('span', 'category-pill', category));
+        if (article.dateLabel) {
+            const time = make('time', '', article.dateLabel);
+            time.dateTime = text(article.date || '');
+            meta.appendChild(time);
+        }
+        copy.appendChild(meta);
+
+        const tags = make('div', 'card-tags');
+        tags.setAttribute('aria-label', 'Štítky');
+        (article.tags || []).slice(0, 3).forEach(tag => tags.appendChild(make('span', 'tag-chip', tag)));
+        if (tags.childElementCount) copy.appendChild(tags);
+
+        const heading = make('h3');
+        heading.textContent = text(article.title);
+        copy.append(heading, make('p', '', article.summary || ''));
+        copy.appendChild(make('span', 'card-cta', contentType === 'workflow' ? 'Otevřít workflow →' : 'Číst článek →'));
+        link.appendChild(copy);
+        card.appendChild(link);
+        if (article.featured) card.classList.add('is-featured');
+        card.dataset.order = String(index + 1);
+        mount.appendChild(card);
+    });
+})();

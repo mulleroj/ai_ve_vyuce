@@ -12,6 +12,9 @@
   const filterMatches = card => {
     const haystack = normalise(card.dataset.search + ' ' + card.dataset.category + ' ' + card.dataset.contentType);
     if (activeFilter === 'all') return true;
+    const selectedButton = filterButtons.find(button => button.dataset.filter === activeFilter);
+    if (selectedButton?.dataset.filterCategory) return card.dataset.category === selectedButton.dataset.filterCategory;
+    if (selectedButton?.dataset.filterContentType) return selectedButton.dataset.filterContentType.split(',').includes(card.dataset.contentType);
     if (activeFilter === 'philosophy') return haystack.includes('filozofovani s ai');
     const terms = { chatgpt: ['chatgpt'], gemini: ['gemini', 'notebooklm'], microsoft: ['microsoft', 'copilot'], 'vibe-coding': ['vibe coding'] };
     return (terms[activeFilter] || []).some(term => haystack.includes(normalise(term)));
