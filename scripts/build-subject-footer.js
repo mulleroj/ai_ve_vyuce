@@ -4,7 +4,7 @@ const path = require('node:path');
 const { buildSubjectFooter } = require('./subject-footer');
 
 const ROOT = path.resolve(__dirname, '..');
-const PAGES = ['anglictina.html', 'matematika.html'];
+const PAGES = ['anglictina.html', 'matematika.html', 'cestina.html', 'prirodoveda.html', 'dejepis.html'];
 const normalise = text => text.replace(/\r\n?/g, '\n');
 
 function renderPage(file) {

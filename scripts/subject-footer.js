@@ -16,6 +16,7 @@ function buildSubjectFooter() {
     '          <a href="aktivity.html">Aktivity</a>',
     '          <a href="asistenti.html">AI nástroje</a>',
     '        </div>',
+    '        <small class="site-footer-mark">AI + 👤 | HUMAN IN THE LOOP</small>',
     '        <small>© 2026 AI ve výuce</small>',
     '      </div>',
     '    </footer>'

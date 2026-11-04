@@ -3,7 +3,7 @@ const path = require('path');
 const { buildSubjectNavigation } = require('./subject-navigation');
 
 const ROOT = path.resolve(__dirname, '..');
-const PILOT_PAGES = ['anglictina', 'matematika'];
+const SUBJECT_PAGES = ['anglictina', 'matematika', 'cestina', 'prirodoveda', 'dejepis'];
 
 function renderPage(file, subjectId) {
     const filePath = path.join(ROOT, file);
@@ -27,7 +27,7 @@ function main() {
     if (args.some(arg => arg !== '--check')) throw new Error(`Unknown argument: ${args.find(arg => arg !== '--check')}`);
     const checkOnly = args.includes('--check');
     let driftCount = 0;
-    PILOT_PAGES.forEach(subjectId => {
+    SUBJECT_PAGES.forEach(subjectId => {
         const result = renderPage(`${subjectId}.html`, subjectId);
         const drift = result.updated !== result.html;
         console.log(`${result.file}: ${drift ? 'DRIFT' : 'OK'}`);
@@ -41,4 +41,4 @@ if (require.main === module) {
     try { main(); } catch (error) { console.error(error.message); process.exitCode = 1; }
 }
 
-module.exports = { PILOT_PAGES, renderPage };
+module.exports = { SUBJECT_PAGES, renderPage };
