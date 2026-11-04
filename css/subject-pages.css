@@ -94,7 +94,7 @@
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 965 / 640;
+  aspect-ratio: auto;
   object-fit: contain;
 }
 .subject-page--english .page-hero-icon { display: grid; place-items: center; font-size: 1.05rem; font-weight: 850; letter-spacing: .06em; }
