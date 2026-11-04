@@ -1,50 +1,46 @@
 (() => {
-    const dropdowns = [...document.querySelectorAll('.subject-page .nav-dropdown')];
-    const closeDropdown = (dropdown, returnFocus = false) => {
-        const toggle = dropdown.querySelector('.subject-nav-toggle');
-        dropdown.classList.remove('is-open');
-        toggle?.setAttribute('aria-expanded', 'false');
-        if (returnFocus) toggle?.focus();
-    };
+  'use strict';
+  const page = document.querySelector('.subject-page');
+  const header = page?.querySelector('.site-header');
+  const toggle = header?.querySelector('.nav-toggle');
+  const nav = header?.querySelector('.primary-nav');
+  if (!page || !toggle || !nav) return;
 
-    dropdowns.forEach(dropdown => {
-        const toggle = dropdown.querySelector('.subject-nav-toggle');
-        const menu = dropdown.querySelector('.nav-dropdown-menu');
-        if (!toggle || !menu) return;
+  // Without JavaScript, the links stay visible (including on small screens).
+  // Enable the compact mobile menu only after its button is working.
+  page.classList.add('subject-nav-ready');
 
-        toggle.addEventListener('click', () => {
-            const willOpen = !dropdown.classList.contains('is-open');
-            dropdowns.forEach(other => closeDropdown(other));
-            if (willOpen) {
-                dropdown.classList.add('is-open');
-                toggle.setAttribute('aria-expanded', 'true');
-            }
-        });
+  const closeMenu = (returnFocus = false) => {
+    nav.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    if (returnFocus) toggle.focus();
+  };
 
-        toggle.addEventListener('keydown', event => {
-            if (event.key !== 'ArrowDown') return;
-            event.preventDefault();
-            dropdown.classList.add('is-open');
-            toggle.setAttribute('aria-expanded', 'true');
-            menu.querySelector('a')?.focus();
-        });
+  toggle.addEventListener('click', () => {
+    const opening = !nav.classList.contains('is-open');
+    nav.classList.toggle('is-open', opening);
+    toggle.setAttribute('aria-expanded', String(opening));
+  });
 
-        dropdown.addEventListener('keydown', event => {
-            if (event.key === 'Escape') closeDropdown(dropdown, true);
-        });
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => closeMenu());
+  });
 
-        dropdown.addEventListener('mouseenter', () => toggle.setAttribute('aria-expanded', 'true'));
-        dropdown.addEventListener('mouseleave', () => {
-            if (!dropdown.classList.contains('is-open')) toggle.setAttribute('aria-expanded', 'false');
-        });
-        dropdown.addEventListener('focusout', event => {
-            if (!dropdown.contains(event.relatedTarget)) closeDropdown(dropdown);
-        });
-    });
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape') return;
+    const hadOpenGroup = !!nav.querySelector('details[open]');
+    nav.querySelectorAll('details[open]').forEach(details => { details.open = false; });
+    if (nav.classList.contains('is-open')) closeMenu(true);
+    else if (hadOpenGroup) nav.querySelector('.subject-nav-group summary')?.focus();
+  });
 
-    document.addEventListener('click', event => {
-        dropdowns.forEach(dropdown => {
-            if (!dropdown.contains(event.target)) closeDropdown(dropdown);
-        });
-    });
+  document.addEventListener('click', event => {
+    if (!header.contains(event.target)) {
+      nav.querySelectorAll('details[open]').forEach(details => { details.open = false; });
+      closeMenu();
+    }
+  });
+
+  const desktop = window.matchMedia('(min-width: 901px)');
+  if (desktop.addEventListener) desktop.addEventListener('change', () => closeMenu());
 })();
