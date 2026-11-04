@@ -8,7 +8,9 @@ const PILOT_PAGES = ['anglictina', 'matematika'];
 function renderPage(file, subjectId) {
     const filePath = path.join(ROOT, file);
     const html = fs.readFileSync(filePath, 'utf8');
-    const start = html.indexOf('<nav class="nav" id="nav"');
+    const modernStart = html.indexOf('<header class="site-header"');
+    const legacyStart = html.indexOf('<nav class="nav" id="nav"');
+    const start = modernStart >= 0 ? modernStart : legacyStart;
     const end = html.indexOf('<section class="page-hero"', start);
     if (start === -1 || end === -1 || end < start) throw new Error(`${file}: shared subject navigation boundaries are missing`);
     const regionStart = html.lastIndexOf('\n', start) + 1;
