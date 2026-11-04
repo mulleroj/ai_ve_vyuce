@@ -7,7 +7,9 @@ const PILOT_PAGES = ['anglictina', 'matematika'];
 
 function renderPage(file, subjectId) {
     const filePath = path.join(ROOT, file);
-    const html = fs.readFileSync(filePath, 'utf8');
+    const source = fs.readFileSync(filePath, 'utf8');
+    const lineEnding = source.includes('\r\n') ? '\r\n' : '\n';
+    const html = source.replace(/\r\n?/g, '\n');
     const modernStart = html.indexOf('<header class="site-header"');
     const legacyStart = html.indexOf('<nav class="nav" id="nav"');
     const start = modernStart >= 0 ? modernStart : legacyStart;
@@ -17,7 +19,7 @@ function renderPage(file, subjectId) {
     const heroComment = subjectId === 'matematika' ? '    <!-- Page Hero -->\n' : '';
     const expected = `${buildSubjectNavigation(subjectId)}\n${heroComment}    `;
     const updated = `${html.slice(0, regionStart)}${expected}${html.slice(end)}`;
-    return { file, filePath, html, updated };
+    return { file, filePath, html, updated, lineEnding };
 }
 
 function main() {
@@ -30,7 +32,7 @@ function main() {
         const drift = result.updated !== result.html;
         console.log(`${result.file}: ${drift ? 'DRIFT' : 'OK'}`);
         if (drift && checkOnly) driftCount += 1;
-        if (drift && !checkOnly) fs.writeFileSync(result.filePath, result.updated, 'utf8');
+        if (drift && !checkOnly) fs.writeFileSync(result.filePath, result.updated.replace(/\n/g, result.lineEnding), 'utf8');
     });
     if (driftCount) throw new Error(`${driftCount} subject navigation page(s) are out of date`);
 }
