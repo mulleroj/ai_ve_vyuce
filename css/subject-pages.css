@@ -78,15 +78,19 @@
 }
 
 .subject-page .page-hero-content { max-width: 1000px; }
-.subject-page--english .page-hero-layout {
+.subject-page--english .page-hero-layout,
+.subject-page--mathematics .page-hero-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr);
   align-items: center;
   gap: clamp(24px, 4vw, 58px);
 }
-.subject-page--english .page-hero-content { min-width: 0; max-width: none; }
-.subject-page--english .page-hero-art { min-width: 0; margin: 0; }
-.subject-page--english .page-hero-art img {
+.subject-page--english .page-hero-content,
+.subject-page--mathematics .page-hero-content { min-width: 0; max-width: none; }
+.subject-page--english .page-hero-art,
+.subject-page--mathematics .page-hero-art { min-width: 0; margin: 0; }
+.subject-page--english .page-hero-art img,
+.subject-page--mathematics .page-hero-art img {
   display: block;
   width: 100%;
   height: auto;
@@ -309,8 +313,10 @@
   .subject-page .nav-mobile-toggle { display: flex; }
   .subject-page .mobile-menu { top: 66px; padding: 18px 20px 26px; }
   .subject-page .page-hero { padding-top: 96px; }
-  .subject-page--english .page-hero-layout { grid-template-columns: minmax(0, 1fr); gap: 18px; }
-  .subject-page--english .page-hero-art { width: 100%; }
+  .subject-page--english .page-hero-layout,
+  .subject-page--mathematics .page-hero-layout { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .subject-page--english .page-hero-art,
+  .subject-page--mathematics .page-hero-art { width: 100%; }
   .subject-page .page-hero-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
   .subject-page .page-hero-stat { min-width: 0; padding: 9px 10px; font-size: .82rem; }
   .subject-page .activity-grid,
