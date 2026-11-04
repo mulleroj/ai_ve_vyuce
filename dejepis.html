@@ -95,6 +95,16 @@
             </div>
 
             <div id="tab-aktivity" class="tab-panel">
+                <div class="filter-bar">
+                    <span class="filter-label">Ročník:</span>
+                    <div class="filter-group" role="group" aria-label="Filtrovat aktivity podle ročníku">
+                        <button class="filter-chip active" data-filter="all" aria-pressed="true">Vše</button>
+                        <button class="filter-chip" data-filter="zs1" aria-pressed="false">1.–5. ročník</button>
+                        <button class="filter-chip" data-filter="zs2" aria-pressed="false">6.–9. ročník</button>
+                        <button class="filter-chip" data-filter="ss" aria-pressed="false">SŠ</button>
+                    </div>
+                </div>
+                <p class="subject-results-count" role="status" aria-live="polite">Zobrazeno <span data-count-visible>6</span> z <span data-count-total>6</span> aktivit</p>
                 <div class="activity-grid">
                     <!-- GENERATED:ACTIVITIES:DEJEPIS:START -->
                     <div class="activity-card reveal" data-level="zs2">
