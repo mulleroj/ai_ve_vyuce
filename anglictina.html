@@ -8,6 +8,7 @@
     <meta name="description"
         content="AI aktivity a prompty pro výuku anglického jazyka. Konverzační partner, gramatické opravy, slovní zásoba." />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/subject-pages.css?v=20261104-stage5a-english-hero-nav" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/anglictina" />
     <meta property="og:title" content="Anglick&#253; jazyk – AI Pomůcky pro Učitele" />
@@ -24,69 +25,62 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
 </head>
 
-<body>
-    <nav class="nav" id="nav">
-        <div class="nav-inner">
-            <a href="index.html" class="nav-logo">
-                <span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span>
-            </a>
-            <div class="nav-links">
-                <div class="nav-dropdown">
-                    <a href="#" class="nav-link active">📚 Předměty <i class="fa-solid fa-chevron-down"
-                            style="font-size:.65rem"></i></a>
-                    <div class="nav-dropdown-menu">
-                        <a href="matematika.html" class="nav-dropdown-item"><span class="item-icon">🔢</span>
-                            Matematika</a>
-                        <a href="cestina.html" class="nav-dropdown-item"><span class="item-icon">📖</span> Český
-                            jazyk</a>
-                        <a href="anglictina.html" class="nav-dropdown-item"><span class="item-icon">🇬🇧</span> Anglický
-                            jazyk</a>
-                        <a href="prirodoveda.html" class="nav-dropdown-item"><span class="item-icon">🔬</span> Přírodní
-                            vědy</a>
-                        <a href="dejepis.html" class="nav-dropdown-item"><span class="item-icon">🏛️</span> Dějepis</a>
-                    </div>
-                </div>
-                <a href="prompty.html" class="nav-link">✨ Prompty</a>
-                <a href="asistenti.html" class="nav-link">🤖 AI Asistenti</a>
-                <a href="aktivity.html" class="nav-link">🎯 Aktivity</a>
-                <a href="ai.html" class="nav-link">🧠 AI pro školy</a>
-                <a href="vibe-coding.html" class="nav-link">💻 Vibe Coding</a>
-                <a href="qr-kod.html" class="nav-link">🔳 QR kód</a>
+<body class="subject-page subject-page--english">
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="brand" href="index.html" aria-label="AI ve Výuce – úvodní stránka">
+          <img class="brand-logo" src="images/ai-assistant-book-logo.png" width="44" height="42" alt="">
+          <span>AI ve Výuce</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Navigace</button>
+        <nav id="primary-nav" class="primary-nav" aria-label="Hlavní navigace">
+          <a href="index.html">Úvod</a>
+          <a href="ai.html">AI obsah</a>
+          <a href="ai-navody.html">Praktické návody</a>
+          <a href="ai-novinky.html">Novinky</a>
+          <details class="nav-group subject-nav-group">
+            <summary>Předměty</summary>
+            <div class="nav-panel">
+            <a href="matematika.html">Matematika</a>
+            <a href="cestina.html">Čeština</a>
+            <a href="anglictina.html" aria-current="page">Angličtina</a>
+            <a href="prirodoveda.html">Přírodní vědy</a>
+            <a href="dejepis.html">Dějepis</a>
             </div>
-            <button class="nav-mobile-toggle"><span></span><span></span><span></span></button>
-        </div>
-    </nav>
-    <div class="mobile-menu">
-        <a href="index.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏠 Domů</a>
-        <a href="matematika.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔢 Matematika</a>
-        <a href="cestina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">📖 Český jazyk</a>
-        <a href="anglictina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🇬🇧 Angličtina</a>
-        <a href="prirodoveda.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔬 Přírodní vědy</a>
-        <a href="dejepis.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏛️ Dějepis</a>
-        <a href="prompty.html" class="nav-link" style="font-size:1rem;padding:14px 16px">✨ Prompty</a>
-        <a href="asistenti.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🤖 Asistenti</a>
-        <a href="aktivity.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🎯 Aktivity</a>
-        <a href="ai.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🧠 AI pro školy</a>
-        <a href="vibe-coding.html" class="nav-link" style="font-size:1rem;padding:14px 16px">💻 Vibe Coding</a>
-        <a href="qr-kod.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔳 QR kód</a>
-    </div>
-
+          </details>
+          <details class="nav-group">
+            <summary>Nástroje a aktivity</summary>
+            <div class="nav-panel">
+            <a href="prompty.html">Knihovna promptů</a>
+            <a href="asistenti.html">AI asistenti</a>
+            <a href="aktivity.html">Výukové aktivity</a>
+            <a href="vibe-coding.html">Vibe coding</a>
+            <a href="qr-kod.html">Generátor QR kódů</a>
+            </div>
+          </details>
+        </nav>
+      </div>
+    </header>
     <section class="page-hero" style="background:linear-gradient(135deg,#0a0f1e 0%,#001a10 100%)">
         <div class="page-hero-glow" style="background:radial-gradient(ellipse,rgba(0,212,168,0.12) 0%,transparent 70%)">
         </div>
         <div class="container">
-            <div class="page-hero-content">
-                <div class="page-hero-icon"
-                    style="background:linear-gradient(135deg,rgba(0,212,168,0.2),rgba(0,212,168,0.05))">🇬🇧</div>
-                <h1 class="page-hero-title">Anglický jazyk <span class="gradient-text-mint">s AI</span></h1>
-                <p class="page-hero-subtitle">Vytvořte konverzačního partnera, opravujte gramatiku, budujte slovní
-                    zásobu a připravujte žáky na certifikáty. Skvělé pro všechny úrovně CEFR.</p>
-                <div class="page-hero-stats">
-                    <div class="page-hero-stat"><span>🎯</span><strong>6</strong> aktivit</div>
-                    <div class="page-hero-stat"><span>✨</span><strong>4</strong> promptů</div>
-                    <div class="page-hero-stat"><span>🤖</span><strong>3</strong> AI nástroje</div>
-                    <div class="page-hero-stat"><span>📊</span>A1–C1 CEFR</div>
+            <div class="page-hero-layout">
+                <div class="page-hero-content">
+                    <div class="page-hero-icon">EN</div>
+                    <h1 class="page-hero-title">Anglický jazyk <span class="gradient-text-mint">s AI</span></h1>
+                    <p class="page-hero-subtitle">Vytvořte konverzačního partnera, opravujte gramatiku, budujte slovní
+                        zásobu a připravujte žáky na certifikáty. Skvělé pro všechny úrovně CEFR.</p>
+                    <div class="page-hero-stats">
+                        <div class="page-hero-stat"><span>🎯</span><strong>6</strong> aktivit</div>
+                        <div class="page-hero-stat"><span>✨</span><strong>4</strong> promptů</div>
+                        <div class="page-hero-stat"><span>🤖</span><strong>3</strong> AI nástroje</div>
+                        <div class="page-hero-stat"><span>📊</span>A1–C1 CEFR</div>
+                    </div>
                 </div>
+                <figure class="page-hero-art" aria-hidden="true">
+                    <img src="images/ai-ve-vyuce-robot-anglictina-hero.webp" alt="" aria-hidden="true" width="965" height="640" decoding="async" fetchpriority="high">
+                </figure>
             </div>
         </div>
     </section>
@@ -105,24 +99,26 @@
     <section class="section">
         <div class="container">
             <div class="tabs-container">
-                <div class="tabs" role="tablist">
-                    <button class="tab-btn active" data-tab="aktivity">🎯 Aktivity</button>
-                    <button class="tab-btn" data-tab="prompty">✨ Prompty</button>
-                    <button class="tab-btn" data-tab="asistenti">🤖 Asistenti</button>
-                    <button class="tab-btn" data-tab="tipy">💡 Tipy</button>
+                <div class="tabs" role="group" aria-label="Části předmětové stránky">
+                    <button type="button" class="tab-btn active" data-tab="aktivity" aria-controls="tab-aktivity" aria-pressed="true">🎯 Aktivity</button>
+                    <button type="button" class="tab-btn" data-tab="prompty" aria-controls="tab-prompty" aria-pressed="false">✨ Prompty</button>
+                    <button type="button" class="tab-btn" data-tab="asistenti" aria-controls="tab-asistenti" aria-pressed="false">🤖 Asistenti</button>
+                    <button type="button" class="tab-btn" data-tab="tipy" aria-controls="tab-tipy" aria-pressed="false">💡 Tipy</button>
                 </div>
             </div>
 
-            <div id="tab-aktivity" class="tab-panel">
+            <div id="tab-aktivity" class="tab-panel" role="region" aria-labelledby="subject-heading-aktivity">
+                <h2 id="subject-heading-aktivity" class="subject-panel-heading">Výukové aktivity</h2>
                 <div class="filter-bar">
                     <span class="filter-label">Ročník:</span>
-                    <div class="filter-group">
+                    <div class="filter-group" role="group" aria-label="Filtrovat aktivity podle ročníku">
                         <button class="filter-chip active" data-filter="all">Vše</button>
                         <button class="filter-chip" data-filter="zs1">1.–5. ročník</button>
                         <button class="filter-chip" data-filter="zs2">6.–9. ročník</button>
                         <button class="filter-chip" data-filter="ss">SŠ</button>
                     </div>
                 </div>
+                <p class="subject-results-count" role="status" aria-live="polite">Zobrazeno <span data-count-visible>6</span> z <span data-count-total>6</span> aktivit</p>
                 <div class="activity-grid">
                     <!-- GENERATED:ACTIVITIES:ANGLICTINA:START -->
                     <div class="activity-card reveal" data-level="zs2">
@@ -131,7 +127,7 @@
                                     class="badge badge-gray">6.–9. ročník</span></div>
                             <span style="font-size:1.8rem">💬</span>
                         </div>
-                        <div class="activity-title">AI konverzační partner</div>
+                        <h3 class="activity-title">AI konverzační partner</h3>
                         <div class="activity-desc">Nastavte ChatGPT jako bezpečného konverzačního partnera na zadané téma a jazykové úrovni – žáci konverzují v angličtině bez strachu ze selhání.</div>
                         <div class="activity-meta"><span class="activity-meta-item">⏱ 15 min aktivita</span><span
                                 class="activity-meta-item">👤 Individuální</span></div>
@@ -149,7 +145,7 @@
                                     class="badge badge-gray">SŠ</span></div>
                             <span style="font-size:1.8rem">✔️</span>
                         </div>
-                        <div class="activity-title">Opravovač gramatiky a stylu</div>
+                        <h3 class="activity-title">Opravovač gramatiky a stylu</h3>
                         <div class="activity-desc">Claude opraví anglický text žáka, vysvětlí chyby v kontextu gramatických pravidel a navrhne stylistická zlepšení.</div>
                         <div class="activity-meta"><span class="activity-meta-item">⏱ 3 min/text</span><span
                                 class="activity-meta-item">👤 Individuální</span></div>
@@ -167,7 +163,7 @@
                                     class="badge badge-gray">1.–5. ročník</span></div>
                             <span style="font-size:1.8rem">📚</span>
                         </div>
-                        <div class="activity-title">Slovní zásoba – tematické sety</div>
+                        <h3 class="activity-title">Slovní zásoba – tematické sety</h3>
                         <div class="activity-desc">AI vygeneruje tematické sety slovíček s příklady ve větách, obrázkovými popisy a paměťovými tipy pro mladší žáky.</div>
                         <div class="activity-meta"><span class="activity-meta-item">⏱ 10 min příprava</span><span
                                 class="activity-meta-item">🏫 Třída</span></div>
@@ -185,7 +181,7 @@
                                     class="badge badge-gray">SŠ</span></div>
                             <span style="font-size:1.8rem">📝</span>
                         </div>
-                        <div class="activity-title">Příprava na Cambridge / FCE / CAE</div>
+                        <h3 class="activity-title">Příprava na Cambridge / FCE / CAE</h3>
                         <div class="activity-desc">ChatGPT simuluje části zkoušek Cambridge – Use of English, Writing tasks – a dává podrobnou zpětnou vazbu s dosaženým skóre.</div>
                         <div class="activity-meta"><span class="activity-meta-item">⏱ 30 min aktivita</span><span
                                 class="activity-meta-item">👤 Individuální</span></div>
@@ -203,7 +199,7 @@
                                     class="badge badge-gray">6.–9. ročník</span></div>
                             <span style="font-size:1.8rem">🔤</span>
                         </div>
-                        <div class="activity-title">Gramatická cvičení na míru</div>
+                        <h3 class="activity-title">Gramatická cvičení na míru</h3>
                         <div class="activity-desc">Generujte cvičení na konkrétní gramatiku – časy, podmínkové věty, slovesa – s klíčem a doplňujícím vysvětlením pravidla.</div>
                         <div class="activity-meta"><span class="activity-meta-item">⏱ 5 min příprava</span><span
                                 class="activity-meta-item">🏫 Třída</span></div>
@@ -221,7 +217,7 @@
                                     class="badge badge-gray">SŠ</span></div>
                             <span style="font-size:1.8rem">🌍</span>
                         </div>
-                        <div class="activity-title">Překlad s kulturním kontextem</div>
+                        <h3 class="activity-title">Překlad s kulturním kontextem</h3>
                         <div class="activity-desc">Překlad nejde jen o slova – Claude vysvětlí kulturní kontext, idiomy a nuance, které strojový překlad mine.</div>
                         <div class="activity-meta"><span class="activity-meta-item">⏱ 10 min aktivita</span><span
                                 class="activity-meta-item">👥 Skupiny</span></div>
@@ -236,7 +232,8 @@
                 </div>
             </div>
 
-            <div id="tab-prompty" class="tab-panel d-none">
+            <div id="tab-prompty" class="tab-panel d-none" role="region" aria-labelledby="subject-heading-prompty">
+                <h2 id="subject-heading-prompty" class="subject-panel-heading">Prompty pro výuku</h2>
                 <div class="prompt-grid">
                     <!-- DO NOT EDIT MANUALLY. Source: data/prompts.json. Run: node scripts/generate-prompts.js -->
                     <!-- GENERATED:PROMPTS:START -->
@@ -296,7 +293,8 @@
                 </div>
             </div>
 
-            <div id="tab-asistenti" class="tab-panel d-none">
+            <div id="tab-asistenti" class="tab-panel d-none" role="region" aria-labelledby="subject-heading-asistenti">
+                <h2 id="subject-heading-asistenti" class="subject-panel-heading">AI asistenti</h2>
                 <div class="assistant-grid">
                     <div class="assistant-card reveal">
                         <div class="assistant-header">
@@ -356,7 +354,8 @@
                 </div>
             </div>
 
-            <div id="tab-tipy" class="tab-panel d-none">
+            <div id="tab-tipy" class="tab-panel d-none" role="region" aria-labelledby="subject-heading-tipy">
+                <h2 id="subject-heading-tipy" class="subject-panel-heading">Tipy pro práci s AI</h2>
                 <div style="display:grid;gap:16px;max-width:860px">
                     <div class="info-box reveal"><span class="info-box-icon">💡</span>
                         <div class="info-box-text"><strong>Tip: Specifikujte CEFR úroveň</strong>Vždy uveďte CEFR úroveň
@@ -380,42 +379,21 @@
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand"><a href="index.html" class="nav-logo"
-                        style="margin-bottom:12px;display:inline-flex">
-                        <span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span>
-                    </a>
-                    <p>Průvodce AI pro české učitele.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>🎯 Předměty</h4>
-                    <ul>
-                        <li><a href="matematika.html">🔢 Matematika</a></li>
-                        <li><a href="cestina.html">📖 Český jazyk</a></li>
-                        <li><a href="anglictina.html">🇬🇧 Angličtina</a></li>
-                        <li><a href="prirodoveda.html">🔬 Přírodní vědy</a></li>
-                        <li><a href="dejepis.html">🏛️ Dějepis</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>📚 Zdroje</h4>
-                    <ul>
-                        <li><a href="prompty.html">✨ Prompty</a></li>
-                        <li><a href="aktivity.html">🎯 Aktivity</a></li>
-                        <li><a href="asistenti.html">🤖 Asistenti</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>🔗 Navigace</h4>
-                    <ul>
-                        <li><a href="index.html">🏠 Domů</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom"><span>© 2026 AI ve Výuce · Pro české pedagogy</span></div>
+    <footer class="footer home-footer subject-site-footer">
+      <div class="footer-inner">
+        <a class="brand" href="index.html" aria-label="AI ve Výuce – úvodní stránka">
+          <img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="">
+          <span class="brand-copy"><strong>AI ve výuce</strong><small>Inspirace · nástroje · praxe pro učitele</small></span>
+        </a>
+        <p>Moderní průvodce světem AI pro české učitele.</p>
+        <div class="footer-links" aria-label="Užitečné odkazy">
+          <a href="ai-navody.html">Návody</a>
+          <a href="prompty.html">Prompty</a>
+          <a href="aktivity.html">Aktivity</a>
+          <a href="asistenti.html">AI nástroje</a>
         </div>
+        <small>© 2026 AI ve výuce</small>
+      </div>
     </footer>
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal">
@@ -426,7 +404,9 @@
             <div class="modal-body"></div>
         </div>
     </div>
+    <script src="js/subject-navigation.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/subject-pages.js?v=20261103-stage5a"></script>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
 </body>
 
