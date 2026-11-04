@@ -1,354 +1,755 @@
 <!DOCTYPE html>
 <html lang="cs">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aktivity – AI ve Výuce</title>
-    <meta name="description"
-        content="Vybrané AI aktivity pro učitele. Filtrujte podle předmětu, ročníku nebo AI nástroje a další scénáře objevte na předmětových stránkách." />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/aktivity" />
-    <meta property="og:title" content="Aktivity – AI ve V&#253;uce" />
-    <meta property="og:description" content="Vybrané AI aktivity pro učitele. Filtrujte podle předmětu, ročn&#237;ku nebo AI n&#225;stroje a další scénáře objevte na předmětových stránkách." />
-    <meta property="og:url" content="https://ai-ve-vyuce.netlify.app/aktivity" />
-
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=robot-20261103" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=robot-20261103" />
-  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png?v=robot-20261103" />
-  <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64x64.png?v=robot-20261103" />
-  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=robot-20261103" />
-  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
-  <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Výukové aktivity s AI – AI ve Výuce</title>
+  <meta name="description" content="Najděte praktickou aktivitu podle předmětu, ročníku a AI nástroje. Vyberte, upravte prompt a použijte ho ve své hodině.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/subject-pages.css">
+  <link rel="stylesheet" href="css/activity-library.css">
+  <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/aktivity">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=robot-20261103">
 </head>
-
-<body>
-    <nav class="nav" id="nav">
-        <div class="nav-inner">
-            <a href="index.html" class="nav-logo">
-                <span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span>
-            </a>
-            <div class="nav-links">
-                <div class="nav-dropdown">
-                    <a href="#" class="nav-link">📚 Předměty <i class="fa-solid fa-chevron-down"
-                            style="font-size:.65rem"></i></a>
-                    <div class="nav-dropdown-menu">
-                        <a href="matematika.html" class="nav-dropdown-item"><span class="item-icon">🔢</span>
-                            Matematika</a>
-                        <a href="cestina.html" class="nav-dropdown-item"><span class="item-icon">📖</span> Český
-                            jazyk</a>
-                        <a href="anglictina.html" class="nav-dropdown-item"><span class="item-icon">🇬🇧</span> Anglický
-                            jazyk</a>
-                        <a href="prirodoveda.html" class="nav-dropdown-item"><span class="item-icon">🔬</span> Přírodní
-                            vědy</a>
-                        <a href="dejepis.html" class="nav-dropdown-item"><span class="item-icon">🏛️</span> Dějepis</a>
-                    </div>
-                </div>
-                <a href="prompty.html" class="nav-link">✨ Prompty</a>
-                <a href="asistenti.html" class="nav-link">🤖 AI Asistenti</a>
-                <a href="aktivity.html" class="nav-link active">🎯 Aktivity</a>
-                <a href="ai.html" class="nav-link">🧠 AI pro školy</a>
-                <a href="vibe-coding.html" class="nav-link">💻 Vibe Coding</a>
-                <a href="qr-kod.html" class="nav-link">🔳 QR kód</a>
+<body class="subject-page activity-library-page">
+<a class="skip-link" href="#main-content">Přeskočit na obsah</a>
+<!-- GENERATED:ACTIVITY_NAV:START -->
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="brand" href="index.html" aria-label="AI ve Výuce – úvodní stránka">
+          <img class="brand-logo" src="images/ai-assistant-book-logo.png" width="44" height="42" alt="">
+          <span>AI ve Výuce</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Navigace</button>
+        <nav id="primary-nav" class="primary-nav" aria-label="Hlavní navigace">
+          <a href="index.html">Úvod</a>
+          <a href="ai.html">AI obsah</a>
+          <a href="ai-navody.html">Praktické návody</a>
+          <a href="ai-novinky.html">Novinky</a>
+          <details class="nav-group subject-nav-group">
+            <summary>Předměty</summary>
+            <div class="nav-panel">
+            <a href="matematika.html">Matematika</a>
+            <a href="cestina.html">Čeština</a>
+            <a href="anglictina.html">Angličtina</a>
+            <a href="prirodoveda.html">Přírodní vědy</a>
+            <a href="dejepis.html">Dějepis</a>
             </div>
-            <button class="nav-mobile-toggle"><span></span><span></span><span></span></button>
+          </details>
+          <details class="nav-group">
+            <summary>Nástroje a aktivity</summary>
+            <div class="nav-panel">
+            <a href="prompty.html">Knihovna promptů</a>
+            <a href="asistenti.html">AI asistenti</a>
+            <a href="aktivity.html" aria-current="page">Výukové aktivity</a>
+            <a href="vibe-coding.html">Vibe coding</a>
+            <a href="qr-kod.html">Generátor QR kódů</a>
+            </div>
+          </details>
+        </nav>
+      </div>
+    </header>
+                    <!-- GENERATED:ACTIVITY_NAV:END -->
+<main id="main-content">
+  <section class="page-hero" aria-labelledby="activity-library-title">
+    <div class="page-hero-glow" aria-hidden="true"></div>
+    <div class="container"><div class="page-hero-content">
+      <div class="page-hero-icon" aria-hidden="true">🎯</div>
+      <h1 class="page-hero-title" id="activity-library-title">Výukové aktivity s AI</h1>
+      <p class="page-hero-subtitle">Najděte praktickou aktivitu podle předmětu, ročníku a AI nástroje. Vyberte, upravte prompt a použijte ho ve své hodině.</p>
+      <div class="page-hero-stats" aria-label="Knihovna aktivit">
+        <div class="page-hero-stat"><span aria-hidden="true">🎯</span><strong>44</strong> aktivit</div>
+        <div class="page-hero-stat"><span aria-hidden="true">⭐</span><strong>14</strong> doporučených</div>
+        <div class="page-hero-stat"><span aria-hidden="true">🏫</span>ZŠ · SŠ</div>
+      </div>
+    </div></div>
+  </section>
+  <section class="section activity-library-section" aria-labelledby="activity-filter-title">
+    <div class="container">
+      <h2 id="activity-filter-title" class="activity-library-heading">Najděte aktivitu pro svou hodinu</h2>
+      <div class="activity-filters">
+        <label class="activity-search-label" for="activitySearch">Hledat podle názvu nebo popisu</label>
+        <input id="activitySearch" type="search" placeholder="Např. slovní úlohy, psaní, experiment…" autocomplete="off">
+        <div class="activity-filter-row">
+          <label for="subjectFilter">Předmět</label>
+          <select id="subjectFilter" data-filter="subject"><option value="all">Všechny předměty</option><option value="mat">Matematika</option><option value="cj">Čeština</option><option value="aj">Angličtina</option><option value="pv">Přírodní vědy</option><option value="dej">Dějepis</option><option value="obecne">Obecné aktivity</option></select>
+          <label for="levelFilter">Ročník</label>
+          <select id="levelFilter" data-filter="level"><option value="all">Všechny ročníky</option><option value="zs1">1.–5. ročník</option><option value="zs2">6.–9. ročník</option><option value="ss">Střední škola</option></select>
+          <label for="toolFilter">AI nástroj</label>
+          <select id="toolFilter" data-filter="tool"><option value="all">Všechny nástroje</option><option value="chatgpt">ChatGPT</option><option value="gemini">Gemini</option><option value="claude">Claude</option></select>
+          <button type="button" class="btn btn-outline btn-sm" id="resetActivityFilters">Vymazat filtry</button>
         </div>
-    </nav>
-    <div class="mobile-menu">
-        <a href="index.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏠 Domů</a>
-        <a href="matematika.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔢 Matematika</a>
-        <a href="cestina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">📖 Český jazyk</a>
-        <a href="anglictina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🇬🇧 Angličtina</a>
-        <a href="prirodoveda.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔬 Přírodní vědy</a>
-        <a href="dejepis.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏛️ Dějepis</a>
-        <a href="prompty.html" class="nav-link" style="font-size:1rem;padding:14px 16px">✨ Prompty</a>
-        <a href="asistenti.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🤖 Asistenti</a>
-        <a href="aktivity.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🎯 Aktivity</a>
-        <a href="ai.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🧠 AI pro školy</a>
-        <a href="vibe-coding.html" class="nav-link" style="font-size:1rem;padding:14px 16px">💻 Vibe Coding</a>
-        <a href="qr-kod.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔳 QR kód</a>
-    </div>
-
-    <section class="page-hero" style="background:linear-gradient(135deg,#0a0f1e 0%,#001530 100%)">
-        <div class="page-hero-glow"
-            style="background:radial-gradient(ellipse,rgba(52,152,219,0.12) 0%,transparent 70%)"></div>
-        <div class="container">
-            <div class="page-hero-content">
-                <div class="page-hero-icon"
-                    style="background:linear-gradient(135deg,rgba(52,152,219,0.2),rgba(52,152,219,0.05))">🎯</div>
-                <h1 class="page-hero-title">Vybrané <span
-                        style="background:linear-gradient(135deg,#3498db,#9b59b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Aktivity</span>
-                </h1>
-                <p class="page-hero-subtitle">Kurátorovaný výběr AI aktivit pro všechny předměty a ročníky. Filtrujte dle
-                    předmětu, ročníku nebo AI nástroje a najděte scénář, který potřebujete. Další aktivity najdete na předmětových stránkách.</p>
-                <div class="page-hero-stats">
-                    <div class="page-hero-stat"><span>🎯</span><strong>14</strong> vybraných aktivit</div>
-                    <div class="page-hero-stat"><span>📚</span><strong>5</strong> předmětů</div>
-                    <div class="page-hero-stat"><span>🏫</span>ZŠ · SŠ</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <!-- Filters with search -->
-            <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start;margin-bottom:32px">
-                <div class="search-bar" style="flex:1;min-width:240px">
-                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                    <input type="text" class="search-input" id="activitySearch" placeholder="Hledat aktivity..." aria-label="Hledat aktivity">
-                </div>
-            </div>
-            <div style="display:flex;flex-wrap:wrap;gap:24px;margin-bottom:32px">
-                <div>
-                    <div
-                        style="font-size:0.8rem;color:var(--text-muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:.08em">
-                        Předmět</div>
-                    <div class="filter-group" id="subjectFilter">
-                        <button class="filter-chip active" data-filter-type="subject" data-filter="all">Vše</button>
-                        <button class="filter-chip" data-filter-type="subject" data-filter="mat">🔢 Matematika</button>
-                        <button class="filter-chip" data-filter-type="subject" data-filter="cj">📖 Čeština</button>
-                        <button class="filter-chip" data-filter-type="subject" data-filter="aj">🇬🇧 Angličtina</button>
-                        <button class="filter-chip" data-filter-type="subject" data-filter="pv">🔬 Přírodní
-                            vědy</button>
-                        <button class="filter-chip" data-filter-type="subject" data-filter="dej">🏛️ Dějepis</button>
-                        <button class="filter-chip" data-filter-type="subject" data-filter="obecne">🌐 Obecné</button>
-                    </div>
-                </div>
-                <div>
-                    <div
-                        style="font-size:0.8rem;color:var(--text-muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:.08em">
-                        Ročník</div>
-                    <div class="filter-group" id="levelFilter">
-                        <button class="filter-chip active" data-filter-type="level" data-filter="all">Vše</button>
-                        <button class="filter-chip" data-filter-type="level" data-filter="zs1">1.–5.</button>
-                        <button class="filter-chip" data-filter-type="level" data-filter="zs2">6.–9.</button>
-                        <button class="filter-chip" data-filter-type="level" data-filter="ss">SŠ</button>
-                    </div>
-                </div>
-                <div>
-                    <div
-                        style="font-size:0.8rem;color:var(--text-muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:.08em">
-                        AI Nástroj</div>
-                    <div class="filter-group" id="toolFilter">
-                        <button class="filter-chip active" data-filter-type="tool" data-filter="all">Vše</button>
-                        <button class="filter-chip" data-filter-type="tool" data-filter="chatgpt">ChatGPT</button>
-                        <button class="filter-chip" data-filter-type="tool" data-filter="claude">Claude</button>
-                        <button class="filter-chip" data-filter-type="tool" data-filter="gemini">Gemini</button>
-                    </div>
-                </div>
-            </div>
-
-            <p id="activityResults" class="catalog-results-status" aria-live="polite" aria-atomic="true"></p>
-
-            <div class="catalog-role-note">
-                <span class="badge badge-blue">🎯 Hotová aktivita</span>
-                <span><strong>Aktivity</strong> jsou konkrétní scénáře do výuky s časem, ročníkem, organizací práce a doporučeným nástrojem. Tato stránka obsahuje 14 vybraných scénářů; další najdete podle předmětu. Tlačítko „Kopírovat zadání“ zkopíruje prompt připravený pro danou aktivitu.</span>
-                <a href="prompty.html">Hledám univerzální šablonu →</a>
-            </div>
-
-            <!-- All activities grid -->
-            <div class="activity-grid" id="allActivities">
-                <!-- GENERATED:ACTIVITIES:MAIN:START -->
-                    <div class="activity-card reveal" data-subject="mat" data-level="zs2" data-tool="chatgpt">
+        <p id="activityResults" class="activity-results" aria-live="polite" aria-atomic="true">Zobrazeno 44 aktivit</p>
+      </div>
+      <div id="emptyState" class="activity-empty" hidden><h3>Žádné aktivity neodpovídají výběru</h3><p>Zkuste změnit filtry nebo hledaný výraz.</p></div>
+      <div id="allActivities" class="activity-grid" aria-label="Výukové aktivity">
+        <!-- GENERATED:ACTIVITIES:MAIN:START -->
+                    <div class="activity-card reveal" data-subject="mat" data-level="zs2" data-tool="chatgpt" data-activity-id="math-real-life-word-problems" data-recommended="true" data-search="Slovní úlohy z reálného života ChatGPT vygeneruje originální slovní úlohy zasazené do reálných situací blízkých žákům – procenta, zlomky, rovnice a geometrie." data-duration="5 min příprava" data-format="🏫 Třída" data-prompt="Vytvoř 5 slovních úloh z matematiky pro žáky 6.–9. ročníku na téma [TÉMA]. Každou úlohu zasaz do reálné situace a přidej podrobný postup řešení s výsledkem." data-related-prompt="prompt-generator-slovnich-uloh">
                         <div class="activity-card-top">
-                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span class="badge badge-blue">Matematika</span><span class="badge badge-gray">6.–9.</span></div>
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span class="badge badge-blue">Matematika</span><span class="badge badge-gray">6.–9.</span><span class="badge badge-gold">⭐ Doporučeno</span></div>
                             <span style="font-size:1.8rem">🔢</span>
                         </div>
-                        <div class="activity-title">Slovní úlohy z reálného života</div>
+                        <h3 class="activity-title">Slovní úlohy z reálného života</h3>
                         <div class="activity-desc">ChatGPT vygeneruje originální slovní úlohy zasazené do reálných situací blízkých žákům – procenta, zlomky, rovnice a geometrie.</div>
                         <div class="activity-meta"><span class="activity-meta-item">⏱ 5 min příprava</span><span
                                 class="activity-meta-item">🏫 Třída</span></div>
-                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><div class="activity-footer-actions"><a href="prompty.html#prompt-generator-slovnich-uloh" class="activity-template-link btn btn-outline btn-sm">Šablona →</a><button class="copy-btn btn btn-mint btn-sm"
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><div class="activity-footer-actions"><a href="prompty.html#prompt-generator-slovnich-uloh" class="activity-template-link btn btn-outline btn-sm">Šablona →</a><button class="btn btn-outline btn-sm" type="button" data-open-activity="math-real-life-word-problems" aria-haspopup="dialog">Detail</button><button class="copy-btn btn btn-mint btn-sm"
                                 data-copy="Vytvoř 5 slovních úloh z matematiky pro žáky 6.–9. ročníku na téma [TÉMA]. Každou úlohu zasaz do reálné situace a přidej podrobný postup řešení s výsledkem.">📋 Kopírovat</button></div></div>
                     </div>
 
-                    <div class="activity-card reveal" data-subject="mat" data-level="zs2" data-tool="claude">
+                    <div class="activity-card reveal" data-subject="mat" data-level="zs2" data-tool="claude" data-activity-id="math-ai-tutor" data-recommended="true" data-search="AI Matematický Tutor Claude jako trpělivý soukromý tutor – vysvětluje krok za krokem, klade otázky, povzbuzuje a dává nápovědy místo přímých odpovědí." data-duration="15 min aktivita" data-format="👤 Individuální" data-prompt="Jsi trpělivý matematický tutor pro žáka 6.–9. ročníku. Procvičuj se mnou [TÉMA] krok za krokem, vždy polož jednu otázku, čekej na odpověď, dávej nápovědy a neprozrazuj řešení předčasně." data-related-prompt="prompt-napoveda-bez-prozrazeni-vysledku">
                         <div class="activity-card-top">
-                            <div class="activity-badges"><span class="badge badge-purple">Claude</span><span class="badge badge-blue">Matematika</span><span class="badge badge-gray">6.–9.</span></div>
+                            <div class="activity-badges"><span class="badge badge-purple">Claude</span><span class="badge badge-blue">Matematika</span><span class="badge badge-gray">6.–9.</span><span class="badge badge-gold">⭐ Doporučeno</span></div>
                             <span style="font-size:1.8rem">🧑‍🏫</span>
                         </div>
-                        <div class="activity-title">AI Matematický Tutor</div>
+                        <h3 class="activity-title">AI Matematický Tutor</h3>
                         <div class="activity-desc">Claude jako trpělivý soukromý tutor – vysvětluje krok za krokem, klade otázky, povzbuzuje a dává nápovědy místo přímých odpovědí.</div>
                         <div class="activity-meta"><span class="activity-meta-item">⏱ 15 min aktivita</span><span
                                 class="activity-meta-item">👤 Individuální</span></div>
-                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><div class="activity-footer-actions"><a href="prompty.html#prompt-napoveda-bez-prozrazeni-vysledku" class="activity-template-link btn btn-outline btn-sm">Šablona →</a><button class="copy-btn btn btn-mint btn-sm"
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><div class="activity-footer-actions"><a href="prompty.html#prompt-napoveda-bez-prozrazeni-vysledku" class="activity-template-link btn btn-outline btn-sm">Šablona →</a><button class="btn btn-outline btn-sm" type="button" data-open-activity="math-ai-tutor" aria-haspopup="dialog">Detail</button><button class="copy-btn btn btn-mint btn-sm"
                                 data-copy="Jsi trpělivý matematický tutor pro žáka 6.–9. ročníku. Procvičuj se mnou [TÉMA] krok za krokem, vždy polož jednu otázku, čekej na odpověď, dávej nápovědy a neprozrazuj řešení předčasně.">📋 Kopírovat</button></div></div>
                     </div>
 
-                    <div class="activity-card reveal" data-subject="mat" data-level="ss" data-tool="gemini">
+                    <div class="activity-card reveal" data-subject="mat" data-level="ss" data-tool="gemini" data-activity-id="math-data-analysis" data-recommended="true" data-search="Analýza dat a statistika Žáci vloží reálná data a Gemini pomůže s analýzou, tabulkami a interpretací výsledků. Propojení matematiky s reálným světem." data-duration="20 min" data-format="👥 Skupiny" data-prompt="Analyzuj tato data z tabulky: [DATA]. Vytvoř přehled, vypočti základní statistiky, popiš trendy a upozorni na možná zkreslení. Výsledek vysvětli žákům střední školy." data-related-prompt="prompt-statistika-ze-tridnich-dat">
                         <div class="activity-card-top">
-                            <div class="activity-badges"><span class="badge badge-mint">Gemini</span><span class="badge badge-blue">Matematika</span><span class="badge badge-gray">SŠ</span></div>
+                            <div class="activity-badges"><span class="badge badge-mint">Gemini</span><span class="badge badge-blue">Matematika</span><span class="badge badge-gray">SŠ</span><span class="badge badge-gold">⭐ Doporučeno</span></div>
                             <span style="font-size:1.8rem">📊</span>
                         </div>
-                        <div class="activity-title">Analýza dat a statistika</div>
+                        <h3 class="activity-title">Analýza dat a statistika</h3>
                         <div class="activity-desc">Žáci vloží reálná data a Gemini pomůže s analýzou, tabulkami a interpretací výsledků. Propojení matematiky s reálným světem.</div>
                         <div class="activity-meta"><span class="activity-meta-item">⏱ 20 min</span><span
                                 class="activity-meta-item">👥 Skupiny</span></div>
-                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><div class="activity-footer-actions"><a href="prompty.html#prompt-statistika-ze-tridnich-dat" class="activity-template-link btn btn-outline btn-sm">Šablona →</a><button class="copy-btn btn btn-mint btn-sm"
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><div class="activity-footer-actions"><a href="prompty.html#prompt-statistika-ze-tridnich-dat" class="activity-template-link btn btn-outline btn-sm">Šablona →</a><button class="btn btn-outline btn-sm" type="button" data-open-activity="math-data-analysis" aria-haspopup="dialog">Detail</button><button class="copy-btn btn btn-mint btn-sm"
                                 data-copy="Analyzuj tato data z tabulky: [DATA]. Vytvoř přehled, vypočti základní statistiky, popiš trendy a upozorni na možná zkreslení. Výsledek vysvětli žákům střední školy.">📋 Kopírovat</button></div></div>
                     </div>
 
-                    <div class="activity-card reveal" data-subject="cj" data-level="zs2" data-tool="claude">
+                    <div class="activity-card reveal" data-subject="cj" data-level="zs2" data-tool="claude" data-activity-id="czech-essay-workshop" data-recommended="true" data-search="Dílna opravy slohu Vložte slohy žáků do Claude – AI je opraví, navrhne zlepšení stylu, gramatiky a struktury. Šetří hodiny opravování." data-duration="2 min/žák" data-format="📝 Sloh" data-prompt="Oprav slohovou práci žáka [ROČNÍK]. Zkontroluj pravopis, gramatiku, stavbu vět, slovní zásobu a splnění zadání. U každé chyby ukaž opravu a krátké vysvětlení, nakonec přidej 3 tipy na zlepšení. Text: [TEXT]." data-related-prompt="prompt-opravovac-slohu-s-rubrikou">
                         <div class="activity-card-top">
-                            <div class="activity-badges"><span class="badge badge-purple">Claude</span><span class="badge badge-blue">Čeština</span><span class="badge badge-gray">6.–9.</span></div>
+                            <div class="activity-badges"><span class="badge badge-purple">Claude</span><span class="badge badge-blue">Čeština</span><span class="badge badge-gray">6.–9.</span><span class="badge badge-gold">⭐ Doporučeno</span></div>
                             <span style="font-size:1.8rem">✍️</span>
                         </div>
-                        <div class="activity-title">Dílna opravy slohu</div>
+                        <h3 class="activity-title">Dílna opravy slohu</h3>
                         <div class="activity-desc">Vložte slohy žáků do Claude – AI je opraví, navrhne zlepšení stylu, gramatiky a struktury. Šetří hodiny opravování.</div>
                         <div class="activity-meta"><span class="activity-meta-item">⏱ 2 min/žák</span><span
                                 class="activity-meta-item">📝 Sloh</span></div>
-                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><div class="activity-footer-actions"><a href="prompty.html#prompt-opravovac-slohu-s-rubrikou" class="activity-template-link btn btn-outline btn-sm">Šablona →</a><button class="copy-btn btn btn-mint btn-sm"
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><div class="activity-footer-actions"><a href="prompty.html#prompt-opravovac-slohu-s-rubrikou" class="activity-template-link btn btn-outline btn-sm">Šablona →</a><button class="btn btn-outline btn-sm" type="button" data-open-activity="czech-essay-workshop" aria-haspopup="dialog">Detail</button><button class="copy-btn btn btn-mint btn-sm"
                                 data-copy="Oprav slohovou práci žáka [ROČNÍK]. Zkontroluj pravopis, gramatiku, stavbu vět, slovní zásobu a splnění zadání. U každé chyby ukaž opravu a krátké vysvětlení, nakonec přidej 3 tipy na zlepšení. Text: [TEXT].">📋 Kopírovat</button></div></div>
                     </div>
 
-                    <div class="activity-card reveal" data-subject="cj" data-level="zs2" data-tool="chatgpt">
+                    <div class="activity-card reveal" data-subject="cj" data-level="zs2" data-tool="chatgpt" data-activity-id="czech-dictation-activity" data-recommended="true" data-search="Generátor diktátů AI vygeneruje diktáty zaměřené na konkrétní gramatické jevy s klíčem. Každý diktát je nový a originální." data-duration="5 min příprava" data-format="🏫 Třída" data-prompt="Vytvoř diktát pro žáky 6.–9. ročníku na [GRAMATICKÝ JEV], dlouhý přibližně [POČET] slov. Přidej opravný klíč, seznam procvičovaných jevů a krátké vysvětlení pravidel." data-related-prompt="prompt-pravopisna-korektura">
                         <div class="activity-card-top">
-                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span class="badge badge-blue">Čeština</span><span class="badge badge-gray">6.–9.</span></div>
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span class="badge badge-blue">Čeština</span><span class="badge badge-gray">6.–9.</span><span class="badge badge-gold">⭐ Doporučeno</span></div>
                             <span style="font-size:1.8rem">🎧</span>
                         </div>
-                        <div class="activity-title">Generátor diktátů</div>
+                        <h3 class="activity-title">Generátor diktátů</h3>
                         <div class="activity-desc">AI vygeneruje diktáty zaměřené na konkrétní gramatické jevy s klíčem. Každý diktát je nový a originální.</div>
                         <div class="activity-meta"><span class="activity-meta-item">⏱ 5 min příprava</span><span
                                 class="activity-meta-item">🏫 Třída</span></div>
-                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><div class="activity-footer-actions"><a href="prompty.html#prompt-pravopisna-korektura" class="activity-template-link btn btn-outline btn-sm">Příbuzný prompt →</a><button class="copy-btn btn btn-mint btn-sm"
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><div class="activity-footer-actions"><a href="prompty.html#prompt-pravopisna-korektura" class="activity-template-link btn btn-outline btn-sm">Příbuzný prompt →</a><button class="btn btn-outline btn-sm" type="button" data-open-activity="czech-dictation-activity" aria-haspopup="dialog">Detail</button><button class="copy-btn btn btn-mint btn-sm"
                                 data-copy="Vytvoř diktát pro žáky 6.–9. ročníku na [GRAMATICKÝ JEV], dlouhý přibližně [POČET] slov. Přidej opravný klíč, seznam procvičovaných jevů a krátké vysvětlení pravidel.">📋 Kopírovat</button></div></div>
                     </div>
 
-                    <div class="activity-card reveal" data-subject="cj" data-level="ss" data-tool="gemini">
+                    <div class="activity-card reveal" data-subject="cj" data-level="ss" data-tool="gemini" data-activity-id="czech-literary-analysis-class" data-recommended="true" data-search="Rozbor literárního díla ve třídě Gemini provede komplexní literární rozbor – žánr, téma, postavy, kompozici, jazykové prostředky a historický kontext." data-duration="10 min příprava" data-format="👤 Individuální" data-prompt="Proveď literární rozbor díla [NÁZEV] od [AUTOR] pro žáky SŠ. Zahrň žánr, téma, motivy, postavy, kompozici, jazykové prostředky a historický kontext. Výstup strukturu jako přehledné body." data-related-prompt="prompt-literarni-rozbor-dila">
                         <div class="activity-card-top">
-                            <div class="activity-badges"><span class="badge badge-mint">Gemini</span><span class="badge badge-blue">Čeština</span><span class="badge badge-gray">SŠ</span></div>
+                            <div class="activity-badges"><span class="badge badge-mint">Gemini</span><span class="badge badge-blue">Čeština</span><span class="badge badge-gray">SŠ</span><span class="badge badge-gold">⭐ Doporučeno</span></div>
                             <span style="font-size:1.8rem">📚</span>
                         </div>
-                        <div class="activity-title">Rozbor literárního díla ve třídě</div>
+                        <h3 class="activity-title">Rozbor literárního díla ve třídě</h3>
                         <div class="activity-desc">Gemini provede komplexní literární rozbor – žánr, téma, postavy, kompozici, jazykové prostředky a historický kontext.</div>
                         <div class="activity-meta"><span class="activity-meta-item">⏱ 10 min příprava</span><span
                                 class="activity-meta-item">👤 Individuální</span></div>
-                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><div class="activity-footer-actions"><a href="prompty.html#prompt-literarni-rozbor-dila" class="activity-template-link btn btn-outline btn-sm">Šablona →</a><button class="copy-btn btn btn-mint btn-sm"
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><div class="activity-footer-actions"><a href="prompty.html#prompt-literarni-rozbor-dila" class="activity-template-link btn btn-outline btn-sm">Šablona →</a><button class="btn btn-outline btn-sm" type="button" data-open-activity="czech-literary-analysis-class" aria-haspopup="dialog">Detail</button><button class="copy-btn btn btn-mint btn-sm"
                                 data-copy="Proveď literární rozbor díla [NÁZEV] od [AUTOR] pro žáky SŠ. Zahrň žánr, téma, motivy, postavy, kompozici, jazykové prostředky a historický kontext. Výstup strukturu jako přehledné body.">📋 Kopírovat</button></div></div>
                     </div>
 
-                    <div class="activity-card reveal" data-subject="aj" data-level="zs2" data-tool="chatgpt">
+                    <div class="activity-card reveal" data-subject="aj" data-level="zs2" data-tool="chatgpt" data-activity-id="english-conversation-activity" data-recommended="true" data-search="Konverzační aktivita v angličtině Nastavte ChatGPT jako konverzačního partnera na zadané téma a jazykové úrovni – žáci konverzují v angličtině bez strachu." data-duration="15 min" data-format="👤 Individuální" data-prompt="Jsi trpělivý konverzační partner v angličtině pro žáka na úrovni [A2/B1/B2]. Konverzuj se mnou na téma [TOPIC], mluv pouze anglicky, opravuj chyby jemně a pokládej navazující otázky." data-related-prompt="prompt-konverzacni-partner-v-anglictine">
                         <div class="activity-card-top">
-                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span class="badge badge-blue">Angličtina</span><span class="badge badge-gray">6.–9.</span></div>
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span class="badge badge-blue">Angličtina</span><span class="badge badge-gray">6.–9.</span><span class="badge badge-gold">⭐ Doporučeno</span></div>
                             <span style="font-size:1.8rem">💬</span>
                         </div>
-                        <div class="activity-title">Konverzační aktivita v angličtině</div>
+                        <h3 class="activity-title">Konverzační aktivita v angličtině</h3>
                         <div class="activity-desc">Nastavte ChatGPT jako konverzačního partnera na zadané téma a jazykové úrovni – žáci konverzují v angličtině bez strachu.</div>
                         <div class="activity-meta"><span class="activity-meta-item">⏱ 15 min</span><span
                                 class="activity-meta-item">👤 Individuální</span></div>
-                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><div class="activity-footer-actions"><a href="prompty.html#prompt-konverzacni-partner-v-anglictine" class="activity-template-link btn btn-outline btn-sm">Šablona →</a><button class="copy-btn btn btn-mint btn-sm"
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><div class="activity-footer-actions"><a href="prompty.html#prompt-konverzacni-partner-v-anglictine" class="activity-template-link btn btn-outline btn-sm">Šablona →</a><button class="btn btn-outline btn-sm" type="button" data-open-activity="english-conversation-activity" aria-haspopup="dialog">Detail</button><button class="copy-btn btn btn-mint btn-sm"
                                 data-copy="Jsi trpělivý konverzační partner v angličtině pro žáka na úrovni [A2/B1/B2]. Konverzuj se mnou na téma [TOPIC], mluv pouze anglicky, opravuj chyby jemně a pokládej navazující otázky.">📋 Kopírovat</button></div></div>
                     </div>
 
-                    <div class="activity-card reveal" data-subject="aj" data-level="ss" data-tool="claude">
+                    <div class="activity-card reveal" data-subject="aj" data-level="ss" data-tool="claude" data-activity-id="english-essay-feedback" data-recommended="true" data-search="Opravovač anglické eseje Claude opraví anglický text s rubrikou Cambridge Writing: Content, Organization, Grammar, Vocabulary, Style." data-duration="3 min/text" data-format="📝 Sloh" data-prompt="Oprav anglickou esej žáka na úrovni [B1/B2]. Zhodnoť obsah, organizaci, gramatiku, slovní zásobu a styl. Uveď konkrétní opravy, vysvětli je a přidej 3 doporučení pro zlepšení. Text: [TEXT]." data-related-prompt="prompt-opinion-essay">
                         <div class="activity-card-top">
-                            <div class="activity-badges"><span class="badge badge-purple">Claude</span><span class="badge badge-blue">Angličtina</span><span class="badge badge-gray">SŠ</span></div>
+                            <div class="activity-badges"><span class="badge badge-purple">Claude</span><span class="badge badge-blue">Angličtina</span><span class="badge badge-gray">SŠ</span><span class="badge badge-gold">⭐ Doporučeno</span></div>
                             <span style="font-size:1.8rem">✔️</span>
                         </div>
-                        <div class="activity-title">Opravovač anglické eseje</div>
+                        <h3 class="activity-title">Opravovač anglické eseje</h3>
                         <div class="activity-desc">Claude opraví anglický text s rubrikou Cambridge Writing: Content, Organization, Grammar, Vocabulary, Style.</div>
                         <div class="activity-meta"><span class="activity-meta-item">⏱ 3 min/text</span><span
                                 class="activity-meta-item">📝 Sloh</span></div>
-                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><div class="activity-footer-actions"><a href="prompty.html#prompt-opinion-essay" class="activity-template-link btn btn-outline btn-sm">Šablona eseje →</a><button class="copy-btn btn btn-mint btn-sm"
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><div class="activity-footer-actions"><a href="prompty.html#prompt-opinion-essay" class="activity-template-link btn btn-outline btn-sm">Šablona eseje →</a><button class="btn btn-outline btn-sm" type="button" data-open-activity="english-essay-feedback" aria-haspopup="dialog">Detail</button><button class="copy-btn btn btn-mint btn-sm"
                                 data-copy="Oprav anglickou esej žáka na úrovni [B1/B2]. Zhodnoť obsah, organizaci, gramatiku, slovní zásobu a styl. Uveď konkrétní opravy, vysvětli je a přidej 3 doporučení pro zlepšení. Text: [TEXT].">📋 Kopírovat</button></div></div>
                     </div>
 
-                    <div class="activity-card reveal" data-subject="pv" data-level="zs2" data-tool="gemini">
+                    <div class="activity-card reveal" data-subject="pv" data-level="zs2" data-tool="gemini" data-activity-id="science-virtual-lab-simulation" data-recommended="true" data-search="Virtuální laboratorní experiment Gemini jako virtuální laboratorní asistent simuluje průběh experimentu – popisuje kroky, výsledky a závěry bez fyzické laboratoře." data-duration="20 min" data-format="👥 Skupiny" data-prompt="Simuluj laboratorní experiment [NÁZEV] pro žáky [ROČNÍK]. Uveď pomůcky, bezpečnostní pravidla, postup, očekávaná pozorování, vědecké vysvětlení, závěr a 3 kontrolní otázky." data-related-prompt="prompt-plan-laboratorniho-experimentu">
                         <div class="activity-card-top">
-                            <div class="activity-badges"><span class="badge badge-mint">Gemini</span><span class="badge badge-green">Přírodní vědy</span><span class="badge badge-gray">ZŠ</span></div>
+                            <div class="activity-badges"><span class="badge badge-mint">Gemini</span><span class="badge badge-green">Přírodní vědy</span><span class="badge badge-gray">ZŠ</span><span class="badge badge-gold">⭐ Doporučeno</span></div>
                             <span style="font-size:1.8rem">🧬</span>
                         </div>
-                        <div class="activity-title">Virtuální laboratorní experiment</div>
+                        <h3 class="activity-title">Virtuální laboratorní experiment</h3>
                         <div class="activity-desc">Gemini jako virtuální laboratorní asistent simuluje průběh experimentu – popisuje kroky, výsledky a závěry bez fyzické laboratoře.</div>
                         <div class="activity-meta"><span class="activity-meta-item">⏱ 20 min</span><span
                                 class="activity-meta-item">👥 Skupiny</span></div>
-                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><div class="activity-footer-actions"><a href="prompty.html#prompt-plan-laboratorniho-experimentu" class="activity-template-link btn btn-outline btn-sm">Šablona →</a><button class="copy-btn btn btn-mint btn-sm"
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><div class="activity-footer-actions"><a href="prompty.html#prompt-plan-laboratorniho-experimentu" class="activity-template-link btn btn-outline btn-sm">Šablona →</a><button class="btn btn-outline btn-sm" type="button" data-open-activity="science-virtual-lab-simulation" aria-haspopup="dialog">Detail</button><button class="copy-btn btn btn-mint btn-sm"
                                 data-copy="Simuluj laboratorní experiment [NÁZEV] pro žáky [ROČNÍK]. Uveď pomůcky, bezpečnostní pravidla, postup, očekávaná pozorování, vědecké vysvětlení, závěr a 3 kontrolní otázky.">📋 Kopírovat</button></div></div>
                     </div>
 
-                    <div class="activity-card reveal" data-subject="pv" data-level="zs2" data-tool="chatgpt">
+                    <div class="activity-card reveal" data-subject="pv" data-level="zs2" data-tool="chatgpt" data-activity-id="physics-phenomenon-analogies-class" data-recommended="true" data-search="Vysvětlení fyzikálních jevů analogiemi AI vysvětlí složité fyzikální pojmy pomocí analogií ze každodenního života, které žáci ihned pochopí." data-duration="5 min" data-format="🏫 Třída" data-prompt="Vysvětli fyzikální jev [JEV] žákům [ROČNÍK] pomocí 3 analogií z každodenního života. Přidej jednoduchý příklad, upozorni na limity analogií a zakonči 3 otázkami ověřujícími porozumění." data-related-prompt="prompt-vedecky-text-pro-zaky">
                         <div class="activity-card-top">
-                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span class="badge badge-green">Přírodní vědy</span><span class="badge badge-gray">ZŠ</span></div>
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span class="badge badge-green">Přírodní vědy</span><span class="badge badge-gray">ZŠ</span><span class="badge badge-gold">⭐ Doporučeno</span></div>
                             <span style="font-size:1.8rem">⚡</span>
                         </div>
-                        <div class="activity-title">Vysvětlení fyzikálních jevů analogiemi</div>
+                        <h3 class="activity-title">Vysvětlení fyzikálních jevů analogiemi</h3>
                         <div class="activity-desc">AI vysvětlí složité fyzikální pojmy pomocí analogií ze každodenního života, které žáci ihned pochopí.</div>
                         <div class="activity-meta"><span class="activity-meta-item">⏱ 5 min</span><span
                                 class="activity-meta-item">🏫 Třída</span></div>
-                        <div class="activity-footer"><span class="badge badge-gold">Oblíbené</span><div class="activity-footer-actions"><a href="prompty.html#prompt-vedecky-text-pro-zaky" class="activity-template-link btn btn-outline btn-sm">Výukový text →</a><button class="copy-btn btn btn-mint btn-sm"
+                        <div class="activity-footer"><span class="badge badge-gold">Oblíbené</span><div class="activity-footer-actions"><a href="prompty.html#prompt-vedecky-text-pro-zaky" class="activity-template-link btn btn-outline btn-sm">Výukový text →</a><button class="btn btn-outline btn-sm" type="button" data-open-activity="physics-phenomenon-analogies-class" aria-haspopup="dialog">Detail</button><button class="copy-btn btn btn-mint btn-sm"
                                 data-copy="Vysvětli fyzikální jev [JEV] žákům [ROČNÍK] pomocí 3 analogií z každodenního života. Přidej jednoduchý příklad, upozorni na limity analogií a zakonči 3 otázkami ověřujícími porozumění.">📋 Kopírovat</button></div></div>
                     </div>
 
-                    <div class="activity-card reveal" data-subject="dej" data-level="zs2" data-tool="claude">
+                    <div class="activity-card reveal" data-subject="dej" data-level="zs2" data-tool="claude" data-activity-id="history-roleplay-classroom" data-recommended="true" data-search="Roleplay historické osobnosti Claude hraje roli historické osobnosti – žáci mu mohou klást otázky jako novinář nebo spolučasník. Rozvíjí empatii a historické myšlení." data-duration="20 min" data-format="🏫 Třída" data-prompt="Hraj roli historické osobnosti [OSOBNOST] z období [OBDOBÍ]. Odpovídej na otázky žáků věcně a dobově přiměřeně, přiznej nejistotu a na konci uveď, které informace je třeba ověřit ve zdroji." data-related-prompt="prompt-historicka-osobnost">
                         <div class="activity-card-top">
-                            <div class="activity-badges"><span class="badge badge-purple">Claude</span><span class="badge badge-purple">Dějepis</span><span class="badge badge-gray">6.–9.</span></div>
+                            <div class="activity-badges"><span class="badge badge-purple">Claude</span><span class="badge badge-purple">Dějepis</span><span class="badge badge-gray">6.–9.</span><span class="badge badge-gold">⭐ Doporučeno</span></div>
                             <span style="font-size:1.8rem">🎭</span>
                         </div>
-                        <div class="activity-title">Roleplay historické osobnosti</div>
+                        <h3 class="activity-title">Roleplay historické osobnosti</h3>
                         <div class="activity-desc">Claude hraje roli historické osobnosti – žáci mu mohou klást otázky jako novinář nebo spolučasník. Rozvíjí empatii a historické myšlení.</div>
                         <div class="activity-meta"><span class="activity-meta-item">⏱ 20 min</span><span
                                 class="activity-meta-item">🏫 Třída</span></div>
-                        <div class="activity-footer"><span class="badge badge-gold">Oblíbené</span><div class="activity-footer-actions"><a href="prompty.html#prompt-historicka-osobnost" class="activity-template-link btn btn-outline btn-sm">Šablona →</a><button class="copy-btn btn btn-mint btn-sm"
+                        <div class="activity-footer"><span class="badge badge-gold">Oblíbené</span><div class="activity-footer-actions"><a href="prompty.html#prompt-historicka-osobnost" class="activity-template-link btn btn-outline btn-sm">Šablona →</a><button class="btn btn-outline btn-sm" type="button" data-open-activity="history-roleplay-classroom" aria-haspopup="dialog">Detail</button><button class="copy-btn btn btn-mint btn-sm"
                                 data-copy="Hraj roli historické osobnosti [OSOBNOST] z období [OBDOBÍ]. Odpovídej na otázky žáků věcně a dobově přiměřeně, přiznej nejistotu a na konci uveď, které informace je třeba ověřit ve zdroji.">📋 Kopírovat</button></div></div>
                     </div>
 
-                    <div class="activity-card reveal" data-subject="dej" data-level="zs2" data-tool="chatgpt">
+                    <div class="activity-card reveal" data-subject="dej" data-level="zs2" data-tool="chatgpt" data-activity-id="history-class-timeline" data-recommended="true" data-search="Třídní časová osa AI vytvoří přehlednou chronologickou osu klíčových událostí pro libovolné historické období s příčinami a důsledky." data-duration="5 min příprava" data-format="🏫 Třída" data-prompt="Vytvoř přehlednou chronologickou osu tématu [TÉMA] pro žáky [ROČNÍK]. U každé události uveď datum nebo období, stručný popis, příčinu, důsledek a zdroj k ověření." data-related-prompt="prompt-casova-osa-udalosti">
                         <div class="activity-card-top">
-                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span class="badge badge-purple">Dějepis</span><span class="badge badge-gray">ZŠ/SŠ</span></div>
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span class="badge badge-purple">Dějepis</span><span class="badge badge-gray">ZŠ/SŠ</span><span class="badge badge-gold">⭐ Doporučeno</span></div>
                             <span style="font-size:1.8rem">📅</span>
                         </div>
-                        <div class="activity-title">Třídní časová osa</div>
+                        <h3 class="activity-title">Třídní časová osa</h3>
                         <div class="activity-desc">AI vytvoří přehlednou chronologickou osu klíčových událostí pro libovolné historické období s příčinami a důsledky.</div>
                         <div class="activity-meta"><span class="activity-meta-item">⏱ 5 min příprava</span><span
                                 class="activity-meta-item">🏫 Třída</span></div>
-                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><div class="activity-footer-actions"><a href="prompty.html#prompt-casova-osa-udalosti" class="activity-template-link btn btn-outline btn-sm">Šablona →</a><button class="copy-btn btn btn-mint btn-sm"
+                        <div class="activity-footer"><span class="badge badge-green">Připraveno</span><div class="activity-footer-actions"><a href="prompty.html#prompt-casova-osa-udalosti" class="activity-template-link btn btn-outline btn-sm">Šablona →</a><button class="btn btn-outline btn-sm" type="button" data-open-activity="history-class-timeline" aria-haspopup="dialog">Detail</button><button class="copy-btn btn btn-mint btn-sm"
                                 data-copy="Vytvoř přehlednou chronologickou osu tématu [TÉMA] pro žáky [ROČNÍK]. U každé události uveď datum nebo období, stručný popis, příčinu, důsledek a zdroj k ověření.">📋 Kopírovat</button></div></div>
                     </div>
 
-                    <div class="activity-card reveal" data-subject="obecne" data-level="zs2 ss" data-tool="chatgpt" style="border-color:rgba(245,166,35,0.3);background:rgba(245,166,35,0.03)">
+                    <div class="activity-card reveal" data-subject="obecne" data-level="zs2 ss" data-tool="chatgpt" data-activity-id="general-prompt-power-up-relay" data-recommended="true" data-search="Prompt Power-Up Relay Žáci v týmech postupně vylepšují slabý AI prompt – přidávají roli, kontext, formát a omezení. Srovnají výstupy kola 0 a finále a hlasují o nejlepším výsledku." data-duration="12–20 min" data-format="👥 Týmy 2–4" data-prompt="Vezmi tento základní prompt: [PROMPT]. Vytvoř 4 postupně lepší verze přidáním role, kontextu, formátu a omezení. U každé verze stručně vysvětli, co se zlepšilo, a na konci přidej pravidlo pro ověření výstupu." style="border-color:rgba(245,166,35,0.3);background:rgba(245,166,35,0.03)">
                         <div class="activity-card-top">
-                            <div class="activity-badges"><span class="badge badge-gold">⚡ Icebreaker</span><span class="badge badge-gray">6.–9. · SŠ</span><span class="badge badge-purple">Prompt skills</span></div>
+                            <div class="activity-badges"><span class="badge badge-green">Obecné aktivity</span><span class="badge badge-gold">⚡ Icebreaker</span><span class="badge badge-gray">6.–9. · SŠ</span><span class="badge badge-purple">Prompt skills</span></div>
                             <span style="font-size:1.8rem">🚀</span>
                         </div>
-                        <div class="activity-title">Prompt Power-Up Relay</div>
+                        <h3 class="activity-title">Prompt Power-Up Relay</h3>
                         <div class="activity-desc">Žáci v týmech postupně vylepšují slabý AI prompt – přidávají roli, kontext, formát a omezení. Srovnají výstupy kola 0 a finále a hlasují o nejlepším výsledku.</div>
                         <div class="activity-meta"><span class="activity-meta-item">⏱ 12–20 min</span><span
                                 class="activity-meta-item">👥 Týmy 2–4</span><span class="activity-meta-item">✏️ 2 min příprava</span></div>
-                        <div class="activity-footer"><span class="badge badge-gold">⭐ Doporučeno</span><div class="activity-footer-actions"><button class="btn btn-primary btn-sm" onclick="document.getElementById(&quot;modalPowerUpRelay&quot;).classList.add(&#39;open&#39;)">Zobrazit detail
-                                →</button><button class="copy-btn btn btn-mint btn-sm"
+                        <div class="activity-footer"><span class="badge badge-gold">⭐ Doporučeno</span><div class="activity-footer-actions"><button class="btn btn-primary btn-sm" type="button" data-modal-target="modalPowerUpRelay" aria-haspopup="dialog">Zobrazit detail →</button><button class="copy-btn btn btn-mint btn-sm"
                                 data-copy="Vezmi tento základní prompt: [PROMPT]. Vytvoř 4 postupně lepší verze přidáním role, kontextu, formátu a omezení. U každé verze stručně vysvětli, co se zlepšilo, a na konci přidej pravidlo pro ověření výstupu.">📋 Kopírovat</button></div></div>
                     </div>
 
-                    <div class="activity-card reveal" data-subject="obecne" data-level="zs2" data-tool="chatgpt" style="border-color:rgba(52,152,219,0.3);background:rgba(52,152,219,0.03)">
+                    <div class="activity-card reveal" data-subject="obecne" data-level="zs2" data-tool="chatgpt" data-activity-id="general-fact-or-fiction" data-recommended="true" data-search="AI Fakt nebo Finta Týmy použijí AI k vytvoření tří tvrzení (dvě pravdy a lež). Ostatní týmy fungují jako ověřovací detektivové a odhalují nepravdivé tvrzení pomocí důkazů." data-duration="10–18 min" data-format="👥 Týmy 2–4" data-prompt="Vytvoř 3 tvrzení o tématu [TÉMA] pro žáky 6.–8. ročníku: dvě tvrzení pravdivá a jedno uvěřitelně nepravdivé. Každé napiš jednou větou. Přidej klíč odpovědí A/B/C, vysvětlení lži a zdroj, podle kterého lze tvrzení ověřit." style="border-color:rgba(52,152,219,0.3);background:rgba(52,152,219,0.03)">
                         <div class="activity-card-top">
-                            <div class="activity-badges"><span class="badge badge-blue">🎮 AI hra</span><span class="badge badge-gray">6.–9.</span><span class="badge badge-purple">Mediální gramotnost</span></div>
+                            <div class="activity-badges"><span class="badge badge-green">Obecné aktivity</span><span class="badge badge-blue">🎮 AI hra</span><span class="badge badge-gray">6.–9.</span><span class="badge badge-purple">Mediální gramotnost</span></div>
                             <span style="font-size:1.8rem">🔍</span>
                         </div>
-                        <div class="activity-title">AI Fakt nebo Finta</div>
+                        <h3 class="activity-title">AI Fakt nebo Finta</h3>
                         <div class="activity-desc">Týmy použijí AI k vytvoření tří tvrzení (dvě pravdy a lež). Ostatní týmy fungují jako ověřovací detektivové a odhalují nepravdivé tvrzení pomocí důkazů.</div>
                         <div class="activity-meta"><span class="activity-meta-item">⏱ 10–18 min</span><span
                                 class="activity-meta-item">👥 Týmy 2–4</span><span class="activity-meta-item">✏️ 2 min příprava</span></div>
-                        <div class="activity-footer"><span class="badge badge-gold">⭐ Doporučeno</span><div class="activity-footer-actions"><button class="btn btn-primary btn-sm" onclick="document.getElementById(&quot;modalFaktFinta&quot;).classList.add(&#39;open&#39;)">Zobrazit detail
-                                →</button><button class="copy-btn btn btn-mint btn-sm"
+                        <div class="activity-footer"><span class="badge badge-gold">⭐ Doporučeno</span><div class="activity-footer-actions"><button class="btn btn-primary btn-sm" type="button" data-modal-target="modalFaktFinta" aria-haspopup="dialog">Zobrazit detail →</button><button class="copy-btn btn btn-mint btn-sm"
                                 data-copy="Vytvoř 3 tvrzení o tématu [TÉMA] pro žáky 6.–8. ročníku: dvě tvrzení pravdivá a jedno uvěřitelně nepravdivé. Každé napiš jednou větou. Přidej klíč odpovědí A/B/C, vysvětlení lži a zdroj, podle kterého lze tvrzení ověřit.">📋 Kopírovat</button></div></div>
                     </div>
+
+                    <div class="activity-card reveal" data-subject="mat" data-level="zs1" data-activity-id="math-word-problem-generator" data-search="Generátor slovních úloh AI vygeneruje sadu slovních úloh na téma přizpůsobených věku žáků s realistickými kontexty a správnými řešeními." data-tool="chatgpt" data-duration="10 min" data-format="👥 Celá třída" data-prompt="Jsi zkušený učitel matematiky. Vygeneruj 10 slovních úloh na téma [TÉMA] pro žáky [ROČNÍK]. Každá úloha musí mít realistický kontext. Uveď správné řešení s postupem." data-modal-title="Generátor slovních úloh" data-intro="Zadejte ChatGPT tento prompt a upravte hodnoty v závorkách:" data-subject="mat">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span class="badge badge-blue">Matematika</span><span
+                                    class="badge badge-gray">1.–5. ročník</span></div>
+                            <span style="font-size:1.8rem">📝</span>
+                        </div>
+                        <h3 class="activity-title">Generátor slovních úloh</h3>
+                        <div class="activity-desc">AI vygeneruje sadu slovních úloh na téma přizpůsobených věku žáků s realistickými kontexty a správnými řešeními.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 10 min</span><span
+                                class="activity-meta-item">👥 Celá třída</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="math-word-problem-generator" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="Jsi zkušený učitel matematiky. Vygeneruj 10 slovních úloh na téma [TÉMA] pro žáky [ROČNÍK]. Každá úloha musí mít realistický kontext. Uveď správné řešení s postupem.">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-subject="mat" data-level="zs2" data-activity-id="math-step-by-step-guide" data-search="Krok-za-krokem průvodce Gemini vysvětlí libovolný matematický postup srozumitelně s pojmenováním každého kroku, příklady a mnemotechnickými pomůckami." data-tool="gemini" data-duration="5 min" data-format="👤 Individuální" data-prompt="Vysvětli postup řešení [MATEMATICKÝ PROBLÉM] pro žáky [ROČNÍK] krok za krokem. Každý krok pojmenuj, vysvětli proč ho děláme a uveď příklad. Na konci přidej tip jak si postup zapamatovat." data-modal-title="Krok-za-krokem průvodce" data-intro="" data-subject="mat">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-mint">Gemini</span><span class="badge badge-blue">Matematika</span><span
+                                    class="badge badge-gray">6.–9. ročník</span></div>
+                            <span style="font-size:1.8rem">📐</span>
+                        </div>
+                        <h3 class="activity-title">Krok-za-krokem průvodce</h3>
+                        <div class="activity-desc">Gemini vysvětlí libovolný matematický postup srozumitelně s pojmenováním každého kroku, příklady a mnemotechnickými pomůckami.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 5 min</span><span
+                                class="activity-meta-item">👤 Individuální</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="math-step-by-step-guide" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="Vysvětli postup řešení [MATEMATICKÝ PROBLÉM] pro žáky [ROČNÍK] krok za krokem. Každý krok pojmenuj, vysvětli proč ho děláme a uveď příklad. Na konci přidej tip jak si postup zapamatovat.">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-subject="mat" data-level="ss" data-activity-id="math-test-paper-generator" data-search="Tvorba testů a písemek Claude vytvoří kompletní písemné práce s bodovým hodnocením, různými typy úloh a vzorovou odpovědí i bodovacím klíčem." data-tool="claude" data-duration="3 min" data-format="🏫 Třída" data-prompt="Vytvoř písemnou práci z matematiky pro [ROČNÍK] na téma [TÉMA]. Celkem [POČET] bodů. Přidej: vzorové řešení, bodovací klíč, hodnotící škálu (1–5)." data-modal-title="Tvorba testů" data-intro="" data-subject="mat">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-purple">Claude</span><span class="badge badge-blue">Matematika</span><span
+                                    class="badge badge-gray">SŠ</span></div>
+                            <span style="font-size:1.8rem">📋</span>
+                        </div>
+                        <h3 class="activity-title">Tvorba testů a písemek</h3>
+                        <div class="activity-desc">Claude vytvoří kompletní písemné práce s bodovým hodnocením, různými typy úloh a vzorovou odpovědí i bodovacím klíčem.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 3 min</span><span
+                                class="activity-meta-item">🏫 Třída</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="math-test-paper-generator" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="Vytvoř písemnou práci z matematiky pro [ROČNÍK] na téma [TÉMA]. Celkem [POČET] bodů. Přidej: vzorové řešení, bodovací klíč, hodnotící škálu (1–5).">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-subject="mat" data-level="zs2" data-activity-id="math-differentiated-problems" data-search="Diferenciace úloh dle žáka Zadejte standardní úlohu a AI vygeneruje 3 verze: pro podprůměrné, průměrné a nadprůměrné žáky." data-tool="chatgpt" data-duration="8 min" data-format="👥 Skupiny" data-prompt="Vezmi tuto matematickou úlohu: [ÚLOHA]. Přepracuj ji do 3 verzí: 1) Lehká – pro žáky ve SPO, 2) Standardní – původní, 3) Rozšiřující – pro nadané žáky." data-modal-title="Diferenciace úloh" data-intro="" data-subject="mat">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span class="badge badge-blue">Matematika</span><span
+                                    class="badge badge-gray">6.–9. ročník</span></div>
+                            <span style="font-size:1.8rem">🎯</span>
+                        </div>
+                        <h3 class="activity-title">Diferenciace úloh dle žáka</h3>
+                        <div class="activity-desc">Zadejte standardní úlohu a AI vygeneruje 3 verze: pro podprůměrné, průměrné a nadprůměrné žáky.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 8 min</span><span
+                                class="activity-meta-item">👥 Skupiny</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="math-differentiated-problems" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="Vezmi tuto matematickou úlohu: [ÚLOHA]. Přepracuj ji do 3 verzí: 1) Lehká – pro žáky ve SPO, 2) Standardní – původní, 3) Rozšiřující – pro nadané žáky.">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-subject="mat" data-level="zs1" data-activity-id="math-story-problem-game" data-search="Matematická hra – příběhové úlohy Gemini vytvoří mini-příběh, ve kterém žáci musí vyřešit matematické problémy, aby postoupili dál v příběhu." data-tool="gemini" data-duration="15 min" data-format="👥 Skupiny" data-prompt="Vytvoř matematickou hru pro žáky [ROČNÍK] na téma [TÉMA]. Napiš krátký příběh rozdělený do 5 kroků. V každém kroku přidej matematickou úlohu přiměřenou věku, správné řešení a podmínku pro pokračování. Zachovej motivující tón a nabídni práci ve skupinách." data-modal-title="Matematická hra – příběhové úlohy" data-intro="" data-subject="mat">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-mint">Gemini</span><span class="badge badge-blue">Matematika</span><span
+                                    class="badge badge-gray">1.–5. ročník</span></div>
+                            <span style="font-size:1.8rem">🎮</span>
+                        </div>
+                        <h3 class="activity-title">Matematická hra – příběhové úlohy</h3>
+                        <div class="activity-desc">Gemini vytvoří mini-příběh, ve kterém žáci musí vyřešit matematické problémy, aby postoupili dál v příběhu.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 15 min</span><span
+                                class="activity-meta-item">👥 Skupiny</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-gold">Oblíbené</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="math-story-problem-game" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="Vytvoř matematickou hru pro žáky [ROČNÍK] na téma [TÉMA]. Napiš krátký příběh rozdělený do 5 kroků. V každém kroku přidej matematickou úlohu přiměřenou věku, správné řešení a podmínku pro pokračování. Zachovej motivující tón a nabídni práci ve skupinách.">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-subject="mat" data-level="ss" data-activity-id="math-statistics-analysis" data-search="Statistika a analýza dat AI pomůže žákům interpretovat datové sady, vysvětlí statistické pojmy a navede je správnou interpretací výsledků." data-tool="chatgpt" data-duration="20 min" data-format="👤 Individuální" data-prompt="Analyzuj datovou sadu [DATA] pro žáky střední školy. Vytvoř přehled tabulky, vypočti základní statistiky, popiš hlavní trendy a odlehlé hodnoty, vysvětli statistické pojmy jednoduchým jazykem a upozorni na možné chyby nebo zkreslení v interpretaci." data-modal-title="Statistika a analýza dat" data-intro="" data-subject="mat">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span class="badge badge-blue">Matematika</span><span
+                                    class="badge badge-gray">SŠ</span></div>
+                            <span style="font-size:1.8rem">📊</span>
+                        </div>
+                        <h3 class="activity-title">Statistika a analýza dat</h3>
+                        <div class="activity-desc">AI pomůže žákům interpretovat datové sady, vysvětlí statistické pojmy a navede je správnou interpretací výsledků.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 20 min</span><span
+                                class="activity-meta-item">👤 Individuální</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="math-statistics-analysis" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="Analyzuj datovou sadu [DATA] pro žáky střední školy. Vytvoř přehled tabulky, vypočti základní statistiky, popiš hlavní trendy a odlehlé hodnoty, vysvětli statistické pojmy jednoduchým jazykem a upozorni na možné chyby nebo zkreslení v interpretaci.">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-subject="cj" data-level="zs2" data-activity-id="czech-essay-feedback" data-search="Opravovač slohových prací Vložte slohy žáků do Claude – AI je opraví, navrhne zlepšení stylu, gramatiky a struktury a přidá konstruktivní zpětnou vazbu." data-tool="claude" data-duration="2 min/žák" data-format="📝 Sloh" data-prompt="Oprav tuto slohovou práci žáka [ROČNÍK]. Zaměř se na: 1) gramatiku a pravopis, 2) stavbu vět a odstavců, 3) vhodnost slovní zásoby, 4) splnění zadání. Pro každou chybu uveď správnou variantu a stručné vysvětlení. Na závěr napiš celkové hodnocení a 3 tipy na zlepšení. Sloh: [TEXT SLOHU]" data-modal-title="Opravovač slohových prací" data-intro="" data-subject="cj">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-purple">Claude</span><span class="badge badge-blue">Čeština</span><span
+                                    class="badge badge-gray">6.–9. ročník</span></div>
+                            <span style="font-size:1.8rem">✍️</span>
+                        </div>
+                        <h3 class="activity-title">Opravovač slohových prací</h3>
+                        <div class="activity-desc">Vložte slohy žáků do Claude – AI je opraví, navrhne zlepšení stylu, gramatiky a struktury a přidá konstruktivní zpětnou vazbu.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 2 min/žák</span><span
+                                class="activity-meta-item">📝 Sloh</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="czech-essay-feedback" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="Oprav tuto slohovou práci žáka [ROČNÍK]. Zaměř se na: 1) gramatiku a pravopis, 2) stavbu vět a odstavců, 3) vhodnost slovní zásoby, 4) splnění zadání. Pro každou chybu uveď správnou variantu a stručné vysvětlení. Na závěr napiš celkové hodnocení a 3 tipy na zlepšení. Sloh: [TEXT SLOHU]">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-subject="cj" data-level="zs2" data-activity-id="czech-dictation-generator" data-search="Generátor diktátů AI vygeneruje diktáty zaměřené na konkrétní gramatické jevy s různou úrovní obtížnosti a klíčem." data-tool="chatgpt" data-duration="5 min příprava" data-format="🏫 Třída" data-prompt="Vytvoř diktát pro žáky [ROČNÍK] ZŠ zaměřený na [GRAMATICKÝ JEV, např. vyjmenovaná slova / psaní i/y / shoda přísudku s podmětem]. Délka: cca [POČET] slov. Přidej: opravný klíč a seznam procvičovaných jevů s vysvětlením pravidla." data-modal-title="Generátor diktátů" data-intro="" data-subject="cj">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span class="badge badge-blue">Čeština</span><span
+                                    class="badge badge-gray">6.–9. ročník</span></div>
+                            <span style="font-size:1.8rem">🎧</span>
+                        </div>
+                        <h3 class="activity-title">Generátor diktátů</h3>
+                        <div class="activity-desc">AI vygeneruje diktáty zaměřené na konkrétní gramatické jevy s různou úrovní obtížnosti a klíčem.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 5 min příprava</span><span
+                                class="activity-meta-item">🏫 Třída</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="czech-dictation-generator" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="Vytvoř diktát pro žáky [ROČNÍK] ZŠ zaměřený na [GRAMATICKÝ JEV, např. vyjmenovaná slova / psaní i/y / shoda přísudku s podmětem]. Délka: cca [POČET] slov. Přidej: opravný klíč a seznam procvičovaných jevů s vysvětlením pravidla.">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-subject="cj" data-level="ss" data-activity-id="czech-literary-analysis" data-search="Literární rozbor díla Gemini provede komplexní literární rozbor díla – žánr, téma, postavy, kompozici, jazykové prostředky a historický kontext." data-tool="gemini" data-duration="10 min příprava" data-format="👤 Individuální" data-prompt="Proveď literární rozbor díla „[NÁZEV]“ od [AUTOR]. Zahrň: žánr a literární druh, téma a hlavní myšlenky, charakteristiku hlavních postav, kompozici a stavbu díla, jazykové prostředky, historický a společenský kontext. Odpovědi strukturuj jako přehledné body vhodné pro přípravu žáků SŠ." data-modal-title="Literární rozbor díla" data-intro="" data-subject="cj">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-mint">Gemini</span><span class="badge badge-blue">Čeština</span><span
+                                    class="badge badge-gray">SŠ</span></div>
+                            <span style="font-size:1.8rem">📚</span>
+                        </div>
+                        <h3 class="activity-title">Literární rozbor díla</h3>
+                        <div class="activity-desc">Gemini provede komplexní literární rozbor díla – žánr, téma, postavy, kompozici, jazykové prostředky a historický kontext.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 10 min příprava</span><span
+                                class="activity-meta-item">👤 Individuální</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="czech-literary-analysis" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="Proveď literární rozbor díla „[NÁZEV]“ od [AUTOR]. Zahrň: žánr a literární druh, téma a hlavní myšlenky, charakteristiku hlavních postav, kompozici a stavbu díla, jazykové prostředky, historický a společenský kontext. Odpovědi strukturuj jako přehledné body vhodné pro přípravu žáků SŠ.">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-subject="cj" data-level="zs1" data-activity-id="czech-spelling-word-exercises" data-search="Cvičení vyjmenovaných slov AI vygeneruje kreativní cvičení a příběhy procvičující vyjmenovaná slova zábavnou formou pro mladší žáky." data-tool="chatgpt" data-duration="5 min příprava" data-format="🏫 Třída" data-prompt="Vytvoř kreativní cvičení pro žáky 1.–5. ročníku na téma vyjmenovaná slova [ŘADA]. Zařaď krátký příběh, 8 úloh s různými typy doplňování a výběru, okamžitou zpětnou vazbu a správné řešení s jednoduchým vysvětlením." data-modal-title="Cvičení vyjmenovaných slov" data-intro="" data-subject="cj">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span class="badge badge-blue">Čeština</span><span
+                                    class="badge badge-gray">1.–5. ročník</span></div>
+                            <span style="font-size:1.8rem">🔤</span>
+                        </div>
+                        <h3 class="activity-title">Cvičení vyjmenovaných slov</h3>
+                        <div class="activity-desc">AI vygeneruje kreativní cvičení a příběhy procvičující vyjmenovaná slova zábavnou formou pro mladší žáky.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 5 min příprava</span><span
+                                class="activity-meta-item">🏫 Třída</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-gold">Oblíbené</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="czech-spelling-word-exercises" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="Vytvoř kreativní cvičení pro žáky 1.–5. ročníku na téma vyjmenovaná slova [ŘADA]. Zařaď krátký příběh, 8 úloh s různými typy doplňování a výběru, okamžitou zpětnou vazbu a správné řešení s jednoduchým vysvětlením.">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-subject="cj" data-level="ss" data-activity-id="czech-matura-oral-exam" data-search="Příprava na maturitní ústní zkoušku Claude simuluje maturitní ústní zkoušku – klade otázky k literárnímu dílu a hodnotí odpovědi žáka s radami na zlepšení." data-tool="claude" data-duration="20 min aktivita" data-format="👤 Individuální" data-prompt="Simuluj maturitní ústní zkoušku z literatury pro dílo [NÁZEV] od [AUTOR]. Ptej se vždy jen na jednu otázku, počkej na odpověď, ohodnoť její věcnost a úplnost, vysvětli, co chybí, a nabídni jednu konkrétní radu ke zlepšení." data-modal-title="Příprava na maturitní ústní zkoušku" data-intro="" data-subject="cj">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-purple">Claude</span><span class="badge badge-blue">Čeština</span><span
+                                    class="badge badge-gray">SŠ</span></div>
+                            <span style="font-size:1.8rem">🗣️</span>
+                        </div>
+                        <h3 class="activity-title">Příprava na maturitní ústní zkoušku</h3>
+                        <div class="activity-desc">Claude simuluje maturitní ústní zkoušku – klade otázky k literárnímu dílu a hodnotí odpovědi žáka s radami na zlepšení.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 20 min aktivita</span><span
+                                class="activity-meta-item">👤 Individuální</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="czech-matura-oral-exam" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="Simuluj maturitní ústní zkoušku z literatury pro dílo [NÁZEV] od [AUTOR]. Ptej se vždy jen na jednu otázku, počkej na odpověď, ohodnoť její věcnost a úplnost, vysvětli, co chybí, a nabídni jednu konkrétní radu ke zlepšení.">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-subject="cj" data-level="zs2" data-activity-id="czech-writing-form-guide" data-search="Asistent pro tvorbu slohových útvarů Žáci dostávají krok-za-krokem průvodce pro psaní různých slohových útvarů – líčení, popis, vypravování, charakteristika." data-tool="chatgpt" data-duration="15 min aktivita" data-format="👤 Individuální" data-prompt="Proveď žáka krok za krokem tvorbou slohového útvaru [ÚTVAR] na téma [TÉMA]. Nejprve vysvětli strukturu, potom navrhni osnovu a užitečná jazyková spojení, polož otázky k vlastnímu nápadu a nakonec pomoz upravit text. Nevytvářej celý text za žáka." data-modal-title="Asistent pro tvorbu slohových útvarů" data-intro="" data-subject="cj">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span class="badge badge-blue">Čeština</span><span
+                                    class="badge badge-gray">6.–9. ročník</span></div>
+                            <span style="font-size:1.8rem">📝</span>
+                        </div>
+                        <h3 class="activity-title">Asistent pro tvorbu slohových útvarů</h3>
+                        <div class="activity-desc">Žáci dostávají krok-za-krokem průvodce pro psaní různých slohových útvarů – líčení, popis, vypravování, charakteristika.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 15 min aktivita</span><span
+                                class="activity-meta-item">👤 Individuální</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="czech-writing-form-guide" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="Proveď žáka krok za krokem tvorbou slohového útvaru [ÚTVAR] na téma [TÉMA]. Nejprve vysvětli strukturu, potom navrhni osnovu a užitečná jazyková spojení, polož otázky k vlastnímu nápadu a nakonec pomoz upravit text. Nevytvářej celý text za žáka.">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-subject="aj" data-level="zs2" data-activity-id="english-conversation-partner" data-search="AI konverzační partner Nastavte ChatGPT jako bezpečného konverzačního partnera na zadané téma a jazykové úrovni – žáci konverzují v angličtině bez strachu ze selhání." data-tool="chatgpt" data-duration="15 min aktivita" data-format="👤 Individuální" data-prompt="You are a friendly English conversation partner for a Czech student at [CEFR level] level. Speak only in English. The topic is: [TOPIC]. Start the conversation naturally, ask follow-up questions, gently correct grammar mistakes by repeating the corrected sentence, and encourage the student. If they don&#39;t understand, rephrase simply. Keep sentences short and clear." data-modal-title="AI konverzační partner" data-intro="" data-subject="aj">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span class="badge badge-blue">Angličtina</span><span
+                                    class="badge badge-gray">6.–9. ročník</span></div>
+                            <span style="font-size:1.8rem">💬</span>
+                        </div>
+                        <h3 class="activity-title">AI konverzační partner</h3>
+                        <div class="activity-desc">Nastavte ChatGPT jako bezpečného konverzačního partnera na zadané téma a jazykové úrovni – žáci konverzují v angličtině bez strachu ze selhání.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 15 min aktivita</span><span
+                                class="activity-meta-item">👤 Individuální</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="english-conversation-partner" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="You are a friendly English conversation partner for a Czech student at [CEFR level] level. Speak only in English. The topic is: [TOPIC]. Start the conversation naturally, ask follow-up questions, gently correct grammar mistakes by repeating the corrected sentence, and encourage the student. If they don&#39;t understand, rephrase simply. Keep sentences short and clear.">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-subject="aj" data-level="ss" data-activity-id="english-grammar-feedback" data-search="Opravovač gramatiky a stylu Claude opraví anglický text žáka, vysvětlí chyby v kontextu gramatických pravidel a navrhne stylistická zlepšení." data-tool="claude" data-duration="3 min/text" data-format="👤 Individuální" data-prompt="Correct the following English text written by a Czech student at [CEFR] level. For each error: show original, corrected version, brief grammar rule. Summary of main error patterns and 3 style improvement tips. TEXT: [STUDENT TEXT]" data-modal-title="Opravovač gramatiky" data-intro="" data-subject="aj">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-purple">Claude</span><span class="badge badge-blue">Angličtina</span><span
+                                    class="badge badge-gray">SŠ</span></div>
+                            <span style="font-size:1.8rem">✔️</span>
+                        </div>
+                        <h3 class="activity-title">Opravovač gramatiky a stylu</h3>
+                        <div class="activity-desc">Claude opraví anglický text žáka, vysvětlí chyby v kontextu gramatických pravidel a navrhne stylistická zlepšení.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 3 min/text</span><span
+                                class="activity-meta-item">👤 Individuální</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="english-grammar-feedback" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="Correct the following English text written by a Czech student at [CEFR] level. For each error: show original, corrected version, brief grammar rule. Summary of main error patterns and 3 style improvement tips. TEXT: [STUDENT TEXT]">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-subject="aj" data-level="zs1" data-activity-id="english-vocabulary-builder" data-search="Slovní zásoba – tematické sety AI vygeneruje tematické sety slovíček s příklady ve větách, obrázkovými popisy a paměťovými tipy pro mladší žáky." data-tool="gemini" data-duration="10 min příprava" data-format="🏫 Třída" data-prompt="Create a thematic vocabulary set for Czech pupils at [AGE] level on [TOPIC]. Include 15 words with Czech translations, simple example sentences, a short image description for each word, one memory tip, and 8 exercises with an answer key. Use language suitable for beginners." data-modal-title="Slovní zásoba – tematické sety" data-intro="" data-subject="aj">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-mint">Gemini</span><span class="badge badge-blue">Angličtina</span><span
+                                    class="badge badge-gray">1.–5. ročník</span></div>
+                            <span style="font-size:1.8rem">📚</span>
+                        </div>
+                        <h3 class="activity-title">Slovní zásoba – tematické sety</h3>
+                        <div class="activity-desc">AI vygeneruje tematické sety slovíček s příklady ve větách, obrázkovými popisy a paměťovými tipy pro mladší žáky.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 10 min příprava</span><span
+                                class="activity-meta-item">🏫 Třída</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-gold">Oblíbené</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="english-vocabulary-builder" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="Create a thematic vocabulary set for Czech pupils at [AGE] level on [TOPIC]. Include 15 words with Czech translations, simple example sentences, a short image description for each word, one memory tip, and 8 exercises with an answer key. Use language suitable for beginners.">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-subject="aj" data-level="ss" data-activity-id="english-cambridge-exam-practice" data-search="Příprava na Cambridge / FCE / CAE ChatGPT simuluje části zkoušek Cambridge – Use of English, Writing tasks – a dává podrobnou zpětnou vazbu s dosaženým skóre." data-tool="chatgpt" data-duration="30 min aktivita" data-format="👤 Individuální" data-prompt="Act as a Cambridge English exam trainer for [B1/B2/C1] level. Prepare a mixed practice session with Use of English, a Writing task, and a clear feedback rubric. Give one task at a time, wait for the answer, score it using the relevant criteria, explain corrections, and recommend the next step." data-modal-title="Příprava na Cambridge / FCE / CAE" data-intro="" data-subject="aj">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span class="badge badge-blue">Angličtina</span><span
+                                    class="badge badge-gray">SŠ</span></div>
+                            <span style="font-size:1.8rem">📝</span>
+                        </div>
+                        <h3 class="activity-title">Příprava na Cambridge / FCE / CAE</h3>
+                        <div class="activity-desc">ChatGPT simuluje části zkoušek Cambridge – Use of English, Writing tasks – a dává podrobnou zpětnou vazbu s dosaženým skóre.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 30 min aktivita</span><span
+                                class="activity-meta-item">👤 Individuální</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="english-cambridge-exam-practice" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="Act as a Cambridge English exam trainer for [B1/B2/C1] level. Prepare a mixed practice session with Use of English, a Writing task, and a clear feedback rubric. Give one task at a time, wait for the answer, score it using the relevant criteria, explain corrections, and recommend the next step.">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-subject="aj" data-level="zs2" data-activity-id="english-grammar-exercises" data-search="Gramatická cvičení na míru Generujte cvičení na konkrétní gramatiku – časy, podmínkové věty, slovesa – s klíčem a doplňujícím vysvětlením pravidla." data-tool="gemini" data-duration="5 min příprava" data-format="🏫 Třída" data-prompt="Create 15 English grammar exercises for Czech students at [CEFR] level on [GRAMMAR TOPIC]. Mix fill-in, transformation, error correction, and short production tasks. Add an answer key and a concise Czech explanation of each rule. Adjust the difficulty to the selected level." data-modal-title="Gramatická cvičení na míru" data-intro="" data-subject="aj">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-mint">Gemini</span><span class="badge badge-blue">Angličtina</span><span
+                                    class="badge badge-gray">6.–9. ročník</span></div>
+                            <span style="font-size:1.8rem">🔤</span>
+                        </div>
+                        <h3 class="activity-title">Gramatická cvičení na míru</h3>
+                        <div class="activity-desc">Generujte cvičení na konkrétní gramatiku – časy, podmínkové věty, slovesa – s klíčem a doplňujícím vysvětlením pravidla.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 5 min příprava</span><span
+                                class="activity-meta-item">🏫 Třída</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="english-grammar-exercises" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="Create 15 English grammar exercises for Czech students at [CEFR] level on [GRAMMAR TOPIC]. Mix fill-in, transformation, error correction, and short production tasks. Add an answer key and a concise Czech explanation of each rule. Adjust the difficulty to the selected level.">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-subject="aj" data-level="ss" data-activity-id="english-contextual-translation" data-search="Překlad s kulturním kontextem Překlad nejde jen o slova – Claude vysvětlí kulturní kontext, idiomy a nuance, které strojový překlad mine." data-tool="claude" data-duration="10 min aktivita" data-format="👥 Skupiny" data-prompt="Translate the text below from [SOURCE LANGUAGE] to [TARGET LANGUAGE]. Preserve the meaning and tone. Then explain important idioms, cultural references, and language nuances in Czech, offer two natural alternatives for difficult phrases, and identify places where a literal translation would sound unnatural. TEXT: [TEXT]" data-modal-title="Překlad s kulturním kontextem" data-intro="" data-subject="aj">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-purple">Claude</span><span class="badge badge-blue">Angličtina</span><span
+                                    class="badge badge-gray">SŠ</span></div>
+                            <span style="font-size:1.8rem">🌍</span>
+                        </div>
+                        <h3 class="activity-title">Překlad s kulturním kontextem</h3>
+                        <div class="activity-desc">Překlad nejde jen o slova – Claude vysvětlí kulturní kontext, idiomy a nuance, které strojový překlad mine.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 10 min aktivita</span><span
+                                class="activity-meta-item">👥 Skupiny</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="english-contextual-translation" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="Translate the text below from [SOURCE LANGUAGE] to [TARGET LANGUAGE]. Preserve the meaning and tone. Then explain important idioms, cultural references, and language nuances in Czech, offer two natural alternatives for difficult phrases, and identify places where a literal translation would sound unnatural. TEXT: [TEXT]">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-subject="pv" data-level="zs2" data-activity-id="biology-virtual-lab-experiment" data-search="Virtuální laboratorní experiment Gemini jako virtuální laboratorní asistent simuluje průběh experimentu – popisuje kroky, výsledky a závěry bez fyzické laboratoře." data-tool="gemini" data-duration="20 min" data-format="👥 Skupiny" data-prompt="Simuluj laboratorní experiment: [NÁZEV EXPERIMENTU] pro žáky [ROČNÍK]. Popište: 1) Potřebné pomůcky a chemikálie, 2) Přesný postup krok za krokem, 3) Co žáci uvidí / jak reakce proběhne, 4) Vědecké vysvětlení jevu, 5) Bezpečnostní upozornění, 6) Otázky k zamyšlení po experimentu." data-modal-title="Virtuální experiment" data-intro="" data-subject="pv">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-mint">Gemini</span><span class="badge badge-blue">Přírodní vědy</span><span
+                                    class="badge badge-gray">Biologie</span></div>
+                            <span style="font-size:1.8rem">🧬</span>
+                        </div>
+                        <h3 class="activity-title">Virtuální laboratorní experiment</h3>
+                        <div class="activity-desc">Gemini jako virtuální laboratorní asistent simuluje průběh experimentu – popisuje kroky, výsledky a závěry bez fyzické laboratoře.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 20 min</span><span
+                                class="activity-meta-item">👥 Skupiny</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="biology-virtual-lab-experiment" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="Simuluj laboratorní experiment: [NÁZEV EXPERIMENTU] pro žáky [ROČNÍK]. Popište: 1) Potřebné pomůcky a chemikálie, 2) Přesný postup krok za krokem, 3) Co žáci uvidí / jak reakce proběhne, 4) Vědecké vysvětlení jevu, 5) Bezpečnostní upozornění, 6) Otázky k zamyšlení po experimentu.">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-subject="pv" data-level="ss" data-activity-id="chemistry-equation-guide" data-search="Průvodce chemickými rovnicemi AI krok za krokem vysvětlí postup vyčíslování chemických rovnic, jejich typy a aplikace v reálném světě." data-tool="chatgpt" data-duration="10 min" data-format="👤 Individuální" data-prompt="Vysvětli vyčíslování chemické rovnice [ROVNICE] žákům střední školy krok za krokem. Urči typ reakce, ukaž postup zachování počtu atomů, vysvětli každý krok jednoduchým jazykem a přidej jednu podobnou rovnici k samostatnému procvičení s řešením." data-modal-title="Průvodce chemickými rovnicemi" data-intro="" data-subject="pv">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span class="badge badge-blue">Přírodní vědy</span><span
+                                    class="badge badge-gray">Chemie</span></div>
+                            <span style="font-size:1.8rem">⚗️</span>
+                        </div>
+                        <h3 class="activity-title">Průvodce chemickými rovnicemi</h3>
+                        <div class="activity-desc">AI krok za krokem vysvětlí postup vyčíslování chemických rovnic, jejich typy a aplikace v reálném světě.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 10 min</span><span
+                                class="activity-meta-item">👤 Individuální</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="chemistry-equation-guide" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="Vysvětli vyčíslování chemické rovnice [ROVNICE] žákům střední školy krok za krokem. Urči typ reakce, ukaž postup zachování počtu atomů, vysvětli každý krok jednoduchým jazykem a přidej jednu podobnou rovnici k samostatnému procvičení s řešením.">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-subject="pv" data-level="zs2" data-activity-id="physics-phenomenon-analogies-explainer" data-search="Vysvětlení fyzikálních jevů analogiemi AI vysvětlí složité fyzikální pojmy pomocí analogií ze každodenního života, které žáci ihned pochopí a zapamatují si." data-tool="chatgpt" data-duration="5 min" data-format="🏫 Třída" data-prompt="Vysvětli fyzikální jev [JEV] žákům [ROČNÍK] pomocí tří analogií z každodenního života. Přidej jednoduchý příklad, upozorni na limity každé analogie a zakonči třemi otázkami ověřujícími porozumění." data-modal-title="Vysvětlení fyzikálních jevů analogiemi" data-intro="" data-subject="pv">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span class="badge badge-blue">Přírodní vědy</span><span
+                                    class="badge badge-gray">Fyzika</span></div>
+                            <span style="font-size:1.8rem">⚡</span>
+                        </div>
+                        <h3 class="activity-title">Vysvětlení fyzikálních jevů analogiemi</h3>
+                        <div class="activity-desc">AI vysvětlí složité fyzikální pojmy pomocí analogií ze každodenního života, které žáci ihned pochopí a zapamatují si.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 5 min</span><span
+                                class="activity-meta-item">🏫 Třída</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-gold">Oblíbené</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="physics-phenomenon-analogies-explainer" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="Vysvětli fyzikální jev [JEV] žákům [ROČNÍK] pomocí tří analogií z každodenního života. Přidej jednoduchý příklad, upozorni na limity každé analogie a zakonči třemi otázkami ověřujícími porozumění.">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-subject="pv" data-level="zs1" data-activity-id="biology-animal-encyclopedia" data-search="Encyklopedie živočichů na míru Gemini vytvoří poutavý popis libovolného živočicha přizpůsobený věku žáků – výskyt, potravní řetězec, zajímavosti." data-tool="gemini" data-duration="8 min" data-format="👤 Individuální" data-prompt="Vytvoř poutavý profil živočicha [ŽIVOČICH] pro žáky [ROČNÍK]. Uveď vzhled, výskyt, potravu, potravní řetězec, způsob života, ohrožení a pět zajímavostí. Přizpůsob jazyk věku žáků a přidej tři otázky k ověření porozumění." data-modal-title="Encyklopedie živočichů na míru" data-intro="" data-subject="pv">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-mint">Gemini</span><span class="badge badge-blue">Přírodní vědy</span><span
+                                    class="badge badge-gray">Biologie</span></div>
+                            <span style="font-size:1.8rem">🐾</span>
+                        </div>
+                        <h3 class="activity-title">Encyklopedie živočichů na míru</h3>
+                        <div class="activity-desc">Gemini vytvoří poutavý popis libovolného živočicha přizpůsobený věku žáků – výskyt, potravní řetězec, zajímavosti.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 8 min</span><span
+                                class="activity-meta-item">👤 Individuální</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="biology-animal-encyclopedia" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="Vytvoř poutavý profil živočicha [ŽIVOČICH] pro žáky [ROČNÍK]. Uveď vzhled, výskyt, potravu, potravní řetězec, způsob života, ohrožení a pět zajímavostí. Přizpůsob jazyk věku žáků a přidej tři otázky k ověření porozumění.">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-subject="pv" data-level="ss" data-activity-id="physics-problem-solver" data-search="Řešení fyzikálních úloh s výkladem Claude nejen vyřeší fyzikální úlohu, ale vysvětlí každý krok, použité vzorce a jejich odvození – jako soukromý tutor." data-tool="claude" data-duration="5 min" data-format="👤 Individuální" data-prompt="Vyřeš fyzikální úlohu [ÚLOHA] pro žáka střední školy. Vypiš známé a neznámé veličiny, zvol vhodné vzorce, vysvětli jejich význam, postupuj krok za krokem a zkontroluj jednotky i výsledek. Na konci přidej krátké vysvětlení, proč je postup správný." data-modal-title="Řešení fyzikálních úloh s výkladem" data-intro="" data-subject="pv">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-purple">Claude</span><span class="badge badge-blue">Přírodní vědy</span><span
+                                    class="badge badge-gray">Fyzika</span></div>
+                            <span style="font-size:1.8rem">🔭</span>
+                        </div>
+                        <h3 class="activity-title">Řešení fyzikálních úloh s výkladem</h3>
+                        <div class="activity-desc">Claude nejen vyřeší fyzikální úlohu, ale vysvětlí každý krok, použité vzorce a jejich odvození – jako soukromý tutor.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 5 min</span><span
+                                class="activity-meta-item">👤 Individuální</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="physics-problem-solver" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="Vyřeš fyzikální úlohu [ÚLOHA] pro žáka střední školy. Vypiš známé a neznámé veličiny, zvol vhodné vzorce, vysvětli jejich význam, postupuj krok za krokem a zkontroluj jednotky i výsledek. Na konci přidej krátké vysvětlení, proč je postup správný.">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-subject="pv" data-level="zs2" data-activity-id="chemistry-elements-compounds-quiz" data-search="Kvíz – prvky a sloučeniny Generátor opakovacích kvízů o prvcích periodické tabulky, sloučeninách a jejich vlastnostech s automatickým klíčem." data-tool="chatgpt" data-duration="6 min příprava" data-format="🏫 Třída" data-prompt="Vytvoř opakovací kvíz pro žáky [ROČNÍK] na téma [PRVKY NEBO SLOUČENINY]. Připrav deset otázek různých typů, zahrň vlastnosti, značky, názvy a praktické využití, přidej správné odpovědi a krátké vysvětlení každé odpovědi." data-modal-title="Kvíz – prvky a sloučeniny" data-intro="" data-subject="pv">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span class="badge badge-blue">Přírodní vědy</span><span
+                                    class="badge badge-gray">Chemie</span></div>
+                            <span style="font-size:1.8rem">🧪</span>
+                        </div>
+                        <h3 class="activity-title">Kvíz – prvky a sloučeniny</h3>
+                        <div class="activity-desc">Generátor opakovacích kvízů o prvcích periodické tabulky, sloučeninách a jejich vlastnostech s automatickým klíčem.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 6 min příprava</span><span
+                                class="activity-meta-item">🏫 Třída</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="chemistry-elements-compounds-quiz" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="Vytvoř opakovací kvíz pro žáky [ROČNÍK] na téma [PRVKY NEBO SLOUČENINY]. Připrav deset otázek různých typů, zahrň vlastnosti, značky, názvy a praktické využití, přidej správné odpovědi a krátké vysvětlení každé odpovědi.">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-subject="dej" data-level="zs2" data-activity-id="history-roleplay-historical-person" data-search="Roleplay historické osobnosti Claude hraje roli historické osobnosti – žáci mu mohou klást otázky jako novinář, soudce nebo spolučasník. Rozvíjí empatii a historické myšlení." data-tool="claude" data-duration="20 min" data-format="👥 Třída" data-prompt="Budeš hrát roli [HISTORICKÁ OSOBNOST] v době [HISTORICKÉ OBDOBÍ]. Mluv v první osobě, přesně podle historických faktů. Odpovídej na otázky z pohledu této osoby s ohledem na její dobu, hodnoty a přesvědčení. Pokud nemáš historicky přesnou odpověď, odpověz v souladu s tím, co by tato osoba pravděpodobně řekla. Nezapomínej na kontext doby." data-modal-title="Roleplay historické osobnosti" data-intro="" data-subject="dej">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-purple">Claude</span><span class="badge badge-blue">Dějepis</span><span
+                                    class="badge badge-gray">6.–9. ročník</span></div>
+                            <span style="font-size:1.8rem">🎭</span>
+                        </div>
+                        <h3 class="activity-title">Roleplay historické osobnosti</h3>
+                        <div class="activity-desc">Claude hraje roli historické osobnosti – žáci mu mohou klást otázky jako novinář, soudce nebo spolučasník. Rozvíjí empatii a historické myšlení.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 20 min</span><span
+                                class="activity-meta-item">👥 Třída</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-gold">Oblíbené</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="history-roleplay-historical-person" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="Budeš hrát roli [HISTORICKÁ OSOBNOST] v době [HISTORICKÉ OBDOBÍ]. Mluv v první osobě, přesně podle historických faktů. Odpovídej na otázky z pohledu této osoby s ohledem na její dobu, hodnoty a přesvědčení. Pokud nemáš historicky přesnou odpověď, odpověz v souladu s tím, co by tato osoba pravděpodobně řekla. Nezapomínej na kontext doby.">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-subject="dej" data-level="zs1 zs2 ss" data-activity-id="history-timeline-generator" data-search="Generátor časových os AI vytvoří přehlednou chronologickou osu klíčových událostí pro libovolné historické období s vysvětlením příčin a důsledků." data-tool="chatgpt" data-duration="5 min příprava" data-format="🏫 Třída" data-prompt="Vytvoř chronologickou osu klíčových událostí pro [HISTORICKÉ OBDOBÍ] vhodnou pro žáky [ROČNÍK]. Pro každou událost uveď: datum, název události, stručný popis (2–3 věty), příčiny a důsledky, přesah do dalšího vývoje. Zvýrazni 3 nejdůležitější zlomové momenty." data-modal-title="Generátor časových os" data-intro="" data-subject="dej">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span class="badge badge-blue">Dějepis</span><span
+                                    class="badge badge-gray">ZŠ/SŠ</span></div>
+                            <span style="font-size:1.8rem">📅</span>
+                        </div>
+                        <h3 class="activity-title">Generátor časových os</h3>
+                        <div class="activity-desc">AI vytvoří přehlednou chronologickou osu klíčových událostí pro libovolné historické období s vysvětlením příčin a důsledků.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 5 min příprava</span><span
+                                class="activity-meta-item">🏫 Třída</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="history-timeline-generator" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="Vytvoř chronologickou osu klíčových událostí pro [HISTORICKÉ OBDOBÍ] vhodnou pro žáky [ROČNÍK]. Pro každou událost uveď: datum, název události, stručný popis (2–3 věty), příčiny a důsledky, přesah do dalšího vývoje. Zvýrazni 3 nejdůležitější zlomové momenty.">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-subject="dej" data-level="ss" data-activity-id="history-debate-pro-con" data-search="Debatní aktivita – pro a proti AI připraví argumenty na obě strany historického sporu nebo etické otázky. Žáci debatují, AI zodpovídá dotazy jako nestranný odborník." data-tool="gemini" data-duration="25 min" data-format="👥 Skupiny" data-prompt="Připrav nestrannou debatní aktivitu pro žáky [ROČNÍK] k historickému sporu nebo etické otázce [TÉMA]. Představ dvě odlišné pozice, u každé uveď hlavní argumenty, důkazy a možné protiargumenty. Navrhni pravidla debaty, otázky pro moderátora a krátké závěrečné ověření faktů." data-modal-title="Debatní aktivita – pro a proti" data-intro="" data-subject="dej">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-mint">Gemini</span><span class="badge badge-blue">Dějepis</span><span
+                                    class="badge badge-gray">SŠ</span></div>
+                            <span style="font-size:1.8rem">⚖️</span>
+                        </div>
+                        <h3 class="activity-title">Debatní aktivita – pro a proti</h3>
+                        <div class="activity-desc">AI připraví argumenty na obě strany historického sporu nebo etické otázky. Žáci debatují, AI zodpovídá dotazy jako nestranný odborník.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 25 min</span><span
+                                class="activity-meta-item">👥 Skupiny</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="history-debate-pro-con" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="Připrav nestrannou debatní aktivitu pro žáky [ROČNÍK] k historickému sporu nebo etické otázce [TÉMA]. Představ dvě odlišné pozice, u každé uveď hlavní argumenty, důkazy a možné protiargumenty. Navrhni pravidla debaty, otázky pro moderátora a krátké závěrečné ověření faktů.">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-subject="dej" data-level="zs2" data-activity-id="history-period-newspaper" data-search="Dobový novinový článek AI napíše fiktivní dobový novinový článek o historické události očima tehdejšího novináře. Vhodné jako ukázka přístupu dobové žurnalistiky." data-tool="chatgpt" data-duration="10 min příprava" data-format="👤 Individuální" data-prompt="Napiš fiktivní dobový novinový článek o události [UDÁLOST] z roku [ROK] očima novináře žijícího v dané době. Zachovej dobový jazyk a znalosti, uveď titulek, místo, datum, popis události a dvě dobové reakce. Nakonec odděl historicky doložená fakta od tvůrčího doplnění." data-modal-title="Dobový novinový článek" data-intro="" data-subject="dej">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-gold">ChatGPT</span><span class="badge badge-blue">Dějepis</span><span
+                                    class="badge badge-gray">6.–9. ročník</span></div>
+                            <span style="font-size:1.8rem">🗞️</span>
+                        </div>
+                        <h3 class="activity-title">Dobový novinový článek</h3>
+                        <div class="activity-desc">AI napíše fiktivní dobový novinový článek o historické události očima tehdejšího novináře. Vhodné jako ukázka přístupu dobové žurnalistiky.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 10 min příprava</span><span
+                                class="activity-meta-item">👤 Individuální</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="history-period-newspaper" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="Napiš fiktivní dobový novinový článek o události [UDÁLOST] z roku [ROK] očima novináře žijícího v dané době. Zachovej dobový jazyk a znalosti, uveď titulek, místo, datum, popis události a dvě dobové reakce. Nakonec odděl historicky doložená fakta od tvůrčího doplnění.">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-subject="dej" data-level="ss" data-activity-id="history-source-analysis" data-search="Analýza historického pramene Vložte text historického pramene – AI pomůže žákům pochopit kontext, identifikovat bias autora a interpretovat obsah kriticky." data-tool="claude" data-duration="15 min" data-format="👥 Skupiny" data-prompt="Analyzuj tento historický pramen pro žáky střední školy: [TEXT PRAMENE]. Urči autora, dobu vzniku, účel a cílové publikum, vysvětli historický kontext, odliš fakta od názorů a upozorni na možný bias. Přidej pět otázek, které povedou ke kritické interpretaci." data-modal-title="Analýza historického pramene" data-intro="" data-subject="dej">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-purple">Claude</span><span class="badge badge-blue">Dějepis</span><span
+                                    class="badge badge-gray">SŠ</span></div>
+                            <span style="font-size:1.8rem">🧠</span>
+                        </div>
+                        <h3 class="activity-title">Analýza historického pramene</h3>
+                        <div class="activity-desc">Vložte text historického pramene – AI pomůže žákům pochopit kontext, identifikovat bias autora a interpretovat obsah kriticky.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 15 min</span><span
+                                class="activity-meta-item">👥 Skupiny</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="history-source-analysis" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="Analyzuj tento historický pramen pro žáky střední školy: [TEXT PRAMENE]. Urči autora, dobu vzniku, účel a cílové publikum, vysvětli historický kontext, odliš fakta od názorů a upozorni na možný bias. Přidej pět otázek, které povedou ke kritické interpretaci.">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card reveal" data-subject="dej" data-level="zs1 zs2" data-activity-id="history-map-analysis" data-search="Přehled historické mapy AI vysvětlí geopolitické změny hranic, migrace a vliv zeměpisu na historický vývoj – vhodné doplnit fyzickou mapou." data-tool="gemini" data-duration="10 min" data-format="🏫 Třída" data-prompt="Vysvětli historickou mapu regionu [REGION] v období [OBDOBÍ] pro žáky [ROČNÍK]. Popiš změny hranic, migrace, mocenské vztahy a vliv geografie na historický vývoj. Navrhni, co mají žáci na mapě vyhledat, a přidej tři otázky k interpretaci." data-modal-title="Přehled historické mapy" data-intro="" data-subject="dej">
+                        <div class="activity-card-top">
+                            <div class="activity-badges"><span class="badge badge-mint">Gemini</span><span class="badge badge-blue">Dějepis</span><span
+                                    class="badge badge-gray">ZŠ</span></div>
+                            <span style="font-size:1.8rem">🌍</span>
+                        </div>
+                        <h3 class="activity-title">Přehled historické mapy</h3>
+                        <div class="activity-desc">AI vysvětlí geopolitické změny hranic, migrace a vliv zeměpisu na historický vývoj – vhodné doplnit fyzickou mapou.</div>
+                        <div class="activity-meta"><span class="activity-meta-item">⏱ 10 min</span><span
+                                class="activity-meta-item">🏫 Třída</span></div>
+                        <div class="activity-footer">
+                            <span class="badge badge-green">Připraveno</span>
+                            <div class="activity-footer-actions"><button class="btn btn-mint btn-sm" type="button" data-open-activity="history-map-analysis" aria-haspopup="dialog">Detail →</button><button class="copy-btn btn btn-mint btn-sm" data-copy="Vysvětli historickou mapu regionu [REGION] v období [OBDOBÍ] pro žáky [ROČNÍK]. Popiš změny hranic, migrace, mocenské vztahy a vliv geografie na historický vývoj. Navrhni, co mají žáci na mapě vyhledat, a přidej tři otázky k interpretaci.">📋 Kopírovat</button></div>
+                        </div>
+                    </div>
                     <!-- GENERATED:ACTIVITIES:MAIN:END -->
-            </div>
-
-            <!-- Empty state -->
-            <div id="emptyState" style="display:none;text-align:center;padding:60px 20px;color:var(--text-muted)">
-                <div style="font-size:3rem;margin-bottom:16px">🔍</div>
-                <p style="font-size:1.1rem">Žádné aktivity neodpovídají vybraným filtrům.</p>
-                <button class="btn btn-outline" style="margin-top:16px" onclick="resetFilters()">Zobrazit vše</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════ MODAL: Prompt Power-Up Relay ═══════════════════════════════════ -->
-    <div class="modal-overlay" id="modalPowerUpRelay" onclick="if(event.target===this)this.classList.remove('open')">
+      </div>
+    </div>
+  </section>
+</main><div class="modal-overlay" id="modalPowerUpRelay" onclick="if(event.target===this)this.classList.remove('open')">
         <div class="modal" style="max-width:780px">
             <div class="modal-header">
                 <div>
@@ -805,110 +1206,39 @@
         </div>
     </div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand"><a href="index.html" class="nav-logo"
-                        style="margin-bottom:12px;display:inline-flex">
-                        <span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span>
-                    </a>
-                    <p>Průvodce AI pro české učitele.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>🎯 Předměty</h4>
-                    <ul>
-                        <li><a href="matematika.html">🔢 Matematika</a></li>
-                        <li><a href="cestina.html">📖 Český jazyk</a></li>
-                        <li><a href="anglictina.html">🇬🇧 Angličtina</a></li>
-                        <li><a href="prirodoveda.html">🔬 Přírodní vědy</a></li>
-                        <li><a href="dejepis.html">🏛️ Dějepis</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>📚 Zdroje</h4>
-                    <ul>
-                        <li><a href="prompty.html">✨ Prompty</a></li>
-                        <li><a href="aktivity.html">🎯 Aktivity</a></li>
-                        <li><a href="asistenti.html">🤖 Asistenti</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>🔗 Navigace</h4>
-                    <ul>
-                        <li><a href="index.html">🏠 Domů</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom"><span>© 2026 AI ve Výuce · Pro české pedagogy</span></div>
+<div class="activity-detail-dialog" id="activityDetailDialog" role="dialog" aria-modal="true" aria-labelledby="activityDetailTitle" hidden>
+  <div class="activity-dialog-backdrop" data-close-dialog></div>
+  <section class="activity-dialog-panel" tabindex="-1">
+    <button class="activity-dialog-close" type="button" data-close-dialog aria-label="Zavřít detail">×</button>
+    <h2 id="activityDetailTitle" tabindex="-1"></h2>
+    <p class="activity-dialog-description" id="activityDetailDescription"></p>
+    <p class="activity-dialog-intro" id="activityDetailIntro" hidden></p>
+    <dl class="activity-dialog-meta" id="activityDetailMeta"></dl>
+    <div class="activity-dialog-prompt"><h3>Prompt</h3><pre id="activityDetailPrompt"></pre></div>
+    <div class="activity-dialog-actions"><button class="copy-btn btn btn-mint btn-sm" id="activityDetailCopy" type="button">📋 Kopírovat prompt</button><a id="activityDetailRelated" class="btn btn-outline btn-sm" hidden>Otevřít související prompt →</a></div>
+  </section>
+</div>
+<!-- GENERATED:ACTIVITY_FOOTER:START -->
+    <footer class="footer home-footer subject-site-footer">
+      <div class="footer-inner">
+        <a class="brand" href="index.html" aria-label="AI ve Výuce – úvodní stránka">
+          <img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="">
+          <span class="brand-copy"><strong>AI ve výuce</strong><small>Inspirace · nástroje · praxe pro učitele</small></span>
+        </a>
+        <p>Moderní průvodce světem AI pro české učitele.</p>
+        <div class="footer-links" aria-label="Užitečné odkazy">
+          <a href="ai-navody.html">Návody</a>
+          <a href="prompty.html">Prompty</a>
+          <a href="aktivity.html">Aktivity</a>
+          <a href="asistenti.html">AI nástroje</a>
         </div>
+        <small>© 2026 AI ve výuce</small>
+      </div>
     </footer>
-    <script src="js/main.js"></script>
-    <script>
-        // Multi-dimensional filtering
-        const filters = { subject: 'all', level: 'all', tool: 'all' };
-        const activityCards = [...document.querySelectorAll('#allActivities .activity-card')];
-        const activityResults = document.getElementById('activityResults');
-        const activitySearch = document.getElementById('activitySearch');
-
-        document.querySelectorAll('#subjectFilter .filter-chip, #levelFilter .filter-chip, #toolFilter .filter-chip').forEach(chip => {
-            chip.setAttribute('aria-pressed', chip.classList.contains('active') ? 'true' : 'false');
-            chip.addEventListener('click', () => {
-                const type = chip.dataset.filterType;
-                const value = chip.dataset.filter;
-                filters[type] = value;
-                chip.closest('.filter-group').querySelectorAll('.filter-chip').forEach(c => {
-                    c.classList.remove('active');
-                    c.setAttribute('aria-pressed', 'false');
-                });
-                chip.classList.add('active');
-                chip.setAttribute('aria-pressed', 'true');
-                applyFilters();
-            });
-        });
-
-        function applyFilters() {
-            const query = activitySearch.value.toLowerCase().trim();
-            let visible = 0;
-            activityCards.forEach(card => {
-                const matchSubject = filters.subject === 'all' || card.dataset.subject === filters.subject;
-                const matchLevel = filters.level === 'all' || card.dataset.level.split(' ').includes(filters.level);
-                const matchTool = filters.tool === 'all' || card.dataset.tool === filters.tool;
-                const matchQuery = query === '' || card.textContent.toLowerCase().includes(query);
-                if (matchSubject && matchLevel && matchTool && matchQuery) {
-                    card.style.display = '';
-                    visible++;
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-            document.getElementById('emptyState').style.display = visible === 0 ? 'block' : 'none';
-            activityResults.textContent = `Nalezeno ${visible} ${visible === 1 ? 'aktivita' : (visible >= 2 && visible <= 4 ? 'aktivity' : 'aktivit')}`;
-        }
-
-        function resetFilters() {
-            Object.keys(filters).forEach(k => filters[k] = 'all');
-            document.querySelectorAll('#subjectFilter .filter-chip, #levelFilter .filter-chip, #toolFilter .filter-chip').forEach(c => {
-                const isActive = c.dataset.filter === 'all';
-                c.classList.toggle('active', isActive);
-                c.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-            });
-            activitySearch.value = '';
-            applyFilters();
-        }
-
-        // Search
-        activitySearch.addEventListener('input', applyFilters);
-        applyFilters();
-
-        // Klávesa Escape zavře modál
-        document.addEventListener('keydown', e => {
-            if (e.key === 'Escape') {
-                document.querySelectorAll('.modal-overlay.open').forEach(m => m.classList.remove('open'));
-            }
-        });
-    </script>
-
-    <script src="js/site-footer.js?v=20260927-human-loop"></script>
+                    <!-- GENERATED:ACTIVITY_FOOTER:END -->
+<script src="js/subject-navigation.js"></script>
+<script src="js/main.js"></script>
+<script src="js/activity-library.js"></script>
+<script src="js/site-footer.js?v=20260927-human-loop"></script>
 </body>
-
 </html>

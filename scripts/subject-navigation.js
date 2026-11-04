@@ -26,16 +26,13 @@ function subjectLinks(currentId) {
   ).join('\n');
 }
 
-function toolLinks() {
+function toolLinks(currentHref) {
   return TOOLS.map(tool =>
-    '            <a href="' + tool.href + '">' + tool.label + '</a>'
+    '            <a href="' + tool.href + '"' + (tool.href === currentHref ? ' aria-current="page"' : '') + '>' + tool.label + '</a>'
   ).join('\n');
 }
 
-function buildSubjectNavigation(currentId) {
-  if (!SUBJECTS.some(subject => subject.id === currentId)) {
-    throw new Error('Unknown subject: ' + currentId);
-  }
+function buildNavigation(currentId, currentToolHref) {
   return [
     '    <header class="site-header">',
     '      <div class="site-header-inner">',
@@ -58,7 +55,7 @@ function buildSubjectNavigation(currentId) {
     '          <details class="nav-group">',
     '            <summary>Nástroje a aktivity</summary>',
     '            <div class="nav-panel">',
-    toolLinks(),
+    toolLinks(currentToolHref),
     '            </div>',
     '          </details>',
     '        </nav>',
@@ -67,4 +64,11 @@ function buildSubjectNavigation(currentId) {
   ].join('\n');
 }
 
-module.exports = { SUBJECTS, TOOLS, buildSubjectNavigation };
+function buildSubjectNavigation(currentId) {
+  if (!SUBJECTS.some(subject => subject.id === currentId)) throw new Error('Unknown subject: ' + currentId);
+  return buildNavigation(currentId);
+}
+
+function buildActivityNavigation() { return buildNavigation(null, 'aktivity.html'); }
+
+module.exports = { SUBJECTS, TOOLS, buildSubjectNavigation, buildActivityNavigation };
