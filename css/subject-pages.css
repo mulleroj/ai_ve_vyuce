@@ -440,3 +440,105 @@
 @media (max-width: 560px) {
   .subject-page .site-header-inner { min-height: 62px; }
 }
+
+
+/* Same compact dark footer as the approved 2.0 homepage.
+   Kept subject-scoped to avoid changing legacy and catalog pages. */
+.subject-page .subject-site-footer {
+  padding: 30px 24px;
+  background: #113b36;
+  color: #fff;
+  border-top: 1px solid #113b36;
+}
+.subject-page .subject-site-footer .footer-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.subject-page .subject-site-footer .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+.subject-page .subject-site-footer .brand-symbol {
+  display: block;
+  width: 52px;
+  height: 52px;
+  flex: none;
+  object-fit: contain;
+}
+.subject-page .subject-site-footer .brand-copy {
+  display: grid;
+  line-height: 1.08;
+}
+.subject-page .subject-site-footer .brand-copy strong {
+  font-size: 25px;
+  line-height: 1.1;
+  color: #fff;
+  letter-spacing: -.035em;
+}
+.subject-page .subject-site-footer .brand-copy small {
+  margin-top: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  color: #d8e8e2;
+}
+.subject-page .subject-site-footer p {
+  margin: 0;
+  color: #e4eeeb;
+  font-size: .95rem;
+}
+.subject-page .subject-site-footer .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 17px;
+  align-items: center;
+}
+.subject-page .subject-site-footer .footer-links a {
+  color: #f2f9f6;
+  font-size: .9rem;
+  text-decoration: none;
+}
+.subject-page .subject-site-footer .footer-links a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+.subject-page .subject-site-footer .footer-inner > small {
+  color: #e4eeeb;
+  font-size: .8rem;
+}
+.subject-page .subject-site-footer .site-footer-mark {
+  display: block;
+  margin: 18px auto 0;
+  padding-top: 12px;
+  border-color: rgba(232, 246, 238, .24);
+  color: #d8e8e2;
+}
+@media (max-width: 800px) {
+  .subject-page .subject-site-footer .footer-inner {
+    justify-content: flex-start;
+  }
+  .subject-page .subject-site-footer p {
+    flex-basis: 100%;
+  }
+}
+@media (max-width: 540px) {
+  .subject-page .subject-site-footer {
+    padding: 24px 15px;
+  }
+  .subject-page .subject-site-footer .brand-symbol {
+    width: 44px;
+    height: 44px;
+  }
+  .subject-page .subject-site-footer .brand-copy strong { font-size: 20px; }
+  .subject-page .subject-site-footer .brand-copy small { font-size: 8px; }
+  .subject-page .subject-site-footer .footer-links { gap: 11px; }
+  .subject-page .subject-site-footer .footer-links a { font-size: .82rem; }
+}
