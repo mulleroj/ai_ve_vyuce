@@ -309,13 +309,21 @@ function replaceGeneratedRegion(html, region, startMarker = START_MARKER, endMar
     if (start === -1 || end === -1 || end < start) fail('generated activity markers are missing or out of order');
     if (html.indexOf(startMarker, start + startMarker.length) !== -1 || html.indexOf(endMarker, end + endMarker.length) !== -1) fail('generated activity markers must occur exactly once');
     const contentStart = start + startMarker.length;
-    return `${html.slice(0, contentStart)}\n${region}\n                    ${html.slice(end)}`;
+    const newline = html.slice(contentStart).match(/\r\n|\n/)?.[0] || '\n';
+    const normalizedRegion = region.replace(/\r\n?/g, '\n').replace(/\n/g, newline);
+    return `${html.slice(0, contentStart)}${newline}${normalizedRegion}${newline}                    ${html.slice(end)}`;
 }
 
 function getActivityCountParts(html) {
     const start = html.indexOf(ACTIVITY_COUNT_START_MARKER);
     const end = html.indexOf(ACTIVITY_COUNT_END_MARKER);
-    if (start === -1 || end === -1 || end < start) fail(`generated activity count markers are missing or out of order in ${ACTIVITY_COUNT_PAGE}`);
+    if (start === -1 && end === -1) {
+        const unmarkedCount = [...html.matchAll(/<div\b[^>]*\bdata-target=["']\d+["'][^>]*>[\s\S]*?<\/div>/gi)]
+            .some(([markup]) => /\bhome-stat-blue\b/i.test(markup));
+        if (unmarkedCount) fail(`activity counter in ${ACTIVITY_COUNT_PAGE} is missing its generated markers`);
+        return null;
+    }
+    if (start === -1 || end === -1 || end < start) fail(`generated activity count markers are incomplete or out of order in ${ACTIVITY_COUNT_PAGE}`);
     if (html.indexOf(ACTIVITY_COUNT_START_MARKER, start + ACTIVITY_COUNT_START_MARKER.length) !== -1 ||
         html.indexOf(ACTIVITY_COUNT_END_MARKER, end + ACTIVITY_COUNT_END_MARKER.length) !== -1) {
         fail(`generated activity count markers must occur exactly once in ${ACTIVITY_COUNT_PAGE}`);
@@ -340,6 +348,7 @@ function inspectActivityCount(activityCount) {
     const htmlPath = path.join(ROOT, ACTIVITY_COUNT_PAGE);
     const html = fs.readFileSync(htmlPath, 'utf8');
     const parts = getActivityCountParts(html);
+    if (!parts) return null;
     const expectedRegion = buildActivityCountRegion(activityCount, parts);
     return { page: ACTIVITY_COUNT_PAGE, htmlPath, html, parts, expectedRegion, drift: parts.currentRegion !== expectedRegion };
 }
@@ -388,14 +397,18 @@ function main() {
         }
     });
     console.log('Homepage activity count:');
-    console.log(`${activityCountInspection.page}: ${activityCountInspection.drift ? 'DRIFT' : 'OK'} (${records.length})`);
-    if (checkOnly) {
-        totalDrift += activityCountInspection.drift ? 1 : 0;
-        if (activityCountInspection.drift) fail('homepage activity count is out of date');
-    }
-    if (!checkOnly && activityCountInspection.drift) {
-        fs.writeFileSync(activityCountInspection.htmlPath, replaceActivityCountRegion(activityCountInspection), 'utf8');
-        console.log(`Updated: ${path.relative(ROOT, activityCountInspection.htmlPath)}`);
+    if (!activityCountInspection) {
+        console.log(`${ACTIVITY_COUNT_PAGE}: no generated counter block (not present in the homepage)`);
+    } else {
+        console.log(`${activityCountInspection.page}: ${activityCountInspection.drift ? 'DRIFT' : 'OK'} (${records.length})`);
+        if (checkOnly) {
+            totalDrift += activityCountInspection.drift ? 1 : 0;
+            if (activityCountInspection.drift) fail('homepage activity count is out of date');
+        }
+        if (!checkOnly && activityCountInspection.drift) {
+            fs.writeFileSync(activityCountInspection.htmlPath, replaceActivityCountRegion(activityCountInspection), 'utf8');
+            console.log(`Updated: ${path.relative(ROOT, activityCountInspection.htmlPath)}`);
+        }
     }
     console.log(`Collections: ${targets.length}`);
     console.log(`Total activities: ${records.length}`);
