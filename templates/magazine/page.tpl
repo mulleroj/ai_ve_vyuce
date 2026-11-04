@@ -31,6 +31,7 @@
   </main>
   {{FOOTER}}
   <script src="js/main.js?v=20261102-magazine-shared-v1" defer></script>
+  <script src="js/site-footer.js?v=20260927-human-loop" defer></script>
   {{ARTICLE_SCRIPTS}}
 </body>
 </html>
