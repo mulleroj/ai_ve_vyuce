@@ -1,6 +1,6 @@
 # Pedagogický návrh oprav aktivit – etapa 6B/2, vlna 2
 
-**Stav:** návrh pro samostatné pedagogické posouzení; žádná klasifikace ani navržený prompt není schváleným školním postupem.
+**Stav:** metodický směr všech deseti návrhů je schválen pro implementaci; nejde o schválení konkrétní služby ani školního datového režimu. Implementace do registru a generovaných stránek čeká na sloučení první vlny PR #32, aby se její změny nepřepsaly.
 
 **Východisko:** registr 44 aktivit v `origin/master` (`01aae8854407304475a0d0a6fb76588e6714595c`) a pedagogický audit v draft PR #31 (commit `a515a92f8a3ab841537f26bcd5229dc038776eec`). První vlna je v samostatném ne-sloučeném draft PR #32. Proto tento návrh se záměrnou separací **nemění `data/activities.json`, žádnou generovanou HTML stránku ani první vlnu**.
 
@@ -176,9 +176,9 @@ Vytvoř 3 tvrzení o tématu [TÉMA] pro žáky 6.–8. ročníku: dvě tvrzení
 ```text
 Pomoz učiteli připravit bezpečnou hru „Dvě pravdy a tvrzení k ověření“ pro žáky 6.–8. ročníku. Téma: [TÉMA]. Povolené zdroje pro ověření: [UČITELEM SCHVÁLENÉ ZDROJE]. Vyhni se zdraví, bezpečnosti, aktuálním politickým tvrzením, osobám žáků a citlivým tématům.
 
-Navrhni tři krátká, konkrétní tvrzení. Jedno označ pouze v odděleném pracovním návrhu pro učitele jako záměrně nepravdivé. U každého tvrzení uveď, jakou otázkou a ve kterém dodaném zdroji lze ověřit pravdivost. Nevymýšlej citace, názvy stránek ani odkazy; pokud zdroj nelze zkontrolovat z poskytnutých podkladů, napiš „zdroj k ověření učitelem“.
+Navrhni tři krátká, konkrétní tvrzení. Jedno označ pouze v odděleném pracovním návrhu pro učitele jako záměrně nepravdivé a výslovně u něj uveď „VZDĚLÁVACÍ HRA – ZÁMĚRNĚ NEPRAVDIVÉ TVRZENÍ“, aby se označení zachovalo při každém sdílení. U každého tvrzení uveď, jakou otázkou a ve kterém dodaném zdroji lze ověřit pravdivost. Nevymýšlej citace, názvy stránek ani odkazy; pokud zdroj nelze zkontrolovat z poskytnutých podkladů, napiš „zdroj chybí – učitel musí doplnit a ověřit“ a tvrzení nepředkládej jako ověřené.
 
-Než materiál dostanou žáci, učitel musí nezávisle zkontrolovat všechna tvrzení, klíč a zdroje. Žákům zobraz pouze tvrzení, nikoli klíč. Po jejich pátrání vyzvi týmy, aby doložily odpověď důkazem. Učitel na konci odhalí klíč, opraví nepravdivé tvrzení přesným faktem a ověří, že nedošlo k nedorozumění. Záměrná lež je vždy označena jako součást hry a po aktivitě opravena.
+Než materiál dostanou žáci, učitel musí nezávisle ověřit všechna tři tvrzení, správný klíč i každý uvedený zdroj. Klíč je neveřejný učitelský podklad a nesmí se zobrazit žákům v žádné fázi hry ani v kopírovaném či promítaném výstupu. Žákům zobraz pouze tři tvrzení a pokyny k ověřování. Po jejich pátrání vyzvi týmy, aby doložily odpověď důkazem. Aktivitu vždy zakonči učitelským odhalením správného řešení, opravou nepravdivého tvrzení ověřeným faktem a krátkým vysvětlením; ověř, že žáci opravu pochopili. Záměrná nepravda musí být před sdílením i při závěru jasně označena jako součást vzdělávací hry.
 ```
 
 **Doporučený operátor AI:** učitel připravuje a ověřuje tvrzení; žáci jako skupiny provádějí ověřování. Přímé používání AI žáky není pro splnění cíle nutné.
@@ -256,9 +256,9 @@ Budeš hrát roli [HISTORICKÁ OSOBNOST] v době [HISTORICKÉ OBDOBÍ]. Mluv v p
 **Navržený nový prompt:**
 
 ```text
-Jsi výslovně fiktivní vzdělávací simulace osoby [OSOBNOST] v období [OBDOBÍ] pro žáky [ROČNÍK]. Nejsi skutečná osoba, historický pramen ani svědek. Podklady ověřené učitelem: [STRUČNÝ SEZNAM ZDROJŮ / FAKTŮ].
+Na začátku každé odpovědi v celém rozhovoru zachovej označení „VZDĚLÁVACÍ SIMULACE – AI NENÍ HISTORICKÁ OSOBNOST ANI PRAMEN“. Jsi výslovně fiktivní vzdělávací simulace osoby [OSOBNOST] v období [OBDOBÍ] pro žáky [ROČNÍK]. Podklady ověřené učitelem: [STRUČNÝ SEZNAM ZDROJŮ / FAKTŮ].
 
-Odpovídej na jednu otázku žáků v daném historickém kontextu, ale nevymýšlej citace ani soukromé myšlenky a nepředstírej, že jsou známy. Každou odpověď označ jako jednu z možností: „doloženo v dodaných podkladech“, „interpretace“ nebo „modelovaná odpověď – ověřit“. Pokud podklad nestačí, přiznej nejistotu a navrhni, co třída může ověřit.
+U každého tvrzení důsledně rozliš jednu z přesných kategorií: „historicky doložené tvrzení“ s odkazem na dodaný podklad, „historická interpretace“ s uvedením, že jde o výklad, nebo „modelovaná odpověď vytvořená AI“, která není citací ani skutečným výrokem osobnosti. Nikdy nevydávej vytvořenou formulaci za autentickou citaci a nevymýšlej soukromé myšlenky. Pokud dodané podklady pro odpověď nestačí, výslovně řekni „to z dodaných podkladů nevím“ a navrhni, co třída může ověřit.
 
 Po každé odpovědi polož žákům otázku: které tvrzení mohou doložit a z jakého zdroje? Neodpovídej za ně a neprohlašuj modelovanou reakci za skutečný výrok historické osoby. Na konci shrň doložená fakta, interpretace a fikční prvky odděleně. Učitel řídí simulaci a ověřuje závěry.
 ```
@@ -446,6 +446,17 @@ Pokračuj po jedné větě nebo krátkém úryvku. Nabídni nejvýše dvě přir
 5. Posoudit věkovou a kurikulární přiměřenost ročníků, témat a navržených přenosových úloh. Návrhy nejsou ověřením souladu s kurikulem.
 6. Potvrdit doporučené délky jednotlivých částí. Všechny původní řetězce `duration` jsou zachovány pouze jako údaje zdrojového registru, nikoli jako validovaná měření.
 
-## Doporučený postup po schválení
+## Závislost na první vlně a přesný integrační postup
 
-Nejdříve pedagog posoudí jednotlivé problémy, cílové výsledky a nové prompty. Po schválení se opravy implementují v oddělené navazující etapě: stabilní ID a pořadí se zachovají, upraví se pouze schválené záznamy v registru a vygenerované stránky; potom se ověří obsah, kopírování promptů a filtry. Do té doby tento návrh nemění web ani jeho datové zdroje.
+K 5. 11. 2026 zůstává PR #32 otevřeným draftem a jeho větev vychází z `master` (`01aae8854407304475a0d0a6fb76588e6714595c`). PR #32 mění `data/activities.json` a generované `aktivity.html`, `matematika.html`, `cestina.html` a `anglictina.html`. Druhá vlna upraví jiné záznamy aktivit, ale sdílí registr a hlavní, matematické i anglické generované stránky. Samostatné generování proti dosavadnímu `master` by tak vytvořilo stránky bez první vlny; následné spojení může první vlnu přepsat nebo způsobit konflikty. Proto tento commit PR #33 upravuje pouze tento dokument; registr a HTML zůstávají beze změny.
+
+Po sloučení PR #32 proveď implementaci v existující větvi PR #33 tímto postupem:
+
+1. Ověř, že PR #32 je skutečně sloučen, načti aktuální `origin/master` a ověř, že první vlna je v něm přítomná.
+2. Aktualizuj větev `codex/ai-ve-vyuce-etapa6b2-pedagogicke-opravy-2` rebase na aktuální `origin/master`; nepřenášej zpět ani znovu nevytvářej větev první vlny.
+3. V `data/activities.json` uprav pouze stabilní ID uvedená v tomto dokumentu. Zachovej pořadí, všech 44 ID, 14 doporučených aktivit, každou hodnotu `duration` i všechny změny první vlny.
+4. Spusť generátor aktivit nad tímto úplným registrem, aby vznikly stránky obsahující obě vlny. Neměň ani neregeneruj registr promptů.
+5. Proveď obsahové kontroly a validace včetně kontroly přesně deseti změněných záznamů, úplných kopií promptů, filtrů, zachování první vlny a `git diff --check`.
+6. Aktualizuj tento dokument na konečnou implementovanou podobu a záznam kontrol, commitni a pushni do stejné větve PR #33. Aktualizuj existující PR jako draft; PR #31, #32 ani #33 neslučuj a nenasazuj do produkce.
+
+Tento postup zachovává jediný registr aktivit a integruje druhou vlnu až na základě výsledku první; nevytváří třetí paralelní variantu.
