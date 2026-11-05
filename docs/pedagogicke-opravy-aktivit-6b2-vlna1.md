@@ -4,7 +4,7 @@
 
 **Rozsah:** 10 vybraných ID; zachován počet 44, pořadí, stabilní ID, všechny statusy (včetně doporučených), původní časy a ostatních 34 záznamů. Registr promptů s 204 položkami není upraven.
 
-**Otevřené klasifikační případy z auditu:** `math-statistics-analysis` a `math-data-analysis` jsou mezi pěti neurčenými případy v auditním PR #31. Jejich role operátora AI se touto úpravou nerozhoduje. U `math-statistics-analysis` je výchozím návrhem učitelem vedené zkoumání; u `math-data-analysis` skupinové zkoumání. Jde pouze o scénáře k posouzení. Konkrétní operátor AI a případné přímé zapojení žáků musí schválit pedagog a škola.
+**Zohlednění auditu PR #31:** auditní návrh původně označil operátora AI u těchto aktivit za neurčeného; tato aktualizace nyní stanovuje pedagogické výchozí scénáře podle následného rozhodnutí. Pedagogický scénář `math-statistics-analysis` stanoví učitele jako operátora AI. U `math-data-analysis` žáci pracují ve skupinách; přímý přístup závisí na školou schváleném prostředí, jinak AI ovládá učitel. To neschvaluje konkrétní službu ani zpracování dat.
 
 ## Přehled změn
 
@@ -94,14 +94,16 @@ Oprav slohovou práci žáka [ROČNÍK]. Zkontroluj pravopis, gramatiku, stavbu 
 ```text
 Jsi průvodce žáka [ROČNÍK] při vlastní revizi slohu. Pomáhej mu přemýšlet, text za něj nepřepisuj. Použij modelový či syntetický text; skutečnou práci zpracuj pouze v nástroji a režimu předem schváleném školou. Anonymizace sama neopravňuje k externímu zpracování. Nežádej osobní údaje, známku ani diagnózu.
 
-Cíl: [ZADÁNÍ]. Text: [MODELOVÝ TEXT NEBO TEXT VE SCHVÁLENÉM REŽIMU]. Režim: [DELŠÍ DÍLNA / KRÁTKÝ REŽIM – 5 MINUT].
+Cíl: [ZADÁNÍ]. Text: [MODELOVÝ TEXT NEBO TEXT VE SCHVÁLENÉM REŽIMU]. Režim: [KRÁTKÁ KONZULTACE – PŘIBLIŽNĚ 2 MIN/ŽÁK / KRÁTKÁ REVIZE – 5 MINUT / DELŠÍ DÍLNA].
 
-V krátkém režimu žák vybere jediný problematický úsek. Dej jednu nápovědu či otázku, počkej na jeho návrh opravy, pomoz ověřit správnost a zakonči stručným shrnutím. Zaměř se na jeden cíl dosažitelný přibližně za pět minut; pokud ne, upozorni na to. Krátký režim nenahrazuje delší dílnu.
+V přibližně dvouminutové konzultaci pomoz žákovi pojmenovat jeden cíl či problém a dej jednu stručnou nápovědu; neprováděj úplnou revizi.
 
-V delším režimu postupuj po jednom kroku: zjisti záměr, nech žáka vybrat úsek a navrhnout změnu, pak ji ověř a vysvětli pravidlo či alternativy. Na konci shrň rozhodnutí žáka a nabídni kontrolní seznam. Neznámkuj ani nehodnoť schopnosti; nejistotu označ. Učitel kontroluje výstup a případné hodnocení.
+V pětiminutové revizi žák vybere jediný problematický úsek. Dej jednu nápovědu či otázku, počkej na jeho návrh opravy, pomoz ověřit správnost a zakonči stručným shrnutím. Zaměř se na jeden dosažitelný cíl. Tento režim nenahrazuje delší dílnu.
+
+V delší dílně postupuj krok za krokem: zjisti záměr, nech žáka vybrat úsek a navrhnout změnu, potom ji ověř a vysvětli pravidlo či alternativy. Na konci shrň jeho rozhodnutí a nabídni kontrolní seznam. Neznámkuj ani nehodnoť schopnosti; nejistotu označ. Učitel kontroluje výstup a případné hodnocení.
 ```
 
-**Proč se prompt mění:** Doplněn volitelný pětiminutový režim s jedním úsekem, nápovědou, vlastním pokusem a ověřením; delší dílna zůstává zachována.
+**Proč se prompt mění:** Výslovně oddělena původní přibližně dvouminutová konzultace na žáka od volitelné pětiminutové revize jednoho úseku; delší dílna zůstává.
 
 **Zbývající rizika:** AI může stále vytvářet chybnou radu, opravu, výpočet nebo interpretaci. Skutečnou žákovskou práci lze zpracovat jen v nástroji i režimu předem schváleném školou pro daný účel; anonymizace sama oprávnění nezakládá. Učitel ověřuje výstup a rozhoduje o klasifikaci.
 
@@ -256,18 +258,18 @@ Analyzuj datovou sadu [DATA] pro žáky střední školy. Vytvoř přehled tabul
 **Aktuální navržený prompt (po dopracování):**
 
 ```text
-Jsi didaktický asistent pro učitelem vedené statistické zkoumání žáky SŠ. Toto je pouze navržený scénář k pedagogickému schválení, nikoli závazná klasifikace. V tomto scénáři učitel ovládá AI, zprostředkuje otázky a řídí diskusi; žáci formulují hypotézy, volí a provádějí výpočty a sami tvoří závěry.
+Jsi didaktický asistent pro učitelem vedené statistické zkoumání žáky SŠ. AI ovládá učitel. Žáci formulují hypotézy, navrhují a provádějí výpočty, interpretují výsledky a sami formulují závěry. Učitel ověřuje výpočty i věcné výstupy a řídí diskusi.
 
-Cíl: [CÍL HODINY]. Data: [SYNTETICKÁ DATA NEBO DATA SCHVÁLENÁ ŠKOLOU PRO TENTO NÁSTROJ A REŽIM]. Otázka: [OTÁZKA ZKOUMÁNÍ]. Upřednostni syntetická data. Skutečná osobní či třídní data nepoužívej bez schválení konkrétního účelu, nástroje a režimu; anonymizace sama externí zpracování neopravňuje.
+Cíl: [CÍL HODINY]. Data: [SYNTETICKÁ DATA NEBO DATA SCHVÁLENÁ ŠKOLOU PRO TENTO NÁSTROJ A REŽIM]. Otázka: [OTÁZKA ZKOUMÁNÍ]. Upřednostni syntetická data. Skutečná osobní či třídní data nepoužívej bez schválení školy pro konkrétní účel, nástroj a režim; anonymizace sama neopravňuje k externímu zpracování.
 
-Pomáhej učiteli postupně vést žáky k popisu proměnných a hypotéze, volbě statistiky, vlastnímu výpočtu, kontrolnímu přepočtu a posouzení limitů či alternativních vysvětlení. Nepředkládej hotový závěr před pokusem žáků. Odděluj výpočet a interpretaci, nevydávej korelaci za příčinu a označ nejistotu. Učitel ověřuje správnost. Přímé ovládání AI žáky vyžaduje samostatné rozhodnutí pedagoga a schválený školní režim.
+Veď učitele k postupným otázkám o proměnných a hypotéze, volbě statistiky, vlastním výpočtu a kontrole, limitech a alternativních vysvětleních. Neprozrazuj závěr před pokusem žáků. Odděluj výpočet a interpretaci, nevydávej korelaci za příčinu a označ nejistotu. Tento scénář neurčuje technické ani datové schválení konkrétní služby školou.
 ```
 
-**Proč se prompt mění:** Doporučen učitelem vedený scénář: učitel ovládá AI, žáci tvoří hypotézy, počítají a formulují závěry; jde jen o návrh k pedagogickému schválení.
+**Proč se prompt mění:** Výchozí pedagogický scénář je učitelem vedený: učitel ovládá AI, žáci tvoří hypotézy, počítají a interpretují, učitel ověřuje a vede diskusi. Nejde o technické ani datové schválení služby.
 
 **Zbývající rizika:** AI může stále vytvářet chybnou radu, opravu, výpočet nebo interpretaci. Skutečnou žákovskou práci lze zpracovat jen v nástroji i režimu předem schváleném školou pro daný účel; anonymizace sama oprávnění nezakládá. Učitel ověřuje výstup a rozhoduje o klasifikaci.
 
-**Otázka pro pedagoga:** Zůstává výslovně nevyřešeno, kdo AI ovládá (učitel, žák, nebo oba); nesmí se to považovat za schválenou klasifikaci. Také je třeba schválit zdroj a režim dat.
+**Otázka pro školu:** Které konkrétní nástroje, datové zdroje a režimy jsou schválené pro tento účel? Pedagogický scénář stanoví učitele jako operátora, ale nenahrazuje technické a právní schválení školy.
 
 ### `math-data-analysis` — Skupinové zkoumání a interpretace dat
 
@@ -284,24 +286,26 @@ Analyzuj tato data z tabulky: [DATA]. Vytvoř přehled, vypočti základní stat
 **Aktuální navržený prompt (po dopracování):**
 
 ```text
-Jsi didaktický asistent pro skupinové zkoumání dat žáky SŠ. Toto je pouze navržený scénář k pedagogickému schválení, nikoli závazná klasifikace. Žáci pracují ve skupinách, sami volí otázky, výpočty a závěry; mohou určit mluvčího, který postup sdílí a interpretaci obhajuje. AI nabízí nápovědu a zpětnou vazbu, nikoli hotový závěr.
+Jsi didaktický asistent pro skupinové zkoumání dat žáky SŠ. Žáci ve skupinách sami volí otázky, provádějí výpočty a formulují závěry. Mohou určit mluvčího, který sdílí postup a obhajuje interpretaci. AI nabízí nápovědu a kontrolní zpětnou vazbu, nikoli hotový závěr.
 
-Cíl: [CÍL HODINY]. Data: [SYNTETICKÁ DATA NEBO DATA SCHVÁLENÁ ŠKOLOU PRO TENTO NÁSTROJ A REŽIM]. Preferuj syntetická data. Skutečná třídní či osobní data vyžadují schválení školy pro konkrétní účel, nástroj a režim; anonymizace sama externí zpracování neopravňuje. Přímá interakce žáků s AI je možná jen ve schváleném režimu.
+Cíl: [CÍL HODINY]. Data: [SYNTETICKÁ DATA NEBO DATA SCHVÁLENÁ ŠKOLOU PRO TENTO NÁSTROJ A REŽIM]. Upřednostni syntetická data. Skutečná osobní či třídní data použij pouze po schválení školy pro daný účel, nástroj a režim; anonymizace sama externí zpracování neopravňuje.
 
-Postupuj po jednom kroku a čekej na skupinu: nechej ji popsat proměnné a navrhnout otázku, předpovědět výsledek, provést výpočet a až poté nabídni kontrolní přepočet. Ptej se, jak důkazy podporují interpretaci a co tvrdit nelze. Skupina sama zapíše a obhájí závěr. Učitel ověřuje data a výpočty. Rozlišuj pozorování a závěr, nevydávej korelaci za příčinu, označ limity a nejistotu. O tom, kdo ovládá AI, rozhodne pedagogicky schválený scénář.
+Přímé ovládání AI žákem je možné jen ve školou schváleném prostředí a režimu. Pokud schváleno není, AI ovládá učitel a zprostředkuje skupině nápovědu či kontrolní výpočty. Postupuj po jednom kroku a čekej na skupinu: vyžádej popis proměnných a otázku, její předpověď a vlastní výpočet; teprve pak nabídni kontrolu. Ptej se, jak důkazy podporují interpretaci a co tvrdit nelze. Skupina sama sepíše a obhájí závěr; učitel ověřuje data, výpočty a vede reflexi.
+
+Rozlišuj pozorování od závěru, nevydávej korelaci za příčinu a označ limity i nejistotu. Pedagogický scénář sám neschvaluje službu ani zpracování dat.
 ```
 
-**Proč se prompt mění:** Doporučeno odlišné skupinové zkoumání s vlastními otázkami, výpočty, volitelným mluvčím a obhajobou; AI dává nápovědu, scénář čeká na schválení.
+**Proč se prompt mění:** Výchozí pedagogický scénář je skupinová práce s vlastními otázkami, výpočty, volitelným mluvčím a obhajobou. Při neschváleném přímém přístupu AI ovládá učitel; scénář neschvaluje službu ani zpracování dat.
 
 **Zbývající rizika:** AI může stále vytvářet chybnou radu, opravu, výpočet nebo interpretaci. Skutečnou žákovskou práci lze zpracovat jen v nástroji i režimu předem schváleném školou pro daný účel; anonymizace sama oprávnění nezakládá. Učitel ověřuje výstup a rozhoduje o klasifikaci.
 
-**Otázka pro pedagoga:** Zůstává výslovně nevyřešeno, kdo AI ovládá. Pedagog musí určit, zda jde o přímou skupinovou interakci nebo učitelem vedenou činnost.
+**Otázka pro pedagoga/školu:** Je pro žáky schválené přímé ovládání AI v konkrétním prostředí a datovém režimu? Pokud ne, scénář určuje učitele jako operátora.
 
 ## Zachování otevřených rozhodnutí auditu
 
-- Audit PR #31 výslovně ponechal jako nerozhodnuté role operátora AI u ID `math-statistics-analysis` a `math-data-analysis` (spolu s dalšími případy mimo tuto vlnu). Tato větev nepřepisuje ani nepovažuje audit za schválený.
-- U obou datových aktivit je nutné schválit, zda skupina smí přímo ovládat školou schválenou AI, nebo zda ji ovládá učitel a skupina pracuje s odpověďmi. Do té doby nelze v UI ani metadatech publikovat jednoznačný štítek operátora.
-- U `czech-essay-workshop` zůstává původní údaj `2 min/žák`, zatímco nový volitelný režim počítá přibližně s pěti minutami. Čas nebyl změněn; pedagog má rozhodnout, zda údaj označuje jinou část přípravy, zda jej upravit, nebo zda krátký režim časově zkrátit.
+- Audit PR #31 původně ponechal role operátora AI těchto aktivit neurčené. Následné rozhodnutí v této větvi stanovuje pedagogické výchozí scénáře popsané výše; nepovažuje však auditní klasifikace ani provozní režim služby za schválené.
+- `math-statistics-analysis`: pedagogický scénář určuje učitele jako operátora AI. `math-data-analysis`: přímé ovládání žáky je podmíněno schváleným školním prostředím; jinak AI ovládá učitel. Škola zvlášť schvaluje konkrétní službu, účel a datový režim.
+- U `czech-essay-workshop` původní údaj `2 min/žák` označuje krátkou konzultaci; volitelná revize jednoho úseku trvá přibližně 5 minut. Jde o odlišné režimy, ne o změnu pole `duration`. Registr uchovává jen jeden obecný údaj; přesné rozlišení je proto v popisku a promptu.
 - U testu matematiky je odhad dokončitelnosti jen orientační. Učitel má před použitím ověřit časovou náročnost pro konkrétní třídu a rozsah testu.
 - Cambridge a maturitní podklady ani kritéria nejsou automaticky ověřeny promptem. Pedagog musí dodat a zkontrolovat aktuální podklady pro zamýšlené cvičení.
 - Reálná žákovská data a texty: rozhodnutí o schváleném nástroji, režimu, účelu, oprávnění, uchovávání a přístupu náleží škole/odpovědné osobě. Syntetická data a modelové práce jsou výchozí bezpečnější ukázkou; anonymizace není automatickým souhlasem s externím zpracováním.
