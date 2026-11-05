@@ -3,655 +3,1207 @@
     "id": "math-word-problem-generator",
     "title": "Generátor slovních úloh",
     "description": "AI vygeneruje sadu slovních úloh na téma přizpůsobených věku žáků s realistickými kontexty a správnými řešeními.",
-    "subjects": ["mat"],
-    "levels": ["zs1"],
-    "tools": ["chatgpt"],
+    "subjects": [
+      "mat"
+    ],
+    "levels": [
+      "zs1"
+    ],
+    "tools": [
+      "chatgpt"
+    ],
     "duration": "10 min",
     "format": "whole-class",
     "prompt": "Jsi zkušený učitel matematiky. Vygeneruj 10 slovních úloh na téma [TÉMA] pro žáky [ROČNÍK]. Každá úloha musí mít realistický kontext. Uveď správné řešení s postupem.",
     "status": "ready",
-    "collections": [{"id": "matematika", "order": 1}],
+    "collections": [
+      {
+        "id": "matematika",
+        "order": 1
+      }
+    ],
     "icon": "📝",
-    "detail": {"intro": "Zadejte ChatGPT tento prompt a upravte hodnoty v závorkách:"}
+    "detail": {
+      "intro": "Zadejte ChatGPT tento prompt a upravte hodnoty v závorkách:"
+    }
   },
   {
     "id": "math-step-by-step-guide",
     "title": "Krok-za-krokem průvodce",
     "description": "Gemini vysvětlí libovolný matematický postup srozumitelně s pojmenováním každého kroku, příklady a mnemotechnickými pomůckami.",
-    "subjects": ["mat"],
-    "levels": ["zs2"],
-    "tools": ["gemini"],
+    "subjects": [
+      "mat"
+    ],
+    "levels": [
+      "zs2"
+    ],
+    "tools": [
+      "gemini"
+    ],
     "duration": "5 min",
     "format": "individual",
     "prompt": "Vysvětli postup řešení [MATEMATICKÝ PROBLÉM] pro žáky [ROČNÍK] krok za krokem. Každý krok pojmenuj, vysvětli proč ho děláme a uveď příklad. Na konci přidej tip jak si postup zapamatovat.",
     "status": "ready",
-    "collections": [{"id": "matematika", "order": 2}],
+    "collections": [
+      {
+        "id": "matematika",
+        "order": 2
+      }
+    ],
     "icon": "📐"
   },
   {
     "id": "math-test-paper-generator",
     "title": "Tvorba testů a písemek",
-    "description": "Claude vytvoří kompletní písemné práce s bodovým hodnocením, různými typy úloh a vzorovou odpovědí i bodovacím klíčem.",
-    "subjects": ["mat"],
-    "levels": ["ss"],
-    "tools": ["claude"],
+    "description": "Návrh matematické písemky s ověřitelným řešením, bodovacím klíčem a hodnoticí škálou ke schválení učitelem; AI sama žáky neklasifikuje.",
+    "subjects": [
+      "mat"
+    ],
+    "levels": [
+      "ss"
+    ],
+    "tools": [
+      "claude"
+    ],
     "duration": "3 min",
     "format": "classroom",
-    "prompt": "Vytvoř písemnou práci z matematiky pro [ROČNÍK] na téma [TÉMA]. Celkem [POČET] bodů. Přidej: vzorové řešení, bodovací klíč, hodnotící škálu (1–5).",
+    "prompt": "Jsi metodický asistent učitele matematiky. Navrhni písemnou práci pro [ROČNÍK] na [TÉMA] podle výukových cílů [CÍLE] a probraného učiva [ROZSAH]. Připrav [POČET ÚLOH] úloh různých typů v celkové hodnotě [POČET BODŮ]. U každé uveď ověřovanou dovednost, jednoznačné zadání, vzorové řešení a bodování; přepočítej výsledky a zkontroluj součet bodů. Odděl verzi pro žáky od klíče pro učitele. Přidej jen návrh škály 1–5 výrazně označený KE SCHVÁLENÍ UČITELEM. Upozorni na možné nejednoznačnosti a nepřiměřenou obtížnost. Před použitím musí učitel ověřit zadání, klíč i kritéria; AI žádnou známku nepřiděluje.",
     "status": "ready",
-    "collections": [{"id": "matematika", "order": 3}],
+    "collections": [
+      {
+        "id": "matematika",
+        "order": 3
+      }
+    ],
     "icon": "📋",
-    "detail": {"modalTitle": "Tvorba testů"}
+    "detail": {
+      "modalTitle": "Tvorba testů"
+    }
   },
   {
     "id": "math-differentiated-problems",
     "title": "Diferenciace úloh dle žáka",
-    "description": "Zadejte standardní úlohu a AI vygeneruje 3 verze: pro podprůměrné, průměrné a nadprůměrné žáky.",
-    "subjects": ["mat"],
-    "levels": ["zs2"],
-    "tools": ["chatgpt"],
+    "description": "Tři varianty téže matematické úlohy podle míry opory, nikoli podle nálepky či diagnózy žáka; výukový cíl zůstává společný.",
+    "subjects": [
+      "mat"
+    ],
+    "levels": [
+      "zs2"
+    ],
+    "tools": [
+      "chatgpt"
+    ],
     "duration": "8 min",
     "format": "groups",
-    "prompt": "Vezmi tuto matematickou úlohu: [ÚLOHA]. Přepracuj ji do 3 verzí: 1) Lehká – pro žáky ve SPO, 2) Standardní – původní, 3) Rozšiřující – pro nadané žáky.",
+    "prompt": "Jsi asistent učitele matematiky. Výukový cíl: [CÍL], ročník: [ROČNÍK], výchozí úloha: [ÚLOHA]. Připrav tři varianty se stejným základním matematickým cílem: A) s větší oporou (přehledný postup, vodicí otázky a přiměřená vizuální nebo číselná pomůcka), B) standardní (samostatné řešení), C) rozšiřující (náročnější aplikace nebo zdůvodnění). U každé uveď, co žák skutečně procvičuje, vhodnou nápovědu, řešení a krátkou kontrolu správnosti. Neoznačuj žáky jako podprůměrné nebo podle diagnózy. Nepoužívej osobní údaje; učitel ověří matematickou správnost a přiměřenost podpory.",
     "status": "ready",
-    "collections": [{"id": "matematika", "order": 4}],
+    "collections": [
+      {
+        "id": "matematika",
+        "order": 4
+      }
+    ],
     "icon": "🎯",
-    "detail": {"modalTitle": "Diferenciace úloh"}
+    "detail": {
+      "modalTitle": "Diferenciace úloh"
+    }
   },
   {
     "id": "math-story-problem-game",
     "title": "Matematická hra – příběhové úlohy",
     "description": "Gemini vytvoří mini-příběh, ve kterém žáci musí vyřešit matematické problémy, aby postoupili dál v příběhu.",
-    "subjects": ["mat"],
-    "levels": ["zs1"],
-    "tools": ["gemini"],
+    "subjects": [
+      "mat"
+    ],
+    "levels": [
+      "zs1"
+    ],
+    "tools": [
+      "gemini"
+    ],
     "duration": "15 min",
     "format": "groups",
     "prompt": "Vytvoř matematickou hru pro žáky [ROČNÍK] na téma [TÉMA]. Napiš krátký příběh rozdělený do 5 kroků. V každém kroku přidej matematickou úlohu přiměřenou věku, správné řešení a podmínku pro pokračování. Zachovej motivující tón a nabídni práci ve skupinách.",
     "status": "favorite",
-    "collections": [{"id": "matematika", "order": 5}],
+    "collections": [
+      {
+        "id": "matematika",
+        "order": 5
+      }
+    ],
     "icon": "🎮"
   },
   {
     "id": "math-statistics-analysis",
     "title": "Statistika a analýza dat",
-    "description": "AI pomůže žákům interpretovat datové sady, vysvětlí statistické pojmy a navede je správnou interpretací výsledků.",
-    "subjects": ["mat"],
-    "levels": ["ss"],
-    "tools": ["chatgpt"],
+    "description": "Statistická analýza se syntetickými či schválenými daty; žák formuluje vlastní hypotézy a ověřuje výpočty i interpretaci.",
+    "subjects": [
+      "mat"
+    ],
+    "levels": [
+      "ss"
+    ],
+    "tools": [
+      "chatgpt"
+    ],
     "duration": "20 min",
     "format": "individual",
-    "prompt": "Analyzuj datovou sadu [DATA] pro žáky střední školy. Vytvoř přehled tabulky, vypočti základní statistiky, popiš hlavní trendy a odlehlé hodnoty, vysvětli statistické pojmy jednoduchým jazykem a upozorni na možné chyby nebo zkreslení v interpretaci.",
+    "prompt": "Pomáhej při učení statistiky na SŠ v režimu [UČITELSKÁ UKÁZKA / PRÁCE ŽÁKA], který předem zvolí učitel. Pracuj jen se syntetickými nebo školou povolenými neidentifikujícími daty [DATA]; nevyžaduj jména, známky ani jiné osobní údaje. Cíl: [STATISTICKÝ CÍL]. Nejprve polož dvě otázky, jaký trend a odlehlé hodnoty lze v tabulce čekat, a vyžádej vlastní odhad žáka. Potom pomoz spočítat [UKAZATELE], krok za krokem vysvětli vzorce a nabídni kontrolu výpočtu jiným postupem. Nech žáka napsat vlastní interpretaci a upozorni na alternativní výklady, velikost vzorku a možné zkreslení. Přiznej nejistotu; neposkytuj hotový závěr bez žákova pokusu.",
     "status": "ready",
-    "collections": [{"id": "matematika", "order": 6}],
+    "collections": [
+      {
+        "id": "matematika",
+        "order": 6
+      }
+    ],
     "icon": "📊"
   },
   {
     "id": "czech-essay-feedback",
     "title": "Opravovač slohových prací",
-    "description": "Vložte slohy žáků do Claude – AI je opraví, navrhne zlepšení stylu, gramatiky a struktury a přidá konstruktivní zpětnou vazbu.",
-    "subjects": ["cj"],
-    "levels": ["zs2"],
-    "tools": ["claude"],
+    "description": "Učitel získá návrh formativní zpětné vazby k modelovému nebo školou povolenému slohu; žák dostane konkrétní vodítka k vlastní opravě.",
+    "subjects": [
+      "cj"
+    ],
+    "levels": [
+      "zs2"
+    ],
+    "tools": [
+      "claude"
+    ],
     "duration": "2 min/žák",
     "format": "essay",
-    "prompt": "Oprav tuto slohovou práci žáka [ROČNÍK]. Zaměř se na: 1) gramatiku a pravopis, 2) stavbu vět a odstavců, 3) vhodnost slovní zásoby, 4) splnění zadání. Pro každou chybu uveď správnou variantu a stručné vysvětlení. Na závěr napiš celkové hodnocení a 3 tipy na zlepšení. Sloh: [TEXT SLOHU]",
+    "prompt": "Jsi asistent učitele českého jazyka pro formativní zpětnou vazbu. Pracuj pouze s modelovým textem nebo se skutečným textem v režimu výslovně schváleném školou pro danou AI službu; nevkládej jména ani jiné identifikátory. Zadání: [ZADÁNÍ], ročník: [ROČNÍK], kritéria: [KRITÉRIA], text: [POVOLENÝ TEXT]. Nejprve vyzdvihni dvě konkrétní silné stránky. Pak vyber nejvýše pět důležitých míst k úpravě z hlediska pravopisu, stavby textu, slovní zásoby či splnění zadání; u každého uveď krátký úryvek, vysvětlení a nápovědu, aby žák mohl chybu opravit sám. Na závěr navrhni tři kroky další práce. Neuděluj známku a neodhaduj vlastnosti žáka; učitel návrhy zkontroluje.",
     "status": "ready",
-    "collections": [{"id": "cestina", "order": 1}],
+    "collections": [
+      {
+        "id": "cestina",
+        "order": 1
+      }
+    ],
     "icon": "✍️"
   },
   {
     "id": "czech-dictation-generator",
     "title": "Generátor diktátů",
     "description": "AI vygeneruje diktáty zaměřené na konkrétní gramatické jevy s různou úrovní obtížnosti a klíčem.",
-    "subjects": ["cj"],
-    "levels": ["zs2"],
-    "tools": ["chatgpt"],
+    "subjects": [
+      "cj"
+    ],
+    "levels": [
+      "zs2"
+    ],
+    "tools": [
+      "chatgpt"
+    ],
     "duration": "5 min příprava",
     "format": "classroom",
     "prompt": "Vytvoř diktát pro žáky [ROČNÍK] ZŠ zaměřený na [GRAMATICKÝ JEV, např. vyjmenovaná slova / psaní i/y / shoda přísudku s podmětem]. Délka: cca [POČET] slov. Přidej: opravný klíč a seznam procvičovaných jevů s vysvětlením pravidla.",
     "status": "ready",
-    "collections": [{"id": "cestina", "order": 2}],
+    "collections": [
+      {
+        "id": "cestina",
+        "order": 2
+      }
+    ],
     "icon": "🎧"
   },
   {
     "id": "czech-literary-analysis",
     "title": "Literární rozbor díla",
     "description": "Gemini provede komplexní literární rozbor díla – žánr, téma, postavy, kompozici, jazykové prostředky a historický kontext.",
-    "subjects": ["cj"],
-    "levels": ["ss"],
-    "tools": ["gemini"],
+    "subjects": [
+      "cj"
+    ],
+    "levels": [
+      "ss"
+    ],
+    "tools": [
+      "gemini"
+    ],
     "duration": "10 min příprava",
     "format": "individual",
     "prompt": "Proveď literární rozbor díla „[NÁZEV]“ od [AUTOR]. Zahrň: žánr a literární druh, téma a hlavní myšlenky, charakteristiku hlavních postav, kompozici a stavbu díla, jazykové prostředky, historický a společenský kontext. Odpovědi strukturuj jako přehledné body vhodné pro přípravu žáků SŠ.",
     "status": "ready",
-    "collections": [{"id": "cestina", "order": 3}],
+    "collections": [
+      {
+        "id": "cestina",
+        "order": 3
+      }
+    ],
     "icon": "📚"
   },
   {
     "id": "czech-spelling-word-exercises",
     "title": "Cvičení vyjmenovaných slov",
     "description": "AI vygeneruje kreativní cvičení a příběhy procvičující vyjmenovaná slova zábavnou formou pro mladší žáky.",
-    "subjects": ["cj"],
-    "levels": ["zs1"],
-    "tools": ["chatgpt"],
+    "subjects": [
+      "cj"
+    ],
+    "levels": [
+      "zs1"
+    ],
+    "tools": [
+      "chatgpt"
+    ],
     "duration": "5 min příprava",
     "format": "classroom",
     "prompt": "Vytvoř kreativní cvičení pro žáky 1.–5. ročníku na téma vyjmenovaná slova [ŘADA]. Zařaď krátký příběh, 8 úloh s různými typy doplňování a výběru, okamžitou zpětnou vazbu a správné řešení s jednoduchým vysvětlením.",
     "status": "favorite",
-    "collections": [{"id": "cestina", "order": 4}],
+    "collections": [
+      {
+        "id": "cestina",
+        "order": 4
+      }
+    ],
     "icon": "🔤"
   },
   {
     "id": "czech-matura-oral-exam",
     "title": "Příprava na maturitní ústní zkoušku",
-    "description": "Claude simuluje maturitní ústní zkoušku – klade otázky k literárnímu dílu a hodnotí odpovědi žáka s radami na zlepšení.",
-    "subjects": ["cj"],
-    "levels": ["ss"],
-    "tools": ["claude"],
+    "description": "Neoficiální nácvik ústní maturity s otázkami po jedné a orientační zpětnou vazbou; fakta o díle je třeba ověřit.",
+    "subjects": [
+      "cj"
+    ],
+    "levels": [
+      "ss"
+    ],
+    "tools": [
+      "claude"
+    ],
     "duration": "20 min aktivita",
     "format": "individual",
-    "prompt": "Simuluj maturitní ústní zkoušku z literatury pro dílo [NÁZEV] od [AUTOR]. Ptej se vždy jen na jednu otázku, počkej na odpověď, ohodnoť její věcnost a úplnost, vysvětli, co chybí, a nabídni jednu konkrétní radu ke zlepšení.",
+    "prompt": "Jsi tréninkový partner pro neoficiální nácvik ústní maturitní zkoušky z českého jazyka a literatury. Procvičuj dílo [DÍLO A AUTOR] podle školního zadání [OKRUHY] a případných ověřených podkladů [ZDROJE]. Polož jednu otázku, počkej na odpověď žáka a pak polož doplňující otázku nebo dej nápovědu; neříkej hned celý rozbor. Postupně se věnuj tématu, kompozici, postavám, jazyku a souvislostem relevantním pro školní kritéria. Po pěti otázkách shrň dvě silné stránky, dvě oblasti k procvičení a konkrétní další krok. Nevymýšlej citace ani historické údaje; nejisté informace označ k ověření v díle nebo zdrojích. Neuděluj oficiální známku ani nepředpovídej výsledek maturity.",
     "status": "ready",
-    "collections": [{"id": "cestina", "order": 5}],
+    "collections": [
+      {
+        "id": "cestina",
+        "order": 5
+      }
+    ],
     "icon": "🗣️"
   },
   {
     "id": "czech-writing-form-guide",
     "title": "Asistent pro tvorbu slohových útvarů",
     "description": "Žáci dostávají krok-za-krokem průvodce pro psaní různých slohových útvarů – líčení, popis, vypravování, charakteristika.",
-    "subjects": ["cj"],
-    "levels": ["zs2"],
-    "tools": ["chatgpt"],
+    "subjects": [
+      "cj"
+    ],
+    "levels": [
+      "zs2"
+    ],
+    "tools": [
+      "chatgpt"
+    ],
     "duration": "15 min aktivita",
     "format": "individual",
     "prompt": "Proveď žáka krok za krokem tvorbou slohového útvaru [ÚTVAR] na téma [TÉMA]. Nejprve vysvětli strukturu, potom navrhni osnovu a užitečná jazyková spojení, polož otázky k vlastnímu nápadu a nakonec pomoz upravit text. Nevytvářej celý text za žáka.",
     "status": "ready",
-    "collections": [{"id": "cestina", "order": 6}],
+    "collections": [
+      {
+        "id": "cestina",
+        "order": 6
+      }
+    ],
     "icon": "📝"
   },
   {
     "id": "english-conversation-partner",
     "title": "AI konverzační partner",
     "description": "Nastavte ChatGPT jako bezpečného konverzačního partnera na zadané téma a jazykové úrovni – žáci konverzují v angličtině bez strachu ze selhání.",
-    "subjects": ["aj"],
-    "levels": ["zs2"],
-    "tools": ["chatgpt"],
+    "subjects": [
+      "aj"
+    ],
+    "levels": [
+      "zs2"
+    ],
+    "tools": [
+      "chatgpt"
+    ],
     "duration": "15 min aktivita",
     "format": "individual",
     "prompt": "You are a friendly English conversation partner for a Czech student at [CEFR level] level. Speak only in English. The topic is: [TOPIC]. Start the conversation naturally, ask follow-up questions, gently correct grammar mistakes by repeating the corrected sentence, and encourage the student. If they don't understand, rephrase simply. Keep sentences short and clear.",
     "status": "ready",
-    "collections": [{"id": "anglictina", "order": 1}],
+    "collections": [
+      {
+        "id": "anglictina",
+        "order": 1
+      }
+    ],
     "icon": "💬"
   },
   {
     "id": "english-grammar-feedback",
     "title": "Opravovač gramatiky a stylu",
-    "description": "Claude opraví anglický text žáka, vysvětlí chyby v kontextu gramatických pravidel a navrhne stylistická zlepšení.",
-    "subjects": ["aj"],
-    "levels": ["ss"],
-    "tools": ["claude"],
+    "description": "Anglický jazykový kouč pomáhá žákovi rozpoznat vzorce chyb a vlastními silami opravit krátký úsek povoleného textu.",
+    "subjects": [
+      "aj"
+    ],
+    "levels": [
+      "ss"
+    ],
+    "tools": [
+      "claude"
+    ],
     "duration": "3 min/text",
     "format": "individual",
-    "prompt": "Correct the following English text written by a Czech student at [CEFR] level. For each error: show original, corrected version, brief grammar rule. Summary of main error patterns and 3 style improvement tips. TEXT: [STUDENT TEXT]",
+    "prompt": "Act as a supportive English writing coach for a Czech learner at [CEFR] level. Use only a synthetic sample or text approved by the school for processing in this AI service; do not request names or personal details. Task: [WRITING TASK]. Text: [APPROVED TEXT]. First identify two strengths. Select up to four high-priority grammar or vocabulary errors; for each, quote a short excerpt, give a brief rule at this CEFR level, and ask the learner to try a correction before revealing an example. Wait for the learner's attempts, then give constructive feedback and two practice sentences. Do not rewrite the whole text or assign an official score or grade. Flag uncertain style choices as suggestions, not errors.",
     "status": "ready",
-    "collections": [{"id": "anglictina", "order": 2}],
+    "collections": [
+      {
+        "id": "anglictina",
+        "order": 2
+      }
+    ],
     "icon": "✔️",
-    "detail": {"modalTitle": "Opravovač gramatiky"}
+    "detail": {
+      "modalTitle": "Opravovač gramatiky"
+    }
   },
   {
     "id": "english-vocabulary-builder",
     "title": "Slovní zásoba – tematické sety",
     "description": "AI vygeneruje tematické sety slovíček s příklady ve větách, obrázkovými popisy a paměťovými tipy pro mladší žáky.",
-    "subjects": ["aj"],
-    "levels": ["zs1"],
-    "tools": ["gemini"],
+    "subjects": [
+      "aj"
+    ],
+    "levels": [
+      "zs1"
+    ],
+    "tools": [
+      "gemini"
+    ],
     "duration": "10 min příprava",
     "format": "classroom",
     "prompt": "Create a thematic vocabulary set for Czech pupils at [AGE] level on [TOPIC]. Include 15 words with Czech translations, simple example sentences, a short image description for each word, one memory tip, and 8 exercises with an answer key. Use language suitable for beginners.",
     "status": "favorite",
-    "collections": [{"id": "anglictina", "order": 3}],
+    "collections": [
+      {
+        "id": "anglictina",
+        "order": 3
+      }
+    ],
     "icon": "📚"
   },
   {
     "id": "english-cambridge-exam-practice",
     "title": "Příprava na Cambridge / FCE / CAE",
-    "description": "ChatGPT simuluje části zkoušek Cambridge – Use of English, Writing tasks – a dává podrobnou zpětnou vazbu s dosaženým skóre.",
-    "subjects": ["aj"],
-    "levels": ["ss"],
-    "tools": ["chatgpt"],
+    "description": "Neoficiální nácvik typu Cambridge s úlohami po jedné, vysvětlením chyb a zpětnou vazbou bez oficiálního skóre.",
+    "subjects": [
+      "aj"
+    ],
+    "levels": [
+      "ss"
+    ],
+    "tools": [
+      "chatgpt"
+    ],
     "duration": "30 min aktivita",
     "format": "individual",
-    "prompt": "Act as a Cambridge English exam trainer for [B1/B2/C1] level. Prepare a mixed practice session with Use of English, a Writing task, and a clear feedback rubric. Give one task at a time, wait for the answer, score it using the relevant criteria, explain corrections, and recommend the next step.",
+    "prompt": "Act as an unofficial English exam-practice coach for level [B1/B2/C1] and skill [USE OF ENGLISH / WRITING]. Create original practice tasks inspired by the general skill type, not copied official examination items. State the skill being practised and give one task at a time; wait for the learner's answer. Ask the learner briefly to explain a choice or revise a sentence before giving a model response. For Writing, use the provided task [TASK] and agreed criteria [CRITERIA] to give specific strengths and next steps; for Use of English, explain the language rule and offer another example. Do not invent or claim official Cambridge scoring, grade boundaries, certification, or predicted exam results. Invite verification against current official materials and teacher guidance.",
     "status": "ready",
-    "collections": [{"id": "anglictina", "order": 4}],
+    "collections": [
+      {
+        "id": "anglictina",
+        "order": 4
+      }
+    ],
     "icon": "📝"
   },
   {
     "id": "english-grammar-exercises",
     "title": "Gramatická cvičení na míru",
     "description": "Generujte cvičení na konkrétní gramatiku – časy, podmínkové věty, slovesa – s klíčem a doplňujícím vysvětlením pravidla.",
-    "subjects": ["aj"],
-    "levels": ["zs2"],
-    "tools": ["gemini"],
+    "subjects": [
+      "aj"
+    ],
+    "levels": [
+      "zs2"
+    ],
+    "tools": [
+      "gemini"
+    ],
     "duration": "5 min příprava",
     "format": "classroom",
     "prompt": "Create 15 English grammar exercises for Czech students at [CEFR] level on [GRAMMAR TOPIC]. Mix fill-in, transformation, error correction, and short production tasks. Add an answer key and a concise Czech explanation of each rule. Adjust the difficulty to the selected level.",
     "status": "ready",
-    "collections": [{"id": "anglictina", "order": 5}],
+    "collections": [
+      {
+        "id": "anglictina",
+        "order": 5
+      }
+    ],
     "icon": "🔤"
   },
   {
     "id": "english-contextual-translation",
     "title": "Překlad s kulturním kontextem",
     "description": "Překlad nejde jen o slova – Claude vysvětlí kulturní kontext, idiomy a nuance, které strojový překlad mine.",
-    "subjects": ["aj"],
-    "levels": ["ss"],
-    "tools": ["claude"],
+    "subjects": [
+      "aj"
+    ],
+    "levels": [
+      "ss"
+    ],
+    "tools": [
+      "claude"
+    ],
     "duration": "10 min aktivita",
     "format": "groups",
     "prompt": "Translate the text below from [SOURCE LANGUAGE] to [TARGET LANGUAGE]. Preserve the meaning and tone. Then explain important idioms, cultural references, and language nuances in Czech, offer two natural alternatives for difficult phrases, and identify places where a literal translation would sound unnatural. TEXT: [TEXT]",
     "status": "ready",
-    "collections": [{"id": "anglictina", "order": 6}],
+    "collections": [
+      {
+        "id": "anglictina",
+        "order": 6
+      }
+    ],
     "icon": "🌍"
   },
   {
     "id": "biology-virtual-lab-experiment",
     "title": "Virtuální laboratorní experiment",
     "description": "Gemini jako virtuální laboratorní asistent simuluje průběh experimentu – popisuje kroky, výsledky a závěry bez fyzické laboratoře.",
-    "subjects": ["pv"],
-    "subsubjects": ["bio"],
-    "levels": ["zs2"],
-    "tools": ["gemini"],
+    "subjects": [
+      "pv"
+    ],
+    "subsubjects": [
+      "bio"
+    ],
+    "levels": [
+      "zs2"
+    ],
+    "tools": [
+      "gemini"
+    ],
     "duration": "20 min",
     "format": "groups",
     "prompt": "Simuluj laboratorní experiment: [NÁZEV EXPERIMENTU] pro žáky [ROČNÍK]. Popište: 1) Potřebné pomůcky a chemikálie, 2) Přesný postup krok za krokem, 3) Co žáci uvidí / jak reakce proběhne, 4) Vědecké vysvětlení jevu, 5) Bezpečnostní upozornění, 6) Otázky k zamyšlení po experimentu.",
     "status": "ready",
-    "collections": [{"id": "prirodoveda", "order": 1}],
+    "collections": [
+      {
+        "id": "prirodoveda",
+        "order": 1
+      }
+    ],
     "icon": "🧬",
-    "detail": {"modalTitle": "Virtuální experiment"}
+    "detail": {
+      "modalTitle": "Virtuální experiment"
+    }
   },
   {
     "id": "chemistry-equation-guide",
     "title": "Průvodce chemickými rovnicemi",
     "description": "AI krok za krokem vysvětlí postup vyčíslování chemických rovnic, jejich typy a aplikace v reálném světě.",
-    "subjects": ["pv"],
-    "subsubjects": ["che"],
-    "levels": ["ss"],
-    "tools": ["chatgpt"],
+    "subjects": [
+      "pv"
+    ],
+    "subsubjects": [
+      "che"
+    ],
+    "levels": [
+      "ss"
+    ],
+    "tools": [
+      "chatgpt"
+    ],
     "duration": "10 min",
     "format": "individual",
     "prompt": "Vysvětli vyčíslování chemické rovnice [ROVNICE] žákům střední školy krok za krokem. Urči typ reakce, ukaž postup zachování počtu atomů, vysvětli každý krok jednoduchým jazykem a přidej jednu podobnou rovnici k samostatnému procvičení s řešením.",
     "status": "ready",
-    "collections": [{"id": "prirodoveda", "order": 2}],
+    "collections": [
+      {
+        "id": "prirodoveda",
+        "order": 2
+      }
+    ],
     "icon": "⚗️"
   },
   {
     "id": "physics-phenomenon-analogies-explainer",
     "title": "Vysvětlení fyzikálních jevů analogiemi",
     "description": "AI vysvětlí složité fyzikální pojmy pomocí analogií ze každodenního života, které žáci ihned pochopí a zapamatují si.",
-    "subjects": ["pv"],
-    "subsubjects": ["fyz"],
-    "levels": ["zs2"],
-    "tools": ["chatgpt"],
+    "subjects": [
+      "pv"
+    ],
+    "subsubjects": [
+      "fyz"
+    ],
+    "levels": [
+      "zs2"
+    ],
+    "tools": [
+      "chatgpt"
+    ],
     "duration": "5 min",
     "format": "classroom",
     "prompt": "Vysvětli fyzikální jev [JEV] žákům [ROČNÍK] pomocí tří analogií z každodenního života. Přidej jednoduchý příklad, upozorni na limity každé analogie a zakonči třemi otázkami ověřujícími porozumění.",
     "status": "favorite",
-    "collections": [{"id": "prirodoveda", "order": 3}],
+    "collections": [
+      {
+        "id": "prirodoveda",
+        "order": 3
+      }
+    ],
     "icon": "⚡"
   },
   {
     "id": "biology-animal-encyclopedia",
     "title": "Encyklopedie živočichů na míru",
     "description": "Gemini vytvoří poutavý popis libovolného živočicha přizpůsobený věku žáků – výskyt, potravní řetězec, zajímavosti.",
-    "subjects": ["pv"],
-    "subsubjects": ["bio"],
-    "levels": ["zs1"],
-    "tools": ["gemini"],
+    "subjects": [
+      "pv"
+    ],
+    "subsubjects": [
+      "bio"
+    ],
+    "levels": [
+      "zs1"
+    ],
+    "tools": [
+      "gemini"
+    ],
     "duration": "8 min",
     "format": "individual",
     "prompt": "Vytvoř poutavý profil živočicha [ŽIVOČICH] pro žáky [ROČNÍK]. Uveď vzhled, výskyt, potravu, potravní řetězec, způsob života, ohrožení a pět zajímavostí. Přizpůsob jazyk věku žáků a přidej tři otázky k ověření porozumění.",
     "status": "ready",
-    "collections": [{"id": "prirodoveda", "order": 4}],
+    "collections": [
+      {
+        "id": "prirodoveda",
+        "order": 4
+      }
+    ],
     "icon": "🐾"
   },
   {
     "id": "physics-problem-solver",
     "title": "Řešení fyzikálních úloh s výkladem",
     "description": "Claude nejen vyřeší fyzikální úlohu, ale vysvětlí každý krok, použité vzorce a jejich odvození – jako soukromý tutor.",
-    "subjects": ["pv"],
-    "subsubjects": ["fyz"],
-    "levels": ["ss"],
-    "tools": ["claude"],
+    "subjects": [
+      "pv"
+    ],
+    "subsubjects": [
+      "fyz"
+    ],
+    "levels": [
+      "ss"
+    ],
+    "tools": [
+      "claude"
+    ],
     "duration": "5 min",
     "format": "individual",
     "prompt": "Vyřeš fyzikální úlohu [ÚLOHA] pro žáka střední školy. Vypiš známé a neznámé veličiny, zvol vhodné vzorce, vysvětli jejich význam, postupuj krok za krokem a zkontroluj jednotky i výsledek. Na konci přidej krátké vysvětlení, proč je postup správný.",
     "status": "ready",
-    "collections": [{"id": "prirodoveda", "order": 5}],
+    "collections": [
+      {
+        "id": "prirodoveda",
+        "order": 5
+      }
+    ],
     "icon": "🔭"
   },
   {
     "id": "chemistry-elements-compounds-quiz",
     "title": "Kvíz – prvky a sloučeniny",
     "description": "Generátor opakovacích kvízů o prvcích periodické tabulky, sloučeninách a jejich vlastnostech s automatickým klíčem.",
-    "subjects": ["pv"],
-    "subsubjects": ["che"],
-    "levels": ["zs2"],
-    "tools": ["chatgpt"],
+    "subjects": [
+      "pv"
+    ],
+    "subsubjects": [
+      "che"
+    ],
+    "levels": [
+      "zs2"
+    ],
+    "tools": [
+      "chatgpt"
+    ],
     "duration": "6 min příprava",
     "format": "classroom",
     "prompt": "Vytvoř opakovací kvíz pro žáky [ROČNÍK] na téma [PRVKY NEBO SLOUČENINY]. Připrav deset otázek různých typů, zahrň vlastnosti, značky, názvy a praktické využití, přidej správné odpovědi a krátké vysvětlení každé odpovědi.",
     "status": "ready",
-    "collections": [{"id": "prirodoveda", "order": 6}],
+    "collections": [
+      {
+        "id": "prirodoveda",
+        "order": 6
+      }
+    ],
     "icon": "🧪"
   },
   {
     "id": "history-roleplay-historical-person",
     "title": "Roleplay historické osobnosti",
     "description": "Claude hraje roli historické osobnosti – žáci mu mohou klást otázky jako novinář, soudce nebo spolučasník. Rozvíjí empatii a historické myšlení.",
-    "subjects": ["dej"],
-    "levels": ["zs2"],
-    "tools": ["claude"],
+    "subjects": [
+      "dej"
+    ],
+    "levels": [
+      "zs2"
+    ],
+    "tools": [
+      "claude"
+    ],
     "duration": "20 min",
     "format": "classroom",
     "prompt": "Budeš hrát roli [HISTORICKÁ OSOBNOST] v době [HISTORICKÉ OBDOBÍ]. Mluv v první osobě, přesně podle historických faktů. Odpovídej na otázky z pohledu této osoby s ohledem na její dobu, hodnoty a přesvědčení. Pokud nemáš historicky přesnou odpověď, odpověz v souladu s tím, co by tato osoba pravděpodobně řekla. Nezapomínej na kontext doby.",
     "status": "favorite",
-    "collections": [{"id": "dejepis", "order": 1}],
+    "collections": [
+      {
+        "id": "dejepis",
+        "order": 1
+      }
+    ],
     "icon": "🎭"
   },
   {
     "id": "history-timeline-generator",
     "title": "Generátor časových os",
     "description": "AI vytvoří přehlednou chronologickou osu klíčových událostí pro libovolné historické období s vysvětlením příčin a důsledků.",
-    "subjects": ["dej"],
-    "levels": ["zs1", "zs2", "ss"],
-    "tools": ["chatgpt"],
+    "subjects": [
+      "dej"
+    ],
+    "levels": [
+      "zs1",
+      "zs2",
+      "ss"
+    ],
+    "tools": [
+      "chatgpt"
+    ],
     "duration": "5 min příprava",
     "format": "classroom",
     "prompt": "Vytvoř chronologickou osu klíčových událostí pro [HISTORICKÉ OBDOBÍ] vhodnou pro žáky [ROČNÍK]. Pro každou událost uveď: datum, název události, stručný popis (2–3 věty), příčiny a důsledky, přesah do dalšího vývoje. Zvýrazni 3 nejdůležitější zlomové momenty.",
     "status": "ready",
-    "collections": [{"id": "dejepis", "order": 2}],
+    "collections": [
+      {
+        "id": "dejepis",
+        "order": 2
+      }
+    ],
     "icon": "📅"
   },
   {
     "id": "history-debate-pro-con",
     "title": "Debatní aktivita – pro a proti",
     "description": "AI připraví argumenty na obě strany historického sporu nebo etické otázky. Žáci debatují, AI zodpovídá dotazy jako nestranný odborník.",
-    "subjects": ["dej"],
-    "levels": ["ss"],
-    "tools": ["gemini"],
+    "subjects": [
+      "dej"
+    ],
+    "levels": [
+      "ss"
+    ],
+    "tools": [
+      "gemini"
+    ],
     "duration": "25 min",
     "format": "groups",
     "prompt": "Připrav nestrannou debatní aktivitu pro žáky [ROČNÍK] k historickému sporu nebo etické otázce [TÉMA]. Představ dvě odlišné pozice, u každé uveď hlavní argumenty, důkazy a možné protiargumenty. Navrhni pravidla debaty, otázky pro moderátora a krátké závěrečné ověření faktů.",
     "status": "ready",
-    "collections": [{"id": "dejepis", "order": 3}],
+    "collections": [
+      {
+        "id": "dejepis",
+        "order": 3
+      }
+    ],
     "icon": "⚖️"
   },
   {
     "id": "history-period-newspaper",
     "title": "Dobový novinový článek",
     "description": "AI napíše fiktivní dobový novinový článek o historické události očima tehdejšího novináře. Vhodné jako ukázka přístupu dobové žurnalistiky.",
-    "subjects": ["dej"],
-    "levels": ["zs2"],
-    "tools": ["chatgpt"],
+    "subjects": [
+      "dej"
+    ],
+    "levels": [
+      "zs2"
+    ],
+    "tools": [
+      "chatgpt"
+    ],
     "duration": "10 min příprava",
     "format": "individual",
     "prompt": "Napiš fiktivní dobový novinový článek o události [UDÁLOST] z roku [ROK] očima novináře žijícího v dané době. Zachovej dobový jazyk a znalosti, uveď titulek, místo, datum, popis události a dvě dobové reakce. Nakonec odděl historicky doložená fakta od tvůrčího doplnění.",
     "status": "ready",
-    "collections": [{"id": "dejepis", "order": 4}],
+    "collections": [
+      {
+        "id": "dejepis",
+        "order": 4
+      }
+    ],
     "icon": "🗞️"
   },
   {
     "id": "history-source-analysis",
     "title": "Analýza historického pramene",
     "description": "Vložte text historického pramene – AI pomůže žákům pochopit kontext, identifikovat bias autora a interpretovat obsah kriticky.",
-    "subjects": ["dej"],
-    "levels": ["ss"],
-    "tools": ["claude"],
+    "subjects": [
+      "dej"
+    ],
+    "levels": [
+      "ss"
+    ],
+    "tools": [
+      "claude"
+    ],
     "duration": "15 min",
     "format": "groups",
     "prompt": "Analyzuj tento historický pramen pro žáky střední školy: [TEXT PRAMENE]. Urči autora, dobu vzniku, účel a cílové publikum, vysvětli historický kontext, odliš fakta od názorů a upozorni na možný bias. Přidej pět otázek, které povedou ke kritické interpretaci.",
     "status": "ready",
-    "collections": [{"id": "dejepis", "order": 5}],
+    "collections": [
+      {
+        "id": "dejepis",
+        "order": 5
+      }
+    ],
     "icon": "🧠"
   },
   {
     "id": "history-map-analysis",
     "title": "Přehled historické mapy",
     "description": "AI vysvětlí geopolitické změny hranic, migrace a vliv zeměpisu na historický vývoj – vhodné doplnit fyzickou mapou.",
-    "subjects": ["dej"],
-    "levels": ["zs1", "zs2"],
-    "tools": ["gemini"],
+    "subjects": [
+      "dej"
+    ],
+    "levels": [
+      "zs1",
+      "zs2"
+    ],
+    "tools": [
+      "gemini"
+    ],
     "duration": "10 min",
     "format": "classroom",
     "prompt": "Vysvětli historickou mapu regionu [REGION] v období [OBDOBÍ] pro žáky [ROČNÍK]. Popiš změny hranic, migrace, mocenské vztahy a vliv geografie na historický vývoj. Navrhni, co mají žáci na mapě vyhledat, a přidej tři otázky k interpretaci.",
     "status": "ready",
-    "collections": [{"id": "dejepis", "order": 6}],
+    "collections": [
+      {
+        "id": "dejepis",
+        "order": 6
+      }
+    ],
     "icon": "🌍"
   },
   {
     "id": "math-real-life-word-problems",
     "title": "Slovní úlohy z reálného života",
     "description": "ChatGPT vygeneruje originální slovní úlohy zasazené do reálných situací blízkých žákům – procenta, zlomky, rovnice a geometrie.",
-    "subjects": ["mat"],
-    "levels": ["zs2"],
-    "tools": ["chatgpt"],
+    "subjects": [
+      "mat"
+    ],
+    "levels": [
+      "zs2"
+    ],
+    "tools": [
+      "chatgpt"
+    ],
     "duration": "5 min příprava",
     "format": "classroom",
     "prompt": "Vytvoř 5 slovních úloh z matematiky pro žáky 6.–9. ročníku na téma [TÉMA]. Každou úlohu zasaz do reálné situace a přidej podrobný postup řešení s výsledkem.",
     "status": "ready",
-    "collections": [{"id": "activities-main", "order": 1}],
+    "collections": [
+      {
+        "id": "activities-main",
+        "order": 1
+      }
+    ],
     "icon": "🔢",
     "relatedPromptId": "prompt-generator-slovnich-uloh",
-    "detail": {"ctaLabel": "Šablona →"}
+    "detail": {
+      "ctaLabel": "Šablona →"
+    }
   },
   {
     "id": "math-ai-tutor",
     "title": "AI Matematický Tutor",
     "description": "Claude jako trpělivý soukromý tutor – vysvětluje krok za krokem, klade otázky, povzbuzuje a dává nápovědy místo přímých odpovědí.",
-    "subjects": ["mat"],
-    "levels": ["zs2"],
-    "tools": ["claude"],
+    "subjects": [
+      "mat"
+    ],
+    "levels": [
+      "zs2"
+    ],
+    "tools": [
+      "claude"
+    ],
     "duration": "15 min aktivita",
     "format": "individual",
     "prompt": "Jsi trpělivý matematický tutor pro žáka 6.–9. ročníku. Procvičuj se mnou [TÉMA] krok za krokem, vždy polož jednu otázku, čekej na odpověď, dávej nápovědy a neprozrazuj řešení předčasně.",
     "status": "ready",
-    "collections": [{"id": "activities-main", "order": 2}],
+    "collections": [
+      {
+        "id": "activities-main",
+        "order": 2
+      }
+    ],
     "icon": "🧑‍🏫",
     "relatedPromptId": "prompt-napoveda-bez-prozrazeni-vysledku",
-    "detail": {"ctaLabel": "Šablona →"}
+    "detail": {
+      "ctaLabel": "Šablona →"
+    }
   },
   {
     "id": "math-data-analysis",
     "title": "Analýza dat a statistika",
-    "description": "Žáci vloží reálná data a Gemini pomůže s analýzou, tabulkami a interpretací výsledků. Propojení matematiky s reálným světem.",
-    "subjects": ["mat"],
-    "levels": ["ss"],
-    "tools": ["gemini"],
+    "description": "Skupinové statistické bádání na bezpečné datové sadě: hypotézy a závěry tvoří žáci, AI pomáhá s kontrolou výpočtů.",
+    "subjects": [
+      "mat"
+    ],
+    "levels": [
+      "ss"
+    ],
+    "tools": [
+      "gemini"
+    ],
     "duration": "20 min",
     "format": "groups",
-    "prompt": "Analyzuj tato data z tabulky: [DATA]. Vytvoř přehled, vypočti základní statistiky, popiš trendy a upozorni na možná zkreslení. Výsledek vysvětli žákům střední školy.",
+    "prompt": "Jsi průvodce skupinovou analýzou dat pro žáky SŠ. Učitel předem určí, zda AI ovládá sám, nebo ji žáci používají v povoleném školním režimu. Pracuj pouze se syntetickými nebo školou schválenými neidentifikujícími daty [DATA]. Cíl: [VÝZKUMNÁ OTÁZKA]. 1) Vyzvi skupinu, aby bez AI zapsala dvě hypotézy a navrhla vhodný statistický ukazatel. 2) Pomoz uspořádat tabulku a kontrolní výpočet, ale vyžádej vlastní postup žáků. 3) Po jejich pokusu nabídni ověření výsledku a vysvětli možné chyby, odlehlé hodnoty a zkreslení. 4) Nech skupinu sestavit vlastní graf a závěr podložený čísly. Nepředkládej hotovou interpretaci před jejich návrhem; učitel ověří přesnost i bezpečnost dat.",
     "status": "ready",
-    "collections": [{"id": "activities-main", "order": 3}],
+    "collections": [
+      {
+        "id": "activities-main",
+        "order": 3
+      }
+    ],
     "icon": "📊",
     "relatedPromptId": "prompt-statistika-ze-tridnich-dat",
-    "detail": {"ctaLabel": "Šablona →"}
+    "detail": {
+      "ctaLabel": "Šablona →"
+    }
   },
   {
     "id": "czech-essay-workshop",
     "title": "Dílna opravy slohu",
-    "description": "Vložte slohy žáků do Claude – AI je opraví, navrhne zlepšení stylu, gramatiky a struktury. Šetří hodiny opravování.",
-    "subjects": ["cj"],
-    "levels": ["zs2"],
-    "tools": ["claude"],
+    "description": "Dílna vede žáka k vlastnímu přepracování jednoho úseku textu; AI klade otázky a nabízí nápovědy místo hotového přepisu.",
+    "subjects": [
+      "cj"
+    ],
+    "levels": [
+      "zs2"
+    ],
+    "tools": [
+      "claude"
+    ],
     "duration": "2 min/žák",
     "format": "essay",
-    "prompt": "Oprav slohovou práci žáka [ROČNÍK]. Zkontroluj pravopis, gramatiku, stavbu vět, slovní zásobu a splnění zadání. U každé chyby ukaž opravu a krátké vysvětlení, nakonec přidej 3 tipy na zlepšení. Text: [TEXT].",
+    "prompt": "Jsi průvodce dílnou psaní pro [ROČNÍK]. Používej jen modelový text nebo skutečný text, jehož zpracování v této AI službě škola předem schválila; bez jmen a identifikátorů. Zadání: [ZADÁNÍ], text: [POVOLENÝ TEXT]. 1) Vyber jeden odstavec, který lze zlepšit, a vysvětli proč. 2) Polož žákovi dvě otázky k obsahu a stavbě odstavce a počkej na jeho odpověď. 3) Nabídni nápovědu k pravopisu, návaznosti vět a slovní zásobě, ale nepřepisuj celý text. 4) Po žákově vlastní úpravě porovnej původní a novou verzi podle zadání a vyzdvihni konkrétní pokrok. 5) Navrhni další malý krok. Neznámkuj; konečné posouzení patří učiteli.",
     "status": "ready",
-    "collections": [{"id": "activities-main", "order": 4}],
+    "collections": [
+      {
+        "id": "activities-main",
+        "order": 4
+      }
+    ],
     "icon": "✍️",
     "relatedPromptId": "prompt-opravovac-slohu-s-rubrikou",
-    "detail": {"ctaLabel": "Šablona →"}
+    "detail": {
+      "ctaLabel": "Šablona →"
+    }
   },
   {
     "id": "czech-dictation-activity",
     "title": "Generátor diktátů",
     "description": "AI vygeneruje diktáty zaměřené na konkrétní gramatické jevy s klíčem. Každý diktát je nový a originální.",
-    "subjects": ["cj"],
-    "levels": ["zs2"],
-    "tools": ["chatgpt"],
+    "subjects": [
+      "cj"
+    ],
+    "levels": [
+      "zs2"
+    ],
+    "tools": [
+      "chatgpt"
+    ],
     "duration": "5 min příprava",
     "format": "classroom",
     "prompt": "Vytvoř diktát pro žáky 6.–9. ročníku na [GRAMATICKÝ JEV], dlouhý přibližně [POČET] slov. Přidej opravný klíč, seznam procvičovaných jevů a krátké vysvětlení pravidel.",
     "status": "ready",
-    "collections": [{"id": "activities-main", "order": 5}],
+    "collections": [
+      {
+        "id": "activities-main",
+        "order": 5
+      }
+    ],
     "icon": "🎧",
     "relatedPromptId": "prompt-pravopisna-korektura",
-    "detail": {"ctaLabel": "Příbuzný prompt →"}
+    "detail": {
+      "ctaLabel": "Příbuzný prompt →"
+    }
   },
   {
     "id": "czech-literary-analysis-class",
     "title": "Rozbor literárního díla ve třídě",
     "description": "Gemini provede komplexní literární rozbor – žánr, téma, postavy, kompozici, jazykové prostředky a historický kontext.",
-    "subjects": ["cj"],
-    "levels": ["ss"],
-    "tools": ["gemini"],
+    "subjects": [
+      "cj"
+    ],
+    "levels": [
+      "ss"
+    ],
+    "tools": [
+      "gemini"
+    ],
     "duration": "10 min příprava",
     "format": "individual",
     "prompt": "Proveď literární rozbor díla [NÁZEV] od [AUTOR] pro žáky SŠ. Zahrň žánr, téma, motivy, postavy, kompozici, jazykové prostředky a historický kontext. Výstup strukturu jako přehledné body.",
     "status": "ready",
-    "collections": [{"id": "activities-main", "order": 6}],
+    "collections": [
+      {
+        "id": "activities-main",
+        "order": 6
+      }
+    ],
     "icon": "📚",
     "relatedPromptId": "prompt-literarni-rozbor-dila",
-    "detail": {"ctaLabel": "Šablona →"}
+    "detail": {
+      "ctaLabel": "Šablona →"
+    }
   },
   {
     "id": "english-conversation-activity",
     "title": "Konverzační aktivita v angličtině",
     "description": "Nastavte ChatGPT jako konverzačního partnera na zadané téma a jazykové úrovni – žáci konverzují v angličtině bez strachu.",
-    "subjects": ["aj"],
-    "levels": ["zs2"],
-    "tools": ["chatgpt"],
+    "subjects": [
+      "aj"
+    ],
+    "levels": [
+      "zs2"
+    ],
+    "tools": [
+      "chatgpt"
+    ],
     "duration": "15 min",
     "format": "individual",
     "prompt": "Jsi trpělivý konverzační partner v angličtině pro žáka na úrovni [A2/B1/B2]. Konverzuj se mnou na téma [TOPIC], mluv pouze anglicky, opravuj chyby jemně a pokládej navazující otázky.",
     "status": "ready",
-    "collections": [{"id": "activities-main", "order": 7}],
+    "collections": [
+      {
+        "id": "activities-main",
+        "order": 7
+      }
+    ],
     "icon": "💬",
     "relatedPromptId": "prompt-konverzacni-partner-v-anglictine",
-    "detail": {"ctaLabel": "Šablona →"}
+    "detail": {
+      "ctaLabel": "Šablona →"
+    }
   },
   {
     "id": "english-essay-feedback",
     "title": "Opravovač anglické eseje",
-    "description": "Claude opraví anglický text s rubrikou Cambridge Writing: Content, Organization, Grammar, Vocabulary, Style.",
-    "subjects": ["aj"],
-    "levels": ["ss"],
-    "tools": ["claude"],
+    "description": "Návrh formativního komentáře k anglické eseji podle zadání a úrovně B1/B2; skóre AI není oficiálním výsledkem zkoušky.",
+    "subjects": [
+      "aj"
+    ],
+    "levels": [
+      "ss"
+    ],
+    "tools": [
+      "claude"
+    ],
     "duration": "3 min/text",
     "format": "essay",
-    "prompt": "Oprav anglickou esej žáka na úrovni [B1/B2]. Zhodnoť obsah, organizaci, gramatiku, slovní zásobu a styl. Uveď konkrétní opravy, vysvětli je a přidej 3 doporučení pro zlepšení. Text: [TEXT].",
+    "prompt": "Jsi asistent učitele angličtiny pro formativní zpětnou vazbu k eseji na úrovni [B1/B2]. Pracuj jen s modelovým textem nebo textem schváleným školou pro zpracování v dané AI službě; bez identifikátorů. Zadání: [WRITING TASK], žánr: [TEXT TYPE], požadovaná délka: [LENGTH], text: [APPROVED TEXT]. Posuď splnění zadání, organizaci, srozumitelnost a jazyk. U každé oblasti uveď jednu silnou stránku a nejvýše jedno konkrétní zlepšení s krátkým příkladem. Rozliš gramatickou chybu od přijatelné stylistické varianty. Přidej tři kroky samostatné revize pro žáka; nevytvářej celé nové znění eseje. Nepřisuzuj oficiální Cambridge hodnocení ani známku; učitel návrh ověří.",
     "status": "ready",
-    "collections": [{"id": "activities-main", "order": 8}],
+    "collections": [
+      {
+        "id": "activities-main",
+        "order": 8
+      }
+    ],
     "icon": "✔️",
     "relatedPromptId": "prompt-opinion-essay",
-    "detail": {"ctaLabel": "Šablona eseje →"}
+    "detail": {
+      "ctaLabel": "Šablona eseje →"
+    }
   },
   {
     "id": "science-virtual-lab-simulation",
     "title": "Virtuální laboratorní experiment",
     "description": "Gemini jako virtuální laboratorní asistent simuluje průběh experimentu – popisuje kroky, výsledky a závěry bez fyzické laboratoře.",
-    "subjects": ["pv"],
-    "levels": ["zs2"],
-    "tools": ["gemini"],
+    "subjects": [
+      "pv"
+    ],
+    "levels": [
+      "zs2"
+    ],
+    "tools": [
+      "gemini"
+    ],
     "duration": "20 min",
     "format": "groups",
     "prompt": "Simuluj laboratorní experiment [NÁZEV] pro žáky [ROČNÍK]. Uveď pomůcky, bezpečnostní pravidla, postup, očekávaná pozorování, vědecké vysvětlení, závěr a 3 kontrolní otázky.",
     "status": "ready",
-    "collections": [{"id": "activities-main", "order": 9}],
+    "collections": [
+      {
+        "id": "activities-main",
+        "order": 9
+      }
+    ],
     "icon": "🧬",
     "relatedPromptId": "prompt-plan-laboratorniho-experimentu",
-    "detail": {"ctaLabel": "Šablona →", "levelLabel": "ZŠ"}
+    "detail": {
+      "ctaLabel": "Šablona →",
+      "levelLabel": "ZŠ"
+    }
   },
   {
     "id": "physics-phenomenon-analogies-class",
     "title": "Vysvětlení fyzikálních jevů analogiemi",
     "description": "AI vysvětlí složité fyzikální pojmy pomocí analogií ze každodenního života, které žáci ihned pochopí.",
-    "subjects": ["pv"],
-    "levels": ["zs2"],
-    "tools": ["chatgpt"],
+    "subjects": [
+      "pv"
+    ],
+    "levels": [
+      "zs2"
+    ],
+    "tools": [
+      "chatgpt"
+    ],
     "duration": "5 min",
     "format": "classroom",
     "prompt": "Vysvětli fyzikální jev [JEV] žákům [ROČNÍK] pomocí 3 analogií z každodenního života. Přidej jednoduchý příklad, upozorni na limity analogií a zakonči 3 otázkami ověřujícími porozumění.",
     "status": "favorite",
-    "collections": [{"id": "activities-main", "order": 10}],
+    "collections": [
+      {
+        "id": "activities-main",
+        "order": 10
+      }
+    ],
     "icon": "⚡",
     "relatedPromptId": "prompt-vedecky-text-pro-zaky",
-    "detail": {"ctaLabel": "Výukový text →", "levelLabel": "ZŠ"}
+    "detail": {
+      "ctaLabel": "Výukový text →",
+      "levelLabel": "ZŠ"
+    }
   },
   {
     "id": "history-roleplay-classroom",
     "title": "Roleplay historické osobnosti",
     "description": "Claude hraje roli historické osobnosti – žáci mu mohou klást otázky jako novinář nebo spolučasník. Rozvíjí empatii a historické myšlení.",
-    "subjects": ["dej"],
-    "levels": ["zs2"],
-    "tools": ["claude"],
+    "subjects": [
+      "dej"
+    ],
+    "levels": [
+      "zs2"
+    ],
+    "tools": [
+      "claude"
+    ],
     "duration": "20 min",
     "format": "classroom",
     "prompt": "Hraj roli historické osobnosti [OSOBNOST] z období [OBDOBÍ]. Odpovídej na otázky žáků věcně a dobově přiměřeně, přiznej nejistotu a na konci uveď, které informace je třeba ověřit ve zdroji.",
     "status": "favorite",
-    "collections": [{"id": "activities-main", "order": 11}],
+    "collections": [
+      {
+        "id": "activities-main",
+        "order": 11
+      }
+    ],
     "icon": "🎭",
     "relatedPromptId": "prompt-historicka-osobnost",
-    "detail": {"ctaLabel": "Šablona →"}
+    "detail": {
+      "ctaLabel": "Šablona →"
+    }
   },
   {
     "id": "history-class-timeline",
     "title": "Třídní časová osa",
     "description": "AI vytvoří přehlednou chronologickou osu klíčových událostí pro libovolné historické období s příčinami a důsledky.",
-    "subjects": ["dej"],
-    "levels": ["zs2"],
-    "tools": ["chatgpt"],
+    "subjects": [
+      "dej"
+    ],
+    "levels": [
+      "zs2"
+    ],
+    "tools": [
+      "chatgpt"
+    ],
     "duration": "5 min příprava",
     "format": "classroom",
     "prompt": "Vytvoř přehlednou chronologickou osu tématu [TÉMA] pro žáky [ROČNÍK]. U každé události uveď datum nebo období, stručný popis, příčinu, důsledek a zdroj k ověření.",
     "status": "ready",
-    "collections": [{"id": "activities-main", "order": 12}],
+    "collections": [
+      {
+        "id": "activities-main",
+        "order": 12
+      }
+    ],
     "icon": "📅",
     "relatedPromptId": "prompt-casova-osa-udalosti",
-    "detail": {"ctaLabel": "Šablona →", "levelLabel": "ZŠ/SŠ"}
+    "detail": {
+      "ctaLabel": "Šablona →",
+      "levelLabel": "ZŠ/SŠ"
+    }
   },
   {
     "id": "general-prompt-power-up-relay",
     "title": "Prompt Power-Up Relay",
     "description": "Žáci v týmech postupně vylepšují slabý AI prompt – přidávají roli, kontext, formát a omezení. Srovnají výstupy kola 0 a finále a hlasují o nejlepším výsledku.",
-    "subjects": ["obecne"],
-    "levels": ["zs2", "ss"],
-    "tools": ["chatgpt"],
+    "subjects": [
+      "obecne"
+    ],
+    "levels": [
+      "zs2",
+      "ss"
+    ],
+    "tools": [
+      "chatgpt"
+    ],
     "duration": "12–20 min",
     "format": "teams-2-4",
     "prompt": "Vezmi tento základní prompt: [PROMPT]. Vytvoř 4 postupně lepší verze přidáním role, kontextu, formátu a omezení. U každé verze stručně vysvětli, co se zlepšilo, a na konci přidej pravidlo pro ověření výstupu.",
     "status": "recommended",
-    "collections": [{"id": "activities-main", "order": 13}],
+    "collections": [
+      {
+        "id": "activities-main",
+        "order": 13
+      }
+    ],
     "icon": "🚀",
-    "badges": ["⚡ Icebreaker", "6.–9. · SŠ", "Prompt skills"],
-    "detail": {"modalId": "modalPowerUpRelay", "ctaLabel": "Zobrazit detail →", "levelLabel": "6.–9. · SŠ"}
+    "badges": [
+      "⚡ Icebreaker",
+      "6.–9. · SŠ",
+      "Prompt skills"
+    ],
+    "detail": {
+      "modalId": "modalPowerUpRelay",
+      "ctaLabel": "Zobrazit detail →",
+      "levelLabel": "6.–9. · SŠ"
+    }
   },
   {
     "id": "general-fact-or-fiction",
     "title": "AI Fakt nebo Finta",
     "description": "Týmy použijí AI k vytvoření tří tvrzení (dvě pravdy a lež). Ostatní týmy fungují jako ověřovací detektivové a odhalují nepravdivé tvrzení pomocí důkazů.",
-    "subjects": ["obecne"],
-    "levels": ["zs2"],
-    "tools": ["chatgpt"],
+    "subjects": [
+      "obecne"
+    ],
+    "levels": [
+      "zs2"
+    ],
+    "tools": [
+      "chatgpt"
+    ],
     "duration": "10–18 min",
     "format": "teams-2-4",
     "prompt": "Vytvoř 3 tvrzení o tématu [TÉMA] pro žáky 6.–8. ročníku: dvě tvrzení pravdivá a jedno uvěřitelně nepravdivé. Každé napiš jednou větou. Přidej klíč odpovědí A/B/C, vysvětlení lži a zdroj, podle kterého lze tvrzení ověřit.",
     "status": "recommended",
-    "collections": [{"id": "activities-main", "order": 14}],
+    "collections": [
+      {
+        "id": "activities-main",
+        "order": 14
+      }
+    ],
     "icon": "🔍",
-    "badges": ["🎮 AI hra", "6.–9.", "Mediální gramotnost"],
-    "detail": {"modalId": "modalFaktFinta", "ctaLabel": "Zobrazit detail →"}
+    "badges": [
+      "🎮 AI hra",
+      "6.–9.",
+      "Mediální gramotnost"
+    ],
+    "detail": {
+      "modalId": "modalFaktFinta",
+      "ctaLabel": "Zobrazit detail →"
+    }
   }
 ]
