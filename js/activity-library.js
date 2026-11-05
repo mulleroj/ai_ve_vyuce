@@ -49,6 +49,12 @@
     document.body.classList.remove('activity-dialog-open');
     if (returnFocus && document.contains(returnFocus)) restoreFocus();
   }
+  function closeLegacyDialog(modal) {
+    if (!modal || !modal.classList.contains('open')) return;
+    modal.classList.remove('open');
+    document.body.classList.remove('activity-dialog-open');
+    if (returnFocus && document.contains(returnFocus)) restoreFocus();
+  }
   function openDialog(card, trigger) {
     returnFocus = trigger;
     document.getElementById('activityDetailTitle').textContent = card.dataset.modalTitle || card.querySelector('.activity-title').textContent.trim();
@@ -90,17 +96,13 @@
   });
   dialog.addEventListener('click', event => { if (event.target.closest('[data-close-dialog]')) closeDialog(); });
   document.addEventListener('click', event => {
-    const close = event.target.closest('.modal-close');
-    if (close) { close.closest('.modal-overlay')?.classList.remove('open'); document.body.classList.remove('activity-dialog-open'); restoreFocus(); }
+    const modal = event.target.closest('.modal-overlay.open');
+    if (modal && (event.target === modal || event.target.closest('.modal-close'))) closeLegacyDialog(modal);
   });
-  document.querySelectorAll('.modal-overlay').forEach(modal => modal.addEventListener('click', event => {
-    if (event.target !== modal || !modal.classList.contains('open')) return;
-    modal.classList.remove('open'); document.body.classList.remove('activity-dialog-open'); restoreFocus();
-  }));
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && !dialog.hidden) { event.preventDefault(); closeDialog(); return; }
     const activeModal = document.querySelector('.modal-overlay.open');
-    if (event.key === 'Escape' && activeModal) { event.preventDefault(); event.stopImmediatePropagation(); activeModal.classList.remove('open'); document.body.classList.remove('activity-dialog-open'); restoreFocus(); return; }
+    if (event.key === 'Escape' && activeModal) { event.preventDefault(); event.stopImmediatePropagation(); closeLegacyDialog(activeModal); return; }
     if (event.key !== 'Tab') return;
     const focusScope = dialog.hidden ? activeModal : dialog;
     if (!focusScope) return;
