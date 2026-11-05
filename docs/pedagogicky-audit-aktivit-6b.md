@@ -1,0 +1,125 @@
+# Pedagogický audit knihovny aktivit – etapa 6B/1
+
+**Stav:** pracovní odborný návrh k pedagogickému schválení. Klasifikace níže není odborná akreditace ani schválení pro konkrétní školu. Audit vychází z úplného znění 44 záznamů v `data/activities.json` (včetně promptů), nikoli pouze z názvů a anotací. Registr, prompty a jejich pořadí zůstávají beze změny.
+
+## Rozsah a způsob hodnocení
+
+Prohlédnuto všech 44 aktivit se stabilními ID, deklarovaným ročníkem, formátem, délkou, popisem a úplným promptem. „Primární uživatel“ označuje osobu, která podle promptu přímo zadává požadavek AI; u přípravy materiálu pro učitele tedy není žák cílovým uživatelem jen proto, že materiál později použije. Formát `classroom` sám o sobě nedokazuje, že žáci s AI pracují.
+
+Časy jsou převzaty přesně z pole `duration`. Rozlišení v tabulce je interpretace deklarovaného údaje podle účelu promptu, nikoli měření skutečného času. Pokud údaj nerozlišuje přípravu od výuky nebo individuální práce, je označen jako nejasný. Chybějící odhad se nedoplňuje.
+
+### Navržená taxonomie účelu
+
+| Kód | Kategorie | Použití |
+|---|---|---|
+| `priprava` | Příprava materiálů | Učitel připravuje zadání, texty, testy, příklady, osnovy či jiné podklady pro výuku. |
+| `vysvetlovani` | Vysvětlování a modelování | AI objasňuje pojem/postup, ukazuje vzor nebo vede žáka k porozumění. |
+| `procvicovani` | Procvičování | Žák nebo třída upevňuje učivo pomocí úloh, kvízů, jazykové či jiné praxe. |
+| `overovani_zpetna_vazba` | Ověřování a zpětná vazba | Kontrola porozumění/výkonu, diagnostika nebo komentář k práci; automatické skóre se nepovažuje za známku. |
+| `tvorba` | Tvořivá práce | Vzniká otevřený žákovský produkt, text, scénář, návrh nebo iterativní výstup. |
+| `diskuse_kriticke_mysleni` | Diskuse a kritické myšlení | Argumentace, interpretace pramenů, ověřování tvrzení, mediální/AI gramotnost nebo práce s perspektivou. |
+| `badani_simulace` | Badání a simulace | Modelování jevu, virtuální experiment nebo práce s daty jako badatelská činnost. |
+
+Každá aktivita má právě jeden navržený hlavní účel; vedlejší účel lze uvést, pokud je z promptu zřetelný. Při nejednoznačnosti je přiřazení označeno **[SCHVÁLIT]**.
+
+### Stupnice kvalitativních poznámek
+
+- **Účel / třída / instrukce:** `dobrý základ` = záměr je čitelný a prompt má použitelnou kostru; `doplnit` = chybí podstatná opora pro výuku; `revize` = instrukce mohou vést k zavádějícímu či nevhodnému použití.
+- **Ročník:** posouzen pouze podle uvedených úrovní a zadání; vhodnost závisí na konkrétním tématu, předchozích znalostech a potřebách třídy. Nejde o ověření kurikula.
+- **Rizika:** `ověřit výstup` = věcná správnost; `soukromí` = vložený žákovský text/data; `automatické hodnocení` = AI hodnotí výkon; `simulace` = výstup může působit jako autentický fakt/experiment.
+- **Revize:** `ano` značí doporučenou pedagogickou úpravu promptu/pokynů před doporučováním aktivity; `zvážit` značí nejasné nebo kontextové rozhodnutí. Každé nejisté odborné přiřazení vyžaduje schválení pedagoga.
+
+## Přehled klasifikace všech 44 aktivit
+
+Legenda primárního uživatele: **U** = učitel, **Ž** = žák, **S** = učitel a žáci společně. Čas: **P** = příprava učitele, **V** = aktivita ve výuce, **Ž** = zpracování jedním žákem, **?** = druh času není spolehlivě určen. Čas v závorce je doslovná hodnota z registru.
+
+| # | Stabilní ID | Primární uživatel | Hlavní účel (vedlejší) | Čas podle registru | Kvalita a doporučená revize |
+|---:|---|---|---|---|---|
+| 1 | `math-word-problem-generator` | U | `priprava` | ? (10 min; není řečeno, zda generování či výuka) | Účel jasný; ročník `zs1` může být vhodný po konkretizaci tématu. Prompt nepožaduje kontrolu řešení ani citlivost k úrovni čtení. **Revize: zvážit** ověřovací krok a konkrétní učivo. |
+| 2 | `math-step-by-step-guide` | Ž | `vysvetlovani` (`procvicovani`) | ? (5 min; nepojmenovaný čas) | Srozumitelný dialogový záměr; „libovolný problém“ je příliš široký a zadání nepožaduje ověření ani žákovu vlastní odpověď. **Revize: zvážit** hranici nápovědy a kontrolní otázku. |
+| 3 | `math-test-paper-generator` | U | `priprava` (`overovani_zpetna_vazba`) | P? (3 min, deklarováno jen jako délka) | Písemka, klíč, bodování i známkovací škála; vysoké riziko chybných úloh/klíče a nevalidované známkovací hranice. **Revize: ano** – vyžádat kontrolu učitelem, cíle a transparentní rubriku; AI známku nesmí určovat samostatně. |
+| 4 | `math-differentiated-problems` | U | `priprava` | ? (8 min) | Záměr diferenciace jasný, ale kategorie „podprůměrní“ a „SPO“ mohou stigmatizovat a nepopisují konkrétní podpůrné potřeby. **Revize: ano** – anonymní, neštítkující úrovně podle obtížnosti; nevkládat identifikaci ani diagnózu žáka. |
+| 5 | `math-story-problem-game` | U | `priprava` (`procvicovani`) | V? (15 min; označení nerozlišuje tvorbu/použití) | Příběh a pět kroků dávají použitelnou strukturu; chybí pojistka proti chybnému řešení a parametr délky. **Revize: zvážit** ověřit klíč a připravit variantu bez zařízení. |
+| 6 | `math-statistics-analysis` | Ž | `badani_simulace` (`vysvetlovani`) **[SCHVÁLIT]** | V? (20 min; individuální formát, ale čas neříká, zda práce žáka) | Obsahuje trendy, odlehlé hodnoty i zkreslení; žák má vkládat `[DATA]`, což může odhalit osobní údaje. **Revize: ano** – pouze syntetická/anonymizovaná data, ověřit výpočty a závěry. |
+| 7 | `czech-essay-feedback` | U | `overovani_zpetna_vazba` | Ž (2 min/žák) | Konkrétní kritéria a tipy; automatické „celkové hodnocení“ může být zaměněno za známku a text může obsahovat osobní údaje. **Revize: ano** – nepředávat identifikátory, AI komentář pouze jako návrh, konečné hodnocení učitelem. |
+| 8 | `czech-dictation-generator` | U | `priprava` | P (5 min příprava) | Zadání, délka, klíč a vysvětlení jsou přítomné. **Revize: zvážit** přidat učivo/ročník/variantu obtížnosti a výslovně ověřit pravopis i klíč. |
+| 9 | `czech-literary-analysis` | U | `priprava` (`vysvetlovani`) | P (10 min příprava) | Široká, přehledná osnova pro SŠ; AI může vymýšlet citace, dějové detaily či kontext. **Revize: ano** – opřít analýzu o zadaný text/ověřené zdroje; oddělit interpretaci od faktů. |
+| 10 | `czech-spelling-word-exercises` | U | `priprava` (`procvicovani`) | P (5 min příprava) | Věk, forma, počet i klíč jsou specifikovány; „okamžitá zpětná vazba“ není jasné, zda ji poskytuje učitel nebo AI. **Revize: zvážit** definovat režim zpětné vazby a kontrolu klíče. |
+| 11 | `czech-matura-oral-exam` | Ž | `procvicovani` (`overovani_zpetna_vazba`) | V? (20 min aktivita) | Jedna otázka po druhé podporuje nácvik; AI „hodnotí“ úplnost bez rubriky a může vytvářet nesprávný obsah o díle. **Revize: ano** – hodnoticí kritéria, lidská kontrola a jasné upozornění, že nejde o predikci maturity. |
+| 12 | `czech-writing-form-guide` | Ž | `tvorba` (`vysvetlovani`) | V (15 min aktivita) | Dobře chrání autorství („nevytvářej celý text“), nabízí procesní podporu. **Revize: zvážit** doplnit věk/ročník, práci s vlastním nápadem a zákaz vkládání identifikátorů. |
+| 13 | `english-conversation-partner` | Ž | `procvicovani` | V (15 min aktivita) | Jasný dialog a úroveň CEFR; chybí věk, soukromí, bezpečnost konverzace a režim při chybných opravách. **Revize: ano** – školou schválené účty, neuvádět osobní údaje; opravy ověřit učitelem. |
+| 14 | `english-grammar-feedback` | Ž | `overovani_zpetna_vazba` (`procvicovani`) | Ž (3 min/text) | Užitečné lokální vysvětlení chyb; obecný text může nést osobní údaje, úroveň CEFR není povinně vymezena a AI může opravovat styl subjektivně. **Revize: ano** – anonymizace a zpětná vazba jako návrh. |
+| 15 | `english-vocabulary-builder` | U | `priprava` (`procvicovani`) | P (10 min příprava) | Výstupní forma je konkrétní; úroveň „[AGE]“ neodpovídá CEFR a 15 slov + 8 cvičení může být pro začátečníky nepřiměřený rozsah. **Revize: zvážit** upřesnit věk/úroveň a kontrolovat překlady i klíč. |
+| 16 | `english-cambridge-exam-practice` | Ž | `procvicovani` (`overovani_zpetna_vazba`) | V (30 min aktivita) | Postup po jedné úloze a kritéria jsou zmíněna, ale „relevant criteria“ nejsou vyjmenována; AI skóre není oficiální Cambridge výsledek. **Revize: ano** – explicitní rubrika, upozornění na neoficiální odhad a kontrola člověkem. |
+| 17 | `english-grammar-exercises` | U | `priprava` (`procvicovani`) | P (5 min příprava) | Čtyři typy úloh, klíč a vysvětlení; české vysvětlení je jasné. **Revize: zvážit** ověřit správnost/ambiguitu položek a nastavit rozsah podle úrovně. |
+| 18 | `english-contextual-translation` | Ž | `vysvetlovani` (`tvorba`) **[SCHVÁLIT]** | V? (10 min aktivita; formát `groups`) | Jazykové nuance jsou vhodným cílem, ale zdrojový text může být chráněný či osobní; příkaz neurčuje překladový směr přesněji než zástupné hodnoty. **Revize: zvážit** licenci/soukromí a ověření kulturních tvrzení. |
+| 19 | `biology-virtual-lab-experiment` | S | `badani_simulace` | V (20 min) | Struktura obsahuje pomůcky, postup i bezpečnost; simulovaný průběh nesmí být zaměněn za empirické pozorování a chemikálie mohou být nebezpečné. **Revize: ano** – žádný reálný pokus bez učitele, školních pravidel a ověření odborníkem; označit očekávaný/modelový výsledek. |
+| 20 | `chemistry-equation-guide` | Ž | `vysvetlovani` (`procvicovani`) | ? (10 min) | Postup zachování atomů a navazující příklad jsou dobře strukturovány; při chybném vstupu může vzniknout nesprávné vyčíslení. **Revize: zvážit** kontrolu rovnice a nezávislé ověření řešení. |
+| 21 | `physics-phenomenon-analogies-explainer` | U | `vysvetlovani` (`overovani_zpetna_vazba`) | ? (5 min) | Výslovně požaduje limity analogií i otázky, což je silná stránka. **Revize: zvážit** ověřit věcnou přesnost a nepoužívat analogii jako doslovný model. |
+| 22 | `biology-animal-encyclopedia` | Ž | `vysvetlovani` | ? (8 min) | Požaduje profil a kontrolní otázky; široký požadavek na výskyt, ohrožení a zajímavosti vytváří riziko smyšlených faktů. **Revize: ano** – vyžadovat ověřitelné zdroje a oddělení nejistých údajů. |
+| 23 | `physics-problem-solver` | Ž | `vysvetlovani` (`procvicovani`) | ? (5 min) | Kontrola jednotek a zdůvodnění jsou kvalitní instrukce; může však rovnou vyřešit úlohu za žáka. **Revize: zvážit** režim nápověd po pokusu žáka, kontrolovat vzorce/výsledek. |
+| 24 | `chemistry-elements-compounds-quiz` | U | `priprava` (`procvicovani`) | P (6 min příprava) | Obsahuje rozmanité otázky, správné odpovědi i vysvětlení; AI klíč musí projít věcnou kontrolou. **Revize: zvážit** vymezit obsah podle probraného učiva a ověřit chemické údaje. |
+| 25 | `history-roleplay-historical-person` | S | `diskuse_kriticke_mysleni` (`tvorba`) **[SCHVÁLIT]** | V (20 min) | Roleplay podporuje perspektivu, avšak „odpověz pravděpodobně“ rozostřuje fakt a domněnku; chybí značení fikce a zdrojová opora. **Revize: ano** – simulaci výslovně označit, nejistotu přiznat, po aktivitě ověřit tvrzení v pramenech. |
+| 26 | `history-timeline-generator` | U | `priprava` | P (5 min příprava) | Chronologie, příčiny a důsledky jsou jasné; datum i kauzalita mohou být nepřesné nebo zjednodušené. **Revize: ano** – přidat zdroje a ověřit data, výběr událostí i různé interpretace. |
+| 27 | `history-debate-pro-con` | S | `diskuse_kriticke_mysleni` | V (25 min) | Obsahuje pozice, argumenty, pravidla i závěrečné ověření; „historický spor nebo etická otázka“ je široký a falešná vyváženost může stavět nepodložené pozice na roveň. **Revize: ano** – vhodnost tématu, důkazy a hranice debatovatelných tvrzení schvaluje učitel. |
+| 28 | `history-period-newspaper` | U | `tvorba` (`priprava`) | P (10 min příprava) | Fikční charakter a oddělení faktů od doplnění jsou výslovně uvedeny; hrozí, že se fiktivní text bude šířit jako autentický pramen. **Revize: ano** – viditelné označení „simulace“, žádné vymyšlené citace vydávané za skutečné. |
+| 29 | `history-source-analysis` | S | `diskuse_kriticke_mysleni` | V? (15 min; skupinová práce, druh času neurčen) | Dobrá sada otázek k původu a zaujatosti; model může nesprávně určit autora, dobu či záměr. **Revize: ano** – AI výklad porovnat s pramenem a odbornými zdroji; anonymizovat nevydané/citlivé texty. |
+| 30 | `history-map-analysis` | S | `diskuse_kriticke_mysleni` (`vysvetlovani`) **[SCHVÁLIT]** | V? (10 min) | Požaduje práci s mapou, ale prompt mapu ani její data nepřijímá; AI může změny hranic/migrace domyslet. **Revize: ano** – pracovat s konkrétní přiloženou mapou nebo uvést přesný zdroj a ověřit výklad. |
+| 31 | `math-real-life-word-problems` | U | `priprava` | P (5 min příprava) | Věkové rozmezí i řešení jsou jasné; podobnost s ID `math-word-problem-generator` je vysoká. **Revize: zvážit** pedagogické rozhodnutí, zda odlišné zaměření odůvodňuje dvě položky; ověřit realistické kontexty/řešení. |
+| 32 | `math-ai-tutor` | Ž | `procvicovani` (`vysvetlovani`) | V (15 min aktivita) | Po jedné otázce a nápovědách, bez předčasného řešení – dobře podporuje aktivní řešení. **Revize: zvážit** přidat kontrolu správnosti a postup, když AI chybně vyhodnotí odpověď; osobní údaje nesdělovat. |
+| 33 | `math-data-analysis` | Ž | `badani_simulace` **[SCHVÁLIT]** | V? (20 min, skupiny) | Analýza, trendy a zkreslení jsou vhodné; `[DATA]` může být třídní či osobní dataset, bez instrukce k anonymizaci. **Revize: ano** – pouze agregovaná/anonymní nebo syntetická data, ověřit výpočty a závěry. |
+| 34 | `czech-essay-workshop` | U | `overovani_zpetna_vazba` | Ž (2 min/žák) | Podobá se ID `czech-essay-feedback`; uvádí úsporu času, která není ověřena. **Revize: ano** – anonymizace, učitelská kontrola, nepoužívat AI hodnocení jako známku; pedagog má rozhodnout o překryvu obou aktivit. |
+| 35 | `czech-dictation-activity` | U | `priprava` | P (5 min příprava) | Přiměřeně konkrétní ročníky, jev, délka i klíč. **Revize: zvážit** ověřit pravopis a vyváženost jevů; vysoká podobnost s ID `czech-dictation-generator` vyžaduje rozhodnutí, zda jde o smysluplně odlišné varianty. |
+| 36 | `czech-literary-analysis-class` | U | `priprava` (`vysvetlovani`) | P (10 min příprava) | Vhodné jako příprava pro SŠ, ale nemá výstupní zdroje ani oporu v textu. **Revize: ano** – ověřit faktografii/interpretace a rozhodnout překryv s `czech-literary-analysis`. |
+| 37 | `english-conversation-activity` | Ž | `procvicovani` | V? (15 min, formát individual) | Funkční základ pro konverzaci; na rozdíl od `english-conversation-partner` nepožaduje krátké věty ani přeformulování při neporozumění. **Revize: zvážit** ochranu soukromí, věk, úroveň a vhodné opravy. |
+| 38 | `english-essay-feedback` | Ž | `overovani_zpetna_vazba` | Ž (3 min/text) | Kritéria jsou uvedena, ale obecná a bez skórovací škály; možné osobní údaje a automatické posuzování. **Revize: ano** – anonymizovat, kalibrovat rubriku na zadání/úroveň, rozhoduje učitel; rozlišit od `english-grammar-feedback`. |
+| 39 | `science-virtual-lab-simulation` | S | `badani_simulace` | V (20 min) | Má pozorování, vysvětlení, závěr i otázky; druhá virtuální laboratoř (`biology-virtual-lab-experiment`) je obsahově blízká. **Revize: ano** – jasně simulované výsledky, odborné ověření, neprovádět reálný pokus jen podle výstupu AI. |
+| 40 | `physics-phenomenon-analogies-class` | U | `vysvetlovani` (`overovani_zpetna_vazba`) | ? (5 min) | Prompt je téměř shodný s `physics-phenomenon-analogies-explainer`; limity analogií a otázky jsou přínosné. **Revize: zvážit** rozhodnout, zda je druhý záznam prakticky odlišný; ověřit fyzikální přesnost. |
+| 41 | `history-roleplay-classroom` | S | `diskuse_kriticke_mysleni` **[SCHVÁLIT]** | V (20 min) | Lepší než starší varianta: přiznává nejistotu a požaduje následné ověření. Přesto neurčuje, jak odlišit dobové vědomosti od dnešního výkladu ani označit fikci. **Revize: ano** – učitelská moderace a dohledání zdrojů; porovnat s `history-roleplay-historical-person`. |
+| 42 | `history-class-timeline` | U | `priprava` | P (5 min příprava) | Požaduje zdroj k ověření, což je pozitivní; zdroj není definován ani citován jednotným způsobem. **Revize: zvážit** vyžádat identifikovatelné důvěryhodné zdroje a kontrolu chronologie. |
+| 43 | `general-prompt-power-up-relay` | S | `procvicovani` (`tvorba`, `diskuse_kriticke_mysleni`) **[SCHVÁLIT]** | V (12–20 min) | Týmová aktivita učí iteraci promptu a obsahuje ověřovací pravidlo; samotný prompt dává čtyři verze modelu, nepopisuje kola, evidenci výstupů ani hlasování z anotace. **Revize: ano** – sjednotit prompt s úplným scénářem aktivity a vymezit bezpečný neutrální vstup bez osobních údajů. |
+| 44 | `general-fact-or-fiction` | S | `diskuse_kriticke_mysleni` (`procvicovani`) **[SCHVÁLIT]** | V (10–18 min) | Dobře odpovídá týmovému ověřování, ale prompt nechává AI vytvořit i klíč a zdroj; nepravdivé tvrzení může být škodlivé a uvedený zdroj nemusí existovat. **Revize: ano** – učitel předem schválí téma i tvrzení, týmy ověřují v nezávislých důvěryhodných zdrojích, výstup zřetelně označí jako hru. |
+
+## Aktivity vyžadující přednostní metodickou revizi
+
+1. **Automatické hodnocení a žákovské texty:** `czech-essay-feedback`, `czech-essay-workshop`, `english-grammar-feedback`, `english-essay-feedback`, `czech-matura-oral-exam`, `english-cambridge-exam-practice` a `math-test-paper-generator`. Prompty žádají „hodnocení“, „skóre“, bodovací klíč nebo známkovací škálu, ale nevymezují dostatečně validovaná kritéria, lidský dohled ani hranici mezi formativní zpětnou vazbou a klasifikací. Žákovská práce může obsahovat jméno, osobní zkušenost či jiné citlivé informace. Doporučit anonymizaci/minimalizaci, školou schválené prostředí a výhradní odpovědnost učitele za známku a rozhodnutí.
+2. **Data a soukromí:** `math-statistics-analysis`, `math-data-analysis`, `czech-essay-feedback`, `czech-essay-workshop`, `english-grammar-feedback`, `english-essay-feedback`, `history-source-analysis`. Prompty neříkají, aby se nepředávaly identifikátory, osobní či citlivé údaje, neveřejná díla nebo celé texty bez oprávnění. U dat doporučit syntetické/agregované, anonymizované sady; před použitím ověřit školní pravidla a podmínky nástroje.
+3. **Faktická správnost a zdroje:** `czech-literary-analysis`, `biology-animal-encyclopedia`, `history-timeline-generator`, `history-map-analysis`, obě virtuální laboratoře a kvíz `chemistry-elements-compounds-quiz`. Chybí povinné citace či ověřovací postup, případně AI může bez zadaného vstupu doplnit mapu/kontext. Učitel ověřuje faktická tvrzení, výpočty, klíče a přiměřenost před zadáním žákům.
+4. **Simulace a fikční podání:** `history-roleplay-historical-person`, `history-roleplay-classroom`, `history-period-newspaper`, `biology-virtual-lab-experiment`, `science-virtual-lab-simulation`. Výstup má být označen jako simulovaný/fiktivní; roleplay nevytváří historické svědectví a virtuální výsledek není pozorování skutečného experimentu. Bezpečnostní instrukce AI nenahrazují školní laboratorní pravidla ani učitele.
+5. **Diferenciace a nálepkování:** `math-differentiated-problems` používá „podprůměrní“/„SPO“ bez konkrétního pedagogického profilu. Doporučit popisovat úroveň podpory či obtížnost zadání, ne identitu žáka nebo diagnózu. Individuální přizpůsobení nesmí vyžadovat vkládání identifikovatelných údajů.
+6. **Možný obsahový překryv:** dvojice `math-word-problem-generator` / `math-real-life-word-problems`, `czech-essay-feedback` / `czech-essay-workshop`, `czech-dictation-generator` / `czech-dictation-activity`, `czech-literary-analysis` / `czech-literary-analysis-class`, `english-conversation-partner` / `english-conversation-activity`, `biology-virtual-lab-experiment` / `science-virtual-lab-simulation`, `physics-phenomenon-analogies-explainer` / `physics-phenomenon-analogies-class`, `history-roleplay-historical-person` / `history-roleplay-classroom`, `history-timeline-generator` / `history-class-timeline`. Některé promptové dvojice jsou téměř totožné; ponechání obou, sloučení či vymezení rozdílu je rozhodnutí vlastníka obsahu/pedagoga, nikoli tohoto auditu.
+7. **Nesoulad popisu a promptu:** `general-prompt-power-up-relay` – popis slibuje týmová kola, porovnání výstupů a hlasování, zatímco prompt generuje čtyři vylepšené verze a vyžádá pravidlo ověření; scénář kol není v samotném promptu. U `history-map-analysis` prompt předpokládá mapu, ale neurčuje, že ji AI dostane. U těchto záznamů je nutné vyjasnit, které kroky probíhají v AI a které vede učitel.
+
+## Konkrétní návrhy změn (zatím neimplementovat)
+
+- U každé aktivity pro učitele doplnit krátký pokyn „Před použitím ověřte výstup, správnost klíče a soulad s cílem hodiny.“ Konkrétní formulaci schvaluje pedagog.
+- U aktivit se žákovskou prací/datovými sadami doplnit zákaz zadávat jména, kontakty, známky, diagnózy a jiné identifikátory; doporučit anonymizovaný/syntetický obsah a školou schválený účet.
+- U automatické zpětné vazby doplnit, že AI komentář/skóre je návrh k učení, nikoli známka nebo rozhodnutí o žákovi; učitel kontroluje obsah a konečné hodnocení.
+- U simulací explicitně označit modelované/vymyšlené části, uvádět zdroje pro faktická tvrzení a oddělit „očekávaný výsledek simulace“ od skutečného pozorování. Reálné experimenty musí schválit a řídit učitel podle školních bezpečnostních pravidel.
+- U roleplay a fiktivního tisku přidat závěrečný rozbor: co je doloženo, co je interpretace a co je tvůrčí simulace. Nevydávat generované výroky za citace či historické prameny.
+- U aktivit 43–44 sladit celý postup mezi popisem, promptem a instrukcemi učitele; předem nastavit bezpečná témata, ověřovací zdroje a způsob práce se spornými/nepravdivými výroky.
+- U překryvných dvojic rozhodnout, zda doplnit jasné rozlišení (např. příprava vs. práce žáka), nebo ponechat dvě samostatné nabídky. Počet ani pořadí se v tomto návrhu nemění.
+
+## Rozhodnutí, která vyžadují pedagoga
+
+1. Schválit nebo upravit hlavní a případný vedlejší účel každého ID, zejména označení **[SCHVÁLIT]** v tabulce (ID 6, 18, 25, 30, 33, 41, 43, 44).
+2. Určit, zda aktivity s `classroom`/`groups` mají primárního uživatele učitele, žáka nebo společný režim; samotný formát to neprokazuje.
+3. Vyjasnit sémantiku všech neprůhledných délek (ID 1–6, 18, 20–23, 29–30, 33, 37, 40): jde o čas přípravy, čas společné hodiny, dobu práce jednotlivce, nebo pouze orientační generování AI? Uvedené zařazení je nejisté a vyžaduje schválení.
+4. Stanovit přijatelné podmínky používání AI se žáky, zejména věk/účty, soukromí, ukládání konverzací, školní souhlas a případné alternativy bez AI. Registr nyní tyto podmínky plošně neuvádí.
+5. Rozhodnout, zda a jak učitelé mohou využít AI zpětnou vazbu při známkování, které rubriky jsou schváleny a kdo kontroluje jejich konzistenci a přístupnost.
+6. Stanovit, jaké zdroje jsou přijatelné pro ověřování historických, literárních, přírodovědných a geografických výstupů; kdo ověřuje bezpečnost laboratorních postupů.
+7. Posoudit věkovou přiměřenost a případné jazykové/čtenářské nároky konkrétních aktivit v reálném kontextu třídy. Označení `zs1`, `zs2`, `ss` samo neurčuje konkrétní ročník ani úroveň podpory.
+8. Rozhodnout, jak vyřešit překryv devíti dvojic uvedených výše, aniž by se bez rozhodnutí měnil počet nebo pořadí aktivit.
+
+## Bezpečný postup pro budoucí metadata a vyhledávání
+
+1. Nejdříve pedagog písemně schválí taxonomii, definice, jednotlivá přiřazení, časy a bezpečnostní pokyny. Nejasnosti se nepromění automaticky v data; mohou zůstat jako „nespecifikováno“.
+2. Teprve v samostatné implementační etapě přidat k záznamům stabilní metadata s kontrolovanými hodnotami, například `primaryUser`, `primaryPurpose`, `secondaryPurposes`, `teacherPrepMinutes`, `classActivityMinutes`, `studentWorkMinutes`, `timeStatus`, `reviewStatus` a `safetyNotes`. Pole s časem zůstanou `null`, pokud údaj není v podkladech doložen; textový interval se nepřevádí na falešně přesné číslo.
+3. Udržet obsah promptu, status doporučení, kolekce i stávající pořadí odděleně od nových facetů. Změna metadat nesmí sama měnit žádný počet ani stávající výběr 14 doporučených aktivit.
+4. Přidat validaci povolených enumů, ID uniqueness, úplnosti a konzistence odkazů; vyžadovat explicitní lidské schválení nových hodnot. Neodvozovat metadata automatickou AI klasifikací při buildování webu.
+5. Filtry navrhnout jako doplňkové, přístupné ovládací prvky, které lze kombinovat se stávajícím textovým hledáním; zachovat výchozí zobrazení, URL parametry, sdílení výsledků, klávesnicové ovládání a mobilní použitelnost. Do implementace nepřidávat skryté přerovnávání ani automatické vylučování aktivit.
+6. Před vydáním ověřit přesně 44 unikátních ID a pořadí, zachování 14 doporučených, výsledky prázdného i kombinovaného filtru, přímé načtení/sdílení URL a kompatibilitu se staršími odkazy. Pedagogická schválení uchovat v review dokumentaci/verzování metadat.
+
+## Závěr
+
+Knihovna nabízí zastoupení přípravy materiálů, vysvětlování, procvičování, zpětné vazby, tvoření, diskuse i simulace. Největšími průřezovými riziky jsou neopatrné předávání žákovských textů a dat, přisuzování autority automatickému hodnocení, neověřené faktické/číselné výstupy a nejasné hranice historických či laboratorních simulací. Klasifikaci i návrhy je třeba schválit pedagogem před změnou registru nebo uživatelského rozhraní.
