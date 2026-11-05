@@ -13,7 +13,7 @@
    - `vibe-coding-prompty.html`, kde jsou povinné kolekce `vibe-coding` a právě jedna sekce Vibe Coding;
    - `gemini-notebook-prompty.html`, kde `geminiSection` určuje generovanou sekci.
 3. ID je součást odkazů a vazeb, proto ho po zveřejnění neměňte. Musí být ve stabilním kebab-case formátu a v registru jedinečné.
-4. Spusťte `node scripts/generate-prompts.js`. Tím se aktualizují příslušné HTML regiony i homepage počítadlo. Následně ověřte stav příkazem `node scripts/generate-prompts.js --check`.
+4. Spusťte `node scripts/generate-prompts.js`. Tím se aktualizují příslušné HTML regiony. Pokud homepage obsahuje volitelný označený blok počtu promptů, generátor ho také aktualizuje; redesignovaná homepage ho mít nemusí. Následně ověřte stav příkazem `node scripts/generate-prompts.js --check`.
 
 Neměňte vygenerované HTML ručně. Při příštím běhu by se ruční změna ztratila a kontrola driftu ji označí jako nesoulad.
 
@@ -29,7 +29,7 @@ Generated karty v předmětových stránkách a v `aktivity.html` neupravujte ru
 
 ## Homepage počítadla
 
-Počet promptů se odvozuje z délky `data/prompts.json` a počet aktivit z délky `data/activities.json`. Příslušné generátory aktualizují své označené části `index.html` (`PROMPT_COUNT` a `ACTIVITY_COUNT`). Hodnoty v homepage proto ručně nepřepisujte. Aktuální čísla jsou jen datovaný stav registrů, nikoli pevná definice systému.
+`data/prompts.json` a `data/activities.json` jsou zdrojem pravdy pro počty promptů a aktivit. Počítadla jsou volitelnou součástí návrhu homepage: jejich označené generované bloky (`PROMPT_COUNT` a `ACTIVITY_COUNT`) mohou být přítomné, ale redesignovaná homepage je nemusí zobrazovat. Pokud blok existuje, příslušný generátor jej aktualizuje a `--check` ověřuje jeho skutečný obsah i značky. Pokud chybí, jeho nepřítomnost není chyba a generátor ho do stránky sám nevrací. Generované části neupravujte ručně; před změnou generátoru nebo výstupů vždy zkontrolujte obsahový i vizuální dopad.
 
 ## Články
 

@@ -307,6 +307,10 @@ function escapeHtml(value) {
     }[character]));
 }
 
+function escapeHtmlWithNewlines(value, newline) {
+    return escapeHtml(String(value).replace(/\r\n?/g, '\n').replace(/\n/g, newline));
+}
+
 function decodeHtml(value) {
     return value
         .replace(/&nbsp;/g, ' ')
@@ -551,7 +555,7 @@ function renderGeminiCard(prompt, newline) {
         `                        <div class="prompt-body">${renderGeminiPromptBody(prompt)}</div>`,
         '                        <div class="prompt-footer">',
         `                            <span class="badge ${GEMINI_CATEGORY_BADGE_CLASSES[prompt.category] || 'badge-gray'}">${escapeHtml(prompt.category)}</span>`,
-        `                            <button class="copy-btn" type="button" data-copy="${escapeHtml(prompt.prompt)}">📋 Kopírovat</button>`,
+        `                            <button class="copy-btn" type="button" data-copy="${escapeHtmlWithNewlines(prompt.prompt, newline)}">📋 Kopírovat</button>`,
         '                        </div>',
         '                    </div>'
     ];
@@ -588,14 +592,14 @@ function renderCard(prompt, newline, variant) {
         `                                <div class="prompt-title">${escapeHtml(prompt.title)}</div>${lead}${metadataRow}`,
         '                            </div>',
         '                        </div>',
-        `                        <div class="prompt-body">${escapeHtml(prompt.prompt)}</div>`,
+        `                        <div class="prompt-body">${escapeHtmlWithNewlines(prompt.prompt, newline)}</div>`,
         '                        <div class="prompt-footer">'
     ];
     if (prompt.category) {
         lines.push(`                            <span class="badge ${categoryClass}">${escapeHtml(prompt.category)}</span>`);
     }
     lines.push(
-        `                            <button class="copy-btn" type="button" data-copy="${escapeHtml(prompt.prompt)}">📋 Kopírovat</button>`,
+        `                            <button class="copy-btn" type="button" data-copy="${escapeHtmlWithNewlines(prompt.prompt, newline)}">📋 Kopírovat</button>`,
         '                        </div>',
         '                    </div>'
     );
@@ -643,12 +647,17 @@ function buildPromptCountRegion(promptCount, parts) {
 function inspectPromptCount(promptCount) {
     const htmlPath = path.join(ROOT, PROMPT_COUNT_PAGE);
     const html = fs.readFileSync(htmlPath, 'utf8');
+    const hasStart = html.includes(PROMPT_COUNT_START_MARKER);
+    const hasEnd = html.includes(PROMPT_COUNT_END_MARKER);
+    if (!hasStart && !hasEnd) {
+        return { page: PROMPT_COUNT_PAGE, configured: false, drift: false };
+    }
     const parts = getParts(html, PROMPT_COUNT_PAGE, {
         start: PROMPT_COUNT_START_MARKER,
         end: PROMPT_COUNT_END_MARKER
     });
     const expectedRegion = buildPromptCountRegion(promptCount, parts);
-    return { page: PROMPT_COUNT_PAGE, htmlPath, html, parts, expectedRegion, drift: parts.currentRegion !== expectedRegion };
+    return { page: PROMPT_COUNT_PAGE, htmlPath, html, parts, expectedRegion, configured: true, drift: parts.currentRegion !== expectedRegion };
 }
 
 function inspectTarget(page, markers, cards, variant) {
@@ -693,7 +702,7 @@ function main() {
     const promptCountInspection = inspectPromptCount(prompts.length);
 
     const driftCount = inspections.filter((inspection) => inspection.drift).length +
-        (promptCountInspection.drift ? 1 : 0);
+        (promptCountInspection.configured && promptCountInspection.drift ? 1 : 0);
     const subjectInspections = inspections.slice(0, SUBJECT_TARGETS.length);
     const libraryStart = SUBJECT_TARGETS.length;
     const libraryEnd = libraryStart + LIBRARY_SECTIONS.length;
@@ -730,7 +739,9 @@ function main() {
         console.log(`  ${section.marker}: ${inspection.drift ? 'DRIFT' : 'OK'} (${inspection.cards.length})`);
     });
     console.log('Homepage prompt count:');
-    console.log(`${promptCountInspection.page}: ${promptCountInspection.drift ? 'DRIFT' : 'OK'} (${prompts.length})`);
+    console.log(`${promptCountInspection.page}: ${promptCountInspection.configured
+        ? `${promptCountInspection.drift ? 'DRIFT' : 'OK'} (${prompts.length})`
+        : 'OPTIONAL (no generated prompt count markers)'}`);
     console.log('Summary:');
     console.log(`Registry prompts: ${prompts.length}`);
     console.log(`Subject prompts: ${subjectInspections.reduce((sum, inspection) => sum + inspection.cards.length, 0)}`);
@@ -747,7 +758,7 @@ function main() {
         if (driftCount) process.exitCode = 1;
         return;
     }
-    if (promptCountInspection.drift) {
+    if (promptCountInspection.configured && promptCountInspection.drift) {
         const updated = replaceRegion(
             promptCountInspection.html,
             promptCountInspection.parts,
