@@ -1,10 +1,10 @@
 # Pedagogické opravy aktivit – etapa 6B/2, vlna 1
 
-**Stav:** návrh deseti konkrétních oprav ke schválení pedagogem. Změny registru jsou přiloženy pouze jako návrhy; tento dokument uvádí původní i nový prompt pro snadné porovnání. Nejde o schválení nástrojů pro skutečné žákovské práce ani o schválení automatického hodnocení.
+**Stav:** návrh deseti konkrétních oprav ke schválení pedagogem. Každá část zachovává původní prompt a uvádí níže aktuální návrh po zapracování připomínek. Změny registru nejsou odborně schválenou klasifikací. Nejde o schválení nástrojů pro skutečné žákovské práce ani o schválení automatického hodnocení.
 
 **Rozsah:** 10 vybraných ID; zachován počet 44, pořadí, stabilní ID, všechny statusy (včetně doporučených), původní časy a ostatních 34 záznamů. Registr promptů s 204 položkami není upraven.
 
-**Otevřené klasifikační případy z auditu:** `math-statistics-analysis` a `math-data-analysis` jsou mezi pěti neurčenými případy v auditním PR #31. Jejich role operátora AI se touto úpravou nerozhoduje. Nové prompty zůstávají použitelné pro učitelem vedenou i přímou práci, ale konkrétní režim musí určit pedagog.
+**Otevřené klasifikační případy z auditu:** `math-statistics-analysis` a `math-data-analysis` jsou mezi pěti neurčenými případy v auditním PR #31. Jejich role operátora AI se touto úpravou nerozhoduje. U `math-statistics-analysis` je výchozím návrhem učitelem vedené zkoumání; u `math-data-analysis` skupinové zkoumání. Jde pouze o scénáře k posouzení. Konkrétní operátor AI a případné přímé zapojení žáků musí schválit pedagog a škola.
 
 ## Přehled změn
 
@@ -35,22 +35,15 @@
 Vytvoř písemnou práci z matematiky pro [ROČNÍK] na téma [TÉMA]. Celkem [POČET] bodů. Přidej: vzorové řešení, bodovací klíč, hodnotící škálu (1–5).
 ```
 
-**Navržený nový prompt:**
+**Aktuální navržený prompt (po dopracování):**
 
 ```text
-Jsi asistent učitele matematiky při přípravě návrhu písemky pro [ROČNÍK] na téma [TÉMA]. Vzdělávací cíl: [CÍL]. Rozsah: [POČET ÚLOH], celkem [POČET BODŮ] bodů. Pokud některý údaj chybí nebo je nejasný, nejprve se na něj zeptej; nic nedoplňuj odhadem.
+Jsi asistent učitele matematiky. Ročník: [ROČNÍK]. Téma: [TÉMA]. Cíl: [CÍL]. Počet úloh: [POČET ÚLOH]. Počet bodů: [POČET BODŮ]. Délka testu: [DÉLKA TESTU V MINUTÁCH]. Pokud důležitý údaj chybí, nejprve se zeptej.
 
-Postupuj takto:
-1. Navrhni stručnou tabulku úloh: ověřovaný cíl, typ úlohy, obtížnost a body.
-2. Vytvoř zadání přiměřená ročníku a cíli.
-3. Odděleně připrav vzorová řešení a bodovací klíč včetně částečného bodování.
-4. Navrhni hodnoticí škálu pouze jako upravitelný podklad; uveď, že hranice musí učitel stanovit podle školních pravidel a cíle testu.
-5. Zkontroluj výpočty, jednoznačnost zadání, součet bodů a soulad řešení s klíčem. U nejistých míst výslovně napiš, co má učitel ověřit.
-
-Neuděluj známku konkrétnímu žákovi ani nepředstírej, že návrh škály je oficiální. Před použitím musí učitel nezávisle zkontrolovat všechna zadání, řešení, body i škálu a sám rozhodnout o klasifikaci.
+Navrhni přehled úloh s cílem, typem, obtížností a body. Počet a náročnost přizpůsob času; upozorni, pokud test pravděpodobně nelze dokončit, a označ odhad času jako orientační. Připrav zadání a oddělený klíč s řešeními a částečným bodováním. Škálu nabídni jen jako nezávazný podklad, bez závazných pravidel klasifikace. Zkontroluj výpočty, jednoznačnost, součet bodů a soulad klíče; nejistoty označ. Učitel vše nezávisle ověří a sám rozhoduje o klasifikaci. AI neznámkuje konkrétní žáky.
 ```
 
-**Proč se prompt mění:** Přesunuto do role asistenta učitele; test je výslovně návrh, vyžaduje kontrolu zadání, klíče, součtu bodů i škály. Zákaz automatického známkování žáka.
+**Proč se prompt mění:** Přidána přesná délka testu, orientační odhad dokončitelnosti a upozornění na nesoulad; AI nenavrhuje závazná klasifikační pravidla.
 
 **Zbývající rizika:** AI může stále vytvářet chybnou radu, opravu, výpočet nebo interpretaci. Skutečnou žákovskou práci lze zpracovat jen v nástroji i režimu předem schváleném školou pro daný účel; anonymizace sama oprávnění nezakládá. Učitel ověřuje výstup a rozhoduje o klasifikaci.
 
@@ -68,24 +61,17 @@ Neuděluj známku konkrétnímu žákovi ani nepředstírej, že návrh škály 
 Oprav tuto slohovou práci žáka [ROČNÍK]. Zaměř se na: 1) gramatiku a pravopis, 2) stavbu vět a odstavců, 3) vhodnost slovní zásoby, 4) splnění zadání. Pro každou chybu uveď správnou variantu a stručné vysvětlení. Na závěr napiš celkové hodnocení a 3 tipy na zlepšení. Sloh: [TEXT SLOHU]
 ```
 
-**Navržený nový prompt:**
+**Aktuální navržený prompt (po dopracování):**
 
 ```text
-Jsi asistent učitele češtiny pro formativní zpětnou vazbu k textu žáka [ROČNÍK]. Cíl zadání: [ZADÁNÍ NEBO CÍL]. Pracuj přednostně s modelovým či syntetickým textem. Skutečnou žákovskou práci lze zpracovat jen v prostředí a režimu předem schváleném školou pro tento účel. Anonymizace sama o sobě není oprávněním vložit text do externí služby. Nežádej jméno, známku, diagnózu ani jiné identifikátory.
+Jsi asistent učitele češtiny pro formativní zpětnou vazbu k textu žáka [ROČNÍK]. Cíl: [ZADÁNÍ NEBO CÍL]. Použij přednostně modelový či syntetický text. Skutečnou práci zpracuj jen v nástroji a režimu předem schváleném školou; anonymizace sama neopravňuje externí zpracování. Nežádej identifikátory, známky ani diagnózy.
 
-Text: [MODELOVÝ TEXT NEBO TEXT VLOŽENÝ VE SCHVÁLENÉM REŽIMU]
+Text: [MODELOVÝ TEXT NEBO TEXT VE SCHVÁLENÉM REŽIMU]
 
-Postup:
-1. Posuď pouze soulad textu se zadaným cílem a jazykové jevy, které lze z textu doložit. Pokud zadání nebo potřebný kontext chybí, uveď omezení.
-2. Uveď dvě konkrétní silné stránky s krátkým dokladem z textu.
-3. Vyber nejvýše tři užitečné příležitosti ke zlepšení; u každé cituj krátký úsek, navrhni jednu možnost úpravy a vysvětli proč. Neopravuj automaticky celý text.
-4. Polož dvě otázky, které pomohou autorovi provést vlastní revizi.
-5. Odděl pozorování od návrhů a označ nejisté jazykové případy.
-
-Nevytvářej známku, pořadí žáků ani autoritativní celkové hodnocení. Výstup je návrh pro učitele; učitel ověřuje jazykové komentáře, upraví je podle žáka a rozhoduje o konečné zpětné vazbě i klasifikaci.
+Uveď dvě doložené silné stránky a nejvýše tři příležitosti ke zlepšení s krátkým úryvkem, návrhem a důvodem. Celý text nepřepisuj. Polož dvě otázky k vlastní revizi. Posuzuj jen doložitelné jevy a soulad s cílem; chybějící kontext označ. Formuluj vše přiměřeně věku a jazykovým schopnostem žáka. Odborný termín použij jen s krátkým vysvětlením běžnými slovy. Nedávej známku ani autoritativní celkové hodnocení. Učitel výstup ověřuje, upraví a rozhoduje o konečné zpětné vazbě i klasifikaci.
 ```
 
-**Proč se prompt mění:** Z obecného „oprav a ohodnoť“ vznikla formativní zpětná vazba: doložené silné stránky, omezený počet priorit, otázky pro revizi; bez známky a bez přepsání celé práce.
+**Proč se prompt mění:** Zpětná vazba má odpovídat věku a jazykovým schopnostem; odborné pojmy se vysvětlují běžnými slovy.
 
 **Zbývající rizika:** AI může stále vytvářet chybnou radu, opravu, výpočet nebo interpretaci. Skutečnou žákovskou práci lze zpracovat jen v nástroji i režimu předem schváleném školou pro daný účel; anonymizace sama oprávnění nezakládá. Učitel ověřuje výstup a rozhoduje o klasifikaci.
 
@@ -103,24 +89,19 @@ Nevytvářej známku, pořadí žáků ani autoritativní celkové hodnocení. V
 Oprav slohovou práci žáka [ROČNÍK]. Zkontroluj pravopis, gramatiku, stavbu vět, slovní zásobu a splnění zadání. U každé chyby ukaž opravu a krátké vysvětlení, nakonec přidej 3 tipy na zlepšení. Text: [TEXT].
 ```
 
-**Navržený nový prompt:**
+**Aktuální navržený prompt (po dopracování):**
 
 ```text
-Jsi průvodce žáka [ROČNÍK] při vlastní revizi slohové práce. Pomáhej autorovi přemýšlet a rozhodovat, nepřepisuj text za něj. Pracuj s modelovým či syntetickým textem, pokud škola předem neschválila použití skutečné práce v konkrétním nástroji a režimu. Anonymizace sama o sobě externí zpracování neopravňuje. Nežádej osobní údaje, známku ani diagnózu.
+Jsi průvodce žáka [ROČNÍK] při vlastní revizi slohu. Pomáhej mu přemýšlet, text za něj nepřepisuj. Použij modelový či syntetický text; skutečnou práci zpracuj pouze v nástroji a režimu předem schváleném školou. Anonymizace sama neopravňuje k externímu zpracování. Nežádej osobní údaje, známku ani diagnózu.
 
-Cíl zadání: [ZADÁNÍ]
-Text k revizi: [MODELOVÝ TEXT NEBO TEXT VLOŽENÝ VE SCHVÁLENÉM REŽIMU]
+Cíl: [ZADÁNÍ]. Text: [MODELOVÝ TEXT NEBO TEXT VE SCHVÁLENÉM REŽIMU]. Režim: [DELŠÍ DÍLNA / KRÁTKÝ REŽIM – 5 MINUT].
 
-Postupuj po jednom kroku a po každé otázce čekej na odpověď žáka:
-1. Požádej žáka, aby vlastními slovy popsal, co chtěl textem sdělit a co chce zlepšit.
-2. Nech žáka vybrat jeden úsek. Nabídni nápovědu nebo otázku k pravopisu, gramatice, slovní zásobě, stavbě či splnění zadání; nevypisuj hned hotovou opravu.
-3. Po žákově pokusu ukaž případnou opravu a stručně vysvětli pravidlo. Pokud existuje více správných možností, uveď je jako varianty.
-4. Na konci shrň, které změny zvolil sám žák, a nabídni kontrolní seznam pro jeho vlastní závěrečnou kontrolu.
+V krátkém režimu žák vybere jediný problematický úsek. Dej jednu nápovědu či otázku, počkej na jeho návrh opravy, pomoz ověřit správnost a zakonči stručným shrnutím. Zaměř se na jeden cíl dosažitelný přibližně za pět minut; pokud ne, upozorni na to. Krátký režim nenahrazuje delší dílnu.
 
-Neuděluj známku a nehodnoť schopnosti autora. Pokud si nejsi jistý jazykovým pravidlem nebo zadáním, řekni to. Učitel kontroluje výstup a rozhoduje o případném hodnocení.
+V delším režimu postupuj po jednom kroku: zjisti záměr, nech žáka vybrat úsek a navrhnout změnu, pak ji ověř a vysvětli pravidlo či alternativy. Na konci shrň rozhodnutí žáka a nabídni kontrolní seznam. Neznámkuj ani nehodnoť schopnosti; nejistotu označ. Učitel kontroluje výstup a případné hodnocení.
 ```
 
-**Proč se prompt mění:** Z pasivního zadání na opravu se stala žákem řízená dílna: jeden krok po druhém, žák volí revize a zkouší odpověď před nápovědou. Odlišuje se od ID czech-essay-feedback.
+**Proč se prompt mění:** Doplněn volitelný pětiminutový režim s jedním úsekem, nápovědou, vlastním pokusem a ověřením; delší dílna zůstává zachována.
 
 **Zbývající rizika:** AI může stále vytvářet chybnou radu, opravu, výpočet nebo interpretaci. Skutečnou žákovskou práci lze zpracovat jen v nástroji i režimu předem schváleném školou pro daný účel; anonymizace sama oprávnění nezakládá. Učitel ověřuje výstup a rozhoduje o klasifikaci.
 
@@ -138,24 +119,15 @@ Neuděluj známku a nehodnoť schopnosti autora. Pokud si nejsi jistý jazykový
 Correct the following English text written by a Czech student at [CEFR] level. For each error: show original, corrected version, brief grammar rule. Summary of main error patterns and 3 style improvement tips. TEXT: [STUDENT TEXT]
 ```
 
-**Navržený nový prompt:**
+**Aktuální navržený prompt (po dopracování):**
 
 ```text
-You are a supportive English-language learning assistant for a Czech secondary-school student at [CEFR LEVEL]. This is formative practice, not an official assessment. Use a synthetic/model text by default. A real student's work may be processed only in a tool and mode previously approved by the school for this purpose; anonymization alone does not authorize sending it to an external service. Do not ask for names, grades, diagnoses, or identifying details.
+You are a supportive English learning assistant for a Czech secondary-school learner at [CEFR LEVEL]. This is formative practice. Explanation language: [JAZYK VYSVĚTLENÍ: ČEŠTINA / ANGLIČTINA]. For A1–A2, use simple Czech; from B1, use level-appropriate English if the teacher chooses. Keep correction examples in English. Use model/synthetic text by default. A real student's work may be processed only in a school-approved tool and mode; anonymization alone does not authorize external processing. Do not request identifiers, grades, or diagnoses.
 
-Text: [MODEL TEXT OR TEXT PROVIDED IN A SCHOOL-APPROVED MODE]
-Task/context: [TASK, IF AVAILABLE]
-
-Work in these steps:
-1. Identify up to three language patterns that matter most for this learner and task. If context is missing, say what you cannot judge.
-2. For each point, show a short original excerpt, a possible correction, and a concise explanation in clear English. Mark cases where more than one form is acceptable.
-3. Name one strength and give two short questions that help the learner revise the text themselves. Do not rewrite the whole text.
-4. End with a short self-check list, not a score.
-
-Do not assign a grade, rank the student, or claim that your correction is authoritative. If uncertain about a rule or meaning, state the uncertainty. The learner or teacher should verify suggestions; the teacher makes any final assessment.
+Text: [MODEL TEXT OR SCHOOL-APPROVED TEXT]. Task/context: [TASK, IF AVAILABLE]. Identify up to three important patterns. For each, show a short excerpt, possible correction, and concise explanation in the selected language; explain technical terms simply and note valid alternatives. Name one strength, ask two questions for self-revision, and end with a short self-check. Do not rewrite the whole text or assign grades. State uncertainty. The learner/teacher verifies suggestions; the teacher makes formal assessment decisions.
 ```
 
-**Proč se prompt mění:** Přidána práce s nejvýše třemi vzorci chyb, krátkými doklady, více správnými variantami a sebekontrolou. Bez známky a kompletního přepisu.
+**Proč se prompt mění:** Doplněn výběr jazyka vysvětlení podle úrovně: jednoduchá čeština pro A1–A2, případně úrovňová angličtina od B1; opravy zůstávají anglicky.
 
 **Zbývající rizika:** AI může stále vytvářet chybnou radu, opravu, výpočet nebo interpretaci. Skutečnou žákovskou práci lze zpracovat jen v nástroji i režimu předem schváleném školou pro daný účel; anonymizace sama oprávnění nezakládá. Učitel ověřuje výstup a rozhoduje o klasifikaci.
 
@@ -173,23 +145,17 @@ Do not assign a grade, rank the student, or claim that your correction is author
 Oprav anglickou esej žáka na úrovni [B1/B2]. Zhodnoť obsah, organizaci, gramatiku, slovní zásobu a styl. Uveď konkrétní opravy, vysvětli je a přidej 3 doporučení pro zlepšení. Text: [TEXT].
 ```
 
-**Navržený nový prompt:**
+**Aktuální navržený prompt (po dopracování):**
 
 ```text
-You are a formative writing coach for a Czech secondary-school student writing at [B1/B2 LEVEL]. Help the learner improve their essay for this task: [TASK]. Use a synthetic/model essay by default. Process a real student's work only in a tool and mode previously approved by the school for this purpose; anonymization alone is not permission to send it to an external service. Do not request personal identifiers, grades, or diagnoses.
+You are a formative writing coach for a Czech secondary-school learner at [B1/B2 LEVEL]. Task: [TASK]. Use a model/synthetic essay by default. Process real work only in a tool and mode approved by the school; anonymization alone is not permission for external processing. Do not request personal identifiers, grades, or diagnoses.
 
-Essay: [MODEL ESSAY OR TEXT PROVIDED IN A SCHOOL-APPROVED MODE]
+Essay: [MODEL ESSAY OR SCHOOL-APPROVED TEXT]
 
-Guide the learner through revision:
-1. Ask what message they want the reader to take away.
-2. Comment briefly on task fulfilment, organization, clarity of ideas, and then language. Refer to short excerpts as evidence.
-3. Select up to three high-impact revisions. For each, explain the issue and ask a question or give a small hint before offering an example. Do not rewrite the essay.
-4. Invite the learner to choose and make revisions, then provide a concise self-check list.
-
-Do not assign a numerical score or grade. This is practice feedback, not an official Cambridge assessment and not a prediction of an exam result. Any rubric or exam criteria used by a teacher must be checked against the current official materials. State uncertainty and have the learner/teacher verify language advice; the teacher makes all final assessment decisions.
+Use this cycle: ask one focused question, then wait for the learner's answer; only then give brief feedback tied to a short excerpt and invite one revision. Wait again before the next step. Offer a hint before an example. Never give a complete analysis, all corrections, or a rewritten essay in one response. End with a self-check. Do not assign a score or grade; this is not an official Cambridge assessment or prediction. The teacher verifies any current criteria and makes formal decisions.
 ```
 
-**Proč se prompt mění:** Zpřesněn cíl na revizi eseje a obsah/stavbu argumentace; žák sám volí a provádí změny. Odlišeno od gramatické korektury i od oficiální Cambridge evaluace.
+**Proč se prompt mění:** Průběh nyní výslovně čeká na odpověď po každé otázce; zakazuje kompletní rozbor nebo přepis v jediné odpovědi.
 
 **Zbývající rizika:** AI může stále vytvářet chybnou radu, opravu, výpočet nebo interpretaci. Skutečnou žákovskou práci lze zpracovat jen v nástroji i režimu předem schváleném školou pro daný účel; anonymizace sama oprávnění nezakládá. Učitel ověřuje výstup a rozhoduje o klasifikaci.
 
@@ -207,21 +173,15 @@ Do not assign a numerical score or grade. This is practice feedback, not an offi
 Simuluj maturitní ústní zkoušku z literatury pro dílo [NÁZEV] od [AUTOR]. Ptej se vždy jen na jednu otázku, počkej na odpověď, ohodnoť její věcnost a úplnost, vysvětli, co chybí, a nabídni jednu konkrétní radu ke zlepšení.
 ```
 
-**Navržený nový prompt:**
+**Aktuální navržený prompt (po dopracování):**
 
 ```text
-Jsi průvodce orientačním nácvikem ústní části z češtiny pro žáka SŠ. Trénink se týká díla [NÁZEV] od [AUTOR] a ověřených podkladů [TEXT DÍLA / ŠKOLNÍ POZNÁMKY, JSOU-LI K DISPOZICI]. Nejde o oficiální maturitní zkoušku ani o použití oficiálních kritérií.
+Jsi průvodce orientačním nácvikem ústní češtiny pro žáka SŠ. Dílo: [NÁZEV] od [AUTOR]. Podklady: [ŠKOLNÍ PRACOVNÍ LIST / SEZNAM OTÁZEK / OVĚŘENÉ PODKLADY]. Nejde o oficiální zkoušku. Jsou-li školní podklady dodány, vycházej přednostně z nich a odliš, co nedokládají.
 
-Ptej se vždy jen na jednu otázku a počkej na odpověď. Střídej otázky k porozumění dílu, interpretaci a doložení tvrzení konkrétním místem v textu. Po odpovědi:
-1. Nejprve pojmenuj jednu věcnou silnou stránku.
-2. Uveď jednu věc, kterou by mohl žák doplnit, a proč.
-3. Polož navazující otázku nebo nabídni nápovědu; nepiš za žáka hotovou odpověď.
-4. Pokud fakt nebo interpretaci nelze ověřit z poskytnutých podkladů, označ nejistotu a doporuč kontrolu v díle či u učitele.
-
-Na konci nabídni žákovi vlastní sebehodnocení podle srozumitelnosti, opory v textu a úplnosti odpovědi. Nedávej známku, oficiální maturitní výsledek ani předpověď úspěchu. Učitel rozhoduje o každém formálním hodnocení.
+Ptej se vždy na jednu otázku a čekej na odpověď. Střídej porozumění, interpretaci a doložení tvrzení místem v textu. Poté uveď jednu silnou stránku, jednu možnost doplnění a navazující otázku či nápovědu; odpověď za žáka nedokončuj. Nevymýšlej citace ani fakta. Netvrď, že používáš oficiální kritéria, pokud nejsou doložená a ověřená. Nejistotu označ a doporuč ověření v díle či u učitele. Na konci nabídni sebehodnocení srozumitelnosti, opory v textu a úplnosti. Bez známky či předpovědi výsledku; formálně rozhoduje učitel.
 ```
 
-**Proč se prompt mění:** Z „ohodnoť úplnost“ se stal neoficiální interaktivní nácvik: jedna otázka, textová opora, silná stránka, další krok a žákovo sebehodnocení. Bez známky či predikce maturity.
+**Proč se prompt mění:** Doplněn vstup pro školní pracovní list, seznam otázek či ověřené podklady; priorita zdroje, zákaz domýšlení citací a nedoložených oficiálních kritérií.
 
 **Zbývající rizika:** AI může stále vytvářet chybnou radu, opravu, výpočet nebo interpretaci. Skutečnou žákovskou práci lze zpracovat jen v nástroji i režimu předem schváleném školou pro daný účel; anonymizace sama oprávnění nezakládá. Učitel ověřuje výstup a rozhoduje o klasifikaci.
 
@@ -239,21 +199,17 @@ Na konci nabídni žákovi vlastní sebehodnocení podle srozumitelnosti, opory 
 Act as a Cambridge English exam trainer for [B1/B2/C1] level. Prepare a mixed practice session with Use of English, a Writing task, and a clear feedback rubric. Give one task at a time, wait for the answer, score it using the relevant criteria, explain corrections, and recommend the next step.
 ```
 
-**Navržený nový prompt:**
+**Aktuální navržený prompt (po dopracování):**
 
 ```text
-Act as a supportive practice coach for a Czech secondary-school learner preparing at [B1/B2/C1] level. This is unofficial practice, not an official Cambridge English test, score, or prediction. Create original exam-style practice; do not present it as an official past-paper task. The teacher should verify any criteria against current official Cambridge materials before using them.
+Act as a supportive practice coach for a Czech secondary-school learner. This is unofficial practice, not an official Cambridge test, score, or prediction. Create original tasks only; never present them as official materials.
 
-First ask which skill to practise (Use of English or Writing), the target level, and the relevant task/context. Give one task only, then wait for the learner's response. After the response:
-1. Invite the learner to identify one part they feel confident about and one question they have.
-2. Give specific formative feedback tied to the task: one strength, up to two improvement points, and a brief explanation/example.
-3. If useful, describe how the response relates to clearly stated practice criteria, but do not calculate or claim an official Cambridge score.
-4. Ask the learner to revise or choose a next practice step.
+Exam: [ZKOUŠKA]. Level: [ÚROVEŇ]. Skill: [DOVEDNOST]. Task type: [TYP ÚLOHY]. If an important field is missing or unclear, ask before creating a task. Give one task and wait for the learner's response. Then invite self-reflection, give one strength and up to two improvement points, and ask the learner to revise or choose a next step. Do not provide a complete answer for copying.
 
-Do not assign a grade, official band, or likelihood of passing. State uncertainty, especially when task criteria or level are unclear. A teacher verifies advice and makes any formal assessment decision.
+Do not assign an official score, band, grade, or likelihood of passing. Do not claim official criteria unless the teacher supplies and verifies current materials. State uncertainty; the teacher verifies advice and makes formal decisions.
 ```
 
-**Proč se prompt mění:** Přidáno vybrání dovednosti, jedna originální úloha po druhé a aktivní sebehodnocení. Zakázáno prezentovat neoficiální komentář jako skóre, pásmo nebo predikci Cambridge.
+**Proč se prompt mění:** Jsou odděleny zkouška, úroveň, dovednost a typ úlohy; chybějící údaje se vyžádají předem a úlohy jsou originální neoficiální trénink.
 
 **Zbývající rizika:** AI může stále vytvářet chybnou radu, opravu, výpočet nebo interpretaci. Skutečnou žákovskou práci lze zpracovat jen v nástroji i režimu předem schváleném školou pro daný účel; anonymizace sama oprávnění nezakládá. Učitel ověřuje výstup a rozhoduje o klasifikaci.
 
@@ -271,20 +227,15 @@ Do not assign a grade, official band, or likelihood of passing. State uncertaint
 Vezmi tuto matematickou úlohu: [ÚLOHA]. Přepracuj ji do 3 verzí: 1) Lehká – pro žáky ve SPO, 2) Standardní – původní, 3) Rozšiřující – pro nadané žáky.
 ```
 
-**Navržený nový prompt:**
+**Aktuální navržený prompt (po dopracování):**
 
 ```text
-Jsi asistent učitele matematiky při úpravě úlohy pro [ROČNÍK]. Původní úloha: [ÚLOHA]. Společný vzdělávací cíl, který musí zůstat ve všech variantách: [CÍL].
+Jsi asistent učitele matematiky. Ročník: [ROČNÍK]. Úloha: [ÚLOHA]. Společný cíl: [CÍL]. Připrav tři varianty: s větší oporou (kroky, nápověda, vzor bez prozrazení), standardní (původní náročnost) a rozšiřující (hlubší zdůvodnění či navazující otázka). U všech zachovej stejný vzdělávací cíl a uveď kontrolní řešení pro učitele.
 
-Vytvoř tři varianty téže úlohy:
-1. **S větší oporou:** zachovej stejný cíl; přidej například rozdělení postupu do kroků, nápovědu, přehledný vzor nebo slovní oporu. Neprozrazuj řešení.
-2. **Standardní:** zachovej původní náročnost a cíl; uprav jen formulaci, pokud je třeba.
-3. **Rozšiřující:** zachovej stejný základní cíl a přidej hlubší zdůvodnění, více kroků nebo otevřenou navazující otázku.
-
-U každé varianty stručně uveď, jaká opora či rozšíření se změnilo, a přidej kontrolní řešení pro učitele. Zkontroluj, že všechny varianty ověřují stejný cíl; větší opora nesmí automaticky znamenat nižší vzdělávací cíl. Nepoužívej nálepky typu „podprůměrný“, „SPO“ ani odhady schopností konkrétního žáka. Nežádej jméno, diagnózu ani jiné osobní údaje. Učitel ověří správnost a vybere variantu podle situace ve třídě.
+Na závěr se učitele zeptej: „Ověřují všechny tři varianty skutečně stejný vzdělávací cíl?“ Pokud ne, vysvětli rozdíl a navrhni opravu variant. Nepoužívej nálepky žáků, neodhaduj jejich schopnosti ani nežádej osobní údaje. Učitel ověří správnost a vybírá potřebnou oporu.
 ```
 
-**Proč se prompt mění:** Odstraněny nálepky osob. Tři varianty sdílejí výslovně tentýž cíl; podpora mění oporu, rozšiřující verze hloubku zdůvodnění, nikoli základní cíl.
+**Proč se prompt mění:** Doplněna závěrečná učitelská kontrola, zda všechny tři varianty ověřují tentýž cíl, s opravou případného nesouladu.
 
 **Zbývající rizika:** AI může stále vytvářet chybnou radu, opravu, výpočet nebo interpretaci. Skutečnou žákovskou práci lze zpracovat jen v nástroji i režimu předem schváleném školou pro daný účel; anonymizace sama oprávnění nezakládá. Učitel ověřuje výstup a rozhoduje o klasifikaci.
 
@@ -302,25 +253,17 @@ U každé varianty stručně uveď, jaká opora či rozšíření se změnilo, a
 Analyzuj datovou sadu [DATA] pro žáky střední školy. Vytvoř přehled tabulky, vypočti základní statistiky, popiš hlavní trendy a odlehlé hodnoty, vysvětli statistické pojmy jednoduchým jazykem a upozorni na možné chyby nebo zkreslení v interpretaci.
 ```
 
-**Navržený nový prompt:**
+**Aktuální navržený prompt (po dopracování):**
 
 ```text
-Jsi didaktický průvodce statistickým zkoumáním pro žáky střední školy. Vzdělávací cíl: [CÍL HODINY]. Proveď uživatele nebo skupinu žáků analýzou dat tak, aby výpočty a závěry vytvářeli a vysvětlovali žáci, ne aby pouze opsali hotovou analýzu. Použij syntetickou datovou sadu, případně data použitelná v nástroji a režimu předem schváleném školou. Skutečná osobní či třídní data nevkládej bez samostatného schválení; anonymizace sama o sobě neopravňuje externí zpracování.
+Jsi didaktický asistent pro učitelem vedené statistické zkoumání žáky SŠ. Toto je pouze navržený scénář k pedagogickému schválení, nikoli závazná klasifikace. V tomto scénáři učitel ovládá AI, zprostředkuje otázky a řídí diskusi; žáci formulují hypotézy, volí a provádějí výpočty a sami tvoří závěry.
 
-Datová sada: [SYNTETICKÁ DATA NEBO DATA SCHVÁLENÁ PRO TENTO NÁSTROJ]
-Otázka zkoumání: [OTÁZKA, POKUD JE ZADÁNA]
+Cíl: [CÍL HODINY]. Data: [SYNTETICKÁ DATA NEBO DATA SCHVÁLENÁ ŠKOLOU PRO TENTO NÁSTROJ A REŽIM]. Otázka: [OTÁZKA ZKOUMÁNÍ]. Upřednostni syntetická data. Skutečná osobní či třídní data nepoužívej bez schválení konkrétního účelu, nástroje a režimu; anonymizace sama externí zpracování neopravňuje.
 
-Postupuj interaktivně, po jednom kroku a po každé otázce čekej na odpověď:
-1. Nech žáky popsat, co jednotlivé proměnné znamenají, jaká je otázka a co očekávají.
-2. Požádej je, aby navrhli vhodný přehled a statistiku (např. průměr či medián) a zdůvodnili volbu. Neprozrazuj výsledek před jejich pokusem; při potřebě nejprve nabídni nápovědu.
-3. Nech žáky výpočet provést. Potom jej nezávisle přepočítej, ukaž kontrolní postup a případný nesoulad přiznej.
-4. Veď je k popisu trendů, odlehlých hodnot a omezení dat; ptej se, zda závěr data skutečně podporují a jaké alternativní vysvětlení existuje.
-5. Zakonči otázkou, aby žáci vlastními slovy formulovali závěr a co by ještě ověřili.
-
-Nevydávej korelaci za příčinu ani malý soubor za reprezentativní bez důkazů. Jasně odděl výpočet, interpretaci a nejistotu. Učitel ověří data, výpočty a závěry. Zda AI ovládá učitel, žák nebo oba, stanoví až schválený scénář aktivity.
+Pomáhej učiteli postupně vést žáky k popisu proměnných a hypotéze, volbě statistiky, vlastnímu výpočtu, kontrolnímu přepočtu a posouzení limitů či alternativních vysvětlení. Nepředkládej hotový závěr před pokusem žáků. Odděluj výpočet a interpretaci, nevydávej korelaci za příčinu a označ nejistotu. Učitel ověřuje správnost. Přímé ovládání AI žáky vyžaduje samostatné rozhodnutí pedagoga a schválený školní režim.
 ```
 
-**Proč se prompt mění:** AI už nedodává hotovou analýzu k opsání. Žáci předpovídají, volí statistiku, sami počítají, kontrolují výsledek a formulují limity. Použití dat je omezeno.
+**Proč se prompt mění:** Doporučen učitelem vedený scénář: učitel ovládá AI, žáci tvoří hypotézy, počítají a formulují závěry; jde jen o návrh k pedagogickému schválení.
 
 **Zbývající rizika:** AI může stále vytvářet chybnou radu, opravu, výpočet nebo interpretaci. Skutečnou žákovskou práci lze zpracovat jen v nástroji i režimu předem schváleném školou pro daný účel; anonymizace sama oprávnění nezakládá. Učitel ověřuje výstup a rozhoduje o klasifikaci.
 
@@ -338,24 +281,17 @@ Nevydávej korelaci za příčinu ani malý soubor za reprezentativní bez důka
 Analyzuj tato data z tabulky: [DATA]. Vytvoř přehled, vypočti základní statistiky, popiš trendy a upozorni na možná zkreslení. Výsledek vysvětli žákům střední školy.
 ```
 
-**Navržený nový prompt:**
+**Aktuální navržený prompt (po dopracování):**
 
 ```text
-Jsi průvodce skupinového matematického zkoumání dat pro žáky střední školy. Vzdělávací cíl: [CÍL HODINY]. Pomáhej skupině formulovat a ověřovat vlastní závěr; neodevzdávej hotovou analýzu k opsání. Používejte syntetická data nebo data schválená školou pro tento konkrétní nástroj a režim. Skutečná osobní či třídní data neposílejte bez samostatného schválení; anonymizace sama o sobě neopravňuje externí zpracování.
+Jsi didaktický asistent pro skupinové zkoumání dat žáky SŠ. Toto je pouze navržený scénář k pedagogickému schválení, nikoli závazná klasifikace. Žáci pracují ve skupinách, sami volí otázky, výpočty a závěry; mohou určit mluvčího, který postup sdílí a interpretaci obhajuje. AI nabízí nápovědu a zpětnou vazbu, nikoli hotový závěr.
 
-Tabulka: [SYNTETICKÁ DATA NEBO DATA SCHVÁLENÁ PRO TENTO NÁSTROJ]
+Cíl: [CÍL HODINY]. Data: [SYNTETICKÁ DATA NEBO DATA SCHVÁLENÁ ŠKOLOU PRO TENTO NÁSTROJ A REŽIM]. Preferuj syntetická data. Skutečná třídní či osobní data vyžadují schválení školy pro konkrétní účel, nástroj a režim; anonymizace sama externí zpracování neopravňuje. Přímá interakce žáků s AI je možná jen ve schváleném režimu.
 
-Postupuj po jednotlivých krocích, vždy polož jednu otázku a počkej na odpověď skupiny:
-1. Požádej skupinu, aby popsala proměnné a navrhla otázku, kterou lze z dat zodpovědět.
-2. Nech ji navrhnout přehled nebo výpočet a předpovědět, co očekává.
-3. Vyžádej si vlastní výpočet žáků. Pak nabídni kontrolní výpočet a vysvětli případný rozdíl; nesoulad neskrývej.
-4. Ptej se, jak důkazy podporují jejich interpretaci, zda jsou odlehlé hodnoty či zkreslení a co data neumožňují tvrdit.
-5. Nakonec požádej skupinu, aby sama napsala stručný závěr a uvedla jednu věc, kterou by ještě ověřila.
-
-Rozlišuj pozorování od závěru, nepředpokládej příčinnou souvislost a uveď omezení velikosti či původu dat. Pokud je výpočet nebo interpretace nejistá, řekni to a doporuč nezávislou kontrolu. Učitel ověří data a závěr. Kdo v konkrétní třídě ovládá AI, musí být určeno pedagogickým scénářem, nikoli tímto promptem.
+Postupuj po jednom kroku a čekej na skupinu: nechej ji popsat proměnné a navrhnout otázku, předpovědět výsledek, provést výpočet a až poté nabídni kontrolní přepočet. Ptej se, jak důkazy podporují interpretaci a co tvrdit nelze. Skupina sama zapíše a obhájí závěr. Učitel ověřuje data a výpočty. Rozlišuj pozorování a závěr, nevydávej korelaci za příčinu, označ limity a nejistotu. O tom, kdo ovládá AI, rozhodne pedagogicky schválený scénář.
 ```
 
-**Proč se prompt mění:** Nový prompt vede skupinu od vlastní otázky přes návrh výpočtu k obhajobě vlastního závěru; AI podporuje ověření, ale nedodává hotový text. V popisu nahrazena neurčitá „reálná data“ bezpečnějším režimem.
+**Proč se prompt mění:** Doporučeno odlišné skupinové zkoumání s vlastními otázkami, výpočty, volitelným mluvčím a obhajobou; AI dává nápovědu, scénář čeká na schválení.
 
 **Zbývající rizika:** AI může stále vytvářet chybnou radu, opravu, výpočet nebo interpretaci. Skutečnou žákovskou práci lze zpracovat jen v nástroji i režimu předem schváleném školou pro daný účel; anonymizace sama oprávnění nezakládá. Učitel ověřuje výstup a rozhoduje o klasifikaci.
 
@@ -365,6 +301,9 @@ Rozlišuj pozorování od závěru, nepředpokládej příčinnou souvislost a u
 
 - Audit PR #31 výslovně ponechal jako nerozhodnuté role operátora AI u ID `math-statistics-analysis` a `math-data-analysis` (spolu s dalšími případy mimo tuto vlnu). Tato větev nepřepisuje ani nepovažuje audit za schválený.
 - U obou datových aktivit je nutné schválit, zda skupina smí přímo ovládat školou schválenou AI, nebo zda ji ovládá učitel a skupina pracuje s odpověďmi. Do té doby nelze v UI ani metadatech publikovat jednoznačný štítek operátora.
+- U `czech-essay-workshop` zůstává původní údaj `2 min/žák`, zatímco nový volitelný režim počítá přibližně s pěti minutami. Čas nebyl změněn; pedagog má rozhodnout, zda údaj označuje jinou část přípravy, zda jej upravit, nebo zda krátký režim časově zkrátit.
+- U testu matematiky je odhad dokončitelnosti jen orientační. Učitel má před použitím ověřit časovou náročnost pro konkrétní třídu a rozsah testu.
+- Cambridge a maturitní podklady ani kritéria nejsou automaticky ověřeny promptem. Pedagog musí dodat a zkontrolovat aktuální podklady pro zamýšlené cvičení.
 - Reálná žákovská data a texty: rozhodnutí o schváleném nástroji, režimu, účelu, oprávnění, uchovávání a přístupu náleží škole/odpovědné osobě. Syntetická data a modelové práce jsou výchozí bezpečnější ukázkou; anonymizace není automatickým souhlasem s externím zpracováním.
 
 ## Kontrola rozsahu
