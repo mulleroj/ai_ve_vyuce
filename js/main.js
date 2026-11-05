@@ -179,9 +179,13 @@ function closeModal() {
     modalOverlay.classList.remove('open');
     document.body.style.overflow = '';
 }
-if (modalClose) modalClose.addEventListener('click', closeModal);
-if (modalOverlay) modalOverlay.addEventListener('click', (e) => { if (e.target === modalOverlay) closeModal(); });
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+// The activity library owns its two rich dialogs and handles every close path
+// together, including restoring focus and the page scroll lock.
+if (!document.body.classList.contains('activity-library-page')) {
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    if (modalOverlay) modalOverlay.addEventListener('click', (e) => { if (e.target === modalOverlay) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+}
 window.openModal = openModal;
 
 /* ── Filter chips ── */

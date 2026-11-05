@@ -1,5 +1,7 @@
 const fs = require('fs');
 const path = require('path');
+const { buildActivityNavigation } = require('./subject-navigation');
+const { buildSubjectFooter } = require('./subject-footer');
 
 const ROOT = path.resolve(__dirname, '..');
 const DATA_PATH = process.env.ACTIVITIES_DATA_PATH
@@ -31,6 +33,7 @@ const MAIN_SUBJECT_LABELS = new Map([
     ['mat', ['Matematika', 'badge-blue']], ['cj', ['Čeština', 'badge-blue']], ['aj', ['Angličtina', 'badge-blue']],
     ['pv', ['Přírodní vědy', 'badge-green']], ['dej', ['Dějepis', 'badge-purple']]
 ]);
+const LIBRARY_SUBJECT_LABELS = new Map([['mat', 'Matematika'], ['cj', 'Čeština'], ['aj', 'Angličtina'], ['pv', 'Přírodní vědy'], ['dej', 'Dějepis'], ['obecne', 'Obecné aktivity']]);
 const TOOL_BADGES = new Map([
     ['chatgpt', ['ChatGPT', 'badge-gold']], ['claude', ['Claude', 'badge-purple']], ['gemini', ['Gemini', 'badge-mint']]
 ]);
@@ -215,7 +218,7 @@ function levelLabel(levels) {
 function formatLabel(record) {
     return FORMAT_DISPLAY_OVERRIDES.get(record.id) || FORMAT_LABELS.get(record.format);
 }
-function buildCard(record, prompts) {
+function buildCard(record, prompts, library = false) {
     const prompt = resolvePrompt(record, prompts);
     const [toolLabel, toolClass] = TOOL_BADGES.get(record.tools[0]);
     const secondaryLabel = record.subsubjects ? SUBJECT_LABELS.get(record.subsubjects[0]) : levelLabel(record.levels);
@@ -224,23 +227,27 @@ function buildCard(record, prompts) {
     const body = buildModalBody(record, prompt);
     const modalTitle = record.detail && record.detail.modalTitle ? record.detail.modalTitle : record.title;
     const modalPayload = JSON.stringify({title: modalTitle, body});
-    const subjectAttribute = record.subsubjects ? ` data-subject="${escapeAttribute(record.subsubjects[0])}"` : '';
+    const subjectAttribute = library ? ` data-subject="${escapeAttribute(record.subjects[0])}"` : (record.subsubjects ? ` data-subject="${escapeAttribute(record.subsubjects[0])}"` : '');
     const titleTag = ['anglictina', 'matematika'].includes(record.collections[0].id) ? 'h3' : 'div';
-    return `                    <div class="activity-card reveal" data-level="${escapeAttribute(record.levels.join(' '))}"${subjectAttribute}>
+    const libraryAttributes = library ? ` data-activity-id="${escapeAttribute(record.id)}" data-search="${escapeAttribute(`${record.title} ${record.description}`)}" data-tool="${escapeAttribute(record.tools[0])}" data-duration="${escapeAttribute(record.duration)}" data-format="${escapeAttribute(formatLabel(record))}" data-prompt="${escapeAttribute(prompt)}" data-modal-title="${escapeAttribute(modalTitle)}" data-intro="${escapeAttribute(record.detail?.intro || '')}"${record.relatedPromptId ? ` data-related-prompt="${escapeAttribute(record.relatedPromptId)}"` : ''}` : '';
+    const detailButton = library
+        ? `<button class="btn btn-mint btn-sm" type="button" data-open-activity="${escapeAttribute(record.id)}" aria-haspopup="dialog">Detail →</button>`
+        : `<button class="btn btn-mint btn-sm"
+                                onclick="openModal(${escapeAttribute(modalPayload)})">Detail
+                                →</button>`;
+    return `                    <div class="activity-card reveal"${library ? ` data-subject="${escapeAttribute(record.subjects[0])}"` : ''} data-level="${escapeAttribute(record.levels.join(' '))}"${libraryAttributes}${subjectAttribute}>
                         <div class="activity-card-top">
-                            <div class="activity-badges"><span class="badge ${toolClass}">${escapeHtml(toolLabel)}</span><span
+                            <div class="activity-badges"><span class="badge ${toolClass}">${escapeHtml(toolLabel)}</span>${library ? `<span class="badge badge-blue">${escapeHtml(LIBRARY_SUBJECT_LABELS.get(record.subjects[0]))}</span>` : ''}<span
                                     class="badge badge-gray">${escapeHtml(secondaryLabel)}</span>${extraBadges}</div>
                             <span style="font-size:1.8rem">${escapeHtml(record.icon)}</span>
                         </div>
-                        <${titleTag} class="activity-title">${escapeHtml(record.title)}</${titleTag}>
+                        <${library ? 'h3' : titleTag} class="activity-title">${escapeHtml(record.title)}</${library ? 'h3' : titleTag}>
                         <div class="activity-desc">${escapeHtml(record.description)}</div>
                         <div class="activity-meta"><span class="activity-meta-item">⏱ ${escapeHtml(record.duration)}</span><span
                                 class="activity-meta-item">${escapeHtml(formatLabel(record))}</span></div>
                         <div class="activity-footer">
                             <span class="badge ${statusClass}">${escapeHtml(statusLabel)}</span>
-                            <button class="btn btn-mint btn-sm"
-                                onclick="openModal(${escapeAttribute(modalPayload)})">Detail
-                                →</button>
+                            ${library ? `<div class="activity-footer-actions">${detailButton}<button class="copy-btn btn btn-mint btn-sm" data-copy="${escapeAttribute(prompt)}">📋 Kopírovat</button></div>` : detailButton}
                         </div>
                     </div>`;
 }
@@ -269,38 +276,46 @@ function mainBadgeMarkup(record) {
     }
     return (record.badges || []).map(label => `<span class="badge ${MAIN_BADGE_CLASSES.get(label) || 'badge-gray'}">${escapeHtml(label)}</span>`).join('');
 }
-function mainCtaMarkup(record) {
+function mainCtaMarkup(record, library = false) {
     const ctaLabel = record.detail.ctaLabel;
     if (record.relatedPromptId) {
         return `<a href="${escapeAttribute(`prompty.html#${record.relatedPromptId}`)}" class="activity-template-link btn btn-outline btn-sm">${escapeHtml(ctaLabel)}</a>`;
     }
     const modalId = record.detail.modalId;
+    if (library) return `<button class="btn btn-primary btn-sm" type="button" data-modal-target="${escapeAttribute(modalId)}" aria-haspopup="dialog">${escapeHtml(ctaLabel)}</button>`;
     const onclick = `document.getElementById(${JSON.stringify(modalId)}).classList.add('open')`;
     const modalLabel = ctaLabel.replace(' →', '\n                                →');
     return `<button class="btn btn-primary btn-sm" onclick="${escapeAttribute(onclick)}">${escapeHtml(modalLabel)}</button>`;
 }
-function buildMainCard(record) {
+function buildMainCard(record, library = false) {
     const tool = TOOL_BADGES.get(record.tools[0]);
     const status = STATUS_BADGES.get(record.status);
     const style = MAIN_CARD_STYLES.get(record.id) || '';
-    const cardAttributes = `data-subject="${escapeAttribute(record.subjects[0])}" data-level="${escapeAttribute(record.levels.join(' '))}" data-tool="${escapeAttribute(record.tools[0])}"`;
+    const cardAttributes = `data-subject="${escapeAttribute(record.subjects[0])}" data-level="${escapeAttribute(record.levels.join(' '))}" data-tool="${escapeAttribute(record.tools[0])}"${library ? ` data-activity-id="${escapeAttribute(record.id)}" data-recommended="true" data-search="${escapeAttribute(`${record.title} ${record.description}`)}" data-duration="${escapeAttribute(record.duration)}" data-format="${escapeAttribute(formatLabel(record))}" data-prompt="${escapeAttribute(record.prompt)}"${record.relatedPromptId ? ` data-related-prompt="${escapeAttribute(record.relatedPromptId)}"` : ''}` : ''}`;
     return `                    <div class="activity-card reveal" ${cardAttributes}${style}>
                         <div class="activity-card-top">
-                            <div class="activity-badges">${record.subjects[0] === 'obecne' ? '' : `<span class="badge ${tool[1]}">${escapeHtml(tool[0])}</span>`}${mainBadgeMarkup(record)}</div>
+                            <div class="activity-badges">${record.subjects[0] === 'obecne' ? `<span class="badge badge-green">Obecné aktivity</span>` : `<span class="badge ${tool[1]}">${escapeHtml(tool[0])}</span>`}${mainBadgeMarkup(record)}${library && record.status !== 'recommended' ? '<span class="badge badge-gold">⭐ Doporučeno</span>' : ''}</div>
                             <span style="font-size:1.8rem">${escapeHtml(record.icon)}</span>
                         </div>
-                        <div class="activity-title">${escapeHtml(record.title)}</div>
+                        <${library ? 'h3' : 'div'} class="activity-title">${escapeHtml(record.title)}</${library ? 'h3' : 'div'}>
                         <div class="activity-desc">${escapeHtml(record.description)}</div>
                         <div class="activity-meta"><span class="activity-meta-item">⏱ ${escapeHtml(record.duration)}</span><span
                                 class="activity-meta-item">${escapeHtml(formatLabel(record))}</span>${MAIN_EXTRA_META.has(record.id) ? `<span class="activity-meta-item">${escapeHtml(MAIN_EXTRA_META.get(record.id))}</span>` : ''}</div>
-                        <div class="activity-footer"><span class="badge ${status[1]}">${escapeHtml(status[0])}</span><div class="activity-footer-actions">${mainCtaMarkup(record)}<button class="copy-btn btn btn-mint btn-sm"
+                        <div class="activity-footer"><span class="badge ${status[1]}">${escapeHtml(status[0])}</span><div class="activity-footer-actions">${mainCtaMarkup(record, library)}${library && !record.detail.modalId ? `<button class="btn btn-outline btn-sm" type="button" data-open-activity="${escapeAttribute(record.id)}" aria-haspopup="dialog">Detail</button>` : ''}<button class="copy-btn btn btn-mint btn-sm"
                                 data-copy="${escapeAttribute(record.prompt)}">📋 Kopírovat</button></div></div>
                     </div>`;
 }
 function buildRegion(records, promptRegistry, collectionId) {
     const prompts = promptMap(promptRegistry);
     const selectedRecords = collectionId ? records.filter(record => record.collections[0].id === collectionId).sort((a, b) => a.collections[0].order - b.collections[0].order) : records;
-    if (collectionId === 'activities-main') return selectedRecords.map(buildMainCard).join('\n\n');
+    if (collectionId === 'activities-main') {
+        const all = records.filter(record => record.collections[0].id === 'activities-main').sort((a, b) => a.collections[0].order - b.collections[0].order);
+        const recommended = all;
+        const remaining = records.filter(record => record.collections[0].id !== 'activities-main');
+        const libraryRecords = [...recommended, ...remaining];
+        if (libraryRecords.length !== records.length || new Set(libraryRecords.map(record => record.id)).size !== records.length) fail('activity library must contain every registry activity exactly once');
+        return [...recommended.map(record => buildMainCard(record, true)), ...remaining.map(record => buildCard(record, prompts, true))].join('\n\n');
+    }
     return selectedRecords.map(record => buildCard(record, prompts)).join('\n\n');
 }
 function replaceGeneratedRegion(html, region, startMarker = START_MARKER, endMarker = END_MARKER) {
@@ -382,7 +397,11 @@ function main() {
         const html = fs.readFileSync(target.htmlPath, 'utf8');
         const {start, end} = markerPair(collection);
         const region = buildRegion(records, promptRegistry, collection.id);
-        const updatedHtml = replaceGeneratedRegion(html, region, start, end);
+        let updatedHtml = replaceGeneratedRegion(html, region, start, end);
+        if (collection.id === 'activities-main') {
+            updatedHtml = replaceGeneratedRegion(updatedHtml, buildActivityNavigation(), '<!-- GENERATED:ACTIVITY_NAV:START -->', '<!-- GENERATED:ACTIVITY_NAV:END -->');
+            updatedHtml = replaceGeneratedRegion(updatedHtml, buildSubjectFooter(), '<!-- GENERATED:ACTIVITY_FOOTER:START -->', '<!-- GENERATED:ACTIVITY_FOOTER:END -->');
+        }
         const drift = updatedHtml === html ? 0 : 1;
         totalDrift += checkOnly ? drift : 0;
         console.log(`Collection: ${collection.id} (${collection.expectedIds.length} activities)`);
