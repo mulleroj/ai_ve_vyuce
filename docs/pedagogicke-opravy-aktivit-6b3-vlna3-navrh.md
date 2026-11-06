@@ -394,3 +394,32 @@ Prompty vedou žáka k vlastnímu pokusu, otázce, argumentu nebo interpretaci. 
 ## Rozsah a stav
 
 Pedagogická rozhodnutí jsou zapracována do `data/activities.json` a vygenerovaných HTML stránek pro přesně deset ID. Tento dokument zachovává původní problémy a zdůvodnění a zaznamenává finální implementované prompty, výsledky, rizika, časová rozhodnutí i zbývající otázky. ID, statusy, původní hodnoty `duration`, pořadí aktivit a registr 204 promptů se nemění. PR #34 zůstává draftem; nic nebylo sloučeno ani nasazeno do produkce.
+
+
+## Dokončení QA bez závislosti na Netlify DNS – 2026-11-06
+
+### A. Lokální aplikace
+
+- Testovaný obsahový commit: `8d5ad5388da2a1bc81c7251c211d7d2f609a3693`. Přes `git fetch origin pull/34/head` byl ověřen stejný SHA ve `FETCH_HEAD`. Sedm lokálních HTML/JSON souborů odpovídá tomuto obsahu; jediný rozdíl jsou závěrečné prázdné řádky (bez obsahového rozdílu).
+- Server: Python `http.server` na `http://127.0.0.1:8765`; samostatný Node.js v24.11.1 + Playwright proces a Chromium Headless Shell 151.0.7922.34. Clipboard API běželo na loopback originu, nikoli přes `file://`.
+- Oba skutečné viewporty: 390 × 844 px a 1440 × 900 px. `window.innerWidth/innerHeight` odpovídaly přesně; `documentElement` i `body` měly stejné `scrollWidth` jako viewport, bez horizontálního přetečení.
+- Před navigací byly připojeny posluchače `pageerror`, `console.error`, neúspěšných síťových požadavků a HTTP chyb JavaScriptů. Výsledek: 0 `pageerror`, 0 chyb konzole, 0 selhání kritických skriptů.
+- V každém viewportu bylo otevřeno všech deset aktivit třetí vlny. Názvy karet a detailů, celý text promptu v detailu a prompt v `data/activities.json` souhlasily. Escape zavřel detail a fokus se vrátil na otevírací tlačítko.
+- Skutečná schránka byla po každém kliknutí přečtena přes `navigator.clipboard.readText()`: 20/20 čtení (10 aktivit × 2 viewports) souhlasilo s úplným promptem. Windows převedl LF na CRLF; při porovnání byla normalizována pouze tato forma konců řádků. Obsah odstavců, diakritika, první i poslední znak zůstaly shodné. Aplikace nemá záložní kopírovací metodu; systémové Clipboard API uspělo.
+- Kombinované filtrování podle předmětu, ročníku a nástroje bylo v obou viewports porovnáno s očekáváním odvozeným přímo z registru karet. Filtr Matematika + 1.–5. ročník + ChatGPT zobrazil jedinou odpovídající aktivitu `math-word-problem-generator`.
+- Tři regresní aktivity z předchozích vln (`math-statistics-analysis`, `history-source-analysis`, `general-prompt-power-up-relay`) prošly v obou viewports kontrolou úplného promptu, otevření/zavření a návratu fokusu: 6/6.
+
+### B. Validace a zachované invarianty
+
+- `node scripts/generate-activities.js --check`: 44 aktivit, drift 0; ID unikátní a pořadí odpovídá masteru.
+- `node scripts/generate-prompts.js --check`: samostatný registr 204 promptů, drift 0.
+- `node scripts/validate-content.js`: 76 článků, 0 chyb a 0 varování.
+- `node scripts/check-site-footer.js`: 102 relevantních HTML souborů prošlo.
+- `node --check` pro 23 JavaScript souborů: vše prošlo.
+- `git diff --check`: prošel; upozornění LF/CRLF je pouze formátovací a nevytváří obsahovou změnu. Zachováno 14 doporučených aktivit, statusy a původní délky aktivit, předchozí opravené vlny i zbývajících 14 nezměněných aktivit.
+
+### C. Nasazení a veřejné preview
+
+- Netlify deploy `6aee30d770841d765d38c980` byl ve stavu `ready` a jeho `commit_ref` odpovídal testovanému obsahu `8d5ad5388da2a1bc81c7251c211d7d2f609a3693`.
+- Samostatné načtení veřejného Deploy Preview v předchozím běhu nebylo možné kvůli `ERR_NAME_NOT_RESOLVED`; tento browserový test zůstává neprovedený. Lokální Playwright test ověřuje aplikaci z lokální kopie a sám o sobě nedokazuje dostupnost veřejného preview.
+- Toto QA neprovádělo produkční deploy ani sloučení PR. Po dokumentačním commitu je nutné znovu ověřit nový Deploy Preview proti novému HEAD.
