@@ -476,3 +476,34 @@ Po aktualizaci dokumentace vznikne ještě doc-only commit; jeho Deploy Preview 
 ### Otevřené pedagogické otázky
 
 Šest rozhodnutí pro pedagogickou kontrolu výše zůstává otevřeno. Technické kontroly neposuzují kurikulární vhodnost, délku výuky, školní pravidla pro služby ani souhlas s konkrétním provozním režimem. PR #33 zůstává draftem do pedagogické revize. Neprovádí se produkční deploy ani sloučení.
+
+## Závěrečné pedagogické rozhodnutí – druhá vlna
+
+Toto rozhodnutí uzavírá pedagogickou kontrolu návrhů a zachovává původní výběr i zdůvodnění výše. Nejde o potvrzení souladu s konkrétním RVP/ŠVP ani o schválení konkrétní AI služby školou. Ročník a cíl musí učitel před použitím doplnit nebo přizpůsobit úrovni třídy.
+
+| Aktivita | Závěr | Cílená úprava / omezení |
+|---|---|---|
+| `general-prompt-power-up-relay` | Splňuje požadavky. | Žáci vytvářejí každou verzi promptu sami; AI se ptá, dává nápovědu a pomáhá porovnávat. Závěr vyžaduje dvě věty zdůvodnění konkrétní účinnější změny. Omezení: učitel volí věkově vhodný úkol a zajišťuje ověření; přímý přístup jen ve školou schváleném prostředí. |
+| `physics-problem-solver` | Splňuje požadavky po cíleném zpřesnění. | Přenosová otázka výslovně procvičuje tentýž fyzikální cíl a vztah, bez nového principu. Cíl doplňuje učitel; správnost i vhodnost ověřuje učitel. |
+| `math-step-by-step-guide` | Splňuje požadavky po cílené úpravě. | Primárně individuální procvičování, alternativně učitelem vedená demonstrace. Prompt nyní řídí sled vlastní pokus → nápověda → oprava → ověření → nová samostatná úloha. Přímé použití žákem vyžaduje školou schválené prostředí. |
+| `general-fact-or-fiction` | Splňuje požadavky. | Učitel předem ověřuje všechna tvrzení, klíč i zdroje; klíč zůstává oddělený od žákovské části; žáci nejprve ověřují sami; závěr opraví nepravdivé tvrzení a vysvětlí je. Omezení: AI výstup není důkaz; chybějící či nevěrohodný zdroj znamená, že tvrzení nelze označit za ověřené. |
+| `history-source-analysis` | Splňuje požadavky po cíleném zpřesnění. | Bez pramene nebo nutných podkladů si je AI nejprve vyžádá. Přímý popis, hypotéza a neznámé zůstávají oddělené; AI pramen nenahrazuje. Omezení: učitel ověřuje původ i oprávnění k použití textu. |
+| `history-roleplay-historical-person` | Splňuje požadavky. | Doložené údaje, interpretace a výslovně modelované odpovědi jsou oddělené; chybějící podklady se vyžádají a AI nevytváří citace ani nedoložené biografické údaje. Omezení: simulace je učitelem řízená a nesmí být zaměněna za pramen. |
+| `history-period-newspaper` | Splňuje požadavky po cíleném zpřesnění. | Při chybějících podkladech se AI nejprve zeptá; používá jen doložená fakta a viditelně označí simulaci. Nevytváří citace ani reakce svědků. Omezení: učitel ověří zdroje a označení na všech kopiích. |
+| `history-map-analysis` | Splňuje požadavky po cíleném zpřesnění. | Bez mapy, legendy, měřítka nebo dalších potřebných podkladů AI nejprve požádá o doplnění a analýzu nevytváří. Pozorování z mapy je oddělené od interpretace. Omezení: služba musí konkrétní mapový vstup skutečně umět zpracovat; kauzální výklad vyžaduje další ověřený zdroj. |
+| `history-timeline-generator` | Splňuje požadavky po cíleném zpřesnění. | Bez ověřeného seznamu událostí a zdrojů si je AI vyžádá; nedoplňuje smyšlená data. Datum, nejistota a doložená kauzalita jsou odděleny. Omezení: výběr „klíčových“ událostí a pracovní verzi kontroluje učitel. |
+| `english-contextual-translation` | Splňuje požadavky. | Žáci nejprve překládají sami, učitel zprostředkuje AI variantu a skupina zdůvodní vlastní řešení. Kulturní tvrzení bez zdroje zůstává hypotézou. Omezení: učitel volí ročník/úroveň a text s odpovídajícím oprávněním. |
+
+### Ročník, cíle a přenos
+
+Aktivity zachovávají stávající pole úrovně; u jednotlivého použití učitel zvolí konkrétní ročník, doplní učební cíl a upraví obtížnost i zadání. Tato kontrola tedy netvrdí automatický soulad s RVP ani ŠVP. U fyziky přenosová otázka zůstává u stejného cíle a vztahu; u matematiky nová samostatná úloha ověřuje stejný postup.
+
+### Časová organizace
+
+Původní hodnoty `duration` zůstaly beze změny. Záznamy „příprava“ (historický článek, časová osa) označují přípravu učitele, ne dobu žákovské aktivity; „aktivita“ označuje výukovou část. U matematického a fyzikálního `5 min` a historické mapy `10 min` není přesný rozsah dostatečně ověřen a nemá se prezentovat jako změřená délka. U individuálního procvičování délka závisí na žákově pokusu a tempu.
+
+Doporučení pro budoucí metadata: oddělit `teacherPreparation`, `classroomActivity` a případně `individualPractice`, uvádět je jako orientační intervaly s předpoklady a ponechat nynější `duration` do samostatně schválené datové změny.
+
+## Výsledky závěrečné kontroly
+
+Změny se týkají pouze promptů/popisu nutných k naplnění výše uvedených rozhodnutí a tohoto závěrečného záznamu. ID, pořadí, statusy, časy, první vlna i ostatních 24 aktivit a registr promptů zůstávají invarianty. Generátory a validační kontroly jsou spuštěny po změně; kontrola Deploy Preview proti novému HEAD se zaznamená po dokončení aktualizovaného buildu. Do té doby PR zůstává draftem a závěr technického QA není nahrazen předchozím browser testem.
