@@ -422,4 +422,4 @@ Pedagogická rozhodnutí jsou zapracována do `data/activities.json` a vygenerov
 
 - Netlify deploy `6aee30d770841d765d38c980` byl ve stavu `ready` a jeho `commit_ref` odpovídal testovanému obsahu `8d5ad5388da2a1bc81c7251c211d7d2f609a3693`.
 - Samostatné načtení veřejného Deploy Preview v předchozím běhu nebylo možné kvůli `ERR_NAME_NOT_RESOLVED`; tento browserový test zůstává neprovedený. Lokální Playwright test ověřuje aplikaci z lokální kopie a sám o sobě nedokazuje dostupnost veřejného preview.
-- Toto QA neprovádělo produkční deploy ani sloučení PR. Po dokumentačním commitu je nutné znovu ověřit nový Deploy Preview proti novému HEAD.
+- Toto QA neprovádělo produkční deploy ani sloučení PR. Po dokumentačním commitu `f6eae8f806e0e1365189660f76b689ceb00ea4e2` byl nový Deploy Preview `6aee3bf6d4643d2737280b82` ověřen jako `ready`; jeho `commit_ref` přesně odpovídal tomuto HEAD. Tato dokumentační aktualizace sama vyvolá další dokumentační-only deploy, jehož HEAD se znovu ověří před označením PR jako Ready for review.
