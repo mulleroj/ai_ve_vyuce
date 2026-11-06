@@ -1,7 +1,9 @@
 # Etapa 6B/4 – pedagogické opravy aktivit, čtvrtá vlna (návrh)
 
-**Stav:** pouze návrh k pedagogickému posouzení; bez implementace.  
-**Základ:** aktuální `master` `beba76a9606ae885c4f5373ca84b202280ea91a5` (6. 11. 2026). PR #32–34 jsou sloučeny; PR #31 zůstává otevřený draft a není měněn.  
+**Stav:** pouze návrh k pedagogickému posouzení; bez implementace.
+
+**Základ:** aktuální `master` `beba76a9606ae885c4f5373ca84b202280ea91a5` (6. 11. 2026). PR #32–34 jsou sloučeny; PR #31 zůstává otevřený draft a není měněn.
+
 **Rozsah:** přesně deset ID z této vlny. `math-story-problem-game`, `czech-spelling-word-exercises`, `english-grammar-exercises` a `chemistry-elements-compounds-quiz` zůstávají mimo rozsah.
 
 ## Metodický rámec
@@ -12,10 +14,12 @@ Každý záznam níže zachycuje původní obsah, problém, navržený název a 
 
 ## 1. `czech-dictation-generator`
 
-**Původní název:** Generátor diktátů. **Původní popis:** AI vygeneruje diktáty zaměřené na konkrétní gramatické jevy s různou úrovní obtížnosti a klíčem.  
+**Původní název:** Generátor diktátů. **Původní popis:** AI vygeneruje diktáty zaměřené na konkrétní gramatické jevy s různou úrovní obtížnosti a klíčem.
+
 **Původní prompt:** «Vytvoř diktát pro žáky [ROČNÍK] ZŠ zaměřený na [GRAMATICKÝ JEV, např. vyjmenovaná slova / psaní i/y / shoda přísudku s podmětem]. Délka: cca [POČET] slov. Přidej: opravný klíč a seznam procvičovaných jevů s vysvětlením pravidla.»
 
-**Problém:** Neodděluje text pro žáka a klíč pro učitele a nevyžaduje kontrolu, že text skutečně procvičuje cílový jev. Snadno se zamění s druhým generátorem diktátu.  
+**Problém:** Neodděluje text pro žáka a klíč pro učitele a nevyžaduje kontrolu, že text skutečně procvičuje cílový jev. Snadno se zamění s druhým generátorem diktátu.
+
 **Navržený název:** Učitelská příprava pravopisného diktátu. **Popis karty:** Učitel zadá jev a věkovou úroveň; AI navrhne text, oddělený klíč, procvičované jevy a poznámku k opravě. Učitel před použitím ověří správnost i přiměřenost.
 
 **Nový prompt:**
@@ -34,7 +38,8 @@ Nevymýšlej pravidla ani zdroje. Nejistá místa označ k ověření. Učitel z
 
 ## 2. `czech-dictation-activity`
 
-**Původní název:** Generátor diktátů. **Původní popis:** AI vygeneruje diktáty zaměřené na konkrétní gramatické jevy s klíčem. Každý diktát je nový a originální.  
+**Původní název:** Generátor diktátů. **Původní popis:** AI vygeneruje diktáty zaměřené na konkrétní gramatické jevy s klíčem. Každý diktát je nový a originální.
+
 **Původní prompt:** «Vytvoř diktát pro žáky 6.–9. ročníku na [GRAMATICKÝ JEV], dlouhý přibližně [POČET] slov. Přidej opravný klíč, seznam procvičovaných jevů a krátké vysvětlení pravidel.»
 
 **Problém:** Popisuje druhou tvorbu diktátu, nikoli aktivní práci starších žáků s chybou a její příčinou. **Navržený název:** Žákovská dílna pravopisných chyb (6.–9. ročník). **Popis:** Žáci hledají, zdůvodňují a opravují chyby v ověřeném modelovém cvičení a reflektují použitou strategii; učitel ověřuje klíč.
@@ -55,7 +60,8 @@ Nevyžaduj skutečnou žákovskou práci, jméno ani jiné osobní údaje. Bez s
 
 ## 3. `physics-phenomenon-analogies-explainer`
 
-**Původní název:** Vysvětlení fyzikálních jevů analogiemi. **Původní popis:** AI vysvětlí složité fyzikální pojmy pomocí analogií ze každodenního života, které žáci ihned pochopí a zapamatují si.  
+**Původní název:** Vysvětlení fyzikálních jevů analogiemi. **Původní popis:** AI vysvětlí složité fyzikální pojmy pomocí analogií ze každodenního života, které žáci ihned pochopí a zapamatují si.
+
 **Původní prompt:** «Vysvětli fyzikální jev [JEV] žákům [ROČNÍK] pomocí tří analogií z každodenního života. Přidej jednoduchý příklad, upozorni na limity každé analogie a zakonči třemi otázkami ověřujícími porozumění.»
 
 **Problém:** Slibuje okamžité pochopení a nemá dostatečnou kontrolu fyzikální správnosti, limitů, miskoncepcí a věku. **Navržený název:** Učitelská příprava fyzikálních analogií. **Popis:** Učitel získá návrhy s mapováním podobností, hranicemi a riziky miskoncepcí; ověří a vybere vhodnou analogii.
@@ -144,7 +150,8 @@ AI ovládá: učitel organizuje; žák přímo jen po schválení. Učitel: dod�
 
 ## 8. czech-writing-form-guide
 
-**Původní název:** Asistent pro tvorbu slohových útvarů. **Původní popis:** Žáci dostávají krok-za-krokem průvodce pro psaní různých slohových útvarů – líčení, popis, vypravování, charakteristika.  
+**Původní název:** Asistent pro tvorbu slohových útvarů. **Původní popis:** Žáci dostávají krok-za-krokem průvodce pro psaní různých slohových útvarů – líčení, popis, vypravování, charakteristika.
+
 **Původní prompt:** Proveď žáka krok za krokem tvorbou slohového útvaru [ÚTVAR] na téma [TÉMA]. Nejprve vysvětli strukturu, potom navrhni osnovu a užitečná jazyková spojení, polož otázky k vlastnímu nápadu a nakonec pomoz upravit text. Nevytvářej celý text za žáka.
 
 **Problém:** AI navrhuje osnovu ještě před zjištěním žákova záměru; hranice autorství a práce s modelem nejsou jasné. **Název:** Žák píše vlastní sloh s průvodcem. **Popis:** Žák nejprve formuluje záměr a nápady, z nich vytvoří osnovu, napíše text a s otázkami AI jej reviduje. AI nepíše odstavce.
@@ -162,7 +169,8 @@ AI ovládá: žák pouze ve schváleném nástroji, jinak učitel nebo papírov�
 
 ## 9. english-vocabulary-builder
 
-**Původní název:** Slovní zásoba – tematické sety. **Původní popis:** AI vygeneruje tematické sety slovíček s příklady ve větách, obrázkovými popisy a paměťovými tipy pro mladší žáky.  
+**Původní název:** Slovní zásoba – tematické sety. **Původní popis:** AI vygeneruje tematické sety slovíček s příklady ve větách, obrázkovými popisy a paměťovými tipy pro mladší žáky.
+
 **Původní prompt:** Create a thematic vocabulary set for Czech pupils at [AGE] level on [TOPIC]. Include 15 words with Czech translations, simple example sentences, a short image description for each word, one memory tip, and 8 exercises with an answer key. Use language suitable for beginners.
 
 **Problém:** Pevných 15 slov a 8 cvičení ignoruje CEFR, ročník, komunikační cíl a známou slovní zásobu; klíč i přirozenost překladů nejsou kontrolovány. **Název:** Tematická slovní zásoba: vybav si a použij. **Popis:** Učitel určí CEFR, ročník, cíl a známá slova. AI připraví přiměřenou sadu a cyklus seznámení → aktivní vybavení → použití ve větě → opakování; klíč oddělí.
@@ -180,7 +188,8 @@ AI ovládá: učitel připravuje a ověřuje sadu; žák procvičuje z oddělen�
 
 ## 10. chemistry-equation-guide
 
-**Původní název:** Průvodce chemickými rovnicemi. **Původní popis:** AI krok za krokem vysvětlí postup vyčíslování chemických rovnic, jejich typy a aplikace v reálném světě.  
+**Původní název:** Průvodce chemickými rovnicemi. **Původní popis:** AI krok za krokem vysvětlí postup vyčíslování chemických rovnic, jejich typy a aplikace v reálném světě.
+
 **Původní prompt:** Vysvětli vyčíslování chemické rovnice [ROVNICE] žákům střední školy krok za krokem. Urči typ reakce, ukaž postup zachování počtu atomů, vysvětli každý krok jednoduchým jazykem a přidej jednu podobnou rovnici k samostatnému procvičení s řešením.
 
 **Problém:** AI prozradí celý postup, nemusí ověřit chemický smysl reakce a může měnit index místo stechiometrického koeficientu. **Název:** Chemické rovnice: nejprve počty atomů, pak nápověda. **Popis:** Žák nejprve sám spočítá atomy a navrhne koeficienty; AI dává cílené nápovědy a nemění indexy, učitel ověřuje rovnici.
