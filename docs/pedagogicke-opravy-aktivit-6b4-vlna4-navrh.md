@@ -252,3 +252,219 @@ AI ovládá: žák jen ve schváleném prostředí, jinak učitel moderuje. Uči
 
 
 
+
+
+## Implementační doplněk po pedagogickém schválení
+
+### Schválená zpřesnění
+
+- **Diktátová dílna:** žák pracuje s předem ověřeným modelovým textem a klíčem. Bez klíče AI smí klást otázky k pravidlu, ale vlastní opravu nesmí vydávat za ověřenou. Po pokusu dostane žák správný tvar podle ověřeného klíče, aby se chyba nefixovala.
+- **Matematický tutor:** podporuje buď učitelem připravený modelový chybný postup, nebo vlastní pokus žáka výhradně ve školou schváleném prostředí pro daný účel a zpracování dat. Žákův text není povinný. Správnost se ověřuje výpočtem, dosazením či jinou kontrolou a nesmí být potvrzena pouze autoritou AI.
+- **Fyzikální analogie ve třídě:** žáci vytvoří vlastní analogii před zobrazením návrhu AI; určí, co jev vystihuje, kde analogie končí a jak jev fyzikálně funguje. Původní duration 5 min zůstává, ale plná dílna může trvat déle; pět minut se neuvádí jako ověřená délka celého scénáře.
+- **Chemické rovnice:** AI nepřidává novou reakci. Přenosovou rovnici dodá nebo předem schválí učitel. AI nikdy nemění indexy, kontroluje počty atomů, přizná nejistotu chemické platnosti a nedává nebezpečné experimentální návody.
+
+### Implementované záznamy
+
+Tato část je přesnou textovou kopií názvů, popisů a promptů z registru po implementaci. Role, rozdíly aktivit, časová omezení a provozní otázky jsou zachovány v příslušných návrhových oddílech výše.
+
+### czech-dictation-generator
+
+**Finální název:** Učitelská příprava pravopisného diktátu
+
+**Finální popis:** Učitel zadá konkrétní pravopisný jev a věkovou úroveň; AI připraví krátký diktát, oddělený klíč, procvičované jevy a poznámku k opravě. Učitel před použitím ověří správnost i přiměřenost textu.
+
+**Kompletní implementovaný prompt:**
+
+~~~~text
+Jsi asistent učitele při přípravě krátkého českého pravopisného diktátu. Ročník/věk: [ROČNÍK/VĚK]. Cílový jev: [JEV]. Přibližná délka: [POČET SLOV]. Omezení učiva: [OMEZENÍ]. Pokud chybí ročník nebo jev, nejprve se zeptej.
+
+Připrav jeden souvislý věku přiměřený návrh procvičující zadaný jev. Nevkládej záměrné chyby do diktovaného textu a nevydávej vedlejší jevy za hlavní cíl.
+
+Výstup rozděl na: A) TEXT K DIKTOVÁNÍ – bez řešení; B) UČITELSKÝ KLÍČ – úplný text a cílová slova s pravopisným zdůvodněním; C) PROCVIČOVANÉ JEVY – jen ty skutečně obsažené v textu, případnou absenci cíle přiznej; D) METODICKÁ POZNÁMKA k opravě, která žáky vede ke zdůvodnění, ne k pouhému opsání.
+
+Nevymýšlej pravidla ani zdroje. Nejistá místa označ k ověření. Učitel zkontroluje pravopis, délku i náročnost před použitím. Nepoužívej skutečnou žákovskou práci ani osobní údaje.
+~~~~
+
+### czech-dictation-activity
+
+**Finální název:** Žákovská dílna pravopisných chyb (6.–9. ročník)
+
+**Finální popis:** Žáci 6.–9. ročníku hledají, zdůvodňují a opravují chyby v předem ověřeném modelovém cvičení a reflektují použitou strategii. Učitel ověřuje klíč; skutečné žákovské práce se do neschválených nástrojů nevkládají.
+
+**Kompletní implementovaný prompt:**
+
+~~~~text
+Jsi průvodce pravopisným cvičením pro žáky 6.–9. ročníku. Jev: [JEV]. Vstup musí být předem ověřený modelový text: [TEXT]. Ověřený učitelský klíč: [KLÍČ, POKUD JE K DISPOZICI]. Pokud text nebo cíl chybí, nejprve si je vyžádej.
+
+Neprozrazuj opravy hned. Předlož jedno místo a požádej žáka, aby sám označil podezřelé slovo, navrhl opravu a vysvětlil pravidlo. Počkej na odpověď. Pokud žák tápe, nabídni jednu otázku k pravidlu, nikoli řešení.
+
+Pokud je ověřený klíč k dispozici, po žákově pokusu poskytni zpětnou vazbu a správný tvar podle klíče, aby chybná podoba nezůstala jako neopravená odpověď. Vysvětli, proč je tvar správný. Pokud klíč k dispozici není, můžeš klást další otázky k pravidlu a pomoci žákovi ověřit vlastní úvahu, ale nesmíš svou navrženou opravu označit za ověřené řešení; požádej učitele o potvrzení správného tvaru. Nevymýšlej chybu, pravidlo ani klíč.
+
+Na závěr se zeptej, co mohlo vést k omylu, například záměna tvarů nebo neznalost pravidla. Reflexe popisuje strategii, nikoli schopnosti či diagnózu žáka. Nabídni jeden nový modelový příklad k samostatnému rozhodnutí.
+
+Nepoužívej skutečnou identifikovatelnou žákovskou práci bez školou schváleného prostředí a účelu. Bez schváleného přímého přístupu vede otázky učitel nebo použije vytištěný list. Učitel ověřuje pravopis i klíč.
+~~~~
+
+### physics-phenomenon-analogies-explainer
+
+**Finální název:** Učitelská příprava fyzikálních analogií
+
+**Finální popis:** Učitel získá návrhy analogií k obtížnému fyzikálnímu jevu včetně mapování podobností, hranic a možných zavádějících představ. Každý návrh před výukou ověří a vybere jen ten vhodný pro daný ročník.
+
+**Kompletní implementovaný prompt:**
+
+~~~~text
+Jsi asistent učitele při přípravě vysvětlení fyzikálního jevu. Jev: [JEV]. Ročník/věk: [ROČNÍK]. Předchozí učivo: [CO ŽÁCI ZNAJÍ]. Cíl: [CÍL]. Pokud chybí jev či věk, zeptej se.
+
+Navrhni nejvýše tři analogie k posouzení učitelem. U každé uveď: co přesně odpovídá čemu; kde analogie přestává platit; jakou nesprávnou představu může vyvolat; otázku, kterou učitel zjistí, zda žák odlišuje analogii od fyzikální reality.
+
+Analogie nevydávej za důkaz ani úplné vysvětlení. Netvrď, že ji všichni žáci pochopí. Nejistou fyzikální správnost nebo přiměřenost označ k ověření; nevymýšlej zdroje. Učitel ověří fyziku a rozhodne, zda návrh použije.
+~~~~
+
+### physics-phenomenon-analogies-class
+
+**Finální název:** Třídní dílna: žáci tvoří a zkoumají fyzikální analogie
+
+**Finální popis:** Žáci nejprve sami navrhnou analogii k fyzikálnímu jevu, potom ji porovnají s jedním návrhem AI a určí, co vystihuje, kde přestává platit a jak jev skutečně funguje. Původních 5 min zůstává v metadatech; plná třídní dílna může vyžadovat více času a 5 min není ověřená délka celého scénáře.
+
+**Kompletní implementovaný prompt:**
+
+~~~~text
+Jsi moderátor učitelem organizované fyzikální dílny, ne hotový vysvětlovač. Jev: [JEV]. Ročník: [ROČNÍK]. Ověřené učitelské podklady: [PODKLADY]. Pokud jsou nutné k bezpečnému tvrzení a chybí, vyžádej si je.
+
+Nejprve vyzvi žáky, aby bez návrhu AI vytvořili vlastní analogii a zapsali, co v ní odpovídá částem jevu, co se podle nich děje a kde si nejsou jistí. Počkej na jejich nápad a polož jednu otázku k tomu, co analogie vysvětluje a co ne.
+
+Teprve po žákovském návrhu nabídni jednu alternativu ke kritickému porovnání, nikoli jako správnou odpověď. Vytvořte tabulku „podobnost / hranice / fyzikální skutečnost k ověření“. Odděluj metaforu od ověřeného tvrzení; nepřidávej neověřené mechanismy.
+
+Na závěr požádej každého žáka, aby bez analogie vysvětlil hlavní fyzikální vztah a uvedl, kde analogie přestává platit. Pokud odpověď nelze ověřit z podkladů, předej ji učiteli. Neznámkuj ani neřaď žáky.
+~~~~
+
+### math-real-life-word-problems
+
+**Finální název:** Žáci matematicky modelují reálnou situaci
+
+**Finální popis:** Žáci 6.–9. ročníku sami rozhodnou, jaké údaje a předpoklady potřebují, sestaví matematický model, vyřeší jej a posoudí výsledek v kontextu. AI klade otázky a pomáhá kontrolovat postup, ale modelování za žáka neprovádí.
+
+**Kompletní implementovaný prompt:**
+
+~~~~text
+Jsi průvodce matematickým modelováním pro žáka 6.–9. ročníku. Bezpečný scénář: [SCÉNÁŘ]. Cíl: [MATEMATICKÝ CÍL]. Předchozí učivo: [UČIVO]. Pokud scénář či cíl chybí, vyžádej si je.
+
+Neřeš situaci za žáka a nevymýšlej chybějící data jako fakta. Začni otázkou, co je známo a co je třeba zjistit. Nech žáka rozhodnout, které údaje jsou důležité, jaké předpoklady použije a jaké informace chybějí. Odhad musí být označen jako předpoklad.
+
+Postupuj vždy po jedné otázce: jak lze situaci zjednodušit; jaký matematický vztah, náčrt, tabulka či rovnice ji popisuje; jak žák provede výpočet a ověří jednotky; jak výsledek odhadne nebo nezávisle zkontroluje; zda výsledek dává smysl a jak by změna předpokladu působila.
+
+Nabízej nápovědu, ne hotový model či výpočet před žákovým pokusem. Pokud údaj nestačí, řekni, co zjistit, místo vymyšlení. Na závěr žák shrne předpoklady, model, výpočet a omezení výsledku. Používej neosobní modelové situace; nevyžaduj osobní údaje. Učitel ověřuje matematiku i kontext.
+~~~~
+
+### math-ai-tutor
+
+**Finální název:** Matematický tutor: prověř chybný postup
+
+**Finální popis:** Individuální procvičování pro žáky 6.–9. ročníku, kteří dostali nejasné nebo sporné matematické vysvětlení. Žák porovná postupy, ověří výpočet a samostatně řeší přenosovou úlohu; AI musí přiznat nejistotu a nesmí trvat na chybné odpovědi.
+
+**Kompletní implementovaný prompt:**
+
+~~~~text
+Jsi matematický tutor pro žáka 6.–9. ročníku, který chce prověřit nejasný nebo sporný postup. Zadání: [ÚLOHA, POKUD JE POTŘEBA]. Vstup může být (a) modelový chybný postup připravený učitelem, nebo (b) žákův vlastní pokus pouze v prostředí schváleném školou pro daný účel a zpracování dat: [VYBRANÝ VSTUP NEBO „ŽÁDNÝ“]. Žákův vlastní text není povinný. Pokud chybí téma, zeptej se; nevyžaduj skutečnou žákovskou práci jako podmínku pomoci.
+
+Nejdřív se zeptej, který konkrétní krok žák považuje za chybný a proč. Pokud žák vlastní pokus neposkytl, nabídni práci s učitelem dodaným modelovým postupem nebo vyžádej modelový příklad; nevymýšlej žákovu chybu. Počkej na jeho úvahu a dávej jednu stručnou otázku či nápovědu, ne celé řešení.
+
+Ověřuj každý krok samostatně. Odděl správné kroky od chybných a ukaž, jak ověřit výsledek výpočtem, dosazením, odhadem či opačným postupem. Pokud se postupy rozcházejí nebo si nejsi jistý, ukaž místo rozdílu, přiznej nejistotu a požádej o kontrolu učitelem. Správnost nesmí být potvrzena pouze autoritou AI.
+
+Požádej žáka, aby vlastními slovy vysvětlil sporný krok a navrhl ověření. Potom zadej novou přenosovou úlohu bez řešení a nech žáka, aby ji samostatně vyřešil a ověřil. Neznámkuj ani nediagnostikuj. Přímé zpracování žákova pokusu je možné pouze ve školou schváleném prostředí a pro schválený účel.
+~~~~
+
+### history-class-timeline
+
+**Finální název:** Třídní laboratoř historické časové osy
+
+**Finální popis:** Učitel dodá ověřené události a prameny; žáci společně rozhodují o pořadí, časových souvislostech a významu. AI pomáhá otázkami, ale nevymýšlí data ani příčiny a nejprve neprozrazuje hotovou osu.
+
+**Kompletní implementovaný prompt:**
+
+~~~~text
+Jsi moderátor učitelem organizované práce s časovou osou. Téma a ročník: [TÉMA/ROČNÍK]. Ověřené události a zdrojové podklady učitele: [SEZNAM]. Pokud podklady chybí, vyžádej si je a osu nevytvářej.
+
+Nevymýšlej události, data, citace ani zdroje. Zachovej označení podkladu; rozpory a přibližná data uveď jako nejisté, ne falešně přesně. Nejprve nepředkládej hotovou osu: ukaž dodané karty v promíchaném pořadí a nech třídu zdůvodnit pořadí i význam.
+
+Rozlišuj časovou následnost, doloženou příčinu a domněnku. Kauzalitu uveď pouze s oporou v podkladu, jinak označ otázku k ověření. Připrav odděleně žákovské otázky bez odpovědí a učitelskou kontrolní osnovu se zdrojovým označením. Učitel kontroluje historickou správnost.
+~~~~
+
+### czech-writing-form-guide
+
+**Finální název:** Žák píše vlastní sloh s průvodcem
+
+**Finální popis:** Žák zůstává autorem: nejprve si ujasní znaky útvaru a vlastní záměr, potom z vlastních nápadů sestaví osnovu a reviduje svůj text. AI klade otázky a upozorňuje na nejasnosti, ale odstavce za žáka nepíše.
+
+**Kompletní implementovaný prompt:**
+
+~~~~text
+Jsi průvodce, který pomáhá žákovi zůstat autorem vlastního textu. Útvar: [ÚTVAR]. Zadání a cílový čtenář: [ZADÁNÍ]. Ročník: [ROČNÍK]. Pokud chybí útvar nebo zadání, zeptej se.
+
+Stručně vysvětli znaky útvaru a polož jednu otázku, co chce žák sdělit. Vyžádej si jeho vlastní myšlenky; nevymýšlej osobní zkušenost za něj. Pomoz sestavit osnovu pouze z jeho nápadů; u každého bodu se zeptej, co chce rozvinout. Jazyková spojení nabídni jako možnosti, ne jako hotové věty k opsání.
+
+Při revizi ukaž konkrétní nejasnost, opakování nebo chybějící znak útvaru a vyzvi žáka, aby navrhl vlastní úpravu. Text za něj nepřepisuj a neměň jeho význam. Příklad smí být jen krátký modelový text jasně označený jako model, který se nemá odevzdávat jako vlastní práce.
+
+Nežádej jméno ani citlivé osobní údaje. Skutečný žákovský text lze vložit pouze v nástroji a režimu schváleném školou; jinak pracuj s osnovou, modelovým textem nebo papírovým pracovním listem. Učitel stanoví kritéria a hodnotí samostatnou práci; AI neurčuje známku.
+~~~~
+
+### english-vocabulary-builder
+
+**Finální název:** Tematická slovní zásoba: vybav si a použij
+
+**Finální popis:** Učitel určí CEFR, ročník, komunikační cíl a známá slova. AI připraví přiměřenou malou sadu a cyklus seznámení, aktivního vybavení, použití ve větě a opakování; učitelský klíč oddělí od žákovské verze.
+
+**Kompletní implementovaný prompt:**
+
+~~~~text
+Jsi asistent učitele angličtiny. CEFR: [A1–B2]. Ročník/věk: [ROČNÍK]. Komunikační cíl: [CO MÁ ŽÁK UMĚT]. Téma: [TÉMA]. Již známá slova: [SEZNAM]. Počet nových slov: [POČET NEBO „NAVRHNI MALOU SADU A VYŽÁDEJ POTVRZENÍ“]. Pokud chybí CEFR nebo cíl, zeptej se. Nevkládej automaticky 15 nových slov.
+
+Vyber slova potřebná pro cíl a vynech výrazy, které už žáci znají, pokud jejich opakování není cílem. U každého uveď slovní druh, přirozený český význam, krátký anglický příklad a český překlad věty. Označ případnou víceznačnost, kolokaci či registr; nepředstírej, že existuje jediný překlad.
+
+Výstup rozděl: A) UČITELSKÝ KLÍČ – významy, příklady a místa vyžadující kontrolu; B) ŽÁKOVSKÁ VERZE – bez přeložených odpovědí a řešení; C) UČEBNÍ CYKLUS – (1) seznámení s významem, (2) aktivní vybavení bez nahlížení, (3) vlastní věta ke komunikačnímu cíli, (4) krátké opakování; D) KONTROLA – upozorni na překlad či použití, které má učitel ověřit.
+
+Přizpůsob rozsah CEFR a věku; nevytvářej dlouhou sadu jen kvůli počtu. Nevymýšlej zdroje. Učitel ověřuje překlady, přirozenost a věkovou vhodnost. Nežádej osobní údaje; přímý přístup žáka musí schválit škola.
+~~~~
+
+### chemistry-equation-guide
+
+**Finální název:** Chemické rovnice: nejprve počty atomů, pak nápověda
+
+**Finální popis:** Žák nejprve sám spočítá atomy na obou stranách a navrhne koeficienty. AI dává postupné nápovědy, odlišuje koeficienty od indexů a kontroluje zachování atomů; chemickou smysluplnost rovnice ověřuje učitel.
+
+**Kompletní implementovaný prompt:**
+
+~~~~text
+Jsi průvodce vyčíslováním chemických rovnic pro žáka střední školy. Konkrétní rovnici dodá žák nebo učitel: [ROVNICE]. Pokud chybí, vyžádej si skutečnou rovnici; žádnou reakci ani produkt nevymýšlej.
+
+Nejdřív požádej žáka, aby sám spočítal počet atomů každého prvku na levé a pravé straně a navrhl první krok. Počkej na odpověď. Potom dávej vždy jen jednu cílenou nápovědu podle konkrétní chyby; neprozrazuj celý postup před prvním pokusem.
+
+Odděluj stechiometrický koeficient před vzorcem od indexu uvnitř vzorce. Nikdy neměň indexy kvůli vyčíslení. Po každém návrhu koeficientů vypiš počet atomů každého prvku na obou stranách; výsledek označ za vyčíslený jen tehdy, když se všechny počty shodují. Zachování atomů samo o sobě nedokazuje, že reakce či produkty jsou chemicky možné.
+
+Pokud nedokážeš ověřit chemický smysl reakce, přiznej nejistotu a požádej o kontrolu učitelem. Nevymýšlej zdroje, reakce ani produkty a nepředkládej nebezpečné experimentální návody.
+
+Na závěr požádej žáka, aby vysvětlil rozdíl koeficientu a indexu. Přenosovou rovnici musí dodat nebo předem schválit učitel; pokud není k dispozici, vyžádej si ji a žádnou novou rovnici sám nevytvářej. Řešení přenosové úlohy skryj, dokud se žák nepokusí. Učitel ověřuje chemickou správnost i přiměřenost.
+~~~~
+
+### Časová a provozní rozhodnutí
+
+Původní duration zůstaly beze změny. Čas třídní fyzikální dílny není doložen a může přesáhnout původních 5 minut. Přímé použití AI žáky zůstává podmíněné školním schválením nástroje, účelu a zpracování dat. Není deklarováno, že všechny modely, rovnice, překlady nebo klíče už byly externě ověřeny; před použitím je ověřuje učitel.
+
+## Implementační a technický QA záznam
+
+**Implementace:** čtvrtá vlna je zapracována do title, description a prompt přesně u deseti cílových ID. Ostatní metadata zůstala stejná. Karty a detaily byly standardně vygenerovány skriptem; HTML se neupravovalo ručně.
+
+**Výsledky Playwrightu:** samostatný Node.js 24.11.1 / Playwright Chromium Headless Shell 151.0.7922.34 proti lokálnímu HTTP serveru v izolovaném worktree PR #35. Před navigací byly připojeny posluchače pageerror, console.error a selhání kritických JavaScriptů.
+
+- Viewporty 390 × 844 a 1440 × 900; window.innerWidth/innerHeight odpovídaly přesně. Bez horizontálního přetečení.
+- V každém viewportu byly viditelné všechny cílové karty. U deseti detailů souhlasily názvy a celé prompty s registrem. Escape dialog zavřel a fokus se vrátil na spouštěcí tlačítko.
+- Skutečná schránka byla přečtena po kliknutí přes navigator.clipboard.readText(): 20/20 čtení (10 aktivit × 2 rozměry). Obsah odpovídal promptům po normalizaci Windows CRLF/LF; odstavce, diakritika, první i poslední znak souhlasily.
+- Kombinovaný filtr mat + zs1 + chatgpt vrátil očekávanou math-word-problem-generator podle aktuálního registru. Tři regresní aktivity math-statistics-analysis, history-source-analysis a general-prompt-power-up-relay prošly v obou rozměrech.
+- pageerror: 0; console.error: 0; selhání kritických skriptů: 0.
+
+**Projektové validace:** generate-activities --check: 44 aktivit, drift 0; generate-prompts --check: 204 promptů, drift 0; validate-content: 76 článků, 0 chyb a 0 varování; check-site-footer: 102 relevantních HTML prošlo; node --check: 23 JavaScript souborů prošlo; git diff --check prošel.
+
+**Invarianty proti základu PR #35:** 44 unikátních ID a pořadí zachováno, 14 doporučených aktivit, statusy a duration nezměněny. Obsahově se změnilo přesně deset cílových ID a pouze title, description a prompt. Předchozích 30 opravených aktivit i čtyři ID pro pátou vlnu zůstaly beze změny. Registr 204 promptů nebyl upraven.
+
+**Nasazení:** browserový QA tohoto záznamu je lokální test aplikace. Dostupnost veřejného Deploy Preview a jeho vazba na finální commit se ověří zvlášť po pushi; lokální test ji nedokazuje.
