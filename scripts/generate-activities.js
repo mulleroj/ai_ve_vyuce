@@ -281,8 +281,8 @@ function mainCtaMarkup(record, library = false) {
     if (record.relatedPromptId) {
         return `<a href="${escapeAttribute(`prompty.html#${record.relatedPromptId}`)}" class="activity-template-link btn btn-outline btn-sm">${escapeHtml(ctaLabel)}</a>`;
     }
+    if (library) return `<button class="btn btn-primary btn-sm" type="button" data-open-activity="${escapeAttribute(record.id)}" aria-haspopup="dialog">${escapeHtml(ctaLabel)}</button>`;
     const modalId = record.detail.modalId;
-    if (library) return `<button class="btn btn-primary btn-sm" type="button" data-modal-target="${escapeAttribute(modalId)}" aria-haspopup="dialog">${escapeHtml(ctaLabel)}</button>`;
     const onclick = `document.getElementById(${JSON.stringify(modalId)}).classList.add('open')`;
     const modalLabel = ctaLabel.replace(' →', '\n                                →');
     return `<button class="btn btn-primary btn-sm" onclick="${escapeAttribute(onclick)}">${escapeHtml(modalLabel)}</button>`;
