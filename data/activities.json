@@ -41,7 +41,7 @@
     "status": "ready",
     "collections": [{"id": "matematika", "order": 3}],
     "icon": "📋",
-    "detail": {"modalTitle": "Tvorba testů"}
+    "detail": {"modalTitle": "Návrh matematického testu"}
   },
   {
     "id": "math-differentiated-problems",
@@ -56,7 +56,7 @@
     "status": "ready",
     "collections": [{"id": "matematika", "order": 4}],
     "icon": "🎯",
-    "detail": {"modalTitle": "Diferenciace úloh"}
+    "detail": {"modalTitle": "Varianty úlohy podle úrovně podpory"}
   },
   {
     "id": "math-story-problem-game",
@@ -197,7 +197,7 @@
     "status": "ready",
     "collections": [{"id": "anglictina", "order": 2}],
     "icon": "✔️",
-    "detail": {"modalTitle": "Opravovač gramatiky"}
+    "detail": {"modalTitle": "Formativní zpětná vazba k anglickému textu"}
   },
   {
     "id": "english-vocabulary-builder",
