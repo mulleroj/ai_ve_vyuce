@@ -448,7 +448,7 @@ Pokračuj po jedné větě nebo krátkém úryvku. Nabídni nejvýše dvě přir
 
 ## Implementace a technický záznam PR #33
 
-PR #32 je sloučen do master jako commit 16f115d294c5a74b49b9dedd7222e433cbf14b36. Větev PR #33 byla rebasována na tento commit. Implementované změny jsou omezeny na deset ID uvedených v tomto dokumentu a jejich generované zobrazení. Registr data/prompts.json zůstává beze změny.
+PR #32 je sloučen do master jako commit 16f115d294c5a74b49b9dedd7222e433cbf14b36. Větev PR #33 byla rebasována na tento commit. Implementované změny jsou omezeny na deset ID uvedených v tomto dokumentu, jejich generované zobrazení a drobnou opravu směrování detailu pro dvě obecné aktivity. Registr data/prompts.json zůstává beze změny.
 
 ### Regresní kontroly
 
@@ -461,10 +461,17 @@ Provedeno na implementační pracovní kopii:
 - node --check js/activity-library.js a node --check js/main.js: prošlo.
 - git diff --check: prošlo.
 - Vlastní invarianty: zachováno všech 44 stabilních ID i pořadí; změněno přesně deset očekávaných ID a pouze jejich title, description, prompt; statusy a délky beze změny; ostatních 34 aktivit včetně první vlny beze změny; registr 204 promptů hashově beze změny; generovaný hlavní katalog uvádí 14 doporučených aktivit.
+- Browserová kontrola před odhalením problému zjistila, že dvě obecné aktivity otevíraly zastaralé ruční modály. Oprava v scripts/generate-activities.js přesměrovala v knihovně detail přímých promptových aktivit do společného dialogu; kontrola byla opakována po opravě.
 
 ### Browserová kontrola Deploy Preview
 
-Výsledky doplnit po nasazení preview přesného commitu PR #33. Povinné viewporty: 390 × 844 px a 1440 × 900 px. V obou se kontrolují všechny aktivity, čitelnost a přetečení, detaily a úplnost promptů, kopírování, kombinované filtry, Escape a návrat focusu i chyby JavaScriptu. Preview musí vykazovat přesný commit SHA; jinak je kontrola neplatná.
+Kontrolováno na Deploy Preview #33 pro implementační commit 764d023d82b2217a9e2dd2422e54bd84473fa27a (deploy 6aedf6c20393ddea79453c8e, ready; commit_ref přesně odpovídal HEAD).
+
+- **390 × 844 px:** zobrazeno všech 44 aktivit; všech deset upravených názvů, popisů a promptů bylo kompletní; otevření detailu, shoda detailového a kopírovaného promptu, úspěšné zkopírování, zavření Escape a návrat focusu prošly u všech deseti ID. Kombinovaný filtr (matematika + SŠ + ChatGPT) vrátil očekávanou aktivitu math-statistics-analysis. Dokument ani tělo stránky nepřetékaly vodorovně; titulky a popisy neměly horizontální přetečení.
+- **1440 × 900 px:** stejné kontroly všech deseti aktivit prošly; všech 44 karet bylo zobrazeno, bez horizontálního přetečení. Kombinovaný filtr vrátil math-statistics-analysis.
+- Konzole: žádné relevantní JavaScriptové chyby.
+
+Po aktualizaci dokumentace vznikne ještě doc-only commit; jeho Deploy Preview se ověří proti novému HEAD.
 
 ### Otevřené pedagogické otázky
 
