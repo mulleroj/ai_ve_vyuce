@@ -1,8 +1,8 @@
 # Pedagogický návrh oprav aktivit – etapa 6B/2, vlna 2
 
-**Stav:** metodický směr všech deseti návrhů je schválen pro implementaci; nejde o schválení konkrétní služby ani školního datového režimu. Implementace do registru a generovaných stránek čeká na sloučení první vlny PR #32, aby se její změny nepřepsaly.
+**Stav:** všech deset scénářů druhé vlny je implementováno v PR #33 na základě sloučené první vlny. Implementace zachovává původní ID, pořadí, statusy a délky; tento technický stav nepředstavuje pedagogické schválení služby ani školního datového režimu. Otevřená pedagogická rozhodnutí zůstávají uvedena níže.
 
-**Východisko:** registr 44 aktivit v `origin/master` (`01aae8854407304475a0d0a6fb76588e6714595c`) a pedagogický audit v draft PR #31 (commit `a515a92f8a3ab841537f26bcd5229dc038776eec`). První vlna je v samostatném ne-sloučeném draft PR #32. Proto tento návrh se záměrnou separací **nemění `data/activities.json`, žádnou generovanou HTML stránku ani první vlnu**.
+**Východisko implementace:** `origin/master` po sloučení PR #32, commit `16f115d294c5a74b49b9dedd7222e433cbf14b36`. Návrhový audit PR #31 je oddělený. PR #33 přidává přesně deset zde vybraných záznamů do `data/activities.json` a regeneruje příslušné HTML stránky; samostatný registr promptů zůstává nedotčen.
 
 ## Výběr podle závažnosti
 
@@ -43,11 +43,11 @@ Vezmi tento základní prompt: [PROMPT]. Vytvoř 4 postupně lepší verze přid
 
 **Konkrétní problém:** AI za týmy vytvoří všechny kroky zlepšení. Žáci mohou jen převzít hotové verze, přestože účelem je procvičit tvorbu a iteraci promptů.
 
-**Navržený název:** Týmová laboratoř promptů: navrhni, otestuj, uprav.
+**Implementovaný název:** Týmová laboratoř promptů: navrhni, otestuj, uprav.
 
-**Navržený popis:** Týmy na stejném úkolu upraví slabý prompt ve vlastních krocích, porovnají dva výstupy a doloží, jak změny ovlivnily přesnost a použitelnost. AI poskytuje zpětnou vazbu až po pokusu týmu.
+**Implementovaný popis:** Týmy na stejném úkolu upraví slabý prompt ve vlastních krocích, porovnají dva výstupy a doloží, jak změny ovlivnily přesnost a použitelnost. AI poskytuje zpětnou vazbu až po pokusu týmu.
 
-**Navržený nový prompt:**
+**Finální implementovaný prompt:**
 
 ```text
 Jsi průvodce týmové aktivity pro žáky [ROČNÍK]. Cílem je, aby tým sám navrhl a ověřil lepší prompt, ne aby jej AI napsala za něj. Úkol: [ÚKOL]. Výchozí slabý prompt: [PROMPT].
@@ -446,17 +446,26 @@ Pokračuj po jedné větě nebo krátkém úryvku. Nabídni nejvýše dvě přir
 5. Posoudit věkovou a kurikulární přiměřenost ročníků, témat a navržených přenosových úloh. Návrhy nejsou ověřením souladu s kurikulem.
 6. Potvrdit doporučené délky jednotlivých částí. Všechny původní řetězce `duration` jsou zachovány pouze jako údaje zdrojového registru, nikoli jako validovaná měření.
 
-## Závislost na první vlně a přesný integrační postup
+## Implementace a technický záznam PR #33
 
-K 5. 11. 2026 zůstává PR #32 otevřeným draftem a jeho větev vychází z `master` (`01aae8854407304475a0d0a6fb76588e6714595c`). PR #32 mění `data/activities.json` a generované `aktivity.html`, `matematika.html`, `cestina.html` a `anglictina.html`. Druhá vlna upraví jiné záznamy aktivit, ale sdílí registr a hlavní, matematické i anglické generované stránky. Samostatné generování proti dosavadnímu `master` by tak vytvořilo stránky bez první vlny; následné spojení může první vlnu přepsat nebo způsobit konflikty. Proto tento commit PR #33 upravuje pouze tento dokument; registr a HTML zůstávají beze změny.
+PR #32 je sloučen do master jako commit 16f115d294c5a74b49b9dedd7222e433cbf14b36. Větev PR #33 byla rebasována na tento commit. Implementované změny jsou omezeny na deset ID uvedených v tomto dokumentu a jejich generované zobrazení. Registr data/prompts.json zůstává beze změny.
 
-Po sloučení PR #32 proveď implementaci v existující větvi PR #33 tímto postupem:
+### Regresní kontroly
 
-1. Ověř, že PR #32 je skutečně sloučen, načti aktuální `origin/master` a ověř, že první vlna je v něm přítomná.
-2. Aktualizuj větev `codex/ai-ve-vyuce-etapa6b2-pedagogicke-opravy-2` rebase na aktuální `origin/master`; nepřenášej zpět ani znovu nevytvářej větev první vlny.
-3. V `data/activities.json` uprav pouze stabilní ID uvedená v tomto dokumentu. Zachovej pořadí, všech 44 ID, 14 doporučených aktivit, každou hodnotu `duration` i všechny změny první vlny.
-4. Spusť generátor aktivit nad tímto úplným registrem, aby vznikly stránky obsahující obě vlny. Neměň ani neregeneruj registr promptů.
-5. Proveď obsahové kontroly a validace včetně kontroly přesně deseti změněných záznamů, úplných kopií promptů, filtrů, zachování první vlny a `git diff --check`.
-6. Aktualizuj tento dokument na konečnou implementovanou podobu a záznam kontrol, commitni a pushni do stejné větve PR #33. Aktualizuj existující PR jako draft; PR #31, #32 ani #33 neslučuj a nenasazuj do produkce.
+Provedeno na implementační pracovní kopii:
 
-Tento postup zachovává jediný registr aktivit a integruje druhou vlnu až na základě výsledku první; nevytváří třetí paralelní variantu.
+- node scripts/generate-activities.js --check: 44 aktivit, drift 0.
+- node scripts/generate-prompts.js --check: 204 promptů, drift 0.
+- node scripts/validate-content.js: 76 článků, 0 chyb, 0 varování.
+- node scripts/check-site-footer.js: 102 HTML souborů prošlo.
+- node --check js/activity-library.js a node --check js/main.js: prošlo.
+- git diff --check: prošlo.
+- Vlastní invarianty: zachováno všech 44 stabilních ID i pořadí; změněno přesně deset očekávaných ID a pouze jejich title, description, prompt; statusy a délky beze změny; ostatních 34 aktivit včetně první vlny beze změny; registr 204 promptů hashově beze změny; generovaný hlavní katalog uvádí 14 doporučených aktivit.
+
+### Browserová kontrola Deploy Preview
+
+Výsledky doplnit po nasazení preview přesného commitu PR #33. Povinné viewporty: 390 × 844 px a 1440 × 900 px. V obou se kontrolují všechny aktivity, čitelnost a přetečení, detaily a úplnost promptů, kopírování, kombinované filtry, Escape a návrat focusu i chyby JavaScriptu. Preview musí vykazovat přesný commit SHA; jinak je kontrola neplatná.
+
+### Otevřené pedagogické otázky
+
+Šest rozhodnutí pro pedagogickou kontrolu výše zůstává otevřeno. Technické kontroly neposuzují kurikulární vhodnost, délku výuky, školní pravidla pro služby ani souhlas s konkrétním provozním režimem. PR #33 zůstává draftem do pedagogické revize. Neprovádí se produkční deploy ani sloučení.
