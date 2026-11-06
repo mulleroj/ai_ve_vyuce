@@ -512,6 +512,27 @@ Změny se týkají pouze promptů/popisu nutných k naplnění výše uvedených
 
 Nový Deploy Preview `deploy-preview-33` je ve stavu ready a `commit_ref` přesně odpovídá tomuto HEAD. Interaktivně bylo ověřeno všech deset upravených detailů: nový prompt je v dialogu přítomen, Escape dialog zavře a vrátí focus na tlačítko detailu a kopírovací tlačítko u každé aktivity oznámí úspěšné zkopírování. Knihovna zobrazí 44 aktivit a 14 doporučených; reset filtrů obnoví 44 výsledků.
 
-Kombinovaný filtr Matematika + SŠ + ChatGPT vrací jednu aktivitu `math-data-analysis`. Starší záznam výše uvádějící `math-statistics-analysis` se tímto opravuje jako nepřesný název; samotný filtr pracuje.
+Předchozí interakční záznam správný výsledek filtru chybně pojmenoval. Podle aktuálního registru je kombinovaný filtr Matematika + SŠ + ChatGPT určen pro `math-statistics-analysis`; `math-data-analysis` používá Gemini. Závěrečný Playwright test níže toto očekávání ověřil proti registru i výsledku UI.
 
-Dostupné rozhraní pro browser QA v tomto běhu neumožnilo nastavit přesné viewporty 390 × 844 a 1440 × 900 ani získat konzolové logy. Vizuální snímek v dostupné velikosti nevykázal zjevné horizontální oříznutí, ale nenahrazuje kontrolu obou požadovaných rozměrů ani přesnou kontrolu overflow. Konzolové chyby pro nový commit proto nelze potvrdit. Tyto kontroly zůstávají podmínkou před označením PR jako Ready for review; předchozí test na starém HEAD se za ně nepovažuje.
+Tato omezení se týkala předchozího pokusu přes jiné browserové rozhraní. Následná finální kontrola Playwrightem provedla požadované testy; její výsledky jsou v následující části.
+
+
+## Finální browser QA – Playwright
+
+**Datum:** 6. 11. 2026. **Testovaný commit:** `1f84762f931b85927f578db262d292b4db044c2b`. **Deploy Preview:** `deploy-preview-33`, deploy `6aee01654fb779510b36680d`, stav ready; `commit_ref` přesně odpovídá testovanému commitu. **Prostředí:** Playwright 1.52.0 s odpovídajícím Chromium headless buildem 1169. Playwright byl spuštěn izolovaně z dočasné npm cache; repozitář nedostal žádnou trvalou závislost.
+
+Screenshoty jsou uloženy mimo repozitář:
+- Mobil 390 × 844: `C:\Users\mulle\.codex\visualizations\2026\11\06\01a1b1ac-e8b2-7ab3-8ca0-93b0f731e1cb\PR33\pr33-mobile-390x844.png`
+- Desktop 1440 × 900: `C:\Users\mulle\.codex\visualizations\2026\11\06\01a1b1ac-e8b2-7ab3-8ca0-93b0f731e1cb\PR33\pr33-desktop-1440x900.png`
+
+### Výsledky
+
+- Oba viewports byly nastaveny přes Playwright context a ověřeny v stránce: mobil `window.innerWidth/innerHeight = 390/844`, desktop `1440/900`.
+- Horizontální přetečení: žádné. `documentElement.scrollWidth` i `body.scrollWidth` se rovnaly šířce každého viewportu. Názvy a popisy všech deseti cílových karet byly přítomné, zalamovaly se a nepřetékaly mimo své boxy.
+- Všech deset aktivit druhé vlny prošlo v obou viewports: karta a popis, správný detail a titulek, úplná shoda detailového promptu i kopírovacího payloadu se zdrojem `data/activities.json`, skutečný obsah schránky, zavření Escape a návrat focusu na původní tlačítko.
+- Schránka při čtení ve Windows Chromium vrací text s konci řádků CRLF. Test je normalizoval na LF; obsah se poté přesně shodoval se zdrojovým promptem. Pro jeden prompt bylo ověřeno šest převodů LF → CRLF; nejde o ztrátu obsahu.
+- Filtr Matematika + SŠ + ChatGPT v obou viewports vrátil právě `math-statistics-analysis`. Registr potvrzuje `subjects=[mat]`, `levels=[ss]`, `tools=[chatgpt]`. `math-data-analysis` má `tools=[gemini]`, proto do očekávaného výsledku nepatří.
+- Regresní kontrolou prošly tři aktivity první vlny: `math-statistics-analysis`, `english-essay-feedback` a `czech-essay-workshop`; jejich detaily, prompty, kopírování, Escape a návrat focusu fungovaly v obou rozměrech.
+- Registr zachovává 44 unikátních ID a 14 aktivit v hlavním katalogu.
+- JavaScriptové chyby: 0 `pageerror`, 0 chyb konzole. Kritické skripty `activity-library.js`, `main.js`, `site-footer.js` a `subject-navigation.js` se načetly se stavem HTTP 200. Všechny zachycené script requesty včetně Netlify CDP/RUM podpory a Segment analytics rovněž vrátily 200; neúspěšné JS požadavky: 0.
+- Screenshoty byly pořízeny při obou přesných velikostech. Další obsahové ani zdrojové úpravy nebyly pro QA potřeba.
