@@ -507,3 +507,11 @@ Doporučení pro budoucí metadata: oddělit `teacherPreparation`, `classroomAct
 ## Výsledky závěrečné kontroly
 
 Změny se týkají pouze promptů/popisu nutných k naplnění výše uvedených rozhodnutí a tohoto závěrečného záznamu. ID, pořadí, statusy, časy, první vlna i ostatních 24 aktivit a registr promptů zůstávají invarianty. Generátory a validační kontroly jsou spuštěny po změně; kontrola Deploy Preview proti novému HEAD se zaznamená po dokončení aktualizovaného buildu. Do té doby PR zůstává draftem a závěr technického QA není nahrazen předchozím browser testem.
+
+### Aktualizace browser QA pro commit `b33a0c294b96a091ddc13824b3c554e91f9c4708`
+
+Nový Deploy Preview `deploy-preview-33` je ve stavu ready a `commit_ref` přesně odpovídá tomuto HEAD. Interaktivně bylo ověřeno všech deset upravených detailů: nový prompt je v dialogu přítomen, Escape dialog zavře a vrátí focus na tlačítko detailu a kopírovací tlačítko u každé aktivity oznámí úspěšné zkopírování. Knihovna zobrazí 44 aktivit a 14 doporučených; reset filtrů obnoví 44 výsledků.
+
+Kombinovaný filtr Matematika + SŠ + ChatGPT vrací jednu aktivitu `math-data-analysis`. Starší záznam výše uvádějící `math-statistics-analysis` se tímto opravuje jako nepřesný název; samotný filtr pracuje.
+
+Dostupné rozhraní pro browser QA v tomto běhu neumožnilo nastavit přesné viewporty 390 × 844 a 1440 × 900 ani získat konzolové logy. Vizuální snímek v dostupné velikosti nevykázal zjevné horizontální oříznutí, ale nenahrazuje kontrolu obou požadovaných rozměrů ani přesnou kontrolu overflow. Konzolové chyby pro nový commit proto nelze potvrdit. Tyto kontroly zůstávají podmínkou před označením PR jako Ready for review; předchozí test na starém HEAD se za ně nepovažuje.
