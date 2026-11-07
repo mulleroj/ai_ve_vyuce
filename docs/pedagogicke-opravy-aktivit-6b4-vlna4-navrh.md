@@ -482,4 +482,4 @@ Po cílené úpravě proběhly projektové kontroly: generátor aktivit ověřil
 
 Samostatný Playwright Chromium test se skutečným Clipboard API proběhl při 390 × 844 a 1440 × 900. V obou rozměrech se detail otevřel, prompt v registru, generovaném HTML, detailu a schránce přesně souhlasil (odstavce, diakritika i koncová tečka), Escape detail zavřel a focus se vrátil na otevírací tlačítko. pageerror: 0, console.error: 0, selhání kritických skriptů: 0. Test běžel z lokální file:// zdroje; nedostupný vzdálený Google Fonts stylesheet byl v testovacím kontextu nahrazen prázdným CSS, protože síťové DNS izolovaného prostředí jej nerozlišovalo. Tato výjimka nemění spuštění ani chování JavaScriptu aplikace.
 
-Po pushi je Netlify Deploy Preview pro přesný commit 1648f34c957c1ad745a3c270e78f75f7d59a12ef ve stavu Ready. Poslední commit této revize čeká na vytvoření nového Deploy Preview po pushi.
+Aktuální Netlify Deploy Preview a jeho vazba na finální HEAD se ověřují odděleně; lokální Playwright test samotný nasazení nedokazuje. Změna nepovoluje produkční nasazení ani sloučení bez review.
