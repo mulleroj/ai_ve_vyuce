@@ -128,7 +128,7 @@ TP=teacher_preparation, TL=teacher_led, SD=student_direct, F=flexible, N=undecid
 
 U přímého přístupu musí škola ověřit nástroj/režim, účet a věk, data, dohled a offline volbu. Nejde o splněné podmínky. Nejasné fallbacky nejsou domyšleny. Citlivé oblasti zahrnují osobní/třídní data, žákovské práce, autorské texty/mapy/prameny a historické simulace.
 
-## 7. Srovnání podobných aktivit
+## 7. Srovnání podobných aktivi
 
 | Skupina z auditu 6C/1 | Zachovaný rozdíl |
 |---|---|
@@ -176,5 +176,4 @@ Schválit jednotlivě R01–R08 (obsluha AI u anglické gramatiky, chemického/f
 
 ### Provedené invarianty
 
-44 záznamů/44 unikátních ID, pořadí matice odpovídá registru; activities-main má 14 členů; registr promptů má 204 položek. Časové skupiny jsou uvedeny výše a dávají 44. Rozdělení rolí: TP 15 + TL 8 + SD 12 + F 3 + N 6 = 44. Výchozí master obsahuje prompty po předchozích etapách; tento návrh mění pouze nový Markdown soubor.
-
+44 záznamů/44 unikátních ID, pořadí matice odpovídá registru; activities-main má 14 členů; registr promptů má 204 položek. Časové skupiny jsou uvedeny výše a dávají 44. Rozdělení rolí: TP 15 + TL 8 + SD 12 + F 3 + N 6 = 44. Výchozí master obsahuje prompty po předchozích etapách; tento návrh mění pouze nový Markdown soubor.\n
