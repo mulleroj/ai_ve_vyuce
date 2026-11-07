@@ -149,6 +149,7 @@ Detail obsahuje přístupné sekce **Jak se používá AI** a **Časová nároč
 - Filtry a vyhledávání, modal dialog, Escape, návrat fokusu, názvy tlačítek, nadpis stránky, žádná nulová minuta, horizontální přetečení a nové JavaScriptové chyby: bez nálezu.
 - Kontrast nově použitých textů: 5.77:1 až 12.15:1 na příslušném pozadí.
 - Srovnatelné snímky devíti karet a jejich detailů před/po jsou uloženy v `qa-6c5-before/` a `qa-6c5-after/` v adresáři výstupů této revize.
+- Draft PR #41: [AI VE VÝUCE 2.0 – 6C/5](https://github.com/mulleroj/ai_ve_vyuce/pull/41). Netlify Deploy Preview je připraveno: [deploy-preview-41](https://deploy-preview-41--ai-ve-vyuce.netlify.app/). Produkční deploy nebyl proveden.
 
 Plný axe audit nebylo možné spustit: `axe-core` ani `@axe-core/playwright` nejsou v dostupném prostředí nainstalované. Browser kontrola ověřila základní názvy ovládacích prvků, sémantiku dialogu, klávesnicové ovládání, fokus a kontrast nového textu; nenahrazuje kompletní audit WCAG.
 
