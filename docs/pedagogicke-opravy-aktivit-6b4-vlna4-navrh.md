@@ -372,7 +372,7 @@ Nejdřív se zeptej, který konkrétní krok žák považuje za chybný a proč.
 
 Ověřuj každý krok samostatně. Odděl správné kroky od chybných a ukaž, jak ověřit výsledek výpočtem, dosazením, odhadem či opačným postupem. Pokud se postupy rozcházejí nebo si nejsi jistý, ukaž místo rozdílu, přiznej nejistotu a požádej o kontrolu učitelem. Správnost nesmí být potvrzena pouze autoritou AI.
 
-Požádej žáka, aby vlastními slovy vysvětlil sporný krok a navrhl ověření. Potom zadej novou přenosovou úlohu bez řešení a nech žáka, aby ji samostatně vyřešil a ověřil. Neznámkuj ani nediagnostikuj. Přímé zpracování žákova pokusu je možné pouze ve školou schváleném prostředí a pro schválený účel.
+Požádej žáka, aby vlastními slovy vysvětlil sporný krok a navrhl ověření. Poté použij přenosovou úlohu, kterou předem dodal nebo schválil učitel: [UČITELEM DODANÁ NEBO SCHVÁLENÁ PŘENOSOVÁ ÚLOHA]. Pokud taková úloha chybí, požádej učitele o její doplnění a přenosové procvičování zatím neprezentuj jako hotové. Nevytvářej samostatně novou neověřenou úlohu ani ji bez učitelské kontroly nevydávej za správně připravené procvičování. Jakmile je úloha dodána či schválena, předlož ji bez řešení a nech žáka, aby ji samostatně vyřešil a ověřil. Neznámkuj ani nediagnostikuj. Přímé zpracování žákova pokusu je možné pouze ve školou schváleném prostředí a pro schválený účel.
 ~~~~
 
 ### history-class-timeline
@@ -468,3 +468,18 @@ Původní duration zůstaly beze změny. Čas třídní fyzikální dílny není
 **Invarianty proti základu PR #35:** 44 unikátních ID a pořadí zachováno, 14 doporučených aktivit, statusy a duration nezměněny. Obsahově se změnilo přesně deset cílových ID a pouze title, description a prompt. Předchozích 30 opravených aktivit i čtyři ID pro pátou vlnu zůstaly beze změny. Registr 204 promptů nebyl upraven.
 
 **Nasazení:** browserový QA tohoto záznamu je lokální test aplikace. Dostupnost veřejného Deploy Preview a jeho vazba na finální commit se ověří zvlášť po pushi; lokální test ji nedokazuje.
+
+
+## Závěrečné pedagogické schválení
+
+Pedagogická revize schválila metodický směr všech deseti aktivit čtvrté vlny. Před publikací byl na základě závěrečné připomínky cíleně upřesněn pouze prompt math-ai-tutor: přenosová úloha musí být předem dodaná nebo schválená učitelem. Pokud chybí, tutor si vyžádá doplnění; samostatně vytvořenou neověřenou úlohu nevydává za správně připravené procvičování. Dosavadní postup žákova pojmenování, ověřování a vysvětlení sporného kroku zůstává zachován. Ostatních devět aktivit nebylo změněno.
+
+Provozní podmínky zůstávají podmínkami použití: škola musí určit schválené nástroje, účty a režimy zpracování dat; konkrétní vědecké modely a zdroje a autorskoprávní použitelnost ukázek musí být ověřeny; úroveň CEFR musí být přiměřená; časové údaje je třeba ověřit v konkrétní výuce. Toto pedagogické schválení samo o sobě tyto provozní skutečnosti nepotvrzuje.
+
+## Regresní kontrola po závěrečném schválení
+
+Po cílené úpravě proběhly projektové kontroly: generátor aktivit ověřil 44 aktivit bez driftu; generátor promptů ověřil samostatný registr 204 promptů bez driftu; obsahová validace prošla pro 76 článků bez chyb či varování; kontrola patiček prošla pro 102 HTML souborů; syntaxe 23 JS souborů a git diff --check prošly. Invarianty potvrdily 44 unikátních ID ve stejném pořadí, 14 doporučených aktivit a změnu pouze promptu math-ai-tutor; zbylých devět aktivit i pole title, description, status a duration zůstaly beze změny. Čtyři ID další vlny zůstala beze změny a registr 204 promptů se nezměnil.
+
+Samostatný Playwright Chromium test se skutečným Clipboard API proběhl při 390 × 844 a 1440 × 900. V obou rozměrech se detail otevřel, prompt v registru, generovaném HTML, detailu a schránce přesně souhlasil (odstavce, diakritika i koncová tečka), Escape detail zavřel a focus se vrátil na otevírací tlačítko. pageerror: 0, console.error: 0, selhání kritických skriptů: 0. Test běžel z lokální file:// zdroje; nedostupný vzdálený Google Fonts stylesheet byl v testovacím kontextu nahrazen prázdným CSS, protože síťové DNS izolovaného prostředí jej nerozlišovalo. Tato výjimka nemění spuštění ani chování JavaScriptu aplikace.
+
+Po pushi je Netlify Deploy Preview pro přesný commit 1648f34c957c1ad745a3c270e78f75f7d59a12ef ve stavu Ready. Poslední commit této revize čeká na vytvoření nového Deploy Preview po pushi.
