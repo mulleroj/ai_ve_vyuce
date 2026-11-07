@@ -1,6 +1,9 @@
 # Role AI a časová metadata aktivit – etapa 6C/3
 
-**Stav:** návrh k pedagogickému schválení, bez implementace.
+**Stav k 7. 11. 2026:** pedagogická rozhodnutí R01–R08 a T01–T08 jsou schválena; klasifikace 44 aktivit je dokumentačně dokončena. Prompty, metadata registru, štítky a karty dosud nejsou implementovány.
+
+> **Dodatek 6C/3:** Oddíly 14–20 jsou aktuálním rozhodnutím a nahrazují rozporné předběžné počty, statusy „nerozhodnuto“ a otevřené R/T otázky ve starších oddílech. Historické `duration` i produktové soubory zůstávají beze změny.
+
 **Analyzovaný obsah:** origin/master, commit 9a47dfb0244927082777eff13291bab556bbaea6 (7. 11. 2026).
 **Zdroje:** úplný data/activities.json a data/prompts.json, audit docs/zaverecny-audit-knihovny-aktivit-6c.md, dokumentace docs/pristupnost-knihovny-aktivit-6c2.md, scripts/generate-activities.js, aktivity.html a js/activity-library.js.
 
@@ -56,7 +59,7 @@ Doporučuji variantu B, vnořené usage a timing, před plochými poli: odděluj
 
 Hodnota času může být null, jediná hodnota nebo interval min/max. Vždy zaznamenat jednotku, fázi, zdroj a stav. null není nula; unverified_estimate není pilot_observed. Pilotní údaj vyžaduje protokol, vzorek a metodu. Neurčenou fázi ponechat null, nikoli domýšlet. Kořenové duration zachovat beze změny a nevykreslit jako potvrzenou dobu výuky.
 
-## 5. Kompletní pedagogická rozhodovací matice
+## 5. Kompletní pedagogická rozhodovací matice (výchozí, před schválením; aktuální klasifikace je v oddílu 16)
 
 TP=teacher_preparation, TL=teacher_led, SD=student_direct, F=flexible, N=undecided. Přímý přístup je požadavek hlavního režimu; školní schválení není tím potvrzeno. ? znamená, že škola/nástroj/účet/věk/data nejsou zdrojem ověřeny.
 
@@ -107,7 +110,7 @@ TP=teacher_preparation, TL=teacher_led, SD=student_direct, F=flexible, N=undecid
 | 43 general-prompt-power-up-relay | SD týmový operátor střední | tým tvoří/testuje prompt; učitel schvaluje téma | bez osobních dat, ověřit výstupy, školní režim ? | „tým sám navrhl a ověřil lepší prompt“ | 12–20 min interval týmového cyklu; odhad |
 | 44 general-fact-or-fiction | TP učitel vysoká | učitel připravuje/ověří neveřejný klíč; týmy ověřují zdroje | citlivá témata vyloučit; učitel ověří a opraví záměrnou nepravdu | „Pomoz učiteli připravit bezpečnou hru“; „učitel musí nezávisle ověřit“ | 10–18 min interval hry dle popisu; odhad |
 
-## 6. Nejasné a sporné případy
+## 6. Nejasné a sporné případy (výchozí otázky před rozhodnutím; uzavřeno oddílem 14–15)
 
 1. R01 english-grammar-feedback: kdo vloží text – žák, učitel, nebo oba?
 2. R02 chemistry-equation-guide: „rovnici dodá žák nebo učitel“ je volba vstupu, nebo režimu obsluhy?
@@ -170,10 +173,124 @@ Záměna sociálního formátu za operátora; dojem, že student_direct znamená
 
 Každá z 44 aktivit má jeden režim nebo undecided a důkaz. format není důkazem obsluhy. Školní schválení/účet/věk/data/dohled jsou samostatné. Prompty, statusy a duration zůstávají beze změny. Čas podporuje hodnotu, interval a null se zdrojem, jednotkou, fází a stavem. Souhrny dávají 44 a nejistoty jsou viditelné. Význam sděluje text, ne jen barva.
 
-## 13. Rozhodnutí vyžadující pedagogické schválení
+## 13. Rozhodnutí vyžadující pedagogické schválení (historický stav; rozhodnutí schválena v oddílech 14–15)
 
-Schválit jednotlivě R01–R08 (obsluha AI u anglické gramatiky, chemického/fyzikálního tutora, historické simulace/debaty/pramene/mapy a anglické eseje) a T01–T08 (režimové časy profilu živočicha, konflikt přípravného štítku modelování, varianty slohové dílny, přípravný čas diktátu, dvojí čas literární interpretace, anglická konverzace, fyzikální dílna a časová osa). Dále schválit prezentaci odhadů a požadavky případného měření. Nic z toho tímto dokumentem není považováno za rozhodnuté.
+Následující výčet je historickým záznamem předběžných otázek z doby vzniku návrhu. Aktuální schválená rozhodnutí a jejich stav jsou uvedeny v oddílech 14–15; implementační práce je evidována v oddílu 19.
 
 ### Provedené invarianty
 
 44 záznamů/44 unikátních ID, pořadí matice odpovídá registru; activities-main má 14 členů; registr promptů má 204 položek. Časové skupiny jsou uvedeny výše a dávají 44. Rozdělení rolí: TP 15 + TL 8 + SD 12 + F 3 + N 6 = 44. Výchozí master obsahuje prompty po předchozích etapách; tento návrh mění pouze nový Markdown soubor.\n
+
+## 14. Schválená rozhodnutí R01–R08 (PEDAGOGICKY SCHVÁLENO – DOSUD NEIMPLEMENTOVÁNO)
+
+Schválený budoucí režim není důkazem současné promptové implementace.
+
+| ID | Aktivita | Schválený budoucí režim | Podmínka a současný prompt |
+|---|---|---|---|
+| R01 | english-grammar-feedback | teacher_preparation; žákovská varianta pouze budoucí možnost | Textová proměnná neurčuje, kdo text vkládá. Současný režim nevymezen. |
+| R02 | chemistry-equation-guide | flexible | „Rovnici dodá žák nebo učitel“ určuje zdroj vstupu, nikoli operátora AI. Přímé použití jen ve školou schváleném prostředí. |
+| R03 | physics-problem-solver | student_direct | Prompt zachovává nejprve vlastní pokus žáka a potom nápovědu; přístup podmínit schváleným nástrojem a režimem. |
+| R04 | history-roleplay-historical-person | teacher_led | Učitel ovládá simulaci, žáci kladou otázky a ověřují tvrzení. Prompt neurčuje operátora. |
+| R05 | history-debate-pro-con | teacher_led | Učitel ovládá AI, žáci argumentují a pracují s prameny. Prompt operátora neurčuje. |
+| R06 | history-source-analysis | teacher_led | Učitel zadává prompt a zprostředkovává AI, žáci analyzují pramen. Prompt obsluhu neurčuje. |
+| R07 | history-map-analysis | teacher_led | Učitel ovládá AI, žáci pracují s mapou a ověřují závěry. Prompt obsluhu neurčuje. |
+| R08 | english-essay-feedback | flexible | Učitel nebo žák; skutečné práce jen ve schváleném režimu. Prompt vede dialog s „learner“, nerozlišuje učitelem připravenou zpětnou vazbu a přímou žákovskou revizi. |
+
+Skutečné žákovské práce se nesmějí automaticky vkládat do neschválených externích služeb; anonymizace sama o sobě schválení nenahrazuje. Dějepisné režimy znamenají učitelskou technickou obsluhu, ne omezení žákovské diskuse.
+
+## 15. Schválená rozhodnutí T01–T08
+
+Všechny uvedené časy jsou **neověřené orientační odhady**; žádný není doložen pilotním měřením.
+
+| ID | Aktivita | Schválený výklad |
+|---|---|---|
+| T01 | biology-animal-encyclopedia | Krátký režim asi 8 minut; rozšířený asi 20–30 minut. |
+| T02 | math-real-life-word-problems | Zachovat původních 5 minut přípravy; čas žákovské práce neznámý. |
+| T03 | czech-essay-workshop | Varianty 2 min/žák, 5 minut a delší režim; délku delšího bez podkladu nevyčíslovat. |
+| T04 | czech-dictation-activity | 5 minut příprava; délka práce žáků neuvedena. |
+| T05 | czech-literary-analysis-class | 10 minut příprava; 15–20 minut orientační práce žáků. |
+| T06 | english-conversation-activity | Orientačně 15 minut celkem, bez rozpisu částí. |
+| T07 | physics-phenomenon-analogies-class | Původních 5 minut zachovat jako historickou nejednoznačnou hodnotu, nikoli délku celé dílny. |
+| T08 | history-class-timeline | 5 minut příprava; délka práce žáků neuvedena. |
+
+Historické `duration` zůstává beze změny. Neznámé časy zůstávají neznámé; nedoplňovat délku výuky ani kontroly.
+
+## 16. Kompletní matice po schválení
+
+`approvedFutureMode` značí schválený pedagogický režim; `currentPromptMode` pouze režim doložený promptem. `undecided` znamená nedoloženého operátora, nikoli otevřené pedagogické rozhodnutí. Pořadí odpovídá registru.
+
+| # | ID aktivity | approvedFutureMode | currentPromptMode |
+|---:|---|---|---|
+| 1 | math-word-problem-generator | teacher_preparation | teacher_preparation |
+| 2 | math-step-by-step-guide | flexible | flexible |
+| 3 | math-test-paper-generator | teacher_preparation | teacher_preparation |
+| 4 | math-differentiated-problems | teacher_preparation | teacher_preparation |
+| 5 | math-story-problem-game | teacher_preparation | teacher_preparation |
+| 6 | math-statistics-analysis | teacher_led | teacher_led |
+| 7 | czech-essay-feedback | teacher_preparation | teacher_preparation |
+| 8 | czech-dictation-generator | teacher_preparation | teacher_preparation |
+| 9 | czech-literary-analysis | teacher_preparation | teacher_preparation |
+| 10 | czech-spelling-word-exercises | teacher_preparation | teacher_preparation |
+| 11 | czech-matura-oral-exam | student_direct | student_direct |
+| 12 | czech-writing-form-guide | student_direct | student_direct |
+| 13 | english-conversation-partner | student_direct | student_direct |
+| 14 | english-grammar-feedback | teacher_preparation | undecided |
+| 15 | english-vocabulary-builder | teacher_preparation | teacher_preparation |
+| 16 | english-cambridge-exam-practice | student_direct | student_direct |
+| 17 | english-grammar-exercises | teacher_preparation | teacher_preparation |
+| 18 | english-contextual-translation | teacher_led | teacher_led |
+| 19 | biology-virtual-lab-experiment | teacher_led | teacher_led |
+| 20 | chemistry-equation-guide | flexible | undecided |
+| 21 | physics-phenomenon-analogies-explainer | teacher_preparation | teacher_preparation |
+| 22 | biology-animal-encyclopedia | student_direct | student_direct |
+| 23 | physics-problem-solver | student_direct | student_direct |
+| 24 | chemistry-elements-compounds-quiz | teacher_preparation | teacher_preparation |
+| 25 | history-roleplay-historical-person | teacher_led | undecided |
+| 26 | history-timeline-generator | teacher_preparation | teacher_preparation |
+| 27 | history-debate-pro-con | teacher_led | undecided |
+| 28 | history-period-newspaper | teacher_preparation | teacher_preparation |
+| 29 | history-source-analysis | teacher_led | undecided |
+| 30 | history-map-analysis | teacher_led | undecided |
+| 31 | math-real-life-word-problems | student_direct | student_direct |
+| 32 | math-ai-tutor | student_direct | student_direct |
+| 33 | math-data-analysis | flexible | flexible |
+| 34 | czech-essay-workshop | student_direct | student_direct |
+| 35 | czech-dictation-activity | flexible | flexible |
+| 36 | czech-literary-analysis-class | student_direct | student_direct |
+| 37 | english-conversation-activity | teacher_led | teacher_led |
+| 38 | english-essay-feedback | flexible | undecided |
+| 39 | science-virtual-lab-simulation | teacher_led | teacher_led |
+| 40 | physics-phenomenon-analogies-class | teacher_led | teacher_led |
+| 41 | history-roleplay-classroom | teacher_led | teacher_led |
+| 42 | history-class-timeline | teacher_led | teacher_led |
+| 43 | general-prompt-power-up-relay | student_direct | student_direct |
+| 44 | general-fact-or-fiction | teacher_preparation | teacher_preparation |
+
+Součet schválených režimů: **teacher_preparation 16, teacher_led 12, student_direct 11, flexible 5, undecided 0 (44 celkem)**. Současný prompt neurčuje technického operátora u R01, R02 a R04–R08; R03 přímý žákovský režim popisuje, ale podmínku schváleného prostředí je vhodné doplnit.
+
+## 17. Prompty k následné revizi – revize nebyly provedeny
+
+| Aktivita | Současná formulace | Schválený režim | Potřebná změna | Riziko |
+|---|---|---|---|---|
+| english-grammar-feedback (R01) | Textová proměnná, vkládající neurčen | teacher_preparation | **Povinná:** vyjasnit vložení učitelem a odstranit nejasnost žákovského vkládání. | Skutečná práce žáka ve službě bez schválení. |
+| chemistry-equation-guide (R02) | Rovnici může dodat žák nebo učitel | flexible | **Povinná:** určit operátora AI; přímý přístup jen ve schváleném prostředí. | Záměna vstupu za obsluhu. |
+| physics-problem-solver (R03) | Žák zkusí postup před nápovědou | student_direct | **Doporučená:** výslovně podmínit schváleným nástrojem/režimem; zachovat vlastní pokus před nápovědou. | Přístup bez schválených podmínek. |
+| history-roleplay-historical-person (R04) | Simulace pro žáky; operátor neurčen | teacher_led | **Povinná:** učitel ovládá, žáci se ptají a ověřují. | Samostatný přístup; simulace zaměněná za pramen. |
+| history-debate-pro-con (R05) | AI klade kontrolní otázky; operátor neurčen | teacher_led | **Povinná:** učitel ovládá AI, žáci argumentují z pramenů. | Žákovské ovládání, AI převezme argumentaci. |
+| history-source-analysis (R06) | Průvodce skupinovou analýzou; operátor neurčen | teacher_led | **Povinná:** učitel zadává prompt a zprostředkovává AI. | Neurčené zpracování pramene a přímý přístup. |
+| history-map-analysis (R07) | Průvodce pro žáky; operátor neurčen | teacher_led | **Povinná:** učitel ovládá AI, žáci pracují s mapou a ověřují. | Nejasný operátor, zdroj mapy a ověření. |
+| english-essay-feedback (R08) | Dialog „learner“, bez rozlišení učitel/žák | flexible | **Doporučená:** oddělit učitelem připravenou zpětnou vazbu a přímou revizi; skutečnou práci povolit jen ve schváleném režimu. | Automatické vystavení práce neschválené službě. |
+
+## 18. Budoucí datový model
+
+Zachovat `usage` a `timing`. Navrhnout `usage.approvedFutureMode`, `usage.currentPromptMode`, `usage.requiresSchoolApprovedEnvironment` (požadavek, nikoli potvrzení schválení), `usage.offlineAlternative` s evidencí nebo null. Oddělit schválený režim, skutečnou dostupnost promptem, školní podmínky a offline alternativu; nepoužívat veřejné `approvalStatus`. `timing` ponese fázi, hodnotu/interval, jednotku, zdroj a stav `unverified_estimate`; neznámé zůstává null. Zachovat historické `duration` přesně. Pilotní údaj vyžaduje protokol, vzorek a metodu; žádný nyní není.
+
+## 19. Stav a implementační úkoly
+
+**Schváleno a dokumentačně uzavřeno:** R01–R08, T01–T08 a klasifikace 44 aktivit. **Neimplementováno:** prompty nebyly upraveny, metadata registru nebyla změněna a nové štítky ani karty nebyly implementovány.
+
+Následné úkoly: (1) revidovat osm promptů podle oddílu 17; (2) navrhnout a validovat `usage`/`timing` při zachování `duration`; (3) potom implementovat štítky a karty; (4) případné pilotní měření provést s protokolem. Nejde o otevřená pedagogická rozhodnutí.
+
+## 20. Kontrola
+
+44 unikátních ID v přesném pořadí registru; součet 16 + 12 + 11 + 5 + 0 = 44; zaznamenáno všech 16 rozhodnutí. Původní `duration` ani žádný neznámý čas nebyly změněny či nahrazeny. Rozpory R01–R08 jsou uvedeny v oddílu 17. Změněn je pouze tento dokument; registry, prompty, HTML, JavaScript, CSS a generátory zůstaly beze změny.
