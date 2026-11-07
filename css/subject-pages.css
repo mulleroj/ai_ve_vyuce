@@ -211,14 +211,19 @@
   align-items: flex-start;
   gap: 7px 14px;
   flex-wrap: wrap;
-  color: #657970;
+  color: #526b62;
 }
 .subject-page .activity-footer { border-color: #e6ece6; }
 .subject-page .badge-gray { background: #f1f4ef; color: #455e53; border-color: #e2e9e1; }
 .subject-page .badge-gold,
 .subject-page .badge-mint { background: #eaf5ee; color: #086746; border-color: #cfe5d4; }
-.subject-page .activity-card .btn-mint { background: #087b58; color: #fff; }
-.subject-page .activity-card .btn-mint:hover { background: #075b42; }
+.subject-page .badge-blue { background: #eaf2fc; color: #174a86; border-color: #bfd2ec; }
+.subject-page .badge-purple { background: #f3eafa; color: #603477; border-color: #d9c4e8; }
+.subject-page .badge-green { background: #eaf5ed; color: #19633b; border-color: #c6e4d0; }
+.subject-page .badge-orange { background: #fff1dd; color: #824000; border-color: #f0d0a5; }
+.subject-page .badge-pink { background: #fbeaf3; color: #8b2059; border-color: #edc3d8; }
+.subject-page .activity-card .btn-mint { background: #075b42; color: #fff; }
+.subject-page .activity-card .btn-mint:hover { background: #064a36; }
 
 .subject-page .prompt-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .subject-page .prompt-card,

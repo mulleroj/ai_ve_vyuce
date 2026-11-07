@@ -86,15 +86,15 @@
     <section class="section">
         <div class="container">
             <div class="tabs-container">
-                <div class="tabs" role="tablist">
-                    <button class="tab-btn active" data-tab="aktivity">🎯 Aktivity</button>
-                    <button class="tab-btn" data-tab="prompty">✨ Prompty</button>
-                    <button class="tab-btn" data-tab="asistenti">🤖 Asistenti</button>
-                    <button class="tab-btn" data-tab="tipy">💡 Tipy</button>
+                <div class="tabs" role="group" aria-label="Části předmětové stránky">
+                    <button type="button" class="tab-btn active" data-tab="aktivity" aria-controls="tab-aktivity" aria-pressed="true">🎯 Aktivity</button>
+                    <button type="button" class="tab-btn" data-tab="prompty" aria-controls="tab-prompty" aria-pressed="false">✨ Prompty</button>
+                    <button type="button" class="tab-btn" data-tab="asistenti" aria-controls="tab-asistenti" aria-pressed="false">🤖 Asistenti</button>
+                    <button type="button" class="tab-btn" data-tab="tipy" aria-controls="tab-tipy" aria-pressed="false">💡 Tipy</button>
                 </div>
             </div>
 
-            <div id="tab-aktivity" class="tab-panel">
+            <div id="tab-aktivity" class="tab-panel" role="region" aria-label="Aktivity">
                 <div class="filter-bar">
                     <span class="filter-label">Ročník:</span>
                     <div class="filter-group" role="group" aria-label="Filtrovat aktivity podle ročníku">
@@ -218,7 +218,7 @@
                 </div>
             </div>
 
-            <div id="tab-prompty" class="tab-panel d-none">
+            <div id="tab-prompty" class="tab-panel d-none" role="region" aria-label="Prompty">
                 <div class="prompt-grid">
                     <!-- DO NOT EDIT MANUALLY. Source: data/prompts.json. Run: node scripts/generate-prompts.js -->
                     <!-- GENERATED:PROMPTS:START -->
@@ -278,7 +278,7 @@
                 </div>
             </div>
 
-            <div id="tab-asistenti" class="tab-panel d-none">
+            <div id="tab-asistenti" class="tab-panel d-none" role="region" aria-label="Asistenti">
                 <div class="assistant-grid">
                     <div class="assistant-card reveal">
                         <div class="assistant-header">
@@ -338,7 +338,7 @@
                 </div>
             </div>
 
-            <div id="tab-tipy" class="tab-panel d-none">
+            <div id="tab-tipy" class="tab-panel d-none" role="region" aria-label="Tipy">
                 <div style="display:grid;gap:16px;max-width:860px">
                     <div class="info-box reveal"><span class="info-box-icon">💡</span>
                         <div class="info-box-text"><strong>Tip: Claude je král opravování</strong>Pro opravování
@@ -364,7 +364,7 @@
 
     <footer class="footer home-footer subject-site-footer">
       <div class="footer-inner">
-        <a class="brand" href="index.html" aria-label="AI ve Výuce – úvodní stránka">
+        <a class="brand" href="index.html">
           <img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="">
           <span class="brand-copy"><strong>AI ve výuce</strong><small>Inspirace · nástroje · praxe pro učitele</small></span>
         </a>

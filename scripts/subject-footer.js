@@ -5,7 +5,7 @@ function buildSubjectFooter() {
   return [
     '    <footer class="footer home-footer subject-site-footer">',
     '      <div class="footer-inner">',
-    '        <a class="brand" href="index.html" aria-label="AI ve Výuce – úvodní stránka">',
+    '        <a class="brand" href="index.html">',
     '          <img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="">',
     '          <span class="brand-copy"><strong>AI ve výuce</strong><small>Inspirace · nástroje · praxe pro učitele</small></span>',
     '        </a>',
