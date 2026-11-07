@@ -1,7 +1,7 @@
 # Role AI a časová metadata aktivit – etapa 6C/3
 
-**Stav:** návrh k pedagogickému schválení, bez implementace.  
-**Analyzovaný obsah:** origin/master, commit 9a47dfb0244927082777eff13291bab556bbaea6 (7. 11. 2026).  
+**Stav:** návrh k pedagogickému schválení, bez implementace.
+**Analyzovaný obsah:** origin/master, commit 9a47dfb0244927082777eff13291bab556bbaea6 (7. 11. 2026).
 **Zdroje:** úplný data/activities.json a data/prompts.json, audit docs/zaverecny-audit-knihovny-aktivit-6c.md, dokumentace docs/pristupnost-knihovny-aktivit-6c2.md, scripts/generate-activities.js, aktivity.html a js/activity-library.js.
 
 ## 1. Shrnutí
