@@ -64,13 +64,28 @@
     const copy = document.getElementById('activityDetailCopy');
     copy.dataset.copy = card.dataset.prompt;
     const meta = document.getElementById('activityDetailMeta');
-    const entries = [['Předmět', subjectNames[card.dataset.subject]], ['Ročník', card.dataset.level.split(/\s+/).map(level => levels[level]).join(', ')], ['AI nástroj', toolNames[card.dataset.tool]], ['Doba', card.dataset.duration], ['Forma', card.dataset.format]];
+    const entries = [['Předmět', subjectNames[card.dataset.subject]], ['Ročník', card.dataset.level.split(/\s+/).map(level => levels[level]).join(', ')], ['AI nástroj', toolNames[card.dataset.tool]], ['Forma', card.dataset.format]];
     meta.replaceChildren(...entries.flatMap(([label, value]) => { const wrap = document.createElement('div'); const dt = document.createElement('dt'); const dd = document.createElement('dd'); dt.textContent = `${label}:`; dd.textContent = value; wrap.append(dt, dd); return [wrap]; }));
+    const usage = JSON.parse(card.dataset.usageInfo);
+    const usageRows = [
+      ['Role AI', usage.roleLabel], ['Použití', usage.operatorDescription], ['Učitel', usage.teacherRole],
+      ['Žák', usage.studentRole], ['Přímý přístup žáka', usage.accessText]
+    ];
+    if (usage.offlineAlternative) usageRows.push(['Varianta bez AI', usage.offlineAlternative]);
+    renderDefinitionList(document.getElementById('activityDetailUsage'), usageRows);
+    const timing = JSON.parse(card.dataset.timingInfo);
+    renderDefinitionList(document.getElementById('activityDetailTiming'), timing.map(item => [item.label, item.text]));
     const related = document.getElementById('activityDetailRelated');
     if (card.dataset.relatedPrompt) { related.href = `prompty.html#${encodeURIComponent(card.dataset.relatedPrompt)}`; related.hidden = false; } else related.hidden = true;
     dialog.hidden = false;
     document.body.classList.add('activity-dialog-open');
     document.getElementById('activityDetailTitle').focus();
+  }
+  function renderDefinitionList(element, rows) {
+    element.replaceChildren(...rows.flatMap(([label, value]) => {
+      const wrap = document.createElement('div'); const dt = document.createElement('dt'); const dd = document.createElement('dd');
+      dt.textContent = label; dd.textContent = value; wrap.append(dt, dd); return [wrap];
+    }));
   }
   for (const [key, element] of Object.entries(filters)) element.addEventListener('change', () => apply());
   search.addEventListener('input', () => apply());
