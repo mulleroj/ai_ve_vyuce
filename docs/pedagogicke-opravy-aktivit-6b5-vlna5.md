@@ -246,3 +246,26 @@ Chromium test běžel nad lokálním `file://` zdrojem a dostal odpovídající 
 Po revizi PR #36: v matematice přibyl krátký individuální návrh postupu před skupinovou diskusí; v češtině se musí vyžádat ročník a vzdělávací cíl a počet úloh se odvíjí od času práce žáků; v angličtině je ročník nezaměnitelný s kalendářním rokem, čas žákovského řešení je povinný a čas přípravy učitele nepovinný; v chemii je povinný cíl a reflexe i pro žáka bez chyby. Úplná znění promptů a popisy výše jsou aktualizované.
 
 Původní technické a prohlížečové testy uvedené výše platí pro HEAD `afce315814fce818ef2c73e02eab5f1a946b6908`. Po opravné iteraci je nutné ověřit nový HEAD, generované stránky, kontrolní sadu a Deploy Preview. Časové údaje nebyly pilotně ověřené a obsah musí před výukou zkontrolovat učitel.
+
+## Finální QA aktuálního obsahového commitu
+
+**Testovaný obsahový commit:** `441cc46c0548c1922d69d02471d4ff9b1e2a31f4`, načtený do nové samostatné Git kopie z větve PR #36 `codex/ai-ve-vyuce-etapa6b5-pedagogicke-opravy-5`. Kontrola GitHubu potvrdila stejný HEAD; základ `origin/master` je `88b487afb162f966d69ea2d5ecc8f7e8a2ff4382`. Pracovní strom byl před testem čistý. Původní kopie a starší testovací worktree nebyly měněny.
+
+**Obsah a projektové kontroly:**
+
+- `node scripts/generate-activities.js --check`: 44 aktivit, drift 0.
+- `node scripts/generate-prompts.js --check`: 204 promptů, drift 0.
+- `node scripts/validate-content.js`: 76 článků, 0 chyb, 0 varování.
+- `node scripts/check-site-footer.js`: 102 HTML souborů prošlo.
+- Syntaxe všech 23 JavaScriptových souborů prošla; `git diff --check origin/master...HEAD` prošel.
+- Registry invariants: 44 unikátních ID ve stejném pořadí, 14 aktivit v hlavním výběru, statusy a `duration` zachovány, všech 40 ostatních záznamů beze změny. Změněny přesně čtyři cílové záznamy (`math-story-problem-game`, `czech-spelling-word-exercises`, `english-grammar-exercises`, `chemistry-elements-compounds-quiz`) a pouze jejich `title`, `description`, `prompt`. Registr `data/prompts.json` zůstal shodný s masterem, 204/204.
+
+**Browser QA:** Playwright 1.65.0, Chromium API nad dostupným systémovým Google Chrome 156.0.8078.81 (Chromium), headless, oba skutečné viewports `390 × 844` a `1440 × 900`; `window.innerWidth` a `window.innerHeight` odpovídaly oběma rozměrům. V každém viewportu bylo ověřeno všech 44 karet v DOM a u všech čtyř cílových aktivit název a celý popis karty, otevření detailu a shoda názvu, popisu i celého promptu s registrem. Dialog zavřel Escape a fokus se vrátil na původní tlačítko. Kombinace filtrů `mat` + `zs1` + `gemini` ponechala jedinou očekávanou matematickou aktivitu. Horizontální přetečení nebylo.
+
+Skutečné čtení `navigator.clipboard.readText()` prošlo **8/8** (čtyři prompty ve dvou viewports). Schránka vracela odstavce s Windows konci řádků CRLF; po normalizaci CRLF na LF byl obsah přesně shodný s registrem, včetně diakritiky u českých promptů, odstavců i posledního znaku. Anglický prompt je celý anglicky a českou diakritiku neobsahuje ani ve zdroji.
+
+Regresní detail a prompt se v obou viewports ověřily také pro `math-statistics-analysis` (vlna 1), `math-step-by-step-guide` (vlna 2), `biology-virtual-lab-experiment` (vlna 3) a `physics-phenomenon-analogies-class` (vlna 4). Celkem: `pageerror` **0**, `console.error` **2**, selhání kritických skriptů **0**. Obě chyby konzole vznikly očekávaným zablokováním externích Google Fonts; žádný místní CSS ani JavaScript nebyl nahrazen testovací verzí.
+
+**Omezení prostředí:** Přímé připojení browseru k lokálnímu HTTP serveru bylo sandboxem odmítnuto. Playwright proto použil loopback origin s request routingem, který četl a vracel skutečné soubory HTML, CSS, JavaScript a obrázky přímo z tohoto checkoutu. Jen požadavky na Google Fonts byly zablokovány; typografie vzdálených fontů se tedy v tomto běhu neověřila. Veřejný Deploy Preview byl nezávisle zkontrolován přes Netlify: deploy `6aef5ba185796fcd59d2e9f1` má stav **Ready**, větev odpovídá PR #36 a `commit_ref` přesně odpovídá `441cc46c0548c1922d69d02471d4ff9b1e2a31f4`. Preview URL: https://deploy-preview-36--ai-ve-vyuce.netlify.app/.
+
+Tyto výsledky nahrazují pouze dosavadní závěrečné technické tvrzení o aktuálním stavu. Historický záznam testů `afce315…` výše zůstává zachován a vztahuje se pouze ke staršímu commitu. Časové údaje zůstávají neověřené v konkrétní třídě; materiál před použitím kontroluje učitel.
