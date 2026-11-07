@@ -59,7 +59,7 @@ Doporučuji variantu B, vnořené usage a timing, před plochými poli: odděluj
 
 Hodnota času může být null, jediná hodnota nebo interval min/max. Vždy zaznamenat jednotku, fázi, zdroj a stav. null není nula; unverified_estimate není pilot_observed. Pilotní údaj vyžaduje protokol, vzorek a metodu. Neurčenou fázi ponechat null, nikoli domýšlet. Kořenové duration zachovat beze změny a nevykreslit jako potvrzenou dobu výuky.
 
-## 5. Kompletní pedagogická rozhodovací matice (výchozí, před schválením; aktuální klasifikace je v oddílu 16)
+## 5. Historická pedagogická matice před schválením (aktuální klasifikace v oddílu 16)
 
 TP=teacher_preparation, TL=teacher_led, SD=student_direct, F=flexible, N=undecided. Přímý přístup je požadavek hlavního režimu; školní schválení není tím potvrzeno. ? znamená, že škola/nástroj/účet/věk/data nejsou zdrojem ověřeny.
 
@@ -131,7 +131,7 @@ TP=teacher_preparation, TL=teacher_led, SD=student_direct, F=flexible, N=undecid
 
 U přímého přístupu musí škola ověřit nástroj/režim, účet a věk, data, dohled a offline volbu. Nejde o splněné podmínky. Nejasné fallbacky nejsou domyšleny. Citlivé oblasti zahrnují osobní/třídní data, žákovské práce, autorské texty/mapy/prameny a historické simulace.
 
-## 7. Srovnání podobných aktivi
+## 7. Srovnání podobných aktivit
 
 | Skupina z auditu 6C/1 | Zachovaný rozdíl |
 |---|---|
