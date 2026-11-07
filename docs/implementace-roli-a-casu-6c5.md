@@ -40,7 +40,7 @@ Do všech 44 aktivit přibyly `usage` a `timing`. Historické `duration` zůstá
 
 Boolean `requiresSchoolApprovedEnvironment` se vztahuje výhradně na přímou interakci žáka s AI. `true` označuje požadavek pro přímý režim, nikoli potvrzení schválení. `false` znamená, že přímý žákovský přístup není součástí daného režimu; neznamená výjimku z obecných pravidel školy, ochrany dat, autorských práv ani dalších organizačních a právních povinností při učitelském použití AI.
 
-`offlineAlternative` je `null`, pokud schválená dokumentace nedokládá konkrétní alternativu. Pokud ji dokládá, obsahuje popis a evidenci v promptu nebo schváleném podkladu. Žádný veřejný stav netvrdí, že škola skutečně schválila určitý nástroj.
+`offlineAlternative` je `null`, pokud schválená dokumentace nedokládá konkrétní alternativu. Pokud ji dokládá, obsahuje popis a evidenci v promptu nebo schváleném podkladu. Rozhraní ji označuje **Alternativní postup**: může nahrazovat jen přímý přístup žáka nebo jednu fázi práce. Netvrdí, že celý postup včetně učitelské přípravy proběhne bez AI. Žádný veřejný stav netvrdí, že škola skutečně schválila určitý nástroj.
 
 Časový záznam nese číselnou hodnotu nebo interval `range.min`/`range.max`, jednotku `minutes`, volitelnou jednotku osoby či textu (`per`), stav a zdroj. Stav `unknown` používá `value: null` a `range: null`; nejde o nulu. Varianty jsou samostatné záznamy s označením režimu a fází. `pilot_observed` validátor odmítne bez protokolu, vzorku a metody měření.
 
@@ -126,7 +126,7 @@ Detail obsahuje přístupné sekce **Jak se používá AI** a **Časová nároč
 
 - Přímý žákovský přístup není považován za automaticky schválený; školní schválení je požadavek režimu, ne uložený stav školy.
 - Učitel v přímých či flexibilních rolích nadále stanovuje vzdělávací cíl a školní podmínky.
-- Offline alternativy jsou uvedeny jen tam, kde je dokládá prompt nebo schválený podklad; nejsou odvozeny z pouhé možnosti práci vytisknout.
+- Alternativní postupy jsou uvedeny jen tam, kde je dokládá prompt nebo schválený podklad; nejsou odvozeny z pouhé možnosti práci vytisknout a neznamenají, že předchozí učitelská příprava nevyužívá AI.
 - Popisky jsou skutečný text; sekce detailu mají nadpisy a definované seznamy. Stávající tlačítka detailu, kopírování a zavření zůstávají ovladatelná klávesnicí.
 - Nové štítky používají střídmé barvy a zalamování. Kontrola po implementaci zahrnuje malé, střední a široké zobrazení a ověření klávesnicového dialogu.
 
@@ -155,4 +155,4 @@ Plný axe audit nebylo možné spustit: `axe-core` ani `@axe-core/playwright` ne
 
 ## Známá omezení
 
-Role jsou pedagogicky schválené kategorie z matice 6C/3; nejsou technickým vynucením role v AI nástroji. Orientační časy nejsou změřené. U historických údajů bez fáze zůstává možné pouze neutrální zobrazení. Offline alternativa znamená doložený způsob práce bez přímého žákovského AI přístupu, nikoli automatickou náhradu veškeré přípravy učitele.
+Role jsou pedagogicky schválené kategorie z matice 6C/3; nejsou technickým vynucením role v AI nástroji. Orientační časy nejsou změřené. U historických údajů bez fáze zůstává možné pouze neutrální zobrazení. Alternativní postup označuje pouze doložený dílčí způsob práce bez přímého žákovského AI přístupu, nikoli nutně celý scénář bez AI ani automatickou náhradu přípravy učitele.

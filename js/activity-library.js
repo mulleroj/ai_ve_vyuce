@@ -71,7 +71,7 @@
       ['Role AI', usage.roleLabel], ['Použití', usage.operatorDescription], ['Učitel', usage.teacherRole],
       ['Žák', usage.studentRole], ['Přímý přístup žáka', usage.accessText]
     ];
-    if (usage.offlineAlternative) usageRows.push(['Varianta bez AI', usage.offlineAlternative]);
+    if (usage.offlineAlternative) usageRows.push(['Alternativní postup', usage.offlineAlternative]);
     renderDefinitionList(document.getElementById('activityDetailUsage'), usageRows);
     const timing = JSON.parse(card.dataset.timingInfo);
     renderDefinitionList(document.getElementById('activityDetailTiming'), timing.map(item => [item.label, item.text]));
