@@ -28,8 +28,8 @@
 ### R02 — `chemistry-equation-guide`
 
 - **Původní problém:** „rovnici dodá žák nebo učitel“ určovalo zdroj vstupu, nikoli technického operátora AI.
-- **Změna:** režim A výslovně znamená, že AI ovládá učitel a žákovské pokusy i nápovědy zprostředkovává. Režim B dovoluje přímou komunikaci jen po potvrzení školou schváleného prostředí a dohledu. Není-li režim zvolen, prompt se nejprve zeptá a nezačne řešit rovnici.
-- **Zachováno:** nejprve samostatné počítání atomů a první krok; vždy jedna nápověda; koeficienty versus indexy; počty atomů po každém návrhu; chemická smysluplnost; učitelské ověření; bez vymýšlení reakcí/produktů a nebezpečných postupů; přenosová úloha schválená učitelem.
+- **Změna:** režim A výslovně znamená, že AI ovládá učitel a žákovské pokusy i nápovědy zprostředkovává. Režim B dovoluje přímou komunikaci jen po potvrzení školou schváleného prostředí a dohledu. Není-li režim zvolen, prompt se nejprve zeptá a nezačne řešit rovnici. Závěrem žák vlastními slovy vysvětluje rozdíl koeficientu a indexu, aniž by předem dostal hotové vysvětlení; v režimu A otázku zprostředkuje učitel a v režimu B ji položí AI přímo žákovi.
+- **Zachováno:** nejprve samostatné počítání atomů a první krok; vždy jedna nápověda; koeficienty versus indexy; počty atomů po každém návrhu; výslovná závěrečná kontrola porozumění; chemická smysluplnost; učitelské ověření; bez vymýšlení reakcí/produktů a nebezpečných postupů; přenosová úloha schválená učitelem.
 - **Bezpečnost:** operátor není odvozen od toho, kdo rovnici dodal. Přímý režim je podmíněný potvrzením schválení; samotný prompt schválení nedokládá.
 - **Riziko/omezení:** AI nedokáže nezávisle ověřit, zda školní schválení skutečně platí; tuto podmínku musí zajistit uživatel a škola.
 
@@ -60,7 +60,7 @@
 ### R06 — `history-source-analysis`
 
 - **Původní problém:** skupinová práce nevymezovala technickou obsluhu AI a pořadí předávání podnětů.
-- **Změna:** učitel vybírá pramen, ověřuje oprávnění, ovládá AI a předává její otázky/nápovědy. Žáci analyzují ve skupině. Prompt vynucuje pořadí: dvě tvrzení a otázka nejprve bez AI; učitel předá podněty; AI položí jednu otázku; skupina odpovídá a ověřuje; učitel kontroluje správnost.
+- **Změna:** učitel vybírá pramen, ověřuje oprávnění, ovládá AI a předává její otázky/nápovědy. Žáci analyzují ve skupině. Prompt vynucuje pořadí: dvě tvrzení a otázka nejprve bez AI; učitel předá podněty; AI nabídne jednu otázku k autorovi a publiku, účelu, okolnostem vzniku nebo chybějícím informacím či perspektivám; učitel ji zprostředkuje; skupina odpovídá a ověřuje; učitel kontroluje správnost. Otázka nesmí předpokládat autora či kontext bez opory v dodaném materiálu.
 - **Zachováno:** přímý doklad versus hypotéza versus neznámé; nevymýšlet citace, autora, dataci ani původ; nápověda místo hotového rozboru; bez známkování.
 - **Bezpečnost:** vyžádat pramen a potvrzení oprávnění; pokud chybí, analýzu nevytvářet.
 - **Riziko/omezení:** učitel musí předávat podněty skupiny bez identifikujících údajů.
