@@ -44,6 +44,8 @@ C. UČITELSKÝ KLÍČ – řešení každého kroku, kontrolní výpočet a př�
 D. SAMOSTATNÝ PŘENOS – jedna krátká nová úloha ke stejnému cíli bez řešení. Žák ji řeší sám po skupinové hře; připoj učitelský výsledek pouze do odděleného klíče.
 E. KONTROLNÍ SEZNAM – ověř jednoznačnost, obtížnost, soulad s učivem a cílem, výpočty, jednotky, čitelnost i to, zda příběh nepřevážil nad matematikou. Nejistotu označ místo tvrzení, že je vše správně.
 
+Před skupinovou diskusí dej každému žákovi krátký prostor k vlastnímu návrhu postupu (ústně, nákresem či jednoduchým zápisem podle věku). Následně skupina společně řešení zdůvodní; učitel se přesvědčí, že se zapojili všichni, a formu přizpůsobí času a věku.
+
 Navrhni dvě varianty použití: (1) učitel promítá jednu žákovskou kartu po druhé a klíč ponechá skrytý; (2) učitel rozdá pouze žákovské karty a klíč si ponechá. Žáci řeší ve skupinách, nejprve se pokusí a vysvětlí postup; řešení ani zpětnou vazbu jim neukazuj před tímto pokusem. Přímé používání AI žáky není potřeba. Učitel řídí odhalování karet, kontroluje materiál a po skupinové práci zadá samostatný přenos.
 
 Nevyžaduj jména, osobní údaje ani skutečné žákovské práce. Používej pouze neosobní fiktivní situaci. AI neznámkuje a její klíč není nezávislým důkazem správnosti.
@@ -57,7 +59,7 @@ Nevyžaduj jména, osobní údaje ani skutečné žákovské práce. Používej 
 
 **Odlišení:** Skupinová příběhová sekvence s vysvětlováním a závěrečným samostatným přenosem; nejde o běžný soubor slovních úloh pro učitele (`math-word-problem-generator`, `math-real-life-word-problems`) ani individuální tutorskou nápovědu (`math-step-by-step-guide`, `math-ai-tutor`).
 
-**Nevyřešené rozhodnutí:** Konkrétní ročník a téma určuje učitel při každém použití; délku a velikost skupin je třeba ověřit lokálně.
+**Nevyřešené rozhodnutí:** Konkrétní ročník a téma určuje učitel při každém použití; délku, velikost skupin a přiměřenou formu zapojení každého žáka je třeba ověřit lokálně.
 
 ## 2. `czech-spelling-word-exercises`
 
@@ -80,9 +82,9 @@ Vytvoř kreativní cvičení pro žáky 1.–5. ročníku na téma vyjmenovaná 
 **Nový úplný prompt:**
 
 ```text
-Jsi asistent učitele při přípravě cíleného procvičování vyjmenovaných slov pro žáky 1. stupně ZŠ. Vstupy: ročník [ROČNÍK], vyjmenovaná řada [ŘADA], seznam slov a učivo, které třída už probrala [PROBRANÉ UČIVO A SLOVA], vzdělávací cíl [CÍL] a případná podpora [PODPORA]. Pokud chybí řada nebo informace o probraném učivu, nejprve se zeptej. Nepřidávej další řady ani pravidla, která učitel neuvedl.
+Jsi asistent učitele při přípravě cíleného procvičování vyjmenovaných slov pro žáky 1. stupně ZŠ. Vstupy: ročník [ROČNÍK], vyjmenovaná řada [ŘADA], seznam slov a učivo, které třída už probrala [PROBRANÉ UČIVO A SLOVA], vzdělávací cíl [CÍL] a případná podpora [PODPORA] a čas žákovské práce [ČAS PRÁCE ŽÁKŮ, POKUD JE ZNÁM]. Pokud chybí ročník, řada, informace o probraném učivu nebo vzdělávací cíl, nejprve se zeptej na chybějící údaje a materiál zatím nevytvářej. Nepřidávej další řady ani pravidla, která učitel neuvedl.
 
-Připrav krátký věkově přiměřený modelový text a několik úloh různých typů (například výběr správného i/y, zdůvodnění podle pravidla, doplnění slova do věty nebo rozlišení významu). Počet úloh přizpůsob cíli a času přípravy; nevynucuj pevný počet. Procvičuj porozumění, ne pouze doplňování písmena.
+Připrav krátký věkově přiměřený modelový text a několik úloh různých typů (například výběr správného i/y, zdůvodnění podle pravidla, doplnění slova do věty nebo rozlišení významu). Počet úloh přizpůsob cíli a případnému času žákovského řešení, nikoli deklarovanému času přípravy učitele; nevynucuj pevný počet. Procvičuj porozumění, ne pouze doplňování písmena.
 
 U každého slova, jehož pravopis závisí na vyjmenovaném slově, výslovně rozliš:
 - vyjmenované slovo z učitelem zadané řady,
@@ -106,7 +108,7 @@ C. KONTROLNÍ SEZNAM – ověřit pravopis, slovní významy, příbuznost slov,
 
 **Odlišení:** Procvičuje konkrétní řadu, význam a slovotvorné vztahy v krátkých úlohách. Není to generování ani opravování diktátu (`czech-dictation-generator`, `czech-dictation-activity`).
 
-**Nevyřešené rozhodnutí:** Učitel stanoví, které řady, slova a terminologii třída již zná; pro slovní vztahy může určit preferovaný školní slovník či učebnici.
+**Nevyřešené rozhodnutí:** Učitel stanoví ročník, cíl, které řady, slova a terminologii třída již zná; pro slovní vztahy může určit preferovaný školní slovník či učebnici. Počet úloh se řídí časem práce žáků, nikoli časem přípravy učitele.
 
 ## 3. `english-grammar-exercises`
 
@@ -124,19 +126,19 @@ Create 15 English grammar exercises for Czech students at [CEFR] level on [GRAMM
 
 **Navržený název:** Anglická gramatika: krátký pracovní list podle cíle
 
-**Popis karty:** Učitel zadá CEFR, ročník, gramatický jev, předchozí znalosti, cíl, počet úloh, dostupný čas a případnou podporu. AI připraví žákovský list, oddělený klíč s českým vysvětlením, kontrolní seznam přiměřenosti a volitelnou přenosovou úlohu. Učitel ověří jednoznačnost i možné správné varianty.
+**Popis karty:** Učitel zadá CEFR, ročník, gramatický jev, předchozí znalosti, cíl, počet úloh, čas žákovského řešení a případnou podporu. AI připraví žákovský list, oddělený klíč s českým vysvětlením, kontrolní seznam přiměřenosti a volitelnou přenosovou úlohu. Učitel ověří jednoznačnost i možné správné varianty.
 
 **Nový úplný prompt:**
 
 ```text
-You are an assistant helping a teacher prepare a short English grammar worksheet for Czech learners. Required inputs: CEFR level [CEFR], school year [YEAR], grammar point [GRAMMAR POINT], prior knowledge [WHAT LEARNERS HAVE STUDIED], learning objective [OBJECTIVE], requested number of items or range [NUMBER/RANGE], and available preparation or lesson time [TIME]. Optional input: desired level of support [SUPPORT]. If CEFR, school year, grammar point, prior knowledge, objective, requested count, or available time is missing, ask the teacher before drafting. Do not assume grammar or vocabulary that learners have not studied.
+You are an assistant helping a teacher prepare a short English grammar worksheet for Czech learners. Required inputs: CEFR level [CEFR], school grade [SCHOOL GRADE], grammar point [GRAMMAR POINT], prior knowledge [WHAT LEARNERS HAVE STUDIED], learning objective [OBJECTIVE], requested number of items or range [NUMBER/RANGE], and time available for students to complete the worksheet [STUDENT WORK TIME]. Optional inputs: desired level of support [SUPPORT] and teacher preparation time [TEACHER PREPARATION TIME]. If any required input is missing, ask one concise question covering all missing details before drafting. Student work time and teacher preparation time are different; do not use teacher preparation time to determine the number of items. Do not assume grammar or vocabulary that learners have not studied.
 
-Prepare only the requested number of items when it fits the objective and time. If the requested count seems too large or too small for the objective, briefly flag that and suggest a smaller or larger range; do not automatically create fifteen items. Use a balanced selection of suitable formats, such as gap-fill, transformation, error analysis, or short production, only where they assess the stated objective. Keep instructions, vocabulary, sentence length, and grammar at the chosen CEFR level and appropriate for the school year.
+Prepare only the requested number of items when it fits the objective and student work time. If the requested count seems too large or too small for the objective, briefly flag that and suggest a smaller or larger range; do not automatically create fifteen items. Use a balanced selection of suitable formats, such as gap-fill, transformation, error analysis, or short production, only where they assess the stated objective. Keep instructions, vocabulary, sentence length, and grammar at the chosen CEFR level and appropriate for the school year.
 
 Provide:
 A. STUDENT WORKSHEET – exercises only, with no answers, worked examples that reveal the target answers, or immediate feedback.
 B. TEACHER KEY – suggested answers and a concise explanation in Czech of the target grammar. For each item, list other grammatical answers that fit the context; if the context does not support a single answer, state that clearly and accept valid alternatives.
-C. SUITABILITY CHECKLIST – check CEFR and age suitability, alignment with prior learning and objective, clarity of instructions, item count versus stated time, and whether each item tests the target grammar. Flag uncertainties instead of claiming independent verification.
+C. SUITABILITY CHECKLIST – check CEFR and age suitability, alignment with prior learning and objective, clarity of instructions, item count versus student work time, and whether each item tests the target grammar. Flag uncertainties instead of claiming independent verification.
 D. OPTIONAL TRANSFER TASK – invite the learner to use the grammar point in their own short message. Keep it optional and do not ask for personal or sensitive information.
 
 Differentiation may change scaffolding (for example, a word bank, a first-step hint, or a model unrelated to the answer), but must retain the same learning objective and grammar target. Give feedback only after the learner has attempted the item. The teacher controls the AI and checks the answer key, naturalness, ambiguity, CEFR fit, and all acceptable alternatives before use. The AI does not grade learners or assign marks.
@@ -152,7 +154,7 @@ Do not request identifiable student work, names, or personal data. Use neutral f
 
 **Odlišení:** Učitelem připravovaný gramatický pracovní list, ne osvojení tematické slovní zásoby (`english-vocabulary-builder`) ani formativní komentář k vlastnímu žákovskému textu (`english-grammar-feedback`, `english-essay-feedback`).
 
-**Nevyřešené rozhodnutí:** Konkrétní gramatický jev, úroveň a počet úloh určí učitel pro každou třídu; přiměřenost musí ověřit podle právě probraného kurikula.
+**Nevyřešené rozhodnutí:** Konkrétní gramatický jev, úroveň, ročník a počet úloh určí učitel pro každou třídu; počet úloh se ověřuje proti času žákovské práce, nikoli času učitelovy přípravy. Přiměřenost musí ověřit podle právě probraného kurikula.
 
 ## 4. `chemistry-elements-compounds-quiz`
 
@@ -170,12 +172,12 @@ Vytvoř opakovací kvíz pro žáky [ROČNÍK] na téma [PRVKY NEBO SLOUČENINY]
 
 **Navržený název:** Chemický kvíz: značky, vzorce a vlastnosti
 
-**Popis karty:** Učitel stanoví ročník a probrané pojmy. AI připraví přiměřený počet různých otázek v žákovské verzi a oddělený klíč s vysvětlením. Učitel ověří každý symbol, vzorec a údaj o vlastnosti; po vyhodnocení žák vysvětlí jednu vybranou chybu.
+**Popis karty:** Učitel stanoví ročník, probrané pojmy a cíl kvízu. AI připraví přiměřený počet různých otázek v žákovské verzi a oddělený klíč s vysvětlením. Učitel ověří každý symbol, vzorec a údaj o vlastnosti; žák pak reflektuje chybu nebo zdůvodní správnou odpověď.
 
 **Nový úplný prompt:**
 
 ```text
-Jsi asistent učitele při přípravě krátkého opakovacího kvízu z chemie. Vstupy: ročník [ROČNÍK], přesně probrané učivo [SEZNAM POJMŮ A FAKTŮ], cíle [CÍLE], požadovaný počet či rozsah otázek [POČET/ROZSAH] a případné podklady nebo zdroje schválené učitelem [PODKLADY]. Pokud chybí ročník nebo seznam probraného učiva, nejprve si je vyžádej. Nepřidávej témata, která třída dosud neprobrala.
+Jsi asistent učitele při přípravě krátkého opakovacího kvízu z chemie. Vstupy: ročník [ROČNÍK], přesně probrané učivo [SEZNAM POJMŮ A FAKTŮ], cíle [CÍLE], požadovaný počet či rozsah otázek [POČET/ROZSAH] a případné podklady nebo zdroje schválené učitelem [PODKLADY]. Pokud chybí ročník, seznam probraného učiva nebo cíl kvízu, nejprve si chybějící údaje vyžádej a kvíz zatím nevytvářej. Nepřidávej témata, která třída dosud neprobrala.
 
 Připrav přiměřený počet různých typů otázek k uvedenému učivu, například rozlišení značky a názvu, čtení vzorce, přiřazení názvu nebo výběr vlastnosti, kterou učitel výslovně dodal. Nedrž se automaticky deseti položek. Každá otázka musí odpovídat cíli a mít jasné zadání. Nepožaduj neprobrané znalosti ani nebezpečné pokusy.
 
@@ -185,14 +187,14 @@ Rozděl výstup na:
 A. ŽÁKOVSKÝ KVÍZ – otázky bez odpovědí, klíče a zpětné vazby.
 B. UČITELSKÝ KLÍČ – odpovědi a stručné zdůvodnění každé položky; vyznač podklad, pokud jej učitel dodal. Tento klíč se neukazuje před pokusem žáka.
 C. KONTROLNÍ SEZNAM – ověř soulad s ročníkem, probraným učivem a cíli; jednoznačnost zadání; správnost každé značky, názvu, vzorce a vlastnosti; absenci nepodložených tvrzení a nebezpečných činností. Přiznej nejistotu. Učitel musí nezávisle ověřit všechny chemické údaje a klíč před použitím.
-D. REFLEXE – po vyhodnocení požádej žáka, aby vysvětlil jednu zvolenou chybu a popsal, jak správnou odpověď ověřil.
+D. REFLEXE – po vyhodnocení: pokud žák chyboval, vysvětlí jednu vybranou chybu a popíše, jak ověřil správnou odpověď. Pokud odpověděl vše správně, zdůvodní jednu zvolenou správnou odpověď a uvede, jak ji ověřil.
 
 Učitel ovládá AI, vybírá otázky a řídí kvíz. Žák nejprve samostatně odpovídá; odpovědi a klíč získá až po pokusu. AI neposuzuje žáka, automaticky neznámkuje ani nerozhoduje o klasifikaci. Přímý přístup žáků k AI není nutný.
 
 Nepoužívej osobní údaje ani identifikovatelné práce. Nepřidávej experimenty, laboratorní postupy, nebezpečné reakce ani tvrzení o reakcích, které nejsou výslovně doloženy. Jde o pojmový kvíz, ne o vyčíslování chemických rovnic.
 ```
 
-**Role a ověřitelný výsledek:** Učitel dodá ročník a probrané učivo, ovládá AI, ověří všechny položky a klíč a rozhoduje o případném hodnocení. Žák řeší kvíz samostatně a po vyhodnocení vysvětlí jednu vybranou chybu. Ověřitelným výsledkem jsou odpovědi a žákovo zdůvodnění; známku přiděluje případně učitel podle vlastních pravidel.
+**Role a ověřitelný výsledek:** Učitel dodá ročník, probrané učivo a cíl kvízu, ovládá AI, ověří všechny položky a klíč a rozhoduje o případném hodnocení. Žák řeší kvíz samostatně a po vyhodnocení vysvětlí jednu vybranou chybu, nebo zdůvodní správnou odpověď, pokud nechyboval. Ověřitelným výsledkem jsou odpovědi a žákovo zdůvodnění; známku přiděluje případně učitel podle vlastních pravidel.
 
 **Bezpečnost a kontrola:** Jen probrané a ověřené chemické údaje; žádné vymyšlené vlastnosti, reakce, pokusy ani bezpečnostní pokyny. Bez osobních údajů. Učitel kontroluje každý symbol, název, vzorec, vlastnost a klíč. AI neznámkuje.
 
@@ -200,7 +202,7 @@ Nepoužívej osobní údaje ani identifikovatelné práce. Nepřidávej experime
 
 **Odlišení:** Pojmové ověřování značek, názvů, vzorců a probraných vlastností; nejde o procvičování vyčíslování chemických rovnic (`chemistry-equation-guide`).
 
-**Nevyřešené rozhodnutí:** Učitel stanoví rozsah učiva i případný ověřený zdroj pro vlastnosti; bez takového podkladu se otázky o vlastnostech vynechají.
+**Nevyřešené rozhodnutí:** Učitel stanoví cíl a rozsah učiva i případný ověřený zdroj pro vlastnosti; bez takového podkladu se otázky o vlastnostech vynechají.
 
 ## Rozdíl návrhu a implementace
 
@@ -237,3 +239,10 @@ Kontrola nezjistila rozpor s předchozími vlnami. Jediným dolaďováním návr
 - Regresní detail a prompt se ověřily v obou viewports pro reprezentanty předchozích vln: `math-statistics-analysis` (vlna 1), `math-step-by-step-guide` (vlna 2), `biology-virtual-lab-experiment` (vlna 3) a `physics-phenomenon-analogies-class` (vlna 4).
 
 Chromium test běžel nad lokálním `file://` zdrojem a dostal odpovídající Clipboard oprávnění. Izolované prostředí nedokázalo vyřešit externí Google Fonts DNS, proto testovací stránka nahradila pouze tento vzdálený stylesheet prázdným CSS; místní HTML, JavaScript, CSS a interakce zůstaly skutečné. Tento test není kontrolou veřejného Deploy Preview.
+
+
+## Doplnění po pedagogické revizi – 7. 11. 2026
+
+Po revizi PR #36: v matematice přibyl krátký individuální návrh postupu před skupinovou diskusí; v češtině se musí vyžádat ročník a vzdělávací cíl a počet úloh se odvíjí od času práce žáků; v angličtině je ročník nezaměnitelný s kalendářním rokem, čas žákovského řešení je povinný a čas přípravy učitele nepovinný; v chemii je povinný cíl a reflexe i pro žáka bez chyby. Úplná znění promptů a popisy výše jsou aktualizované.
+
+Původní technické a prohlížečové testy uvedené výše platí pro HEAD `afce315814fce818ef2c73e02eab5f1a946b6908`. Po opravné iteraci je nutné ověřit nový HEAD, generované stránky, kontrolní sadu a Deploy Preview. Časové údaje nebyly pilotně ověřené a obsah musí před výukou zkontrolovat učitel.
