@@ -66,7 +66,32 @@ function buildNavigation(currentId, currentToolHref) {
 
 function buildSubjectNavigation(currentId) {
   if (!SUBJECTS.some(subject => subject.id === currentId)) throw new Error('Unknown subject: ' + currentId);
+  if (currentId === 'matematika' || currentId === 'anglictina') return buildPilotNavigation();
   return buildNavigation(currentId);
+}
+
+function buildPilotNavigation() {
+  return [
+    '    <header class="site-header">',
+    '      <nav class="site-nav" aria-label="Hlavní navigace">',
+    '        <a class="brand" href="index.html" aria-label="AI ve výuce – domů">',
+    '          <img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="">',
+    '          <span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span>',
+    '        </a>',
+    '        <button class="menu-toggle" type="button" aria-label="Otevřít navigaci" aria-expanded="false" aria-controls="primary-menu"><span></span><span></span><span aria-hidden="true"></span></button>',
+    '        <div class="nav-content" id="primary-menu">',
+    '          <div class="site-nav-pilot" data-site-navigation>',
+    '            <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a>',
+    '            <a href="ai-navody.html">Připravit výuku</a>',
+    '            <a href="aktivity.html">Učit s AI</a>',
+    '            <a href="asistenti.html">Nástroje a asistenti</a>',
+    '            <a href="vibe-coding.html">Tvořit s AI</a>',
+    '            <a href="ai.html">Číst a objevovat</a>',
+    '          </div>',
+    '        </div>',
+    '      </nav>',
+    '    </header>'
+  ].join('\n');
 }
 
 function buildActivityNavigation() {
@@ -93,4 +118,4 @@ function buildActivityNavigation() {
   ].join('\n');
 }
 
-module.exports = { SUBJECTS, TOOLS, buildSubjectNavigation, buildActivityNavigation };
+module.exports = { SUBJECTS, TOOLS, buildSubjectNavigation, buildActivityNavigation, buildPilotNavigation };

@@ -23,43 +23,28 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261108-7f" />
 </head>
 
-<body class="subject-page subject-page--english">
+<body class="subject-page subject-page--english site-navigation-enabled">
     <header class="site-header">
-      <div class="site-header-inner">
-        <a class="brand" href="index.html" aria-label="AI ve Výuce – úvodní stránka">
-          <img class="brand-logo" src="images/ai-assistant-book-logo.png" width="44" height="42" alt="">
-          <span>AI ve Výuce</span>
+      <nav class="site-nav" aria-label="Hlavní navigace">
+        <a class="brand" href="index.html" aria-label="AI ve výuce – domů">
+          <img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="">
+          <span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span>
         </a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Navigace</button>
-        <nav id="primary-nav" class="primary-nav" aria-label="Hlavní navigace">
-          <a href="index.html">Úvod</a>
-          <a href="ai.html">AI obsah</a>
-          <a href="ai-navody.html">Praktické návody</a>
-          <a href="ai-novinky.html">Novinky</a>
-          <details class="nav-group subject-nav-group">
-            <summary>Předměty</summary>
-            <div class="nav-panel">
-            <a href="matematika.html">Matematika</a>
-            <a href="cestina.html">Čeština</a>
-            <a href="anglictina.html" aria-current="page">Angličtina</a>
-            <a href="prirodoveda.html">Přírodní vědy</a>
-            <a href="dejepis.html">Dějepis</a>
-            </div>
-          </details>
-          <details class="nav-group">
-            <summary>Nástroje a aktivity</summary>
-            <div class="nav-panel">
-            <a href="prompty.html">Knihovna promptů</a>
-            <a href="asistenti.html">AI asistenti</a>
-            <a href="aktivity.html">Výukové aktivity</a>
-            <a href="vibe-coding.html">Vibe coding</a>
-            <a href="qr-kod.html">Generátor QR kódů</a>
-            </div>
-          </details>
-        </nav>
-      </div>
+        <button class="menu-toggle" type="button" aria-label="Otevřít navigaci" aria-expanded="false" aria-controls="primary-menu"><span></span><span></span><span aria-hidden="true"></span></button>
+        <div class="nav-content" id="primary-menu">
+          <div class="site-nav-pilot" data-site-navigation>
+            <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a>
+            <a href="ai-navody.html">Připravit výuku</a>
+            <a href="aktivity.html">Učit s AI</a>
+            <a href="asistenti.html">Nástroje a asistenti</a>
+            <a href="vibe-coding.html">Tvořit s AI</a>
+            <a href="ai.html">Číst a objevovat</a>
+          </div>
+        </div>
+      </nav>
     </header>
     <section class="page-hero" style="background:linear-gradient(135deg,#0a0f1e 0%,#001a10 100%)">
         <div class="page-hero-glow" style="background:radial-gradient(ellipse,rgba(0,212,168,0.12) 0%,transparent 70%)">
@@ -402,6 +387,8 @@
     <script src="js/main.js"></script>
     <script src="js/subject-pages.js?v=20261103-stage5a"></script>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261108-7f"></script>
+    <script src="js/site-navigation.js?v=20261108-7f"></script>
 </body>
 
 </html>

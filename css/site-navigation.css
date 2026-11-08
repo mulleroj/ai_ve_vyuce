@@ -1,4 +1,5 @@
 /* Isolated styles for the 7E pilot navigation only. */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
 .site-nav-pilot { display: flex; align-items: center; gap: .35rem; }
 .site-nav-pilot .site-nav-area { position: relative; }
 .site-nav-pilot .site-nav-area > summary { cursor: pointer; list-style: none; }
@@ -29,4 +30,57 @@
   .mobile-menu.site-nav-pilot { display: none !important; }
   .site-nav-pilot .site-nav-panel { display: none; }
   .site-nav-pilot .site-nav-area[open] > .site-nav-panel { display: grid; }
+}
+
+/* Shared pilot header: matches the approved homepage header without loading
+   homepage content styles onto these otherwise unchanged page templates. */
+.site-navigation-enabled .site-header { position: relative; z-index: 40; background: #fff; border-bottom: 1px solid #eee; }
+.site-navigation-enabled .site-nav { position: relative; min-height: 76px; width: min(1440px, 100% - 48px); margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+.site-navigation-enabled .site-nav > .brand { display: flex; align-items: center; gap: 10px; flex: none; color: #102d2b; text-decoration: none; white-space: nowrap; font-family: 'DM Sans', Arial, sans-serif; }
+.site-navigation-enabled .brand-symbol { width: 52px; height: 52px; flex: none; object-fit: contain; }
+.site-navigation-enabled .brand-copy { display: grid; line-height: 1.05; }
+.site-navigation-enabled .brand-copy strong { color: #102d2b; font-size: 27px; letter-spacing: -1.2px; font-weight: 800; }
+.site-navigation-enabled .brand-copy small { margin-top: 5px; color: #102d2b; font-size: 9px; letter-spacing: .8px; font-weight: 700; }
+.site-navigation-enabled .nav-content { display: flex; align-items: center; justify-content: flex-end; flex: 1; min-width: 0; }
+.site-navigation-enabled .site-nav-pilot { justify-content: flex-end; gap: clamp(10px, 1.4vw, 20px); min-width: 0; }
+.site-navigation-enabled .site-nav-pilot .site-nav-area > summary { color: #101820; font-family: 'DM Sans', Arial, sans-serif; font-size: 14px; text-decoration: none; white-space: nowrap; }
+.site-navigation-enabled .site-nav-pilot .site-nav-area > summary:hover { color: #07584f; }
+.site-navigation-enabled .site-nav-pilot .site-nav-area[data-active="true"] > summary { color: #07584f; font-weight: 700; }
+.site-navigation-enabled .site-nav-pilot > a { color: #101820; font-family: 'DM Sans', Arial, sans-serif; font-size: 14px; text-decoration: none; white-space: nowrap; }
+.site-navigation-enabled .site-nav-pilot .site-nav-panel { top: calc(100% + 14px); min-width: 200px; border-color: #e5e7e1; border-radius: 12px; box-shadow: 0 12px 28px #143b2a1a; font-family: 'DM Sans', Arial, sans-serif; }
+.site-navigation-enabled .site-nav-pilot .site-nav-panel a:hover,
+.site-navigation-enabled .site-nav-pilot .site-nav-panel a:focus-visible { background: #edf5f2; }
+.site-navigation-enabled .menu-toggle { display: none; border: 0; background: transparent; color: #102d2b; }
+.site-navigation-enabled .menu-toggle > span { width: 21px; height: 2px; background: #124b43; border-radius: 2px; }
+@media (max-width: 1100px) {
+  .site-navigation-enabled .site-nav { width: calc(100% - 32px); gap: 14px; }
+  .site-navigation-enabled .brand-copy strong { font-size: 23px; }
+  .site-navigation-enabled .brand-copy small { font-size: 8px; }
+  .site-navigation-enabled .site-nav-pilot { gap: 10px; }
+  .site-navigation-enabled .site-nav-pilot .site-nav-area > summary { font-size: 13px; }
+}
+@media (max-width: 800px) {
+  .site-navigation-enabled .site-nav { min-height: 68px; width: calc(100% - 32px); }
+  .site-navigation-enabled .brand-symbol { width: 49px; height: 49px; }
+  .site-navigation-enabled .brand-copy strong { font-size: 22px; }
+  .site-navigation-enabled .menu-toggle { display: flex; width: 43px; height: 43px; flex: none; flex-direction: column; justify-content: center; gap: 5px; padding: 10px; border: 1px solid #d9e4df; border-radius: 12px; cursor: pointer; }
+  .site-navigation-enabled .nav-content { position: absolute; z-index: 41; top: 68px; left: 0; right: 0; display: none; align-items: stretch; flex-direction: column; padding: 14px 22px 18px; background: #fff; border-bottom: 1px solid #e4e9e5; box-shadow: 0 12px 18px #132b1b13; }
+  .site-navigation-enabled .nav-content.is-open { display: flex; }
+  .site-navigation-enabled .nav-content .site-nav-pilot { align-items: stretch; flex-direction: column; gap: 0; }
+  .site-navigation-enabled .site-nav-pilot .site-nav-area { width: 100%; }
+  .site-navigation-enabled .site-nav-pilot .site-nav-area > summary { padding: .65rem; font-size: 15px; }
+  .site-navigation-enabled .site-nav-pilot > a { padding: .65rem; font-size: 15px; white-space: normal; }
+  .site-navigation-enabled .site-nav-pilot .site-nav-panel { position: static; min-width: 0; margin: 0 0 .45rem; border-radius: .45rem; box-shadow: none; }
+  html:not(.js) .site-navigation-enabled .menu-toggle { display: none; }
+  html:not(.js) .site-navigation-enabled .nav-content { position: static; display: flex; width: 100%; padding: 10px 16px; box-shadow: none; }
+}
+/* Legacy prompt pages reserved space for a fixed header. The shared header is
+   now in normal flow, so subtract its height to keep the original hero position. */
+.site-navigation-enabled .page-hero { padding-top: calc(var(--nav-height) + 60px - 76px); }
+@media (max-width: 540px) {
+  .site-navigation-enabled .site-nav { width: calc(100% - 28px); gap: 8px; }
+  .site-navigation-enabled .site-nav > .brand { gap: 6px; }
+  .site-navigation-enabled .brand-symbol { width: 44px; height: 44px; }
+  .site-navigation-enabled .brand-copy strong { font-size: 20px; letter-spacing: -.8px; }
+  .site-navigation-enabled .brand-copy small { font-size: 7px; letter-spacing: .3px; }
 }
