@@ -36,6 +36,24 @@ if (mobileToggle && mobileMenu) {
             mobileMenu.querySelectorAll('details').forEach(other => { if (other !== details) other.open = false; });
         });
     });
+
+    const desktopNavigation = window.matchMedia('(min-width: 801px)');
+    const closeMobileMenu = () => {
+        mobileMenu.classList.remove('open', 'is-open');
+        mobileMenu.querySelectorAll('details[open]').forEach(details => { details.open = false; });
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        mobileToggle.setAttribute('aria-label', 'Otevřít navigaci');
+        document.body.style.overflow = '';
+    };
+    if (desktopNavigation.addEventListener) {
+        desktopNavigation.addEventListener('change', event => {
+            if (event.matches) closeMobileMenu();
+        });
+    } else if (desktopNavigation.addListener) {
+        desktopNavigation.addListener(event => {
+            if (event.matches) closeMobileMenu();
+        });
+    }
 }
 
 /* ── Particle canvas (hero background) ── */

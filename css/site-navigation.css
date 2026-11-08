@@ -22,4 +22,8 @@
   html.js .mobile-menu.site-nav-pilot { display: none !important; }
   html.js .mobile-menu.site-nav-pilot.open { display: flex !important; }
 }
-@media (min-width: 801px) { .site-nav-pilot .site-nav-panel { display: none; } .site-nav-pilot .site-nav-area[open] > .site-nav-panel { display: grid; } }
+@media (min-width: 801px) {
+  .mobile-menu.site-nav-pilot { display: none !important; }
+  .site-nav-pilot .site-nav-panel { display: none; }
+  .site-nav-pilot .site-nav-area[open] > .site-nav-panel { display: grid; }
+}
