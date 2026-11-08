@@ -1,7 +1,7 @@
 /* Shared pilot navigation contract for the six approved areas. */
 window.siteNavigationAreas = [
   { id: 'start', label: 'Začít s AI', href: 'ai-navod-chatgpt-zacatek-bezpecne.html', links: [
-    ['Bezpečný začátek', 'ai-navod-chatgpt-zacatek-bezpecne.html'], ['Praktické návody', 'ai-navody.html']
+    ['Bezpečný začátek', 'ai-navod-chatgpt-zacatek-bezpecne.html']
   ] },
   { id: 'prepare', label: 'Připravit výuku', href: 'ai-navody.html', links: [
     ['Návody pro učitele', 'ai-navody.html'], ['Knihovna promptů', 'prompty.html'], ['Workflow pro učitele', 'ai-workflow.html']
