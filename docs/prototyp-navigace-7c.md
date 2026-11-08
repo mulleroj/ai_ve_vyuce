@@ -75,3 +75,51 @@ Nasazovat společné menu a rozcestníky po tematických skupinách. Každou sku
 ## Stav pro revizi
 
 Prototyp představuje návrh IA, nikoli schválení finální podoby. Recenzentům je třeba předat jak tento dokument, tak lokální složku prototypu. Před implementací čeká na potvrzení zejména pojmenování karet a podkategorií, vhodnost úkolových vstupů, srozumitelnost tematických hranic a vizuální použitelnost na uvedených šířkách.
+
+
+## Revize 7D
+
+### Nová samostatná verze
+
+Upravený prototyp je uložen mimo repozitář a Netlify publikační strom ve složce:
+
+`C:\\Users\\mulle\\.codex\\visualizations\\2026\\11\\08\\01a1bb79-8100-7681-96e4-887193bff64d\\ai-ve-vyuce-7d-prototype`
+
+Kompletní ZIP je v uživatelské složce Downloads:
+
+`C:\\Users\\mulle\\Downloads\\ai-ve-vyuce-prototyp-7d.zip`
+
+Původní složka a archiv 7C zůstaly zachované. V 7D jsou čtyři soubory v kořeni (`index.html`, `filozofovani-s-ai.html`, `styles.css`, `app.js`) a šest obrazových podkladů v `assets/`. HTML odkazují na soubory relativně. Samostatná stránka série i homepage mají `noindex,nofollow`; jde o lokální prototyp, nikoli o vytvoření produkční cesty `/filozofovani-s-ai`.
+
+### Provedené úpravy
+
+- Zachováno šest schválených oblastí. Každý název hlavního menu je nativní rozbalovací ovládací prvek a každá podkategorie vede na konkrétní sekci prototypu nebo existující veřejnou stránku.
+- Menu na desktopu i mobilu používá stejné názvy a pořadí. Jeho rozbalení je založeno na `details/summary`; Escape zavírá podmenu, na mobilu také celé menu a vrací fokus na spouštěč. Na desktopu vrací fokus na příslušnou oblast. Aktivní oblast se označuje atributem `aria-current="location"` po výběru odkazu nebo navigaci na kotvu.
+- Zpřesněny cíle „Základy práce s AI“, „Praktické návody“, „Práce žáků s AI“, „Bezpečnost a testování“, „Novinky“ a „Filozofování s AI“. Katalog aktivit pro angličtinu zachovává `subject=aj`.
+- Příprava materiálů nyní odděluje pracovní list a test, uvádí kroky kontroly a propojuje prompt, návod a workflow podle jejich účelu.
+- Doplněno průřezové téma práce žáků s AI, které vede k roli žáka, roli AI a důkazu učení; nevzniká druhý katalog aktivit.
+- Porovnání ChatGPT/Gemini obsahuje rozhodovací otázky podle úkolu a školních podmínek. Formulář návrhové karty aplikace vytvoří lokální textové zadání; nevolá žádnou AI službu.
+- Přidáno přímé obousměrné rozlišení: hotový asistent vede do katalogu asistentů, tvorba vlastního agenta do návodu „První agent“. Popisy vysvětlují rozdíl mezi používáním připraveného pomocníka a navrhováním agenta.
+- Inline výpis série na homepage byl nahrazen stručnou upoutávkou. Nový soubor `filozofovani-s-ai.html` vysvětluje smysl série, ukazuje čtyři díly podle evidovaného pořadí `seriesNumber`, uvádí téma každého dílu, odkazy na celé články, předchozí/následující díl, návrat do magazínu a související pedagogická témata. URL článků se nemění.
+- Zvětšeny drobné navigační popisky a dotykové cíle; styly zachovávají tmavě zelenou identitu, žlutý akcent a existující grafiku. Nepřidány nové animace.
+
+### Kontroly 7D
+
+Statické ověření lokální složky:
+- 2 HTML stránky: homepage a samostatný rozcestník série; po 33 a 6 jedinečných ID, bez duplicit;
+- 67 fragmentových odkazů na homepage a 10 na stránce série; žádný neplatný fragment;
+- všech 6 obrazových souborů nalezeno a všech 6 použitých obrazových zdrojů se odkazuje na existující soubor;
+- šest hlavních oblastí je přítomno v menu;
+- všech 21 unikátních cílových produkčních HTML stránek, na které verze 7D odkazuje, existuje v `master`; odkazy otevírané v novém panelu mají `rel="noopener"`;
+- pořadí čtyř článků odpovídá `seriesNumber` z 7B: kritické myšlení → role lidí → učení žáků → odpovědnost agentů;
+- `node --check app.js` prošel;
+- zdrojové barvy pro běžný text, odkaz a tmavý text na žlutém tlačítku mají vypočtený kontrastní poměr 17,73:1, 8,26:1 a 7,68:1. Jde o kontrolu zadaných barev, nikoli o měření všech vykreslených kombinací;
+- ZIP obsahuje 10 souborů, neobsahuje absolutní ani nebezpečně relativní cesty a byl rozbalen do dočasné složky; všech 10 očekávaných souborů se při rozbalení našlo.
+
+### Neprovedené testy a omezení
+
+Playwrightové testy, axe ani jiné automatizované kontroly přístupnosti v běžícím prohlížeči nebyly provedeny. Dostupné browser-control rozhraní dříve výslovně odmítlo otevřít lokální soubor a zakázalo dosáhnout stejného výsledku přes jiný browser, lokální HTTP server nebo jinou obchvatnou cestu. Toto omezení nebylo obcházeno. Playwright modul nebyl v dostupném Node prostředí použitelný. Nejsou tedy potvrzené skutečné rozměry, přetékání, dotykové cíle, vizuální kontrast na pozadích, chování klávesnice, aktivní oblast v reálném prohlížeči ani výsledek interaktivních cest. Screenshoty nebyly pořízeny.
+
+Před pedagogickou/uživatelskou revizí a implementací otevřete rozbalenou složku 7D ručně v prohlížeči a projděte šířky **320, 390, 768 a 1440 px**. Ověřte přetečení a čitelnost, hlavní menu i podmenu, aktivní oblast, ovládání Enter/Space/Tab, Escape a návrat fokusu, změnu šířky, režim bez JavaScriptu a formulář návrhu aplikace. Projděte všech šest cest: bezpečný začátek; příprava hodiny; pracovní list i test; angličtina s filtrem; volba ChatGPT/Gemini a přechod asistent–agent; novinky/článek a všechny díly série včetně navigace tam i zpět. Zkontrolujte také zoom, čtečku obrazovky a rozdíly v kontrastu. Pořiďte screenshot homepage, otevřeného menu, rozcestníku „Připravit výuku“ a stránky série na desktopu i mobilu.
+
+Prototyp zůstává návrhem k uživatelskému a vizuálnímu posouzení, nikoli podkladem připraveným k produkční implementaci. Při této revizi se měnil pouze externí prototyp a tento dokument v PR #44; produkční HTML, CSS, JavaScript, sitemap, canonical, `_redirects` a existující URL zůstaly beze změny. PR #44 zůstává draft a nesloučený.
