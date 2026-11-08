@@ -59,7 +59,7 @@ Inventura snapshotu obsahuje **102 obsahových HTML**: `index.html` je kořen we
 `ai-navody.html` je širší existující vstup pro **Připravit výuku**: hodina, materiály, praktické návody, prompty i workflow. Stránky s produktovým názvem se řadí podle účelu. Krokový návod pro učitele patří pod přípravu výuky; produktový přehled pod nástroje.
 
 | URL | Název stránky | Primární oblast | Primární podkategorie | Rodičovský rozcestník | Hierarchie | Sekundární vazby | Doporučený další krok |
-|---|---|---|---|---|---|---|---|| URL | Název stránky | Primární oblast | Primární podkategorie | Rodičovský rozcestník | Hierarchie | Sekundární vazby | Doporučený další krok |
+|---|---|---|---|---|---|---|---|
 |---|---|---|---|---|---|---|---|
 | `ai-agenti-10-ukolu.html` | 10 úkolů, které může AI agent převzít učiteli | Tvořit s AI | AI agenti a automatizace | `ai-agenti.html` | AI agenti a automatizace › 10 úkolů, které může AI agent převzít učiteli | Hotový asistent: `asistenti.html`. | Navázat od principu k návrhu agenta a testování. |
 | `ai-agenti-agentni-smycka.html` | Jak funguje AI agent: agentní smyčka krok za krokem | Tvořit s AI | AI agenti a automatizace | `ai-agenti.html` | AI agenti a automatizace › Jak funguje AI agent: agentní smyčka krok za krokem | Hotový asistent: `asistenti.html`. | Navázat od principu k návrhu agenta a testování. |
@@ -151,10 +151,6 @@ Inventura snapshotu obsahuje **102 obsahových HTML**: `index.html` je kořen we
 | `katalog-asistenti.html` | Hotoví AI asistenti pro učitele | Nástroje a asistenti | Hotoví AI asistenti | `asistenti.html` | Hotoví AI asistenti › Hotoví AI asistenti pro učitele | Vlastní agent: `ai-agenti.html`. | Otevřít asistenta a zkontrolovat jeho limity. |
 | `kdyz-ai-jedna-odpovednost-ai-agenta.html` | Když AI už nejen radí, ale jedná: kdo nese odpovědnost za AI agenta? | Číst a objevovat | Filozofování s AI | [NOVÝ ROZCESTNÍK — `/filozofovani-s-ai`; budoucí cíl, zatím bez HTML] | Filozofování s AI › Když AI už nejen radí, ale jedná: kdo nese odpovědnost za AI agenta? | Předchozí/následující díl dle `seriesNumber`; návrat do magazínu `ai.html`. | Další díl podle redakčního čísla; po #4 návrat do `ai.html`. |
 | `matematika.html` | Matematika s AI | Učit s AI | Výuka podle předmětů | `aktivity.html` (předfiltrovat předmět) | Výuka podle předmětů › Matematika s AI | Práce žáků s AI je průřezové téma, nikoli katalog. | Otevřít `aktivity.html` s přednastaveným předmětem. |
-| 
-eplytvej-inteligenci-ai-modely.html` | Neplýtvej inteligencí | Číst a objevovat | Články | `ai.html` | Články › Neplýtvej inteligencí | Související výuka: `aktivity.html`. | Vybrat vhodnou aktivitu v `aktivity.html`. |
-| 
-otebooklm-hlasovy-rozhovor-nad-zdroji.html` | Když AI zná naše učivo: hlasový rozhovor nad zdroji v NotebookLM | Připravit výuku | Workflow | `ai-navody.html` (širší vstup „Připravit výuku“) | Workflow › Když AI zná naše učivo: hlasový rozhovor nad zdroji v NotebookLM | NotebookLM jako použitý nástroj. | Převést práci se zdroji do aktivity. |
 | `perplexity-pro-ucitele.html` | Perplexity pro učitele | Nástroje a asistenti | Přehled AI nástrojů | [NOVÝ ROZCESTNÍK — „Přehled AI nástrojů“; budoucí cíl, URL k rozhodnutí] | Přehled AI nástrojů › Perplexity pro učitele | Návody jsou v `ai-navody.html`; hotoví asistenti v `asistenti.html`. | Vybrat praktický návod pro stejný úkol. |
 | `prirodoveda.html` | Přírodní vědy s AI | Učit s AI | Výuka podle předmětů | `aktivity.html` (předfiltrovat předmět) | Výuka podle předmětů › Přírodní vědy s AI | Práce žáků s AI je průřezové téma, nikoli katalog. | Otevřít `aktivity.html` s přednastaveným předmětem. |
 | `prompty.html` | Knihovna Promptů | Připravit výuku | Prompty | `ai-navody.html` (širší vstup „Připravit výuku“) | Prompty › Knihovna Promptů | Workflow do kterého prompt zapadá: `ai-workflow.html`. | Doplnit kontext, použít prompt a zkontrolovat výstup. |
@@ -238,8 +234,7 @@ Na homepage zůstávají úkolové vstupy (co dnes potřebujete, předmětové v
 |---|---|---|---|
 | `ai-novinka-ai-duvod-premyslet.html` | `/ai-novinka-ai-duvod-premyslet` | ne | Má být indexovatelný článek (je v katalogu a homepage feedu); přidat canonical URL do sitemapy, je-li veřejný/indexovatelný. |
 | `gemini-skills-pro-ucitele.html` | `/gemini-skills-pro-ucitele` | ne | Prověřit indexovatelnost a veřejnou dostupnost; pokud veřejný detail, doplnit sitemapu. |
-| `skill-anglictina-vyukove-materialy.html` | `/skill-anglictina-vyukove-materialy` | ne | Prověřit soulad zip/download, veřejné stránky, 
-oindex` a canonical; pokud má být veřejný detail, doplnit sitemapu. |
+| `skill-anglictina-vyukove-materialy.html` | `/skill-anglictina-vyukove-materialy` | ne | Prověřit soulad zip/download, veřejné stránky, `noindex` a canonical; pokud má být veřejný detail, doplnit sitemapu. |
 
 ### Dvě canonical URL s odlišným tvarem
 
@@ -250,8 +245,7 @@ oindex` a canonical; pokud má být veřejný detail, doplnit sitemapu. |
 
 **Produkční URL – kontrola 8. 11. 2026:** přímé otevření v prohlížeči potvrdilo, že všechny tři sitemapou vynechané bezpříponové URL načítají odpovídající obsah a jejich produkční canonical odpovídá této bezpříponové cestě. Obě `.html` stránky se také načetly na přesné `.html` adrese a produkční canonical obsahoval `.html`; žádné konkrétní přesměrovací pravidlo pro tyto dvě cesty v `_redirects` není. To je reálný nesoulad se sitemapou, kde je shodný slug uveden bez přípony. Prohlížečová kontrola nevrátila HTTP status ani hlavičky `Location`; přesný status/redirect je proto ještě třeba ověřit HTTP crawl/Netlify logem. Tři sitemapové výpadky a oba canonical rozpory zůstávají rozhodnutími, nic se neopravuje v 7B. Nedoplňovat canonical/sitemap/redirecty v tomto dokumentačním PR.
 
-Další kontroly pro 7C/SEO: srovnat každý indexovatelný canonical s jednou sitemap URL; potvrdit záměr u 
-oindex`; kontrolovat katalogové karty na platné interní href; query filtry mají zůstat nekanonickými stavy a všechny vést na stejnou canonical stránku; zachovat 94 existujících 301 a nepřidávat řetězce/smyčky. URL se v 7B nemění.
+Další kontroly pro 7C/SEO: srovnat každý indexovatelný canonical s jednou sitemap URL; potvrdit záměr u `noindex`; kontrolovat katalogové karty na platné interní href; query filtry mají zůstat nekanonickými stavy a všechny vést na stejnou canonical stránku; zachovat 94 existujících 301 a nepřidávat řetězce/smyčky. URL se v 7B nemění.
 
 ## 9. Přesný plán prototypu etapy 7C
 
