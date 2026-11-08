@@ -123,3 +123,27 @@ Playwrightové testy, axe ani jiné automatizované kontroly přístupnosti v b�
 Před pedagogickou/uživatelskou revizí a implementací otevřete rozbalenou složku 7D ručně v prohlížeči a projděte šířky **320, 390, 768 a 1440 px**. Ověřte přetečení a čitelnost, hlavní menu i podmenu, aktivní oblast, ovládání Enter/Space/Tab, Escape a návrat fokusu, změnu šířky, režim bez JavaScriptu a formulář návrhu aplikace. Projděte všech šest cest: bezpečný začátek; příprava hodiny; pracovní list i test; angličtina s filtrem; volba ChatGPT/Gemini a přechod asistent–agent; novinky/článek a všechny díly série včetně navigace tam i zpět. Zkontrolujte také zoom, čtečku obrazovky a rozdíly v kontrastu. Pořiďte screenshot homepage, otevřeného menu, rozcestníku „Připravit výuku“ a stránky série na desktopu i mobilu.
 
 Prototyp zůstává návrhem k uživatelskému a vizuálnímu posouzení, nikoli podkladem připraveným k produkční implementaci. Při této revizi se měnil pouze externí prototyp a tento dokument v PR #44; produkční HTML, CSS, JavaScript, sitemap, canonical, `_redirects` a existující URL zůstaly beze změny. PR #44 zůstává draft a nesloučený.
+
+
+## Závěrečné úpravy prototypu 7D
+
+- Samostatná stránka `filozofovani-s-ai.html` nyní používá stejné globální menu se šesti oblastmi jako homepage. Odkazy na oblasti vedou na odpovídající části hlavní prototypové stránky; vlastní rozcestník série a odkazy na její díly zůstávají samostatné.
+- Z viditelných textů stránky série byla odstraněna označení `seriesNumber` a vysvětlení o redakčních metadatech. Čtyři díly zůstávají v ověřeném pořadí: „Kritické myšlení už nestačí?“, „Možná nám AI ukáže, kolik lidí nám celou dobu chybělo“, „Učí se žák, nebo za něj přemýšlí AI?“ a „Když AI už nejen radí, ale jedná“.
+- Karty úkolů a oblastí se při šířce do 520 px skládají do jednoho sloupce. Tím se odstraní úzké dvousloupcové karty v rozsahu 361–520 px; v rozsahu 521–640 px zůstávají dvě širší karty vedle sebe. Vykreslené rozměry nebylo možné browserem ověřit.
+- Návrhová karta aplikace i menu zůstaly funkční podle izolované simulace JavaScriptových obslužných rutin: ověřen počáteční stav desktopového a mobilního menu, označení vybrané oblasti, Escape a návrat fokusu na příslušný spouštěč / položku a vytvoření návrhového textu z formuláře. `node --check app.js` prošel. Tato simulace není prohlížečový test ani test skutečného vykreslení.
+- Staticky ověřeno shodné pořadí a názvy šesti oblastí na obou stránkách, žádné chybné fragmenty na homepage/sérii ani chybné odkazy ze stránky série zpět do homepage. Odkazy na sérii a články míří na lokální prototypový soubor nebo na již existující články.
+- Aktualizovaný ZIP `ai-ve-vyuce-prototyp-7d.zip` v Downloads obsahuje 10 souborů; archiv byl rozbalen a kontrolní součty všech rozbalených souborů souhlasí se zdrojovou složkou.
+- Browser/Playwright/axe test, vizuální kontrola v rozsahu 320, 390, 768 a 1440 px a screenshoty nebyly provedeny. Dřívější bezpečnostní odmítnutí lokálního prototypu výslovně zakázalo obcházet blokaci jiným browserem nebo lokálním serverem; toto omezení zůstává respektováno. Otevřené testy a ruční postup uvedený výše proto zůstávají podmínkou pilotní implementace.
+
+### Návrh návaznosti dílů na existujících článcích
+
+Při budoucí implementaci přidejte po těle každého ze čtyř článků jednoduchou navigaci „Předchozí díl / Všechny díly / Následující díl“. Vložení do produkčních HTML zde neproběhlo. Všechny existující adresy článků zůstávají beze změny; odkaz „Všechny díly“ bude po samostatném schválení mířit na budoucí rozcestník `/filozofovani-s-ai`.
+
+| Díl | Existující článek | Předchozí | Následující |
+|---|---|---|---|
+| 1 | `ai-novinka-filozofovani-s-ai-kriticke-mysleni.html` | Začátek série / všechny díly | Díl 2: `ai-novinka-filozofovani-s-ai-chybejici-role.html` |
+| 2 | `ai-novinka-filozofovani-s-ai-chybejici-role.html` | Díl 1: `ai-novinka-filozofovani-s-ai-kriticke-mysleni.html` | Díl 3: `uci-se-zak-nebo-za-nej-premysli-ai.html` |
+| 3 | `uci-se-zak-nebo-za-nej-premysli-ai.html` | Díl 2: `ai-novinka-filozofovani-s-ai-chybejici-role.html` | Díl 4: `kdyz-ai-jedna-odpovednost-ai-agenta.html` |
+| 4 | `kdyz-ai-jedna-odpovednost-ai-agenta.html` | Díl 3: `uci-se-zak-nebo-za-nej-premysli-ai.html` | Konec série; nabídnout všechny díly a návrat do magazínu |
+
+**Doporučení:** prototyp je připravený k pedagogické revizi, ale ještě ne k pilotní implementaci. Před pilotem je nutné ruční ověření v prohlížeči, včetně responzivních šířek, klávesnice a čtečky obrazovky; současně je třeba schválit texty a budoucí umístění navigace v článcích.
