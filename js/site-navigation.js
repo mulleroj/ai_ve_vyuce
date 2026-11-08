@@ -12,7 +12,8 @@
       : current === 'vibe-coding-prompty.html' || current.startsWith('ai-agenti-')
         ? 'create'
         : null;
-  const explicitArea = document.body.dataset.siteNavigationArea || inferredArea;
+  const linkedArea = areas.find((area) => area.href === current || area.links.some(([, href]) => href === current));
+  const activeArea = linkedArea?.id || document.body.dataset.siteNavigationArea || inferredArea;
   document.documentElement.classList.add('js');
   navs.forEach((nav) => {
     nav.classList.add('site-nav-pilot');
@@ -21,7 +22,7 @@
     const details = document.createElement('details');
     details.className = 'site-nav-area';
     details.dataset.area = area.id;
-    const active = explicitArea ? area.id === explicitArea : area.href === current || area.links.some(([, href]) => href === current);
+    const active = area.id === activeArea;
     if (active) details.dataset.active = 'true';
     const summary = document.createElement('summary');
     summary.textContent = area.label;
@@ -113,3 +114,4 @@
   });
 
 })();
+
