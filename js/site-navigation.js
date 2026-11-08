@@ -5,6 +5,14 @@
 
   const pathLeaf = location.pathname.split('/').filter(Boolean).pop() || 'index.html';
   const current = pathLeaf.includes('.') ? pathLeaf : `${pathLeaf}.html`;
+  const inferredArea = current.startsWith('ai-novinka-')
+    ? 'discover'
+    : current.startsWith('ai-navod-') || current.startsWith('ai-workflow-') || current === 'gemini-notebook-prompty.html'
+      ? 'prepare'
+      : current === 'vibe-coding-prompty.html' || current.startsWith('ai-agenti-')
+        ? 'create'
+        : null;
+  const explicitArea = document.body.dataset.siteNavigationArea || inferredArea;
   document.documentElement.classList.add('js');
   navs.forEach((nav) => {
     nav.classList.add('site-nav-pilot');
@@ -13,7 +21,7 @@
     const details = document.createElement('details');
     details.className = 'site-nav-area';
     details.dataset.area = area.id;
-    const active = area.href === current || area.links.some(([, href]) => href === current);
+    const active = explicitArea ? area.id === explicitArea : area.href === current || area.links.some(([, href]) => href === current);
     if (active) details.dataset.active = 'true';
     const summary = document.createElement('summary');
     summary.textContent = area.label;

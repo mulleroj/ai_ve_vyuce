@@ -48,6 +48,6 @@ Inventura vychází z HTML na HEAD PR #47 (`f2968d372dcd1e040f64de3161930554d129
 - Magazine/news generator: `ai-novinka-ai-duvod-premyslet.html`, `ai-novinka-ai-ve-vzdelavani-zari-2026.html`.
 - Ručně skládané promptové stránky: `vibe-coding-prompty.html`, `gemini-notebook-prompty.html`.
 
-Nový `templates/site-navigation.tpl` je společný statický fallback pro těchto šest výstupů. Obsahuje šest přímých odkazů i bez JavaScriptu; `js/site-navigation.js` je při dostupném JavaScriptu rozšíří o schválená podmenu. Šablony vytvářejí pouze výstupy vedené ve svých stávajících manifestech, ruční pilot se týká pouze dvou uvedených HTML stránek.
+Nový `templates/site-navigation.tpl` je společný statický fallback pro těchto šest výstupů. Obsahuje šest přímých odkazů i bez JavaScriptu; `js/site-navigation.js` je při dostupném JavaScriptu rozšíří o schválená podmenu. Detailní stránky vybírají aktivní oblast z existujícího rozcestníkového href nebo podle stabilního typu URL (návod/workflow, novinka, promptová stránka či AI agent). Šablony vytvářejí pouze výstupy vedené ve svých stávajících manifestech, ruční pilot se týká pouze dvou uvedených HTML stránek.
 
 Hromadné rozšíření není zatím doporučeno: většina stránek se generuje/udržuje ručně a její `workflow-shell` kombinuje identitu, návratový odkaz a obsahový hero. Každá rodina musí být pilotována s obsahovou regresí a mobilní kontrolou, případně musí předem vzniknout zdrojová šablona. Následující krok může využít společný partial, ale nemá automaticky přepisovat zbývajících 77 dosud nemigrovaných stránek.
