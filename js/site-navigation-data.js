@@ -10,7 +10,7 @@ window.siteNavigationAreas = [
     ['Výukové aktivity', 'aktivity.html'], ['Matematika', 'matematika.html'], ['Čeština', 'cestina.html'], ['Angličtina', 'anglictina.html'], ['Přírodní vědy', 'prirodoveda.html'], ['Dějepis', 'dejepis.html']
   ] },
   { id: 'tools', label: 'Nástroje a asistenti', href: 'asistenti.html', links: [
-    ['AI asistenti', 'asistenti.html'], ['Katalog asistentů', 'katalog-asistenti.html'], ['Generátor QR kódů', 'qr-kod.html']
+    ['AI asistenti', 'asistenti.html'], ['Katalog asistentů', 'katalog-asistenti.html'], ['Generátor QR kódů', 'qr-kod.html'], ['Gemini Notebook', 'gemini-notebook.html']
   ] },
   { id: 'create', label: 'Tvořit s AI', href: 'vibe-coding.html', links: [
     ['Vibe coding', 'vibe-coding.html'], ['AI agenti', 'ai-agenti.html'], ['Bezpečnost kódu', 'vibe-coding-bezpecnost-kodu-php2shell.html']
