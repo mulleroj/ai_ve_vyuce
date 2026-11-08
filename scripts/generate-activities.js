@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { buildActivityNavigation } = require('./subject-navigation');
 const { buildSubjectFooter } = require('./subject-footer');
+const { ROLE_LABELS, cardTimingLabel, usageDetails, timingDetails } = require('./activity-metadata-display');
 
 const ROOT = path.resolve(__dirname, '..');
 const DATA_PATH = process.env.ACTIVITIES_DATA_PATH
@@ -85,6 +86,92 @@ function validateDetail(detail, index) {
     });
 }
 
+const ALLOWED_AI_OPERATORS = new Set(Object.keys(ROLE_LABELS));
+const ALLOWED_DIRECT_ACCESS = new Set(['required', 'optional', 'not_required', 'unknown']);
+const ALLOWED_TIMING_STATUSES = new Set(['unverified_estimate', 'pilot_observed', 'unknown']);
+const ALLOWED_TIMING_PHASES = new Set(['teacherPrep', 'learnerWork', 'teacherReview', 'activityTotal']);
+
+function validateTimeValue(value, label) {
+    if (!value || typeof value !== 'object' || Array.isArray(value)) fail(`${label} must be an object`);
+    if (!ALLOWED_TIMING_STATUSES.has(value.status)) fail(`${label}: invalid timing status ${JSON.stringify(value.status)}`);
+    if (value.unit !== 'minutes') fail(`${label}: unit must be minutes`);
+    if (!['student', 'text', 'team', null].includes(value.per)) fail(`${label}: invalid per unit`);
+    assertNonEmptyString(value.source, `${label}.source`, 0);
+    if (value.status === 'unknown') {
+        if (value.value !== null || value.range !== null) fail(`${label}: unknown time must use null value and range`);
+        if (typeof value.note !== 'string' || !value.note.trim()) fail(`${label}: unknown time needs an explanatory note`);
+    } else {
+        const hasValue = Number.isFinite(value.value);
+        const hasRange = value.range !== null && typeof value.range === 'object';
+        if (hasValue === hasRange) fail(`${label}: provide exactly one numeric value or interval`);
+        const numbers = hasValue ? [value.value] : [value.range.min, value.range.max];
+        if (numbers.some(number => !Number.isFinite(number) || number < 0)) fail(`${label}: times must be finite and non-negative`);
+        if (hasRange && value.range.min > value.range.max) fail(`${label}: interval minimum exceeds maximum`);
+    }
+    if (value.status === 'pilot_observed') {
+        const evidence = value.pilotEvidence;
+        if (!evidence || ['protocol', 'sample', 'method'].some(key => typeof evidence[key] !== 'string' || !evidence[key].trim())) {
+            fail(`${label}: pilot_observed requires protocol, sample, and method evidence`);
+        }
+    }
+}
+
+function validateUsageTiming(record, index) {
+    const usage = record.usage;
+    if (!usage || typeof usage !== 'object' || Array.isArray(usage)) fail(`record ${index + 1}: usage must be an object`);
+    if (!ALLOWED_AI_OPERATORS.has(usage.aiOperator)) fail(`record ${index + 1}: invalid usage.aiOperator`);
+    if (typeof usage.requiresSchoolApprovedEnvironment !== 'boolean') fail(`record ${index + 1}: requiresSchoolApprovedEnvironment must be boolean`);
+    if (!ALLOWED_DIRECT_ACCESS.has(usage.studentDirectAccess)) fail(`record ${index + 1}: invalid usage.studentDirectAccess`);
+    const expectedAccess = usage.aiOperator === 'student_direct' ? 'required' : usage.aiOperator === 'flexible' ? 'optional' : 'not_required';
+    if (usage.studentDirectAccess !== expectedAccess) fail(`record ${index + 1}: direct access conflicts with the approved operator category`);
+    if (usage.requiresSchoolApprovedEnvironment !== (usage.studentDirectAccess !== 'not_required')) fail(`record ${index + 1}: school-approval flag applies only to direct student AI access`);
+    assertNonEmptyString(usage.teacherRole, 'usage.teacherRole', index);
+    assertNonEmptyString(usage.studentRole, 'usage.studentRole', index);
+    if (usage.offlineAlternative !== null) {
+        if (!usage.offlineAlternative || typeof usage.offlineAlternative !== 'object' || Array.isArray(usage.offlineAlternative)) fail(`record ${index + 1}: offlineAlternative must be null or an evidence object`);
+        assertNonEmptyString(usage.offlineAlternative.description, 'usage.offlineAlternative.description', index);
+        assertNonEmptyString(usage.offlineAlternative.evidence, 'usage.offlineAlternative.evidence', index);
+    }
+
+    const timing = record.timing;
+    if (!timing || typeof timing !== 'object' || Array.isArray(timing)) fail(`record ${index + 1}: timing must be an object`);
+    for (const key of ['teacherPrep', 'learnerWork', 'teacherReview', 'activityTotal', 'legacyUnclassified']) {
+        if (!hasOwn(timing, key)) fail(`record ${index + 1}: timing.${key} is required`);
+        if (timing[key] !== null) validateTimeValue(timing[key], `record ${index + 1}: timing.${key}`);
+    }
+    if (!Array.isArray(timing.variants)) fail(`record ${index + 1}: timing.variants must be an array`);
+    timing.variants.forEach((variant, variantIndex) => {
+        assertNonEmptyString(variant.label, `timing.variants[${variantIndex}].label`, index);
+        if (!ALLOWED_TIMING_PHASES.has(variant.phase)) fail(`record ${index + 1}: invalid timing variant phase`);
+        validateTimeValue(variant.duration, `record ${index + 1}: timing.variants[${variantIndex}].duration`);
+    });
+}
+
+function validateApprovedMetadataCounts(records) {
+    const counts = Object.fromEntries([...ALLOWED_AI_OPERATORS].map(role => [role, 0]));
+    records.forEach(record => { if (record.usage && counts[record.usage.aiOperator] !== undefined) counts[record.usage.aiOperator]++; });
+    const expected = { teacher_preparation: 16, teacher_led: 12, student_direct: 11, flexible: 5 };
+    for (const [role, count] of Object.entries(expected)) if (counts[role] !== count) fail(`expected ${count} ${role} activities, got ${counts[role]}`);
+}
+
+function validateTimingDecisions(records) {
+    const byId = new Map(records.map(record => [record.id, record]));
+    const animal = byId.get('biology-animal-encyclopedia').timing.variants;
+    if (animal.length !== 2 || animal[0].duration.value !== 8 || animal[1].duration.range?.min !== 20 || animal[1].duration.range?.max !== 30) fail('T01: preserve the two animal-profile time variants');
+    const realLife = byId.get('math-real-life-word-problems').timing;
+    if (realLife.teacherPrep?.value !== 5 || realLife.learnerWork !== null) fail('T02: five minutes is preparation; learner-work time is unknown');
+    const essay = byId.get('czech-essay-workshop').timing.variants;
+    if (essay.length !== 3 || essay[0].duration.value !== 2 || essay[0].duration.per !== 'student' || essay[1].duration.value !== 5 || essay[2].duration.status !== 'unknown') fail('T03: preserve essay-workshop modes and per-student unit');
+    if (byId.get('czech-dictation-activity').timing.teacherPrep?.value !== 5) fail('T04: preserve preparation time only');
+    const literature = byId.get('czech-literary-analysis-class').timing;
+    if (literature.teacherPrep?.value !== 10 || literature.learnerWork?.range?.min !== 15 || literature.learnerWork?.range?.max !== 20) fail('T05: separate preparation and learner work');
+    const conversation = byId.get('english-conversation-activity').timing;
+    if (conversation.activityTotal?.value !== 15 || conversation.teacherPrep !== null || conversation.learnerWork !== null) fail('T06: preserve the orientational total without inventing phase splits');
+    const physics = byId.get('physics-phenomenon-analogies-class').timing.legacyUnclassified;
+    if (physics?.value !== 5 || !/not.*doloženo|není doloženo/i.test(physics.note || '')) fail('T07: five minutes must remain unclassified, not a full workshop duration');
+    if (byId.get('history-class-timeline').timing.teacherPrep?.value !== 5 || byId.get('history-class-timeline').timing.learnerWork !== null) fail('T08: preserve preparation time and unknown learner-work duration');
+}
+
 function validateModalReferences(records, html) {
     const modalIds = new Set();
     records.filter(record => record.collections?.[0]?.id === 'activities-main').forEach((record, index) => {
@@ -121,7 +208,9 @@ function validateActivities(records, promptRegistry, mainHtml = fs.readFileSync(
 
     records.forEach((record, index) => {
         if (!record || typeof record !== 'object' || Array.isArray(record)) fail(`record ${index + 1} must be an object`);
-        assertNoNulls(record, `record ${index + 1}`);
+        Object.entries(record).forEach(([key, value]) => {
+            if (!['usage', 'timing'].includes(key)) assertNoNulls(value, `record ${index + 1}.${key}`);
+        });
         assertNonEmptyString(record.id, 'id', index);
         if (ids.has(record.id)) fail(`duplicate activity id ${record.id}`);
         ids.add(record.id);
@@ -139,6 +228,7 @@ function validateActivities(records, promptRegistry, mainHtml = fs.readFileSync(
             if (record.subjects[0] !== 'pv') fail(`record ${index + 1}: subsubjects are only valid for subject pv`);
         } else if (record.subjects[0] === 'pv' && record.collections?.[0]?.id !== 'activities-main') fail(`record ${index + 1}: subject pv requires subsubjects`);
         assertNonEmptyString(record.duration, 'duration', index);
+        validateUsageTiming(record, index);
         if (!FORMAT_LABELS.has(record.format)) fail(`record ${index + 1}: invalid format ${JSON.stringify(record.format)}`);
         if (!STATUS_BADGES.has(record.status)) fail(`record ${index + 1}: invalid status ${JSON.stringify(record.status)}`);
         if (hasOwn(record, 'statusBadge')) fail(`record ${index + 1}: statusBadge is not allowed; use status`);
@@ -190,6 +280,17 @@ function validateActivities(records, promptRegistry, mainHtml = fs.readFileSync(
         if (collectionOrders.get(collection.id).size !== collection.expectedIds.length) fail(`collection ${collection.id} orders must be unique`);
     });
     if (ids.size !== EXPECTED_IDS.length) fail('activity ids must be unique');
+    validateApprovedMetadataCounts(records);
+    validateTimingDecisions(records);
+    const promptRoleDecisions = {
+        'english-grammar-feedback': 'teacher_preparation', 'chemistry-equation-guide': 'flexible',
+        'physics-problem-solver': 'student_direct', 'history-roleplay-historical-person': 'teacher_led',
+        'history-debate-pro-con': 'teacher_led', 'history-source-analysis': 'teacher_led',
+        'history-map-analysis': 'teacher_led', 'english-essay-feedback': 'flexible'
+    };
+    for (const [id, role] of Object.entries(promptRoleDecisions)) {
+        if (records.find(record => record.id === id)?.usage.aiOperator !== role) fail(`${id}: usage role conflicts with the approved 6C/4 decision`);
+    }
     const promptIdCount = records.filter(record => hasOwn(record, 'promptId')).length;
     const relatedPromptCount = records.filter(record => hasOwn(record, 'relatedPromptId')).length;
     if (promptIdCount !== 0) fail(`expected 0 promptId references, got ${promptIdCount}`);
@@ -206,9 +307,13 @@ function escapeHtml(value) {
 function escapeAttribute(value) { return escapeHtml(value); }
 function buildModalBody(record, prompt) {
     const intro = record.detail && record.detail.intro ? `<p style="color:var(--text-secondary);line-height:1.7;margin-bottom:16px">${escapeHtml(record.detail.intro)}</p>` : '';
+    const usage = usageDetails(record.usage);
+    const usageBlock = `<section class="activity-detail-block"><h3>Jak se používá AI</h3><dl><dt>${escapeHtml(usage.roleLabel)}</dt><dd>${escapeHtml(usage.operatorDescription)}</dd><dt>Učitel</dt><dd>${escapeHtml(usage.teacherRole)}</dd><dt>Žák</dt><dd>${escapeHtml(usage.studentRole)}</dd><dt>Přímý přístup žáka</dt><dd>${escapeHtml(usage.accessText)}</dd>${usage.offlineAlternative ? `<dt>Alternativní postup</dt><dd>${escapeHtml(usage.offlineAlternative)}</dd>` : ''}</dl></section>`;
+    const timingRows = timingDetails(record.timing).map(row => `<div><dt>${escapeHtml(row.label)}</dt><dd>${escapeHtml(row.text)}</dd></div>`).join('');
+    const timingBlock = `<section class="activity-detail-block"><h3>Časová náročnost</h3><dl>${timingRows}</dl><p>Časové údaje jsou orientační odhady, nikoli pilotní měření. Neznámé fáze nejsou doplněny.</p></section>`;
     const promptBlock = `<div style="background:rgba(0,0,0,0.3);padding:16px;border-radius:12px;font-size:0.875rem;color:var(--text-secondary);line-height:1.7">${escapeHtml(prompt)}</div>`;
     const copyBlock = `<div style="margin-top:16px"><button class="copy-btn btn btn-mint btn-sm" data-copy="${escapeAttribute(prompt)}">📋 Kopírovat prompt</button></div>`;
-    return `${intro}${promptBlock}${copyBlock}`;
+    return `${intro}${usageBlock}${timingBlock}${promptBlock}${copyBlock}`;
 }
 function levelLabel(levels) {
     if (levels.length === 3 && levels.every(level => ALLOWED_LEVELS.has(level))) return 'ZŠ/SŠ';
@@ -217,6 +322,16 @@ function levelLabel(levels) {
 }
 function formatLabel(record) {
     return FORMAT_DISPLAY_OVERRIDES.get(record.id) || FORMAT_LABELS.get(record.format);
+}
+function usageTimingAttributes(record) {
+    const usage = usageDetails(record.usage);
+    const timing = timingDetails(record.timing);
+    return ` data-role-label="${escapeAttribute(ROLE_LABELS[record.usage.aiOperator])}" data-card-timing="${escapeAttribute(cardTimingLabel(record.timing))}" data-usage-info="${escapeAttribute(JSON.stringify(usage))}" data-timing-info="${escapeAttribute(JSON.stringify(timing))}"`;
+}
+function cardMetadata(record) {
+    const timingLabel = cardTimingLabel(record.timing);
+    const timingPrefix = timingLabel.startsWith('Čas ') ? '' : 'Čas: ';
+    return `<div class="activity-meta activity-meta-roles"><span class="activity-meta-item activity-meta-role">Role AI: ${escapeHtml(ROLE_LABELS[record.usage.aiOperator])}</span><span class="activity-meta-item activity-meta-time">${timingPrefix}${escapeHtml(timingLabel)}</span><span class="activity-meta-item">${escapeHtml(formatLabel(record))}</span></div>`;
 }
 function buildCard(record, prompts, library = false) {
     const prompt = resolvePrompt(record, prompts);
@@ -229,7 +344,7 @@ function buildCard(record, prompts, library = false) {
     const modalPayload = JSON.stringify({title: modalTitle, body});
     const subjectAttribute = library ? ` data-subject="${escapeAttribute(record.subjects[0])}"` : (record.subsubjects ? ` data-subject="${escapeAttribute(record.subsubjects[0])}"` : '');
     const titleTag = ['anglictina', 'matematika'].includes(record.collections[0].id) ? 'h3' : 'div';
-    const libraryAttributes = library ? ` data-activity-id="${escapeAttribute(record.id)}" data-search="${escapeAttribute(`${record.title} ${record.description}`)}" data-tool="${escapeAttribute(record.tools[0])}" data-duration="${escapeAttribute(record.duration)}" data-format="${escapeAttribute(formatLabel(record))}" data-prompt="${escapeAttribute(prompt)}" data-modal-title="${escapeAttribute(modalTitle)}" data-intro="${escapeAttribute(record.detail?.intro || '')}"${record.relatedPromptId ? ` data-related-prompt="${escapeAttribute(record.relatedPromptId)}"` : ''}` : '';
+    const libraryAttributes = library ? ` data-activity-id="${escapeAttribute(record.id)}" data-search="${escapeAttribute(`${record.title} ${record.description}`)}" data-tool="${escapeAttribute(record.tools[0])}" data-duration="${escapeAttribute(record.duration)}" data-format="${escapeAttribute(formatLabel(record))}" data-prompt="${escapeAttribute(prompt)}" data-modal-title="${escapeAttribute(modalTitle)}" data-intro="${escapeAttribute(record.detail?.intro || '')}"${usageTimingAttributes(record)}${record.relatedPromptId ? ` data-related-prompt="${escapeAttribute(record.relatedPromptId)}"` : ''}` : '';
     const detailButton = library
         ? `<button class="btn btn-mint btn-sm" type="button" data-open-activity="${escapeAttribute(record.id)}" aria-haspopup="dialog">Detail →</button>`
         : `<button class="btn btn-mint btn-sm"
@@ -243,8 +358,7 @@ function buildCard(record, prompts, library = false) {
                         </div>
                         <${library ? 'h3' : titleTag} class="activity-title">${escapeHtml(record.title)}</${library ? 'h3' : titleTag}>
                         <div class="activity-desc">${escapeHtml(record.description)}</div>
-                        <div class="activity-meta"><span class="activity-meta-item">⏱ ${escapeHtml(record.duration)}</span><span
-                                class="activity-meta-item">${escapeHtml(formatLabel(record))}</span></div>
+                        ${cardMetadata(record)}
                         <div class="activity-footer">
                             <span class="badge ${statusClass}">${escapeHtml(statusLabel)}</span>
                             ${library ? `<div class="activity-footer-actions">${detailButton}<button class="copy-btn btn btn-mint btn-sm" data-copy="${escapeAttribute(prompt)}">📋 Kopírovat</button></div>` : detailButton}
@@ -258,9 +372,6 @@ const MAIN_BADGE_CLASSES = new Map([
 const MAIN_CARD_STYLES = new Map([
     ['general-prompt-power-up-relay', ' style="border-color:rgba(245,166,35,0.3);background:rgba(245,166,35,0.03)"'],
     ['general-fact-or-fiction', ' style="border-color:rgba(52,152,219,0.3);background:rgba(52,152,219,0.03)"']
-]);
-const MAIN_EXTRA_META = new Map([
-    ['general-prompt-power-up-relay', '✏️ 2 min příprava'], ['general-fact-or-fiction', '✏️ 2 min příprava']
 ]);
 function mainLevelLabel(record) {
     if (record.detail && record.detail.levelLabel) return record.detail.levelLabel;
@@ -291,7 +402,7 @@ function buildMainCard(record, library = false) {
     const tool = TOOL_BADGES.get(record.tools[0]);
     const status = STATUS_BADGES.get(record.status);
     const style = MAIN_CARD_STYLES.get(record.id) || '';
-    const cardAttributes = `data-subject="${escapeAttribute(record.subjects[0])}" data-level="${escapeAttribute(record.levels.join(' '))}" data-tool="${escapeAttribute(record.tools[0])}"${library ? ` data-activity-id="${escapeAttribute(record.id)}" data-recommended="true" data-search="${escapeAttribute(`${record.title} ${record.description}`)}" data-duration="${escapeAttribute(record.duration)}" data-format="${escapeAttribute(formatLabel(record))}" data-prompt="${escapeAttribute(record.prompt)}"${record.relatedPromptId ? ` data-related-prompt="${escapeAttribute(record.relatedPromptId)}"` : ''}` : ''}`;
+    const cardAttributes = `data-subject="${escapeAttribute(record.subjects[0])}" data-level="${escapeAttribute(record.levels.join(' '))}" data-tool="${escapeAttribute(record.tools[0])}"${library ? ` data-activity-id="${escapeAttribute(record.id)}" data-recommended="true" data-search="${escapeAttribute(`${record.title} ${record.description}`)}" data-duration="${escapeAttribute(record.duration)}" data-format="${escapeAttribute(formatLabel(record))}" data-prompt="${escapeAttribute(record.prompt)}"${usageTimingAttributes(record)}${record.relatedPromptId ? ` data-related-prompt="${escapeAttribute(record.relatedPromptId)}"` : ''}` : ''}`;
     return `                    <div class="activity-card reveal" ${cardAttributes}${style}>
                         <div class="activity-card-top">
                             <div class="activity-badges">${record.subjects[0] === 'obecne' ? `<span class="badge badge-green">Obecné aktivity</span>` : `<span class="badge ${tool[1]}">${escapeHtml(tool[0])}</span>`}${mainBadgeMarkup(record)}${library && record.status !== 'recommended' ? '<span class="badge badge-gold">⭐ Doporučeno</span>' : ''}</div>
@@ -299,8 +410,7 @@ function buildMainCard(record, library = false) {
                         </div>
                         <${library ? 'h3' : 'div'} class="activity-title">${escapeHtml(record.title)}</${library ? 'h3' : 'div'}>
                         <div class="activity-desc">${escapeHtml(record.description)}</div>
-                        <div class="activity-meta"><span class="activity-meta-item">⏱ ${escapeHtml(record.duration)}</span><span
-                                class="activity-meta-item">${escapeHtml(formatLabel(record))}</span>${MAIN_EXTRA_META.has(record.id) ? `<span class="activity-meta-item">${escapeHtml(MAIN_EXTRA_META.get(record.id))}</span>` : ''}</div>
+                        ${cardMetadata(record)}
                         <div class="activity-footer"><span class="badge ${status[1]}">${escapeHtml(status[0])}</span><div class="activity-footer-actions">${mainCtaMarkup(record, library)}${library && !record.detail.modalId ? `<button class="btn btn-outline btn-sm" type="button" data-open-activity="${escapeAttribute(record.id)}" aria-haspopup="dialog">Detail</button>` : ''}<button class="copy-btn btn btn-mint btn-sm"
                                 data-copy="${escapeAttribute(record.prompt)}">📋 Kopírovat</button></div></div>
                     </div>`;

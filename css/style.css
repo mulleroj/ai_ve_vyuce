@@ -888,6 +888,36 @@ select {
   gap: 5px;
 }
 
+.activity-card .activity-meta-roles {
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 7px 14px;
+  line-height: 1.4;
+}
+
+.activity-card .activity-meta-role { color: #315449; font-weight: 700; }
+.activity-card .activity-meta-time { color: #526b62; }
+
+.activity-detail-block {
+  margin: 18px 0;
+  padding: 16px 18px;
+  border: 1px solid #dce8dc;
+  border-radius: 12px;
+  background: #f7faf6;
+}
+
+.activity-detail-block h3 { margin: 0 0 10px; color: #17382f; font-size: 1.05rem; }
+.activity-detail-list { display: grid; grid-template-columns: minmax(130px, .35fr) minmax(0, 1fr); gap: 8px 14px; margin: 0; color: #344f43; }
+.activity-detail-list div { display: contents; }
+.activity-detail-list dt { font-weight: 700; }
+.activity-detail-list dd { margin: 0; line-height: 1.55; }
+.activity-timing-note { margin: 12px 0 0; color: #526b62; font-size: .9rem; line-height: 1.5; }
+
+@media (max-width: 600px) {
+  .activity-detail-list { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .activity-detail-list dd { margin-bottom: 10px; }
+}
+
 .activity-footer {
   margin-top: 16px;
   padding-top: 16px;
