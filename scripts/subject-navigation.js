@@ -69,6 +69,28 @@ function buildSubjectNavigation(currentId) {
   return buildNavigation(currentId);
 }
 
-function buildActivityNavigation() { return buildNavigation(null, 'aktivity.html'); }
+function buildActivityNavigation() {
+  return [
+    '    <header class="site-header">',
+    '      <div class="site-header-inner">',
+    '        <a class="brand" href="index.html" aria-label="AI ve Výuce – úvodní stránka">',
+    '          <img class="brand-logo" src="images/ai-assistant-book-logo.png" width="44" height="42" alt="">',
+    '          <span>AI ve Výuce</span>',
+    '        </a>',
+    '        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Navigace</button>',
+    '        <nav id="primary-nav" class="primary-nav" aria-label="Hlavní navigace">',
+    '          <div class="site-nav-pilot" data-site-navigation>',
+    '            <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a>',
+    '            <a href="ai-navody.html">Připravit výuku</a>',
+    '            <a href="aktivity.html" aria-current="page">Učit s AI</a>',
+    '            <a href="asistenti.html">Nástroje a asistenti</a>',
+    '            <a href="vibe-coding.html">Tvořit s AI</a>',
+    '            <a href="ai.html">Číst a objevovat</a>',
+    '          </div>',
+    '        </nav>',
+    '      </div>',
+    '    </header>'
+  ].join('\n');
+}
 
 module.exports = { SUBJECTS, TOOLS, buildSubjectNavigation, buildActivityNavigation };

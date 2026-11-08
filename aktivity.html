@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/activity-library.css">
   <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/aktivity">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=robot-20261103">
+<link rel="stylesheet" href="css/site-navigation.css">
 </head>
 <body class="subject-page activity-library-page">
 <a class="skip-link" href="#main-content">Přeskočit na obsah</a>
@@ -22,30 +23,14 @@
         </a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Navigace</button>
         <nav id="primary-nav" class="primary-nav" aria-label="Hlavní navigace">
-          <a href="index.html">Úvod</a>
-          <a href="ai.html">AI obsah</a>
-          <a href="ai-navody.html">Praktické návody</a>
-          <a href="ai-novinky.html">Novinky</a>
-          <details class="nav-group subject-nav-group">
-            <summary>Předměty</summary>
-            <div class="nav-panel">
-            <a href="matematika.html">Matematika</a>
-            <a href="cestina.html">Čeština</a>
-            <a href="anglictina.html">Angličtina</a>
-            <a href="prirodoveda.html">Přírodní vědy</a>
-            <a href="dejepis.html">Dějepis</a>
-            </div>
-          </details>
-          <details class="nav-group">
-            <summary>Nástroje a aktivity</summary>
-            <div class="nav-panel">
-            <a href="prompty.html">Knihovna promptů</a>
-            <a href="asistenti.html">AI asistenti</a>
-            <a href="aktivity.html" aria-current="page">Výukové aktivity</a>
-            <a href="vibe-coding.html">Vibe coding</a>
-            <a href="qr-kod.html">Generátor QR kódů</a>
-            </div>
-          </details>
+          <div class="site-nav-pilot" data-site-navigation>
+            <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a>
+            <a href="ai-navody.html">Připravit výuku</a>
+            <a href="aktivity.html" aria-current="page">Učit s AI</a>
+            <a href="asistenti.html">Nástroje a asistenti</a>
+            <a href="vibe-coding.html">Tvořit s AI</a>
+            <a href="ai.html">Číst a objevovat</a>
+          </div>
         </nav>
       </div>
     </header>
@@ -1713,6 +1698,7 @@ Rozlišuj čtyři kategorie: pozorování mapy, interpretaci, historické vysvě
       </div>
     </footer>
                     <!-- GENERATED:ACTIVITY_FOOTER:END -->
+<script src="js/site-navigation-data.js"></script><script src="js/site-navigation.js"></script>
 <script src="js/subject-navigation.js"></script>
 <script src="js/main.js"></script>
 <script src="js/activity-library.js"></script>
