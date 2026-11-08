@@ -104,6 +104,27 @@ if ('IntersectionObserver' in window) {
 }
 
 /* ── Toast ── */
+// Keep the live region in the DOM before any status text changes. The visual
+// toast remains separate so it does not announce the same message twice.
+const toastAnnouncer = document.createElement('div');
+Object.assign(toastAnnouncer.style, {
+    position: 'absolute',
+    width: '1px',
+    height: '1px',
+    padding: '0',
+    margin: '-1px',
+    overflow: 'hidden',
+    clip: 'rect(0, 0, 0, 0)',
+    whiteSpace: 'nowrap',
+    border: '0'
+});
+toastAnnouncer.setAttribute('role', 'status');
+toastAnnouncer.setAttribute('aria-live', 'polite');
+toastAnnouncer.setAttribute('aria-atomic', 'true');
+document.body.appendChild(toastAnnouncer);
+let toastAnnouncementTimer;
+let toastAnnouncementVersion = 0;
+
 function showToast(msg, icon = '✅') {
     let toast = document.querySelector('.toast');
     if (!toast) {
@@ -115,6 +136,17 @@ function showToast(msg, icon = '✅') {
     toast.classList.add('show');
     clearTimeout(toast._timer);
     toast._timer = setTimeout(() => toast.classList.remove('show'), 2800);
+
+    // Clear and defer the update so repeated identical messages still create
+    // a distinct live-region change. Only the latest rapid update is announced.
+    const announcementVersion = ++toastAnnouncementVersion;
+    clearTimeout(toastAnnouncementTimer);
+    toastAnnouncer.textContent = '';
+    toastAnnouncementTimer = setTimeout(() => {
+        if (announcementVersion === toastAnnouncementVersion) {
+            toastAnnouncer.textContent = msg;
+        }
+    }, 50);
 }
 
 /* ── Copy to clipboard ── */
@@ -123,14 +155,11 @@ document.addEventListener('click', async (e) => {
     if (!btn) return;
     const text = btn.dataset.copy || btn.closest('.prompt-card')?.querySelector('.prompt-body')?.innerText || '';
     if (!text) return;
-    const defaultCopyLabel = btn.closest('.activity-card') ? '📋 Kopírovat zadání' : '📋 Kopírovat';
     try {
         await navigator.clipboard.writeText(text.trim());
-        btn.innerHTML = '✅ Zkopírováno';
         btn.classList.add('copied');
         showToast('Prompt zkopírován do schránky!');
         setTimeout(() => {
-            btn.innerHTML = defaultCopyLabel;
             btn.classList.remove('copied');
         }, 2000);
     } catch {
