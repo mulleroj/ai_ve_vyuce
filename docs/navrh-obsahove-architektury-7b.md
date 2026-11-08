@@ -142,7 +142,7 @@ Každá obsahová HTML má právě jednu primární kategorii, podkategorii, rod
 | `gemini-storybook-navod-pro-ucitele.html` | Gemini Storybook: jak vytvořit ilustrovaný příběh pro výuku | Nástroje a asistenti | Přehled AI nástrojů | `asistenti.html` (oblastní přehled nástrojů + hotových asistentů) | Přehled AI nástrojů › Gemini Storybook: jak vytvořit ilustrovaný příběh pro výuku | úkolový návod → porovnat alternativní nástroj |
 | `google-ai-studio-2026-vibe-coding.html` | Google AI Studio 2026: od jednoduchého promptu k celé aplikaci | Tvořit s AI | Vibe coding | `vibe-coding.html` | Vibe coding › Google AI Studio 2026: od jednoduchého promptu k celé aplikaci | bezpečnost/testování → projekt nebo návod k ověření aplikace |
 | `chatgpt-pro-ucitele.html` | ChatGPT pro učitele | Nástroje a asistenti | Přehled AI nástrojů | `asistenti.html` (oblastní přehled nástrojů + hotových asistentů) | Přehled AI nástrojů › ChatGPT pro učitele | úkolový návod → porovnat alternativní nástroj |
-| `index.html` | Umělá inteligence ve škole, která má smysl. | Domů | Úkolové vstupy | Homepage (mimo šest sekcí) | Úkolové vstupy › Umělá inteligence ve škole, která má smysl. | všech šest oblastí → zvolit jeden úkolový vstup |
+| `index.html` | Umělá inteligence ve škole, která má smysl. | Začít s AI | Úkolové vstupy homepage | Kořenový vstup webu (logo vede zpět) | Začít s AI › Úkolové vstupy | všech šest oblastí → zvolit jeden úkolový vstup |
 | `katalog-asistenti.html` | Hotoví AI asistenti pro učitele | Nástroje a asistenti | Hotoví AI asistenti | `asistenti.html` (upravit jako oblastní rozcestník) | Hotoví AI asistenti › Hotoví AI asistenti pro učitele | `ai-agenti.html` → jak postavit a otestovat vlastního agenta |
 | `kdyz-ai-jedna-odpovednost-ai-agenta.html` | Když AI už nejen radí, ale jedná: kdo nese odpovědnost za AI agenta? | Tvořit s AI | AI agenti a automatizace | `ai-agenti.html` (upravit jako agentní rozcestník) | AI agenti a automatizace › Když AI už nejen radí, ale jedná: kdo nese odpovědnost za AI agenta? | `asistenti.html` → rozlišit hotového asistenta od návrhu vlastního agenta |
 | `matematika.html` | Matematika s AI | Učit s AI | Výuka podle předmětů |  | Výuka podle předmětů › Matematika s AI | role AI a čas → detail vhodné aktivity; odtud související návod |
@@ -286,6 +286,8 @@ Prototyp navigačního kontraktu na stávajících šablonách bez přestavby we
 7. **[OBSAHOVÉ ROZHODNUTÍ]** Jestli „Práce žáků s AI“ patří jako samostatná stránka/podkategorie, nebo je to průřezový štítek a filtrovací vstup do aktivit.
 
 **Předání:** návrh je připraven k závěrečné obsahové revizi pedagogem a učitelem běžným uživatelem webu. Zahájení 7C prototypování a následné implementace je podmíněno vypořádáním označených rozhodnutí.
+
+
 
 
 
