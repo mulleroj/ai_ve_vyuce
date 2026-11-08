@@ -229,7 +229,7 @@ function renderArticle(article, catalogEntry) {
   const toc = renderToc(headings);
   const rendered = template('page')
     .replace('{{SEO_META}}', renderSeo(article, catalogEntry))
-    .replace('{{NAVIGATION}}', template('navigation'))
+    .replace('{{NAVIGATION}}', read('templates/site-navigation.tpl').trim())
     .replace('{{HERO}}', renderHero(article, catalogEntry))
     .replace('{{GRID_CLASS}}', toc ? '' : ' magazine-reading-grid-no-toc')
     .replace('{{TOC}}', toc)

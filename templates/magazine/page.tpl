@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   {{SEO_META}}
   <link rel="stylesheet" href="css/magazine-article.css?v=20261102-magazine-shared-v1" />
+  <link rel="stylesheet" href="css/site-navigation.css" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=robot-20261103" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=robot-20261103" />
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png?v=robot-20261103" />
@@ -14,7 +15,7 @@
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
 </head>
-<body class="magazine-article-page">
+<body class="magazine-article-page site-navigation-enabled">
   <a class="skip-link" href="#main-content">Přeskočit na obsah</a>
   {{NAVIGATION}}
   {{HERO}}
@@ -32,6 +33,8 @@
   {{FOOTER}}
   <script src="js/main.js?v=20261102-magazine-shared-v1" defer></script>
   <script src="js/site-footer.js?v=20260927-human-loop" defer></script>
+  <script src="js/site-navigation-data.js?v=20261108-7h" defer></script>
+  <script src="js/site-navigation.js?v=20261108-7h" defer></script>
   {{ARTICLE_SCRIPTS}}
 </body>
 </html>

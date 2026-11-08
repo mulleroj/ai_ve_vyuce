@@ -63,10 +63,10 @@
           toggle.setAttribute('aria-label', opening ? 'Zavřít navigaci' : 'Otevřít navigaci');
           document.body.style.overflow = opening ? 'hidden' : '';
         });
-        menu.addEventListener('click', (event) => {
-          if (event.target.closest('a')) closeMenu();
-        });
       }
+      menu.addEventListener('click', (event) => {
+        if (event.target.closest('a')) closeMenu();
+      });
     }
 
     nav.addEventListener('keydown', (event) => {
