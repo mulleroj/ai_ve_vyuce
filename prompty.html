@@ -43,55 +43,22 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261108-7f">
 </head>
 
-<body>
-    <nav class="nav" id="nav">
-        <div class="nav-inner">
-            <a href="index.html" class="nav-logo">
-                <span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span>
-            </a>
-            <div class="nav-links">
-                <div class="nav-dropdown">
-                    <a href="#" class="nav-link">📚 Předměty <i class="fa-solid fa-chevron-down"
-                            style="font-size:.65rem"></i></a>
-                    <div class="nav-dropdown-menu">
-                        <a href="matematika.html" class="nav-dropdown-item"><span class="item-icon">🔢</span>
-                            Matematika</a>
-                        <a href="cestina.html" class="nav-dropdown-item"><span class="item-icon">📖</span> Český
-                            jazyk</a>
-                        <a href="anglictina.html" class="nav-dropdown-item"><span class="item-icon">🇬🇧</span> Anglický
-                            jazyk</a>
-                        <a href="prirodoveda.html" class="nav-dropdown-item"><span class="item-icon">🔬</span> Přírodní
-                            vědy</a>
-                        <a href="dejepis.html" class="nav-dropdown-item"><span class="item-icon">🏛️</span> Dějepis</a>
-                    </div>
-                </div>
-                <a href="prompty.html" class="nav-link active">✨ Prompty</a>
-                <a href="asistenti.html" class="nav-link">🤖 AI Asistenti</a>
-                <a href="aktivity.html" class="nav-link">🎯 Aktivity</a>
-                <a href="ai.html" class="nav-link">🧠 AI pro školy</a>
-                <a href="vibe-coding.html" class="nav-link">💻 Vibe Coding</a>
-                <a href="qr-kod.html" class="nav-link">🔳 QR kód</a>
-            </div>
-            <button class="nav-mobile-toggle"><span></span><span></span><span></span></button>
-        </div>
-    </nav>
-    <div class="mobile-menu">
-        <a href="index.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏠 Domů</a>
-        <a href="matematika.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔢 Matematika</a>
-        <a href="cestina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">📖 Český jazyk</a>
-        <a href="anglictina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🇬🇧 Angličtina</a>
-        <a href="prirodoveda.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔬 Přírodní vědy</a>
-        <a href="dejepis.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏛️ Dějepis</a>
-        <a href="prompty.html" class="nav-link" style="font-size:1rem;padding:14px 16px">✨ Prompty</a>
-        <a href="asistenti.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🤖 Asistenti</a>
-        <a href="aktivity.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🎯 Aktivity</a>
-        <a href="ai.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🧠 AI pro školy</a>
-        <a href="vibe-coding.html" class="nav-link" style="font-size:1rem;padding:14px 16px">💻 Vibe Coding</a>
-        <a href="qr-kod.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔳 QR kód</a>
-    </div>
-
+<body class="site-navigation-enabled">
+        <header class="site-header">
+      <nav class="site-nav" aria-label="Hlavní navigace">
+        <a class="brand" href="index.html" aria-label="AI ve výuce – domů">
+          <img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="">
+          <span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Otevřít navigaci" aria-expanded="false" aria-controls="primary-menu"><span></span><span></span><span aria-hidden="true"></span></button>
+        <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation>
+          <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a>
+        </div></div>
+      </nav>
+    </header>
     <section class="page-hero" style="background:linear-gradient(135deg,#0a0f1e 0%,#0d0020 100%)">
         <div class="page-hero-glow"
             style="background:radial-gradient(ellipse,rgba(243,156,18,0.12) 0%,transparent 70%)"></div>
@@ -2458,6 +2425,8 @@ vocabulary. Start with an engaging opening question about the topic.">📋 Kopí
     </div>
     <script src="js/main.js?v=20260827-chatgpt-prompts"></script>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261108-7f"></script>
+    <script src="js/site-navigation.js?v=20261108-7f"></script>
 </body>
 
 </html>
