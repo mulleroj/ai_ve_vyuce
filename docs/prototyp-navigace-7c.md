@@ -83,11 +83,11 @@ Prototyp představuje návrh IA, nikoli schválení finální podoby. Recenzent�
 
 Upravený prototyp je uložen mimo repozitář a Netlify publikační strom ve složce:
 
-`C:\\Users\\mulle\\.codex\\visualizations\\2026\\11\\08\\01a1bb79-8100-7681-96e4-887193bff64d\\ai-ve-vyuce-7d-prototype`
+`C:\Users\mulle\.codex\visualizations\2026\11\08\01a1bb79-8100-7681-96e4-887193bff64d\ai-ve-vyuce-7d-prototype`
 
 Kompletní ZIP je v uživatelské složce Downloads:
 
-`C:\\Users\\mulle\\Downloads\\ai-ve-vyuce-prototyp-7d.zip`
+`C:\Users\mulle\Downloads\ai-ve-vyuce-prototyp-7d.zip`
 
 Původní složka a archiv 7C zůstaly zachované. V 7D jsou čtyři soubory v kořeni (`index.html`, `filozofovani-s-ai.html`, `styles.css`, `app.js`) a šest obrazových podkladů v `assets/`. HTML odkazují na soubory relativně. Samostatná stránka série i homepage mají `noindex,nofollow`; jde o lokální prototyp, nikoli o vytvoření produkční cesty `/filozofovani-s-ai`.
 
