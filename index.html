@@ -23,24 +23,18 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+<link rel="stylesheet" href="css/site-navigation.css">
 </head>
 <body class="home-redesign">
   <a class="skip-link" href="#main-content">Přeskočit na obsah</a>
   <header class="site-header" id="top">
     <nav class="site-nav" aria-label="Hlavní navigace">
-      <a class="brand" href="index.html" aria-label="AI ve výuce – domů">
+      <a class="brand" href="index.html" aria-current="page" aria-label="AI ve výuce – domů">
         <img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" />
         <span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span>
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu"><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
-      <div class="nav-content" id="primary-menu">
-        <a class="nav-home" href="#top" aria-current="page">Domů</a>
-        <details class="nav-dropdown"><summary>Články</summary><div class="dropdown-panel"><a href="#articles">Nejnovější články</a><a href="ai.html">Všechny články</a><a href="#philosophy">Filozofování s AI</a></div></details>
-        <details class="nav-dropdown"><summary>Návody a workflow</summary><div class="dropdown-panel"><a href="ai-navody.html">Praktické návody</a><a href="ai-workflow.html">Workflow</a><a href="prompty.html">Knihovna promptů</a></div></details>
-        <a href="#tools">AI nástroje</a>
-        <details class="nav-dropdown"><summary>Pro školy</summary><div class="dropdown-panel"><a href="ai.html">AI ve vzdělávání</a><a href="aktivity.html">Aktivity do výuky</a><a href="anglictina.html">Předměty</a></div></details>
-        <a href="#philosophy">Filozofování s AI</a>
-        <form class="site-search" role="search" action="ai.html" method="get"><label class="visually-hidden" for="home-search">Hledat na webu</label><input id="home-search" name="q" type="search" placeholder="Hledat články…" /><button aria-label="Hledat" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg><span>Hledat</span></button></form>
+      <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation><a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a></div><form class="site-search" role="search" action="ai.html" method="get"><label class="visually-hidden" for="home-search">Hledat na webu</label><input id="home-search" name="q" type="search" placeholder="Hledat články…" /><button aria-label="Hledat" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg><span>Hledat</span></button></form>
       </div>
     </nav>
   </header>
@@ -89,7 +83,7 @@
     </section>
 
     <div class="midrow section-wrap">
-      <section class="philosophy" id="philosophy" aria-labelledby="philosophy-title"><img src="images/home-philosophy-banner-v2.jpg" width="2048" height="683" alt="Malý robot sedí na knihách pod teplým světlem lampy v tmavě zelené knihovně" loading="lazy" decoding="async"/><div class="philosophy-copy"><span class="eyebrow">— SÉRIE</span><h2 id="philosophy-title">Filozofování s AI</h2><p>Otázky, které technologie otevírá. A odpovědi, které musíme hledat sami.</p><a class="button button-light" href="ai.html?filter=philosophy">Prozkoumat sérii <span aria-hidden="true">→</span></a></div></section>
+      <section class="philosophy" id="philosophy" aria-labelledby="philosophy-title"><img src="images/home-philosophy-banner-v2.jpg" width="2048" height="683" alt="Malý robot sedí na knihách pod teplým světlem lampy v tmavě zelené knihovně" loading="lazy" decoding="async"/><div class="philosophy-copy"><span class="eyebrow">— SÉRIE</span><h2 id="philosophy-title">Filozofování s AI</h2><p>Otázky, které technologie otevírá. A odpovědi, které musíme hledat sami.</p><a class="button button-light" href="filozofovani-s-ai.html">Prozkoumat sérii <span aria-hidden="true">→</span></a></div></section>
       <section class="subjects" id="subjects" aria-labelledby="subjects-title"><div class="section-heading"><h2 id="subjects-title">AI ve vybraných předmětech</h2><a href="aktivity.html">Aktivity podle předmětu <span aria-hidden="true">→</span></a></div><div class="subject-grid">
         <a href="anglictina.html"><img src="images/home-subject-english.webp" width="300" height="180" alt="Britská vlajka" loading="lazy"/><strong>Angličtina</strong></a><a href="dejepis.html"><img src="images/home-subject-history.webp" width="300" height="180" alt="Historická knihovna" loading="lazy"/><strong>Dějepis</strong></a><a href="prirodoveda.html"><img src="images/home-subject-science.webp" width="300" height="180" alt="Měřicí přístroj pro přírodovědný pokus" loading="lazy"/><strong>Přírodní vědy</strong></a><a href="matematika.html"><img src="images/home-subject-math.webp" width="300" height="180" alt="Převody a technická součástka" loading="lazy"/><strong>Matematika</strong></a><a href="cestina.html"><img src="images/home-subject-czech.webp" width="300" height="180" alt="Socha spravedlnosti s vahami" loading="lazy"/><strong>Český jazyk</strong></a>
       </div></section>
@@ -99,7 +93,7 @@
 
   <footer class="footer home-footer"><div class="footer-inner"><a class="brand" href="index.html"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>Inspirace · nástroje · praxe pro učitele</small></span></a><p>Moderní průvodce světem AI pro české učitele.</p><div class="footer-links"><a href="ai-navody.html">Návody</a><a href="prompty.html">Prompty</a><a href="aktivity.html">Aktivity</a><a href="asistenti.html">AI nástroje</a></div><small>© 2026 AI ve výuce</small></div></footer>
   <script src="js/site-articles.js?v=20261102-pr19-visual"></script>
-  <script src="js/main.js?v=20261102-pr19-visual"></script>
+  <script src="js/site-navigation-data.js"></script><script src="js/site-navigation.js"></script><script src="js/main.js?v=20261102-pr19-visual"></script>
   <script src="js/home.js?v=20261101-home-redesign"></script>
   <script src="js/site-footer.js?v=20260927-human-loop"></script>
 </body>
