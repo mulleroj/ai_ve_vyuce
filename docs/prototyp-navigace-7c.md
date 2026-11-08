@@ -147,3 +147,17 @@ Při budoucí implementaci přidejte po těle každého ze čtyř článků jedn
 | 4 | `kdyz-ai-jedna-odpovednost-ai-agenta.html` | Díl 3: `uci-se-zak-nebo-za-nej-premysli-ai.html` | Konec série; nabídnout všechny díly a návrat do magazínu |
 
 **Doporučení:** prototyp je připravený k pedagogické revizi, ale ještě ne k pilotní implementaci. Před pilotem je nutné ruční ověření v prohlížeči, včetně responzivních šířek, klávesnice a čtečky obrazovky; současně je třeba schválit texty a budoucí umístění navigace v článcích.
+
+
+## Deploy Preview 7D pro uživatelskou revizi
+
+Aktuální prototyp 7D je dočasně dostupný v izolovaném adresáři `preview-7d/` této větve PR #44:
+
+- Homepage: https://deploy-preview-44--ai-ve-vyuce.netlify.app/preview-7d/
+- Filozofování s AI: https://deploy-preview-44--ai-ve-vyuce.netlify.app/preview-7d/filozofovani-s-ai.html
+
+Deploy Preview je veřejné prostředí: kdokoli s odkazem může prototyp otevřít. Neobsahuje neveřejné údaje. Obě HTML stránky obsahují `noindex,nofollow`; Netlify Deploy Preview navíc posílá hlavičku `X-Robots-Tag: noindex`. Prototyp není přidán do veřejného menu ani do `sitemap.xml`. Odkazy mezi stránkami, CSS, JavaScript a obrázky používají relativní cesty.
+
+**Před jakýmkoli budoucím sloučením PR #44 do masteru je povinné odstranit celý adresář `preview-7d/` z větve.** Kořen repozitáře se publikuje na ostrý web; pokud adresář zůstane ve větvi při merge, jeho soubory budou dostupné na produkční doméně. Změna v tomto PR vytváří pouze Deploy Preview; nebyl proveden merge ani produkční deploy.
+
+Technická kontrola preview (commit `ffb5b42aeaa740b436503ccb0a9cf47da71fa053`): Netlify deploy byl ve stavu `ready` a vygeneroval obě stránky. Veřejné HTTPS načtení a ověření jednotlivých zdrojů je součástí aktuální revize; níže uvedený souhrn se aktualizuje po dokončení kontroly.
