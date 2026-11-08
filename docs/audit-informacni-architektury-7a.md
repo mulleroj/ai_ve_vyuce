@@ -1,6 +1,3 @@
-Warning: truncated output (original token count: 16289)
-Total output lines: 371
-
 # Audit informační architektury AI VE VÝUCE – etapa 7A
 
 **Rozsah aktualizace 8. 11. 2026:** ověřený aktuální `origin/master` `899d11ee5a15e66fc8d7d71d1b2c1470c560c3c1` (produkční potvrzený commit) získaný `git fetch origin master`. Snapshot byl vybalen do izolovaného archivačního adresáře; hlavní pracovní kopie a jejích WIP změny zachovány. Audit nyní vychází z přesně zadaného commitu. Před implementací ověřit audit proti aktuálnímu `master` na remote.
@@ -122,7 +119,55 @@ Následující seznam přiřazuje každou stránku k funkční skupině podle so
 ```text
 Homepage
 ├── témata: AI ve vzdělávání / novinky
-├── …1289 tokens truncated…úkol. Vést úkolové návody a z nich uvádět kompatibilní nástroje.
+├── práce: návody, workflow, prompty
+├── učitelská praxe: aktivity + předmětové stránky
+├── produkty a pomocníci: AI nástroje / asistenti a boti
+└── specializované tematické větve: AI agenti / vibe coding
+
+Detailní obsah
+├── samostatné články a novinky (část tvoří sérii Filozofování s AI)
+├── návody (postupy pro konkrétní úkol či produkt)
+├── workflow (složené scénáře a pracovní postupy)
+├── knihovna promptů (znovupoužitelné vstupy)
+├── knihovna aktivit (filtrovatelný katalog; doplněný předmětovými stránkami)
+├── katalog AI nástrojů a produktové stránky
+└── asistenti (rozcestník, katalog a detailní implementace)
+```
+
+Je to spíše soustava tematických mikrowebů než jednotná taxonomie. Shodné typy obsahu (novinka, návod, workflow, prompt, aktivita) se nevyskytují jen v jedné sekci. Hloubka navigace kolísá: někde vede hlavní nabídka na obecný rozcestník, jinde přímo na nástroj či specializovanou oblast. Patičky, zpětné odkazy a související obsah doplňují menu, ale ne vždy obnovují kontext nebo ukazují společného rodiče.
+
+## 3. Audit současného menu a informačního kontextu
+
+- Homepage, katalogové stránky a vibe coding mají odlišné navigační varianty. Uživatel proto může po přechodu změnit nabídku i názvosloví; lokální menu vibe codingu zdůrazňuje specializovanou větev.
+- Nabídka mísí **oblast** (AI agenti), **formát** (návody), **konkrétní výsledek** (aktivity), **produkt** (Gemini/ChatGPT) a někde **zdroj** (prompty). Tyto položky si konkurují na stejné úrovni.
+- „Článek“, „návod“, „workflow“, „prompt“ a „aktivita“ se v některých materiálech překrývají. Několik workflow je pojmenováno počtem promptů; vyhledávající učitel tak nemusí vědět, zda hledá návod, hotový prompt, nebo aktivitu.
+- Stránky s názvem produktu a „pro učitele“ jsou součástí produktových vstupů, ale vedle nich jsou obecné katalogy; cesta k porovnání napříč produkty není vždy zřejmá.
+- AI agenti a asistenti/boti souvisí, ale nejsou synonyma. Jedno označuje princip/typ systému, druhé může být hotová role či katalog. Současné rozdělení může čtenáře nutit znát technický rozdíl předem.
+- Vibe coding je obsahový formát/téma pro tvorbu softwaru, ne kategorie konkrétního produktu. Vlastní hlavička a karty mohou působit jako samostatný web.
+- Navigační prvky a kontext je třeba posuzovat podle skutečného HTML každé šablony. Atributy `aria-label`, drobečky a zvýraznění aktuální položky nejsou doloženy jednotným kontraktem napříč stránkami. U živě generovaných/šablonových článků se stav může lišit od statických souborů.
+- `ai.html` a `ai-novinky.html` mají podobně formulovaný titul a v zásadě informační vstup k AI; bez jasného označení může uživatel zaměnit obecný přehled a chronologický magazín.
+- Patička a odkazy „zpět“ neposkytují všude stejně předvídatelnou cestu k rodiči; interní odkazy často vedou mezi tématy bez vysvětlení, proč je další obsah doporučen.
+
+### Rozdíl typů obsahu pro uživatelské štítky
+
+| Typ | Odpovídá na otázku | Očekávaný formát |
+|---|---|---|
+| Článek / novinka | Proč je téma důležité a co se změnilo? | vysvětlení a kontext |
+| Návod | Jak udělám konkrétní úkol? | kroky a kontrolní body |
+| Workflow | Jak propojit více kroků/nástrojů do práce? | celý postup a výsledek |
+| Prompt | Co mohu vložit do AI? | kopírovatelný vstup + doporučené použití |
+| Aktivita | Co udělají žáci a učitel v hodině? | cíl, průběh, role a čas |
+| Nástroj | Jaké možnosti a omezení má služba? | přehled produktu, přístup a vhodné použití |
+| Asistent | Jak použít hotového pomocníka? | role, vstup, limity a spuštění |
+
+## 4. Duplicitní a nelogické návaznosti
+
+- **Tematické novinky vs. obecné AI přehledy:** `ai.html` / `ai-novinky.html` a tematické novinky mohou směšovat nadčasový úvod s časovou osou. Doporučit oddělené štítky „Začít“ a „Novinky“.
+- **Workflow vs. návod vs. prompt:** obsah jako „7 promptů“ může být objevován z více knihoven; každá karta má jasně uvést formát a výstup, místo vytváření druhého konkurenčního seznamu.
+- **Aktivity vs. předmětové stránky:** předmětové vstupy mohou duplikovat nebo znovu vybírat stejné aktivity. Jedno úložiště aktivity s filtrem předmětu, nikoli samostatné paralelní karty bez společného ID.
+- **Asistenti vs. katalog asistentů vs. agenti:** podobná slova ve vyhledávání, různé úrovně obsahu. Vysvětlit „hotový asistent“ a odkazovat z technického tématu agentů.
+- **Vibe coding vs. coding agenti:** společný zájem o tvorbu kódu, ale rozdílná zkušenost a rizika. Propojit s bezpečnostním a ověřovacím návodem bez slévání témat.
+- **Produktové stránky vs. obecné návody:** obsah podle značky usnadňuje hledání, ale může duplikovat postupy pro stejný úkol. Vést úkolové návody a z nich uvádět kompatibilní nástroje.
 - **Filozofování s AI:** články jsou v novinkové řadě, a tak se série může ztratit v chronologii. Potřebuje vlastní přistávací stránku/seznam série a předchozí/další článek.
 
 ## 5. Šest uživatelských cest
