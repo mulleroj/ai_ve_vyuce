@@ -50,6 +50,11 @@
       const desktop = window.matchMedia('(min-width: 801px)');
       if (desktop.addEventListener) desktop.addEventListener('change', (event) => { if (event.matches) closeMenu(); });
       else if (desktop.addListener) desktop.addListener((event) => { if (event.matches) closeMenu(); });
+      toggle.addEventListener('keydown', (event) => {
+        if (event.key !== 'Escape' || !menu.classList.contains('is-open')) return;
+        event.preventDefault();
+        closeMenu(true);
+      });
       if (!mainScriptLoaded) {
         toggle.addEventListener('click', () => {
           const opening = !menu.classList.contains('is-open');

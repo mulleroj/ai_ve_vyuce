@@ -66,8 +66,7 @@ function buildNavigation(currentId, currentToolHref) {
 
 function buildSubjectNavigation(currentId) {
   if (!SUBJECTS.some(subject => subject.id === currentId)) throw new Error('Unknown subject: ' + currentId);
-  if (currentId === 'matematika' || currentId === 'anglictina') return buildPilotNavigation();
-  return buildNavigation(currentId);
+  return buildPilotNavigation();
 }
 
 function buildPilotNavigation() {
