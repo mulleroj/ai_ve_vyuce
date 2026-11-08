@@ -22,6 +22,9 @@
   html.js .mobile-menu.site-nav-pilot { display: none !important; }
   html.js .mobile-menu.site-nav-pilot.open { display: flex !important; }
 }
+@media (max-width: 768px) {
+  .nav-links.site-nav-pilot { display: none; }
+}
 @media (min-width: 801px) {
   .mobile-menu.site-nav-pilot { display: none !important; }
   .site-nav-pilot .site-nav-panel { display: none; }
