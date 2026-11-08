@@ -94,7 +94,7 @@ Původní složka a archiv 7C zůstaly zachované. V 7D jsou čtyři soubory v k
 ### Provedené úpravy
 
 - Zachováno šest schválených oblastí. Každý název hlavního menu je nativní rozbalovací ovládací prvek a každá podkategorie vede na konkrétní sekci prototypu nebo existující veřejnou stránku.
-- Menu na desktopu i mobilu používá stejné názvy a pořadí. Jeho rozbalení je založeno na `details/summary`; Escape zavírá podmenu, na mobilu také celé menu a vrací fokus na spouštěč. Na desktopu vrací fokus na příslušnou oblast. Aktivní oblast se označuje atributem `aria-current="location"` po výběru odkazu nebo navigaci na kotvu.
+- Menu na desktopu i mobilu používá stejné názvy a pořadí. Jeho rozbalení je založeno na `details/summary`; Escape zavírá podmenu, na mobilu také celé menu a vrací fokus na spouštěč. Na desktopu vrací fokus na příslušnou oblast. Aktivní oblast se označuje atributem `aria-current="location"` po výběru odkazu, změně kotvy i při posunu stránky.
 - Zpřesněny cíle „Základy práce s AI“, „Praktické návody“, „Práce žáků s AI“, „Bezpečnost a testování“, „Novinky“ a „Filozofování s AI“. Katalog aktivit pro angličtinu zachovává `subject=aj`.
 - Příprava materiálů nyní odděluje pracovní list a test, uvádí kroky kontroly a propojuje prompt, návod a workflow podle jejich účelu.
 - Doplněno průřezové téma práce žáků s AI, které vede k roli žáka, roli AI a důkazu učení; nevzniká druhý katalog aktivit.
