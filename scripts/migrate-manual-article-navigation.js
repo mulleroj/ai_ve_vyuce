@@ -32,7 +32,13 @@ function verifyMigrated(html, page) {
   assert((html.match(/js\/site-navigation\.js/g) || []).length === 1, file, 'expected one shared navigation script');
   if (!page.productClass) {
     assert((html.match(/<section class="workflow-shell">/g) || []).length === 1, file, 'workflow hero must remain a separate content section');
-    assert(html.includes('class="workflow-back"'), file, 'original return link is missing');
+    if (file === 'gemini-pro-ucitele.html') {
+      assert(html.includes('<nav class="site-breadcrumbs" aria-label="Drobečková navigace">'), file, 'shared breadcrumb is missing');
+      assert(html.includes('<a href="asistenti.html">AI asistenti</a>'), file, 'breadcrumb return target changed');
+      assert(!html.includes('class="workflow-back"'), file, 'duplicate return control remains beside the breadcrumb');
+    } else {
+      assert(html.includes('class="workflow-back"'), file, 'original return link is missing');
+    }
     assert(!html.includes('class="nav-logo"'), file, 'legacy duplicate logo remains in workflow header');
   }
   assert((html.match(/<h1\b/g) || []).length === 1, file, 'expected the original single page H1');

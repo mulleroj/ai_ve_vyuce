@@ -32,6 +32,7 @@ body.light-background-pilot.stage7l-insight-article .workflow-shell {
   color: var(--stage7l-ink);
   background: linear-gradient(180deg, #fff 0%, #fffefa 58%, #f4f6ef 82%, #fffefa 100%);
 }
+body.light-background-pilot.stage7l-insight-article .workflow-shell { padding-top: 0; }
 body.light-background-pilot.stage7l-gemini-directory .workflow-shell::after,
 body.light-background-pilot.stage7l-data-news .workflow-shell::after,
 body.light-background-pilot.stage7l-insight-article .workflow-shell::after { display: none; }
