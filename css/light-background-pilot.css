@@ -18,7 +18,7 @@ body.light-background-pilot.gemini-notebook-prompt-page {
   --bg-glass: rgba(255, 254, 250, .96);
   --text-primary: #173b35;
   --text-secondary: #52675f;
-  --text-muted: #657970;
+  --text-muted: #52675f;
   --border: #dfe8e1;
   --border-hover: #9fcab2;
   --shadow: 0 8px 28px rgba(23, 56, 47, .09);
@@ -98,7 +98,7 @@ body.light-background-pilot.gemini-notebook-prompt-page {
   background: #fff;
 }
 .light-background-pilot.workflow-page .workflow-related-card .workflow-card-number {
-  color: #00d4a8;
+  color: #087568;
 }
 
 /* Preserve purpose-built dark prompt/diagram cards and the dark footer. */
