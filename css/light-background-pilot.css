@@ -166,6 +166,28 @@ body.light-background-pilot.gemini-notebook-prompt-page {
 .light-background-pilot.gemini-notebook-prompt-page .prompt-collection-nav a:focus-visible {
   border-color: #087568;
 }
+.light-background-pilot.gemini-notebook-prompt-page main .badge-mint,
+.light-background-pilot.gemini-notebook-prompt-page main .badge-gold {
+  color: #07584f;
+}
+.light-background-pilot.gemini-notebook-prompt-page main .badge-blue {
+  color: #1d4f91;
+}
+.light-background-pilot.gemini-notebook-prompt-page main .badge-purple {
+  color: #68347b;
+}
+.light-background-pilot.gemini-notebook-prompt-page main .badge-green {
+  color: #176b3a;
+}
+.light-background-pilot.gemini-notebook-prompt-page main .badge-orange {
+  color: #87420e;
+}
+.light-background-pilot.gemini-notebook-prompt-page main .badge-pink {
+  color: #941850;
+}
+.light-background-pilot.gemini-notebook-prompt-page main .badge-gray {
+  color: #52675f;
+}
 .light-background-pilot.gemini-notebook-prompt-page .copy-btn {
   border-color: #9fcab2;
   background: #e6f1ed;
