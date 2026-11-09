@@ -1,0 +1,370 @@
+/* Stage 7L: scoped light visual layer for four approved pages only. */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+
+body.light-background-pilot.stage7l-gemini-directory,
+body.light-background-pilot.stage7l-data-news,
+body.light-background-pilot.stage7l-insight-article,
+body.light-background-pilot.stage7l-notebook-prompts {
+  --stage7l-ink: #102d2b;
+  --stage7l-text: #25343d;
+  --stage7l-muted: #52675f;
+  --stage7l-green: #07584f;
+  --stage7l-paper: #fffefa;
+  --stage7l-soft: #f2f6f1;
+  --stage7l-line: #dfe8e1;
+  background: var(--stage7l-paper);
+  color: var(--stage7l-text);
+  font-family: 'DM Sans', Arial, sans-serif;
+}
+
+body.light-background-pilot.stage7l-gemini-directory :focus-visible,
+body.light-background-pilot.stage7l-data-news :focus-visible,
+body.light-background-pilot.stage7l-insight-article :focus-visible,
+body.light-background-pilot.stage7l-notebook-prompts :focus-visible {
+  outline: 3px solid #087568;
+  outline-offset: 3px;
+}
+
+/* Existing workflow templates: preserve layout and imagery, change surfaces and text colors. */
+body.light-background-pilot.stage7l-gemini-directory .workflow-shell,
+body.light-background-pilot.stage7l-data-news .workflow-shell,
+body.light-background-pilot.stage7l-insight-article .workflow-shell {
+  color: var(--stage7l-ink);
+  background: linear-gradient(180deg, #fff 0%, #fffefa 58%, #f4f6ef 82%, #fffefa 100%);
+}
+body.light-background-pilot.stage7l-gemini-directory .workflow-shell::after,
+body.light-background-pilot.stage7l-data-news .workflow-shell::after,
+body.light-background-pilot.stage7l-insight-article .workflow-shell::after { display: none; }
+body.light-background-pilot.stage7l-gemini-directory .workflow-hero,
+body.light-background-pilot.stage7l-data-news .workflow-hero,
+body.light-background-pilot.stage7l-insight-article .workflow-hero { color: var(--stage7l-ink); }
+body.light-background-pilot.stage7l-gemini-directory .workflow-hero h1,
+body.light-background-pilot.stage7l-data-news .workflow-hero h1,
+body.light-background-pilot.stage7l-insight-article .workflow-hero h1 {
+  color: var(--stage7l-ink);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.2rem, 4.8vw, 3.8rem);
+  line-height: 1.12;
+}
+body.light-background-pilot.stage7l-gemini-directory .workflow-hero h1 span,
+body.light-background-pilot.stage7l-data-news .workflow-hero h1 span,
+body.light-background-pilot.stage7l-insight-article .workflow-hero h1 span,
+body.light-background-pilot.stage7l-gemini-directory .workflow-eyebrow,
+body.light-background-pilot.stage7l-data-news .workflow-eyebrow,
+body.light-background-pilot.stage7l-insight-article .workflow-eyebrow { color: var(--stage7l-green); }
+body.light-background-pilot.stage7l-gemini-directory .workflow-eyebrow::before,
+body.light-background-pilot.stage7l-data-news .workflow-eyebrow::before,
+body.light-background-pilot.stage7l-insight-article .workflow-eyebrow::before { background: #168f7c; }
+body.light-background-pilot.stage7l-gemini-directory .workflow-hero-lead,
+body.light-background-pilot.stage7l-data-news .workflow-hero-lead,
+body.light-background-pilot.stage7l-insight-article .workflow-hero-lead { color: #344b45; }
+body.light-background-pilot.stage7l-gemini-directory .workflow-meta span,
+body.light-background-pilot.stage7l-data-news .workflow-meta span,
+body.light-background-pilot.stage7l-insight-article .workflow-meta span {
+  border: 1px solid #d2e2db;
+  background: #eaf3ef;
+  color: #254b43;
+}
+body.light-background-pilot.stage7l-gemini-directory .workflow-topbar,
+body.light-background-pilot.stage7l-data-news .workflow-topbar,
+body.light-background-pilot.stage7l-insight-article .workflow-topbar { border-bottom-color: #e5e7e1; }
+body.light-background-pilot.stage7l-gemini-directory .workflow-back,
+body.light-background-pilot.stage7l-data-news .workflow-back,
+body.light-background-pilot.stage7l-insight-article .workflow-back {
+  border-color: #cbd9d3;
+  background: rgba(255,255,255,.84);
+  color: var(--stage7l-green);
+}
+body.light-background-pilot.stage7l-gemini-directory .workflow-back:hover,
+body.light-background-pilot.stage7l-data-news .workflow-back:hover,
+body.light-background-pilot.stage7l-insight-article .workflow-back:hover,
+body.light-background-pilot.stage7l-gemini-directory .workflow-back:focus-visible,
+body.light-background-pilot.stage7l-data-news .workflow-back:focus-visible,
+body.light-background-pilot.stage7l-insight-article .workflow-back:focus-visible {
+  border-color: #8bb8a9;
+  background: #e6f1ed;
+  color: #063f39;
+}
+
+body.light-background-pilot.stage7l-gemini-directory .workflow-news-panel {
+  border: 1px solid var(--stage7l-line);
+  background: rgba(255,255,255,.9);
+  box-shadow: 0 8px 28px rgba(23,56,47,.08);
+  color: var(--stage7l-text);
+}
+body.light-background-pilot.stage7l-gemini-directory .workflow-news-panel-label,
+body.light-background-pilot.stage7l-gemini-directory .workflow-news-panel h2 { color: var(--stage7l-ink); }
+body.light-background-pilot.stage7l-gemini-directory .workflow-news-panel p { color: var(--stage7l-muted); }
+body.light-background-pilot.stage7l-gemini-directory .workflow-news-panel-meta span {
+  border-color: var(--stage7l-line);
+  background: var(--stage7l-soft);
+  color: #254b43;
+}
+body.light-background-pilot.stage7l-gemini-directory .workflow-launch-link {
+  border-color: #07584f;
+  background: #07584f;
+  color: #fffefa;
+}
+body.light-background-pilot.stage7l-gemini-directory .workflow-launch-link:hover,
+body.light-background-pilot.stage7l-gemini-directory .workflow-launch-link:focus-visible {
+  background: #063f39;
+  color: #fff;
+}
+body.light-background-pilot.stage7l-data-news .workflow-stage,
+body.light-background-pilot.stage7l-insight-article .workflow-stage {
+  border-color: #dce8e2;
+  background: rgba(255,255,255,.9);
+  box-shadow: 0 4px 14px rgba(22,55,43,.06);
+}
+body.light-background-pilot.stage7l-data-news .workflow-route::before,
+body.light-background-pilot.stage7l-insight-article .workflow-route::before { border-color: #aac8bc; }
+body.light-background-pilot.stage7l-data-news .workflow-stage-number,
+body.light-background-pilot.stage7l-data-news .workflow-stage:nth-child(even) .workflow-stage-number,
+body.light-background-pilot.stage7l-insight-article .workflow-stage-number,
+body.light-background-pilot.stage7l-insight-article .workflow-stage:nth-child(even) .workflow-stage-number {
+  background: #e6f1ed;
+  color: #07584f;
+}
+body.light-background-pilot.stage7l-data-news .workflow-stage strong,
+body.light-background-pilot.stage7l-insight-article .workflow-stage strong { color: #173b35; }
+body.light-background-pilot.stage7l-data-news .workflow-stage small,
+body.light-background-pilot.stage7l-insight-article .workflow-stage small { color: #52675f; }
+
+/* The Insight article has its own older subject-navigation template. */
+body.light-background-pilot.stage7l-insight-article .nav {
+  background: rgba(255,254,250,.97);
+  border-bottom: 1px solid var(--stage7l-line);
+  box-shadow: 0 4px 16px rgba(23,56,47,.06);
+}
+body.light-background-pilot.stage7l-insight-article .nav-link,
+body.light-background-pilot.stage7l-insight-article .nav-logo { color: #173b35; }
+body.light-background-pilot.stage7l-insight-article .nav-link:hover,
+body.light-background-pilot.stage7l-insight-article .nav-link:focus-visible,
+body.light-background-pilot.stage7l-insight-article .nav-link.active { color: #07584f; }
+body.light-background-pilot.stage7l-insight-article .nav-link:hover {
+  background: #eaf3ef;
+  color: #063f39;
+}
+body.light-background-pilot.stage7l-insight-article .nav-logo span { color: #07584f; }
+body.light-background-pilot.stage7l-insight-article .nav-dropdown-menu,
+body.light-background-pilot.stage7l-insight-article .mobile-menu {
+  border-color: var(--stage7l-line);
+  background: #fffefa;
+  box-shadow: 0 8px 24px rgba(23,56,47,.12);
+}
+body.light-background-pilot.stage7l-insight-article .nav-dropdown-item { color: #25343d; }
+body.light-background-pilot.stage7l-insight-article .nav-dropdown-item:hover,
+body.light-background-pilot.stage7l-insight-article .nav-dropdown-item:focus-visible {
+  background: #eaf3ef;
+  color: #07584f;
+}
+body.light-background-pilot.stage7l-insight-article .insight-feature,
+body.light-background-pilot.stage7l-insight-article .insight-privacy {
+  border-color: var(--stage7l-line);
+  border-left-color: #087568;
+  background: #fff;
+}
+body.light-background-pilot.stage7l-insight-article .insight-example {
+  border-color: var(--stage7l-line);
+  background: #eef5ef;
+}
+
+body.light-background-pilot.stage7l-gemini-directory .workflow-article,
+body.light-background-pilot.stage7l-data-news .workflow-article,
+body.light-background-pilot.stage7l-insight-article .workflow-article {
+  border-color: var(--stage7l-line);
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(23,56,47,.07);
+}
+body.light-background-pilot.stage7l-gemini-directory .workflow-article-intro,
+body.light-background-pilot.stage7l-data-news .workflow-article-intro,
+body.light-background-pilot.stage7l-insight-article .workflow-article-intro { border-color: #e5e7e1; }
+body.light-background-pilot.stage7l-gemini-directory .workflow-article-kicker,
+body.light-background-pilot.stage7l-data-news .workflow-article-kicker,
+body.light-background-pilot.stage7l-insight-article .workflow-article-kicker,
+body.light-background-pilot.stage7l-gemini-directory .workflow-article-title,
+body.light-background-pilot.stage7l-data-news .workflow-article-title,
+body.light-background-pilot.stage7l-insight-article .workflow-article-title,
+body.light-background-pilot.stage7l-gemini-directory .article-content,
+body.light-background-pilot.stage7l-data-news .article-content,
+body.light-background-pilot.stage7l-insight-article .article-content { color: var(--stage7l-text); }
+body.light-background-pilot.stage7l-gemini-directory .workflow-article-title,
+body.light-background-pilot.stage7l-data-news .workflow-article-title,
+body.light-background-pilot.stage7l-insight-article .workflow-article-title,
+body.light-background-pilot.stage7l-gemini-directory .article-content h2,
+body.light-background-pilot.stage7l-data-news .article-content h2,
+body.light-background-pilot.stage7l-insight-article .article-content h2,
+body.light-background-pilot.stage7l-gemini-directory .article-content h3,
+body.light-background-pilot.stage7l-data-news .article-content h3,
+body.light-background-pilot.stage7l-insight-article .article-content h3 { color: var(--stage7l-ink); }
+body.light-background-pilot.stage7l-gemini-directory .workflow-article-summary,
+body.light-background-pilot.stage7l-data-news .workflow-article-summary,
+body.light-background-pilot.stage7l-insight-article .workflow-article-summary,
+body.light-background-pilot.stage7l-gemini-directory .workflow-related-heading p,
+body.light-background-pilot.stage7l-data-news .workflow-related-heading p,
+body.light-background-pilot.stage7l-insight-article .workflow-related-heading p,
+body.light-background-pilot.stage7l-gemini-directory .workflow-related-card p,
+body.light-background-pilot.stage7l-data-news .workflow-related-card p,
+body.light-background-pilot.stage7l-insight-article .workflow-related-card p,
+body.light-background-pilot.stage7l-insight-article .insight-hero-figure figcaption { color: var(--stage7l-muted); }
+body.light-background-pilot.stage7l-gemini-directory .article-content a,
+body.light-background-pilot.stage7l-data-news .article-content a,
+body.light-background-pilot.stage7l-insight-article .article-content a,
+body.light-background-pilot.stage7l-gemini-directory .workflow-related-card a,
+body.light-background-pilot.stage7l-data-news .workflow-related-card a,
+body.light-background-pilot.stage7l-insight-article .workflow-related-card a {
+  color: var(--stage7l-green);
+  text-decoration-color: rgba(7,88,79,.45);
+  text-underline-offset: 3px;
+}
+body.light-background-pilot.stage7l-gemini-directory .article-content a:hover,
+body.light-background-pilot.stage7l-data-news .article-content a:hover,
+body.light-background-pilot.stage7l-insight-article .article-content a:hover,
+body.light-background-pilot.stage7l-gemini-directory .article-content a:focus-visible,
+body.light-background-pilot.stage7l-data-news .article-content a:focus-visible,
+body.light-background-pilot.stage7l-insight-article .article-content a:focus-visible { color: #063f39; }
+body.light-background-pilot.stage7l-gemini-directory .article-content blockquote,
+body.light-background-pilot.stage7l-data-news .article-content blockquote,
+body.light-background-pilot.stage7l-insight-article .article-content blockquote {
+  border-left-color: #087568;
+  background: #eef5ef;
+  color: #294b41;
+}
+body.light-background-pilot.stage7l-gemini-directory .article-content .article-prompt,
+body.light-background-pilot.stage7l-data-news .article-content .article-prompt,
+body.light-background-pilot.stage7l-insight-article .article-content .article-prompt {
+  border-color: var(--stage7l-line);
+  background: #f2f6f1;
+  color: #25343d;
+}
+body.light-background-pilot.stage7l-gemini-directory .workflow-related-card,
+body.light-background-pilot.stage7l-data-news .workflow-related-card,
+body.light-background-pilot.stage7l-insight-article .workflow-related-card {
+  border: 1px solid var(--stage7l-line);
+  background: #fff;
+}
+body.light-background-pilot.stage7l-gemini-directory .workflow-related-heading h2,
+body.light-background-pilot.stage7l-data-news .workflow-related-heading h2,
+body.light-background-pilot.stage7l-insight-article .workflow-related-heading h2 { color: var(--stage7l-ink); }
+body.light-background-pilot.stage7l-data-news .article-figure img,
+body.light-background-pilot.stage7l-insight-article .insight-hero-figure img,
+body.light-background-pilot.stage7l-insight-article .article-figure img {
+  border: 1px solid var(--stage7l-line);
+  box-shadow: 0 8px 24px rgba(22,55,43,.1);
+}
+
+/* Gemini Notebook prompt library: light hero, collection cards, prompt surfaces and controls. */
+body.light-background-pilot.stage7l-notebook-prompts {
+  --bg-primary: #fffefa;
+  --bg-secondary: #f2f6f1;
+  --bg-card: #fff;
+  --bg-card-hover: #f7faf5;
+  --bg-glass: rgba(255,254,250,.96);
+  --text-primary: #173b35;
+  --text-secondary: #52675f;
+  --text-muted: #52675f;
+  --border: #dfe8e1;
+  --border-hover: #9fcab2;
+  --shadow: 0 8px 28px rgba(23,56,47,.09);
+  --shadow-hover: 0 14px 34px rgba(23,56,47,.13);
+}
+body.light-background-pilot.stage7l-notebook-prompts .page-hero {
+  background: linear-gradient(180deg,#fff 0%,#fffefa 60%,#f2f6f1 100%) !important;
+  color: var(--stage7l-ink);
+}
+body.light-background-pilot.stage7l-notebook-prompts .page-hero-glow { opacity: .14; }
+body.light-background-pilot.stage7l-notebook-prompts .page-hero-icon,
+body.light-background-pilot.stage7l-notebook-prompts .page-hero-stat {
+  border: 1px solid var(--stage7l-line);
+  background: #fff;
+  color: var(--stage7l-green);
+}
+body.light-background-pilot.stage7l-notebook-prompts .page-hero-title {
+  color: var(--stage7l-ink);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.1rem,5vw,3.7rem);
+}
+body.light-background-pilot.stage7l-notebook-prompts .page-hero-title .gradient-text-gold {
+  background: none;
+  color: var(--stage7l-green);
+  -webkit-text-fill-color: currentColor;
+}
+body.light-background-pilot.stage7l-notebook-prompts .page-hero-subtitle { color: #344b45; }
+body.light-background-pilot.stage7l-notebook-prompts .page-hero-stat strong { color: var(--stage7l-ink); }
+body.light-background-pilot.stage7l-notebook-prompts main,
+body.light-background-pilot.stage7l-notebook-prompts .section { color: var(--stage7l-text); }
+body.light-background-pilot.stage7l-notebook-prompts .section-title,
+body.light-background-pilot.stage7l-notebook-prompts .section-title span,
+body.light-background-pilot.stage7l-notebook-prompts .prompt-collection-heading h3 { color: var(--stage7l-ink); }
+body.light-background-pilot.stage7l-notebook-prompts .gradient-text,
+body.light-background-pilot.stage7l-notebook-prompts .section-label {
+  background: none;
+  color: #07584f;
+  -webkit-text-fill-color: currentColor;
+}
+body.light-background-pilot.stage7l-notebook-prompts .nav-link.active,
+body.light-background-pilot.stage7l-notebook-prompts .nav-link:hover,
+body.light-background-pilot.stage7l-notebook-prompts .nav-link:focus-visible {
+  color: #07584f;
+}
+body.light-background-pilot.stage7l-notebook-prompts .nav-link:hover { background: #eaf3ef; }
+body.light-background-pilot.stage7l-notebook-prompts .section-subtitle,
+body.light-background-pilot.stage7l-notebook-prompts .prompt-lead,
+body.light-background-pilot.stage7l-notebook-prompts .prompt-collection-heading p { color: var(--stage7l-muted); }
+body.light-background-pilot.stage7l-notebook-prompts .prompt-card,
+body.light-background-pilot.stage7l-notebook-prompts .prompt-collection-nav a {
+  border-color: var(--stage7l-line);
+  background: #fff;
+  color: var(--stage7l-text);
+  box-shadow: 0 6px 22px rgba(23,56,47,.06);
+}
+body.light-background-pilot.stage7l-notebook-prompts .prompt-card h2,
+body.light-background-pilot.stage7l-notebook-prompts .prompt-card h3,
+body.light-background-pilot.stage7l-notebook-prompts .prompt-card h4,
+body.light-background-pilot.stage7l-notebook-prompts .prompt-header h3 { color: var(--stage7l-ink); }
+body.light-background-pilot.stage7l-notebook-prompts .prompt-card-intro,
+body.light-background-pilot.stage7l-notebook-prompts .prompt-footer,
+body.light-background-pilot.stage7l-notebook-prompts .prompt-lead { color: var(--stage7l-muted); }
+body.light-background-pilot.stage7l-notebook-prompts .prompt-body {
+  border: 1px solid var(--stage7l-line);
+  background: #f2f6f1;
+  color: #25343d;
+}
+body.light-background-pilot.stage7l-notebook-prompts .prompt-body code { color: #173b35; }
+body.light-background-pilot.stage7l-notebook-prompts .prompt-collection-nav a { color: #07584f; }
+body.light-background-pilot.stage7l-notebook-prompts .prompt-collection-nav a:hover,
+body.light-background-pilot.stage7l-notebook-prompts .prompt-collection-nav a:focus-visible {
+  border-color: #087568;
+  background: #eaf3ef;
+  color: #063f39;
+}
+body.light-background-pilot.stage7l-notebook-prompts .copy-btn {
+  border-color: #9fcab2;
+  background: #e6f1ed;
+  color: #07584f;
+}
+body.light-background-pilot.stage7l-notebook-prompts .copy-btn:hover,
+body.light-background-pilot.stage7l-notebook-prompts .copy-btn:focus-visible,
+body.light-background-pilot.stage7l-notebook-prompts .copy-btn.copied {
+  border-color: #07584f;
+  background: #d3e9dc;
+  color: #063f39;
+}
+body.light-background-pilot.stage7l-notebook-prompts .footer-links a:hover,
+body.light-background-pilot.stage7l-notebook-prompts .footer-bottom-links a:hover {
+  color: #063f39;
+}
+
+body.light-background-pilot.stage7l-gemini-directory .workflow-footer,
+body.light-background-pilot.stage7l-data-news .workflow-footer,
+body.light-background-pilot.stage7l-insight-article .workflow-footer {
+  border-top: 1px solid var(--stage7l-line);
+  background: #f2f6f1;
+  color: #35524c;
+}
+body.light-background-pilot.stage7l-gemini-directory .workflow-footer a,
+body.light-background-pilot.stage7l-data-news .workflow-footer a,
+body.light-background-pilot.stage7l-insight-article .workflow-footer a,
+body.light-background-pilot.stage7l-gemini-directory .workflow-footer .site-footer-mark,
+body.light-background-pilot.stage7l-data-news .workflow-footer .site-footer-mark,
+body.light-background-pilot.stage7l-insight-article .workflow-footer .site-footer-mark { color: #07584f; }
