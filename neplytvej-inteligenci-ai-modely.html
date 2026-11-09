@@ -7,6 +7,7 @@
     <title>Neplýtvej inteligencí: Efektivnější práce s AI | AI ve výuce</title>
     <meta name="description" content="Jak efektivně využívat AI modely, šetřit tokeny a rozdělovat práci mezi AI agenty. Šest principů a praktické prompty pro učitele." />
     <link rel="stylesheet" href="css/workflow.css?v=20260923-neplytvej-inteligenci" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7i" />
     <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/neplytvej-inteligenci-ai-modely" />
     <meta property="og:title" content="Neplýtvej inteligencí: Efektivnější práce s AI | AI ve výuce" />
     <meta property="og:description" content="Jak efektivně využívat AI modely, šetřit tokeny a rozdělovat práci mezi AI agenty. Šest principů a praktické prompty pro učitele." />
@@ -26,10 +27,25 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
+<body class="workflow-page site-navigation-enabled" data-site-navigation-area="prepare">
+<header class="site-header" id="top">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu">
+      <div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+        <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a>
+        <a href="ai-navody.html">Připravit výuku</a>
+        <a href="aktivity.html">Učit s AI</a>
+        <a href="asistenti.html">Nástroje a asistenti</a>
+        <a href="vibe-coding.html">Tvořit s AI</a>
+        <a href="ai.html">Číst a objevovat</a>
+      </div>
+    </div>
+  </nav>
+</header>
+    <section class="workflow-shell">
         <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
             <a class="workflow-back" href="ai.html#navody">← Praktické návody</a>
         </div>
         <div class="workflow-hero">
@@ -45,7 +61,7 @@
                 <div class="workflow-stage"><span class="workflow-stage-number">3</span><div><strong>Rozdělte práci a kontrolujte</strong><small>AI pomáhá, člověk rozhoduje</small></div></div>
             </div>
         </div>
-    </header>
+    </section>
 
     <main class="workflow-main">
         <article class="workflow-article">
@@ -335,6 +351,8 @@ Pokud delegování není technicky dostupné, vysvětli omezení a navrhni alter
 
     <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai.html#navody">Zpět na praktické návody</a></footer>
     <script src="js/tool-guide.js?v=20260923-neplytvej-prompts" defer></script>
+    <script src="js/site-navigation-data.js?v=20261109-7i"></script>
+    <script src="js/site-navigation.js?v=20261109-7i"></script>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
 </body>
 
