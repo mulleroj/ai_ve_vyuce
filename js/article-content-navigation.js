@@ -1,6 +1,37 @@
 (() => {
   const navigation = document.querySelector('.article-content-navigation');
-  if (!navigation || !('IntersectionObserver' in window)) return;
+  if (!navigation) return;
+
+  const summary = navigation.querySelector('summary');
+  const desktopQuery = window.matchMedia('(min-width: 961px)');
+
+  const syncDisclosure = () => {
+    if (desktopQuery.matches) {
+      navigation.open = true;
+      summary.tabIndex = -1;
+      summary.setAttribute('aria-disabled', 'true');
+    } else {
+      summary.removeAttribute('tabindex');
+      summary.removeAttribute('aria-disabled');
+    }
+  };
+
+  summary.addEventListener('click', event => {
+    if (desktopQuery.matches) event.preventDefault();
+  });
+
+  navigation.addEventListener('toggle', () => {
+    if (desktopQuery.matches && !navigation.open) navigation.open = true;
+  });
+
+  if (typeof desktopQuery.addEventListener === 'function') {
+    desktopQuery.addEventListener('change', syncDisclosure);
+  } else {
+    desktopQuery.addListener(syncDisclosure);
+  }
+  syncDisclosure();
+
+  if (!('IntersectionObserver' in window)) return;
 
   const links = Array.from(navigation.querySelectorAll('a[href^="#"]'));
   const items = links.map(link => ({
