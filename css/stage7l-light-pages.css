@@ -369,3 +369,27 @@ body.light-background-pilot.stage7l-insight-article .workflow-footer a,
 body.light-background-pilot.stage7l-gemini-directory .workflow-footer .site-footer-mark,
 body.light-background-pilot.stage7l-data-news .workflow-footer .site-footer-mark,
 body.light-background-pilot.stage7l-insight-article .workflow-footer .site-footer-mark { color: #07584f; }
+
+/* Replace legacy dark-hero foreground colors on this light pilot page. */
+body.light-background-pilot.gemini-notebook-prompt-page.stage7l-notebook-prompts .page-hero .page-hero-stat {
+  border-color: var(--stage7l-line);
+  background: #fff;
+  color: var(--stage7l-green);
+}
+body.light-background-pilot.gemini-notebook-prompt-page.stage7l-notebook-prompts .page-hero .page-hero-stat strong {
+  color: var(--stage7l-ink);
+}
+body.light-background-pilot.gemini-notebook-prompt-page.stage7l-notebook-prompts .page-hero .btn-secondary,
+body.light-background-pilot.gemini-notebook-prompt-page.stage7l-notebook-prompts .page-hero .btn-outline {
+  border-color: #9fcab2;
+  background: #e6f1ed;
+  color: #07584f;
+}
+body.light-background-pilot.gemini-notebook-prompt-page.stage7l-notebook-prompts .page-hero .btn-secondary:hover,
+body.light-background-pilot.gemini-notebook-prompt-page.stage7l-notebook-prompts .page-hero .btn-secondary:focus-visible,
+body.light-background-pilot.gemini-notebook-prompt-page.stage7l-notebook-prompts .page-hero .btn-outline:hover,
+body.light-background-pilot.gemini-notebook-prompt-page.stage7l-notebook-prompts .page-hero .btn-outline:focus-visible {
+  border-color: #07584f;
+  background: #d3e9dc;
+  color: #063f39;
+}
