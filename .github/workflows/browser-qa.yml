@@ -20,6 +20,7 @@ jobs:
     timeout-minutes: 15
     env:
       TESTED_SHA: ${{ github.event_name == 'workflow_dispatch' && inputs.tested_sha || github.event.pull_request.head.sha }}
+      BASELINE_SHA: 1abd3fc39df4650b402f5f6d31f6a2148f7a769f
     steps:
       - name: Checkout the tested commit
         uses: actions/checkout@v4
@@ -31,6 +32,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
+
+      - name: Fetch the pre-migration baseline
+        run: git fetch --no-tags --depth=1 origin "$BASELINE_SHA"
 
       - name: Install isolated browser test runner
         run: |
@@ -93,7 +97,6 @@ jobs:
           name: browser-qa-${{ env.TESTED_SHA }}
           path: |
             artifacts/
-            test-results/
             test-results/
           if-no-files-found: warn
           retention-days: 14
