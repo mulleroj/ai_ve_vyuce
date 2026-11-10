@@ -21,14 +21,37 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261109-7k" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261109-7k-v2" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261110-7q" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-            <a class="workflow-back" href="ai-agenti.html">← AI agenti</a>
-        </div>
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="create">
+<header class="site-header" id="top">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu">
+      <div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+        <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a>
+        <a href="ai-navody.html">Připravit výuku</a>
+        <a href="aktivity.html">Učit s AI</a>
+        <a href="asistenti.html">Nástroje a asistenti</a>
+        <a href="vibe-coding.html" aria-current="location">Tvořit s AI</a>
+        <a href="ai.html">Číst a objevovat</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace">
+  <ol>
+    <li><a href="index.html">Domů</a></li>
+    <li><a href="ai-agenti.html">AI agenti</a></li>
+    <li aria-current="page">AI agent, automatizace, workflow nebo chatbot?</li>
+  </ol>
+</nav>
+    <section class="workflow-shell">
         <div class="workflow-hero">
             <div>
                 <div class="workflow-eyebrow">AI agenti · 1. září 2026</div>
@@ -43,26 +66,19 @@
                 <div class="workflow-stage"><span class="workflow-stage-number">04</span><div><strong>Musí systém rozhodovat?</strong><small>Zvaž AI agenta</small></div></div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
+        <details class="article-content-navigation" open>
+            <summary id="toc-heading-ai-agenti-chatbot-automatizace-workflow-html">V tomto článku</summary>
+            <nav aria-label="Obsah článku"><ol><li><a href="#toc-01">Ne všechno, co používá AI, je agent</a></li><li><a href="#typ-chatbot">1. Chatbot: když potřebujeme odpověď</a><ol><li><a href="#typ-chatbot-kdy">Kdy použít chatbot</a></li></ol></li><li><a href="#typ-automatizace">2. Automatizace: když přesně víme, co má následovat</a><ol><li><a href="#typ-automatizace-spolehlivost">Automatizace bývá spolehlivější než AI</a></li></ol></li><li><a href="#typ-workflow">3. Workflow: když máme několik známých kroků</a><ol><li><a href="#typ-workflow-ai">Workflow může obsahovat AI</a></li></ol></li><li><a href="#typ-agent">4. AI agent: když přesnou cestu předem neznáme</a></li><li><a href="#toc-02">Hlavní rozdíl: kdo rozhoduje o dalším kroku</a></li><li><a href="#toc-03">Jednoduchý příklad: pracovní list</a></li><li><a href="#toc-04">Agent není automaticky lepší</a></li><li><a href="#toc-05">Kdy zvolit chatbot</a></li><li><a href="#toc-06">Kdy zvolit automatizaci</a></li><li><a href="#vybrat-workflow">Kdy zvolit workflow</a></li><li><a href="#vybrat-agenta">Kdy zvolit AI agenta</a></li><li><a href="#hybridni-reseni">A co hybridní řešení?</a></li><li><a href="#agent-spousti-workflow">Agent může spouštět workflow</a></li><li><a href="#dulezitost-a-improvizace">Čím důležitější úkol, tím méně improvizace</a></li><li><a href="#rozhodnuti-za-minutu">Jak to poznat během jedné minuty</a><ol><li><a href="#rozhodnuti-znamy-postup">1. Znám přesný postup?</a></li><li><a href="#rozhodnuti-obsah">2. Potřebuji pouze vytvořit nebo analyzovat obsah?</a></li><li><a href="#rozhodnuti-agent">3. Musí systém sám rozhodovat, co udělá dál?</a></li></ol></li><li><a href="#prakticka-tabulka">Praktická tabulka</a></li><li><a href="#nejjednodussi-system">Nejlepší systém může být překvapivě nudný</a></li></ol></nav>
+        </details>
         <article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Rozdíl mezi těmito přístupy není jen technický. Ovlivňuje cenu, spolehlivost, bezpečnost i to, kolik kontroly nad systémem máme.</p>
                 <p class="article-editorial-title">AI agent, automatizace, workflow nebo chatbot? Co kdy vlastně použít</p>
             </div>
 
-            <nav class="article-toc" aria-labelledby="toc-heading-ai-agenti-chatbot-automatizace-workflow-html">
-                <p class="article-toc-label" id="toc-heading-ai-agenti-chatbot-automatizace-workflow-html">V tomto článku</p>
-                <ul>
-                    <li><a href="#toc-01">Ne všechno, co používá AI, je agent</a></li>
-                    <li><a href="#toc-02">Hlavní rozdíl: kdo rozhoduje o dalším kroku</a></li>
-                    <li><a href="#toc-03">Jednoduchý příklad: pracovní list</a></li>
-                    <li><a href="#toc-04">Agent není automaticky lepší</a></li>
-                    <li><a href="#toc-05">Kdy zvolit chatbot</a></li>
-                    <li><a href="#toc-06">Kdy zvolit automatizaci</a></li>
-                </ul>
-            </nav>
             <div class="article-content">
                 <p class="article-lead">Ne každý úkol potřebuje AI agenta. Někdy stačí obyčejný chatbot. Jindy je lepší klasická automatizace. A u některých procesů dává smysl pevně definované workflow. Rozdíl mezi těmito přístupy není jen technický. Ovlivňuje cenu, spolehlivost, bezpečnost i to, kolik kontroly nad systémem máme.</p>
 
@@ -85,7 +101,7 @@
                 <div class="article-prompt"><strong>chatbot · automatizace · workflow · AI agent</strong></div>
                 <p>Každý se hodí na něco jiného.</p>
 
-                <h2>1. Chatbot: když potřebujeme odpověď</h2>
+                <h2 id="typ-chatbot">1. Chatbot: když potřebujeme odpověď</h2>
                 <p>Chatbot je nejjednodušší varianta.</p>
                 <p>Člověk něco zadá.</p>
                 <p>AI odpoví.</p>
@@ -97,7 +113,7 @@
                 <p>Může pracovat s obrázky, soubory, webem nebo dalšími nástroji.</p>
                 <p>Ale pokud uživatel stále řídí jednotlivé kroky, máme stále spíše interaktivního asistenta než autonomnějšího agenta.</p>
 
-                <h3>Kdy použít chatbot</h3>
+                <h3 id="typ-chatbot-kdy">Kdy použít chatbot</h3>
                 <p>Chatbot je vhodný, když:</p>
                 <ul><li>potřebujeme jednorázovou odpověď,</li><li>chceme něco vysvětlit,</li><li>vytváříme návrh,</li><li>upravujeme text,</li><li>brainstormujeme,</li><li>člověk chce mít průběh práce plně pod kontrolou.</li></ul>
                 <p>Například:</p>
@@ -105,7 +121,7 @@
                 <p>Není potřeba stavět agenta.</p>
                 <p>Chatbot to zvládne skvěle.</p>
 
-                <h2>2. Automatizace: když přesně víme, co má následovat</h2>
+                <h2 id="typ-automatizace">2. Automatizace: když přesně víme, co má následovat</h2>
                 <p>Automatizace je vhodná pro procesy s jasně danými pravidly.</p>
                 <p>Například:</p>
                 <ul><li>Když přijde nový soubor → přesuň ho do složky.</li><li>Každý pátek → pošli připomínku.</li><li>Pokud je hodnota vyšší než X → označ řádek.</li></ul>
@@ -123,7 +139,7 @@
                 <p>Nemá co rozhodovat.</p>
                 <p>Pravidlo je jasné.</p>
 
-                <h3>Automatizace bývá spolehlivější než AI</h3>
+                <h3 id="typ-automatizace-spolehlivost">Automatizace bývá spolehlivější než AI</h3>
                 <p>Pokud má proces jednoznačná pravidla, klasická automatizace bývá:</p>
                 <div class="article-prompt"><strong>levnější · rychlejší · předvídatelnější · jednodušší na kontrolu</strong></div>
                 <p>AI je výborná tam, kde existuje nejistota a práce s jazykem.</p>
@@ -133,7 +149,7 @@
                 <p>Ano, zvládl by to.</p>
                 <p>Ale proč?</p>
 
-                <h2>3. Workflow: když máme několik známých kroků</h2>
+                <h2 id="typ-workflow">3. Workflow: když máme několik známých kroků</h2>
                 <p>Workflow je pracovní postup složený z několika kroků.</p>
                 <p>Například:</p>
                 <div class="article-prompt"><strong>načti dokument<br /><br />↓<br /><br />vytvoř shrnutí pomocí AI<br /><br />↓<br /><br />ulož výsledek<br /><br />↓<br /><br />pošli ho člověku ke schválení</strong></div>
@@ -141,7 +157,7 @@
                 <p>Systém neřeší pokaždé úplně od nuly, co má dělat.</p>
                 <p>Má připravenou cestu.</p>
 
-                <h3>Workflow může obsahovat AI</h3>
+                <h3 id="typ-workflow-ai">Workflow může obsahovat AI</h3>
                 <p>To je důležitá věc.</p>
                 <p>Použití jazykového modelu automaticky neznamená, že máme AI agenta.</p>
                 <p>Představme si tento proces:</p>
@@ -157,7 +173,7 @@
                 <p>Proces je pořád stejný.</p>
                 <p>Nemusíme nutně potřebovat agenta.</p>
 
-                <h2>4. AI agent: když přesnou cestu předem neznáme</h2>
+                <h2 id="typ-agent">4. AI agent: když přesnou cestu předem neznáme</h2>
                 <p>A teď přichází agent.</p>
                 <p>Agent dostane:</p>
                 <div class="article-prompt"><strong>cíl</strong></div>
@@ -242,7 +258,7 @@
                 <p>Například:</p>
                 <ul><li>připomínky,</li><li>přesouvání souborů,</li><li>přejmenování dokumentů,</li><li>pravidelné exporty,</li><li>jednoduché výpočty,</li><li>kopírování dat.</li></ul>
 
-                <h2>Kdy zvolit workflow</h2>
+                <h2 id="vybrat-workflow">Kdy zvolit workflow</h2>
                 <p>Použijte workflow, pokud:</p>
                 <div class="article-prompt"><strong>existuje několik jasných kroků a některé mohou využívat AI.</strong></div>
                 <p>Například:</p>
@@ -250,21 +266,21 @@
                 <p>Workflow je skvělé tam, kde chceme kombinovat:</p>
                 <div class="article-prompt"><strong>automatizaci + AI + lidskou kontrolu.</strong></div>
 
-                <h2>Kdy zvolit AI agenta</h2>
+                <h2 id="vybrat-agenta">Kdy zvolit AI agenta</h2>
                 <p>Agent dává smysl, pokud:</p>
                 <ul><li>přesný postup závisí na situaci,</li><li>systém musí vybrat mezi různými nástroji,</li><li>potřebuje hledat informace,</li><li>musí reagovat na výsledky předchozích kroků,</li><li>cíle jsou širší než jednotlivé instrukce.</li></ul>
                 <p>Například:</p>
                 <blockquote>„Zjisti, co musím připravit na zítřejší výuku, a připrav mi chybějící materiály.“</blockquote>
                 <p>To už je typicky agentní úkol.</p>
 
-                <h2>A co hybridní řešení?</h2>
+                <h2 id="hybridni-reseni">A co hybridní řešení?</h2>
                 <p>V praxi je možná nejzajímavější kombinace všech přístupů.</p>
                 <p>Například:</p>
                 <div class="article-prompt"><strong>Agent</strong><br /><br />rozhodne, že je potřeba vytvořit pracovní list.<br /><br />↓<br /><br /><strong>Spustí workflow:</strong><br /><br />vytvoření → kontrola → export<br /><br />↓<br /><br /><strong>Workflow použije AI model</strong><br /><br />pro tvorbu obsahu.<br /><br />↓<br /><br /><strong>Po dokončení proběhne automatizace</strong><br /><br />a soubor se uloží na správné místo.</div>
                 <p>Takový systém využívá každý nástroj přesně tam, kde dává smysl.</p>
                 <p>A to je podle mě mnohem rozumnější než snažit se všechno označit slovem „agent“.</p>
 
-                <h2>Agent může spouštět workflow</h2>
+                <h2 id="agent-spousti-workflow">Agent může spouštět workflow</h2>
                 <p>Tohle je důležitý návrhový princip.</p>
                 <p>Představme si, že máme dobře otestovaný proces:</p>
                 <div class="article-prompt"><strong>create_workbook</strong></div>
@@ -278,7 +294,7 @@
                 <div class="article-prompt"><strong>flexibilitu agenta + spolehlivost pevného procesu.</strong></div>
                 <p>To je velmi silná kombinace.</p>
 
-                <h2>Čím důležitější úkol, tím méně improvizace</h2>
+                <h2 id="dulezitost-a-improvizace">Čím důležitější úkol, tím méně improvizace</h2>
                 <p>U nízkorizikové činnosti můžeme agentovi dát poměrně velkou volnost.</p>
                 <p>Například:</p>
                 <blockquote>Navrhni tři varianty aktivity.</blockquote>
@@ -292,26 +308,26 @@
                 <div class="article-prompt"><strong>vytvoření návrhu → kontrola člověkem → potvrzení → odeslání.</strong></div>
                 <p>Tím se autonomie drží tam, kde je užitečná, a omezuje tam, kde by mohla být nebezpečná.</p>
 
-                <h2>Jak to poznat během jedné minuty</h2>
+                <h2 id="rozhodnuti-za-minutu">Jak to poznat během jedné minuty</h2>
                 <p>Když přemýšlíte, jaký typ řešení potřebujete, položte si tři otázky.</p>
 
-                <h3>1. Znám přesný postup?</h3>
+                <h3 id="rozhodnuti-znamy-postup">1. Znám přesný postup?</h3>
                 <p>Pokud ano, pravděpodobně potřebujete:</p>
                 <div class="article-prompt"><strong>automatizaci nebo workflow.</strong></div>
 
-                <h3>2. Potřebuji pouze vytvořit nebo analyzovat obsah?</h3>
+                <h3 id="rozhodnuti-obsah">2. Potřebuji pouze vytvořit nebo analyzovat obsah?</h3>
                 <p>Pokud ano, často stačí:</p>
                 <div class="article-prompt"><strong>chatbot nebo jeden AI krok ve workflow.</strong></div>
 
-                <h3>3. Musí systém sám rozhodovat, co udělá dál?</h3>
+                <h3 id="rozhodnuti-agent">3. Musí systém sám rozhodovat, co udělá dál?</h3>
                 <p>Pokud ano, začíná dávat smysl:</p>
                 <div class="article-prompt"><strong>AI agent.</strong></div>
 
-                <h2>Praktická tabulka</h2>
+                <h2 id="prakticka-tabulka">Praktická tabulka</h2>
                 <div class="article-prompt"><strong>Potřeba → Nejvhodnější řešení</strong><br /><br />Vysvětlit téma → Chatbot<br />Přepsat text → Chatbot<br />Každé pondělí poslat připomínku → Automatizace<br />Po nahrání souboru vytvořit PDF → Automatizace<br />Načíst dokument → shrnout → uložit → Workflow<br />Vytvořit pracovní list → řešení → kontrola → Workflow<br />Zjistit, co učím zítra, a připravit potřebné materiály → AI agent<br />Vybrat správný nástroj podle situace → AI agent<br />Rozhodnout, zda je třeba něco přepracovat → AI agent<br />Rozhodnout o známce žáka → Člověk</div>
                 <p>Poslední řádek je docela důležitý. Ne každý proces musí končit technologií.</p>
 
-                <h2>Nejlepší systém může být překvapivě nudný</h2>
+                <h2 id="nejjednodussi-system">Nejlepší systém může být překvapivě nudný</h2>
                 <p>Tohle je možná trochu nepohodlná pravda.</p>
                 <p>Někdy je nejmodernější řešení zároveň nejhorší.</p>
                 <p>Pokud jednoduchá automatizace udělá práci:</p>
@@ -358,6 +374,9 @@
         <a href="ai-agenti.html">Zpět na AI agenty</a>
     </footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261110-7q" defer></script>
 </body>
 
 </html>
