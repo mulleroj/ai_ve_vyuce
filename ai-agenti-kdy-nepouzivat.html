@@ -21,14 +21,37 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261109-7k" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261109-7k-v2" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261110-7q" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-            <a class="workflow-back" href="ai-agenti.html">← AI agenti</a>
-        </div>
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="create">
+<header class="site-header" id="top">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu">
+      <div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+        <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a>
+        <a href="ai-navody.html">Připravit výuku</a>
+        <a href="aktivity.html">Učit s AI</a>
+        <a href="asistenti.html">Nástroje a asistenti</a>
+        <a href="vibe-coding.html" aria-current="location">Tvořit s AI</a>
+        <a href="ai.html">Číst a objevovat</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace">
+  <ol>
+    <li><a href="index.html">Domů</a></li>
+    <li><a href="ai-agenti.html">AI agenti</a></li>
+    <li aria-current="page">Kdy AI agenta ve škole raději nepoužívat</li>
+  </ol>
+</nav>
+    <section class="workflow-shell">
         <div class="workflow-hero">
             <div>
                 <div class="workflow-eyebrow">AI agenti · 1. září 2026</div>
@@ -43,24 +66,18 @@
                 <div class="workflow-stage"><span class="workflow-stage-number">04</span><div><strong>Nech člověka rozhodnout</strong><small>Výsledek musí být ověřitelný</small></div></div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
+        <details class="article-content-navigation" open>
+            <summary id="toc-heading-ai-agenti-kdy-nepouzivat-html">V tomto článku</summary>
+            <nav aria-label="Obsah článku"><ol><li><a href="#toc-01">Nejdůležitější otázka není „Umí to AI?“</a></li><li><a href="#riziko-znamka">1. Když má AI rozhodovat o známce</a></li><li><a href="#riziko-kazenske-opatreni">2. Když má agent rozhodovat o kázeňském opatření</a></li><li><a href="#riziko-pocity">3. Když má AI „poznat“, co žák cítí</a></li><li><a href="#riziko-osobni-udaje">4. Když agent nepotřebuje osobní údaje, ale stejně mu je dáváme</a></li><li><a href="#riziko-citlive-udaje">5. Když jde o citlivé údaje žáků</a></li><li><a href="#riziko-umisteni-dat">6. Když nevíme, kam data odcházejí</a></li><li><a href="#riziko-opravneni">7. Když agent dostal zbytečně mnoho oprávnění</a></li><li><a href="#riziko-nasledky">8. Když jedna chyba může mít velké následky</a></li><li><a href="#riziko-kontrola">9. Když výsledek nikdo neumí zkontrolovat</a></li><li><a href="#riziko-zastarale-dokumenty">10. Když agent pracuje se zastaralými dokumenty</a></li><li><a href="#riziko-usudek">11. Když po agentovi chceme pedagogický úsudek bez kontextu</a></li><li><a href="#riziko-spatny-proces">12. Když se snažíme automatizovat špatný proces</a></li><li><a href="#riziko-modernost">13. Když používáme agenta jen proto, že je to moderní</a></li><li><a href="#toc-02">Pozor také na AI Act</a></li><li><a href="#toc-03">Jednoduchý semafor pro školní AI agenty</a><ol><li><a href="#semafor-zelena">🟢 Zelená – agent může poměrně samostatně</a></li><li><a href="#semafor-zluta">🟡 Žlutá – agent připraví, člověk schválí</a></li><li><a href="#semafor-cervena">🔴 Červená – velká opatrnost nebo vůbec ne</a></li></ol></li><li><a href="#toc-04">Pět otázek před zapnutím agenta</a></li><li><a href="#toc-05">Nejbezpečnější agent není ten, který nic neumí</a></li></ol></nav>
+        </details>
         <article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">AI agent dokáže připravovat materiály, vyhledávat v dokumentech a automatizovat pracovní postupy. Ve škole ale pracuje také s dětmi, osobními údaji, hodnocením a rozhodnutími se skutečnými důsledky.</p>
             </div>
 
-            <nav class="article-toc" aria-labelledby="toc-heading-ai-agenti-kdy-nepouzivat-html">
-                <p class="article-toc-label" id="toc-heading-ai-agenti-kdy-nepouzivat-html">V tomto článku</p>
-                <ul>
-                    <li><a href="#toc-01">Nejdůležitější otázka není „Umí to AI?“</a></li>
-                    <li><a href="#toc-02">Pozor také na AI Act</a></li>
-                    <li><a href="#toc-03">Jednoduchý semafor pro školní AI agenty</a></li>
-                    <li><a href="#toc-04">Pět otázek před zapnutím agenta</a></li>
-                    <li><a href="#toc-05">Nejbezpečnější agent není ten, který nic neumí</a></li>
-                </ul>
-            </nav>
             <div class="article-content">
                 <p class="article-lead">AI agent dokáže připravovat materiály, vyhledávat v dokumentech, kontrolovat texty, pracovat s nástroji a automatizovat celé pracovní postupy. Právě proto ale musíme dobře vědět, kde jeho použití končí. Ve škole totiž nepracujeme pouze s dokumenty a tabulkami. Pracujeme s dětmi, osobními údaji, hodnocením a rozhodnutími, která mohou mít skutečné důsledky pro konkrétního člověka.</p>
 
@@ -80,7 +97,7 @@
                 <ul><li>analyzovat výsledky žáků,</li><li>navrhnout známku,</li><li>přečíst školní dokumentaci,</li><li>vyhodnotit chování,</li><li>vytvořit zprávu rodičům,</li><li>pracovat s osobními údaji.</li></ul>
                 <p>To ještě neznamená, že mu máme všechny tyto činnosti bez dalšího svěřit.</p>
 
-                <h2>1. Když má AI rozhodovat o známce</h2>
+                <h2 id="riziko-znamka">1. Když má AI rozhodovat o známce</h2>
                 <p>AI může být užitečným pomocníkem při hodnocení.</p>
                 <p>Může například:</p>
                 <ul><li>zkontrolovat pravopis,</li><li>porovnat odpověď s hodnoticími kritérii,</li><li>navrhnout zpětnou vazbu,</li><li>upozornit na chybějící části,</li><li>připravit předběžné bodování.</li></ul>
@@ -94,7 +111,7 @@
                 <div class="article-prompt"><strong>AI → podklady a návrh<br /><br />učitel → rozhodnutí</strong></div>
                 <p>Některé AI systémy používané k hodnocení výsledků vzdělávání patří podle evropského AI Actu mezi oblasti, které mohou být klasifikovány jako vysoce rizikové. Evropská pravidla výslovně uvádějí například systémy určené k hodnocení výsledků učení či řízení vzdělávacího procesu.</p>
 
-                <h2>2. Když má agent rozhodovat o kázeňském opatření</h2>
+                <h2 id="riziko-kazenske-opatreni">2. Když má agent rozhodovat o kázeňském opatření</h2>
                 <p>Podobná hranice platí pro chování žáků.</p>
                 <p>Agent může například:</p>
                 <div class="article-prompt"><strong>shrnovat záznamy nebo připravit přehled událostí</strong></div>
@@ -105,7 +122,7 @@
                 <p>AI vidí data, která jí poskytneme.</p>
                 <p>Nevidí nutně vztahy ve třídě, předchozí konflikt, rodinnou situaci ani další okolnosti, které učitel zná.</p>
 
-                <h2>3. Když má AI „poznat“, co žák cítí</h2>
+                <h2 id="riziko-pocity">3. Když má AI „poznat“, co žák cítí</h2>
                 <p>Tohle není pouze otázka vhodnosti.</p>
                 <p>V Evropské unii je používání AI pro rozpoznávání emocí ve vzdělávacích institucích obecně zakázané, s úzkými výjimkami například pro zdravotní nebo bezpečnostní důvody.</p>
                 <p>Takže představa:</p>
@@ -115,7 +132,7 @@
                 <p>A podle mě celkem správně.</p>
                 <p>Výraz obličeje není spolehlivý teploměr lidské psychiky.</p>
 
-                <h2>4. Když agent nepotřebuje osobní údaje, ale stejně mu je dáváme</h2>
+                <h2 id="riziko-osobni-udaje">4. Když agent nepotřebuje osobní údaje, ale stejně mu je dáváme</h2>
                 <p>Tohle je jedna z nejčastějších chyb.</p>
                 <p>Potřebujeme například přizpůsobit pracovní list.</p>
                 <p>Agentovi pošleme:</p>
@@ -127,7 +144,7 @@
                 <p>Praktické pravidlo je jednoduché:</p>
                 <div class="article-prompt"><strong>Pokud agent nemusí vědět, komu údaj patří, identitu mu nedávejte.</strong></div>
 
-                <h2>5. Když jde o citlivé údaje žáků</h2>
+                <h2 id="riziko-citlive-udaje">5. Když jde o citlivé údaje žáků</h2>
                 <p>Ještě větší opatrnost je potřeba u informací týkajících se například:</p>
                 <ul><li>zdravotního stavu,</li><li>speciálních vzdělávacích potřeb,</li><li>psychologických vyšetření,</li><li>rodinné situace,</li><li>dalších zvlášť citlivých údajů.</li></ul>
                 <p>Tady bych rozhodně nepoužívala běžný veřejný AI nástroj stylem:</p>
@@ -136,7 +153,7 @@
                 <ul><li>kdo data zpracovává,</li><li>kde jsou uložena,</li><li>za jakým účelem,</li><li>jak dlouho,</li><li>kdo k nim má přístup,</li><li>zda je vůbec jejich předání dané službě oprávněné.</li></ul>
                 <p>Veřejné instituce i další organizace musí při zpracování osobních údajů respektovat zásady GDPR včetně zákonnosti, minimalizace dat a integrity a důvěrnosti.</p>
 
-                <h2>6. Když nevíme, kam data odcházejí</h2>
+                <h2 id="riziko-umisteni-dat">6. Když nevíme, kam data odcházejí</h2>
                 <p>Před připojením agenta k nějaké službě bych se vždy ptala:</p>
                 <blockquote>Kam informace putují?</blockquote>
                 <p>Pokud odpověď zní:</p>
@@ -147,7 +164,7 @@
                 <p>U nástroje pro generování obrázku na téma středověk můžeme být mnohem benevolentnější.</p>
                 <p>U agenta připojeného k celé školní infrastruktuře opravdu ne.</p>
 
-                <h2>7. Když agent dostal zbytečně mnoho oprávnění</h2>
+                <h2 id="riziko-opravneni">7. Když agent dostal zbytečně mnoho oprávnění</h2>
                 <p>AI agent může mít různé nástroje.</p>
                 <p>Například:</p>
                 <div class="article-prompt"><strong>čtení dokumentů</strong></div>
@@ -164,7 +181,7 @@
                 <p>Pokud připravuje e-maily, nemusí je automaticky odesílat.</p>
                 <p>Pokud analyzuje tabulku, nepotřebuje přístup k celému školnímu disku.</p>
 
-                <h2>8. Když jedna chyba může mít velké následky</h2>
+                <h2 id="riziko-nasledky">8. Když jedna chyba může mít velké následky</h2>
                 <p>Položme si otázku:</p>
                 <blockquote>Co se stane, když se agent splete?</blockquote>
                 <p>Pokud vytvoří pracovní list s jednou špatnou otázkou, učitel ji pravděpodobně při kontrole opraví.</p>
@@ -174,7 +191,7 @@
                 <p>dopad může být podstatně větší.</p>
                 <p>Čím dražší je chyba, tím méně autonomie bych agentovi dávala.</p>
 
-                <h2>9. Když výsledek nikdo neumí zkontrolovat</h2>
+                <h2 id="riziko-kontrola">9. Když výsledek nikdo neumí zkontrolovat</h2>
                 <p>Tohle pravidlo je podle mě dost podceňované.</p>
                 <p>AI bych nerada nechávala samostatně vykonávat práci, jejíž správnost neumí nikdo zodpovědný ověřit.</p>
                 <p>Představme si například, že si pomocí vibe codingu vytvoříme aplikaci pracující s přihlašovacími údaji žáků.</p>
@@ -189,7 +206,7 @@
                 <ul><li>kyberbezpečnost,</li><li>osobní údaje,</li><li>autentizace,</li><li>právní procesy,</li><li>účetnictví,</li></ul>
                 <p>musí být výstup kontrolovatelný někým, kdo dané oblasti opravdu rozumí.</p>
 
-                <h2>10. Když agent pracuje se zastaralými dokumenty</h2>
+                <h2 id="riziko-zastarale-dokumenty">10. Když agent pracuje se zastaralými dokumenty</h2>
                 <p>Agent může být technicky bezchybný a přesto odpovídat špatně.</p>
                 <p>Stačí mu dát špatné zdroje.</p>
                 <p>Představme si školní RAG systém.</p>
@@ -204,7 +221,7 @@
                 <p>Agent nad neudržovaným úložištěm není znalostní systém.</p>
                 <div class="article-prompt"><strong>Je to velmi rychlý archeolog.</strong></div>
 
-                <h2>11. Když po agentovi chceme pedagogický úsudek bez kontextu</h2>
+                <h2 id="riziko-usudek">11. Když po agentovi chceme pedagogický úsudek bez kontextu</h2>
                 <p>Představme si otázku:</p>
                 <blockquote>„Je tento žák líný, nebo učivu nerozumí?“</blockquote>
                 <p>AI může začít analyzovat.</p>
@@ -219,7 +236,7 @@
                 <p>Může pomoci hledat vzorce v dostupných informacích.</p>
                 <p>Ale neměl by suplovat pedagogickou diagnostiku pouze na základě několika řádků dat.</p>
 
-                <h2>12. Když se snažíme automatizovat špatný proces</h2>
+                <h2 id="riziko-spatny-proces">12. Když se snažíme automatizovat špatný proces</h2>
                 <p>Představme si administrativní postup, který obsahuje:</p>
                 <div class="article-prompt"><strong>12 tabulek, 5 ručních přepisů a 3 kontroly stejného údaje.</strong></div>
                 <p>Nápad:</p>
@@ -231,7 +248,7 @@
                 <div class="article-prompt"><strong>špatný proces, který běží rychleji.</strong></div>
                 <p>Někdy je lepší odstranit zbytečný krok než nad něj postavit umělou inteligenci.</p>
 
-                <h2>13. Když používáme agenta jen proto, že je to moderní</h2>
+                <h2 id="riziko-modernost">13. Když používáme agenta jen proto, že je to moderní</h2>
                 <p>Ne každý problém potřebuje AI agenta.</p>
                 <p>Pokud úkol zní:</p>
                 <blockquote>Každý pátek zkopíruj hodnotu z buňky A do buňky B.</blockquote>
@@ -253,15 +270,15 @@
                 <h2 id="toc-03">Jednoduchý semafor pro školní AI agenty</h2>
                 <p>Pro běžnou praxi se mi osvědčuje velmi jednoduché rozdělení.</p>
 
-                <h3>🟢 Zelená – agent může poměrně samostatně</h3>
+                <h3 id="semafor-zelena">🟢 Zelená – agent může poměrně samostatně</h3>
                 <p>Například:</p>
                 <ul><li>vytvoření návrhu pracovního listu,</li><li>formátování textu,</li><li>shrnutí veřejného dokumentu,</li><li>příprava aktivit,</li><li>kontrola pravopisu,</li><li>vytvoření osnovy.</li></ul>
 
-                <h3>🟡 Žlutá – agent připraví, člověk schválí</h3>
+                <h3 id="semafor-zluta">🟡 Žlutá – agent připraví, člověk schválí</h3>
                 <p>Například:</p>
                 <ul><li>e-mail rodičům,</li><li>návrh hodnocení,</li><li>práce s interní dokumentací,</li><li>změna kalendáře,</li><li>zveřejnění materiálu,</li><li>individualizace na základě osobních údajů.</li></ul>
 
-                <h3>🔴 Červená – velká opatrnost nebo vůbec ne</h3>
+                <h3 id="semafor-cervena">🔴 Červená – velká opatrnost nebo vůbec ne</h3>
                 <p>Například:</p>
                 <ul><li>autonomní klasifikace,</li><li>kázeňské rozhodování,</li><li>nakládání s citlivými osobními údaji bez jasného právního a technického rámce,</li><li>nekontrolované změny školních databází,</li><li>automatické rozhodování s významným dopadem na žáka,</li><li>rozpoznávání emocí žáků.</li></ul>
 
@@ -316,6 +333,9 @@
         <a href="ai-agenti.html">Zpět na AI agenty</a>
     </footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261110-7q" defer></script>
 </body>
 
 </html>
