@@ -111,6 +111,10 @@ test('contents links navigate to H2 and selected H3 and update the active chapte
 test('keyboard disclosure and mobile menu support Space, Enter, and Escape', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto(`${baseURL}/ai-novinka-datovi-agenti-lidske-schvaleni.html`);
+  await page.keyboard.press('Tab');
+  await expect(page.locator('.brand')).toBeFocused();
+  await page.keyboard.press('Tab');
+  await expect(page.locator('.menu-toggle')).toBeFocused();
   const toc = page.locator('.article-content-navigation');
   const summary = toc.locator('summary');
   await summary.focus();
