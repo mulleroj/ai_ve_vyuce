@@ -11,6 +11,10 @@
   min-width: 0;
 }
 
+.workflow-main.article-content-layout > .workflow-related {
+  grid-column: 1 / -1;
+}
+
 .article-content-navigation {
   position: sticky;
   top: calc(var(--nav-height, 0px) + 18px);
