@@ -21,14 +21,37 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261109-7k" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261109-7k-v2" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261110-7q" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-            <a class="workflow-back" href="ai-agenti.html">← AI agenti</a>
-        </div>
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="create">
+<header class="site-header" id="top">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu">
+      <div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+        <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a>
+        <a href="ai-navody.html">Připravit výuku</a>
+        <a href="aktivity.html">Učit s AI</a>
+        <a href="asistenti.html">Nástroje a asistenti</a>
+        <a href="vibe-coding.html" aria-current="location">Tvořit s AI</a>
+        <a href="ai.html">Číst a objevovat</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace">
+  <ol>
+    <li><a href="index.html">Domů</a></li>
+    <li><a href="ai-agenti.html">AI agenti</a></li>
+    <li aria-current="page">Jak funguje AI agent: agentní smyčka krok za krokem</li>
+  </ol>
+</nav>
+    <section class="workflow-shell">
         <div class="workflow-hero">
             <div>
                 <div class="workflow-eyebrow">AI agenti · 1. září 2026</div>
@@ -43,25 +66,18 @@
                 <div class="workflow-stage"><span class="workflow-stage-number">04</span><div><strong>Zkontroluj</strong><small>Co se po provedení akce stalo?</small></div></div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
+        <details class="article-content-navigation" open>
+            <summary id="toc-heading-ai-agenti-agentni-smycka-html">V tomto článku</summary>
+            <nav aria-label="Obsah článku"><ol><li><a href="#toc-01">Od jedné odpovědi k pracovnímu procesu</a></li><li><a href="#toc-02">Co je agentní smyčka</a></li><li><a href="#toc-03">1. Pochop: Co po mně vlastně uživatel chce?</a><ol><li><a href="#loop-think">Znamená „Think“, že AI opravdu myslí?</a></li></ol></li><li><a href="#toc-04">2. Naplánuj: Jak se k cíli dostanu?</a><ol><li><a href="#loop-plan">Plán nemusí být dlouhý</a></li></ol></li><li><a href="#toc-05">3. Proveď: Agent použije nástroj</a></li><li><a href="#toc-06">4. Zkontroluj: Co se po provedení akce stalo?</a></li><li><a href="#loop-a-potom">A potom znovu</a></li><li><a href="#loop-priklad-skola">Příklad ze školy</a></li><li><a href="#loop-chyba">Co když agent udělá chybu?</a></li><li><a href="#loop-clovek">Kdy musí do procesu vstoupit člověk</a></li><li><a href="#loop-autonomie">Agent nemusí být úplně autonomní</a><ol><li><a href="#autonomie-nizka">Nízká autonomie</a></li><li><a href="#autonomie-stredni">Střední autonomie</a></li><li><a href="#autonomie-vysoka">Vysoká autonomie</a></li></ol></li><li><a href="#loop-vibe-coding">Agentní smyčka ve vibe codingu</a></li></ol></nav>
+        </details>
         <article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Od jedné odpovědi k pracovnímu procesu: jak agent rozumí cíli, plánuje, používá nástroje, kontroluje výsledek a rozhoduje o dalším kroku.</p>
             </div>
 
-            <nav class="article-toc" aria-labelledby="toc-heading-ai-agenti-agentni-smycka-html">
-                <p class="article-toc-label" id="toc-heading-ai-agenti-agentni-smycka-html">V tomto článku</p>
-                <ul>
-                    <li><a href="#toc-01">Od jedné odpovědi k pracovnímu procesu</a></li>
-                    <li><a href="#toc-02">Co je agentní smyčka</a></li>
-                    <li><a href="#toc-03">1. Pochop: Co po mně vlastně uživatel chce?</a></li>
-                    <li><a href="#toc-04">2. Naplánuj: Jak se k cíli dostanu?</a></li>
-                    <li><a href="#toc-05">3. Proveď: Agent použije nástroj</a></li>
-                    <li><a href="#toc-06">4. Zkontroluj: Co se po provedení akce stalo?</a></li>
-                </ul>
-            </nav>
             <div class="article-content">
                 <p class="article-lead">V prvním článku jsme si ukázali, že AI agent není jen chatbot, který umí odpovídat na otázky. Dostane cíl, rozdělí si práci do několika kroků, použije dostupné nástroje a průběžně kontroluje, jestli se k výsledku skutečně blíží.</p>
                 <p>Jak ale taková práce probíhá uvnitř? Základním principem je takzvaná agentní smyčka.</p>
@@ -122,7 +138,7 @@
                 </ul>
                 <p>Jazykový model sám o sobě přitom aktuální jízdní řád nemusí znát. Agent tedy musí pochopit také to, že bude potřebovat externí zdroj nebo nástroj.</p>
 
-                <h3>Znamená „Think“, že AI opravdu myslí?</h3>
+                <h3 id="loop-think">Znamená „Think“, že AI opravdu myslí?</h3>
                 <p><strong>Ne.</strong></p>
                 <p>Slovo <em>think</em> je v těchto schématech užitečná zkratka, ale může být zavádějící.</p>
                 <p>AI agent nemá lidské vědomí a nepřemýšlí stejným způsobem jako člověk.</p>
@@ -148,7 +164,7 @@
                 <div class="article-prompt"><strong>A → B → problém → vyhodnocení → nový plán → E</strong></div>
                 <p>Agent tedy nemusí pouze následovat pevně naprogramovaný postup. Může se podle situace rozhodovat mezi několika možnostmi.</p>
 
-                <h3>Plán nemusí být dlouhý</h3>
+                <h3 id="loop-plan">Plán nemusí být dlouhý</h3>
                 <p>Agent přitom nemusí vždy vytvářet komplikovaný plán o dvaceti krocích.</p>
                 <p>U jednoduché úlohy může rozhodnutí vypadat například takto:</p>
                 <blockquote>Potřebuji zjistit aktuální počasí. Použiji nástroj pro předpověď počasí.</blockquote>
@@ -197,7 +213,7 @@
                 </ul>
                 <p>Právě schopnost reagovat na výsledek vlastní akce je pro agentní systémy zásadní.</p>
 
-                <h2>A potom znovu</h2>
+                <h2 id="loop-a-potom">A potom znovu</h2>
                 <p>Po fázi Observe se agent vrací na začátek smyčky.</p>
                 <p>Nyní už ale má více informací než předtím.</p>
                 <p>Může tedy vyhodnotit:</p>
@@ -208,7 +224,7 @@
                 <div class="article-prompt"><strong>cíl<br />↓<br />vyhodnocení situace<br />↓<br />plán<br />↓<br />akce<br />↓<br />výsledek<br />↓<br />kontrola<br />↓<br />hotovo?<br /><br />→ ANO → výsledek pro uživatele<br />→ NE → další kolo smyčky</strong></div>
                 <p>To je jeden ze základních mechanismů agentní AI.</p>
 
-                <h2>Příklad ze školy</h2>
+                <h2 id="loop-priklad-skola">Příklad ze školy</h2>
                 <p>Představme si agenta, který dostane úkol:</p>
                 <blockquote>„Připrav mi materiály na zítřejší hodinu angličtiny pro 2. ročník.“</blockquote>
                 <p>Samotné zadání je velmi obecné.</p>
@@ -250,7 +266,7 @@
                 <p>Teprve potom připraví výsledný materiál.</p>
                 <p>To je v praxi agentní smyčka.</p>
 
-                <h2>Co když agent udělá chybu?</h2>
+                <h2 id="loop-chyba">Co když agent udělá chybu?</h2>
                 <p>A tady přichází jedna důležitá věc.</p>
                 <p>Agentní smyčka sama o sobě nezaručuje správný výsledek.</p>
                 <p>Agent může:</p>
@@ -267,7 +283,7 @@
                 <p>Agent potom může velmi systematicky vyrábět nesmysl. Jen technologicky elegantněji. 🙂</p>
                 <p>Proto jsou důležité kontrolní mechanismy.</p>
 
-                <h2>Kdy musí do procesu vstoupit člověk</h2>
+                <h2 id="loop-clovek">Kdy musí do procesu vstoupit člověk</h2>
                 <p>Ne všechny akce by měl agent provádět automaticky.</p>
                 <p>Často se používá princip:</p>
                 <div class="article-prompt"><strong>Human in the loop</strong></div>
@@ -292,24 +308,24 @@
                 <blockquote>„Chcete tuto akci opravdu provést?“</blockquote>
                 <p>Čím větší dopad může mít určitá akce, tím důležitější je kontrola člověkem.</p>
 
-                <h2>Agent nemusí být úplně autonomní</h2>
+                <h2 id="loop-autonomie">Agent nemusí být úplně autonomní</h2>
                 <p>Když se mluví o agentní AI, často se používá slovo autonomie.</p>
                 <p>Ani zde ale není všechno černobílé.</p>
                 <p>Agent může mít různou míru samostatnosti.</p>
 
-                <h3>Nízká autonomie</h3>
+                <h3 id="autonomie-nizka">Nízká autonomie</h3>
                 <p>Agent navrhne další krok, člověk jej schválí.</p>
 
-                <h3>Střední autonomie</h3>
+                <h3 id="autonomie-stredni">Střední autonomie</h3>
                 <p>Agent samostatně provádí běžné kroky, ale důležité akce potvrzuje člověk.</p>
 
-                <h3>Vysoká autonomie</h3>
+                <h3 id="autonomie-vysoka">Vysoká autonomie</h3>
                 <p>Agent provádí většinu procesu bez zásahu uživatele.</p>
 
                 <p>V praxi není nejvyšší autonomie automaticky nejlepší.</p>
                 <p>Pro řadu úloh je mnohem rozumnější vytvořit systém, který je částečně samostatný, ale dobře kontrolovatelný.</p>
 
-                <h2>Agentní smyčka ve vibe codingu</h2>
+                <h2 id="loop-vibe-coding">Agentní smyčka ve vibe codingu</h2>
                 <p>Velmi dobře je tento princip vidět u moderních coding agentů.</p>
                 <p>Uživatel zadá:</p>
                 <blockquote>„Přidej do mé aplikace možnost exportovat výsledky do PDF.“</blockquote>
@@ -391,6 +407,9 @@
 
     <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai-agenti.html">Zpět na AI agenty</a></footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261110-7q" defer></script>
 </body>
 
 </html>
