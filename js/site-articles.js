@@ -262,7 +262,7 @@ window.siteArticles = [
   {
     href: 'ai-novinka-datovi-agenti-lidske-schvaleni.html',
     title: 'AI ve vzdělávání: datoví agenti, lidské schvalování a bezpečnější automatizace',
-    summary: 'Datoví agenti, lidské schvalování akcí a principy bezpečnější automatizace pro školy. Praktické souvislosti pro učitele.',
+    summary: 'Datoví agenti, lidské schvalování a bezpečnější automatizace pro školy. Navigace usnadňuje návrat k vybraným kapitolám.',
     category: 'Novinka',
     date: '2026-09-14',
     dateLabel: '14. září 2026',
