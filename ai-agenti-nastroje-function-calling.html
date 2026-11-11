@@ -21,14 +21,37 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261109-7k" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261109-7k-v2" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261110-7q" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-            <a class="workflow-back" href="ai-agenti.html">← AI agenti</a>
-        </div>
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="create">
+<header class="site-header" id="top">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu">
+      <div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+        <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a>
+        <a href="ai-navody.html">Připravit výuku</a>
+        <a href="aktivity.html">Učit s AI</a>
+        <a href="asistenti.html">Nástroje a asistenti</a>
+        <a href="vibe-coding.html" aria-current="location">Tvořit s AI</a>
+        <a href="ai.html">Číst a objevovat</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace">
+  <ol>
+    <li><a href="index.html">Domů</a></li>
+    <li><a href="ai-agenti.html">AI agenti</a></li>
+    <li aria-current="page">Nástroje a Function Calling: jak dostane AI „ruce“</li>
+  </ol>
+</nav>
+    <section class="workflow-shell">
         <div class="workflow-hero">
             <div>
                 <div class="workflow-eyebrow">AI agenti · 1. září 2026</div>
@@ -43,25 +66,18 @@
                 <div class="workflow-stage"><span class="workflow-stage-number">04</span><div><strong>Bezpečná oprávnění</strong><small>Minimální přístup a člověk v procesu</small></div></div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
+        <details class="article-content-navigation" open>
+            <summary id="toc-heading-ai-agenti-nastroje-function-calling-html">V tomto článku</summary>
+            <nav aria-label="Obsah článku"><ol><li><a href="#toc-01">Jazykový model není celý agent</a></li><li><a href="#toc-02">Co je nástroj</a></li><li><a href="#toc-03">Jaké nástroje může agent používat</a></li><li><a href="#toc-04">Co je Function Calling</a></li><li><a href="#toc-05">Proč je to lepší než „hádat“</a></li><li><a href="#toc-06">Jak model pozná, jaký nástroj použít</a></li><li><a href="#tools-description">Dobře popsaný nástroj je zásadní</a></li><li><a href="#tools-school-example">Příklad ze školy</a><ol><li><a href="#tools-step-understand">1. Vyhodnotí zadání</a></li><li><a href="#tools-step-select">2. Vybere nástroj</a></li><li><a href="#tools-step-search">3. Nástroj vyhledá dokumenty</a></li><li><a href="#tools-step-results">4. Vrátí relevantní části</a></li><li><a href="#tools-step-answer">5. Vytvoří odpověď</a></li></ol></li><li><a href="#tools-actions">Nástroje mohou také provádět akce</a></li><li><a href="#tools-read-write">Čtení není totéž co zápis</a><ol><li><a href="#tools-read">Read</a></li><li><a href="#tools-write">Write</a></li></ol></li><li><a href="#tools-human-review">Human in the loop</a></li><li><a href="#tools-least-privilege">Princip minimálních oprávnění</a></li><li><a href="#tools-not-internet">Nástroj nemusí být internetová služba</a></li><li><a href="#tools-agent-value">A tady začíná být agent opravdu zajímavý</a></li><li><a href="#tools-versus-automation">Tools versus automatizace</a></li><li><a href="#tools-vibe-coding">Nástroje ve vibe codingu</a></li><li><a href="#tools-api">Co jsou API</a></li><li><a href="#tools-mcp">A jak s tím souvisí MCP?</a></li></ol></nav>
+        </details>
         <article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Jazykový model umí skvěle pracovat s textem. Aby mohl agent něco skutečně udělat, potřebuje nástroje, jasné parametry a bezpečná pravidla.</p>
             </div>
 
-            <nav class="article-toc" aria-labelledby="toc-heading-ai-agenti-nastroje-function-calling-html">
-                <p class="article-toc-label" id="toc-heading-ai-agenti-nastroje-function-calling-html">V tomto článku</p>
-                <ul>
-                    <li><a href="#toc-01">Jazykový model není celý agent</a></li>
-                    <li><a href="#toc-02">Co je nástroj</a></li>
-                    <li><a href="#toc-03">Jaké nástroje může agent používat</a></li>
-                    <li><a href="#toc-04">Co je Function Calling</a></li>
-                    <li><a href="#toc-05">Proč je to lepší než „hádat“</a></li>
-                    <li><a href="#toc-06">Jak model pozná, jaký nástroj použít</a></li>
-                </ul>
-            </nav>
             <div class="article-content">
                 <p class="article-lead">V předchozím článku jsme si ukázali agentní smyčku: AI agent pochopí zadání, naplánuje další krok, provede akci a zkontroluje výsledek.</p>
                 <p>Jenže samotný jazykový model toho ve skutečném světě mnoho „neudělá“. Umí velmi dobře pracovat s textem, ale neumí sám od sebe otevřít kalendář, zjistit aktuální počasí nebo změnit soubor. K tomu potřebuje nástroje.</p>
@@ -184,7 +200,7 @@
                 <p>model může vyhodnotit:</p>
                 <blockquote>Potřebuji aktuální informace. Použiji webové vyhledávání.</blockquote>
 
-                <h2>Dobře popsaný nástroj je zásadní</h2>
+                <h2 id="tools-description">Dobře popsaný nástroj je zásadní</h2>
                 <p>Pokud je popis nástroje nejasný, agent jej může používat špatně.</p>
                 <p>Například:</p>
                 <div class="article-prompt"><strong>Nástroj A: search</strong></div>
@@ -195,20 +211,20 @@
                 <p>Agent tak lépe pozná, kdy má nástroj použít.</p>
                 <p>To je velmi důležité při tvorbě vlastních agentů.</p>
 
-                <h2>Příklad ze školy</h2>
+                <h2 id="tools-school-example">Příklad ze školy</h2>
                 <p>Představme si zadání:</p>
                 <blockquote>„Zjisti, jaké povinnosti má třídní učitel při omlouvání absence.“</blockquote>
                 <p>Běžný chatbot může odpovědět podle obecných znalostí.</p>
                 <p>Agent s přístupem ke školním dokumentům může postupovat jinak.</p>
 
-                <h3>1. Vyhodnotí zadání</h3>
+                <h3 id="tools-step-understand">1. Vyhodnotí zadání</h3>
                 <p>Jde o otázku na interní pravidla školy.</p>
 
-                <h3>2. Vybere nástroj</h3>
+                <h3 id="tools-step-select">2. Vybere nástroj</h3>
                 <p>Použije například:</p>
                 <div class="article-prompt"><strong>search_school_documents</strong></div>
 
-                <h3>3. Nástroj vyhledá dokumenty</h3>
+                <h3 id="tools-step-search">3. Nástroj vyhledá dokumenty</h3>
                 <p>Najde například:</p>
                 <ul>
                     <li>školní řád,</li>
@@ -216,15 +232,15 @@
                     <li>klasifikační řád.</li>
                 </ul>
 
-                <h3>4. Vrátí relevantní části</h3>
+                <h3 id="tools-step-results">4. Vrátí relevantní části</h3>
                 <p>Agent je přečte.</p>
 
-                <h3>5. Vytvoří odpověď</h3>
+                <h3 id="tools-step-answer">5. Vytvoří odpověď</h3>
                 <p>A může uvést:</p>
                 <blockquote>Podle školního řádu…</blockquote>
                 <p>To je zásadně lepší než odpověď založená pouze na obecných znalostech modelu.</p>
 
-                <h2>Nástroje mohou také provádět akce</h2>
+                <h2 id="tools-actions">Nástroje mohou také provádět akce</h2>
                 <p>Doposud jsme mluvili hlavně o získávání informací.</p>
                 <p>Nástroje ale mohou dělat mnohem víc.</p>
                 <p>Například:</p>
@@ -238,10 +254,10 @@
                 </ul>
                 <p>A právě v tomto okamžiku se významně mění otázka bezpečnosti.</p>
 
-                <h2>Čtení není totéž co zápis</h2>
+                <h2 id="tools-read-write">Čtení není totéž co zápis</h2>
                 <p>U nástrojů je velmi užitečné rozlišovat:</p>
 
-                <h3>Read</h3>
+                <h3 id="tools-read">Read</h3>
                 <p>Agent pouze získává informace.</p>
                 <p>Například:</p>
                 <ul>
@@ -251,7 +267,7 @@
                 </ul>
                 <p>Riziko bývá nižší.</p>
 
-                <h3>Write</h3>
+                <h3 id="tools-write">Write</h3>
                 <p>Agent něco mění.</p>
                 <p>Například:</p>
                 <ul>
@@ -263,7 +279,7 @@
                 <p>Riziko je výrazně vyšší.</p>
                 <p>A právě zde by měl být často zapojen člověk.</p>
 
-                <h2>Human in the loop</h2>
+                <h2 id="tools-human-review">Human in the loop</h2>
                 <p>U důležitých akcí může agent pracovat například takto:</p>
                 <blockquote>Připravil jsem e-mail pro rodiče. Chcete jej odeslat?</blockquote>
                 <p>Teprve po potvrzení uživatelem agent použije nástroj <strong>send_email</strong>.</p>
@@ -279,7 +295,7 @@
                 <p>Rozumný agent tedy není ten, který může všechno.</p>
                 <p>Rozumný agent je ten, který má právě tolik oprávnění, kolik potřebuje.</p>
 
-                <h2>Princip minimálních oprávnění</h2>
+                <h2 id="tools-least-privilege">Princip minimálních oprávnění</h2>
                 <p>V informatice se používá princip:</p>
                 <div class="article-prompt"><strong>Principle of Least Privilege</strong></div>
                 <p>tedy princip minimálních oprávnění.</p>
@@ -288,7 +304,7 @@
                 <p>Pokud má připravovat koncepty e-mailů, nemusí mít právo je automaticky odesílat.</p>
                 <p>To je jeden z nejdůležitějších bezpečnostních principů agentních systémů.</p>
 
-                <h2>Nástroj nemusí být internetová služba</h2>
+                <h2 id="tools-not-internet">Nástroj nemusí být internetová služba</h2>
                 <p>Když se řekne „tool“, člověk si často představí nějaké API.</p>
                 <p>Ale nástrojem může být prakticky jakákoli funkce, kterou systém agentovi zpřístupní.</p>
                 <p>Například:</p>
@@ -301,7 +317,7 @@
                 </ul>
                 <p>Z jednotlivých malých nástrojů potom můžeme stavět mnohem složitější pracovní postupy.</p>
 
-                <h2>A tady začíná být agent opravdu zajímavý</h2>
+                <h2 id="tools-agent-value">A tady začíná být agent opravdu zajímavý</h2>
                 <p>Představme si, že má k dispozici pět nástrojů:</p>
                 <ol>
                     <li>vyhledej téma v tematickém plánu,</li>
@@ -317,7 +333,7 @@
                 <p>Agent sám rozhodne, které nástroje a v jakém pořadí použije.</p>
                 <p>A právě to je podstata agentní práce.</p>
 
-                <h2>Tools versus automatizace</h2>
+                <h2 id="tools-versus-automation">Tools versus automatizace</h2>
                 <p>Možná vás napadne:</p>
                 <blockquote>Není to jednoduše automatizace?</blockquote>
                 <p>Částečně ano.</p>
@@ -328,7 +344,7 @@
                 <blockquote>Mám tento cíl. Který z dostupných nástrojů je teď nejvhodnější?</blockquote>
                 <p>To umožňuje řešit úkoly, jejichž přesný průběh nemusíme znát předem.</p>
 
-                <h2>Nástroje ve vibe codingu</h2>
+                <h2 id="tools-vibe-coding">Nástroje ve vibe codingu</h2>
                 <p>V coding agentech je používání nástrojů vidět velmi názorně.</p>
                 <p>Coding agent může mít například nástroje:</p>
                 <ul>
@@ -354,7 +370,7 @@
                 </ol>
                 <p>Nástroje jsou tedy praktickým prostředkem, kterým agent provádí jednotlivé kroky agentní smyčky.</p>
 
-                <h2>Co jsou API</h2>
+                <h2 id="tools-api">Co jsou API</h2>
                 <p>V souvislosti s nástroji velmi často narazíme na další zkratku:</p>
                 <div class="article-prompt"><strong>API – Application Programming Interface</strong></div>
                 <p>API je rozhraní, přes které spolu mohou komunikovat různé aplikace.</p>
@@ -363,7 +379,7 @@
                 <div class="article-prompt"><strong>AI aplikace:</strong><br />Dej mi aktuální předpověď počasí pro Prahu.<br /><br /><strong>API počasí:</strong><br />Zde jsou aktuální data.<br /><br /><strong>AI aplikace:</strong><br />Vytvořím z nich odpověď pro uživatele.</div>
                 <p>API tedy často funguje jako most mezi agentem a externí službou.</p>
 
-                <h2>A jak s tím souvisí MCP?</h2>
+                <h2 id="tools-mcp">A jak s tím souvisí MCP?</h2>
                 <p>Tady se dostáváme k problému.</p>
                 <p>Představme si, že chceme propojit AI s:</p>
                 <ul>
@@ -432,6 +448,9 @@
 
     <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai-agenti.html">Zpět na AI agenty</a></footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261110-7q" defer></script>
 </body>
 
 </html>
