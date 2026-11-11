@@ -447,13 +447,16 @@ test('original light pilot visual before and after comparison', async ({ page })
   const { execFileSync } = require('node:child_process');
   const baselineHTML = execFileSync('git', ['show', `${article.baselineSha}:${article.file}`], { encoding: 'utf8' });
   await page.setViewportSize({ width: 1440, height: 900 });
-  await page.setContent(baselineHTML.replace('</head>', `<base href="${baseURL}/"></head>`), { waitUntil: 'networkidle' });
+  const baselineURL = `${baseURL}/${article.file}`;
+  await page.route(baselineURL, route => route.fulfill({ status: 200, contentType: 'text/html; charset=utf-8', body: baselineHTML }));
+  await page.goto(baselineURL, { waitUntil: 'networkidle' });
   await page.evaluate(() => document.fonts.ready);
   const beforeGeometry = await page.locator('.workflow-hero').evaluate(el => {
     const box = el.getBoundingClientRect(), title = el.querySelector('h1'), style = getComputedStyle(title);
     return { width: box.width, height: box.height, titleFont: style.fontFamily, titleSize: style.fontSize, titleColor: style.color, text: title.innerText };
   });
   const before = await page.screenshot({ path: 'artifacts/ai-agenti-co-je-ai-agent-pilot-before.png' });
+  await page.unroute(baselineURL);
   await page.goto(`${baseURL}/${article.file}`);
   await page.evaluate(() => document.fonts.ready);
   const afterGeometry = await page.locator('.workflow-hero').evaluate(el => {
