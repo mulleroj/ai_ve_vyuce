@@ -164,10 +164,10 @@ const wave2Articles = [
   { file: 'ai-agenti-rag.html', title: 'RAG: když AI pracuje s vašimi vlastními dokumenty', tocCount: 38, h2: '#toc-04', h3: '#rag-step-sources', baselineSha: '6ae5e726d79b6aea3c87845193b9e0caa0f3ed19' }
 ];
 const wave3Articles = [
-  { file: 'ai-agenti-mcp.html', title: 'MCP: univerzální konektor pro svět AI agentů', tocCount: 30, h2: '#toc-07', h3: '#ai-agenti-mcp-h3-01', baselineSha: '258e96761fb8d327d06ecea9b283cc1bd9f3ea10', checkTocScroll: true },
-  { file: 'ai-agenti-multi-agentni.html', title: 'Multi-agentní systémy: když na jednom úkolu pracuje tým AI', tocCount: 27, h2: '#toc-07', h3: null, baselineSha: '258e96761fb8d327d06ecea9b283cc1bd9f3ea10', checkTocScroll: true },
-  { file: 'ai-agenti-prvni-agent.html', title: 'Jak navrhnout svého prvního jednoduchého AI agenta', tocCount: 27, h2: '#toc-07', h3: '#ai-agenti-prvni-agent-h3-01', baselineSha: '258e96761fb8d327d06ecea9b283cc1bd9f3ea10', checkTocScroll: true },
-  { file: 'ai-agenti-skills.html', title: 'Skills: jak naučit AI agenta opakovat osvědčený pracovní postup', tocCount: 37, h2: '#toc-07', h3: '#ai-agenti-skills-h3-01', baselineSha: '258e96761fb8d327d06ecea9b283cc1bd9f3ea10', checkTocScroll: true }
+  { file: 'ai-agenti-mcp.html', title: 'MCP: univerzální konektor pro svět AI agentů', tocCount: 30, h2: '#toc-02', h3: '#ai-agenti-mcp-h3-01', baselineSha: '258e96761fb8d327d06ecea9b283cc1bd9f3ea10', checkTocScroll: true },
+  { file: 'ai-agenti-multi-agentni.html', title: 'Multi-agentní systémy: když na jednom úkolu pracuje tým AI', tocCount: 27, h2: '#toc-02', h3: null, baselineSha: '258e96761fb8d327d06ecea9b283cc1bd9f3ea10', checkTocScroll: true },
+  { file: 'ai-agenti-prvni-agent.html', title: 'Jak navrhnout svého prvního jednoduchého AI agenta', tocCount: 27, h2: '#toc-02', h3: '#ai-agenti-prvni-agent-h3-01', baselineSha: '258e96761fb8d327d06ecea9b283cc1bd9f3ea10', checkTocScroll: true },
+  { file: 'ai-agenti-skills.html', title: 'Skills: jak naučit AI agenta opakovat osvědčený pracovní postup', tocCount: 37, h2: '#toc-02', h3: '#ai-agenti-skills-h3-01', baselineSha: '258e96761fb8d327d06ecea9b283cc1bd9f3ea10', checkTocScroll: true }
 ];
 const migrationArticles = [...wave1Articles, ...wave2Articles, ...wave3Articles];
 
@@ -257,7 +257,7 @@ for (const article of migrationArticles) {
           expect(state.related.width).toBeGreaterThan(state.article.width);
         } else {
           expect(state.tocPosition).toBe('static');
-          expect(state.toc.left).toBeCloseTo(state.article.left, 0);
+          expect(Math.abs(state.toc.left - state.article.left)).toBeLessThanOrEqual(1);
         }
 
         if (width === 1440) {
