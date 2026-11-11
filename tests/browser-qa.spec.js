@@ -151,15 +151,22 @@ test('no critical browser errors or missing local resources', async ({ page }) =
   expect(localProblems, localProblems.join('\n')).toEqual([]);
 });
 
-const migrationArticles = [
-  { file: 'ai-agenti-10-ukolu.html', title: '10 úkolů, které může AI agent převzít učiteli', tocCount: 18, h2: '#ukol-pracovni-list', h3: '#autonomie-schvaleni' },
-  { file: 'ai-agenti-agentni-smycka.html', title: 'Jak funguje AI agent: agentní smyčka krok za krokem', tocCount: 17, h2: '#toc-03', h3: '#loop-think' },
-  { file: 'ai-agenti-chatbot-automatizace-workflow.html', title: 'AI agent, automatizace, workflow nebo chatbot?', tocCount: 24, h2: '#typ-chatbot', h3: '#typ-chatbot-kdy' },
-  { file: 'ai-agenti-kdy-nepouzivat.html', title: 'Kdy AI agenta ve škole raději nepoužívat', tocCount: 21, h2: '#riziko-znamka', h3: '#semafor-zluta' }
+const wave1Articles = [
+  { file: 'ai-agenti-10-ukolu.html', title: '10 úkolů, které může AI agent převzít učiteli', tocCount: 18, h2: '#ukol-pracovni-list', h3: '#autonomie-schvaleni', baselineSha: '1abd3fc39df4650b402f5f6d31f6a2148f7a769f' },
+  { file: 'ai-agenti-agentni-smycka.html', title: 'Jak funguje AI agent: agentní smyčka krok za krokem', tocCount: 17, h2: '#toc-03', h3: '#loop-think', baselineSha: '1abd3fc39df4650b402f5f6d31f6a2148f7a769f' },
+  { file: 'ai-agenti-chatbot-automatizace-workflow.html', title: 'AI agent, automatizace, workflow nebo chatbot?', tocCount: 24, h2: '#typ-chatbot', h3: '#typ-chatbot-kdy', baselineSha: '1abd3fc39df4650b402f5f6d31f6a2148f7a769f' },
+  { file: 'ai-agenti-kdy-nepouzivat.html', title: 'Kdy AI agenta ve škole raději nepoužívat', tocCount: 21, h2: '#riziko-znamka', h3: '#semafor-zluta', baselineSha: '1abd3fc39df4650b402f5f6d31f6a2148f7a769f' }
 ];
+const wave2Articles = [
+  { file: 'ai-agenti-coding-agenti.html', title: 'Od vibe codingu ke coding agentům', tocCount: 31, h2: '#toc-03', h3: '#coding-agent', baselineSha: '6ae5e726d79b6aea3c87845193b9e0caa0f3ed19' },
+  { file: 'ai-agenti-nastroje-function-calling.html', title: 'Nástroje a Function Calling: jak dostane AI „ruce“', tocCount: 25, h2: '#toc-04', h3: '#tools-step-understand', baselineSha: '6ae5e726d79b6aea3c87845193b9e0caa0f3ed19' },
+  { file: 'ai-agenti-pamet.html', title: 'Paměť AI agentů: co si AI skutečně pamatuje', tocCount: 28, h2: '#toc-02', h3: '#memory-context-size', baselineSha: '6ae5e726d79b6aea3c87845193b9e0caa0f3ed19' },
+  { file: 'ai-agenti-rag.html', title: 'RAG: když AI pracuje s vašimi vlastními dokumenty', tocCount: 38, h2: '#toc-04', h3: '#rag-step-sources', baselineSha: '6ae5e726d79b6aea3c87845193b9e0caa0f3ed19' }
+];
+const migrationArticles = [...wave1Articles, ...wave2Articles];
 
 for (const article of migrationArticles) {
-  test.describe(`Wave 1: ${article.file}`, () => {
+  test.describe(`Migration: ${article.file}`, () => {
     test('responsive layout, global navigation, contents, related articles, and screenshots', async ({ page }) => {
       const problems = [];
       page.on('console', message => { if (message.type() === 'error') problems.push(`console: ${message.text()}`); });
@@ -209,16 +216,38 @@ for (const article of migrationArticles) {
             heroTitleColor: getComputedStyle(document.querySelector('.workflow-hero h1')).color,
             related: document.querySelector('.workflow-related').getBoundingClientRect().toJSON(),
             article: document.querySelector('.workflow-article').getBoundingClientRect().toJSON(),
-            toc: document.querySelector('.article-content-navigation').getBoundingClientRect().toJSON()
+            toc: document.querySelector('.article-content-navigation').getBoundingClientRect().toJSON(),
+            tocScroll: {
+              overflowY: getComputedStyle(document.querySelector('.article-content-navigation nav')).overflowY,
+              scrollHeight: document.querySelector('.article-content-navigation nav').scrollHeight,
+              clientHeight: document.querySelector('.article-content-navigation nav').clientHeight
+            },
+            imageStatus: [...document.querySelectorAll('.article-figure img')].map(img => ({
+              src: img.getAttribute('src'), complete: img.complete, naturalWidth: img.naturalWidth, alt: img.getAttribute('alt')
+            })),
+            promptStyles: [...document.querySelectorAll('.article-prompt')].slice(0, 1).map(el => ({
+              background: getComputedStyle(el).backgroundColor, color: getComputedStyle(el).color
+            })),
+            codeOverflow: [...document.querySelectorAll('pre')].map(el => ({
+              scrollWidth: el.scrollWidth, clientWidth: el.clientWidth, overflowX: getComputedStyle(el).overflowX
+            }))
           };
         });
         expect(state.scrollWidth, `horizontal overflow at ${width}px on ${article.file}`).toBeLessThanOrEqual(width + 1);
         expect(state.idsUnique, `duplicate IDs on ${article.file}`).toBe(true);
         expect(state.anchorsResolve, `broken contents anchor on ${article.file}`).toBe(true);
         expect(state.bodyBackground).toBe('rgb(255, 254, 250)');
+        expect(state.imageStatus.length, `article illustration missing on ${article.file}`).toBeGreaterThan(0);
+        expect(state.imageStatus.every(image => image.complete && image.naturalWidth > 0 && image.alt), `article illustration failed to load or lacks alt text on ${article.file}`).toBe(true);
+        expect(state.promptStyles.every(style => style.background !== 'rgba(0, 0, 0, 0)' && style.color !== 'rgba(0, 0, 0, 0)'), `prompt styling missing on ${article.file}`).toBe(true);
+        expect(state.codeOverflow.every(block => block.scrollWidth <= block.clientWidth || ['auto', 'scroll'].includes(block.overflowX)), `code overflow escapes its block on ${article.file}`).toBe(true);
         if (width > 960) {
           expect(state.tocPosition).toBe('sticky');
           expect(state.toc.left).toBeLessThan(state.article.left);
+          if (article.baselineSha === '6ae5e726d79b6aea3c87845193b9e0caa0f3ed19') {
+            expect(['auto', 'scroll']).toContain(state.tocScroll.overflowY);
+            expect(state.tocScroll.scrollHeight).toBeGreaterThan(state.tocScroll.clientHeight);
+          }
           expect(state.related.width).toBeGreaterThan(state.article.width);
         } else {
           expect(state.tocPosition).toBe('static');
@@ -226,20 +255,24 @@ for (const article of migrationArticles) {
         }
 
         if (width === 1440) {
-          await page.screenshot({ path: `artifacts/wave1-${article.file}-desktop-1440-top.png` });
+          await page.screenshot({ path: `artifacts/${article.file}-desktop-1440-top.png` });
           await page.locator('.workflow-main').scrollIntoViewIfNeeded();
           await page.waitForTimeout(150);
-          await page.screenshot({ path: `artifacts/wave1-${article.file}-desktop-1440-content.png` });
+          await page.screenshot({ path: `artifacts/${article.file}-desktop-1440-toc-scrolled.png` });
           const stickyTop = await toc.evaluate(el => el.getBoundingClientRect().top);
           expect(stickyTop).toBeGreaterThanOrEqual(0);
           expect(stickyTop).toBeLessThan(280);
         }
         if (width === 390) {
           await expect(toc).toHaveJSProperty('open', true);
-          await page.screenshot({ path: `artifacts/wave1-${article.file}-mobile-390-expanded.png` });
+          await toc.scrollIntoViewIfNeeded();
+          await page.waitForTimeout(100);
+          await page.screenshot({ path: `artifacts/${article.file}-mobile-390-expanded.png` });
           await toc.locator('summary').click();
           await expect(toc).toHaveJSProperty('open', false);
-          await page.screenshot({ path: `artifacts/wave1-${article.file}-mobile-390-collapsed.png` });
+          await toc.scrollIntoViewIfNeeded();
+          await page.waitForTimeout(100);
+          await page.screenshot({ path: `artifacts/${article.file}-mobile-390-collapsed.png` });
           await toc.locator('summary').click();
           await expect(toc).toHaveJSProperty('open', true);
         }
@@ -295,7 +328,7 @@ for (const article of migrationArticles) {
     });
 
     test('article text, headings, IDs, media, links, controls, date, and SEO match the pre-migration baseline', async ({ page }) => {
-      const baselineSha = process.env.BASELINE_SHA;
+      const baselineSha = article.baselineSha || process.env.BASELINE_SHA;
       expect(baselineSha, 'baseline SHA must be provided by the workflow').toBeTruthy();
       const { execFileSync } = require('node:child_process');
       const baselineHTML = execFileSync('git', ['show', `${baselineSha}:${article.file}`], { encoding: 'utf8' });
@@ -340,9 +373,9 @@ for (const article of migrationArticles) {
   });
 }
 
-test('desktop overview compares all four migrated articles side by side', async ({ page }) => {
+test('wave 1 desktop overview compares its four articles side by side', async ({ page }) => {
   const cards = [];
-  for (const article of migrationArticles) {
+  for (const article of wave1Articles) {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto(`${baseURL}/${article.file}`);
     await page.evaluate(() => document.fonts.ready);
@@ -352,4 +385,19 @@ test('desktop overview compares all four migrated articles side by side', async 
   await page.setViewportSize({ width: 1800, height: 1100 });
   await page.setContent(`<!doctype html><html lang="cs"><meta charset="utf-8"><title>AI agenti – přehled migrační vlny 1</title><style>body{margin:0;padding:24px;background:#fffefa;color:#102d2b;font:600 15px Arial,sans-serif}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}article{min-width:0;border:1px solid #dfe8e1;border-radius:12px;padding:10px;background:#fff;overflow:hidden}h2{font-size:16px;min-height:40px;margin:4px 0 12px}img{display:block;width:100%;height:auto;border:1px solid #eee}</style><main class="grid">${cards.join('')}</main>`);
   await page.screenshot({ path: 'artifacts/wave1-overview-desktop-four-articles.png', fullPage: true });
+});
+
+
+test('wave 2 desktop overview compares its four articles side by side', async ({ page }) => {
+  const cards = [];
+  for (const article of wave2Articles) {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(`${baseURL}/${article.file}`);
+    await page.evaluate(() => document.fonts.ready);
+    const image = await page.screenshot();
+    cards.push(`<article><h2>${article.title}</h2><img alt="${article.title}" src="data:image/png;base64,${image.toString('base64')}"></article>`);
+  }
+  await page.setViewportSize({ width: 1800, height: 1100 });
+  await page.setContent(`<!doctype html><html lang="cs"><meta charset="utf-8"><title>AI agenti – přehled migrační vlny 2</title><style>body{margin:0;padding:24px;background:#fffefa;color:#102d2b;font:600 15px Arial,sans-serif}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}article{min-width:0;border:1px solid #dfe8e1;border-radius:12px;padding:10px;background:#fff;overflow:hidden}h2{font-size:16px;min-height:40px;margin:4px 0 12px}img{display:block;width:100%;height:auto;border:1px solid #eee}</style><main class="grid">${cards.join('')}</main>`);
+  await page.screenshot({ path: 'artifacts/wave2-overview-desktop-four-articles.png', fullPage: true });
 });
