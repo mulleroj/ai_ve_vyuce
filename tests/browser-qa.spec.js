@@ -163,7 +163,13 @@ const wave2Articles = [
   { file: 'ai-agenti-pamet.html', title: 'Paměť AI agentů: co si AI skutečně pamatuje', tocCount: 28, h2: '#toc-02', h3: '#memory-context-size', baselineSha: '6ae5e726d79b6aea3c87845193b9e0caa0f3ed19' },
   { file: 'ai-agenti-rag.html', title: 'RAG: když AI pracuje s vašimi vlastními dokumenty', tocCount: 38, h2: '#toc-04', h3: '#rag-step-sources', baselineSha: '6ae5e726d79b6aea3c87845193b9e0caa0f3ed19' }
 ];
-const migrationArticles = [...wave1Articles, ...wave2Articles];
+const wave3Articles = [
+  { file: 'ai-agenti-mcp.html', title: 'MCP: univerzální konektor pro svět AI agentů', tocCount: 30, h2: '#toc-07', h3: '#ai-agenti-mcp-h3-01', baselineSha: '258e96761fb8d327d06ecea9b283cc1bd9f3ea10', checkTocScroll: true },
+  { file: 'ai-agenti-multi-agentni.html', title: 'Multi-agentní systémy: když na jednom úkolu pracuje tým AI', tocCount: 27, h2: '#toc-07', h3: null, baselineSha: '258e96761fb8d327d06ecea9b283cc1bd9f3ea10', checkTocScroll: true },
+  { file: 'ai-agenti-prvni-agent.html', title: 'Jak navrhnout svého prvního jednoduchého AI agenta', tocCount: 27, h2: '#toc-07', h3: '#ai-agenti-prvni-agent-h3-01', baselineSha: '258e96761fb8d327d06ecea9b283cc1bd9f3ea10', checkTocScroll: true },
+  { file: 'ai-agenti-skills.html', title: 'Skills: jak naučit AI agenta opakovat osvědčený pracovní postup', tocCount: 37, h2: '#toc-07', h3: '#ai-agenti-skills-h3-01', baselineSha: '258e96761fb8d327d06ecea9b283cc1bd9f3ea10', checkTocScroll: true }
+];
+const migrationArticles = [...wave1Articles, ...wave2Articles, ...wave3Articles];
 
 for (const article of migrationArticles) {
   test.describe(`Migration: ${article.file}`, () => {
@@ -244,7 +250,7 @@ for (const article of migrationArticles) {
         if (width > 960) {
           expect(state.tocPosition).toBe('sticky');
           expect(state.toc.left).toBeLessThan(state.article.left);
-          if (article.baselineSha === '6ae5e726d79b6aea3c87845193b9e0caa0f3ed19') {
+          if (article.checkTocScroll || article.baselineSha === '6ae5e726d79b6aea3c87845193b9e0caa0f3ed19') {
             expect(['auto', 'scroll']).toContain(state.tocScroll.overflowY);
             expect(state.tocScroll.scrollHeight).toBeGreaterThan(state.tocScroll.clientHeight);
           }
@@ -283,7 +289,7 @@ for (const article of migrationArticles) {
     test('H2 and selected H3 links navigate and highlight the current chapter', async ({ page }) => {
       await page.setViewportSize({ width: 1440, height: 900 });
       await page.goto(`${baseURL}/${article.file}`);
-      for (const fragment of [article.h2, article.h3]) {
+      for (const fragment of [article.h2, article.h3].filter(Boolean)) {
         await page.locator(`.article-content-navigation a[href="${fragment}"]`).click();
         await expect(page).toHaveURL(new RegExp(`${fragment}$`));
         await expect(page.locator(fragment)).toBeInViewport();
@@ -400,4 +406,19 @@ test('wave 2 desktop overview compares its four articles side by side', async ({
   await page.setViewportSize({ width: 1800, height: 1100 });
   await page.setContent(`<!doctype html><html lang="cs"><meta charset="utf-8"><title>AI agenti – přehled migrační vlny 2</title><style>body{margin:0;padding:24px;background:#fffefa;color:#102d2b;font:600 15px Arial,sans-serif}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}article{min-width:0;border:1px solid #dfe8e1;border-radius:12px;padding:10px;background:#fff;overflow:hidden}h2{font-size:16px;min-height:40px;margin:4px 0 12px}img{display:block;width:100%;height:auto;border:1px solid #eee}</style><main class="grid">${cards.join('')}</main>`);
   await page.screenshot({ path: 'artifacts/wave2-overview-desktop-four-articles.png', fullPage: true });
+});
+
+
+test('wave 3 desktop overview compares its four articles side by side', async ({ page }) => {
+  const cards = [];
+  for (const article of wave3Articles) {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(`${baseURL}/${article.file}`);
+    await page.evaluate(() => document.fonts.ready);
+    const image = await page.screenshot();
+    cards.push(`<article><h2>${article.title}</h2><img alt="${article.title}" src="data:image/png;base64,${image.toString('base64')}"></article>`);
+  }
+  await page.setViewportSize({ width: 1800, height: 1100 });
+  await page.setContent(`<!doctype html><html lang="cs"><meta charset="utf-8"><title>AI agenti – přehled migrační vlny 3</title><style>body{margin:0;padding:24px;background:#fffefa;color:#102d2b;font:600 15px Arial,sans-serif}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}article{min-width:0;border:1px solid #dfe8e1;border-radius:12px;padding:10px;background:#fff;overflow:hidden}h2{font-size:16px;min-height:40px;margin:4px 0 12px}img{display:block;width:100%;height:auto;border:1px solid #eee}</style><main class="grid">${cards.join('')}</main>`);
+  await page.screenshot({ path: 'artifacts/wave3-overview-desktop-four-articles.png', fullPage: true });
 });
