@@ -44,7 +44,7 @@ jobs:
       - name: Install isolated browser test runner
         run: |
           npm install --no-save --package-lock=false @playwright/test
-          npx playwright install --with-deps chromium
+          npx playwright install chromium
 
       - name: Run tests against a local HTTP server
         run: |
