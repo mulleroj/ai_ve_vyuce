@@ -293,11 +293,6 @@ for (const article of migrationArticles) {
         await page.locator(`.article-content-navigation a[href="${fragment}"]`).click();
         await expect(page).toHaveURL(new RegExp(`${fragment}$`));
         await expect(page.locator(fragment)).toBeInViewport();
-        if (article.baselineSha === '258e96761fb8d327d06ecea9b283cc1bd9f3ea10') {
-          await page.locator(fragment).evaluate(el => {
-            window.scrollBy(0, el.getBoundingClientRect().top - 200);
-          });
-        }
         await expect(page.locator('.article-content-navigation a[aria-current="location"]'))
           .toHaveAttribute('href', fragment);
       }
