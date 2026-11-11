@@ -21,14 +21,37 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261109-7k" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261109-7k-v2" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261110-7q" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-            <a class="workflow-back" href="ai-agenti.html">← AI agenti</a>
-        </div>
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="create">
+<header class="site-header" id="top">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu">
+      <div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+        <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a>
+        <a href="ai-navody.html">Připravit výuku</a>
+        <a href="aktivity.html">Učit s AI</a>
+        <a href="asistenti.html">Nástroje a asistenti</a>
+        <a href="vibe-coding.html" aria-current="location">Tvořit s AI</a>
+        <a href="ai.html">Číst a objevovat</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace">
+  <ol>
+    <li><a href="index.html">Domů</a></li>
+    <li><a href="ai-agenti.html">AI agenti</a></li>
+    <li aria-current="page">RAG: když AI pracuje s vašimi vlastními dokumenty</li>
+  </ol>
+</nav>
+    <section class="workflow-shell">
         <div class="workflow-hero">
             <div>
                 <div class="workflow-eyebrow">AI agenti · 1. září 2026</div>
@@ -43,25 +66,18 @@
                 <div class="workflow-stage"><span class="workflow-stage-number">04</span><div><strong>Odpověz se zdrojem</strong><small>Kontrola, citace a aktuálnost</small></div></div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
+        <details class="article-content-navigation" open>
+            <summary id="toc-heading-ai-agenti-rag-html">V tomto článku</summary>
+            <nav aria-label="Obsah článku"><ol><li><a href="#toc-01">Co znamená RAG</a></li><li><a href="#toc-02">Proč vůbec RAG potřebujeme</a></li><li><a href="#toc-03">Bez RAG a s RAG</a><ol><li><a href="#rag-without">Bez RAG</a></li><li><a href="#rag-with">S RAG</a></li></ol></li><li><a href="#toc-04">Jak RAG funguje</a><ol><li><a href="#rag-step-sources">1. Připravíme zdroje</a></li><li><a href="#rag-step-chunk">2. Dokument se rozdělí na menší části</a></li><li><a href="#rag-step-embedding">3. Text se převede na číselnou reprezentaci</a></li><li><a href="#rag-step-question">4. Uživatel položí otázku</a></li><li><a href="#rag-step-context">5. Relevantní text se předá jazykovému modelu</a></li><li><a href="#rag-step-answer">6. Model vytvoří odpověď</a></li></ol></li><li><a href="#toc-05">RAG není totéž co „nahrát PDF do ChatGPT“</a></li><li><a href="#toc-06">RAG není databáze sama o sobě</a></li><li><a href="#rag-vector-database">Co je vektorová databáze</a></li><li><a href="#rag-school-example">Příklad ze školy</a></li><li><a href="#rag-teacher-materials">RAG v učitelových materiálech</a></li><li><a href="#rag-current-info">RAG a aktuální informace</a></li><li><a href="#rag-benefits">Výhody RAG</a><ol><li><a href="#rag-benefit-data">Práce s vlastními daty</a></li><li><a href="#rag-benefit-current">Aktuálnost</a></li><li><a href="#rag-benefit-hallucination">Menší riziko halucinací</a></li><li><a href="#rag-benefit-citations">Citace</a></li><li><a href="#rag-benefit-control">Kontrola znalostí</a></li></ol></li><li><a href="#rag-limitations">Ale RAG nezaručuje pravdu</a><ol><li><a href="#rag-risk-document">Špatný dokument</a></li><li><a href="#rag-risk-search">Špatné vyhledání</a></li><li><a href="#rag-risk-chunks">Příliš malé nebo velké chunks</a></li><li><a href="#rag-risk-query">Špatně formulovaný dotaz</a></li><li><a href="#rag-risk-model">Model může i přes správné zdroje udělat chybu</a></li></ol></li><li><a href="#rag-hybrid-search">Hybridní vyhledávání</a></li><li><a href="#rag-reranking">Reranking</a></li><li><a href="#rag-versus-agent">RAG a agent nejsou totéž</a></li><li><a href="#rag-versus-memory">RAG versus paměť</a><ol><li><a href="#rag-memory">Paměť</a></li><li><a href="#rag-knowledge-base">RAG znalostní báze</a></li></ol></li><li><a href="#rag-vibe-coding">RAG ve vibe codingu</a></li><li><a href="#rag-when">Kdy RAG dává smysl</a></li></ol></nav>
+        </details>
         <article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">RAG umožní agentovi vyhledat relevantní informace ve vašich dokumentech a předat je modelu právě ve chvíli, kdy je potřebuje.</p>
             </div>
 
-            <nav class="article-toc" aria-labelledby="toc-heading-ai-agenti-rag-html">
-                <p class="article-toc-label" id="toc-heading-ai-agenti-rag-html">V tomto článku</p>
-                <ul>
-                    <li><a href="#toc-01">Co znamená RAG</a></li>
-                    <li><a href="#toc-02">Proč vůbec RAG potřebujeme</a></li>
-                    <li><a href="#toc-03">Bez RAG a s RAG</a></li>
-                    <li><a href="#toc-04">Jak RAG funguje</a></li>
-                    <li><a href="#toc-05">RAG není totéž co „nahrát PDF do ChatGPT“</a></li>
-                    <li><a href="#toc-06">RAG není databáze sama o sobě</a></li>
-                </ul>
-            </nav>
             <div class="article-content">
                 <p class="article-lead">V předchozím článku jsme si ukázali, že AI agent může využívat různé druhy paměti. Jenže co když potřebujeme, aby pracoval s informacemi, které nejsou součástí jeho původního tréninku? Třeba se školním řádem, interní směrnicí, učebnicí, firemní dokumentací nebo vlastní databází. Právě k tomu slouží RAG.</p>
 
@@ -108,7 +124,7 @@
                 <h2 id="toc-03">Bez RAG a s RAG</h2>
                 <p>Rozdíl si můžeme ukázat jednoduše.</p>
 
-                <h3>Bez RAG</h3>
+                <h3 id="rag-without">Bez RAG</h3>
                 <p><strong>Uživatel:</strong></p>
                 <blockquote>„Jak se omlouvá absence?“</blockquote>
                 <p><strong>AI:</strong></p>
@@ -117,7 +133,7 @@
                 <p>Ale nemusí.</p>
                 <p>Model odpovídá obecně.</p>
 
-                <h3>S RAG</h3>
+                <h3 id="rag-with">S RAG</h3>
                 <p><strong>Uživatel:</strong></p>
                 <blockquote>„Jak se podle našeho školního řádu omlouvá absence?“</blockquote>
                 <p><strong>Systém:</strong></p>
@@ -136,7 +152,7 @@
                 <h2 id="toc-04">Jak RAG funguje</h2>
                 <p>Celý proces můžeme rozdělit do několika kroků.</p>
 
-                <h3>1. Připravíme zdroje</h3>
+                <h3 id="rag-step-sources">1. Připravíme zdroje</h3>
                 <p>Nejprve musíme systému zpřístupnit dokumenty.</p>
                 <p>Mohou to být například:</p>
                 <ul>
@@ -151,7 +167,7 @@
                 </ul>
                 <p>Dokumenty jsou následně zpracovány tak, aby v nich systém mohl efektivně hledat.</p>
 
-                <h3>2. Dokument se rozdělí na menší části</h3>
+                <h3 id="rag-step-chunk">2. Dokument se rozdělí na menší části</h3>
                 <p>Dlouhý dokument se obvykle neposílá modelu celý.</p>
                 <p>Představme si školní řád o 60 stranách.</p>
                 <p>Pokud se uživatel ptá:</p>
@@ -168,7 +184,7 @@
                 </ul>
                 <p>Systém potom hledá pouze ty úseky, které souvisejí s dotazem.</p>
 
-                <h3>3. Text se převede na číselnou reprezentaci</h3>
+                <h3 id="rag-step-embedding">3. Text se převede na číselnou reprezentaci</h3>
                 <p>A tady přichází trochu techniky.</p>
                 <p>Aby bylo možné hledat podle významu, text se často převádí na takzvané:</p>
                 <div class="article-prompt"><strong>embeddings</strong></div>
@@ -184,7 +200,7 @@
                 <p>To je důležité, protože systém nemusí hledat jen přesnou shodu slov.</p>
                 <p>Může hledat podle významové podobnosti.</p>
 
-                <h3>4. Uživatel položí otázku</h3>
+                <h3 id="rag-step-question">4. Uživatel položí otázku</h3>
                 <p>Například:</p>
                 <blockquote>„Co má žák udělat, když chybí ve škole?“</blockquote>
                 <p>Systém vytvoří embedding také z tohoto dotazu.</p>
@@ -197,14 +213,14 @@
                 </ul>
                 <p>Tyto části jsou označeny jako nejrelevantnější.</p>
 
-                <h3>5. Relevantní text se předá jazykovému modelu</h3>
+                <h3 id="rag-step-context">5. Relevantní text se předá jazykovému modelu</h3>
                 <p>Model potom nedostane pouze otázku.</p>
                 <p>Dostane například:</p>
                 <div class="article-prompt"><strong>Dotaz uživatele:</strong><br /><br />Co má žák udělat, když chybí ve škole?<br /><br /><strong>Relevantní část školního řádu:</strong><br /><br />Zákonný zástupce je povinen…</div>
                 <p>Model tedy odpovídá na základě dodaného kontextu.</p>
                 <p>To je podstata RAG.</p>
 
-                <h3>6. Model vytvoří odpověď</h3>
+                <h3 id="rag-step-answer">6. Model vytvoří odpověď</h3>
                 <p>Teprve nyní nastupuje generativní AI.</p>
                 <p>Model přečte:</p>
                 <ul>
@@ -244,7 +260,7 @@
                 <p>RAG pak řeší:</p>
                 <div class="article-prompt"><strong>jak najít relevantní informace a dostat je k modelu ve správnou chvíli</strong></div>
 
-                <h2>Co je vektorová databáze</h2>
+                <h2 id="rag-vector-database">Co je vektorová databáze</h2>
                 <p>V souvislosti s RAG se často setkáme s pojmem:</p>
                 <div class="article-prompt"><strong>vector database</strong><br /><br />tedy vektorová databáze</div>
                 <p>Je navržena tak, aby efektivně ukládala a vyhledávala embeddings.</p>
@@ -254,7 +270,7 @@
                 <blockquote>Které části dokumentů mají významově nejblíže k tématu omlouvání nepřítomnosti?</blockquote>
                 <p>To umožňuje mnohem chytřejší vyhledávání.</p>
 
-                <h2>Příklad ze školy</h2>
+                <h2 id="rag-school-example">Příklad ze školy</h2>
                 <p>Představme si školního AI asistenta.</p>
                 <p>Má přístup k:</p>
                 <ul>
@@ -277,7 +293,7 @@
                 </ol>
                 <p>To je praktická ukázka RAG.</p>
 
-                <h2>RAG v učitelových materiálech</h2>
+                <h2 id="rag-teacher-materials">RAG v učitelových materiálech</h2>
                 <p>RAG může být zajímavý i přímo při přípravě výuky.</p>
                 <p>Představme si, že máme uložené:</p>
                 <ul>
@@ -300,7 +316,7 @@
                 <p>Model tedy nepracuje pouze s obecnou angličtinou.</p>
                 <p>Pracuje s konkrétním učebním obsahem.</p>
 
-                <h2>RAG a aktuální informace</h2>
+                <h2 id="rag-current-info">RAG a aktuální informace</h2>
                 <p>RAG je užitečný také tam, kde se informace mění.</p>
                 <p>Představme si produktovou dokumentaci.</p>
                 <p>Model byl trénován před rokem.</p>
@@ -309,36 +325,36 @@
                 <p>RAG pak při odpovědi načte aktuální verzi.</p>
                 <p>To je mnohem praktičtější.</p>
 
-                <h2>Výhody RAG</h2>
+                <h2 id="rag-benefits">Výhody RAG</h2>
                 <p>RAG přináší několik zásadních výhod.</p>
 
-                <h3>Práce s vlastními daty</h3>
+                <h3 id="rag-benefit-data">Práce s vlastními daty</h3>
                 <p>Model může používat informace, které nebyly součástí jeho původního tréninku.</p>
 
-                <h3>Aktuálnost</h3>
+                <h3 id="rag-benefit-current">Aktuálnost</h3>
                 <p>Dokumenty lze aktualizovat bez nového trénování modelu.</p>
 
-                <h3>Menší riziko halucinací</h3>
+                <h3 id="rag-benefit-hallucination">Menší riziko halucinací</h3>
                 <p>Pokud model dostane správné podklady, má větší šanci odpovědět správně.</p>
 
-                <h3>Citace</h3>
+                <h3 id="rag-benefit-citations">Citace</h3>
                 <p>Systém může ukázat, z jakého zdroje odpověď vychází.</p>
 
-                <h3>Kontrola znalostí</h3>
+                <h3 id="rag-benefit-control">Kontrola znalostí</h3>
                 <p>Organizace může přesně určit, které dokumenty smí AI používat.</p>
 
-                <h2>Ale RAG nezaručuje pravdu</h2>
+                <h2 id="rag-limitations">Ale RAG nezaručuje pravdu</h2>
                 <p>Tohle je důležité.</p>
                 <p>RAG není kouzelná technologie, která automaticky odstraní chyby.</p>
                 <p>Může selhat hned v několika bodech.</p>
 
-                <h3>Špatný dokument</h3>
+                <h3 id="rag-risk-document">Špatný dokument</h3>
                 <p>Pokud je ve znalostní databázi zastaralý nebo chybný dokument, RAG může velmi přesvědčivě odpovědět podle něj.</p>
                 <p>Platí klasické:</p>
                 <div class="article-prompt"><strong>garbage in → garbage out</strong></div>
                 <p>Pokud jsou špatné zdroje, bude špatný i výsledek.</p>
 
-                <h3>Špatné vyhledání</h3>
+                <h3 id="rag-risk-search">Špatné vyhledání</h3>
                 <p>Systém může najít nesprávnou část dokumentu.</p>
                 <p>Například se uživatel ptá na:</p>
                 <blockquote>omlouvání absence</blockquote>
@@ -347,13 +363,13 @@
                 <p>Témata spolu souvisejí, ale nejsou stejná.</p>
                 <p>Model pak může vytvořit zavádějící odpověď.</p>
 
-                <h3>Příliš malé nebo velké chunks</h3>
+                <h3 id="rag-risk-chunks">Příliš malé nebo velké chunks</h3>
                 <p>Kvalita RAG závisí i na tom, jak se dokumenty rozdělí.</p>
                 <p>Pokud jsou části příliš malé, může se ztratit kontext.</p>
                 <p>Pokud jsou příliš velké, může systém načítat spoustu nepotřebného textu.</p>
                 <p>Rozdělování dokumentů je proto překvapivě důležitá část návrhu.</p>
 
-                <h3>Špatně formulovaný dotaz</h3>
+                <h3 id="rag-risk-query">Špatně formulovaný dotaz</h3>
                 <p>Uživatel může položit velmi obecnou otázku:</p>
                 <blockquote>„Jak to máme s absencí?“</blockquote>
                 <p>Systém nemusí poznat, zda se ptá na:</p>
@@ -366,7 +382,7 @@
                 </ul>
                 <p>Někdy je proto potřeba dotaz přeformulovat nebo uživateli položit doplňující otázku.</p>
 
-                <h3>Model může i přes správné zdroje udělat chybu</h3>
+                <h3 id="rag-risk-model">Model může i přes správné zdroje udělat chybu</h3>
                 <p>Ani když vyhledávání proběhne správně, nemusí být odpověď stoprocentní.</p>
                 <p>Model může:</p>
                 <ul>
@@ -378,7 +394,7 @@
                 <p>Proto jsou u důležitých informací stále důležité:</p>
                 <div class="article-prompt"><strong>citace a možnost kontroly zdroje</strong></div>
 
-                <h2>Hybridní vyhledávání</h2>
+                <h2 id="rag-hybrid-search">Hybridní vyhledávání</h2>
                 <p>Moderní RAG systémy často nepoužívají pouze jeden způsob hledání.</p>
                 <p>Mohou kombinovat:</p>
                 <ul>
@@ -392,7 +408,7 @@
                 <p>Významově podobné formulace zase pomocí embeddings.</p>
                 <p>Kombinace obou přístupů bývá silnější.</p>
 
-                <h2>Reranking</h2>
+                <h2 id="rag-reranking">Reranking</h2>
                 <p>Dalším pojmem, na který můžeme narazit, je:</p>
                 <div class="article-prompt"><strong>reranking</strong></div>
                 <p>Systém nejprve najde například 20 potenciálně vhodných částí dokumentů.</p>
@@ -401,7 +417,7 @@
                 <p>Teprve ty pošle jazykovému modelu.</p>
                 <p>To může výrazně zlepšit kvalitu odpovědí.</p>
 
-                <h2>RAG a agent nejsou totéž</h2>
+                <h2 id="rag-versus-agent">RAG a agent nejsou totéž</h2>
                 <p>Tady je důležité nezaměnit dva pojmy.</p>
                 <p>RAG je metoda získávání relevantních informací.</p>
                 <p>AI agent je systém, který může rozhodovat, plánovat a používat nástroje.</p>
@@ -409,21 +425,21 @@
                 <div class="article-prompt"><strong>Agent:</strong> Potřebuji zjistit pravidla klasifikace.<br /><br /><strong>RAG nástroj:</strong> Najdu relevantní části školních dokumentů.<br /><br /><strong>Agent:</strong> Na základě nalezených informací vytvořím odpověď.</div>
                 <p>RAG tedy může být jednou ze schopností agenta.</p>
 
-                <h2>RAG versus paměť</h2>
+                <h2 id="rag-versus-memory">RAG versus paměť</h2>
                 <p>Tyto dvě věci mohou vypadat podobně.</p>
                 <p>Rozdíl můžeme zjednodušit takto:</p>
 
-                <h3>Paměť</h3>
+                <h3 id="rag-memory">Paměť</h3>
                 <p>Obsahuje například informace o uživateli a předchozí práci.</p>
                 <blockquote>Učitel preferuje pracovní listy na A4.</blockquote>
 
-                <h3>RAG znalostní báze</h3>
+                <h3 id="rag-knowledge-base">RAG znalostní báze</h3>
                 <p>Obsahuje zdrojové dokumenty.</p>
                 <blockquote>Školní řád stanovuje…</blockquote>
                 <p>Obě technologie mohou používat podobné techniky vyhledávání.</p>
                 <p>Jejich účel je ale jiný.</p>
 
-                <h2>RAG ve vibe codingu</h2>
+                <h2 id="rag-vibe-coding">RAG ve vibe codingu</h2>
                 <p>RAG lze použít i u coding agentů.</p>
                 <p>Agent může například vyhledávat v:</p>
                 <ul>
@@ -444,7 +460,7 @@
                 <p>Teprve potom začne upravovat kód.</p>
                 <p>To je mnohem bezpečnější než improvizovat od nuly.</p>
 
-                <h2>Kdy RAG dává smysl</h2>
+                <h2 id="rag-when">Kdy RAG dává smysl</h2>
                 <p>RAG je velmi vhodný, pokud:</p>
                 <ul>
                     <li>máte vlastní dokumenty,</li>
@@ -505,6 +521,9 @@
         <a href="ai-agenti.html">Zpět na AI agenty</a>
     </footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261110-7q" defer></script>
 </body>
 
 </html>
