@@ -169,7 +169,12 @@ const wave3Articles = [
   { file: 'ai-agenti-prvni-agent.html', title: 'Jak navrhnout svého prvního jednoduchého AI agenta', tocCount: 27, h2: '#toc-02', h3: '#ai-agenti-prvni-agent-h3-01', baselineSha: '258e96761fb8d327d06ecea9b283cc1bd9f3ea10', checkTocScroll: true },
   { file: 'ai-agenti-skills.html', title: 'Skills: jak naučit AI agenta opakovat osvědčený pracovní postup', tocCount: 37, h2: '#toc-02', h3: '#ai-agenti-skills-h3-01', baselineSha: '258e96761fb8d327d06ecea9b283cc1bd9f3ea10', checkTocScroll: true }
 ];
-const migrationArticles = [...wave1Articles, ...wave2Articles, ...wave3Articles];
+const wave4Articles = [
+  { file: 'ai-agenti-llm-tools-rag-memory-skills-workflow-mcp.html', title: 'Jak spolu souvisí LLM, Tools, RAG, Memory, Skills, Workflow a MCP', tocCount: 35, h2: '#toc-07', h3: '#ai-agenti-llm-tools-rag-memory-skills-workflow-mcp-h3-01', baselineSha: 'fdc0a22750a024ab2dccc422084c24f51e356581', checkTocScroll: true },
+  { file: 'ai-agenti-ve-skole.html', title: 'AI agent ve škole: co může skutečně dělat učiteli', tocCount: 30, h2: '#toc-07', h3: '#ai-agenti-ve-skole-h3-01', baselineSha: 'fdc0a22750a024ab2dccc422084c24f51e356581', checkTocScroll: true },
+  { file: 'ai-agenti-co-je-ai-agent.html', title: 'AI agenti: když AI začne pracovat', tocCount: 10, h2: '#toc-01', h3: null, baselineSha: 'fdc0a22750a024ab2dccc422084c24f51e356581' }
+];
+const migrationArticles = [...wave1Articles, ...wave2Articles, ...wave3Articles, ...wave4Articles];
 
 for (const article of migrationArticles) {
   test.describe(`Migration: ${article.file}`, () => {
@@ -421,4 +426,43 @@ test('wave 3 desktop overview compares its four articles side by side', async ({
   await page.setViewportSize({ width: 1800, height: 1100 });
   await page.setContent(`<!doctype html><html lang="cs"><meta charset="utf-8"><title>AI agenti – přehled migrační vlny 3</title><style>body{margin:0;padding:24px;background:#fffefa;color:#102d2b;font:600 15px Arial,sans-serif}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}article{min-width:0;border:1px solid #dfe8e1;border-radius:12px;padding:10px;background:#fff;overflow:hidden}h2{font-size:16px;min-height:40px;margin:4px 0 12px}img{display:block;width:100%;height:auto;border:1px solid #eee}</style><main class="grid">${cards.join('')}</main>`);
   await page.screenshot({ path: 'artifacts/wave3-overview-desktop-four-articles.png', fullPage: true });
+});
+
+test('wave 4 desktop overview compares all three articles side by side', async ({ page }) => {
+  const cards = [];
+  for (const article of wave4Articles) {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(`${baseURL}/${article.file}`);
+    await page.evaluate(() => document.fonts.ready);
+    const image = await page.screenshot();
+    cards.push(`<article><h2>${article.title}</h2><img alt="${article.title}" src="data:image/png;base64,${image.toString('base64')}"></article>`);
+  }
+  await page.setViewportSize({ width: 1600, height: 1100 });
+  await page.setContent(`<!doctype html><html lang="cs"><meta charset="utf-8"><title>AI agenti – přehled migrační vlny 4</title><style>body{margin:0;padding:24px;background:#fffefa;color:#102d2b;font:600 15px Arial,sans-serif}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}article{min-width:0;border:1px solid #dfe8e1;border-radius:12px;padding:10px;background:#fff;overflow:hidden}h2{font-size:16px;min-height:40px;margin:4px 0 12px}img{display:block;width:100%;height:auto;border:1px solid #eee}</style><main class="grid">${cards.join('')}</main>`);
+  await page.screenshot({ path: 'artifacts/wave4-overview-desktop-three-articles.png', fullPage: true });
+});
+
+test('original light pilot visual before and after comparison', async ({ page }) => {
+  const article = wave4Articles.find(item => item.file === 'ai-agenti-co-je-ai-agent.html');
+  const { execFileSync } = require('node:child_process');
+  const baselineHTML = execFileSync('git', ['show', `${article.baselineSha}:${article.file}`], { encoding: 'utf8' });
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.setContent(baselineHTML.replace('</head>', `<base href="${baseURL}/"></head>`), { waitUntil: 'networkidle' });
+  await page.evaluate(() => document.fonts.ready);
+  const beforeGeometry = await page.locator('.workflow-hero').evaluate(el => {
+    const box = el.getBoundingClientRect(), title = el.querySelector('h1'), style = getComputedStyle(title);
+    return { width: box.width, height: box.height, titleFont: style.fontFamily, titleSize: style.fontSize, titleColor: style.color, text: title.innerText };
+  });
+  const before = await page.screenshot({ path: 'artifacts/ai-agenti-co-je-ai-agent-pilot-before.png' });
+  await page.goto(`${baseURL}/${article.file}`);
+  await page.evaluate(() => document.fonts.ready);
+  const afterGeometry = await page.locator('.workflow-hero').evaluate(el => {
+    const box = el.getBoundingClientRect(), title = el.querySelector('h1'), style = getComputedStyle(title);
+    return { width: box.width, height: box.height, titleFont: style.fontFamily, titleSize: style.fontSize, titleColor: style.color, text: title.innerText };
+  });
+  const after = await page.screenshot({ path: 'artifacts/ai-agenti-co-je-ai-agent-pilot-after.png' });
+  expect(afterGeometry).toEqual(beforeGeometry);
+  const cards = [before, after].map((image, index) => `<article><h2>${index ? 'Po doplnění TOC' : 'Před migrací'}</h2><img alt="${index ? 'Pilot po migraci' : 'Pilot před migrací'}" src="data:image/png;base64,${image.toString('base64')}"></article>`).join('');
+  await page.setContent(`<!doctype html><html lang="cs"><meta charset="utf-8"><title>Pilot – před a po</title><style>body{margin:0;padding:24px;background:#fffefa;color:#102d2b;font:600 15px Arial,sans-serif}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}article{min-width:0;border:1px solid #dfe8e1;border-radius:12px;padding:10px;background:#fff;overflow:hidden}h2{font-size:16px}img{display:block;width:100%;height:auto;border:1px solid #eee}</style><main class="grid">${cards}</main>`);
+  await page.screenshot({ path: 'artifacts/ai-agenti-co-je-ai-agent-pilot-before-after.png', fullPage: true });
 });

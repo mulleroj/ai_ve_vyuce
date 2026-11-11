@@ -21,10 +21,18 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261109-7k" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261109-7k-v2" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261110-7q" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="create">
+    <header class="site-header" id="top"><nav class="site-nav" aria-label="Hlavní navigace"><a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button><div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu"><a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html" aria-current="location">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a></div></div></nav></section>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace">
+  <ol><li><a href="index.html">Domů</a></li><li><a href="ai-agenti.html">AI agenti</a></li><li aria-current="page">Jak spolu souvisí LLM, Tools, RAG, Memory, Skills, Workflow a MCP</li></ol>
+</nav>
+<section class="workflow-shell">
         <div class="workflow-topbar">
             <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
             <a class="workflow-back" href="ai-agenti.html">← AI agenti</a>
@@ -45,23 +53,17 @@
         </div>
     </header>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
+                <details class="article-content-navigation" open>
+  <summary id="toc-heading-ai-agenti-llm-tools-rag-memory-skills-workflow-mcp-html">V tomto článku</summary>
+  <nav aria-label="Obsah článku"><ol><li><a href="#toc-01">Začněme od úplného základu: LLM</a><ol><li><a href="#ai-agenti-llm-tools-rag-memory-skills-workflow-mcp-h3-01">Samotný model hlavně pracuje s informacemi</a></li></ol></li><li><a href="#toc-02">Tools: co může agent skutečně udělat</a></li><li><a href="#toc-03">Function Calling: jak model o nástroj požádá</a></li><li><a href="#toc-04">Memory: co si má systém uchovat</a></li><li><a href="#toc-05">RAG: kde najít potřebné znalosti</a><ol><li><a href="#ai-agenti-llm-tools-rag-memory-skills-workflow-mcp-h3-02">Memory versus RAG</a></li></ol></li><li><a href="#toc-06">Skills: jak má agent určitou práci dělat</a></li><li><a href="#toc-07">Workflow: jaké kroky mají následovat</a></li><li><a href="#toc-08">A proč potřebujeme MCP?</a></li><li><a href="#toc-09">Jedna školní situace, všechny technologie</a><ol><li><a href="#ai-agenti-llm-tools-rag-memory-skills-workflow-mcp-h3-03">LLM</a></li><li><a href="#ai-agenti-llm-tools-rag-memory-skills-workflow-mcp-h3-04">Tool</a></li><li><a href="#ai-agenti-llm-tools-rag-memory-skills-workflow-mcp-h3-05">MCP</a></li><li><a href="#ai-agenti-llm-tools-rag-memory-skills-workflow-mcp-h3-06">RAG</a></li><li><a href="#ai-agenti-llm-tools-rag-memory-skills-workflow-mcp-h3-07">Agent</a></li></ol></li><li><a href="#toc-10">Jednoduchá mapa agentního systému</a></li><li><a href="#toc-11">Agent je koordinátor celé skládačky</a></li><li><a href="#toc-12">A co agentní smyčka?</a><ol><li><a href="#ai-agenti-llm-tools-rag-memory-skills-workflow-mcp-h3-08">Pochop</a></li><li><a href="#ai-agenti-llm-tools-rag-memory-skills-workflow-mcp-h3-09">Naplánuj</a></li><li><a href="#ai-agenti-llm-tools-rag-memory-skills-workflow-mcp-h3-10">Proveď</a></li><li><a href="#ai-agenti-llm-tools-rag-memory-skills-workflow-mcp-h3-11">Zkontroluj</a></li></ol></li><li><a href="#toc-13">Ne každý agent potřebuje všechno</a></li><li><a href="#toc-14">Víc technologií neznamená lepší agent</a></li><li><a href="#toc-15">Jedna důležitá věc: data nejsou schopnost</a></li><li><a href="#toc-16">Přístup k nástroji také neznamená, že ho agent umí správně použít</a></li><li><a href="#toc-17">Paměť není zdroj pravdy</a></li><li><a href="#toc-18">RAG není paměť modelu</a></li><li><a href="#toc-19">MCP není agentní magie</a></li><li><a href="#toc-20">Skills nejsou zárukou správnosti</a></li><li><a href="#toc-21">Jak agentní systém postupně růst</a></li><li><a href="#toc-22">Ve škole bych postupovala úplně stejně</a></li><li><a href="#toc-23">Celá série v jedné větě</a></li><li><a href="#toc-24">Zapamatujte si</a></li></ol></nav>
+</details>
         <article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Když člověk začne číst o AI agentech, může mít pocit, že každý týden vznikne další zkratka. Ve skutečnosti většina pojmů řeší jinou část stejného problému.</p>
             </div>
 
-            <nav class="article-toc" aria-labelledby="toc-heading-ai-agenti-llm-tools-rag-memory-skills-workflow-mcp-html">
-                <p class="article-toc-label" id="toc-heading-ai-agenti-llm-tools-rag-memory-skills-workflow-mcp-html">V tomto článku</p>
-                <ul>
-                    <li><a href="#toc-01">Začněme od úplného základu: LLM</a></li>
-                    <li><a href="#toc-02">Tools: co může agent skutečně udělat</a></li>
-                    <li><a href="#toc-03">Function Calling: jak model o nástroj požádá</a></li>
-                    <li><a href="#toc-04">Memory: co si má systém uchovat</a></li>
-                    <li><a href="#toc-05">RAG: kde najít potřebné znalosti</a></li>
-                    <li><a href="#toc-06">Skills: jak má agent určitou práci dělat</a></li>
-                </ul>
-            </nav>
+            
             <div class="article-content">
                 <p class="article-lead">Jazykový model, nástroje, paměť, RAG, skills, workflow, MCP… Když člověk začne číst o AI agentech, může mít velmi rychle pocit, že každý týden vznikne další zkratka, kterou musí znát. Ve skutečnosti ale většina těchto pojmů řeší jinou část stejného problému. Jak vytvořit AI systém, který nejen odpovídá, ale dokáže spolehlivě vykonávat práci.</p>
 
@@ -79,7 +81,7 @@
                 <p>Stejně tak samotný LLM ještě není AI agent.</p>
                 <p>Bez dalších částí má omezené možnosti.</p>
 
-                <h3>Samotný model hlavně pracuje s informacemi</h3>
+                <h3 id="ai-agenti-llm-tools-rag-memory-skills-workflow-mcp-h3-01">Samotný model hlavně pracuje s informacemi</h3>
                 <p>Představme si jednoduchý jazykový model.</p>
                 <p>Napíšeme:</p>
                 <blockquote>„Připrav mi pracovní list o Evropské unii.“</blockquote>
@@ -137,7 +139,7 @@
                 <p>RAG tedy odpovídá především na otázku:</p>
                 <div class="article-prompt"><strong>„Kde najdu informace, které model právě potřebuje?“</strong></div>
 
-                <h3>Memory versus RAG</h3>
+                <h3 id="ai-agenti-llm-tools-rag-memory-skills-workflow-mcp-h3-02">Memory versus RAG</h3>
                 <p>Tohle je dobré rozlišovat.</p>
                 <p>Paměť může říkat:</p>
                 <div class="article-prompt"><strong>Uživatel preferuje stručné pracovní listy.</strong></div>
@@ -160,7 +162,7 @@
                 <p>Skill tedy zachycuje opakovatelnou dovednost nebo osvědčený způsob práce.</p>
                 <p>Místo toho, abychom agentovi pokaždé celý postup vysvětlovali v promptu, má tento pracovní návod k dispozici opakovaně.</p>
 
-                <h2>Workflow: jaké kroky mají následovat</h2>
+                <h2 id="toc-07">Workflow: jaké kroky mají následovat</h2>
                 <p>Skill a workflow spolu souvisejí, ale nejsou úplně stejné.</p>
                 <p>Workflow typicky popisuje konkrétní proces.</p>
                 <p>Například:</p>
@@ -176,7 +178,7 @@
                 <p>Technologické názvosloví není cílem.</p>
                 <p>Cílem je mít spolehlivý pracovní postup.</p>
 
-                <h2>A proč potřebujeme MCP?</h2>
+                <h2 id="toc-08">A proč potřebujeme MCP?</h2>
                 <p>Nyní máme agenta, který by chtěl používat:</p>
                 <div class="article-prompt"><strong>dokumenty, kalendář, databázi, GitHub, web, další služby.</strong></div>
                 <p>Jenže každý systém může mít jiné rozhraní.</p>
@@ -188,22 +190,22 @@
                 <p>Řeší hlavně:</p>
                 <div class="article-prompt"><strong>jak se AI aplikace standardizovaně dostane k externím schopnostem a datům.</strong></div>
 
-                <h2>Jedna školní situace, všechny technologie</h2>
+                <h2 id="toc-09">Jedna školní situace, všechny technologie</h2>
                 <p>Nejlépe to bude vidět na jediném příkladu.</p>
                 <p>Učitel zadá:</p>
                 <blockquote>„Připrav mi materiály na zítřejší hodinu angličtiny.“</blockquote>
                 <p>Co se může stát?</p>
-                <h3>LLM</h3>
+                <h3 id="ai-agenti-llm-tools-rag-memory-skills-workflow-mcp-h3-03">LLM</h3>
                 <p>Porozumí zadání.</p>
                 <div class="article-prompt"><strong>Potřebuji zjistit, kterou třídu učitel zítra učí a jaké je aktuální téma.</strong></div>
                 <h3>Memory</h3>
                 <p>Zjistí například:</p>
                 <div class="article-prompt"><strong>Učitel preferuje pracovní listy na A4 a vždy chce také řešení.</strong></div>
-                <h3>Tool</h3>
+                <h3 id="ai-agenti-llm-tools-rag-memory-skills-workflow-mcp-h3-04">Tool</h3>
                 <p>Použije nástroj pro práci s rozvrhem.</p>
-                <h3>MCP</h3>
+                <h3 id="ai-agenti-llm-tools-rag-memory-skills-workflow-mcp-h3-05">MCP</h3>
                 <p>Může být prostředkem, kterým je tento nástroj agentovi zpřístupněn.</p>
-                <h3>RAG</h3>
+                <h3 id="ai-agenti-llm-tools-rag-memory-skills-workflow-mcp-h3-06">RAG</h3>
                 <p>Vyhledá v tematickém plánu:</p>
                 <div class="article-prompt"><strong>aktuální téma: Past Simple.</strong></div>
                 <p>Potom najde relevantní části učebních materiálů.</p>
@@ -214,35 +216,35 @@
                 <h3>Workflow</h3>
                 <p>Spustí proces:</p>
                 <div class="article-prompt"><strong>vytvoření → řešení → kontrola → export.</strong></div>
-                <h3>Agent</h3>
+                <h3 id="ai-agenti-llm-tools-rag-memory-skills-workflow-mcp-h3-07">Agent</h3>
                 <p>Celý proces koordinuje a podle výsledků jednotlivých kroků rozhoduje, co má udělat dál.</p>
                 <p>A najednou všechny ty podivné zkratky začínají dávat smysl.</p>
 
-                <h2>Jednoduchá mapa agentního systému</h2>
+                <h2 id="toc-10">Jednoduchá mapa agentního systému</h2>
                 <p>Můžeme si to shrnout následovně:</p>
                 <div class="article-prompt"><strong>LLM</strong> → Jak rozumět zadání a pracovat s jazykem?<br /><br /><strong>Tools</strong> → Co dokážu skutečně udělat?<br /><br /><strong>Function Calling</strong> → Jak požádám o použití nástroje?<br /><br /><strong>Memory</strong> → Co si mám uchovat z minulosti?<br /><br /><strong>RAG</strong> → Kde najdu potřebné znalosti?<br /><br /><strong>Skills</strong> → Jak umím určitý typ práce dělat?<br /><br /><strong>Workflow</strong> → Jaké kroky mají následovat?<br /><br /><strong>MCP</strong> → Jak se standardně připojím k nástrojům a datům?<br /><br /><strong>Agent</strong> → Jak to všechno použiji k dosažení cíle?</div>
                 <p>Tohle je podle mě jedna z nejdůležitějších tabulek celé série.</p>
                 <p>Protože ukazuje, že jednotlivé technologie nejsou soupeři.</p>
                 <p>Jsou to části jednoho systému.</p>
 
-                <h2>Agent je koordinátor celé skládačky</h2>
+                <h2 id="toc-11">Agent je koordinátor celé skládačky</h2>
                 <p>Můžeme si představit:</p>
                 <div class="article-prompt"><strong>LLM</strong> jako mozek<br /><br /><strong>tools</strong> jako ruce<br /><br /><strong>memory</strong> jako poznámkový blok<br /><br /><strong>RAG</strong> jako knihovníka<br /><br /><strong>skills</strong> jako naučené pracovní postupy<br /><br /><strong>workflow</strong> jako pracovní plán<br /><br /><strong>MCP</strong> jako univerzální komunikační rozhraní<br /><br />a<br /><br /><strong>agenta</strong> jako systém, který všechny tyto části koordinuje.</div>
                 <p>Analogie samozřejmě nesmíme brát technicky doslova.</p>
                 <p>Ale pro pochopení architektury funguje docela dobře.</p>
 
-                <h2>A co agentní smyčka?</h2>
+                <h2 id="toc-12">A co agentní smyčka?</h2>
                 <p>Ještě nám nesmí vypadnout princip, kterým celá soustava pracuje.</p>
                 <p>Agent může fungovat podle cyklu:</p>
                 <div class="article-prompt"><strong>Pochop → Naplánuj → Proveď → Zkontroluj</strong></div>
                 <p>Například:</p>
-                <h3>Pochop</h3>
+                <h3 id="ai-agenti-llm-tools-rag-memory-skills-workflow-mcp-h3-08">Pochop</h3>
                 <p>Potřebuji připravit výuku.</p>
-                <h3>Naplánuj</h3>
+                <h3 id="ai-agenti-llm-tools-rag-memory-skills-workflow-mcp-h3-09">Naplánuj</h3>
                 <p>Zjistím rozvrh a téma.</p>
-                <h3>Proveď</h3>
+                <h3 id="ai-agenti-llm-tools-rag-memory-skills-workflow-mcp-h3-10">Proveď</h3>
                 <p>Použiji nástroje a RAG.</p>
-                <h3>Zkontroluj</h3>
+                <h3 id="ai-agenti-llm-tools-rag-memory-skills-workflow-mcp-h3-11">Zkontroluj</h3>
                 <p>Mám dostatek informací?</p>
                 <p>Pokud ano:</p>
                 <div class="article-prompt"><strong>Použiji skill pro tvorbu materiálu.</strong></div>
@@ -252,7 +254,7 @@
                 <div class="article-prompt"><strong>Předložím výsledek učiteli.</strong></div>
                 <p>Všechny ostatní technologie tedy agent využívá uvnitř svého pracovního cyklu.</p>
 
-                <h2>Ne každý agent potřebuje všechno</h2>
+                <h2 id="toc-13">Ne každý agent potřebuje všechno</h2>
                 <p>Tohle je velmi důležité.</p>
                 <p>Po přečtení celé série by člověk mohl dojít k závěru:</p>
                 <blockquote>Takže správný agent musí mít LLM, RAG, paměť, MCP, deset tools, skills a čtyři workflow.</blockquote>
@@ -265,7 +267,7 @@
                 <p>MCP má smysl tehdy, když potřebujeme vhodně propojit externí systémy.</p>
                 <p>Každou komponentu bych přidávala pouze tehdy, když řeší konkrétní problém.</p>
 
-                <h2>Víc technologií neznamená lepší agent</h2>
+                <h2 id="toc-14">Víc technologií neznamená lepší agent</h2>
                 <p>Je docela snadné postavit systém:</p>
                 <div class="article-prompt"><strong>LLM + 12 tools + RAG + 3 databáze + memory + 20 skills + MCP + 6 agentů</strong></div>
                 <p>a být na něj náležitě pyšný.</p>
@@ -274,7 +276,7 @@
                 <p>Je to velmi moderně provedená komplikace.</p>
                 <p>Dobrá architektura používá minimum komponent potřebných k vyřešení problému.</p>
 
-                <h2>Jedna důležitá věc: data nejsou schopnost</h2>
+                <h2 id="toc-15">Jedna důležitá věc: data nejsou schopnost</h2>
                 <p>Tohle se často plete.</p>
                 <p>Představme si agenta, který má přístup k učebnici.</p>
                 <p>To ještě neznamená, že umí vytvořit kvalitní pracovní list.</p>
@@ -289,7 +291,7 @@
                 <p>Skill může dodat pracovní postup.</p>
                 <p>Teprve jejich kombinace vytvoří kvalitnější výsledek.</p>
 
-                <h2>Přístup k nástroji také neznamená, že ho agent umí správně použít</h2>
+                <h2 id="toc-16">Přístup k nástroji také neznamená, že ho agent umí správně použít</h2>
                 <p>Agent může mít nástroj:</p>
                 <div class="article-prompt"><strong>send_email</strong></div>
                 <p>To ale neznamená, že by ho měl bez omezení používat.</p>
@@ -299,7 +301,7 @@
                 <p>To je důvod, proč jsou tak důležité:</p>
                 <div class="article-prompt"><strong>instrukce, skills, workflow a bezpečnostní pravidla.</strong></div>
 
-                <h2>Paměť není zdroj pravdy</h2>
+                <h2 id="toc-17">Paměť není zdroj pravdy</h2>
                 <p>Podobně:</p>
                 <div class="article-prompt"><strong>Agent má něco uložené v paměti.</strong></div>
                 <p>neznamená:</p>
@@ -311,14 +313,14 @@
                 <div class="article-prompt"><strong>Paměť</strong><br /><br />Myslím, že tato směrnice platí od září.<br /><br /><strong>RAG</strong><br /><br />Najdi aktuální platnou směrnici a ověř datum.</div>
                 <p>To je mnohem bezpečnější.</p>
 
-                <h2>RAG není paměť modelu</h2>
+                <h2 id="toc-18">RAG není paměť modelu</h2>
                 <p>Stejně tak když model pracuje s deseti tisíci dokumenty pomocí RAG, neznamená to, že:</p>
                 <blockquote>„se je všechny naučil.“</blockquote>
                 <p>Dokumenty zůstávají mimo jazykový model.</p>
                 <p>Systém pouze v pravou chvíli vyhledá relevantní části a vloží je do jeho kontextu.</p>
                 <p>To je praktické právě proto, že můžeme dokument aktualizovat bez nového trénování modelu.</p>
 
-                <h2>MCP není agentní magie</h2>
+                <h2 id="toc-19">MCP není agentní magie</h2>
                 <p>Ještě jednou stojí za to připomenout i opačný extrém.</p>
                 <p>Připojení MCP serveru automaticky nevytvoří kvalitního agenta.</p>
                 <p>MCP pouze umožní zpřístupnit určité schopnosti.</p>
@@ -327,7 +329,7 @@
                 <p>MCP je infrastruktura.</p>
                 <div class="article-prompt"><strong>Ne inteligence.</strong></div>
 
-                <h2>Skills nejsou zárukou správnosti</h2>
+                <h2 id="toc-20">Skills nejsou zárukou správnosti</h2>
                 <p>Ani krásně připravený skill neznamená:</p>
                 <div class="article-prompt"><strong>Agent už nikdy neudělá chybu.</strong></div>
                 <p>Skill zvyšuje konzistenci a dává systému osvědčený postup.</p>
@@ -336,23 +338,23 @@
                 <p>Proto i skills potřebují:</p>
                 <div class="article-prompt"><strong>testování a průběžné zlepšování.</strong></div>
 
-                <h2>Jak agentní systém postupně růst</h2>
+                <h2 id="toc-21">Jak agentní systém postupně růst</h2>
                 <p>Rozumný vývoj nemusí začít celou architekturou.</p>
                 <p>Může vypadat například takto:</p>
                 <div class="article-prompt"><strong>1. LLM</strong><br /><br />Nejdřív zjistíme, zda model samotný zvládá základ úkolu.<br /><br />↓<br /><br /><strong>2. Instrukce / skill</strong><br /><br />Standardizujeme způsob práce.<br /><br />↓<br /><br /><strong>3. Tools</strong><br /><br />Přidáme schopnosti, které skutečně potřebuje.<br /><br />↓<br /><br /><strong>4. Workflow</strong><br /><br />Pevné a opakovatelné části procesu stabilizujeme.<br /><br />↓<br /><br /><strong>5. RAG</strong><br /><br />Přidáme vlastní znalostní zdroje.<br /><br />↓<br /><br /><strong>6. Memory</strong><br /><br />Začneme uchovávat užitečný dlouhodobý kontext.<br /><br />↓<br /><br /><strong>7. MCP</strong><br /><br />Pokud potřebujeme více externích integrací, sjednotíme přístup.<br /><br />↓<br /><br /><strong>8. Další agenti</strong><br /><br />Pouze pokud rozdělení práce skutečně přinese výhodu.</div>
                 <p>Takový růst je mnohem rozumnější než začít architektonickým monstrem.</p>
 
-                <h2>Ve škole bych postupovala úplně stejně</h2>
+                <h2 id="toc-22">Ve škole bych postupovala úplně stejně</h2>
                 <p>Například:</p>
                 <div class="article-prompt"><strong>První verze</strong><br /><br />AI vytvoří pracovní list podle vloženého textu.<br /><br /><strong>Druhá verze</strong><br /><br />Dostane standardní skill pro tvorbu materiálů.<br /><br /><strong>Třetí verze</strong><br /><br />Dokáže si najít potřebné materiály.<br /><br /><strong>Čtvrtá verze</strong><br /><br />Zná tematický plán.<br /><br /><strong>Pátá verze</strong><br /><br />Pamatuje si základní pracovní preference učitele.<br /><br /><strong>Šestá verze</strong><br /><br />Dokáže koordinovat více zdrojů a pracovních procesů.</div>
                 <p>A teprve potom se z jednoduchého AI pomocníka postupně stává skutečný dlouhodobý učitelský agent.</p>
 
-                <h2>Celá série v jedné větě</h2>
+                <h2 id="toc-23">Celá série v jedné větě</h2>
                 <p>Kdybych měla agentní architekturu vysvětlit jedinou větou, zněla by asi:</p>
                 <blockquote>Jazykový model pochopí cíl, agent rozhoduje o postupu, tools mu umožňují jednat, RAG mu dodává znalosti, memory uchovává užitečný kontext, skills mu říkají, jak určitou práci dělat, workflow zajišťuje opakovatelné procesy a MCP pomáhá všechny potřebné systémy propojit.</blockquote>
                 <p>To už je prakticky celá agentní AI v jednom odstavci.</p>
 
-                <h2>Zapamatujte si</h2>
+                <h2 id="toc-24">Zapamatujte si</h2>
                 <p>Nemusíte znát všechny technické detaily, abyste dokázali agentním systémům rozumět.</p>
                 <p>Stačí si u každého pojmu položit jeho základní otázku:</p>
                 <div class="article-prompt"><strong>LLM</strong> – Jak pracuji s jazykem?<br /><br /><strong>Tools</strong> – Co můžu udělat?<br /><br /><strong>Memory</strong> – Co si mám uchovat?<br /><br /><strong>RAG</strong> – Kde najdu potřebné informace?<br /><br /><strong>Skills</strong> – Jak mám tuto práci dělat?<br /><br /><strong>Workflow</strong> – Jaké kroky mají následovat?<br /><br /><strong>MCP</strong> – Jak se připojím k externím schopnostem?<br /><br /><strong>Agent</strong> – Jak tyto možnosti použiji k dosažení cíle?</div>
@@ -378,6 +380,9 @@
         <a href="ai-agenti.html">Zpět na AI agenty</a>
     </footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261110-7q" defer></script>
 </body>
 
 </html>
