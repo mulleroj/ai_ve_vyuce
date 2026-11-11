@@ -174,7 +174,13 @@ const wave4Articles = [
   { file: 'ai-agenti-ve-skole.html', title: 'AI agent ve škole: co může skutečně dělat učiteli', tocCount: 30, h2: '#toc-07', h3: '#ai-agenti-ve-skole-h3-01', baselineSha: 'fdc0a22750a024ab2dccc422084c24f51e356581', checkTocScroll: true },
   { file: 'ai-agenti-co-je-ai-agent.html', title: 'AI agenti: když AI začne pracovat', tocCount: 10, h2: '#toc-01', h3: null, baselineSha: 'fdc0a22750a024ab2dccc422084c24f51e356581' }
 ];
-const migrationArticles = [...wave1Articles, ...wave2Articles, ...wave3Articles, ...wave4Articles];
+const wave5Articles = [
+  { file: 'ai-navod-gemini-notebook-infografiky.html', title: '7 promptů pro Gemini Notebook', tocCount: 10, h2: '#toc-01', h3: '#ai-navod-gemini-notebook-infografiky-h3-01', baselineSha: 'bcdd8e48cf8a97b44917b90c40f59c5a6e348f4f', checkTocScroll: true },
+  { file: 'ai-navod-gemini-notebook-prezentace.html', title: '7 promptů pro lepší výukovou prezentaci', tocCount: 14, h2: '#toc-01', h3: '#ai-navod-gemini-notebook-prezentace-h3-01', baselineSha: 'bcdd8e48cf8a97b44917b90c40f59c5a6e348f4f', checkTocScroll: true },
+  { file: 'ai-navod-gemini-notebook-priprava.html', title: '7 promptů pro Gemini Notebook', tocCount: 11, h2: '#toc-01', h3: '#ai-navod-gemini-notebook-priprava-h3-01', baselineSha: 'bcdd8e48cf8a97b44917b90c40f59c5a6e348f4f', checkTocScroll: true },
+  { file: 'ai-navod-gemini-notebook-vyuka.html', title: 'Gemini Notebook ve výuce: interaktivní studijní prostředí', tocCount: 14, h2: '#toc-01', h3: '#ai-navod-gemini-notebook-vyuka-h3-01', baselineSha: 'bcdd8e48cf8a97b44917b90c40f59c5a6e348f4f', checkTocScroll: true }
+];
+const migrationArticles = [...wave1Articles, ...wave2Articles, ...wave3Articles, ...wave4Articles, ...wave5Articles];
 
 for (const article of migrationArticles) {
   test.describe(`Migration: ${article.file}`, () => {
@@ -440,6 +446,20 @@ test('wave 4 desktop overview compares all three articles side by side', async (
   await page.setViewportSize({ width: 1600, height: 1100 });
   await page.setContent(`<!doctype html><html lang="cs"><meta charset="utf-8"><title>AI agenti – přehled migrační vlny 4</title><style>body{margin:0;padding:24px;background:#fffefa;color:#102d2b;font:600 15px Arial,sans-serif}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}article{min-width:0;border:1px solid #dfe8e1;border-radius:12px;padding:10px;background:#fff;overflow:hidden}h2{font-size:16px;min-height:40px;margin:4px 0 12px}img{display:block;width:100%;height:auto;border:1px solid #eee}</style><main class="grid">${cards.join('')}</main>`);
   await page.screenshot({ path: 'artifacts/wave4-overview-desktop-three-articles.png', fullPage: true });
+});
+
+test('wave 5 desktop overview compares all four Gemini Notebook guides side by side', async ({ page }) => {
+  const cards = [];
+  for (const article of wave5Articles) {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(`${baseURL}/${article.file}`);
+    await page.evaluate(() => document.fonts.ready);
+    const image = await page.screenshot();
+    cards.push(`<article><h2>${article.title}</h2><img alt="${article.title}" src="data:image/png;base64,${image.toString('base64')}"></article>`);
+  }
+  await page.setViewportSize({ width: 1800, height: 1100 });
+  await page.setContent(`<!doctype html><html lang="cs"><meta charset="utf-8"><title>Praktické návody – migrační vlna 5</title><style>body{margin:0;padding:24px;background:#fffefa;color:#102d2b;font:600 15px Arial,sans-serif}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}article{min-width:0;border:1px solid #dfe8e1;border-radius:12px;padding:10px;background:#fff;overflow:hidden}h2{font-size:16px;min-height:40px;margin:4px 0 12px}img{display:block;width:100%;height:auto;border:1px solid #eee}</style><main class="grid">${cards.join('')}</main>`);
+  await page.screenshot({ path: 'artifacts/wave5-overview-desktop-four-guides.png', fullPage: true });
 });
 
 test('original light pilot visual before and after comparison', async ({ page }) => {
