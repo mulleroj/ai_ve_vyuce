@@ -21,10 +21,33 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261109-7k" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261109-7k-v2" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261110-7q" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="create">
+    <header class="site-header" id="top">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu">
+      <div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+        <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a>
+        <a href="ai-navody.html">Připravit výuku</a>
+        <a href="aktivity.html">Učit s AI</a>
+        <a href="asistenti.html">Nástroje a asistenti</a>
+        <a href="vibe-coding.html" aria-current="location">Tvořit s AI</a>
+        <a href="ai.html">Číst a objevovat</a>
+      </div>
+    </div>
+  </nav>
+</section>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace">
+  <ol><li><a href="index.html">Domů</a></li><li><a href="ai-agenti.html">AI agenti</a></li><li aria-current="page">Skills: jak naučit AI agenta opakovat osvědčený pracovní postup</li></ol>
+</nav>
+<section class="workflow-shell">
         <div class="workflow-topbar">
             <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
             <a class="workflow-back" href="ai-agenti.html">← AI agenti</a>
@@ -45,23 +68,16 @@
         </div>
     </header>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
         <article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Skill zachycuje způsob, jak určitý druh práce provádět. Agent tak nemusí pokaždé dostávat celý návod znovu a znovu.</p>
             </div>
 
-            <nav class="article-toc" aria-labelledby="toc-heading-ai-agenti-skills-html">
-                <p class="article-toc-label" id="toc-heading-ai-agenti-skills-html">V tomto článku</p>
-                <ul>
-                    <li><a href="#toc-01">Problém nekonečně dlouhých promptů</a></li>
-                    <li><a href="#toc-02">Co je skill</a></li>
-                    <li><a href="#toc-03">Skill není jen další prompt</a></li>
-                    <li><a href="#toc-04">Prompt versus skill</a></li>
-                    <li><a href="#toc-05">Jednoduchý příklad školního skillu</a></li>
-                    <li><a href="#toc-06">Proč jsou skills důležité pro agenty</a></li>
-                </ul>
-            </nav>
+            <details class="article-content-navigation" open>
+  <summary id="toc-heading-ai-agenti-skills-html">V tomto článku</summary>
+  <nav aria-label="Obsah článku"><ol><li><a href="#toc-01">Problém nekonečně dlouhých promptů</a></li><li><a href="#toc-02">Co je skill</a></li><li><a href="#toc-03">Skill není jen další prompt</a></li><li><a href="#toc-04">Prompt versus skill</a><ol><li><a href="#ai-agenti-skills-h3-01">Prompt</a></li><li><a href="#ai-agenti-skills-h3-02">Skill</a></li></ol></li><li><a href="#toc-05">Jednoduchý příklad školního skillu</a></li><li><a href="#toc-06">Proč jsou skills důležité pro agenty</a></li><li><a href="#toc-07">Skill může obsahovat i kontrolu</a></li><li><a href="#toc-08">Skill může používat nástroje</a></li><li><a href="#toc-09">Skill versus tool</a><ol><li><a href="#ai-agenti-skills-h3-03">Tool – nástroj</a></li><li><a href="#ai-agenti-skills-h3-04">Skill – dovednost</a></li></ol></li><li><a href="#toc-10">Skill versus workflow</a><ol><li><a href="#ai-agenti-skills-h3-05">Workflow</a></li><li><a href="#ai-agenti-skills-h3-06">Skill</a></li></ol></li><li><a href="#toc-11">Skill versus paměť</a><ol><li><a href="#ai-agenti-skills-h3-07">Paměť</a></li><li><a href="#ai-agenti-skills-h3-08">Skill</a></li></ol></li><li><a href="#toc-12">Skládání skills</a></li><li><a href="#toc-13">Malé skills jsou často lepší než jeden obrovský</a></li><li><a href="#toc-14">Skill by měl mít jednu odpovědnost</a></li><li><a href="#toc-15">Kdy má agent skill použít</a><ol><li><a href="#ai-agenti-skills-h3-09">Stejně důležité je říct, kdy skill nepoužívat</a></li></ol></li><li><a href="#toc-16">Příklad: skill pro kontrolu pracovního listu</a></li><li><a href="#toc-17">Skills ve vibe codingu</a></li><li><a href="#toc-18">Skill jako recept</a></li><li><a href="#toc-19">Skills mohou vznikat postupně</a></li><li><a href="#toc-20">Skill by měl být verzovaný</a></li><li><a href="#toc-21">Skills potřebují testování</a></li><li><a href="#toc-22">Skill nemá zakrývat problémy</a></li><li><a href="#toc-23">Jak navrhnout první skill</a></li><li><a href="#toc-24">Nejdůležitější změna: znalosti se přesouvají z promptu do systému</a></li><li><a href="#toc-25">Proč je to zajímavé pro školy</a></li><li><a href="#toc-26">Od knihovny promptů ke knihovně schopností</a></li><li><a href="#toc-27">Zapamatujte si</a></li><li><a href="#toc-28">Co dál</a></li></ol></nav>
+</details>
             <div class="article-content">
                 <p class="article-lead">Při běžné práci s AI často znovu a znovu vysvětlujeme stejné věci: jak má vypadat pracovní list, jak má model zkontrolovat text nebo jakým způsobem má postupovat při rešerši. U AI agenta ale můžeme takový postup uložit jako opakovaně použitelnou schopnost – skill. Agent pak nemusí pokaždé dostávat celý návod znovu.</p>
 
@@ -102,10 +118,10 @@
 
                 <h2 id="toc-04">Prompt versus skill</h2>
                 <p>Rozdíl si můžeme ukázat jednoduše.</p>
-                <h3>Prompt</h3>
+                <h3 id="ai-agenti-skills-h3-01">Prompt</h3>
                 <div class="article-prompt"><strong>Vytvoř mi pracovní list k Evropské unii.</strong></div>
                 <p>Prompt zadává konkrétní úkol.</p>
-                <h3>Skill</h3>
+                <h3 id="ai-agenti-skills-h3-02">Skill</h3>
                 <div class="article-prompt"><strong>Jakým způsobem vytváříme pracovní listy.</strong></div>
                 <p>Skill definuje způsob práce.</p>
                 <p>Když je obojí spojíme:</p>
@@ -139,7 +155,7 @@
                 <p>Výsledkem může být:</p>
                 <div class="article-prompt"><strong>větší konzistence, předvídatelnější výsledky a méně opakovaného promptování.</strong></div>
 
-                <h2>Skill může obsahovat i kontrolu</h2>
+                <h2 id="toc-07">Skill může obsahovat i kontrolu</h2>
                 <p>Jedna z nejcennějších částí dobrého skillu není samotná tvorba.</p>
                 <p>Je to kontrola výsledku.</p>
                 <p>Například:</p>
@@ -150,7 +166,7 @@
                 <div class="article-prompt"><strong>k jeho ověření.</strong></div>
                 <p>To výrazně snižuje množství jednoduchých chyb.</p>
 
-                <h2>Skill může používat nástroje</h2>
+                <h2 id="toc-08">Skill může používat nástroje</h2>
                 <p>Představme si skill:</p>
                 <div class="article-prompt"><strong>Připrav materiály podle tematického plánu.</strong></div>
                 <p>Jeho pracovní postup může být:</p>
@@ -160,29 +176,29 @@
                 <div class="article-prompt"><strong>které nástroje má při určité práci použít a v jakém pořadí.</strong></div>
                 <p>To je důležitý rozdíl.</p>
 
-                <h2>Skill versus tool</h2>
+                <h2 id="toc-09">Skill versus tool</h2>
                 <p>Tyto dva pojmy se snadno pletou.</p>
                 <p>Můžeme si je velmi zjednodušeně rozlišit takto:</p>
-                <h3>Tool – nástroj</h3>
+                <h3 id="ai-agenti-skills-h3-03">Tool – nástroj</h3>
                 <p>Říká:</p>
                 <div class="article-prompt"><strong>Co můžu udělat?</strong></div>
                 <p>Například:</p>
                 <ul><li>otevřít dokument,</li><li>vyhledat na webu,</li><li>uložit soubor.</li></ul>
-                <h3>Skill – dovednost</h3>
+                <h3 id="ai-agenti-skills-h3-04">Skill – dovednost</h3>
                 <p>Říká:</p>
                 <div class="article-prompt"><strong>Jak mám určitou práci udělat?</strong></div>
                 <p>Například:</p>
                 <div class="article-prompt"><strong>Jak připravit pracovní list.</strong></div>
                 <p>Skill přitom může během práce používat několik tools.</p>
 
-                <h2>Skill versus workflow</h2>
+                <h2 id="toc-10">Skill versus workflow</h2>
                 <p>Tady je rozdíl o něco jemnější.</p>
-                <h3>Workflow</h3>
+                <h3 id="ai-agenti-skills-h3-05">Workflow</h3>
                 <p>Obvykle představuje konkrétní posloupnost kroků:</p>
                 <div class="article-prompt"><strong>A → B → C → D</strong></div>
                 <p>Například:</p>
                 <div class="article-prompt"><strong>načti soubor → vytvoř shrnutí → exportuj PDF → ulož.</strong></div>
-                <h3>Skill</h3>
+                <h3 id="ai-agenti-skills-h3-06">Skill</h3>
                 <p>Může být flexibilnější.</p>
                 <p>Popisuje způsob, jak určitý typ problému řešit, a agent může podle situace některé kroky přizpůsobit.</p>
                 <p>Například:</p>
@@ -196,12 +212,12 @@
                 <p>Technologické názvosloví není cílem.</p>
                 <p>Cílem je mít spolehlivý pracovní postup.</p>
 
-                <h2>Skill versus paměť</h2>
+                <h2 id="toc-11">Skill versus paměť</h2>
                 <p>Také paměť má jinou úlohu.</p>
-                <h3>Paměť</h3>
+                <h3 id="ai-agenti-skills-h3-07">Paměť</h3>
                 <p>říká například:</p>
                 <div class="article-prompt"><strong>Uživatel preferuje pracovní listy na A4.</strong></div>
-                <h3>Skill</h3>
+                <h3 id="ai-agenti-skills-h3-08">Skill</h3>
                 <p>říká:</p>
                 <div class="article-prompt"><strong>Při tvorbě pracovního listu vždy vytvoř také řešení.</strong></div>
                 <p>Paměť tedy typicky uchovává:</p>
@@ -210,7 +226,7 @@
                 <div class="article-prompt"><strong>jak určitou práci provádíme.</strong></div>
                 <p>Agent při jednom úkolu může využít obojí.</p>
 
-                <h2>Skládání skills</h2>
+                <h2 id="toc-12">Skládání skills</h2>
                 <p>A tady to začne být opravdu zajímavé.</p>
                 <p>Nemusíme vytvořit jeden obrovský skill:</p>
                 <div class="article-prompt"><strong>„Dělej všechno, co učitel potřebuje.“</strong></div>
@@ -221,7 +237,7 @@
                 <div class="article-prompt"><strong>CREATE-WORKSHEET</strong><br /><br />↓<br /><br /><strong>ADAPT-MATERIAL</strong><br /><br />↓<br /><br /><strong>CHECK-WORKSHEET</strong><br /><br />↓<br /><br /><strong>EXPORT-FOR-PRINT</strong></div>
                 <p>Z několika menších schopností vzniká složitější pracovní proces.</p>
 
-                <h2>Malé skills jsou často lepší než jeden obrovský</h2>
+                <h2 id="toc-13">Malé skills jsou často lepší než jeden obrovský</h2>
                 <p>Představme si jediný skill:</p>
                 <div class="article-prompt"><strong>ULTIMATE-TEACHER-SKILL</strong></div>
                 <p>který umí:</p>
@@ -231,7 +247,7 @@
                 <p>Prakticky se špatně udržuje.</p>
                 <p>Mnohem lepší je mít několik menších schopností s jasným účelem.</p>
 
-                <h2>Skill by měl mít jednu odpovědnost</h2>
+                <h2 id="toc-14">Skill by měl mít jednu odpovědnost</h2>
                 <p>Dobré pravidlo:</p>
                 <div class="article-prompt"><strong>Jeden skill = jedna jasná dovednost.</strong></div>
                 <p>Například:</p>
@@ -242,7 +258,7 @@
                 <p>Čím jasnější účel skill má, tím snadněji:</p>
                 <div class="article-prompt"><strong>se testuje · upravuje · znovu používá · hledají chyby.</strong></div>
 
-                <h2>Kdy má agent skill použít</h2>
+                <h2 id="toc-15">Kdy má agent skill použít</h2>
                 <p>Dobrý skill by měl obsahovat také popis:</p>
                 <div class="article-prompt"><strong>kdy se hodí.</strong></div>
                 <p>Například:</p>
@@ -251,7 +267,7 @@
                 <div class="article-prompt"><strong>Tento požadavek odpovídá schopnosti CREATE-WORKSHEET.</strong></div>
                 <p>A nemusí celý postup improvizovat.</p>
 
-                <h3>Stejně důležité je říct, kdy skill nepoužívat</h3>
+                <h3 id="ai-agenti-skills-h3-09">Stejně důležité je říct, kdy skill nepoužívat</h3>
                 <p>Například:</p>
                 <blockquote>Nepoužívej tento skill pro tvorbu testů určených k formálnímu hodnocení.</blockquote>
                 <p>Pro ně může existovat samostatný skill:</p>
@@ -259,7 +275,7 @@
                 <p>s přísnějšími pravidly.</p>
                 <p>To pomáhá zabránit tomu, aby agent použil správně vypadající postup ve špatné situaci.</p>
 
-                <h2>Příklad: skill pro kontrolu pracovního listu</h2>
+                <h2 id="toc-16">Příklad: skill pro kontrolu pracovního listu</h2>
                 <p>Pojďme vytvořit jiný.</p>
                 <div class="article-prompt"><strong>CHECK-WORKSHEET</strong></div>
                 <h3>Cíl</h3>
@@ -281,7 +297,7 @@
                 <div class="article-prompt"><strong>seznam nalezených problémů + doporučené opravy.</strong></div>
                 <p>To je pěkný příklad specializovaného revizního skillu.</p>
 
-                <h2>Skills ve vibe codingu</h2>
+                <h2 id="toc-17">Skills ve vibe codingu</h2>
                 <p>Úplně stejný princip se dá použít při tvorbě aplikací.</p>
                 <p>Coding agent může mít například skills:</p>
                 <ul><li><strong>CREATE-FEATURE</strong> – jak správně přidat novou funkci.</li><li><strong>FIX-BUG</strong> – jak postupovat při hledání chyby.</li><li><strong>REVIEW-CODE</strong> – jak kontrolovat změny.</li><li><strong>RUN-TESTS</strong> – co všechno otestovat před dokončením úkolu.</li><li><strong>CREATE-DOCUMENTATION</strong> – jak dokumentovat novou funkci.</li></ul>
@@ -292,7 +308,7 @@
                 <div class="article-prompt"><strong>analýza → plán → implementace → test → kontrola.</strong></div>
                 <p>To je důležitý posun od náhodného vibe codingu směrem k řízenému vývoji.</p>
 
-                <h2>Skill jako recept</h2>
+                <h2 id="toc-18">Skill jako recept</h2>
                 <p>Pro netechnické vysvětlení si můžeme skill představit jako recept.</p>
                 <p>Máme kuchaře – AI agenta.</p>
                 <p>Má nástroje:</p>
@@ -306,7 +322,7 @@
                 <p>Agent samozřejmě může bez receptu improvizovat.</p>
                 <p>Ale pokud chceme stejné jídlo připravovat pravidelně, recept nám zajistí mnohem stabilnější výsledek.</p>
 
-                <h2>Skills mohou vznikat postupně</h2>
+                <h2 id="toc-19">Skills mohou vznikat postupně</h2>
                 <p>Nemusíme všechny pracovní postupy vymyslet předem.</p>
                 <p>Naopak.</p>
                 <p>Nejlepší skills často vzniknou z reálné práce.</p>
@@ -319,7 +335,7 @@
                 <p>Přidáme bodování mezi povinné kontrolní kroky.</p>
                 <p>Skill se tedy může postupně zlepšovat podle skutečných zkušeností.</p>
 
-                <h2>Skill by měl být verzovaný</h2>
+                <h2 id="toc-20">Skill by měl být verzovaný</h2>
                 <p>Pokud na skillu závisí pravidelná práce, je dobré vědět:</p>
                 <div class="article-prompt"><strong>kterou verzi používáme.</strong></div>
                 <p>Například:</p>
@@ -328,7 +344,7 @@
                 <blockquote>Co jsme změnili a proč?</blockquote>
                 <p>To je mnohem lepší než jeden obrovský prompt, který několik měsíců náhodně přepisujeme.</p>
 
-                <h2>Skills potřebují testování</h2>
+                <h2 id="toc-21">Skills potřebují testování</h2>
                 <p>Tohle je zásadní.</p>
                 <p>Nestačí vytvořit skill a jednou zjistit, že funguje.</p>
                 <p>Je potřeba ho zkusit na různých případech.</p>
@@ -339,19 +355,19 @@
                 <p>ale také:</p>
                 <div class="article-prompt"><strong>jak reagovat, když ji udělat nemůže.</strong></div>
 
-                <h2>Skill nemá zakrývat problémy</h2>
+                <h2 id="toc-22">Skill nemá zakrývat problémy</h2>
                 <p>Pokud musíme do skillu přidat 120 pravidel, protože systém neustále dělá něco špatně, stojí za to se zastavit.</p>
                 <p>Možná problém není ve skillu.</p>
                 <p>Možná:</p>
                 <ul><li>používáme špatný model,</li><li>máme nekvalitní zdroje,</li><li>snažíme se automatizovat příliš složitý proces,</li><li>potřebujeme pevné workflow místo agentního rozhodování.</li></ul>
                 <p>Skill není kouzelná lepicí páska na špatně navržený systém.</p>
 
-                <h2>Jak navrhnout první skill</h2>
+                <h2 id="toc-23">Jak navrhnout první skill</h2>
                 <p>Pro začátek stačí odpovědět na sedm otázek:</p>
                 <ol><li><strong>Jakou jednu dovednost učíme?</strong><br />Vytvořit pracovní list.</li><li><strong>Kdy ji má agent použít?</strong><br />Když uživatel žádá výukový procvičovací materiál.</li><li><strong>Jaké vstupy potřebuje?</strong><br />Téma, cílová skupina, zdroje.</li><li><strong>Jak má postupovat?</strong><br />Analýza → návrh → tvorba → kontrola.</li><li><strong>Jaké nástroje smí použít?</strong><br />Dokumenty a případně vyhledávání ve zdrojích.</li><li><strong>Jak pozná kvalitní výsledek?</strong><br />Podle definovaného checklistu.</li><li><strong>Kdy se má zastavit?</strong><br />Pokud chybí nezbytný zdroj nebo nelze určit správný postup.</li></ol>
                 <p>A máme první použitelnou definici skillu.</p>
 
-                <h2>Nejdůležitější změna: znalosti se přesouvají z promptu do systému</h2>
+                <h2 id="toc-24">Nejdůležitější změna: znalosti se přesouvají z promptu do systému</h2>
                 <p>Při klasické práci s chatbotem nese velkou část pracovního postupu uživatel ve své hlavě.</p>
                 <p>Uživatel ví:</p>
                 <div class="article-prompt"><strong>Nejdřív musím říct toto.<br /><br />Potom musím připomenout tamto.<br /><br />Nakonec musím chtít kontrolu.</strong></div>
@@ -361,7 +377,7 @@
                 <blockquote>„Já vím, jak mám AI správně promptovat.“</blockquote>
                 <p>Je zachycené přímo v agentním systému.</p>
 
-                <h2>Proč je to zajímavé pro školy</h2>
+                <h2 id="toc-25">Proč je to zajímavé pro školy</h2>
                 <p>Ve školách existuje velké množství opakovaných postupů.</p>
                 <ul><li>jak připravujeme pracovní list</li><li>jak kontrolujeme test</li><li>jak zapisujeme zdroje</li><li>jak upravujeme výukový materiál</li><li>jak připravujeme metodickou přípravu</li></ul>
                 <p>Místo toho, aby každý uživatel AI znovu vymýšlel vlastní obrovský prompt, lze kvalitní pracovní postup připravit jednou.</p>
@@ -369,7 +385,7 @@
                 <div class="article-prompt"><strong>sdílet, testovat, upravovat a postupně zlepšovat.</strong></div>
                 <p>To už je mnohem zajímavější než náhodná sbírka „50 nejlepších promptů pro učitele“.</p>
 
-                <h2>Od knihovny promptů ke knihovně schopností</h2>
+                <h2 id="toc-26">Od knihovny promptů ke knihovně schopností</h2>
                 <p>Možná jsme začínali AI cestu takto:</p>
                 <div class="article-prompt"><strong>Sbírka promptů</strong><br /><br />prompt na test<br /><br />prompt na pracovní list<br /><br />prompt na přípravu hodiny</div>
                 <p>Další krok může být:</p>
@@ -378,7 +394,7 @@
                 <p>Je součástí způsobu, jak agent vykonává práci.</p>
                 <p>A právě proto budou skills důležitou součástí agentních systémů.</p>
 
-                <h2>Zapamatujte si</h2>
+                <h2 id="toc-27">Zapamatujte si</h2>
                 <p><strong>Tool</strong> říká agentovi:</p>
                 <div class="article-prompt"><strong>Co může udělat.</strong></div>
                 <p><strong>Paměť</strong> říká:</p>
@@ -391,7 +407,7 @@
                 <div class="article-prompt"><strong>Jak má určitý druh práce správně provádět.</strong></div>
                 <p>Dobře navržené skills umožňují agentovi používat opakovaně osvědčené postupy místo toho, aby pokaždé všechno řešil od začátku.</p>
 
-                <h2>Co dál</h2>
+                <h2 id="toc-28">Co dál</h2>
                 <p>Teď už jsme během série postupně poskládali téměř všechny části agentního systému.</p>
                 <p>Máme:</p>
                 <div class="article-prompt"><strong>LLM<br /><br />↓<br /><br />instrukce<br /><br />↓<br /><br />tools<br /><br />↓<br /><br />memory<br /><br />↓<br /><br />RAG<br /><br />↓<br /><br />skills<br /><br />↓<br /><br />workflow<br /><br />↓<br /><br />MCP<br /><br />↓<br /><br />agent</strong></div>
@@ -420,6 +436,9 @@
         <a href="ai-agenti.html">Zpět na AI agenty</a>
     </footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261110-7q" defer></script>
 </body>
 
 </html>
