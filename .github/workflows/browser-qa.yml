@@ -22,6 +22,7 @@ jobs:
       TESTED_SHA: ${{ github.event_name == 'workflow_dispatch' && inputs.tested_sha || github.event.pull_request.head.sha }}
       BASELINE_SHA: 1abd3fc39df4650b402f5f6d31f6a2148f7a769f
       WAVE2_BASELINE_SHA: 6ae5e726d79b6aea3c87845193b9e0caa0f3ed19
+      WAVE3_BASELINE_SHA: 258e96761fb8d327d06ecea9b283cc1bd9f3ea10
     steps:
       - name: Checkout the tested commit
         uses: actions/checkout@v4
@@ -38,6 +39,7 @@ jobs:
         run: |
           git fetch --no-tags --depth=1 origin "$BASELINE_SHA"
           git fetch --no-tags --depth=1 origin "$WAVE2_BASELINE_SHA"
+          git fetch --no-tags --depth=1 origin "$WAVE3_BASELINE_SHA"
 
       - name: Install isolated browser test runner
         run: |
