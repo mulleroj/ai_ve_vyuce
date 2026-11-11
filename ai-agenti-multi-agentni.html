@@ -21,10 +21,33 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261109-7k" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261109-7k-v2" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261110-7q" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="create">
+    <header class="site-header" id="top">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu">
+      <div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+        <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a>
+        <a href="ai-navody.html">Připravit výuku</a>
+        <a href="aktivity.html">Učit s AI</a>
+        <a href="asistenti.html">Nástroje a asistenti</a>
+        <a href="vibe-coding.html" aria-current="location">Tvořit s AI</a>
+        <a href="ai.html">Číst a objevovat</a>
+      </div>
+    </div>
+  </nav>
+</section>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace">
+  <ol><li><a href="index.html">Domů</a></li><li><a href="ai-agenti.html">AI agenti</a></li><li aria-current="page">Multi-agentní systémy: když na jednom úkolu pracuje tým AI</li></ol>
+</nav>
+<section class="workflow-shell">
         <div class="workflow-topbar">
             <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
             <a class="workflow-back" href="ai-agenti.html">← AI agenti</a>
@@ -45,23 +68,16 @@
         </div>
     </header>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
         <article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Jeden agent nemusí být vždy nejlepší odpověď. U složitějších úkolů mohou práci převzít specialisté s různými rolemi, nástroji a oprávněními.</p>
             </div>
 
-            <nav class="article-toc" aria-labelledby="toc-heading-ai-agenti-multi-agentni-html">
-                <p class="article-toc-label" id="toc-heading-ai-agenti-multi-agentni-html">V tomto článku</p>
-                <ul>
-                    <li><a href="#toc-01">Co je multi-agentní systém</a></li>
-                    <li><a href="#toc-02">Proč vůbec používat více agentů</a></li>
-                    <li><a href="#toc-03">Specializace agentů</a></li>
-                    <li><a href="#toc-04">Jeden agent může řídit ostatní</a></li>
-                    <li><a href="#toc-05">Sekvenční spolupráce</a></li>
-                    <li><a href="#toc-06">Paralelní spolupráce</a></li>
-                </ul>
-            </nav>
+            <details class="article-content-navigation" open>
+  <summary id="toc-heading-ai-agenti-multi-agentni-html">V tomto článku</summary>
+  <nav aria-label="Obsah článku"><ol><li><a href="#toc-01">Co je multi-agentní systém</a></li><li><a href="#toc-02">Proč vůbec používat více agentů</a></li><li><a href="#toc-03">Specializace agentů</a></li><li><a href="#toc-04">Jeden agent může řídit ostatní</a></li><li><a href="#toc-05">Sekvenční spolupráce</a></li><li><a href="#toc-06">Paralelní spolupráce</a></li><li><a href="#toc-07">Agenti mohou výsledek vzájemně kontrolovat</a></li><li><a href="#toc-08">„Debata“ mezi AI agenty</a></li><li><a href="#toc-09">Příklad ze školy</a></li><li><a href="#toc-10">Multi-agentní systém neznamená nutně různé AI modely</a></li><li><a href="#toc-11">Agenti mohou používat různé modely</a></li><li><a href="#toc-12">Multi-agentní systémy a nástroje</a></li><li><a href="#toc-13">Proč není dobrý nápad dát všem všechno</a></li><li><a href="#toc-14">Sdílená paměť</a></li><li><a href="#toc-15">Ale sdílená paměť může být také problém</a></li><li><a href="#toc-16">Co když se agenti zaseknou</a></li><li><a href="#toc-17">Kdy úkol skončil?</a></li><li><a href="#toc-18">Cena multi-agentních systémů</a></li><li><a href="#toc-19">Jeden dobře navržený agent může být lepší</a></li><li><a href="#toc-20">Workflow versus multi-agentní systém</a></li><li><a href="#toc-21">Multi-agentní systémy ve vibe codingu</a></li><li><a href="#toc-22">Ale kdo nese odpovědnost?</a></li><li><a href="#toc-23">Multi-agentní systémy ve škole</a></li><li><a href="#toc-24">Kdy multi-agentní systém dává smysl</a></li><li><a href="#toc-25">Kdy je zbytečný</a></li><li><a href="#toc-26">Zapamatujte si</a></li><li><a href="#toc-27">Co bude následovat</a></li></ol></nav>
+</details>
             <div class="article-content">
                 <p class="article-lead">V předchozích článcích jsme si ukázali, jak funguje jeden AI agent: dostane cíl, plánuje, používá nástroje, pracuje s pamětí a podle potřeby si vyhledává informace. Co když je ale úkol příliš složitý pro jeden systém? Jednou z možností je rozdělit práci mezi více specializovaných agentů. Tak vzniká multi-agentní systém.</p>
 
@@ -160,7 +176,7 @@
                 <p>Další agent potom výsledky spojí do jedné tabulky.</p>
                 <p>To může výrazně urychlit práci.</p>
 
-                <h2>Agenti mohou výsledek vzájemně kontrolovat</h2>
+                <h2 id="toc-07">Agenti mohou výsledek vzájemně kontrolovat</h2>
                 <p>Velmi zajímavou možností je použití agentů jako vzájemných kritiků.</p>
                 <p>Například:</p>
                 <p><strong>Agent A</strong> vytvoří řešení.</p>
@@ -174,7 +190,7 @@
                 <p>Dva AI agenti nejsou automaticky dvakrát chytřejší.</p>
                 <p>Pokud používají podobné modely a podobné informace, mohou oba udělat stejnou chybu.</p>
 
-                <h2>„Debata“ mezi AI agenty</h2>
+                <h2 id="toc-08">„Debata“ mezi AI agenty</h2>
                 <p>Některé systémy nechávají více agentů navrhnout různá řešení.</p>
                 <p>Například:</p>
                 <div class="article-prompt"><strong>Agent A</strong><br /><br />Doporučuji řešení X.<br /><br /><strong>Agent B</strong><br /><br />Doporučuji řešení Y.<br /><br /><strong>Agent C</strong><br /><br />Obě varianty mají tyto slabiny…</div>
@@ -189,7 +205,7 @@
                 <p>Není ale dobré předpokládat, že „diskuse AI“ automaticky vede k pravdě.</p>
                 <p>Někdy se pouze několik modelů velmi kultivovaně dohodne na stejné hlouposti.</p>
 
-                <h2>Příklad ze školy</h2>
+                <h2 id="toc-09">Příklad ze školy</h2>
                 <p>Představme si systém, který připravuje materiály na výuku.</p>
                 <p>Učitel zadá:</p>
                 <blockquote>„Připrav mi kompletní hodinu angličtiny na téma Travel pro úroveň B1.“</blockquote>
@@ -204,7 +220,7 @@
                 </ul>
                 <p>Jeden požadavek tak může spustit celý řetězec specializovaných činností.</p>
 
-                <h2>Multi-agentní systém neznamená nutně různé AI modely</h2>
+                <h2 id="toc-10">Multi-agentní systém neznamená nutně různé AI modely</h2>
                 <p>Tohle je časté nedorozumění.</p>
                 <p>Když řekneme:</p>
                 <blockquote>„pět agentů“</blockquote>
@@ -213,7 +229,7 @@
                 <div class="article-prompt"><strong>stejný LLM</strong><br />instrukce „jsi rešeršér“<br />=<br /><strong>Agent 1</strong><br /><br /><strong>stejný LLM</strong><br />instrukce „jsi kritik“<br />=<br /><strong>Agent 2</strong><br /><br /><strong>stejný LLM</strong><br />instrukce „jsi editor“<br />=<br /><strong>Agent 3</strong></div>
                 <p>Rozdíl tedy může spočívat hlavně v roli, nástrojích a kontextu.</p>
 
-                <h2>Agenti mohou používat různé modely</h2>
+                <h2 id="toc-11">Agenti mohou používat různé modely</h2>
                 <p>Naopak je také možné využít rozdílné modely podle úlohy.</p>
                 <ul>
                     <li>levnější a rychlejší model pro jednoduchou klasifikaci dokumentů,</li>
@@ -225,7 +241,7 @@
                 <blockquote>Na tento jednoduchý krok nepotřebuji nejsilnější model.</blockquote>
                 <p>To může snížit náklady.</p>
 
-                <h2>Multi-agentní systémy a nástroje</h2>
+                <h2 id="toc-12">Multi-agentní systémy a nástroje</h2>
                 <p>Každý agent nemusí mít přístup ke všem nástrojům.</p>
                 <p>A často by ani neměl.</p>
                 <ul>
@@ -236,7 +252,7 @@
                 </ul>
                 <p>Tím lze lépe kontrolovat oprávnění.</p>
 
-                <h2>Proč není dobrý nápad dát všem všechno</h2>
+                <h2 id="toc-13">Proč není dobrý nápad dát všem všechno</h2>
                 <p>Představme si pět agentů.</p>
                 <p>Každý má přístup k:</p>
                 <ul>
@@ -252,7 +268,7 @@
                 <div class="article-prompt"><strong>Každý agent dostane pouze nástroje, které potřebuje pro svou roli.</strong></div>
                 <p>Znovu se tedy vrací princip minimálních oprávnění.</p>
 
-                <h2>Sdílená paměť</h2>
+                <h2 id="toc-14">Sdílená paměť</h2>
                 <p>Agenti mohou používat společnou paměť.</p>
                 <p>Například rešeršér najde informace a uloží je do sdíleného prostoru.</p>
                 <p>Autor je následně načte.</p>
@@ -261,7 +277,7 @@
                 <div class="article-prompt"><strong>Agent A → sdílená paměť ← Agent B</strong><br /><br />↓<br /><br /><strong>Agent C</strong></div>
                 <p>Tím nemusí každý agent dostávat kompletní historii práce všech ostatních.</p>
 
-                <h2>Ale sdílená paměť může být také problém</h2>
+                <h2 id="toc-15">Ale sdílená paměť může být také problém</h2>
                 <p>Pokud jeden agent uloží chybnou informaci, mohou ji ostatní převzít.</p>
                 <p>Například:</p>
                 <div class="article-prompt"><strong>Agent A</strong><br /><br />Zdroj tvrdí, že datum je 2024.<br /><br />Jenže zdroj byl špatně interpretován.<br /><br />Informace se uloží do společné paměti.<br /><br /><strong>Agent B</strong> ji použije v článku.<br /><br /><strong>Agent C</strong> ji převezme do tabulky.<br /><br /><strong>Agent D</strong> ji považuje za již ověřenou.</div>
@@ -274,7 +290,7 @@
                     <li>kdo informaci vytvořil.</li>
                 </ul>
 
-                <h2>Co když se agenti zaseknou</h2>
+                <h2 id="toc-16">Co když se agenti zaseknou</h2>
                 <p>Multi-agentní systém může narazit také na velmi praktický problém.</p>
                 <p>Agenti si začnou práci předávat.</p>
                 <div class="article-prompt"><strong>Agent A:</strong> To musí rozhodnout Agent B.<br /><br /><strong>Agent B:</strong> Potřebuji další informace od Agenta C.<br /><br /><strong>Agent C:</strong> Nejdříve musí Agent A rozhodnout…</div>
@@ -287,7 +303,7 @@
                     <li>co se děje při chybě.</li>
                 </ul>
 
-                <h2>Kdy úkol skončil?</h2>
+                <h2 id="toc-17">Kdy úkol skončil?</h2>
                 <p>U jednoho jednoduchého agenta je to relativně snadné.</p>
                 <p>U multi-agentního systému může každý agent chtít výsledek ještě vylepšit.</p>
                 <p>Vznikne:</p>
@@ -300,7 +316,7 @@
                 </ul>
                 <p>Bez těchto pravidel může systém zbytečně spotřebovávat čas i peníze.</p>
 
-                <h2>Cena multi-agentních systémů</h2>
+                <h2 id="toc-18">Cena multi-agentních systémů</h2>
                 <p>Každý agent používá model.</p>
                 <p>Každá jeho akce něco stojí.</p>
                 <p>Pokud jeden úkol řeší:</p>
@@ -315,7 +331,7 @@
                 <div class="article-prompt"><strong>vyšší kvalitu</strong><br /><br />ale také:<br /><br /><strong>vyšší náklady, delší dobu zpracování a větší složitost</strong></div>
                 <p>Proto není více agentů automaticky lepší.</p>
 
-                <h2>Jeden dobře navržený agent může být lepší</h2>
+                <h2 id="toc-19">Jeden dobře navržený agent může být lepší</h2>
                 <p>Tohle je možná nejdůležitější pravidlo celého článku.</p>
                 <p>Pokud úkol zvládne:</p>
                 <div class="article-prompt"><strong>jeden agent + několik dobrých nástrojů + jasný workflow</strong></div>
@@ -323,7 +339,7 @@
                 <p>Velmi často je lepší:</p>
                 <div class="article-prompt"><strong>jednoduchý systém, kterému rozumíme</strong><br /><br />než:<br /><br /><strong>složitý multi-agentní orchestr, který nikdo nedokáže pořádně kontrolovat</strong></div>
 
-                <h2>Workflow versus multi-agentní systém</h2>
+                <h2 id="toc-20">Workflow versus multi-agentní systém</h2>
                 <p>Další důležitý rozdíl.</p>
                 <p>Představme si:</p>
                 <div class="article-prompt"><strong>krok 1 → vyhledej dokument</strong><br /><br /><strong>krok 2 → vytvoř shrnutí</strong><br /><br /><strong>krok 3 → zkontroluj</strong></div>
@@ -338,7 +354,7 @@
                     <li>nezávislé rozhodování.</li>
                 </ul>
 
-                <h2>Multi-agentní systémy ve vibe codingu</h2>
+                <h2 id="toc-21">Multi-agentní systémy ve vibe codingu</h2>
                 <p>Tento princip se objevuje také při vývoji aplikací.</p>
                 <p>Představme si zadání:</p>
                 <blockquote>„Vytvoř jednoduchou webovou aplikaci pro rezervaci učeben.“</blockquote>
@@ -354,7 +370,7 @@
                 <p>To už se velmi podobá běžnému softwarovému týmu.</p>
                 <p>Jen jeho členové jsou AI agenti.</p>
 
-                <h2>Ale kdo nese odpovědnost?</h2>
+                <h2 id="toc-22">Ale kdo nese odpovědnost?</h2>
                 <p>A tady přichází věc, kterou marketingové obrázky často neukazují.</p>
                 <p>Pokud pět agentů vytvoří chybný výsledek, žádný z nich nenese skutečnou odpovědnost.</p>
                 <p>Tu stále nese:</p>
@@ -362,7 +378,7 @@
                 <p>Multi-agentní systém proto neodstraňuje potřebu lidské kontroly.</p>
                 <p>U důležitých úloh ji může naopak ještě zvyšovat.</p>
 
-                <h2>Multi-agentní systémy ve škole</h2>
+                <h2 id="toc-23">Multi-agentní systémy ve škole</h2>
                 <p>Ve školním prostředí by mohl například existovat:</p>
                 <ul>
                     <li><strong>Agent pro přípravu výuky</strong> – vytváří materiály.</li>
@@ -373,7 +389,7 @@
                 </ul>
                 <p>To už se blíží představě digitálního učitelského asistenta, který není jedním obrovským chatbotem, ale soustavou specializovaných schopností.</p>
 
-                <h2>Kdy multi-agentní systém dává smysl</h2>
+                <h2 id="toc-24">Kdy multi-agentní systém dává smysl</h2>
                 <p>Je vhodný především tehdy, když:</p>
                 <ul>
                     <li>je úkol složitý,</li>
@@ -384,7 +400,7 @@
                     <li>chceme oddělit oprávnění.</li>
                 </ul>
 
-                <h2>Kdy je zbytečný</h2>
+                <h2 id="toc-25">Kdy je zbytečný</h2>
                 <p>Naopak bych ho nepoužíval, pokud:</p>
                 <ul>
                     <li>jde o jednoduchý úkol,</li>
@@ -395,7 +411,7 @@
                 </ul>
                 <p>Pokud potřebujete tři AI agenty, aby vám spočítali průměr pěti známek, někde se návrh systému poněkud utrhl ze řetězu.</p>
 
-                <h2>Zapamatujte si</h2>
+                <h2 id="toc-26">Zapamatujte si</h2>
                 <p>Multi-agentní systém je prostředí, ve kterém spolupracuje více AI agentů.</p>
                 <p>Mohou si rozdělit například role:</p>
                 <div class="article-prompt"><strong>plánování → rešerše → tvorba → kontrola</strong></div>
@@ -417,7 +433,7 @@
                 <p>Proto platí jednoduché pravidlo:</p>
                 <div class="article-prompt"><strong>Pokud úkol dobře zvládne jeden agent, začněte jedním agentem.</strong></div>
 
-                <h2>Co bude následovat</h2>
+                <h2 id="toc-27">Co bude následovat</h2>
                 <p>Tím jsme prošli hlavní technické stavební kameny agentní AI:</p>
                 <div class="article-prompt"><strong>agentní smyčku, nástroje, paměť, RAG, MCP a multi-agentní systémy</strong></div>
                 <p>Teď je čas spojit je s tématem, ze kterého jsme k celé sérii vlastně přišli:</p>
@@ -448,6 +464,9 @@
         <a href="ai-agenti.html">Zpět na AI agenty</a>
     </footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261110-7q" defer></script>
 </body>
 
 </html>
