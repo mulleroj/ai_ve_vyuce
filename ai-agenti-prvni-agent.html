@@ -21,10 +21,33 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261109-7k" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261109-7k-v2" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261110-7q" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="create">
+    <header class="site-header" id="top">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu">
+      <div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+        <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a>
+        <a href="ai-navody.html">Připravit výuku</a>
+        <a href="aktivity.html">Učit s AI</a>
+        <a href="asistenti.html">Nástroje a asistenti</a>
+        <a href="vibe-coding.html" aria-current="location">Tvořit s AI</a>
+        <a href="ai.html">Číst a objevovat</a>
+      </div>
+    </div>
+  </nav>
+</section>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace">
+  <ol><li><a href="index.html">Domů</a></li><li><a href="ai-agenti.html">AI agenti</a></li><li aria-current="page">Jak navrhnout svého prvního jednoduchého AI agenta</li></ol>
+</nav>
+<section class="workflow-shell">
         <div class="workflow-topbar">
             <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
             <a class="workflow-back" href="ai-agenti.html">← AI agenti</a>
@@ -45,23 +68,16 @@
         </div>
     </header>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
         <article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">První agent nemusí být velký systém. Nejlepší začátek je jeden konkrétní problém, jasná pravidla, málo nástrojů a člověk u důležitých rozhodnutí.</p>
             </div>
 
-            <nav class="article-toc" aria-labelledby="toc-heading-ai-agenti-prvni-agent-html">
-                <p class="article-toc-label" id="toc-heading-ai-agenti-prvni-agent-html">V tomto článku</p>
-                <ul>
-                    <li><a href="#toc-01">Nejdřív zapomeňte na technologii</a></li>
-                    <li><a href="#toc-02">Vyberte jeden konkrétní úkol</a></li>
-                    <li><a href="#toc-03">Popište výsledek, ne osobnost</a></li>
-                    <li><a href="#toc-04">Definujte vstupy</a></li>
-                    <li><a href="#toc-05">Určete, odkud smí čerpat</a></li>
-                    <li><a href="#toc-06">Pak teprve přidejte nástroje</a></li>
-                </ul>
-            </nav>
+            <details class="article-content-navigation" open>
+  <summary id="toc-heading-ai-agenti-prvni-agent-html">V tomto článku</summary>
+  <nav aria-label="Obsah článku"><ol><li><a href="#toc-01">Nejdřív zapomeňte na technologii</a></li><li><a href="#toc-02">Vyberte jeden konkrétní úkol</a></li><li><a href="#toc-03">Popište výsledek, ne osobnost</a></li><li><a href="#toc-04">Definujte vstupy</a></li><li><a href="#toc-05">Určete, odkud smí čerpat</a></li><li><a href="#toc-06">Pak teprve přidejte nástroje</a></li><li><a href="#toc-07">Navrhněte jednoduchý pracovní postup</a></li><li><a href="#toc-08">Naučte agenta zastavit se</a></li><li><a href="#toc-09">Definujte kritéria kvality</a></li><li><a href="#toc-10">První agent by měl mít omezená oprávnění</a></li><li><a href="#toc-11">Jeden jednoduchý příklad</a><ol><li><a href="#ai-agenti-prvni-agent-h3-01">Vstup</a></li><li><a href="#ai-agenti-prvni-agent-h3-02">Workflow</a></li><li><a href="#ai-agenti-prvni-agent-h3-03">Human in the loop</a></li></ol></li><li><a href="#toc-12">Kdy přidat paměť</a></li><li><a href="#toc-13">Kdy přidat RAG</a></li><li><a href="#toc-14">Kdy přidat MCP</a></li><li><a href="#toc-15">A kdy přidat dalšího agenta?</a></li><li><a href="#toc-16">Testujte agenta na špatných případech</a></li><li><a href="#toc-17">Neposuzujte jen krásu výsledku</a></li><li><a href="#toc-18">Dobrý agent má být předvídatelný</a></li><li><a href="#toc-19">První verze nemusí být autonomní</a></li><li><a href="#toc-20">Jednoduchý návrhový vzorec</a></li><li><a href="#toc-21">Co bych jako prvního agenta nestavěla</a></li><li><a href="#toc-22">Lepší první projekty</a></li><li><a href="#toc-23">Zapamatujte si</a></li><li><a href="#toc-24">Co můžeme zkusit jako první</a></li></ol></nav>
+</details>
             <div class="article-content">
                 <p class="article-lead">AI agent nemusí být složitý systém napojený na deset databází, několik modelů a půl internetu. Pro první pokus je naopak lepší začít velmi malým úkolem. Dobrý první agent má jasný cíl, několik pravidel, omezený počet nástrojů a přesně určené místo, kde musí výsledek zkontrolovat člověk.</p>
 
@@ -149,7 +165,7 @@
                 <div class="article-prompt"><strong>Nedávejte agentovi nástroj jen proto, že ho můžete připojit.</strong></div>
                 <p>Každý další nástroj zvyšuje možnosti systému, ale zároveň jeho složitost a riziko.</p>
 
-                <h2>Navrhněte jednoduchý pracovní postup</h2>
+                <h2 id="toc-07">Navrhněte jednoduchý pracovní postup</h2>
                 <p>První agent nepotřebuje komplikovanou architekturu.</p>
                 <p>Stačí mu několik jasných kroků.</p>
                 <p>Představme si agenta pro přípravu pracovního listu.</p>
@@ -157,7 +173,7 @@
                 <p>To už je jednoduchý agentní workflow.</p>
                 <p>Nemusíme kvůli tomu vytvářet šest samostatných agentů.</p>
 
-                <h2>Naučte agenta zastavit se</h2>
+                <h2 id="toc-08">Naučte agenta zastavit se</h2>
                 <p>Tohle je překvapivě důležité.</p>
                 <p>Agent by měl vědět nejen:</p>
                 <div class="article-prompt"><strong>co má dělat</strong></div>
@@ -171,7 +187,7 @@
                 </ul>
                 <p>Agent, který umí říct „tady potřebuji člověka“, je často mnohem užitečnější než agent, který se snaží za každou cenu dokončit všechno.</p>
 
-                <h2>Definujte kritéria kvality</h2>
+                <h2 id="toc-09">Definujte kritéria kvality</h2>
                 <p>Agent musí vědět, podle čeho svůj vlastní výstup zkontrolovat.</p>
                 <p>Například u pracovního listu můžeme stanovit:</p>
                 <ul>
@@ -188,7 +204,7 @@
                 <div class="article-prompt"><strong>vytvoř → zkontroluj → oprav → předlož</strong></div>
                 <p>A to už je skutečný agentní princip.</p>
 
-                <h2>První agent by měl mít omezená oprávnění</h2>
+                <h2 id="toc-10">První agent by měl mít omezená oprávnění</h2>
                 <p>Představme si dvě možnosti.</p>
                 <p>První agent umí:</p>
                 <div class="article-prompt"><strong>číst dokumenty a připravovat návrhy</strong></div>
@@ -199,13 +215,13 @@
                 <p>Začněte read-only, tedy schopnostmi založenými převážně na čtení a tvorbě návrhů.</p>
                 <p>Zápisové operace přidávejte až ve chvíli, kdy přesně víte, proč je agent potřebuje.</p>
 
-                <h2>Jeden jednoduchý příklad</h2>
+                <h2 id="toc-11">Jeden jednoduchý příklad</h2>
                 <p>Navrhněme společně agenta:</p>
                 <div class="article-prompt"><strong>Agent pro pracovní listy</strong></div>
                 <p>Jeho úkol:</p>
                 <blockquote>Z dodaného materiálu vytvořit pracovní list a učitelské řešení.</blockquote>
 
-                <h3>Vstup</h3>
+                <h3 id="ai-agenti-prvni-agent-h3-01">Vstup</h3>
                 <p>Uživatel dodá:</p>
                 <div class="article-prompt"><strong>téma, cílovou skupinu a zdrojový materiál</strong></div>
 
@@ -213,7 +229,7 @@
                 <p>Agent má používat pouze dodaný obsah.</p>
                 <p>Nemá doplňovat konkrétní fakta, která ve zdroji nejsou, pokud je neoznačí jako vlastní doplnění.</p>
 
-                <h3>Workflow</h3>
+                <h3 id="ai-agenti-prvni-agent-h3-02">Workflow</h3>
                 <ol>
                     <li>Agent nejprve analyzuje text.</li>
                     <li>Určí hlavní pojmy.</li>
@@ -227,7 +243,7 @@
                 <p>Výsledkem je:</p>
                 <div class="article-prompt"><strong>pracovní list + řešení + stručná poznámka pro učitele</strong></div>
 
-                <h3>Human in the loop</h3>
+                <h3 id="ai-agenti-prvni-agent-h3-03">Human in the loop</h3>
                 <p>Učitel výsledek před tiskem schválí.</p>
                 <p>A máme prvního agenta.</p>
                 <p>Žádných deset databází.</p>
@@ -235,7 +251,7 @@
                 <p>Žádný technický cirkus.</p>
                 <p>Přesto už systém vykonává jasně definovaný pracovní proces.</p>
 
-                <h2>Kdy přidat paměť</h2>
+                <h2 id="toc-12">Kdy přidat paměť</h2>
                 <p>Až agent spolehlivě funguje, můžeme začít přidávat další schopnosti.</p>
                 <p>Například zjistíme, že mu stále opakujeme:</p>
                 <ul>
@@ -249,7 +265,7 @@
                 <p>Má řešit konkrétní problém:</p>
                 <div class="article-prompt"><strong>opakovaně zadáváme stejné informace</strong></div>
 
-                <h2>Kdy přidat RAG</h2>
+                <h2 id="toc-13">Kdy přidat RAG</h2>
                 <p>Další krok může nastat ve chvíli, kdy agent potřebuje pracovat s větší sadou dokumentů.</p>
                 <p>Například:</p>
                 <blockquote>„Připrav pracovní list podle mých materiálů k Evropské unii.“</blockquote>
@@ -260,7 +276,7 @@
                 <p>Znovu platí:</p>
                 <div class="article-prompt"><strong>technologie přidáváme až tehdy, když řeší reálný problém</strong></div>
 
-                <h2>Kdy přidat MCP</h2>
+                <h2 id="toc-14">Kdy přidat MCP</h2>
                 <p>Podobné je to s MCP.</p>
                 <p>První agent ho vůbec nemusí potřebovat.</p>
                 <p>MCP začne být zajímavé například tehdy, když chceme stejného agenta propojit s více systémy:</p>
@@ -272,7 +288,7 @@
                 <blockquote>Potřebuji, aby agent získal informace z tohoto systému.</blockquote>
                 <p>Technický způsob přijde potom.</p>
 
-                <h2>A kdy přidat dalšího agenta?</h2>
+                <h2 id="toc-15">A kdy přidat dalšího agenta?</h2>
                 <p>Až když existuje dobrý důvod.</p>
                 <p>Například zjistíme, že tvorba materiálu funguje dobře, ale chceme nezávislou kontrolu.</p>
                 <p>Pak můžeme přidat:</p>
@@ -283,7 +299,7 @@
                 <p>Teprve potom se výstup vrátí k opravě.</p>
                 <p>To je mnohem rozumnější než začít rovnou s pěti agenty.</p>
 
-                <h2>Testujte agenta na špatných případech</h2>
+                <h2 id="toc-16">Testujte agenta na špatných případech</h2>
                 <p>Při testování často děláme jednu chybu.</p>
                 <p>Zadáme agentovi krásně formulovaný úkol a radujeme se, že funguje.</p>
                 <p>Jenže skutečný uživatel může napsat:</p>
@@ -300,7 +316,7 @@
                 <div class="article-prompt"><strong>neúplném zadání · chybějícím souboru · nesmyslném požadavku · konfliktních instrukcích · nedostupném nástroji</strong></div>
                 <p>Právě tam se ukáže kvalita návrhu.</p>
 
-                <h2>Neposuzujte jen krásu výsledku</h2>
+                <h2 id="toc-17">Neposuzujte jen krásu výsledku</h2>
                 <p>Velký jazykový model umí vytvořit velmi působivý výstup.</p>
                 <p>To může být zrádné.</p>
                 <p>Při testování agenta je potřeba sledovat také:</p>
@@ -314,7 +330,7 @@
                 </ul>
                 <p>To jsou často důležitější ukazatele než vzhled konečného textu.</p>
 
-                <h2>Dobrý agent má být předvídatelný</h2>
+                <h2 id="toc-18">Dobrý agent má být předvídatelný</h2>
                 <p>U kreativního chatbota může být překvapení příjemné.</p>
                 <p>U pracovního agenta už méně.</p>
                 <p>Pokud agent dnes zpracuje pracovní list jedním způsobem a zítra úplně jinak, vzniká problém.</p>
@@ -323,7 +339,7 @@
                 <p>Kreativitu můžeme povolit tam, kde ji chceme.</p>
                 <p>Proces by ale měl zůstat kontrolovatelný.</p>
 
-                <h2>První verze nemusí být autonomní</h2>
+                <h2 id="toc-19">První verze nemusí být autonomní</h2>
                 <p>Možná nejjednodušší první agent funguje takto:</p>
                 <div class="article-prompt"><strong>agent navrhne plán</strong><br /><br />↓<br /><br /><strong>člověk jej schválí</strong><br /><br />↓<br /><br /><strong>agent provede práci</strong><br /><br />↓<br /><br /><strong>člověk zkontroluje výsledek</strong></div>
                 <p>To je pořád agentní systém.</p>
@@ -331,7 +347,7 @@
                 <p>Cílem není maximální autonomie.</p>
                 <p>Cílem je užitečná automatizace s rozumnou kontrolou.</p>
 
-                <h2>Jednoduchý návrhový vzorec</h2>
+                <h2 id="toc-20">Jednoduchý návrhový vzorec</h2>
                 <p>Pro svého prvního agenta si můžete připravit jedinou krátkou kartu:</p>
                 <div class="article-prompt">
                     <strong>Cíl:</strong> Jakou jednu práci má agent převzít?<br /><br />
@@ -346,7 +362,7 @@
                 </div>
                 <p>Pokud tuto kartu dokážete vyplnit, máte velmi slušný návrh prvního agenta.</p>
 
-                <h2>Co bych jako prvního agenta nestavěla</h2>
+                <h2 id="toc-21">Co bych jako prvního agenta nestavěla</h2>
                 <p>Určitě bych nezačínala systémem:</p>
                 <blockquote>„Spravuj mi kompletně školní administrativu.“</blockquote>
                 <p>Stejně tak bych jako první projekt nevolila agenta, který:</p>
@@ -354,13 +370,13 @@
                 <p>Technicky mohou být takové systémy možné.</p>
                 <p>Jako první projekt jsou ale zbytečně rizikové.</p>
 
-                <h2>Lepší první projekty</h2>
+                <h2 id="toc-22">Lepší první projekty</h2>
                 <p>Mnohem vhodnější jsou úkoly, kde případnou chybu jednoduše zachytí člověk před použitím.</p>
                 <p>Například agent pro:</p>
                 <div class="article-prompt"><strong>tvorbu pracovních listů · kontrolu textu · rešerši · shrnutí dokumentů · převod materiálu do jiné formy · přípravu návrhu hodiny</strong></div>
                 <p>Takový agent může ušetřit čas a současně způsobit jen malou škodu, pokud se někde splete.</p>
 
-                <h2>Zapamatujte si</h2>
+                <h2 id="toc-23">Zapamatujte si</h2>
                 <p>První AI agent nemusí být technicky složitý.</p>
                 <p>Ve skutečnosti bych doporučila přesný opak:</p>
                 <div class="article-prompt"><strong>jeden úkol · jasný vstup · málo nástrojů · jednoduchý workflow · člověk u důležitých rozhodnutí</strong></div>
@@ -372,7 +388,7 @@
                 <p>Dobrý agentní systém totiž nevzniká tak, že do něj nasypeme všechny moderní AI technologie.</p>
                 <p>Vzniká tak, že postupně automatizujeme dobře pochopený pracovní proces.</p>
 
-                <h2>Co můžeme zkusit jako první</h2>
+                <h2 id="toc-24">Co můžeme zkusit jako první</h2>
                 <p>Pokud si chcete návrh agenta vyzkoušet bez programování, vezměte jednu činnost, kterou děláte opakovaně, a popište ji pomocí předchozí karty.</p>
                 <p>Třeba:</p>
                 <blockquote>„Pokaždé, když připravuji pracovní list, dělám těchto šest kroků…“</blockquote>
@@ -400,6 +416,9 @@
         <a href="ai-agenti.html">Zpět na AI agenty</a>
     </footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261110-7q" defer></script>
 </body>
 
 </html>
