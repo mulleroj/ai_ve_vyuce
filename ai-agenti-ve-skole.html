@@ -21,10 +21,18 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261109-7k" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261109-7k-v2" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261110-7q" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="create">
+    <header class="site-header" id="top"><nav class="site-nav" aria-label="Hlavní navigace"><a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button><div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu"><a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html" aria-current="location">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a></div></div></nav></header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace">
+  <ol><li><a href="index.html">Domů</a></li><li><a href="ai-agenti.html">AI agenti</a></li><li aria-current="page">AI agent ve škole: co může skutečně dělat učiteli</li></ol>
+</nav>
+<section class="workflow-shell">
         <div class="workflow-topbar">
             <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
             <a class="workflow-back" href="ai-agenti.html">← AI agenti</a>
@@ -45,23 +53,17 @@
         </div>
     </header>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
+                <details class="article-content-navigation" open>
+  <summary id="toc-heading-ai-agenti-ve-skole-html">V tomto článku</summary>
+  <nav aria-label="Obsah článku"><ol><li><a href="#toc-01">Od jednotlivých promptů k dlouhodobému pomocníkovi</a></li><li><a href="#toc-07">1. Příprava výuky</a></li><li><a href="#toc-08">2. Práce s vlastními materiály</a></li><li><a href="#toc-09">3. Diferenciace materiálů</a></li><li><a href="#toc-10">4. Kontrola materiálů</a></li><li><a href="#toc-11">5. Hledání ve školních dokumentech</a></li><li><a href="#toc-12">6. Administrativa</a></li><li><a href="#toc-13">7. Práce s e-mailem</a></li><li><a href="#toc-14">8. Kalendář a plánování</a></li><li><a href="#toc-15">9. Tvorba testů a hodnocení</a></li><li><a href="#toc-16">10. Agent jako učitelský kokpit</a></li><li><a href="#toc-02">Tři zóny použití</a><ol><li><a href="#ai-agenti-ve-skole-h3-01">Zelená zóna</a></li><li><a href="#ai-agenti-ve-skole-h3-02">Žlutá zóna</a></li><li><a href="#ai-agenti-ve-skole-h3-03">Červená zóna</a></li></ol></li><li><a href="#toc-03">Ne všechna data patří do AI</a></li><li><a href="#toc-04">Minimální množství dat</a></li><li><a href="#toc-05">Human in the loop</a></li><li><a href="#toc-06">AI agent není digitální ředitel</a></li><li><a href="#toc-17">Agent jako pomocník, ne náhrada učitele</a></li><li><a href="#toc-18">Praktický příklad: příprava jedné hodiny</a><ol><li><a href="#ai-agenti-ve-skole-h3-04">1. Zkontrolovat rozvrh</a></li><li><a href="#ai-agenti-ve-skole-h3-05">4. Připravit plán</a></li><li><a href="#ai-agenti-ve-skole-h3-06">8. Předložit učiteli</a></li></ol></li><li><a href="#toc-19">A co multi-agentní systém?</a></li><li><a href="#toc-20">Co by měl školní agent umět vysvětlit</a></li><li><a href="#toc-21">Agentní AI nebude fungovat bez dobrých dat</a></li><li><a href="#toc-22">Nejprve proces, potom agent</a></li><li><a href="#toc-23">Začněte malým agentem</a></li><li><a href="#toc-24">Zapamatujte si</a></li></ol></nav>
+</details>
         <article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Praktický pohled na to, kde může agent pomáhat s výukou, materiály a administrativou — a kde musí zůstat odpovědnost i rozhodování na učiteli.</p>
             </div>
 
-            <nav class="article-toc" aria-labelledby="toc-heading-ai-agenti-ve-skole-html">
-                <p class="article-toc-label" id="toc-heading-ai-agenti-ve-skole-html">V tomto článku</p>
-                <ul>
-                    <li><a href="#toc-01">Od jednotlivých promptů k dlouhodobému pomocníkovi</a></li>
-                    <li><a href="#toc-02">Tři zóny použití</a></li>
-                    <li><a href="#toc-03">Ne všechna data patří do AI</a></li>
-                    <li><a href="#toc-04">Minimální množství dat</a></li>
-                    <li><a href="#toc-05">Human in the loop</a></li>
-                    <li><a href="#toc-06">AI agent není digitální ředitel</a></li>
-                </ul>
-            </nav>
+            
             <div class="article-content">
                 <p class="article-lead">O AI agentech se často mluví velmi obecně: plánují, používají nástroje, pracují s pamětí a zvládají několik kroků za sebou. Pro učitele je ale důležitější jiná otázka. Co z toho může být skutečně užitečné ve škole? A kde už začínají problémy s bezpečností, odpovědností a osobními údaji?</p>
 
@@ -95,7 +97,7 @@
                 <p>Rozdíl tedy není jen v kvalitě textu.</p>
                 <p>Rozdíl je v tom, že AI může začít pracovat s celým pracovním postupem.</p>
 
-                <h2>1. Příprava výuky</h2>
+                <h2 id="toc-07">1. Příprava výuky</h2>
                 <p>To je asi nejpřirozenější oblast.</p>
                 <p>Agent může například dostat zadání:</p>
                 <blockquote>„Připrav mi hodinu o Evropské unii pro druhý ročník.“</blockquote>
@@ -110,7 +112,7 @@
                 </ol>
                 <p>Pokud má k dispozici tematický plán a učitelovy zdroje, nemusí každý materiál vznikat úplně od začátku.</p>
 
-                <h2>2. Práce s vlastními materiály</h2>
+                <h2 id="toc-08">2. Práce s vlastními materiály</h2>
                 <p>Tohle je pro školství mimořádně důležité.</p>
                 <p>Obecný chatbot zná obecné informace.</p>
                 <p>Učitel ale často potřebuje, aby AI pracovala podle:</p>
@@ -128,14 +130,14 @@
                 <p>To je mnohem přesnější než obyčejné:</p>
                 <blockquote>„Vymysli nějaké cvičení na Unit 6.“</blockquote>
 
-                <h2>3. Diferenciace materiálů</h2>
+                <h2 id="toc-09">3. Diferenciace materiálů</h2>
                 <p>Další zajímavou oblastí je přizpůsobení výstupů různým potřebám.</p>
                 <p>Učitel může mít jeden základní pracovní list a agent z něj připraví další varianty.</p>
                 <div class="article-prompt"><strong>základní verze → jednodušší instrukce → větší strukturování úkolů → více vizuální podpory → kratší rozsah</strong></div>
                 <p>Agent tedy nemusí pokaždé vytvářet nový materiál od nuly.</p>
                 <p>Může transformovat již hotový podklad podle zadaných pravidel.</p>
 
-                <h2>4. Kontrola materiálů</h2>
+                <h2 id="toc-10">4. Kontrola materiálů</h2>
                 <p>Agent nemusí být jen tvůrce.</p>
                 <p>Může fungovat také jako kontrolor.</p>
                 <p>Například dostane hotový pracovní list a zkontroluje:</p>
@@ -153,7 +155,7 @@
                 <p>Druhý jej zkontroluje.</p>
                 <p>A učitel provede finální kontrolu před použitím.</p>
 
-                <h2>5. Hledání ve školních dokumentech</h2>
+                <h2 id="toc-11">5. Hledání ve školních dokumentech</h2>
                 <p>Učitelé tráví překvapivě mnoho času hledáním informací.</p>
                 <p>Například:</p>
                 <ul>
@@ -169,7 +171,7 @@
                 <blockquote>Podle dokumentu X, část Y…</blockquote>
                 <p>U interních předpisů je možnost zobrazit zdroj zásadní.</p>
 
-                <h2>6. Administrativa</h2>
+                <h2 id="toc-12">6. Administrativa</h2>
                 <p>Tady začíná být agentní AI opravdu zajímavá.</p>
                 <p>Velká část práce učitele není samotná výuka.</p>
                 <p>Je to:</p>
@@ -185,7 +187,7 @@
                 </ul>
                 <p>To jsou přesně úkoly, kde může automatizace ušetřit mnoho času bez toho, aby AI rozhodovala místo učitele.</p>
 
-                <h2>7. Práce s e-mailem</h2>
+                <h2 id="toc-13">7. Práce s e-mailem</h2>
                 <p>Agent může například pomoci s běžnou komunikací.</p>
                 <p>Učitel zadá:</p>
                 <blockquote>„Najdi zprávy týkající se exkurze a připrav mi stručný souhrn.“</blockquote>
@@ -197,7 +199,7 @@
                 <div class="article-prompt"><strong>agent připraví návrh → člověk jej zkontroluje → teprve potom se odešle</strong></div>
                 <p>U komunikace je lidská kontrola stále velmi důležitá.</p>
 
-                <h2>8. Kalendář a plánování</h2>
+                <h2 id="toc-14">8. Kalendář a plánování</h2>
                 <p>Agent může také pomáhat při plánování.</p>
                 <p>Například:</p>
                 <ul>
@@ -207,7 +209,7 @@
                 <p>Při napojení na kalendář může zjistit skutečnou dostupnost.</p>
                 <p>Tady už se agentní AI velmi přirozeně propojuje s běžným digitálním pracovním prostředím.</p>
 
-                <h2>9. Tvorba testů a hodnocení</h2>
+                <h2 id="toc-15">9. Tvorba testů a hodnocení</h2>
                 <p>AI může připravovat:</p>
                 <ul>
                     <li>otázky,</li>
@@ -223,7 +225,7 @@
                 <p>Provádět automatizované hodnocení žáka s reálnými důsledky je věc druhá.</p>
                 <p>U výsledné klasifikace musí odpovědnost zůstat na učiteli.</p>
 
-                <h2>10. Agent jako učitelský kokpit</h2>
+                <h2 id="toc-16">10. Agent jako učitelský kokpit</h2>
                 <p>Pokročilejší varianta už nemusí znamenat jen několik izolovaných funkcí.</p>
                 <p>Učitel může mít jednoho hlavního asistenta, který ví:</p>
                 <ul>
@@ -241,7 +243,7 @@
                 <h2 id="toc-02">Tři zóny použití</h2>
                 <p>Ve škole bych agentní systémy rozdělila do tří velmi jednoduchých kategorií.</p>
 
-                <h3>Zelená zóna</h3>
+                <h3 id="ai-agenti-ve-skole-h3-01">Zelená zóna</h3>
                 <p>Úkoly s nízkým rizikem.</p>
                 <p>Agent může pracovat poměrně samostatně.</p>
                 <p>Například:</p>
@@ -254,7 +256,7 @@
                     <li>hledání ve výukových materiálech.</li>
                 </ul>
 
-                <h3>Žlutá zóna</h3>
+                <h3 id="ai-agenti-ve-skole-h3-02">Žlutá zóna</h3>
                 <p>Agent může připravit výstup, ale člověk jej musí před použitím zkontrolovat.</p>
                 <p>Například:</p>
                 <ul>
@@ -268,7 +270,7 @@
                 <p>Zde je vhodný princip:</p>
                 <div class="article-prompt"><strong>AI navrhne → člověk schválí</strong></div>
 
-                <h3>Červená zóna</h3>
+                <h3 id="ai-agenti-ve-skole-h3-03">Červená zóna</h3>
                 <p>Sem bych AI agenta bez velmi dobře navrženého systému nepouštěla vůbec.</p>
                 <p>Například:</p>
                 <ul>
@@ -328,7 +330,7 @@
                 <p>Agent může připravit podklady.</p>
                 <p>Rozhodnutí je na člověku.</p>
 
-                <h2>Agent jako pomocník, ne náhrada učitele</h2>
+                <h2 id="toc-17">Agent jako pomocník, ne náhrada učitele</h2>
                 <p>Tohle je asi nejlepší způsob, jak se na celé téma dívat.</p>
                 <p>Dobrý školní agent by měl především odstraňovat práci, kterou učitel musí dělat, ale nepotřebuje kvůli ní být učitelem.</p>
                 <p>Například:</p>
@@ -336,11 +338,11 @@
                 <p>Ušetřený čas pak může člověk věnovat tomu, kde je skutečně potřeba:</p>
                 <div class="article-prompt"><strong>výuce, komunikaci, rozhodování a práci se žáky</strong></div>
 
-                <h2>Praktický příklad: příprava jedné hodiny</h2>
+                <h2 id="toc-18">Praktický příklad: příprava jedné hodiny</h2>
                 <p>Představme si učitele, který zadá:</p>
                 <blockquote>„Připrav mi zítřejší hodinu angličtiny pro 2B.“</blockquote>
 
-                <h3>1. Zkontrolovat rozvrh</h3>
+                <h3 id="ai-agenti-ve-skole-h3-04">1. Zkontrolovat rozvrh</h3>
                 <p>Agent zjistí, že hodina trvá 45 minut.</p>
 
                 <h3>2. Zjistit aktuální téma</h3>
@@ -350,7 +352,7 @@
                 <h3>3. Najít zdroje</h3>
                 <p>Použije učebnici a předchozí materiály.</p>
 
-                <h3>4. Připravit plán</h3>
+                <h3 id="ai-agenti-ve-skole-h3-05">4. Připravit plán</h3>
                 <p>Navrhne:</p>
                 <ol>
                     <li>5 minut opakování,</li>
@@ -374,12 +376,12 @@
                     <li>časovou náročnost.</li>
                 </ul>
 
-                <h3>8. Předložit učiteli</h3>
+                <h3 id="ai-agenti-ve-skole-h3-06">8. Předložit učiteli</h3>
                 <p>Učitel výsledek zkontroluje.</p>
                 <p>Tady už dobře vidíme všechny předchozí články v praxi:</p>
                 <div class="article-prompt"><strong>agentní smyčka + tools + paměť + RAG + případně MCP</strong></div>
 
-                <h2>A co multi-agentní systém?</h2>
+                <h2 id="toc-19">A co multi-agentní systém?</h2>
                 <p>Ještě pokročilejší varianta může mít několik rolí.</p>
                 <ul>
                     <li><strong>Agent 1 – příprava obsahu:</strong> vytvoří pracovní list.</li>
@@ -391,7 +393,7 @@
                 <p>Ale znovu platí:</p>
                 <blockquote>Pokud to dobře zvládne jeden systém, není nutné stavět celý digitální kabinet o patnácti agentech.</blockquote>
 
-                <h2>Co by měl školní agent umět vysvětlit</h2>
+                <h2 id="toc-20">Co by měl školní agent umět vysvětlit</h2>
                 <p>Dobrý agent by neměl pouze něco udělat.</p>
                 <p>Měl by být schopný také říct:</p>
                 <ul>
@@ -406,7 +408,7 @@
                 <blockquote>Hotovo.</blockquote>
                 <p>ale nikdo netuší, co vlastně provedl, bych byla velmi opatrná.</p>
 
-                <h2>Agentní AI nebude fungovat bez dobrých dat</h2>
+                <h2 id="toc-21">Agentní AI nebude fungovat bez dobrých dat</h2>
                 <p>Škola může mít nejmodernějšího AI agenta na světě.</p>
                 <p>Pokud jsou ale její dokumenty:</p>
                 <div class="article-prompt"><strong>neaktuální · rozházené · špatně pojmenované · duplicitní · vzájemně si odporují</strong></div>
@@ -415,7 +417,7 @@
                 <blockquote>nepořádek v datech zůstává nepořádkem, i když nad něj postavíme chytrý model.</blockquote>
                 <p>Agent není kouzelník na špatnou správu dokumentů.</p>
 
-                <h2>Nejprve proces, potom agent</h2>
+                <h2 id="toc-22">Nejprve proces, potom agent</h2>
                 <p>Tohle je jedno z nejdůležitějších pravidel.</p>
                 <p>Nejdřív bych se ptala:</p>
                 <ul>
@@ -430,7 +432,7 @@
                 <p>Pokud je proces špatně navržený, agent ho může pouze zautomatizovat špatně a rychleji.</p>
                 <p>To opravdu není pokrok.</p>
 
-                <h2>Začněte malým agentem</h2>
+                <h2 id="toc-23">Začněte malým agentem</h2>
                 <p>Pokud chce škola nebo učitel s agentní AI začít, není potřeba okamžitě stavět systém připojený k celé školní infrastruktuře.</p>
                 <p>Mnohem rozumnější je začít například:</p>
                 <ul>
@@ -440,7 +442,7 @@
                 <p>Teprve když funguje spolehlivě, lze přidávat další schopnosti.</p>
                 <p>Dobrá agentní architektura vzniká postupně.</p>
 
-                <h2>Zapamatujte si</h2>
+                <h2 id="toc-24">Zapamatujte si</h2>
                 <p>AI agent může učiteli pomáhat s:</p>
                 <div class="article-prompt"><strong>přípravou výuky, tvorbou materiálů, hledáním informací, administrativou, kontrolou výstupů a organizací práce</strong></div>
                 <p>Jeho největší přínos není v tom, že „nahradí učitele“.</p>
@@ -471,6 +473,9 @@
         <a href="ai-agenti.html">Zpět na AI agenty</a>
     </footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261110-7q" defer></script>
 </body>
 
 </html>

@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="css/light-background-pilot.css?v=20261109-7k" />
     <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261109-7k-v2" />
     <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261110-7q" />
 </head>
 
 <body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="create">
@@ -67,7 +68,11 @@
         </div>
     </section>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
+                <details class="article-content-navigation" open>
+  <summary id="toc-heading-ai-agenti-co-je-ai-agent-html">V tomto článku</summary>
+  <nav aria-label="Obsah článku"><ol><li><a href="#toc-01">Od chatbotu k agentovi</a></li><li><a href="#toc-02">Co je AI agent?</a></li><li><a href="#toc-03">Rozdíl lze ukázat na jednoduchém příkladu</a></li><li><a href="#toc-04">Jak agent pracuje</a></li><li><a href="#toc-05">Nástroje jsou to, co dává agentům „ruce“</a></li><li><a href="#toc-06">A tady se potkávají AI agenti s vibe codingem</a></li><li><a href="#toc-07">Agent ale není kouzelný zaměstnanec</a></li><li><a href="#toc-08">A co paměť a učení?</a></li><li><a href="#toc-09">Proč jsou AI agenti důležití</a></li><li><a href="#toc-10">Co bude následovat</a></li></ol></nav>
+</details>
         <article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Od chatbotu k plnění celých pracovních úkolů: jak agenti plánují, používají nástroje, pracují s pamětí a proč u nich zůstává důležitý člověk.</p>
@@ -82,7 +87,7 @@
                     <figcaption>AI agent od cíle k výsledku: rozdíl proti chatbotu, agentní smyčka, nástroje, paměť a role člověka.</figcaption>
                 </figure>
 
-                <h2>Od chatbotu k agentovi</h2>
+                <h2 id="toc-01">Od chatbotu k agentovi</h2>
                 <p>Když otevřeme běžný AI chatbot, většinou funguje velmi jednoduše.</p>
                 <p>Napíšeme například:</p>
                 <blockquote>„Vytvoř mi pracovní list na téma Evropská unie.“</blockquote>
@@ -97,7 +102,7 @@
                 <p>Agent může nejprve zjistit, co se právě probírá. Potom vyhledat vhodné podklady. Připravit pracovní list. Vytvořit řešení. Zkontrolovat výstup a případně ho upravit.</p>
                 <p>Právě schopnost spojit několik kroků do jednoho pracovního procesu je jedním z hlavních rozdílů mezi běžným chatbotem a agentním systémem.</p>
 
-                <h2>Co je AI agent?</h2>
+                <h2 id="toc-02">Co je AI agent?</h2>
                 <p>Zjednodušeně můžeme říct:</p>
                 <blockquote><strong>AI agent je systém, který dostane určitý cíl, dokáže určit další kroky, využít dostupné nástroje, vyhodnotit jejich výsledky a podle potřeby pokračovat v práci.</strong></blockquote>
                 <p>Důležité je slovo <strong>systém</strong>.</p>
@@ -108,7 +113,7 @@
                 <p>Ne každý agent přitom musí obsahovat úplně všechny tyto části.</p>
                 <p>Chatbot odpovídá. Agent se snaží splnit úkol.</p>
 
-                <h2>Rozdíl lze ukázat na jednoduchém příkladu</h2>
+                <h2 id="toc-03">Rozdíl lze ukázat na jednoduchém příkladu</h2>
                 <p>Představme si, že chceme naplánovat výlet.</p>
                 <p>Chatbotu napíšeme:</p>
                 <blockquote>„Kam bych mohl jet na tři dny do Rakouska?“</blockquote>
@@ -120,7 +125,7 @@
                 <p>Nejde totiž jen o generování textu.</p>
                 <p>Jde o vykonávání práce prostřednictvím několika navazujících kroků.</p>
 
-                <h2>Jak agent pracuje</h2>
+                <h2 id="toc-04">Jak agent pracuje</h2>
                 <p>U agentních systémů se často používá takzvaná agentní smyčka.</p>
                 <p>Její základní princip můžeme popsat velmi jednoduše:</p>
                 <div class="article-prompt"><strong>Pochop → Naplánuj → Proveď → Zkontroluj</strong></div>
@@ -130,7 +135,7 @@
                 <div class="article-prompt"><strong>Think → Plan → Act → Observe</strong></div>
                 <p>Slovo <em>think</em> je ale potřeba chápat opatrně. Neznamená, že systém „myslí“ stejným způsobem jako člověk. Je to spíš praktická zkratka pro zpracování informací, rozhodování a volbu dalšího kroku.</p>
 
-                <h2>Nástroje jsou to, co dává agentům „ruce“</h2>
+                <h2 id="toc-05">Nástroje jsou to, co dává agentům „ruce“</h2>
                 <p>Samotný jazykový model umí velmi dobře pracovat s jazykem.</p>
                 <p>Může psát, vysvětlovat, shrnovat, překládat nebo analyzovat text.</p>
                 <p>Jenže svět kolem nás se neskládá pouze z textu.</p>
@@ -147,7 +152,7 @@
                 </ul>
                 <p>Právě zde se z AI, která pouze „mluví“, může stát AI, která je schopná provádět konkrétní akce.</p>
 
-                <h2>A tady se potkávají AI agenti s vibe codingem</h2>
+                <h2 id="toc-06">A tady se potkávají AI agenti s vibe codingem</h2>
                 <p>Velmi dobře je tento posun vidět při tvorbě aplikací.</p>
                 <p>Původní práce s generativní AI často vypadala takto:</p>
                 <blockquote>„Napiš mi HTML kód jednoduché stránky.“</blockquote>
@@ -163,7 +168,7 @@
                 <p>A to už je typický agentní způsob práce.</p>
                 <p>Proto spolu dnes pojmy vibe coding, coding agents a agentní AI velmi úzce souvisejí.</p>
 
-                <h2>Agent ale není kouzelný zaměstnanec</h2>
+                <h2 id="toc-07">Agent ale není kouzelný zaměstnanec</h2>
                 <p>Tady je potřeba trochu přibrzdit marketing.</p>
                 <p>Slovo „agent“ může znít, jako bychom AI předali úkol a ona si od té chvíle úplně se vším poradila sama.</p>
                 <p>Tak to není.</p>
@@ -179,7 +184,7 @@
                 <p>Proto se u důležitých operací používá princip <em>human in the loop</em> – člověk zůstává součástí procesu a některé kroky musí před provedením potvrdit.</p>
                 <p>Ve školním prostředí je to důležité dvojnásob, protože pracujeme také s osobními údaji a dokumenty, ke kterým nemůže mít libovolný AI systém automaticky přístup.</p>
 
-                <h2>A co paměť a učení?</h2>
+                <h2 id="toc-08">A co paměť a učení?</h2>
                 <p>Kolem agentů se také často tvrdí, že si „pamatují zkušenosti a postupně se učí“.</p>
                 <p>To je poněkud zavádějící.</p>
                 <p>Agent se obvykle automaticky nepřeučuje po každém úkolu.</p>
@@ -188,7 +193,7 @@
                 <p>To ale není totéž jako nové trénování samotného jazykového modelu.</p>
                 <p>Tento rozdíl budeme v dalších článcích ještě potřebovat.</p>
 
-                <h2>Proč jsou AI agenti důležití</h2>
+                <h2 id="toc-09">Proč jsou AI agenti důležití</h2>
                 <p>Generativní AI změnila způsob, jakým vytváříme obsah.</p>
                 <p>Agentní AI může změnit něco dalšího:</p>
                 <p><strong>způsob, jakým vykonáváme celé pracovní procesy.</strong></p>
@@ -196,7 +201,7 @@
                 <div class="article-prompt"><strong>Ne:</strong> „Napiš mi tabulku.“<br /><strong>Ale:</strong> „Zpracuj data a připrav přehled.“<br /><br /><strong>Ne:</strong> „Vygeneruj mi kód.“<br /><strong>Ale:</strong> „Vytvoř mi aplikaci, která bude dělat toto.“<br /><br /><strong>Ne:</strong> „Napiš pracovní list.“<br /><strong>Ale:</strong> „Připrav materiály pro zítřejší hodinu podle mých zdrojů a požadavků.“</div>
                 <p>Právě tento posun od jednotlivých odpovědí k celým pracovním postupům je podstatou současného rozvoje agentní AI.</p>
 
-                <h2>Co bude následovat</h2>
+                <h2 id="toc-10">Co bude následovat</h2>
                 <p>V dalších dílech se podíváme pod kapotu.</p>
                 <p>Ukážeme si, jak funguje agentní smyčka, proč agent potřebuje nástroje, jak může pracovat s pamětí a vlastními zdroji pomocí RAG, k čemu slouží MCP a proč se začínají objevovat celé týmy spolupracujících AI agentů.</p>
                 <p>A hlavně si ukážeme, co z toho má skutečný praktický význam — a co je zatím spíš pěkně zabalený marketing.</p>
@@ -232,6 +237,7 @@
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
     <script src="js/site-navigation-data.js?v=20261109-7m"></script>
     <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261110-7q" defer></script>
 </body>
 
 </html>
