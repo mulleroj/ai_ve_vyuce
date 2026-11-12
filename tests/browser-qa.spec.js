@@ -479,6 +479,91 @@ test('wave 4 desktop overview compares all three articles side by side', async (
   await page.screenshot({ path: 'artifacts/wave4-overview-desktop-three-articles.png', fullPage: true });
 });
 
+
+test('wave 5 graphic audit captures images and prompt panels at desktop and mobile', async ({ page }) => {
+  const fs = require('node:fs');
+  const path = require('node:path');
+  const audit = [];
+  const cards = [];
+
+  for (const article of wave5Articles) {
+    const stem = article.file.replace(/\\.html$/, '');
+    for (const viewport of [
+      { name: 'desktop-1440', width: 1440, height: 900 },
+      { name: 'mobile-390', width: 390, height: 844 }
+    ]) {
+      await page.setViewportSize({ width: viewport.width, height: viewport.height });
+      await page.goto(`${baseURL}/${article.file}`);
+      const image = page.locator('.article-figure img');
+      await image.evaluate(img => img.decode());
+      const visual = await page.evaluate(() => {
+        const image = document.querySelector('.article-figure img');
+        const figure = document.querySelector('.article-figure');
+        const prompt = document.querySelector('.article-prompt');
+        const canvas = document.createElement('canvas');
+        canvas.width = image.naturalWidth;
+        canvas.height = image.naturalHeight;
+        const context = canvas.getContext('2d', { willReadFrequently: true });
+        context.drawImage(image, 0, 0);
+        const pixels = context.getImageData(0, 0, canvas.width, canvas.height).data;
+        let sampled = 0, dark = 0;
+        for (let i = 0; i < pixels.length; i += 4 * 24) {
+          const luminance = 0.2126 * pixels[i] + 0.7152 * pixels[i + 1] + 0.0722 * pixels[i + 2];
+          if (luminance < 72) dark++;
+          sampled++;
+        }
+        const promptStyle = getComputedStyle(prompt);
+        return {
+          image: image.getAttribute('src'),
+          naturalWidth: image.naturalWidth,
+          naturalHeight: image.naturalHeight,
+          alt: image.getAttribute('alt'),
+          loaded: image.complete && image.naturalWidth > 0,
+          filter: getComputedStyle(image).filter,
+          borderRadius: getComputedStyle(image).borderRadius,
+          darkPixelRatio: dark / sampled,
+          figureBackground: getComputedStyle(figure).backgroundColor,
+          promptBackground: promptStyle.backgroundColor,
+          promptColor: promptStyle.color,
+          bodyBackground: getComputedStyle(document.body).backgroundColor,
+          heroColor: getComputedStyle(document.querySelector('.workflow-hero h1')).color
+        };
+      });
+      expect(visual.loaded, `graphic must load on ${article.file}`).toBe(true);
+      expect(visual.alt, `graphic alt text must remain on ${article.file}`).toBeTruthy();
+      expect(visual.filter, `article image must not be filtered on ${article.file}`).toBe('none');
+      expect(visual.promptBackground, `prompt panel must use the light palette on ${article.file}`).toBe('rgb(238, 245, 239)');
+      expect(visual.bodyBackground).toBe('rgb(255, 254, 250)');
+      audit.push({ article: article.file, viewport: viewport.name, ...visual });
+
+      if (viewport.width === 1440) {
+        const imagePath = await image.getAttribute('src');
+        const bytes = fs.readFileSync(path.join(process.cwd(), imagePath));
+        cards.push({ article, dataUrl: `data:image/png;base64,${bytes.toString('base64')}` });
+      }
+
+      await page.screenshot({ path: `artifacts/${stem}-${viewport.name}-top.png` });
+      await image.scrollIntoViewIfNeeded();
+      await page.screenshot({ path: `artifacts/${stem}-${viewport.name}-infographic.png` });
+      await page.locator('.article-prompt').first().scrollIntoViewIfNeeded();
+      await page.screenshot({ path: `artifacts/${stem}-${viewport.name}-prompt-panel.png` });
+    }
+  }
+
+  fs.writeFileSync('artifacts/wave5-graphic-audit.json', JSON.stringify(audit, null, 2));
+  await page.setViewportSize({ width: 1800, height: 1400 });
+  const cardsHtml = cards.map(({ article, dataUrl }) =>
+    `<article><h2>${article.title}</h2><img alt="${article.title}" src="${dataUrl}"></article>`
+  ).join('');
+  await page.setContent(`<!doctype html><html lang="cs"><meta charset="utf-8"><title>Infografiky Gemini Notebook – vizuální audit</title><style>
+    *{box-sizing:border-box}body{margin:0;padding:24px;background:#fffefa;color:#102d2b;font:600 16px Arial,sans-serif}
+    h1{margin:0 0 20px;font-size:24px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    article{min-width:0;padding:14px;border:1px solid #dfe8e1;border-radius:14px;background:#fff}
+    h2{min-height:42px;margin:0 0 12px;font-size:18px;line-height:1.3}img{display:block;width:100%;height:auto;object-fit:contain;border:1px solid #e5e7e1;border-radius:8px}
+  </style><h1>Vložené infografiky všech čtyř návodů</h1><main class="grid">${cardsHtml}</main></html>`);
+  await page.screenshot({ path: 'artifacts/wave5-graphic-contact-sheet.png', fullPage: true });
+});
+
 test('wave 5 desktop overview compares all four Gemini Notebook guides side by side', async ({ page }) => {
   const cards = [];
   for (const article of wave5Articles) {
