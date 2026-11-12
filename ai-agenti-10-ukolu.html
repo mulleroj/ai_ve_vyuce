@@ -21,14 +21,37 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261109-7k" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261109-7k-v2" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261110-7q" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-            <a class="workflow-back" href="ai-agenti.html">← AI agenti</a>
-        </div>
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="create">
+<header class="site-header" id="top">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu">
+      <div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+        <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a>
+        <a href="ai-navody.html">Připravit výuku</a>
+        <a href="aktivity.html">Učit s AI</a>
+        <a href="asistenti.html">Nástroje a asistenti</a>
+        <a href="vibe-coding.html" aria-current="location">Tvořit s AI</a>
+        <a href="ai.html">Číst a objevovat</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace">
+  <ol>
+    <li><a href="index.html">Domů</a></li>
+    <li><a href="ai-agenti.html">AI agenti</a></li>
+    <li aria-current="page">10 úkolů, které může AI agent převzít učiteli</li>
+  </ol>
+</nav>
+    <section class="workflow-shell">
         <div class="workflow-hero">
             <div>
                 <div class="workflow-eyebrow">AI agenti · 1. září 2026</div>
@@ -43,9 +66,13 @@
                 <div class="workflow-stage"><span class="workflow-stage-number">04</span><div><strong>Kontroluj</strong><small>Člověk schvaluje důležité kroky</small></div></div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
+        <details class="article-content-navigation" open>
+            <summary>V tomto článku</summary>
+            <nav aria-label="Obsah článku"><ol><li><a href="#ukol-pracovni-list">1. Připravit pracovní list podle aktuálního tématu</a></li><li><a href="#ukol-varianty-materialu">2. Přizpůsobit jeden materiál více skupinám žáků</a></li><li><a href="#ukol-kontrola-materialu">3. Zkontrolovat pracovní list nebo test před hodinou</a></li><li><a href="#ukol-plan-hodiny">4. Připravit plán celé vyučovací hodiny</a></li><li><a href="#ukol-dokumenty">5. Vyhledávat ve školních dokumentech</a></li><li><a href="#ukol-komunikace">6. Připravovat první návrhy běžné komunikace</a></li><li><a href="#ukol-shrnuti">7. Shrnovat dlouhé dokumenty a informace</a></li><li><a href="#ukol-vysledky">8. Zpracovat výsledky testu nebo dotazníku</a></li><li><a href="#ukol-varianty-testu">9. Připravit několik verzí stejného testu</a></li><li><a href="#ukol-denni-prehled">10. Připravit učiteli denní pracovní přehled</a></li><li><a href="#co-nepredavat">Co bych agentovi nepředávala bez kontroly</a></li><li><a href="#urovne-autonomie">Tři úrovně autonomie</a><ol><li><a href="#autonomie-samostatne">Agent může provést sám</a></li><li><a href="#autonomie-schvaleni">Agent připraví, člověk schválí</a></li><li><a href="#autonomie-podklady">Agent pouze poskytne podklady</a></li></ol></li><li><a href="#prinos-agenta">Největší přínos není „AI místo učitele“</a></li><li><a href="#dobry-ukol">Jak poznat dobrý úkol pro AI agenta</a></li><li><a href="#kde-zacit">Kde začít</a></li></ol></nav>
+        </details>
         <article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">AI agent nemusí řídit celý školní den. Největší smysl má tam, kde přebírá opakovanou, technickou a časově náročnou práci — zatímco pedagogická rozhodnutí zůstávají člověku.</p>
@@ -59,7 +86,7 @@
                     <figcaption>AI agent má největší přínos u opakované a kontrolovatelné práce. U důležitých rozhodnutí zůstává člověk v procesu.</figcaption>
                 </figure>
 
-                <h2>1. Připravit pracovní list podle aktuálního tématu</h2>
+                <h2 id="ukol-pracovni-list">1. Připravit pracovní list podle aktuálního tématu</h2>
                 <p>Místo zadání:</p>
                 <blockquote>„Vytvoř mi pracovní list na minulý čas.“</blockquote>
                 <p>může agent pracovat komplexněji.</p>
@@ -71,14 +98,14 @@
                 <div class="article-prompt"><strong>žákovskou verzi + řešení + doporučený čas na jednotlivé aktivity</strong></div>
                 <p>To už není jednorázové generování textu, ale celý pracovní proces.</p>
 
-                <h2>2. Přizpůsobit jeden materiál více skupinám žáků</h2>
+                <h2 id="ukol-varianty-materialu">2. Přizpůsobit jeden materiál více skupinám žáků</h2>
                 <p>Učitel často vytvoří jeden kvalitní materiál a potom ho potřebuje upravit.</p>
                 <p>Například:</p>
                 <ul><li>zjednodušit instrukce,</li><li>zkrátit rozsah,</li><li>přidat více vizuální podpory,</li><li>rozdělit úlohy na menší kroky,</li><li>vytvořit náročnější variantu.</li></ul>
                 <p>Agent může dostat základní pracovní list a automaticky z něj připravit několik verzí.</p>
                 <p>To je mnohem praktičtější než vytvářet každý materiál znovu.</p>
 
-                <h2>3. Zkontrolovat pracovní list nebo test před hodinou</h2>
+                <h2 id="ukol-kontrola-materialu">3. Zkontrolovat pracovní list nebo test před hodinou</h2>
                 <p>AI nemusí být jen tvůrcem.</p>
                 <p>Může fungovat jako revizor.</p>
                 <p>Před tiskem může zkontrolovat například:</p>
@@ -87,7 +114,7 @@
                 <div class="article-prompt"><strong>Úloha 7 má dvě možné správné odpovědi.<br /><br />Úloha 10 je výrazně obtížnější než ostatní.<br /><br />Při běžném tempu zabere celý test přibližně 50 minut.</strong></div>
                 <p>Tohle je přesně druh kontroly, kterou člověk večer po desáté snadno přehlédne.</p>
 
-                <h2>4. Připravit plán celé vyučovací hodiny</h2>
+                <h2 id="ukol-plan-hodiny">4. Připravit plán celé vyučovací hodiny</h2>
                 <p>Agent může dostat pouze:</p>
                 <blockquote>„Zítra učím Past Simple v 1. ročníku.“</blockquote>
                 <p>A připravit:</p>
@@ -97,7 +124,7 @@
                 <p>Učitel samozřejmě rozhodne, zda plán odpovídá konkrétní třídě.</p>
                 <p>Agent ale připraví první použitelnou verzi.</p>
 
-                <h2>5. Vyhledávat ve školních dokumentech</h2>
+                <h2 id="ukol-dokumenty">5. Vyhledávat ve školních dokumentech</h2>
                 <p>Tohle je jedna z nejpraktičtějších možností.</p>
                 <p>Místo procházení několika směrnic může učitel položit otázku:</p>
                 <blockquote>„Jaký je postup při neklasifikaci žáka?“</blockquote>
@@ -110,7 +137,7 @@
                 <div class="article-prompt"><strong>Agent musí pracovat s aktuálními dokumenty a ukazovat zdroj.</strong></div>
                 <p>Jinak jen velmi elegantně hádá.</p>
 
-                <h2>6. Připravovat první návrhy běžné komunikace</h2>
+                <h2 id="ukol-komunikace">6. Připravovat první návrhy běžné komunikace</h2>
                 <p>Učitelé píší stále stejné typy zpráv.</p>
                 <p>Například:</p>
                 <ul><li>informace rodičům,</li><li>připomínku termínu,</li><li>omluvu,</li><li>organizační zprávu,</li><li>zápis z akce,</li><li>krátké oznámení žákům.</li></ul>
@@ -122,7 +149,7 @@
                 <div class="article-prompt"><strong>AI připraví → člověk schválí</strong></div>
                 <p>Automatické odesílání bych u běžné školní komunikace jako první krok rozhodně nezaváděla.</p>
 
-                <h2>7. Shrnovat dlouhé dokumenty a informace</h2>
+                <h2 id="ukol-shrnuti">7. Shrnovat dlouhé dokumenty a informace</h2>
                 <p>Školství miluje dokumenty.</p>
                 <p>Směrnice, metodiky, zápisy, změny předpisů, nové pokyny.</p>
                 <p>Agent může dlouhý dokument převést například na:</p>
@@ -131,7 +158,7 @@
                 <p>Ale u právních, bezpečnostních nebo zásadních školních předpisů by měl mít učitel stále možnost otevřít původní zdroj.</p>
                 <p>Shrnutí není náhrada dokumentu.</p>
 
-                <h2>8. Zpracovat výsledky testu nebo dotazníku</h2>
+                <h2 id="ukol-vysledky">8. Zpracovat výsledky testu nebo dotazníku</h2>
                 <p>Agent může pomoci také po hodině.</p>
                 <p>Například dostane tabulku s výsledky testu a připraví:</p>
                 <ul><li>průměr,</li><li>rozložení výsledků,</li><li>nejčastější chyby,</li><li>otázky, které dělaly žákům největší problém,</li><li>návrh na opakování.</li></ul>
@@ -141,7 +168,7 @@
                 <div class="article-prompt"><strong>Největší problém byl u nepravidelných sloves a tvorby otázek. Doporučuji krátké opakování těchto dvou oblastí.</strong></div>
                 <p>To už může mít přímý dopad na přípravu další hodiny.</p>
 
-                <h2>9. Připravit několik verzí stejného testu</h2>
+                <h2 id="ukol-varianty-testu">9. Připravit několik verzí stejného testu</h2>
                 <p>Kdo někdy vytvořil verzi A a B testu ručně, ví, že to není žádná velká intelektuální disciplína.</p>
                 <p>Je to hlavně otrava.</p>
                 <p>Agent může například:</p>
@@ -150,7 +177,7 @@
                 <div class="article-prompt"><strong>stejnou obtížnost a stejné učební cíle</strong></div>
                 <p>Právě to by mělo být součástí jeho kontrolních pravidel.</p>
 
-                <h2>10. Připravit učiteli denní pracovní přehled</h2>
+                <h2 id="ukol-denni-prehled">10. Připravit učiteli denní pracovní přehled</h2>
                 <p>Tohle už je skutečně agentní způsob práce.</p>
                 <p>Před začátkem dne může agent připravit krátký přehled:</p>
                 <div class="article-prompt"><strong>Dnes učíte 2A, 1B a 3C.<br /><br />Pro 2A máte připravený pracovní list.<br /><br />U 1B je aktuální téma Unit 4.<br /><br />U 3C jste minule dokončili pracovní list X.<br /><br />Ve 14:00 máte poradu.<br /><br />Do pátku je potřeba dokončit klasifikaci.</strong></div>
@@ -160,7 +187,7 @@
                 <p>Chatbot čeká na dotaz.</p>
                 <p>Agent může spojit více informací a připravit pracovní kontext pro konkrétní den.</p>
 
-                <h2>Co bych agentovi nepředávala bez kontroly</h2>
+                <h2 id="co-nepredavat">Co bych agentovi nepředávala bez kontroly</h2>
                 <p>Když vidíme deset možných úkolů, je snadné dojít k závěru:</p>
                 <blockquote>„Tak mu prostě dáme přístup ke všemu.“</blockquote>
                 <p>To by byla chyba.</p>
@@ -169,27 +196,27 @@
                 <ul><li>finální klasifikace žáka,</li><li>kázeňská rozhodnutí,</li><li>rozhodování o podpůrných opatřeních,</li><li>odesílání citlivých informací,</li><li>automatická komunikace ve složitých situacích,</li><li>zásahy do důležitých školních databází.</li></ul>
                 <p>Tam musí zůstat člověk v rozhodovacím procesu.</p>
 
-                <h2>Tři úrovně autonomie</h2>
+                <h2 id="urovne-autonomie">Tři úrovně autonomie</h2>
                 <p>Prakticky lze jednotlivé úkoly rozdělit do tří kategorií.</p>
 
-                <h3>Agent může provést sám</h3>
+                <h3 id="autonomie-samostatne">Agent může provést sám</h3>
                 <p>Například:</p>
                 <div class="article-prompt"><strong>připrav návrh pracovního listu, shrň dokument, vytvoř tabulku</strong></div>
                 <p>Riziko případné chyby je malé a výsledek před použitím stejně vidí člověk.</p>
 
-                <h3>Agent připraví, člověk schválí</h3>
+                <h3 id="autonomie-schvaleni">Agent připraví, člověk schválí</h3>
                 <p>Například:</p>
                 <div class="article-prompt"><strong>e-mail, hodnocení textu, změna kalendáře, publikování materiálu</strong></div>
                 <p>Zde je vhodný princip:</p>
                 <div class="article-prompt"><strong>AI navrhne → člověk potvrdí → systém provede</strong></div>
 
-                <h3>Agent pouze poskytne podklady</h3>
+                <h3 id="autonomie-podklady">Agent pouze poskytne podklady</h3>
                 <p>Například:</p>
                 <div class="article-prompt"><strong>klasifikace, kázeňské rozhodnutí nebo práce s citlivými údaji</strong></div>
                 <p>AI může něco analyzovat nebo připravit.</p>
                 <p>Konečné rozhodnutí ale musí udělat člověk.</p>
 
-                <h2>Největší přínos není „AI místo učitele“</h2>
+                <h2 id="prinos-agenta">Největší přínos není „AI místo učitele“</h2>
                 <p>AI agent nemá největší hodnotu tam, kde se snaží dělat pedagogická rozhodnutí.</p>
                 <p>Největší přínos je často mnohem méně efektní.</p>
                 <p>Agent může převzít práci typu:</p>
@@ -197,12 +224,12 @@
                 <p>Jsou to desítky drobných činností, které samostatně nezaberou mnoho času.</p>
                 <p>Dohromady ale dokážou učiteli spolknout podstatnou část pracovního týdne.</p>
 
-                <h2>Jak poznat dobrý úkol pro AI agenta</h2>
+                <h2 id="dobry-ukol">Jak poznat dobrý úkol pro AI agenta</h2>
                 <p>Položte si čtyři otázky.</p>
                 <ol><li>Dělám tuto činnost opakovaně?</li><li>Má poměrně jasná pravidla?</li><li>Umím popsat, jak má vypadat správný výsledek?</li><li>Dokážu případnou chybu zachytit dříve, než způsobí problém?</li></ol>
                 <p>Pokud je odpověď většinou ano, je to velmi dobrý kandidát na agentní automatizaci.</p>
 
-                <h2>Kde začít</h2>
+                <h2 id="kde-zacit">Kde začít</h2>
                 <p>Nesnažila bych se automatizovat všech deset oblastí najednou.</p>
                 <p>Vyberte jedinou činnost.</p>
                 <p>Například:</p>
@@ -246,6 +273,9 @@
         <a href="ai-agenti.html">Zpět na AI agenty</a>
     </footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261110-7q" defer></script>
 </body>
 
 </html>

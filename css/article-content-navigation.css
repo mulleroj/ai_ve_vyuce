@@ -115,11 +115,24 @@
   border-radius: 4px;
 }
 
+
+/* The agent article skin gives .workflow-main a fixed reading width. When the shared
+   sidebar layout is enabled, let its scoped grid define the wider two-column canvas. */
+body.ai-agent-light-page.light-background-pilot.workflow-page .workflow-main.article-content-layout {
+  width: min(1360px, calc(100% - 64px));
+  padding: clamp(24px, 3vw, 40px) 0 82px;
+}
+
 @media (max-width: 960px) {
   .workflow-main.article-content-layout {
     grid-template-columns: minmax(0, 1fr);
     gap: 0;
     width: min(880px, calc(100% - 36px));
+  }
+
+  body.ai-agent-light-page.light-background-pilot.workflow-page .workflow-main.article-content-layout {
+    width: min(880px, calc(100% - 36px));
+    padding: 24px 0 82px;
   }
 
   .article-content-navigation {

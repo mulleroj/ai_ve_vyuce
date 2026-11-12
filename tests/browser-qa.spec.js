@@ -150,3 +150,206 @@ test('no critical browser errors or missing local resources', async ({ page }) =
   await page.waitForTimeout(250);
   expect(localProblems, localProblems.join('\n')).toEqual([]);
 });
+
+const migrationArticles = [
+  { file: 'ai-agenti-10-ukolu.html', title: '10 úkolů, které může AI agent převzít učiteli', tocCount: 18, h2: '#ukol-pracovni-list', h3: '#autonomie-schvaleni' },
+  { file: 'ai-agenti-agentni-smycka.html', title: 'Jak funguje AI agent: agentní smyčka krok za krokem', tocCount: 17, h2: '#toc-03', h3: '#loop-think' },
+  { file: 'ai-agenti-chatbot-automatizace-workflow.html', title: 'AI agent, automatizace, workflow nebo chatbot?', tocCount: 24, h2: '#typ-chatbot', h3: '#typ-chatbot-kdy' },
+  { file: 'ai-agenti-kdy-nepouzivat.html', title: 'Kdy AI agenta ve škole raději nepoužívat', tocCount: 21, h2: '#riziko-znamka', h3: '#semafor-zluta' }
+];
+
+for (const article of migrationArticles) {
+  test.describe(`Wave 1: ${article.file}`, () => {
+    test('responsive layout, global navigation, contents, related articles, and screenshots', async ({ page }) => {
+      const problems = [];
+      page.on('console', message => { if (message.type() === 'error') problems.push(`console: ${message.text()}`); });
+      page.on('pageerror', error => problems.push(`pageerror: ${error.message}`));
+      page.on('response', response => {
+        if (response.url().startsWith(baseURL) && response.status() >= 400) problems.push(`HTTP ${response.status()}: ${response.url()}`);
+      });
+      page.on('requestfailed', request => {
+        if (request.url().startsWith(baseURL)) problems.push(`request failed: ${request.url()} (${request.failure()?.errorText || 'unknown'})`);
+      });
+
+      for (const width of widths) {
+        await page.setViewportSize({ width, height: 900 });
+        await page.goto(`${baseURL}/${article.file}`);
+        await expect(page.locator('.site-header')).toHaveCount(1);
+        await expect(page.locator('.menu-toggle')).toHaveCount(1);
+        await expect(page.locator('.brand')).toHaveAttribute('href', 'index.html');
+        await expect(page.locator('.brand-symbol')).toBeVisible();
+        await expect(page.locator('.site-nav-pilot details')).toHaveCount(6);
+        await expect(page.locator('.site-nav-pilot details[data-active="true"] > summary'))
+          .toHaveText('Tvořit s AI');
+        await expect(page.locator('.site-breadcrumbs li')).toHaveCount(3);
+        await expect(page.locator('.site-breadcrumbs li').nth(0)).toContainText('Domů');
+        await expect(page.locator('.site-breadcrumbs li').nth(1)).toHaveText('AI agenti');
+        await expect(page.locator('.site-breadcrumbs li').nth(1).locator('a')).toHaveAttribute('href', 'ai-agenti.html');
+        await expect(page.locator('.site-breadcrumbs li').nth(2)).toHaveAttribute('aria-current', 'page');
+        await expect(page.locator('.site-breadcrumbs li').nth(2)).toHaveText(article.title);
+        await expect(page.locator('.article-toc')).toHaveCount(0);
+        const toc = page.locator('.article-content-navigation');
+        await expect(toc).toHaveCount(1);
+        await expect(toc.locator('a')).toHaveCount(article.tocCount);
+        await expect(page.locator('.workflow-related')).toHaveCount(1);
+        await expect(page.locator('.workflow-main > .workflow-article')).toHaveCount(1);
+        await expect(page.locator('.workflow-main > .workflow-related')).toHaveCount(1);
+
+        const state = await page.evaluate(() => {
+          const ids = [...document.querySelectorAll('[id]')].map(node => node.id);
+          const links = [...document.querySelectorAll('.article-content-navigation a[href^="#"]')];
+          return {
+            scrollWidth: document.documentElement.scrollWidth,
+            viewportWidth: innerWidth,
+            idsUnique: new Set(ids).size === ids.length,
+            anchorsResolve: links.every(link => document.getElementById(decodeURIComponent(link.hash.slice(1)))),
+            mainChildren: [...document.querySelector('.workflow-main').children].map(node => node.className),
+            tocPosition: getComputedStyle(document.querySelector('.article-content-navigation')).position,
+            bodyBackground: getComputedStyle(document.body).backgroundColor,
+            heroTitleColor: getComputedStyle(document.querySelector('.workflow-hero h1')).color,
+            related: document.querySelector('.workflow-related').getBoundingClientRect().toJSON(),
+            article: document.querySelector('.workflow-article').getBoundingClientRect().toJSON(),
+            toc: document.querySelector('.article-content-navigation').getBoundingClientRect().toJSON()
+          };
+        });
+        expect(state.scrollWidth, `horizontal overflow at ${width}px on ${article.file}`).toBeLessThanOrEqual(width + 1);
+        expect(state.idsUnique, `duplicate IDs on ${article.file}`).toBe(true);
+        expect(state.anchorsResolve, `broken contents anchor on ${article.file}`).toBe(true);
+        expect(state.bodyBackground).toBe('rgb(255, 254, 250)');
+        if (width > 960) {
+          expect(state.tocPosition).toBe('sticky');
+          expect(state.toc.left).toBeLessThan(state.article.left);
+          expect(state.related.width).toBeGreaterThan(state.article.width);
+        } else {
+          expect(state.tocPosition).toBe('static');
+          expect(state.toc.left).toBeCloseTo(state.article.left, 0);
+        }
+
+        if (width === 1440) {
+          await page.screenshot({ path: `artifacts/wave1-${article.file}-desktop-1440-top.png` });
+          await page.locator('.workflow-main').scrollIntoViewIfNeeded();
+          await page.waitForTimeout(150);
+          await page.screenshot({ path: `artifacts/wave1-${article.file}-desktop-1440-content.png` });
+          const stickyTop = await toc.evaluate(el => el.getBoundingClientRect().top);
+          expect(stickyTop).toBeGreaterThanOrEqual(0);
+          expect(stickyTop).toBeLessThan(280);
+        }
+        if (width === 390) {
+          await expect(toc).toHaveJSProperty('open', true);
+          await page.screenshot({ path: `artifacts/wave1-${article.file}-mobile-390-expanded.png` });
+          await toc.locator('summary').click();
+          await expect(toc).toHaveJSProperty('open', false);
+          await page.screenshot({ path: `artifacts/wave1-${article.file}-mobile-390-collapsed.png` });
+          await toc.locator('summary').click();
+          await expect(toc).toHaveJSProperty('open', true);
+        }
+      }
+      expect(problems, problems.join('\n')).toEqual([]);
+    });
+
+    test('H2 and selected H3 links navigate and highlight the current chapter', async ({ page }) => {
+      await page.setViewportSize({ width: 1440, height: 900 });
+      await page.goto(`${baseURL}/${article.file}`);
+      for (const fragment of [article.h2, article.h3]) {
+        await page.locator(`.article-content-navigation a[href="${fragment}"]`).click();
+        await expect(page).toHaveURL(new RegExp(`${fragment}$`));
+        await expect(page.locator(fragment)).toBeInViewport();
+        await expect(page.locator('.article-content-navigation a[aria-current="location"]'))
+          .toHaveAttribute('href', fragment);
+      }
+    });
+
+    test('Tab, Enter, Space, and Escape work for mobile controls', async ({ page }) => {
+      await page.setViewportSize({ width: 390, height: 844 });
+      await page.goto(`${baseURL}/${article.file}`);
+      await page.keyboard.press('Tab');
+      await expect(page.locator('.brand')).toBeFocused();
+      await page.keyboard.press('Tab');
+      const toggle = page.locator('.menu-toggle');
+      await expect(toggle).toBeFocused();
+      const toc = page.locator('.article-content-navigation');
+      const summary = toc.locator('summary');
+      await summary.focus();
+      await page.keyboard.press('Space');
+      await expect(toc).toHaveJSProperty('open', false);
+      await page.keyboard.press('Enter');
+      await expect(toc).toHaveJSProperty('open', true);
+      await toggle.click();
+      await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+      await toggle.focus();
+      await page.keyboard.press('Escape');
+      await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+      await expect(toggle).toBeFocused();
+    });
+
+    test('contents anchors work with JavaScript disabled', async ({ browser }) => {
+      const context = await browser.newContext({ viewport: { width: 390, height: 844 }, javaScriptEnabled: false });
+      const page = await context.newPage();
+      await page.goto(`${baseURL}/${article.file}`);
+      const link = page.locator(`.article-content-navigation a[href="${article.h2}"]`);
+      await link.click();
+      await expect(page).toHaveURL(new RegExp(`${article.h2}$`));
+      await expect(page.locator(article.h2)).toBeInViewport();
+      await expect(page.locator('.article-content-navigation')).toHaveJSProperty('open', true);
+      await context.close();
+    });
+
+    test('article text, headings, IDs, media, links, controls, date, and SEO match the pre-migration baseline', async ({ page }) => {
+      const baselineSha = process.env.BASELINE_SHA;
+      expect(baselineSha, 'baseline SHA must be provided by the workflow').toBeTruthy();
+      const { execFileSync } = require('node:child_process');
+      const baselineHTML = execFileSync('git', ['show', `${baselineSha}:${article.file}`], { encoding: 'utf8' });
+      const currentHTML = require('node:fs').readFileSync(article.file, 'utf8');
+      const [before, after] = await page.evaluate(([oldHTML, newHTML]) => {
+        const fingerprint = html => {
+          const doc = new DOMParser().parseFromString(html, 'text/html');
+          const content = doc.querySelector('.article-content');
+          const intro = doc.querySelector('.workflow-article-intro');
+          const normalize = el => el?.textContent.replace(/\s+/g, ' ').trim() || '';
+          return {
+            title: doc.title,
+            h1: normalize(doc.querySelector('.workflow-hero h1')),
+            intro: normalize(intro),
+            date: normalize(doc.querySelector('.workflow-eyebrow')),
+            articleText: normalize(content),
+            headings: [...content.querySelectorAll('h2,h3')].map(el => [el.tagName, normalize(el)]),
+            ids: [...doc.querySelectorAll('[id]')].map(el => el.id),
+            images: [...content.querySelectorAll('img')].map(el => [el.getAttribute('src'), el.getAttribute('alt'), el.getAttribute('width'), el.getAttribute('height')]),
+            links: [...content.querySelectorAll('a'), ...doc.querySelectorAll('.workflow-related a')].map(el => [el.getAttribute('href'), normalize(el)]),
+            metadata: [...doc.querySelectorAll('meta[name="description"],meta[property^="og:"]')].map(el => [el.getAttribute('name') || el.getAttribute('property'), el.getAttribute('content')]),
+            canonical: doc.querySelector('link[rel="canonical"]')?.getAttribute('href'),
+            preservedStructures: [...content.querySelectorAll('table,pre,code,details,button,form,.article-prompt,.article-table')].map(el => [el.tagName, el.className, el.outerHTML])
+          };
+        };
+        return [fingerprint(oldHTML), fingerprint(newHTML)];
+      }, [baselineHTML, currentHTML]);
+
+      expect(after.title).toBe(before.title);
+      expect(after.h1).toBe(before.h1);
+      expect(after.intro).toBe(before.intro);
+      expect(after.date).toBe(before.date);
+      expect(after.articleText).toBe(before.articleText);
+      expect(after.headings).toEqual(before.headings);
+      expect(after.images).toEqual(before.images);
+      expect(after.links).toEqual(before.links);
+      expect(after.metadata).toEqual(before.metadata);
+      expect(after.canonical).toBe(before.canonical);
+      expect(after.preservedStructures).toEqual(before.preservedStructures);
+      for (const id of before.ids) expect(after.ids, `lost original id: ${id}`).toContain(id);
+    });
+  });
+}
+
+test('desktop overview compares all four migrated articles side by side', async ({ page }) => {
+  const cards = [];
+  for (const article of migrationArticles) {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(`${baseURL}/${article.file}`);
+    await page.evaluate(() => document.fonts.ready);
+    const image = await page.screenshot();
+    cards.push(`<article><h2>${article.title}</h2><img alt="${article.title}" src="data:image/png;base64,${image.toString('base64')}"></article>`);
+  }
+  await page.setViewportSize({ width: 1800, height: 1100 });
+  await page.setContent(`<!doctype html><html lang="cs"><meta charset="utf-8"><title>AI agenti – přehled migrační vlny 1</title><style>body{margin:0;padding:24px;background:#fffefa;color:#102d2b;font:600 15px Arial,sans-serif}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}article{min-width:0;border:1px solid #dfe8e1;border-radius:12px;padding:10px;background:#fff;overflow:hidden}h2{font-size:16px;min-height:40px;margin:4px 0 12px}img{display:block;width:100%;height:auto;border:1px solid #eee}</style><main class="grid">${cards.join('')}</main>`);
+  await page.screenshot({ path: 'artifacts/wave1-overview-desktop-four-articles.png', fullPage: true });
+});
