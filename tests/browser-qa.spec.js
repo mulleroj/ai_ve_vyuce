@@ -180,6 +180,28 @@ const wave5Articles = [
   { file: 'ai-navod-gemini-notebook-priprava.html', title: '7 promptů pro Gemini Notebook', tocCount: 11, h2: '#toc-01', h3: '#ai-navod-gemini-notebook-priprava-h3-01', baselineSha: 'bcdd8e48cf8a97b44917b90c40f59c5a6e348f4f', activeArea: 'Připravit výuku', breadcrumb: 'Praktické návody', breadcrumbHref: 'ai-navody.html', legacyInternalIds: ['toc-heading-ai-navod-gemini-notebook-priprava-html'] },
   { file: 'ai-navod-gemini-notebook-vyuka.html', title: 'Gemini Notebook ve výuce: interaktivní studijní prostředí', tocCount: 14, h2: '#toc-01', h3: '#ai-navod-gemini-notebook-vyuka-h3-01', baselineSha: 'bcdd8e48cf8a97b44917b90c40f59c5a6e348f4f', activeArea: 'Připravit výuku', breadcrumb: 'Praktické návody', breadcrumbHref: 'ai-navody.html', legacyInternalIds: ['toc-heading-ai-navod-gemini-notebook-vyuka-html'] }
 ];
+
+test('wave 5 prompts copy the selected text to the clipboard', async ({ browser }) => {
+  const context = await browser.newContext({ permissions: ['clipboard-read', 'clipboard-write'] });
+  const page = await context.newPage();
+  for (const article of wave5Articles) {
+    await page.goto(`${baseURL}/${article.file}`);
+    const prompt = page.locator('.article-prompt').first();
+    const expected = (await prompt.innerText()).trimEnd();
+    await prompt.evaluate(element => {
+      const range = document.createRange();
+      range.selectNodeContents(element);
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+    });
+    await page.keyboard.press('Control+C');
+    const copied = await page.evaluate(() => navigator.clipboard.readText());
+    expect(copied.trimEnd(), `clipboard contents for ${article.file}`).toBe(expected);
+  }
+  await context.close();
+});
+
 const migrationArticles = [...wave1Articles, ...wave2Articles, ...wave3Articles, ...wave4Articles, ...wave5Articles];
 
 for (const article of migrationArticles) {
