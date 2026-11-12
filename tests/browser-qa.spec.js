@@ -175,10 +175,10 @@ const wave4Articles = [
   { file: 'ai-agenti-co-je-ai-agent.html', title: 'AI agenti: když AI začne pracovat', tocCount: 10, h2: '#toc-01', h3: null, baselineSha: 'fdc0a22750a024ab2dccc422084c24f51e356581' }
 ];
 const wave5Articles = [
-  { file: 'ai-navod-gemini-notebook-infografiky.html', title: '7 promptů pro Gemini Notebook', tocCount: 10, h2: '#toc-01', h3: '#ai-navod-gemini-notebook-infografiky-h3-01', baselineSha: 'bcdd8e48cf8a97b44917b90c40f59c5a6e348f4f', checkTocScroll: true },
-  { file: 'ai-navod-gemini-notebook-prezentace.html', title: '7 promptů pro lepší výukovou prezentaci', tocCount: 14, h2: '#toc-01', h3: '#ai-navod-gemini-notebook-prezentace-h3-01', baselineSha: 'bcdd8e48cf8a97b44917b90c40f59c5a6e348f4f', checkTocScroll: true },
-  { file: 'ai-navod-gemini-notebook-priprava.html', title: '7 promptů pro Gemini Notebook', tocCount: 11, h2: '#toc-01', h3: '#ai-navod-gemini-notebook-priprava-h3-01', baselineSha: 'bcdd8e48cf8a97b44917b90c40f59c5a6e348f4f', checkTocScroll: true },
-  { file: 'ai-navod-gemini-notebook-vyuka.html', title: 'Gemini Notebook ve výuce: interaktivní studijní prostředí', tocCount: 14, h2: '#toc-01', h3: '#ai-navod-gemini-notebook-vyuka-h3-01', baselineSha: 'bcdd8e48cf8a97b44917b90c40f59c5a6e348f4f', checkTocScroll: true }
+  { file: 'ai-navod-gemini-notebook-infografiky.html', title: '7 promptů pro Gemini Notebook', tocCount: 10, h2: '#toc-01', h3: '#ai-navod-gemini-notebook-infografiky-h3-01', baselineSha: 'bcdd8e48cf8a97b44917b90c40f59c5a6e348f4f', checkTocScroll: true, activeArea: 'Připravit výuku', breadcrumb: 'Praktické návody', breadcrumbHref: 'ai-navody.html', legacyInternalIds: ['toc-heading-ai-navod-gemini-notebook-infografiky-html'] },
+  { file: 'ai-navod-gemini-notebook-prezentace.html', title: '7 promptů pro lepší výukovou prezentaci', tocCount: 14, h2: '#toc-01', h3: '#ai-navod-gemini-notebook-prezentace-h3-01', baselineSha: 'bcdd8e48cf8a97b44917b90c40f59c5a6e348f4f', checkTocScroll: true, activeArea: 'Připravit výuku', breadcrumb: 'Praktické návody', breadcrumbHref: 'ai-navody.html', legacyInternalIds: ['toc-heading-ai-navod-gemini-notebook-prezentace-html'] },
+  { file: 'ai-navod-gemini-notebook-priprava.html', title: '7 promptů pro Gemini Notebook', tocCount: 11, h2: '#toc-01', h3: '#ai-navod-gemini-notebook-priprava-h3-01', baselineSha: 'bcdd8e48cf8a97b44917b90c40f59c5a6e348f4f', checkTocScroll: true, activeArea: 'Připravit výuku', breadcrumb: 'Praktické návody', breadcrumbHref: 'ai-navody.html', legacyInternalIds: ['toc-heading-ai-navod-gemini-notebook-priprava-html'] },
+  { file: 'ai-navod-gemini-notebook-vyuka.html', title: 'Gemini Notebook ve výuce: interaktivní studijní prostředí', tocCount: 14, h2: '#toc-01', h3: '#ai-navod-gemini-notebook-vyuka-h3-01', baselineSha: 'bcdd8e48cf8a97b44917b90c40f59c5a6e348f4f', checkTocScroll: true, activeArea: 'Připravit výuku', breadcrumb: 'Praktické návody', breadcrumbHref: 'ai-navody.html', legacyInternalIds: ['toc-heading-ai-navod-gemini-notebook-vyuka-html'] }
 ];
 const migrationArticles = [...wave1Articles, ...wave2Articles, ...wave3Articles, ...wave4Articles, ...wave5Articles];
 
@@ -204,11 +204,11 @@ for (const article of migrationArticles) {
         await expect(page.locator('.brand-symbol')).toBeVisible();
         await expect(page.locator('.site-nav-pilot details')).toHaveCount(6);
         await expect(page.locator('.site-nav-pilot details[data-active="true"] > summary'))
-          .toHaveText('Tvořit s AI');
+          .toHaveText(article.activeArea || 'Tvořit s AI');
         await expect(page.locator('.site-breadcrumbs li')).toHaveCount(3);
         await expect(page.locator('.site-breadcrumbs li').nth(0)).toContainText('Domů');
-        await expect(page.locator('.site-breadcrumbs li').nth(1)).toHaveText('AI agenti');
-        await expect(page.locator('.site-breadcrumbs li').nth(1).locator('a')).toHaveAttribute('href', 'ai-agenti.html');
+        await expect(page.locator('.site-breadcrumbs li').nth(1)).toHaveText(article.breadcrumb || 'AI agenti');
+        await expect(page.locator('.site-breadcrumbs li').nth(1).locator('a')).toHaveAttribute('href', article.breadcrumbHref || 'ai-agenti.html');
         await expect(page.locator('.site-breadcrumbs li').nth(2)).toHaveAttribute('aria-current', 'page');
         await expect(page.locator('.site-breadcrumbs li').nth(2)).toHaveText(article.title);
         await expect(page.locator('.article-toc')).toHaveCount(0);
@@ -364,6 +364,12 @@ for (const article of migrationArticles) {
             articleText: normalize(content),
             headings: [...content.querySelectorAll('h2,h3')].map(el => [el.tagName, normalize(el)]),
             ids: [...doc.querySelectorAll('[id]')].map(el => el.id),
+            publicAnchorIds: [...new Set([
+              ...doc.querySelectorAll('.article-content [id], .workflow-related [id]'),
+              ...[...doc.querySelectorAll('a[href^="#"]')]
+                .map(link => doc.getElementById(decodeURIComponent(link.getAttribute('href').slice(1))))
+                .filter(Boolean)
+            ].map(el => el.id))],
             images: [...content.querySelectorAll('img')].map(el => [el.getAttribute('src'), el.getAttribute('alt'), el.getAttribute('width'), el.getAttribute('height')]),
             links: [...content.querySelectorAll('a'), ...doc.querySelectorAll('.workflow-related a')].map(el => [el.getAttribute('href'), normalize(el)]),
             metadata: [...doc.querySelectorAll('meta[name="description"],meta[property^="og:"]')].map(el => [el.getAttribute('name') || el.getAttribute('property'), el.getAttribute('content')]),
@@ -385,7 +391,10 @@ for (const article of migrationArticles) {
       expect(after.metadata).toEqual(before.metadata);
       expect(after.canonical).toBe(before.canonical);
       expect(after.preservedStructures).toEqual(before.preservedStructures);
-      for (const id of before.ids) expect(after.ids, `lost original id: ${id}`).toContain(id);
+      for (const id of before.publicAnchorIds) expect(after.ids, `lost public article anchor: ${id}`).toContain(id);
+      const lostIds = before.ids.filter(id => !after.ids.includes(id));
+      expect(lostIds.sort(), 'only explicitly documented internal IDs from the removed TOC label may disappear')
+        .toEqual([...(article.legacyInternalIds || [])].sort());
     });
   });
 }
