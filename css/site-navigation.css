@@ -35,6 +35,7 @@
 /* Shared pilot header: matches the approved homepage header without loading
    homepage content styles onto these otherwise unchanged page templates. */
 .site-navigation-enabled .site-header { position: relative; z-index: 40; background: #fff; border-bottom: 1px solid #eee; }
+.site-navigation-enabled .workflow-topbar { justify-content: flex-end; }
 .site-navigation-enabled .site-nav { position: relative; min-height: 76px; width: min(1440px, 100% - 48px); margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
 .site-navigation-enabled .site-nav > .brand { display: flex; align-items: center; gap: 10px; flex: none; color: #102d2b; text-decoration: none; white-space: nowrap; font-family: 'DM Sans', Arial, sans-serif; }
 .site-navigation-enabled .brand-symbol { width: 52px; height: 52px; flex: none; object-fit: contain; }
