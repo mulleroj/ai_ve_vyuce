@@ -21,14 +21,24 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261109-7k" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261109-7k-v2" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261110-7q" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-<a class="workflow-back" href="ai.html#navody">← Praktické návody</a>
-        </div>
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="prepare">
+    <header class="site-header" id="top">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+      <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a>
+    </div></div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="ai-navody.html">Praktické návody</a></li><li aria-current="page">7 promptů pro Gemini Notebook</li></ol></nav>
+<header class="workflow-shell">
         <div class="workflow-hero">
             <div>
                 <div class="workflow-eyebrow">Praktické návody · 23. srpna 2026</div>
@@ -45,24 +55,14 @@
         </div>
     </header>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
+<details class="article-content-navigation" open><summary>V tomto článku</summary><nav aria-label="Obsah článku"><ol><li><a href="#toc-01">1. Gramatická infografika</a></li><li><a href="#toc-02">2. Infografika slovní zásoby</a></li><li><a href="#toc-03">3. Infografika k četbě</a></li><li><a href="#toc-04">4. Infografika k poslechu</a></li><li><a href="#toc-05">5. Infografika k psaní</a></li><li><a href="#toc-06">6. Infografika k mluvení</a></li><li><a href="#stage7u-ai-navod-gemini-notebook-infografiky-h2-01">7. Infografika celé lekce</a></li><li><a href="#stage7u-ai-navod-gemini-notebook-infografiky-h2-02">Malý trik: upravte poslední řádek podle svých žáků</a><ol><li><a href="#ai-navod-gemini-notebook-infografiky-h3-01">Pro začátečníky</a></li></ol></li><li><a href="#stage7u-ai-navod-gemini-notebook-infografiky-h2-03">Proč jsou tyto prompty přesnější?</a></li></ol></nav></details>
         <article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Pokud máte v Gemini Notebooku vlastní výukové materiály, můžete z nich připravit infografiku pro gramatiku, slovní zásobu, četbu, poslech, psaní, mluvení i celou lekci.</p>
                 <p class="article-editorial-title">7 promptů pro Gemini Notebook: vytvořte z výukových materiálů přehledné infografiky</p>
             </div>
 
-            <nav class="article-toc" aria-labelledby="toc-heading-ai-navod-gemini-notebook-infografiky-html">
-                <p class="article-toc-label" id="toc-heading-ai-navod-gemini-notebook-infografiky-html">V tomto článku</p>
-                <ul>
-                    <li><a href="#toc-01">1. Gramatická infografika</a></li>
-                    <li><a href="#toc-02">2. Infografika slovní zásoby</a></li>
-                    <li><a href="#toc-03">3. Infografika k četbě</a></li>
-                    <li><a href="#toc-04">4. Infografika k poslechu</a></li>
-                    <li><a href="#toc-05">5. Infografika k psaní</a></li>
-                    <li><a href="#toc-06">6. Infografika k mluvení</a></li>
-                </ul>
-            </nav>
             <div class="article-content">
                 <p class="article-lead">Máte v Gemini Notebooku nahranou učebnici, prezentaci, vlastní poznámky, pracovní list nebo jiný výukový materiál?</p>
                 <p>Nemusíte z něj vytvářet pouze shrnutí, otázky nebo studijní poznámky. Velmi dobře se hodí také pro tvorbu <strong>výukových infografik</strong>, které mohou žákům pomoci při vysvětlování nové látky i při opakování.</p>
@@ -370,7 +370,7 @@ Infografika musí být snadno použitelná jako opora při mluvení ve dvojici n
 
 Nepřidávej fráze, dialogy ani komunikační strategie, které nejsou podloženy zdroji notebooku.</div>
 
-                <h2>7. Infografika celé lekce</h2>
+                <h2 id="stage7u-ai-navod-gemini-notebook-infografiky-h2-01">7. Infografika celé lekce</h2>
                 <p>Tento prompt je užitečný například tehdy, když máte v Gemini Notebooku materiály k celé lekci z učebnice a chcete z nich vytvořit <strong>jednostránkový přehled pro žáky</strong>.</p>
                 <h3>Prompt</h3>
                 <div class="article-prompt">Vystupuj jako zkušený učitel angličtiny a odborník na instructional design.
@@ -427,9 +427,9 @@ Infografika musí být pochopitelná i při samostatném opakování žáka.
 
 Nepřidávej žádné informace, vysvětlení ani příklady, které nejsou doloženy zdroji tohoto notebooku.</div>
 
-                <h2>Malý trik: upravte poslední řádek podle svých žáků</h2>
+                <h2 id="stage7u-ai-navod-gemini-notebook-infografiky-h2-02">Malý trik: upravte poslední řádek podle svých žáků</h2>
                 <p>Stejný prompt nemusí dát stejný typ infografiky pro každou třídu. Na jeho konec můžete přidat například:</p>
-                <h3>Pro začátečníky</h3>
+                <h3 id="ai-navod-gemini-notebook-infografiky-h3-01">Pro začátečníky</h3>
                 <div class="article-prompt">Žáci jsou začátečníci. Používej maximálně krátké věty a jednoduchou slovní zásobu. Nevysvětluj jeden pojem pomocí dalšího obtížného anglického pojmu.</div>
                 <h3>Pro české žáky</h3>
                 <div class="article-prompt">Vysvětlení a instrukce piš česky. Cílovou anglickou slovní zásobu, fráze a modelové věty ponechávej v angličtině.</div>
@@ -438,7 +438,7 @@ Nepřidávej žádné informace, vysvětlení ani příklady, které nejsou dolo
                 <h3>Pro tisk</h3>
                 <div class="article-prompt">Navrhni infografiku jako přehledný jednostránkový materiál vhodný k tisku na A4. Text musí zůstat dobře čitelný i po vytištění.</div>
 
-                <h2>Proč jsou tyto prompty přesnější?</h2>
+                <h2 id="stage7u-ai-navod-gemini-notebook-infografiky-h2-03">Proč jsou tyto prompty přesnější?</h2>
                 <p>Největší rozdíl není v tom, že jsou delší.</p>
                 <p>Rozdíl je v tom, že AI dostává <strong>didaktické mantinely</strong>.</p>
                 <p>Neříkáme jí pouze, co má vytvořit. Říkáme jí také:</p>
@@ -481,6 +481,9 @@ Nepřidávej žádné informace, vysvětlení ani příklady, které nejsou dolo
 
     <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai.html">Zpět na rozcestník AI</a></footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261110-7q"></script>
 </body>
 
 </html>

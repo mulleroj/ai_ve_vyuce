@@ -21,14 +21,24 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261109-7k" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261109-7k-v2" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261110-7q" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-            <a class="workflow-back" href="ai.html#navody">← Praktické návody</a>
-        </div>
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="prepare">
+    <header class="site-header" id="top">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+      <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a>
+    </div></div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="ai-navody.html">Praktické návody</a></li><li aria-current="page">7 promptů pro lepší výukovou prezentaci</li></ol></nav>
+<header class="workflow-shell">
         <div class="workflow-hero">
             <div>
                 <div class="workflow-eyebrow">Praktické návody · 28. srpna 2026</div>
@@ -44,24 +54,14 @@
         </div>
     </header>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
+<details class="article-content-navigation" open><summary>V tomto článku</summary><nav aria-label="Obsah článku"><ol><li><a href="#toc-01">Proč jsou tyto prompty užitečné</a></li><li><a href="#toc-02">Jak s prompty pracovat</a></li><li><a href="#toc-03">1. Vytvoření kompletní výukové prezentace</a><ol><li><a href="#ai-navod-gemini-notebook-prezentace-h3-01">Kdy prompt použít</a></li></ol></li><li><a href="#toc-04">2. Srozumitelné vysvětlení obtížného tématu</a></li><li><a href="#toc-05">3. Interaktivnější vyučovací hodina</a></li><li><a href="#toc-06">4. Vizuální výuková prezentace</a></li><li><a href="#stage7u-ai-navod-gemini-notebook-prezentace-h2-01">5. Pomoz žákům použít to, co se naučili</a></li><li><a href="#stage7u-ai-navod-gemini-notebook-prezentace-h2-02">6. Prezentace pro opakování a procvičování</a></li><li><a href="#stage7u-ai-navod-gemini-notebook-prezentace-h2-03">7. Ověření porozumění žáků</a></li><li><a href="#stage7u-ai-navod-gemini-notebook-prezentace-h2-04">Jeden zdroj, sedm různých hodin</a></li><li><a href="#stage7u-ai-navod-gemini-notebook-prezentace-h2-05">Malý trik: prompty můžete kombinovat</a></li><li><a href="#stage7u-ai-navod-gemini-notebook-prezentace-h2-06">Univerzální verze pro učitele</a></li><li><a href="#stage7u-ai-navod-gemini-notebook-prezentace-h2-07">Proč si tyto prompty schovat</a></li></ol></nav></details>
         <article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Sedm různých způsobů, jak v Gemini Notebooku proměnit jednu sadu zdrojů v promyšlený výklad, aktivní hodinu, procvičování i ověření porozumění.</p>
                 <p class="article-editorial-title">7 promptů, které z vašich materiálů vytvoří lepší výukovou prezentaci</p>
             </div>
 
-            <nav class="article-toc" aria-labelledby="toc-heading-ai-navod-gemini-notebook-prezentace-html">
-                <p class="article-toc-label" id="toc-heading-ai-navod-gemini-notebook-prezentace-html">V tomto článku</p>
-                <ul>
-                    <li><a href="#toc-01">Proč jsou tyto prompty užitečné</a></li>
-                    <li><a href="#toc-02">Jak s prompty pracovat</a></li>
-                    <li><a href="#toc-03">1. Vytvoření kompletní výukové prezentace</a></li>
-                    <li><a href="#toc-04">2. Srozumitelné vysvětlení obtížného tématu</a></li>
-                    <li><a href="#toc-05">3. Interaktivnější vyučovací hodina</a></li>
-                    <li><a href="#toc-06">4. Vizuální výuková prezentace</a></li>
-                </ul>
-            </nav>
             <div class="article-content">
                 <p class="article-lead">AI dokáže během několika minut vytvořit prezentaci. To samo o sobě ale ještě neznamená, že vznikne dobrá výuková prezentace.</p>
                 <p>Rozdíl často není v použitém modelu, ale v zadání.</p>
@@ -99,7 +99,7 @@
                 <p>To je při tvorbě školních materiálů velmi rozumná pojistka.</p>
 
                 <h2 id="toc-03">1. Vytvoření kompletní výukové prezentace</h2>
-                <h3>Kdy prompt použít</h3>
+                <h3 id="ai-navod-gemini-notebook-prezentace-h3-01">Kdy prompt použít</h3>
                 <p>Tohle je nejlepší univerzální varianta. Hodí se, pokud chcete vytvořit celou vyučovací hodinu od úvodu až po závěrečné ověření učení.</p>
                 <h3>Prompt</h3>
                 <div class="article-prompt">Na základě nahraných zdrojů vytvoř kompletní výukovou prezentaci na téma [téma] v předmětu [předmět] pro [ročník / úroveň vzdělávání], určenou žákům ve věku [věk], pro vyučovací hodinu v délce [délka].
@@ -185,7 +185,7 @@ Každý snímek udržuj přehledný, nepřeplněný a snadno čitelný.
 
 Veškerý faktický obsah založ pouze na nahraných zdrojích. Nepřidávej informace, které nemají v poskytnutých zdrojích oporu.</div>
 
-                <h2>5. Pomoz žákům použít to, co se naučili</h2>
+                <h2 id="stage7u-ai-navod-gemini-notebook-prezentace-h2-01">5. Pomoz žákům použít to, co se naučili</h2>
                 <h3>Kdy prompt použít</h3>
                 <p>Výborný prompt pro okamžik, kdy nechceme skončit u definice a pouhého zapamatování. AI má vytvořit situace, ve kterých musí žák znalost skutečně použít.</p>
                 <h3>Prompt</h3>
@@ -212,7 +212,7 @@ Každý snímek udržuj obsahově zaměřený, vizuálně přehledný a stručn�
 
 Veškerý faktický obsah založ pouze na nahraných zdrojích. Nepřidávej informace, které nemají v poskytnutých zdrojích oporu.</div>
 
-                <h2>6. Prezentace pro opakování a procvičování</h2>
+                <h2 id="stage7u-ai-navod-gemini-notebook-prezentace-h2-02">6. Prezentace pro opakování a procvičování</h2>
                 <h3>Kdy prompt použít</h3>
                 <p>Ideální před testem, po dokončení tematického celku nebo na začátku další hodiny.</p>
                 <p>Důležitou součástí promptu je retrieval practice – vybavování informací z paměti ještě před zobrazením správné odpovědi.</p>
@@ -233,7 +233,7 @@ Každý snímek udržuj obsahově zaměřený, vizuálně přehledný a stručn�
 
 Veškerý faktický obsah založ pouze na nahraných zdrojích. Nepřidávej informace, které nemají v poskytnutých zdrojích oporu.</div>
 
-                <h2>7. Ověření porozumění žáků</h2>
+                <h2 id="stage7u-ai-navod-gemini-notebook-prezentace-h2-03">7. Ověření porozumění žáků</h2>
                 <h3>Kdy prompt použít</h3>
                 <p>Tady nejde primárně o výklad. Cílem je zjistit, co žáci skutečně pochopili.</p>
                 <p>Velmi užitečné například po dokončení tématu nebo jako diagnostická část hodiny.</p>
@@ -256,7 +256,7 @@ Každý snímek udržuj obsahově zaměřený, vizuálně přehledný a stručn�
 
 Veškerý faktický obsah založ pouze na nahraných zdrojích. Nepřidávej informace, které nemají v poskytnutých zdrojích oporu.</div>
 
-                <h2>Jeden zdroj, sedm různých hodin</h2>
+                <h2 id="stage7u-ai-navod-gemini-notebook-prezentace-h2-04">Jeden zdroj, sedm různých hodin</h2>
                 <p>Na celé sadě je zajímavé právě to, že nemusíme měnit zdroje.</p>
                 <p>Do jednoho notebooku můžeme nahrát například kapitolu učebnice a ze stejného materiálu vytvořit:</p>
                 <ul>
@@ -271,7 +271,7 @@ Veškerý faktický obsah založ pouze na nahraných zdrojích. Nepřidávej inf
                 <p>A to je podle mě mnohem zajímavější způsob využití AI než neustálé generování dalších a dalších materiálů od nuly.</p>
                 <p>AI zde není zdrojem učiva. Zdrojem zůstávají naše materiály. AI mění způsob, jakým s nimi pracujeme.</p>
 
-                <h2>Malý trik: prompty můžete kombinovat</h2>
+                <h2 id="stage7u-ai-navod-gemini-notebook-prezentace-h2-05">Malý trik: prompty můžete kombinovat</h2>
                 <p>Jednotlivé prompty není nutné používat izolovaně.</p>
                 <p>Například můžete zadat:</p>
                 <blockquote>„Vytvoř kompletní výukovou prezentaci podle promptu č. 1, ale při návrhu jednotlivých snímků dodržuj také zásady vizuální prezentace z promptu č. 4 a zařaď průběžné ověřování porozumění podle promptu č. 7.“</blockquote>
@@ -280,7 +280,7 @@ Veškerý faktický obsah založ pouze na nahraných zdrojích. Nepřidávej inf
                 <div class="article-prompt"><strong>1 + 3 + 7</strong><br /><br />výklad + aktivní zapojení žáků + průběžné ověřování porozumění</div>
                 <p>To už je podstatně blíž skutečné přípravě hodiny než povel „udělej mi PowerPoint“.</p>
 
-                <h2>Univerzální verze pro učitele</h2>
+                <h2 id="stage7u-ai-navod-gemini-notebook-prezentace-h2-06">Univerzální verze pro učitele</h2>
                 <p>Pokud nechcete pokaždé vybírat mezi sedmi prompty, můžete použít také následující kombinovanou šablonu:</p>
                 <div class="article-prompt">Na základě nahraných zdrojů vytvoř výukovou prezentaci na téma [téma] v předmětu [předmět] pro [ročník], určenou žákům ve věku [věk], pro [délka] minutovou vyučovací hodinu.
 
@@ -314,7 +314,7 @@ Přizpůsob jazyk, příklady, aktivity a obtížnost věku a úrovni žáků.
 
 Veškerý faktický obsah založ pouze na nahraných zdrojích. Pokud některou informaci nelze z nahraných zdrojů doložit, nepoužívej ji a nevymýšlej ji.</div>
 
-                <h2>Proč si tyto prompty schovat</h2>
+                <h2 id="stage7u-ai-navod-gemini-notebook-prezentace-h2-07">Proč si tyto prompty schovat</h2>
                 <p>Protože jeden dobře napsaný prompt může učiteli ušetřit víc času než deset efektních AI aplikací.</p>
                 <p>A hlavně: těchto sedm promptů neříká AI pouze „co má vytvořit“. Říká jí také „jak má o výuce přemýšlet“.</p>
                 <p>A právě tam začíná být AI pro učitele opravdu zajímavá.</p>
@@ -348,6 +348,9 @@ Veškerý faktický obsah založ pouze na nahraných zdrojích. Pokud některou 
 
     <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai.html">Zpět na AI pro výuku</a></footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261110-7q"></script>
 </body>
 
 </html>

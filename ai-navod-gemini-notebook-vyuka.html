@@ -21,14 +21,24 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261109-7k" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261109-7k-v2" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261110-7q" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-<a class="workflow-back" href="ai.html#navody">← Praktické návody</a>
-        </div>
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="prepare">
+    <header class="site-header" id="top">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+      <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a>
+    </div></div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="ai-navody.html">Praktické návody</a></li><li aria-current="page">Gemini Notebook ve výuce: interaktivní studijní prostředí</li></ol></nav>
+<header class="workflow-shell">
         <div class="workflow-hero">
             <div>
                 <div class="workflow-eyebrow">Praktické návody · 26. srpna 2026</div>
@@ -46,24 +56,14 @@
         </div>
     </header>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
+<details class="article-content-navigation" open><summary>V tomto článku</summary><nav aria-label="Obsah článku"><ol><li><a href="#toc-01">Co je Gemini Notebook</a></li><li><a href="#toc-02">Proč je Gemini Notebook pro výuku zajímavější než obyčejný chatbot</a></li><li><a href="#toc-03">Co dokáže Gemini Notebook z učebních materiálů vytvořit</a><ol><li><a href="#ai-navod-gemini-notebook-vyuka-h3-01">1. Studijní průvodce</a></li></ol></li><li><a href="#toc-04">Jeden notebook může představovat celé výukové téma</a></li><li><a href="#toc-05">Jak může vypadat práce žáka</a></li><li><a href="#toc-06">Gemini Notebook může pomoci i učiteli</a></li><li><a href="#stage7u-ai-navod-gemini-notebook-vyuka-h2-01">Praktický model: jedna vyučovací hodina s Gemini Notebookem</a></li><li><a href="#stage7u-ai-navod-gemini-notebook-vyuka-h2-02">Velký potenciál má personalizace</a></li><li><a href="#stage7u-ai-navod-gemini-notebook-vyuka-h2-03">Gemini Notebook se postupně propojuje s Google Classroom</a></li><li><a href="#stage7u-ai-navod-gemini-notebook-vyuka-h2-04">Pozor: Gemini Notebook není totéž co Study Notebooks v Gemini</a></li><li><a href="#stage7u-ai-navod-gemini-notebook-vyuka-h2-05">Na co by si měl učitel dát pozor</a></li><li><a href="#stage7u-ai-navod-gemini-notebook-vyuka-h2-06">Nejde o náhradu učitele</a></li><li><a href="#stage7u-ai-navod-gemini-notebook-vyuka-h2-07">Od PDF k interaktivnímu studijnímu balíčku</a></li></ol></nav></details>
         <article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Gemini Notebook pomáhá učiteli pracovat nad vybranými zdroji a proměnit je v přehledy, otázky, procvičování i další formy studijní podpory.</p>
                 <p class="article-editorial-title">Gemini Notebook ve výuce: z učebních materiálů vytvoří interaktivní studijní prostředí</p>
             </div>
 
-            <nav class="article-toc" aria-labelledby="toc-heading-ai-navod-gemini-notebook-vyuka-html">
-                <p class="article-toc-label" id="toc-heading-ai-navod-gemini-notebook-vyuka-html">V tomto článku</p>
-                <ul>
-                    <li><a href="#toc-01">Co je Gemini Notebook</a></li>
-                    <li><a href="#toc-02">Proč je Gemini Notebook pro výuku zajímavější než obyčejný chatbot</a></li>
-                    <li><a href="#toc-03">Co dokáže Gemini Notebook z učebních materiálů vytvořit</a></li>
-                    <li><a href="#toc-04">Jeden notebook může představovat celé výukové téma</a></li>
-                    <li><a href="#toc-05">Jak může vypadat práce žáka</a></li>
-                    <li><a href="#toc-06">Gemini Notebook může pomoci i učiteli</a></li>
-                </ul>
-            </nav>
             <div class="article-content">
                 <p class="article-lead">Umělá inteligence ve škole nemusí znamenat jen otevřít chatbot a napsat mu otázku. Mnohem zajímavější využití vzniká ve chvíli, kdy AI dostane <strong>konkrétní učební materiály, které vybral učitel</strong>, a pracuje především s nimi.</p>
                 <p>Právě na tomto principu funguje <strong>Gemini Notebook</strong>, služba, kterou Google do července 2026 označoval jako <strong>NotebookLM</strong>. Google ji postupně propojuje s dalšími částmi svého AI ekosystému.</p>
@@ -113,7 +113,7 @@
                 <h2 id="toc-03">Co dokáže Gemini Notebook z učebních materiálů vytvořit</h2>
                 <p>Gemini Notebook není jen nástroj na shrnutí dokumentu. Ze zdrojů dokáže vytvořit několik různých typů studijních materiálů.</p>
 
-                <h3>1. Studijní průvodce</h3>
+                <h3 id="ai-navod-gemini-notebook-vyuka-h3-01">1. Studijní průvodce</h3>
                 <p>Z rozsáhlejšího textu lze vytvořit přehled toho nejdůležitějšího.</p>
                 <p>Žák tak místo třicetistránkového dokumentu může nejprve dostat strukturovaný přehled:</p>
                 <ul>
@@ -228,7 +228,7 @@
                 <blockquote>Navrhni jednoduchý příklad z běžného života, kterým mohu tento princip vysvětlit.</blockquote>
                 <p>Takové využití může výrazně urychlit přípravu hodiny.</p>
 
-                <h2>Praktický model: jedna vyučovací hodina s Gemini Notebookem</h2>
+                <h2 id="stage7u-ai-navod-gemini-notebook-vyuka-h2-01">Praktický model: jedna vyučovací hodina s Gemini Notebookem</h2>
                 <p>Gemini Notebook nemusí znamenat, že studenti stráví celou hodinu před obrazovkou.</p>
                 <p>Může fungovat například takto:</p>
                 <h3>1. Úvod učitele – 5 minut</h3>
@@ -245,7 +245,7 @@
                 <p>AI tedy není cílem hodiny.</p>
                 <p>Je prostředkem.</p>
 
-                <h2>Velký potenciál má personalizace</h2>
+                <h2 id="stage7u-ai-navod-gemini-notebook-vyuka-h2-02">Velký potenciál má personalizace</h2>
                 <p>Každý student nemusí potřebovat stejné vysvětlení.</p>
                 <p>Jeden může požádat:</p>
                 <blockquote>Vysvětli mi tento pojem jednodušeji.</blockquote>
@@ -258,13 +258,13 @@
                 <p>V klasické třídě s dvaceti nebo třiceti studenty je podobná individualizace pro učitele velmi obtížná.</p>
                 <p>Právě tady může AI dávat pedagogicky smysl.</p>
 
-                <h2>Gemini Notebook se postupně propojuje s Google Classroom</h2>
+                <h2 id="stage7u-ai-navod-gemini-notebook-vyuka-h2-03">Gemini Notebook se postupně propojuje s Google Classroom</h2>
                 <p>Google v poslední době výrazně rozšiřuje využití AI přímo ve vzdělávání.</p>
                 <p>Cílem je, aby učitelé mohli studentům zadávat AI aktivity postavené na konkrétních studijních materiálech a měli větší kontrolu nad použitými zdroji.</p>
                 <p>Postupně tak vzniká model:</p>
                 <div class="article-prompt"><strong>učitel připraví zdroje a cíle → AI vytvoří individuální studijní prostředí → student pracuje → učitel výuku řídí a vyhodnocuje.</strong></div>
 
-                <h2>Pozor: Gemini Notebook není totéž co Study Notebooks v Gemini</h2>
+                <h2 id="stage7u-ai-navod-gemini-notebook-vyuka-h2-04">Pozor: Gemini Notebook není totéž co Study Notebooks v Gemini</h2>
                 <p>Google používá několik velmi podobných názvů, takže zmatek je skoro povinnou součástí výbavy. 🙂</p>
                 <p><strong>Gemini Notebook</strong> je nový název původního NotebookLM. Je zaměřen hlavně na práci se zdroji, výzkum, analýzu a vytváření dalších materiálů.</p>
                 <p>Vedle toho Google v samotné aplikaci Gemini zavádí také <strong>Study Notebooks – studijní notebooky</strong>.</p>
@@ -274,7 +274,7 @@
                 <div class="article-prompt"><strong>Gemini Notebook = pracuji se zdroji a vytvářím z nich znalostní prostředí.</strong><br /><br /><strong>Study Notebook = AI mě podle těchto materiálů postupně učí.</strong></div>
                 <p>Tahle dvojice může být pro vzdělávání velmi zajímavá.</p>
 
-                <h2>Na co by si měl učitel dát pozor</h2>
+                <h2 id="stage7u-ai-navod-gemini-notebook-vyuka-h2-05">Na co by si měl učitel dát pozor</h2>
                 <p>Ani Gemini Notebook není bezchybný.</p>
 
                 <h3>AI může udělat chybu</h3>
@@ -309,7 +309,7 @@
                 <p>Školy by měly používání AI řešit v souladu se svou interní směrnicí, GDPR a pravidly správce školního účtu.</p>
                 <p>Ani prostředí s vyšší úrovní ochrany dat neznamená, že můžeme přestat přemýšlet nad tím, <strong>co do AI vůbec patří</strong>.</p>
 
-                <h2>Nejde o náhradu učitele</h2>
+                <h2 id="stage7u-ai-navod-gemini-notebook-vyuka-h2-06">Nejde o náhradu učitele</h2>
                 <p>Gemini Notebook je nejsilnější právě tehdy, když se nesnaží učitele nahradit.</p>
                 <p>Učitel stále rozhoduje:</p>
                 <ul>
@@ -327,7 +327,7 @@
                 <p>Čtvrtý chce procvičovat pomocí otázek.</p>
                 <p>A všichni mohou stále pracovat se stejným učivem připraveným učitelem.</p>
 
-                <h2>Od PDF k interaktivnímu studijnímu balíčku</h2>
+                <h2 id="stage7u-ai-navod-gemini-notebook-vyuka-h2-07">Od PDF k interaktivnímu studijnímu balíčku</h2>
                 <p>Právě tady je největší potenciál Gemini Notebooku pro školu.</p>
                 <p>Učitel už nemusí přemýšlet pouze:</p>
                 <blockquote><strong>„Jaký pracovní list vytvořím?“</strong></blockquote>
@@ -369,6 +369,9 @@
 
 <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai.html#navody">Zpět na praktické návody</a></footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261110-7q"></script>
 </body>
 
 </html>

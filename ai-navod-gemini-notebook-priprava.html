@@ -21,14 +21,24 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261109-7k" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261109-7k-v2" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261110-7q" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-<a class="workflow-back" href="ai.html#navody">← Praktické návody</a>
-        </div>
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="prepare">
+    <header class="site-header" id="top">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+      <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a>
+    </div></div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="ai-navody.html">Praktické návody</a></li><li aria-current="page">7 promptů pro Gemini Notebook</li></ol></nav>
+<header class="workflow-shell">
         <div class="workflow-hero">
             <div>
                 <div class="workflow-eyebrow">Praktické návody · 26. srpna 2026</div>
@@ -46,24 +56,14 @@
         </div>
     </header>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
+<details class="article-content-navigation" open><summary>V tomto článku</summary><nav aria-label="Obsah článku"><ol><li><a href="#toc-01">1. Vytvoření kompletního plánu vyučovací hodiny</a><ol><li><a href="#ai-navod-gemini-notebook-priprava-h3-01">K čemu se hodí</a></li></ol></li><li><a href="#toc-02">2. Vysvětlení obtížného učiva</a></li><li><a href="#toc-03">3. Vytvoření aktivit do hodiny</a></li><li><a href="#toc-04">4. Diferenciace výuky podle potřeb studentů</a></li><li><a href="#toc-05">5. Odhalení možných mezer ve znalostech</a></li><li><a href="#toc-06">6. Vytvoření testu nebo jiného hodnocení</a></li><li><a href="#stage7u-ai-navod-gemini-notebook-priprava-h2-01">7. Přeměna materiálů na audio studijní zdroj</a></li><li><a href="#stage7u-ai-navod-gemini-notebook-priprava-h2-02">Jeden notebook, několik výukových výstupů</a></li><li><a href="#stage7u-ai-navod-gemini-notebook-priprava-h2-03">Důležitá věta, kterou se vyplatí ponechat</a></li><li><a href="#stage7u-ai-navod-gemini-notebook-priprava-h2-04">AI jako přípravna, ne autopilot</a></li></ol></nav></details>
         <article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Z jedné sady učebních materiálů můžete připravit plán vyučovací hodiny, aktivity, vysvětlení obtížného učiva, diferenciované úkoly, test i podklady pro audio studijní materiál.</p>
                 <p class="article-editorial-title">7 promptů pro Gemini Notebook, které promění vaše materiály v kompletní přípravu na výuku</p>
             </div>
 
-            <nav class="article-toc" aria-labelledby="toc-heading-ai-navod-gemini-notebook-priprava-html">
-                <p class="article-toc-label" id="toc-heading-ai-navod-gemini-notebook-priprava-html">V tomto článku</p>
-                <ul>
-                    <li><a href="#toc-01">1. Vytvoření kompletního plánu vyučovací hodiny</a></li>
-                    <li><a href="#toc-02">2. Vysvětlení obtížného učiva</a></li>
-                    <li><a href="#toc-03">3. Vytvoření aktivit do hodiny</a></li>
-                    <li><a href="#toc-04">4. Diferenciace výuky podle potřeb studentů</a></li>
-                    <li><a href="#toc-05">5. Odhalení možných mezer ve znalostech</a></li>
-                    <li><a href="#toc-06">6. Vytvoření testu nebo jiného hodnocení</a></li>
-                </ul>
-            </nav>
             <div class="article-content">
                 <p class="article-lead">Gemini Notebook / NotebookLM nemusí sloužit jen ke shrnutí dokumentů nebo hledání informací v nahraných zdrojích. Pokud mu dáme dobře formulované instrukce, může se z něj stát velmi praktický pomocník při přípravě výuky.</p>
                 <p>Z jedné sady učebních materiálů dokáže připravit <strong>plán vyučovací hodiny, aktivity, vysvětlení obtížného učiva, diferenciované úkoly, test nebo dokonce podklady pro audio studijní materiál</strong>.</p>
@@ -80,7 +80,7 @@
                 <p>Prompt pracuje s věkem studentů, jejich úrovní i délkou vyučovací hodiny a požaduje jasně strukturovanou přípravu od úvodní aktivity až po závěrečné ověření porozumění.</p>
                 <h3>Prompt</h3>
                 <div class="article-prompt">Používej pouze výukové materiály, které jsem nahrál/a. Vytvoř kompletní plán vyučovací hodiny připravený k okamžitému použití ve třídě na téma <strong>[doplň předmět/téma]</strong>.<br /><br />Přizpůsob hodinu studentům ve věku <strong>[doplň věkovou skupinu]</strong>, na úrovni <strong>[doplň ročník nebo úroveň znalostí]</strong> a délce vyučovací hodiny <strong>[doplň čas]</strong>.<br /><br />Zahrň jasně formulované vzdělávací cíle, úvodní aktivitu, postup výuky krok za krokem, řízené procvičování, samostatnou nebo skupinovou práci, průběžnou kontrolu porozumění a závěrečnou aktivitu.<br /><br />Doporuč vhodné výukové strategie a u každé části uveď potřebné pomůcky a materiály. Uspořádej hodinu do jasné posloupnosti a navrhni časovou dotaci jednotlivých částí.<br /><br />Zajisti, aby všechny aktivity přímo podporovaly stanovené vzdělávací cíle.<br /><br /><strong>Nevkládej žádný obsah, který není podložen mými nahranými materiály.</strong></div>
-                <h3>K čemu se hodí</h3>
+                <h3 id="ai-navod-gemini-notebook-priprava-h3-01">K čemu se hodí</h3>
                 <p>Výborně funguje například tehdy, když do Notebooku nahrajeme kapitolu z učebnice, vlastní poznámky, prezentaci nebo metodické materiály a potřebujeme z nich rychle vytvořit použitelnou 45minutovou hodinu.</p>
 
                 <h2 id="toc-02">2. Vysvětlení obtížného učiva</h2>
@@ -121,13 +121,13 @@
                 <p>Výsledný test je samozřejmě potřeba před použitím zkontrolovat. U hodnocení studentů bych AI nikdy nenechával úplně bez učitelského dohledu.</p>
                 <blockquote>AI připravuje. <strong>Učitel rozhoduje.</strong></blockquote>
 
-                <h2>7. Přeměna materiálů na audio studijní zdroj</h2>
+                <h2 id="stage7u-ai-navod-gemini-notebook-priprava-h2-01">7. Přeměna materiálů na audio studijní zdroj</h2>
                 <p>Gemini Notebook nabízí možnost vytvářet Audio Overviews. I zde ale můžeme kvalitu výsledku výrazně ovlivnit tím, jak přesně zadáme jeho zaměření.</p>
                 <h3>Prompt</h3>
                 <div class="article-prompt">Používej pouze výukové materiály, které jsem nahrál/a. Vytvoř poutavý <strong>Audio Overview</strong> na téma <strong>[doplň předmět/téma]</strong> vhodný pro studenty ve věku <strong>[doplň věkovou skupinu]</strong> na úrovni <strong>[doplň ročník nebo úroveň znalostí]</strong>.<br /><br />Přeměň hlavní obsah materiálů na jasnou a studentům srozumitelnou zvukovou diskusi, kterou mohou využít při učení nové látky, opakování nebo upevňování učiva.<br /><br />Zaměř se na nejdůležitější pojmy, vysvětlení, příklady a souvislosti mezi jednotlivými myšlenkami.<br /><br />Uspořádej obsah do logické posloupnosti tak, aby mu bylo možné snadno porozumět pouze poslechem.<br /><br />Přizpůsob jazyk a hloubku vysvětlení věku a úrovni studentů.<br /><br />Zdůrazni hlavní informace, kterým by studenti měli porozumět a které by si měli zapamatovat.<br /><br />Audio udržuj soustředěné, poutavé a vhodné pro samostatný poslech před vyučovací hodinou nebo po ní.<br /><br /><strong>Nevkládej žádný obsah, který není podložen mými nahranými materiály.</strong></div>
                 <p>Audio pak můžeme studentům nabídnout například jako podklad k opakování před testem nebo jako doplňkový materiál po vyučování.</p>
 
-                <h2>Jeden notebook, několik výukových výstupů</h2>
+                <h2 id="stage7u-ai-navod-gemini-notebook-priprava-h2-02">Jeden notebook, několik výukových výstupů</h2>
                 <p>Skutečná síla těchto promptů se ukáže, když je nezačneme používat izolovaně, ale <strong>propojíme je do jednoho workflow</strong>.</p>
                 <p>Do Gemini Notebooku například nahrajeme kapitolu učebnice, pracovní list, prezentaci a vlastní poznámky.</p>
                 <p>Potom můžeme postupně:</p>
@@ -142,14 +142,14 @@
                 </ol>
                 <p>Z jedné sady zdrojů tak vznikne téměř celý výukový balíček.</p>
 
-                <h2>Důležitá věta, kterou se vyplatí ponechat</h2>
+                <h2 id="stage7u-ai-navod-gemini-notebook-priprava-h2-03">Důležitá věta, kterou se vyplatí ponechat</h2>
                 <p>Všech sedm promptů obsahuje stejný požadavek:</p>
                 <blockquote><strong>„Nevkládej žádný obsah, který není podložen mými nahranými materiály.“</strong></blockquote>
                 <p>Není tam náhodou.</p>
                 <p>Právě práce nad konkrétními zdroji je jedna z největších předností Gemini Notebooku. Pokud chceme připravovat materiály přímo podle učebnice, metodických podkladů nebo vlastních dokumentů, je rozumnější AI co nejvíce držet u těchto zdrojů než jí jednoduše říct „vytvoř mi něco o tématu“.</p>
                 <p>Ani tak ale není výstup automaticky bezchybný. Učitel by měl vždy zkontrolovat odbornou správnost, přiměřenost úloh i to, zda návrh skutečně odpovídá jeho konkrétní třídě.</p>
 
-                <h2>AI jako přípravna, ne autopilot</h2>
+                <h2 id="stage7u-ai-navod-gemini-notebook-priprava-h2-04">AI jako přípravna, ne autopilot</h2>
                 <p>Nejzajímavější využití AI ve škole podle mě není v tom, že za učitele jedním kliknutím vytvoří pracovní list.</p>
                 <p>Mnohem zajímavější je možnost použít ji při <strong>celém procesu přípravy výuky</strong>.</p>
                 <p>Může analyzovat zdroje, upozornit na obtížná místa, nabídnout různé cesty vysvětlení, navrhnout diferenciaci, připravit procvičování a následně pomoci s ověřením znalostí.</p>
@@ -186,6 +186,9 @@
 
     <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="asistenti.html">Zpět na AI asistenty</a></footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261110-7q"></script>
 </body>
 
 </html>
