@@ -1,0 +1,220 @@
+/* Scoped light surface pilot. Loaded only by the five 7K pilot pages. */
+body.light-background-pilot.workflow-page {
+  --workflow-ink: #173b35;
+  --workflow-muted: #52675f;
+  --workflow-paper: #fffefa;
+  --workflow-paper-soft: #fffefa;
+  --workflow-line: #dfe8e1;
+  --workflow-shadow: 0 8px 28px rgba(23, 56, 47, .09);
+  background: #fffefa;
+  color: #173b35;
+}
+
+body.light-background-pilot.gemini-notebook-prompt-page {
+  --bg-primary: #fffefa;
+  --bg-secondary: #f2f6f1;
+  --bg-card: #fff;
+  --bg-card-hover: #f7faf5;
+  --bg-glass: rgba(255, 254, 250, .96);
+  --text-primary: #173b35;
+  --text-secondary: #52675f;
+  --text-muted: #52675f;
+  --border: #dfe8e1;
+  --border-hover: #9fcab2;
+  --shadow: 0 8px 28px rgba(23, 56, 47, .09);
+  --shadow-hover: 0 14px 34px rgba(23, 56, 47, .13);
+  background: #fffefa;
+  color: #173b35;
+}
+
+/* Keep the existing dark workflow hero and its text treatment intact. */
+.light-background-pilot.workflow-page .workflow-article {
+  border-color: #dfe8e1;
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(23, 56, 47, .09);
+}
+.light-background-pilot.workflow-page .workflow-article-kicker,
+.light-background-pilot.workflow-page .workflow-article-title,
+.light-background-pilot.workflow-page .article-content,
+.light-background-pilot.workflow-page .article-content h2,
+.light-background-pilot.workflow-page .article-content h3,
+.light-background-pilot.workflow-page .workflow-related-heading h2,
+.light-background-pilot.workflow-page .workflow-related-card h3 {
+  color: #173b35;
+}
+.light-background-pilot.workflow-page .workflow-article-summary,
+.light-background-pilot.workflow-page .article-editorial-title,
+.light-background-pilot.workflow-page .workflow-related-heading p,
+.light-background-pilot.workflow-page .workflow-related-card p,
+.light-background-pilot.workflow-page .article-figure figcaption {
+  color: #52675f;
+}
+.light-background-pilot.workflow-page .workflow-article-meta {
+  color: #07584f;
+}
+.light-background-pilot.workflow-page .article-content .article-lead {
+  color: #394f47;
+}
+.light-background-pilot.workflow-page .article-content strong {
+  color: #173b35;
+}
+.light-background-pilot.workflow-page .article-content a,
+.light-background-pilot.workflow-page .workflow-related-card a {
+  color: #07584f;
+  text-decoration-color: rgba(7, 88, 79, .42);
+  text-underline-offset: 3px;
+}
+.light-background-pilot.workflow-page .article-content a:hover,
+.light-background-pilot.workflow-page .article-content a:focus-visible,
+.light-background-pilot.workflow-page .workflow-related-card a:hover,
+.light-background-pilot.workflow-page .workflow-related-card a:focus-visible {
+  color: #063f39;
+  text-decoration-color: currentColor;
+}
+.light-background-pilot.workflow-page .article-content blockquote {
+  border-left-color: #087568;
+  background: #eef5ef;
+  color: #294b41;
+}
+.light-background-pilot.workflow-page .article-content blockquote strong {
+  color: #173b35;
+}
+.light-background-pilot.workflow-page .article-table-wrap {
+  border-color: #dfe8e1;
+}
+.light-background-pilot.workflow-page .article-table {
+  color: #173b35;
+}
+.light-background-pilot.workflow-page .article-table th,
+.light-background-pilot.workflow-page .article-table td {
+  border-color: #dfe8e1;
+}
+.light-background-pilot.workflow-page .article-table th {
+  background: #e6f1ed;
+  color: #07584f;
+}
+.light-background-pilot.workflow-page .workflow-related-card {
+  border-color: #dfe8e1;
+  background: #fff;
+}
+.light-background-pilot.workflow-page .workflow-related-card .workflow-card-number {
+  color: #087568;
+}
+
+/* Preserve purpose-built dark prompt/diagram cards and the dark footer. */
+.light-background-pilot.workflow-page .article-content .article-prompt {
+  background: rgba(10, 15, 30, .94);
+  color: #f1f5f4;
+}
+.light-background-pilot.workflow-page .article-content .article-prompt strong {
+  color: #45deb5;
+}
+.light-background-pilot.workflow-page .article-bonus {
+  color: #eaf0fb;
+}
+.light-background-pilot.workflow-page .article-bonus strong {
+  color: #fff;
+}
+.light-background-pilot.workflow-page .article-bonus a {
+  color: #9ce9d2;
+}
+.light-background-pilot.workflow-page .workflow-footer {
+  border-top-color: rgba(255, 255, 255, .14);
+  background: #0d1530;
+  color: #d2dfd9;
+}
+.light-background-pilot.workflow-page .workflow-footer a,
+.light-background-pilot.workflow-page .workflow-footer .site-footer-mark {
+  color: #f1f5f4;
+}
+.light-background-pilot.workflow-page .workflow-main :focus-visible {
+  outline: 3px solid #087568;
+  outline-offset: 3px;
+}
+.light-background-pilot.workflow-page .workflow-footer a:focus-visible {
+  outline: 3px solid #9ce9d2;
+  outline-offset: 3px;
+}
+
+/* The Notebook prompt page keeps its dark hero and dark prompt text panels. */
+.light-background-pilot.gemini-notebook-prompt-page .page-hero {
+  color: #f1f5f4;
+}
+.light-background-pilot.gemini-notebook-prompt-page .page-hero-title,
+.light-background-pilot.gemini-notebook-prompt-page .page-hero-subtitle,
+.light-background-pilot.gemini-notebook-prompt-page .page-hero .btn-secondary,
+.light-background-pilot.gemini-notebook-prompt-page .page-hero .btn-outline {
+  color: #f1f5f4;
+}
+.light-background-pilot.gemini-notebook-prompt-page .page-hero .page-hero-stat {
+  border-color: rgba(255, 255, 255, .2);
+  background: rgba(255, 255, 255, .08);
+  color: #f1f5f4;
+}
+.light-background-pilot.gemini-notebook-prompt-page .prompt-body {
+  border-color: rgba(255, 255, 255, .14);
+  background: #0d1530;
+  color: #eaf0fb;
+}
+.light-background-pilot.gemini-notebook-prompt-page .prompt-collection-nav a:hover,
+.light-background-pilot.gemini-notebook-prompt-page .prompt-collection-nav a:focus-visible,
+.light-background-pilot.gemini-notebook-prompt-page .prompt-collection-heading p a,
+.light-background-pilot.gemini-notebook-prompt-page .section-label {
+  color: #07584f;
+}
+.light-background-pilot.gemini-notebook-prompt-page .prompt-collection-nav a:hover,
+.light-background-pilot.gemini-notebook-prompt-page .prompt-collection-nav a:focus-visible {
+  border-color: #087568;
+}
+.light-background-pilot.gemini-notebook-prompt-page main .badge-mint,
+.light-background-pilot.gemini-notebook-prompt-page main .badge-gold {
+  color: #07584f;
+}
+.light-background-pilot.gemini-notebook-prompt-page main .badge-blue {
+  color: #1d4f91;
+}
+.light-background-pilot.gemini-notebook-prompt-page main .badge-purple {
+  color: #68347b;
+}
+.light-background-pilot.gemini-notebook-prompt-page main .badge-green {
+  color: #176b3a;
+}
+.light-background-pilot.gemini-notebook-prompt-page main .badge-orange {
+  color: #87420e;
+}
+.light-background-pilot.gemini-notebook-prompt-page main .badge-pink {
+  color: #941850;
+}
+.light-background-pilot.gemini-notebook-prompt-page main .badge-gray {
+  color: #52675f;
+}
+.light-background-pilot.gemini-notebook-prompt-page .copy-btn {
+  border-color: #9fcab2;
+  background: #e6f1ed;
+  color: #07584f;
+}
+.light-background-pilot.gemini-notebook-prompt-page .copy-btn:hover,
+.light-background-pilot.gemini-notebook-prompt-page .copy-btn:focus-visible,
+.light-background-pilot.gemini-notebook-prompt-page .copy-btn.copied {
+  border-color: #07584f;
+  background: #d3e9dc;
+  color: #063f39;
+}
+.light-background-pilot.gemini-notebook-prompt-page .prompt-card.prompt-focus {
+  border-color: #07584f;
+  box-shadow: 0 0 0 3px #07584f;
+}
+.light-background-pilot.gemini-notebook-prompt-page main .btn-secondary:hover,
+.light-background-pilot.gemini-notebook-prompt-page main .btn-outline:hover,
+.light-background-pilot.gemini-notebook-prompt-page .footer-links a:hover,
+.light-background-pilot.gemini-notebook-prompt-page .footer-bottom-links a:hover {
+  border-color: #07584f;
+  color: #07584f;
+}
+.light-background-pilot.gemini-notebook-prompt-page :focus-visible {
+  outline-color: #087568;
+}
+.light-background-pilot.gemini-notebook-prompt-page main :focus-visible {
+  outline: 3px solid #087568;
+  outline-offset: 3px;
+}
