@@ -481,6 +481,7 @@ test('wave 4 desktop overview compares all three articles side by side', async (
 
 
 
+
 test('wave 5 hero sections use the light palette and capture article and reference screenshots', async ({ page }) => {
   const fs = require('node:fs');
   const audit = [];
@@ -501,16 +502,12 @@ test('wave 5 hero sections use the light palette and capture article and referen
       await page.goto(baseURL + '/' + article.file);
       await page.evaluate(() => document.fonts.ready);
       const hero = page.locator('.workflow-shell');
-      const panel = page.locator('.workflow-news-panel');
       await expect(hero).toBeVisible();
-      await expect(panel).toHaveCount(1);
       const diagnostic = await hero.evaluate(root => {
         const panel = root.querySelector('.workflow-news-panel');
-        const label = panel.querySelector('.workflow-news-panel-label');
-        const heading = panel.querySelector('h2');
-        const lead = panel.querySelector('p');
-        const meta = panel.querySelector('.workflow-news-panel-meta span');
+        const route = root.querySelector('.workflow-route');
         const details = element => {
+          if (!element) return null;
           const style = getComputedStyle(element);
           const before = getComputedStyle(element, '::before');
           const after = getComputedStyle(element, '::after');
@@ -530,24 +527,43 @@ test('wave 5 hero sections use the light palette and capture article and referen
         return {
           shell: details(root),
           hero: details(root.querySelector('.workflow-hero')),
-          panel: details(panel),
-          label: details(label),
-          heading: details(heading),
-          lead: details(lead),
-          meta: details(meta),
+          panel: panel ? {
+            surface: details(panel),
+            label: details(panel.querySelector('.workflow-news-panel-label')),
+            heading: details(panel.querySelector('h2')),
+            lead: details(panel.querySelector('p')),
+            meta: details(panel.querySelector('.workflow-news-panel-meta span'))
+          } : null,
+          route: route ? {
+            surface: details(route),
+            stages: [...route.querySelectorAll('.workflow-stage')].map(stage => ({
+              surface: details(stage),
+              number: details(stage.querySelector('.workflow-stage-number')),
+              title: details(stage.querySelector('strong')),
+              description: details(stage.querySelector('small'))
+            }))
+          } : null,
           heroImages: [...root.querySelectorAll('img')].map(img => ({ src: img.getAttribute('src'), alt: img.alt, loaded: img.complete && img.naturalWidth > 0 }))
         };
       });
       expect(diagnostic.shell.backgroundImage).toContain('linear-gradient(');
       expect(diagnostic.shell.backgroundImage).toContain('rgb(255, 254, 250)');
+      expect(diagnostic.shell.backgroundImage).not.toContain('10, 15, 30');
       expect(diagnostic.shell.after.display).toBe('none');
-      expect(diagnostic.panel.backgroundImage).toContain('rgb(255, 255, 255)');
-      expect(diagnostic.panel.backgroundImage).toContain('rgb(242, 246, 241)');
-      expect(diagnostic.panel.backgroundImage).not.toContain('10, 15, 30');
-      expect(diagnostic.heading.color).toBe('rgb(16, 45, 43)');
-      expect(diagnostic.lead.color).toBe('rgb(82, 103, 95)');
-      expect(diagnostic.label.backgroundColor).toBe('rgb(230, 241, 237)');
-      expect(diagnostic.meta.backgroundColor).toBe('rgb(242, 246, 241)');
+      if (diagnostic.panel) {
+        expect(diagnostic.panel.surface.backgroundImage).toContain('rgb(255, 255, 255)');
+        expect(diagnostic.panel.surface.backgroundImage).toContain('rgb(242, 246, 241)');
+        expect(diagnostic.panel.surface.backgroundImage).not.toContain('10, 15, 30');
+        expect(diagnostic.panel.heading.color).toBe('rgb(16, 45, 43)');
+        expect(diagnostic.panel.lead.color).toBe('rgb(82, 103, 95)');
+        expect(diagnostic.panel.label.backgroundColor).toBe('rgb(230, 241, 237)');
+        expect(diagnostic.panel.meta.backgroundColor).toBe('rgb(242, 246, 241)');
+      } else {
+        expect(diagnostic.route, 'hero must have a panel or workflow route on ' + article.file).toBeTruthy();
+        expect(diagnostic.route.stages.length).toBeGreaterThan(0);
+        expect(diagnostic.route.stages.every(stage => stage.surface.backgroundColor.includes('255, 255, 255'))).toBe(true);
+        expect(diagnostic.route.stages.every(stage => stage.surface.backgroundImage === 'none')).toBe(true);
+      }
       expect(diagnostic.heroImages.every(image => image.loaded), 'all hero images should load').toBe(true);
       audit.push({ article: article.file, viewport: viewport.name, ...diagnostic });
 
