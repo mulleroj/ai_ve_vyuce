@@ -1,0 +1,99 @@
+name: Browser QA – article contents navigation
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  workflow_dispatch:
+    inputs:
+      tested_sha:
+        description: Exact commit SHA to test
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  browser-qa:
+    name: Chromium responsive and interaction QA
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      TESTED_SHA: ${{ github.event_name == 'workflow_dispatch' && inputs.tested_sha || github.event.pull_request.head.sha }}
+    steps:
+      - name: Checkout the tested commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.TESTED_SHA }}
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install isolated browser test runner
+        run: |
+          npm install --no-save --package-lock=false @playwright/test
+          npx playwright install --with-deps chromium
+
+      - name: Run tests against a local HTTP server
+        run: |
+          mkdir -p artifacts test-results
+          printf '%s\n' "$TESTED_SHA" > artifacts/tested-sha.txt
+          python3 -m http.server 4173 --bind 127.0.0.1 > test-results/http-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:4173/ai-novinka-datovi-agenti-lidske-schvaleni.html >/dev/null; then
+              break
+            fi
+            sleep 1
+          done
+          PLAYWRIGHT_JSON_OUTPUT_NAME=test-results/report.json npx playwright test tests/browser-qa.spec.js --reporter=list,json
+
+      - name: Publish test summary
+        if: always()
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const sha = process.env.TESTED_SHA || 'unavailable';
+          let report;
+          try { report = JSON.parse(fs.readFileSync('test-results/report.json', 'utf8')); }
+          catch { report = null; }
+          const stats = report?.stats || {};
+          const expected = stats.expected ?? 0;
+          const failed = stats.unexpected ?? 0;
+          const skipped = stats.skipped ?? 0;
+          const flaky = stats.flaky ?? 0;
+          const lines = [
+            '## Browser QA',
+            '',
+            `- Tested commit: \`${sha}\``,
+            `- Passed: ${expected}`,
+            `- Failed: ${failed}`,
+            `- Skipped: ${skipped}`,
+            `- Flaky: ${flaky}`,
+            '',
+            failed ? 'See the uploaded report and failure screenshots for diagnostics.' : 'Screenshot and browser diagnostics are included in the artifact.'
+          ];
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, lines.join('\n') + '\n');
+          NODE
+          echo "Tested SHA: $TESTED_SHA"
+          if [ -f test-results/report.json ]; then
+            node -e "const r=require('./test-results/report.json'); console.log(JSON.stringify(r.stats))"
+          else
+            echo "No Playwright report was produced."
+          fi
+
+      - name: Upload screenshots, report, and diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-qa-${{ env.TESTED_SHA }}
+          path: |
+            artifacts/
+            test-results/
+            test-results/
+          if-no-files-found: warn
+          retention-days: 14
