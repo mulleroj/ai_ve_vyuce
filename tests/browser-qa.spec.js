@@ -545,8 +545,11 @@ test('wave 5 graphic audit captures images and prompt panels at desktop and mobi
       await page.screenshot({ path: `artifacts/${stem}-${viewport.name}-top.png` });
       await image.scrollIntoViewIfNeeded();
       await page.screenshot({ path: `artifacts/${stem}-${viewport.name}-infographic.png` });
-      await page.locator('.article-prompt').first().scrollIntoViewIfNeeded();
+      await image.screenshot({ path: `artifacts/${stem}-${viewport.name}-infographic-full.png` });
+      const prompt = page.locator('.article-prompt').first();
+      await prompt.scrollIntoViewIfNeeded();
       await page.screenshot({ path: `artifacts/${stem}-${viewport.name}-prompt-panel.png` });
+      await prompt.screenshot({ path: `artifacts/${stem}-${viewport.name}-prompt-panel-full.png` });
     }
   }
 
