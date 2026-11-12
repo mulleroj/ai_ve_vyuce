@@ -53,6 +53,12 @@
     }
   };
 
+  navigation.addEventListener('click', event => {
+    const link = event.target.closest?.('a[href^="#"]');
+    const selected = items.find(item => item.link === link);
+    if (selected) setCurrent(selected);
+  });
+
   const initial = items.find(item => item.heading.id === decodeURIComponent(location.hash.slice(1))) || items[0];
   setCurrent(initial);
 
