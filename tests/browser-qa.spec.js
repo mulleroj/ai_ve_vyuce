@@ -203,9 +203,9 @@ test('wave 5 prompts copy the selected text to the clipboard', async ({ browser 
 });
 
 const wave6Articles = [
-  { file: 'ai-navod-7-univerzalnich-promptu.html', title: '7 univerzálních AI promptů: rychlejší příprava výuky', tocCount: 12, h2: '#toc-01', h3: '#ai-navod-7-univerzalnich-promptu-h3-07', baselineSha: '180c5a3880089216910f5b31b5de6a9b6b6fde38', activeArea: 'Připravit výuku', breadcrumb: 'Praktické návody', breadcrumbHref: 'ai-navody.html', legacyInternalIds: ['toc-heading-ai-navod-7-univerzalnich-promptu-html'] },
+  { file: 'ai-navod-7-univerzalnich-promptu.html', title: '7 univerzálních AI promptů: rychlejší příprava výuky', tocCount: 12, h2: '#toc-01', h3: '#ai-navod-7-univerzalnich-promptu-h3-07', baselineSha: '180c5a3880089216910f5b31b5de6a9b6b6fde38', activeArea: 'Připravit výuku', breadcrumb: 'Praktické návody', breadcrumbHref: 'ai-navody.html' },
   { file: 'ai-navod-ai-agent-v-prohlizeci.html', title: 'AI agent v prohlížeči: když AI také pracuje', tocCount: 22, checkTocScroll: true, h2: '#ai-navod-ai-agent-v-prohlizeci-h2-01', h3: '#ai-navod-ai-agent-v-prohlizeci-h3-04', baselineSha: '180c5a3880089216910f5b31b5de6a9b6b6fde38', activeArea: 'Připravit výuku', breadcrumb: 'Praktické návody', breadcrumbHref: 'ai-navody.html' },
-  { file: 'ai-navod-chatgpt-vizualni-materialy.html', title: '7 promptů pro ChatGPT: vizuální výukové materiály', tocCount: 13, h2: '#toc-01', h3: null, baselineSha: '180c5a3880089216910f5b31b5de6a9b6b6fde38', activeArea: 'Připravit výuku', breadcrumb: 'Praktické návody', breadcrumbHref: 'ai-navody.html', legacyInternalIds: ['toc-heading-ai-navod-chatgpt-vizualni-materialy-html'] },
+  { file: 'ai-navod-chatgpt-vizualni-materialy.html', title: '7 promptů pro ChatGPT: vizuální výukové materiály', tocCount: 13, h2: '#toc-01', h3: null, baselineSha: '180c5a3880089216910f5b31b5de6a9b6b6fde38', activeArea: 'Připravit výuku', breadcrumb: 'Praktické návody', breadcrumbHref: 'ai-navody.html' },
   { file: 'ai-navod-commands-chatgpt.html', title: 'Commands v ChatGPT', tocCount: 10, h2: '#ai-navod-commands-chatgpt-h2-01', h3: null, baselineSha: '180c5a3880089216910f5b31b5de6a9b6b6fde38', activeArea: 'Připravit výuku', breadcrumb: 'Praktické návody', breadcrumbHref: 'ai-navody.html' },
 ];
 
