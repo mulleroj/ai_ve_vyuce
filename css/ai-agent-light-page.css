@@ -111,6 +111,29 @@ body.ai-agent-light-page.light-background-pilot.workflow-page .workflow-stage:nt
 }
 body.ai-agent-light-page.light-background-pilot.workflow-page .workflow-stage strong { color: #173b35; }
 body.ai-agent-light-page.light-background-pilot.workflow-page .workflow-stage small { color: #52675f; }
+
+body.ai-agent-light-page.light-background-pilot.workflow-page .workflow-news-panel {
+  border-color: #d5e5dc;
+  background: linear-gradient(145deg, #ffffff 0%, #f2f6f1 100%);
+  box-shadow: 0 8px 24px rgba(22, 55, 43, 0.08);
+  color: var(--agent-text);
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page .workflow-news-panel-label {
+  background: #e6f1ed;
+  color: var(--agent-green);
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page .workflow-news-panel h2 {
+  color: var(--agent-ink);
+  font-family: 'DM Sans', Arial, sans-serif;
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page .workflow-news-panel p {
+  color: var(--agent-muted);
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page .workflow-news-panel-meta span {
+  border-color: #d2e2db;
+  background: #f2f6f1;
+  color: #35524c;
+}
 body.ai-agent-light-page.light-background-pilot.workflow-page .workflow-main {
   width: min(1180px, calc(100% - 64px));
   padding: clamp(24px, 3vw, 40px) 0 82px;

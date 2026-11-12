@@ -480,6 +480,102 @@ test('wave 4 desktop overview compares all three articles side by side', async (
 });
 
 
+
+test('wave 5 hero sections use the light palette and capture article and reference screenshots', async ({ page }) => {
+  const fs = require('node:fs');
+  const audit = [];
+  const viewports = [
+    { name: 'desktop-1440', width: 1440, height: 900 },
+    { name: 'mobile-390', width: 390, height: 844 }
+  ];
+  const references = [
+    { file: 'ai-agenti-co-je-ai-agent.html', title: 'Schválený světlý pilot', selector: '.workflow-shell', prefix: 'approved-pilot' },
+    { file: 'index.html', title: 'Homepage', selector: '.hero', prefix: 'homepage' }
+  ];
+
+  for (const viewport of viewports) {
+    await page.setViewportSize({ width: viewport.width, height: viewport.height });
+    const cards = [];
+
+    for (const article of wave5Articles) {
+      await page.goto(baseURL + '/' + article.file);
+      await page.evaluate(() => document.fonts.ready);
+      const hero = page.locator('.workflow-shell');
+      const panel = page.locator('.workflow-news-panel');
+      await expect(hero).toBeVisible();
+      await expect(panel).toHaveCount(1);
+      const diagnostic = await hero.evaluate(root => {
+        const panel = root.querySelector('.workflow-news-panel');
+        const label = panel.querySelector('.workflow-news-panel-label');
+        const heading = panel.querySelector('h2');
+        const lead = panel.querySelector('p');
+        const meta = panel.querySelector('.workflow-news-panel-meta span');
+        const details = element => {
+          const style = getComputedStyle(element);
+          const before = getComputedStyle(element, '::before');
+          const after = getComputedStyle(element, '::after');
+          return {
+            backgroundColor: style.backgroundColor,
+            backgroundImage: style.backgroundImage,
+            color: style.color,
+            borderColor: style.borderColor,
+            borderRadius: style.borderRadius,
+            boxShadow: style.boxShadow,
+            filter: style.filter,
+            backdropFilter: style.backdropFilter,
+            before: { content: before.content, display: before.display, backgroundColor: before.backgroundColor, backgroundImage: before.backgroundImage, opacity: before.opacity },
+            after: { content: after.content, display: after.display, backgroundColor: after.backgroundColor, backgroundImage: after.backgroundImage, opacity: after.opacity }
+          };
+        };
+        return {
+          shell: details(root),
+          hero: details(root.querySelector('.workflow-hero')),
+          panel: details(panel),
+          label: details(label),
+          heading: details(heading),
+          lead: details(lead),
+          meta: details(meta),
+          heroImages: [...root.querySelectorAll('img')].map(img => ({ src: img.getAttribute('src'), alt: img.alt, loaded: img.complete && img.naturalWidth > 0 }))
+        };
+      });
+      expect(diagnostic.shell.backgroundImage).toContain('linear-gradient(180deg');
+      expect(diagnostic.shell.backgroundImage).toContain('rgb(255, 254, 250)');
+      expect(diagnostic.shell.after.display).toBe('none');
+      expect(diagnostic.panel.backgroundImage).toContain('rgb(255, 255, 255)');
+      expect(diagnostic.panel.backgroundImage).toContain('rgb(242, 246, 241)');
+      expect(diagnostic.panel.backgroundImage).not.toContain('10, 15, 30');
+      expect(diagnostic.heading.color).toBe('rgb(16, 45, 43)');
+      expect(diagnostic.lead.color).toBe('rgb(82, 103, 95)');
+      expect(diagnostic.label.backgroundColor).toBe('rgb(230, 241, 237)');
+      expect(diagnostic.meta.backgroundColor).toBe('rgb(242, 246, 241)');
+      expect(diagnostic.heroImages.every(image => image.loaded), 'all hero images should load').toBe(true);
+      audit.push({ article: article.file, viewport: viewport.name, ...diagnostic });
+
+      const fullHero = await hero.screenshot({ path: 'artifacts/wave5-hero-' + article.file.replace('.html', '') + '-' + viewport.name + '-full.png' });
+      await page.screenshot({ path: 'artifacts/wave5-hero-' + article.file.replace('.html', '') + '-' + viewport.name + '-page-top.png' });
+      cards.push({ title: article.file, image: fullHero.toString('base64') });
+    }
+
+    for (const reference of references) {
+      await page.goto(baseURL + '/' + reference.file);
+      await page.evaluate(() => document.fonts.ready);
+      const region = page.locator(reference.selector);
+      await expect(region).toBeVisible();
+      const fullHero = await region.screenshot({ path: 'artifacts/wave5-hero-' + reference.prefix + '-' + viewport.name + '-full.png' });
+      await page.screenshot({ path: 'artifacts/wave5-hero-' + reference.prefix + '-' + viewport.name + '-page-top.png' });
+      cards.push({ title: reference.title, image: fullHero.toString('base64') });
+    }
+
+    const cardsHtml = cards.map(card =>
+      '<article><h2>' + card.title + '</h2><img alt="' + card.title + '" src="data:image/png;base64,' + card.image + '"></article>'
+    ).join('');
+    await page.setViewportSize({ width: 2000, height: 1300 });
+    await page.setContent('<!doctype html><html lang="cs"><meta charset="utf-8"><title>Porovnání hero — ' + viewport.name + '</title><style>*{box-sizing:border-box}body{margin:0;padding:24px;background:#fffefa;color:#102d2b;font:600 15px Arial,sans-serif}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}article{min-width:0;padding:12px;border:1px solid #dfe8e1;border-radius:14px;background:#fff;overflow:hidden}h2{min-height:42px;margin:0 0 10px;font-size:15px}img{display:block;width:100%;height:auto;max-height:850px;object-fit:contain;object-position:top}</style><main class="grid">' + cardsHtml + '</main></html>');
+    await page.screenshot({ path: 'artifacts/wave5-hero-comparison-' + viewport.name + '.png', fullPage: true });
+  }
+  fs.writeFileSync('artifacts/wave5-hero-computed-styles.json', JSON.stringify(audit, null, 2));
+});
+
 test('wave 5 graphic audit captures images and prompt panels at desktop and mobile', async ({ page }) => {
   const fs = require('node:fs');
   const path = require('node:path');
