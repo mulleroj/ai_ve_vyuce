@@ -21,14 +21,24 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261109-7k" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261112-7v" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261110-7q" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-            <a class="workflow-back" href="ai.html#navody">← Praktické návody</a>
-        </div>
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="prepare">
+<header class="site-header" id="top">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+      <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a>
+    </div></div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="ai-navody.html">Praktické návody</a></li><li aria-current="page">AI agent v prohlížeči: když AI také pracuje</li></ol></nav>
+<header class="workflow-shell">
         <div class="workflow-hero">
             <div>
                 <div class="workflow-eyebrow">Praktické návody · 8. září 2026</div>
@@ -45,7 +55,8 @@
         </div>
     </header>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
+<details class="article-content-navigation" data-check-scroll="true"><summary>V tomto článku</summary><nav aria-label="Obsah článku"><ol><li><a href="#ai-navod-ai-agent-v-prohlizeci-h2-01">Co je vlastně AI agent</a></li><li><a href="#ai-navod-ai-agent-v-prohlizeci-h2-02">Jak to vypadá v praxi</a></li><li><a href="#ai-navod-ai-agent-v-prohlizeci-h2-03">Které AI nástroje to dnes umí</a></li><li class="article-content-navigation-subitem"><a href="#ai-navod-ai-agent-v-prohlizeci-h3-04">Claude in Chrome</a></li><li class="article-content-navigation-subitem"><a href="#ai-navod-ai-agent-v-prohlizeci-h3-05">ChatGPT Work</a></li><li class="article-content-navigation-subitem"><a href="#ai-navod-ai-agent-v-prohlizeci-h3-06">Perplexity Comet</a></li><li class="article-content-navigation-subitem"><a href="#ai-navod-ai-agent-v-prohlizeci-h3-07">Microsoft Copilot v Edge</a></li><li class="article-content-navigation-subitem"><a href="#ai-navod-ai-agent-v-prohlizeci-h3-08">Gemini v Chrome</a></li><li><a href="#ai-navod-ai-agent-v-prohlizeci-h2-09">Co může browserový agent dělat učiteli</a></li><li class="article-content-navigation-subitem"><a href="#ai-navod-ai-agent-v-prohlizeci-h3-10">Rešerší</a></li><li class="article-content-navigation-subitem"><a href="#ai-navod-ai-agent-v-prohlizeci-h3-11">Přípravou zdrojů</a></li><li class="article-content-navigation-subitem"><a href="#ai-navod-ai-agent-v-prohlizeci-h3-12">Kontrolou zdrojů</a></li><li class="article-content-navigation-subitem"><a href="#ai-navod-ai-agent-v-prohlizeci-h3-13">Porovnáním dokumentů</a></li><li class="article-content-navigation-subitem"><a href="#ai-navod-ai-agent-v-prohlizeci-h3-14">Přípravou NotebookLM</a></li><li class="article-content-navigation-subitem"><a href="#ai-navod-ai-agent-v-prohlizeci-h3-15">Prací s webovými aplikacemi</a></li><li><a href="#ai-navod-ai-agent-v-prohlizeci-h2-16">Největší změna není technologická</a></li><li><a href="#ai-navod-ai-agent-v-prohlizeci-h2-17">Agent není kouzelník</a></li><li><a href="#ai-navod-ai-agent-v-prohlizeci-h2-18">Velký problém: osobní údaje</a></li><li><a href="#ai-navod-ai-agent-v-prohlizeci-h2-19">Pozor také na prompt injection</a></li><li><a href="#ai-navod-ai-agent-v-prohlizeci-h2-20">Jak s browserovým agentem začít</a></li><li><a href="#ai-navod-ai-agent-v-prohlizeci-h2-21">Jedno jednoduché pravidlo</a></li><li><a href="#ai-navod-ai-agent-v-prohlizeci-h2-22">Od chatbotů k agentům</a></li></ol></nav></details>
         <article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Browseroví agenti dokážou převzít část rutinní digitální práce učitele — od hledání zdrojů až po vícekrokové workflow.</p>
@@ -82,7 +93,7 @@
                     <figcaption>Vizuální přehled browserových agentů: od chatbotu přes pracovní postup až po lidskou kontrolu.</figcaption>
                 </figure>
 
-                <h2>Co je vlastně AI agent</h2>
+                <h2 id="ai-navod-ai-agent-v-prohlizeci-h2-01">Co je vlastně AI agent</h2>
                 <p>Běžný chatbot funguje převážně jako konverzační partner.</p>
                 <p>Například:</p>
                 <blockquote>Najdi mi metodiky MŠMT k rizikovému chování.</blockquote>
@@ -94,7 +105,7 @@
                 <p>To už není jen generování textu.</p>
                 <p>Je to <strong>vykonávání pracovního postupu</strong>.</p>
 
-                <h2>Jak to vypadá v praxi</h2>
+                <h2 id="ai-navod-ai-agent-v-prohlizeci-h2-02">Jak to vypadá v praxi</h2>
                 <p>Představte si běžnou učitelskou práci. Potřebujete připravit podklady k novému tématu.</p>
                 <p>Normálně byste:</p>
                 <ol>
@@ -113,10 +124,10 @@
                 <div class="article-prompt">Najdi pět kvalitních oficiálních zdrojů k tématu kyberšikany vhodných pro učitele střední školy. Preferuj MŠMT, Policii ČR a další veřejné instituce. Každý zdroj otevři a ověř jeho obsah. Nakonec mi připrav seznam zdrojů s krátkým vysvětlením, proč je vhodný.</div>
                 <p>Agent potom prochází web podobně jako člověk.</p>
 
-                <h2>Které AI nástroje to dnes umí</h2>
+                <h2 id="ai-navod-ai-agent-v-prohlizeci-h2-03">Které AI nástroje to dnes umí</h2>
                 <p>Browseroví agenti nejsou záležitostí jedné firmy. Během roku 2026 je začaly nabízet téměř všechny velké AI platformy.</p>
 
-                <h3>Claude in Chrome</h3>
+                <h3 id="ai-navod-ai-agent-v-prohlizeci-h3-04">Claude in Chrome</h3>
                 <p>Claude od společnosti Anthropic nabízí rozšíření <strong>Claude in Chrome</strong>.</p>
                 <p>Claude díky němu může pracovat přímo s otevřenými stránkami v Google Chrome.</p>
                 <p>Dokáže stránky číst, klikat na prvky a navigovat mezi nimi. Funkci lze spouštět přímo z bočního panelu Chrome nebo přes další agentní prostředí Claude.</p>
@@ -131,7 +142,7 @@
                 <p>a Claude může podle vašich pokynů mezi stránkami pracovat.</p>
                 <p>Právě tento nástroj jsme použili například při přípravě odborných sešitů v NotebookLM.</p>
 
-                <h3>ChatGPT Work</h3>
+                <h3 id="ai-navod-ai-agent-v-prohlizeci-h3-05">ChatGPT Work</h3>
                 <p>Podobným směrem se vydává také ChatGPT.</p>
                 <p>V režimu <strong>ChatGPT Work</strong> může ChatGPT využívat vlastní cloudový prohlížeč, ve kterém dokáže číst stránky, klikat, vyplňovat formuláře a vykonávat vícekrokové úlohy.</p>
                 <p>V desktopové aplikaci ChatGPT je navíc k dispozici vestavěný prohlížeč.</p>
@@ -139,7 +150,7 @@
                 <p>Princip je tedy podobný:</p>
                 <blockquote>Nedávám AI pouze otázku. Předávám jí úkol.</blockquote>
 
-                <h3>Perplexity Comet</h3>
+                <h3 id="ai-navod-ai-agent-v-prohlizeci-h3-06">Perplexity Comet</h3>
                 <p>Perplexity zvolilo jinou cestu.</p>
                 <p>Nevytvořilo pouze rozšíření, ale celý vlastní internetový prohlížeč nazvaný <strong>Comet</strong>.</p>
                 <p>Je založený na Chromiu a obsahuje přímo zabudovaného AI asistenta. Ten může pracovat s otevřenými kartami, shrnovat stránky, vyhledávat informace a také provádět určité akce na webu.</p>
@@ -154,14 +165,14 @@
                 </ul>
                 <p>Pro běžného uživatele je rozdíl hlavně v tom, že místo Chrome používá celý nový AI prohlížeč.</p>
 
-                <h3>Microsoft Copilot v Edge</h3>
+                <h3 id="ai-navod-ai-agent-v-prohlizeci-h3-07">Microsoft Copilot v Edge</h3>
                 <p>Také Microsoft přidává agentní funkce přímo do prohlížeče Edge.</p>
                 <p>Funkce <strong>Browse with Copilot</strong> umožňuje Copilotu klikat, psát a procházet stránky přímo v Edge.</p>
                 <p>Uživatel přitom vidí jeho jednotlivé kroky a může kdykoli převzít řízení.</p>
                 <p>To může být do budoucna velmi zajímavé právě pro školy, které fungují převážně v prostředí Microsoft 365.</p>
                 <p>Dostupnost této funkce se ale zatím liší podle regionu a předplatného. Microsoft ji v současnosti zavádí postupně.</p>
 
-                <h3>Gemini v Chrome</h3>
+                <h3 id="ai-navod-ai-agent-v-prohlizeci-h3-08">Gemini v Chrome</h3>
                 <p>Google samozřejmě nezůstává stranou.</p>
                 <p>Do Chrome postupně přidává <strong>Gemini in Chrome</strong> a funkci <strong>auto browse</strong>.</p>
                 <p>Ta umožňuje Gemini vykonávat vícekrokové webové úkoly, například vyhledávat, porovnávat informace nebo pracovat s různými webovými službami.</p>
@@ -176,24 +187,24 @@
                 </ul>
                 <p>Agentní funkce Chrome se ale stále zavádějí postupně a některé jsou v současnosti omezené podle regionu, typu účtu nebo předplatného.</p>
 
-                <h2>Co může browserový agent dělat učiteli</h2>
+                <h2 id="ai-navod-ai-agent-v-prohlizeci-h2-09">Co může browserový agent dělat učiteli</h2>
                 <p>Tady už začíná být celá věc opravdu zajímavá.</p>
                 <p>Agent může například pomoci s:</p>
-                <h3>Rešerší</h3>
+                <h3 id="ai-navod-ai-agent-v-prohlizeci-h3-10">Rešerší</h3>
                 <blockquote>Najdi aktuální dokumenty MŠMT k hodnocení žáků a připrav mi seznam nejdůležitějších změn.</blockquote>
-                <h3>Přípravou zdrojů</h3>
+                <h3 id="ai-navod-ai-agent-v-prohlizeci-h3-11">Přípravou zdrojů</h3>
                 <blockquote>Najdi pět kvalitních zdrojů k tématu domácího násilí vhodných pro výuku občanské nauky ve 2. ročníku.</blockquote>
-                <h3>Kontrolou zdrojů</h3>
+                <h3 id="ai-navod-ai-agent-v-prohlizeci-h3-12">Kontrolou zdrojů</h3>
                 <blockquote>Otevři všechny tyto odkazy a zjisti, zda jsou stále funkční a aktuální.</blockquote>
-                <h3>Porovnáním dokumentů</h3>
+                <h3 id="ai-navod-ai-agent-v-prohlizeci-h3-13">Porovnáním dokumentů</h3>
                 <blockquote>Porovnej tuto starší metodiku s novou verzí a vypiš hlavní změny.</blockquote>
-                <h3>Přípravou NotebookLM</h3>
+                <h3 id="ai-navod-ai-agent-v-prohlizeci-h3-14">Přípravou NotebookLM</h3>
                 <blockquote>Najdi vhodné zdroje, ověř je a připrav z nich tematický notebook.</blockquote>
-                <h3>Prací s webovými aplikacemi</h3>
+                <h3 id="ai-navod-ai-agent-v-prohlizeci-h3-15">Prací s webovými aplikacemi</h3>
                 <p>Pokud mu dáme odpovídající oprávnění, může agent pracovat také přímo uvnitř některých webových aplikací.</p>
                 <p>Právě tady ale začíná být nutná větší opatrnost.</p>
 
-                <h2>Největší změna není technologická</h2>
+                <h2 id="ai-navod-ai-agent-v-prohlizeci-h2-16">Největší změna není technologická</h2>
                 <p>Podstatná změna podle mě není v tom, že AI umí kliknout na tlačítko. To samo o sobě není nijak převratné.</p>
                 <p>Změna je ve způsobu zadávání práce.</p>
                 <p>Dříve jsme AI říkali:</p>
@@ -206,7 +217,7 @@
                 <blockquote>Tohle je výsledek, kterého potřebuji dosáhnout. Navrhni postup a jednotlivé kroky proveď.</blockquote>
                 <p>A to už je zásadně jiný způsob spolupráce s AI.</p>
 
-                <h2>Agent není kouzelník</h2>
+                <h2 id="ai-navod-ai-agent-v-prohlizeci-h2-17">Agent není kouzelník</h2>
                 <p>Tady je ale potřeba trochu přibrzdit nadšení.</p>
                 <p>Agent může udělat chybu.</p>
                 <p>Může:</p>
@@ -221,7 +232,7 @@
                 <p>Čím více oprávnění agent dostane, tím větší může mít jeho chyba následky.</p>
                 <blockquote><strong>velmi schopného pomocníka pod dohledem, nikoli autonomního zaměstnance školy.</strong></blockquote>
 
-                <h2>Velký problém: osobní údaje</h2>
+                <h2 id="ai-navod-ai-agent-v-prohlizeci-h2-18">Velký problém: osobní údaje</h2>
                 <p>Pro školy je tu ještě jedna zásadní věc.</p>
                 <p>Browserový agent může vidět obsah stránky, se kterou právě pracuje.</p>
                 <p>Pokud tedy otevřeme:</p>
@@ -245,7 +256,7 @@
                 </ul>
                 <p>Reálná data žáků bych do podobných experimentů vůbec nezapojovala bez jasně nastavených pravidel školy.</p>
 
-                <h2>Pozor také na prompt injection</h2>
+                <h2 id="ai-navod-ai-agent-v-prohlizeci-h2-19">Pozor také na prompt injection</h2>
                 <p>Browseroví agenti přinášejí ještě jeden nový typ rizika.</p>
                 <p>Na webové stránce může být ukryt text, který se pokusí AI přimět, aby udělala něco jiného, než jste jí zadali.</p>
                 <p>Tomuto typu útoku se říká <strong>prompt injection</strong>.</p>
@@ -255,7 +266,7 @@
                 <blockquote><strong>„AI to udělá, já to nemusím kontrolovat.“</strong></blockquote>
                 <p>Spíš naopak.</p>
 
-                <h2>Jak s browserovým agentem začít</h2>
+                <h2 id="ai-navod-ai-agent-v-prohlizeci-h2-20">Jak s browserovým agentem začít</h2>
                 <p>Pro první pokus bych zvolila něco úplně bezpečného.</p>
                 <p>Například:</p>
                 <div class="article-prompt">Najdi tři oficiální zdroje vhodné pro přípravu vyučovací hodiny o dezinformacích. Každý zdroj otevři, ověř autora a rok vydání a napiš mi, proč by byl pro výuku vhodný.</div>
@@ -272,7 +283,7 @@
                     <li>a co je lepší udělat ručně.</li>
                 </ul>
 
-                <h2>Jedno jednoduché pravidlo</h2>
+                <h2 id="ai-navod-ai-agent-v-prohlizeci-h2-21">Jedno jednoduché pravidlo</h2>
                 <p>Při práci s AI agentem bych se držela jednoduchého pravidla:</p>
                 <blockquote><strong>Čím větší důsledky má chyba, tím větší musí být lidská kontrola.</strong></blockquote>
                 <p><strong>Vyhledání pěti metodických zdrojů?</strong></p>
@@ -284,7 +295,7 @@
                 <p><strong>Rozhodnutí týkající se konkrétního žáka?</strong></p>
                 <p>To už není úkol, který bych nechala na agentovi.</p>
 
-                <h2>Od chatbotů k agentům</h2>
+                <h2 id="ai-navod-ai-agent-v-prohlizeci-h2-22">Od chatbotů k agentům</h2>
                 <p>Browseroví agenti jsou podle mě důležitým krokem ve vývoji AI.</p>
                 <p>Ne proto, že by nahradili učitele.</p>
                 <p>Ale proto, že začínají odstraňovat jednu z nejotravnějších částí digitální práce:</p>
@@ -326,6 +337,9 @@
 
     <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai.html">Zpět na rozcestník AI</a></footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261110-7q"></script>
 </body>
 
 </html>

@@ -25,6 +25,7 @@ jobs:
       WAVE3_BASELINE_SHA: 258e96761fb8d327d06ecea9b283cc1bd9f3ea10
       WAVE4_BASELINE_SHA: fdc0a22750a024ab2dccc422084c24f51e356581
       WAVE5_BASELINE_SHA: bcdd8e48cf8a97b44917b90c40f59c5a6e348f4f
+      WAVE6_BASELINE_SHA: 180c5a3880089216910f5b31b5de6a9b6b6fde38
     steps:
       - name: Checkout the tested commit
         uses: actions/checkout@v4
@@ -44,6 +45,7 @@ jobs:
           git fetch --no-tags --depth=1 origin "$WAVE3_BASELINE_SHA"
           git fetch --no-tags --depth=1 origin "$WAVE4_BASELINE_SHA"
           git fetch --no-tags --depth=1 origin "$WAVE5_BASELINE_SHA"
+          git fetch --no-tags --depth=1 origin "$WAVE6_BASELINE_SHA"
 
       - name: Install isolated browser test runner
         run: |

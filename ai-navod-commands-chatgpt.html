@@ -20,14 +20,24 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261109-7k" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261112-7v" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261110-7q" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-<a class="workflow-back" href="ai.html#navody">← Praktické návody</a>
-        </div>
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="prepare">
+<header class="site-header" id="top">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+      <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a>
+    </div></div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="ai-navody.html">Praktické návody</a></li><li aria-current="page">Commands v ChatGPT</li></ol></nav>
+<header class="workflow-shell">
         <div class="workflow-hero">
             <div>
                 <div class="workflow-eyebrow">Praktické návody · 23. srpna 2026</div>
@@ -44,7 +54,8 @@
         </div>
     </header>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
+<details class="article-content-navigation"><summary>V tomto článku</summary><nav aria-label="Obsah článku"><ol><li><a href="#ai-navod-commands-chatgpt-h2-01">Jak command funguje</a></li><li><a href="#ai-navod-commands-chatgpt-h2-02">Commands pro učení</a></li><li><a href="#ai-navod-commands-chatgpt-h2-03">Commands pro psaní</a></li><li><a href="#ai-navod-commands-chatgpt-h2-04">Commands pro obrázky</a></li><li><a href="#ai-navod-commands-chatgpt-h2-05">Commands pro video a sociální sítě</a></li><li><a href="#ai-navod-commands-chatgpt-h2-06">Commands jako pomocník při organizaci práce</a></li><li><a href="#ai-navod-commands-chatgpt-h2-07">AI nemusí jen tvořit. Může vám také oponovat</a></li><li><a href="#ai-navod-commands-chatgpt-h2-08">Nemusíte se učit stovky příkazů</a></li><li><a href="#ai-navod-commands-chatgpt-h2-09">Můžete si vytvořit i vlastní commands</a></li><li><a href="#ai-navod-commands-chatgpt-h2-10">Je v lomítku nějaká magie?</a></li></ol></nav></details>
         <article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Některé pokyny zadáváme pořád dokola. Commands pomohou tyto opakované instrukce převést do krátkých zkratek pro učení, psaní i každodenní organizaci.</p>
@@ -72,7 +83,7 @@
                 <p>Důležité je vědět, že nejde o nějakou tajnou sadu oficiálních funkcí ChatGPT. Jsou to především zkratky pro opakovaně používané instrukce.</p>
                 <p>Místo dlouhého vysvětlování jednoduše použijete krátký příkaz a za něj doplníte téma nebo obsah, se kterým chcete pracovat.</p>
 
-                <h2>Jak command funguje</h2>
+                <h2 id="ai-navod-commands-chatgpt-h2-01">Jak command funguje</h2>
                 <p>Představte si například, že se potřebujete naučit nové téma.</p>
                 <p>Místo věty:</p>
                 <blockquote>„Vysvětli mi tento pojem velmi jednoduše, jako bych o něm zatím vůbec nic nevěděla.“</blockquote>
@@ -83,7 +94,7 @@
                 <p>a nechat si vytvořit kvíz nebo získat postup krok po kroku.</p>
                 <p> Síla těchto příkazů není ani tak v samotném lomítku. Je hlavně v tom, že si postupně vytváříte vlastní pracovní jazyk pro komunikaci s AI.</p>
 
-                <h2>Commands pro učení</h2>
+                <h2 id="ai-navod-commands-chatgpt-h2-02">Commands pro učení</h2>
                 <p>Velká skupina příkazů se hodí při studiu, přípravě výuky nebo snaze pochopit složitější téma.</p>
                 <ul>
                     <li><strong>/eli5</strong> – vysvětlí téma velmi jednoduše,</li>
@@ -100,7 +111,7 @@
                 <div class="article-prompt"><strong>/feynman fotosyntéza</strong></div>
                 <p>může být zajímavější než obyčejné „vysvětli fotosyntézu“, protože AI rovnou říkáte, jakým způsobem má s tématem pracovat.</p>
 
-                <h2>Commands pro psaní</h2>
+                <h2 id="ai-navod-commands-chatgpt-h2-03">Commands pro psaní</h2>
                 <p>Stejný princip lze velmi dobře využít při práci s textem.</p>
                 <ul>
                     <li><strong>/rewrite</strong> – přepíše text při zachování významu,</li>
@@ -117,7 +128,7 @@
                 <div class="article-prompt"><strong>/shorten [vložený text]</strong></div>
                 <p>může být rychlý způsob, jak z dlouhého textu vytvořit stručnější verzi pro web nebo sociální sítě.</p>
 
-                <h2>Commands pro obrázky</h2>
+                <h2 id="ai-navod-commands-chatgpt-h2-04">Commands pro obrázky</h2>
                 <p>Zajímavá je také skupina příkazů zaměřených na práci s AI obrázky a obrazovými prompty.</p>
                 <div class="article-prompt"><strong>/imageprompt futuristická učebna roku 2050</strong></div>
                 <p>může být pokyn, aby AI původní jednoduchý nápad převedla do podrobnějšího promptu pro generátor obrázků.</p>
@@ -143,7 +154,7 @@
                 </ul>
                 <p>Právě ty mohou být užitečné například při tvorbě výukových materiálů nebo technických ilustrací.</p>
 
-                <h2>Commands pro video a sociální sítě</h2>
+                <h2 id="ai-navod-commands-chatgpt-h2-05">Commands pro video a sociální sítě</h2>
                 <p>Pokud vytváříte videa, můžete podobným způsobem pracovat také se scénářem.</p>
                 <div class="article-prompt"><strong>/script30</strong> · scénář přibližně na 30 sekund<br /><strong>/script60</strong> · scénář na jednu minutu<br /><strong>/hook10</strong> · deset variant úvodního hooku<br /><strong>/storyboard</strong> · storyboard scénu po scéně<br /><strong>/shotlist</strong> · seznam potřebných záběrů<br /><strong>/broll</strong> · návrhy doplňkových záběrů<br /><strong>/voiceover</strong> · text pro namluvení<br /><strong>/retention</strong> · úprava scénáře s ohledem na udržení pozornosti</div>
                 <p>Pro sociální sítě lze využít například:</p>
@@ -153,7 +164,7 @@
                 <div class="article-prompt"><strong>/repurpose [článek]</strong></div>
                 <p>AI pak můžete požádat, aby z něj vytvořila příspěvek na LinkedIn, Instagram carousel, krátké video nebo newsletter.</p>
 
-                <h2>Commands jako pomocník při organizaci práce</h2>
+                <h2 id="ai-navod-commands-chatgpt-h2-06">Commands jako pomocník při organizaci práce</h2>
                 <p>Velmi praktická je také sada příkazů pro plánování a organizaci.</p>
                 <ul>
                     <li><strong>/actionplan</strong> – vytvoří akční plán,</li>
@@ -171,7 +182,7 @@
                 <div class="article-prompt"><strong>/actionplan Připravit nový online kurz</strong></div>
                 <p>může během několika sekund vytvořit první kostru celého projektu.</p>
 
-                <h2>AI nemusí jen tvořit. Může vám také oponovat</h2>
+                <h2 id="ai-navod-commands-chatgpt-h2-07">AI nemusí jen tvořit. Může vám také oponovat</h2>
                 <p>Jedna z nejzajímavějších skupin commandů je zaměřená na kritické myšlení a rozhodování.</p>
                 <ul>
                     <li><strong>/devilsadvocate</strong> – záměrně hledá argumenty proti vašemu názoru,</li>
@@ -188,14 +199,14 @@
                 <p>může být často užitečnější než požádat AI pouze o pochvalu nebo další nápady.</p>
                 <p>AI v tomto případě nepoužíváme jen jako generátor textu, ale také jako partnera pro kontrolu vlastního uvažování.</p>
 
-                <h2>Nemusíte se učit stovky příkazů</h2>
+                <h2 id="ai-navod-commands-chatgpt-h2-08">Nemusíte se učit stovky příkazů</h2>
                 <p>Na internetu můžete najít seznamy obsahující desítky nebo dokonce stovky různých commands.</p>
                 <p>Nemá ale příliš smysl učit se je všechny nazpaměť.</p>
                 <p>Mnohem praktičtější je vybrat si například 10 až 20 příkazů odpovídajících činnostem, které skutečně děláte často.</p>
                 <div class="article-prompt"><strong>/summary</strong> · <strong>/rewrite</strong> · <strong>/quiz</strong> · <strong>/flashcards</strong> · <strong>/stepbystep</strong> · <strong>/brainstorm</strong> · <strong>/actionplan</strong> · <strong>/redteam</strong> · <strong>/imageprompt</strong> · <strong>/checklist</strong></div>
                 <p>A postupně si k nim přidávat další.</p>
 
-                <h2>Můžete si vytvořit i vlastní commands</h2>
+                <h2 id="ai-navod-commands-chatgpt-h2-09">Můžete si vytvořit i vlastní commands</h2>
                 <p>A právě tady začíná být celý princip ještě zajímavější.</p>
                 <p>Nemusíte používat pouze commands, které někdo zveřejnil na internetu.</p>
                 <p>Můžete si vytvořit vlastní příkazy odpovídající přesně vaší práci.</p>
@@ -204,7 +215,7 @@
                 <p>Marketér může mít úplně jinou sadu, stejně jako programátor, grafik nebo podnikatel.</p>
                 <p>Důležité je jen předem určit, co přesně má daná zkratka znamenat.</p>
 
-                <h2>Je v lomítku nějaká magie?</h2>
+                <h2 id="ai-navod-commands-chatgpt-h2-10">Je v lomítku nějaká magie?</h2>
                 <p>Ne.</p>
                 <p>Samotné lomítko žádnou zvláštní schopnost ChatGPT neaktivuje.</p>
                 <p>Command je v podstatě dohodnutá zkratka mezi uživatelem a AI.</p>
@@ -245,6 +256,9 @@
 
     <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai.html">Zpět na AI pro výuku</a></footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261110-7q"></script>
 </body>
 
 </html>

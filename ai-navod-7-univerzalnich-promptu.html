@@ -21,14 +21,24 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261109-7k" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261112-7v" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261110-7q" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-            <a class="workflow-back" href="ai.html#navody">← Praktické návody</a>
-        </div>
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="prepare">
+<header class="site-header" id="top">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+      <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a>
+    </div></div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="ai-navody.html">Praktické návody</a></li><li aria-current="page">7 univerzálních AI promptů: rychlejší příprava výuky</li></ol></nav>
+<header class="workflow-shell">
         <div class="workflow-hero">
             <div>
                 <div class="workflow-eyebrow">Praktické návody · 29. srpna 2026</div>
@@ -45,24 +55,15 @@
         </div>
     </header>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
+<details class="article-content-navigation"><summary id="toc-heading-ai-navod-7-univerzalnich-promptu-html">V tomto článku</summary><nav aria-label="Obsah článku"><ol><li><a href="#toc-01">1. Pracovní listy a procvičovací aktivity</a></li><li><a href="#toc-02">2. Řízené poznámky a studijní materiály</a></li><li><a href="#toc-03">3. Grafické organizéry</a></li><li><a href="#toc-04">4. Prezentace připravená do hodiny</a></li><li class="article-content-navigation-subitem"><a href="#ai-navod-7-univerzalnich-promptu-h3-07">Tip</a></li><li><a href="#toc-05">5. Kartičky s úkoly a výuková stanoviště</a></li><li><a href="#toc-06">6. Exit tickety a stručné materiály pro žáky</a></li><li><a href="#ai-navod-7-univerzalnich-promptu-h2-10">7. Diferencované materiály pro různé žáky</a></li><li><a href="#ai-navod-7-univerzalnich-promptu-h2-12">Jak prompty používat v praxi</a></li><li><a href="#ai-navod-7-univerzalnich-promptu-h2-13">Nechte AI nejdříve navrhovat, až potom vyrábět</a></li><li><a href="#ai-navod-7-univerzalnich-promptu-h2-14">AI materiál není hotový materiál</a></li><li><a href="#ai-navod-7-univerzalnich-promptu-h2-15">Shrnutí</a></li></ol></nav></details>
         <article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Sedm upravitelných šablon pro ChatGPT, Gemini, Claude i další AI nástroje. Stačí doplnit předmět, téma, ročník a cíl výuky.</p>
                 <p class="article-editorial-title">7 univerzálních AI promptů, které učiteli výrazně urychlí přípravu výuky</p>
             </div>
 
-            <nav class="article-toc" aria-labelledby="toc-heading-ai-navod-7-univerzalnich-promptu-html">
-                <p class="article-toc-label" id="toc-heading-ai-navod-7-univerzalnich-promptu-html">V tomto článku</p>
-                <ul>
-                    <li><a href="#toc-01">1. Pracovní listy a procvičovací aktivity</a></li>
-                    <li><a href="#toc-02">2. Řízené poznámky a studijní materiály</a></li>
-                    <li><a href="#toc-03">3. Grafické organizéry</a></li>
-                    <li><a href="#toc-04">4. Prezentace připravená do hodiny</a></li>
-                    <li><a href="#toc-05">5. Kartičky s úkoly a výuková stanoviště</a></li>
-                    <li><a href="#toc-06">6. Exit tickety a stručné materiály pro žáky</a></li>
-                </ul>
-            </nav>
+            
             <div class="article-content">
                 <p class="article-lead">Umělá inteligence dokáže při přípravě hodin ušetřit opravdu hodně času — ale jen tehdy, když jí zadáme dostatečně přesný úkol.</p>
                 <p>Jednověté zadání typu „udělej pracovní list“ sice nějaký výsledek vytvoří, ale často skončíme u materiálu, který musíme z poloviny předělat.</p>
@@ -77,7 +78,7 @@
 
                 <h2 id="toc-01">1. Pracovní listy a procvičovací aktivity</h2>
                 <p>Pracovní list patří k nejčastějším materiálům, které učitel s AI vytváří. Tento prompt je užitečný hlavně proto, že AI nenutí vytvořit pouze několik náhodných otázek, ale požaduje různé typy úloh, postupné zvyšování obtížnosti a řešení pro učitele.</p>
-                <h3>Prompt</h3>
+                <h3 id="ai-navod-7-univerzalnich-promptu-h3-01">Prompt</h3>
                 <div class="article-prompt">Vystupuj jako zkušený pedagog a didaktik. Vytvoř komplexní pracovní list a sadu procvičovacích aktivit pro předmět <strong>[předmět]</strong> na téma <strong>[téma]</strong> pro žáky <strong>[ročník / věková skupina]</strong>.
 
 Obsah přizpůsob stanoveným vzdělávacím cílům a případně také příslušným kurikulárním požadavkům.
@@ -91,12 +92,12 @@ Připrav také kompletní řešení pro učitele včetně stručného vysvětlen
 Navrhni možnosti diferenciace pro žáky s různou úrovní schopností a různými vzdělávacími potřebami.
 
 Pracovní list musí být přehledný, vizuálně dobře uspořádaný, zajímavý pro žáky a připravený k okamžitému použití ve výuce. Měl by být vhodný pro práci v hodině, domácí úkol, samostatné procvičování nebo hodnocení.</div>
-                <h3>Kdy se hodí</h3>
+                <h3 id="ai-navod-7-univerzalnich-promptu-h3-02">Kdy se hodí</h3>
                 <p>Použijte jej například před novým tématem, při opakování, jako domácí práci nebo jako základ krátkého testu.</p>
 
                 <h2 id="toc-02">2. Řízené poznámky a studijní materiály</h2>
                 <p>Ne každý žák si dokáže během výkladu vytvořit kvalitní poznámky. Zvlášť užitečné mohou být takzvané řízené poznámky, kde žák nedostává hotový text, ale doplňuje klíčové informace během výuky.</p>
-                <h3>Prompt</h3>
+                <h3 id="ai-navod-7-univerzalnich-promptu-h3-03">Prompt</h3>
                 <div class="article-prompt">Vystupuj jako zkušený pedagog a didaktik. Vytvoř komplexní řízené poznámky a studijní materiál pro předmět <strong>[předmět]</strong> na téma <strong>[téma]</strong> pro žáky <strong>[ročník / věková skupina]</strong>.
 
 Obsah přizpůsob stanoveným vzdělávacím cílům a případně také kurikulárním požadavkům.
@@ -110,13 +111,13 @@ Do řízených poznámek vlož vhodně zvolená prázdná místa, otázky, tabul
 Na závěr vytvoř kontrolní seznam pro opakování, otázky k zopakování učiva a případně slovníček klíčových pojmů.
 
 Výsledný materiál musí být vizuálně přehledný, zajímavý, připravený pro použití ve výuce a vhodný jak pro společnou práci v hodině, tak pro opakování a samostatné studium.</div>
-                <h3>Kdy se hodí</h3>
+                <h3 id="ai-navod-7-univerzalnich-promptu-h3-04">Kdy se hodí</h3>
                 <p>Výborně funguje při výkladu nového učiva nebo u témat, kde mají žáci problém rozlišit, které informace jsou opravdu důležité.</p>
 
                 <h2 id="toc-03">3. Grafické organizéry</h2>
                 <p>Grafické organizéry pomáhají žákům informace nejen přečíst, ale také uspořádat a pochopit jejich vztahy.</p>
                 <p>AI může podle tématu sama navrhnout, zda bude vhodnější myšlenková mapa, Vennův diagram, časová osa nebo třeba schéma příčina–následek.</p>
-                <h3>Prompt</h3>
+                <h3 id="ai-navod-7-univerzalnich-promptu-h3-05">Prompt</h3>
                 <div class="article-prompt">Vystupuj jako zkušený pedagog a didaktik. Vytvoř sadu grafických organizérů připravených k použití ve výuce pro předmět <strong>[předmět]</strong>, téma <strong>[téma]</strong> a žáky <strong>[ročník / věková skupina]</strong>.
 
 Organizéry přizpůsob vzdělávacím cílům a případně příslušným kurikulárním požadavkům.
@@ -134,7 +135,7 @@ Organizéry musí být vizuálně přehledné, jednoduché na používání a na
 
                 <h2 id="toc-04">4. Prezentace připravená do hodiny</h2>
                 <p>AI lze využít nejen k vytvoření textu prezentace. Dobře napsaný prompt jí může zadat také strukturu jednotlivých snímků, otázky pro žáky, kontrolu porozumění i poznámky pro učitele.</p>
-                <h3>Prompt</h3>
+                <h3 id="ai-navod-7-univerzalnich-promptu-h3-06">Prompt</h3>
                 <div class="article-prompt">Vystupuj jako zkušený pedagog a didaktik. Vytvoř profesionální prezentaci připravenou k použití ve výuce pro předmět <strong>[předmět]</strong> na téma <strong>[téma]</strong> pro žáky <strong>[ročník / věková skupina]</strong>.
 
 Prezentaci přizpůsob stanoveným vzdělávacím cílům a případně kurikulárním požadavkům.
@@ -148,7 +149,7 @@ Ke každému snímku vytvoř podrobné poznámky pro učitele.
 Přidej doporučení, jak během prezentace aktivně zapojit žáky, a návrhy vhodných animací nebo multimediálních prvků tam, kde dávají smysl.
 
 Prezentace musí být vizuálně atraktivní, snadno sledovatelná, přiměřená věku žáků a navržená tak, aby podporovala aktivní učení a skutečné porozumění učivu.</div>
-                <h3>Tip</h3>
+                <h3 id="ai-navod-7-univerzalnich-promptu-h3-07">Tip</h3>
                 <p>AI nemusí prezentaci pouze „napsat“. Můžete ji také požádat, aby ke každému snímku uvedla:</p>
                 <div class="article-prompt">Nadpis – text – vizuál – aktivita žáků – poznámky učitele.</div>
                 <p>Výsledek bývá mnohem použitelnější.</p>
@@ -156,7 +157,7 @@ Prezentace musí být vizuálně atraktivní, snadno sledovatelná, přiměřen�
                 <h2 id="toc-05">5. Kartičky s úkoly a výuková stanoviště</h2>
                 <p>Výuková stanoviště jsou skvělá, ale jejich příprava je časově náročná. Musíte vymyslet několik různých aktivit, instrukce, pomůcky, řešení i organizaci práce.</p>
                 <p>Právě tady může AI odvést pořádný kus práce.</p>
-                <h3>Prompt</h3>
+                <h3 id="ai-navod-7-univerzalnich-promptu-h3-08">Prompt</h3>
                 <div class="article-prompt">Vystupuj jako zkušený pedagog a didaktik. Vytvoř sadu <strong>[počet]</strong> kartiček s úkoly a výukových stanovišť pro předmět <strong>[předmět]</strong> na téma <strong>[téma]</strong> pro žáky <strong>[ročník / věková skupina]</strong>.
 
 Aktivity přizpůsob stanoveným vzdělávacím cílům a případně kurikulárním požadavkům.
@@ -181,7 +182,7 @@ Kartičky a stanoviště musí být přehledné, zajímavé, opakovaně použite
                 <p>Exit ticket je krátký úkol na konci hodiny. Během několika minut může učiteli ukázat, zda žáci učivo pochopili.</p>
                 <p>Nemusí jít jen o klasické „napiš tři věci, které sis zapamatoval“.</p>
                 <p>AI může připravit více variant podle konkrétního vzdělávacího cíle.</p>
-                <h3>Prompt</h3>
+                <h3 id="ai-navod-7-univerzalnich-promptu-h3-09">Prompt</h3>
                 <div class="article-prompt">Vystupuj jako zkušený pedagog a didaktik. Vytvoř sadu exit ticketů a pracovních materiálů pro žáky pro předmět <strong>[předmět]</strong> na téma <strong>[téma]</strong> pro žáky <strong>[ročník / věková skupina]</strong>.
 
 Materiály přizpůsob stanoveným vzdělávacím cílům a případně kurikulárním požadavkům.
@@ -194,10 +195,10 @@ Uveď jasné instrukce pro žáky, správná řešení tam, kde jsou potřeba, a
 
 Materiály musí být přehledné, vizuálně dobře organizované a vhodné pro výuku, opakování, domácí přípravu nebo samostatné studium.</div>
 
-                <h2>7. Diferencované materiály pro různé žáky</h2>
+                <h2 id="ai-navod-7-univerzalnich-promptu-h2-10">7. Diferencované materiály pro různé žáky</h2>
                 <p>Jedna z nejzajímavějších možností využití AI ve škole je tvorba více variant stejného materiálu.</p>
                 <p>Nejde přitom o to, aby jedna skupina žáků dostala „lehké učivo“ a druhá „těžké učivo“. Ideálně zůstává stejný vzdělávací cíl, ale mění se množství podpory, struktura zadání nebo náročnost cesty k výsledku.</p>
-                <h3>Prompt</h3>
+                <h3 id="ai-navod-7-univerzalnich-promptu-h3-11">Prompt</h3>
                 <div class="article-prompt">Vystupuj jako zkušený pedagog a didaktik se zkušenostmi s inkluzivním vzděláváním.
 
 Vytvoř diferencované výukové materiály pro předmět <strong>[předmět]</strong> na téma <strong>[téma]</strong> pro žáky <strong>[ročník / věková skupina]</strong>.
@@ -220,7 +221,7 @@ Přidej jasné pokyny pro učitele i pro žáky a doporučení k použití jedno
 
 Materiály musí být vizuálně přehledné, zajímavé, přístupné, inkluzivní a připravené k okamžitému použití.</div>
 
-                <h2>Jak prompty používat v praxi</h2>
+                <h2 id="ai-navod-7-univerzalnich-promptu-h2-12">Jak prompty používat v praxi</h2>
                 <p>Největší chyba je vložit prompt do AI bez dalších informací a čekat zázrak. AI sice materiál vytvoří, ale nezná vaši třídu.</p>
                 <p>Čím více relevantního kontextu dostane, tím lepší bude výsledek.</p>
                 <p>Místo:</p>
@@ -242,7 +243,7 @@ Materiály musí být vizuálně přehledné, zajímavé, přístupné, inkluziv
                 <blockquote>Vycházej pouze z přiložených podkladů. Pokud nějaká informace v podkladech není, nevymýšlej ji a upozorni mě na to.</blockquote>
                 <p>To je jednoduchá věta, ale výrazně omezuje tradiční AI disciplínu jménem „velmi sebevědomě si něco vymyslím“.</p>
 
-                <h2>Nechte AI nejdříve navrhovat, až potom vyrábět</h2>
+                <h2 id="ai-navod-7-univerzalnich-promptu-h2-13">Nechte AI nejdříve navrhovat, až potom vyrábět</h2>
                 <p>Velmi účinný postup je rozdělit práci do dvou kroků.</p>
                 <p>Nejprve můžete AI říct:</p>
                 <div class="article-prompt">Zatím materiál nevytvářej. Nejprve mi navrhni jeho strukturu, typy aktivit a přibližnou časovou náročnost.</div>
@@ -250,7 +251,7 @@ Materiály musí být vizuálně přehledné, zajímavé, přístupné, inkluziv
                 <div class="article-prompt">Návrh schvaluji. Nyní vytvoř kompletní materiál.</div>
                 <p>U rozsáhlejších pracovních listů, testů nebo prezentací je tento postup často lepší než generování všeho jedním povelem.</p>
 
-                <h2>AI materiál není hotový materiál</h2>
+                <h2 id="ai-navod-7-univerzalnich-promptu-h2-14">AI materiál není hotový materiál</h2>
                 <p>Tohle stojí za připomenutí.</p>
                 <p>I velmi dobrý prompt může vytvořit chybu, nevhodně položenou otázku, příliš obtížnou aktivitu nebo faktickou nepřesnost.</p>
                 <p>Před použitím ve výuce proto vždy zkontrolujte především:</p>
@@ -265,7 +266,7 @@ Materiály musí být vizuálně přehledné, zajímavé, přístupné, inkluziv
                 <p>AI může být velmi schopný pomocník při přípravě výuky. Odpovědnost za to, co nakonec dostanou žáci, ale zůstává na učiteli.</p>
                 <p>A tak je to vlastně správně.</p>
 
-                <h2>Shrnutí</h2>
+                <h2 id="ai-navod-7-univerzalnich-promptu-h2-15">Shrnutí</h2>
                 <p>Těchto sedm promptů může vytvořit jednoduchou základní „AI knihovnu“ pro každodenní práci učitele:</p>
                 <ul>
                     <li>pracovní list → poznámky → grafický organizér → prezentace → stanoviště → exit ticket → diferencovaná varianta.</li>
@@ -302,6 +303,9 @@ Materiály musí být vizuálně přehledné, zajímavé, přístupné, inkluziv
 
     <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai.html">Zpět na AI pro výuku</a></footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261110-7q"></script>
 </body>
 
 </html>
