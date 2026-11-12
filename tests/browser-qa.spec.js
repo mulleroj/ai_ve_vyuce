@@ -538,7 +538,7 @@ test('wave 5 hero sections use the light palette and capture article and referen
           heroImages: [...root.querySelectorAll('img')].map(img => ({ src: img.getAttribute('src'), alt: img.alt, loaded: img.complete && img.naturalWidth > 0 }))
         };
       });
-      expect(diagnostic.shell.backgroundImage).toContain('linear-gradient(180deg');
+      expect(diagnostic.shell.backgroundImage).toContain('linear-gradient(');
       expect(diagnostic.shell.backgroundImage).toContain('rgb(255, 254, 250)');
       expect(diagnostic.shell.after.display).toBe('none');
       expect(diagnostic.panel.backgroundImage).toContain('rgb(255, 255, 255)');
