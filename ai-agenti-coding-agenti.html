@@ -21,14 +21,37 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261109-7k" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261109-7k-v2" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261110-7q" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-            <a class="workflow-back" href="ai-agenti.html">← AI agenti</a>
-        </div>
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="create">
+<header class="site-header" id="top">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu">
+      <div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+        <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a>
+        <a href="ai-navody.html">Připravit výuku</a>
+        <a href="aktivity.html">Učit s AI</a>
+        <a href="asistenti.html">Nástroje a asistenti</a>
+        <a href="vibe-coding.html" aria-current="location">Tvořit s AI</a>
+        <a href="ai.html">Číst a objevovat</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace">
+  <ol>
+    <li><a href="index.html">Domů</a></li>
+    <li><a href="ai-agenti.html">AI agenti</a></li>
+    <li aria-current="page">Od vibe codingu ke coding agentům: když AI pracuje na projektu</li>
+  </ol>
+</nav>
+    <section class="workflow-shell">
         <div class="workflow-hero">
             <div>
                 <div class="workflow-eyebrow">AI agenti · 1. září 2026</div>
@@ -43,26 +66,19 @@
                 <div class="workflow-stage"><span class="workflow-stage-number">04</span><div><strong>Oprav a zkontroluj</strong><small>Pracuj se zpětnou vazbou a riziky</small></div></div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
+        <details class="article-content-navigation" open>
+            <summary id="toc-heading-ai-agenti-coding-agenti-html">V tomto článku</summary>
+            <nav aria-label="Obsah článku"><ol><li><a href="#toc-01">Od „napiš mi kód“ k „udělej tuto změnu“</a></li><li><a href="#toc-02">Co je vibe coding</a></li><li><a href="#toc-03">Vibe coding ale není totéž co coding agent</a><ol><li><a href="#coding-classic-helper">Klasický AI pomocník</a></li><li><a href="#coding-agent">Coding agent</a></li></ol></li><li><a href="#toc-04">Agentní smyčka v programování</a><ol><li><a href="#coding-loop-understand">Pochop</a></li><li><a href="#coding-loop-plan">Naplánuj</a></li><li><a href="#coding-loop-act">Proveď</a></li><li><a href="#coding-loop-check">Zkontroluj</a></li><li><a href="#coding-loop-next">Nové kolo</a></li></ol></li><li><a href="#toc-05">Coding agent potřebuje nástroje</a></li><li><a href="#toc-06">Projekt je pro agenta prostředí</a></li><li><a href="#coding-project-context">Coding agent potřebuje kontext projektu</a></li><li><a href="#coding-project-instructions">Projektové instrukce fungují jako procedurální paměť</a></li><li><a href="#coding-skills">Skills: opakovatelný způsob práce</a></li><li><a href="#coding-mcp">A tady se znovu vrací MCP</a></li><li><a href="#coding-accessibility">Vibe coding je díky agentům dostupnější</a></li><li><a href="#coding-risk">Jenže právě tady začíná nebezpečí</a></li><li><a href="#coding-quality">„Funguje“ ještě neznamená „je to dobře“</a></li><li><a href="#coding-human-role">Vibe coding mění roli člověka</a></li><li><a href="#coding-goal">Umět zadat cíl nestačí</a></li><li><a href="#coding-versioning">Proto je důležité verzování</a></li><li><a href="#coding-testing">Testování začíná být ještě důležitější</a></li><li><a href="#coding-definition-done">Nejdůležitější je dobře definovat, co znamená „hotovo“</a></li><li><a href="#coding-specification">Od promptu ke specifikaci</a></li><li><a href="#coding-brief">Čím schopnější AI, tím důležitější zadání</a></li><li><a href="#coding-workflow">Praktický workflow pro vibe coding s agentem</a></li><li><a href="#coding-for-teachers">Pro učitele je to překvapivě zajímavá změna</a></li><li><a href="#coding-school-boundaries">Ale škola potřebuje hranice</a></li><li><a href="#coding-human-oversight">Coding agent není programátor, kterého můžeme přestat kontrolovat</a></li></ol></nav>
+        </details>
         <article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Vibe coding popisuje záměr člověka. Coding agent k němu přidává schopnost AI pracovat přímo v projektu, používat nástroje a ověřovat výsledek.</p>
                 <p class="article-editorial-title">Od vibe codingu ke coding agentům: když AI už nepíše jen kód, ale pracuje na projektu</p>
             </div>
 
-            <nav class="article-toc" aria-labelledby="toc-heading-ai-agenti-coding-agenti-html">
-                <p class="article-toc-label" id="toc-heading-ai-agenti-coding-agenti-html">V tomto článku</p>
-                <ul>
-                    <li><a href="#toc-01">Od „napiš mi kód“ k „udělej tuto změnu“</a></li>
-                    <li><a href="#toc-02">Co je vibe coding</a></li>
-                    <li><a href="#toc-03">Vibe coding ale není totéž co coding agent</a></li>
-                    <li><a href="#toc-04">Agentní smyčka v programování</a></li>
-                    <li><a href="#toc-05">Coding agent potřebuje nástroje</a></li>
-                    <li><a href="#toc-06">Projekt je pro agenta prostředí</a></li>
-                </ul>
-            </nav>
             <div class="article-content">
                 <p class="article-lead">Ještě nedávno znamenala práce s AI při programování hlavně jedno: požádali jsme ji, aby napsala kus kódu. Dnes jí můžeme svěřit celý úkol – prohlédnout projekt, najít správné soubory, navrhnout změnu, upravit kód, spustit aplikaci, odhalit chybu a zkusit ji opravit. Právě tady se vibe coding potkává s agentní AI.</p>
 
@@ -110,7 +126,7 @@
                 <p>Může dostat přístup k celému projektu a aktivně v něm pracovat.</p>
                 <p>To je zásadní rozdíl.</p>
 
-                <h3>Klasický AI pomocník</h3>
+                <h3 id="coding-classic-helper">Klasický AI pomocník</h3>
                 <p>Představme si zadání:</p>
                 <blockquote>„Přidej do aplikace tmavý režim.“</blockquote>
                 <p>Běžný AI chatbot může odpovědět:</p>
@@ -118,7 +134,7 @@
                 <p>A zobrazí řešení.</p>
                 <p>Práci musí dokončit člověk.</p>
 
-                <h3>Coding agent</h3>
+                <h3 id="coding-agent">Coding agent</h3>
                 <p>Coding agent může při stejném zadání udělat něco podobného:</p>
                 <div class="article-prompt"><strong>prohlédnout strukturu projektu → najít soubory se styly → zjistit, jak aplikace ukládá nastavení → upravit příslušné soubory → spustit aplikaci → otestovat změnu → opravit nalezené chyby</strong></div>
                 <p>Uživatel přitom nemusí znát názvy souborů ani přesnou strukturu aplikace.</p>
@@ -130,26 +146,26 @@
                 <div class="article-prompt"><strong>Pochop → Naplánuj → Proveď → Zkontroluj</strong></div>
                 <p>U coding agenta můžeme jednotlivé fáze vidět téměř doslova.</p>
 
-                <h3>Pochop</h3>
+                <h3 id="coding-loop-understand">Pochop</h3>
                 <p>Agent analyzuje zadání:</p>
                 <blockquote>Uživatel chce přidat export výsledků do PDF.</blockquote>
                 <p>Současně prohlédne projekt.</p>
                 <p>Zjistí například:</p>
                 <blockquote>Výsledky jsou uloženy v této komponentě a aplikace používá tento framework.</blockquote>
 
-                <h3>Naplánuj</h3>
+                <h3 id="coding-loop-plan">Naplánuj</h3>
                 <p>Rozhodne:</p>
                 <blockquote>Potřebuji přidat knihovnu pro tvorbu PDF, vytvořit exportní funkci a přidat tlačítko do uživatelského rozhraní.</blockquote>
 
-                <h3>Proveď</h3>
+                <h3 id="coding-loop-act">Proveď</h3>
                 <p>Agent upraví soubory.</p>
 
-                <h3>Zkontroluj</h3>
+                <h3 id="coding-loop-check">Zkontroluj</h3>
                 <p>Spustí aplikaci nebo testy.</p>
                 <p>Zjistí:</p>
                 <blockquote>Export skončil chybou.</blockquote>
 
-                <h3>Nové kolo</h3>
+                <h3 id="coding-loop-next">Nové kolo</h3>
                 <p>Analyzuje chybu.</p>
                 <p>Upraví kód.</p>
                 <p>Spustí test znovu.</p>
@@ -186,7 +202,7 @@
                 <p>A tady se znovu objevují principy, které už známe z RAG.</p>
                 <p>Agent může najít relevantní části kódu, dokumentaci nebo projektové instrukce a načíst jen to, co právě potřebuje.</p>
 
-                <h2>Coding agent potřebuje kontext projektu</h2>
+                <h2 id="coding-project-context">Coding agent potřebuje kontext projektu</h2>
                 <p>Představme si dva projekty.</p>
                 <p>V jednom se používá:</p>
                 <div class="article-prompt"><strong>React</strong></div>
@@ -201,7 +217,7 @@
                 <p>AI už nedostává pouze otázku.</p>
                 <p>Dostává také kontext skutečného prostředí, ve kterém má pracovat.</p>
 
-                <h2>Projektové instrukce fungují jako procedurální paměť</h2>
+                <h2 id="coding-project-instructions">Projektové instrukce fungují jako procedurální paměť</h2>
                 <p>V předchozím článku o paměti jsme mluvili o informacích typu:</p>
                 <blockquote>Jak má agent určité úkoly provádět?</blockquote>
                 <p>Coding projekty mohou obsahovat například instrukce:</p>
@@ -215,7 +231,7 @@
                 <p>Takové instrukce dávají agentovi dlouhodobější pravidla.</p>
                 <p>Nemusíme mu je opakovat v každém promptu.</p>
 
-                <h2>Skills: opakovatelný způsob práce</h2>
+                <h2 id="coding-skills">Skills: opakovatelný způsob práce</h2>
                 <p>Ještě zajímavější je možnost dát agentovi specializované skills, tedy opakovaně použitelné schopnosti nebo pracovní postupy.</p>
                 <p>Například:</p>
                 <div class="article-prompt"><strong>Vytvoř nový formulář</strong></div>
@@ -227,7 +243,7 @@
                 <p>Může pouze zadat cíl a agent použije známý pracovní postup.</p>
                 <p>To je další krok od jednoduchého promptování směrem k opakovatelným agentním workflow.</p>
 
-                <h2>A tady se znovu vrací MCP</h2>
+                <h2 id="coding-mcp">A tady se znovu vrací MCP</h2>
                 <p>Coding agent nemusí být omezen pouze na vlastní soubory.</p>
                 <p>Může potřebovat například:</p>
                 <ul>
@@ -240,7 +256,7 @@
                 <p>A právě zde mohou standardy jako MCP pomoci jednotlivé služby k agentovi připojovat.</p>
                 <p>Coding agent se tak postupně mění z nástroje na psaní kódu v pracovní prostředí schopné koordinovat několik různých služeb.</p>
 
-                <h2>Vibe coding je díky agentům dostupnější</h2>
+                <h2 id="coding-accessibility">Vibe coding je díky agentům dostupnější</h2>
                 <p>Tohle je pro běžného uživatele asi největší změna.</p>
                 <p>Dříve bylo poměrně snadné pomocí AI vytvořit první jednoduchou aplikaci.</p>
                 <p>Obtížnější bylo:</p>
@@ -256,7 +272,7 @@
                 <p>Coding agent může část této technické orientace převzít.</p>
                 <p>Proto se vibe coding stává použitelný i pro větší projekty než jen jednoduchou jednostránkovou aplikaci.</p>
 
-                <h2>Jenže právě tady začíná nebezpečí</h2>
+                <h2 id="coding-risk">Jenže právě tady začíná nebezpečí</h2>
                 <p>Čím samostatnější agent je, tím snadněji může udělat také větší škodu.</p>
                 <p>Klasický chatbot vám může navrhnout chybný kód.</p>
                 <p>Coding agent může chybný kód rovnou vložit do deseti souborů.</p>
@@ -270,7 +286,7 @@
                 </ul>
                 <p>Vyšší autonomie tedy znamená větší pohodlí, ale také větší potřebu kontroly.</p>
 
-                <h2>„Funguje“ ještě neznamená „je to dobře“</h2>
+                <h2 id="coding-quality">„Funguje“ ještě neznamená „je to dobře“</h2>
                 <p>Tohle je při vibe codingu naprosto zásadní.</p>
                 <p>Uživatel zadá:</p>
                 <blockquote>„Přidej přihlašování.“</blockquote>
@@ -290,7 +306,7 @@
                 </ul>
                 <p>To jsou věci, které nemusí být na obrazovce vůbec vidět.</p>
 
-                <h2>Vibe coding mění roli člověka</h2>
+                <h2 id="coding-human-role">Vibe coding mění roli člověka</h2>
                 <p>Když AI přebírá stále větší část psaní kódu, role člověka se posouvá.</p>
                 <p>Méně času trávíme tím:</p>
                 <blockquote>jak přesně napsat jednotlivý příkaz</blockquote>
@@ -300,7 +316,7 @@
                 <div class="article-prompt"><strong>zadavatel → návrhář → produktový manažer → tester → kontrolor</strong></div>
                 <p>To je docela zásadní změna.</p>
 
-                <h2>Umět zadat cíl nestačí</h2>
+                <h2 id="coding-goal">Umět zadat cíl nestačí</h2>
                 <p>Kolem vibe codingu občas vzniká představa:</p>
                 <blockquote>Nemusím ničemu rozumět. Prostě AI řeknu, co chci.</blockquote>
                 <p>Na jednoduchém projektu to může nějakou dobu fungovat.</p>
@@ -315,7 +331,7 @@
                 <p>Nemusíme umět napsat každý řádek kódu.</p>
                 <p>Potřebujeme ale rozumět systému natolik, abychom dokázali kontrolovat výsledek.</p>
 
-                <h2>Proto je důležité verzování</h2>
+                <h2 id="coding-versioning">Proto je důležité verzování</h2>
                 <p>Jeden z nejpraktičtějších návyků při práci s coding agenty je obyčejné:</p>
                 <div class="article-prompt"><strong>ukládat bezpečné verze projektu</strong></div>
                 <p>Pokud agent provede deset změn a aplikace přestane fungovat, potřebujeme možnost vrátit se zpět.</p>
@@ -324,7 +340,7 @@
                 <p>Bez toho může být vibe coding docela zábavný až do chvíle, kdy během pěti minut zmizí něco, co jsme dva dny stavěli.</p>
                 <p>Pak už bývá vibe výrazně méně vibey. 🙂</p>
 
-                <h2>Testování začíná být ještě důležitější</h2>
+                <h2 id="coding-testing">Testování začíná být ještě důležitější</h2>
                 <p>Když kód píše člověk, měl by ho testovat.</p>
                 <p>Když kód píše AI agent, platí to úplně stejně.</p>
                 <p>Možná ještě víc.</p>
@@ -334,7 +350,7 @@
                 <p>Právě automatické testování je jeden z důvodů, proč mohou coding agenti fungovat relativně samostatně.</p>
                 <p>Agent totiž získává zpětnou vazbu, zda jeho změna něco nerozbila.</p>
 
-                <h2>Nejdůležitější je dobře definovat, co znamená „hotovo“</h2>
+                <h2 id="coding-definition-done">Nejdůležitější je dobře definovat, co znamená „hotovo“</h2>
                 <p>Představme si požadavek:</p>
                 <blockquote>„Vytvoř registrační formulář.“</blockquote>
                 <p>Co znamená hotovo?</p>
@@ -352,7 +368,7 @@
                 <p>Čím jasněji definujeme kritéria dokončení, tím lépe může agent pracovat.</p>
                 <p>To je jeden z velkých rozdílů mezi náhodným vibe codingem a systematickou prací s coding agentem.</p>
 
-                <h2>Od promptu ke specifikaci</h2>
+                <h2 id="coding-specification">Od promptu ke specifikaci</h2>
                 <p>S rostoucí složitostí projektu se proto mění i způsob zadávání.</p>
                 <p>Místo:</p>
                 <blockquote>„Udělej mi hezkou aplikaci na rezervaci učeben.“</blockquote>
@@ -362,7 +378,7 @@
                 <p>Je to malá specifikace produktu.</p>
                 <p>A coding agent z ní může vytvořit plán práce.</p>
 
-                <h2>Čím schopnější AI, tím důležitější zadání</h2>
+                <h2 id="coding-brief">Čím schopnější AI, tím důležitější zadání</h2>
                 <p>To může znít paradoxně.</p>
                 <p>Čekali bychom:</p>
                 <blockquote>Čím lepší AI, tím méně musím vysvětlovat.</blockquote>
@@ -372,7 +388,7 @@
                 <p>Pokud dáme neurčitý cíl agentovi, který umí změnit deset souborů, dostaneme velmi efektivně provedenou neurčitou představu.</p>
                 <p>A to není vždy výhra.</p>
 
-                <h2>Praktický workflow pro vibe coding s agentem</h2>
+                <h2 id="coding-workflow">Praktický workflow pro vibe coding s agentem</h2>
                 <p>Pro začátečníka bych doporučila jednoduchý pracovní princip:</p>
                 <ol>
                     <li>Popište cíl a uživatele aplikace.</li>
@@ -387,7 +403,7 @@
                 <blockquote>„Postav mi celý informační systém.“</blockquote>
                 <p>a odejít na kávu.</p>
 
-                <h2>Pro učitele je to překvapivě zajímavá změna</h2>
+                <h2 id="coding-for-teachers">Pro učitele je to překvapivě zajímavá změna</h2>
                 <p>Vibe coding neznamená, že se každý učitel musí stát vývojářem.</p>
                 <p>Ale výrazně snižuje překážku mezi:</p>
                 <div class="article-prompt"><strong>„Mám nápad na jednoduchý digitální nástroj.“</strong><br /><br />a<br /><br /><strong>„Dokážu vytvořit jeho funkční prototyp.“</strong></div>
@@ -406,7 +422,7 @@
                 <blockquote>„To by bylo hezké, kdyby nám to někdo naprogramoval.“</blockquote>
                 <p>Dnes můžeme alespoň prototyp často vytvořit sami.</p>
 
-                <h2>Ale škola potřebuje hranice</h2>
+                <h2 id="coding-school-boundaries">Ale škola potřebuje hranice</h2>
                 <p>Pokud jde o jednoduchou výukovou hru bez ukládání dat, riziko je malé.</p>
                 <p>Úplně jiná situace nastává, pokud aplikace pracuje s:</p>
                 <ul>
@@ -422,7 +438,7 @@
                 <p>Musí nastoupit běžná pravidla bezpečnosti, ochrany dat a správy školních IT systémů.</p>
                 <p>Vibe coding není výjimka z GDPR ani z bezpečnosti.</p>
 
-                <h2>Coding agent není programátor, kterého můžeme přestat kontrolovat</h2>
+                <h2 id="coding-human-oversight">Coding agent není programátor, kterého můžeme přestat kontrolovat</h2>
                 <p>Tohle je asi nejdůležitější závěr.</p>
                 <p>Coding agent může být neuvěřitelně produktivní.</p>
                 <p>Umí za několik minut provést práci, která by člověku zabrala výrazně déle.</p>
@@ -477,6 +493,9 @@
         <a href="ai-agenti.html">Zpět na AI agenty</a>
     </footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261110-7q" defer></script>
 </body>
 
 </html>
