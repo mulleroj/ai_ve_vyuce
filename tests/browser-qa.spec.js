@@ -202,7 +202,88 @@ test('wave 5 prompts copy the selected text to the clipboard', async ({ browser 
   await context.close();
 });
 
-const migrationArticles = [...wave1Articles, ...wave2Articles, ...wave3Articles, ...wave4Articles, ...wave5Articles];
+const wave6Articles = [
+  { file: 'ai-navod-7-univerzalnich-promptu.html', title: '7 univerzálních AI promptů: rychlejší příprava výuky', tocCount: 12, h2: '#toc-01', h3: '#ai-navod-7-univerzalnich-promptu-h3-07', baselineSha: '180c5a3880089216910f5b31b5de6a9b6b6fde38', activeArea: 'Připravit výuku', breadcrumb: 'Praktické návody', breadcrumbHref: 'ai-navody.html' },
+  { file: 'ai-navod-ai-agent-v-prohlizeci.html', title: 'AI agent v prohlížeči: když AI také pracuje', tocCount: 22, checkTocScroll: true, h2: '#ai-navod-ai-agent-v-prohlizeci-h2-01', h3: '#ai-navod-ai-agent-v-prohlizeci-h3-04', baselineSha: '180c5a3880089216910f5b31b5de6a9b6b6fde38', activeArea: 'Připravit výuku', breadcrumb: 'Praktické návody', breadcrumbHref: 'ai-navody.html' },
+  { file: 'ai-navod-chatgpt-vizualni-materialy.html', title: '7 promptů pro ChatGPT: vizuální výukové materiály', tocCount: 13, h2: '#toc-01', h3: null, baselineSha: '180c5a3880089216910f5b31b5de6a9b6b6fde38', activeArea: 'Připravit výuku', breadcrumb: 'Praktické návody', breadcrumbHref: 'ai-navody.html' },
+  { file: 'ai-navod-commands-chatgpt.html', title: 'Commands v ChatGPT', tocCount: 10, h2: '#ai-navod-commands-chatgpt-h2-01', h3: null, baselineSha: '180c5a3880089216910f5b31b5de6a9b6b6fde38', activeArea: 'Připravit výuku', breadcrumb: 'Praktické návody', breadcrumbHref: 'ai-navody.html' },
+];
+
+
+test('wave 6 hero light styles, desktop and mobile screenshots, and computed-style evidence', async ({ page }) => {
+  const fs = require('node:fs');
+  const evidence = [];
+  for (const article of wave6Articles) {
+    for (const width of [1440, 390]) {
+      await page.setViewportSize({ width, height: 1000 });
+      await page.goto(`${baseURL}/${article.file}`, { waitUntil: 'networkidle' });
+      await page.evaluate(() => document.fonts.ready);
+      const record = await page.evaluate(() => {
+        const pick = selector => {
+          const el = document.querySelector(selector);
+          if (!el) return null;
+          const s = getComputedStyle(el), before = getComputedStyle(el, '::before'), after = getComputedStyle(el, '::after');
+          return {
+            selector, backgroundColor: s.backgroundColor, backgroundImage: s.backgroundImage,
+            color: s.color, opacity: s.opacity, filter: s.filter,
+            before: { display: before.display, content: before.content, backgroundColor: before.backgroundColor, backgroundImage: before.backgroundImage, opacity: before.opacity },
+            after: { display: after.display, content: after.content, backgroundColor: after.backgroundColor, backgroundImage: after.backgroundImage, opacity: after.opacity }
+          };
+        };
+        return {
+          width: innerWidth,
+          body: pick('body'),
+          shell: pick('.workflow-shell'),
+          hero: pick('.workflow-hero'),
+          panels: [...document.querySelectorAll('.workflow-news-panel,.workflow-route')].map(el => {
+            const s = getComputedStyle(el), b = getComputedStyle(el,'::before'), a = getComputedStyle(el,'::after');
+            return { selector:'.'+el.className, backgroundColor:s.backgroundColor, backgroundImage:s.backgroundImage, color:s.color, opacity:s.opacity, filter:s.filter,
+              before:{display:b.display,content:b.content,backgroundColor:b.backgroundColor,backgroundImage:b.backgroundImage,opacity:b.opacity},
+              after:{display:a.display,content:a.content,backgroundColor:a.backgroundColor,backgroundImage:a.backgroundImage,opacity:a.opacity} };
+          }),
+          title: pick('.workflow-hero h1'),
+          lead: pick('.workflow-hero-lead')
+        };
+      });
+      evidence.push({ file: article.file, ...record });
+      await page.locator('.workflow-shell').screenshot({ path: `artifacts/${article.file}-hero-${width}.png` });
+      const gradient = record.shell.backgroundImage || '';
+      expect(gradient, `hero gradient missing on ${article.file}`).not.toBe('none');
+      expect(gradient, `hero image overlay on ${article.file}`).not.toMatch(/url\(/i);
+      const stops = [...gradient.matchAll(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/g)];
+      expect(stops.length, `computed gradient stops missing on ${article.file}`).toBeGreaterThan(0);
+      for (const stop of stops) expect(Number(stop[1]) + Number(stop[2]) + Number(stop[3]), `dark hero gradient stop on ${article.file}`).toBeGreaterThan(570);
+      expect(record.shell.opacity).toBe('1');
+    }
+  }
+  fs.writeFileSync('artifacts/wave6-computed-hero-styles.json', JSON.stringify(evidence, null, 2));
+});
+
+test('wave 6 contact sheet compares four article heroes with the approved light pilot and homepage', async ({ page }) => {
+  const cards = [];
+  for (const article of wave6Articles) {
+    await page.setViewportSize({ width: 1440, height: 1000 });
+    await page.goto(`${baseURL}/${article.file}`, { waitUntil: 'networkidle' });
+    const image = await page.locator('.workflow-shell').screenshot();
+    cards.push({ title: article.title, data: image.toString('base64') });
+  }
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto(`${baseURL}/ai-agenti-co-je-ai-agent.html`, { waitUntil: 'networkidle' });
+  const pilot = await page.locator('.workflow-shell').screenshot();
+  cards.push({ title: 'Schválený světlý pilot', data: pilot.toString('base64') });
+  await page.goto(`${baseURL}/`, { waitUntil: 'networkidle' });
+  const home = await page.screenshot();
+  cards.push({ title: 'Homepage', data: home.toString('base64') });
+  await page.setContent(`<!doctype html><html lang="cs"><meta charset="utf-8"><title>Vlna 6 – srovnání hero</title><style>
+    *{box-sizing:border-box}body{margin:0;padding:24px;background:#fffefa;color:#102d2b;font:600 15px Arial,sans-serif}
+    h1{margin:0 0 18px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    article{padding:10px;border:1px solid #dfe8e1;border-radius:12px;background:#fff;overflow:hidden}
+    h2{font-size:16px;min-height:40px;margin:4px 0 10px}img{display:block;width:100%;height:auto;object-fit:contain;border:1px solid #e5e7e1;border-radius:8px}
+  </style><h1>Praktické návody – migrační vlna 6 a světlé reference</h1><main class="grid">${cards.map(x=>`<article><h2>${x.title}</h2><img alt="${x.title}" src="data:image/png;base64,${x.data}"></article>`).join('')}</main></html>`);
+  await page.screenshot({ path: 'artifacts/wave6-hero-contact-sheet.png', fullPage: true });
+});
+
+const migrationArticles = [...wave1Articles, ...wave2Articles, ...wave3Articles, ...wave4Articles, ...wave5Articles, ...wave6Articles];
 
 for (const article of migrationArticles) {
   test.describe(`Migration: ${article.file}`, () => {
