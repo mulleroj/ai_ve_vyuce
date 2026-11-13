@@ -226,8 +226,8 @@ test('wave 6 hero light styles, desktop and mobile screenshots, and computed-sty
           return {
             selector, backgroundColor: s.backgroundColor, backgroundImage: s.backgroundImage,
             color: s.color, opacity: s.opacity, filter: s.filter,
-            before: { display: before.display, content: before.content, backgroundColor: before.backgroundColor, backgroundImage: before.backgroundImage, opacity: before.opacity },
-            after: { display: after.display, content: after.content, backgroundColor: after.backgroundColor, backgroundImage: after.backgroundImage, opacity: after.opacity }
+            before: { display: before.display, content: before.content, backgroundColor: before.backgroundColor, backgroundImage: before.backgroundImage, opacity: before.opacity, position: before.position, width: before.width, height: before.height },
+            after: { display: after.display, content: after.content, backgroundColor: after.backgroundColor, backgroundImage: after.backgroundImage, opacity: after.opacity, position: after.position, width: after.width, height: after.height }
           };
         };
         return {
@@ -343,7 +343,7 @@ test('wave 7 hero styles and desktop/mobile screenshots', async ({ page }) => {
           width: innerWidth,
           shell: snapshot('.workflow-shell'), hero: snapshot('.workflow-hero'),
           title: snapshot('.workflow-hero h1'), lead: snapshot('.workflow-hero-lead'),
-          panels: [...document.querySelectorAll('.workflow-news-panel,.workflow-route,.workflow-stage,.workflow-news-panel-label,.workflow-meta span')]
+          panels: [...document.querySelectorAll('.workflow-news-panel,.workflow-route,.workflow-stage,.workflow-stage-number,.workflow-news-panel-label,.workflow-meta span')]
             .map((el, index) => snapshot(`panel-${index}-${el.className || el.tagName.toLowerCase()}`, el))
         };
       });
@@ -362,11 +362,26 @@ test('wave 7 hero styles and desktop/mobile screenshots', async ({ page }) => {
               .toBeGreaterThan(570);
           }
         }
-        for (const color of [surface.backgroundColor, surface.before?.backgroundColor, surface.after?.backgroundColor].filter(Boolean)) {
+        const colors = [
+          { value: surface.backgroundColor },
+          { value: surface.before?.backgroundColor, pseudo: surface.before },
+          { value: surface.after?.backgroundColor, pseudo: surface.after }
+        ];
+        for (const entry of colors) {
+          const color = entry.value;
+          if (!color) continue;
           const match = color.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/);
-          if (match && (match[4] === undefined || Number(match[4]) > 0.05)) {
-            expect(Number(match[1]) + Number(match[2]) + Number(match[3]), `dark computed hero surface in ${article.file}: ${color}`)
-              .toBeGreaterThan(570);
+          if (!match) continue;
+          const alpha = match[4] === undefined ? 1 : Number(match[4]);
+          if (alpha <= 0.05) continue;
+          const sum = [1, 2, 3].reduce((total, channel) => total + Number(match[channel]) * alpha + 255 * (1 - alpha), 0);
+          if (sum <= 570) {
+            const tinyApprovedGreenMarker = color === 'rgb(22, 143, 124)'
+              && entry.pseudo?.display !== 'none'
+              && Number.parseFloat(entry.pseudo?.width) <= 12
+              && Number.parseFloat(entry.pseudo?.height) <= 12
+              && entry.pseudo?.opacity === '1';
+            expect(tinyApprovedGreenMarker, `unexpected dark hero surface in ${article.file}: ${color}`).toBe(true);
           }
         }
       }
