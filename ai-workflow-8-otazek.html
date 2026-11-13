@@ -20,10 +20,24 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261113-7z" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261113-7z" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261113-7z" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261113-7z" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="prepare">
+    <header class="site-header">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+      <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a>
+    </div></div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="ai.html#workflow">Workflow pro učitele</a></li><li aria-current="page">8 otázek, které by si měl učitel položit při práci s AI</li></ol></nav>
+<header class="workflow-shell">
         <div class="workflow-topbar">
             <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
             <a class="workflow-back" href="ai.html#workflow">← Workflow pro učitele</a>
@@ -44,8 +58,26 @@
         </div>
     </header>
 
-    <main class="workflow-main">
-        <article class="workflow-article">
+    <main class="workflow-main article-content-layout">
+        <details class="article-content-navigation" open><summary><span>V tomto článku</span></summary><nav aria-label="Obsah článku"><ol><li><a href="#ai-workflow-8-otazek-h2-01">1. Může tuto práci AI udělat za mě?</a></li>
+<li><a href="#ai-workflow-8-otazek-h2-02">2. Můžeme na tom pracovat společně?</a></li>
+<li><a href="#ai-workflow-8-otazek-h2-03">3. Jak mohou AI použít žáci při učení?</a></li>
+<li><a href="#ai-workflow-8-otazek-h2-04">4. Rozvíjí používání AI nějakou dovednost?</a></li>
+<li><a href="#ai-workflow-8-otazek-h2-05">5. Učím žáky AI gramotnosti?</a></li>
+<li><a href="#ai-workflow-8-otazek-h2-06">6. Zvážil/a jsem etické a bezpečnostní otázky?</a></li>
+<li><a href="#ai-workflow-8-otazek-h2-07">7. Je AI skutečně nejlepší nástroj?</a></li>
+<li><a href="#ai-workflow-8-otazek-h2-08">8. Kdo udělá poslední rozhodnutí?</a></li>
+<li><a href="#ai-workflow-8-otazek-h2-09">Osm otázek v rychlé podobě</a></li>
+<li><a href="#ai-workflow-8-otazek-h2-10">Příklad: příprava pracovního listu</a><ol><li><a href="#ai-workflow-8-otazek-h3-01">Může mi AI ušetřit čas?</a></li><li><a href="#ai-workflow-8-otazek-h3-02">Můžeme pracovat společně?</a></li><li><a href="#ai-workflow-8-otazek-h3-03">Pomůže to žákům učit se?</a></li><li><a href="#ai-workflow-8-otazek-h3-04">Rozvíjíme dovednost?</a></li><li><a href="#ai-workflow-8-otazek-h3-05">Je v tom AI gramotnost?</a></li><li><a href="#ai-workflow-8-otazek-h3-06">Jsou zde bezpečnostní problémy?</a></li><li><a href="#ai-workflow-8-otazek-h3-07">Je AI nejlepší nástroj?</a></li><li><a href="#ai-workflow-8-otazek-h3-08">Kdo výsledek schválí?</a></li></ol></li>
+<li><a href="#ai-workflow-8-otazek-h2-11">Příklad: hodnocení slohové práce</a></li>
+<li><a href="#ai-workflow-8-otazek-h2-12">Příklad: žákovský referát</a></li>
+<li><a href="#ai-workflow-8-otazek-h2-13">Nejde o to používat AI co nejvíc</a></li>
+<li><a href="#ai-workflow-8-otazek-h2-14">Tři jednoduché režimy</a></li>
+<li><a href="#ai-workflow-8-otazek-h2-15">Dobrá AI otázka není „Co všechno dokáže?“</a></li>
+<li><a href="#ai-workflow-8-otazek-h2-16">Rychlý checklist pro učitele</a></li>
+<li><a href="#ai-workflow-8-otazek-h2-17">Co následuje?</a></li></ol></nav></details>
+
+<article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Rychlý mentální checklist, který pomůže rozhodnout nejen jak AI použít, ale hlavně kdy její použití skutečně dává ve výuce smysl.</p>
             </div>
@@ -66,7 +98,7 @@
                     <figcaption>Osm otázek pro učitele a tři jednoduché režimy rozhodnutí.</figcaption>
                 </figure>
 
-                <h2>1. Může tuto práci AI udělat za mě?</h2>
+                <h2 id="ai-workflow-8-otazek-h2-01">1. Může tuto práci AI udělat za mě?</h2>
                 <p>První otázka je čistě praktická.</p>
                 <p>Existuje část mé práce, kterou nemusím dělat ručně?</p>
                 <p>Například:</p>
@@ -87,7 +119,7 @@
                 <p>To není totéž.</p>
                 <p>U většiny učitelských úkolů je mnohem bezpečnější chápat AI jako tvůrce první verze, kterou učitel následně kontroluje a upravuje.</p>
 
-                <h2>2. Můžeme na tom pracovat společně?</h2>
+                <h2 id="ai-workflow-8-otazek-h2-02">2. Můžeme na tom pracovat společně?</h2>
                 <p>Někdy není nejlepší AI něco celé předat.</p>
                 <p>Mnohem užitečnější je spolupráce.</p>
                 <p>Například:</p>
@@ -101,7 +133,7 @@
                 <p>Může fungovat jako <strong>partner pro přemýšlení</strong>.</p>
                 <p>To je často jeden z nejlepších způsobů jejího využití.</p>
 
-                <h2>3. Jak mohou AI použít žáci při učení?</h2>
+                <h2 id="ai-workflow-8-otazek-h2-03">3. Jak mohou AI použít žáci při učení?</h2>
                 <p>Další otázka obrací perspektivu.</p>
                 <p>Ne:</p>
                 <blockquote>Jak AI využiju já?</blockquote>
@@ -122,7 +154,7 @@
                 <p>Rozdíl je v tom, zda AI:</p>
                 <div class="article-prompt"><strong>nahrazuje učení</strong><br /><br />nebo<br /><br /><strong>pomáhá učit se.</strong></div>
 
-                <h2>4. Rozvíjí používání AI nějakou dovednost?</h2>
+                <h2 id="ai-workflow-8-otazek-h2-04">4. Rozvíjí používání AI nějakou dovednost?</h2>
                 <p>Tohle je podle mě jedna z nejdůležitějších otázek.</p>
                 <p>Pokud žák používá AI, co se při tom vlastně učí?</p>
                 <p>Například:</p>
@@ -141,7 +173,7 @@
                 <p>pak je vzdělávací hodnota velmi malá.</p>
                 <p>Pokud ale musí výstup analyzovat, ověřovat a upravovat, může jít o velmi hodnotnou aktivitu.</p>
 
-                <h2>5. Učím žáky AI gramotnosti?</h2>
+                <h2 id="ai-workflow-8-otazek-h2-05">5. Učím žáky AI gramotnosti?</h2>
                 <p>Nestačí pouze dovolit nebo zakázat ChatGPT.</p>
                 <p>Žáci potřebují rozumět tomu:</p>
                 <ul>
@@ -158,7 +190,7 @@
                 <p>AI gramotnost tedy není „výuka promptů“.</p>
                 <p>Je to širší schopnost <strong>používat AI informovaně, kriticky a odpovědně</strong>.</p>
 
-                <h2>6. Zvážil/a jsem etické a bezpečnostní otázky?</h2>
+                <h2 id="ai-workflow-8-otazek-h2-06">6. Zvážil/a jsem etické a bezpečnostní otázky?</h2>
                 <p>Ne všechno, co lze do AI vložit, bychom tam také měli vložit.</p>
                 <p>Před použitím je dobré se zeptat:</p>
                 <ul>
@@ -175,7 +207,7 @@
                 <blockquote>Tady je kompletní pedagogická dokumentace konkrétního žáka. Řekni mi, co s ním mám dělat.</blockquote>
                 <p>Druhý případ už vyžaduje výrazně větší opatrnost.</p>
 
-                <h2>7. Je AI skutečně nejlepší nástroj?</h2>
+                <h2 id="ai-workflow-8-otazek-h2-07">7. Je AI skutečně nejlepší nástroj?</h2>
                 <p>Tohle se snadno přehlédne.</p>
                 <p>Jen proto, že máme AI, nemusíme s ní řešit všechno.</p>
                 <p>Někdy je rychlejší:</p>
@@ -192,7 +224,7 @@
                 <blockquote><strong>Ušetří mi AI skutečně čas, nebo si právě vyrábím další práci?</strong></blockquote>
                 <p>Když deset minut ladíme prompt na věc, kterou bychom napsali za dvě minuty, technologická revoluce se poněkud minula účinkem.</p>
 
-                <h2>8. Kdo udělá poslední rozhodnutí?</h2>
+                <h2 id="ai-workflow-8-otazek-h2-08">8. Kdo udělá poslední rozhodnutí?</h2>
                 <p>Poslední otázka by měla mít ve škole téměř vždy stejnou odpověď:</p>
                 <blockquote><strong>Člověk.</strong></blockquote>
                 <p>AI může:</p>
@@ -217,7 +249,7 @@
                 <p>AI může doporučit.</p>
                 <blockquote><strong>Učitel rozhoduje.</strong></blockquote>
 
-                <h2>Osm otázek v rychlé podobě</h2>
+                <h2 id="ai-workflow-8-otazek-h2-09">Osm otázek v rychlé podobě</h2>
                 <p>Před použitím AI se můžeme rychle zeptat:</p>
                 <ol>
                     <li><strong>Může mi AI tuto práci urychlit?</strong></li>
@@ -230,28 +262,28 @@
                     <li><strong>Zůstává poslední rozhodnutí na člověku?</strong></li>
                 </ol>
 
-                <h2>Příklad: příprava pracovního listu</h2>
+                <h2 id="ai-workflow-8-otazek-h2-10">Příklad: příprava pracovního listu</h2>
                 <p>Představme si, že učitel potřebuje pracovní list do angličtiny.</p>
                 <p>Může si rychle projít otázky.</p>
-                <h3>Může mi AI ušetřit čas?</h3>
+                <h3 id="ai-workflow-8-otazek-h3-01">Může mi AI ušetřit čas?</h3>
                 <p>Ano. Dokáže vytvořit první návrh.</p>
-                <h3>Můžeme pracovat společně?</h3>
+                <h3 id="ai-workflow-8-otazek-h3-02">Můžeme pracovat společně?</h3>
                 <p>Ano. AI vytvoří návrh a já upravím obtížnost.</p>
-                <h3>Pomůže to žákům učit se?</h3>
+                <h3 id="ai-workflow-8-otazek-h3-03">Pomůže to žákům učit se?</h3>
                 <p>Ano, pokud úlohy odpovídají cíli hodiny.</p>
-                <h3>Rozvíjíme dovednost?</h3>
+                <h3 id="ai-workflow-8-otazek-h3-04">Rozvíjíme dovednost?</h3>
                 <p>Například slovní zásobu a porozumění textu.</p>
-                <h3>Je v tom AI gramotnost?</h3>
+                <h3 id="ai-workflow-8-otazek-h3-05">Je v tom AI gramotnost?</h3>
                 <p>Nemusí být. AI zde může být pouze nástrojem učitele.</p>
-                <h3>Jsou zde bezpečnostní problémy?</h3>
+                <h3 id="ai-workflow-8-otazek-h3-06">Jsou zde bezpečnostní problémy?</h3>
                 <p>Pokud nepoužívám údaje o konkrétních žácích, riziko je malé.</p>
-                <h3>Je AI nejlepší nástroj?</h3>
+                <h3 id="ai-workflow-8-otazek-h3-07">Je AI nejlepší nástroj?</h3>
                 <p>Pravděpodobně ano, pokud potřebuji rychle několik variant úloh.</p>
-                <h3>Kdo výsledek schválí?</h3>
+                <h3 id="ai-workflow-8-otazek-h3-08">Kdo výsledek schválí?</h3>
                 <p>Učitel.</p>
                 <p>A během několika desítek sekund máme poměrně slušné rozhodnutí, zda AI použít.</p>
 
-                <h2>Příklad: hodnocení slohové práce</h2>
+                <h2 id="ai-workflow-8-otazek-h2-11">Příklad: hodnocení slohové práce</h2>
                 <p>Teď jiná situace.</p>
                 <p>Učitel chce AI nahrát slohovou práci konkrétního žáka a nechat ji určit známku.</p>
                 <p>Tady už kontrolní otázky začnou svítit trochu červeněji.</p>
@@ -274,7 +306,7 @@
                 <p>AI tedy stále pomáhá.</p>
                 <p>Ale <strong>nepřebírá rozhodnutí</strong>.</p>
 
-                <h2>Příklad: žákovský referát</h2>
+                <h2 id="ai-workflow-8-otazek-h2-12">Příklad: žákovský referát</h2>
                 <p>Žák chce použít AI při přípravě referátu.</p>
                 <p>Máme několik možností.</p>
                 <h3>Varianta A</h3>
@@ -296,7 +328,7 @@
                 <p>Nenahrazuje ji.</p>
                 <p>A právě takový rozdíl bychom měli žáky učit rozpoznávat.</p>
 
-                <h2>Nejde o to používat AI co nejvíc</h2>
+                <h2 id="ai-workflow-8-otazek-h2-13">Nejde o to používat AI co nejvíc</h2>
                 <p>Je snadné sklouznout k představě, že moderní učitel musí mít AI úplně všude.</p>
                 <p>Nemusí.</p>
                 <p>Cílem není:</p>
@@ -307,7 +339,7 @@
                 <p>Pokud nepomůže, klidně ji nechme zavřenou.</p>
                 <p>Tabule, papír, rozhovor, učebnice nebo praktická práce kvůli tomu neztratily smysl.</p>
 
-                <h2>Tři jednoduché režimy</h2>
+                <h2 id="ai-workflow-8-otazek-h2-14">Tři jednoduché režimy</h2>
                 <p>Celý checklist můžeme ještě zjednodušit na tři rozhodnutí.</p>
                 <h3>AI použiji</h3>
                 <p>Když:</p>
@@ -335,18 +367,18 @@
                     <li>rozhodnutí musí jednoznačně udělat člověk.</li>
                 </ul>
 
-                <h2>Dobrá AI otázka není „Co všechno dokáže?“</h2>
+                <h2 id="ai-workflow-8-otazek-h2-15">Dobrá AI otázka není „Co všechno dokáže?“</h2>
                 <p>Mnohem lepší otázka zní:</p>
                 <blockquote><strong>Co mi v této konkrétní situaci skutečně přinese?</strong></blockquote>
                 <p>To je rozdíl mezi používáním technologie proto, že je nová, a jejím používáním proto, že je užitečná.</p>
                 <p>Ve škole by měl vždy vyhrávat druhý přístup.</p>
 
-                <h2>Rychlý checklist pro učitele</h2>
+                <h2 id="ai-workflow-8-otazek-h2-16">Rychlý checklist pro učitele</h2>
                 <p>Před použitím AI si stačí položit čtyři základní otázky:</p>
                 <div class="article-prompt"><strong>Pomůže mi?</strong><br /><br /><strong>Pomůže žákům učit se?</strong><br /><br /><strong>Je to bezpečné a vhodné?</strong><br /><br /><strong>Zůstávám já tím, kdo rozhoduje?</strong></div>
                 <p>Pokud máme na všechny čtyři dobrou odpověď, pravděpodobně jsme na správné cestě.</p>
 
-                <h2>Co následuje?</h2>
+                <h2 id="ai-workflow-8-otazek-h2-17">Co následuje?</h2>
                 <p>Další článek už bude hodně praktický:</p>
                 <blockquote><strong>18 rychlých AI promptů pro učitele – aktualizováno pro rok 2026</strong></blockquote>
                 <p>Nepůjde o staré příkazy typu „Napiš mi přípravu hodiny“.</p>
@@ -381,6 +413,9 @@
 
     <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai.html">Zpět na AI pro výuku</a></footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261113-7z"></script>
 </body>
 
 </html>

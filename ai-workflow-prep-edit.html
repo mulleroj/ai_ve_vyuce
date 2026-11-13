@@ -20,10 +20,24 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261113-7z" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261113-7z" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261113-7z" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261113-7z" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="prepare">
+    <header class="site-header">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+      <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a>
+    </div></div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="ai.html#workflow">Workflow pro učitele</a></li><li aria-current="page">PREP + EDIT: Praktický workflow pro práci s AI</li></ol></nav>
+<header class="workflow-shell">
         <div class="workflow-topbar">
             <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
             <a class="workflow-back" href="ai.html#workflow">← Workflow pro učitele</a>
@@ -46,8 +60,26 @@
         </div>
     </header>
 
-    <main class="workflow-main">
-        <article class="workflow-article">
+    <main class="workflow-main article-content-layout">
+        <details class="article-content-navigation" open><summary><span>V tomto článku</span></summary><nav aria-label="Obsah článku"><ol><li><a href="#ai-workflow-prep-edit-h2-01">1. ZDROJ</a><ol><li><a href="#ai-workflow-prep-edit-h3-01">Z čeho má AI vycházet?</a></li></ol></li>
+<li><a href="#ai-workflow-prep-edit-h2-02">Kdy zdroj nepotřebujeme?</a></li>
+<li><a href="#ai-workflow-prep-edit-h2-03">2. PREP</a><ol><li><a href="#ai-workflow-prep-edit-h3-02">Zadej úkol přesně</a></li></ol></li>
+<li><a href="#ai-workflow-prep-edit-h2-04">3. AI</a><ol><li><a href="#ai-workflow-prep-edit-h3-03">Nech vytvořit první návrh</a></li></ol></li>
+<li><a href="#ai-workflow-prep-edit-h2-05">4. EDIT</a><ol><li><a href="#ai-workflow-prep-edit-h3-04">Zkontroluj, co AI vytvořila</a></li><li><a href="#ai-workflow-prep-edit-h3-05">E – Evaluate</a></li><li><a href="#ai-workflow-prep-edit-h3-06">D – Determine</a></li><li><a href="#ai-workflow-prep-edit-h3-07">I – Identify</a></li><li><a href="#ai-workflow-prep-edit-h3-08">T – Transform</a></li></ol></li>
+<li><a href="#ai-workflow-prep-edit-h2-06">5. OVĚŘENÍ</a><ol><li><a href="#ai-workflow-prep-edit-h3-09">Důležitá tvrzení zkontroluj ještě jednou</a></li></ol></li>
+<li><a href="#ai-workflow-prep-edit-h2-07">Co ověřovat důkladněji?</a></li>
+<li><a href="#ai-workflow-prep-edit-h2-08">6. SCHVÁLENÍ ČLOVĚKEM</a><ol><li><a href="#ai-workflow-prep-edit-h3-10">Poslední rozhodnutí není úkolem AI</a></li></ol></li>
+<li><a href="#ai-workflow-prep-edit-h2-09">Celý workflow v kostce</a></li>
+<li><a href="#ai-workflow-prep-edit-h2-10">Příklad: vytvoření pracovního listu</a></li>
+<li><a href="#ai-workflow-prep-edit-h2-11">Stejný postup může používat i žák</a></li>
+<li><a href="#ai-workflow-prep-edit-h2-12">AI jako spolupracovník, ne autopilot</a></li>
+<li><a href="#ai-workflow-prep-edit-h2-13">Ne každá úloha potřebuje celý proces</a></li>
+<li><a href="#ai-workflow-prep-edit-h2-14">Praktický semafor</a></li>
+<li><a href="#ai-workflow-prep-edit-h2-15">Největší změna není v promptu</a></li>
+<li><a href="#ai-workflow-prep-edit-h2-16">Celý postup v jedné větě</a></li>
+<li><a href="#ai-workflow-prep-edit-h2-17">Co následuje?</a></li></ol></nav></details>
+
+<article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Spojte kvalitní zdroj, přesné zadání, kritickou kontrolu a lidské rozhodnutí do jednoho opakovatelného postupu pro tvorbu školních materiálů.</p>
             </div>
@@ -79,8 +111,8 @@
                     <figcaption>Praktické workflow PREP + EDIT pro práci s AI ve škole.</figcaption>
                 </figure>
 
-                <h2>1. ZDROJ</h2>
-                <h3>Z čeho má AI vycházet?</h3>
+                <h2 id="ai-workflow-prep-edit-h2-01">1. ZDROJ</h2>
+                <h3 id="ai-workflow-prep-edit-h3-01">Z čeho má AI vycházet?</h3>
                 <p>Tohle je krok, který se při práci s AI často přeskočí.</p>
                 <p>Učitel napíše například:</p>
                 <blockquote>Vytvoř pracovní list o Evropské unii.</blockquote>
@@ -109,7 +141,7 @@
                 <blockquote>Použij jako hlavní zdroj tento dokument a nepřidávej informace, které v něm nejsou.</blockquote>
                 <p>To výrazně snižuje riziko, že AI vytvoří materiál, který sice působí dobře, ale neodpovídá tomu, co ve výuce potřebujeme.</p>
 
-                <h2>Kdy zdroj nepotřebujeme?</h2>
+                <h2 id="ai-workflow-prep-edit-h2-02">Kdy zdroj nepotřebujeme?</h2>
                 <p>Ne vždy.</p>
                 <p>Pokud například chceme:</p>
                 <ul>
@@ -132,8 +164,8 @@
                 <p>je práce se zdroji mnohem důležitější.</p>
                 <blockquote><strong>Čím více záleží na přesnosti, tím důležitější je zdroj.</strong></blockquote>
 
-                <h2>2. PREP</h2>
-                <h3>Zadej úkol přesně</h3>
+                <h2 id="ai-workflow-prep-edit-h2-03">2. PREP</h2>
+                <h3 id="ai-workflow-prep-edit-h3-02">Zadej úkol přesně</h3>
                 <p>Jakmile víme, z čeho má AI vycházet, přichází samotné zadání.</p>
                 <p>Pomoci nám může framework PREP:</p>
                 <div class="article-prompt"><strong>P – Prompt</strong><br />Co má AI udělat?<br /><br /><strong>R – Role</strong><br />V jaké roli má pracovat?<br /><br /><strong>E – Explicit</strong><br />Co přesně má výstup obsahovat?<br /><br /><strong>P – Parameters</strong><br />Jaká omezení má dodržet?</div>
@@ -141,8 +173,8 @@
                 <div class="article-prompt"><strong>Prompt:</strong> Vytvoř pracovní list na téma elektrický obvod.<br /><br /><strong>Role:</strong> Jsi zkušený učitel elektrotechniky na střední odborné škole.<br /><br /><strong>Explicit:</strong> Žáci mají procvičit základní pojmy, rozpoznání součástek a jednoduché schéma zapojení.<br /><br /><strong>Parameters:</strong> Pracovní list je určen pro první ročník, má být na 20 minut, obsahovat maximálně 12 úkolů a na konci řešení pro učitele.</div>
                 <p>Díky PREP nemusí AI tolik hádat.</p>
 
-                <h2>3. AI</h2>
-                <h3>Nech vytvořit první návrh</h3>
+                <h2 id="ai-workflow-prep-edit-h2-04">3. AI</h2>
+                <h3 id="ai-workflow-prep-edit-h3-03">Nech vytvořit první návrh</h3>
                 <p>Teprve teď přichází samotné generování.</p>
                 <p>AI vytvoří:</p>
                 <ul>
@@ -161,11 +193,11 @@
                 <p>Stejně jako když kolega pošle první verzi materiálu, také ji většinou ještě otevřeme, přečteme a upravíme.</p>
                 <p>U AI by to mělo být stejné.</p>
 
-                <h2>4. EDIT</h2>
-                <h3>Zkontroluj, co AI vytvořila</h3>
+                <h2 id="ai-workflow-prep-edit-h2-05">4. EDIT</h2>
+                <h3 id="ai-workflow-prep-edit-h3-04">Zkontroluj, co AI vytvořila</h3>
                 <p>Teď použijeme druhý framework:</p>
                 <div class="article-prompt"><strong>E – Evaluate</strong><br />Zhodnoť výstup.<br /><br /><strong>D – Determine</strong><br />Ověř správnost.<br /><br /><strong>I – Identify</strong><br />Najdi problémy, zkreslení a chybějící informace.<br /><br /><strong>T – Transform</strong><br />Výsledek uprav.</div>
-                <h3>E – Evaluate</h3>
+                <h3 id="ai-workflow-prep-edit-h3-05">E – Evaluate</h3>
                 <p>Ptejme se:</p>
                 <ul>
                     <li>splnila AI zadání?</li>
@@ -175,7 +207,7 @@
                     <li>není příliš dlouhý?</li>
                     <li>není naopak příliš jednoduchý?</li>
                 </ul>
-                <h3>D – Determine</h3>
+                <h3 id="ai-workflow-prep-edit-h3-06">D – Determine</h3>
                 <p>Zkontrolujeme fakta.</p>
                 <p>Například:</p>
                 <ul>
@@ -188,7 +220,7 @@
                     <li>zákony,</li>
                     <li>historické údaje.</li>
                 </ul>
-                <h3>I – Identify</h3>
+                <h3 id="ai-workflow-prep-edit-h3-07">I – Identify</h3>
                 <p>Hledáme problémy.</p>
                 <p>Například:</p>
                 <ul>
@@ -200,7 +232,7 @@
                     <li>nechtěnou nápovědu,</li>
                     <li>nevhodný příklad.</li>
                 </ul>
-                <h3>T – Transform</h3>
+                <h3 id="ai-workflow-prep-edit-h3-08">T – Transform</h3>
                 <p>Nakonec materiál upravíme.</p>
                 <p>Můžeme například:</p>
                 <ul>
@@ -213,8 +245,8 @@
                     <li>přidat obrázek nebo tabulku.</li>
                 </ul>
 
-                <h2>5. OVĚŘENÍ</h2>
-                <h3>Důležitá tvrzení zkontroluj ještě jednou</h3>
+                <h2 id="ai-workflow-prep-edit-h2-06">5. OVĚŘENÍ</h2>
+                <h3 id="ai-workflow-prep-edit-h3-09">Důležitá tvrzení zkontroluj ještě jednou</h3>
                 <p>EDIT už obsahuje kontrolu správnosti.</p>
                 <p>Pro školní praxi je ale užitečné dát <strong>ověření ještě jako samostatný krok</strong>.</p>
                 <p>Proč?</p>
@@ -230,7 +262,7 @@
                 <p>a přesto může obsahovat nepřesnost.</p>
                 <blockquote><strong>Teď se zastav a podívej se na fakta ještě jednou.</strong></blockquote>
 
-                <h2>Co ověřovat důkladněji?</h2>
+                <h2 id="ai-workflow-prep-edit-h2-07">Co ověřovat důkladněji?</h2>
                 <p>Zvláštní pozornost si zaslouží například:</p>
                 <ul>
                     <li>legislativa,</li>
@@ -246,8 +278,8 @@
                 </ul>
                 <p>Čím větší dopad může chyba mít, tím důkladnější má být ověření.</p>
 
-                <h2>6. SCHVÁLENÍ ČLOVĚKEM</h2>
-                <h3>Poslední rozhodnutí není úkolem AI</h3>
+                <h2 id="ai-workflow-prep-edit-h2-08">6. SCHVÁLENÍ ČLOVĚKEM</h2>
+                <h3 id="ai-workflow-prep-edit-h3-10">Poslední rozhodnutí není úkolem AI</h3>
                 <p>Poslední krok je možná nejdůležitější.</p>
                 <p>Někdo musí říct:</p>
                 <blockquote>Ano, tento materiál můžu použít.</blockquote>
@@ -276,7 +308,7 @@
                 <p>Proto je posledním krokem:</p>
                 <blockquote><strong>ČLOVĚK SCHVÁLÍ VÝSLEDEK.</strong></blockquote>
 
-                <h2>Celý workflow v kostce</h2>
+                <h2 id="ai-workflow-prep-edit-h2-09">Celý workflow v kostce</h2>
                 <h3>1. ZDROJ</h3>
                 <p>Z čeho má AI vycházet?</p>
                 <h3>2. PREP</h3>
@@ -290,7 +322,7 @@
                 <h3>6. SCHVÁLENÍ ČLOVĚKEM</h3>
                 <p>Rozhodnu, zda je materiál skutečně připraven k použití.</p>
 
-                <h2>Příklad: vytvoření pracovního listu</h2>
+                <h2 id="ai-workflow-prep-edit-h2-10">Příklad: vytvoření pracovního listu</h2>
                 <p>Představme si, že chceme vytvořit pracovní list do občanské nauky na téma dezinformace.</p>
                 <h3>ZDROJ</h3>
                 <p>Učitel nahraje vlastní výkladový text a odkaz na důvěryhodný zdroj.</p>
@@ -311,7 +343,7 @@
                 <h3>SCHVÁLENÍ</h3>
                 <p>Teprve potom pracovní list použije se žáky.</p>
 
-                <h2>Stejný postup může používat i žák</h2>
+                <h2 id="ai-workflow-prep-edit-h2-11">Stejný postup může používat i žák</h2>
                 <p>Workflow nemusí být určen pouze učitelům.</p>
                 <p>Lze jej zjednodušit i pro žáky.</p>
                 <p>Například:</p>
@@ -319,7 +351,7 @@
                 <p>To je mnohem hodnotnější dovednost než pouhé:</p>
                 <blockquote>„Napiš mi referát.“</blockquote>
 
-                <h2>AI jako spolupracovník, ne autopilot</h2>
+                <h2 id="ai-workflow-prep-edit-h2-12">AI jako spolupracovník, ne autopilot</h2>
                 <p>Celý workflow lze chápat velmi jednoduše.</p>
                 <p>AI není autopilot.</p>
                 <p>Je to spíš <strong>rychlý spolupracovník</strong>.</p>
@@ -340,7 +372,7 @@
                 <p>Druhý způsob je možná o několik minut delší.</p>
                 <p>Ale také výrazně bezpečnější a pedagogicky smysluplnější.</p>
 
-                <h2>Ne každá úloha potřebuje celý proces</h2>
+                <h2 id="ai-workflow-prep-edit-h2-13">Ne každá úloha potřebuje celý proces</h2>
                 <p>Ani tento workflow není potřeba používat mechanicky při každém dotazu.</p>
                 <p>Pokud AI požádáme:</p>
                 <blockquote>Navrhni pět názvů třídního projektu.</blockquote>
@@ -353,7 +385,7 @@
                 <p>Proto lze celý systém chápat jako škálu:</p>
                 <blockquote><strong>Čím vyšší je riziko chyby, tím více kontroly.</strong></blockquote>
 
-                <h2>Praktický semafor</h2>
+                <h2 id="ai-workflow-prep-edit-h2-14">Praktický semafor</h2>
                 <p>Pomoci může jednoduché rozdělení.</p>
                 <h3>🟢 NÍZKÉ RIZIKO</h3>
                 <p>Například:</p>
@@ -384,7 +416,7 @@
                 </ul>
                 <p>Zde je nutná důkladná kontrola a jasné lidské rozhodnutí.</p>
 
-                <h2>Největší změna není v promptu</h2>
+                <h2 id="ai-workflow-prep-edit-h2-15">Největší změna není v promptu</h2>
                 <p>Může se zdát, že moderní práce s AI je hlavně o tom, kdo umí napsat nejlepší prompt.</p>
                 <p>Ale ve škole je mnohem důležitější něco jiného.</p>
                 <p><strong>Umět řídit celý proces.</strong></p>
@@ -399,11 +431,11 @@
                 </ul>
                 <p>To je dovednost, která zůstane užitečná i tehdy, když se dnešní AI nástroje výrazně změní.</p>
 
-                <h2>Celý postup v jedné větě</h2>
+                <h2 id="ai-workflow-prep-edit-h2-16">Celý postup v jedné větě</h2>
                 <p>Pokud si nechceme pamatovat všechny názvy, stačí jednoduché pravidlo:</p>
                 <div class="article-prompt"><strong>Dej AI dobrý zdroj, řekni jí přesně, co chceš, zkontroluj, co vytvořila, ověř důležitá fakta a poslední rozhodnutí udělej sám.</strong></div>
 
-                <h2>Co následuje?</h2>
+                <h2 id="ai-workflow-prep-edit-h2-17">Co následuje?</h2>
                 <p>Máme už tři důležité části:</p>
                 <p><strong>PREP</strong> – jak připravit kvalitní zadání.</p>
                 <p><strong>EDIT</strong> – jak kontrolovat výstupy AI.</p>
@@ -441,6 +473,9 @@
 
     <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai.html">Zpět na AI pro výuku</a></footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261113-7z"></script>
 </body>
 
 </html>

@@ -418,10 +418,10 @@ test('wave 7 hero contact sheet includes the approved light reference', async ({
   await page.screenshot({ path: 'artifacts/wave7-hero-contact-sheet.png', fullPage: true });
 });
 
-test('homepage renders the six newest catalog entries and all wave 7 and wave 8 records', async ({ page }) => {
+test('homepage renders the six newest catalog entries and complete records through wave 10', async ({ page }) => {
   await page.goto(baseURL, { waitUntil: 'networkidle' });
   await expect(page.locator('#latest-articles .latest-card')).toHaveCount(6);
-  const [expected, actual, wave7Records, wave8Records, duplicateHrefs] = await page.evaluate(() => {
+  const [expected, actual, wave7Records, wave8Records, wave10Records, duplicateHrefs] = await page.evaluate(() => {
     const ordered = window.siteArticles
       .map((article, index) => ({ article, index }))
       .sort((left, right) => (right.article.date || '').localeCompare(left.article.date || '') || left.index - right.index)
@@ -434,16 +434,28 @@ test('homepage renders the six newest catalog entries and all wave 7 and wave 8 
         .map(href => window.siteArticles.find(article => article.href === href)),
       ['gemini-desktop-navod-pro-ucitele.html', 'gemini-notebook-navod-pro-ucitele.html', 'gemini-skills-pro-ucitele.html', 'gemini-storybook-navod-pro-ucitele.html', 'ai-navod-chatgpt-zacatek-bezpecne.html', 'ai-workflow-7-kroku-gemini-notebook.html']
         .map(href => window.siteArticles.find(article => article.href === href)),
+      ['ai-workflow-8-otazek.html', 'ai-workflow-prep-edit.html', 'ai-workflow-udl-ai.html', 'ai-workflow-usetri-praci.html']
+        .map(href => window.siteArticles.find(article => article.href === href)),
       window.siteArticles.map(item => item.href).filter((href, index, all) => all.indexOf(href) !== index)
     ];
   });
   expect(actual).toEqual(expected);
   expect(duplicateHrefs).toEqual([]);
-  for (const article of [...wave7Records, ...wave8Records]) {
+  for (const article of [...wave7Records, ...wave8Records, ...wave10Records]) {
     expect(article).toBeTruthy();
     for (const field of ['href', 'title', 'summary', 'category', 'date', 'dateLabel', 'icon', 'tags', 'badgeClass']) {
       expect(article[field], `catalog ${field} for ${article.href}`).toBeTruthy();
     }
+  }
+  const expectedDates = {
+    'ai-workflow-8-otazek.html': ['2026-08-25', '25. srpna 2026'],
+    'ai-workflow-prep-edit.html': ['2026-08-25', '25. srpna 2026'],
+    'ai-workflow-udl-ai.html': ['2026-08-25', '25. srpna 2026'],
+    'ai-workflow-usetri-praci.html': ['2026-08-25', '25. srpna 2026']
+  };
+  for (const article of wave10Records) {
+    expect(article.category).toBe('Workflow');
+    expect([article.date, article.dateLabel]).toEqual(expectedDates[article.href]);
   }
 });
 
@@ -691,7 +703,15 @@ test('wave 9 hero computed styles, desktop/mobile screenshots, and approved refe
   fs.writeFileSync('artifacts/wave9-computed-styles.json',JSON.stringify(records,null,2));
 });
 
-const migrationArticles = [...wave1Articles, ...wave2Articles, ...wave3Articles, ...wave4Articles, ...wave5Articles, ...wave6Articles, ...wave7Articles, ...wave8Articles];
+
+const wave10Articles = [
+  { file: 'ai-workflow-8-otazek.html', title: '8 otázek, které by si měl učitel položit při práci s AI', activeArea: 'Připravit výuku', breadcrumb: 'Workflow pro učitele', breadcrumbHref: 'ai.html#workflow', tocCount: 25, h2: '#ai-workflow-8-otazek-h2-01', h3: '#ai-workflow-8-otazek-h3-01', baselineSha: '94be232d7d0f20e589deb5910c820a6b95fc5171', checkTocScroll: true, representative: '#ai-workflow-8-otazek-h2-01' },
+  { file: 'ai-workflow-prep-edit.html', title: 'PREP + EDIT: Praktický workflow pro práci s AI', activeArea: 'Připravit výuku', breadcrumb: 'Workflow pro učitele', breadcrumbHref: 'ai.html#workflow', tocCount: 27, h2: '#ai-workflow-prep-edit-h2-01', h3: '#ai-workflow-prep-edit-h3-01', baselineSha: '94be232d7d0f20e589deb5910c820a6b95fc5171', checkTocScroll: true, representative: '#ai-workflow-prep-edit-h2-03' },
+  { file: 'ai-workflow-udl-ai.html', title: 'UDL + AI: Jak přizpůsobit výuku různým žákům', activeArea: 'Připravit výuku', breadcrumb: 'Workflow pro učitele', breadcrumbHref: 'ai.html#workflow', tocCount: 40, h2: '#toc-01', h3: '#ai-workflow-udl-ai-h3-01', baselineSha: '94be232d7d0f20e589deb5910c820a6b95fc5171', checkTocScroll: true, representative: '#toc-01' },
+  { file: 'ai-workflow-usetri-praci.html', title: 'Jak může AI skutečně ušetřit učiteli práci', activeArea: 'Připravit výuku', breadcrumb: 'Workflow pro učitele', breadcrumbHref: 'ai.html#workflow', tocCount: 34, h2: '#toc-01', h3: '#ai-workflow-usetri-praci-h3-05', baselineSha: '94be232d7d0f20e589deb5910c820a6b95fc5171', checkTocScroll: true, representative: '#toc-02' }
+];
+
+const migrationArticles = [...wave1Articles, ...wave2Articles, ...wave3Articles, ...wave4Articles, ...wave5Articles, ...wave6Articles, ...wave7Articles, ...wave8Articles, ...wave10Articles];
 
 for (const article of migrationArticles) {
   test.describe(`Migration: ${article.file}`, () => {
@@ -926,6 +946,98 @@ for (const article of migrationArticles) {
     });
   });
 }
+
+
+
+test('wave 10 light hero computed styles and required desktop/mobile screenshot evidence', async ({ page }) => {
+  const fs = require('node:fs');
+  const records = [];
+  const contactCards = [];
+  const contrast = (foreground, background) => {
+    const rgb = value => {
+      const match = value.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)\)/);
+      if (!match) return null;
+      return match.slice(1, 4).map(channel => {
+        const component = Number(channel) / 255;
+        return component <= 0.04045 ? component / 12.92 : ((component + 0.055) / 1.055) ** 2.4;
+      }).reduce((sum, component, index) => sum + component * [0.2126, 0.7152, 0.0722][index], 0);
+    };
+    const a = rgb(foreground), b = rgb(background);
+    if (a === null || b === null) return 0;
+    return (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
+  };
+
+  for (const article of wave10Articles) {
+    for (const viewport of [{name:'desktop-1440',width:1440,height:1000},{name:'mobile-390',width:390,height:844}]) {
+      await page.setViewportSize({width:viewport.width,height:viewport.height});
+      await page.goto(baseURL + '/' + article.file,{waitUntil:'networkidle'});
+      await page.evaluate(() => document.fonts.ready);
+      const style = await page.evaluate(() => {
+        const selectors = ['body','.workflow-shell','.workflow-topbar','.workflow-hero','.workflow-eyebrow','.workflow-hero h1','.workflow-hero h1 span','.workflow-hero-lead','.workflow-meta span','.workflow-news-panel','.workflow-news-panel-label','.workflow-news-panel h2','.workflow-news-panel p','.workflow-news-panel-meta span','.workflow-route','.workflow-stage','.workflow-stage-number','.workflow-stage strong','.workflow-stage small'];
+        return selectors.map(selector => {
+          const element = document.querySelector(selector);
+          if (!element) return null;
+          const css = getComputedStyle(element), before = getComputedStyle(element,'::before'), after = getComputedStyle(element,'::after');
+          const read = item => ({display:item.display,content:item.content,backgroundColor:item.backgroundColor,backgroundImage:item.backgroundImage,color:item.color,opacity:item.opacity,filter:item.filter,backdropFilter:item.backdropFilter});
+          return {selector,backgroundColor:css.backgroundColor,backgroundImage:css.backgroundImage,color:css.color,opacity:css.opacity,filter:css.filter,backdropFilter:css.backdropFilter,before:read(before),after:read(after)};
+        }).filter(Boolean);
+      });
+      records.push({file:article.file,...viewport,styles:style});
+      const value = selector => style.find(item=>item.selector===selector);
+      expect(value('.workflow-shell').backgroundImage).toContain('linear-gradient');
+      expect(value('.workflow-shell').backgroundImage).not.toMatch(/#0a0f1e|#0d1b40|10, 15, 30|13, 27, 64/i);
+      expect(value('.workflow-shell').after.display).toBe('none');
+      expect(value('.workflow-hero h1').color).toBe('rgb(16, 45, 43)');
+      expect(value('.workflow-hero h1 span').color).toBe('rgb(7, 88, 79)');
+      expect(value('.workflow-hero-lead').color).toBe('rgb(52, 75, 69)');
+      expect(contrast(value('.workflow-hero h1').color,'rgb(255, 254, 250)')).toBeGreaterThan(7);
+      expect(contrast(value('.workflow-hero-lead').color,'rgb(255, 254, 250)')).toBeGreaterThan(4.5);
+      const panel=value('.workflow-news-panel');
+      if(panel){
+        expect(panel.backgroundImage).toContain('linear-gradient');
+        expect(panel.backgroundImage).not.toMatch(/#0a0f1e|#0d1b40|10, 15, 30|13, 27, 64/i);
+        expect(value('.workflow-news-panel h2').color).toBe('rgb(16, 45, 43)');
+        expect(value('.workflow-news-panel p').color).toBe('rgb(82, 103, 95)');
+        expect(contrast(value('.workflow-news-panel p').color,'rgb(255, 255, 255)')).toBeGreaterThan(4.5);
+      }
+      for(const surface of style.filter(item=>item.selector==='.workflow-stage')){
+        expect(surface.backgroundColor).not.toMatch(/10, 15, 30|13, 21, 48|13, 27, 64/);
+        expect(surface.backdropFilter).toBe('none');
+      }
+      const heroPath='artifacts/wave10-'+article.file+'-'+viewport.name+'-hero.png';
+      await page.locator('.workflow-shell').screenshot({path:heroPath});
+      if(viewport.width===1440){
+        const image=await fs.promises.readFile(heroPath);
+        contactCards.push({title:article.title,data:image.toString('base64')});
+        const toc=page.locator('.article-content-navigation');
+        await toc.scrollIntoViewIfNeeded();
+        await toc.screenshot({path:'artifacts/wave10-'+article.file+'-desktop-1440-content-panel.png'});
+        const inner=page.locator('.article-content-navigation nav');
+        const scroll=await inner.evaluate(el=>({height:el.scrollHeight,client:el.clientHeight}));
+        expect(scroll.height).toBeGreaterThan(scroll.client);
+        await inner.evaluate(el=>{el.scrollTop=Math.max(0,Math.floor((el.scrollHeight-el.clientHeight)/2));});
+        await toc.screenshot({path:'artifacts/wave10-'+article.file+'-desktop-1440-content-panel-inner-scroll.png'});
+        await page.locator(article.representative).scrollIntoViewIfNeeded();
+        await page.screenshot({path:'artifacts/wave10-'+article.file+'-desktop-1440-method-section.png',fullPage:false});
+      } else {
+        const toc=page.locator('.article-content-navigation');
+        await expect(toc).toHaveJSProperty('open',true);
+        await toc.screenshot({path:'artifacts/wave10-'+article.file+'-mobile-390-expanded-content.png'});
+        await page.locator(article.representative).scrollIntoViewIfNeeded();
+        await page.screenshot({path:'artifacts/wave10-'+article.file+'-mobile-390-method-section.png',fullPage:false});
+      }
+    }
+  }
+
+  await page.setViewportSize({width:1440,height:1000});
+  await page.goto(baseURL+'/ai-navod-edit-kontrola.html',{waitUntil:'networkidle'});
+  const reference=await page.locator('.workflow-shell').screenshot();
+  contactCards.push({title:'Schválený světlý pilot EDIT',data:reference.toString('base64')});
+  const cards=contactCards.map(item=>'<article><h2>'+item.title+'</h2><img alt="'+item.title+'" src="data:image/png;base64,'+item.data+'"></article>').join('');
+  await page.setContent('<!doctype html><html lang="cs"><meta charset="utf-8"><title>Vlna 10 – porovnání hero</title><style>*{box-sizing:border-box}body{margin:0;padding:24px;background:#fffefa;color:#102d2b;font:600 15px Arial,sans-serif}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}article{min-width:0;padding:10px;border:1px solid #dfe8e1;border-radius:12px;background:#fff;overflow:hidden}h2{font-size:16px;min-height:40px;margin:4px 0 12px}img{display:block;width:100%;height:auto;border:1px solid #e5e7e1;border-radius:8px}</style><h1>Vlna 10 – hero a schválený světlý pilot</h1><main class="grid">'+cards+'</main></html>');
+  await page.screenshot({path:'artifacts/wave10-hero-contact-sheet.png',fullPage:true});
+  fs.writeFileSync('artifacts/wave10-computed-styles.json',JSON.stringify(records,null,2));
+});
 
 test('wave 1 desktop overview compares its four articles side by side', async ({ page }) => {
   const cards = [];
