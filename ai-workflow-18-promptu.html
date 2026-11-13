@@ -7,6 +7,10 @@
     <title>18 praktických AI promptů pro učitele | AI ve Výuce</title>
     <meta name="description" content="18 praktických promptů pro učitele: příprava hodin, pracovní listy, diferenciace, testy, jazyková konverzace, zpětná vazba a kontrola výstupů AI." />
     <link rel="stylesheet" href="css/workflow.css?v=20260825-workflow-18-promptu" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261113-8a" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261113-8a" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261113-8a" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261113-8a" />
     <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/ai-workflow-18-promptu" />
     <meta property="og:title" content="18 praktick&#253;ch AI promptů pro učitele | AI ve V&#253;uce" />
     <meta property="og:description" content="18 praktick&#253;ch promptů pro učitele: př&#237;prava hodin, pracovn&#237; listy, diferenciace, testy, jazykov&#225; konverzace, zpětn&#225; vazba a kontrola v&#253;stupů AI." />
@@ -22,12 +26,19 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-            <a class="workflow-back" href="ai.html#workflow">← Workflow pro učitele</a>
-        </div>
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="prepare">
+    <header class="site-header">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+      <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a>
+    </div></div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="ai.html#workflow">Workflow pro učitele</a></li><li aria-current="page">18 praktických AI promptů pro učitele</li></ol></nav>
+<header class="workflow-shell">
+        
         <div class="workflow-hero">
             <div>
                 <div class="workflow-eyebrow">Workflow pro učitele · 25. srpna 2026</div>
@@ -44,24 +55,40 @@
         </div>
     </header>
 
-    <main class="workflow-main">
-        <article class="workflow-article">
+    <main class="workflow-main article-content-layout">
+        <details class="article-content-navigation" open><summary><span>V tomto článku</span></summary><nav aria-label="Obsah článku"><ol><li><a href="#toc-01">Jak prompty používat</a></li>
+<li><a href="#ai-workflow-18-promptu-h2-02">1. Příprava celé vyučovací hodiny</a><ol><li><a href="#ai-workflow-18-promptu-h3-01">Kdy se hodí?</a></li></ol></li>
+<li><a href="#ai-workflow-18-promptu-h2-03">2. Vytvoření pracovního listu</a></li>
+<li><a href="#ai-workflow-18-promptu-h2-04">3. Zjednodušení obtížného textu</a></li>
+<li><a href="#ai-workflow-18-promptu-h2-05">4. Vytvoření obtížnější varianty</a></li>
+<li><a href="#ai-workflow-18-promptu-h2-06">5. Vytvoření podpůrné varianty</a></li>
+<li><a href="#ai-workflow-18-promptu-h2-07">6. Vysvětli to jinak</a></li>
+<li><a href="#ai-workflow-18-promptu-h2-08">7. Najdi běžné chyby žáků</a></li>
+<li><a href="#ai-workflow-18-promptu-h2-09">8. Otázky pro ověření porozumění</a></li>
+<li><a href="#ai-workflow-18-promptu-h2-10">9. Exit ticket na konec hodiny</a></li>
+<li><a href="#ai-workflow-18-promptu-h2-11">10. Vytvoření testových otázek</a></li>
+<li><a href="#ai-workflow-18-promptu-h2-12">11. Kontrola již vytvořeného testu</a></li>
+<li><a href="#ai-workflow-18-promptu-h2-13">12. Aktivita do dvojic</a></li>
+<li><a href="#ai-workflow-18-promptu-h2-14">13. Simulace reálné situace</a></li>
+<li><a href="#ai-workflow-18-promptu-h2-15">14. AI jako partner pro jazykovou konverzaci</a></li>
+<li><a href="#ai-workflow-18-promptu-h2-16">15. Učitel chybuje – žák opravuje AI</a></li>
+<li><a href="#ai-workflow-18-promptu-h2-17">16. Převod materiálu na studijní otázky</a></li>
+<li><a href="#ai-workflow-18-promptu-h2-18">17. Zpětná vazba bez napsání práce za žáka</a></li>
+<li><a href="#ai-workflow-18-promptu-h2-19">18. Zkontroluj vlastní AI výstup metodou EDIT</a></li>
+<li><a href="#toc-02">Jeden univerzální prompt místo osmnácti?</a></li>
+<li><a href="#toc-03">Nemusíme vytvořit dokonalý prompt napoprvé</a></li>
+<li><a href="#toc-04">Když máme vlastní zdroje, používejme je</a></li>
+<li><a href="#toc-05">Prompt není nejdůležitější část práce</a></li>
+<li><a href="#toc-06">Uložte si jen ty, které skutečně používáte</a></li>
+<li><a href="#ai-workflow-18-promptu-h2-25">Co následuje?</a></li></ol></nav></details>
+
+<article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Upravitelné šablony pro konkrétní předmět, třídu a situaci. Prompty pomohou začít, ale nenahrazují práci se zdroji, kontrolu ani rozhodnutí učitele.</p>
                 <p class="article-editorial-title">18 praktických AI promptů pro učitele – aktualizováno pro rok 2026</p>
             </div>
 
-            <nav class="article-toc" aria-labelledby="toc-heading-ai-workflow-18-promptu-html">
-                <p class="article-toc-label" id="toc-heading-ai-workflow-18-promptu-html">V tomto článku</p>
-                <ul>
-                    <li><a href="#toc-01">Jak prompty používat</a></li>
-                    <li><a href="#toc-02">Jeden univerzální prompt místo osmnácti?</a></li>
-                    <li><a href="#toc-03">Nemusíme vytvořit dokonalý prompt napoprvé</a></li>
-                    <li><a href="#toc-04">Když máme vlastní zdroje, používejme je</a></li>
-                    <li><a href="#toc-05">Prompt není nejdůležitější část práce</a></li>
-                    <li><a href="#toc-06">Uložte si jen ty, které skutečně používáte</a></li>
-                </ul>
-            </nav>
+            
             <div class="article-content">
                 <p class="article-lead">Umělá inteligence může učiteli pomoci s přípravou výuky, pracovními listy, diferenciací, testy, vysvětlováním učiva nebo zpětnou vazbou.</p>
                 <p>Nemusíme ale pokaždé začínat prázdným chatovacím oknem a přemýšlet:</p>
@@ -85,62 +112,62 @@
                 <p>Prompty není nutné používat slovo od slova.</p>
                 <p>Berte je jako <strong>šablony</strong>, které si upravíte podle vlastní výuky.</p>
 
-                <h2>1. Příprava celé vyučovací hodiny</h2>
+                <h2 id="ai-workflow-18-promptu-h2-02">1. Příprava celé vyučovací hodiny</h2>
                 <div class="article-prompt">Jsi zkušený učitel předmětu <strong>[předmět]</strong>. Připrav vyučovací hodinu na téma <strong>[téma]</strong> pro <strong>[ročník / věk žáků]</strong>.<br /><br />Žáci již znají <strong>[předchozí znalosti]</strong>.<br /><br />Cílem hodiny je, aby žáci na konci dokázali <strong>[vzdělávací cíl]</strong>.<br /><br />Hodina trvá <strong>[čas]</strong> minut.<br /><br />Navrhni:<br />• úvodní aktivitu,<br />• krátké vysvětlení,<br />• hlavní aktivitu,<br />• způsob ověření porozumění,<br />• závěrečné shrnutí nebo exit ticket.<br /><br />U každé části uveď přibližný čas a stručné instrukce pro učitele.</div>
-                <h3>Kdy se hodí?</h3>
+                <h3 id="ai-workflow-18-promptu-h3-01">Kdy se hodí?</h3>
                 <p>Když potřebujeme první návrh celé hodiny, který následně přizpůsobíme konkrétní třídě.</p>
 
-                <h2>2. Vytvoření pracovního listu</h2>
+                <h2 id="ai-workflow-18-promptu-h2-03">2. Vytvoření pracovního listu</h2>
                 <div class="article-prompt">Vytvoř pracovní list na téma <strong>[téma]</strong> pro žáky <strong>[ročník / úroveň]</strong>.<br /><br />Vycházej z následujícího materiálu:<br /><strong>[vložit text nebo přiložit dokument]</strong><br /><br />Cílem je procvičit <strong>[dovednost / učivo]</strong>.<br /><br />Vytvoř <strong>[počet]</strong> různých typů úloh od jednoduchých ke složitějším.<br /><br />Pracovní list má být přibližně na <strong>[čas]</strong> minut.<br /><br />Na konci vytvoř samostatné řešení pro učitele.<br /><br />Nepřidávej odborné informace, které nelze doložit z přiloženého zdroje.</div>
 
-                <h2>3. Zjednodušení obtížného textu</h2>
+                <h2 id="ai-workflow-18-promptu-h2-04">3. Zjednodušení obtížného textu</h2>
                 <div class="article-prompt">Přepiš následující text tak, aby mu rozuměli žáci <strong>[věk / ročník / jazyková úroveň]</strong>.<br /><br />Zachovej všechny důležité informace a odborné termíny, které se žáci potřebují naučit.<br /><br />Zkrať dlouhé věty, vysvětli obtížná slova a rozděl text do krátkých odstavců.<br /><br />Za text přidej slovníček nejvýše <strong>[počet]</strong> důležitých pojmů.<br /><br />Nevymýšlej nové informace.<br /><br /><strong>Text:</strong><br />[vložit text]</div>
 
-                <h2>4. Vytvoření obtížnější varianty</h2>
+                <h2 id="ai-workflow-18-promptu-h2-05">4. Vytvoření obtížnější varianty</h2>
                 <div class="article-prompt">Uprav následující aktivitu pro žáky, kteří učivo zvládají rychleji.<br /><br />Zachovej stejný vzdělávací cíl, ale:<br />• zvyš náročnost přemýšlení,<br />• přidej úlohy vyžadující vysvětlení nebo argumentaci,<br />• omez jednoduché mechanické procvičování,<br />• přidej jednu rozšiřující úlohu.<br /><br /><strong>Původní aktivita:</strong><br />[vložit]</div>
 
-                <h2>5. Vytvoření podpůrné varianty</h2>
+                <h2 id="ai-workflow-18-promptu-h2-06">5. Vytvoření podpůrné varianty</h2>
                 <div class="article-prompt">Vytvoř přístupnější variantu následujícího materiálu.<br /><br />Zachovej stejný vzdělávací cíl.<br /><br />Uprav pouze způsob zadání:<br />• zkrať instrukce,<br />• rozděl složité úkoly na jednotlivé kroky,<br />• zvýrazni klíčové informace,<br />• přidej jeden vypracovaný příklad,<br />• omez zbytečně komplikované formulace.<br /><br />Nesnižuj obsah na úroveň, při které by žák přestal procvičovat požadovanou dovednost.<br /><br /><strong>Materiál:</strong><br />[vložit]</div>
 
-                <h2>6. Vysvětli to jinak</h2>
+                <h2 id="ai-workflow-18-promptu-h2-07">6. Vysvětli to jinak</h2>
                 <div class="article-prompt">Jsi zkušený učitel <strong>[předmět]</strong>.<br /><br />Potřebuji žákům <strong>[ročník / věk]</strong> vysvětlit pojem <strong>[pojem]</strong>.<br /><br />Žáci už znají <strong>[předchozí znalosti]</strong>.<br /><br />Připrav:<br />1. velmi jednoduché vysvětlení,<br />2. běžný příklad ze života,<br />3. přirovnání nebo analogii,<br />4. odbornější vysvětlení,<br />5. jednu otázku, kterou ověřím, zda tomu žáci skutečně rozumí.<br /><br />Nepoužívej odborné termíny bez vysvětlení.</div>
                 <p>Podobný postup doporučuje i aktuální metodika OpenAI pro pedagogy: při tvorbě vysvětlení je užitečné AI poskytnout úroveň žáků, jejich předchozí znalosti a požádat o vysvětlení, příklady a analogii.</p>
 
-                <h2>7. Najdi běžné chyby žáků</h2>
+                <h2 id="ai-workflow-18-promptu-h2-08">7. Najdi běžné chyby žáků</h2>
                 <div class="article-prompt">Jsi zkušený učitel <strong>[předmět]</strong>.<br /><br />Téma je <strong>[téma]</strong>.<br /><br />Uveď <strong>[počet]</strong> nejčastějších chyb nebo mylných představ, které mohou mít žáci na úrovni <strong>[ročník / úroveň]</strong>.<br /><br />U každé napiš:<br />• v čem chyba spočívá,<br />• proč pravděpodobně vzniká,<br />• jednoduchý způsob, jak ji žákovi vysvětlit,<br />• krátkou kontrolní otázku, podle které poznám, zda už problém pochopil.<br /><br />Pokud si nejsi jistý, že je některá chyba skutečně běžná, výslovně to označ.</div>
 
-                <h2>8. Otázky pro ověření porozumění</h2>
+                <h2 id="ai-workflow-18-promptu-h2-09">8. Otázky pro ověření porozumění</h2>
                 <div class="article-prompt">Na základě následujícího učiva vytvoř <strong>[počet]</strong> krátkých otázek pro ověření porozumění.<br /><br />Nechci pouze otázky na zapamatování faktů.<br /><br />Rozděl je do tří úrovní:<br /><br /><strong>A – základní porozumění</strong><br /><strong>B – použití znalosti</strong><br /><strong>C – vysvětlení a argumentace</strong><br /><br />Ke každé otázce vytvoř stručnou očekávanou odpověď.<br /><br /><strong>Učivo:</strong><br />[vložit text]</div>
 
-                <h2>9. Exit ticket na konec hodiny</h2>
+                <h2 id="ai-workflow-18-promptu-h2-10">9. Exit ticket na konec hodiny</h2>
                 <div class="article-prompt">Vytvoř krátký exit ticket k tématu <strong>[téma]</strong>.<br /><br />Má zabrat maximálně <strong>[2–5]</strong> minut.<br /><br />Obsahuje:<br />1. jednu otázku ověřující hlavní myšlenku hodiny,<br />2. jednu otázku vyžadující použití znalosti,<br />3. jednu sebereflexní otázku typu „Co mi ještě není jasné?“<br /><br />Přidej stručný návod, podle čeho může učitel odpovědi rychle vyhodnotit.</div>
 
-                <h2>10. Vytvoření testových otázek</h2>
+                <h2 id="ai-workflow-18-promptu-h2-11">10. Vytvoření testových otázek</h2>
                 <div class="article-prompt">Na základě přiloženého materiálu vytvoř test k tématu <strong>[téma]</strong>.<br /><br />Používej pouze informace obsažené ve zdroji.<br /><br />Vytvoř:<br />• <strong>[počet]</strong> otázek s výběrem odpovědi,<br />• <strong>[počet]</strong> krátkých otevřených otázek,<br />• <strong>[počet]</strong> aplikačních úloh.<br /><br />U otázek s výběrem odpovědi zajisti, aby byla jednoznačně správná pouze jedna možnost.<br /><br />Nevkládej správnou odpověď nápadně delší nebo podrobnější než ostatní možnosti.<br /><br />Na konci vytvoř klíč správných odpovědí.<br /><br />Poté proveď vlastní kontrolu a upozorni mě na otázky, které mohou být nejednoznačné.</div>
 
-                <h2>11. Kontrola již vytvořeného testu</h2>
+                <h2 id="ai-workflow-18-promptu-h2-12">11. Kontrola již vytvořeného testu</h2>
                 <div class="article-prompt">Zkontroluj následující test jako zkušený metodik.<br /><br />Neřeš pouze pravopis.<br /><br />U každé otázky ověř:<br />• zda je jednoznačná,<br />• zda odpovídá zadanému učivu,<br />• zda neobsahuje nechtěnou nápovědu,<br />• zda není více odpovědí správných,<br />• zda odpovídá požadované obtížnosti.<br /><br />Test nepřepisuj automaticky.<br /><br />Nejprve vytvoř tabulku:<br /><strong>Otázka | Problém | Doporučená změna</strong><br /><br /><strong>Test:</strong><br />[vložit]</div>
 
-                <h2>12. Aktivita do dvojic</h2>
+                <h2 id="ai-workflow-18-promptu-h2-13">12. Aktivita do dvojic</h2>
                 <div class="article-prompt">Navrhni aktivitu do dvojic na téma <strong>[téma]</strong> pro žáky <strong>[věk / úroveň]</strong>.<br /><br />Aktivita má trvat přibližně <strong>[čas]</strong> minut.<br /><br />Každý žák musí během aktivity aktivně pracovat.<br /><br />Připrav:<br />• stručné instrukce,<br />• materiál pro žáka A,<br />• materiál pro žáka B,<br />• očekávaný výsledek,<br />• rychlou kontrolu na konci.<br /><br />Aktivita nesmí být založena pouze na opisování odpovědí.</div>
 
-                <h2>13. Simulace reálné situace</h2>
+                <h2 id="ai-workflow-18-promptu-h2-14">13. Simulace reálné situace</h2>
                 <div class="article-prompt">Vytvoř simulaci reálné situace pro výuku <strong>[předmět]</strong> na téma <strong>[téma]</strong>.<br /><br />Žáci mají procvičit <strong>[dovednost]</strong>.<br /><br />Situace má odpovídat jejich věku a pokud možno skutečnému životu nebo budoucímu povolání.<br /><br />Připrav:<br />• popis situace,<br />• role,<br />• informace, které jednotlivé role dostanou,<br />• úkol,<br />• kritéria úspěchu,<br />• tři otázky pro následnou reflexi.</div>
 
-                <h2>14. AI jako partner pro jazykovou konverzaci</h2>
+                <h2 id="ai-workflow-18-promptu-h2-15">14. AI jako partner pro jazykovou konverzaci</h2>
                 <div class="article-prompt">Veď se mnou konverzaci v <strong>[jazyk]</strong> na úrovni <strong>[A1–C2]</strong>.<br /><br />Téma je <strong>[téma]</strong>.<br /><br />Chovej se jako <strong>[role – zákazník, personalista, turista, kolega…]</strong>.<br /><br />Pokládej vždy jen jednu otázku a počkej na moji odpověď.<br /><br />Neopravuj každou chybu okamžitě, pokud nebrání porozumění.<br /><br />Po <strong>[počet]</strong> výměnách konverzaci zastav a napiš:<br />• tři věci, které se mi povedly,<br />• maximálně tři nejdůležitější chyby,<br />• správnější varianty,<br />• jedno doporučení pro další procvičení.<br /><br />Nepokračuj v konverzaci místo žáka.</div>
 
-                <h2>15. Učitel chybuje – žák opravuje AI</h2>
+                <h2 id="ai-workflow-18-promptu-h2-16">15. Učitel chybuje – žák opravuje AI</h2>
                 <div class="article-prompt">Budeme procvičovat téma <strong>[téma]</strong>.<br /><br />Zahraj roli žáka, který se téma právě učí.<br /><br />Vysvětli mi jednu část učiva, ale udělej ve vysvětlení <strong>jednu realistickou chybu nebo mylný předpoklad</strong>.<br /><br />Neprozrazuj, kde chyba je.<br /><br />Počkej, až ji najdu a vysvětlím.<br /><br />Potom mi řekni, zda jsem problém správně odhalil, a případně mě nasměruj další otázkou.<br /><br />Nedávej správnou odpověď okamžitě.</div>
                 <p>Tento typ použití AI je zajímavý právě tím, že žák nemá odpověď pouze přijmout, ale <strong>kriticky ji hodnotit</strong>. Podobné aktivity, v nichž AI hraje roli chybujícího studenta a skutečný žák její vysvětlení opravuje, doporučují i současné vzdělávací materiály OpenAI.</p>
 
-                <h2>16. Převod materiálu na studijní otázky</h2>
+                <h2 id="ai-workflow-18-promptu-h2-17">16. Převod materiálu na studijní otázky</h2>
                 <div class="article-prompt">Z následujícího materiálu vytvoř studijní otázky.<br /><br />Nevytvářej otázky k informacím, které ve zdroji nejsou.<br /><br />Rozděl je do tří skupin:<br /><br /><strong>Musím znát</strong><br />základní pojmy a fakta<br /><br /><strong>Musím umět vysvětlit</strong><br />vztahy a principy<br /><br /><strong>Musím umět použít</strong><br />aplikace, příklady a řešení problémů<br /><br />Ke každé otázce připoj místo ve zdroji nebo část textu, ze které vychází, pokud ji lze určit.<br /><br /><strong>Zdroj:</strong><br />[vložit nebo přiložit]</div>
 
-                <h2>17. Zpětná vazba bez napsání práce za žáka</h2>
+                <h2 id="ai-workflow-18-promptu-h2-18">17. Zpětná vazba bez napsání práce za žáka</h2>
                 <div class="article-prompt">Poskytni zpětnou vazbu k následujícímu textu.<br /><br />Úkolem není text přepsat za autora.<br /><br />Hodnoť podle těchto kritérií:<br /><strong>[vložit kritéria / rubriku]</strong><br /><br />Nejprve napiš:<br />• dvě konkrétní silné stránky,<br />• tři oblasti, které je možné zlepšit,<br />• u každé jednu otázku nebo nápovědu, která autora dovede k vlastní opravě.<br /><br />Nevytvářej hotovou opravenou verzi, dokud o ni výslovně nepožádám.<br /><br /><strong>Text:</strong><br />[vložit]</div>
 
-                <h2>18. Zkontroluj vlastní AI výstup metodou EDIT</h2>
+                <h2 id="ai-workflow-18-promptu-h2-19">18. Zkontroluj vlastní AI výstup metodou EDIT</h2>
                 <p>Poslední prompt je trochu jiný.</p>
                 <p>Slouží ke kontrole toho, co už AI vytvořila.</p>
                 <div class="article-prompt">Zkontroluj svůj předchozí výstup metodou EDIT.<br /><br /><strong>E – Evaluate:</strong><br />Zhodnoť, zda výstup skutečně splnil moje zadání.<br /><br /><strong>D – Determine:</strong><br />Označ faktická tvrzení, která by měla být ověřena z externího zdroje.<br /><br /><strong>I – Identify:</strong><br />Najdi možné chyby, nejasnosti, stereotypy, nepodložená tvrzení nebo důležité informace, které mohou chybět.<br /><br /><strong>T – Transform:</strong><br />Navrhni konkrétní změny.<br /><br />Nevydávej vlastní předchozí tvrzení za ověřená pouze proto, že jsi je vytvořil.<br /><br />Pokud něco nevíš nebo nemůžeš ověřit, řekni to otevřeně.</div>
@@ -196,7 +223,7 @@
                 <p>Po několika použitích z nich vzniknou <strong>vlastní učitelské šablony</strong>.</p>
                 <p>A právě ty mají obvykle mnohem větší hodnotu než univerzální seznam nalezený na internetu.</p>
 
-                <h2>Co následuje?</h2>
+                <h2 id="ai-workflow-18-promptu-h2-25">Co následuje?</h2>
                 <p>V dalším článku se podíváme na další praktickou oblast:</p>
                 <blockquote><strong>Jak může AI skutečně ušetřit učiteli práci</strong></blockquote>
                 <p>Ne formou slibu, že „AI ušetří deset hodin týdně“, ale konkrétně:</p>
@@ -237,6 +264,9 @@
 
     <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai.html">Zpět na AI pro výuku</a></footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261113-8a"></script>
 </body>
 
 </html>

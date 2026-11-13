@@ -418,10 +418,10 @@ test('wave 7 hero contact sheet includes the approved light reference', async ({
   await page.screenshot({ path: 'artifacts/wave7-hero-contact-sheet.png', fullPage: true });
 });
 
-test('homepage renders the six newest catalog entries and complete records through wave 10', async ({ page }) => {
+test('homepage renders the six newest catalog entries and complete records through wave 11', async ({ page }) => {
   await page.goto(baseURL, { waitUntil: 'networkidle' });
   await expect(page.locator('#latest-articles .latest-card')).toHaveCount(6);
-  const [expected, actual, wave7Records, wave8Records, wave10Records, duplicateHrefs] = await page.evaluate(() => {
+  const [expected, actual, wave7Records, wave8Records, wave10Records, wave11Records, duplicateHrefs] = await page.evaluate(() => {
     const ordered = window.siteArticles
       .map((article, index) => ({ article, index }))
       .sort((left, right) => (right.article.date || '').localeCompare(left.article.date || '') || left.index - right.index)
@@ -436,12 +436,14 @@ test('homepage renders the six newest catalog entries and complete records throu
         .map(href => window.siteArticles.find(article => article.href === href)),
       ['ai-workflow-8-otazek.html', 'ai-workflow-prep-edit.html', 'ai-workflow-udl-ai.html', 'ai-workflow-usetri-praci.html']
         .map(href => window.siteArticles.find(article => article.href === href)),
+      ['ai-workflow-10-promptu-gemini.html', 'ai-workflow-18-promptu.html', 'ai-workflow-chatgpt-images-2-5.html', 'ai-workflow-gemini-notebook-ai-agent.html']
+        .map(href => window.siteArticles.find(article => href === article.href)),
       window.siteArticles.map(item => item.href).filter((href, index, all) => all.indexOf(href) !== index)
     ];
   });
   expect(actual).toEqual(expected);
   expect(duplicateHrefs).toEqual([]);
-  for (const article of [...wave7Records, ...wave8Records, ...wave10Records]) {
+  for (const article of [...wave7Records, ...wave8Records, ...wave10Records, ...wave11Records]) {
     expect(article).toBeTruthy();
     for (const field of ['href', 'title', 'summary', 'category', 'date', 'dateLabel', 'icon', 'tags', 'badgeClass']) {
       expect(article[field], `catalog ${field} for ${article.href}`).toBeTruthy();
@@ -451,9 +453,13 @@ test('homepage renders the six newest catalog entries and complete records throu
     'ai-workflow-8-otazek.html': ['2026-08-25', '25. srpna 2026'],
     'ai-workflow-prep-edit.html': ['2026-08-25', '25. srpna 2026'],
     'ai-workflow-udl-ai.html': ['2026-08-25', '25. srpna 2026'],
-    'ai-workflow-usetri-praci.html': ['2026-08-25', '25. srpna 2026']
+    'ai-workflow-usetri-praci.html': ['2026-08-25', '25. srpna 2026'],
+    'ai-workflow-10-promptu-gemini.html': ['2026-08-26', '26. srpna 2026'],
+    'ai-workflow-18-promptu.html': ['2026-08-25', '25. srpna 2026'],
+    'ai-workflow-chatgpt-images-2-5.html': ['2026-09-11', '11. září 2026'],
+    'ai-workflow-gemini-notebook-ai-agent.html': ['2026-09-08', '8. září 2026']
   };
-  for (const article of wave10Records) {
+  for (const article of [...wave10Records, ...wave11Records]) {
     expect(article.category).toBe('Workflow');
     expect([article.date, article.dateLabel]).toEqual(expectedDates[article.href]);
   }
@@ -711,7 +717,14 @@ const wave10Articles = [
   { file: 'ai-workflow-usetri-praci.html', title: 'Jak může AI skutečně ušetřit učiteli práci', activeArea: 'Připravit výuku', breadcrumb: 'Workflow pro učitele', breadcrumbHref: 'ai.html#workflow', tocCount: 34, h2: '#toc-01', h3: '#ai-workflow-usetri-praci-h3-05', baselineSha: '94be232d7d0f20e589deb5910c820a6b95fc5171', legacyInternalIds: ['toc-heading-ai-workflow-usetri-praci-html'], legacyChapterAnchors: [['toc-01', 'Největší úspora času nevzniká tam, kde AI udělá všechno'], ['toc-02', 'Kde AI šetří nejvíc času?'], ['toc-03', 'Kde AI čas naopak často neušetří?'], ['toc-04', 'Co bych AI nepředávala bez velmi silné kontroly'], ['toc-05', 'Metoda 3D: Delegate – Do together – Decide yourself'], ['toc-06', 'Jeden materiál, více výstupů']], checkTocScroll: true, representative: '#toc-02' }
 ];
 
-const migrationArticles = [...wave1Articles, ...wave2Articles, ...wave3Articles, ...wave4Articles, ...wave5Articles, ...wave6Articles, ...wave7Articles, ...wave8Articles, ...wave10Articles];
+const wave11Articles = [
+  { file: 'ai-workflow-10-promptu-gemini.html', title: '10 promptů pro Gemini Notebook, které mohou učiteli ušetřit hodiny práce', activeArea: 'Připravit výuku', breadcrumb: 'Workflow pro učitele', breadcrumbHref: 'ai.html#workflow', tocCount: 23, h2: '#toc-01', h3: '#ai-workflow-10-promptu-gemini-h3-01', baselineSha: '4f48ddb65eef3f19fa4be7ff62b05b3d8e2bb8c5', checkTocScroll: true, waitForStableViewportChapter: true, noLegacyTopbar: true, legacyInternalIds: ['toc-heading-ai-workflow-10-promptu-gemini-html'], representative: '#ai-workflow-10-promptu-gemini-h2-07', promptCount: 13, representativePromptIndex: 1 },
+  { file: 'ai-workflow-18-promptu.html', title: '18 praktických AI promptů pro učitele', activeArea: 'Připravit výuku', breadcrumb: 'Workflow pro učitele', breadcrumbHref: 'ai.html#workflow', tocCount: 26, h2: '#toc-01', h3: '#ai-workflow-18-promptu-h3-01', baselineSha: '4f48ddb65eef3f19fa4be7ff62b05b3d8e2bb8c5', checkTocScroll: true, waitForStableViewportChapter: true, noLegacyTopbar: true, legacyInternalIds: ['toc-heading-ai-workflow-18-promptu-html'], representative: '#ai-workflow-18-promptu-h2-02', promptCount: 24, representativePromptIndex: 2 },
+  { file: 'ai-workflow-chatgpt-images-2-5.html', title: 'ChatGPT Images 2.5 ve výuce: od jednoduchého obrázku k výukovému materiálu', activeArea: 'Připravit výuku', breadcrumb: 'Workflow pro učitele', breadcrumbHref: 'ai.html#workflow', tocCount: 20, h2: '#toc-01', h3: '#ai-workflow-chatgpt-images-2-5-h3-01', baselineSha: '4f48ddb65eef3f19fa4be7ff62b05b3d8e2bb8c5', checkTocScroll: true, waitForStableViewportChapter: true, noLegacyTopbar: true, legacyInternalIds: ['toc-heading-ai-workflow-chatgpt-images-2-5-html'], representative: '#toc-03', promptCount: 24, representativePromptIndex: 0 },
+  { file: 'ai-workflow-gemini-notebook-ai-agent.html', title: 'Jak vytvořit chytrý učitelský sešit v Gemini Notebooku pomocí AI agenta', activeArea: 'Připravit výuku', breadcrumb: 'Workflow pro učitele', breadcrumbHref: 'ai.html#workflow', tocCount: 20, h2: '#toc-01', h3: '#ai-workflow-gemini-notebook-ai-agent-h3-01', baselineSha: '4f48ddb65eef3f19fa4be7ff62b05b3d8e2bb8c5', checkTocScroll: true, waitForStableViewportChapter: true, noLegacyTopbar: true, legacyInternalIds: ['toc-heading-ai-workflow-gemini-notebook-ai-agent-html'], representative: '#ai-workflow-gemini-notebook-ai-agent-h2-07', promptCount: 5, representativePromptIndex: 1 },
+];
+
+const migrationArticles = [...wave1Articles, ...wave2Articles, ...wave3Articles, ...wave4Articles, ...wave5Articles, ...wave6Articles, ...wave7Articles, ...wave8Articles, ...wave10Articles, ...wave11Articles];
 
 for (const article of migrationArticles) {
   test.describe(`Migration: ${article.file}`, () => {
@@ -730,6 +743,7 @@ for (const article of migrationArticles) {
         await page.setViewportSize({ width, height: 900 });
         await page.goto(`${baseURL}/${article.file}`);
         await expect(page.locator('.site-header')).toHaveCount(1);
+        if (article.noLegacyTopbar) await expect(page.locator('.workflow-topbar')).toHaveCount(0);
         await expect(page.locator('.menu-toggle')).toHaveCount(1);
         await expect(page.locator('.brand')).toHaveAttribute('href', 'index.html');
         await expect(page.locator('.brand-symbol')).toBeVisible();
@@ -1081,6 +1095,167 @@ test('wave 10 light hero computed styles and required desktop/mobile screenshot 
   await page.setContent('<!doctype html><html lang="cs"><meta charset="utf-8"><title>Vlna 10 – porovnání hero</title><style>*{box-sizing:border-box}body{margin:0;padding:24px;background:#fffefa;color:#102d2b;font:600 15px Arial,sans-serif}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}article{min-width:0;padding:10px;border:1px solid #dfe8e1;border-radius:12px;background:#fff;overflow:hidden}h2{font-size:16px;min-height:40px;margin:4px 0 12px}img{display:block;width:100%;height:auto;border:1px solid #e5e7e1;border-radius:8px}</style><h1>Vlna 10 – hero a schválený světlý pilot</h1><main class="grid">'+cards+'</main></html>');
   await page.screenshot({path:'artifacts/wave10-hero-contact-sheet.png',fullPage:true});
   fs.writeFileSync('artifacts/wave10-computed-styles.json',JSON.stringify(records,null,2));
+});
+
+test('wave 11 original prompt blocks remain selectable and copy as selected through the browser', async ({ browser }) => {
+  const context = await browser.newContext({
+    viewport: { width: 390, height: 844 },
+    permissions: ['clipboard-read', 'clipboard-write']
+  });
+  for (const article of wave11Articles) {
+    const page = await context.newPage();
+    await page.goto(baseURL + '/' + article.file, { waitUntil: 'networkidle' });
+    const prompts = page.locator('.article-content .article-prompt');
+    await expect(prompts).toHaveCount(article.promptCount);
+    await expect(page.locator('.article-content button')).toHaveCount(0);
+    for (let index = 0; index < article.promptCount; index++) {
+      const prompt = prompts.nth(index);
+      const selectedText = await prompt.evaluate(element => {
+        const range = document.createRange();
+        range.selectNodeContents(element);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        return { text: selection.toString(), userSelect: getComputedStyle(element).userSelect };
+      });
+      expect(selectedText.text.trim(), article.file + ' prompt ' + index + ' should have selectable text').not.toBe('');
+      expect(selectedText.userSelect, article.file + ' prompt ' + index + ' must permit selection').not.toBe('none');
+      await page.keyboard.press('Control+C');
+      await expect.poll(() => page.evaluate(() => navigator.clipboard.readText()))
+        .toBe(selectedText.text);
+    }
+    await page.close();
+  }
+  await context.close();
+});
+
+test('wave 11 light hero computed styles, prompt screenshots, and contact sheet evidence', async ({ page }) => {
+  const fs = require('node:fs');
+  const records = [];
+  const contactCards = [];
+  const contrast = (foreground, background) => {
+    const rgb = value => {
+      const match = value.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)\)/);
+      if (!match) return null;
+      return match.slice(1, 4).map(channel => {
+        const component = Number(channel) / 255;
+        return component <= 0.04045 ? component / 12.92 : ((component + 0.055) / 1.055) ** 2.4;
+      }).reduce((sum, component, index) => sum + component * [0.2126, 0.7152, 0.0722][index], 0);
+    };
+    const a = rgb(foreground), b = rgb(background);
+    if (a === null || b === null) return 0;
+    return (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
+  };
+  for (const article of wave11Articles) {
+    for (const viewport of [{ name: 'desktop-1440', width: 1440, height: 1000 }, { name: 'mobile-390', width: 390, height: 844 }]) {
+      await page.setViewportSize({ width: viewport.width, height: viewport.height });
+      await page.goto(baseURL + '/' + article.file, { waitUntil: 'networkidle' });
+      await page.evaluate(() => document.fonts.ready);
+      const image = await page.locator('.workflow-article img').evaluate(element => {
+        const rect = element.getBoundingClientRect();
+        return { complete: element.complete, naturalWidth: element.naturalWidth, naturalHeight: element.naturalHeight, width: rect.width, height: rect.height, alt: element.alt };
+      });
+      expect(image.complete && image.naturalWidth > 0 && image.naturalHeight > 0 && image.alt).toBe(true);
+      const renderedRatio = image.width / image.height;
+      const sourceRatio = image.naturalWidth / image.naturalHeight;
+      expect(Math.abs(renderedRatio - sourceRatio) / sourceRatio, article.file + ' image aspect ratio').toBeLessThan(0.02);
+      const styles = await page.evaluate(() => {
+        const selectors = [
+          'body', '.site-header', '.site-breadcrumbs', '.workflow-shell', '.workflow-hero',
+          '.workflow-eyebrow', '.workflow-hero h1', '.workflow-hero h1 span', '.workflow-hero-lead',
+          '.workflow-meta span', '.workflow-news-panel', '.workflow-news-panel-label',
+          '.workflow-news-panel h2', '.workflow-news-panel p', '.workflow-news-panel-meta span', '.article-content .article-prompt', '.article-content .article-prompt strong',
+          '.workflow-route', '.workflow-stage', '.workflow-stage-number', '.workflow-stage strong', '.workflow-stage small',
+          '.workflow-shell::before', '.workflow-shell::after', '.workflow-route::before', '.workflow-stage::before'
+        ];
+        const read = item => ({
+          display: item.display, content: item.content, backgroundColor: item.backgroundColor,
+          backgroundImage: item.backgroundImage, color: item.color, opacity: item.opacity,
+          filter: item.filter, backdropFilter: item.backdropFilter, borderColor: item.borderColor
+        });
+        return selectors.map(selector => {
+          const pseudo = selector.includes('::') ? selector.slice(selector.indexOf('::')) : null;
+          const target = pseudo ? selector.slice(0, selector.indexOf('::')) : selector;
+          const element = document.querySelector(target);
+          if (!element) return null;
+          const css = getComputedStyle(element, pseudo);
+          return { selector, ...read(css) };
+        }).filter(Boolean);
+      });
+      records.push({ file: article.file, ...viewport, styles, articleImage: image });
+      const value = selector => styles.find(item => item.selector === selector);
+      const dark = /#0a0f1e|#0d1b40|#0a1628|10, 15, 30|13, 27, 64|10,15,30/i;
+      expect(value('body').backgroundColor).toBe('rgb(255, 254, 250)');
+      expect(value('.workflow-shell').backgroundImage).toContain('linear-gradient');
+      expect(value('.workflow-shell').backgroundImage).not.toMatch(dark);
+      expect(value('.workflow-shell::after').display).toBe('none');
+      expect(value('.workflow-shell::before').backgroundImage).not.toMatch(dark);
+      for (const pseudo of ['.workflow-shell::before', '.workflow-shell::after', '.workflow-route::before', '.workflow-stage::before']) {
+        const overlay = value(pseudo);
+        expect(overlay.backgroundColor, pseudo + ' background color').not.toMatch(dark);
+        expect(overlay.backgroundImage, pseudo + ' background image').not.toMatch(dark);
+        expect(overlay.backdropFilter, pseudo + ' backdrop').toBe('none');
+      }
+      expect(value('.workflow-hero h1').color).toBe('rgb(16, 45, 43)');
+      expect(value('.workflow-hero h1 span').color).toBe('rgb(7, 88, 79)');
+      expect(value('.workflow-hero-lead').color).toBe('rgb(52, 75, 69)');
+      expect(value('.article-content .article-prompt').backgroundColor).toBe('rgb(238, 245, 239)');
+      expect(value('.article-content .article-prompt').color).toBe('rgb(41, 75, 65)');
+      expect(contrast(value('.article-content .article-prompt').color, value('.article-content .article-prompt').backgroundColor)).toBeGreaterThan(4.5);
+      expect(contrast(value('.workflow-hero h1').color, 'rgb(255, 254, 250)')).toBeGreaterThan(7);
+      expect(contrast(value('.workflow-hero-lead').color, 'rgb(255, 254, 250)')).toBeGreaterThan(4.5);
+      for (const selector of ['.workflow-news-panel', '.workflow-stage', '.workflow-meta span', '.workflow-stage-number']) {
+        const surface = value(selector);
+        if (surface) {
+          expect(surface.backgroundColor, selector + ' background').not.toMatch(dark);
+          expect(surface.backgroundImage, selector + ' gradient').not.toMatch(dark);
+          expect(surface.backdropFilter, selector + ' overlay').toBe('none');
+        }
+      }
+      if (value('.workflow-news-panel')) {
+        expect(value('.workflow-news-panel').backgroundImage).toContain('linear-gradient');
+        expect(value('.workflow-news-panel').backgroundImage).not.toMatch(dark);
+        expect(value('.workflow-news-panel h2').color).toBe('rgb(16, 45, 43)');
+        expect(value('.workflow-news-panel p').color).toBe('rgb(82, 103, 95)');
+        expect(contrast(value('.workflow-news-panel p').color, 'rgb(255, 255, 255)')).toBeGreaterThan(4.5);
+      }
+      for (const selector of ['.workflow-stage strong', '.workflow-stage small', '.workflow-news-panel-label', '.workflow-news-panel-meta span']) {
+        const textStyle = value(selector);
+        if (textStyle) expect(textStyle.color, selector + ' must stay legible and light-design colored').not.toMatch(dark);
+      }
+      const heroPath = 'artifacts/wave11-' + article.file + '-' + viewport.name + '-hero.png';
+      await page.locator('.workflow-shell').screenshot({ path: heroPath });
+      if (viewport.width === 1440) {
+        contactCards.push({ title: article.title, data: (await fs.promises.readFile(heroPath)).toString('base64') });
+        const toc = page.locator('.article-content-navigation');
+        await toc.scrollIntoViewIfNeeded();
+        await page.screenshot({ path: 'artifacts/wave11-' + article.file + '-desktop-1440-sticky-toc.png' });
+        const inner = toc.locator('nav');
+        const scroll = await inner.evaluate(element => ({ height: element.scrollHeight, client: element.clientHeight }));
+        expect(scroll.height, article.file + ' TOC internal scroll').toBeGreaterThan(scroll.client);
+        await inner.evaluate(element => { element.scrollTop = Math.floor((element.scrollHeight - element.clientHeight) / 2); });
+        await toc.screenshot({ path: 'artifacts/wave11-' + article.file + '-desktop-1440-toc-inner-scroll.png' });
+        const representative = page.locator('.article-content .article-prompt').nth(article.representativePromptIndex);
+        await representative.scrollIntoViewIfNeeded();
+        await representative.screenshot({ path: 'artifacts/wave11-' + article.file + '-desktop-1440-prompt.png' });
+      } else {
+        const toc = page.locator('.article-content-navigation');
+        await expect(toc).toHaveJSProperty('open', true);
+        await toc.screenshot({ path: 'artifacts/wave11-' + article.file + '-mobile-390-expanded-toc.png' });
+        const representative = page.locator('.article-content .article-prompt').nth(article.representativePromptIndex);
+        await representative.scrollIntoViewIfNeeded();
+        await representative.screenshot({ path: 'artifacts/wave11-' + article.file + '-mobile-390-prompt.png' });
+      }
+    }
+  }
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto(baseURL + '/ai-navod-edit-kontrola.html', { waitUntil: 'networkidle' });
+  const reference = await page.locator('.workflow-shell').screenshot();
+  contactCards.push({ title: 'Schválený světlý pilot EDIT', data: reference.toString('base64') });
+  const cards = contactCards.map(item => '<article><h2>' + item.title + '</h2><img alt="' + item.title + '" src="data:image/png;base64,' + item.data + '"></article>').join('');
+  await page.setContent('<!doctype html><html lang="cs"><meta charset="utf-8"><title>Vlna 11 – porovnání hero</title><style>*{box-sizing:border-box}body{margin:0;padding:24px;background:#fffefa;color:#102d2b;font:600 15px Arial,sans-serif}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}article{min-width:0;padding:10px;border:1px solid #dfe8e1;border-radius:12px;background:#fff;overflow:hidden}h2{font-size:16px;min-height:40px;margin:4px 0 12px}img{display:block;width:100%;height:auto;border:1px solid #e5e7e1;border-radius:8px}</style><h1>Vlna 11 – hero a schválený světlý pilot</h1><main class="grid">' + cards + '</main></html>');
+  await page.screenshot({ path: 'artifacts/wave11-hero-contact-sheet.png', fullPage: true });
+  fs.writeFileSync('artifacts/wave11-computed-styles.json', JSON.stringify(records, null, 2));
 });
 
 test('wave 1 desktop overview compares its four articles side by side', async ({ page }) => {

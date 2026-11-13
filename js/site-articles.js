@@ -302,6 +302,7 @@ window.siteArticles = [
     icon: '🎨',
     tags: ['ChatGPT Images 2.5', 'Výukové materiály', 'Workflow'],
     badgeClass: 'badge-blue'
+    badgeClass: 'badge-blue'
   },
   {
     href: 'ai-novinka-sdilene-zdroje-propojene-aplikace-2026.html',
@@ -341,13 +342,14 @@ window.siteArticles = [
   {
     href: 'ai-workflow-gemini-notebook-ai-agent.html',
     title: 'Jak vytvořit chytrý učitelský sešit v Gemini Notebooku pomocí AI agenta',
-    platforms: ['gemini', 'claude'],
     summary: 'Praktický workflow od účelu a hierarchie zdrojů přes rešerši a ověření až po nastavení, testování a aktualizaci tematického sešitu.',
     category: 'Workflow',
     date: '2026-09-08',
     dateLabel: '8. září 2026',
     icon: '📓',
     tags: ['Gemini Notebook', 'AI agent', 'Claude'],
+    badgeClass: 'badge-blue'
+    platforms: ['gemini', 'claude'],
     topics: ['gemini-notebook'],
     directoryOrder: 3,
     directoryTitle: "Chytrý učitelský sešit pomocí AI agenta",
@@ -767,6 +769,7 @@ window.siteArticles = [
     dateLabel: '26. srpna 2026',
     icon: '📓',
     tags: ['Gemini Notebook', '10 promptů'],
+    badgeClass: 'badge-blue'
     topics: ['gemini-notebook'],
     directoryOrder: 11,
     directoryTitle: "10 promptů pro Gemini Notebook, které mohou učiteli ušetřit hodiny práce",
@@ -866,13 +869,14 @@ window.siteArticles = [
   {
     href: 'ai-workflow-18-promptu.html',
     title: '18 praktických AI promptů pro učitele',
-    platforms: ['chatgpt'],
     summary: 'Šablony pro plánování hodin, pracovní listy, diferenciaci, testy, konverzaci, zpětnou vazbu a EDIT.',
     category: 'Workflow',
     date: '2026-08-25',
     dateLabel: '25. srpna 2026',
     icon: '🧰',
     tags: ['Prompty', '18 šablon'],
+    badgeClass: 'badge-gold'
+    platforms: ['chatgpt'],
     badgeClass: 'badge-gold'
   },
   {
