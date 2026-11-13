@@ -21,14 +21,24 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261109-7k" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261112-7v" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261110-7q" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-            <a class="workflow-back" href="ai.html#navody">← Praktické návody</a>
-        </div>
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="prepare">
+<header class="site-header" id="top">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+      <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a>
+    </div></div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="ai-navody.html">Praktické návody</a></li><li aria-current="page">Jak psát lepší prompty pro AI: 10 zásad pro učitele</li></ol></nav>
+<header class="workflow-shell">
         <div class="workflow-hero">
             <div>
                 <div class="workflow-eyebrow">Praktické návody · 8. září 2026</div>
@@ -45,7 +55,8 @@
         </div>
     </header>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
+<details class="article-content-navigation" open><summary>V tomto článku</summary><nav aria-label="Obsah článku"><ol><li><a href="#ai-navod-lepsi-prompty-10-zasad-h2-01">1. Řekněte přesně, co chcete vytvořit</a><ol></ol></li><li><a href="#ai-navod-lepsi-prompty-10-zasad-h2-02">2. Přidejte potřebný kontext</a><ol></ol></li><li><a href="#ai-navod-lepsi-prompty-10-zasad-h2-03">3. Vysvětlete účel</a><ol></ol></li><li><a href="#ai-navod-lepsi-prompty-10-zasad-h2-04">4. Určete podobu výsledku</a><ol></ol></li><li><a href="#ai-navod-lepsi-prompty-10-zasad-h2-05">5. Určete jazyk a styl</a><ol></ol></li><li><a href="#ai-navod-lepsi-prompty-10-zasad-h2-06">6. Dejte AI příklad</a><ol></ol></li><li><a href="#ai-navod-lepsi-prompty-10-zasad-h2-07">7. Řekněte také, co nechcete</a><ol></ol></li><li><a href="#ai-navod-lepsi-prompty-10-zasad-h2-08">8. Nečekejte dokonalý výsledek na první pokus</a><ol></ol></li><li><a href="#ai-navod-lepsi-prompty-10-zasad-h2-09">9. Složité úkoly rozdělte na části</a><ol></ol></li><li><a href="#ai-navod-lepsi-prompty-10-zasad-h2-10">10. Výsledek vždy zkontrolujte</a><ol></ol></li><li><a href="#ai-navod-lepsi-prompty-10-zasad-h2-11">Praktický příklad</a><ol><li><a href="#ai-navod-lepsi-prompty-10-zasad-h3-01">Jednoduché zadání</a></li><li><a href="#ai-navod-lepsi-prompty-10-zasad-h3-02">Přesnější zadání</a></li></ol></li><li><a href="#ai-navod-lepsi-prompty-10-zasad-h2-12">Nemusíme psát dokonalé prompty</a><ol></ol></li><li><a href="#ai-navod-lepsi-prompty-10-zasad-h2-13">Od promptu k práci s AI</a><ol></ol></li></ol></nav></details>
         <article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Jasné zadání pomůže AI připravit výsledek, který lépe odpovídá konkrétním žákům, cíli hodiny i zamýšlenému použití.</p>
@@ -62,7 +73,7 @@
                     <figcaption>Vizuální tahák: deset zásad pro lepší prompty a pět otázek, které pomohou zadání zpřesnit.</figcaption>
                 </figure>
 
-                <h2>1. Řekněte přesně, co chcete vytvořit</h2>
+                <h2 id="ai-navod-lepsi-prompty-10-zasad-h2-01">1. Řekněte přesně, co chcete vytvořit</h2>
                 <p>Častou chybou je příliš obecné zadání.</p>
                 <p>Například:</p>
                 <blockquote>„Vytvoř pracovní list na present simple.“</blockquote>
@@ -71,19 +82,19 @@
                 <blockquote>„Vytvoř pracovní list z angličtiny na 25 minut pro žáky 2. ročníku učebního oboru na úrovni A1–A2. Tématem je opakování present simple.“</blockquote>
                 <p>Najednou má AI podstatně více informací, podle kterých může materiál připravit.</p>
 
-                <h2>2. Přidejte potřebný kontext</h2>
+                <h2 id="ai-navod-lepsi-prompty-10-zasad-h2-02">2. Přidejte potřebný kontext</h2>
                 <p>AI nevidí do naší třídy. Neví, co jsme učili minulý týden, jak rychle žáci pracují ani s jakou učebnicí pracujeme. Pokud je tato informace pro výsledek důležitá, musíme ji doplnit.</p>
                 <p>Můžeme například napsat:</p>
                 <blockquote>„Žáci už znají present simple, příslovce frekvence a slovní zásobu daily routine. Novou gramatiku zatím nezařazuj.“</blockquote>
                 <p>Právě kontext bývá často důležitější než komplikované promptovací techniky.</p>
 
-                <h2>3. Vysvětlete účel</h2>
+                <h2 id="ai-navod-lepsi-prompty-10-zasad-h2-03">3. Vysvětlete účel</h2>
                 <p>Stejné téma může být zpracováno mnoha způsoby. Jiný materiál potřebujeme pro výklad, procvičování, opakování, domácí úkol, test, skupinovou práci nebo například jako podklad do Microsoft Forms.</p>
                 <p>Proto je dobré AI říct, k čemu má výsledný materiál sloužit.</p>
                 <blockquote>„Materiál použiji na začátku hodiny jako desetiminutové opakování.“</blockquote>
                 <p>AI potom může lépe zvolit rozsah i náročnost.</p>
 
-                <h2>4. Určete podobu výsledku</h2>
+                <h2 id="ai-navod-lepsi-prompty-10-zasad-h2-04">4. Určete podobu výsledku</h2>
                 <p>Pokud víme, jak má výstup vypadat, řekněme to rovnou.</p>
                 <ul>
                     <li>„Připrav pracovní list na jednu A4.“</li>
@@ -94,7 +105,7 @@
                 </ul>
                 <p>Tím ušetříme další kolo úprav.</p>
 
-                <h2>5. Určete jazyk a styl</h2>
+                <h2 id="ai-navod-lepsi-prompty-10-zasad-h2-05">5. Určete jazyk a styl</h2>
                 <p>AI umí velmi snadno měnit styl komunikace. U školních materiálů můžeme například požadovat:</p>
                 <ul>
                     <li>„Používej jednoduchou češtinu.“</li>
@@ -105,13 +116,13 @@
                 </ul>
                 <p>To je zvlášť užitečné při přípravě materiálů pro různě schopné skupiny žáků.</p>
 
-                <h2>6. Dejte AI příklad</h2>
+                <h2 id="ai-navod-lepsi-prompty-10-zasad-h2-06">6. Dejte AI příklad</h2>
                 <p>Jeden dobrý příklad bývá často účinnější než dlouhé vysvětlování.</p>
                 <p>Pokud už máme pracovní list, test nebo prezentaci, která nám vyhovuje, můžeme ji AI poskytnout a říct:</p>
                 <blockquote>„Nový materiál vytvoř ve stejné struktuře.“</blockquote>
                 <p>AI tak rychle pochopí způsob členění, délku úloh i styl zadání. Tato metoda je velmi praktická i při budování jednotného vzhledu učebních materiálů.</p>
 
-                <h2>7. Řekněte také, co nechcete</h2>
+                <h2 id="ai-navod-lepsi-prompty-10-zasad-h2-07">7. Řekněte také, co nechcete</h2>
                 <p>Dobré zadání nemusí obsahovat jen požadavky. Velmi užitečné bývá vymezit také hranice.</p>
                 <ul>
                     <li>„Nepoužívej gramatiku, kterou žáci ještě neznají.“</li>
@@ -121,7 +132,7 @@
                 </ul>
                 <p>Taková omezení mohou zabránit tomu, aby AI vytvořila materiál, který je sice formálně správný, ale pro konkrétní třídu nepoužitelný.</p>
 
-                <h2>8. Nečekejte dokonalý výsledek na první pokus</h2>
+                <h2 id="ai-navod-lepsi-prompty-10-zasad-h2-08">8. Nečekejte dokonalý výsledek na první pokus</h2>
                 <p>První odpověď AI je dobré chápat jako návrh.</p>
                 <p>Můžeme pokračovat například:</p>
                 <ul>
@@ -132,7 +143,7 @@
                 </ul>
                 <p>Práce s AI je tedy často spíš krátký dialog než jediné zadání. A právě zde bývá největší rozdíl mezi začátečníkem a zkušenějším uživatelem AI.</p>
 
-                <h2>9. Složité úkoly rozdělte na části</h2>
+                <h2 id="ai-navod-lepsi-prompty-10-zasad-h2-09">9. Složité úkoly rozdělte na části</h2>
                 <p>Pokud chceme po AI příliš mnoho věcí najednou, výsledek může být nepřehledný nebo některé části zadání přehlédne.</p>
                 <p>Místo požadavku:</p>
                 <blockquote>„Připrav celou hodinu, prezentaci, pracovní list, test a domácí úkol.“</blockquote>
@@ -146,7 +157,7 @@
                 </ol>
                 <p>Tento způsob práce je užitečný nejen při tvorbě učebních materiálů, ale také při práci s rozsáhlejšími projekty.</p>
 
-                <h2>10. Výsledek vždy zkontrolujte</h2>
+                <h2 id="ai-navod-lepsi-prompty-10-zasad-h2-10">10. Výsledek vždy zkontrolujte</h2>
                 <p>Tohle je možná nejdůležitější pravidlo. AI může vytvořit velmi přesvědčivou odpověď a přesto se splést.</p>
                 <p>Učitel by měl kontrolovat především:</p>
                 <ul>
@@ -159,16 +170,16 @@
                 </ul>
                 <p>AI může výrazně urychlit naši práci. Odpovědnost za výsledný materiál ale stále zůstává na člověku.</p>
 
-                <h2>Praktický příklad</h2>
+                <h2 id="ai-navod-lepsi-prompty-10-zasad-h2-11">Praktický příklad</h2>
                 <p>Podívejme se na rozdíl mezi dvěma zadáními.</p>
-                <h3>Jednoduché zadání</h3>
+                <h3 id="ai-navod-lepsi-prompty-10-zasad-h3-01">Jednoduché zadání</h3>
                 <blockquote>„Vytvoř pracovní list na present simple.“</blockquote>
                 <p>AI musí většinu věcí odhadnout.</p>
-                <h3>Přesnější zadání</h3>
+                <h3 id="ai-navod-lepsi-prompty-10-zasad-h3-02">Přesnější zadání</h3>
                 <div class="article-prompt">Vytvoř pracovní list z angličtiny na 25 minut pro žáky 2. ročníku učebního oboru. Jejich úroveň je přibližně A1–A2. Opakují present simple, příslovce frekvence a slovní zásobu daily routine. Připrav čtyři krátká cvičení od jednoduššího k náročnějšímu. Výstup má být vhodný k tisku na jednu A4. Instrukce napiš jednoduchou angličtinou. Na konci přidej správné odpovědi pro učitele.</div>
                 <p>Tady už AI nemusí tolik hádat. A právě o to při dobrém zadávání jde.</p>
 
-                <h2>Nemusíme psát dokonalé prompty</h2>
+                <h2 id="ai-navod-lepsi-prompty-10-zasad-h2-12">Nemusíme psát dokonalé prompty</h2>
                 <p>Kolem promptování se někdy vytváří dojem, že existuje nějaká tajná správná formule, která z AI dostane dokonalý výsledek.</p>
                 <p>Ve skutečnosti je princip mnohem jednodušší.</p>
                 <p>Potřebujeme AI dobře vysvětlit:</p>
@@ -182,7 +193,7 @@
                 <p>A potom výsledek případně upravit další instrukcí.</p>
                 <p>Moderní AI stále lépe rozumí běžnému jazyku. Dobré promptování proto není soutěž o nejdelší zadání. Je to především schopnost jasně popsat problém.</p>
 
-                <h2>Od promptu k práci s AI</h2>
+                <h2 id="ai-navod-lepsi-prompty-10-zasad-h2-13">Od promptu k práci s AI</h2>
                 <p>Zároveň se postupně mění i samotný způsob, jakým AI používáme.</p>
                 <p>Dříve jsme často zadali jeden prompt a čekali na odpověď. Dnes můžeme AI poskytnout dokumenty, učebnice, vlastní materiály nebo dlouhodobé instrukce. AI může pracovat v několika krocích, používat nástroje nebo fungovat jako specializovaný pomocník.</p>
                 <p>Prompt proto není cílem. Je to spíš začátek spolupráce mezi člověkem a AI.</p>
@@ -219,6 +230,9 @@
 
     <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai.html">Zpět na rozcestník AI</a></footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261110-7q"></script>
 </body>
 
 </html>

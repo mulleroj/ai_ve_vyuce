@@ -250,7 +250,7 @@ test('wave 6 hero light styles, desktop and mobile screenshots, and computed-sty
       const gradient = record.shell.backgroundImage || '';
       expect(gradient, `hero gradient missing on ${article.file}`).not.toBe('none');
       expect(gradient, `hero image overlay on ${article.file}`).not.toMatch(/url\(/i);
-      const stops = [...gradient.matchAll(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/g)];
+      const stops = [...gradient.matchAll(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/g)];
       expect(stops.length, `computed gradient stops missing on ${article.file}`).toBeGreaterThan(0);
       for (const stop of stops) expect(Number(stop[1]) + Number(stop[2]) + Number(stop[3]), `dark hero gradient stop on ${article.file}`).toBeGreaterThan(570);
       expect(record.shell.opacity).toBe('1');
@@ -283,7 +283,150 @@ test('wave 6 contact sheet compares four article heroes with the approved light 
   await page.screenshot({ path: 'artifacts/wave6-hero-contact-sheet.png', fullPage: true });
 });
 
-const migrationArticles = [...wave1Articles, ...wave2Articles, ...wave3Articles, ...wave4Articles, ...wave5Articles, ...wave6Articles];
+const wave7Articles = [
+  { file: 'ai-navod-edit-kontrola.html', title: 'EDIT: kontrola výstupů', tocCount: 39, h2: '#ai-navod-edit-kontrola-h2-01', h3: '#ai-navod-edit-kontrola-h3-01', baselineSha: '80caef268f88b36c496518d35cf18209f7ff3e8f', activeArea: 'Připravit výuku', breadcrumb: 'Praktické návody', breadcrumbHref: 'ai-navody.html', checkTocScroll: true },
+  { file: 'ai-navod-lepsi-prompty-10-zasad.html', title: 'Jak psát lepší prompty pro AI: 10 zásad pro učitele', tocCount: 15, h2: '#ai-navod-lepsi-prompty-10-zasad-h2-01', h3: '#ai-navod-lepsi-prompty-10-zasad-h3-01', baselineSha: '80caef268f88b36c496518d35cf18209f7ff3e8f', activeArea: 'Připravit výuku', breadcrumb: 'Praktické návody', breadcrumbHref: 'ai-navody.html' },
+  { file: 'ai-navod-prep-prompty.html', title: 'PREP: lepší prompty', tocCount: 24, h2: '#ai-navod-prep-prompty-h2-01', h3: '#ai-navod-prep-prompty-h3-01', baselineSha: '80caef268f88b36c496518d35cf18209f7ff3e8f', activeArea: 'Připravit výuku', breadcrumb: 'Praktické návody', breadcrumbHref: 'ai-navody.html', checkTocScroll: true }
+];
+const wave7PromptArticles = [
+  { file: 'ai-navod-edit-kontrola.html', count: 10 },
+  { file: 'ai-navod-lepsi-prompty-10-zasad.html', count: 2 },
+  { file: 'ai-navod-prep-prompty.html', count: 8 }
+];
+
+test('wave 7 prompts remain selectable and copy the exact selected text', async ({ browser }) => {
+  const context = await browser.newContext({ permissions: ['clipboard-read', 'clipboard-write'] });
+  const page = await context.newPage();
+  for (const article of wave7PromptArticles) {
+    await page.goto(`${baseURL}/${article.file}`);
+    const prompts = page.locator('.article-content .article-prompt');
+    await expect(prompts).toHaveCount(article.count);
+    for (let index = 0; index < article.count; index++) {
+      const prompt = prompts.nth(index);
+      const expected = (await prompt.innerText()).trimEnd();
+      await prompt.evaluate(element => {
+        const range = document.createRange();
+        range.selectNodeContents(element);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+      });
+      await page.keyboard.press('Control+C');
+      const copied = await page.evaluate(() => navigator.clipboard.readText());
+      expect(copied.trimEnd(), `selected prompt ${index + 1} in ${article.file}`).toBe(expected);
+    }
+  }
+  await context.close();
+});
+
+test('wave 7 hero styles and desktop/mobile screenshots', async ({ page }) => {
+  const fs = require('node:fs');
+  const records = [];
+  for (const article of wave7Articles) {
+    for (const width of [1440, 390]) {
+      await page.setViewportSize({ width, height: 1000 });
+      await page.goto(`${baseURL}/${article.file}`, { waitUntil: 'networkidle' });
+      await page.evaluate(() => document.fonts.ready);
+      const record = await page.evaluate(() => {
+        const snapshot = (selector, provided) => {
+          const el = provided || document.querySelector(selector);
+          if (!el) return null;
+          const style = getComputedStyle(el), before = getComputedStyle(el, '::before'), after = getComputedStyle(el, '::after');
+          return {
+            selector, backgroundColor: style.backgroundColor, backgroundImage: style.backgroundImage,
+            color: style.color, opacity: style.opacity, filter: style.filter, backdropFilter: style.backdropFilter,
+            before: { display: before.display, content: before.content, backgroundColor: before.backgroundColor, backgroundImage: before.backgroundImage, opacity: before.opacity },
+            after: { display: after.display, content: after.content, backgroundColor: after.backgroundColor, backgroundImage: after.backgroundImage, opacity: after.opacity }
+          };
+        };
+        return {
+          width: innerWidth,
+          shell: snapshot('.workflow-shell'), hero: snapshot('.workflow-hero'),
+          title: snapshot('.workflow-hero h1'), lead: snapshot('.workflow-hero-lead'),
+          panels: [...document.querySelectorAll('.workflow-news-panel,.workflow-route,.workflow-stage,.workflow-news-panel-label,.workflow-meta span')]
+            .map((el, index) => snapshot(`panel-${index}-${el.className || el.tagName.toLowerCase()}`, el))
+        };
+      });
+      records.push({ file: article.file, ...record });
+      const surfaces = [record.shell, record.hero, ...record.panels].filter(Boolean);
+      for (const surface of surfaces) {
+        expect(surface.filter).toBe('none');
+        expect(surface.backdropFilter).toBe('none');
+        for (const image of [surface.backgroundImage, surface.before?.backgroundImage, surface.after?.backgroundImage].filter(Boolean)) {
+          expect(image, `hero image layer in ${article.file}`).not.toMatch(/url\(/i);
+          const rgbStops = [...image.matchAll(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/g)];
+          for (const stop of rgbStops) {
+            const alpha = stop[4] === undefined ? 1 : Number(stop[4]);
+            const luminanceSum = [1, 2, 3].reduce((sum, channel) => sum + Number(stop[channel]) * alpha + 255 * (1 - alpha), 0);
+            expect(luminanceSum, `dark computed hero gradient in ${article.file}: ${image}`)
+              .toBeGreaterThan(570);
+          }
+        }
+        for (const color of [surface.backgroundColor, surface.before?.backgroundColor, surface.after?.backgroundColor].filter(Boolean)) {
+          const match = color.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/);
+          if (match && (match[4] === undefined || Number(match[4]) > 0.05)) {
+            expect(Number(match[1]) + Number(match[2]) + Number(match[3]), `dark computed hero surface in ${article.file}: ${color}`)
+              .toBeGreaterThan(570);
+          }
+        }
+      }
+      expect(record.shell.opacity).toBe('1');
+      await page.locator('.workflow-shell').screenshot({ path: `artifacts/${article.file}-hero-${width}.png` });
+      const prompt = page.locator('.article-content .article-prompt').first();
+      await prompt.scrollIntoViewIfNeeded();
+      await prompt.screenshot({ path: `artifacts/${article.file}-prompt-${width}.png` });
+    }
+  }
+  fs.writeFileSync('artifacts/wave7-computed-hero-styles.json', JSON.stringify(records, null, 2));
+});
+
+test('wave 7 hero contact sheet includes the approved light reference', async ({ page }) => {
+  const cards = [];
+  for (const article of wave7Articles) {
+    await page.setViewportSize({ width: 1440, height: 1000 });
+    await page.goto(`${baseURL}/${article.file}`, { waitUntil: 'networkidle' });
+    const image = await page.locator('.workflow-shell').screenshot();
+    cards.push({ title: article.title, data: image.toString('base64') });
+  }
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto(`${baseURL}/ai-navod-commands-chatgpt.html`, { waitUntil: 'networkidle' });
+  const reference = await page.locator('.workflow-shell').screenshot();
+  cards.push({ title: 'Schválená světlá reference z PR #60', data: reference.toString('base64') });
+  await page.setContent(`<!doctype html><html lang="cs"><meta charset="utf-8"><title>Vlna 7 – hero a světlá reference</title><style>
+    *{box-sizing:border-box}body{margin:0;padding:24px;background:#fffefa;color:#102d2b;font:600 15px Arial,sans-serif}
+    h1{margin:0 0 18px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    article{padding:10px;border:1px solid #dfe8e1;border-radius:12px;background:#fff;overflow:hidden}
+    h2{font-size:16px;min-height:40px;margin:4px 0 10px}img{display:block;width:100%;height:auto;object-fit:contain;border:1px solid #e5e7e1;border-radius:8px}
+  </style><h1>Praktické návody – migrační vlna 7 a schválená světlá reference</h1><main class="grid">${cards.map(x=>`<article><h2>${x.title}</h2><img alt="${x.title}" src="data:image/png;base64,${x.data}"></article>`).join('')}</main></html>`);
+  await page.screenshot({ path: 'artifacts/wave7-hero-contact-sheet.png', fullPage: true });
+});
+
+test('homepage renders the six newest catalog entries and all wave 7 records', async ({ page }) => {
+  await page.goto(baseURL, { waitUntil: 'networkidle' });
+  await expect(page.locator('#latest-articles .latest-card')).toHaveCount(6);
+  const [expected, actual, wave7Records] = await page.evaluate(() => {
+    const ordered = window.siteArticles
+      .map((article, index) => ({ article, index }))
+      .sort((left, right) => (right.article.date || '').localeCompare(left.article.date || '') || left.index - right.index)
+      .slice(0, 6)
+      .map(item => item.article.href);
+    return [
+      ordered,
+      [...document.querySelectorAll('#latest-articles .latest-card-title')].map(link => link.getAttribute('href')),
+      ['ai-navod-edit-kontrola.html', 'ai-navod-lepsi-prompty-10-zasad.html', 'ai-navod-prep-prompty.html']
+        .map(href => window.siteArticles.find(article => article.href === href))
+    ];
+  });
+  expect(actual).toEqual(expected);
+  for (const article of wave7Records) {
+    expect(article).toBeTruthy();
+    for (const field of ['href', 'title', 'summary', 'category', 'date', 'dateLabel', 'icon', 'tags', 'badgeClass']) {
+      expect(article[field], `catalog ${field} for ${article.href}`).toBeTruthy();
+    }
+  }
+});
+
+const migrationArticles = [...wave1Articles, ...wave2Articles, ...wave3Articles, ...wave4Articles, ...wave5Articles, ...wave6Articles, ...wave7Articles];
 
 for (const article of migrationArticles) {
   test.describe(`Migration: ${article.file}`, () => {
