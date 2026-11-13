@@ -432,7 +432,7 @@ test('homepage renders the six newest catalog entries and all wave 7 and wave 8 
       [...document.querySelectorAll('#latest-articles .latest-card-title')].map(link => link.getAttribute('href')),
       ['ai-navod-edit-kontrola.html', 'ai-navod-lepsi-prompty-10-zasad.html', 'ai-navod-prep-prompty.html']
         .map(href => window.siteArticles.find(article => article.href === href)),
-      ['gemini-desktop-navod-pro-ucitele.html', 'gemini-notebook-navod-pro-ucitele.html', 'gemini-skills-pro-ucitele.html', 'gemini-storybook-navod-pro-ucitele.html']
+      ['gemini-desktop-navod-pro-ucitele.html', 'gemini-notebook-navod-pro-ucitele.html', 'gemini-skills-pro-ucitele.html', 'gemini-storybook-navod-pro-ucitele.html', 'ai-navod-chatgpt-zacatek-bezpecne.html', 'ai-workflow-7-kroku-gemini-notebook.html']
         .map(href => window.siteArticles.find(article => article.href === href)),
       window.siteArticles.map(item => item.href).filter((href, index, all) => all.indexOf(href) !== index)
     ];
@@ -447,6 +447,11 @@ test('homepage renders the six newest catalog entries and all wave 7 and wave 8 
   }
 });
 
+const wave9Articles = [
+  { file: 'ai-navod-chatgpt-zacatek-bezpecne.html', title: 'ChatGPT pro učitele: jak začít bezpečně a co zvládnete i zdarma', baselineSha: '55347de6a974110071b66406404e7ab29dfef46b', activeArea: 'Začít s AI', breadcrumb: 'ChatGPT pro učitele', breadcrumbHref: 'chatgpt-pro-ucitele.html', h2: '#guide-chatgpt-zacatek-bezpecne-1-zacnete-na-oficialnim-chatgpt-1', h3: '#guide-chatgpt-zacatek-bezpecne-dulezite-4', copyButtons: 2 },
+  { file: 'ai-workflow-7-kroku-gemini-notebook.html', title: 'Gemini Notebook jako kompletní příprava výuky', baselineSha: '55347de6a974110071b66406404e7ab29dfef46b', activeArea: 'Připravit výuku', breadcrumb: 'Workflow pro učitele', breadcrumbHref: 'ai.html#workflow', h2: '#toc-01', h3: '#guide-gemini-notebook-7-kroku-proc-tento-krok-delat-3', copyButtons: 8 }
+];
+
 const wave8Articles = [
   { file: 'gemini-desktop-navod-pro-ucitele.html', title: 'Gemini Desktop pro učitele: instalace a první kroky ve Windows', tocCount: 22, h2: '#wave8-gemini-desktop-navod-pro-ucitele-h2-01', h3: '#wave8-gemini-desktop-navod-pro-ucitele-h3-10', baselineSha: '815614650945db4c916f29a73c6444d00abe23c9', activeArea: 'Nástroje a asistenti', breadcrumb: 'Gemini pro učitele', breadcrumbHref: 'gemini-pro-ucitele.html', checkTocScroll: true, activeHeadingFollowsViewport: true },
   { file: 'gemini-notebook-navod-pro-ucitele.html', title: 'Gemini Notebook: jak si vytvořit sešit, který opravdu šetří práci', tocCount: 49, h2: '#ucel-potom-zdroje', h3: '#wave8-gemini-notebook-navod-pro-ucitele-h3-28', baselineSha: '815614650945db4c916f29a73c6444d00abe23c9', activeArea: 'Nástroje a asistenti', breadcrumb: 'Gemini Notebook', breadcrumbHref: 'gemini-notebook.html', checkTocScroll: true, activeHeadingFollowsViewport: true },
@@ -458,6 +463,233 @@ const wave8InteractiveArticles = [
   { file: 'gemini-skills-pro-ucitele.html', buttons: 11, details: 8, checkboxes: 8 },
   { file: 'gemini-storybook-navod-pro-ucitele.html', buttons: 3, details: 0, checkboxes: 0 }
 ];
+
+test('wave 9 generated guides preserve body text, heading IDs, media, links, and SEO metadata', async ({ page }) => {
+  const { execFileSync } = require('node:child_process');
+  const normalize = value => value.replace(/\s+/g, ' ').trim();
+  for (const article of wave9Articles) {
+    const baseline = execFileSync('git', ['show', article.baselineSha + ':' + article.file], { encoding: 'utf8' });
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(baseURL + '/' + article.file, { waitUntil: 'networkidle' });
+    const current = await page.evaluate(() => ({
+      headings: [...document.querySelectorAll('.guide-article .article-content h2, .guide-article .article-content h3')].map(el => [el.tagName, el.id, el.textContent.replace(/\s+/g, ' ').trim()]),
+      images: [...document.querySelectorAll('.guide-cover img, .guide-article .article-content img')].map(el => [el.getAttribute('src'), el.getAttribute('alt')]),
+      links: [...document.querySelectorAll('.guide-article .article-content a')].map(el => el.getAttribute('href')),
+      title: document.title,
+      metadata: [...document.querySelectorAll('meta[name="description"], meta[property^="og:"], link[rel="canonical"]')].map(el => [el.getAttribute('name') || el.getAttribute('property') || 'canonical', el.getAttribute('content') || el.getAttribute('href')]),
+      text: document.querySelector('.guide-article .article-content').innerText.replace(/\s+/g, ' ').trim()
+    }));
+    const previous = await page.evaluate(html => {
+      const parsed = new DOMParser().parseFromString(html, 'text/html');
+      const wrapper = document.createElement('article');
+      wrapper.className = 'guide-article';
+      wrapper.innerHTML = parsed.querySelector('.guide-article').innerHTML;
+      document.body.append(wrapper);
+      const text = wrapper.querySelector('.article-content').innerText.replace(/\s+/g, ' ').trim();
+      wrapper.remove();
+      return {
+        headings: [...parsed.querySelectorAll('.guide-article .article-content h2, .guide-article .article-content h3')].map(el => [el.tagName, el.id, el.textContent.replace(/\s+/g, ' ').trim()]),
+        images: [...parsed.querySelectorAll('.guide-cover img, .guide-article .article-content img')].map(el => [el.getAttribute('src'), el.getAttribute('alt')]),
+        links: [...parsed.querySelectorAll('.guide-article .article-content a')].map(el => el.getAttribute('href')),
+        title: parsed.title,
+        metadata: [...parsed.querySelectorAll('meta[name="description"], meta[property^="og:"], link[rel="canonical"]')].map(el => [el.getAttribute('name') || el.getAttribute('property') || 'canonical', el.getAttribute('content') || el.getAttribute('href')]),
+        text
+      };
+    }, baseline);
+    expect(current).toEqual(previous);
+    const expectedDate = article.file.startsWith('ai-workflow-') ? '29. srpna 2026' : '27. srpna 2026';
+    await expect(page.locator('.guide-eyebrow')).toContainText(expectedDate);
+    await expect(page.locator('.guide-breadcrumbs > ol > li').nth(2)).toHaveText(article.title);
+  }
+});
+
+test('wave 9 shared TOC, navigation, breadcrumbs, and responsive layout work at required widths', async ({ page }) => {
+  for (const article of wave9Articles) {
+    for (const width of widths) {
+      await page.setViewportSize({ width, height: 900 });
+      await page.goto(baseURL + '/' + article.file);
+      const toc = page.locator('.article-content-navigation');
+      await expect(toc).toHaveCount(1);
+      await expect(page.locator('.guide-toc-mobile, .guide-toc-desktop, .guide-toc-list')).toHaveCount(0);
+      await expect(page.locator('.site-header')).toHaveCount(1);
+      await expect(page.locator('.site-nav-pilot details')).toHaveCount(6);
+      await expect(page.locator('.site-nav-pilot details[data-active="true"] > summary')).toHaveText(article.activeArea);
+      await expect(page.locator('.guide-breadcrumbs > ol > li')).toHaveCount(3);
+      await expect(page.locator('.guide-breadcrumbs > ol > li').nth(1)).toHaveText(article.breadcrumb);
+      await expect(page.locator('.guide-breadcrumbs > ol > li').nth(1).locator('a')).toHaveAttribute('href', article.breadcrumbHref);
+      await expect(page.locator('.guide-breadcrumbs > ol > li').nth(2)).toHaveAttribute('aria-current', 'page');
+      const state = await page.evaluate(() => {
+        const navigation = document.querySelector('.article-content-navigation');
+        const links = [...navigation.querySelectorAll('a[href^="#"]')];
+        return {
+          scrollWidth: document.documentElement.scrollWidth,
+          open: navigation.open,
+          position: getComputedStyle(navigation).position,
+          ids: [...document.querySelectorAll('[id]')].map(node => node.id),
+          h2Count: document.querySelectorAll('.guide-article .article-content h2[id]').length,
+          tocH2Count: navigation.querySelectorAll(':scope > nav > ol > li').length,
+          tocH3Count: navigation.querySelectorAll(':scope > nav > ol > li > ol > li').length,
+          anchorsResolve: links.every(link => document.getElementById(decodeURIComponent(link.hash.slice(1)))),
+          images: [...document.querySelectorAll('.guide-cover img')].map(image => ({complete:image.complete,width:image.naturalWidth,alt:image.alt}))
+        };
+      });
+      expect(state.scrollWidth, 'overflow at ' + width + 'px in ' + article.file).toBeLessThanOrEqual(width + 1);
+      expect(new Set(state.ids).size).toBe(state.ids.length);
+      expect(state.anchorsResolve).toBe(true);
+      expect(state.tocH2Count).toBe(state.h2Count);
+      expect(state.tocH3Count).toBeGreaterThan(0);
+      expect(state.images.length).toBe(1);
+      expect(state.images.every(image => image.complete && image.width > 0 && image.alt)).toBe(true);
+      if (width > 960) {
+        expect(state.position).toBe('sticky');
+        expect(state.open).toBe(true);
+      } else {
+        expect(state.position).toBe('static');
+        expect(state.open).toBe(true);
+      }
+      if (width === 1440) {
+        await page.locator('.guide-hero').screenshot({ path: 'artifacts/' + article.file + '-desktop-1440-hero.png' });
+        await toc.scrollIntoViewIfNeeded();
+        await toc.screenshot({ path: 'artifacts/' + article.file + '-desktop-1440-sticky-toc.png' });
+        await page.locator('.prompt-card').first().screenshot({ path: 'artifacts/' + article.file + '-desktop-1440-prompt.png' });
+      }
+      if (width === 390) {
+        await page.locator('.guide-hero').screenshot({ path: 'artifacts/' + article.file + '-mobile-390-hero.png' });
+        await toc.scrollIntoViewIfNeeded();
+        await toc.screenshot({ path: 'artifacts/' + article.file + '-mobile-390-expanded-toc.png' });
+        await page.locator('.prompt-card').first().screenshot({ path: 'artifacts/' + article.file + '-mobile-390-prompt.png' });
+      }
+    }
+  }
+});
+
+test('wave 9 H2/H3 links update the active chapter and anchors work without JavaScript', async ({ browser, page }) => {
+  for (const article of wave9Articles) {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(baseURL + '/' + article.file);
+    for (const fragment of [article.h2, article.h3]) {
+      await page.locator('.article-content-navigation a[href="' + fragment + '"]').click();
+      await expect(page).toHaveURL(new RegExp(fragment + '$'));
+      await expect(page.locator(fragment)).toBeInViewport();
+      await expect.poll(() => page.evaluate(() => {
+        const links = [...document.querySelectorAll('.article-content-navigation a[href^="#"]')].map(link => ({
+          href: link.getAttribute('href'),
+          heading: document.getElementById(decodeURIComponent(link.hash.slice(1)))
+        })).filter(item => item.heading);
+        const marker = Math.min(window.innerHeight * 0.34, 240);
+        const passed = links.filter(item => item.heading.getBoundingClientRect().top <= marker);
+        const expected = (passed[passed.length - 1] || links[0])?.href || null;
+        const active = document.querySelector('.article-content-navigation a[aria-current="location"]')?.getAttribute('href') || null;
+        return expected === active;
+      })).toBe(true);
+    }
+    const noJs = await browser.newContext({ viewport: { width: 390, height: 844 }, javaScriptEnabled: false });
+    const noJsPage = await noJs.newPage();
+    await noJsPage.goto(baseURL + '/' + article.file);
+    await expect(noJsPage.locator('.article-content-navigation')).toHaveJSProperty('open', true);
+    await noJsPage.locator('.article-content-navigation a[href="' + article.h2 + '"]').click();
+    await expect(noJsPage).toHaveURL(new RegExp(article.h2 + '$'));
+    await expect(noJsPage.locator(article.h2)).toBeInViewport();
+    await noJs.close();
+  }
+});
+
+test('wave 9 mobile TOC supports keyboard toggling and each prompt copies its exact text', async ({ browser }) => {
+  const keyboardContext = await browser.newContext({ viewport: { width: 390, height: 844 } });
+  const keyboardPage = await keyboardContext.newPage();
+  for (const article of wave9Articles) {
+    await keyboardPage.goto(baseURL + '/' + article.file);
+    const toc = keyboardPage.locator('.article-content-navigation');
+    const summary = toc.locator('summary');
+    await summary.focus();
+    await keyboardPage.keyboard.press('Space');
+    await expect(toc).toHaveJSProperty('open', false);
+    await keyboardPage.keyboard.press('Enter');
+    await expect(toc).toHaveJSProperty('open', true);
+    await expect(summary).toBeFocused();
+  }
+  await keyboardContext.close();
+
+  const context = await browser.newContext({ permissions: ['clipboard-read', 'clipboard-write'] });
+  const page = await context.newPage();
+  for (const article of wave9Articles) {
+    await page.goto(baseURL + '/' + article.file);
+    const buttons = page.locator('.prompt-copy-button');
+    await expect(buttons).toHaveCount(article.copyButtons);
+    for (let index = 0; index < article.copyButtons; index++) {
+      const button = buttons.nth(index);
+      const targetId = await button.getAttribute('data-copy-prompt');
+      const expected = await page.locator('#' + targetId).innerText();
+      await button.click();
+      await expect(button).toHaveText('Zkopírováno');
+      const copied = await page.evaluate(() => navigator.clipboard.readText());
+      expect(copied.trim(), article.file + ' prompt ' + (index + 1)).toBe(expected.trim());
+    }
+  }
+  await context.close();
+});
+
+test('wave 9 hero computed styles, desktop/mobile screenshots, and approved reference comparison', async ({ page }) => {
+  const fs = require('node:fs');
+  const cards = [];
+  const records = [];
+  for (const article of wave9Articles) {
+    for (const width of [1440, 390]) {
+      await page.setViewportSize({ width, height: 1000 });
+      await page.goto(baseURL + '/' + article.file, { waitUntil: 'networkidle' });
+      await page.evaluate(() => document.fonts.ready);
+      const record = await page.evaluate(() => {
+        const selectors = ['.guide-hero', '.guide-hero-copy', '.guide-hero-extra', '.guide-meta span', '.workflow-article-summary', '.guide-overview', '.guide-overview .workflow-route', '.guide-overview .workflow-stage', '.guide-hero h1', '.guide-hero-lead', '.guide-hero-illustration'];
+        const snapshot = selector => {
+          const el = document.querySelector(selector);
+          if (!el) return null;
+          const style = getComputedStyle(el), before = getComputedStyle(el, '::before'), after = getComputedStyle(el, '::after');
+          return {selector,backgroundColor:style.backgroundColor,backgroundImage:style.backgroundImage,color:style.color,opacity:style.opacity,filter:style.filter,backdropFilter:style.backdropFilter,
+            before:{display:before.display,content:before.content,backgroundColor:before.backgroundColor,backgroundImage:before.backgroundImage,opacity:before.opacity},
+            after:{display:after.display,content:after.content,backgroundColor:after.backgroundColor,backgroundImage:after.backgroundImage,opacity:after.opacity}};
+        };
+        return {file:location.pathname.split('/').pop(),width:innerWidth,body:snapshot('body'),hero:snapshot('.guide-hero'),surfaces:selectors.map(snapshot).filter(Boolean),
+          title:snapshot('.guide-hero h1'),lead:snapshot('.guide-hero-lead'),image:(()=>{const el=document.querySelector('.guide-hero-illustration img');return {src:el?.getAttribute('src'),complete:el?.complete,naturalWidth:el?.naturalWidth,alt:el?.alt};})()};
+      });
+      records.push(record);
+      expect(record.image.complete && record.image.naturalWidth > 0).toBe(true);
+      expect(record.title.color).toBe('rgb(18, 63, 54)');
+      expect(record.lead.color).toBe('rgb(49, 87, 75)');
+      for (const surface of record.surfaces.filter(item => !['.guide-hero h1','.guide-hero-lead'].includes(item.selector))) {
+        expect(surface.filter, surface.selector).toBe('none');
+        expect(surface.backdropFilter, surface.selector).toBe('none');
+        for (const paint of [surface.backgroundColor,surface.before.backgroundColor,surface.after.backgroundColor]) {
+          const match=paint.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/);
+          if(!match)continue;
+          const alpha=match[4]===undefined?1:Number(match[4]);
+          if(alpha<0.05)continue;
+          const brightness=[1,2,3].reduce((sum,channel)=>sum+Number(match[channel])*alpha+255*(1-alpha),0);
+          expect(brightness,surface.selector+' dark hero surface').toBeGreaterThan(570);
+        }
+        for(const paint of [surface.backgroundImage,surface.before.backgroundImage,surface.after.backgroundImage]){
+          if(!paint||paint==='none')continue;
+          expect(paint).not.toMatch(/url\(/i);
+          for(const stop of paint.matchAll(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/g)){
+            const alpha=stop[4]===undefined?1:Number(stop[4]);
+            const brightness=[1,2,3].reduce((sum,channel)=>sum+Number(stop[channel])*alpha+255*(1-alpha),0);
+            expect(brightness,surface.selector+' dark gradient stop').toBeGreaterThan(570);
+          }
+        }
+      }
+      if(width===1440){
+        const image=await page.locator('.guide-hero').screenshot({path:'artifacts/'+article.file+'-hero-1440.png'});
+        cards.push({title:article.title,data:image.toString('base64')});
+      }
+    }
+  }
+  await page.setViewportSize({width:1440,height:1000});
+  await page.goto(baseURL+'/ai-agenti-co-je-ai-agent.html',{waitUntil:'networkidle'});
+  const reference=await page.locator('.workflow-shell').screenshot();
+  cards.push({title:'Schválená světlá reference',data:reference.toString('base64')});
+  await page.setContent('<!doctype html><html lang="cs"><meta charset="utf-8"><title>Vlna 9 – hero comparison</title><style>*{box-sizing:border-box}body{margin:0;padding:24px;background:#fffefa;color:#102d2b;font:600 15px Arial,sans-serif}h1{margin:0 0 18px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}article{padding:10px;border:1px solid #dfe8e1;border-radius:12px;background:#fff;overflow:hidden}h2{font-size:16px;min-height:40px;margin:4px 0 10px}img{display:block;width:100%;height:auto;object-fit:contain;border:1px solid #e5e7e1;border-radius:8px}</style><h1>Etapa 7Y – hero comparison and approved light reference</h1><main class="grid">'+cards.map(x=>'<article><h2>'+x.title+'</h2><img alt="'+x.title+'" src="data:image/png;base64,'+x.data+'"></article>').join('')+'</main></html>');
+  await page.screenshot({path:'artifacts/wave9-hero-contact-sheet.png',fullPage:true});
+  fs.writeFileSync('artifacts/wave9-computed-styles.json',JSON.stringify(records,null,2));
+});
 
 const migrationArticles = [...wave1Articles, ...wave2Articles, ...wave3Articles, ...wave4Articles, ...wave5Articles, ...wave6Articles, ...wave7Articles, ...wave8Articles];
 

@@ -15,6 +15,18 @@
   grid-column: 1 / -1;
 }
 
+.guide-layout.article-content-layout {
+  width: 100%;
+  grid-template-columns: minmax(180px, min(260px, 28%)) minmax(0, 1fr);
+  gap: clamp(24px, 3.8vw, 52px);
+  justify-content: center;
+  align-items: start;
+}
+
+.guide-layout.article-content-layout > .guide-article {
+  min-width: 0;
+}
+
 .article-content-navigation {
   position: sticky;
   top: calc(var(--nav-height, 0px) + 18px);
@@ -133,6 +145,11 @@ body.ai-agent-light-page.light-background-pilot.workflow-page .workflow-main.art
   body.ai-agent-light-page.light-background-pilot.workflow-page .workflow-main.article-content-layout {
     width: min(880px, calc(100% - 36px));
     padding: 24px 0 82px;
+  }
+
+  .guide-layout.article-content-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
   }
 
   .article-content-navigation {
