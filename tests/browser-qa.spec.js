@@ -335,8 +335,8 @@ test('wave 7 hero styles and desktop/mobile screenshots', async ({ page }) => {
           return {
             selector, backgroundColor: style.backgroundColor, backgroundImage: style.backgroundImage,
             color: style.color, opacity: style.opacity, filter: style.filter, backdropFilter: style.backdropFilter,
-            before: { display: before.display, content: before.content, backgroundColor: before.backgroundColor, backgroundImage: before.backgroundImage, opacity: before.opacity },
-            after: { display: after.display, content: after.content, backgroundColor: after.backgroundColor, backgroundImage: after.backgroundImage, opacity: after.opacity }
+            before: { display: before.display, content: before.content, backgroundColor: before.backgroundColor, backgroundImage: before.backgroundImage, opacity: before.opacity, position: before.position, width: before.width, height: before.height },
+            after: { display: after.display, content: after.content, backgroundColor: after.backgroundColor, backgroundImage: after.backgroundImage, opacity: after.opacity, position: after.position, width: after.width, height: after.height }
           };
         };
         return {
@@ -380,6 +380,8 @@ test('wave 7 hero styles and desktop/mobile screenshots', async ({ page }) => {
               && surface.selector.includes('workflow-stage')
               && entry.pseudo?.display !== 'none'
               && entry.pseudo?.position === 'absolute'
+              && Number.parseFloat(entry.pseudo?.width) <= 20
+              && Number.parseFloat(entry.pseudo?.height) <= 20
               && entry.pseudo?.opacity === '1';
             expect(tinyApprovedGreenMarker, `unexpected dark hero surface in ${article.file}: ${color}`).toBe(true);
           }
