@@ -448,10 +448,10 @@ test('homepage renders the six newest catalog entries and all wave 7 and wave 8 
 });
 
 const wave8Articles = [
-  { file: 'gemini-desktop-navod-pro-ucitele.html', title: 'Gemini Desktop pro učitele: instalace a první kroky ve Windows', tocCount: 22, h2: '#wave8-gemini-desktop-navod-pro-ucitele-h2-01', h3: '#wave8-gemini-desktop-navod-pro-ucitele-h3-10', baselineSha: '815614650945db4c916f29a73c6444d00abe23c9', activeArea: 'Nástroje a asistenti', breadcrumb: 'Gemini pro učitele', breadcrumbHref: 'gemini-pro-ucitele.html', checkTocScroll: true },
-  { file: 'gemini-notebook-navod-pro-ucitele.html', title: 'Gemini Notebook: jak si vytvořit sešit, který opravdu šetří práci', tocCount: 49, h2: '#ucel-potom-zdroje', h3: '#wave8-gemini-notebook-navod-pro-ucitele-h3-28', baselineSha: '815614650945db4c916f29a73c6444d00abe23c9', activeArea: 'Nástroje a asistenti', breadcrumb: 'Gemini Notebook', breadcrumbHref: 'gemini-notebook.html', checkTocScroll: true },
-  { file: 'gemini-skills-pro-ucitele.html', title: 'Gemini Skills pro učitele: jednou nastavíte, pak už Gemini ví, jak má pracovat', tocCount: 35, h2: '#gemini-zaklady', h3: '#wave8-gemini-skills-pro-ucitele-h3-25', baselineSha: '815614650945db4c916f29a73c6444d00abe23c9', activeArea: 'Nástroje a asistenti', breadcrumb: 'Gemini pro učitele', breadcrumbHref: 'gemini-pro-ucitele.html', checkTocScroll: true },
-  { file: 'gemini-storybook-navod-pro-ucitele.html', title: 'Gemini Storybook: jak vytvořit ilustrovaný příběh pro výuku', tocCount: 29, h2: '#kdy-storybook-pouzit', h3: '#wave8-gemini-storybook-navod-pro-ucitele-h3-20', baselineSha: '815614650945db4c916f29a73c6444d00abe23c9', activeArea: 'Nástroje a asistenti', breadcrumb: 'Gemini pro učitele', breadcrumbHref: 'gemini-pro-ucitele.html', checkTocScroll: true }
+  { file: 'gemini-desktop-navod-pro-ucitele.html', title: 'Gemini Desktop pro učitele: instalace a první kroky ve Windows', tocCount: 22, h2: '#wave8-gemini-desktop-navod-pro-ucitele-h2-01', h3: '#wave8-gemini-desktop-navod-pro-ucitele-h3-10', baselineSha: '815614650945db4c916f29a73c6444d00abe23c9', activeArea: 'Nástroje a asistenti', breadcrumb: 'Gemini pro učitele', breadcrumbHref: 'gemini-pro-ucitele.html', checkTocScroll: true, activeHeadingFollowsViewport: true },
+  { file: 'gemini-notebook-navod-pro-ucitele.html', title: 'Gemini Notebook: jak si vytvořit sešit, který opravdu šetří práci', tocCount: 49, h2: '#ucel-potom-zdroje', h3: '#wave8-gemini-notebook-navod-pro-ucitele-h3-28', baselineSha: '815614650945db4c916f29a73c6444d00abe23c9', activeArea: 'Nástroje a asistenti', breadcrumb: 'Gemini Notebook', breadcrumbHref: 'gemini-notebook.html', checkTocScroll: true, activeHeadingFollowsViewport: true },
+  { file: 'gemini-skills-pro-ucitele.html', title: 'Gemini Skills pro učitele: jednou nastavíte, pak už Gemini ví, jak má pracovat', tocCount: 35, h2: '#gemini-zaklady', h3: '#wave8-gemini-skills-pro-ucitele-h3-25', baselineSha: '815614650945db4c916f29a73c6444d00abe23c9', activeArea: 'Nástroje a asistenti', breadcrumb: 'Gemini pro učitele', breadcrumbHref: 'gemini-pro-ucitele.html', checkTocScroll: true, activeHeadingFollowsViewport: true },
+  { file: 'gemini-storybook-navod-pro-ucitele.html', title: 'Gemini Storybook: jak vytvořit ilustrovaný příběh pro výuku', tocCount: 29, h2: '#kdy-storybook-pouzit', h3: '#wave8-gemini-storybook-navod-pro-ucitele-h3-20', baselineSha: '815614650945db4c916f29a73c6444d00abe23c9', activeArea: 'Nástroje a asistenti', breadcrumb: 'Gemini pro učitele', breadcrumbHref: 'gemini-pro-ucitele.html', checkTocScroll: true, activeHeadingFollowsViewport: true }
 ];
 const wave8InteractiveArticles = [
   { file: 'gemini-notebook-navod-pro-ucitele.html', buttons: 2, details: 0, checkboxes: 0 },
@@ -583,8 +583,20 @@ for (const article of migrationArticles) {
         await page.locator(`.article-content-navigation a[href="${fragment}"]`).click();
         await expect(page).toHaveURL(new RegExp(`${fragment}$`));
         await expect(page.locator(fragment)).toBeInViewport();
-        await expect(page.locator('.article-content-navigation a[aria-current="location"]'))
-          .toHaveAttribute('href', fragment);
+        if (article.activeHeadingFollowsViewport) {
+          await expect.poll(() => page.evaluate(() => {
+            const links = [...document.querySelectorAll('.article-content-navigation a[href^="#"]')].map(link => ({
+              href: link.getAttribute('href'),
+              heading: document.getElementById(decodeURIComponent(link.hash.slice(1)))
+            })).filter(item => item.heading);
+            const marker = Math.min(window.innerHeight * 0.34, 240);
+            const passed = links.filter(item => item.heading.getBoundingClientRect().top <= marker);
+            return (passed[passed.length - 1] || links[0])?.href || null;
+          })).toBe(await page.locator('.article-content-navigation a[aria-current="location"]').getAttribute('href'));
+        } else {
+          await expect(page.locator('.article-content-navigation a[aria-current="location"]'))
+            .toHaveAttribute('href', fragment);
+        }
       }
     });
 
