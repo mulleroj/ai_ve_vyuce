@@ -705,10 +705,10 @@ test('wave 9 hero computed styles, desktop/mobile screenshots, and approved refe
 
 
 const wave10Articles = [
-  { file: 'ai-workflow-8-otazek.html', title: '8 otázek, které by si měl učitel položit při práci s AI', activeArea: 'Připravit výuku', breadcrumb: 'Workflow pro učitele', breadcrumbHref: 'ai.html#workflow', tocCount: 25, h2: '#ai-workflow-8-otazek-h2-01', h3: '#ai-workflow-8-otazek-h3-01', baselineSha: '94be232d7d0f20e589deb5910c820a6b95fc5171', checkTocScroll: true, representative: '#ai-workflow-8-otazek-h2-01' },
+  { file: 'ai-workflow-8-otazek.html', title: '8 otázek, které by si měl učitel položit při práci s AI', activeArea: 'Připravit výuku', breadcrumb: 'Workflow pro učitele', breadcrumbHref: 'ai.html#workflow', tocCount: 25, h2: '#ai-workflow-8-otazek-h2-01', h3: '#ai-workflow-8-otazek-h3-01', baselineSha: '94be232d7d0f20e589deb5910c820a6b95fc5171', checkTocScroll: true, activeHeadingFollowsViewport: true, representative: '#ai-workflow-8-otazek-h2-01' },
   { file: 'ai-workflow-prep-edit.html', title: 'PREP + EDIT: Praktický workflow pro práci s AI', activeArea: 'Připravit výuku', breadcrumb: 'Workflow pro učitele', breadcrumbHref: 'ai.html#workflow', tocCount: 27, h2: '#ai-workflow-prep-edit-h2-01', h3: '#ai-workflow-prep-edit-h3-01', baselineSha: '94be232d7d0f20e589deb5910c820a6b95fc5171', checkTocScroll: true, representative: '#ai-workflow-prep-edit-h2-03' },
-  { file: 'ai-workflow-udl-ai.html', title: 'UDL + AI: Jak přizpůsobit výuku různým žákům', activeArea: 'Připravit výuku', breadcrumb: 'Workflow pro učitele', breadcrumbHref: 'ai.html#workflow', tocCount: 40, h2: '#toc-01', h3: '#ai-workflow-udl-ai-h3-01', baselineSha: '94be232d7d0f20e589deb5910c820a6b95fc5171', checkTocScroll: true, representative: '#toc-01' },
-  { file: 'ai-workflow-usetri-praci.html', title: 'Jak může AI skutečně ušetřit učiteli práci', activeArea: 'Připravit výuku', breadcrumb: 'Workflow pro učitele', breadcrumbHref: 'ai.html#workflow', tocCount: 34, h2: '#toc-01', h3: '#ai-workflow-usetri-praci-h3-05', baselineSha: '94be232d7d0f20e589deb5910c820a6b95fc5171', checkTocScroll: true, representative: '#toc-02' }
+  { file: 'ai-workflow-udl-ai.html', title: 'UDL + AI: Jak přizpůsobit výuku různým žákům', activeArea: 'Připravit výuku', breadcrumb: 'Workflow pro učitele', breadcrumbHref: 'ai.html#workflow', tocCount: 40, h2: '#toc-01', h3: '#ai-workflow-udl-ai-h3-01', baselineSha: '94be232d7d0f20e589deb5910c820a6b95fc5171', legacyInternalIds: ['toc-heading-ai-workflow-udl-ai-html'], legacyChapterAnchors: [['toc-01', 'Co je UDL?'], ['toc-02', 'AI může pomoci hlavně s variantami'], ['toc-03', 'Největší chyba: „udělej to jednodušší“'], ['toc-04', 'UDL není „speciální verze pro slabší žáky“'], ['toc-05', 'Co má zůstat stejné?'], ['toc-06', 'Praktický prompt: vytvoř tři varianty']], checkTocScroll: true, representative: '#toc-01' },
+  { file: 'ai-workflow-usetri-praci.html', title: 'Jak může AI skutečně ušetřit učiteli práci', activeArea: 'Připravit výuku', breadcrumb: 'Workflow pro učitele', breadcrumbHref: 'ai.html#workflow', tocCount: 34, h2: '#toc-01', h3: '#ai-workflow-usetri-praci-h3-05', baselineSha: '94be232d7d0f20e589deb5910c820a6b95fc5171', legacyInternalIds: ['toc-heading-ai-workflow-usetri-praci-html'], legacyChapterAnchors: [['toc-01', 'Největší úspora času nevzniká tam, kde AI udělá všechno'], ['toc-02', 'Kde AI šetří nejvíc času?'], ['toc-03', 'Kde AI čas naopak často neušetří?'], ['toc-04', 'Co bych AI nepředávala bez velmi silné kontroly'], ['toc-05', 'Metoda 3D: Delegate – Do together – Decide yourself'], ['toc-06', 'Jeden materiál, více výstupů']], checkTocScroll: true, representative: '#toc-02' }
 ];
 
 const migrationArticles = [...wave1Articles, ...wave2Articles, ...wave3Articles, ...wave4Articles, ...wave5Articles, ...wave6Articles, ...wave7Articles, ...wave8Articles, ...wave10Articles];
@@ -836,7 +836,32 @@ for (const article of migrationArticles) {
         await expect(page).toHaveURL(new RegExp(`${fragment}$`));
         await expect(page.locator(fragment)).toBeInViewport();
         if (article.activeHeadingFollowsViewport) {
-          const viewportChapter = () => page.evaluate(() => {
+          await page.evaluate(() => new Promise(resolve => {
+            let previous = null;
+            let stableFrames = 0;
+            const sample = () => {
+              const links = [...document.querySelectorAll('.article-content-navigation a[href^="#"]')].map(link => ({
+                href: link.getAttribute('href'),
+                heading: document.getElementById(decodeURIComponent(link.hash.slice(1)))
+              })).filter(item => item.heading);
+              const marker = Math.min(window.innerHeight * 0.34, 240);
+              const passed = links.filter(item => item.heading.getBoundingClientRect().top <= marker);
+              const expected = (passed[passed.length - 1] || links[0])?.href || null;
+              const active = document.querySelector('.article-content-navigation a[aria-current="location"]')?.getAttribute('href') || null;
+              const state = { scrollY: window.scrollY, expected, active };
+              if (active && active === expected && previous?.scrollY === state.scrollY &&
+                  previous?.expected === state.expected && previous?.active === state.active) {
+                stableFrames += 1;
+              } else {
+                stableFrames = 0;
+              }
+              previous = state;
+              if (stableFrames >= 3) resolve();
+              else requestAnimationFrame(sample);
+            };
+            requestAnimationFrame(sample);
+          }));
+          const viewportChapter = await page.evaluate(() => {
             const links = [...document.querySelectorAll('.article-content-navigation a[href^="#"]')].map(link => ({
               href: link.getAttribute('href'),
               heading: document.getElementById(decodeURIComponent(link.hash.slice(1)))
@@ -845,11 +870,8 @@ for (const article of migrationArticles) {
             const passed = links.filter(item => item.heading.getBoundingClientRect().top <= marker);
             return (passed[passed.length - 1] || links[0])?.href || null;
           });
-          await expect.poll(async () => {
-            const expected = await viewportChapter();
-            const active = await page.locator('.article-content-navigation a[aria-current="location"]').getAttribute('href');
-            return expected === active;
-          }).toBe(true);
+          await expect(page.locator('.article-content-navigation a[aria-current="location"]'))
+            .toHaveAttribute('href', viewportChapter);
         } else {
           await expect(page.locator('.article-content-navigation a[aria-current="location"]'))
             .toHaveAttribute('href', fragment);
@@ -891,6 +913,23 @@ for (const article of migrationArticles) {
       await expect(page.locator('.article-content-navigation')).toHaveJSProperty('open', true);
       await context.close();
     });
+
+    if (article.legacyChapterAnchors) {
+      test('legacy public chapter anchors remain and only one contents navigation controls the article', async ({ browser }) => {
+        const context = await browser.newContext({ viewport: { width: 1440, height: 900 }, javaScriptEnabled: false });
+        const page = await context.newPage();
+        for (const [id, headingText] of article.legacyChapterAnchors) {
+          await page.goto(`${baseURL}/${article.file}#${id}`);
+          await expect(page.locator('.article-toc')).toHaveCount(0);
+          await expect(page.locator('.article-content-navigation')).toHaveCount(1);
+          const heading = page.locator(`#${id}`);
+          await expect(heading).toHaveJSProperty('tagName', 'H2');
+          await expect(heading).toHaveText(headingText);
+          await expect(heading).toBeInViewport();
+        }
+        await context.close();
+      });
+    }
 
     test('article text, headings, IDs, media, links, controls, date, and SEO match the pre-migration baseline', async ({ page }) => {
       const baselineSha = article.baselineSha || process.env.BASELINE_SHA;
