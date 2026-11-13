@@ -20,14 +20,24 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261109-7k" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261112-7v" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261110-7q" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-<a class="workflow-back" href="ai.html#navody">← Praktické návody</a>
-        </div>
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="prepare">
+<header class="site-header" id="top">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+      <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a>
+    </div></div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="ai-navody.html">Praktické návody</a></li><li aria-current="page">PREP: lepší prompty</li></ol></nav>
+<header class="workflow-shell">
         <div class="workflow-hero">
             <div>
                 <div class="workflow-eyebrow">Praktické návody · 25. srpna 2026</div>
@@ -44,7 +54,8 @@
         </div>
     </header>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
+<details class="article-content-navigation" open><summary>V tomto článku</summary><nav aria-label="Obsah článku"><ol><li><a href="#ai-navod-prep-prompty-h2-01">Co znamená PREP?</a><ol></ol></li><li><a href="#ai-navod-prep-prompty-h2-02">1. P – PROMPT</a><ol><li><a href="#ai-navod-prep-prompty-h3-01">Co má AI udělat?</a></li></ol></li><li><a href="#ai-navod-prep-prompty-h2-03">2. R – ROLE</a><ol><li><a href="#ai-navod-prep-prompty-h3-02">Kým má AI při řešení úkolu být?</a></li></ol></li><li><a href="#ai-navod-prep-prompty-h2-04">3. E – EXPLICIT</a><ol><li><a href="#ai-navod-prep-prompty-h3-03">Řekni přesně, co chceš</a></li></ol></li><li><a href="#ai-navod-prep-prompty-h2-05">4. P – PARAMETERS</a><ol><li><a href="#ai-navod-prep-prompty-h3-04">Nastav hranice výsledku</a></li></ol></li><li><a href="#ai-navod-prep-prompty-h2-06">Jak vypadá celý PREP prompt?</a><ol><li><a href="#ai-navod-prep-prompty-h3-05">Původní zadání</a></li><li><a href="#ai-navod-prep-prompty-h3-06">Stejné zadání pomocí PREP</a></li></ol></li><li><a href="#ai-navod-prep-prompty-h2-07">Univerzální PREP šablona pro učitele</a><ol></ol></li><li><a href="#ai-navod-prep-prompty-h2-08">Praktický příklad: pracovní list</a><ol><li><a href="#ai-navod-prep-prompty-h3-07">Bez PREP</a></li><li><a href="#ai-navod-prep-prompty-h3-08">S PREP</a></li></ol></li><li><a href="#ai-navod-prep-prompty-h2-09">Praktický příklad: občanská nauka</a><ol></ol></li><li><a href="#ai-navod-prep-prompty-h2-10">Praktický příklad: diferenciace</a><ol></ol></li><li><a href="#ai-navod-prep-prompty-h2-11">PREP není jen pro tvorbu materiálů</a><ol></ol></li><li><a href="#ai-navod-prep-prompty-h2-12">Nemusíme psát „dokonalý prompt“</a><ol></ol></li><li><a href="#ai-navod-prep-prompty-h2-13">Na co si dát pozor</a><ol></ol></li><li><a href="#ai-navod-prep-prompty-h2-14">PREP v jedné větě</a><ol></ol></li><li><a href="#ai-navod-prep-prompty-h2-15">Co následuje?</a><ol></ol></li><li><a href="#ai-navod-prep-prompty-h2-16">Zdroj a další informace</a><ol></ol></li></ol></nav></details>
         <article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">PREP pomáhá učiteli rozdělit zadání na čtyři srozumitelné části: úkol, roli, přesné požadavky a parametry výsledku.</p>
@@ -64,7 +75,7 @@
                     <figcaption>Infografika frameworku PREP: Prompt, Role, Explicit a Parameters.</figcaption>
                 </figure>
 
-                <h2>Co znamená PREP?</h2>
+                <h2 id="ai-navod-prep-prompty-h2-01">Co znamená PREP?</h2>
                 <p>Zkratka PREP představuje čtyři části dobrého zadání:</p>
                 <ul>
                     <li><strong>P – Prompt</strong></li>
@@ -75,8 +86,8 @@
                 <blockquote><strong>Řekni AI, co má udělat → v jaké roli má pracovat → co přesně požaduješ → jaké má dodržet podmínky.</strong></blockquote>
                 <p>Původní framework definuje jednotlivé kroky jako zadání úkolu, přidělení role, explicitní instrukce a stanovení parametrů výsledku.</p>
 
-                <h2>1. P – PROMPT</h2>
-                <h3>Co má AI udělat?</h3>
+                <h2 id="ai-navod-prep-prompty-h2-02">1. P – PROMPT</h2>
+                <h3 id="ai-navod-prep-prompty-h3-01">Co má AI udělat?</h3>
                 <p>První krok je nejjednodušší.</p>
                 <p>AI musí vědět, <strong>jaký úkol má splnit</strong>.</p>
                 <p>Například:</p>
@@ -99,8 +110,8 @@
                 <p>Ještě pořád ale nevíme, <strong>pro koho, na jakou úroveň, na jak dlouho ani k jakému cíli</strong>.</p>
                 <p>Proto přicházejí další části PREP.</p>
 
-                <h2>2. R – ROLE</h2>
-                <h3>Kým má AI při řešení úkolu být?</h3>
+                <h2 id="ai-navod-prep-prompty-h2-03">2. R – ROLE</h2>
+                <h3 id="ai-navod-prep-prompty-h3-02">Kým má AI při řešení úkolu být?</h3>
                 <p>Ve druhém kroku přidělíme AI roli.</p>
                 <p>Například:</p>
                 <blockquote>Jsi zkušený učitel občanské nauky na střední odborné škole.</blockquote>
@@ -126,8 +137,8 @@
                 <blockquote>Jsi zkušený učitel angličtiny na střední odborné škole, který pracuje s učni na úrovni A1.</blockquote>
                 <p>To už AI poskytuje velmi užitečný kontext.</p>
 
-                <h2>3. E – EXPLICIT</h2>
-                <h3>Řekni přesně, co chceš</h3>
+                <h2 id="ai-navod-prep-prompty-h2-04">3. E – EXPLICIT</h2>
+                <h3 id="ai-navod-prep-prompty-h3-03">Řekni přesně, co chceš</h3>
                 <p>Tady se často rozhoduje o kvalitě výsledku.</p>
                 <p>Nestačí říct:</p>
                 <blockquote>Vytvoř pracovní list.</blockquote>
@@ -150,8 +161,8 @@
                 <blockquote>Žáci už znají osobní zájmena a sloveso <em>to be</em>. Nově mají procvičit základní slovní zásobu týkající se povolání elektrikáře. Nepoužívej gramatiku nad úroveň A1.</blockquote>
                 <p>Taková informace může kvalitu výsledku změnit velmi výrazně.</p>
 
-                <h2>4. P – PARAMETERS</h2>
-                <h3>Nastav hranice výsledku</h3>
+                <h2 id="ai-navod-prep-prompty-h2-05">4. P – PARAMETERS</h2>
+                <h3 id="ai-navod-prep-prompty-h3-04">Nastav hranice výsledku</h3>
                 <p>Poslední část frameworku říká AI, <strong>jak má výsledný výstup vypadat</strong>.</p>
                 <p>Parametry mohou určovat například:</p>
                 <ul>
@@ -171,9 +182,9 @@
                 <p>Parametry jsou užitečné hlavně proto, že AI jinak často vytvoří <strong>mnohem více textu, než učitel skutečně potřebuje</strong>.</p>
                 <p>A učitel opravdu nepotřebuje osm odstavců filozofie ve chvíli, kdy chtěl deset otázek do Kahootu.</p>
 
-                <h2>Jak vypadá celý PREP prompt?</h2>
+                <h2 id="ai-navod-prep-prompty-h2-06">Jak vypadá celý PREP prompt?</h2>
                 <p>Podívejme se na jednoduchý příklad.</p>
-                <h3>Původní zadání</h3>
+                <h3 id="ai-navod-prep-prompty-h3-05">Původní zadání</h3>
                 <div class="article-prompt">Vytvoř hodinu o pracovním pohovoru.</div>
                 <p>AI musí odhadovat téměř všechno.</p>
                 <p>Neví:</p>
@@ -185,31 +196,31 @@
                     <li>vzdělávací cíl,</li>
                     <li>požadované aktivity.</li>
                 </ul>
-                <h3>Stejné zadání pomocí PREP</h3>
+                <h3 id="ai-navod-prep-prompty-h3-06">Stejné zadání pomocí PREP</h3>
                 <div class="article-prompt"><strong>P – Prompt</strong><br />Vytvoř vyučovací hodinu angličtiny na téma Job Interview.<br /><br /><strong>R – Role</strong><br />Jsi zkušený učitel angličtiny na střední odborné škole.<br /><br /><strong>E – Explicit</strong><br />Žáci jsou na úrovni A2. Cílem je naučit je základní otázky a odpovědi používané při pracovním pohovoru. Zařaď práci se slovní zásobou, krátký modelový rozhovor a praktický nácvik pohovoru ve dvojicích.<br /><br /><strong>P – Parameters</strong><br />Hodina trvá 45 minut. Rozděl ji do maximálně pěti aktivit a u každé napiš přibližný čas. Instrukce pro žáky mají být jednoduché. Na závěr zařaď krátkou reflexi.</div>
                 <p>Najednou má AI mnohem lepší představu, <strong>co má vytvořit</strong>.</p>
 
-                <h2>Univerzální PREP šablona pro učitele</h2>
+                <h2 id="ai-navod-prep-prompty-h2-07">Univerzální PREP šablona pro učitele</h2>
                 <p>Nemusíme pokaždé celý prompt vymýšlet znovu.</p>
                 <p>Stačí si uložit jednoduchou kostru:</p>
                 <div class="article-prompt"><strong>PROMPT</strong><br />Co potřebuji vytvořit?<br /><br />Vytvoř / navrhni / vysvětli / uprav / připrav…<br /><br /><strong>ROLE</strong><br />V jaké roli má AI pracovat?<br /><br />Jsi zkušený učitel / metodik / odborník na…<br /><br /><strong>EXPLICIT</strong><br />Co přesně má výstup obsahovat?<br /><br />Materiál je určen pro…<br />Cílem je…<br />Žáci již znají…<br />Zařaď…<br />Nezařazuj…<br /><br /><strong>PARAMETERS</strong><br />Jaké má výstup omezení?<br /><br />Délka…<br />Čas…<br />Počet úloh…<br />Jazyk…<br />Úroveň…<br />Formát…</div>
 
-                <h2>Praktický příklad: pracovní list</h2>
-                <h3>Bez PREP</h3>
+                <h2 id="ai-navod-prep-prompty-h2-08">Praktický příklad: pracovní list</h2>
+                <h3 id="ai-navod-prep-prompty-h3-07">Bez PREP</h3>
                 <div class="article-prompt">Udělej pracovní list na minulý čas.</div>
-                <h3>S PREP</h3>
+                <h3 id="ai-navod-prep-prompty-h3-08">S PREP</h3>
                 <div class="article-prompt"><strong>P – Prompt:</strong> Vytvoř pracovní list na procvičení Past Simple.<br /><br /><strong>R – Role:</strong> Jsi učitel angličtiny na střední odborné škole, který pracuje s žáky na úrovni A2.<br /><br /><strong>E – Explicit:</strong> Žáci již znají tvorbu kladných vět a základní nepravidelná slovesa. Zaměř se na procvičení kladných vět, záporu a otázek. Použij situace z běžného života mladých lidí.<br /><br /><strong>P – Parameters:</strong> Pracovní list je určen přibližně na 20 minut. Obsahuje čtyři typy úloh a maximálně 20 položek. Na konci vytvoř řešení pro učitele.</div>
                 <p>To už je zadání, se kterým se dá velmi dobře pracovat.</p>
 
-                <h2>Praktický příklad: občanská nauka</h2>
+                <h2 id="ai-navod-prep-prompty-h2-09">Praktický příklad: občanská nauka</h2>
                 <div class="article-prompt"><strong>P:</strong> Připrav aktivitu na téma dezinformace.<br /><br /><strong>R:</strong> Jsi učitel občanské nauky na střední odborné škole.<br /><br /><strong>E:</strong> Žáci mají pochopit rozdíl mezi informací, názorem, manipulací a dezinformací. Vytvoř několik krátkých modelových příspěvků ze sociálních sítí a nech žáky rozhodovat, jak by jejich důvěryhodnost ověřili.<br /><br /><strong>P:</strong> Aktivita má trvat 20 minut. Je určena pro žáky ve věku 16–17 let. Použij současný a srozumitelný jazyk. Nevytvářej skutečné nepravdivé informace o konkrétních žijících osobách.</div>
 
-                <h2>Praktický příklad: diferenciace</h2>
+                <h2 id="ai-navod-prep-prompty-h2-10">Praktický příklad: diferenciace</h2>
                 <p>PREP se hodí také tehdy, když potřebujeme jeden materiál upravit pro různé skupiny žáků.</p>
                 <p>Například:</p>
                 <div class="article-prompt"><strong>P:</strong> Vytvoř jednodušší variantu následujícího pracovního listu.<br /><br /><strong>R:</strong> Jsi zkušený pedagog se znalostí diferenciace výuky.<br /><br /><strong>E:</strong> Zachovej stejné vzdělávací cíle, ale zkrať instrukce, rozděl složité úkoly do menších kroků a přidej jeden vypracovaný příklad.<br /><br /><strong>P:</strong> Neměň odborné termíny, které se mají žáci naučit. Výsledný materiál nesmí být delší než původní verze.</div>
 
-                <h2>PREP není jen pro tvorbu materiálů</h2>
+                <h2 id="ai-navod-prep-prompty-h2-11">PREP není jen pro tvorbu materiálů</h2>
                 <p>Stejný princip můžeme použít například při:</p>
                 <ul>
                     <li>plánování vyučovací hodiny,</li>
@@ -227,7 +238,7 @@
                 </ul>
                 <p>PREP se dnes objevuje i v dalších vzdělávacích doporučeních pro práci s generativní AI, což ukazuje, že jednoduchá původní myšlenka má praktickou hodnotu i několik let po svém vzniku.</p>
 
-                <h2>Nemusíme psát „dokonalý prompt“</h2>
+                <h2 id="ai-navod-prep-prompty-h2-12">Nemusíme psát „dokonalý prompt“</h2>
                 <p>Tady je ale důležitá věc.</p>
                 <p>PREP není formulář, který musíme pokaždé otrocky vyplnit.</p>
                 <p>Současné AI nástroje zvládají běžnou konverzaci mnohem lépe než první generace chatbotů. Někdy tedy úplně stačí napsat:</p>
@@ -244,7 +255,7 @@
                 </ul>
                 <p>Pokud ano, máme většinou velmi slušný základ.</p>
 
-                <h2>Na co si dát pozor</h2>
+                <h2 id="ai-navod-prep-prompty-h2-13">Na co si dát pozor</h2>
                 <p>Ani perfektně napsaný prompt nezaručuje správný výsledek.</p>
                 <p>Generativní AI může:</p>
                 <ul>
@@ -260,19 +271,19 @@
                 <blockquote>PREP tedy řeší <strong>kvalitu zadání</strong>.<br /><br />Neřeší automaticky <strong>kvalitu a pravdivost odpovědi</strong>.</blockquote>
                 <p>A právě proto na PREP navazuje druhý velmi užitečný framework – <strong>EDIT</strong>.</p>
 
-                <h2>PREP v jedné větě</h2>
+                <h2 id="ai-navod-prep-prompty-h2-14">PREP v jedné větě</h2>
                 <p>Pokud si nechceme pamatovat celou metodiku, stačí si zapamatovat:</p>
                 <div class="article-prompt"><strong>Co má AI udělat + v jaké roli + co přesně požaduji + jak má výsledek vypadat.</strong></div>
                 <p>To je celý PREP.</p>
                 <p>Jednoduchý princip, ale při každodenní práci učitele dokáže ušetřit překvapivě mnoho pokusů typu:</p>
                 <blockquote>„Ne, takhle jsem to nemyslela.“</blockquote>
 
-                <h2>Co následuje?</h2>
+                <h2 id="ai-navod-prep-prompty-h2-15">Co následuje?</h2>
                 <p>Samotný dobrý prompt nestačí. AI může i při perfektním zadání vytvořit chybný nebo nevhodný výsledek.</p>
                 <p>Proto se v dalším článku podíváme na druhou polovinu původního systému <em>The AI Classroom</em>:</p>
                 <blockquote><strong>EDIT – jak výstup AI zkontrolovat, ověřit a upravit předtím, než jej použijeme ve výuce.</strong></blockquote>
 
-                <h2>Zdroj a další informace</h2>
+                <h2 id="ai-navod-prep-prompty-h2-16">Zdroj a další informace</h2>
                 <p>Framework PREP pochází z materiálů spojených s knihou <em>The AI Classroom: The Ultimate Guide to Artificial Intelligence in Education</em> autorů Dana Fitzpatricka, Amandy Fox a Brada Weinsteina. TeacherGoals nabízí k publikaci také bezplatné doprovodné materiály, včetně Prompt Engineer Frameworku, PREP &amp; EDIT materiálů a dalších zdrojů pro učitele.</p>
             </div>
         </article>
@@ -304,6 +315,9 @@
 
     <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai.html">Zpět na AI pro výuku</a></footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261110-7q"></script>
 </body>
 
 </html>

@@ -20,14 +20,24 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261109-7k" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261112-7v" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261110-7q" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-<a class="workflow-back" href="ai.html#navody">← Praktické návody</a>
-        </div>
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="prepare">
+<header class="site-header" id="top">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+      <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a>
+    </div></div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="ai-navody.html">Praktické návody</a></li><li aria-current="page">EDIT: kontrola výstupů</li></ol></nav>
+<header class="workflow-shell">
         <div class="workflow-hero">
             <div>
                 <div class="workflow-eyebrow">Praktické návody · 25. srpna 2026</div>
@@ -44,7 +54,8 @@
         </div>
     </header>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
+<details class="article-content-navigation" open><summary>V tomto článku</summary><nav aria-label="Obsah článku"><ol><li><a href="#ai-navod-edit-kontrola-h2-01">Co znamená EDIT?</a><ol><li><a href="#ai-navod-edit-kontrola-h3-01">E – EVALUATE</a></li><li><a href="#ai-navod-edit-kontrola-h3-02">Zhodnoť výsledek</a></li></ol></li><li><a href="#ai-navod-edit-kontrola-h2-02">D – DETERMINE</a><ol><li><a href="#ai-navod-edit-kontrola-h3-03">Ověř správnost</a></li></ol></li><li><a href="#ai-navod-edit-kontrola-h2-03">„Ale AI mi napsala zdroj“</a><ol></ol></li><li><a href="#ai-navod-edit-kontrola-h2-04">I – IDENTIFY</a><ol><li><a href="#ai-navod-edit-kontrola-h3-04">Hledej chyby, zkreslení a to, co chybí</a></li></ol></li><li><a href="#ai-navod-edit-kontrola-h2-05">Malý experiment</a><ol></ol></li><li><a href="#ai-navod-edit-kontrola-h2-06">T – TRANSFORM</a><ol><li><a href="#ai-navod-edit-kontrola-h3-05">Výsledek uprav</a></li></ol></li><li><a href="#ai-navod-edit-kontrola-h2-07">EDIT v jedné tabulce</a><ol></ol></li><li><a href="#ai-navod-edit-kontrola-h2-08">Jak EDIT použije učitel?</a><ol><li><a href="#ai-navod-edit-kontrola-h3-06">E – Evaluate</a></li><li><a href="#ai-navod-edit-kontrola-h3-07">D – Determine</a></li><li><a href="#ai-navod-edit-kontrola-h3-08">I – Identify</a></li><li><a href="#ai-navod-edit-kontrola-h3-09">T – Transform</a></li></ol></li><li><a href="#ai-navod-edit-kontrola-h2-09">EDIT je možná ještě důležitější pro žáky</a><ol></ol></li><li><a href="#ai-navod-edit-kontrola-h2-10">Aktivita do výuky: Najdi chybu AI</a><ol><li><a href="#ai-navod-edit-kontrola-h3-10">Zadání</a></li><li><a href="#ai-navod-edit-kontrola-h3-11">E – Evaluate</a></li><li><a href="#ai-navod-edit-kontrola-h3-12">D – Determine</a></li><li><a href="#ai-navod-edit-kontrola-h3-13">I – Identify</a></li><li><a href="#ai-navod-edit-kontrola-h3-14">T – Transform</a></li></ol></li><li><a href="#ai-navod-edit-kontrola-h2-11">Aktivita: AI versus učebnice</a><ol></ol></li><li><a href="#ai-navod-edit-kontrola-h2-12">Aktivita: Dvě AI, dvě odpovědi</a><ol></ol></li><li><a href="#ai-navod-edit-kontrola-h2-13">EDIT jako jednoduchý žákovský checklist</a><ol><li><a href="#ai-navod-edit-kontrola-h3-15">1. ZHODNOŤ</a></li><li><a href="#ai-navod-edit-kontrola-h3-16">2. OVĚŘ</a></li><li><a href="#ai-navod-edit-kontrola-h3-17">3. HLEDEJ PROBLÉM</a></li><li><a href="#ai-navod-edit-kontrola-h3-18">4. UPRAV</a></li></ol></li><li><a href="#ai-navod-edit-kontrola-h2-14">Učitel zůstává rozhodující</a><ol></ol></li><li><a href="#ai-navod-edit-kontrola-h2-15">EDIT neznamená nedůvěřovat všemu</a><ol></ol></li><li><a href="#ai-navod-edit-kontrola-h2-16">PREP + EDIT</a><ol><li><a href="#ai-navod-edit-kontrola-h3-19">PREP</a></li><li><a href="#ai-navod-edit-kontrola-h3-20">EDIT</a></li></ol></li><li><a href="#ai-navod-edit-kontrola-h2-17">Co bychom měli naučit žáky?</a><ol></ol></li><li><a href="#ai-navod-edit-kontrola-h2-18">EDIT v jedné větě</a><ol></ol></li><li><a href="#ai-navod-edit-kontrola-h2-19">Co následuje?</a><ol></ol></li></ol></nav></details>
         <article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Metoda EDIT pomáhá učiteli i žákům projít výstup AI krok za krokem: nejprve posoudit použitelnost, potom ověřit fakta, odhalit problémy a nakonec výsledek upravit.</p>
@@ -78,10 +89,10 @@
                     <figcaption>Infografika frameworku EDIT: zhodnoť, ověř, hledej problém a uprav.</figcaption>
                 </figure>
 
-                <h2>Co znamená EDIT?</h2>
+                <h2 id="ai-navod-edit-kontrola-h2-01">Co znamená EDIT?</h2>
 
-                <h3>E – EVALUATE</h3>
-                <h3>Zhodnoť výsledek</h3>
+                <h3 id="ai-navod-edit-kontrola-h3-01">E – EVALUATE</h3>
+                <h3 id="ai-navod-edit-kontrola-h3-02">Zhodnoť výsledek</h3>
                 <p>První otázka zní:</p>
                 <blockquote><strong>Odpovídá vůbec výsledek tomu, co jsem potřeboval/a?</strong></blockquote>
                 <p>Nemusíme zatím hledat každou faktickou chybu. Nejprve se podíváme na výstup jako celek.</p>
@@ -104,8 +115,8 @@
                 <blockquote>Rozuměl by tomu vůbec žák prvního ročníku?</blockquote>
                 <p>To je <strong>Evaluate</strong>.</p>
 
-                <h2>D – DETERMINE</h2>
-                <h3>Ověř správnost</h3>
+                <h2 id="ai-navod-edit-kontrola-h2-02">D – DETERMINE</h2>
+                <h3 id="ai-navod-edit-kontrola-h3-03">Ověř správnost</h3>
                 <p>Teď přichází jedna z nejdůležitějších částí.</p>
                 <p>Ptáme se:</p>
                 <blockquote><strong>Je to, co AI tvrdí, skutečně pravda?</strong></blockquote>
@@ -132,7 +143,7 @@
                     <li>primární historický pramen.</li>
                 </ul>
 
-                <h2>„Ale AI mi napsala zdroj“</h2>
+                <h2 id="ai-navod-edit-kontrola-h2-03">„Ale AI mi napsala zdroj“</h2>
                 <p>Ani to nestačí.</p>
                 <p>AI může vytvořit citaci, která vypadá dokonale:</p>
                 <blockquote>Novák, J. (2024). Artificial Intelligence in Modern Education. Prague: Education Press.</blockquote>
@@ -143,8 +154,8 @@
                 <p>Proto platí velmi jednoduché pravidlo:</p>
                 <blockquote><strong>Zdroj není ověřený tím, že ho AI uvedla.</strong><br /><br />Zdroj je ověřený teprve tehdy, když jsme schopni zjistit, že skutečně existuje a podporuje dané tvrzení.</blockquote>
 
-                <h2>I – IDENTIFY</h2>
-                <h3>Hledej chyby, zkreslení a to, co chybí</h3>
+                <h2 id="ai-navod-edit-kontrola-h2-04">I – IDENTIFY</h2>
+                <h3 id="ai-navod-edit-kontrola-h3-04">Hledej chyby, zkreslení a to, co chybí</h3>
                 <p>Teď se podíváme na odpověď trochu jinak.</p>
                 <p>Neptáme se jen:</p>
                 <blockquote>Je to pravda?</blockquote>
@@ -170,7 +181,7 @@
                     <li>Není odpověď ovlivněna tím, jak byla položena otázka?</li>
                 </ul>
 
-                <h2>Malý experiment</h2>
+                <h2 id="ai-navod-edit-kontrola-h2-05">Malý experiment</h2>
                 <p>Zkuste se stejné AI zeptat:</p>
                 <blockquote>Proč jsou sociální sítě škodlivé pro mladé lidi?</blockquote>
                 <p>A potom:</p>
@@ -180,8 +191,8 @@
                 <p>Jen každá vychází z jinak formulovaného zadání.</p>
                 <p>A právě tady začíná <strong>kritická práce s AI</strong>.</p>
 
-                <h2>T – TRANSFORM</h2>
-                <h3>Výsledek uprav</h3>
+                <h2 id="ai-navod-edit-kontrola-h2-06">T – TRANSFORM</h2>
+                <h3 id="ai-navod-edit-kontrola-h3-05">Výsledek uprav</h3>
                 <p>Poslední krok je zásadní.</p>
                 <p>Nejde jen najít chyby a říct:</p>
                 <blockquote>AI to zase pokazila.</blockquote>
@@ -204,27 +215,27 @@
                 <div class="article-prompt"><strong>materiál vytvořený člověkem s pomocí AI.</strong></div>
                 <p>To je podstatný rozdíl.</p>
 
-                <h2>EDIT v jedné tabulce</h2>
+                <h2 id="ai-navod-edit-kontrola-h2-07">EDIT v jedné tabulce</h2>
                 <div class="article-prompt"><strong>E – Evaluate</strong><br />Zhodnotíme výsledek<br /><em>Je to použitelné pro můj účel?</em><br /><br /><strong>D – Determine</strong><br />Ověříme fakta<br /><em>Je to skutečně pravda?</em><br /><br /><strong>I – Identify</strong><br />Hledáme problémy<br /><em>Co je zkreslené, chybné nebo chybí?</em><br /><br /><strong>T – Transform</strong><br />Výsledek upravíme<br /><em>Co musím změnit, aby byl výsledek kvalitní?</em></div>
 
-                <h2>Jak EDIT použije učitel?</h2>
+                <h2 id="ai-navod-edit-kontrola-h2-08">Jak EDIT použije učitel?</h2>
                 <p>Představme si, že AI připravila deset otázek do testu z občanské nauky.</p>
                 <p>Neměli bychom pouze text zkopírovat do testu.</p>
                 <p>Můžeme projít čtyři kroky.</p>
-                <h3>E – Evaluate</h3>
+                <h3 id="ai-navod-edit-kontrola-h3-06">E – Evaluate</h3>
                 <p>Jsou otázky srozumitelné?</p>
                 <p>Odpovídají tématu?</p>
                 <p>Mají vhodnou obtížnost?</p>
                 <p>Testují to, co jsme skutečně učili?</p>
-                <h3>D – Determine</h3>
+                <h3 id="ai-navod-edit-kontrola-h3-07">D – Determine</h3>
                 <p>Jsou správné odpovědi opravdu správné?</p>
                 <p>Jsou data, pojmy a definice přesné?</p>
-                <h3>I – Identify</h3>
+                <h3 id="ai-navod-edit-kontrola-h3-08">I – Identify</h3>
                 <p>Neobsahují některé otázky nejednoznačnou formulaci?</p>
                 <p>Není více odpovědí správných?</p>
                 <p>Není v zadání skrytá nápověda?</p>
                 <p>Není otázka založena na něčem, co žáci nemohli znát?</p>
-                <h3>T – Transform</h3>
+                <h3 id="ai-navod-edit-kontrola-h3-09">T – Transform</h3>
                 <p>Nevhodné otázky upravíme.</p>
                 <p>Některé odstraníme.</p>
                 <p>Jiné doplníme.</p>
@@ -232,7 +243,7 @@
                 <p>Doplníme vlastní příklady.</p>
                 <p>A teprve potom máme <strong>test připravený učitelem</strong>, nikoli „test vytvořený ChatGPT“.</p>
 
-                <h2>EDIT je možná ještě důležitější pro žáky</h2>
+                <h2 id="ai-navod-edit-kontrola-h2-09">EDIT je možná ještě důležitější pro žáky</h2>
                 <p>Právě tady má metoda velmi zajímavé využití.</p>
                 <p>Místo jednoduchého pravidla:</p>
                 <blockquote>AI při práci nepoužívejte.</blockquote>
@@ -244,19 +255,19 @@
                 <p>To už je úplně jiná vzdělávací aktivita.</p>
                 <p>UNESCO ve svém rámci AI kompetencí pro žáky zdůrazňuje právě schopnost AI systémy kriticky posuzovat a připravovat žáky na roli odpovědných uživatelů a spolutvůrců technologií.</p>
 
-                <h2>Aktivita do výuky: Najdi chybu AI</h2>
+                <h2 id="ai-navod-edit-kontrola-h2-10">Aktivita do výuky: Najdi chybu AI</h2>
                 <p>Jedna z nejjednodušších možností použití EDIT ve třídě.</p>
-                <h3>Zadání</h3>
+                <h3 id="ai-navod-edit-kontrola-h3-10">Zadání</h3>
                 <p>Učitel nechá AI vytvořit krátký text k probíranému tématu.</p>
                 <p>Do textu mohou být záměrně nebo přirozeně zahrnuty problematické informace.</p>
                 <p>Žáci dostanou úkol:</p>
-                <h3>E – Evaluate</h3>
+                <h3 id="ai-navod-edit-kontrola-h3-11">E – Evaluate</h3>
                 <p>Zhodnoťte odpověď.</p>
                 <p>Je srozumitelná?</p>
                 <p>Odpovídá zadání?</p>
-                <h3>D – Determine</h3>
+                <h3 id="ai-navod-edit-kontrola-h3-12">D – Determine</h3>
                 <p>Ověřte alespoň tři tvrzení pomocí důvěryhodných zdrojů.</p>
-                <h3>I – Identify</h3>
+                <h3 id="ai-navod-edit-kontrola-h3-13">I – Identify</h3>
                 <p>Najděte:</p>
                 <ul>
                     <li>nepřesnosti,</li>
@@ -264,12 +275,12 @@
                     <li>chybějící informace,</li>
                     <li>případná zkreslení.</li>
                 </ul>
-                <h3>T – Transform</h3>
+                <h3 id="ai-navod-edit-kontrola-h3-14">T – Transform</h3>
                 <p>Přepište odpověď tak, aby byla přesnější a kvalitnější.</p>
                 <p>Najednou se z AI nestává stroj na domácí úkoly.</p>
                 <p>Stává se <strong>materiálem pro kritickou analýzu</strong>.</p>
 
-                <h2>Aktivita: AI versus učebnice</h2>
+                <h2 id="ai-navod-edit-kontrola-h2-11">Aktivita: AI versus učebnice</h2>
                 <p>Další jednoduchá možnost.</p>
                 <p>Žáci položí AI otázku k aktuálnímu učivu.</p>
                 <p>Například:</p>
@@ -292,7 +303,7 @@
                 </ul>
                 <p>To je praktická informační gramotnost.</p>
 
-                <h2>Aktivita: Dvě AI, dvě odpovědi</h2>
+                <h2 id="ai-navod-edit-kontrola-h2-12">Aktivita: Dvě AI, dvě odpovědi</h2>
                 <p>Zajímavé může být také položit stejnou otázku dvěma různým AI systémům.</p>
                 <p>Například ChatGPT a Gemini.</p>
                 <p>Potom žáci porovnají:</p>
@@ -310,24 +321,24 @@
                 <blockquote>Zeptáme se třetí AI. 😄</blockquote>
                 <p>Musíme se vrátit ke zdrojům.</p>
 
-                <h2>EDIT jako jednoduchý žákovský checklist</h2>
+                <h2 id="ai-navod-edit-kontrola-h2-13">EDIT jako jednoduchý žákovský checklist</h2>
                 <p>Pro běžnou práci nemusíme používat anglické názvy.</p>
                 <p>Žákům můžeme EDIT přeložit například takto:</p>
-                <h3>1. ZHODNOŤ</h3>
+                <h3 id="ai-navod-edit-kontrola-h3-15">1. ZHODNOŤ</h3>
                 <p>Rozumím odpovědi?</p>
                 <p>Odpovídá otázce?</p>
-                <h3>2. OVĚŘ</h3>
+                <h3 id="ai-navod-edit-kontrola-h3-16">2. OVĚŘ</h3>
                 <p>Která tvrzení jsou fakta?</p>
                 <p>Dokážu je ověřit?</p>
-                <h3>3. HLEDEJ PROBLÉM</h3>
+                <h3 id="ai-navod-edit-kontrola-h3-17">3. HLEDEJ PROBLÉM</h3>
                 <p>Co může být chybné?</p>
                 <p>Co chybí?</p>
                 <p>Je odpověď jednostranná?</p>
-                <h3>4. UPRAV</h3>
+                <h3 id="ai-navod-edit-kontrola-h3-18">4. UPRAV</h3>
                 <p>Co musím změnit, aby byl výsledek lepší?</p>
                 <p>Tohle už si lze vytisknout jako malou kartičku vedle počítače.</p>
 
-                <h2>Učitel zůstává rozhodující</h2>
+                <h2 id="ai-navod-edit-kontrola-h2-14">Učitel zůstává rozhodující</h2>
                 <p>Stejný princip platí při používání AI učitelem.</p>
                 <p>AI může:</p>
                 <ul>
@@ -351,7 +362,7 @@
                 <p>AI může být pomocník.</p>
                 <blockquote><strong>Odpovědnost ale nepřebírá.</strong></blockquote>
 
-                <h2>EDIT neznamená nedůvěřovat všemu</h2>
+                <h2 id="ai-navod-edit-kontrola-h2-15">EDIT neznamená nedůvěřovat všemu</h2>
                 <p>Smyslem není vytvořit z učitele nebo žáka detektiva, který předpokládá, že každá věta AI je podvod.</p>
                 <p>Stejně tak ale není rozumné předpokládat:</p>
                 <blockquote>Když to napsala moderní AI, bude to určitě správně.</blockquote>
@@ -363,12 +374,12 @@
                 <p>Tady už bych bez ověření primárního zdroje AI nevěřila.</p>
                 <p>Čím důležitější je rozhodnutí, tím důkladnější by měla být kontrola.</p>
 
-                <h2>PREP + EDIT</h2>
+                <h2 id="ai-navod-edit-kontrola-h2-16">PREP + EDIT</h2>
                 <p>Teď už máme dvě poloviny systému.</p>
-                <h3>PREP</h3>
+                <h3 id="ai-navod-edit-kontrola-h3-19">PREP</h3>
                 <p>Pomáhá vytvořit dobré zadání.</p>
                 <div class="article-prompt"><strong>Prompt → Role → Explicit → Parameters</strong></div>
-                <h3>EDIT</h3>
+                <h3 id="ai-navod-edit-kontrola-h3-20">EDIT</h3>
                 <p>Pomáhá zkontrolovat odpověď.</p>
                 <div class="article-prompt"><strong>Evaluate → Determine → Identify → Transform</strong></div>
                 <p>Dohromady vzniká jednoduchý pracovní cyklus:</p>
@@ -376,7 +387,7 @@
                 <p>A pokud výsledek stále není dobrý?</p>
                 <p>Zadání můžeme zpřesnit a celý postup zopakovat.</p>
 
-                <h2>Co bychom měli naučit žáky?</h2>
+                <h2 id="ai-navod-edit-kontrola-h2-17">Co bychom měli naučit žáky?</h2>
                 <p>Možná vůbec nejdůležitější lekce o AI není:</p>
                 <blockquote>Jak napsat nejlepší prompt?</blockquote>
                 <p>Mnohem důležitější je:</p>
@@ -389,11 +400,11 @@
                 <div class="article-prompt"><strong>pochybovat, porovnávat, ověřovat, argumentovat a opravovat</strong></div>
                 <p>budou důležité pořád.</p>
 
-                <h2>EDIT v jedné větě</h2>
+                <h2 id="ai-navod-edit-kontrola-h2-18">EDIT v jedné větě</h2>
                 <p>Pokud si nechceme pamatovat celou zkratku, stačí toto:</p>
                 <div class="article-prompt"><strong>Než výstup AI použiješ, zhodnoť ho, ověř fakta, najdi problémy a uprav ho.</strong></div>
 
-                <h2>Co následuje?</h2>
+                <h2 id="ai-navod-edit-kontrola-h2-19">Co následuje?</h2>
                 <p>PREP nám ukázal, <strong>jak AI správně zadat práci</strong>.</p>
                 <p>EDIT ukázal, <strong>jak její výsledek kriticky zkontrolovat</strong>.</p>
                 <p>V dalším článku oba principy spojíme a posuneme o krok dál.</p>
@@ -430,6 +441,9 @@
 
     <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai.html">Zpět na AI pro výuku</a></footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261110-7q"></script>
 </body>
 
 </html>
