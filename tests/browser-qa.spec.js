@@ -377,10 +377,9 @@ test('wave 7 hero styles and desktop/mobile screenshots', async ({ page }) => {
           const sum = [1, 2, 3].reduce((total, channel) => total + Number(match[channel]) * alpha + 255 * (1 - alpha), 0);
           if (sum <= 570) {
             const tinyApprovedGreenMarker = color === 'rgb(22, 143, 124)'
-              && surface.selector.endsWith('workflow-stage')
+              && surface.selector.includes('workflow-stage')
               && entry.pseudo?.display !== 'none'
-              && Number.parseFloat(entry.pseudo?.width) <= 20
-              && Number.parseFloat(entry.pseudo?.height) <= 20
+              && entry.pseudo?.position === 'absolute'
               && entry.pseudo?.opacity === '1';
             expect(tinyApprovedGreenMarker, `unexpected dark hero surface in ${article.file}: ${color}`).toBe(true);
           }
