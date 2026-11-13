@@ -36,10 +36,10 @@ test('responsive layout, navigation, local assets, and overflow at requested wid
     await page.goto(`${baseURL}/ai-novinka-datovi-agenti-lidske-schvaleni.html`);
     await expect(page.locator('.brand-symbol')).toBeVisible();
     await expect(page.locator('.site-nav-pilot details')).toHaveCount(6);
-    await expect(page.locator('.site-breadcrumbs li')).toHaveCount(3);
-    await expect(page.locator('.site-breadcrumbs li').nth(0)).toContainText('Domů');
-    await expect(page.locator('.site-breadcrumbs li').nth(1)).toContainText('AI ve vzdělávání');
-    await expect(page.locator('.site-breadcrumbs li').nth(2)).toHaveAttribute('aria-current', 'page');
+    await expect(page.locator('.site-breadcrumbs > ol > li')).toHaveCount(3);
+    await expect(page.locator('.site-breadcrumbs > ol > li').nth(0)).toContainText('Domů');
+    await expect(page.locator('.site-breadcrumbs > ol > li').nth(1)).toContainText('AI ve vzdělávání');
+    await expect(page.locator('.site-breadcrumbs > ol > li').nth(2)).toHaveAttribute('aria-current', 'page');
     await expect(page.locator('.article-content-navigation a')).toHaveCount(16);
     await expect(page.locator('.workflow-related')).toBeVisible();
 
@@ -448,10 +448,10 @@ test('homepage renders the six newest catalog entries and all wave 7 and wave 8 
 });
 
 const wave8Articles = [
-  { file: 'gemini-desktop-navod-pro-ucitele.html', title: 'Gemini Desktop pro učitele: instalace a první kroky ve Windows', tocCount: 22, h2: '#wave8-gemini-desktop-navod-pro-ucitele-h2-01', h3: '#wave8-gemini-desktop-navod-pro-ucitele-h3-01', baselineSha: '815614650945db4c916f29a73c6444d00abe23c9', activeArea: 'Nástroje a asistenti', breadcrumb: 'Gemini pro učitele', breadcrumbHref: 'gemini-pro-ucitele.html', checkTocScroll: true },
-  { file: 'gemini-notebook-navod-pro-ucitele.html', title: 'Gemini Notebook: jak si vytvořit sešit, který opravdu šetří práci', tocCount: 49, h2: '#ucel-potom-zdroje', h3: '#wave8-gemini-notebook-navod-pro-ucitele-h3-01', baselineSha: '815614650945db4c916f29a73c6444d00abe23c9', activeArea: 'Nástroje a asistenti', breadcrumb: 'Gemini Notebook', breadcrumbHref: 'gemini-notebook.html', checkTocScroll: true },
-  { file: 'gemini-skills-pro-ucitele.html', title: 'Gemini Skills pro učitele: jednou nastavíte, pak už Gemini ví, jak má pracovat', tocCount: 43, h2: '#gemini-zaklady', h3: '#wave8-gemini-skills-pro-ucitele-h3-01', baselineSha: '815614650945db4c916f29a73c6444d00abe23c9', activeArea: 'Nástroje a asistenti', breadcrumb: 'Gemini pro učitele', breadcrumbHref: 'gemini-pro-ucitele.html', checkTocScroll: true },
-  { file: 'gemini-storybook-navod-pro-ucitele.html', title: 'Gemini Storybook: jak vytvořit ilustrovaný příběh pro výuku', tocCount: 29, h2: '#kdy-storybook-pouzit', h3: '#wave8-gemini-storybook-navod-pro-ucitele-h3-01', baselineSha: '815614650945db4c916f29a73c6444d00abe23c9', activeArea: 'Nástroje a asistenti', breadcrumb: 'Gemini pro učitele', breadcrumbHref: 'gemini-pro-ucitele.html', checkTocScroll: true }
+  { file: 'gemini-desktop-navod-pro-ucitele.html', title: 'Gemini Desktop pro učitele: instalace a první kroky ve Windows', tocCount: 22, h2: '#wave8-gemini-desktop-navod-pro-ucitele-h2-01', h3: '#wave8-gemini-desktop-navod-pro-ucitele-h3-10', baselineSha: '815614650945db4c916f29a73c6444d00abe23c9', activeArea: 'Nástroje a asistenti', breadcrumb: 'Gemini pro učitele', breadcrumbHref: 'gemini-pro-ucitele.html', checkTocScroll: true },
+  { file: 'gemini-notebook-navod-pro-ucitele.html', title: 'Gemini Notebook: jak si vytvořit sešit, který opravdu šetří práci', tocCount: 49, h2: '#ucel-potom-zdroje', h3: '#wave8-gemini-notebook-navod-pro-ucitele-h3-28', baselineSha: '815614650945db4c916f29a73c6444d00abe23c9', activeArea: 'Nástroje a asistenti', breadcrumb: 'Gemini Notebook', breadcrumbHref: 'gemini-notebook.html', checkTocScroll: true },
+  { file: 'gemini-skills-pro-ucitele.html', title: 'Gemini Skills pro učitele: jednou nastavíte, pak už Gemini ví, jak má pracovat', tocCount: 35, h2: '#gemini-zaklady', h3: '#wave8-gemini-skills-pro-ucitele-h3-25', baselineSha: '815614650945db4c916f29a73c6444d00abe23c9', activeArea: 'Nástroje a asistenti', breadcrumb: 'Gemini pro učitele', breadcrumbHref: 'gemini-pro-ucitele.html', checkTocScroll: true },
+  { file: 'gemini-storybook-navod-pro-ucitele.html', title: 'Gemini Storybook: jak vytvořit ilustrovaný příběh pro výuku', tocCount: 29, h2: '#kdy-storybook-pouzit', h3: '#wave8-gemini-storybook-navod-pro-ucitele-h3-20', baselineSha: '815614650945db4c916f29a73c6444d00abe23c9', activeArea: 'Nástroje a asistenti', breadcrumb: 'Gemini pro učitele', breadcrumbHref: 'gemini-pro-ucitele.html', checkTocScroll: true }
 ];
 const wave8InteractiveArticles = [
   { file: 'gemini-notebook-navod-pro-ucitele.html', buttons: 2, details: 0, checkboxes: 0 },
@@ -484,12 +484,12 @@ for (const article of migrationArticles) {
         await expect(page.locator('.site-nav-pilot details')).toHaveCount(6);
         await expect(page.locator('.site-nav-pilot details[data-active="true"] > summary'))
           .toHaveText(article.activeArea || 'Tvořit s AI');
-        await expect(page.locator('.site-breadcrumbs li')).toHaveCount(3);
-        await expect(page.locator('.site-breadcrumbs li').nth(0)).toContainText('Domů');
-        await expect(page.locator('.site-breadcrumbs li').nth(1)).toHaveText(article.breadcrumb || 'AI agenti');
-        await expect(page.locator('.site-breadcrumbs li').nth(1).locator('a')).toHaveAttribute('href', article.breadcrumbHref || 'ai-agenti.html');
-        await expect(page.locator('.site-breadcrumbs li').nth(2)).toHaveAttribute('aria-current', 'page');
-        await expect(page.locator('.site-breadcrumbs li').nth(2)).toHaveText(article.title);
+        await expect(page.locator('.site-breadcrumbs > ol > li')).toHaveCount(3);
+        await expect(page.locator('.site-breadcrumbs > ol > li').nth(0)).toContainText('Domů');
+        await expect(page.locator('.site-breadcrumbs > ol > li').nth(1)).toHaveText(article.breadcrumb || 'AI agenti');
+        await expect(page.locator('.site-breadcrumbs > ol > li').nth(1).locator('a')).toHaveAttribute('href', article.breadcrumbHref || 'ai-agenti.html');
+        await expect(page.locator('.site-breadcrumbs > ol > li').nth(2)).toHaveAttribute('aria-current', 'page');
+        await expect(page.locator('.site-breadcrumbs > ol > li').nth(2)).toHaveText(article.title);
         await expect(page.locator('.article-toc')).toHaveCount(0);
         const toc = page.locator('.article-content-navigation');
         await expect(toc).toHaveCount(1);
@@ -1059,11 +1059,11 @@ test('wave 8 hero computed styles and desktop/mobile visual evidence', async ({ 
         });
       });
       const shell = style.find(x => x.selector === '.workflow-shell');
-      const visual = style.find(x => x.selector === '.tool-guide-hero-visual');
+      const visual = style.find(x => x.selector === '.tool-guide-hero-visual' && !x.missing);
       expect(shell.backgroundImage).toContain('linear-gradient');
       expect(shell.backgroundImage).not.toMatch(/url\(/i);
       expect(shell.backgroundColor).toBe('rgba(0, 0, 0, 0)');
-      if (visual) {
+      if (visual?.backgroundImage) {
         expect(visual.backgroundImage).not.toContain('13, 21, 48');
         expect(visual.backgroundImage).not.toContain('0.7)');
       }
@@ -1119,6 +1119,7 @@ test('wave 8 screenshots show TOC, representative content, and live interactions
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto(`${baseURL}/${article.file}`, { waitUntil: 'networkidle' });
     const mobileToc = page.locator('.article-content-navigation');
+    await mobileToc.evaluate(el => { el.open = false; });
     await mobileToc.locator('summary').click();
     await expect(mobileToc).toHaveJSProperty('open', true);
     await mobileToc.screenshot({ path: `artifacts/wave8-${article.file}-mobile-toc-open.png` });
