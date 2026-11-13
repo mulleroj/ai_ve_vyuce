@@ -20,10 +20,24 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261113-7z" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261113-7z" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261113-7z" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261113-7z" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="prepare">
+    <header class="site-header">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+      <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a>
+    </div></div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="ai.html#workflow">Workflow pro učitele</a></li><li aria-current="page">Jak může AI skutečně ušetřit učiteli práci</li></ol></nav>
+<header class="workflow-shell">
         <div class="workflow-topbar">
             <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
             <a class="workflow-back" href="ai.html#workflow">← Workflow pro učitele</a>
@@ -44,24 +58,42 @@
         </div>
     </header>
 
-    <main class="workflow-main">
-        <article class="workflow-article">
+    <main class="workflow-main article-content-layout">
+        <details class="article-content-navigation" open><summary><span>V tomto článku</span></summary><nav aria-label="Obsah článku"><ol><li><a href="#toc-01">Největší úspora času nevzniká tam, kde AI udělá všechno</a></li>
+<li><a href="#ai-workflow-usetri-praci-h2-02">1. První návrh přípravy hodiny</a></li>
+<li><a href="#ai-workflow-usetri-praci-h2-03">2. Tvorba variant stejné aktivity</a></li>
+<li><a href="#ai-workflow-usetri-praci-h2-04">3. Pracovní listy</a></li>
+<li><a href="#ai-workflow-usetri-praci-h2-05">4. Testové otázky</a></li>
+<li><a href="#ai-workflow-usetri-praci-h2-06">5. Řešení a klíče</a></li>
+<li><a href="#ai-workflow-usetri-praci-h2-07">6. Převod jednoho materiálu do jiné podoby</a></li>
+<li><a href="#ai-workflow-usetri-praci-h2-08">7. Zjednodušení textu</a></li>
+<li><a href="#ai-workflow-usetri-praci-h2-09">8. Vytváření příkladů</a></li>
+<li><a href="#ai-workflow-usetri-praci-h2-10">9. Brainstorming</a></li>
+<li><a href="#ai-workflow-usetri-praci-h2-11">10. Otázky do diskuse</a></li>
+<li><a href="#ai-workflow-usetri-praci-h2-12">11. Zpětná vazba</a></li>
+<li><a href="#ai-workflow-usetri-praci-h2-13">12. Hodnoticí rubriky</a></li>
+<li><a href="#ai-workflow-usetri-praci-h2-14">13. Převod složitých instrukcí</a></li>
+<li><a href="#ai-workflow-usetri-praci-h2-15">14. Příprava slovní zásoby</a></li>
+<li><a href="#ai-workflow-usetri-praci-h2-16">15. Příprava otázek k videu nebo textu</a></li>
+<li><a href="#ai-workflow-usetri-praci-h2-17">16. Shrnutí dlouhého materiálu</a></li>
+<li><a href="#ai-workflow-usetri-praci-h2-18">17. Opakování učiva</a></li>
+<li><a href="#ai-workflow-usetri-praci-h2-19">18. Příprava suplování</a></li>
+<li><a href="#toc-02">Kde AI šetří nejvíc času?</a></li>
+<li><a href="#toc-03">Kde AI čas naopak často neušetří?</a></li>
+<li><a href="#toc-04">Co bych AI nepředávala bez velmi silné kontroly</a></li>
+<li><a href="#toc-05">Metoda 3D: Delegate – Do together – Decide yourself</a><ol><li><a href="#ai-workflow-usetri-praci-h3-05">1. DELEGATE – předej AI</a></li><li><a href="#ai-workflow-usetri-praci-h3-06">2. DO TOGETHER – pracujte společně</a></li><li><a href="#ai-workflow-usetri-praci-h3-07">3. DECIDE YOURSELF – rozhodni sám</a></li></ol></li>
+<li><a href="#toc-06">Jeden materiál, více výstupů</a></li>
+<li><a href="#ai-workflow-usetri-praci-h2-25">Největší úspora vzniká opakováním dobrého workflow</a><ol><li><a href="#ai-workflow-usetri-praci-h3-08">Pracovní list</a></li><li><a href="#ai-workflow-usetri-praci-h3-09">Test</a></li><li><a href="#ai-workflow-usetri-praci-h3-10">Diferenciace</a></li></ol></li>
+<li><a href="#ai-workflow-usetri-praci-h2-26">AI nemá šetřit každou minutu</a></li>
+<li><a href="#ai-workflow-usetri-praci-h2-27">Nejlepší úspora času?</a></li>
+<li><a href="#ai-workflow-usetri-praci-h2-28">Co následuje?</a></li></ol></nav></details>
+
+<article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Praktický pohled na rutinní části učitelské práce, které má smysl delegovat, upravovat společně s AI nebo si ponechat jako lidské rozhodnutí.</p>
             </div>
 
-            <nav class="article-toc" aria-labelledby="toc-heading-ai-workflow-usetri-praci-html">
-                <p class="article-toc-label" id="toc-heading-ai-workflow-usetri-praci-html">V tomto článku</p>
-                <ul>
-                    <li><a href="#toc-01">Největší úspora času nevzniká tam, kde AI udělá všechno</a></li>
-                    <li><a href="#toc-02">Kde AI šetří nejvíc času?</a></li>
-                    <li><a href="#toc-03">Kde AI čas naopak často neušetří?</a></li>
-                    <li><a href="#toc-04">Co bych AI nepředávala bez velmi silné kontroly</a></li>
-                    <li><a href="#toc-05">Metoda 3D: Delegate – Do together – Decide yourself</a></li>
-                    <li><a href="#toc-06">Jeden materiál, více výstupů</a></li>
-                </ul>
-            </nav>
-            <div class="article-content">
+                        <div class="article-content">
                 <p class="article-lead">O umělé inteligenci se často říká, že učitelům šetří čas.</p>
                 <p>To je pravda jen napůl.</p>
                 <p>AI může některé úkoly výrazně urychlit. Jindy ale vytvoří tolik další kontroly, úprav a přepisování, že výsledná úspora času zmizí.</p>
@@ -88,7 +120,7 @@
                     <li>zabírají čas, ale nevyžadují pokaždé zásadní odborné rozhodnutí.</li>
                 </ul>
 
-                <h2>1. První návrh přípravy hodiny</h2>
+                <h2 id="ai-workflow-usetri-praci-h2-02">1. První návrh přípravy hodiny</h2>
                 <p>Jedna z nejčastějších možností.</p>
                 <p>Místo začínání od prázdného dokumentu můžeme AI zadat:</p>
                 <ul>
@@ -105,7 +137,7 @@
                 <p>Učitel pak nemusí začínat od nuly.</p>
                 <p>To je často skutečná úspora.</p>
 
-                <h2>2. Tvorba variant stejné aktivity</h2>
+                <h2 id="ai-workflow-usetri-praci-h2-03">2. Tvorba variant stejné aktivity</h2>
                 <p>Tady je AI mimořádně praktická.</p>
                 <p>Máme jednu aktivitu a potřebujeme:</p>
                 <ul>
@@ -124,7 +156,7 @@
                 <p>AI vytvoří základ.</p>
                 <p>Učitel pak jen kontroluje, zda diferenciace skutečně dává pedagogicky smysl.</p>
 
-                <h2>3. Pracovní listy</h2>
+                <h2 id="ai-workflow-usetri-praci-h2-04">3. Pracovní listy</h2>
                 <p>Pracovní list je přesně ten typ materiálu, kde AI může ušetřit hodně času.</p>
                 <p>Může například vytvořit:</p>
                 <ul>
@@ -142,7 +174,7 @@
                 <blockquote><strong>AI vytvoří deset návrhů úloh a já si vyberu šest dobrých.</strong></blockquote>
                 <p>To je výrazně rychlejší než vymýšlet vše od první otázky.</p>
 
-                <h2>4. Testové otázky</h2>
+                <h2 id="ai-workflow-usetri-praci-h2-05">4. Testové otázky</h2>
                 <p>AI dokáže rychle navrhnout:</p>
                 <ul>
                     <li>otázky s výběrem odpovědi,</li>
@@ -164,7 +196,7 @@
                 <p>Proto je ideální workflow:</p>
                 <div class="article-prompt"><strong>AI navrhne → učitel zkontroluje → AI může pomoci opravit → učitel schválí.</strong></div>
 
-                <h2>5. Řešení a klíče</h2>
+                <h2 id="ai-workflow-usetri-praci-h2-06">5. Řešení a klíče</h2>
                 <p>Velmi praktická drobnost.</p>
                 <p>Pokud už máme pracovní list nebo test, můžeme AI požádat:</p>
                 <blockquote>Vytvoř řešení pro učitele.</blockquote>
@@ -173,7 +205,7 @@
                 <p>To může ušetřit překvapivě hodně času.</p>
                 <p>Zvlášť u rozsáhlejších pracovních listů.</p>
 
-                <h2>6. Převod jednoho materiálu do jiné podoby</h2>
+                <h2 id="ai-workflow-usetri-praci-h2-07">6. Převod jednoho materiálu do jiné podoby</h2>
                 <p>Tohle patří mezi nejsilnější možnosti.</p>
                 <p>Máme například <strong>výkladový text</strong>.</p>
                 <p>AI z něj může vytvořit:</p>
@@ -190,14 +222,14 @@
                 <p>Nemusíme tedy vytvářet každý materiál znovu.</p>
                 <p>Jedna příprava může být základem pro několik různých výstupů.</p>
 
-                <h2>7. Zjednodušení textu</h2>
+                <h2 id="ai-workflow-usetri-praci-h2-08">7. Zjednodušení textu</h2>
                 <p>Máme odborný text, který je pro určitou skupinu žáků příliš složitý.</p>
                 <p>Místo kompletního ručního přepisování můžeme AI zadat:</p>
                 <blockquote>Zachovej všechny důležité informace, ale zkrať věty, vysvětli obtížná slova a uprav text pro žáky prvního ročníku.</blockquote>
                 <p>To neznamená, že výsledek použijeme bez kontroly.</p>
                 <p>Ale první úprava může být hotová během několika sekund.</p>
 
-                <h2>8. Vytváření příkladů</h2>
+                <h2 id="ai-workflow-usetri-praci-h2-09">8. Vytváření příkladů</h2>
                 <p>Učitelé často nepotřebují další teorii.</p>
                 <p>Potřebují další příklad.</p>
                 <p>AI může vytvořit:</p>
@@ -217,7 +249,7 @@
                 <blockquote>Vytvoř tři situace, na kterých lze vysvětlit princip nabídky a poptávky.</blockquote>
                 <p>Tohle bývá rychlé a praktické.</p>
 
-                <h2>9. Brainstorming</h2>
+                <h2 id="ai-workflow-usetri-praci-h2-10">9. Brainstorming</h2>
                 <p>AI je dobrá tam, kde nepotřebujeme jednu správnou odpověď.</p>
                 <p>Potřebujeme <strong>možnosti</strong>.</p>
                 <p>Například:</p>
@@ -236,7 +268,7 @@
                 <blockquote>Navrhni deset různých možností. Záměrně je udělej odlišné.</blockquote>
                 <p>Pak vybírá učitel.</p>
 
-                <h2>10. Otázky do diskuse</h2>
+                <h2 id="ai-workflow-usetri-praci-h2-11">10. Otázky do diskuse</h2>
                 <p>Příprava kvalitních diskusních otázek může být překvapivě časově náročná.</p>
                 <p>AI můžeme požádat:</p>
                 <blockquote>Vytvoř otázky od jednoduchého názoru přes argumentaci až po otázky bez jednoznačné odpovědi.</blockquote>
@@ -249,7 +281,7 @@
                     <li>mediální výchovy.</li>
                 </ul>
 
-                <h2>11. Zpětná vazba</h2>
+                <h2 id="ai-workflow-usetri-praci-h2-12">11. Zpětná vazba</h2>
                 <p>AI může pomoci formulovat zpětnou vazbu.</p>
                 <p>Například máme poznámku:</p>
                 <blockquote>Obsah dobrý, ale práce je nepřehledná a argumenty nejsou vysvětlené.</blockquote>
@@ -258,7 +290,7 @@
                 <p>Učitel ale musí rozhodnout, <strong>zda zpětná vazba skutečně odpovídá práci žáka</strong>.</p>
                 <p>AI nemá nahrazovat pedagogický úsudek.</p>
 
-                <h2>12. Hodnoticí rubriky</h2>
+                <h2 id="ai-workflow-usetri-praci-h2-13">12. Hodnoticí rubriky</h2>
                 <p>AI může velmi rychle vytvořit první návrh kritérií.</p>
                 <p>Například:</p>
                 <blockquote>Vytvoř jednoduchou rubriku pro hodnocení prezentace žáků.</blockquote>
@@ -273,7 +305,7 @@
                 </ul>
                 <p>Učitel potom rubriku upraví podle vlastních požadavků.</p>
 
-                <h2>13. Převod složitých instrukcí</h2>
+                <h2 id="ai-workflow-usetri-praci-h2-14">13. Převod složitých instrukcí</h2>
                 <p>Někdy máme úkol, kterému rozumíme my, ale žáci už méně.</p>
                 <p>AI můžeme říct:</p>
                 <blockquote>Přepiš zadání do pěti krátkých kroků. Každý krok začni slovesem.</blockquote>
@@ -287,7 +319,7 @@
                 </ol>
                 <p>To může pomoci zvlášť u složitějších úloh.</p>
 
-                <h2>14. Příprava slovní zásoby</h2>
+                <h2 id="ai-workflow-usetri-praci-h2-15">14. Příprava slovní zásoby</h2>
                 <p>U jazykové výuky může AI pomoci vytvořit:</p>
                 <ul>
                     <li>tematický seznam slov,</li>
@@ -300,7 +332,7 @@
                 <blockquote>Vyber 12 nejdůležitějších slov k tématu Electrical Safety pro žáky A1. Ke každému napiš jednoduchou anglickou větu.</blockquote>
                 <p>Učitel pak zkontroluje odbornou správnost a vhodnost slovní zásoby.</p>
 
-                <h2>15. Příprava otázek k videu nebo textu</h2>
+                <h2 id="ai-workflow-usetri-praci-h2-16">15. Příprava otázek k videu nebo textu</h2>
                 <p>Máme obsah.</p>
                 <p>Potřebujeme k němu rychle vytvořit úkol.</p>
                 <p>AI může připravit:</p>
@@ -313,7 +345,7 @@
                 </ul>
                 <p>To je jeden z typických úkolů, kde první návrh AI šetří spoustu rutinní práce.</p>
 
-                <h2>16. Shrnutí dlouhého materiálu</h2>
+                <h2 id="ai-workflow-usetri-praci-h2-17">16. Shrnutí dlouhého materiálu</h2>
                 <p>Máme například:</p>
                 <ul>
                     <li>metodický dokument,</li>
@@ -331,7 +363,7 @@
                 <p>Pozor ale:</p>
                 <p>Pokud je přesnost důležitá, je lepší pracovat přímo s konkrétním dokumentem a výsledek ověřit.</p>
 
-                <h2>17. Opakování učiva</h2>
+                <h2 id="ai-workflow-usetri-praci-h2-18">17. Opakování učiva</h2>
                 <p>Z jednoho tématu může AI připravit několik různých forem opakování:</p>
                 <ul>
                     <li>rychlý kvíz,</li>
@@ -345,7 +377,7 @@
                 </ul>
                 <p>Učitel pouze vybírá formu vhodnou pro konkrétní třídu.</p>
 
-                <h2>18. Příprava suplování</h2>
+                <h2 id="ai-workflow-usetri-praci-h2-19">18. Příprava suplování</h2>
                 <p>To je situace, kde může AI opravdu zachraňovat nervy.</p>
                 <p>Například:</p>
                 <blockquote>Připrav samostatnou 45minutovou aktivitu k tématu [téma]. Žáci musí být schopni pracovat bez předchozího výkladu suplujícího učitele. Přidej jasné instrukce a řešení.</blockquote>
@@ -395,15 +427,15 @@
 
                 <h2 id="toc-05">Metoda 3D: Delegate – Do together – Decide yourself</h2>
                 <p>Pro každodenní práci si můžeme vytvořit velmi jednoduché rozdělení.</p>
-                <h3>1. DELEGATE – předej AI</h3>
+                <h3 id="ai-workflow-usetri-praci-h3-05">1. DELEGATE – předej AI</h3>
                 <p>Rutinní část může AI udělat téměř sama.</p>
                 <p>Například:</p>
                 <ul><li>vytvoř návrhy,</li><li>změň formát,</li><li>připrav varianty,</li><li>zkrať text.</li></ul>
-                <h3>2. DO TOGETHER – pracujte společně</h3>
+                <h3 id="ai-workflow-usetri-praci-h3-06">2. DO TOGETHER – pracujte společně</h3>
                 <p>AI vytvoří návrh a učitel jej postupně upravuje.</p>
                 <p>Například:</p>
                 <ul><li>pracovní list,</li><li>plán hodiny,</li><li>test,</li><li>rubrika,</li><li>diferenciace.</li></ul>
-                <h3>3. DECIDE YOURSELF – rozhodni sám</h3>
+                <h3 id="ai-workflow-usetri-praci-h3-07">3. DECIDE YOURSELF – rozhodni sám</h3>
                 <p>Učitel si může od AI nechat připravit informace nebo možnosti.</p>
                 <p>Konečné rozhodnutí ale udělá sám.</p>
                 <p>Například:</p>
@@ -416,20 +448,20 @@
                 <div class="article-prompt"><strong>zdrojový text → výklad → pracovní list → zjednodušená varianta → kvíz → flashcards → exit ticket → řešení pro učitele</strong></div>
                 <p>To je mnohem efektivnější než začínat pokaždé od nuly.</p>
 
-                <h2>Největší úspora vzniká opakováním dobrého workflow</h2>
+                <h2 id="ai-workflow-usetri-praci-h2-25">Největší úspora vzniká opakováním dobrého workflow</h2>
                 <p>Pokud pokaždé otevíráme AI a začínáme:</p>
                 <blockquote>Hmm… co jí teď napíšu?</blockquote>
                 <p>čas moc neušetříme.</p>
                 <p>Mnohem efektivnější je mít několik vlastních osvědčených postupů.</p>
-                <h3>Pracovní list</h3>
+                <h3 id="ai-workflow-usetri-praci-h3-08">Pracovní list</h3>
                 <div class="article-prompt"><strong>zdroj → prompt → návrh → kontrola → řešení</strong></div>
-                <h3>Test</h3>
+                <h3 id="ai-workflow-usetri-praci-h3-09">Test</h3>
                 <div class="article-prompt"><strong>učivo → návrh otázek → kontrola → klíč → finální revize</strong></div>
-                <h3>Diferenciace</h3>
+                <h3 id="ai-workflow-usetri-praci-h3-10">Diferenciace</h3>
                 <div class="article-prompt"><strong>původní materiál → zachovat cíl → změnit podporu → kontrola</strong></div>
                 <p>Jakmile takové workflow používáme opakovaně, začíná skutečná časová úspora.</p>
 
-                <h2>AI nemá šetřit každou minutu</h2>
+                <h2 id="ai-workflow-usetri-praci-h2-26">AI nemá šetřit každou minutu</h2>
                 <p>Cílem není odstranit z učitelské práce všechno, co zabere čas.</p>
                 <p>Některé věci zabírají čas proto, že jsou důležité.</p>
                 <p>Například:</p>
@@ -446,13 +478,13 @@
                 <p>Technicky možná.</p>
                 <p>Pedagogicky ne vždy.</p>
 
-                <h2>Nejlepší úspora času?</h2>
+                <h2 id="ai-workflow-usetri-praci-h2-27">Nejlepší úspora času?</h2>
                 <p>Nechat AI dělat to, v čem je rychlá.</p>
                 <p>A člověka nechat dělat to, v čem je důležitý.</p>
                 <div class="article-prompt"><strong>AI</strong><br />• první návrh<br />• varianty<br />• převody<br />• struktura<br />• brainstorming<br /><br /><strong>Učitel</strong><br />• cíl<br />• kontext<br />• výběr<br />• kontrola<br />• vztah se žákem<br />• rozhodnutí</div>
                 <p>Takové rozdělení práce dává ve škole mnohem větší smysl než snaha automatizovat úplně všechno.</p>
 
-                <h2>Co následuje?</h2>
+                <h2 id="ai-workflow-usetri-praci-h2-28">Co následuje?</h2>
                 <p>V dalším článku se podíváme na oblast, kde může AI učiteli pomoci opravdu výrazně:</p>
                 <blockquote><strong>UDL + AI: Jak přizpůsobit výuku různým žákům</strong></blockquote>
                 <p>Ukážeme si, jak pomocí AI:</p>
@@ -493,6 +525,9 @@
 
     <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai.html">Zpět na AI pro výuku</a></footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261113-7z"></script>
 </body>
 
 </html>

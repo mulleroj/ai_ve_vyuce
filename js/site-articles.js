@@ -830,14 +830,14 @@ window.siteArticles = [
   {
     href: 'ai-workflow-prep-edit.html',
     title: 'PREP + EDIT: Praktický workflow pro práci s AI',
-    platforms: ['chatgpt'],
     summary: 'Šest kroků pro bezpečnější tvorbu školních materiálů: zdroj, zadání, návrh AI, kontrola, ověření a schválení.',
     category: 'Workflow',
     date: '2026-08-25',
     dateLabel: '25. srpna 2026',
     icon: '🧩',
     tags: ['PREP + EDIT', '6 kroků'],
-    badgeClass: 'badge-gold'
+    badgeClass: 'badge-gold',
+    platforms: ['chatgpt']
   },
   {
     href: 'ai-navod-edit-kontrola.html',
@@ -878,38 +878,38 @@ window.siteArticles = [
   {
     href: 'ai-workflow-8-otazek.html',
     title: '8 otázek, které by si měl učitel položit při práci s AI',
-    platforms: ['chatgpt'],
     summary: 'Rychlé otázky pro posouzení přínosu, spolupráce, učení žáků, bezpečnosti a lidské odpovědnosti.',
     category: 'Workflow',
     date: '2026-08-25',
     dateLabel: '25. srpna 2026',
     icon: '❓',
     tags: ['Reflexe', 'Bezpečnost'],
-    badgeClass: 'badge-mint'
+    badgeClass: 'badge-mint',
+    platforms: ['chatgpt']
   },
   {
     href: 'ai-workflow-udl-ai.html',
     title: 'UDL + AI: Jak přizpůsobit výuku různým žákům',
-    platforms: ['chatgpt'],
     summary: 'Jak připravit různé úrovně podpory, varianty materiálu a způsoby výstupu bez snížení vzdělávacího cíle.',
     category: 'Workflow',
     date: '2026-08-25',
     dateLabel: '25. srpna 2026',
     icon: '🧩',
     tags: ['UDL', 'Diferenciace'],
-    badgeClass: 'badge-mint'
+    badgeClass: 'badge-mint',
+    platforms: ['chatgpt']
   },
   {
     href: 'ai-workflow-usetri-praci.html',
     title: 'Jak může AI skutečně ušetřit učiteli práci',
-    platforms: ['chatgpt'],
     summary: 'Praktické rozdělení práce mezi AI a učitele: návrhy, varianty, převody, kontrola a rozhodování.',
     category: 'Workflow',
     date: '2026-08-25',
     dateLabel: '25. srpna 2026',
     icon: '⏱️',
     tags: ['Efektivita', 'Workflow'],
-    badgeClass: 'badge-gold'
+    badgeClass: 'badge-gold',
+    platforms: ['chatgpt']
   },
   {
     href: 'ai-novinka-gemini-notebook-sablona.html',
