@@ -1253,7 +1253,7 @@ test('wave 11 light hero computed styles, prompt screenshots, and contact sheet 
           await expect.poll(() => inner.evaluate(element => element.scrollTop)).toBeGreaterThan(0);
           await toc.screenshot({ path: 'artifacts/wave11-' + article.file + '-desktop-1440-toc-inner-scroll.png' });
         } else {
-          await expect(inner).toHaveJSProperty('scrollHeight', scroll.client);
+          expect(scroll.height, article.file + ' TOC fits without internal overflow').toBeLessThanOrEqual(scroll.client);
         }
         const representative = page.locator('.article-content .article-prompt').nth(article.representativePromptIndex);
         await representative.scrollIntoViewIfNeeded();
