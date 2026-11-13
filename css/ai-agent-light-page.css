@@ -281,3 +281,92 @@ body.ai-agent-light-page.light-background-pilot.workflow-page :focus-visible {
   body.ai-agent-light-page.light-background-pilot.workflow-page .workflow-stage small { font-size: 0.76rem; }
   body.ai-agent-light-page.light-background-pilot.workflow-page .article-content { padding-inline: 18px; }
 }
+
+/* Wave 8: the shared tool-guide components use the approved light article palette. */
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .tool-guide-shell {
+  color: var(--agent-ink);
+  background: linear-gradient(180deg, #ffffff 0%, #fffefa 58%, #f4f6ef 82%, #fffefa 100%);
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .tool-guide-shell::before,
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .tool-guide-shell::after {
+  display: none;
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .tool-guide-hero-copy,
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .tool-guide-hero-visual,
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .tool-guide-meta-card,
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .tool-guide-use-card,
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .tool-guide-step,
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .tool-guide-callout,
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .tool-guide-warning,
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .tool-guide-output-card,
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .tool-guide-question-card,
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .tool-guide-activity-card {
+  border-color: #dfe8e1;
+  background: linear-gradient(145deg, #ffffff 0%, #f2f6f1 100%);
+  box-shadow: 0 8px 24px rgba(22, 55, 43, 0.07);
+  color: #25343d;
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .tool-guide-eyebrow,
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .tool-guide-hero-label,
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .tool-guide-meta-card strong,
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .tool-guide-mini-flow span,
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .tool-guide-hero-visual strong {
+  color: #07584f;
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .tool-guide-meta-card span,
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .tool-guide-hero-visual p,
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .tool-guide-hero-visual small,
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .tool-guide-hero-visual div {
+  color: #52675f;
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .tool-guide-hero-icon { border-color:#d2e2db; background:#e6f1ed; color:#07584f; box-shadow:0 0 0 12px rgba(22,143,124,.06); }
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .tool-guide-mini-flow span { border-color:#d2e2db; background:#fff; color:#07584f; }
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .tool-guide-mini-flow b { color:#087568; }
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .tool-guide-hero h1 span {
+  color: #087568;
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .workflow-main .tool-guide-cover,
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .workflow-main .tool-guide-cover img {
+  border-color: #dfe8e1;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(22, 55, 43, 0.07);
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .workflow-main [class*="tool-guide-"]:not(a):not(button):not(input),
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .workflow-main .teaching-example,
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .workflow-main .article-bonus.teacher-skill {
+  border-color: #dfe8e1;
+  background-color: #f7faf6;
+  color: #25343d;
+  box-shadow: 0 5px 18px rgba(22, 55, 43, 0.05);
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .workflow-main .prompt-body {
+  border-color: #dfe8e1;
+  background: #fffefa;
+  color: #25343d;
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .workflow-main .prompt-copy-button {
+  border-color: #9fcab2;
+  background: #e6f1ed;
+  color: #07584f;
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .workflow-main .prompt-copy-button:hover,
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .workflow-main .prompt-copy-button:focus-visible,
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .workflow-main .prompt-copy-button.copied {
+  border-color: #07584f;
+  background: #d3e9dc;
+  color: #063f39;
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .workflow-main .prompt-copy-feedback {
+  color: #07584f;
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .workflow-main .article-bonus,
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .workflow-main .article-bonus strong,
+body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .workflow-main .article-bonus a {
+  color: #25343d;
+}
+@media (max-width: 640px) {
+  body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .tool-guide-hero-visual {
+    padding: 28px 18px;
+    border-radius: 20px;
+  }
+}

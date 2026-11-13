@@ -7,6 +7,10 @@
     <title>Gemini Storybook: jak vytvořit ilustrovaný příběh pro výuku | AI ve Výuce</title>
     <meta name="description" content="Nástroj krok za krokem pro učitele: jak v Gemini Storybooku vytvořit, zkontrolovat a použít ilustrovaný příběh ve výuce." />
     <link rel="stylesheet" href="css/workflow.css?v=20260915-tool-guide-cover" />
+<link rel="stylesheet" href="css/light-background-pilot.css?v=20261113-7x" />
+<link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261113-7x" />
+<link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+<link rel="stylesheet" href="css/article-content-navigation.css?v=20261110-7q" />
     <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/gemini-storybook-navod-pro-ucitele" />
     <meta property="og:title" content="Gemini Storybook: jak vytvořit ilustrovaný příběh pro výuku | AI ve Výuce" />
     <meta property="og:description" content="Praktický návod pro učitele – od prvního otevření Storybooku až po použití výsledku v hodině." />
@@ -27,12 +31,20 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
 </head>
 
-<body class="workflow-page tool-guide-page">
-    <header class="workflow-shell tool-guide-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-            <a class="workflow-back" href="ai.html#navody">← Praktické návody</a>
-        </div>
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled tool-guide-page" data-site-navigation-area="tools">
+    <header class="site-header" id="top">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+      <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a>
+    </div></div>
+  </nav>
+</header>
+
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="gemini-pro-ucitele.html">Gemini pro učitele</a></li><li aria-current="page">Gemini Storybook: jak vytvořit ilustrovaný příběh pro výuku</li></ol></nav>
+<header class="workflow-shell">
+        <div class="workflow-topbar"><a class="workflow-back" href="ai.html#navody">← Praktické návody</a></div>
         <div class="workflow-hero tool-guide-hero">
             <div class="tool-guide-hero-copy">
                 <div class="tool-guide-eyebrow">NÁSTROJ KROK ZA KROKEM</div>
@@ -57,7 +69,9 @@
         </div>
     </header>
 
-    <main class="workflow-main tool-guide-main">
+    <main class="workflow-main tool-guide-main article-content-layout">
+<details class="article-content-navigation" open><summary><span>V tomto článku</span></summary><nav aria-label="Obsah článku"><ol><li><a href="#kdy-storybook-pouzit">Kdy Storybook použít</a><ol><li><a href="#wave8-gemini-storybook-navod-pro-ucitele-h3-01">Cizí jazyk</a></li><li><a href="#wave8-gemini-storybook-navod-pro-ucitele-h3-02">Občanská nauka</a></li><li><a href="#wave8-gemini-storybook-navod-pro-ucitele-h3-03">Odborné předměty</a></li><li><a href="#wave8-gemini-storybook-navod-pro-ucitele-h3-04">Diferenciace</a></li></ol></li><li><a href="#vyukovy-cil">Nejdříve učivo, potom obrázky</a></li><li><a href="#postup-krok-za-krokem">Postup krok za krokem</a><ol><li><a href="#wave8-gemini-storybook-navod-pro-ucitele-h3-05">Otevřete Gemini</a></li><li><a href="#wave8-gemini-storybook-navod-pro-ucitele-h3-06">Otevřete Gems</a></li><li><a href="#wave8-gemini-storybook-navod-pro-ucitele-h3-07">Určete výukový cíl</a></li><li><a href="#wave8-gemini-storybook-navod-pro-ucitele-h3-08">Zadejte cílovou skupinu</a></li><li><a href="#wave8-gemini-storybook-navod-pro-ucitele-h3-09">Určete prostředí a obsah</a></li><li><a href="#wave8-gemini-storybook-navod-pro-ucitele-h3-10">Nastavte rozsah a jazyk</a></li><li><a href="#wave8-gemini-storybook-navod-pro-ucitele-h3-11">Určete vizuální styl</a></li><li><a href="#wave8-gemini-storybook-navod-pro-ucitele-h3-12">Vygenerujte Storybook</a></li><li><a href="#wave8-gemini-storybook-navod-pro-ucitele-h3-13">Výsledek zkontrolujte</a></li><li><a href="#wave8-gemini-storybook-navod-pro-ucitele-h3-14">Použijte materiál v hodině</a></li></ol></li><li><a href="#prompt-pripraveny">Prompt připravený ke kopírování</a></li><li><a href="#priklady-z-vyuky">Příklady z výuky</a><ol><li><a href="#wave8-gemini-storybook-navod-pro-ucitele-h3-15">Tom's First Day at Work</a></li><li><a href="#wave8-gemini-storybook-navod-pro-ucitele-h3-16">Tlak vrstevníků</a></li></ol></li><li><a href="#pozor-na-omezeni">Pozor na omezení</a><ol><li><a href="#wave8-gemini-storybook-navod-pro-ucitele-h3-17">Uživatelé mladší 18 let</a></li></ol></li><li><a href="#co-s-vysledkem-dal">Co s výsledkem dál</a></li><li><a href="#zaver-storybook">Storybook jako jiná cesta k témuž učivu</a></li><li><a href="#dalsi-navody">Další praktické návody</a><ol><li><a href="#wave8-gemini-storybook-navod-pro-ucitele-h3-18">Gemini Notebook ve výuce</a></li><li><a href="#wave8-gemini-storybook-navod-pro-ucitele-h3-19">Vizuální materiály v ChatGPT</a></li><li><a href="#wave8-gemini-storybook-navod-pro-ucitele-h3-20">Všechny návody</a></li></ol></li></ol></nav></details>
+
         <article class="workflow-article tool-guide-article">
             <div class="workflow-article-intro">
                 <div class="workflow-article-kicker"><span class="workflow-step">01</span> Nástroj krok za krokem · 15. září 2026</div>
@@ -78,10 +92,10 @@
                 <section class="tool-guide-use-cases" aria-labelledby="kdy-storybook-pouzit">
                     <h2 id="kdy-storybook-pouzit">Kdy Storybook použít</h2>
                     <div class="tool-guide-use-grid">
-                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">01</span><h3>Cizí jazyk</h3><p>Krátké čtení, slovní zásoba, popis obrázku, převyprávění.</p></article>
-                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">02</span><h3>Občanská nauka</h3><p>Modelové situace, dilemata, vztahy, odpovědnost a diskuse.</p></article>
-                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">03</span><h3>Odborné předměty</h3><p>Situace z dílny, pracoviště nebo odborného výcviku.</p></article>
-                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">04</span><h3>Diferenciace</h3><p>Převedení obtížnějšího textu nebo tématu do jednodušší a názornější formy.</p></article>
+                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">01</span><h3 id="wave8-gemini-storybook-navod-pro-ucitele-h3-01">Cizí jazyk</h3><p>Krátké čtení, slovní zásoba, popis obrázku, převyprávění.</p></article>
+                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">02</span><h3 id="wave8-gemini-storybook-navod-pro-ucitele-h3-02">Občanská nauka</h3><p>Modelové situace, dilemata, vztahy, odpovědnost a diskuse.</p></article>
+                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">03</span><h3 id="wave8-gemini-storybook-navod-pro-ucitele-h3-03">Odborné předměty</h3><p>Situace z dílny, pracoviště nebo odborného výcviku.</p></article>
+                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">04</span><h3 id="wave8-gemini-storybook-navod-pro-ucitele-h3-04">Diferenciace</h3><p>Převedení obtížnějšího textu nebo tématu do jednodušší a názornější formy.</p></article>
                     </div>
                 </section>
 
@@ -97,16 +111,16 @@
                     <h2 id="postup-krok-za-krokem">Postup krok za krokem</h2>
                     <p>Jednotlivé kroky můžete použít jako rychlý checklist při přípravě vlastního Storybooku.</p>
                     <ol class="tool-guide-steps">
-                        <li class="tool-guide-step"><span class="tool-guide-step-number">1</span><div><h3>Otevřete Gemini</h3><p>Přihlaste se ke svému účtu.</p></div></li>
-                        <li class="tool-guide-step"><span class="tool-guide-step-number">2</span><div><h3>Otevřete Gems</h3><p>Vyberte Storybook / Příběh.</p></div></li>
-                        <li class="tool-guide-step"><span class="tool-guide-step-number">3</span><div><h3>Určete výukový cíl</h3><p>Nejdříve rozhodněte, co má žák pochopit nebo procvičit.</p></div></li>
-                        <li class="tool-guide-step"><span class="tool-guide-step-number">4</span><div><h3>Zadejte cílovou skupinu</h3><p>Uveďte věk, typ školy nebo jazykovou úroveň.</p></div></li>
-                        <li class="tool-guide-step"><span class="tool-guide-step-number">5</span><div><h3>Určete prostředí a obsah</h3><p>Doplňte téma, postavy, slovní zásobu a odborné pojmy.</p></div></li>
-                        <li class="tool-guide-step"><span class="tool-guide-step-number">6</span><div><h3>Nastavte rozsah a jazyk</h3><p>Například maximálně tři krátké věty na stránku.</p></div></li>
-                        <li class="tool-guide-step"><span class="tool-guide-step-number">7</span><div><h3>Určete vizuální styl</h3><p>Pro středoškoláky používejte moderní, ne infantilní vzhled.</p></div></li>
-                        <li class="tool-guide-step"><span class="tool-guide-step-number">8</span><div><h3>Vygenerujte Storybook</h3><p>Nechte nástroj připravit příběh podle zadaných parametrů.</p></div></li>
-                        <li class="tool-guide-step"><span class="tool-guide-step-number">9</span><div><h3>Výsledek zkontrolujte</h3><p>Ověřte fakta, jazyk, ilustrace, stereotypy i logiku příběhu.</p></div></li>
-                        <li class="tool-guide-step"><span class="tool-guide-step-number">10</span><div><h3>Použijte materiál v hodině</h3><p>Promítněte jej, exportujte jako PDF, připravte pracovní list nebo navazující diskusi.</p></div></li>
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">1</span><div><h3 id="wave8-gemini-storybook-navod-pro-ucitele-h3-05">Otevřete Gemini</h3><p>Přihlaste se ke svému účtu.</p></div></li>
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">2</span><div><h3 id="wave8-gemini-storybook-navod-pro-ucitele-h3-06">Otevřete Gems</h3><p>Vyberte Storybook / Příběh.</p></div></li>
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">3</span><div><h3 id="wave8-gemini-storybook-navod-pro-ucitele-h3-07">Určete výukový cíl</h3><p>Nejdříve rozhodněte, co má žák pochopit nebo procvičit.</p></div></li>
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">4</span><div><h3 id="wave8-gemini-storybook-navod-pro-ucitele-h3-08">Zadejte cílovou skupinu</h3><p>Uveďte věk, typ školy nebo jazykovou úroveň.</p></div></li>
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">5</span><div><h3 id="wave8-gemini-storybook-navod-pro-ucitele-h3-09">Určete prostředí a obsah</h3><p>Doplňte téma, postavy, slovní zásobu a odborné pojmy.</p></div></li>
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">6</span><div><h3 id="wave8-gemini-storybook-navod-pro-ucitele-h3-10">Nastavte rozsah a jazyk</h3><p>Například maximálně tři krátké věty na stránku.</p></div></li>
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">7</span><div><h3 id="wave8-gemini-storybook-navod-pro-ucitele-h3-11">Určete vizuální styl</h3><p>Pro středoškoláky používejte moderní, ne infantilní vzhled.</p></div></li>
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">8</span><div><h3 id="wave8-gemini-storybook-navod-pro-ucitele-h3-12">Vygenerujte Storybook</h3><p>Nechte nástroj připravit příběh podle zadaných parametrů.</p></div></li>
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">9</span><div><h3 id="wave8-gemini-storybook-navod-pro-ucitele-h3-13">Výsledek zkontrolujte</h3><p>Ověřte fakta, jazyk, ilustrace, stereotypy i logiku příběhu.</p></div></li>
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">10</span><div><h3 id="wave8-gemini-storybook-navod-pro-ucitele-h3-14">Použijte materiál v hodině</h3><p>Promítněte jej, exportujte jako PDF, připravte pracovní list nebo navazující diskusi.</p></div></li>
                     </ol>
                 </section>
 
@@ -144,7 +158,7 @@ Na konci vytvoř situaci, o které mohou studenti diskutovat.</pre>
                     <h2 id="priklady-z-vyuky">Příklady z výuky</h2>
                     <div class="tool-guide-examples">
                         <article class="teaching-example">
-                            <div class="teaching-example-heading"><span class="tool-guide-example-label">ANGLIČTINA A1</span><h3>Tom's First Day at Work</h3></div>
+                            <div class="teaching-example-heading"><span class="tool-guide-example-label">ANGLIČTINA A1</span><h3 id="wave8-gemini-storybook-navod-pro-ucitele-h3-15">Tom's First Day at Work</h3></div>
                             <div class="prompt-card prompt-card-compact">
                                 <div class="prompt-card-header"><h4>Prompt</h4><button class="prompt-copy-button" type="button" data-copy-prompt="tom-prompt" aria-describedby="tom-copy-feedback">Kopírovat prompt</button></div>
                                 <pre class="prompt-body" id="tom-prompt">Create a storybook for 16-year-old vocational school students learning English at A1 level.
@@ -167,7 +181,7 @@ Create modern comic-style illustrations suitable for teenagers. Do not make the 
                         </article>
 
                         <article class="teaching-example">
-                            <div class="teaching-example-heading"><span class="tool-guide-example-label">OBČANSKÁ NAUKA</span><h3>Tlak vrstevníků</h3></div>
+                            <div class="teaching-example-heading"><span class="tool-guide-example-label">OBČANSKÁ NAUKA</span><h3 id="wave8-gemini-storybook-navod-pro-ucitele-h3-16">Tlak vrstevníků</h3></div>
                             <div class="prompt-card prompt-card-compact">
                                 <div class="prompt-card-header"><h4>Prompt</h4><button class="prompt-copy-button" type="button" data-copy-prompt="peer-pressure-prompt" aria-describedby="peer-copy-feedback">Kopírovat prompt</button></div>
                                 <pre class="prompt-body" id="peer-pressure-prompt">Vytvoř storybook pro studenty střední školy ve věku 16–17 let.
@@ -192,7 +206,7 @@ Použij realistický moderní komiksový styl pro teenagery.</pre>
                 <aside class="tool-guide-warning" aria-labelledby="pozor-na-omezeni">
                     <span class="tool-guide-callout-label">DŮLEŽITÉ PŘED POUŽITÍM</span>
                     <h2 id="pozor-na-omezeni">Pozor na omezení</h2>
-                    <h3>Uživatelé mladší 18 let</h3>
+                    <h3 id="wave8-gemini-storybook-navod-pro-ucitele-h3-17">Uživatelé mladší 18 let</h3>
                     <p>Storybook v současnosti není dostupný uživatelům mladším 18 let.</p>
                     <p>Proto je na střední škole obvykle vhodnější workflow:</p>
                     <div class="tool-guide-teacher-workflow"><strong>učitel vytvoří</strong><span>→</span><strong>zkontroluje</strong><span>→</span><strong>použije se třídou</strong></div>
@@ -219,9 +233,9 @@ Použij realistický moderní komiksový styl pro teenagery.</pre>
         <section class="workflow-related tool-guide-related" aria-labelledby="dalsi-navody">
             <div class="workflow-related-heading"><div><span class="tool-guide-callout-label">STEJNÝ FORMÁT</span><h2 id="dalsi-navody">Další praktické návody</h2></div><p>Layout `tool-guide` je připravený i pro další nástroje a výuková workflow.</p></div>
             <div class="workflow-related-grid">
-                <a class="workflow-related-card tool-guide-related-card" href="ai-navod-gemini-notebook-vyuka.html"><span class="workflow-card-number">02</span><h3>Gemini Notebook ve výuce</h3><p>Práce s vlastními zdroji a výukovými materiály.</p></a>
-                <a class="workflow-related-card tool-guide-related-card" href="ai-navod-chatgpt-vizualni-materialy.html"><span class="workflow-card-number">03</span><h3>Vizuální materiály v ChatGPT</h3><p>Infografiky, mapy, diagramy a další výstupy.</p></a>
-                <a class="workflow-related-card tool-guide-related-card" href="ai.html#navody"><span class="workflow-card-number">→</span><h3>Všechny návody</h3><p>Projděte další praktické postupy pro učitele.</p></a>
+                <a class="workflow-related-card tool-guide-related-card" href="ai-navod-gemini-notebook-vyuka.html"><span class="workflow-card-number">02</span><h3 id="wave8-gemini-storybook-navod-pro-ucitele-h3-18">Gemini Notebook ve výuce</h3><p>Práce s vlastními zdroji a výukovými materiály.</p></a>
+                <a class="workflow-related-card tool-guide-related-card" href="ai-navod-chatgpt-vizualni-materialy.html"><span class="workflow-card-number">03</span><h3 id="wave8-gemini-storybook-navod-pro-ucitele-h3-19">Vizuální materiály v ChatGPT</h3><p>Infografiky, mapy, diagramy a další výstupy.</p></a>
+                <a class="workflow-related-card tool-guide-related-card" href="ai.html#navody"><span class="workflow-card-number">→</span><h3 id="wave8-gemini-storybook-navod-pro-ucitele-h3-20">Všechny návody</h3><p>Projděte další praktické postupy pro učitele.</p></a>
             </div>
         </section>
     </main>
@@ -229,6 +243,10 @@ Použij realistický moderní komiksový styl pro teenagery.</pre>
     <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai.html#navody">Zpět na praktické návody</a></footer>
     <script src="js/tool-guide.js?v=20260915-tool-guide" defer></script>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261110-7q"></script>
 </body>
 
 </html>
