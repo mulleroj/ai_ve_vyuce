@@ -518,7 +518,7 @@ for (const article of migrationArticles) {
               scrollHeight: document.querySelector('.article-content-navigation nav').scrollHeight,
               clientHeight: document.querySelector('.article-content-navigation nav').clientHeight
             },
-            imageStatus: [...document.querySelectorAll('.article-figure img')].map(img => ({
+            imageStatus: [...document.querySelectorAll('.workflow-article img')].map(img => ({
               src: img.getAttribute('src'), complete: img.complete, naturalWidth: img.naturalWidth, alt: img.getAttribute('alt')
             })),
             promptStyles: [...document.querySelectorAll('.article-prompt')].slice(0, 1).map(el => ({
@@ -584,7 +584,7 @@ for (const article of migrationArticles) {
         await expect(page).toHaveURL(new RegExp(`${fragment}$`));
         await expect(page.locator(fragment)).toBeInViewport();
         if (article.activeHeadingFollowsViewport) {
-          await expect.poll(() => page.evaluate(() => {
+          const viewportChapter = () => page.evaluate(() => {
             const links = [...document.querySelectorAll('.article-content-navigation a[href^="#"]')].map(link => ({
               href: link.getAttribute('href'),
               heading: document.getElementById(decodeURIComponent(link.hash.slice(1)))
@@ -592,7 +592,12 @@ for (const article of migrationArticles) {
             const marker = Math.min(window.innerHeight * 0.34, 240);
             const passed = links.filter(item => item.heading.getBoundingClientRect().top <= marker);
             return (passed[passed.length - 1] || links[0])?.href || null;
-          })).toBe(await page.locator('.article-content-navigation a[aria-current="location"]').getAttribute('href'));
+          });
+          await expect.poll(async () => {
+            const expected = await viewportChapter();
+            const active = await page.locator('.article-content-navigation a[aria-current="location"]').getAttribute('href');
+            return expected === active;
+          }).toBe(true);
         } else {
           await expect(page.locator('.article-content-navigation a[aria-current="location"]'))
             .toHaveAttribute('href', fragment);
