@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"><title>Gemini Skills pro učitele: návod krok za krokem | AI ve výuce</title>
 <meta name="description" content="Co jsou Gemini Skills, jak si učitel vytvoří první Skill a jak jej použít při práci s výukovými materiály a Gemini Notebookem. Praktický návod krok za krokem.">
 <link rel="stylesheet" href="css/workflow.css?v=20261001-skill-library">
+<link rel="stylesheet" href="css/light-background-pilot.css?v=20261113-7x" />
+<link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261113-7x" />
+<link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+<link rel="stylesheet" href="css/article-content-navigation.css?v=20261110-7q" />
 <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/gemini-skills-pro-ucitele">
 <meta property="og:title" content="Gemini Skills pro učitele: jednou nastavíte, pak už Gemini ví, jak má pracovat">
 <meta property="og:type" content="article">
@@ -21,11 +25,20 @@
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
 </head>
-<body class="workflow-page tool-guide-page gemini-skills-page">
-<header class="workflow-shell">
-<div class="workflow-topbar"><a href="index.html" class="nav-logo">
-<span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a><a class="workflow-back" href="ai.html">← Rozcestník AI</a>
-</div>
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled tool-guide-page gemini-skills-page" data-site-navigation-area="tools">
+<header class="site-header" id="top">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+      <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a>
+    </div></div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="ai-navody.html">Praktické návody</a></li><li aria-current="page">EDIT: kontrola výstupů</li></ol></nav>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="gemini-pro-ucitele.html">Gemini pro učitele</a></li><li aria-current="page">Gemini Skills pro učitele: jednou nastavíte, pak už Gemini ví, jak má pracovat</li></ol></nav>
+<header class="workflow-shell tool-guide-shell">
+<div class="workflow-topbar"><a class="workflow-back" href="ai.html">← Rozcestník AI</a></div>
 <div class="workflow-hero">
 <div>
 <div class="workflow-eyebrow">Nástroj krok za krokem · pro učitele ZŠ a SŠ</div>
@@ -50,35 +63,16 @@
 </div>
 </div>
 </header>
-<main class="workflow-main">
+<main class="workflow-main article-content-layout">
+<details class="article-content-navigation" open><summary><span id="toc-title">V tomto článku</span></summary><nav aria-label="Obsah článku"><ol><li><a href="#gemini-zaklady">Začínáte s Gemini?</a></li><li><a href="#co-je-skill">Co je Gemini Skill</a></li><li><a href="#tri-casti">Prompt, Skill a Notebook: tři různé role</a><ol><li><a href="#wave8-gemini-skills-pro-ucitele-h3-01">Prompt</a></li><li><a href="#wave8-gemini-skills-pro-ucitele-h3-02">Skill</a></li><li><a href="#wave8-gemini-skills-pro-ucitele-h3-03">Gemini Notebook</a></li></ol></li><li><a href="#dostupnost">Stav k 1. 10. 2026</a></li><li><a href="#prvni-skill">Vytvoříme první Skill: Pracuj pouze ze zdrojů</a><ol><li><a href="#wave8-gemini-skills-pro-ucitele-h3-04">Varianta A: vytvoření ručně</a></li><li><a href="#wave8-gemini-skills-pro-ucitele-h3-05">Varianta B: s pomocí Gemini</a></li></ol></li><li><a href="#hotovy-skill">Hotový Skill: Pracuj pouze ze zdrojů</a><ol><li><a href="#wave8-gemini-skills-pro-ucitele-h3-06">NAME / Název</a></li><li><a href="#wave8-gemini-skills-pro-ucitele-h3-07">DESCRIPTION / Popis</a></li><li><a href="#wave8-gemini-skills-pro-ucitele-h3-08">INSTRUCTIONS / Instrukce</a></li></ol></li><li><a href="#popis">Proč je popis tak důležitý</a></li><li><a href="#pouziti">Jak Skill použít</a><ol><li><a href="#wave8-gemini-skills-pro-ucitele-h3-09">1. Automaticky</a></li><li><a href="#wave8-gemini-skills-pro-ucitele-h3-10">2. Přímým výběrem</a></li></ol></li><li><a href="#workflow">Celý postup: pracovní list na present simple</a></li><li><a href="#notebook">Gemini Notebook + Skills</a></li><li><a href="#teacher-skill-library">Teacher Skill Library – 8 hotových Skills pro učitele</a><ol><li><a href="#wave8-gemini-skills-pro-ucitele-h3-11">Pracuj pouze ze zdrojů</a></li><li><a href="#wave8-gemini-skills-pro-ucitele-h3-12">Naplánuj 45minutovou hodinu</a></li><li><a href="#wave8-gemini-skills-pro-ucitele-h3-13">Vytvoř pracovní list</a></li><li><a href="#wave8-gemini-skills-pro-ucitele-h3-14">Vytvoř test nebo ověření</a></li><li><a href="#wave8-gemini-skills-pro-ucitele-h3-15">Uprav výukový materiál</a></li><li><a href="#wave8-gemini-skills-pro-ucitele-h3-16">Vytvoř výukovou prezentaci</a></li><li><a href="#wave8-gemini-skills-pro-ucitele-h3-17">Vytěž obsah lekce ze zdroje</a></li><li><a href="#wave8-gemini-skills-pro-ucitele-h3-18">Zkontroluj výukový materiál</a></li></ol></li><li><a href="#kombinace">Jak Skills kombinovat</a><ol><li><a href="#wave8-gemini-skills-pro-ucitele-h3-19">Pracovní list z učebnice</a></li><li><a href="#wave8-gemini-skills-pro-ucitele-h3-20">Test po lekci</a></li><li><a href="#wave8-gemini-skills-pro-ucitele-h3-21">Příprava hodiny</a></li><li><a href="#wave8-gemini-skills-pro-ucitele-h3-22">Přístupnější pracovní list</a></li><li><a href="#wave8-gemini-skills-pro-ucitele-h3-23">Výuková prezentace</a></li><li><a href="#wave8-gemini-skills-pro-ucitele-h3-24">Zpracování lekce z učebnice</a></li><li><a href="#wave8-gemini-skills-pro-ucitele-h3-25">Finální kontrola</a></li></ol></li><li><a href="#chyby">Pět častých chyb</a></li><li><a href="#kam-co">Co patří do Skillu a co do Notebooku</a></li><li><a href="#data">Bezpečnost a školní data</a></li><li><a href="#checklist">Můj první Skill – kontrolní seznam</a></li><li><a href="#co-dal">Co dál?</a></li><li><a href="#zdroje">Zdroje a další informace</a></li></ol></nav></details>
+
 <article class="workflow-article">
 <div class="workflow-article-intro">
 <p class="workflow-article-summary">První Skill vytvoříte bez programování. Níže najdete celý postup i tři texty ke zkopírování.</p>
 </div>
 <figure class="article-figure"><img src="images/gemini-skills-pro-ucitele.png" width="1536" height="1024" alt="Notebook poskytuje zdroje, Skill pravidla práce a prompt aktuální úkol; učitel výsledný materiál zkontroluje." decoding="async"><figcaption>Princip práce se zdroji, pravidly a aktuálním úkolem. Infografika vysvětluje role, nikoli dostupnost tlačítek na každém účtu.</figcaption>
 </figure>
-<nav class="article-toc" aria-labelledby="toc-title">
-<p class="article-toc-label" id="toc-title">V tomto článku</p>
-<ul>
-<li><a href="#co-je-skill">Co je Gemini Skill</a></li>
-<li><a href="#tri-casti">Prompt, Skill a Notebook: tři různé role</a></li>
-<li><a href="#dostupnost">Stav k 1. 10. 2026</a></li>
-<li><a href="#prvni-skill">Vytvoříme první Skill: Pracuj pouze ze zdrojů</a></li>
-<li><a href="#hotovy-skill">Hotový Skill: Pracuj pouze ze zdrojů</a></li>
-<li><a href="#popis">Proč je popis tak důležitý</a></li>
-<li><a href="#pouziti">Jak Skill použít</a></li>
-<li><a href="#workflow">Celý postup: pracovní list na present simple</a></li>
-<li><a href="#notebook">Gemini Notebook + Skills</a></li>
-<li><a href="#teacher-skill-library">Teacher Skill Library – 8 hotových Skills</a></li>
-<li><a href="#kombinace">Jak Skills kombinovat</a></li>
-<li><a href="#chyby">Pět častých chyb</a></li>
-<li><a href="#kam-co">Co patří do Skillu a co do Notebooku</a></li>
-<li><a href="#data">Bezpečnost a školní data</a></li>
-<li><a href="#checklist">Můj první Skill – kontrolní seznam</a></li>
-<li><a href="#co-dal">Co dál?</a></li>
-<li><a href="#zdroje">Zdroje a další informace</a></li>
-</ul>
-</nav>
+
 <div class="article-content">
 <p class="article-lead">Možná Gemini při přípravě výuky pořád píšete: „Pracuj pouze s přiloženými materiály. Nic si nevymýšlej. Pokud odpověď ve zdrojích není, přiznej to.“</p>
 <p><strong>A co kdybychom to Gemini řekli jen jednou?</strong> Uložený Skill umožňuje stejný pracovní postup používat opakovaně. Ukážeme si jeden, který využijete v různých předmětech.</p>
@@ -92,17 +86,17 @@
 <h2 id="tri-casti">Prompt, Skill a Notebook: tři různé role</h2>
 <div class="tool-guide-use-grid">
 <div class="tool-guide-use-card">
-<h3>Prompt</h3>
+<h3 id="wave8-gemini-skills-pro-ucitele-h3-01">Prompt</h3>
 <p>Co chci právě teď.</p>
 <p>„Vytvoř pracovní list na present simple.“</p>
 </div>
 <div class="tool-guide-use-card">
-<h3>Skill</h3>
+<h3 id="wave8-gemini-skills-pro-ucitele-h3-02">Skill</h3>
 <p>Jak chci, aby Gemini tento druh práce provádělo pokaždé.</p>
 <p>„Pracovní list musí mít jasné instrukce, postupnou obtížnost a řešení pro učitele.“</p>
 </div>
 <div class="tool-guide-use-card">
-<h3>Gemini Notebook</h3>
+<h3 id="wave8-gemini-skills-pro-ucitele-h3-03">Gemini Notebook</h3>
 <p>Z jakých podkladů má Gemini vycházet.</p>
 <p>Student’s Book, Workbook, vlastní poznámky a metodické materiály.</p>
 </div>
@@ -122,7 +116,7 @@
 <h2 id="prvni-skill">Vytvoříme první Skill: Pracuj pouze ze zdrojů</h2>
 <p><code>work-only-from-sources</code> se hodí pro pracovní listy, prezentace, testy i přípravu hodin. Neváže se na jednu učebnici. Pravidla pro doložené informace, přiznání nejistoty a rozlišení faktů od vlastních návrhů už nebudete pokaždé opisovat.</p>
 <p><strong>Skill výrazně zpřesní pravidla práce Gemini, ale stále nenahrazuje kontrolu učitele.</strong> Název ani instrukce nezaručují, že Gemini nikdy nevytvoří nedoložené tvrzení.</p>
-<h3>Varianta A: vytvoření ručně</h3>
+<h3 id="wave8-gemini-skills-pro-ucitele-h3-04">Varianta A: vytvoření ručně</h3>
 <ol>
 <li>Otevřete <a href="https://gemini.google.com/">Gemini ve webovém prohlížeči</a>.</li>
 <li>V postranní nabídce otevřete <strong>Nastavení → Skills / Dovednosti</strong>. Pokud položku nemáte, vraťte se k boxu o dostupnosti.</li>
@@ -131,7 +125,7 @@
 <li>Klikněte na <strong>Create / Vytvořit</strong>. Ověřte, že nový Skill vidíte v seznamu a že je aktivní.</li>
 </ol>
 <p>Název pište malými písmeny a slova oddělte spojovníky. Anglický název usnadňuje přesné vyvolání; instrukce mohou být česky.</p>
-<h3>Varianta B: s pomocí Gemini</h3>
+<h3 id="wave8-gemini-skills-pro-ucitele-h3-05">Varianta B: s pomocí Gemini</h3>
 <p>Na stránce Skills zvolte <strong>Create with Gemini</strong> a popište opakovanou činnost. Nebo v chatu požádejte: „Vytvoř Skill podle těchto instrukcí“ a připojte text níže. Před použitím zkontrolujte uložený název, popis i instrukce.</p>
 <p><a href="https://support.google.com/gemini/answer/17094296?hl=en">Oficiální postup vytvoření</a></p>
 </section>
@@ -140,17 +134,17 @@
 <p>Každý blok vložte do stejnojmenného pole. Anglický popis říká, že Skill ověřuje tvrzení v dostupných podkladech a má se použít tam, kde záleží na věrnosti zdrojům. Slovo „prevents“ vyjadřuje zamýšlené pravidlo, nikoli záruku bezchybnosti.</p>
 <div class="prompt-card">
 <div class="prompt-card-header">
-<h3>NAME / Název</h3><button type="button" class="prompt-copy-button" data-copy-prompt="skill-name" data-copy-label="Kopírovat" aria-label="Kopírovat: NAME / Název">Kopírovat</button>
+<h3 id="wave8-gemini-skills-pro-ucitele-h3-06">NAME / Název</h3><button type="button" class="prompt-copy-button" data-copy-prompt="skill-name" data-copy-label="Kopírovat" aria-label="Kopírovat: NAME / Název">Kopírovat</button>
 </div><pre class="prompt-body" id="skill-name">work-only-from-sources</pre><span class="prompt-copy-feedback" role="status" aria-live="polite"></span>
 </div>
 <div class="prompt-card">
 <div class="prompt-card-header">
-<h3>DESCRIPTION / Popis</h3><button type="button" class="prompt-copy-button" data-copy-prompt="skill-description" data-copy-label="Kopírovat" aria-label="Kopírovat: DESCRIPTION / Popis">Kopírovat</button>
+<h3 id="wave8-gemini-skills-pro-ucitele-h3-07">DESCRIPTION / Popis</h3><button type="button" class="prompt-copy-button" data-copy-prompt="skill-description" data-copy-label="Kopírovat" aria-label="Kopírovat: DESCRIPTION / Popis">Kopírovat</button>
 </div><pre class="prompt-body" id="skill-description">Verifies claims against the sources available in the current notebook, files or conversation and prevents unsupported information from being presented as fact. Use when accuracy, source fidelity, curriculum alignment, legal correctness, or faithful processing of supplied teaching materials is important.</pre><span class="prompt-copy-feedback" role="status" aria-live="polite"></span>
 </div>
 <div class="prompt-card">
 <div class="prompt-card-header">
-<h3>INSTRUCTIONS / Instrukce</h3><button type="button" class="prompt-copy-button" data-copy-prompt="skill-instructions" data-copy-label="Kopírovat instrukce" aria-label="Kopírovat instrukce: INSTRUCTIONS / Instrukce">Kopírovat instrukce</button>
+<h3 id="wave8-gemini-skills-pro-ucitele-h3-08">INSTRUCTIONS / Instrukce</h3><button type="button" class="prompt-copy-button" data-copy-prompt="skill-instructions" data-copy-label="Kopírovat instrukce" aria-label="Kopírovat instrukce: INSTRUCTIONS / Instrukce">Kopírovat instrukce</button>
 </div><pre class="prompt-body" id="skill-instructions">Pracuj přednostně pouze s informacemi obsaženými v dostupných zdrojích, přiložených dokumentech nebo aktuálním notebooku.
 
 ### Základní pravidla
@@ -189,9 +183,9 @@ Pokud ano, výstup oprav.</pre><span class="prompt-copy-feedback" role="status" 
 </section>
 <section aria-labelledby="pouziti">
 <h2 id="pouziti">Jak Skill použít</h2>
-<h3>1. Automaticky</h3>
+<h3 id="wave8-gemini-skills-pro-ucitele-h3-09">1. Automaticky</h3>
 <p>Napište: „Z přiložených materiálů připrav stručné vysvětlení rozdílu mezi present simple a present continuous.“ Pokud Gemini rozpozná relevantní aktivní Skill, může jej použít automaticky.</p>
-<h3>2. Přímým výběrem</h3>
+<h3 id="wave8-gemini-skills-pro-ucitele-h3-10">2. Přímým výběrem</h3>
 <p>V chatu začněte psát <code>/</code> a vyberte Skill z nabídky. Příklad: <code>/work-only-from-sources</code>, potom „Vytvoř pracovní list z přiložené lekce.“ Google avizuje přechod na <code>@</code>; řiďte se nabídkou ve svém rozhraní. Podstatné je vybrat uložený Skill, ne jen vložit jeho název jako běžný text.</p>
 <p><a href="https://support.google.com/gemini/answer/18560919?hl=en">Přímé vyvolání podle Googlu</a></p>
 </section>
@@ -227,7 +221,7 @@ Pokud ano, výstup oprav.</pre><span class="prompt-copy-feedback" role="status" 
 <details class="article-bonus teacher-skill" id="library-work-only-from-sources">
 <summary><strong>1. Pracuj pouze ze zdrojů</strong><br><code>work-only-from-sources</code><br><span>Věrné zpracování materiálů a kontrola doložitelnosti informací.</span></summary>
 <div class="prompt-card">
-<div class="prompt-card-header"><h3>Pracuj pouze ze zdrojů</h3><button type="button" class="prompt-copy-button" data-copy-prompt="library-text-1" data-copy-label="Kopírovat celý Skill" data-copy-success-label="Zkopírováno ✓" aria-label="Kopírovat celý Skill: Pracuj pouze ze zdrojů">Kopírovat celý Skill</button></div>
+<div class="prompt-card-header"><h3 id="wave8-gemini-skills-pro-ucitele-h3-11">Pracuj pouze ze zdrojů</h3><button type="button" class="prompt-copy-button" data-copy-prompt="library-text-1" data-copy-label="Kopírovat celý Skill" data-copy-success-label="Zkopírováno ✓" aria-label="Kopírovat celý Skill: Pracuj pouze ze zdrojů">Kopírovat celý Skill</button></div>
 <pre class="prompt-body" id="library-text-1">NAME
 work-only-from-sources
 
@@ -267,7 +261,7 @@ Pokud ano, výstup oprav.</pre>
 <details class="article-bonus teacher-skill" id="library-plan-45-minute-lesson">
 <summary><strong>2. Naplánuj 45minutovou hodinu</strong><br><code>plan-45-minute-lesson</code><br><span>Struktura hodiny, aktivity a rozvržení času.</span></summary>
 <div class="prompt-card">
-<div class="prompt-card-header"><h3>Naplánuj 45minutovou hodinu</h3><button type="button" class="prompt-copy-button" data-copy-prompt="library-text-2" data-copy-label="Kopírovat celý Skill" data-copy-success-label="Zkopírováno ✓" aria-label="Kopírovat celý Skill: Naplánuj 45minutovou hodinu">Kopírovat celý Skill</button></div>
+<div class="prompt-card-header"><h3 id="wave8-gemini-skills-pro-ucitele-h3-12">Naplánuj 45minutovou hodinu</h3><button type="button" class="prompt-copy-button" data-copy-prompt="library-text-2" data-copy-label="Kopírovat celý Skill" data-copy-success-label="Zkopírováno ✓" aria-label="Kopírovat celý Skill: Naplánuj 45minutovou hodinu">Kopírovat celý Skill</button></div>
 <pre class="prompt-body" id="library-text-2">NAME
 plan-45-minute-lesson
 
@@ -324,7 +318,7 @@ Pokud důležitá informace o třídě chybí, vytvoř rozumnou základní varia
 <details class="article-bonus teacher-skill" id="library-create-student-worksheet">
 <summary><strong>3. Vytvoř pracovní list</strong><br><code>create-student-worksheet</code><br><span>Pracovní listy, opakování, domácí úkoly a procvičování.</span></summary>
 <div class="prompt-card">
-<div class="prompt-card-header"><h3>Vytvoř pracovní list</h3><button type="button" class="prompt-copy-button" data-copy-prompt="library-text-3" data-copy-label="Kopírovat celý Skill" data-copy-success-label="Zkopírováno ✓" aria-label="Kopírovat celý Skill: Vytvoř pracovní list">Kopírovat celý Skill</button></div>
+<div class="prompt-card-header"><h3 id="wave8-gemini-skills-pro-ucitele-h3-13">Vytvoř pracovní list</h3><button type="button" class="prompt-copy-button" data-copy-prompt="library-text-3" data-copy-label="Kopírovat celý Skill" data-copy-success-label="Zkopírováno ✓" aria-label="Kopírovat celý Skill: Vytvoř pracovní list">Kopírovat celý Skill</button></div>
 <pre class="prompt-body" id="library-text-3">NAME
 create-student-worksheet
 
@@ -387,7 +381,7 @@ U každého uzavřeného úkolu uveď správné řešení.</pre>
 <details class="article-bonus teacher-skill" id="library-create-assessment">
 <summary><strong>4. Vytvoř test nebo ověření</strong><br><code>create-assessment</code><br><span>Testy, kvízy, bodování a klíče pro učitele.</span></summary>
 <div class="prompt-card">
-<div class="prompt-card-header"><h3>Vytvoř test nebo ověření</h3><button type="button" class="prompt-copy-button" data-copy-prompt="library-text-4" data-copy-label="Kopírovat celý Skill" data-copy-success-label="Zkopírováno ✓" aria-label="Kopírovat celý Skill: Vytvoř test nebo ověření">Kopírovat celý Skill</button></div>
+<div class="prompt-card-header"><h3 id="wave8-gemini-skills-pro-ucitele-h3-14">Vytvoř test nebo ověření</h3><button type="button" class="prompt-copy-button" data-copy-prompt="library-text-4" data-copy-label="Kopírovat celý Skill" data-copy-success-label="Zkopírováno ✓" aria-label="Kopírovat celý Skill: Vytvoř test nebo ověření">Kopírovat celý Skill</button></div>
 <pre class="prompt-body" id="library-text-4">NAME
 create-assessment
 
@@ -458,7 +452,7 @@ Pokud o to uživatel požádá, připrav také:
 <details class="article-bonus teacher-skill" id="library-adapt-learning-material">
 <summary><strong>5. Uprav výukový materiál</strong><br><code>adapt-learning-material</code><br><span>Srozumitelnější a přístupnější podoba materiálu.</span></summary>
 <div class="prompt-card">
-<div class="prompt-card-header"><h3>Uprav výukový materiál</h3><button type="button" class="prompt-copy-button" data-copy-prompt="library-text-5" data-copy-label="Kopírovat celý Skill" data-copy-success-label="Zkopírováno ✓" aria-label="Kopírovat celý Skill: Uprav výukový materiál">Kopírovat celý Skill</button></div>
+<div class="prompt-card-header"><h3 id="wave8-gemini-skills-pro-ucitele-h3-15">Uprav výukový materiál</h3><button type="button" class="prompt-copy-button" data-copy-prompt="library-text-5" data-copy-label="Kopírovat celý Skill" data-copy-success-label="Zkopírováno ✓" aria-label="Kopírovat celý Skill: Uprav výukový materiál">Kopírovat celý Skill</button></div>
 <pre class="prompt-body" id="library-text-5">NAME
 adapt-learning-material
 
@@ -501,7 +495,7 @@ Na konci stručně uveď:
 <details class="article-bonus teacher-skill" id="library-create-teaching-presentation">
 <summary><strong>6. Vytvoř výukovou prezentaci</strong><br><code>create-teaching-presentation</code><br><span>Obsah snímků, poznámky pro učitele a návrhy vizuálů.</span></summary>
 <div class="prompt-card">
-<div class="prompt-card-header"><h3>Vytvoř výukovou prezentaci</h3><button type="button" class="prompt-copy-button" data-copy-prompt="library-text-6" data-copy-label="Kopírovat celý Skill" data-copy-success-label="Zkopírováno ✓" aria-label="Kopírovat celý Skill: Vytvoř výukovou prezentaci">Kopírovat celý Skill</button></div>
+<div class="prompt-card-header"><h3 id="wave8-gemini-skills-pro-ucitele-h3-16">Vytvoř výukovou prezentaci</h3><button type="button" class="prompt-copy-button" data-copy-prompt="library-text-6" data-copy-label="Kopírovat celý Skill" data-copy-success-label="Zkopírováno ✓" aria-label="Kopírovat celý Skill: Vytvoř výukovou prezentaci">Kopírovat celý Skill</button></div>
 <pre class="prompt-body" id="library-text-6">NAME
 create-teaching-presentation
 
@@ -552,7 +546,7 @@ Nevkládej dekorativní obrázky, které nepomáhají pochopení látky.</pre>
 <details class="article-bonus teacher-skill" id="library-extract-lesson-content">
 <summary><strong>7. Vytěž obsah lekce ze zdroje</strong><br><code>extract-lesson-content</code><br><span>Věrný převod lekce do strukturovaného textu.</span></summary>
 <div class="prompt-card">
-<div class="prompt-card-header"><h3>Vytěž obsah lekce ze zdroje</h3><button type="button" class="prompt-copy-button" data-copy-prompt="library-text-7" data-copy-label="Kopírovat celý Skill" data-copy-success-label="Zkopírováno ✓" aria-label="Kopírovat celý Skill: Vytěž obsah lekce ze zdroje">Kopírovat celý Skill</button></div>
+<div class="prompt-card-header"><h3 id="wave8-gemini-skills-pro-ucitele-h3-17">Vytěž obsah lekce ze zdroje</h3><button type="button" class="prompt-copy-button" data-copy-prompt="library-text-7" data-copy-label="Kopírovat celý Skill" data-copy-success-label="Zkopírováno ✓" aria-label="Kopírovat celý Skill: Vytěž obsah lekce ze zdroje">Kopírovat celý Skill</button></div>
 <pre class="prompt-body" id="library-text-7">NAME
 extract-lesson-content
 
@@ -624,7 +618,7 @@ Nikdy neshrnuj nebo nepřeformulovávej obsah, pokud by se tím mohla změnit di
 <details class="article-bonus teacher-skill" id="library-quality-check-teaching-material">
 <summary><strong>8. Zkontroluj výukový materiál</strong><br><code>quality-check-teaching-material</code><br><span>Audit obsahu, zadání, řešení a použitelnosti.</span></summary>
 <div class="prompt-card">
-<div class="prompt-card-header"><h3>Zkontroluj výukový materiál</h3><button type="button" class="prompt-copy-button" data-copy-prompt="library-text-8" data-copy-label="Kopírovat celý Skill" data-copy-success-label="Zkopírováno ✓" aria-label="Kopírovat celý Skill: Zkontroluj výukový materiál">Kopírovat celý Skill</button></div>
+<div class="prompt-card-header"><h3 id="wave8-gemini-skills-pro-ucitele-h3-18">Zkontroluj výukový materiál</h3><button type="button" class="prompt-copy-button" data-copy-prompt="library-text-8" data-copy-label="Kopírovat celý Skill" data-copy-success-label="Zkopírováno ✓" aria-label="Kopírovat celý Skill: Zkontroluj výukový materiál">Kopírovat celý Skill</button></div>
 <pre class="prompt-body" id="library-text-8">NAME
 quality-check-teaching-material
 
@@ -706,32 +700,32 @@ Nakonec uveď:
 <section aria-labelledby="kombinace">
 <h2 id="kombinace">Jak Skills kombinovat</h2>
 <p>Nejprve si příslušné Skills vytvořte a potom je vyberte pro společný úkol. Pokud si pravidla odporují, upřesněte zadání.</p>
-<h3>Pracovní list z učebnice</h3>
+<h3 id="wave8-gemini-skills-pro-ucitele-h3-19">Pracovní list z učebnice</h3>
 <pre class="prompt-body">work-only-from-sources
 + create-student-worksheet</pre>
 <p>Pravidla věrnosti zdrojům doplní jasnou strukturu pracovního listu.</p>
-<h3>Test po lekci</h3>
+<h3 id="wave8-gemini-skills-pro-ucitele-h3-20">Test po lekci</h3>
 <pre class="prompt-body">work-only-from-sources
 + create-assessment</pre>
 <p>Test vychází z dodané látky a zahrnuje bodování i klíč.</p>
-<h3>Příprava hodiny</h3>
+<h3 id="wave8-gemini-skills-pro-ucitele-h3-21">Příprava hodiny</h3>
 <pre class="prompt-body">work-only-from-sources
 + plan-45-minute-lesson</pre>
 <p>Z podkladů vznikne plán hodiny s aktivitami a rozvržením času.</p>
-<h3>Přístupnější pracovní list</h3>
+<h3 id="wave8-gemini-skills-pro-ucitele-h3-22">Přístupnější pracovní list</h3>
 <pre class="prompt-body">work-only-from-sources
 + create-student-worksheet
 + adapt-learning-material</pre>
 <p>Pracovní list se zpřístupní při zachování obsahu a vzdělávacího cíle.</p>
-<h3>Výuková prezentace</h3>
+<h3 id="wave8-gemini-skills-pro-ucitele-h3-23">Výuková prezentace</h3>
 <pre class="prompt-body">work-only-from-sources
 + create-teaching-presentation</pre>
 <p>Zdrojový obsah se promění ve stručné snímky pro výuku.</p>
-<h3>Zpracování lekce z učebnice</h3>
+<h3 id="wave8-gemini-skills-pro-ucitele-h3-24">Zpracování lekce z učebnice</h3>
 <pre class="prompt-body">extract-lesson-content
 + work-only-from-sources</pre>
 <p>Lekce se převede do strukturovaného textu bez domýšlení chybějícího obsahu.</p>
-<h3>Finální kontrola</h3>
+<h3 id="wave8-gemini-skills-pro-ucitele-h3-25">Finální kontrola</h3>
 <pre class="prompt-body">work-only-from-sources
 + quality-check-teaching-material</pre>
 <p>Audit porovná materiál se zdroji a prověří zadání, řešení i použitelnost.</p>
@@ -835,4 +829,8 @@ Nakonec uveď:
 </footer>
 <script src="js/tool-guide.js?v=20261001-skill-library" defer></script>
 <script src="js/site-footer.js?v=20260927-human-loop"></script>
+
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261110-7q"></script>
 </body></html>

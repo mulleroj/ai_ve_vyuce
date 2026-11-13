@@ -7,6 +7,10 @@
     <title>Gemini Notebook: jak si vytvořit sešit, který opravdu šetří práci | AI ve Výuce</title>
     <meta name="description" content="Praktický návod pro učitele: jak v Gemini Notebooku nastavit instrukce, metodiku, tematický plán, zdroje a vzorové materiály pro opakovanou přípravu výuky." />
     <link rel="stylesheet" href="css/workflow.css?v=20260915-tool-guide-notebook" />
+<link rel="stylesheet" href="css/light-background-pilot.css?v=20261113-7x" />
+<link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261113-7x" />
+<link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+<link rel="stylesheet" href="css/article-content-navigation.css?v=20261110-7q" />
     <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/gemini-notebook-navod-pro-ucitele" />
     <meta property="og:title" content="Gemini Notebook: jak si vytvořit sešit, který opravdu šetří práci | AI ve Výuce" />
     <meta property="og:description" content="Jak správně nastavit instrukce, metodiku, tematický plán, zdroje a vzorové materiály, aby Notebook pomáhal s přípravou výuky." />
@@ -27,12 +31,20 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
 </head>
 
-<body class="workflow-page tool-guide-page">
-    <header class="workflow-shell tool-guide-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-            <a class="workflow-back" href="gemini-notebook.html">← Gemini Notebook</a>
-        </div>
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled tool-guide-page" data-site-navigation-area="tools">
+    <header class="site-header" id="top">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+      <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a>
+    </div></div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="ai-navody.html">Praktické návody</a></li><li aria-current="page">EDIT: kontrola výstupů</li></ol></nav>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="gemini-notebook.html">Gemini Notebook</a></li><li aria-current="page">Gemini Notebook: jak si vytvořit sešit, který opravdu šetří práci</li></ol></nav>
+<header class="workflow-shell">
+        <div class="workflow-topbar"><a class="workflow-back" href="gemini-notebook.html">← Gemini Notebook</a></div>
         <div class="workflow-hero tool-guide-hero">
             <div class="tool-guide-hero-copy">
                 <div class="tool-guide-eyebrow">NÁSTROJ KROK ZA KROKEM</div>
@@ -57,7 +69,9 @@
         </div>
     </header>
 
-    <main class="workflow-main tool-guide-main">
+    <main class="workflow-main tool-guide-main article-content-layout">
+<details class="article-content-navigation" open><summary><span id="toc-heading-gemini-notebook-navod-pro-ucitele-html">V tomto článku</span></summary><nav aria-label="Obsah článku"><ol><li><a href="#ucel-potom-zdroje">Nejdříve účel, potom zdroje</a></li><li><a href="#jeden-sesit-ucel">Jeden sešit = jeden jasný účel</a><ol><li><a href="#wave8-gemini-notebook-navod-pro-ucitele-h3-01">Tematické celky</a></li><li><a href="#wave8-gemini-notebook-navod-pro-ucitele-h3-02">Praktická témata</a></li></ol></li><li><a href="#konfigurace-sesitu">Konfigurace sešitu: nejdůležitější krok</a></li><li><a href="#vzor-instrukci">Vzor instrukcí pro učitele</a></li><li><a href="#co-patri-do-instrukci">Co může být v instrukcích</a></li><li><a href="#instrukce-versus-zdroje">Instrukce nejsou skladiště dokumentů</a></li><li><a href="#metodika-jako-zdroj">Metodika jako zdroj</a></li><li><a href="#vzorovy-pracovni-list">Vzorový pracovní list je také zdroj</a></li><li><a href="#tematicky-plan">Tematický plán jako zdroj</a><ol><li><a href="#wave8-gemini-notebook-navod-pro-ucitele-h3-03">Angličtina – Unit 2</a></li></ol></li><li><a href="#pet-vrstev-sesitu">Pět vrstev dobře připraveného učitelského sešitu</a><ol><li><a href="#wave8-gemini-notebook-navod-pro-ucitele-h3-04">Instrukce</a></li><li><a href="#wave8-gemini-notebook-navod-pro-ucitele-h3-05">Metodika</a></li><li><a href="#wave8-gemini-notebook-navod-pro-ucitele-h3-06">Tematický plán</a></li><li><a href="#wave8-gemini-notebook-navod-pro-ucitele-h3-07">Učební zdroje</a></li><li><a href="#wave8-gemini-notebook-navod-pro-ucitele-h3-08">Vzorové materiály</a></li></ol></li><li><a href="#zdroje-vice-neznamena-lepe">Zdroje: více neznamená automaticky lépe</a></li><li><a href="#pojmenovani-zdroju">Pojmenovávejte zdroje tak, aby jim rozuměl i člověk</a></li><li><a href="#workflow-sesit">Workflow krok za krokem</a><ol><li><a href="#wave8-gemini-notebook-navod-pro-ucitele-h3-09">Určete účel sešitu</a></li><li><a href="#wave8-gemini-notebook-navod-pro-ucitele-h3-10">Vymezte cílovou skupinu</a></li><li><a href="#wave8-gemini-notebook-navod-pro-ucitele-h3-11">Nastavte instrukce</a></li><li><a href="#wave8-gemini-notebook-navod-pro-ucitele-h3-12">Přidejte metodiku</a></li><li><a href="#wave8-gemini-notebook-navod-pro-ucitele-h3-13">Přidejte tematický plán</a></li><li><a href="#wave8-gemini-notebook-navod-pro-ucitele-h3-14">Přidejte učební materiály</a></li><li><a href="#wave8-gemini-notebook-navod-pro-ucitele-h3-15">Přidejte vzorové výstupy</a></li><li><a href="#wave8-gemini-notebook-navod-pro-ucitele-h3-16">Uspořádejte zdroje</a></li><li><a href="#wave8-gemini-notebook-navod-pro-ucitele-h3-17">Otestujte sešit</a></li><li><a href="#wave8-gemini-notebook-navod-pro-ucitele-h3-18">Teprve potom jej používejte pro běžnou přípravu</a></li></ol></li><li><a href="#prvni-test">První test nakonfigurovaného sešitu</a></li><li><a href="#prakticky-priklad">Praktický příklad: sešit pro jednu lekci angličtiny</a><ol><li><a href="#wave8-gemini-notebook-navod-pro-ucitele-h3-19">Samostatný sešit pro jednu lekci</a></li></ol></li><li><a href="#nastavte-jednou">⚙️ Nastavte jednou, používejte pořád</a></li><li><a href="#na-co-pozor">Na co si dát pozor</a></li><li><a href="#zmena-zdroju">Když se změní zdroje, zkontrolujte i sešit</a></li><li><a href="#co-ziskate">Co z dobře nastaveného sešitu můžete získat</a><ol><li><a href="#wave8-gemini-notebook-navod-pro-ucitele-h3-20">Příprava hodiny</a></li><li><a href="#wave8-gemini-notebook-navod-pro-ucitele-h3-21">Pracovní list</a></li><li><a href="#wave8-gemini-notebook-navod-pro-ucitele-h3-22">Diferenciace</a></li><li><a href="#wave8-gemini-notebook-navod-pro-ucitele-h3-23">Kvíz</a></li><li><a href="#wave8-gemini-notebook-navod-pro-ucitele-h3-24">Shrnutí</a></li><li><a href="#wave8-gemini-notebook-navod-pro-ucitele-h3-25">Kontrola plánu</a></li></ol></li><li><a href="#zaver-notebook">Gemini Notebook jako pracovní systém</a></li><li><a href="#dalsi-navody">Další praktické návody</a><ol><li><a href="#wave8-gemini-notebook-navod-pro-ucitele-h3-26">Gemini Storybook</a></li><li><a href="#wave8-gemini-notebook-navod-pro-ucitele-h3-27">Gemini Notebook</a></li><li><a href="#wave8-gemini-notebook-navod-pro-ucitele-h3-28">Všechny návody</a></li></ol></li></ol></nav></details>
+
         <article class="workflow-article tool-guide-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Dobře nastavený sešit šetří učiteli opakované vysvětlování, co má AI dělat, z jakých podkladů má vycházet a jak mají výsledné materiály vypadat.</p>
@@ -68,17 +82,7 @@
                 <figcaption>Gemini Notebook jako pracovní prostředí pro opakovanou přípravu výuky.</figcaption>
             </figure>
 
-            <nav class="article-toc" aria-labelledby="toc-heading-gemini-notebook-navod-pro-ucitele-html">
-                <p class="article-toc-label" id="toc-heading-gemini-notebook-navod-pro-ucitele-html">V tomto článku</p>
-                <ul>
-                    <li><a href="#ucel-potom-zdroje">Nejdříve účel, potom zdroje</a></li>
-                    <li><a href="#jeden-sesit-ucel">Jeden sešit = jeden jasný účel</a></li>
-                    <li><a href="#konfigurace-sesitu">Konfigurace sešitu: nejdůležitější krok</a></li>
-                    <li><a href="#vzor-instrukci">Vzor instrukcí pro učitele</a></li>
-                    <li><a href="#co-patri-do-instrukci">Co může být v instrukcích</a></li>
-                    <li><a href="#instrukce-versus-zdroje">Instrukce nejsou skladiště dokumentů</a></li>
-                </ul>
-            </nav>
+            
             <div class="article-content">
                 <p class="article-lead">Gemini Notebook může fungovat jako místo, kam učitel nahraje učebnici, metodiku nebo několik dokumentů a následně se na jejich obsah ptá.</p>
                 <p>To je ale pouze základní způsob použití.</p>
@@ -111,8 +115,8 @@
                     <p>Každý sešit potom obsahuje pouze zdroje potřebné pro konkrétní lekci.</p>
                     <p>Stejný princip lze použít také v dalších předmětech:</p>
                     <div class="tool-guide-examples">
-                        <article class="teaching-example"><div class="teaching-example-heading"><span class="tool-guide-example-label">OBČANSKÁ NAUKA</span><h3>Tematické celky</h3></div><ul class="tool-guide-activity-list"><li>pracovní právo</li><li>lidská práva</li><li>finanční gramotnost</li><li>stát a demokracie</li></ul></article>
-                        <article class="teaching-example"><div class="teaching-example-heading"><span class="tool-guide-example-label">EKONOMIKA</span><h3>Praktická témata</h3></div><ul class="tool-guide-activity-list"><li>mzda</li><li>pracovní smlouva</li><li>daně</li><li>podnikání</li></ul></article>
+                        <article class="teaching-example"><div class="teaching-example-heading"><span class="tool-guide-example-label">OBČANSKÁ NAUKA</span><h3 id="wave8-gemini-notebook-navod-pro-ucitele-h3-01">Tematické celky</h3></div><ul class="tool-guide-activity-list"><li>pracovní právo</li><li>lidská práva</li><li>finanční gramotnost</li><li>stát a demokracie</li></ul></article>
+                        <article class="teaching-example"><div class="teaching-example-heading"><span class="tool-guide-example-label">EKONOMIKA</span><h3 id="wave8-gemini-notebook-navod-pro-ucitele-h3-02">Praktická témata</h3></div><ul class="tool-guide-activity-list"><li>mzda</li><li>pracovní smlouva</li><li>daně</li><li>podnikání</li></ul></article>
                     </div>
                     <p><strong>Méně nerelevantních zdrojů znamená přesnější kontext pro práci sešitu.</strong></p>
                 </section>
@@ -212,7 +216,7 @@ Pokud pracuješ s konkrétní informací ze zdrojů, umožni učiteli dohledat, 
                     <p>Mezi nejzajímavější zdroje pro učitelský sešit může patřit také <strong>tematický plán</strong>.</p>
                     <p>Nemusí být nutné vkládat celý plán na celý školní rok. Pokud je sešit zaměřen pouze na jednu lekci nebo tematický celek, je často užitečnější vložit pouze část tematického plánu, která se tohoto tématu týká.</p>
                     <div class="teaching-example">
-                        <div class="teaching-example-heading"><span class="tool-guide-example-label">PŘÍKLAD</span><h3>Angličtina – Unit 2</h3></div>
+                        <div class="teaching-example-heading"><span class="tool-guide-example-label">PŘÍKLAD</span><h3 id="wave8-gemini-notebook-navod-pro-ucitele-h3-03">Angličtina – Unit 2</h3></div>
                         <p><strong>Zdroje:</strong></p>
                         <ul class="tool-guide-activity-list"><li>Student's Book – Unit 2</li><li>Workbook – Unit 2</li><li>Teacher's Book – Unit 2</li><li>slovní zásoba Unit 2</li><li>vlastní pracovní materiály</li><li>metodika tvorby materiálů</li><li>vzor pracovního listu</li><li>část tematického plánu vztahující se k Unit 2</li></ul>
                     </div>
@@ -226,11 +230,11 @@ Pokud pracuješ s konkrétní informací ze zdrojů, umožni učiteli dohledat, 
                 <section aria-labelledby="pet-vrstev-sesitu">
                     <h2 id="pet-vrstev-sesitu">Pět vrstev dobře připraveného učitelského sešitu</h2>
                     <div class="tool-guide-use-grid">
-                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">01</span><h3>Instrukce</h3><p><strong>Jak má AI pracovat?</strong></p></article>
-                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">02</span><h3>Metodika</h3><p><strong>Podle jakých pedagogických pravidel má pracovat?</strong></p></article>
-                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">03</span><h3>Tematický plán</h3><p><strong>Co má být probráno?</strong></p></article>
-                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">04</span><h3>Učební zdroje</h3><p><strong>Z čeho má čerpat?</strong></p></article>
-                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">05</span><h3>Vzorové materiály</h3><p><strong>Jak má výsledek vypadat?</strong></p></article>
+                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">01</span><h3 id="wave8-gemini-notebook-navod-pro-ucitele-h3-04">Instrukce</h3><p><strong>Jak má AI pracovat?</strong></p></article>
+                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">02</span><h3 id="wave8-gemini-notebook-navod-pro-ucitele-h3-05">Metodika</h3><p><strong>Podle jakých pedagogických pravidel má pracovat?</strong></p></article>
+                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">03</span><h3 id="wave8-gemini-notebook-navod-pro-ucitele-h3-06">Tematický plán</h3><p><strong>Co má být probráno?</strong></p></article>
+                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">04</span><h3 id="wave8-gemini-notebook-navod-pro-ucitele-h3-07">Učební zdroje</h3><p><strong>Z čeho má čerpat?</strong></p></article>
+                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">05</span><h3 id="wave8-gemini-notebook-navod-pro-ucitele-h3-08">Vzorové materiály</h3><p><strong>Jak má výsledek vypadat?</strong></p></article>
                     </div>
                     <div class="tool-guide-output-flow" aria-label="Od krátkého požadavku k odpovídajícímu výstupu"><span>Krátký požadavek učitele</span><b>↓</b><span>Výstup odpovídající předmětu, žákům, plánu a způsobu práce</span></div>
                     <blockquote><strong>Připrav mi pracovní list na 30 minut k tomuto tématu.</strong></blockquote>
@@ -264,16 +268,16 @@ Vzor pracovního listu</pre>
                     <h2 id="workflow-sesit">Workflow krok za krokem</h2>
                     <p>Jednotlivé kroky můžete použít jako rychlý checklist při přípravě vlastního učitelského sešitu.</p>
                     <ol class="tool-guide-steps">
-                        <li class="tool-guide-step"><span class="tool-guide-step-number">1</span><div><h3>Určete účel sešitu</h3><p>Rozhodněte, pro jaký předmět, lekci, téma nebo činnost má sloužit.</p></div></li>
-                        <li class="tool-guide-step"><span class="tool-guide-step-number">2</span><div><h3>Vymezte cílovou skupinu</h3><p>Věk, ročník, typ školy, úroveň znalostí nebo jazykovou úroveň.</p></div></li>
-                        <li class="tool-guide-step"><span class="tool-guide-step-number">3</span><div><h3>Nastavte instrukce</h3><p>Určete způsob práce, pravidla a požadované výstupy.</p></div></li>
-                        <li class="tool-guide-step"><span class="tool-guide-step-number">4</span><div><h3>Přidejte metodiku</h3><p>Pokud podle nějaké pracujete, vložte ji jako zdroj.</p></div></li>
-                        <li class="tool-guide-step"><span class="tool-guide-step-number">5</span><div><h3>Přidejte tematický plán</h3><p>Ideálně pouze část relevantní pro danou lekci nebo tematický celek.</p></div></li>
-                        <li class="tool-guide-step"><span class="tool-guide-step-number">6</span><div><h3>Přidejte učební materiály</h3><p>Učebnice, pracovní sešity, vlastní texty, prezentace nebo jiné relevantní zdroje.</p></div></li>
-                        <li class="tool-guide-step"><span class="tool-guide-step-number">7</span><div><h3>Přidejte vzorové výstupy</h3><p>Například pracovní list nebo přípravu hodiny, jejíž strukturu chcete opakovaně používat.</p></div></li>
-                        <li class="tool-guide-step"><span class="tool-guide-step-number">8</span><div><h3>Uspořádejte zdroje</h3><p>Používejte jasné názvy a logické skupiny.</p></div></li>
-                        <li class="tool-guide-step"><span class="tool-guide-step-number">9</span><div><h3>Otestujte sešit</h3><p>Nezačínejte rovnou tvorbou celé přípravy. Nejdříve ověřte, zda Notebook správně chápe své zdroje a účel.</p></div></li>
-                        <li class="tool-guide-step"><span class="tool-guide-step-number">10</span><div><h3>Teprve potom jej používejte pro běžnou přípravu</h3><p>Po správném nastavení mohou být každodenní požadavky mnohem kratší.</p></div></li>
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">1</span><div><h3 id="wave8-gemini-notebook-navod-pro-ucitele-h3-09">Určete účel sešitu</h3><p>Rozhodněte, pro jaký předmět, lekci, téma nebo činnost má sloužit.</p></div></li>
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">2</span><div><h3 id="wave8-gemini-notebook-navod-pro-ucitele-h3-10">Vymezte cílovou skupinu</h3><p>Věk, ročník, typ školy, úroveň znalostí nebo jazykovou úroveň.</p></div></li>
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">3</span><div><h3 id="wave8-gemini-notebook-navod-pro-ucitele-h3-11">Nastavte instrukce</h3><p>Určete způsob práce, pravidla a požadované výstupy.</p></div></li>
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">4</span><div><h3 id="wave8-gemini-notebook-navod-pro-ucitele-h3-12">Přidejte metodiku</h3><p>Pokud podle nějaké pracujete, vložte ji jako zdroj.</p></div></li>
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">5</span><div><h3 id="wave8-gemini-notebook-navod-pro-ucitele-h3-13">Přidejte tematický plán</h3><p>Ideálně pouze část relevantní pro danou lekci nebo tematický celek.</p></div></li>
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">6</span><div><h3 id="wave8-gemini-notebook-navod-pro-ucitele-h3-14">Přidejte učební materiály</h3><p>Učebnice, pracovní sešity, vlastní texty, prezentace nebo jiné relevantní zdroje.</p></div></li>
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">7</span><div><h3 id="wave8-gemini-notebook-navod-pro-ucitele-h3-15">Přidejte vzorové výstupy</h3><p>Například pracovní list nebo přípravu hodiny, jejíž strukturu chcete opakovaně používat.</p></div></li>
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">8</span><div><h3 id="wave8-gemini-notebook-navod-pro-ucitele-h3-16">Uspořádejte zdroje</h3><p>Používejte jasné názvy a logické skupiny.</p></div></li>
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">9</span><div><h3 id="wave8-gemini-notebook-navod-pro-ucitele-h3-17">Otestujte sešit</h3><p>Nezačínejte rovnou tvorbou celé přípravy. Nejdříve ověřte, zda Notebook správně chápe své zdroje a účel.</p></div></li>
+                        <li class="tool-guide-step"><span class="tool-guide-step-number">10</span><div><h3 id="wave8-gemini-notebook-navod-pro-ucitele-h3-18">Teprve potom jej používejte pro běžnou přípravu</h3><p>Po správném nastavení mohou být každodenní požadavky mnohem kratší.</p></div></li>
                     </ol>
                 </section>
 
@@ -300,7 +304,7 @@ Navrhni osnovu 45minutové hodiny a uveď, ze kterých zdrojů při návrhu vych
                 <section aria-labelledby="prakticky-priklad">
                     <h2 id="prakticky-priklad">Praktický příklad: sešit pro jednu lekci angličtiny</h2>
                     <div class="teaching-example">
-                        <div class="teaching-example-heading"><span class="tool-guide-example-label">ANGLIČTINA · UNIT 2</span><h3>Samostatný sešit pro jednu lekci</h3></div>
+                        <div class="teaching-example-heading"><span class="tool-guide-example-label">ANGLIČTINA · UNIT 2</span><h3 id="wave8-gemini-notebook-navod-pro-ucitele-h3-19">Samostatný sešit pro jednu lekci</h3></div>
                         <p><strong>Instrukce</strong></p>
                         <ul><li>Sešit je určen k přípravě angličtiny pro studenty střední odborné školy.</li><li>Jazyková úroveň: A1–A2.</li><li>Materiály mají být praktické, přehledné a vhodné pro teenagery.</li><li>Pracovní listy mají obsahovat zadání pro žáka a samostatné řešení pro učitele.</li></ul>
                         <p><strong>Zdroje</strong></p>
@@ -342,12 +346,12 @@ Navrhni osnovu 45minutové hodiny a uveď, ze kterých zdrojů při návrhu vych
                 <section aria-labelledby="co-ziskate">
                     <h2 id="co-ziskate">Co z dobře nastaveného sešitu můžete získat</h2>
                     <div class="tool-guide-use-grid">
-                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">01</span><h3>Příprava hodiny</h3><p>Cíl, struktura, aktivity, otázky a závěr.</p></article>
-                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">02</span><h3>Pracovní list</h3><p>Materiál odpovídající tématu a úrovni žáků.</p></article>
-                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">03</span><h3>Diferenciace</h3><p>Jednodušší nebo náročnější varianta stejného učiva.</p></article>
-                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">04</span><h3>Kvíz</h3><p>Otázky vycházející přímo ze zdrojů.</p></article>
-                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">05</span><h3>Shrnutí</h3><p>Přehled tématu pro učitele nebo žáky.</p></article>
-                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">06</span><h3>Kontrola plánu</h3><p>Porovnání připravené výuky s tematickým plánem.</p></article>
+                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">01</span><h3 id="wave8-gemini-notebook-navod-pro-ucitele-h3-20">Příprava hodiny</h3><p>Cíl, struktura, aktivity, otázky a závěr.</p></article>
+                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">02</span><h3 id="wave8-gemini-notebook-navod-pro-ucitele-h3-21">Pracovní list</h3><p>Materiál odpovídající tématu a úrovni žáků.</p></article>
+                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">03</span><h3 id="wave8-gemini-notebook-navod-pro-ucitele-h3-22">Diferenciace</h3><p>Jednodušší nebo náročnější varianta stejného učiva.</p></article>
+                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">04</span><h3 id="wave8-gemini-notebook-navod-pro-ucitele-h3-23">Kvíz</h3><p>Otázky vycházející přímo ze zdrojů.</p></article>
+                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">05</span><h3 id="wave8-gemini-notebook-navod-pro-ucitele-h3-24">Shrnutí</h3><p>Přehled tématu pro učitele nebo žáky.</p></article>
+                        <article class="tool-guide-use-card"><span class="tool-guide-card-icon">06</span><h3 id="wave8-gemini-notebook-navod-pro-ucitele-h3-25">Kontrola plánu</h3><p>Porovnání připravené výuky s tematickým plánem.</p></article>
                     </div>
                 </section>
 
@@ -369,9 +373,9 @@ Navrhni osnovu 45minutové hodiny a uveď, ze kterých zdrojů při návrhu vych
         <section class="workflow-related tool-guide-related" aria-labelledby="dalsi-navody">
             <div class="workflow-related-heading"><div><span class="tool-guide-callout-label">STEJNÝ FORMÁT</span><h2 id="dalsi-navody">Další praktické návody</h2></div><p>Projděte další návody z řady Nástroj krok za krokem a praktické workflow pro učitele.</p></div>
             <div class="workflow-related-grid">
-                <a class="workflow-related-card tool-guide-related-card" href="gemini-storybook-navod-pro-ucitele.html"><span class="workflow-card-number">01</span><h3>Gemini Storybook</h3><p>Jak vytvořit ilustrovaný příběh pro výuku.</p></a>
-                <a class="workflow-related-card tool-guide-related-card" href="gemini-notebook.html"><span class="workflow-card-number">NB</span><h3>Gemini Notebook</h3><p>Hlavní rozcestník článků, návodů a workflow.</p></a>
-                <a class="workflow-related-card tool-guide-related-card" href="ai.html#navody"><span class="workflow-card-number">→</span><h3>Všechny návody</h3><p>Projděte další praktické postupy pro učitele.</p></a>
+                <a class="workflow-related-card tool-guide-related-card" href="gemini-storybook-navod-pro-ucitele.html"><span class="workflow-card-number">01</span><h3 id="wave8-gemini-notebook-navod-pro-ucitele-h3-26">Gemini Storybook</h3><p>Jak vytvořit ilustrovaný příběh pro výuku.</p></a>
+                <a class="workflow-related-card tool-guide-related-card" href="gemini-notebook.html"><span class="workflow-card-number">NB</span><h3 id="wave8-gemini-notebook-navod-pro-ucitele-h3-27">Gemini Notebook</h3><p>Hlavní rozcestník článků, návodů a workflow.</p></a>
+                <a class="workflow-related-card tool-guide-related-card" href="ai.html#navody"><span class="workflow-card-number">→</span><h3 id="wave8-gemini-notebook-navod-pro-ucitele-h3-28">Všechny návody</h3><p>Projděte další praktické postupy pro učitele.</p></a>
             </div>
         </section>
     </main>
@@ -379,6 +383,10 @@ Navrhni osnovu 45minutové hodiny a uveď, ze kterých zdrojů při návrhu vych
     <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="gemini-notebook.html">Zpět na Gemini Notebook</a></footer>
     <script src="js/tool-guide.js?v=20260915-tool-guide-notebook" defer></script>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261110-7q"></script>
 </body>
 
 </html>
