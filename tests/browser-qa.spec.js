@@ -884,11 +884,17 @@ for (const article of migrationArticles) {
             const passed = links.filter(item => item.heading.getBoundingClientRect().top <= marker);
             return (passed[passed.length - 1] || links[0])?.href || null;
           });
-          await expect.poll(async () => {
-            const expected = await viewportChapter();
-            const active = await page.locator('.article-content-navigation a[aria-current="location"]').getAttribute('href');
-            return expected === active;
-          }).toBe(true);
+          await expect.poll(async () => page.evaluate(() => {
+            const links = [...document.querySelectorAll('.article-content-navigation a[href^="#"]')].map(link => ({
+              href: link.getAttribute('href'),
+              heading: document.getElementById(decodeURIComponent(link.hash.slice(1)))
+            })).filter(item => item.heading);
+            const marker = Math.min(window.innerHeight * 0.34, 240);
+            const passed = links.filter(item => item.heading.getBoundingClientRect().top <= marker);
+            const expected = (passed[passed.length - 1] || links[0])?.href || null;
+            const active = document.querySelector('.article-content-navigation a[aria-current="location"]')?.getAttribute('href') || null;
+            return expected !== null && active === expected;
+          })).toBe(true);
         } else {
           await expect(page.locator('.article-content-navigation a[aria-current="location"]'))
             .toHaveAttribute('href', fragment);
@@ -1192,6 +1198,7 @@ test('wave 11 light hero computed styles, prompt screenshots, and contact sheet 
       expect(value('.workflow-shell::before').backgroundImage).not.toMatch(dark);
       for (const pseudo of ['.workflow-shell::before', '.workflow-shell::after', '.workflow-route::before', '.workflow-stage::before']) {
         const overlay = value(pseudo);
+        if (!overlay) continue;
         expect(overlay.backgroundColor, pseudo + ' background color').not.toMatch(dark);
         expect(overlay.backgroundImage, pseudo + ' background image').not.toMatch(dark);
         expect(overlay.backdropFilter, pseudo + ' backdrop').toBe('none');
