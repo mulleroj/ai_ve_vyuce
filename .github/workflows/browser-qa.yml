@@ -28,6 +28,7 @@ jobs:
       WAVE6_BASELINE_SHA: 180c5a3880089216910f5b31b5de6a9b6b6fde38
       WAVE7_BASELINE_SHA: 80caef268f88b36c496518d35cf18209f7ff3e8f
       WAVE8_BASELINE_SHA: 815614650945db4c916f29a73c6444d00abe23c9
+      WAVE9_BASELINE_SHA: 55347de6a974110071b66406404e7ab29dfef46b
     steps:
       - name: Checkout the tested commit
         uses: actions/checkout@v4
@@ -50,7 +51,34 @@ jobs:
           git fetch --no-tags --depth=1 origin "$WAVE6_BASELINE_SHA"
           git fetch --no-tags --depth=1 origin "$WAVE7_BASELINE_SHA"
           git fetch --no-tags --depth=1 origin "$WAVE8_BASELINE_SHA"
+          git fetch --no-tags --depth=1 origin "$WAVE9_BASELINE_SHA"
 
+      - name: Verify guide generator determinism and scope
+        run: |
+          targets=(ai-navod-chatgpt-zacatek-bezpecne.html ai-workflow-7-kroku-gemini-notebook.html)
+          printf 'Guide pages in manifest: '
+          node -e "console.log(JSON.parse(require('node:fs').readFileSync('content/guides/articles.json', 'utf8')).length)"
+          node scripts/build-guide-articles.js
+          first_hashes=$(sha256sum "${targets[@]}")
+          git status --short
+          node scripts/build-guide-articles.js
+          second_hashes=$(sha256sum "${targets[@]}")
+          test "$first_hashes" = "$second_hashes"
+          node scripts/build-guide-articles.js --check
+          if [ -n "$(git status --porcelain)" ]; then
+            echo 'Generator output is not clean or touched paths outside its committed outputs:'
+            git status --short
+            exit 1
+          fi
+          node <<'NODE'
+          const fs = require('node:fs');
+          const crypto = require('node:crypto');
+          const manifest = JSON.parse(fs.readFileSync('content/guides/articles.json', 'utf8'));
+          const outputs = ['ai-navod-chatgpt-zacatek-bezpecne.html', 'ai-workflow-7-kroku-gemini-notebook.html'];
+          const hashes = Object.fromEntries(outputs.map(file => [file, crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex')]));
+          const report = { testedSha: process.env.TESTED_SHA, manifestPageCount: manifest.length, generatedPaths: outputs, firstAndSecondRunHashesMatch: true, checkMode: 'passed', changedFilesAfterBuild: [], outputSha256: hashes };
+          fs.writeFileSync(process.env.RUNNER_TEMP + '/guide-generator-check.json', JSON.stringify(report, null, 2));
+          NODE
       - name: Install isolated browser test runner
         run: |
           npm install --no-save --package-lock=false @playwright/test
@@ -59,6 +87,7 @@ jobs:
       - name: Run tests against a local HTTP server
         run: |
           mkdir -p artifacts test-results
+          cp "$RUNNER_TEMP/guide-generator-check.json" artifacts/guide-generator-check.json
           printf '%s\n' "$TESTED_SHA" > artifacts/tested-sha.txt
           python3 -m http.server 4173 --bind 127.0.0.1 > test-results/http-server.log 2>&1 &
           server_pid=$!

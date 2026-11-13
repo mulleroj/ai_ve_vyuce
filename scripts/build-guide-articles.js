@@ -73,8 +73,19 @@ function prepareBody(raw, a) {
     const nextAttrs = attrId ? attrs.replace(attrId[0], `id="${escapeHtml(id)}"`) : `${attrs} id="${escapeHtml(id)}"`;
     return `<h${level}${nextAttrs}>${inner}</h${level}>`;
   });
-  const toc = headings.filter(h => !(h.level === 3 && /^prompt(?:\s|$)/i.test(h.label)))
-    .map(h => `<li class="guide-toc-${h.level === 3 ? 'sub' : 'major'}"><a href="#${escapeHtml(h.id)}">${escapeHtml(h.label)}</a></li>`).join('\n');
+  const tocRoots = [];
+  let currentSection = null;
+  for (const heading of headings.filter(h => !(h.level === 3 && /^prompt(?:\s|$)/i.test(h.label)))) {
+    const item = { ...heading, children: [] };
+    if (heading.level === 2 || !currentSection) {
+      tocRoots.push(item);
+      currentSection = heading.level === 2 ? item : null;
+    } else {
+      currentSection.children.push(item);
+    }
+  }
+  const renderTocItem = item => '<li><a href="#' + escapeHtml(item.id) + '">' + escapeHtml(item.label) + '</a>' + (item.children.length ? '<ol>' + item.children.map(renderTocItem).join('') + '</ol>' : '') + '</li>';
+  const toc = tocRoots.map(renderTocItem).join('\n');
   let promptCount = 0;
   body = body.replace(/<div\b([^>]*\bclass\s*=\s*(["'])[^"']*\barticle-prompt\b[^"']*\2[^>]*\bdata-guide-copyable\s*=\s*(["'])(.*?)\3[^>]*)>([\s\S]*?)<\/div>/gi, (_match, attrs, _q, _q2, _key, content) => {
     promptCount++;
@@ -151,7 +162,8 @@ function main() {
     const footer = footerSource.replace(/<footer class="workflow-footer">([\s\S]*?)<\/footer>/i, '<footer class="guide-footer">$1<span class="guide-human-mark" data-site-footer-mark>AI + 👤 | HUMAN IN THE LOOP</span></footer>');
     const metaHtml = a.hero.metaHtml.replace('workflow-meta', 'guide-meta');
     const html = `<!doctype html>\n<html lang="cs" class="home-redesign-document">\n<head>\n<meta charset="utf-8" />\n<meta name="viewport" content="width=device-width, initial-scale=1" />\n<title>${a.sourceTitle}</title>\n${a.headTags.join('\n')}\n<meta property="og:type" content="article" />\n<link rel="stylesheet" href="css/home.css?v=pr19-robot-brand-20261103" />\n<link rel="stylesheet" href="css/guide-article.css" />
-<link rel="stylesheet" href="css/site-navigation.css" />\n</head>\n<body class="home-redesign guide-page site-navigation-enabled">\n<a class="skip-link" href="#main-content">Přeskočit na obsah</a>\n${navigation}\n<main id="main-content" class="guide-main">\n<nav class="guide-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="${escapeHtml(a.parent.href)}">${escapeHtml(a.parent.label)}</a></li><li aria-current="page">${escapeHtml(entry.title)}</li></ol></nav>\n<header class="guide-hero"><div class="guide-hero-copy"><div class="guide-eyebrow">${escapeHtml(a.sourceCategory)} · ${escapeHtml(a.sourceDateLabel)}</div>${a.hero.titleHtml}${a.hero.leadHtml}</div>${illustration}<div class="guide-hero-extra">${metaHtml}${a.intro.summaryHtml}${a.intro.editorialTitleHtml}</div></header>\n<section class="guide-overview" aria-labelledby="guide-overview-title"><h2 id="guide-overview-title">Přehled postupu</h2>${overview}</section>\n${cover ? `<div class="guide-cover">${cover}</div>\n` : ''}<div class="guide-toc-mobile"><details><summary>V tomto návodu</summary><nav aria-label="Obsah návodu"><ul class="guide-toc-list">${toc}</ul></nav></details></div>\n<div class="guide-layout"><aside class="guide-toc guide-toc-desktop"><nav aria-label="Obsah návodu"><h2>V tomto návodu</h2><ul>${toc}</ul></nav></aside><article class="guide-article"><div class="article-content">${body}</div><div class="guide-back-top"><a href="#top">↑ Zpět nahoru</a></div></article></div>\n<section class="guide-related" aria-label="Související obsah">${relatedSource}</section>\n${footer}\n</main>\n<script src="js/main.js" defer></script>\n<script src="js/tool-guide.js" defer></script>\n<script src="js/site-footer.js" defer></script>
+<link rel="stylesheet" href="css/article-content-navigation.css?v=20261113-7y" />
+<link rel="stylesheet" href="css/site-navigation.css" />\n</head>\n<body class="home-redesign guide-page site-navigation-enabled">\n<a class="skip-link" href="#main-content">Přeskočit na obsah</a>\n${navigation}\n<main id="main-content" class="guide-main">\n<nav class="guide-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="${escapeHtml(a.parent.href)}">${escapeHtml(a.parent.label)}</a></li><li aria-current="page">${escapeHtml(entry.title)}</li></ol></nav>\n<header class="guide-hero"><div class="guide-hero-copy"><div class="guide-eyebrow">${escapeHtml(a.sourceCategory)} · ${escapeHtml(a.sourceDateLabel)}</div>${a.hero.titleHtml}${a.hero.leadHtml}</div>${illustration}<div class="guide-hero-extra">${metaHtml}${a.intro.summaryHtml}${a.intro.editorialTitleHtml}</div></header>\n<section class="guide-overview" aria-labelledby="guide-overview-title"><h2 id="guide-overview-title">Přehled postupu</h2>${overview}</section>\n${cover ? `<div class="guide-cover">${cover}</div>\n` : ''}<div class="guide-layout article-content-layout"><details class="article-content-navigation" open><summary>V tomto článku</summary><nav aria-label="Obsah článku"><ol>${toc}</ol></nav></details><article class="guide-article"><div class="article-content">${body}</div><div class="guide-back-top"><a href="#top">↑ Zpět nahoru</a></div></article></div>\n<section class="guide-related" aria-label="Související obsah">${relatedSource}</section>\n${footer}\n</main>\n<script src="js/main.js" defer></script>\n<script src="js/tool-guide.js" defer></script>\n<script src="js/article-content-navigation.js?v=20261113-7y" defer></script>\n<script src="js/site-footer.js" defer></script>
 <script src="js/site-navigation-data.js?v=20261108-7h" defer></script>
 <script src="js/site-navigation.js?v=20261108-7h" defer></script>\n</body></html>\n`;
     const output = html.replace(/[ \t]+(?=\r?$)/gm, '');
