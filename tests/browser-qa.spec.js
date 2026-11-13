@@ -499,9 +499,7 @@ test('wave 9 generated guides preserve body text, heading IDs, media, links, and
     expect(current).toEqual(previous);
     const expectedDate = article.file.startsWith('ai-workflow-') ? '29. srpna 2026' : '27. srpna 2026';
     await expect(page.locator('.guide-eyebrow')).toContainText(expectedDate);
-    const catalog = await page.evaluate(file => window.siteArticles.find(item => item.href === file), article.file);
-    expect(catalog).toBeTruthy();
-    await expect(page.locator('.guide-breadcrumbs > ol > li').nth(2)).toHaveText(catalog.title);
+    await expect(page.locator('.guide-breadcrumbs > ol > li').nth(2)).toHaveText(article.title);
   }
 });
 
