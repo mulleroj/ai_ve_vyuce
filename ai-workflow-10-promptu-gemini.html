@@ -7,6 +7,10 @@
     <title>10 promptů pro Gemini Notebook, které mohou učiteli ušetřit hodiny práce | AI ve Výuce</title>
     <meta name="description" content="10 praktických promptů pro Gemini Notebook, které učiteli pomohou pracovat se sadou zdrojů, připravit výuku, vytvořit studijní materiály a kriticky zhodnotit podklady." />
     <link rel="stylesheet" href="css/workflow.css?v=20260826-workflow-10-promptu-gemini" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261113-8a" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261113-8a" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261113-8a" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261113-8a" />
     <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/ai-workflow-10-promptu-gemini" />
     <meta property="og:title" content="10 promptů pro Gemini Notebook, kter&#233; mohou učiteli ušetřit hodiny pr&#225;ce | AI ve V&#253;uce" />
     <meta property="og:description" content="10 praktick&#253;ch promptů pro Gemini Notebook, kter&#233; učiteli pomohou pracovat se sadou zdrojů, připravit v&#253;uku, vytvořit studijn&#237; materi&#225;ly a kriticky zhodnotit podklady." />
@@ -22,12 +26,19 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-            <a class="workflow-back" href="ai.html#workflow">← Workflow pro učitele</a>
-        </div>
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="prepare">
+    <header class="site-header">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+      <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a>
+    </div></div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="ai.html#workflow">Workflow pro učitele</a></li><li aria-current="page">10 promptů pro Gemini Notebook, které mohou učiteli ušetřit hodiny práce</li></ol></nav>
+<header class="workflow-shell">
+        
         <div class="workflow-hero">
             <div>
                 <div class="workflow-eyebrow">Workflow pro učitele · 26. srpna 2026</div>
@@ -44,23 +55,29 @@
         </div>
     </header>
 
-    <main class="workflow-main">
-        <article class="workflow-article">
+    <main class="workflow-main article-content-layout">
+        <details class="article-content-navigation" open><summary><span>V tomto článku</span></summary><nav aria-label="Obsah článku"><ol><li><a href="#toc-01">Doporučený workflow</a></li>
+<li><a href="#toc-02">1. Přeměň zdroje na srozumitelné shrnutí pro žáky</a></li>
+<li><a href="#toc-03">2. Vytvoř podrobné poznámky ze všech zdrojů</a></li>
+<li><a href="#toc-04">3. Najdi nejdůležitější informace a dolož je zdroji</a></li>
+<li><a href="#toc-05">4. Vysvětli obtížné části jako osobní tutor</a></li>
+<li><a href="#toc-06">5. Přeměň informace na praktický plán</a></li>
+<li><a href="#ai-workflow-10-promptu-gemini-h2-07">6. Vytvoř kompletní studijní balíček</a></li>
+<li><a href="#ai-workflow-10-promptu-gemini-h2-08">7. Porovnej hlavní myšlenky, metody nebo možnosti</a><ol><li><a href="#ai-workflow-10-promptu-gemini-h3-01">Příklady použití</a></li></ol></li>
+<li><a href="#ai-workflow-10-promptu-gemini-h2-09">8. Vytvoř otázky, které by měl žák umět zodpovědět</a><ol><li><a href="#ai-workflow-10-promptu-gemini-h3-02">Proč je tento prompt zajímavý</a></li></ol></li>
+<li><a href="#ai-workflow-10-promptu-gemini-h2-10">9. Přeměň zdroje na další výukový obsah</a></li>
+<li><a href="#ai-workflow-10-promptu-gemini-h2-11">10. Kriticky zhodnoť zdroje</a><ol><li><a href="#ai-workflow-10-promptu-gemini-h3-03">Zajímavé použití ve výuce</a></li></ol></li>
+<li><a href="#ai-workflow-10-promptu-gemini-h2-12">Nemusíte používat všech deset promptů</a><ol><li><a href="#ai-workflow-10-promptu-gemini-h3-04">1. Shrnutí</a></li><li><a href="#ai-workflow-10-promptu-gemini-h3-05">3. Klíčová fakta se zdroji</a></li><li><a href="#ai-workflow-10-promptu-gemini-h3-06">4. Osobní tutor</a></li><li><a href="#ai-workflow-10-promptu-gemini-h3-07">6. Studijní balíček</a></li><li><a href="#ai-workflow-10-promptu-gemini-h3-08">10. Kritická analýza</a></li></ol></li>
+<li><a href="#ai-workflow-10-promptu-gemini-h2-13">Nejdůležitější změna: nepracujte jen s jedním PDF</a></li>
+<li><a href="#ai-workflow-10-promptu-gemini-h2-14">Jednoduchý workflow pro učitele</a></li>
+<li><a href="#ai-workflow-10-promptu-gemini-h2-15">Závěr</a></li></ol></nav></details>
+
+<article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Praktická sestava promptů pro práci s více zdroji: od orientace a ověřování přes přizpůsobení žákům až po tvorbu materiálů, dalších výstupů a kritickou analýzu.</p>
             </div>
 
-            <nav class="article-toc" aria-labelledby="toc-heading-ai-workflow-10-promptu-gemini-html">
-                <p class="article-toc-label" id="toc-heading-ai-workflow-10-promptu-gemini-html">V tomto článku</p>
-                <ul>
-                    <li><a href="#toc-01">Doporučený workflow</a></li>
-                    <li><a href="#toc-02">1. Přeměň zdroje na srozumitelné shrnutí pro žáky</a></li>
-                    <li><a href="#toc-03">2. Vytvoř podrobné poznámky ze všech zdrojů</a></li>
-                    <li><a href="#toc-04">3. Najdi nejdůležitější informace a dolož je zdroji</a></li>
-                    <li><a href="#toc-05">4. Vysvětli obtížné části jako osobní tutor</a></li>
-                    <li><a href="#toc-06">5. Přeměň informace na praktický plán</a></li>
-                </ul>
-            </nav>
+            
             <div class="article-content">
                 <p class="article-lead">Gemini Notebook může být pro učitele mnohem víc než místo, kam nahrajete PDF a necháte si ho shrnout.</p>
                 <p>Jeho skutečná síla se ukáže ve chvíli, kdy do jednoho notebooku vložíte více zdrojů k určitému tématu – například učebnici, vlastní poznámky, metodické materiály, prezentace, odborné texty nebo další podklady – a necháte AI pracovat nad touto sadou jako nad jedním znalostním celkem.</p>
@@ -148,7 +165,7 @@
                     <li>profesní rozvoj učitele.</li>
                 </ul>
 
-                <h2>6. Vytvoř kompletní studijní balíček</h2>
+                <h2 id="ai-workflow-10-promptu-gemini-h2-07">6. Vytvoř kompletní studijní balíček</h2>
                 <p>Jeden z nejpraktičtějších promptů celé sestavy.</p>
                 <p>Z jedné sady zdrojů dokáže vytvořit nejen shrnutí, ale rovnou materiál k učení a procvičování.</p>
                 <h3>Prompt</h3>
@@ -158,12 +175,12 @@
                 <div class="article-prompt"><strong>výklad → zápis → procvičování → otázky → testování → opakování</strong></div>
                 <p>Právě zde začíná být práce s Gemini Notebookem výrazně zajímavější než prosté generování jednotlivých odpovědí v běžném chatbotu.</p>
 
-                <h2>7. Porovnej hlavní myšlenky, metody nebo možnosti</h2>
+                <h2 id="ai-workflow-10-promptu-gemini-h2-08">7. Porovnej hlavní myšlenky, metody nebo možnosti</h2>
                 <p>Některá témata stojí na porovnávání.</p>
                 <p>Může jít o ekonomické systémy, politické názory, technická řešení, historické události, gramatické jevy nebo odborné postupy.</p>
                 <h3>Prompt</h3>
                 <div class="article-prompt">Porovnej hlavní <strong>[myšlenky / teorie / metody / postupy / možnosti / technologie]</strong> popsané ve zdrojích tohoto notebooku.<br /><br />Výsledek nejprve zpracuj do přehledné tabulky.<br /><br />Porovnej:<br />• účel,<br />• princip fungování,<br />• výhody,<br />• nevýhody a omezení,<br />• důkazy nebo argumenty ze zdrojů,<br />• vhodné použití,<br />• rizika,<br />• cílovou skupinu,<br />• hlavní rozdíly.<br /><br />Poté vysvětli:<br />• která možnost má nejsilnější podporu ve zdrojích,<br />• která je nejjednodušší na použití,<br />• která má největší rizika,<br />• která je nejvhodnější pro <strong>[konkrétní situaci]</strong>.<br /><br />Každý závěr dolož zdrojem. Pokud zdroje neumožňují něco rozhodnout, napiš to otevřeně.</div>
-                <h3>Příklady použití</h3>
+                <h3 id="ai-workflow-10-promptu-gemini-h3-01">Příklady použití</h3>
                 <p>Můžeme porovnávat například:</p>
                 <ul>
                     <li>demokracii a autoritářský režim,</li>
@@ -174,16 +191,16 @@
                     <li>dva gramatické jevy.</li>
                 </ul>
 
-                <h2>8. Vytvoř otázky, které by měl žák umět zodpovědět</h2>
+                <h2 id="ai-workflow-10-promptu-gemini-h2-09">8. Vytvoř otázky, které by měl žák umět zodpovědět</h2>
                 <p>Místo generování náhodných testových otázek můžeme nejprve zjistit, <strong>jaké otázky vlastně z daného učiva vyplývají</strong>.</p>
                 <h3>Prompt</h3>
                 <div class="article-prompt">Na základě zdrojů tohoto notebooku vytvoř <strong>[20 / 30 / 40] důležitých otázek</strong> k tématu <strong>[téma]</strong>, které by měl žák po prostudování učiva umět zodpovědět.<br /><br />Rozděl je do kategorií:<br />• základní porozumění,<br />• vysvětlení vztahů a souvislostí,<br />• práce s důkazy,<br />• praktické použití,<br />• rizika a problémy,<br />• omezení,<br />• informace, které ve zdrojích chybí.<br /><br />U každé otázky uveď:<br />• správnou nebo očekávanou odpověď,<br />• zdroj, ze kterého odpověď vychází,<br />• stav: <strong>zodpovězeno / částečně zodpovězeno / zdroje neodpovídají</strong>,<br />• obtížnost: <strong>základní / střední / náročná</strong>.<br /><br />Nakonec vypiš <strong>5 nejdůležitějších otázek, na které zdroje neposkytují dostatečnou odpověď</strong>.<br /><br />Nevymýšlej odpovědi tam, kde ve zdrojích nejsou.</div>
-                <h3>Proč je tento prompt zajímavý</h3>
+                <h3 id="ai-workflow-10-promptu-gemini-h3-02">Proč je tento prompt zajímavý</h3>
                 <p>Nejde pouze o tvorbu otázek.</p>
                 <p>Současně nám ukazuje, <strong>co naše zdroje skutečně pokrývají a kde mají mezery</strong>.</p>
                 <p>To může být velmi užitečné ještě před samotným vytvořením testu nebo pracovního listu.</p>
 
-                <h2>9. Přeměň zdroje na další výukový obsah</h2>
+                <h2 id="ai-workflow-10-promptu-gemini-h2-10">9. Přeměň zdroje na další výukový obsah</h2>
                 <p>Jednou vytvořený kvalitní zdroj nemusí skončit pouze jako text.</p>
                 <p>Stejný obsah můžeme převést do několika dalších formátů.</p>
                 <h3>Prompt</h3>
@@ -199,12 +216,12 @@
                     <li>diskusní aktivitu.</li>
                 </ul>
 
-                <h2>10. Kriticky zhodnoť zdroje</h2>
+                <h2 id="ai-workflow-10-promptu-gemini-h2-11">10. Kriticky zhodnoť zdroje</h2>
                 <p>AI nemusíme používat pouze jako nástroj, který informace zjednodušuje.</p>
                 <p>Můžeme ji nechat také hledat slabá místa v materiálech, se kterými pracujeme.</p>
                 <h3>Prompt</h3>
                 <div class="article-prompt">Kriticky zhodnoť zdroje vložené v tomto notebooku k tématu <strong>[téma]</strong> spravedlivě, objektivně a vyváženě.<br /><br />Posuď:<br />• hlavní cíl,<br />• sílu argumentů,<br />• kvalitu důkazů,<br />• důvěryhodnost použitých zdrojů,<br />• jasnost a strukturu,<br />• předpoklady autorů,<br />• možné zkreslení nebo jednostrannost,<br />• chybějící informace,<br />• slabé nebo rozporné argumenty,<br />• praktickou využitelnost.<br /><br />Poté uveď:<br />• 3 hlavní silné stránky,<br />• 3 hlavní slabiny,<br />• tvrzení, která by bylo vhodné ověřit,<br />• otázky pro další zkoumání,<br />• pro koho jsou zdroje nejvhodnější,<br />• celkové hodnocení 1–10,<br />• krátký závěrečný verdikt.<br /><br /><strong>Striktně rozlišuj mezi tím, co skutečně uvádějí zdroje, a vlastním hodnocením.</strong><br /><br />Pokud nelze například důvěryhodnost nebo správnost některého tvrzení ověřit pouze z dostupných zdrojů, výslovně to napiš.</div>
-                <h3>Zajímavé použití ve výuce</h3>
+                <h3 id="ai-workflow-10-promptu-gemini-h3-03">Zajímavé použití ve výuce</h3>
                 <p>Tento prompt nemusí používat pouze učitel.</p>
                 <p>Můžeme jej dát také žákům jako součást práce se zdroji.</p>
                 <p>Místo otázky:</p>
@@ -213,21 +230,21 @@
                 <blockquote><strong>„Z čeho toto tvrzení vychází? Je důkaz dostatečný? Co ve zdroji chybí? Existuje zde nějaké zkreslení?“</strong></blockquote>
                 <p>A právě to je mnohem cennější dovednost.</p>
 
-                <h2>Nemusíte používat všech deset promptů</h2>
+                <h2 id="ai-workflow-10-promptu-gemini-h2-12">Nemusíte používat všech deset promptů</h2>
                 <p>Pro každodenní práci učitele bych jako základní sestavu doporučila především pět:</p>
-                <h3>1. Shrnutí</h3>
+                <h3 id="ai-workflow-10-promptu-gemini-h3-04">1. Shrnutí</h3>
                 <p>Rychle pochopím, co zdroje obsahují.</p>
-                <h3>3. Klíčová fakta se zdroji</h3>
+                <h3 id="ai-workflow-10-promptu-gemini-h3-05">3. Klíčová fakta se zdroji</h3>
                 <p>Zjistím, co je opravdu důležité a o co se tvrzení opírá.</p>
-                <h3>4. Osobní tutor</h3>
+                <h3 id="ai-workflow-10-promptu-gemini-h3-06">4. Osobní tutor</h3>
                 <p>Přizpůsobím obtížnost vysvětlení konkrétním žákům.</p>
-                <h3>6. Studijní balíček</h3>
+                <h3 id="ai-workflow-10-promptu-gemini-h3-07">6. Studijní balíček</h3>
                 <p>Převedu zdroje do materiálu pro výuku a procvičování.</p>
-                <h3>10. Kritická analýza</h3>
+                <h3 id="ai-workflow-10-promptu-gemini-h3-08">10. Kritická analýza</h3>
                 <p>Prověřím slabiny, rozpory a omezení zdrojů.</p>
                 <p>Tahle pětice už sama o sobě pokryje velkou část běžné přípravy učitele.</p>
 
-                <h2>Nejdůležitější změna: nepracujte jen s jedním PDF</h2>
+                <h2 id="ai-workflow-10-promptu-gemini-h2-13">Nejdůležitější změna: nepracujte jen s jedním PDF</h2>
                 <p>Původní podobné prompty často začínají větou:</p>
                 <blockquote><strong>„Shrň toto PDF.“</strong></blockquote>
                 <p>To je škoda.</p>
@@ -244,11 +261,11 @@
                 <p>Teprve potom nad nimi spouštět jednotlivé prompty.</p>
                 <p>Gemini Notebook se tak neposouvá pouze do role <strong>„AI čtečky PDF“</strong>, ale stává se pracovním prostředím, ve kterém můžeme nad vybranou sadou zdrojů postupně vytvářet další výukové materiály.</p>
 
-                <h2>Jednoduchý workflow pro učitele</h2>
+                <h2 id="ai-workflow-10-promptu-gemini-h2-14">Jednoduchý workflow pro učitele</h2>
                 <p>Celý postup může vypadat například takto:</p>
                 <div class="article-prompt"><strong>ZDROJE</strong><br />učebnice + metodika + vlastní materiály + další podklady<br /><br /><strong>↓</strong><br /><br /><strong>ORIENTACE</strong><br />shrnutí a klíčové myšlenky<br /><br /><strong>↓</strong><br /><br /><strong>OVĚŘENÍ</strong><br />nejdůležitější tvrzení + odkazy na zdroje<br /><br /><strong>↓</strong><br /><br /><strong>PŘIZPŮSOBENÍ ŽÁKŮM</strong><br />jednodušší vysvětlení + příklady + analogie<br /><br /><strong>↓</strong><br /><br /><strong>TVORBA MATERIÁLŮ</strong><br />poznámky + otázky + procvičování + studijní balíček<br /><br /><strong>↓</strong><br /><br /><strong>KONTROLA</strong><br />kritická analýza + mezery ve zdrojích + tvrzení k ověření<br /><br /><strong>↓</strong><br /><br /><strong>DALŠÍ VÝSTUPY</strong><br />pracovní list, prezentace, infografika, video nebo webový obsah</div>
 
-                <h2>Závěr</h2>
+                <h2 id="ai-workflow-10-promptu-gemini-h2-15">Závěr</h2>
                 <p>Největší úspora času nevzniká tím, že učitel zadá AI jeden chytrý prompt.</p>
                 <p>Vzniká ve chvíli, kdy si vytvoří <strong>opakovatelný pracovní postup</strong>.</p>
                 <p>Stejný notebook můžeme nejprve použít k pochopení tématu, potom k přípravě výuky, následně k diferenciaci materiálů, vytvoření otázek a nakonec ke kontrole kvality použitých zdrojů.</p>
@@ -284,6 +301,9 @@
 
     <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai.html">Zpět na AI pro výuku</a></footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261113-8a"></script>
 </body>
 
 </html>

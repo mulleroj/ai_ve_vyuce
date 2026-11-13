@@ -8,6 +8,10 @@
     <meta name="description"
         content="Praktický workflow pro vytvoření tematického učitelského sešitu v Gemini Notebooku pomocí Claude, Claude in Chrome a AI agenta: od účelu a zdrojů až po kontrolu a aktualizaci." />
     <link rel="stylesheet" href="css/workflow.css?v=20260908-gemini-ai-agent" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261113-8a" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261113-8a" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261113-8a" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261113-8a" />
     <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/ai-workflow-gemini-notebook-ai-agent" />
     <meta property="og:title" content="Jak vytvořit chytr&#253; učitelsk&#253; sešit v Gemini Notebooku pomoc&#237; AI agenta | AI ve V&#253;uce" />
     <meta property="og:description" content="Praktick&#253; workflow pro vytvořen&#237; tematick&#233;ho učitelsk&#233;ho sešitu v Gemini Notebooku pomoc&#237; Claude, Claude in Chrome a AI agenta: od &#250;čelu a zdrojů až po kontrolu a aktualizaci." />
@@ -23,12 +27,19 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-            <a class="workflow-back" href="ai.html#workflow">← Workflow pro učitele</a>
-        </div>
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="prepare">
+    <header class="site-header">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+      <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a>
+    </div></div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="ai.html#workflow">Workflow pro učitele</a></li><li aria-current="page">Jak vytvořit chytrý učitelský sešit v Gemini Notebooku pomocí AI agenta</li></ol></nav>
+<header class="workflow-shell">
+        
         <div class="workflow-hero">
             <div>
                 <div class="workflow-eyebrow">Workflow pro učitele · 8. září 2026</div>
@@ -45,23 +56,25 @@
         </div>
     </header>
 
-    <main class="workflow-main">
-        <article class="workflow-article">
+    <main class="workflow-main article-content-layout">
+        <details class="article-content-navigation" open><summary><span>V tomto článku</span></summary><nav aria-label="Obsah článku"><ol><li><a href="#toc-01">K čemu takový sešit může učitel použít</a></li>
+<li><a href="#toc-02">Jakého AI agenta jsme použili</a></li>
+<li><a href="#toc-03">Kde Claude najdu</a></li>
+<li><a href="#toc-04">Jak dostat Claude do prohlížeče</a></li>
+<li><a href="#toc-05">Ještě jedna možnost: Cowork</a></li>
+<li><a href="#toc-06">Pozor na školní účty a citlivá data</a></li>
+<li><a href="#ai-workflow-gemini-notebook-ai-agent-h2-07">Workflow: od nápadu k hotovému sešitu</a><ol><li><a href="#ai-workflow-gemini-notebook-ai-agent-h3-01">1. Nejprve určete účel sešitu</a></li><li><a href="#ai-workflow-gemini-notebook-ai-agent-h3-02">2. Určete hierarchii zdrojů</a></li><li><a href="#ai-workflow-gemini-notebook-ai-agent-h3-03">3. Připravte agentovi přesné zadání</a></li><li><a href="#ai-workflow-gemini-notebook-ai-agent-h3-04">4. Agent provede rešerši</a></li><li><a href="#ai-workflow-gemini-notebook-ai-agent-h3-05">5. Každý zdroj je potřeba ověřit</a></li><li><a href="#ai-workflow-gemini-notebook-ai-agent-h3-06">6. Agent vytvoří sešit</a></li><li><a href="#ai-workflow-gemini-notebook-ai-agent-h3-07">7. Nastavte instrukce sešitu</a></li><li><a href="#ai-workflow-gemini-notebook-ai-agent-h3-08">8. Sešit otestujte</a></li><li><a href="#ai-workflow-gemini-notebook-ai-agent-h3-09">9. Myslete také na aktualizaci</a></li></ol></li>
+<li><a href="#ai-workflow-gemini-notebook-ai-agent-h2-08">Jednoduchý model celého procesu</a></li>
+<li><a href="#ai-workflow-gemini-notebook-ai-agent-h2-09">Co na tomto způsobu práce považuji za nejzajímavější</a></li>
+<li><a href="#ai-workflow-gemini-notebook-ai-agent-h2-10">Kde bych byla opatrná</a></li>
+<li><a href="#ai-workflow-gemini-notebook-ai-agent-h2-11">Praktický závěr</a></li></ol></nav></details>
+
+<article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Místo ručního hledání, stahování, nahrávání a nastavování instrukcí může AI agent připravit tematický sešit z důvěryhodných zdrojů.</p>
             </div>
 
-            <nav class="article-toc" aria-labelledby="toc-heading-ai-workflow-gemini-notebook-ai-agent-html">
-                <p class="article-toc-label" id="toc-heading-ai-workflow-gemini-notebook-ai-agent-html">V tomto článku</p>
-                <ul>
-                    <li><a href="#toc-01">K čemu takový sešit může učitel použít</a></li>
-                    <li><a href="#toc-02">Jakého AI agenta jsme použili</a></li>
-                    <li><a href="#toc-03">Kde Claude najdu</a></li>
-                    <li><a href="#toc-04">Jak dostat Claude do prohlížeče</a></li>
-                    <li><a href="#toc-05">Ještě jedna možnost: Cowork</a></li>
-                    <li><a href="#toc-06">Pozor na školní účty a citlivá data</a></li>
-                </ul>
-            </nav>
+            
             <div class="article-content">
                 <p class="article-lead">Gemini Notebook, respektive NotebookLM, používám stále častěji jako prostředí, ve kterém si mohu vytvořit vlastního odborného pomocníka nad konkrétními zdroji. Samotné založení sešitu je jednoduché. Mnohem zajímavější ale začíná být situace, kdy přípravu celého sešitu svěříme AI agentovi.</p>
                 <p>Místo ručního hledání desítek dokumentů, jejich stahování, nahrávání, kontroly a nastavování instrukcí může agent velkou část této práce udělat za nás.</p>
@@ -165,8 +178,8 @@
                 </ul>
                 <p>Pro podobnou rešerši, jakou jsme dělali při vytváření metodických notebooků, je to ideální: agent pracuje především s veřejnými metodikami, právními předpisy a odbornými stránkami.</p>
 
-                <h2>Workflow: od nápadu k hotovému sešitu</h2>
-                <h3>1. Nejprve určete účel sešitu</h3>
+                <h2 id="ai-workflow-gemini-notebook-ai-agent-h2-07">Workflow: od nápadu k hotovému sešitu</h2>
+                <h3 id="ai-workflow-gemini-notebook-ai-agent-h3-01">1. Nejprve určete účel sešitu</h3>
                 <p>Nejdůležitější otázka není:</p>
                 <blockquote>„Jaké dokumenty tam nahraju?“</blockquote>
                 <p>Ale:</p>
@@ -181,7 +194,7 @@
                     <li>jak mají být nastaveny instrukce notebooku.</li>
                 </ul>
 
-                <h3>2. Určete hierarchii zdrojů</h3>
+                <h3 id="ai-workflow-gemini-notebook-ai-agent-h3-02">2. Určete hierarchii zdrojů</h3>
                 <p>Ne všechny internetové zdroje mají stejnou hodnotu.</p>
                 <p>U školních témat je vhodné předem stanovit, které zdroje mají přednost.</p>
                 <p>Například:</p>
@@ -196,7 +209,7 @@
                 <p>U právních nebo metodických témat bych byla velmi opatrná s blogy, diskusemi nebo články bez jasného autora.</p>
                 <p>AI agent umí najít obrovské množství materiálů. To ale ještě neznamená, že všechny patří do odborného sešitu.</p>
 
-                <h3>3. Připravte agentovi přesné zadání</h3>
+                <h3 id="ai-workflow-gemini-notebook-ai-agent-h3-03">3. Připravte agentovi přesné zadání</h3>
                 <p>AI agent potřebuje vědět nejen <strong>co má hledat</strong>, ale také <strong>jak má postupovat</strong>.</p>
                 <p>Zadání proto může obsahovat například:</p>
                 <ul>
@@ -214,7 +227,7 @@
                 <p>Tahle část je důležitější, než se může zdát.</p>
                 <p>Agent totiž jinak velmi ochotně sesbírá spoustu věcí, které vypadají správně, ale po otevření zjistíte, že některý odkaz vede pouze na rozcestník, starší verzi dokumentu nebo úplně jiný soubor.</p>
 
-                <h3>4. Agent provede rešerši</h3>
+                <h3 id="ai-workflow-gemini-notebook-ai-agent-h3-04">4. Agent provede rešerši</h3>
                 <p>Tady začíná část práce, která by učiteli ručně zabrala nejvíce času.</p>
                 <p>Agent může:</p>
                 <ul>
@@ -230,7 +243,7 @@
                 <p>A právě tady začíná být agent skutečně užitečný.</p>
                 <p>Není to jen chatbot, který odpovídá na otázku. Dokáže projít celý pracovní postup.</p>
 
-                <h3>5. Každý zdroj je potřeba ověřit</h3>
+                <h3 id="ai-workflow-gemini-notebook-ai-agent-h3-05">5. Každý zdroj je potřeba ověřit</h3>
                 <p>Tohle je krok, který bych rozhodně nepřeskakovala.</p>
                 <p>U našich sešitů jsme požadovali, aby agent každý zdroj skutečně otevřel.</p>
                 <p>Kontrolujeme například:</p>
@@ -247,7 +260,7 @@
                 <p>Rozdíl je pouze v tom, že ji dokáže udělat mnohem rychleji a ve větším množství.</p>
                 <blockquote><strong>Automatizujeme práci, ne odpovědnost.</strong></blockquote>
 
-                <h3>6. Agent vytvoří sešit</h3>
+                <h3 id="ai-workflow-gemini-notebook-ai-agent-h3-06">6. Agent vytvoří sešit</h3>
                 <p>Jakmile jsou zdroje připravené, může agent přejít přímo do Gemini Notebooku / NotebookLM a vytvořit nový sešit.</p>
                 <p>Následně:</p>
                 <ol>
@@ -270,7 +283,7 @@
                     <li>konkrétní vyučovací předmět.</li>
                 </ul>
 
-                <h3>7. Nastavte instrukce sešitu</h3>
+                <h3 id="ai-workflow-gemini-notebook-ai-agent-h3-07">7. Nastavte instrukce sešitu</h3>
                 <p>Toto je podle mě jedna z nejdůležitějších částí celého workflow.</p>
                 <p>Notebook nemusí být pouze vyhledávač dokumentů.</p>
                 <p>Můžeme mu určit, <strong>jakou roli má plnit</strong>.</p>
@@ -287,7 +300,7 @@
                 </ul>
                 <p>Dobré instrukce z obyčejné databáze dokumentů udělají skutečného tematického poradce.</p>
 
-                <h3>8. Sešit otestujte</h3>
+                <h3 id="ai-workflow-gemini-notebook-ai-agent-h3-08">8. Sešit otestujte</h3>
                 <p>Hotový notebook ještě nemusí být dobrý notebook.</p>
                 <p>Proto mu položte několik typických otázek, které budete později skutečně používat.</p>
                 <p>Například:</p>
@@ -305,7 +318,7 @@
                 </ul>
                 <p>Pokud se objeví problém, můžeme upravit zdroje nebo instrukce.</p>
 
-                <h3>9. Myslete také na aktualizaci</h3>
+                <h3 id="ai-workflow-gemini-notebook-ai-agent-h3-09">9. Myslete také na aktualizaci</h3>
                 <p>Tohle je část, na kterou se při vytváření podobných systémů často zapomíná.</p>
                 <p>Dokument, který je správný dnes, nemusí být správný za rok.</p>
                 <p>Proto je dobré už při tvorbě notebooku vytvořit jednoduché pravidlo údržby.</p>
@@ -316,10 +329,10 @@
                 <p>Právě tady se znovu velmi dobře uplatní AI agent.</p>
                 <p>Nemusí celý notebook vytvářet znovu. Může pouze kontrolovat změny.</p>
 
-                <h2>Jednoduchý model celého procesu</h2>
+                <h2 id="ai-workflow-gemini-notebook-ai-agent-h2-08">Jednoduchý model celého procesu</h2>
                 <div class="article-prompt"><strong>Téma</strong><br />↓<br /><strong>Definice účelu</strong><br />↓<br /><strong>Pravidla pro zdroje</strong><br />↓<br /><strong>Claude / AI agent</strong><br />↓<br /><strong>Rešerše a ověření zdrojů</strong><br />↓<br /><strong>Gemini Notebook / NotebookLM</strong><br />↓<br /><strong>Nastavení instrukcí</strong><br />↓<br /><strong>Testovací otázky</strong><br />↓<br /><strong>Používání</strong><br />↓<br /><strong>Pravidelná aktualizace</strong></div>
 
-                <h2>Co na tomto způsobu práce považuji za nejzajímavější</h2>
+                <h2 id="ai-workflow-gemini-notebook-ai-agent-h2-09">Co na tomto způsobu práce považuji za nejzajímavější</h2>
                 <p>Největší změnou podle mě není samotný Gemini Notebook.</p>
                 <p>Zajímavější je propojení notebooku s AI agentem.</p>
                 <p>Notebook se stará o práci se znalostmi.</p>
@@ -327,7 +340,7 @@
                 <p>Může vyhledávat, kontrolovat, porovnávat, organizovat a aktualizovat zdroje.</p>
                 <p>Učitel potom nemusí trávit hodiny technickou přípravou systému a může se soustředit na to nejdůležitější: <strong>co od svého odborného pomocníka vlastně potřebuje</strong>.</p>
 
-                <h2>Kde bych byla opatrná</h2>
+                <h2 id="ai-workflow-gemini-notebook-ai-agent-h2-10">Kde bych byla opatrná</h2>
                 <p>Ani tento postup není bez rizik.</p>
                 <p>AI agent může:</p>
                 <ul>
@@ -351,7 +364,7 @@
                 <p>AI je zde výborný pomocník.</p>
                 <p>Neměla by ale být posledním článkem rozhodování.</p>
 
-                <h2>Praktický závěr</h2>
+                <h2 id="ai-workflow-gemini-notebook-ai-agent-h2-11">Praktický závěr</h2>
                 <p>Pokud už NotebookLM nebo Gemini Notebook používáte, zkuste příště nezačínat ručním nahráváním dokumentů.</p>
                 <p>Nejprve si napište:</p>
                 <blockquote>„Jakého odborného pomocníka bych chtěl vytvořit?“</blockquote>
@@ -392,6 +405,9 @@
 
     <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="gemini-notebook.html">Gemini Notebook</a> · <a href="ai.html">Zpět na rozcestník AI</a></footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261113-8a"></script>
 </body>
 
 </html>
