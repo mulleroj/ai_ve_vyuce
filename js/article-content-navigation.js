@@ -68,7 +68,20 @@
     setCurrent(passed[passed.length - 1] || items[0]);
   };
 
-  const observer = new IntersectionObserver(updateCurrent, {
+  let updateScheduled = false;
+  const scheduleCurrent = () => {
+    if (updateScheduled) return;
+    updateScheduled = true;
+    window.requestAnimationFrame(() => {
+      updateScheduled = false;
+      updateCurrent();
+    });
+  };
+
+  window.addEventListener('scroll', scheduleCurrent, { passive: true });
+  window.addEventListener('resize', scheduleCurrent, { passive: true });
+
+  const observer = new IntersectionObserver(scheduleCurrent, {
     rootMargin: '-18% 0px -66% 0px',
     threshold: 0
   });

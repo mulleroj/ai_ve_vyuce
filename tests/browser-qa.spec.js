@@ -1155,7 +1155,7 @@ test('wave 11 light hero computed styles, prompt screenshots, and contact sheet 
         const rect = element.getBoundingClientRect();
         return { complete: element.complete, naturalWidth: element.naturalWidth, naturalHeight: element.naturalHeight, width: rect.width, height: rect.height, alt: element.alt };
       });
-      expect(image.complete && image.naturalWidth > 0 && image.naturalHeight > 0 && image.alt).toBe(true);
+      expect(image.complete && image.naturalWidth > 0 && image.naturalHeight > 0 && image.alt.trim().length > 0).toBe(true);
       const renderedRatio = image.width / image.height;
       const sourceRatio = image.naturalWidth / image.naturalHeight;
       expect(Math.abs(renderedRatio - sourceRatio) / sourceRatio, article.file + ' image aspect ratio').toBeLessThan(0.02);
