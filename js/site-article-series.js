@@ -2,7 +2,7 @@
   const articles = (window.siteArticles || [])
     .filter((article) => article.series === 'Filozofování s AI' && Number.isFinite(article.seriesNumber))
     .sort((a, b) => a.seriesNumber - b.seriesNumber);
-  if (articles.length !== 4) return;
+  if (articles.length !== 4 || articles.some((article, index) => article.seriesNumber !== index + 1)) return;
 
   const pathLeaf = location.pathname.split('/').filter(Boolean).pop() || '';
   const currentHref = pathLeaf && !pathLeaf.includes('.') ? `${pathLeaf}.html` : pathLeaf;
@@ -63,8 +63,10 @@
   }
   nav.append(steps);
   const returnLink = document.createElement('a');
-  returnLink.href = 'ai.html';
-  returnLink.textContent = 'Zpět do magazínu';
+  returnLink.href = 'filozofovani-s-ai.html';
+  returnLink.textContent = 'Zpět na rozcestník série';
   nav.append(returnLink);
-  main.append(nav);
+  const related = main.querySelector('.workflow-related');
+  if (related) main.insertBefore(nav, related);
+  else main.append(nav);
 })();
