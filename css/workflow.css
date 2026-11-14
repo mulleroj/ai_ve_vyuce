@@ -1789,6 +1789,11 @@ body.workflow-page {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html:has(body.workflow-page),
+  html:has(body.tool-guide-page) {
+    scroll-behavior: auto !important;
+  }
+
   .workflow-page,
   .workflow-page *,
   .tool-guide-page,

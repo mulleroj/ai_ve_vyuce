@@ -133,12 +133,27 @@ test('keyboard disclosure and mobile menu support Space, Enter, and Escape', asy
 });
 
 test('contents anchor works with JavaScript disabled', async ({ browser }) => {
-  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, javaScriptEnabled: false });
+  const context = await browser.newContext({
+    viewport: { width: 390, height: 844 },
+    javaScriptEnabled: false,
+    reducedMotion: 'reduce'
+  });
   const page = await context.newPage();
   await page.goto(`${baseURL}/ai-novinka-datovi-agenti-lidske-schvaleni.html`);
-  await page.locator('.article-content-navigation a[href="#obsah-co-si-odnest"]').click();
+  const chapter = page.locator('#obsah-co-si-odnest');
+  const link = page.locator('.article-content-navigation a[href="#obsah-co-si-odnest"]');
+  const rootScrollBehavior = await page.evaluate(() => getComputedStyle(document.documentElement).scrollBehavior);
+  expect(rootScrollBehavior).toBe('auto');
+  await expect(chapter).not.toBeInViewport();
+
+  await link.scrollIntoViewIfNeeded();
+  await expect(chapter).not.toBeInViewport();
+  const scrollYBeforeAnchor = await page.evaluate(() => window.scrollY);
+  await link.click();
   await expect(page).toHaveURL(/#obsah-co-si-odnest$/);
-  await expect(page.locator('#obsah-co-si-odnest')).toBeInViewport();
+  await expect(chapter).toBeInViewport();
+  const scrollYAfterAnchor = await page.evaluate(() => window.scrollY);
+  expect(scrollYAfterAnchor).toBeGreaterThan(scrollYBeforeAnchor);
   await expect(page.locator('.article-content-navigation')).toHaveJSProperty('open', true);
   await context.close();
 });
@@ -758,7 +773,15 @@ const wave14Articles = [
   { file: 'ai-novinka-sdilene-zdroje-propojene-aplikace-2026.html', title: 'AI ve vzdělávání: sdílené zdroje, propojené aplikace a bezpečnější práce s daty', activeArea: 'Číst a objevovat', breadcrumb: 'AI ve vzdělávání', breadcrumbHref: 'ai.html#novinky', tocCount: 17, h2: '#wave14-sdilene-zdroje-propojene-aplikace-2026-h2-01', h3: '#wave14-sdilene-zdroje-propojene-aplikace-2026-h3-01', baselineSha: '709eeb0edb22c8bdd988ec41999e087b25861143', noLegacyTopbar: true, waitForStableViewportChapter: true, representative: '#wave14-sdilene-zdroje-propojene-aplikace-2026-h2-03' },
   { file: 'notebooklm-hlasovy-rozhovor-nad-zdroji.html', title: 'Když AI zná naše učivo: hlasový rozhovor nad zdroji v NotebookLM', activeArea: 'Číst a objevovat', breadcrumb: 'AI ve vzdělávání', breadcrumbHref: 'ai.html#novinky', tocCount: 12, h2: '#wave14-notebooklm-hlasovy-rozhovor-nad-zdroji-h2-01', h3: null, baselineSha: '709eeb0edb22c8bdd988ec41999e087b25861143', noLegacyTopbar: true, waitForStableViewportChapter: true, representative: '#wave14-notebooklm-hlasovy-rozhovor-nad-zdroji-h2-03' },
 ];
-const migrationArticles = [...wave1Articles, ...wave2Articles, ...wave3Articles, ...wave4Articles, ...wave5Articles, ...wave6Articles, ...wave7Articles, ...wave8Articles, ...wave10Articles, ...wave11Articles, ...wave12Articles, ...wave13Articles, ...wave14Articles];
+const wave15Articles = [
+  { file: 'ai-novinka-ai-ve-vzdelavani-srpen-2026.html', title: 'AI ve vzdělávání: co je nového na konci srpna', activeArea: 'Číst a objevovat', breadcrumb: 'AI ve vzdělávání', breadcrumbHref: 'ai.html#novinky', tocCount: 10, h2: '#wave15-ai-ve-vzdelavani-srpen-2026-h2-01', h3: '#wave15-ai-ve-vzdelavani-srpen-2026-h3-01', baselineSha: '1a2ca130db05a6cfe46e072235a18ecb75d2adbb', noLegacyTopbar: true, waitForStableViewportChapter: true, representative: '#wave15-ai-ve-vzdelavani-srpen-2026-h2-02', sourceH2: 8, sourceH3: 6, sourceImages: 1 },
+  { file: 'ai-novinka-gemini-classroom.html', title: 'Gemini míří přímo do výuky', activeArea: 'Číst a objevovat', breadcrumb: 'AI ve vzdělávání', breadcrumbHref: 'ai.html#novinky', tocCount: 4, h2: '#wave15-gemini-classroom-h2-01', h3: null, baselineSha: '1a2ca130db05a6cfe46e072235a18ecb75d2adbb', noLegacyTopbar: true, waitForStableViewportChapter: true, representative: '#wave15-gemini-classroom-h2-02', sourceH2: 6, sourceH3: 3, sourceImages: 1 },
+  { file: 'ai-novinka-microsoft-ai-workflow.html', title: 'Microsoft skládá AI workflow pro učitele', activeArea: 'Číst a objevovat', breadcrumb: 'AI ve vzdělávání', breadcrumbHref: 'ai.html#novinky', tocCount: 6, h2: '#wave15-microsoft-ai-workflow-h2-01', h3: null, baselineSha: '1a2ca130db05a6cfe46e072235a18ecb75d2adbb', noLegacyTopbar: true, waitForStableViewportChapter: true, representative: '#wave15-microsoft-ai-workflow-h2-02', sourceH2: 8, sourceH3: 3, sourceImages: 1 },
+  { file: 'ai-novinka-microsoft-gemini.html', title: 'Microsoft skládá AI do jednoho prostředí', activeArea: 'Číst a objevovat', breadcrumb: 'AI ve vzdělávání', breadcrumbHref: 'ai.html#novinky', tocCount: 6, h2: '#wave15-microsoft-gemini-h2-01', h3: null, baselineSha: '1a2ca130db05a6cfe46e072235a18ecb75d2adbb', noLegacyTopbar: true, waitForStableViewportChapter: true, representative: '#wave15-microsoft-gemini-h2-02', sourceH2: 8, sourceH3: 3, sourceImages: 1 },
+  { file: 'ai-novinka-vykonnejsi-ai.html', title: 'Výkonnější AI se stává běžně dostupnou', activeArea: 'Číst a objevovat', breadcrumb: 'AI ve vzdělávání', breadcrumbHref: 'ai.html#novinky', tocCount: 6, h2: '#wave15-vykonnejsi-ai-h2-01', h3: null, baselineSha: '1a2ca130db05a6cfe46e072235a18ecb75d2adbb', noLegacyTopbar: true, waitForStableViewportChapter: true, representative: '#wave15-vykonnejsi-ai-h2-02', sourceH2: 8, sourceH3: 3, sourceImages: 1 },
+];
+
+const migrationArticles = [...wave1Articles, ...wave2Articles, ...wave3Articles, ...wave4Articles, ...wave5Articles, ...wave6Articles, ...wave7Articles, ...wave8Articles, ...wave10Articles, ...wave11Articles, ...wave12Articles, ...wave13Articles, ...wave14Articles, ...wave15Articles];
 
 for (const article of migrationArticles) {
   test.describe(`Migration: ${article.file}`, () => {
@@ -2167,11 +2190,11 @@ test('wave 13 internal article and gallery links resolve on the preview', async 
   }
 });
 
-test('wave 13 catalog records remain complete, dated, unique, linked, and homepage order stays current', async ({ page, request }) => {
+test('migration catalog records remain complete, dated, unique, linked, and homepage order stays current', async ({ page, request }) => {
   await page.goto(baseURL, { waitUntil: 'networkidle' });
   await expect(page.locator('#latest-articles .latest-card')).toHaveCount(6);
   const data = await page.evaluate(() => {
-    const wanted = ['asistent-ucitele-osobni-ai-asistent.html','neplytvej-inteligenci-ai-modely.html','skill-anglictina-vyukove-materialy.html','vibe-coding-bezpecnost-kodu-php2shell.html','vibe-coding-pro-ucitele.html','vibe-coding-ucitele.html','ai-novinka-agenti-onenote-pruvodce-ucenim.html','ai-novinka-gemini-desktop-chatgpt-word-agenti.html','ai-novinka-sdilene-zdroje-propojene-aplikace-2026.html','notebooklm-hlasovy-rozhovor-nad-zdroji.html'];
+    const wanted = ['asistent-ucitele-osobni-ai-asistent.html','neplytvej-inteligenci-ai-modely.html','skill-anglictina-vyukove-materialy.html','vibe-coding-bezpecnost-kodu-php2shell.html','vibe-coding-pro-ucitele.html','vibe-coding-ucitele.html','ai-novinka-agenti-onenote-pruvodce-ucenim.html','ai-novinka-gemini-desktop-chatgpt-word-agenti.html','ai-novinka-sdilene-zdroje-propojene-aplikace-2026.html','notebooklm-hlasovy-rozhovor-nad-zdroji.html','ai-novinka-ai-ve-vzdelavani-srpen-2026.html','ai-novinka-gemini-classroom.html','ai-novinka-microsoft-ai-workflow.html','ai-novinka-microsoft-gemini.html','ai-novinka-vykonnejsi-ai.html'];
     const records = wanted.map(href => window.siteArticles.find(item => item.href === href));
     const latest = window.siteArticles.map((article,index) => ({article,index}))
       .sort((a,b) => (b.article.date || '').localeCompare(a.article.date || '') || a.index-b.index).slice(0,6).map(item=>item.article.href);
@@ -2187,7 +2210,12 @@ test('wave 13 catalog records remain complete, dated, unique, linked, and homepa
     'ai-novinka-agenti-onenote-pruvodce-ucenim.html':['2026-09-07','7. září 2026'],
     'ai-novinka-gemini-desktop-chatgpt-word-agenti.html':['2026-09-18','18. září 2026'],
     'ai-novinka-sdilene-zdroje-propojene-aplikace-2026.html':['2026-09-11','11. září 2026'],
-    'notebooklm-hlasovy-rozhovor-nad-zdroji.html':['2026-09-23','23. září 2026']
+    'notebooklm-hlasovy-rozhovor-nad-zdroji.html':['2026-09-23','23. září 2026'],
+    'ai-novinka-ai-ve-vzdelavani-srpen-2026.html':['2026-08-27','27. srpna 2026'],
+    'ai-novinka-gemini-classroom.html':['2026-08-12','12. srpna 2026'],
+    'ai-novinka-microsoft-ai-workflow.html':['2026-08-21','21. srpna 2026'],
+    'ai-novinka-microsoft-gemini.html':['2026-08-17','17. srpna 2026'],
+    'ai-novinka-vykonnejsi-ai.html':['2026-08-14','14. srpna 2026']
   };
   expect(data.records.every(Boolean)).toBe(true);
   expect(data.duplicates).toEqual([]);
@@ -2377,3 +2405,95 @@ test('wave 14 hero computed styles and six-view screenshot evidence', async ({ p
   await page.setContent(`<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{margin:0;padding:24px;background:#fffefa;color:#102d2b;font:600 16px Arial}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}figure{margin:0;padding:10px;background:white;border:1px solid #dfe8e1;border-radius:12px}figcaption{margin:0 0 8px}img{display:block;width:100%;height:320px;object-fit:cover;object-position:top;border-radius:8px}@media(max-width:700px){.grid{grid-template-columns:1fr}}</style></head><body><h1>Wave 14 · porovnání světlých hero</h1><div class="grid">${cards}</div></body></html>`);
   await page.screenshot({ path: 'artifacts/wave14-hero-contact-sheet.png', fullPage: true });
 });
+
+test('wave 15 hero styles and six screenshot evidence sets', async ({ page }) => {
+  const fs = require('node:fs');
+  const path = require('node:path');
+  fs.mkdirSync('artifacts', { recursive: true });
+  const evidence = { testedSha: process.env.TESTED_SHA, baselineSha: '1a2ca130db05a6cfe46e072235a18ecb75d2adbb', pages: [] };
+  const heroCards = [];
+  const refs = [...wave15Articles.map(article => ({ ...article, isReference: false })), {
+    file: 'ai-novinka-datovi-agenti-lidske-schvaleni.html',
+    title: 'Schválená světlá reference PR #68', isReference: true
+  }];
+  const styleSnapshot = async () => page.evaluate(() => {
+    const selectors = ['body', '.site-header', '.workflow-shell', '.workflow-shell::before', '.workflow-shell::after',
+      '.workflow-hero', '.workflow-hero h1', '.workflow-hero-lead', '.workflow-eyebrow',
+      '.workflow-meta', '.workflow-route', '.workflow-stage', '.workflow-stage-number',
+      '.workflow-news-panel', '.workflow-news-panel-label', '.workflow-news-panel-meta span'];
+    return Object.fromEntries(selectors.map(selector => {
+      const pseudo = selector.includes('::');
+      const base = selector.replace(/::(before|after)/, '');
+      const el = document.querySelector(base);
+      if (!el) return [selector, null];
+      const style = getComputedStyle(el, pseudo ? selector.slice(selector.indexOf('::')) : null);
+      return [selector, { backgroundColor: style.backgroundColor, backgroundImage: style.backgroundImage,
+        color: style.color, display: style.display, borderColor: style.borderColor, fontFamily: style.fontFamily }];
+    }));
+  });
+  for (const article of refs) {
+    await page.setViewportSize({ width: 1440, height: 1000 });
+    await page.goto(`${baseURL}/${article.file}`, { waitUntil: 'networkidle' });
+    await page.evaluate(async () => { await document.fonts.ready; });
+    await expect(page.locator('.workflow-hero')).toBeVisible();
+    const hero = page.locator('.workflow-hero');
+    const heroImg = await hero.screenshot();
+    heroCards.push({ title: article.isReference ? article.title : article.file, data: heroImg.toString('base64') });
+    const style = await styleSnapshot();
+    if (!article.isReference) {
+      const inventory = await page.evaluate(() => ({
+        bodyH2: document.querySelectorAll('.article-content h2').length,
+        bodyH3: document.querySelectorAll('.article-content h3').length,
+        globalH2: document.querySelectorAll('h2').length,
+        globalH3: document.querySelectorAll('h3').length,
+        images: document.querySelectorAll('.workflow-article img').length,
+        loadedImages: [...document.querySelectorAll('.workflow-article img')].every(img => img.complete && img.naturalWidth > 0),
+        duplicateToc: document.querySelectorAll('.article-content-navigation').length,
+        date: document.querySelector('.workflow-eyebrow')?.textContent.trim(),
+        breadcrumbs: [...document.querySelectorAll('.site-breadcrumbs a')].map(a => ({ text: a.textContent.trim(), href: a.getAttribute('href') }))
+      }));
+      expect(inventory.bodyH2).toBe(article.sourceH2 - (article.file === 'ai-novinka-ai-ve-vzdelavani-srpen-2026.html' ? 1 : 2));
+      expect(inventory.globalH2).toBe(article.sourceH2);
+      expect(inventory.globalH3).toBe(article.sourceH3);
+      expect(inventory.bodyH3).toBe(article.file === 'ai-novinka-ai-ve-vzdelavani-srpen-2026.html' ? 3 : 0);
+      expect(inventory.images).toBe(article.sourceImages);
+      expect(inventory.loadedImages).toBe(true);
+      expect(inventory.duplicateToc).toBe(1);
+      expect(inventory.breadcrumbs.some(link => link.href === 'ai.html#novinky')).toBe(true);
+      expect(style['body'].backgroundColor).toBe('rgb(255, 254, 250)');
+      expect(style['.workflow-shell::after'].display).toBe('none');
+      expect(style['.workflow-hero h1'].color).toBe('rgb(16, 45, 43)');
+      if (style['.workflow-route']) {
+        expect(style['.workflow-stage'].backgroundColor).toBe('rgba(255, 255, 255, 0.88)');
+      } else {
+        expect(style['.workflow-news-panel']).not.toBeNull();
+        expect(style['.workflow-news-panel'].backgroundImage).toContain('linear-gradient');
+        expect(style['.workflow-news-panel-label']).not.toBeNull();
+      }
+      evidence.pages.push({ file: article.file, inventory, computedStyles: style });
+          await hero.screenshot({ path: `artifacts/${article.file}-desktop-1440-hero.png` });
+      await page.locator('.article-content-navigation').scrollIntoViewIfNeeded();
+      await page.screenshot({ path: `artifacts/${article.file}-desktop-1440-toc.png` });
+      await page.locator(article.representative).scrollIntoViewIfNeeded();
+      await page.screenshot({ path: `artifacts/${article.file}-desktop-1440-chapter.png` });
+      await page.setViewportSize({ width: 390, height: 844 });
+      await page.goto(`${baseURL}/${article.file}`, { waitUntil: 'networkidle' });
+      await page.evaluate(async () => { await document.fonts.ready; });
+      await page.locator('.workflow-hero').screenshot({ path: `artifacts/${article.file}-mobile-390-hero.png` });
+      const toc = page.locator('.article-content-navigation');
+      const summary = toc.locator('summary');
+      if (!(await toc.evaluate(el => el.open))) await summary.click();
+      await expect(toc).toHaveJSProperty('open', true);
+      await toc.screenshot({ path: `artifacts/${article.file}-mobile-390-toc.png` });
+      await page.locator(article.representative).scrollIntoViewIfNeeded();
+      await page.screenshot({ path: `artifacts/${article.file}-mobile-390-chapter.png` });
+    }
+  }
+  evidence.testedSha = process.env.TESTED_SHA || 'unavailable';
+  fs.writeFileSync('artifacts/wave15-computed-styles.json', JSON.stringify(evidence, null, 2));
+  const cards = heroCards.map(card => `<article><h2>${card.title}</h2><img alt="${card.title}" src="data:image/png;base64,${card.data}"></article>`).join('');
+  await page.setViewportSize({ width: 1200, height: 1500 });
+  await page.setContent(`<!doctype html><html lang="cs"><meta charset="utf-8"><style>body{font:16px Arial;background:#fffefa;color:#102d2b;margin:24px}h1{font-size:24px}main{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}article{border:1px solid #dfe8e1;border-radius:14px;padding:12px;background:white}h2{font-size:14px}img{width:100%;height:280px;object-fit:contain;object-position:top}</style><h1>Vlna 15 – světlé hero a schválená reference PR #68</h1><main>${cards}</main></html>`);
+  await page.screenshot({ path: 'artifacts/wave15-hero-contact-sheet.png', fullPage: true });
+});
+
