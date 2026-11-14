@@ -145,3 +145,16 @@ body.ai-agent-light-page.light-background-pilot.workflow-page .series-navigation
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Keep long series titles inside the single-column article layout on narrow screens. */
+@media (max-width: 960px) {
+  body.ai-agent-light-page.light-background-pilot.workflow-page .workflow-main.article-content-layout > *,
+  body.ai-agent-light-page.light-background-pilot.workflow-page .workflow-main.article-content-layout .series-navigation {
+    min-width: 0;
+    max-width: 100%;
+  }
+  body.ai-agent-light-page.light-background-pilot.workflow-page .series-navigation a,
+  body.ai-agent-light-page.light-background-pilot.workflow-page .series-navigation h2 {
+    overflow-wrap: anywhere;
+  }
+}
