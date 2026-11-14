@@ -3304,3 +3304,76 @@ test('wave 18 records image and light-design evidence and creates a five-hero co
  await page.screenshot({path:'artifacts/wave18-hero-contact-sheet.png',fullPage:true});
  fs.writeFileSync('artifacts/wave18-browser-evidence.json',JSON.stringify(evidence,null,2));
 });
+
+
+test('wave 18 series navigation stays clear of sticky contents and links correctly', async ({ page }) => {
+  const articles = [
+    { href: 'ai-novinka-filozofovani-s-ai-kriticke-mysleni.html', n: 1 },
+    { href: 'ai-novinka-filozofovani-s-ai-chybejici-role.html', n: 2 },
+    { href: 'uci-se-zak-nebo-za-nej-premysli-ai.html', n: 3 },
+    { href: 'kdyz-ai-jedna-odpovednost-ai-agenta.html', n: 4 }
+  ];
+  for (const width of [1440, 1024, 390]) {
+    await page.setViewportSize({ width, height: width === 390 ? 844 : 1000 });
+    for (const article of articles) {
+      await page.goto(baseURL + '/' + article.href);
+      const navigation = page.locator('.series-navigation');
+      await expect(navigation).toBeAttached();
+      await navigation.evaluate(el => {
+        el.scrollIntoView({ block: 'center', behavior: 'instant' });
+        return new Promise(resolve => {
+          let lastY = window.scrollY, stable = 0;
+          const frame = () => {
+            const y = window.scrollY;
+            stable = y === lastY ? stable + 1 : 0;
+            lastY = y;
+            if (stable >= 4) resolve();
+            else requestAnimationFrame(frame);
+          };
+          requestAnimationFrame(frame);
+        });
+      });
+      const geometry = await page.evaluate(() => {
+        const nav = document.querySelector('.series-navigation');
+        const toc = document.querySelector('.article-content-navigation');
+        const nr = nav.getBoundingClientRect(), tr = toc.getBoundingClientRect();
+        const links = [...nav.querySelectorAll('.series-all-parts a')];
+        const textRects = links.map(link => {
+          const range = document.createRange();
+          range.selectNodeContents(link);
+          return [...range.getClientRects()].map(r => ({left:r.left,right:r.right,top:r.top,bottom:r.bottom}));
+        });
+        const hitTargets = links.map(link => {
+          const range = document.createRange();
+          range.selectNodeContents(link);
+          const r = [...range.getClientRects()].find(x => x.width && x.height);
+          const hit = r && document.elementFromPoint(r.left + Math.min(r.width / 2, 3), r.top + r.height / 2);
+          return !!r && (hit === link || link.contains(hit));
+        });
+        return {nav:nr.toJSON(),toc:tr.toJSON(),tocPosition:getComputedStyle(toc).position,
+          links:links.map(a=>({href:a.getAttribute('href'),text:a.textContent.trim()})),textRects,hitTargets};
+      });
+      expect(geometry.links, article.href).toHaveLength(4);
+      expect(geometry.hitTargets, article.href + ' text hit testing').toEqual([true,true,true,true]);
+      expect(geometry.textRects.flat().length).toBeGreaterThan(0);
+      for (const link of geometry.links) await expect(navigation.locator('.series-all-parts a').filter({hasText:link.text})).toBeVisible();
+      if (width > 960) {
+        expect(geometry.tocPosition).toBe('sticky');
+        expect(geometry.nav.left, article.href + ' starts right of sticky TOC').toBeGreaterThanOrEqual(geometry.toc.right);
+        expect(geometry.textRects.flat().every(r=>r.left >= geometry.toc.right - 1 || r.right <= geometry.toc.left + 1)).toBe(true);
+      } else {
+        expect(geometry.tocPosition).toBe('static');
+        expect(geometry.nav.left).toBeGreaterThanOrEqual(geometry.toc.left - 1);
+      }
+      const previous = navigation.locator('.series-steps a[rel="prev"]');
+      const next = navigation.locator('.series-steps a[rel="next"]');
+      if (article.n > 1) await expect(previous).toHaveAttribute('href', articles[article.n - 2].href);
+      else await expect(previous).toHaveCount(0);
+      if (article.n < 4) await expect(next).toHaveAttribute('href', articles[article.n].href);
+      else await expect(next).toHaveCount(0);
+      await expect(navigation.locator('.series-all-parts a[aria-current="page"]')).toHaveAttribute('href', article.href);
+      await expect(navigation.locator('a[href="filozofovani-s-ai.html"]')).toBeVisible();
+      await navigation.screenshot({path:'artifacts/wave18-' + article.href + '-series-' + width + '.png'});
+    }
+  }
+});
