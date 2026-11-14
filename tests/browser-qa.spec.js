@@ -2615,7 +2615,8 @@ test('wave 16 computed styles, six screenshots, and seven-hero contact sheet', a
     }));
     expect(inventory.globalH2, article.file + ' H2 inventory').toBe(article.sourceH2);
     expect(inventory.globalH3, article.file + ' H3 inventory').toBe(article.sourceH3);
-    expect(inventory.articleImages.length, article.file + ' article image count').toBe(article.sourceImages);
+    const articleImageCount = article.audit ? article.sourceImages - 1 : article.sourceImages; // The audited page has one source image in its hero, outside .workflow-article.
+    expect(inventory.articleImages.length, article.file + ' article image count').toBe(articleImageCount);
     expect(inventory.articleImages.every(img => img.complete && img.naturalWidth > 0 && img.alt), article.file + ' image load and alt text').toBe(true);
     expect(inventory.allImages.every(img => img.complete && img.naturalWidth > 0), article.file + ' every media resource loads').toBe(true);
     expect(inventory.tocCount, article.file + ' single contents navigation').toBe(1);
