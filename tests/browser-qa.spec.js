@@ -2429,13 +2429,17 @@ test('wave 15 hero styles and six screenshot evidence sets', async ({ page }) =>
       const inventory = await page.evaluate(() => ({
         bodyH2: document.querySelectorAll('.article-content h2').length,
         bodyH3: document.querySelectorAll('.article-content h3').length,
+        globalH2: document.querySelectorAll('h2').length,
+        globalH3: document.querySelectorAll('h3').length,
         images: document.querySelectorAll('.workflow-article img').length,
         loadedImages: [...document.querySelectorAll('.workflow-article img')].every(img => img.complete && img.naturalWidth > 0),
         duplicateToc: document.querySelectorAll('.article-content-navigation').length,
         date: document.querySelector('.workflow-eyebrow')?.textContent.trim(),
         breadcrumbs: [...document.querySelectorAll('.site-breadcrumbs a')].map(a => ({ text: a.textContent.trim(), href: a.getAttribute('href') }))
       }));
-      expect(inventory.bodyH2).toBe(article.sourceH2 - 1);
+      expect(inventory.bodyH2).toBe(article.sourceH2 - (article.file === 'ai-novinka-ai-ve-vzdelavani-srpen-2026.html' ? 1 : 2));
+      expect(inventory.globalH2).toBe(article.sourceH2);
+      expect(inventory.globalH3).toBe(article.sourceH3);
       expect(inventory.bodyH3).toBe(article.file === 'ai-novinka-ai-ve-vzdelavani-srpen-2026.html' ? 3 : 0);
       expect(inventory.images).toBe(article.sourceImages);
       expect(inventory.loadedImages).toBe(true);
