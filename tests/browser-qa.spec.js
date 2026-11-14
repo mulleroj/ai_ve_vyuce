@@ -2834,3 +2834,375 @@ test('wave 16 internal fragments, local article links, and source destinations r
     testedSha: process.env.TESTED_SHA, pages: diagnostics
   }, null, 2));
 });
+
+
+const wave17MagazineArticles = [
+  {
+    file: 'ai-novinka-ai-duvod-premyslet.html',
+    date: '2026-10-30',
+    dateLabel: '30. října 2026',
+    h2Count: 15,
+    h3Count: 5,
+    tocCount: 20,
+    representative: '#prakticka-ukazka',
+    breadcrumbCurrent: 'Didaktika',
+    heroHighlights: []
+  },
+  {
+    file: 'ai-novinka-ai-ve-vzdelavani-zari-2026.html',
+    date: '2026-09-09',
+    dateLabel: '9. září 2026',
+    h2Count: 14,
+    h3Count: 3,
+    tocCount: 17,
+    representative: '#chatgpt-images-2-5-zajimavejsi-je-editace-nez-samotne-generovani',
+    breadcrumbCurrent: 'Novinky',
+    heroHighlights: [
+      ['Přesnější práce s obrázky', 'Editace existujících materiálů a zachování stylu'],
+      ['Bezpečnější přístup k AI', 'Kontext, zařízení a podmínky použití'],
+      ['Nové zázemí pro školy', 'Specializované nástroje a pedagogické workflow']
+    ]
+  }
+];
+
+test('wave 17 generator preserves the source articles, IDs, metadata, images, prompts, and related links', async ({ page }) => {
+  const { execFileSync } = require('node:child_process');
+  const inspect = markup => {
+    const doc = markup ? new DOMParser().parseFromString(markup, 'text/html') : document;
+    const article = doc.querySelector('.article-content');
+    const normalize = value => value.replace(/\s+/g, ' ').trim();
+    return {
+      text: normalize(article.textContent),
+      headings: [...article.querySelectorAll('h2, h3')].map(node => [node.tagName, node.id, normalize(node.textContent)]),
+      ids: [...doc.querySelectorAll('[id]')].map(node => node.id),
+      images: [...article.querySelectorAll('img')].map(image => ({
+        src: image.getAttribute('src'), alt: image.getAttribute('alt'),
+        width: image.getAttribute('width'), height: image.getAttribute('height'),
+        fullSizeHref: image.closest('a')?.getAttribute('href') || null
+      })),
+      articleLinks: [...article.querySelectorAll('a[href]')].map(link => [link.getAttribute('href'), normalize(link.textContent)]),
+      relatedLinks: [...doc.querySelectorAll('.workflow-related a')].map(link => [link.getAttribute('href'), normalize(link.textContent)]),
+      footerLinks: [...doc.querySelectorAll('.workflow-footer a')].map(link => [link.getAttribute('href'), normalize(link.textContent)]),
+      prompts: [...doc.querySelectorAll('.prompt-copy-button')].map(button => {
+        const prompt = doc.getElementById(button.dataset.copyPrompt);
+        return [button.dataset.copyPrompt, normalize(prompt?.textContent || '')];
+      }),
+      metadata: {
+        title: doc.title,
+        description: doc.querySelector('meta[name="description"]')?.content || null,
+        published: doc.querySelector('meta[property="article:published_time"]')?.content || null,
+        canonical: doc.querySelector('link[rel="canonical"]')?.href || null,
+        openGraph: [...doc.querySelectorAll('meta[property^="og:"]')].map(meta => [meta.getAttribute('property'), meta.content])
+      },
+      dateLabel: normalize(doc.querySelector('.workflow-meta time')?.textContent || ''),
+      heroHighlights: [...doc.querySelectorAll('.magazine-hero-highlights li')].map(item => [
+        normalize(item.querySelector('strong')?.textContent || ''),
+        normalize(item.querySelector('small')?.textContent || '')
+      ])
+    };
+  };
+
+  for (const article of wave17MagazineArticles) {
+    await page.setViewportSize({ width: 1440, height: 1000 });
+    await page.goto(baseURL + '/' + article.file, { waitUntil: 'networkidle' });
+    await page.locator('img').evaluateAll(images => Promise.all(images.map(image => {
+      image.loading = 'eager';
+      return image.decode().catch(() => false);
+    })));
+    const baselineHTML = execFileSync('git', ['show', 'e7bbb564051bfc7db9f55792acb6a37856ce04e3:' + article.file], { encoding: 'utf8' });
+    const before = await page.evaluate(inspect, baselineHTML);
+    const after = await page.evaluate(inspect, null);
+    expect(after.text, article.file + ' source text').toBe(before.text);
+    expect(after.headings, article.file + ' heading order and public IDs').toEqual(before.headings);
+    expect(after.ids, article.file + ' all existing and generated page IDs').toEqual(before.ids);
+    expect(after.images, article.file + ' image sources, alt text, dimensions, and full-size links').toEqual(before.images);
+    expect(after.articleLinks, article.file + ' original article links').toEqual(before.articleLinks);
+    expect(after.relatedLinks, article.file + ' related links').toEqual(before.relatedLinks);
+    expect(after.footerLinks, article.file + ' footer links').toEqual(before.footerLinks);
+    expect(after.prompts, article.file + ' complete prompt source text').toEqual(before.prompts);
+    expect(after.metadata, article.file + ' metadata').toEqual(before.metadata);
+    expect(after.metadata.published).toBe(article.date);
+    expect(after.dateLabel).toBe(article.dateLabel);
+    expect(after.heroHighlights).toEqual(article.heroHighlights);
+    expect(new Set(after.ids).size).toBe(after.ids.length);
+    await expect(page.locator('.magazine-toc')).toHaveCount(0);
+    await expect(page.locator('.article-content-navigation')).toHaveCount(1);
+  }
+});
+
+test('wave 17 shared contents navigation, global navigation, and media work across all required widths', async ({ page }) => {
+  const evidence = { testedSha: process.env.TESTED_SHA, baselineSha: 'e7bbb564051bfc7db9f55792acb6a37856ce04e3', pages: [] };
+  for (const article of wave17MagazineArticles) {
+    for (const width of widths) {
+      await page.setViewportSize({ width, height: 1000 });
+      await page.goto(baseURL + '/' + article.file, { waitUntil: 'networkidle' });
+      await page.locator('img').evaluateAll(images => Promise.all(images.map(image => {
+        image.loading = 'eager';
+        return image.decode().catch(() => false);
+      })));
+      await page.evaluate(async () => { await document.fonts.ready; });
+      const state = await page.evaluate(() => {
+        const navigation = document.querySelector('.article-content-navigation');
+        const tocLinks = [...navigation.querySelectorAll('a[href^="#"]')];
+        const allIds = [...document.querySelectorAll('[id]')].map(node => node.id);
+        const images = [...document.querySelectorAll('img')].map(image => ({
+          complete: image.complete, naturalWidth: image.naturalWidth, alt: image.alt
+        }));
+        const header = document.querySelector('.magazine-article-hero');
+        const toc = navigation.getBoundingClientRect();
+        const article = document.querySelector('.workflow-article').getBoundingClientRect();
+        return {
+          viewportWidth: innerWidth,
+          documentWidth: document.documentElement.scrollWidth,
+          navigationCount: document.querySelectorAll('.article-content-navigation').length,
+          legacyTocCount: document.querySelectorAll('.magazine-toc').length,
+          tocOpen: navigation.open,
+          tocPosition: getComputedStyle(navigation).position,
+          tocBeforeArticle: toc.left < article.left || toc.bottom <= article.top,
+          tocLinks: tocLinks.length,
+          headings: document.querySelectorAll('.article-content h2').length,
+          subheadings: document.querySelectorAll('.article-content h3').length,
+          anchorsResolve: tocLinks.every(link => document.getElementById(decodeURIComponent(link.hash.slice(1)))),
+          allFragmentsResolve: [...document.querySelectorAll('a[href^="#"]')].every(link => {
+            const id = decodeURIComponent(link.getAttribute('href').slice(1));
+            return !id || document.getElementById(id);
+          }),
+          uniqueIds: new Set(allIds).size === allIds.length,
+          images,
+          articleImages: [...document.querySelectorAll('.philosophy-hero-cover img, .article-content img')].map(image => ({ complete: image.complete, naturalWidth: image.naturalWidth, alt: image.alt })),
+          heroBackground: getComputedStyle(header).backgroundImage,
+          pageBackground: getComputedStyle(document.body).backgroundColor,
+          navColor: getComputedStyle(navigation).color,
+          summaryFocus: getComputedStyle(navigation.querySelector('summary')).outlineStyle,
+          highlights: [...document.querySelectorAll('.magazine-hero-highlights li')].map(item => [item.querySelector('strong').textContent.trim(), item.querySelector('small').textContent.trim()])
+        };
+      });
+      expect(state.documentWidth, article.file + ' horizontal overflow at ' + width).toBeLessThanOrEqual(width + 1);
+      expect(state.navigationCount).toBe(1);
+      expect(state.legacyTocCount).toBe(0);
+      expect(state.tocOpen).toBe(true);
+      expect(state.tocLinks).toBe(article.tocCount);
+      expect(state.headings).toBe(article.h2Count);
+      expect(state.subheadings).toBe(article.h3Count);
+      expect(state.anchorsResolve).toBe(true);
+      expect(state.allFragmentsResolve).toBe(true);
+      expect(state.uniqueIds).toBe(true);
+      expect(state.images.length).toBe(3);
+      expect(state.images.every(image => image.complete && image.naturalWidth > 0)).toBe(true);
+      expect(state.articleImages.length).toBe(2);
+      expect(state.articleImages.every(image => image.complete && image.naturalWidth > 0 && image.alt)).toBe(true);
+      await expect(page.locator('.brand-symbol')).toHaveCount(1);
+      expect(state.heroBackground).toContain('linear-gradient');
+      expect(state.pageBackground).toBe('rgb(255, 253, 247)');
+      expect(state.highlights).toEqual(article.heroHighlights);
+      await expect(page.locator('.site-nav-pilot details')).toHaveCount(6);
+      await expect(page.locator('.site-nav-pilot details[data-active="true"] > summary')).toHaveText('Číst a objevovat');
+      await expect(page.locator('.magazine-breadcrumb [aria-current="page"]')).toHaveText(article.breadcrumbCurrent);
+      if (width > 960) {
+        expect(state.tocPosition).toBe('sticky');
+        expect(state.tocBeforeArticle).toBe(true);
+      } else {
+        expect(state.tocPosition).toBe('static');
+        expect(state.tocBeforeArticle).toBe(true);
+      }
+      evidence.pages.push({ file: article.file, width, state });
+    }
+  }
+  const fs = require('node:fs');
+  fs.mkdirSync('artifacts', { recursive: true });
+  fs.writeFileSync('artifacts/wave17-magazine-responsive-diagnostics.json', JSON.stringify(evidence, null, 2));
+});
+
+test('wave 17 contents links navigate with and without JavaScript and highlight the settled chapter', async ({ browser, page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  for (const article of wave17MagazineArticles) {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(baseURL + '/' + article.file, { waitUntil: 'networkidle' });
+    expect(await page.evaluate(() => getComputedStyle(document.body).scrollBehavior)).toBe('auto');
+    const link = page.locator('.article-content-navigation a[href="' + article.representative + '"]');
+    await link.click();
+    await expect(page).toHaveURL(new RegExp(article.representative + '$'));
+    await expect(page.locator(article.representative)).toBeInViewport();
+    await expect.poll(() => page.evaluate(() => {
+      const links = [...document.querySelectorAll('.article-content-navigation a[href^="#"]')].map(item => ({
+        href: item.getAttribute('href'),
+        target: document.getElementById(decodeURIComponent(item.hash.slice(1)))
+      })).filter(item => item.target);
+      const marker = Math.min(innerHeight * 0.34, 240);
+      const passed = links.filter(item => item.target.getBoundingClientRect().top <= marker);
+      const expected = (passed[passed.length - 1] || links[0])?.href || null;
+      const active = document.querySelector('.article-content-navigation a[aria-current="location"]')?.getAttribute('href') || null;
+      return active === expected;
+    })).toBe(true);
+
+    const context = await browser.newContext({
+      viewport: { width: 390, height: 844 },
+      javaScriptEnabled: false,
+      reducedMotion: 'reduce'
+    });
+    const noJsPage = await context.newPage();
+    await noJsPage.goto(baseURL + '/' + article.file, { waitUntil: 'networkidle' });
+    await expect(noJsPage.locator('.article-content-navigation')).toHaveCount(1);
+    await expect(noJsPage.locator('.article-content-navigation')).toHaveJSProperty('open', true);
+    const noJsLink = noJsPage.locator('.article-content-navigation a[href="' + article.representative + '"]');
+    await noJsLink.click();
+    await expect(noJsPage).toHaveURL(new RegExp(article.representative + '$'));
+    await expect(noJsPage.locator(article.representative)).toBeInViewport();
+    expect(await noJsPage.evaluate(() => getComputedStyle(document.body).scrollBehavior)).toBe('auto');
+    await context.close();
+  }
+});
+
+test('wave 17 shared TOC and global menu remain keyboard accessible on mobile', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(baseURL + '/' + wave17MagazineArticles[0].file, { waitUntil: 'networkidle' });
+  const toc = page.locator('.article-content-navigation');
+  const summary = toc.locator('summary');
+  await expect(summary).toHaveAccessibleName('V tomto článku');
+  await summary.focus();
+  await page.keyboard.press('Tab');
+  expect(await page.evaluate(() => getComputedStyle(document.activeElement).outlineStyle)).not.toBe('none');
+  await summary.focus();
+  await page.keyboard.press('Space');
+  await expect(toc).toHaveJSProperty('open', false);
+  await page.keyboard.press('Enter');
+  await expect(toc).toHaveJSProperty('open', true);
+  await expect(summary).toBeFocused();
+  const toggle = page.locator('.menu-toggle');
+  await toggle.click();
+  await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+  await toggle.focus();
+  await page.keyboard.press('Escape');
+  await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+  await expect(toggle).toBeFocused();
+});
+
+test('wave 17 all three prompt buttons copy their unchanged full text with feedback', async ({ browser }) => {
+  const context = await browser.newContext({ permissions: ['clipboard-read', 'clipboard-write'] });
+  const page = await context.newPage();
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto(baseURL + '/ai-novinka-ai-duvod-premyslet.html', { waitUntil: 'networkidle' });
+  const { execFileSync } = require('node:child_process');
+  const baselineHTML = execFileSync('git', ['show', 'e7bbb564051bfc7db9f55792acb6a37856ce04e3:ai-novinka-ai-duvod-premyslet.html'], { encoding: 'utf8' });
+  const expectedPrompts = await page.evaluate(markup => {
+    const doc = new DOMParser().parseFromString(markup, 'text/html');
+    return [...doc.querySelectorAll('.prompt-copy-button')].map(button => [
+      button.dataset.copyPrompt,
+      (button.dataset.copyFormat === 'rendered' ? doc.getElementById(button.dataset.copyPrompt).innerText : doc.getElementById(button.dataset.copyPrompt).textContent).trim()
+    ]);
+  }, baselineHTML);
+  const buttons = page.locator('.prompt-copy-button');
+  await expect(buttons).toHaveCount(3);
+  expect(expectedPrompts).toHaveLength(3);
+  for (let index = 0; index < 3; index++) {
+    const button = buttons.nth(index);
+    const targetId = await button.getAttribute('data-copy-prompt');
+    const expected = expectedPrompts.find(prompt => prompt[0] === targetId)?.[1];
+    expect(expected, 'baseline prompt ' + targetId).toBeTruthy();
+    await button.click();
+    await expect(button).toHaveText('Zkopírováno');
+    await expect(button).toHaveClass(/copied/);
+    await expect(button.closest('.prompt-card').locator('.prompt-copy-feedback')).toHaveText('Zkopírováno');
+    expect((await page.evaluate(() => navigator.clipboard.readText())).trim()).toBe(expected);
+    if (index === 0) await button.closest('.prompt-card').screenshot({ path: 'artifacts/wave17-prompt-copy-success.png' });
+  }
+  await context.close();
+});
+
+test('wave 17 magazine visuals, images, viewport screenshots, and light reference contact sheet', async ({ page }) => {
+  const fs = require('node:fs');
+  fs.mkdirSync('artifacts', { recursive: true });
+  const evidence = { testedSha: process.env.TESTED_SHA || 'unavailable', baselineSha: 'e7bbb564051bfc7db9f55792acb6a37856ce04e3', views: [], images: [] };
+  const heroCards = [];
+  for (const article of wave17MagazineArticles) {
+    await page.setViewportSize({ width: 1440, height: 1000 });
+    await page.goto(baseURL + '/' + article.file, { waitUntil: 'networkidle' });
+    await page.locator('img').evaluateAll(images => Promise.all(images.map(image => {
+      image.loading = 'eager';
+      return image.decode().catch(() => false);
+    })));
+    await page.evaluate(async () => { await document.fonts.ready; });
+    const hero = page.locator('.magazine-article-hero');
+    const heroScreenshot = await hero.screenshot();
+    heroCards.push({ label: article.file, data: heroScreenshot.toString('base64') });
+    const desktopStyles = await page.evaluate(() => {
+      const style = selector => {
+        const node = document.querySelector(selector);
+        if (!node) return null;
+        const computed = getComputedStyle(node);
+        return {
+          background: computed.backgroundColor,
+          backgroundImage: computed.backgroundImage,
+          color: computed.color,
+          fontFamily: computed.fontFamily,
+          fontSize: computed.fontSize,
+          position: computed.position,
+          borderColor: computed.borderColor,
+          outlineStyle: computed.outlineStyle
+        };
+      };
+      return {
+        body: style('body'),
+        hero: style('.magazine-article-hero'),
+        heroTitle: style('.magazine-article-hero h1'),
+        heroLead: style('.magazine-article-hero .workflow-hero-lead'),
+        highlights: style('.magazine-hero-highlights'),
+        cover: style('.philosophy-hero-cover'),
+        toc: style('.article-content-navigation'),
+        tocSummary: style('.article-content-navigation summary'),
+        tocList: style('.article-content-navigation nav'),
+        article: style('.workflow-article'),
+        breadcrumb: style('.magazine-breadcrumb')
+      };
+    });
+    evidence.views.push({ file: article.file, width: 1440, computedStyles: desktopStyles });
+    expect(desktopStyles.body.background).toBe('rgb(255, 254, 250)');
+    expect(desktopStyles.hero.backgroundImage).toContain('linear-gradient');
+    expect(desktopStyles.heroTitle.fontFamily).toMatch(/Playfair Display|Georgia/);
+    expect(desktopStyles.toc.position).toBe('sticky');
+    expect(desktopStyles.tocSummary.outlineStyle).not.toBe('none');
+    await hero.screenshot({ path: 'artifacts/wave17-' + article.file + '-desktop-1440-hero.png' });
+    const toc = page.locator('.article-content-navigation');
+    await toc.screenshot({ path: 'artifacts/wave17-' + article.file + '-desktop-1440-toc.png' });
+    await page.locator(article.representative).scrollIntoViewIfNeeded();
+    await page.screenshot({ path: 'artifacts/wave17-' + article.file + '-desktop-1440-chapter.png' });
+    const infographic = page.locator('.article-content img').first();
+    await infographic.screenshot({ path: 'artifacts/wave17-' + article.file + '-infographic.png' });
+    evidence.images.push({ file: article.file, alt: await infographic.getAttribute('alt'), src: await infographic.getAttribute('src') });
+
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto(baseURL + '/' + article.file, { waitUntil: 'networkidle' });
+    await page.locator('img').evaluateAll(images => Promise.all(images.map(image => {
+      image.loading = 'eager';
+      return image.decode().catch(() => false);
+    })));
+    await page.evaluate(async () => { await document.fonts.ready; });
+    const mobileStyles = await page.evaluate(() => ({
+      tocPosition: getComputedStyle(document.querySelector('.article-content-navigation')).position,
+      tocOpen: document.querySelector('.article-content-navigation').open,
+      highlightsColumns: getComputedStyle(document.querySelector('.magazine-hero-highlights')).gridTemplateColumns,
+      heroTitleSize: getComputedStyle(document.querySelector('.magazine-article-hero h1')).fontSize,
+      documentWidth: document.documentElement.scrollWidth,
+      viewportWidth: innerWidth
+    }));
+    evidence.views.push({ file: article.file, width: 390, computedStyles: mobileStyles });
+    expect(mobileStyles.tocPosition).toBe('static');
+    expect(mobileStyles.tocOpen).toBe(true);
+    expect(mobileStyles.documentWidth).toBeLessThanOrEqual(391);
+    await page.locator('.magazine-article-hero').screenshot({ path: 'artifacts/wave17-' + article.file + '-mobile-390-hero.png' });
+    const mobileToc = page.locator('.article-content-navigation');
+    await mobileToc.screenshot({ path: 'artifacts/wave17-' + article.file + '-mobile-390-expanded-toc.png' });
+    await page.locator(article.representative).scrollIntoViewIfNeeded();
+    await page.screenshot({ path: 'artifacts/wave17-' + article.file + '-mobile-390-chapter.png' });
+  }
+
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto(baseURL + '/ai-novinka-datovi-agenti-lidske-schvaleni.html', { waitUntil: 'networkidle' });
+  await page.locator('.workflow-shell').evaluate(el => el.scrollIntoView());
+  await page.evaluate(async () => { await document.fonts.ready; });
+  heroCards.push({ label: 'Schválená světlá reference', data: (await page.locator('.workflow-shell').screenshot()).toString('base64') });
+  const cards = heroCards.map(card => '<article><h2>' + card.label + '</h2><img alt="' + card.label + '" src="data:image/png;base64,' + card.data + '"></article>').join('');
+  await page.setContent('<!doctype html><html lang="cs"><meta charset="utf-8"><style>body{font:16px Arial;background:#fffefa;color:#102d2b;margin:24px}h1{font-size:24px}main{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}article{min-width:0;border:1px solid #dfe8e1;border-radius:14px;padding:12px;background:#fff}h2{font-size:14px}img{width:100%;height:290px;object-fit:contain;object-position:top}</style><h1>Vlna 17 – dva magazínové články a schválený světlý článek</h1><main>' + cards + '</main></html>');
+  await page.screenshot({ path: 'artifacts/wave17-magazine-and-reference-hero-contact-sheet.png', fullPage: true });
+  fs.writeFileSync('artifacts/wave17-magazine-computed-styles.json', JSON.stringify(evidence, null, 2));
+});

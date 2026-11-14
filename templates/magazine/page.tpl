@@ -4,8 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   {{SEO_META}}
-  <link rel="stylesheet" href="css/magazine-article.css?v=20261102-magazine-shared-v1" />
+  <link rel="stylesheet" href="css/magazine-article.css?v=20261114-magazine-shared-v2" />
   <link rel="stylesheet" href="css/site-navigation.css" />
+  <link rel="stylesheet" href="css/article-content-navigation.css" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=robot-20261103" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=robot-20261103" />
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png?v=robot-20261103" />
@@ -20,7 +21,7 @@
   {{NAVIGATION}}
   {{HERO}}
   <main id="main-content" class="magazine-main">
-    <div class="magazine-reading-grid{{GRID_CLASS}}">
+    <div class="magazine-reading-grid article-content-layout{{GRID_CLASS}}">
       {{TOC}}
       <article class="workflow-article" id="{{ARTICLE_ID}}">
         {{INTRO}}
@@ -35,6 +36,7 @@
   <script src="js/site-footer.js?v=20260927-human-loop" defer></script>
   <script src="js/site-navigation-data.js?v=20261108-7h" defer></script>
   <script src="js/site-navigation.js?v=20261108-7h" defer></script>
+  <script src="js/article-content-navigation.js?v=20261114-shared-content-v1" defer></script>
   {{ARTICLE_SCRIPTS}}
 </body>
 </html>

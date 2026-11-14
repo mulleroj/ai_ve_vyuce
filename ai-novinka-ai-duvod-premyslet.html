@@ -14,8 +14,9 @@
   <meta property="og:locale" content="cs_CZ" />
   <meta property="og:image" content="https://ai-ve-vyuce.netlify.app/images/ai-duvod-premyslet-hero.png" />
   <meta property="og:image:alt" content="Učitelka a středoškoláci v technické dílně zkoumají zapojení jističů; na notebooku je vzdělávací aplikace s otázkou o fungování jističe." />
-  <link rel="stylesheet" href="css/magazine-article.css?v=20261102-magazine-shared-v1" />
+  <link rel="stylesheet" href="css/magazine-article.css?v=20261114-magazine-shared-v2" />
   <link rel="stylesheet" href="css/site-navigation.css" />
+  <link rel="stylesheet" href="css/article-content-navigation.css" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=robot-20261103" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=robot-20261103" />
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png?v=robot-20261103" />
@@ -60,11 +61,13 @@
 </header>
 
   <main id="main-content" class="magazine-main">
-    <div class="magazine-reading-grid">
-      <nav class="magazine-toc" aria-label="V tomto článku">
-  <h2>V tomto článku</h2>
-  <ol><li><a href="#princip-1">Začněme otázkou, ne definicí</a></li><li><a href="#princip-2">AI jako průvodce, který se nejprve ptá</a></li><li><a href="#princip-3">Chyba nemusí znamenat neúspěch</a></li><li><a href="#princip-4">Každý žák potřebuje jinou míru podpory</a></li><li><a href="#princip-5">Propojujme učivo se skutečným životem</a></li><li><a href="#princip-6">Ne všechno musí být zábavné</a></li><li><a href="#princip-7">Nejdůležitější okamžik přichází po vypnutí AI</a></li><li><a href="#prakticka-ukazka">Praktická ukázka: 25 minut výuky s AI</a><ol><li><a href="#1-problem-ze-zivota-3-minuty">Problém ze života – 3 minuty</a></li><li><a href="#2-vlastni-hypotezy-5-minut">Vlastní hypotézy – 5 minut</a></li><li><a href="#3-prace-s-ai-7-minut">Práce s AI – 7 minut</a></li><li><a href="#4-vysvetleni-spoluzakovi-5-minut">Vysvětlení spolužákovi – 5 minut</a></li><li><a href="#5-overeni-bez-ai-5-minut">Ověření bez AI – 5 minut</a></li></ol></li><li><a href="#prompty">Tři prompty, které může učitel ihned vyzkoušet</a><ol><li><a href="#prompt-1-title">Probuď zvídavost</a></li><li><a href="#prompt-2-title">Buď průvodcem, ne strojem na odpovědi</a></li><li><a href="#prompt-3-title">Ověř skutečné porozumění</a></li></ol></li><li><a href="#pohlidat">Co si musí učitel pohlídat</a></li><li><a href="#zaver">Závěr: Technologie může pomoci. Zájem musí vzniknout u žáka.</a></li><li><a href="#odborne-zdroje">Odborné zdroje</a></li></ol>
-</nav>
+    <div class="magazine-reading-grid article-content-layout">
+      <details class="article-content-navigation" open>
+  <summary>V tomto článku</summary>
+  <nav aria-label="Obsah článku">
+    <ol><li><a href="#princip-1">Začněme otázkou, ne definicí</a></li><li><a href="#princip-2">AI jako průvodce, který se nejprve ptá</a></li><li><a href="#princip-3">Chyba nemusí znamenat neúspěch</a></li><li><a href="#princip-4">Každý žák potřebuje jinou míru podpory</a></li><li><a href="#princip-5">Propojujme učivo se skutečným životem</a></li><li><a href="#princip-6">Ne všechno musí být zábavné</a></li><li><a href="#princip-7">Nejdůležitější okamžik přichází po vypnutí AI</a></li><li><a href="#prakticka-ukazka">Praktická ukázka: 25 minut výuky s AI</a><ol><li><a href="#1-problem-ze-zivota-3-minuty">Problém ze života – 3 minuty</a></li><li><a href="#2-vlastni-hypotezy-5-minut">Vlastní hypotézy – 5 minut</a></li><li><a href="#3-prace-s-ai-7-minut">Práce s AI – 7 minut</a></li><li><a href="#4-vysvetleni-spoluzakovi-5-minut">Vysvětlení spolužákovi – 5 minut</a></li><li><a href="#5-overeni-bez-ai-5-minut">Ověření bez AI – 5 minut</a></li></ol></li><li><a href="#prompty">Tři prompty, které může učitel ihned vyzkoušet</a><ol><li><a href="#prompt-1-title">Probuď zvídavost</a></li><li><a href="#prompt-2-title">Buď průvodcem, ne strojem na odpovědi</a></li><li><a href="#prompt-3-title">Ověř skutečné porozumění</a></li></ol></li><li><a href="#pohlidat">Co si musí učitel pohlídat</a></li><li><a href="#zaver">Závěr: Technologie může pomoci. Zájem musí vzniknout u žáka.</a></li><li><a href="#odborne-zdroje">Odborné zdroje</a></li></ol>
+  </nav>
+</details>
 
       <article class="workflow-article" id="ai-duvod-premyslet">
         <div class="workflow-article-intro">
@@ -95,7 +98,7 @@
                     <figcaption>Sedm principů a praktický postup v jednom přehledu. Kliknutím otevřete infografiku v plném rozlišení.</figcaption>
                 </figure>
 
-                <h2 id="princip-1">1. Začněme otázkou, ne definicí</h2>
+                <h2 id="princip-1" tabindex="-1">1. Začněme otázkou, ne definicí</h2>
 
                 <p>Tradiční výuka často postupuje od vysvětlení k procvičení. Tento postup má své místo a v mnoha situacích je nezastupitelný.</p>
 
@@ -118,7 +121,7 @@
 
                 <p>Zajímavost bez vzdělávacího cíle se totiž snadno změní v pouhou zábavu.</p>
 
-                <h2 id="princip-2">2. AI jako průvodce, který se nejprve ptá</h2>
+                <h2 id="princip-2" tabindex="-1">2. AI jako průvodce, který se nejprve ptá</h2>
 
                 <p>Představme si žáka, který nerozumí fungování transformátoru.</p>
 
@@ -138,7 +141,7 @@
 
                 <p>Učitel přitom zůstává odpovědný za správnost výkladu, volbu obtížnosti i ověřování výsledků.</p>
 
-                <h2 id="princip-3">3. Chyba nemusí znamenat neúspěch</h2>
+                <h2 id="princip-3" tabindex="-1">3. Chyba nemusí znamenat neúspěch</h2>
 
                 <p>Žák odpoví nesprávně.</p>
 
@@ -162,7 +165,7 @@
 
                 <p>Důležité je, aby pomoc odpovídala jeho aktuálním znalostem.</p>
 
-                <h2 id="princip-4">4. Každý žák potřebuje jinou míru podpory</h2>
+                <h2 id="princip-4" tabindex="-1">4. Každý žák potřebuje jinou míru podpory</h2>
 
                 <p>Ve stejné třídě mohou sedět žáci, kteří látku pochopí po prvním vysvětlení, i ti, kteří potřebují více času a opakování.</p>
 
@@ -184,7 +187,7 @@
 
                 <p>A ještě důležitější je jedna věc: <em>podpora by se měla postupně zmenšovat.</em> Žák se potřebuje naučit pracovat i bez ní.</p>
 
-                <h2 id="princip-5">5. Propojujme učivo se skutečným životem</h2>
+                <h2 id="princip-5" tabindex="-1">5. Propojujme učivo se skutečným životem</h2>
 
                 <p>Zvláště v odborném vzdělávání má tento princip mimořádný význam.</p>
 
@@ -202,7 +205,7 @@
 
                 <p>To ale neznamená, že digitální simulace může nahradit skutečnou odbornou praxi. V technických oborech musí být praktické postupy odborně ověřené a bezpečné. Chatbot není autoritou pro práci na elektrickém zařízení.</p>
 
-                <h2 id="princip-6">6. Ne všechno musí být zábavné</h2>
+                <h2 id="princip-6" tabindex="-1">6. Ne všechno musí být zábavné</h2>
 
                 <p>Zde je potřeba upozornit na časté nedorozumění.</p>
 
@@ -218,7 +221,7 @@
 
                 <p>Dobře navržená výuka proto kombinuje zajímavé podněty s požadavkem na samostatnou práci.</p>
 
-                <h2 id="princip-7">7. Nejdůležitější okamžik přichází po vypnutí AI</h2>
+                <h2 id="princip-7" tabindex="-1">7. Nejdůležitější okamžik přichází po vypnutí AI</h2>
 
                 <p>Žák dokončí úkol s pomocí chatbota.</p>
 
@@ -236,39 +239,39 @@
 
                 <p>A právě zde zůstává role učitele nezastupitelná.</p>
 
-                <h2 id="prakticka-ukazka">Praktická ukázka: 25 minut výuky s AI</h2>
+                <h2 id="prakticka-ukazka" tabindex="-1">Praktická ukázka: 25 minut výuky s AI</h2>
 
                 <p><em>Předmět:</em> Elektrotechnika<br />
                 <em>Téma:</em> Elektrické jištění<br />
                 <em>Cíl:</em> Žák vlastními slovy vysvětlí, k čemu slouží jistič a proč je důležité chránit elektrické vedení před nadproudem.</p>
 
-                <h3 id="1-problem-ze-zivota-3-minuty">1. Problém ze života – 3 minuty</h3>
+                <h3 id="1-problem-ze-zivota-3-minuty" tabindex="-1">1. Problém ze života – 3 minuty</h3>
 
                 <p>Učitel představí situaci: „V domácnosti se po zapnutí několika spotřebičů vypnul jistič. Proč se to mohlo stát?“</p>
 
-                <h3 id="2-vlastni-hypotezy-5-minut">2. Vlastní hypotézy – 5 minut</h3>
+                <h3 id="2-vlastni-hypotezy-5-minut" tabindex="-1">2. Vlastní hypotézy – 5 minut</h3>
 
                 <p>Žáci navrhnou vysvětlení. Učitel jejich odpovědi zaznamená, ale zatím neposkytuje úplné řešení.</p>
 
-                <h3 id="3-prace-s-ai-7-minut">3. Práce s AI – 7 minut</h3>
+                <h3 id="3-prace-s-ai-7-minut" tabindex="-1">3. Práce s AI – 7 minut</h3>
 
                 <p>Žáci pomocí řízených otázek prozkoumají souvislost mezi elektrickým proudem, zatížením obvodu a funkcí jističe. Použijí pouze učitelem ověřené zadání a podklady.</p>
 
-                <h3 id="4-vysvetleni-spoluzakovi-5-minut">4. Vysvětlení spolužákovi – 5 minut</h3>
+                <h3 id="4-vysvetleni-spoluzakovi-5-minut" tabindex="-1">4. Vysvětlení spolužákovi – 5 minut</h3>
 
                 <p>Ve dvojicích si vysvětlí, co zjistili. Učitel opraví případné nepřesnosti a doplní odborný výklad.</p>
 
-                <h3 id="5-overeni-bez-ai-5-minut">5. Ověření bez AI – 5 minut</h3>
+                <h3 id="5-overeni-bez-ai-5-minut" tabindex="-1">5. Ověření bez AI – 5 minut</h3>
 
                 <p>Každý žák samostatně odpoví na tři krátké otázky. Učitel získá přehled o skutečném porozumění a rozhodne, zda je potřeba další procvičení.</p>
 
                 <p>Celou aktivitu lze realizovat také s jediným počítačem a projekcí. Není nutné, aby měl každý žák vlastní telefon nebo účet u poskytovatele AI.</p>
 
-                <h2 id="prompty">Tři prompty, které může učitel ihned vyzkoušet</h2>
+                <h2 id="prompty" tabindex="-1">Tři prompty, které může učitel ihned vyzkoušet</h2>
 
                 <section class="prompt-card" aria-labelledby="prompt-1-title">
                     <div class="prompt-card-header">
-                        <div><span class="tool-guide-callout-label">PROMPT 1</span><h3 id="prompt-1-title">Probuď zvídavost</h3></div>
+                        <div><span class="tool-guide-callout-label">PROMPT 1</span><h3 id="prompt-1-title" tabindex="-1">Probuď zvídavost</h3></div>
                         <button class="prompt-copy-button" type="button" data-copy-prompt="prompt-1" aria-describedby="prompt-1-feedback">Kopírovat prompt</button>
                     </div>
                     <pre class="prompt-body" id="prompt-1">Připravuji hodinu na téma [TÉMA] pro žáky [ROČNÍK A OBOR]. Navrhni pět zajímavých úvodních otázek nebo problémových situací ze skutečného života. Každá musí souviset s konkrétním vzdělávacím cílem. Nepoužívej samoúčelné hry. U každé otázky uveď, jaké znalosti žáci potřebují k jejímu vysvětlení a jakou mylnou představu může odhalit.</pre>
@@ -277,7 +280,7 @@
 
                 <section class="prompt-card" aria-labelledby="prompt-2-title">
                     <div class="prompt-card-header">
-                        <div><span class="tool-guide-callout-label">PROMPT 2</span><h3 id="prompt-2-title">Buď průvodcem, ne strojem na odpovědi</h3></div>
+                        <div><span class="tool-guide-callout-label">PROMPT 2</span><h3 id="prompt-2-title" tabindex="-1">Buď průvodcem, ne strojem na odpovědi</h3></div>
                         <button class="prompt-copy-button" type="button" data-copy-prompt="prompt-2" aria-describedby="prompt-2-feedback">Kopírovat prompt</button>
                     </div>
                     <pre class="prompt-body" id="prompt-2">Jsi trpělivý výukový průvodce středoškolského žáka. Pomáhej mi porozumět tématu [TÉMA]. Nejprve zjisti, co už vím. Pokládej vždy jen jednu otázku a počkej na odpověď. Neposkytuj hned celé řešení. Pokud si nevím rady, nabídni přiměřenou nápovědu nebo krátké vysvětlení. Neudržuj mě zbytečně v nejistotě. Průběžně ověřuj, zda rozumím. Na závěr mi polož tři otázky bez nápovědy. Neuděluj mi známku.</pre>
@@ -286,14 +289,14 @@
 
                 <section class="prompt-card" aria-labelledby="prompt-3-title">
                     <div class="prompt-card-header">
-                        <div><span class="tool-guide-callout-label">PROMPT 3</span><h3 id="prompt-3-title">Ověř skutečné porozumění</h3></div>
+                        <div><span class="tool-guide-callout-label">PROMPT 3</span><h3 id="prompt-3-title" tabindex="-1">Ověř skutečné porozumění</h3></div>
                         <button class="prompt-copy-button" type="button" data-copy-prompt="prompt-3" aria-describedby="prompt-3-feedback">Kopírovat prompt</button>
                     </div>
                     <pre class="prompt-body" id="prompt-3">K tématu [TÉMA] vytvoř tři úlohy pro samostatné ověření znalostí. První ověří základní porozumění, druhá použití znalostí v nové situaci a třetí schopnost vysvětlit vlastní postup. Připrav také správná řešení a jednoduchá kritéria hodnocení pro učitele. Žák má tyto úlohy řešit bez AI.</pre>
                     <span class="prompt-copy-feedback" id="prompt-3-feedback" aria-live="polite"></span>
                 </section>
 
-                <h2 id="pohlidat">Co si musí učitel pohlídat</h2>
+                <h2 id="pohlidat" tabindex="-1">Co si musí učitel pohlídat</h2>
 
                 <p>Nadšení pro nové technologie nesmí zastínit jejich omezení.</p>
 
@@ -311,7 +314,7 @@
 
                 <p>Zavedení AI do výuky má smysl pouze tehdy, pokud přináší konkrétní vzdělávací přínos.</p>
 
-                <h2 id="zaver">Závěr: Technologie může pomoci. Zájem musí vzniknout u žáka.</h2>
+                <h2 id="zaver" tabindex="-1">Závěr: Technologie může pomoci. Zájem musí vzniknout u žáka.</h2>
 
                 <p>Žádný chatbot nedokáže sám vytvořit dobrou výuku.</p>
 
@@ -327,7 +330,7 @@
 
                 <p>Cílem je vychovat člověka, který dokáže přemýšlet, klást dobré otázky a hledat odpovědi i sám.</p>
 
-                <h2 id="odborne-zdroje">Odborné zdroje</h2>
+                <h2 id="odborne-zdroje" tabindex="-1">Odborné zdroje</h2>
 
                 <ul>
                     <li><a class="workflow-inline-link" href="https://www.oecd.org/en/publications/oecd-digital-education-outlook-2026_062a7394-en.html" target="_blank" rel="noopener noreferrer">OECD – Digital Education Outlook 2026</a></li>
@@ -359,6 +362,7 @@
   <script src="js/site-footer.js?v=20260927-human-loop" defer></script>
   <script src="js/site-navigation-data.js?v=20261108-7h" defer></script>
   <script src="js/site-navigation.js?v=20261108-7h" defer></script>
+  <script src="js/article-content-navigation.js?v=20261114-shared-content-v1" defer></script>
   <script src="js/tool-guide.js?v=20261030-ai-duvod-prompty" defer></script>
 </body>
 </html>
