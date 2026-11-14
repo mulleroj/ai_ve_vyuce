@@ -1773,7 +1773,7 @@ test('wave 12 CSS Grid examples remain exact, selectable, copyable, and containe
   const context = await browser.newContext({ viewport: { width: 320, height: 900 }, permissions: ['clipboard-read', 'clipboard-write'] });
   const page = await context.newPage();
   await page.goto(baseURL + '/ai-workflow-css-grid-vibe-coding.html', { waitUntil: 'networkidle' });
-  const codes = page.locator('.article-content code');
+  const codes = page.locator('body code');
   await expect(codes).toHaveCount(31);
   await expect(page.locator('.article-content button')).toHaveCount(0);
   for (let index = 0; index < 31; index++) {
@@ -1842,7 +1842,7 @@ test('wave 12 light hero computed styles, full screenshots, and hero contact she
         const rect = element.getBoundingClientRect();
         return { complete: element.complete, naturalWidth: element.naturalWidth, naturalHeight: element.naturalHeight, width: rect.width, height: rect.height, alt: element.alt };
       });
-      expect(image.complete && image.naturalWidth > 0 && image.naturalHeight > 0 && image.alt.trim()).toBe(true);
+      expect(Boolean(image.complete && image.naturalWidth > 0 && image.naturalHeight > 0 && image.alt.trim())).toBe(true);
       expect(Math.abs((image.width / image.height) / (image.naturalWidth / image.naturalHeight) - 1)).toBeLessThan(0.02);
       const styles = await page.evaluate(() => {
         const selectors = [
