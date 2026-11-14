@@ -136,9 +136,24 @@ test('contents anchor works with JavaScript disabled', async ({ browser }) => {
   const context = await browser.newContext({ viewport: { width: 390, height: 844 }, javaScriptEnabled: false });
   const page = await context.newPage();
   await page.goto(`${baseURL}/ai-novinka-datovi-agenti-lidske-schvaleni.html`);
-  await page.locator('.article-content-navigation a[href="#obsah-co-si-odnest"]').click();
+  const chapter = page.locator('#obsah-co-si-odnest');
+  const link = page.locator('.article-content-navigation a[href="#obsah-co-si-odnest"]');
+  await expect(chapter).not.toBeInViewport();
+
+  // Keep Playwright's own click scrolling out of the measurement; then observe the
+  // browser's native smooth anchor scroll to completion instead of racing its animation.
+  await link.evaluate(el => el.scrollIntoView({ behavior: 'instant', block: 'center' }));
+  const scrollYBeforeAnchor = await page.evaluate(() => window.scrollY);
+  await page.evaluate(() => {
+    window.__noJsAnchorScrollEnd = new Promise(resolve => {
+      document.addEventListener('scrollend', () => resolve(window.scrollY), { once: true });
+    });
+  });
+  await link.click();
   await expect(page).toHaveURL(/#obsah-co-si-odnest$/);
-  await expect(page.locator('#obsah-co-si-odnest')).toBeInViewport();
+  const scrollYAfterAnchor = await page.evaluate(() => window.__noJsAnchorScrollEnd);
+  expect(scrollYAfterAnchor).toBeGreaterThan(scrollYBeforeAnchor);
+  await expect(chapter).toBeInViewport();
   await expect(page.locator('.article-content-navigation')).toHaveJSProperty('open', true);
   await context.close();
 });
