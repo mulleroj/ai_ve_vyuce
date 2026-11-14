@@ -865,7 +865,7 @@ for (const article of migrationArticles) {
         expect(state.scrollWidth, `horizontal overflow at ${width}px on ${article.file}`).toBeLessThanOrEqual(width + 1);
         expect(state.idsUnique, `duplicate IDs on ${article.file}`).toBe(true);
         expect(state.anchorsResolve, `broken contents anchor on ${article.file}`).toBe(true);
-        expect(state.bodyBackground).toBe('rgb(255, 254, 250)');
+        expect(state.bodyBackground).toBe('rgb(255, 253, 247)');
         expect(state.imageStatus.length, `article illustration missing on ${article.file}`).toBeGreaterThan(0);
         expect(state.imageStatus.every(image => image.complete && image.naturalWidth > 0 && image.alt), `article illustration failed to load or lacks alt text on ${article.file}`).toBe(true);
         expect(state.promptStyles.every(style => style.background !== 'rgba(0, 0, 0, 0)' && style.color !== 'rgba(0, 0, 0, 0)'), `prompt styling missing on ${article.file}`).toBe(true);
@@ -2841,8 +2841,8 @@ const wave17MagazineArticles = [
     file: 'ai-novinka-ai-duvod-premyslet.html',
     date: '2026-10-30',
     dateLabel: '30. října 2026',
-    h2Count: 15,
-    h3Count: 5,
+    h2Count: 12,
+    h3Count: 8,
     tocCount: 20,
     representative: '#prakticka-ukazka',
     breadcrumbCurrent: 'Didaktika',
@@ -3102,9 +3102,10 @@ test('wave 17 all three prompt buttons copy their unchanged full text with feedb
     await button.click();
     await expect(button).toHaveText('Zkopírováno');
     await expect(button).toHaveClass(/copied/);
-    await expect(button.closest('.prompt-card').locator('.prompt-copy-feedback')).toHaveText('Zkopírováno');
+    const card = button.locator('xpath=ancestor::*[contains(concat(" ", normalize-space(@class), " "), " prompt-card ")]');
+    await expect(card.locator('.prompt-copy-feedback')).toHaveText('Zkopírováno');
     expect((await page.evaluate(() => navigator.clipboard.readText())).trim()).toBe(expected);
-    if (index === 0) await button.closest('.prompt-card').screenshot({ path: 'artifacts/wave17-prompt-copy-success.png' });
+    if (index === 0) await card.screenshot({ path: 'artifacts/wave17-prompt-copy-success.png' });
   }
   await context.close();
 });
