@@ -2361,7 +2361,7 @@ test('wave 14 hero computed styles and six-view screenshot evidence', async ({ p
       await page.screenshot({ path: `artifacts/${item.file}-mobile-390-hero.png` });
       const mobileStyles = await page.evaluate(() => ({width:innerWidth,scrollWidth:document.documentElement.scrollWidth,background:getComputedStyle(document.body).backgroundColor,heroBackground:getComputedStyle(document.querySelector('.workflow-shell')).backgroundImage}));
       expect(mobileStyles.scrollWidth).toBeLessThanOrEqual(391);
-      records.push({url:location.pathname,width:390,...mobileStyles});
+      records.push({url:new URL(page.url()).pathname,width:390,...mobileStyles});
       const toc = page.locator('.article-content-navigation');
       await toc.scrollIntoViewIfNeeded();
       await expect(toc).toHaveJSProperty('open',true);
