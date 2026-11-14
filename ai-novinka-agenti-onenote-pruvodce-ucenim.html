@@ -20,15 +20,25 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261114-8d" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261114-8d" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261113-8a" />
 </head>
 
-<body class="workflow-page workflow-news-roundup">
-    <header class="workflow-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-            <a class="workflow-back" href="ai.html#novinky">← AI ve vzdělávání</a>
-        </div>
-        <div class="workflow-hero">
+<body class="workflow-page workflow-news-roundup light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="discover">
+    <header class="site-header" id="top">
+  <nav class="site-nav" id="nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+      <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html" aria-current="location">Číst a objevovat</a>
+    </div></div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="ai.html#novinky">AI ve vzdělávání</a></li><li aria-current="page">AI ve vzdělávání: chytřejší agenti, OneNote v ChatGPT a AI jako průvodce učením</li></ol></nav>
+<section class="workflow-shell">
+<div class="workflow-hero">
             <div>
                 <div class="workflow-eyebrow">AI ve vzdělávání · 7. září 2026</div>
                 <h1>AI ve vzdělávání:<br /><span>chytřejší agenti, OneNote v ChatGPT a AI jako průvodce učením</span></h1>
@@ -41,9 +51,11 @@
                 <div class="workflow-stage"><span class="workflow-stage-number">03</span><div><strong>Průvodce učením</strong><small>Otázky, které pomáhají žákovi porozumět</small></div></div>
             </div>
         </div>
-    </header>
+</section>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
+        <details class="article-content-navigation" open><summary><span>V tomto článku</span></summary><nav aria-label="Obsah článku"><ol><li><a href="#wave14-agenti-onenote-pruvodce-ucenim-h2-01">GPT-6 Astra: důležitější než nový model je způsob práce</a></li><li><a href="#wave14-agenti-onenote-pruvodce-ucenim-h2-02">Astra přichází také do Microsoft Copilotu</a></li><li><a href="#wave14-agenti-onenote-pruvodce-ucenim-h2-03">Když si AI není jistá, měla by se zastavit</a></li><li><a href="#wave14-agenti-onenote-pruvodce-ucenim-h2-04">ChatGPT se propojuje s OneNotem</a></li><li><a href="#wave14-agenti-onenote-pruvodce-ucenim-h2-05">Nejprve testovat, potom teprve zapojovat školní data</a></li><li><a href="#wave14-agenti-onenote-pruvodce-ucenim-h2-06">Google posiluje AI, která žáka vede místo toho, aby odpovídala</a></li><li><a href="#wave14-agenti-onenote-pruvodce-ucenim-h2-07">AI tutor není totéž jako generátor odpovědí</a></li><li><a href="#wave14-agenti-onenote-pruvodce-ucenim-h2-08">Co lze vyzkoušet přímo v hodině</a></li><li><a href="#wave14-agenti-onenote-pruvodce-ucenim-h2-09">Jak testovat nový model při tvorbě materiálů</a></li><li><a href="#wave14-agenti-onenote-pruvodce-ucenim-h2-10">Co z toho plyne pro vlastní vzdělávací AI nástroje</a><ol><li><a href="#wave14-agenti-onenote-pruvodce-ucenim-h3-01">AI musí umět pracovat v delším workflow</a></li><li><a href="#wave14-agenti-onenote-pruvodce-ucenim-h3-02">AI se bude stále více napojovat na existující nástroje</a></li><li><a href="#wave14-agenti-onenote-pruvodce-ucenim-h3-03">AI by měla žáka vést, ne nahrazovat</a></li></ol></li><li><a href="#wave14-agenti-onenote-pruvodce-ucenim-h2-11">Shrnutí</a></li></ol></nav></details>
+
         <article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Chytřejší agenti, propojení ChatGPT s OneNotem a AI jako průvodce učením. Tři směry vývoje a praktické tipy pro učitele.</p>
@@ -59,7 +71,7 @@
 
                 <p>Pro učitele jsou zajímavé především tři směry: nový model GPT-6 Astra, propojení ChatGPT s OneNotem a rozvoj režimů, které využívají AI jako průvodce učením.</p>
 
-                <h2>GPT-6 Astra: důležitější než nový model je způsob práce</h2>
+                <h2 id="wave14-agenti-onenote-pruvodce-ucenim-h2-01">GPT-6 Astra: důležitější než nový model je způsob práce</h2>
 
                 <p>OpenAI představilo model GPT-6 Astra zaměřený na komplexnější vícekrokové úlohy, práci s dokumenty, výzkum, používání počítače a tvorbu výstupů podle existujících šablon.</p>
 
@@ -71,7 +83,7 @@
 
                 <p>Právě tento typ práce bývá pro učitele cennější než jednorázové generování materiálu od nuly.</p>
 
-                <h2>Astra přichází také do Microsoft Copilotu</h2>
+                <h2 id="wave14-agenti-onenote-pruvodce-ucenim-h2-02">Astra přichází také do Microsoft Copilotu</h2>
 
                 <p>Microsoft oznámil dostupnost GPT-6 Astra ve vybraných produktech svého Copilot ekosystému, například v Copilot Cowork a Copilot Studio.</p>
 
@@ -81,7 +93,7 @@
 
                 <p>AI tak postupně přestává být samostatnou aplikací a začíná se stávat součástí běžných pracovních procesů.</p>
 
-                <h2>Když si AI není jistá, měla by se zastavit</h2>
+                <h2 id="wave14-agenti-onenote-pruvodce-ucenim-h2-03">Když si AI není jistá, měla by se zastavit</h2>
 
                 <p>Zajímavým bezpečnostním principem u novějších agentních systémů je snaha rozpoznat situaci, kdy AI pravděpodobně špatně pochopila zadání.</p>
 
@@ -97,7 +109,7 @@
 
                 <p>Čím více totiž AI dokáže dělat sama, tím důležitější je schopnost poznat vlastní nejistotu a předat rozhodnutí člověku.</p>
 
-                <h2>ChatGPT se propojuje s OneNotem</h2>
+                <h2 id="wave14-agenti-onenote-pruvodce-ucenim-h2-04">ChatGPT se propojuje s OneNotem</h2>
 
                 <p>Další zajímavou novinkou je beta verze propojení ChatGPT s OneNotem.</p>
 
@@ -119,7 +131,7 @@
 
                 <p>To už je podstatně praktičtější než ruční kopírování obsahu z OneNotu do samostatného chatbotu.</p>
 
-                <h2>Nejprve testovat, potom teprve zapojovat školní data</h2>
+                <h2 id="wave14-agenti-onenote-pruvodce-ucenim-h2-05">Nejprve testovat, potom teprve zapojovat školní data</h2>
 
                 <p>Propojení s OneNotem je ale zatím vhodné chápat jako experimentální funkci.</p>
 
@@ -138,7 +150,7 @@
 
                 <p>U AI platí jednoduché pravidlo: <strong>čím větší oprávnění, tím menší prostor pro bezstarostné experimentování</strong>.</p>
 
-                <h2>Google posiluje AI, která žáka vede místo toho, aby odpovídala</h2>
+                <h2 id="wave14-agenti-onenote-pruvodce-ucenim-h2-06">Google posiluje AI, která žáka vede místo toho, aby odpovídala</h2>
 
                 <p>Google současně rozvíjí vzdělávací funkce zaměřené na <strong>Guided Learning</strong>.</p>
 
@@ -160,7 +172,7 @@
 
                 <p>Ve druhém případě AI může pomáhat jeho práci řídit.</p>
 
-                <h2>AI tutor není totéž jako generátor odpovědí</h2>
+                <h2 id="wave14-agenti-onenote-pruvodce-ucenim-h2-07">AI tutor není totéž jako generátor odpovědí</h2>
 
                 <p>Podobný směr je vidět i u dalších nástrojů, například ChatGPT Study Mode.</p>
 
@@ -179,7 +191,7 @@
 
                 <p>Samozřejmě stále platí, že AI může udělat chybu nebo žáka vést špatným směrem. Učitel proto zůstává zodpovědný za výběr vhodného nástroje a typu úlohy.</p>
 
-                <h2>Co lze vyzkoušet přímo v hodině</h2>
+                <h2 id="wave14-agenti-onenote-pruvodce-ucenim-h2-08">Co lze vyzkoušet přímo v hodině</h2>
 
                 <p>Jednoduchým experimentem může být porovnání běžného chatu a režimu Guided Learning.</p>
 
@@ -202,7 +214,7 @@
 
                 <p>To je podle mě mnohem zajímavější způsob hodnocení AI nástroje než jednoduchá otázka: „Který chatbot odpovídá lépe?“</p>
 
-                <h2>Jak testovat nový model při tvorbě materiálů</h2>
+                <h2 id="wave14-agenti-onenote-pruvodce-ucenim-h2-09">Jak testovat nový model při tvorbě materiálů</h2>
 
                 <p>Pokud se nový výkonnější model objeví v dostupném účtu, není potřeba ho testovat otázkou:</p>
 
@@ -225,17 +237,17 @@
 
                 <p>Pro tvůrce vzdělávacích materiálů je právě tato schopnost velmi důležitá.</p>
 
-                <h2>Co z toho plyne pro vlastní vzdělávací AI nástroje</h2>
+                <h2 id="wave14-agenti-onenote-pruvodce-ucenim-h2-10">Co z toho plyne pro vlastní vzdělávací AI nástroje</h2>
 
                 <p>Aktuální vývoj ukazuje tři důležité principy.</p>
 
-                <h3>AI musí umět pracovat v delším workflow</h3>
+                <h3 id="wave14-agenti-onenote-pruvodce-ucenim-h3-01">AI musí umět pracovat v delším workflow</h3>
 
                 <p>Nestačí vygenerovat jeden text.</p>
 
                 <p>Dobrá vzdělávací AI musí zvládnout několik navazujících kroků a přitom zachovat původní zadání, strukturu a pedagogický záměr.</p>
 
-                <h3>AI se bude stále více napojovat na existující nástroje</h3>
+                <h3 id="wave14-agenti-onenote-pruvodce-ucenim-h3-02">AI se bude stále více napojovat na existující nástroje</h3>
 
                 <p>OneNote, Drive, Teams, dokumenty, tabulky nebo školní úložiště se postupně stávají přirozenou součástí AI workflow.</p>
 
@@ -243,7 +255,7 @@
 
                 <p>AI se přesune tam, kde už učitel pracuje.</p>
 
-                <h3>AI by měla žáka vést, ne nahrazovat</h3>
+                <h3 id="wave14-agenti-onenote-pruvodce-ucenim-h3-03">AI by měla žáka vést, ne nahrazovat</h3>
 
                 <p>Pro vzdělávání je nejdůležitější otázka stále stejná:</p>
 
@@ -251,7 +263,7 @@
 
                 <p>Čím schopnější modely budou, tím důležitější tato otázka bude.</p>
 
-                <h2>Shrnutí</h2>
+                <h2 id="wave14-agenti-onenote-pruvodce-ucenim-h2-11">Shrnutí</h2>
 
                 <p>Nejdůležitější novinkou není samotný příchod dalšího výkonnějšího modelu.</p>
 
@@ -300,6 +312,9 @@
 
     <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai-novinky.html">Další novinky</a> · <a href="ai.html#novinky">Zpět na AI ve vzdělávání</a></footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261113-8a" defer></script>
 </body>
 
 </html>

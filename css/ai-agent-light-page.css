@@ -431,3 +431,13 @@ body.ai-agent-light-page.light-background-pilot.workflow-page .workflow-project-
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+
+/* Wave 14: keep the NotebookLM cover panel in the shared light hero. */
+body.ai-agent-light-page.light-background-pilot.workflow-page .philosophy-hero-cover {
+  border-color: #dfe8e1;
+  background: #f2f6f1;
+  box-shadow: 0 10px 30px rgba(23, 56, 47, 0.08);
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page .philosophy-hero-cover::before,
+body.ai-agent-light-page.light-background-pilot.workflow-page .philosophy-hero-cover::after { display: none; }

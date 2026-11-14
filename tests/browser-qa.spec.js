@@ -751,7 +751,14 @@ const wave13Articles = [
 ];
 const wave13Gallery = { file: 'vibe-coding-pro-ucitele.html', title: 'Co si můžete vytvořit do výuky', activeArea: 'Tvořit s AI', breadcrumb: 'Vibe Coding', breadcrumbHref: 'vibe-coding.html', baselineSha: '646735727573f95b337fa03977b12530b8ebff61' };
 
-const migrationArticles = [...wave1Articles, ...wave2Articles, ...wave3Articles, ...wave4Articles, ...wave5Articles, ...wave6Articles, ...wave7Articles, ...wave8Articles, ...wave10Articles, ...wave11Articles, ...wave12Articles, ...wave13Articles];
+
+const wave14Articles = [
+  { file: 'ai-novinka-agenti-onenote-pruvodce-ucenim.html', title: 'AI ve vzdělávání: chytřejší agenti, OneNote v ChatGPT a AI jako průvodce učením', activeArea: 'Číst a objevovat', breadcrumb: 'AI ve vzdělávání', breadcrumbHref: 'ai.html#novinky', tocCount: 14, h2: '#wave14-agenti-onenote-pruvodce-ucenim-h2-01', h3: '#wave14-agenti-onenote-pruvodce-ucenim-h3-01', baselineSha: '709eeb0edb22c8bdd988ec41999e087b25861143', noLegacyTopbar: true, waitForStableViewportChapter: true, representative: '#wave14-agenti-onenote-pruvodce-ucenim-h2-03' },
+  { file: 'ai-novinka-gemini-desktop-chatgpt-word-agenti.html', title: 'AI ve vzdělávání: Gemini na Windows, ChatGPT ve Wordu a nové hranice pro AI agenty', activeArea: 'Číst a objevovat', breadcrumb: 'AI ve vzdělávání', breadcrumbHref: 'ai.html#novinky', tocCount: 13, h2: '#wave14-gemini-desktop-chatgpt-word-agenti-h2-01', h3: '#wave14-gemini-desktop-chatgpt-word-agenti-h3-01', baselineSha: '709eeb0edb22c8bdd988ec41999e087b25861143', noLegacyTopbar: true, waitForStableViewportChapter: true, representative: '#wave14-gemini-desktop-chatgpt-word-agenti-h2-03' },
+  { file: 'ai-novinka-sdilene-zdroje-propojene-aplikace-2026.html', title: 'AI ve vzdělávání: sdílené zdroje, propojené aplikace a bezpečnější práce s daty', activeArea: 'Číst a objevovat', breadcrumb: 'AI ve vzdělávání', breadcrumbHref: 'ai.html#novinky', tocCount: 17, h2: '#wave14-sdilene-zdroje-propojene-aplikace-2026-h2-01', h3: '#wave14-sdilene-zdroje-propojene-aplikace-2026-h3-01', baselineSha: '709eeb0edb22c8bdd988ec41999e087b25861143', noLegacyTopbar: true, waitForStableViewportChapter: true, representative: '#wave14-sdilene-zdroje-propojene-aplikace-2026-h2-03' },
+  { file: 'notebooklm-hlasovy-rozhovor-nad-zdroji.html', title: 'Když AI zná naše učivo: hlasový rozhovor nad zdroji v NotebookLM', activeArea: 'Číst a objevovat', breadcrumb: 'AI ve vzdělávání', breadcrumbHref: 'ai.html#novinky', tocCount: 12, h2: '#wave14-notebooklm-hlasovy-rozhovor-nad-zdroji-h2-01', h3: null, baselineSha: '709eeb0edb22c8bdd988ec41999e087b25861143', noLegacyTopbar: true, waitForStableViewportChapter: true, representative: '#wave14-notebooklm-hlasovy-rozhovor-nad-zdroji-h2-03' },
+];
+const migrationArticles = [...wave1Articles, ...wave2Articles, ...wave3Articles, ...wave4Articles, ...wave5Articles, ...wave6Articles, ...wave7Articles, ...wave8Articles, ...wave10Articles, ...wave11Articles, ...wave12Articles, ...wave13Articles, ...wave14Articles];
 
 for (const article of migrationArticles) {
   test.describe(`Migration: ${article.file}`, () => {
@@ -769,7 +776,7 @@ for (const article of migrationArticles) {
       for (const width of widths) {
         await page.setViewportSize({ width, height: 900 });
         await page.goto(`${baseURL}/${article.file}`);
-        await page.locator('.workflow-article img').evaluateAll(images => Promise.all(images.map(image => { image.loading = 'eager'; return image.decode().catch(() => false); })));
+        await page.locator('.workflow-article img, .workflow-hero img').evaluateAll(images => Promise.all(images.map(image => { image.loading = 'eager'; return image.decode().catch(() => false); })));
         await page.evaluate(() => window.scrollTo(0, 0));
         await expect(page.locator('.site-header')).toHaveCount(1);
         if (article.noLegacyTopbar) await expect(page.locator('.workflow-topbar')).toHaveCount(0);
@@ -813,7 +820,7 @@ for (const article of migrationArticles) {
               scrollHeight: document.querySelector('.article-content-navigation nav').scrollHeight,
               clientHeight: document.querySelector('.article-content-navigation nav').clientHeight
             },
-            imageStatus: [...document.querySelectorAll('.workflow-article img')].map(img => ({
+            imageStatus: [...document.querySelectorAll('.workflow-article img, .workflow-hero img')].map(img => ({
               src: img.getAttribute('src'), complete: img.complete, naturalWidth: img.naturalWidth, alt: img.getAttribute('alt')
             })),
             promptStyles: [...document.querySelectorAll('.article-prompt')].slice(0, 1).map(el => ({
@@ -2164,7 +2171,7 @@ test('wave 13 catalog records remain complete, dated, unique, linked, and homepa
   await page.goto(baseURL, { waitUntil: 'networkidle' });
   await expect(page.locator('#latest-articles .latest-card')).toHaveCount(6);
   const data = await page.evaluate(() => {
-    const wanted = ['asistent-ucitele-osobni-ai-asistent.html','neplytvej-inteligenci-ai-modely.html','skill-anglictina-vyukove-materialy.html','vibe-coding-bezpecnost-kodu-php2shell.html','vibe-coding-pro-ucitele.html','vibe-coding-ucitele.html'];
+    const wanted = ['asistent-ucitele-osobni-ai-asistent.html','neplytvej-inteligenci-ai-modely.html','skill-anglictina-vyukove-materialy.html','vibe-coding-bezpecnost-kodu-php2shell.html','vibe-coding-pro-ucitele.html','vibe-coding-ucitele.html','ai-novinka-agenti-onenote-pruvodce-ucenim.html','ai-novinka-gemini-desktop-chatgpt-word-agenti.html','ai-novinka-sdilene-zdroje-propojene-aplikace-2026.html','notebooklm-hlasovy-rozhovor-nad-zdroji.html'];
     const records = wanted.map(href => window.siteArticles.find(item => item.href === href));
     const latest = window.siteArticles.map((article,index) => ({article,index}))
       .sort((a,b) => (b.article.date || '').localeCompare(a.article.date || '') || a.index-b.index).slice(0,6).map(item=>item.article.href);
@@ -2176,7 +2183,11 @@ test('wave 13 catalog records remain complete, dated, unique, linked, and homepa
     'skill-anglictina-vyukove-materialy.html':['2026-11-01','1. listopadu 2026'],
     'vibe-coding-bezpecnost-kodu-php2shell.html':['2026-10-25','25. října 2026'],
     'vibe-coding-pro-ucitele.html':['2026-09-11','11. září 2026'],
-    'vibe-coding-ucitele.html':['2026-08-23','23. srpna 2026']
+    'vibe-coding-ucitele.html':['2026-08-23','23. srpna 2026'],
+    'ai-novinka-agenti-onenote-pruvodce-ucenim.html':['2026-09-07','7. září 2026'],
+    'ai-novinka-gemini-desktop-chatgpt-word-agenti.html':['2026-09-18','18. září 2026'],
+    'ai-novinka-sdilene-zdroje-propojene-aplikace-2026.html':['2026-09-11','11. září 2026'],
+    'notebooklm-hlasovy-rozhovor-nad-zdroji.html':['2026-09-23','23. září 2026']
   };
   expect(data.records.every(Boolean)).toBe(true);
   expect(data.duplicates).toEqual([]);
@@ -2216,4 +2227,153 @@ test('wave 13 full article media and metadata match source HEAD on all six migra
     expect(after.published, `published date metadata on ${article.file}`).toBe(before.published);
     expect(after.dates, `article dates on ${article.file}`).toEqual(before.dates);
   }
+});
+
+
+test('wave 14 preserves every article text, heading, source link, image, and metadata from the exact baseline', async ({ page }) => {
+  const { execFileSync } = require('node:child_process');
+  for (const item of wave14Articles) {
+    const beforeHTML = execFileSync('git', ['show', `${item.baselineSha}:${item.file}`], { encoding: 'utf8' });
+    const afterHTML = require('node:fs').readFileSync(item.file, 'utf8');
+    const [before, after] = await page.evaluate(([oldHTML,newHTML]) => {
+      const fingerprint = html => {
+        const doc = new DOMParser().parseFromString(html, 'text/html');
+        const norm = value => (value || '').replace(/\\s+/g, ' ').trim();
+        const article = doc.querySelector('.workflow-article');
+        const related = doc.querySelector('.workflow-related');
+        const scoped = [article,related].filter(Boolean);
+        return {
+          title: doc.title,
+          heroText: norm(doc.querySelector('.workflow-hero')?.textContent),
+          articleText: scoped.map(el=>norm(el.textContent)),
+          headings: [...doc.querySelectorAll('.workflow-article h2,.workflow-article h3')].map(h=>[h.tagName,norm(h.textContent)]),
+          links: scoped.flatMap(el=>[...el.querySelectorAll('a[href]')].map(a=>[a.getAttribute('href'),norm(a.textContent)])),
+          images: [...scoped.flatMap(el=>[...el.querySelectorAll('img')]),...doc.querySelectorAll('.workflow-hero img')].map(img=>[img.getAttribute('src'),img.getAttribute('alt'),img.getAttribute('width'),img.getAttribute('height')]),
+          ids: [...new Set(scoped.flatMap(el=>[...el.querySelectorAll('[id]')].map(node=>node.id)).filter(id=>!id.startsWith('wave14-')))].sort(),
+          metadata: [...doc.querySelectorAll('meta[name="description"],meta[property^="og:"]')].map(meta=>[meta.getAttribute('name')||meta.getAttribute('property'),meta.getAttribute('content')]),
+          canonical: doc.querySelector('link[rel="canonical"]')?.getAttribute('href') || null,
+          published: doc.querySelector('meta[property="article:published_time"]')?.getAttribute('content') || null,
+          time: [...doc.querySelectorAll('time')].map(el=>[el.getAttribute('datetime'),norm(el.textContent)]),
+          h1: norm(doc.querySelector('.workflow-hero h1')?.textContent),
+          lead: norm(doc.querySelector('.workflow-hero-lead')?.textContent),
+          counts: [doc.querySelectorAll('h2').length,doc.querySelectorAll('h3').length,scoped.reduce((n,el)=>n+el.querySelectorAll('img').length,0)+doc.querySelectorAll('.workflow-hero img').length,scoped.reduce((n,el)=>n+el.querySelectorAll('button').length,0)]
+        };
+      };
+      return [fingerprint(oldHTML),fingerprint(newHTML)];
+    }, [beforeHTML,afterHTML]);
+    expect(after.title, item.file).toBe(before.title);
+    expect(after.heroText, item.file+' hero/date text').toBe(before.heroText);
+    expect(after.articleText, item.file+' full article and related text').toEqual(before.articleText);
+    expect(after.headings, item.file+' H2/H3 order and wording').toEqual(before.headings);
+    expect(after.links, item.file+' hrefs and visible link text').toEqual(before.links);
+    expect(after.images, item.file+' images, alt text, and dimensions').toEqual(before.images);
+    expect(after.ids, item.file+' public article IDs').toEqual(before.ids);
+    expect(after.metadata, item.file+' SEO/Open Graph').toEqual(before.metadata);
+    expect(after.canonical, item.file+' canonical URL').toBe(before.canonical);
+    expect(after.published, item.file+' publication metadata').toBe(before.published);
+    expect(after.time, item.file+' time elements').toEqual(before.time);
+    expect(after.h1, item.file+' headline').toBe(before.h1);
+    expect(after.lead, item.file+' lead').toBe(before.lead);
+    expect(after.counts, item.file+' H2/H3/image/button inventory').toEqual(before.counts);
+    expect(after.counts[0], item.file+' total H2 inventory').toBe([12,9,15,13][wave14Articles.indexOf(item)]);
+    expect(after.counts[1], item.file+' total H3 inventory').toBe([6,8,6,3][wave14Articles.indexOf(item)]);
+    expect(after.counts[2], item.file+' illustration count').toBe(1);
+  }
+});
+
+test('wave 14 NotebookLM shared mobile menu retains the original navigation action', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(`${baseURL}/notebooklm-hlasovy-rozhovor-nad-zdroji.html`);
+  await expect(page.locator('script[src^="js/main.js"]')).toHaveCount(1);
+  await expect(page.locator('.nav-mobile-toggle')).toHaveCount(0);
+  const toggle = page.locator('.menu-toggle');
+  const menu = page.locator('#primary-menu');
+  await toggle.click();
+  await expect(toggle).toHaveAttribute('aria-expanded','true');
+  await expect(menu).toHaveClass(/is-open/);
+  await expect(menu).toBeVisible();
+  await page.screenshot({ path: 'artifacts/notebooklm-hlasovy-rozhovor-nad-zdroji-mobile-menu-open.png' });
+  await page.keyboard.press('Escape');
+  await expect(toggle).toHaveAttribute('aria-expanded','false');
+  await expect(menu).not.toHaveClass(/is-open/);
+});
+
+test('wave 14 direct chapter links work with JavaScript disabled', async ({ browser }) => {
+  const page = await browser.newPage({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
+  for (const item of wave14Articles) {
+    await page.goto(`${baseURL}/${item.file}${item.h2}`);
+    await expect(page).toHaveURL(new RegExp(item.h2.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'$'));
+    const heading = page.locator(item.h2);
+    await expect(heading).toBeAttached();
+    const id = await heading.getAttribute('id');
+    expect(id).toBe(item.h2.slice(1));
+  }
+  await page.close();
+});
+
+test('wave 14 hero computed styles and six-view screenshot evidence', async ({ page }) => {
+  const fs = require('node:fs');
+  const records = [];
+  const heroes = [];
+  for (const item of [...wave14Articles, { file: 'ai-novinka-datovi-agenti-lidske-schvaleni.html', title: 'Referenční světlá stránka' }]) {
+    await page.setViewportSize({ width: 1440, height: 1000 });
+    await page.goto(`${baseURL}/${item.file}`, { waitUntil: 'networkidle' });
+    await page.evaluate(() => document.fonts.ready);
+    const hero = page.locator('.workflow-shell');
+    const heroShot = await hero.screenshot();
+    if (wave14Articles.includes(item)) heroes.push({ title: item.title, data: heroShot.toString('base64') });
+    const styles = await page.evaluate(() => {
+      const selectors = ['.workflow-shell','.workflow-hero','.philosophy-hero-cover','.workflow-hero h1','.workflow-hero-lead','.workflow-eyebrow','.workflow-meta','.workflow-meta span','.workflow-shell img'];
+      const nodes = selectors.map(selector => {
+        const el = document.querySelector(selector);
+        if (!el) return {selector, missing:true};
+        const get = pseudo => {
+          const s = getComputedStyle(el,pseudo);
+          return {backgroundColor:s.backgroundColor,backgroundImage:s.backgroundImage,color:s.color,borderColor:s.borderColor,boxShadow:s.boxShadow,display:s.display,content:s.content};
+        };
+        return {selector, rect:el.getBoundingClientRect().toJSON(), style:get(null), before:get('::before'), after:get('::after')};
+      });
+      return {url:location.pathname,width:innerWidth,bodyBackground:getComputedStyle(document.body).backgroundColor,nodes};
+    });
+    records.push(styles);
+    expect(styles.bodyBackground).toBe('rgb(255, 254, 250)');
+    expect(styles.nodes.find(x=>x.selector==='.workflow-hero h1').style.color).toBe('rgb(16, 45, 43)');
+    expect(styles.nodes.find(x=>x.selector==='.workflow-hero-lead').style.color).toBe('rgb(52, 75, 69)');
+    expect(styles.nodes.find(x=>x.selector==='.workflow-shell').style.backgroundImage).toContain('rgb(255, 255, 255)');
+    expect(styles.nodes.find(x=>x.selector==='.workflow-shell').after.display).toBe('none');
+    if (item.file === 'notebooklm-hlasovy-rozhovor-nad-zdroji.html') {
+      const cover = styles.nodes.find(x=>x.selector==='.philosophy-hero-cover');
+      expect(cover.style.backgroundColor).toBe('rgb(242, 246, 241)');
+      expect(cover.style.boxShadow).not.toContain('0.3)');
+    }
+
+    if (wave14Articles.includes(item)) {
+      await page.screenshot({ path: `artifacts/${item.file}-desktop-1440-hero.png` });
+      await page.locator('.article-content-navigation').scrollIntoViewIfNeeded();
+      await page.waitForTimeout(160);
+      await page.screenshot({ path: `artifacts/${item.file}-desktop-1440-sticky-contents.png` });
+      await page.locator(item.representative).scrollIntoViewIfNeeded();
+      await page.waitForTimeout(120);
+      await page.screenshot({ path: `artifacts/${item.file}-desktop-1440-representative.png` });
+      await page.setViewportSize({ width: 390, height: 844 });
+      await page.goto(`${baseURL}/${item.file}`, { waitUntil: 'networkidle' });
+      await page.evaluate(() => document.fonts.ready);
+      await page.screenshot({ path: `artifacts/${item.file}-mobile-390-hero.png` });
+      const mobileStyles = await page.evaluate(() => ({width:innerWidth,scrollWidth:document.documentElement.scrollWidth,background:getComputedStyle(document.body).backgroundColor,heroBackground:getComputedStyle(document.querySelector('.workflow-shell')).backgroundImage}));
+      expect(mobileStyles.scrollWidth).toBeLessThanOrEqual(391);
+      records.push({url:new URL(page.url()).pathname,width:390,...mobileStyles});
+      const toc = page.locator('.article-content-navigation');
+      await toc.scrollIntoViewIfNeeded();
+      await expect(toc).toHaveJSProperty('open',true);
+      await page.waitForTimeout(100);
+      await toc.screenshot({ path: `artifacts/${item.file}-mobile-390-contents-expanded.png` });
+      await page.locator(item.representative).scrollIntoViewIfNeeded();
+      await page.waitForTimeout(100);
+      await page.screenshot({ path: `artifacts/${item.file}-mobile-390-representative.png` });
+    }
+  }
+  fs.writeFileSync('artifacts/wave14-computed-styles.json',JSON.stringify({testedSha:process.env.TESTED_SHA,baselineSha:'709eeb0edb22c8bdd988ec41999e087b25861143',records},null,2));
+  const cards = heroes.map(hero=>`<figure><figcaption>${hero.title.replace(/&/g,'&amp;').replace(/</g,'&lt;')}</figcaption><img alt="" src="data:image/png;base64,${hero.data}"></figure>`).join('');
+  await page.setContent(`<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{margin:0;padding:24px;background:#fffefa;color:#102d2b;font:600 16px Arial}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}figure{margin:0;padding:10px;background:white;border:1px solid #dfe8e1;border-radius:12px}figcaption{margin:0 0 8px}img{display:block;width:100%;height:320px;object-fit:cover;object-position:top;border-radius:8px}@media(max-width:700px){.grid{grid-template-columns:1fr}}</style></head><body><h1>Wave 14 · porovnání světlých hero</h1><div class="grid">${cards}</div></body></html>`);
+  await page.screenshot({ path: 'artifacts/wave14-hero-contact-sheet.png', fullPage: true });
 });
