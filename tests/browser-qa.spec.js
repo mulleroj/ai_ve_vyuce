@@ -744,7 +744,7 @@ const wave10Articles = [
 
 const wave11Articles = [
   { file: 'ai-workflow-10-promptu-gemini.html', title: '10 promptů pro Gemini Notebook, které mohou učiteli ušetřit hodiny práce', activeArea: 'Připravit výuku', breadcrumb: 'Workflow pro učitele', breadcrumbHref: 'ai.html#workflow', tocCount: 23, h2: '#toc-01', h3: '#ai-workflow-10-promptu-gemini-h3-01', baselineSha: '4f48ddb65eef3f19fa4be7ff62b05b3d8e2bb8c5', checkTocScroll: true, waitForStableViewportChapter: true, noLegacyTopbar: true, legacyInternalIds: ['toc-heading-ai-workflow-10-promptu-gemini-html'], representative: '#ai-workflow-10-promptu-gemini-h2-07', promptCount: 13, representativePromptIndex: 1 },
-  { file: 'ai-workflow-18-promptu.html', title: '18 praktických AI promptů pro učitele', activeArea: 'Připravit výuku', breadcrumb: 'Workflow pro učitele', breadcrumbHref: 'ai.html#workflow', tocCount: 26, h2: '#toc-01', h3: '#ai-workflow-18-promptu-h3-01', baselineSha: '4f48ddb65eef3f19fa4be7ff62b05b3d8e2bb8c5', checkTocScroll: true, waitForStableViewportChapter: true, noLegacyTopbar: true, legacyInternalIds: ['toc-heading-ai-workflow-18-promptu-html'], representative: '#ai-workflow-18-promptu-h2-02', promptCount: 24, representativePromptIndex: 2 },
+  { file: 'ai-workflow-18-promptu.html', title: '18 praktických AI promptů pro učitele', activeArea: 'Připravit výuku', breadcrumb: 'Workflow pro učitele', breadcrumbHref: 'ai.html#workflow', tocCount: 38, h2: '#toc-01', h3: '#ai-workflow-18-promptu-h3-01', baselineSha: '4f48ddb65eef3f19fa4be7ff62b05b3d8e2bb8c5', checkTocScroll: true, waitForStableViewportChapter: true, noLegacyTopbar: true, legacyInternalIds: ['toc-heading-ai-workflow-18-promptu-html'], representative: '#ai-workflow-18-promptu-h2-02', promptCount: 24, representativePromptIndex: 2 },
   { file: 'ai-workflow-chatgpt-images-2-5.html', title: 'ChatGPT Images 2.5 ve výuce: od jednoduchého obrázku k výukovému materiálu', activeArea: 'Připravit výuku', breadcrumb: 'Workflow pro učitele', breadcrumbHref: 'ai.html#workflow', tocCount: 20, h2: '#toc-01', h3: '#ai-workflow-chatgpt-images-2-5-h3-01', baselineSha: '4f48ddb65eef3f19fa4be7ff62b05b3d8e2bb8c5', checkTocScroll: true, waitForStableViewportChapter: true, noLegacyTopbar: true, legacyInternalIds: ['toc-heading-ai-workflow-chatgpt-images-2-5-html'], representative: '#toc-03', promptCount: 24, representativePromptIndex: 0 },
   { file: 'ai-workflow-gemini-notebook-ai-agent.html', title: 'Jak vytvořit chytrý učitelský sešit v Gemini Notebooku pomocí AI agenta', activeArea: 'Připravit výuku', breadcrumb: 'Workflow pro učitele', breadcrumbHref: 'ai.html#workflow', tocCount: 20, h2: '#toc-01', h3: '#ai-workflow-gemini-notebook-ai-agent-h3-01', baselineSha: '4f48ddb65eef3f19fa4be7ff62b05b3d8e2bb8c5', checkTocScroll: true, waitForStableViewportChapter: true, noLegacyTopbar: true, legacyInternalIds: ['toc-heading-ai-workflow-gemini-notebook-ai-agent-html'], representative: '#ai-workflow-gemini-notebook-ai-agent-h2-07', promptCount: 5, representativePromptIndex: 1 },
 ];
@@ -781,7 +781,15 @@ const wave15Articles = [
   { file: 'ai-novinka-vykonnejsi-ai.html', title: 'Výkonnější AI se stává běžně dostupnou', activeArea: 'Číst a objevovat', breadcrumb: 'AI ve vzdělávání', breadcrumbHref: 'ai.html#novinky', tocCount: 6, h2: '#wave15-vykonnejsi-ai-h2-01', h3: null, baselineSha: '1a2ca130db05a6cfe46e072235a18ecb75d2adbb', noLegacyTopbar: true, waitForStableViewportChapter: true, representative: '#wave15-vykonnejsi-ai-h2-02', sourceH2: 8, sourceH3: 3, sourceImages: 1 },
 ];
 
-const migrationArticles = [...wave1Articles, ...wave2Articles, ...wave3Articles, ...wave4Articles, ...wave5Articles, ...wave6Articles, ...wave7Articles, ...wave8Articles, ...wave10Articles, ...wave11Articles, ...wave12Articles, ...wave13Articles, ...wave14Articles, ...wave15Articles];
+const wave16Articles = [
+  {"file":"ai-novinka-chatgpt-interaktivni-kvizy.html","title":"ChatGPT přidává interaktivní kvízy","tocCount":6,"h2":"#wave16-ai-novinka-chatgpt-interaktivni-kvizy-h2-01","h3":null,"representative":"#wave16-ai-novinka-chatgpt-interaktivni-kvizy-h2-04","sourceH2":8,"sourceH3":3,"sourceImages":1,"activeArea":"Číst a objevovat","breadcrumb":"AI ve vzdělávání","breadcrumbHref":"ai.html#novinky","baselineSha":"287b9c331e8c938b5f8152f8718e423521ee1e11","noLegacyTopbar":true,"waitForStableViewportChapter":true},
+  {"file":"ai-novinka-gemini-notebook-sablona.html","title":"Gemini Notebook jako výuková šablona","tocCount":10,"h2":"#wave16-ai-novinka-gemini-notebook-sablona-h2-01","h3":null,"representative":"#wave16-ai-novinka-gemini-notebook-sablona-h2-05","sourceH2":11,"sourceH3":3,"sourceImages":1,"activeArea":"Číst a objevovat","breadcrumb":"AI ve vzdělávání","breadcrumbHref":"ai.html#novinky","baselineSha":"287b9c331e8c938b5f8152f8718e423521ee1e11","noLegacyTopbar":true,"waitForStableViewportChapter":true},
+  {"file":"ai-novinka-google-ai-vzdelavani-zari-2026.html","title":"AI ve vzdělávání: Google posiluje tvorbu materiálů i bezpečnost práce s daty","tocCount":13,"h2":"#wave16-ai-novinka-google-ai-vzdelavani-zari-2026-h2-01","h3":"#wave16-ai-novinka-google-ai-vzdelavani-zari-2026-h3-01","representative":"#wave16-ai-novinka-google-ai-vzdelavani-zari-2026-h2-08","sourceH2":10,"sourceH3":7,"sourceImages":1,"activeArea":"Číst a objevovat","breadcrumb":"AI ve vzdělávání","breadcrumbHref":"ai.html#novinky","baselineSha":"287b9c331e8c938b5f8152f8718e423521ee1e11","noLegacyTopbar":true,"waitForStableViewportChapter":true},
+  {"file":"ai-novinka-pravidla-ve-skole.html","title":"AI pravidla ve škole","tocCount":26,"h2":"#toc-01","h3":"#wave16-ai-novinka-pravidla-ve-skole-h3-07","representative":"#toc-05","sourceH2":31,"sourceH3":29,"sourceImages":1,"checkTocScroll":true,"activeArea":"Číst a objevovat","breadcrumb":"AI ve vzdělávání","breadcrumbHref":"ai.html#novinky","baselineSha":"287b9c331e8c938b5f8152f8718e423521ee1e11","noLegacyTopbar":true,"waitForStableViewportChapter":true},
+  {"file":"co-se-muze-ucitel-naucit-od-youtube.html","title":"Co se může učitel naučit od YouTube? Pozornost žáků není samozřejmost","tocCount":10,"h2":"#wave16-co-se-muze-ucitel-naucit-od-youtube-h2-01","h3":"#wave16-co-se-muze-ucitel-naucit-od-youtube-h3-02","representative":"#wave16-co-se-muze-ucitel-naucit-od-youtube-h2-05","sourceH2":8,"sourceH3":3,"sourceImages":1,"noRelated":true,"activeArea":"Číst a objevovat","breadcrumb":"AI ve vzdělávání","breadcrumbHref":"ai.html#novinky","baselineSha":"287b9c331e8c938b5f8152f8718e423521ee1e11","noLegacyTopbar":true,"waitForStableViewportChapter":true},
+  {"file":"gemini-notebook-ucitel-vidi-chaty-zaku.html","title":"Učitel nově uvidí, jak se žáci učí s AI. Google Gemini Notebook otevírá novou kapitolu výuky","tocCount":13,"h2":"#wave16-gemini-notebook-ucitel-vidi-chaty-zaku-h2-01","h3":"#wave16-gemini-notebook-ucitel-vidi-chaty-zaku-h3-01","representative":"#priklad-z-vyuky","sourceH2":11,"sourceH3":6,"sourceImages":2,"audit":true,"activeArea":"Číst a objevovat","breadcrumb":"AI ve vzdělávání","breadcrumbHref":"ai.html#novinky","baselineSha":"287b9c331e8c938b5f8152f8718e423521ee1e11","noLegacyTopbar":true,"waitForStableViewportChapter":true},
+];
+const migrationArticles = [...wave1Articles, ...wave2Articles, ...wave3Articles, ...wave4Articles, ...wave5Articles, ...wave6Articles, ...wave7Articles, ...wave8Articles, ...wave10Articles, ...wave11Articles, ...wave12Articles, ...wave13Articles, ...wave14Articles, ...wave15Articles, ...wave16Articles];
 
 for (const article of migrationArticles) {
   test.describe(`Migration: ${article.file}`, () => {
@@ -819,9 +827,9 @@ for (const article of migrationArticles) {
         const toc = page.locator('.article-content-navigation');
         await expect(toc).toHaveCount(1);
         await expect(toc.locator('a')).toHaveCount(article.tocCount);
-        await expect(page.locator('.workflow-related')).toHaveCount(1);
+        await expect(page.locator('.workflow-related')).toHaveCount(article.noRelated ? 0 : 1);
         await expect(page.locator('.workflow-main > .workflow-article')).toHaveCount(1);
-        await expect(page.locator('.workflow-main > .workflow-related')).toHaveCount(1);
+        await expect(page.locator('.workflow-main > .workflow-related')).toHaveCount(article.noRelated ? 0 : 1);
 
         const state = await page.evaluate(() => {
           const ids = [...document.querySelectorAll('[id]')].map(node => node.id);
@@ -835,7 +843,7 @@ for (const article of migrationArticles) {
             tocPosition: getComputedStyle(document.querySelector('.article-content-navigation')).position,
             bodyBackground: getComputedStyle(document.body).backgroundColor,
             heroTitleColor: getComputedStyle(document.querySelector('.workflow-hero h1')).color,
-            related: document.querySelector('.workflow-related').getBoundingClientRect().toJSON(),
+            related: document.querySelector('.workflow-related')?.getBoundingClientRect().toJSON() || null,
             article: document.querySelector('.workflow-article').getBoundingClientRect().toJSON(),
             toc: document.querySelector('.article-content-navigation').getBoundingClientRect().toJSON(),
             tocScroll: {
@@ -869,7 +877,7 @@ for (const article of migrationArticles) {
             expect(['auto', 'scroll']).toContain(state.tocScroll.overflowY);
             expect(state.tocScroll.scrollHeight).toBeGreaterThan(state.tocScroll.clientHeight);
           }
-          expect(state.related.width).toBeGreaterThan(state.article.width);
+          if (!article.noRelated) expect(state.related.width).toBeGreaterThan(state.article.width);
         } else {
           expect(state.tocPosition).toBe('static');
           expect(Math.abs(state.toc.left - state.article.left)).toBeLessThanOrEqual(1);
@@ -994,9 +1002,11 @@ for (const article of migrationArticles) {
     });
 
     test('contents anchors work with JavaScript disabled', async ({ browser }) => {
-      const context = await browser.newContext({ viewport: { width: 390, height: 844 }, javaScriptEnabled: false });
+      const context = await browser.newContext({ viewport: { width: 390, height: 844 }, javaScriptEnabled: false, reducedMotion: 'reduce' });
       const page = await context.newPage();
       await page.goto(`${baseURL}/${article.file}`);
+      const rootScrollBehavior = await page.evaluate(() => getComputedStyle(document.documentElement).scrollBehavior);
+      expect(rootScrollBehavior).toBe("auto");
       const link = page.locator(`.article-content-navigation a[href="${article.h2}"]`);
       await link.click();
       await expect(page).toHaveURL(new RegExp(`${article.h2}$`));
@@ -1038,6 +1048,7 @@ for (const article of migrationArticles) {
           const normalize = el => el?.textContent.replace(/\s+/g, ' ').trim() || '';
           return {
             title: doc.title,
+            footer: normalize(doc.querySelector('.workflow-footer')),
             h1: normalize(doc.querySelector('.workflow-hero h1')),
             intro: normalize(intro),
             date: normalize(doc.querySelector('.workflow-eyebrow')),
@@ -1062,6 +1073,7 @@ for (const article of migrationArticles) {
       }, [baselineHTML, currentHTML]);
 
       expect(after.title).toBe(before.title);
+      expect(after.footer).toBe(before.footer);
       expect(after.h1).toBe(before.h1);
       expect(after.intro).toBe(before.intro);
       expect(after.date).toBe(before.date);
@@ -2194,7 +2206,7 @@ test('migration catalog records remain complete, dated, unique, linked, and home
   await page.goto(baseURL, { waitUntil: 'networkidle' });
   await expect(page.locator('#latest-articles .latest-card')).toHaveCount(6);
   const data = await page.evaluate(() => {
-    const wanted = ['asistent-ucitele-osobni-ai-asistent.html','neplytvej-inteligenci-ai-modely.html','skill-anglictina-vyukove-materialy.html','vibe-coding-bezpecnost-kodu-php2shell.html','vibe-coding-pro-ucitele.html','vibe-coding-ucitele.html','ai-novinka-agenti-onenote-pruvodce-ucenim.html','ai-novinka-gemini-desktop-chatgpt-word-agenti.html','ai-novinka-sdilene-zdroje-propojene-aplikace-2026.html','notebooklm-hlasovy-rozhovor-nad-zdroji.html','ai-novinka-ai-ve-vzdelavani-srpen-2026.html','ai-novinka-gemini-classroom.html','ai-novinka-microsoft-ai-workflow.html','ai-novinka-microsoft-gemini.html','ai-novinka-vykonnejsi-ai.html'];
+    const wanted = ['asistent-ucitele-osobni-ai-asistent.html','neplytvej-inteligenci-ai-modely.html','skill-anglictina-vyukove-materialy.html','vibe-coding-bezpecnost-kodu-php2shell.html','vibe-coding-pro-ucitele.html','vibe-coding-ucitele.html','ai-novinka-agenti-onenote-pruvodce-ucenim.html','ai-novinka-gemini-desktop-chatgpt-word-agenti.html','ai-novinka-sdilene-zdroje-propojene-aplikace-2026.html','notebooklm-hlasovy-rozhovor-nad-zdroji.html','ai-novinka-ai-ve-vzdelavani-srpen-2026.html','ai-novinka-gemini-classroom.html','ai-novinka-microsoft-ai-workflow.html','ai-novinka-microsoft-gemini.html','ai-novinka-vykonnejsi-ai.html','ai-novinka-chatgpt-interaktivni-kvizy.html','ai-novinka-gemini-notebook-sablona.html','ai-novinka-google-ai-vzdelavani-zari-2026.html','ai-novinka-pravidla-ve-skole.html','gemini-notebook-ucitel-vidi-chaty-zaku.html','co-se-muze-ucitel-naucit-od-youtube.html','ai-novinka-datovi-agenti-lidske-schvaleni.html'];
     const records = wanted.map(href => window.siteArticles.find(item => item.href === href));
     const latest = window.siteArticles.map((article,index) => ({article,index}))
       .sort((a,b) => (b.article.date || '').localeCompare(a.article.date || '') || a.index-b.index).slice(0,6).map(item=>item.article.href);
@@ -2215,7 +2227,14 @@ test('migration catalog records remain complete, dated, unique, linked, and home
     'ai-novinka-gemini-classroom.html':['2026-08-12','12. srpna 2026'],
     'ai-novinka-microsoft-ai-workflow.html':['2026-08-21','21. srpna 2026'],
     'ai-novinka-microsoft-gemini.html':['2026-08-17','17. srpna 2026'],
-    'ai-novinka-vykonnejsi-ai.html':['2026-08-14','14. srpna 2026']
+    'ai-novinka-vykonnejsi-ai.html':['2026-08-14','14. srpna 2026'],
+    'ai-novinka-chatgpt-interaktivni-kvizy.html':['2026-08-19','19. srpna 2026'],
+    'ai-novinka-gemini-notebook-sablona.html':['2026-08-24','24. srpna 2026'],
+    'ai-novinka-google-ai-vzdelavani-zari-2026.html':['2026-09-02','2. září 2026'],
+    'ai-novinka-pravidla-ve-skole.html':['2026-08-25','25. srpna 2026'],
+    'gemini-notebook-ucitel-vidi-chaty-zaku.html':['2026-10-23','23. října 2026'],
+    'co-se-muze-ucitel-naucit-od-youtube.html':['2026-10-16','16. října 2026'],
+    'ai-novinka-datovi-agenti-lidske-schvaleni.html':['2026-09-14','14. září 2026']
   };
   expect(data.records.every(Boolean)).toBe(true);
   expect(data.duplicates).toEqual([]);
@@ -2225,6 +2244,26 @@ test('migration catalog records remain complete, dated, unique, linked, and home
     expect([record.date,record.dateLabel]).toEqual(expectedDates[record.href]);
     const response = await request.get(`${baseURL}/${record.href}`);
     expect(response.ok(), `catalog target ${record.href}`).toBe(true);
+    if (wave16Articles.some(article => article.file === record.href)) {
+      const articleData = await page.evaluate(html => {
+        const doc = new DOMParser().parseFromString(html, 'text/html');
+        const heading = doc.querySelector('.workflow-hero h1');
+        const title = document.createElement('div');
+        title.innerHTML = (heading?.innerHTML || '').replace(/<br\s*\/?>/gi, ' ');
+        return {
+          title: title.textContent.replace(/\s+/g, ' ').trim(),
+          published: doc.querySelector('meta[property="article:published_time"]')?.content
+            || doc.querySelector('.workflow-meta time')?.getAttribute('datetime') || null,
+          eyebrow: doc.querySelector('.workflow-eyebrow')?.textContent || '',
+          metadata: [...doc.querySelectorAll('meta[name="description"],meta[property^="og:"]')]
+            .map(meta => meta.getAttribute('content')).filter(Boolean)
+        };
+      }, await response.text());
+      expect(articleData.title, 'catalog title for ' + record.href).toBe(record.title);
+      expect(articleData.metadata.length, 'SEO metadata for ' + record.href).toBeGreaterThan(0);
+      if (articleData.published) expect(articleData.published, 'published date for ' + record.href).toBe(record.date);
+      else expect(articleData.eyebrow, 'visible date for ' + record.href).toContain(record.dateLabel);
+    }
   }
 });
 
@@ -2266,7 +2305,7 @@ test('wave 14 preserves every article text, heading, source link, image, and met
     const [before, after] = await page.evaluate(([oldHTML,newHTML]) => {
       const fingerprint = html => {
         const doc = new DOMParser().parseFromString(html, 'text/html');
-        const norm = value => (value || '').replace(/\\s+/g, ' ').trim();
+        const norm = value => (value || '').replace(/\s+/g, ' ').trim();
         const article = doc.querySelector('.workflow-article');
         const related = doc.querySelector('.workflow-related');
         const scoped = [article,related].filter(Boolean);
@@ -2497,3 +2536,296 @@ test('wave 15 hero styles and six screenshot evidence sets', async ({ page }) =>
   await page.screenshot({ path: 'artifacts/wave15-hero-contact-sheet.png', fullPage: true });
 });
 
+
+test('wave 16 computed styles, six screenshots, and seven-hero contact sheet', async ({ page }) => {
+  const fs = require('node:fs');
+  fs.mkdirSync('artifacts', { recursive: true });
+  const evidence = { testedSha: process.env.TESTED_SHA, baselineSha: '287b9c331e8c938b5f8152f8718e423521ee1e11', pages: [] };
+  const cards = [];
+  const refs = [...wave16Articles.map(article => ({ ...article, group: article.audit ? 'audit' : 'migrated' })), {
+    file: 'ai-novinka-datovi-agenti-lidske-schvaleni.html',
+    title: 'Schválený světlý pilot – beze změn',
+    group: 'reference',
+    tocCount: 16,
+    sourceH2: 12,
+    sourceH3: 8,
+    sourceImages: 1,
+    representative: '#obsah-co-si-odnest'
+  }];
+  const styleSnapshot = () => page.evaluate(() => {
+    const selectors = ['body', '.site-header', '.site-breadcrumbs', '.workflow-shell',
+      '.workflow-shell::before', '.workflow-shell::after', '.workflow-hero', '.workflow-hero h1',
+      '.workflow-hero h1 span', '.workflow-hero-lead', '.workflow-eyebrow', '.workflow-meta span',
+      '.workflow-route', '.workflow-stage', '.workflow-stage-number', '.workflow-stage strong',
+      '.workflow-stage small', '.workflow-news-panel', '.workflow-news-panel-label',
+      '.workflow-news-panel h2', '.workflow-news-panel p', '.insight-hero-figure',
+      '.article-content-navigation', '.article-content-navigation summary'];
+    return Object.fromEntries(selectors.map(selector => {
+      const pseudo = selector.includes('::');
+      const base = selector.replace(/::(before|after)/, '');
+      const el = document.querySelector(base);
+      if (!el) return [selector, null];
+      const style = getComputedStyle(el, pseudo ? selector.slice(selector.indexOf('::')) : null);
+      return [selector, { backgroundColor: style.backgroundColor, backgroundImage: style.backgroundImage,
+        color: style.color, display: style.display, borderColor: style.borderColor, fontFamily: style.fontFamily }];
+    }));
+  });
+  const contrast = (foreground, background) => {
+    const rgb = value => {
+      const m = value.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+      if (!m) return null;
+      return m.slice(1, 4).map(channel => {
+        const c = Number(channel) / 255;
+        return c <= .04045 ? c / 12.92 : ((c + .055) / 1.055) ** 2.4;
+      }).reduce((sum, c, i) => sum + c * [0.2126, 0.7152, 0.0722][i], 0);
+    };
+    const a = rgb(foreground), b = rgb(background);
+    return a === null || b === null ? 0 : (Math.max(a, b) + .05) / (Math.min(a, b) + .05);
+  };
+
+  for (const article of refs) {
+    await page.setViewportSize({ width: 1440, height: 1000 });
+    await page.goto(baseURL + '/' + article.file, { waitUntil: 'networkidle' });
+    await page.evaluate(async () => { await document.fonts.ready; });
+    const hero = page.locator('.workflow-shell');
+    await expect(hero).toBeVisible();
+    const heroImage = await hero.screenshot();
+    cards.push({ label: article.group + ' · ' + article.file, data: heroImage.toString('base64') });
+    const style = await styleSnapshot();
+    const inventory = await page.evaluate(() => ({
+      bodyH2: document.querySelectorAll('.article-content h2').length,
+      bodyH3: document.querySelectorAll('.article-content h3').length,
+      globalH2: document.querySelectorAll('h2').length,
+      globalH3: document.querySelectorAll('h3').length,
+      articleImages: [...document.querySelectorAll('.workflow-article img')].map(img => ({
+        src: img.getAttribute('src'), alt: img.getAttribute('alt'), complete: img.complete, naturalWidth: img.naturalWidth
+      })),
+      allImages: [...document.querySelectorAll('img')].map(img => ({
+        src: img.getAttribute('src'), alt: img.getAttribute('alt'), complete: img.complete, naturalWidth: img.naturalWidth
+      })),
+      tocCount: document.querySelectorAll('.article-content-navigation').length,
+      tocLinks: document.querySelectorAll('.article-content-navigation a').length,
+      navAreas: document.querySelectorAll('.site-nav-pilot details').length,
+      activeArea: document.querySelector('.site-nav-pilot details[data-active="true"] > summary')?.textContent.trim(),
+      noDuplicateIds: (() => { const ids = [...document.querySelectorAll('[id]')].map(el => el.id); return new Set(ids).size === ids.length; })(),
+      unresolvedLocalFragments: [...document.querySelectorAll('a[href^="#"]')].map(a => decodeURIComponent(a.getAttribute('href').slice(1))).filter(id => id && !document.getElementById(id)),
+      computedRootScrollBehavior: getComputedStyle(document.documentElement).scrollBehavior,
+      articleTextLength: document.querySelector('.article-content')?.textContent.trim().length || 0
+    }));
+    expect(inventory.globalH2, article.file + ' H2 inventory').toBe(article.sourceH2);
+    expect(inventory.globalH3, article.file + ' H3 inventory').toBe(article.sourceH3);
+    expect(inventory.articleImages.length, article.file + ' article image count').toBe(article.sourceImages);
+    expect(inventory.articleImages.every(img => img.complete && img.naturalWidth > 0 && img.alt), article.file + ' image load and alt text').toBe(true);
+    expect(inventory.allImages.every(img => img.complete && img.naturalWidth > 0), article.file + ' every media resource loads').toBe(true);
+    expect(inventory.tocCount, article.file + ' single contents navigation').toBe(1);
+    expect(inventory.tocLinks, article.file + ' contents hierarchy').toBe(article.tocCount);
+    expect(inventory.navAreas).toBe(6);
+    expect(inventory.activeArea).toBe('Číst a objevovat');
+    expect(inventory.noDuplicateIds).toBe(true);
+    expect(inventory.unresolvedLocalFragments).toEqual([]);
+    expect(inventory.articleTextLength).toBeGreaterThan(1000);
+    expect(style['body'].backgroundColor).toBe('rgb(255, 254, 250)');
+    expect(style['.site-header'].backgroundColor).toBe('rgb(255, 255, 255)');
+    expect(style['.workflow-shell::after'].display).toBe('none');
+    expect(style['.workflow-hero h1'].color).toBe('rgb(16, 45, 43)');
+    expect(contrast(style['.workflow-hero h1'].color, 'rgb(255, 255, 255)')).toBeGreaterThanOrEqual(4.5);
+    expect(contrast(style['.workflow-hero-lead'].color, 'rgb(255, 255, 255)')).toBeGreaterThanOrEqual(4.5);
+    for (const selector of ['.workflow-shell', '.workflow-hero', '.workflow-news-panel', '.workflow-stage']) {
+      const record = style[selector];
+      if (record) expect(record.backgroundColor).not.toBe('rgb(10, 15, 30)');
+      if (record) expect(record.backgroundImage).not.toContain('10, 15, 30');
+    }
+    if (article.group !== 'reference') {
+      expect(inventory.bodyH2).toBe(article.sourceH2 - (article.file === 'ai-novinka-chatgpt-interaktivni-kvizy.html' || article.file === 'ai-novinka-pravidla-ve-skole.html' ? 2 : article.file === 'co-se-muze-ucitel-naucit-od-youtube.html' ? 0 : 1));
+      evidence.pages.push({ file: article.file, group: article.group, inventory, computedStyles: style });
+      await hero.screenshot({ path: 'artifacts/wave16-' + article.file + '-desktop-1440-hero.png' });
+      const toc = page.locator('.article-content-navigation');
+      await toc.scrollIntoViewIfNeeded();
+      await toc.screenshot({ path: 'artifacts/wave16-' + article.file + '-desktop-1440-toc.png' });
+      if (article.checkTocScroll) {
+        const tocScroll = toc.locator('nav');
+        const scrollState = await tocScroll.evaluate(el => ({ overflowY: getComputedStyle(el).overflowY, scrollHeight: el.scrollHeight, clientHeight: el.clientHeight }));
+        expect(['auto', 'scroll']).toContain(scrollState.overflowY);
+        expect(scrollState.scrollHeight).toBeGreaterThan(scrollState.clientHeight);
+        await tocScroll.evaluate(el => { el.scrollTop = el.scrollHeight; });
+        await expect.poll(() => tocScroll.evaluate(el => el.scrollTop)).toBeGreaterThan(0);
+        await tocScroll.screenshot({ path: 'artifacts/wave16-school-rules-desktop-toc-inner-scroll.png' });
+        evidence.pages[evidence.pages.length - 1].desktopTocScroll = scrollState;
+      }
+      await page.locator(article.representative).scrollIntoViewIfNeeded();
+      await page.screenshot({ path: 'artifacts/wave16-' + article.file + '-desktop-1440-chapter.png' });
+      if (article.audit) {
+        await page.locator('.brand-symbol').screenshot({ path: 'artifacts/wave16-student-chats-desktop-brand-media.png' });
+        await page.locator('.insight-hero-figure img').screenshot({ path: 'artifacts/wave16-student-chats-desktop-hero-media.png' });
+        await page.locator('.insight-infographic img').screenshot({ path: 'artifacts/wave16-student-chats-desktop-infographic-media.png' });
+      }
+
+      await page.setViewportSize({ width: 390, height: 844 });
+      await page.goto(baseURL + '/' + article.file, { waitUntil: 'networkidle' });
+      await page.evaluate(async () => { await document.fonts.ready; });
+      await page.locator('.workflow-shell').screenshot({ path: 'artifacts/wave16-' + article.file + '-mobile-390-hero.png' });
+      const mobileToc = page.locator('.article-content-navigation');
+      if (!(await mobileToc.evaluate(el => el.open))) await mobileToc.locator('summary').click();
+      await expect(mobileToc).toHaveJSProperty('open', true);
+      await mobileToc.screenshot({ path: 'artifacts/wave16-' + article.file + '-mobile-390-toc.png' });
+      if (article.checkTocScroll) {
+        const mobileScroll = await mobileToc.locator('nav').evaluate(el => ({ overflowY: getComputedStyle(el).overflowY, scrollHeight: el.scrollHeight, clientHeight: el.clientHeight }));
+        expect(['auto', 'scroll']).toContain(mobileScroll.overflowY);
+        expect(mobileScroll.clientHeight).toBeLessThanOrEqual(380);
+        expect(mobileScroll.scrollHeight).toBeGreaterThan(mobileScroll.clientHeight);
+        await page.screenshot({ path: 'artifacts/wave16-school-rules-mobile-content.png' });
+      }
+      await page.locator(article.representative).scrollIntoViewIfNeeded();
+      await page.screenshot({ path: 'artifacts/wave16-' + article.file + '-mobile-390-chapter.png' });
+      if (article.audit) {
+        await page.locator('.brand-symbol').screenshot({ path: 'artifacts/wave16-student-chats-mobile-brand-media.png' });
+        await page.locator('.insight-hero-figure img').screenshot({ path: 'artifacts/wave16-student-chats-mobile-hero-media.png' });
+        await page.locator('.insight-infographic img').screenshot({ path: 'artifacts/wave16-student-chats-mobile-infographic-media.png' });
+        await page.locator('.brand-symbol').screenshot({ path: 'artifacts/wave16-student-chats-mobile-brand-media.png' });
+        await page.locator('.insight-hero-figure img').screenshot({ path: 'artifacts/wave16-student-chats-mobile-hero-media.png' });
+        await page.locator('.insight-infographic img').screenshot({ path: 'artifacts/wave16-student-chats-mobile-infographic-media.png' });
+      }
+    } else {
+      expect(inventory.articleImages.length).toBe(1);
+      expect(inventory.tocCount).toBe(1);
+      expect(await page.locator('.article-content-navigation').evaluate(el => el.open)).toBe(true);
+      evidence.pages.push({ file: article.file, group: article.group, inventory, computedStyles: style });
+      await hero.screenshot({ path: 'artifacts/wave16-data-agents-desktop-1440-hero.png' });
+      const pilotToc = page.locator('.article-content-navigation');
+      await pilotToc.screenshot({ path: 'artifacts/wave16-data-agents-desktop-1440-toc.png' });
+      await page.locator(article.representative).scrollIntoViewIfNeeded();
+      await page.screenshot({ path: 'artifacts/wave16-data-agents-desktop-1440-chapter.png' });
+      await page.setViewportSize({ width: 390, height: 844 });
+      await page.goto(baseURL + '/' + article.file, { waitUntil: 'networkidle' });
+      await page.evaluate(async () => { await document.fonts.ready; });
+      await page.locator('.workflow-shell').screenshot({ path: 'artifacts/wave16-data-agents-mobile-390-hero.png' });
+      const mobilePilotToc = page.locator('.article-content-navigation');
+      await expect(mobilePilotToc).toHaveJSProperty('open', true);
+      await mobilePilotToc.screenshot({ path: 'artifacts/wave16-data-agents-mobile-390-toc.png' });
+      await page.locator(article.representative).scrollIntoViewIfNeeded();
+      await page.screenshot({ path: 'artifacts/wave16-data-agents-mobile-390-chapter.png' });
+    }
+  }
+
+  const cardsHtml = cards.map(card => '<article><h2>' + card.label + '</h2><img alt="' + card.label + '" src="data:image/png;base64,' + card.data + '"></article>').join('');
+  await page.setViewportSize({ width: 1440, height: 1500 });
+  await page.setContent('<!doctype html><html lang="cs"><meta charset="utf-8"><style>body{font:16px Arial;background:#fffefa;color:#102d2b;margin:24px}h1{font-size:24px}main{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}article{border:1px solid #dfe8e1;border-radius:14px;padding:12px;background:white}h2{font-size:14px}img{width:100%;height:280px;object-fit:contain;object-position:top}</style><h1>Vlna 16 – pět migrovaných stránek, audit a referenční pilot</h1><main>' + cardsHtml + '</main></html>');
+  await page.screenshot({ path: 'artifacts/wave16-seven-hero-contact-sheet.png', fullPage: true });
+  evidence.testedSha = process.env.TESTED_SHA || 'unavailable';
+  fs.writeFileSync('artifacts/wave16-computed-styles.json', JSON.stringify(evidence, null, 2));
+});
+
+test('wave 16 student chat page keeps its original menu, metadata, scripts, and three media items', async ({ page }) => {
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(baseURL + '/gemini-notebook-ucitel-vidi-chaty-zaku.html', { waitUntil: 'networkidle' });
+  await expect(page.locator('script[src*="js/main.js"]')).toHaveCount(1);
+  await expect(page.locator('meta[property="article:published_time"]')).toHaveAttribute('content', '2026-10-23');
+  await expect(page.locator('.workflow-meta time')).toHaveAttribute('datetime', '2026-10-23');
+  await expect(page.locator('.workflow-article')).toHaveAttribute('aria-label', 'Insight Summaries ve výuce');
+  await expect(page.locator('.article-content-navigation')).toHaveCount(1);
+  await expect(page.locator('.workflow-article .insight-hero-figure img')).toHaveAttribute('alt', /.+/);
+  await expect(page.locator('.workflow-article .insight-infographic img')).toHaveAttribute('alt', /.+/);
+  await expect(page.locator('img')).toHaveCount(3);
+  const media = await page.locator('img').evaluateAll(images => images.map(img => ({ src: img.getAttribute('src'), alt: img.getAttribute('alt'), loaded: img.complete && img.naturalWidth > 0 })));
+  expect(media.every(image => image.loaded)).toBe(true);
+  expect(media.filter(image => image.src.includes('gemini-notebook-insight-summaries')).length).toBe(2);
+  await page.screenshot({ path: 'artifacts/wave16-student-chats-mobile-layout.png', fullPage: true });
+  const toggle = page.locator('.menu-toggle');
+  await toggle.focus();
+  await page.keyboard.press('Enter');
+  await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+  await page.keyboard.press('Escape');
+  await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+  await expect(toggle).toBeFocused();
+  await page.keyboard.press('Space');
+  await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+  await page.keyboard.press('Space');
+  await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+  const toc = page.locator('.article-content-navigation');
+  await toc.locator('summary').focus();
+  await page.keyboard.press('Space');
+  await expect(toc).toHaveJSProperty('open', false);
+  await page.keyboard.press('Enter');
+  await expect(toc).toHaveJSProperty('open', true);
+  expect(errors).toEqual([]);
+});
+
+test('wave 16 approved data agents pilot remains byte-for-byte unchanged in article content and keeps no visual regression', async ({ page }) => {
+  const { execFileSync } = require('node:child_process');
+  const file = 'ai-novinka-datovi-agenti-lidske-schvaleni.html';
+  const beforeHTML = execFileSync('git', ['show', '287b9c331e8c938b5f8152f8718e423521ee1e11:' + file], { encoding: 'utf8' });
+  const currentHTML = require('node:fs').readFileSync(file, 'utf8');
+  const [before, after] = await page.evaluate(([oldHTML, newHTML]) => {
+    const fingerprint = html => {
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const content = doc.querySelector('.article-content');
+      const normalize = el => el?.textContent.replace(/\s+/g, ' ').trim() || '';
+      return {
+        text: normalize(content),
+        headings: [...content.querySelectorAll('h2,h3')].map(el => [el.tagName, normalize(el), el.id || '']),
+        images: [...doc.querySelectorAll('.workflow-article img')].map(el => [el.getAttribute('src'), el.getAttribute('alt')]),
+        links: [...content.querySelectorAll('a')].map(el => [el.getAttribute('href'), normalize(el)]),
+        metadata: [...doc.querySelectorAll('meta[name="description"],meta[property^="og:"],meta[property="article:published_time"]')].map(el => [el.getAttribute('name') || el.getAttribute('property'),el.getAttribute('content')]),
+        canonical: doc.querySelector('link[rel="canonical"]')?.getAttribute('href'),
+        menu: normalize(doc.querySelector('.site-nav')),
+        toc: [...doc.querySelectorAll('.article-content-navigation a')].map(el => [el.getAttribute('href'),normalize(el)]),
+        details: [...doc.querySelectorAll('details')].map(el => [el.className,el.open,normalize(el.querySelector('summary'))])
+      };
+    };
+    return [fingerprint(oldHTML), fingerprint(newHTML)];
+  }, [beforeHTML, currentHTML]);
+  expect(after).toEqual(before);
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto(baseURL + '/' + file, { waitUntil: 'networkidle' });
+  const pilot = await page.locator('.workflow-shell').evaluate(el => ({
+    backgroundColor: getComputedStyle(el).backgroundColor,
+    backgroundImage: getComputedStyle(el).backgroundImage,
+    h1: getComputedStyle(el.querySelector('h1')).color,
+    panel: getComputedStyle(el.querySelector('.workflow-route')).backgroundColor
+  }));
+  expect(pilot.h1).toBe('rgb(16, 45, 43)');
+  expect(pilot.backgroundImage).not.toContain('10, 15, 30');
+  await page.locator('.workflow-shell').screenshot({ path: 'artifacts/wave16-data-agents-approved-pilot-desktop-hero.png' });
+  await page.locator('.article-content-navigation').screenshot({ path: 'artifacts/wave16-data-agents-approved-pilot-desktop-toc-open.png' });
+  await page.screenshot({ path: 'artifacts/wave16-data-agents-approved-pilot-desktop-open-toc.png' });
+});
+
+
+test('wave 16 internal fragments, local article links, and source destinations resolve', async ({ page, request }) => {
+  const diagnostics = [];
+  for (const article of wave16Articles) {
+    await page.goto(baseURL + '/' + article.file);
+    const data = await page.evaluate(() => {
+      const hrefs = [...document.querySelectorAll('.article-content a[href], .workflow-related a[href]')]
+        .map(link => link.getAttribute('href')).filter(Boolean);
+      const fragments = [...document.querySelectorAll('a[href^="#"]')]
+        .map(link => decodeURIComponent(link.getAttribute('href').slice(1))).filter(Boolean);
+      return { hrefs, fragments, missingFragments: fragments.filter(id => !document.getElementById(id)) };
+    });
+    expect(data.missingFragments, article.file + ' local fragment targets').toEqual([]);
+    const local = data.hrefs.map(href => new URL(href, baseURL + '/' + article.file))
+      .filter(url => url.origin === new URL(baseURL).origin);
+    const unique = [...new Map(local.map(url => [url.href, url])).values()];
+    const responses = await Promise.all(unique.map(async url => {
+      const response = await request.get(url.href);
+      let fragmentResolved = true;
+      if (response.ok() && url.hash.length > 1) {
+        const html = await response.text();
+        const fragment = decodeURIComponent(url.hash.slice(1));
+        fragmentResolved = await page.evaluate(([source, id]) => {
+          const doc = new DOMParser().parseFromString(source, 'text/html');
+          return !!doc.getElementById(id) || !!doc.querySelector('[name="' + CSS.escape(id) + '"]');
+        }, [html, fragment]);
+      }
+      return { href: url.href, status: response.status(), ok: response.ok(), fragmentResolved };
+    }));
+    diagnostics.push({ file: article.file, fragmentCount: data.fragments.length, localDestinations: responses });
+    expect(responses.filter(response => !response.ok), article.file + ' local destinations').toEqual([]);
+    expect(responses.filter(response => !response.fragmentResolved), article.file + ' linked fragments').toEqual([]);
+  }
+  require('node:fs').writeFileSync('artifacts/wave16-link-diagnostics.json', JSON.stringify({
+    testedSha: process.env.TESTED_SHA, pages: diagnostics
+  }, null, 2));
+});
