@@ -8,6 +8,10 @@
     <meta name="description"
         content="Jak propojit výukový cíl, vlastní zdroje, Gemini Notebook, Gemini a vibe coding při tvorbě výukové webové stránky, ke které se žáci mohou vracet." />
     <link rel="stylesheet" href="css/workflow.css?v=20260902-prezentace-webova-stranka" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261114-8b" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261114-8b" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261113-8a" />
     <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/ai-workflow-prezentace-webova-stranka" />
     <meta property="og:title" content="Od prezentace k webov&#233; str&#225;nce: jak může AI pomoci vytvořit v&#253;ukov&#253; materi&#225;l | AI ve V&#253;uce" />
     <meta property="og:description" content="Jak propojit v&#253;ukov&#253; c&#237;l, vlastn&#237; zdroje, Gemini Notebook, Gemini a vibe coding při tvorbě v&#253;ukov&#233; webov&#233; str&#225;nky, ke kter&#233; se ž&#225;ci mohou vracet." />
@@ -23,12 +27,18 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-            <a class="workflow-back" href="ai.html#workflow">← Workflow pro učitele</a>
-        </div>
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="prepare">
+    <header class="site-header">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+      <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a>
+    </div></div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="ai.html#workflow">Workflow pro učitele</a></li><li aria-current="page">Od prezentace k webové stránce</li></ol></nav>
+<header class="workflow-shell">
         <div class="workflow-hero">
             <div>
                 <div class="workflow-eyebrow">Workflow pro učitele · 2. září 2026</div>
@@ -46,7 +56,21 @@
         </div>
     </header>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
+        <details class="article-content-navigation" open><summary><span>V tomto článku</span></summary><nav aria-label="Obsah článku"><ol><li><a href="#ai-workflow-prezentace-webova-stranka-h2-01">Musí být výsledkem vždycky prezentace?</a></li>
+<li><a href="#ai-workflow-prezentace-webova-stranka-h2-02">AI jako součást pracovního postupu</a></li>
+<li><a href="#ai-workflow-prezentace-webova-stranka-h2-03">1. Nezačínám AI, ale výukovým cílem</a></li>
+<li><a href="#ai-workflow-prezentace-webova-stranka-h2-04">2. Gemini Notebook jako pracovní prostor nad zdroji</a></li>
+<li><a href="#ai-workflow-prezentace-webova-stranka-h2-05">3. Gemini pomůže obsah přizpůsobit žákům</a></li>
+<li><a href="#ai-workflow-prezentace-webova-stranka-h2-06">4. Z obsahu vznikne webová stránka</a></li>
+<li><a href="#ai-workflow-prezentace-webova-stranka-h2-07">5. Stránka nemusí být pouze na čtení</a></li>
+<li><a href="#ai-workflow-prezentace-webova-stranka-h2-08">Jak by to mohlo vypadat v praxi: Podstata státu</a><ol><li><a href="#ai-workflow-prezentace-webova-stranka-h3-01">1. Připravím zdroje</a></li>
+<li><a href="#ai-workflow-prezentace-webova-stranka-h3-02">2. Přizpůsobím obsah svým žákům</a></li>
+<li><a href="#ai-workflow-prezentace-webova-stranka-h3-03">3. Doplním vizuální oporu</a></li>
+<li><a href="#ai-workflow-prezentace-webova-stranka-h3-04">4. Přidám procvičování</a></li>
+<li><a href="#ai-workflow-prezentace-webova-stranka-h3-05">5. Materiál nekončí se zazvoněním</a></li></ol></li>
+<li><a href="#ai-workflow-prezentace-webova-stranka-h2-09">Kdy to smysl má – a kdy ne</a></li>
+<li><a href="#ai-workflow-prezentace-webova-stranka-h2-10">Možná nemusíme přestat používat prezentace</a></li></ol></nav></details>
         <article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Jak propojit výukový cíl, vlastní zdroje, Gemini Notebook, Gemini a jednoduchou webovou stránku s interaktivitou, ke které se žáci mohou vracet i po skončení hodiny.</p>
@@ -62,7 +86,7 @@
                     <figcaption>Od výukového cíle přes vlastní zdroje a Gemini až k webové stránce, která může obsahovat i procvičování.</figcaption>
                 </figure>
 
-                <h2>Musí být výsledkem vždycky prezentace?</h2>
+                <h2 id="ai-workflow-prezentace-webova-stranka-h2-01">Musí být výsledkem vždycky prezentace?</h2>
                 <p>Když připravuji novou hodinu, velmi snadno sklouznu k tradičnímu postupu:</p>
                 <div class="article-prompt"><strong>téma → materiály → prezentace → výklad</strong></div>
                 <p>Na prezentacích není nic špatného. Sama je používám a používat budu. Problém nastává spíš ve chvíli, kdy se prezentace stane automatickou odpovědí na každou výukovou situaci.</p>
@@ -79,7 +103,7 @@
                 <blockquote><strong>Ne proto, že je web modernější než PowerPoint. Ale proto, že může mít jinou funkci.</strong></blockquote>
                 <p>Prezentace pomáhá učiteli vést hodinu. Webová stránka pomáhá žákovi se k učivu vracet. Interaktivní prvek mu navíc může umožnit si učivo vyzkoušet.</p>
 
-                <h2>AI jako součást pracovního postupu</h2>
+                <h2 id="ai-workflow-prezentace-webova-stranka-h2-02">AI jako součást pracovního postupu</h2>
                 <p>Dnes už učitel nemusí webovou stránku programovat ručně ani se kvůli ní učit HTML, CSS a JavaScript.</p>
                 <p>Zároveň bych ale nedoporučovala otevřít AI a jednoduše napsat:</p>
                 <blockquote>„Vytvoř mi webovou stránku na téma podstata státu.“</blockquote>
@@ -89,14 +113,14 @@
                 <div class="article-prompt"><strong>moje výukové cíle → vlastní zdroje → Gemini Notebook → Gemini → webová stránka → případná interaktivita</strong></div>
                 <p>AI potom není autorem mé hodiny. Je pomocníkem v jednotlivých fázích její přípravy.</p>
 
-                <h2>1. Nezačínám AI, ale výukovým cílem</h2>
+                <h2 id="ai-workflow-prezentace-webova-stranka-h2-03">1. Nezačínám AI, ale výukovým cílem</h2>
                 <p>Nejdříve si položím obyčejnou učitelskou otázku:</p>
                 <blockquote>Co má žák po této hodině vědět nebo umět?</blockquote>
                 <p>Nemusím psát složitý pedagogický dokument. Stačí několik konkrétních bodů.</p>
                 <p>Teprve potom má smysl otevírat AI.</p>
                 <p>Tohle pořadí je podle mě důležité. Pokud totiž sama nevím, kam má hodina směřovat, AI to za mě spolehlivě nerozhodne.</p>
 
-                <h2>2. Gemini Notebook jako pracovní prostor nad zdroji</h2>
+                <h2 id="ai-workflow-prezentace-webova-stranka-h2-04">2. Gemini Notebook jako pracovní prostor nad zdroji</h2>
                 <p>Do Gemini Notebooku mohu vložit materiály, ze kterých při přípravě skutečně vycházím – vlastní poznámky, studijní texty, dokumenty nebo další vhodné zdroje.</p>
                 <p>Místo požadavku na hotovou stránku si z nich můžu nechat například:</p>
                 <ul>
@@ -109,7 +133,7 @@
                 </ul>
                 <p>Gemini Notebook tak používám především jako pracovní prostor nad vlastními zdroji, nikoliv jako automatického autora hotové hodiny.</p>
 
-                <h2>3. Gemini pomůže obsah přizpůsobit žákům</h2>
+                <h2 id="ai-workflow-prezentace-webova-stranka-h2-05">3. Gemini pomůže obsah přizpůsobit žákům</h2>
                 <p>Připravenou strukturu můžu dále rozpracovat v Gemini.</p>
                 <p>Tady už mohu řešit například:</p>
                 <ul>
@@ -125,7 +149,7 @@
                 <p>AI nezná moji třídu tak jako já. Neví automaticky, co už jsme probírali, na čem se žáci minule zasekli nebo který příklad u nich bude fungovat.</p>
                 <p>Výsledek proto kontroluji a upravuji.</p>
 
-                <h2>4. Z obsahu vznikne webová stránka</h2>
+                <h2 id="ai-workflow-prezentace-webova-stranka-h2-06">4. Z obsahu vznikne webová stránka</h2>
                 <p>Teprve když mám vyřešený obsah, začínám přemýšlet o podobě stránky.</p>
                 <p>Může být velmi jednoduchá.</p>
                 <p>Například:</p>
@@ -134,7 +158,7 @@
                 <p>Má především pomoci žákovi pochopit učivo a později se k němu vrátit.</p>
                 <p>Pro vizuální zpracování lze využít například Canvu a další nástroje. Kdo chce jít dál, může začít experimentovat také s vibe codingem a Google AI Studiem.</p>
 
-                <h2>5. Stránka nemusí být pouze na čtení</h2>
+                <h2 id="ai-workflow-prezentace-webova-stranka-h2-07">5. Stránka nemusí být pouze na čtení</h2>
                 <p>Tady začíná být celý postup ještě zajímavější.</p>
                 <p>Výstupy vytvořené při práci s Gemini Notebookem nemusí zůstat pouze uvnitř notebooku.</p>
                 <p>Například obsah kartiček lze dále zpracovat jako strukturovaná data a použít jej při tvorbě vlastního interaktivního prvku. Podobně lze pracovat s otázkami nebo dalšími připravenými výstupy.</p>
@@ -152,7 +176,7 @@
                 <p>A právě tady začíná být vibe coding pro učitele zajímavý.</p>
                 <p>Nemusím se stát programátorem. Potřebuji především vědět, co má daná aktivita dělat a proč ji chci ve výuce použít.</p>
 
-                <h2>Jak by to mohlo vypadat v praxi: Podstata státu</h2>
+                <h2 id="ai-workflow-prezentace-webova-stranka-h2-08">Jak by to mohlo vypadat v praxi: Podstata státu</h2>
                 <p>Vezměme si konkrétní téma z občanské nauky – Podstata státu.</p>
                 <p>Místo toho, abych začala příkazem:</p>
                 <blockquote>„Vytvoř mi stránku o státu,“</blockquote>
@@ -166,45 +190,45 @@
                     <li>dokázat pojmy spojit s konkrétními příklady.</li>
                 </ul>
 
-                <h3>1. Připravím zdroje</h3>
+                <h3 id="ai-workflow-prezentace-webova-stranka-h3-01">1. Připravím zdroje</h3>
                 <p>Do Gemini Notebooku vložím materiály, ze kterých při výuce vycházím.</p>
                 <p>Nechám si z nich vytvořit například návrh struktury:</p>
                 <div class="article-prompt"><strong>Co je stát → znaky státu → suverenita → funkce státu → příklady → shrnutí → kontrolní otázky</strong></div>
                 <p>Tím získám kostru.</p>
 
-                <h3>2. Přizpůsobím obsah svým žákům</h3>
+                <h3 id="ai-workflow-prezentace-webova-stranka-h3-02">2. Přizpůsobím obsah svým žákům</h3>
                 <p>V Gemini potom jednotlivé části rozpracuji.</p>
                 <p>Mohu například požadovat krátké vysvětlení pojmu suverenita pro středoškoláka nebo příklad, na kterém bude dobře vidět rozdíl mezi územím, obyvatelstvem a státní mocí.</p>
                 <p>Výsledek následně upravím podle své třídy.</p>
 
-                <h3>3. Doplním vizuální oporu</h3>
+                <h3 id="ai-workflow-prezentace-webova-stranka-h3-03">3. Doplním vizuální oporu</h3>
                 <p>Nemusím vytvářet dvacet obrázků.</p>
                 <p>Pro toto téma může úplně stačit jednoduché schéma:</p>
                 <div class="article-prompt"><strong>STÁT</strong><br /><br />↓<br /><br />území · obyvatelstvo · státní moc · suverenita</div>
                 <p>K tomu lze přidat několik konkrétních příkladů.</p>
 
-                <h3>4. Přidám procvičování</h3>
+                <h3 id="ai-workflow-prezentace-webova-stranka-h3-04">4. Přidám procvičování</h3>
                 <p>Z připravených pojmů mohou vzniknout kartičky.</p>
                 <p>Z kontrolních otázek krátký kvíz.</p>
                 <p>A pokud chci experimentovat s vibe codingem, můžu si v Google AI Studiu nechat pomoci s vytvořením jednoduché interaktivní aktivity.</p>
                 <p>Žák tak stránku nejen přečte, ale může si na jejím konci také ověřit:</p>
                 <blockquote><strong>Rozumím tomu skutečně?</strong></blockquote>
 
-                <h3>5. Materiál nekončí se zazvoněním</h3>
+                <h3 id="ai-workflow-prezentace-webova-stranka-h3-05">5. Materiál nekončí se zazvoněním</h3>
                 <p>A v tom vidím největší rozdíl oproti klasické prezentaci.</p>
                 <p>Po skončení hodiny stránka nezmizí.</p>
                 <p>Mohu na ni odkázat žáka, který chyběl. Mohu ji použít před testem. Později na ni můžu navázat dalším tématem. A pokud zjistím, že některé vysvětlení nefunguje, jednoduše ho upravím.</p>
                 <p>Postupně tak nemusím vytvářet pouze jednotlivé přípravy na hodiny.</p>
                 <blockquote><strong>Mohu si budovat vlastní malou digitální učebnici.</strong></blockquote>
 
-                <h2>Kdy to smysl má – a kdy ne</h2>
+                <h2 id="ai-workflow-prezentace-webova-stranka-h2-09">Kdy to smysl má – a kdy ne</h2>
                 <p>Ne každé téma potřebuje vlastní webovou stránku.</p>
                 <p>Velký smysl podle mě mají především témata, ke kterým se žáci opakovaně vracejí: větší tematické celky, maturitní okruhy, obtížnější učivo nebo látka, která tvoří základ pro další témata.</p>
                 <p>Naopak hodina založená především na diskusi, skupinové práci nebo společném zážitku žádný vlastní web potřebovat nemusí.</p>
                 <p>Stejně tak nemá cenu strávit tři hodiny výrobou stránky, kterou použiji deset minut a už ji nikdy neotevřu.</p>
                 <p>Technologie má učiteli práci ulehčit, ne mu vytvořit další zaměstnání.</p>
 
-                <h2>Možná nemusíme přestat používat prezentace</h2>
+                <h2 id="ai-workflow-prezentace-webova-stranka-h2-10">Možná nemusíme přestat používat prezentace</h2>
                 <p>PowerPoint ze školy nezmizí a podle mě ani nemusí.</p>
                 <p>Zajímavější je začít přemýšlet, zda je prezentace vždycky tím nejlepším výsledkem naší přípravy.</p>
                 <p>AI nám totiž postupně umožňuje vytvářet materiály, které byly ještě nedávno pro běžného učitele technicky příliš náročné.</p>
@@ -245,6 +269,9 @@
 
     <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai.html#workflow">Zpět na Workflow pro učitele</a></footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261113-8a"></script>
 </body>
 
 </html>

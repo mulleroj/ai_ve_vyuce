@@ -370,3 +370,9 @@ body.ai-agent-light-page.light-background-pilot.workflow-page.tool-guide-page .w
     border-radius: 20px;
   }
 }
+
+
+/* Keep technical inline examples readable on narrow article cards. */
+body.ai-agent-light-page.light-background-pilot.workflow-page .article-content code {
+  overflow-wrap: anywhere;
+}
