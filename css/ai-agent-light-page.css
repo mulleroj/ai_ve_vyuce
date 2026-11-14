@@ -441,3 +441,18 @@ body.ai-agent-light-page.light-background-pilot.workflow-page .philosophy-hero-c
 }
 body.ai-agent-light-page.light-background-pilot.workflow-page .philosophy-hero-cover::before,
 body.ai-agent-light-page.light-background-pilot.workflow-page .philosophy-hero-cover::after { display: none; }
+
+
+/* Keep the long school-rules contents usable without making mobile pages excessively tall. */
+body.wave16-ai-rules .article-content-navigation nav {
+  max-height: calc(100vh - var(--nav-height, 0px) - 5.25rem);
+  overflow-y: auto;
+}
+
+@media (max-width: 960px) {
+  body.wave16-ai-rules .article-content-navigation nav {
+    max-height: min(45vh, 360px);
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+  }
+}
