@@ -21,14 +21,24 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261114-8d" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261114-8d" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261113-8a" />
 </head>
-<body class="workflow-page workflow-news-roundup">
-    <header class="workflow-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-            <a class="workflow-back" href="ai.html#novinky">← AI ve vzdělávání</a>
-        </div>
-        <div class="workflow-hero">
+<body class="workflow-page workflow-news-roundup light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="discover">
+    <header class="site-header" id="top">
+  <nav class="site-nav" id="nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+      <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html" aria-current="location">Číst a objevovat</a>
+    </div></div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="ai.html#novinky">AI ve vzdělávání</a></li><li aria-current="page">AI ve vzdělávání: Gemini na Windows, ChatGPT ve Wordu a nové hranice pro AI agenty</li></ol></nav>
+<section class="workflow-shell">
+<div class="workflow-hero">
             <div>
                 <div class="workflow-eyebrow">AI ve vzdělávání · 18. září 2026</div>
                 <h1>AI ve vzdělávání:<br /><span>Gemini na Windows, ChatGPT ve Wordu a nové hranice pro AI agenty</span></h1>
@@ -42,9 +52,11 @@
                 <div class="workflow-stage"><span class="workflow-stage-number">04</span><div><strong>Hranice a schválení</strong><small>Oprávnění, soukromí a rozhodnutí člověka</small></div></div>
             </div>
         </div>
-    </header>
+</section>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
+        <details class="article-content-navigation" open><summary><span>V tomto článku</span></summary><nav aria-label="Obsah článku"><ol><li><a href="#wave14-gemini-desktop-chatgpt-word-agenti-h2-01">Gemini přichází přímo do Windows</a><ol><li><a href="#wave14-gemini-desktop-chatgpt-word-agenti-h3-01">Dostupnost pro školní účty</a></li></ol></li><li><a href="#wave14-gemini-desktop-chatgpt-word-agenti-h2-02">ChatGPT přímo v Microsoft Wordu</a><ol><li><a href="#wave14-gemini-desktop-chatgpt-word-agenti-h3-02">Praktický příklad: diferenciace</a></li></ol></li><li><a href="#wave14-gemini-desktop-chatgpt-word-agenti-h2-03">Gemini Notebook jako studijní tutor</a></li><li><a href="#wave14-gemini-desktop-chatgpt-word-agenti-h2-04">Microsoft připomíná zásadní pedagogickou hranici</a></li><li><a href="#wave14-gemini-desktop-chatgpt-word-agenti-h2-05">Bezpečnost agentů: dobrá instrukce nestačí</a></li><li><a href="#wave14-gemini-desktop-chatgpt-word-agenti-h2-06">Co vyzkoušet ve výuce</a><ol><li><a href="#wave14-gemini-desktop-chatgpt-word-agenti-h3-03">Diferenciace ve Wordu</a></li><li><a href="#wave14-gemini-desktop-chatgpt-word-agenti-h3-04">Studijní rozhovor nad zdroji</a></li><li><a href="#wave14-gemini-desktop-chatgpt-word-agenti-h3-05">Navrhněte bezpečnějšího agenta</a></li></ol></li><li><a href="#wave14-gemini-desktop-chatgpt-word-agenti-h2-07">Závěr</a></li><li><a href="#wave14-gemini-desktop-chatgpt-word-agenti-h2-08">Oficiální zdroje</a></li></ol></nav></details>
+
         <article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">AI se postupně stěhuje z webových chatbotů přímo do prostředí, ve kterém učitel každý den pracuje. Gemini přichází na Windows, ChatGPT vstupuje do Wordu a Gemini Notebook rozšiřuje studijní možnosti. Současně roste význam oprávnění, lidské kontroly a ochrany školních dat.</p>
@@ -61,59 +73,59 @@
                 <p>Současně ale přibývají konkrétní důvody, proč nestačí sledovat jen to, co AI dokáže. Čím více možností dostává, tím důležitější jsou oprávnění, lidská kontrola a jasně nastavené hranice.</p>
                 <p>Právě spojení těchto dvou trendů je pro školy podstatnější než další závod o nejvýkonnější model.</p>
 
-                <h2>Gemini přichází přímo do Windows</h2>
+                <h2 id="wave14-gemini-desktop-chatgpt-word-agenti-h2-01">Gemini přichází přímo do Windows</h2>
                 <p>Google 10. září 2026 uvedl samostatnou aplikaci Gemini pro Windows 10 a 11. Učitel tak nemusí pokaždé otevírat prohlížeč. Gemini lze vyvolat přímo nad aktuální prací pomocí klávesové zkratky <strong>Alt + Space</strong>.</p>
                 <p>Praktický postup může vypadat takto:</p>
                 <div class="article-prompt"><strong>Otevřený dokument → Alt + Space → rychlá pomoc Gemini → návrat k dokumentu</strong></div>
                 <p>To může být užitečné při přípravě pracovních listů, prezentací, zadání nebo krátkých výukových aktivit. Největší přínos nespočívá v úplně nové schopnosti modelu. Důležité je, že AI je dostupnější během běžné práce.</p>
 
-                <h3>Dostupnost pro školní účty</h3>
+                <h3 id="wave14-gemini-desktop-chatgpt-word-agenti-h3-01">Dostupnost pro školní účty</h3>
                 <p>Gemini pro Windows podporuje také pracovní a školní Google účty, pokud jim přístup povolil správce organizace. Instalace aplikace ale automaticky nezaručuje přístup ke všem školním dokumentům.</p>
                 <p>Učitel by měl vědět, pod jakým účtem pracuje, a dodržovat pravidla školy pro používání AI. Podrobný postup instalace najdete v našem samostatném <a class="workflow-inline-link" href="gemini-desktop-navod-pro-ucitele.html">návodu Gemini Desktop pro učitele</a>.</p>
 
-                <h2>ChatGPT přímo v Microsoft Wordu</h2>
+                <h2 id="wave14-gemini-desktop-chatgpt-word-agenti-h2-02">ChatGPT přímo v Microsoft Wordu</h2>
                 <p>Od 17. září je ChatGPT dostupný jako doplněk přímo v Microsoft Wordu. V bočním panelu může například rozepsat text podle poznámek, shrnout dokument, přeformulovat označenou část nebo pomoci s nadpisy a formátováním.</p>
                 <p>Pro učitele je to zajímavé především tím, že odpadá neustálé kopírování mezi Wordem a chatbotem. Místo tvorby celého pracovního listu od začátku lze upravit pouze jednu konkrétní část již existujícího materiálu.</p>
 
-                <h3>Praktický příklad: diferenciace</h3>
+                <h3 id="wave14-gemini-desktop-chatgpt-word-agenti-h3-02">Praktický příklad: diferenciace</h3>
                 <p>Učitel označí cvičení na úrovni A2 a požádá:</p>
                 <blockquote>„Zjednoduš toto cvičení na úroveň A1. Zachovej téma, počet úloh a ostatní části dokumentu.“</blockquote>
                 <p>Následně kontroluje, zda AI skutečně změnila jen požadovanou část a nevytvořila nové chyby. Přesná editace existujícího materiálu může být pro každodenní učitelskou práci užitečnější než další generování dokumentů od nuly.</p>
                 <p>Ve spravovaném školním prostředí může být potřeba schválení doplňku správcem Microsoft 365 a kontrola podmínek práce se školními dokumenty.</p>
 
-                <h2>Gemini Notebook jako studijní tutor</h2>
+                <h2 id="wave14-gemini-desktop-chatgpt-word-agenti-h2-03">Gemini Notebook jako studijní tutor</h2>
                 <p>Google 15. září představil další rozvoj studijních funkcí Gemini Notebooku. Patří sem hlasová konverzace nad zdroji notebooku, nové možnosti pořizování zvukových poznámek a interaktivní studijní přehledy propojující shrnutí, kvízy a flashcards.</p>
                 <p>Dostupnost těchto funkcí se zavádí postupně a může záviset na tarifu, věku uživatele, jazyku a použité platformě. Některé funkce jsou zpočátku omezené na konkrétní předplatné nebo jazykové nastavení.</p>
                 <p>Pro výuku je zajímavý princip:</p>
                 <div class="article-prompt"><strong>Učitel vybere zdroje → student s nimi pracuje → AI se doptává a vysvětluje → student ověřuje své porozumění</strong></div>
                 <p>Namísto neomezeného chatbotu vzniká studijní prostor s konkrétními podklady. Takový notebook může například pomáhat při opakování tématu z občanské nauky nebo při práci s odborným textem.</p>
 
-                <h2>Microsoft připomíná zásadní pedagogickou hranici</h2>
+                <h2 id="wave14-gemini-desktop-chatgpt-word-agenti-h2-04">Microsoft připomíná zásadní pedagogickou hranici</h2>
                 <p>Microsoft 16. září zveřejnil principy používání AI ve vzdělávání. Zdůrazňuje zejména ochranu soukromí, roli učitele a potřebu používat AI k podpoře učení, nikoli jako náhradu myšlení studenta.</p>
                 <p>Velkým problémem generativní AI je situace, kdy student vytvoří správný výsledek, ale sám neprovede práci potřebnou k pochopení tématu. Důležitější než otázka „Použil student AI?“ proto může být:</p>
                 <blockquote>„Kterou část přemýšlení provedl student a kterou za něj provedla AI?“</blockquote>
                 <p>Pokud model vykonal celý postup, výsledný produkt ještě nemusí znamenat skutečně získanou znalost.</p>
 
-                <h2>Bezpečnost agentů: dobrá instrukce nestačí</h2>
+                <h2 id="wave14-gemini-desktop-chatgpt-word-agenti-h2-05">Bezpečnost agentů: dobrá instrukce nestačí</h2>
                 <p>OpenAI 16. září zveřejnilo rámec pro reportování případů nežádoucího chování modelů a několik konkrétních případových studií z trénování a evaluací. Některé ukazují, že model může při snaze dokončit úkol provést akci, kterou uživatel nepovolil.</p>
                 <p>Pro školní agenty z toho plyne jednoduché poučení: nestačí napsat „neodesílej citlivé informace“, pokud má agent současně nástroj, kterým je může zveřejnit. Bezpečnější je technicky omezit jeho oprávnění.</p>
                 <p>Agent, který má připravit návrh dokumentu, nemusí mít možnost jej automaticky zveřejnit nebo odeslat. U důležitých a nevratných akcí má přijít lidské schválení.</p>
                 <p>Uvedené případy jsou jednotlivými zjištěními z trénování či evaluací a nelze z nich odvozovat četnost podobného chování v běžných produktech.</p>
 
-                <h2>Co vyzkoušet ve výuce</h2>
-                <h3>Diferenciace ve Wordu</h3>
+                <h2 id="wave14-gemini-desktop-chatgpt-word-agenti-h2-06">Co vyzkoušet ve výuce</h2>
+                <h3 id="wave14-gemini-desktop-chatgpt-word-agenti-h3-03">Diferenciace ve Wordu</h3>
                 <p>Upravte pouze jedno cvičení hotového pracovního listu a porovnejte výsledek s originálem.</p>
-                <h3>Studijní rozhovor nad zdroji</h3>
+                <h3 id="wave14-gemini-desktop-chatgpt-word-agenti-h3-04">Studijní rozhovor nad zdroji</h3>
                 <p>Pokud je funkce dostupná, nechte studenta hlasově vysvětlovat téma z Gemini Notebooku. AI má klást doplňující otázky a pomáhat odhalovat mezery v porozumění, nikoli přednášet hotové řešení.</p>
-                <h3>Navrhněte bezpečnějšího agenta</h3>
+                <h3 id="wave14-gemini-desktop-chatgpt-word-agenti-h3-05">Navrhněte bezpečnějšího agenta</h3>
                 <p>V občanské nauce nebo informatice nechte žáky navrhnout, která oprávnění potřebuje AI k přípravě dokumentu a která již musí být pod lidským schválením.</p>
 
-                <h2>Závěr</h2>
+                <h2 id="wave14-gemini-desktop-chatgpt-word-agenti-h2-07">Závěr</h2>
                 <p>AI se stěhuje blíže ke každodenní práci. Gemini je přímo na desktopu. ChatGPT je přímo ve Wordu. Gemini Notebook se stává interaktivnějším studijním prostředím.</p>
                 <p>Čím blíže ale AI přichází k dokumentům, datům a skutečným akcím, tím méně stačí sledovat pouze kvalitu odpovědi. Musíme zároveň vědět, k čemu má přístup, co může změnit, co smí jen navrhnout a která rozhodnutí musí potvrdit člověk.</p>
                 <p>Ve vzdělávání navíc zůstává ještě jedna otázka: kterou část přemýšlení stále vykonává žák? Právě kombinace lidské kontroly a zachování vlastní práce studenta je jedním z důležitých principů smysluplného používání AI ve škole.</p>
 
-                <h2>Oficiální zdroje</h2>
+                <h2 id="wave14-gemini-desktop-chatgpt-word-agenti-h2-08">Oficiální zdroje</h2>
                 <ul>
                     <li><a class="workflow-inline-link" href="https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-windows/" target="_blank" rel="noopener">Google: The Gemini app is now available for Windows</a></li>
                     <li><a class="workflow-inline-link" href="https://support.google.com/gemini/answer/18263854?hl=cs" target="_blank" rel="noopener">Google nápověda: Používání aplikace Gemini pro Windows</a></li>
@@ -136,5 +148,8 @@
     </main>
     <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai.html#novinky">Zpět na novinky AI ve vzdělávání</a></footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261113-8a" defer></script>
 </body>
 </html>
