@@ -85,7 +85,7 @@ body.ai-agent-light-page.light-background-pilot.workflow-page.workflow-philosoph
   border-color: rgba(7, 88, 79, 0.35);
 }
 .workflow-main.article-content-layout > .series-navigation {
-  grid-column: 1 / -1;
+  grid-column: 2;
 }
 body.ai-agent-light-page.light-background-pilot.workflow-page .series-navigation {
   margin: 10px 0 12px;
