@@ -3180,17 +3180,22 @@ test('wave 17 magazine visuals, images, viewport screenshots, and light referenc
       return image.decode().catch(() => false);
     })));
     await page.evaluate(async () => { await document.fonts.ready; });
-    const mobileStyles = await page.evaluate(() => ({
-      tocPosition: getComputedStyle(document.querySelector('.article-content-navigation')).position,
-      tocOpen: document.querySelector('.article-content-navigation').open,
-      highlightsColumns: getComputedStyle(document.querySelector('.magazine-hero-highlights')).gridTemplateColumns,
-      heroTitleSize: getComputedStyle(document.querySelector('.magazine-article-hero h1')).fontSize,
-      documentWidth: document.documentElement.scrollWidth,
-      viewportWidth: innerWidth
-    }));
+    const mobileStyles = await page.evaluate(() => {
+      const highlights = document.querySelector('.magazine-hero-highlights');
+      return {
+        tocPosition: getComputedStyle(document.querySelector('.article-content-navigation')).position,
+        tocOpen: document.querySelector('.article-content-navigation').open,
+        highlightsColumns: highlights ? getComputedStyle(highlights).gridTemplateColumns : null,
+        heroTitleSize: getComputedStyle(document.querySelector('.magazine-article-hero h1')).fontSize,
+        documentWidth: document.documentElement.scrollWidth,
+        viewportWidth: innerWidth
+      };
+    });
     evidence.views.push({ file: article.file, width: 390, computedStyles: mobileStyles });
     expect(mobileStyles.tocPosition).toBe('static');
     expect(mobileStyles.tocOpen).toBe(true);
+    expect(mobileStyles.highlightsColumns !== null).toBe(article.heroHighlights.length > 0);
+    if (article.heroHighlights.length > 0) expect(mobileStyles.highlightsColumns).not.toBe('none');
     expect(mobileStyles.documentWidth).toBeLessThanOrEqual(391);
     await page.locator('.magazine-article-hero').screenshot({ path: 'artifacts/wave17-' + article.file + '-mobile-390-hero.png' });
     const mobileToc = page.locator('.article-content-navigation');
