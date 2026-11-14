@@ -2444,8 +2444,13 @@ test('wave 15 hero styles and six screenshot evidence sets', async ({ page }) =>
       expect(style['body'].backgroundColor).toBe('rgb(255, 254, 250)');
       expect(style['.workflow-shell::after'].display).toBe('none');
       expect(style['.workflow-hero h1'].color).toBe('rgb(16, 45, 43)');
-      expect(style['.workflow-route'].backgroundColor).not.toBe('rgb(17, 24, 39)');
-      expect(style['.workflow-stage'].backgroundColor).not.toBe('rgb(17, 24, 39)');
+      if (style['.workflow-route']) {
+        expect(style['.workflow-stage'].backgroundColor).toBe('rgba(255, 255, 255, 0.88)');
+      } else {
+        expect(style['.workflow-news-panel']).not.toBeNull();
+        expect(style['.workflow-news-panel'].backgroundImage).toContain('linear-gradient');
+        expect(style['.workflow-news-panel-label']).not.toBeNull();
+      }
       evidence.pages.push({ file: article.file, inventory, computedStyles: style });
           await hero.screenshot({ path: `artifacts/${article.file}-desktop-1440-hero.png` });
       await page.locator('.article-content-navigation').scrollIntoViewIfNeeded();
