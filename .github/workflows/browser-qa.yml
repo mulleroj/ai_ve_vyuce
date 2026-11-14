@@ -37,6 +37,7 @@ jobs:
       WAVE15_BASELINE_SHA: 1a2ca130db05a6cfe46e072235a18ecb75d2adbb
       WAVE16_BASELINE_SHA: 287b9c331e8c938b5f8152f8718e423521ee1e11
       WAVE17_BASELINE_SHA: e7bbb564051bfc7db9f55792acb6a37856ce04e3
+      WAVE18_BASELINE_SHA: 5505c10e72de01513b70c6f8bf84d498820158b0
     steps:
       - name: Checkout the tested commit
         uses: actions/checkout@v4
@@ -68,6 +69,7 @@ jobs:
           git fetch --no-tags --depth=1 origin "$WAVE15_BASELINE_SHA"
           git fetch --no-tags --depth=1 origin "$WAVE16_BASELINE_SHA"
           git fetch --no-tags --depth=1 origin "$WAVE17_BASELINE_SHA"
+          git fetch --no-tags --depth=1 origin "$WAVE18_BASELINE_SHA"
 
       - name: Verify guide generator determinism and scope
         run: |

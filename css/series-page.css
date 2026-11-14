@@ -50,3 +50,98 @@
   .series-related ul { align-items: stretch; flex-direction: column; }
   .series-related .button { justify-content: flex-start; width: 100%; }
 }
+
+
+/* Wave 18: editorial series articles retain their illustration and identity in
+   the approved light article system. */
+body.ai-agent-light-page.light-background-pilot.workflow-page .workflow-shell.philosophy-editorial-shell {
+  padding-top: 0;
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page.workflow-philosophy .philosophy-hero-cover {
+  border-color: #dfe8e1;
+  background: #fff;
+  box-shadow: 0 14px 38px rgba(22, 55, 43, 0.1);
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page.workflow-philosophy .article-content blockquote {
+  border-left-color: #168f7c;
+  background: linear-gradient(90deg, #eaf3ef, #f5f8f4);
+  color: #294b41;
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page.workflow-philosophy .article-content blockquote::before {
+  color: rgba(7, 88, 79, 0.2);
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page.workflow-philosophy .philosophy-origin {
+  border-color: #d5e5dc;
+  background: linear-gradient(135deg, #f5f8f3, #eaf3ef);
+  color: #294b41;
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page.workflow-philosophy .philosophy-origin h2 {
+  color: #07584f;
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page.workflow-philosophy .philosophy-origin p {
+  color: #52675f;
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page.workflow-philosophy .philosophy-origin::before {
+  border-color: rgba(7, 88, 79, 0.35);
+}
+.workflow-main.article-content-layout > .series-navigation {
+  grid-column: 1 / -1;
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page .series-navigation {
+  margin: 10px 0 12px;
+  padding: clamp(20px, 3vw, 30px);
+  border-color: #dfe8e1;
+  background: linear-gradient(145deg, #ffffff, #f2f6f1);
+  color: #25343d;
+  box-shadow: 0 8px 24px rgba(22, 55, 43, 0.07);
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page .series-navigation h2 {
+  color: #102d2b;
+  font-family: 'DM Sans', Arial, sans-serif;
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page .series-all-parts {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page .series-all-parts li {
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page .series-navigation a {
+  color: #07584f;
+  text-underline-offset: 3px;
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page .series-navigation a:hover,
+body.ai-agent-light-page.light-background-pilot.workflow-page .series-navigation a:focus-visible {
+  color: #063f39;
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page .series-navigation a[aria-current="page"] {
+  border-radius: 6px;
+  background: #e6f1ed;
+  color: #063f39;
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page .series-steps {
+  justify-content: flex-start;
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page .series-navigation > a {
+  display: inline-block;
+  padding: 8px 12px;
+  border: 1px solid #cbd9d3;
+  border-radius: 999px;
+  background: #fff;
+  font-weight: 700;
+}
+@media (max-width: 960px) {
+  .workflow-main.article-content-layout > .series-navigation {
+    grid-column: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .philosophy-series-page *,
+  .ai-agent-light-page.workflow-page * {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
