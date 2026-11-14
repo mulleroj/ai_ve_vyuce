@@ -126,3 +126,12 @@
 @media (max-width: 420px) {
   .site-navigation-enabled .site-breadcrumbs { width: calc(100% - 28px); }
 }
+
+/* With scripting disabled, stack the header rows so the full menu keeps its
+   available width instead of shrinking beside the brand. */
+@media (max-width: 800px) {
+  html:not(.js) .site-navigation-enabled .site-nav {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}

@@ -3267,6 +3267,7 @@ test('wave 18 fragment navigation works without JavaScript and layouts fit every
  const ctx=await browser.newContext({javaScriptEnabled:false,reducedMotion:'reduce'}),page=await ctx.newPage();
  for(const a of wave18Articles)for(const width of widths){
   await page.setViewportSize({width,height:900});await page.goto(baseURL+'/'+a.href);
+  await expect(page.locator('.site-nav .nav-content')).toBeVisible();
   const link=page.locator('.article-content-navigation a').first(),href=await link.getAttribute('href');
   await link.click();await expect(page).toHaveURL(new RegExp(href.replace('#','')));
   await expect(page.locator(href)).toBeInViewport();
