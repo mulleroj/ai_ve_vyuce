@@ -158,3 +158,14 @@ body.ai-agent-light-page.light-background-pilot.workflow-page .series-navigation
     overflow-wrap: anywhere;
   }
 }
+
+/* Long current-page breadcrumbs wrap in the smallest no-JS header. */
+@media (max-width: 420px) {
+  .site-navigation-enabled .site-breadcrumbs li {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .site-navigation-enabled .site-breadcrumbs li + li::before {
+    margin-inline: 0 4px;
+  }
+}
