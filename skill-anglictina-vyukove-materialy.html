@@ -7,6 +7,12 @@
     <meta name="description" content="Otevřený English Teaching Materials SKILL pro učitele angličtiny: sedm výukových formátů, návody pro ChatGPT, Claude a Gemini a kompletní ZIP ke stažení." />
     <meta property="article:published_time" content="2026-11-01" />
     <link rel="stylesheet" href="css/workflow.css?v=20261101-english-skill-editorial" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261113-8a" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261114-8c" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261113-8a" />
+
+
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=robot-20261103" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=robot-20261103" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png?v=robot-20261103" />
@@ -30,12 +36,18 @@
         .english-skill-article .workflow-news-panel .prompt-copy-button { display: inline-flex; text-decoration: none; }
     </style>
 </head>
-<body class="workflow-page workflow-news-roundup english-skill-article">
-    <header class="workflow-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-            <a class="workflow-back" href="ai.html">← AI pro školy</a>
-        </div>
+<body class="workflow-page workflow-news-roundup english-skill-article light-background-pilot ai-agent-light-page site-navigation-enabled tool-guide-page" data-site-navigation-area="teach">
+    <header class="site-header" id="top">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+      <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a>
+    </div></div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="anglictina.html">Angličtina</a></li><li aria-current="page">Jeden SKILL, sedm výukových materiálů: AI pomocník pro angličtinu</li></ol></nav>
+<header class="workflow-shell">
         <div class="workflow-hero">
             <div>
                 <div class="workflow-eyebrow">Angličtina · Praktický nástroj · 1. listopadu 2026</div>
@@ -51,19 +63,21 @@
             </div>
         </div>
     </header>
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
+        <details class="article-content-navigation" open><summary><span>V tomto článku</span></summary><nav aria-label="Obsah článku"><ol><li><a href="#wave13-skill-anglictina-vyukove-materialy-h2-01">Co je SKILL a čím se liší od běžného promptu?</a></li><li><a href="#wave13-skill-anglictina-vyukove-materialy-h2-02">Sedm druhů materiálů v jednom balíčku</a></li><li><a href="#wave13-skill-anglictina-vyukove-materialy-h2-03">Jak SKILL získat?</a></li><li><a href="#jak-pouzit">Jak SKILL dostat do chatbota?</a><ol><li><a href="#wave13-skill-anglictina-vyukove-materialy-h3-01">ChatGPT: projekt nebo běžná konverzace</a></li><li><a href="#wave13-skill-anglictina-vyukove-materialy-h3-02">Claude: vlastní Skills, pokud jsou ve vašem prostředí dostupné</a></li><li><a href="#wave13-skill-anglictina-vyukove-materialy-h3-03">Gemini: import vlastního SKILLu</a></li><li><a href="#wave13-skill-anglictina-vyukove-materialy-h3-04">Další agenti s podporou Agent Skills</a></li></ol></li><li><a href="#wave13-skill-anglictina-vyukove-materialy-h2-05">Vyzkoušejte si ho na jedné lekci</a><ol><li><a href="#skill-example-title">Připravte pracovní list na Present Simple</a></li></ol></li><li><a href="#wave13-skill-anglictina-vyukove-materialy-h2-06">Co SKILL sám o sobě nedokáže?</a></li><li><a href="#wave13-skill-anglictina-vyukove-materialy-h2-07">Proč to stojí za vyzkoušení?</a><ol><li><a href="#english-skill-download-title">English Teaching Materials 1.0</a></li></ol></li></ol></nav></details>
+        
         <article class="workflow-article" id="skill-anglictina-vyukove-materialy">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Otevřený English Teaching Materials SKILL pro učitele angličtiny: sedm formátů materiálů, postupy pro ChatGPT, Claude a Gemini a kompletní ZIP balíček ke stažení.</p>
                 <div class="workflow-article-meta"><time datetime="2026-11-01">1. listopadu 2026</time><span>Angličtina · Agent Skills · Výukové materiály</span></div>
             </div>
             <div class="article-content">
-                <h2>Co je SKILL a čím se liší od běžného promptu?</h2>
+                <h2 id="wave13-skill-anglictina-vyukove-materialy-h2-01">Co je SKILL a čím se liší od běžného promptu?</h2>
                 <p><strong>Prompt</strong> je jednorázové zadání, například „Vytvoř pracovní list na Present Simple pro žáky úrovně A1.“</p>
                 <p><strong>SKILL</strong> je podrobnější návod, který může AI používat opakovaně. Obsahuje pravidla, jednotlivé postupy, kontrolní seznamy i příklady. Náš SKILL vede asistenta k tomu, aby přizpůsobil jazyk věku a úrovni žáků, vycházel z výukového cíle, oddělil řešení pro učitele, postupoval od vysvětlení k procvičování a předložil materiál ke kontrole.</p>
                 <p>English Teaching Materials 1.0 je otevřený balíček instrukcí ve formátu <a class="workflow-inline-link" href="https://agentskills.io/specification" target="_blank" rel="noopener noreferrer">Agent Skills</a>. Není to samostatná aplikace ani generátor obrázků a nezaručuje bezchybný výstup.</p>
 
-                <h2>Sedm druhů materiálů v jednom balíčku</h2>
+                <h2 id="wave13-skill-anglictina-vyukove-materialy-h2-02">Sedm druhů materiálů v jednom balíčku</h2>
                 <ol>
                 <li><strong>Názorná výuková pomůcka (Teaching Visual)</strong><p>Jednoduché schéma, diagram nebo obrázek vysvětluje jeden jazykový jev, například slovosled anglické věty nebo rozdíl mezi dvěma tvary.</p></li>
                 <li><strong>Gramatický plakát (Grammar Poster)</strong><p>Přehled pravidel, vzorců, krátkých příkladů a častých chyb pro témata jako Present Simple nebo Present Continuous. Důležitá je přesnost, ne množství dekorací.</p></li>
@@ -75,26 +89,26 @@
                 </ol>
                 <figure class="article-figure article-figure-infographic english-skill-infographic"><a href="images/english-teaching-materials-infografika.png" target="_blank" rel="noopener noreferrer" aria-label="Otevřít originální infografiku v PNG ve větším rozlišení"><img src="images/english-teaching-materials-infografika.webp" alt="Infografika představuje sedm typů výukových materiálů: názornou výukovou pomůcku, gramatický plakát, obrázkovou slovní zásobu, pracovní list, vizuální podporu čtení a poslechu, konverzační aktivitu a infografiku lekce." loading="lazy" decoding="async" width="1024" height="1536"></a><figcaption>Sedm typů výukových materiálů, které lze připravit pomocí SKILLu English Teaching Materials. Ukázky jsou ilustrační.</figcaption></figure>
 
-                <h2>Jak SKILL získat?</h2>
+                <h2 id="wave13-skill-anglictina-vyukove-materialy-h2-03">Jak SKILL získat?</h2>
                 <p>Kompletní balíček English Teaching Materials 1.0 si stáhněte níže jako ZIP. Po rozbalení najdete <code>SKILL.md</code>, stručný <code>README.md</code>, adresář <code>references</code> se sedmi metodickými režimy, vzorem zadání a kontrolou kvality a adresář <code>examples</code> s ukázkovým pracovním listem Present Simple (A1). Složku zachovejte pohromadě.</p>
 
                 <h2 id="jak-pouzit">Jak SKILL dostat do chatbota?</h2>
                 <p>Postup závisí na funkcích konkrétního nástroje a účtu. Nahrání souborů do chatu není samo o sobě nativní instalací Agent Skills.</p>
-                <h3>ChatGPT: projekt nebo běžná konverzace</h3>
+                <h3 id="wave13-skill-anglictina-vyukove-materialy-h3-01">ChatGPT: projekt nebo běžná konverzace</h3>
                 <ol>
                 <li>Pokud máte dostupné Projekty, vytvořte projekt například „Výuka angličtiny“.</li>
                 <li>Přidejte obsah <code>SKILL.md</code> do instrukcí projektu; pokud vaše prostředí přijímá příslušné soubory, přiložte také reference a příklad. Případně vložte potřebný obsah přímo do chatu.</li>
                 <li>Požádejte asistenta, aby při tvorbě materiálů vycházel z těchto instrukcí, a zadejte konkrétní úkol.</li>
                 </ol>
                 <p>ChatGPT umí v Projektech pracovat s instrukcemi a přiloženými zdroji, ale to není totéž jako nativní instalace Agent Skills. Počet a typ souborů a dostupnost Projektů se mohou lišit podle plánu a nastavení účtu. <a class="workflow-inline-link" href="https://help.openai.com/en/articles/10169521-projects-in-chatgpt" target="_blank" rel="noopener noreferrer">Návod OpenAI k Projektům</a>.</p>
-                <h3>Claude: vlastní Skills, pokud jsou ve vašem prostředí dostupné</h3>
+                <h3 id="wave13-skill-anglictina-vyukove-materialy-h3-02">Claude: vlastní Skills, pokud jsou ve vašem prostředí dostupné</h3>
                 <ol>
                 <li>Stáhněte ZIP se složkou <code>english-teaching-materials</code>.</li>
                 <li>V Claude otevřete nastavení Skills (například v části Customize/Capabilities, pokud ji vaše prostředí nabízí) a nahrajte ZIP podle pokynů aplikace.</li>
                 <li>Ověřte, že se Skill načetl, a vyzkoušejte konkrétní zadání.</li>
                 </ol>
                 <p>Dostupnost správy vlastních Skills se může lišit podle prostředí, účtu či pracovního prostoru. Pokud funkci nemáte, přidejte <code>SKILL.md</code> a potřebné reference do Projektu nebo konverzace jako běžné podklady; tím se z nich nestane nativně instalovaný Skill. <a class="workflow-inline-link" href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills" target="_blank" rel="noopener noreferrer">Představení Agent Skills od Anthropic</a>.</p>
-                <h3>Gemini: import vlastního SKILLu</h3>
+                <h3 id="wave13-skill-anglictina-vyukove-materialy-h3-03">Gemini: import vlastního SKILLu</h3>
                 <p>Gemini umožňuje vytvářet a importovat vlastní Skills založené na souboru <code>SKILL.md</code>. V podporovaných účtech tedy není nutné převádět náš balíček na Gem. Nahrávání Skills je dostupné v aplikaci Gemini na webu <code>gemini.google.com</code>; nabídka a dostupnost funkce se mohou lišit podle účtu, věku uživatele, nastavení organizace a fáze zavádění.</p>
                 <ol>
                 <li>Otevřete <a class="workflow-inline-link" href="https://gemini.google.com" target="_blank" rel="noopener noreferrer"><code>gemini.google.com</code></a> pod osobním Google účtem (18+), pokud je funkce Skills ve vašem účtu dostupná.</li>
@@ -107,9 +121,9 @@
                 <p>Distribuční ZIP English Teaching Materials obsahuje jedinou složku <code>english-teaching-materials</code> s <code>SKILL.md</code> v její hlavní složce a podpůrnými soubory v <code>references</code> a <code>examples</code>. Tato struktura odpovídá pokynům Google pro ZIP či složku obsahující <code>SKILL.md</code>; archiv je možné při importu vybrat. Pokud jej vaše rozhraní nepřijme, rozbalte ZIP a nahrajte složku <code>english-teaching-materials</code>, případně samotný soubor <code>SKILL.md</code>. Import v konkrétním účtu se může lišit a zde není potvrzován jako provedený.</p>
                 <p><strong>Co se stane s Gems?</strong> Google je postupně nahrazuje systémem Skills. Podle aktuální nápovědy budou Gems u osobních Google účtů uživatelů 18+ od 17. listopadu 2026 pouze pro čtení a 17. prosince 2026 odstraněny. U firemních, enterprise a neziskových účtů Google Workspace k tomu dojde nejdříve 1. března 2027; u Google Workspace for Education nejdříve 1. června 2027. Google uvádí, že existující Gems automaticky převede na Skills, ale některé typy přiložených souborů se přenést nemusí. Dostupnost importu a správy Skills se liší podle typu účtu; ve školním Workspace nemusí být stejný postup jako v osobní aplikaci Gemini dostupný, případně jej může omezit správce.</p>
                 <p>Oficiální informace: <a class="workflow-inline-link" href="https://support.google.com/gemini/answer/17094296" target="_blank" rel="noopener noreferrer">vytváření a import Skills v Gemini</a>, <a class="workflow-inline-link" href="https://support.google.com/gemini/answer/18560919" target="_blank" rel="noopener noreferrer">přechod z Gems na Skills</a> a <a class="workflow-inline-link" href="https://workspaceupdates.googleblog.com/2026/09/skills-gemini-app-workspace.html" target="_blank" rel="noopener noreferrer">oznámení Google Workspace k přechodu a termínům</a>.</p>
-                <h3>Další agenti s podporou Agent Skills</h3><p>U nástroje, který tento otevřený formát přímo podporuje, se instaluje celá složka s <code>SKILL.md</code> a souvisejícími soubory. Konkrétní umístění a postup určuje daná aplikace; viz <a class="workflow-inline-link" href="https://agentskills.io/specification" target="_blank" rel="noopener noreferrer">specifikace Agent Skills</a>.</p>
+                <h3 id="wave13-skill-anglictina-vyukove-materialy-h3-04">Další agenti s podporou Agent Skills</h3><p>U nástroje, který tento otevřený formát přímo podporuje, se instaluje celá složka s <code>SKILL.md</code> a souvisejícími soubory. Konkrétní umístění a postup určuje daná aplikace; viz <a class="workflow-inline-link" href="https://agentskills.io/specification" target="_blank" rel="noopener noreferrer">specifikace Agent Skills</a>.</p>
 
-                <h2>Vyzkoušejte si ho na jedné lekci</h2><p>Pokud má váš asistent k dispozici SKILL nebo jeho instrukce, můžete zadat například:</p>
+                <h2 id="wave13-skill-anglictina-vyukove-materialy-h2-05">Vyzkoušejte si ho na jedné lekci</h2><p>Pokud má váš asistent k dispozici SKILL nebo jeho instrukce, můžete zadat například:</p>
                 <section class="prompt-card" aria-labelledby="skill-example-title">
                 <div class="prompt-card-header">
                 <div><span class="workflow-article-kicker">UKÁZKOVÉ ZADÁNÍ</span><h3 id="skill-example-title">Připravte pracovní list na Present Simple</h3></div>
@@ -120,11 +134,11 @@
                 </section>
                 <p>Pokud máte tematický plán, seznam slov nebo text, přiložte ho; AI pak může materiál lépe navázat na skutečnou lekci. Do externích nástrojů nevkládejte identifikační údaje ani citlivé informace o žácích.</p>
 
-                <h2>Co SKILL sám o sobě nedokáže?</h2>
+                <h2 id="wave13-skill-anglictina-vyukove-materialy-h2-06">Co SKILL sám o sobě nedokáže?</h2>
                 <p>SKILL nenahradí generátor obrázků, PDF editor ani přístup k učebnicím, školním dokumentům nebo NotebookLM. Popisuje pracovní postup; konkrétní výstup závisí na schopnostech a oprávněních použitého nástroje.</p>
                 <p>Před použitím ověřte správnost angličtiny, přiměřenost obtížnosti, klíč odpovědí, čitelnost při tisku a shodu obrázků s popisky. Učitel odpovídá také za legální použití zdrojů a ochranu údajů žáků.</p>
 
-                <h2>Proč to stojí za vyzkoušení?</h2><p>Výhodou není jen rychlost. SKILL pomáhá opakovaně uplatňovat stejné didaktické zásady a zpřesňovat zadání. Učitel nemusí pokaždé znovu vysvětlovat, že pracovní list má mít postupně těžší úkoly, samostatný klíč nebo jazyk odpovídající žákům.</p>
+                <h2 id="wave13-skill-anglictina-vyukove-materialy-h2-07">Proč to stojí za vyzkoušení?</h2><p>Výhodou není jen rychlost. SKILL pomáhá opakovaně uplatňovat stejné didaktické zásady a zpřesňovat zadání. Učitel nemusí pokaždé znovu vysvětlovat, že pracovní list má mít postupně těžší úkoly, samostatný klíč nebo jazyk odpovídající žákům.</p>
                 <p><strong>Učitel určuje cíl. AI připravuje návrh. Učitel rozhoduje, co půjde do výuky.</strong></p>
                 <section class="workflow-news-panel" aria-labelledby="english-skill-download-title">
                     <span class="workflow-news-panel-label">KE STAŽENÍ</span>
@@ -149,5 +163,8 @@
     <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="anglictina.html">Angličtina</a> · <a href="ai.html">AI pro školy</a></footer>
     <script src="js/tool-guide.js?v=20261101-english-skill-copy" defer></script>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261113-8a"></script>
 </body>
 </html>

@@ -542,6 +542,8 @@ test('wave 9 shared TOC, navigation, breadcrumbs, and responsive layout work at 
       await expect(page.locator('.site-header')).toHaveCount(1);
       await expect(page.locator('.site-nav-pilot details')).toHaveCount(6);
       await expect(page.locator('.site-nav-pilot details[data-active="true"] > summary')).toHaveText(article.activeArea);
+  await page.locator('.menu-toggle').click();
+  await expect(page.locator('.menu-toggle')).toHaveAttribute('aria-expanded', 'true');
       await expect(page.locator('.guide-breadcrumbs > ol > li')).toHaveCount(3);
       await expect(page.locator('.guide-breadcrumbs > ol > li').nth(1)).toHaveText(article.breadcrumb);
       await expect(page.locator('.guide-breadcrumbs > ol > li').nth(1).locator('a')).toHaveAttribute('href', article.breadcrumbHref);
@@ -742,7 +744,16 @@ const wave12Articles = [
   { file: 'ai-ziva-hlasova-ai-ve-vyuce.html', title: 'Když AI začne skutečně naslouchat: živá hlasová umělá inteligence ve výuce', activeArea: 'Číst a objevovat', breadcrumb: 'AI ve vzdělávání', breadcrumbHref: 'ai.html#novinky', tocCount: 21, h2: '#ai-ziva-hlasova-ai-ve-vyuce-h2-01', h3: '#ai-ziva-hlasova-ai-ve-vyuce-h3-01', baselineSha: '3a566d2deb6e54e202acd4d1dc88194714477093', noLegacyTopbar: true, waitForStableViewportChapter: true, representative: '#ai-ziva-hlasova-ai-ve-vyuce-h2-03' },
 ];
 
-const migrationArticles = [...wave1Articles, ...wave2Articles, ...wave3Articles, ...wave4Articles, ...wave5Articles, ...wave6Articles, ...wave7Articles, ...wave8Articles, ...wave10Articles, ...wave11Articles, ...wave12Articles];
+const wave13Articles = [
+  { file: 'asistent-ucitele-osobni-ai-asistent.html', title: 'Asistent učitele: Pomocník, který pedagogům dosud chyběl', activeArea: 'Nástroje a asistenti', breadcrumb: 'AI asistenti a boti', breadcrumbHref: 'asistenti.html', tocCount: 14, h2: '#wave13-asistent-ucitele-osobni-ai-asistent-h2-01', h3: '#wave13-asistent-ucitele-osobni-ai-asistent-h3-01', baselineSha: '646735727573f95b337fa03977b12530b8ebff61', noLegacyTopbar: true, waitForStableViewportChapter: true, representative: '#wave13-asistent-ucitele-osobni-ai-asistent-h2-02' },
+  { file: 'neplytvej-inteligenci-ai-modely.html', title: 'Neplýtvej inteligencí', activeArea: 'Připravit výuku', breadcrumb: 'Praktické návody', breadcrumbHref: 'ai.html#navody', tocCount: 24, h2: '#jak-nevycerpat', h3: '#wave13-neplytvej-inteligenci-ai-modely-h3-01', baselineSha: '646735727573f95b337fa03977b12530b8ebff61', noLegacyTopbar: true, legacyInternalIds: ['toc-heading-neplytvej-inteligenci'], waitForStableViewportChapter: true, representative: '#princip-1' },
+  { file: 'skill-anglictina-vyukove-materialy.html', title: 'Jeden SKILL, sedm výukových materiálů: AI pomocník pro angličtinu', activeArea: 'Učit s AI', breadcrumb: 'Angličtina', breadcrumbHref: 'anglictina.html', tocCount: 13, h2: '#wave13-skill-anglictina-vyukove-materialy-h2-01', h3: '#wave13-skill-anglictina-vyukove-materialy-h3-01', baselineSha: '646735727573f95b337fa03977b12530b8ebff61', noLegacyTopbar: true, waitForStableViewportChapter: true, representative: '#wave13-skill-anglictina-vyukove-materialy-h2-02' },
+  { file: 'vibe-coding-bezpecnost-kodu-php2shell.html', title: 'Vibe Coding: AI ti naprogramuje aplikaci. Ale kdo zkontroluje její bezpečnost?', activeArea: 'Tvořit s AI', breadcrumb: 'Vibe Coding', breadcrumbHref: 'vibe-coding.html', tocCount: 10, h2: '#wave13-vibe-coding-bezpecnost-kodu-php2shell-h2-01', baselineSha: '646735727573f95b337fa03977b12530b8ebff61', noLegacyTopbar: true, waitForStableViewportChapter: true, representative: '#wave13-vibe-coding-bezpecnost-kodu-php2shell-h2-02' },
+  { file: 'vibe-coding-ucitele.html', title: 'Úvod do vibe codingu pro učitele', activeArea: 'Tvořit s AI', breadcrumb: 'Vibe Coding', breadcrumbHref: 'vibe-coding.html', tocCount: 12, h2: '#wave13-vibe-coding-ucitele-h2-01', baselineSha: '646735727573f95b337fa03977b12530b8ebff61', noLegacyTopbar: true, waitForStableViewportChapter: true, representative: '#wave13-vibe-coding-ucitele-h2-02' },
+];
+const wave13Gallery = { file: 'vibe-coding-pro-ucitele.html', title: 'Co si můžete vytvořit do výuky', activeArea: 'Tvořit s AI', breadcrumb: 'Vibe Coding', breadcrumbHref: 'vibe-coding.html', baselineSha: '646735727573f95b337fa03977b12530b8ebff61' };
+
+const migrationArticles = [...wave1Articles, ...wave2Articles, ...wave3Articles, ...wave4Articles, ...wave5Articles, ...wave6Articles, ...wave7Articles, ...wave8Articles, ...wave10Articles, ...wave11Articles, ...wave12Articles, ...wave13Articles];
 
 for (const article of migrationArticles) {
   test.describe(`Migration: ${article.file}`, () => {
@@ -1941,5 +1952,264 @@ test('wave 12 article and related internal links resolve from the local preview'
       const response = await request.get(url.origin + url.pathname);
       expect(response.ok(), article.file + ' link ' + href + ' returned ' + response.status()).toBe(true);
     }
+  }
+});
+
+
+// Wave 13: the project gallery keeps its card-led layout; long-form pages use the shared contents navigation.
+test('wave 13 project gallery preserves every card, image, alt text, order, and project URL at responsive widths', async ({ page }) => {
+  const article = wave13Gallery;
+  const { execFileSync } = require('node:child_process');
+  const baselineHTML = execFileSync('git', ['show', `${article.baselineSha}:${article.file}`], { encoding: 'utf8' });
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto(`${baseURL}/${article.file}`, { waitUntil: 'networkidle' });
+  const current = await page.evaluate(oldHTML => {
+    const oldDoc = new DOMParser().parseFromString(oldHTML, 'text/html');
+    const oldCards = [...oldDoc.querySelectorAll('.workflow-project-preview')].map(figure => {
+      const card = figure.closest('.workflow-related-card');
+      return { text: card.innerText.replace(/\\s+/g, ' ').trim(), image: [figure.querySelector('img')?.getAttribute('src'), figure.querySelector('img')?.getAttribute('alt')], links: [...card.querySelectorAll('a[href]')].map(a => a.getAttribute('href')) };
+    });
+    const cards = [...document.querySelectorAll('.workflow-project-preview')].map(figure => {
+      const card = figure.closest('.workflow-related-card');
+      return { text: card.innerText.replace(/\\s+/g, ' ').trim(), image: [figure.querySelector('img')?.getAttribute('src'), figure.querySelector('img')?.getAttribute('alt')], links: [...card.querySelectorAll('a[href]')].map(a => a.getAttribute('href')) };
+    });
+    return {
+      oldCards, cards,
+      oldPageImages: [...oldDoc.querySelectorAll('.workflow-article img')].map(i => [i.getAttribute('src'), i.getAttribute('alt')]),
+      pageImages: [...document.querySelectorAll('.workflow-article img')].map(i => [i.getAttribute('src'), i.getAttribute('alt')]),
+      title: document.querySelector('.workflow-article-intro h2')?.innerText.trim(),
+      noContentsToc: !document.querySelector('.article-content-navigation'),
+      oldArticleText: oldDoc.querySelector('.article-content')?.textContent.replace(/\\s+/g, ' ').trim(),
+      articleText: document.querySelector('.article-content')?.textContent.replace(/\\s+/g, ' ').trim(),
+      oldHeadings: [...oldDoc.querySelectorAll('.article-content h2,.article-content h3')].map(h => [h.tagName, h.textContent.replace(/\\s+/g, ' ').trim()]),
+      headings: [...document.querySelectorAll('.article-content h2,.article-content h3')].map(h => [h.tagName, h.textContent.replace(/\\s+/g, ' ').trim()]),
+      oldLinks: [...oldDoc.querySelectorAll('.workflow-article a[href],.workflow-related a[href]')].map(a => [a.getAttribute('href'), a.textContent.replace(/\\s+/g, ' ').trim()]),
+      links: [...document.querySelectorAll('.workflow-article a[href],.workflow-related a[href]')].map(a => [a.getAttribute('href'), a.textContent.replace(/\\s+/g, ' ').trim()]),
+      oldMetadata: [...oldDoc.querySelectorAll('meta[name="description"],meta[property^="og:"]')].map(m => [m.getAttribute('name')||m.getAttribute('property'),m.getAttribute('content')]),
+      metadata: [...document.querySelectorAll('meta[name="description"],meta[property^="og:"]')].map(m => [m.getAttribute('name')||m.getAttribute('property'),m.getAttribute('content')]),
+      oldCanonical: oldDoc.querySelector('link[rel="canonical"]')?.getAttribute('href'),
+      canonical: document.querySelector('link[rel="canonical"]')?.getAttribute('href'),
+      breadcrumb: document.querySelector('.site-breadcrumbs > ol > li:nth-child(2) a')?.getAttribute('href'),
+      scrollWidth: document.documentElement.scrollWidth,
+      viewportWidth: innerWidth
+    };
+  }, baselineHTML);
+  expect(current.title).toBe('Vibe coding pro učitele: co si můžete vytvořit do výuky');
+  expect(current.cards).toEqual(current.oldCards);
+  expect(current.articleText).toBe(current.oldArticleText);
+  expect(current.headings).toEqual(current.oldHeadings);
+  expect(current.links).toEqual(current.oldLinks);
+  expect(current.metadata).toEqual(current.oldMetadata);
+  expect(current.canonical).toBe(current.oldCanonical);
+  expect(current.pageImages).toEqual(current.oldPageImages);
+  expect(current.cards.length).toBeGreaterThan(0);
+  expect(current.noContentsToc).toBe(true);
+  expect(current.breadcrumb).toBe('vibe-coding.html');
+  expect(current.scrollWidth).toBeLessThanOrEqual(current.viewportWidth + 1);
+  await expect(page.locator('.site-nav-pilot details[data-active="true"] > summary')).toHaveText(article.activeArea);
+  await expect(page.locator('.workflow-project-grid .workflow-related-card')).toHaveCount(9);
+  await page.locator('.workflow-project-preview').last().scrollIntoViewIfNeeded();
+  await expect.poll(() => page.locator('.workflow-article img').evaluateAll(images => images.every(img => img.complete && img.naturalWidth > 0 && Boolean(img.alt)))).toBe(true);
+  await page.screenshot({ path: 'artifacts/wave13-project-gallery-desktop-1440.png', fullPage: true });
+  for (const width of widths) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto(`${baseURL}/${article.file}`, { waitUntil: 'networkidle' });
+    const geometry = await page.evaluate(() => ({ scrollWidth: document.documentElement.scrollWidth, width: innerWidth, columns: getComputedStyle(document.querySelector('.workflow-project-grid')).gridTemplateColumns }));
+    expect(geometry.scrollWidth, `gallery overflow at ${width}px`).toBeLessThanOrEqual(width + 1);
+    if (width <= 640) expect(geometry.columns.split(' ').length).toBe(1);
+    if (width === 390) {
+      await page.locator('.menu-toggle').click();
+      await expect(page.locator('.menu-toggle')).toHaveAttribute('aria-expanded', 'true');
+      await page.screenshot({ path: 'artifacts/wave13-project-gallery-mobile-390.png', fullPage: true });
+    }
+  }
+});
+
+test('wave 13 article pages retain public fragments and contents navigation works without JavaScript', async ({ browser }) => {
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, javaScriptEnabled: false });
+  const page = await context.newPage();
+  for (const article of wave13Articles) {
+    await page.goto(`${baseURL}/${article.file}`);
+    const link = page.locator(`.article-content-navigation a[href="${article.h2}"]`);
+    await expect(link).toHaveCount(1);
+    await link.click();
+    await expect(page).toHaveURL(new RegExp(`${article.h2}$`));
+    await expect(page.locator(article.h2)).toBeInViewport();
+    await expect(page.locator('.article-content-navigation')).toHaveJSProperty('open', true);
+  }
+  await context.close();
+});
+
+test('wave 13 preserves both efficiency tables, six prompt-copy buttons, and bonus details interaction', async ({ browser }) => {
+  const context = await browser.newContext({ permissions: ['clipboard-read', 'clipboard-write'], viewport: { width: 390, height: 844 } });
+  const page = await context.newPage();
+  await page.goto(`${baseURL}/neplytvej-inteligenci-ai-modely.html`, { waitUntil: 'networkidle' });
+  await expect(page.locator('.article-table')).toHaveCount(2);
+  await expect(page.locator('.article-content .prompt-copy-button[data-copy-prompt]')).toHaveCount(6);
+  await expect(page.locator('.article-bonus')).toHaveCount(1);
+  const tableState = await page.locator('.article-table-wrap').evaluateAll(wraps => wraps.map(wrap => ({ scrollWidth: wrap.scrollWidth, clientWidth: wrap.clientWidth, overflowX: getComputedStyle(wrap).overflowX, rows: wrap.querySelectorAll('tr').length })));
+  expect(tableState).toHaveLength(2);
+  expect(tableState.every(table => table.scrollWidth <= table.clientWidth || ['auto', 'scroll'].includes(table.overflowX))).toBe(true);
+  for (const button of await page.locator('.article-content .prompt-copy-button[data-copy-prompt]').all()) {
+    const promptId = await button.getAttribute('data-copy-prompt');
+    const expected = (await page.locator(`#${promptId}`).textContent()).trim();
+    await button.click();
+    await expect.poll(() => page.evaluate(() => navigator.clipboard.readText())).toBe(expected);
+    await expect(button).toContainText('Zkopírováno');
+    if (promptId === 'prompt-1') await button.screenshot({ path: 'artifacts/wave13-neplytvej-copy-success.png' });
+  }
+  const bonus = page.locator('.article-bonus'), summary = bonus.locator('summary');
+  await summary.focus();
+  await page.keyboard.press('Enter');
+  await expect(bonus).toHaveAttribute('open', '');
+  await expect(bonus.locator('table')).toBeVisible();
+  await page.screenshot({ path: 'artifacts/wave13-neplytvej-bonus-expanded.png', fullPage: true });
+  await page.locator('.article-table-wrap').nth(0).screenshot({ path: 'artifacts/wave13-neplytvej-table-1.png' });
+  await page.locator('.article-table-wrap').nth(1).screenshot({ path: 'artifacts/wave13-neplytvej-table-2.png' });
+  await page.keyboard.press('Space');
+  await expect(bonus).not.toHaveAttribute('open', '');
+  await page.screenshot({ path: 'artifacts/wave13-neplytvej-table-and-copy-success.png', fullPage: true });
+  await context.close();
+});
+
+test('wave 13 skill keeps all 19 code elements and copies the unchanged prompt', async ({ browser }) => {
+  const context = await browser.newContext({ permissions: ['clipboard-read', 'clipboard-write'], viewport: { width: 390, height: 844 } });
+  const page = await context.newPage();
+  await page.goto(`${baseURL}/skill-anglictina-vyukove-materialy.html`, { waitUntil: 'networkidle' });
+  await expect(page.locator('.article-content code')).toHaveCount(19);
+  const button = page.locator('[data-copy-prompt="skill-example"]');
+  await expect(button).toHaveCount(1);
+  const expected = (await page.locator('#skill-example').textContent()).trim();
+  await button.click();
+  await expect.poll(() => page.evaluate(() => navigator.clipboard.readText())).toBe(expected);
+  await expect(button).toContainText('Zkopírováno');
+  for (const width of [320, 390]) {
+    await page.setViewportSize({ width, height: 844 });
+    const state = await page.evaluate(() => ({ width: innerWidth, scrollWidth: document.documentElement.scrollWidth, code: [...document.querySelectorAll('.article-content code')].map(el => ({ width: el.getBoundingClientRect().width, scrollWidth: el.scrollWidth })) }));
+    expect(state.scrollWidth, `SKILL page overflow at ${width}px`).toBeLessThanOrEqual(width + 1);
+    expect(state.code.every(code => code.width <= width)).toBe(true);
+    if (width === 320) await page.screenshot({ path: 'artifacts/wave13-skill-code-mobile-320.png', fullPage: true });
+    if (width === 390) await page.screenshot({ path: 'artifacts/wave13-skill-copy-success-mobile-390.png', fullPage: true });
+  }
+  await context.close();
+});
+
+test('wave 13 hero computed styles and screenshot contact sheet compare all six pages with the approved light pilot', async ({ page }) => {
+  const fs = require('node:fs');
+  const records = [];
+  const cards = [];
+  const all = [...wave13Articles, wave13Gallery];
+  for (const article of all) {
+    for (const width of [1440, 390]) {
+      await page.setViewportSize({ width, height: 1000 });
+      await page.goto(`${baseURL}/${article.file}`, { waitUntil: 'networkidle' });
+      await page.evaluate(() => document.fonts.ready);
+      const record = await page.evaluate(() => {
+        const pick = selector => {
+          const el = document.querySelector(selector);
+          if (!el) return null;
+          const style = getComputedStyle(el), before = getComputedStyle(el, '::before'), after = getComputedStyle(el, '::after');
+          return { backgroundColor: style.backgroundColor, backgroundImage: style.backgroundImage, color: style.color, before: { display: before.display, backgroundColor: before.backgroundColor, backgroundImage: before.backgroundImage, opacity: before.opacity }, after: { display: after.display, backgroundColor: after.backgroundColor, backgroundImage: after.backgroundImage, opacity: after.opacity } };
+        };
+        return { page: location.pathname, viewport: innerWidth, body: pick('body'), shell: pick('.workflow-shell'), hero: pick('.workflow-hero'), heading: pick('.workflow-hero h1'), route: pick('.workflow-route'), panel: pick('.workflow-stage') };
+      });
+      expect(record.body.backgroundColor).toBe('rgb(255, 254, 250)');
+      expect(record.heading.color).not.toBe('rgb(255, 255, 255)');
+      records.push(record);
+      if (width === 1440) {
+        const image = await page.locator('.workflow-shell').screenshot();
+        cards.push({ title: article.title, data: image.toString('base64') });
+      }
+      if (width === 390) {
+        await page.locator('.workflow-shell').screenshot({ path: `artifacts/wave13-${article.file}-hero-mobile-390.png` });
+        await page.locator('.workflow-main').screenshot({ path: `artifacts/wave13-${article.file}-content-mobile-390.png` });
+      } else {
+        await page.locator('.workflow-shell').screenshot({ path: `artifacts/wave13-${article.file}-hero-desktop-1440.png` });
+        await page.locator('.workflow-main').screenshot({ path: `artifacts/wave13-${article.file}-content-desktop-1440.png` });
+      }
+    }
+  }
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto(`${baseURL}/ai-workflow-css-grid-vibe-coding.html`, { waitUntil: 'networkidle' });
+  const reference = await page.locator('.workflow-shell').screenshot();
+  cards.push({ title: 'Schválený světlý pilot (PR #66)', data: reference.toString('base64') });
+  await page.setContent(`<!doctype html><html lang="cs"><meta charset="utf-8"><title>Vlna 13 – hero kontakt sheet</title><style>
+    *{box-sizing:border-box}body{margin:0;padding:24px;background:#fffefa;color:#102d2b;font:600 15px Arial,sans-serif}
+    h1{margin:0 0 18px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    article{padding:10px;border:1px solid #dfe8e1;border-radius:12px;background:#fff;overflow:hidden}
+    h2{font-size:16px;min-height:40px;margin:4px 0 10px}img{display:block;width:100%;height:auto;object-fit:contain;border:1px solid #e5e7e1;border-radius:8px}
+  </style><h1>Metodické a projektové stránky – vlna 13 se schváleným pilotem</h1><main class="grid">${cards.map(x => `<article><h2>${x.title}</h2><img alt="${x.title}" src="data:image/png;base64,${x.data}"></article>`).join('')}</main></html>`);
+  await page.screenshot({ path: 'artifacts/wave13-hero-contact-sheet.png', fullPage: true });
+  fs.writeFileSync('artifacts/wave13-computed-styles.json', JSON.stringify(records, null, 2));
+});
+
+test('wave 13 internal article and gallery links resolve on the preview', async ({ page, request }) => {
+  for (const article of [...wave13Articles, wave13Gallery]) {
+    await page.goto(`${baseURL}/${article.file}`, { waitUntil: 'networkidle' });
+    const hrefs = await page.locator('.article-content a[href], .workflow-article a[href], .workflow-related a[href]').evaluateAll(links => [...new Set(links.map(link => link.getAttribute('href')).filter(Boolean))]);
+    for (const href of hrefs) {
+      const url = new URL(href, `${baseURL}/${article.file}`);
+      if (url.origin !== new URL(baseURL).origin || url.pathname.endsWith('.pdf') || url.pathname.endsWith('.docx') || url.pathname.endsWith('.zip')) continue;
+      const response = await request.get(url.origin + url.pathname);
+      expect(response.ok(), `${article.file} link ${href} returned ${response.status()}`).toBe(true);
+    }
+  }
+});
+
+test('wave 13 catalog records remain complete, dated, unique, linked, and homepage order stays current', async ({ page, request }) => {
+  await page.goto(baseURL, { waitUntil: 'networkidle' });
+  await expect(page.locator('#latest-articles .latest-card')).toHaveCount(6);
+  const data = await page.evaluate(() => {
+    const wanted = ['asistent-ucitele-osobni-ai-asistent.html','neplytvej-inteligenci-ai-modely.html','skill-anglictina-vyukove-materialy.html','vibe-coding-bezpecnost-kodu-php2shell.html','vibe-coding-pro-ucitele.html','vibe-coding-ucitele.html'];
+    const records = wanted.map(href => window.siteArticles.find(item => item.href === href));
+    const latest = window.siteArticles.map((article,index) => ({article,index}))
+      .sort((a,b) => (b.article.date || '').localeCompare(a.article.date || '') || a.index-b.index).slice(0,6).map(item=>item.article.href);
+    return {records, latest, rendered:[...document.querySelectorAll('#latest-articles .latest-card-title')].map(a=>a.getAttribute('href')), duplicates:window.siteArticles.map(item=>item.href).filter((href,i,all)=>all.indexOf(href)!==i)};
+  });
+  const expectedDates = {
+    'asistent-ucitele-osobni-ai-asistent.html':['2026-10-25','25. října 2026'],
+    'neplytvej-inteligenci-ai-modely.html':['2026-09-23','23. září 2026'],
+    'skill-anglictina-vyukove-materialy.html':['2026-11-01','1. listopadu 2026'],
+    'vibe-coding-bezpecnost-kodu-php2shell.html':['2026-10-25','25. října 2026'],
+    'vibe-coding-pro-ucitele.html':['2026-09-11','11. září 2026'],
+    'vibe-coding-ucitele.html':['2026-08-23','23. srpna 2026']
+  };
+  expect(data.records.every(Boolean)).toBe(true);
+  expect(data.duplicates).toEqual([]);
+  expect(data.rendered).toEqual(data.latest);
+  for (const record of data.records) {
+    for (const field of ['href','title','summary','category','date','dateLabel','icon','tags','badgeClass']) expect(record[field], `catalog ${field} for ${record.href}`).toBeTruthy();
+    expect([record.date,record.dateLabel]).toEqual(expectedDates[record.href]);
+    const response = await request.get(`${baseURL}/${record.href}`);
+    expect(response.ok(), `catalog target ${record.href}`).toBe(true);
+  }
+});
+
+test('wave 13 full article media and metadata match source HEAD on all six migrated pages', async ({ page }) => {
+  const { execFileSync } = require('node:child_process');
+  for (const article of [...wave13Articles, wave13Gallery]) {
+    const baselineHTML = execFileSync('git', ['show', `${article.baselineSha}:${article.file}`], { encoding: 'utf8' });
+    const currentHTML = require('node:fs').readFileSync(article.file, 'utf8');
+    const [before, after] = await page.evaluate(([oldHTML,newHTML]) => {
+      const fingerprint = html => {
+        const doc = new DOMParser().parseFromString(html, 'text/html');
+        const article = doc.querySelector('.workflow-article');
+        return {
+          images: [...article.querySelectorAll('img')].map(img=>[img.getAttribute('src'),img.getAttribute('alt'),img.getAttribute('width'),img.getAttribute('height')]),
+          ids: [...new Set([...doc.querySelectorAll('.workflow-article [id],.workflow-related [id],a[href^="#"]')].map(el=>el.id || decodeURIComponent(el.getAttribute('href').slice(1))).filter(Boolean))],
+          metadata: [...doc.querySelectorAll('meta[name="description"],meta[property^="og:"]')].map(meta=>[meta.getAttribute('name')||meta.getAttribute('property'),meta.getAttribute('content')]),
+          canonical: doc.querySelector('link[rel="canonical"]')?.getAttribute('href'),
+          published: doc.querySelector('meta[property="article:published_time"]')?.getAttribute('content') || null,
+          dates: [...doc.querySelectorAll('.workflow-article-meta time')].map(time=>time.getAttribute('datetime'))
+        };
+      };
+      return [fingerprint(oldHTML),fingerprint(newHTML)];
+    }, [baselineHTML,currentHTML]);
+    expect(after.images, `article image src/alt/dimensions on ${article.file}`).toEqual(before.images);
+    for (const id of before.ids) expect(after.ids, `fragment ${id} on ${article.file}`).toContain(id);
+    expect(after.metadata, `SEO metadata on ${article.file}`).toEqual(before.metadata);
+    expect(after.canonical, `canonical URL on ${article.file}`).toBe(before.canonical);
+    expect(after.published, `published date metadata on ${article.file}`).toBe(before.published);
+    expect(after.dates, `article dates on ${article.file}`).toEqual(before.dates);
   }
 });
