@@ -3214,3 +3214,91 @@ test('wave 17 magazine visuals, images, viewport screenshots, and light referenc
   await page.screenshot({ path: 'artifacts/wave17-magazine-and-reference-hero-contact-sheet.png', fullPage: true });
   fs.writeFileSync('artifacts/wave17-magazine-computed-styles.json', JSON.stringify(evidence, null, 2));
 });
+
+
+
+const wave18Articles=[
+{href:'ai-novinka-filozofovani-s-ai-kriticke-mysleni.html',n:1},
+{href:'ai-novinka-filozofovani-s-ai-chybejici-role.html',n:2},
+{href:'uci-se-zak-nebo-za-nej-premysli-ai.html',n:3},
+{href:'kdyz-ai-jedna-odpovednost-ai-agenta.html',n:4}
+];
+const wave18Base='5505c10e72de01513b70c6f8bf84d498820158b0';
+const wave18Baseline=file=>require('node:child_process').execFileSync('git',['show',wave18Base+':'+file],{encoding:'utf8'});
+test('wave 18 preserves article copy, IDs, images, links, and metadata',async({page})=>{
+ for(const a of wave18Articles){
+  const old=await page.evaluate(markup=>{const d=new DOMParser().parseFromString(markup,'text/html'),m=d.querySelector('.workflow-article'),c=m?.querySelector('.article-content');return{title:d.title,description:d.querySelector('meta[name="description"]')?.content,date:d.querySelector('meta[property="article:published_time"]')?.content||d.querySelector('meta[name="date"]')?.content,h1:m?.querySelector('h1')?.textContent.trim(),lead:m?.querySelector('.workflow-hero-lead')?.textContent.trim(),text:c?.innerText.replace(/\s+/g,' ').trim(),headings:[...c.querySelectorAll('h2,h3')].map(x=>x.textContent.trim()),ids:[...d.querySelectorAll('[id]')].map(x=>x.id),images:[...m.querySelectorAll('img')].map(x=>[x.getAttribute('src'),x.alt,x.getAttribute('width'),x.getAttribute('height'),x.closest('figure')?.querySelector('figcaption')?.innerText.trim()||'']),links:[...c.querySelectorAll('a[href]')].map(x=>[x.getAttribute('href'),x.textContent.trim()])}},wave18Baseline(a.href));
+  await page.goto(baseURL+'/'+a.href);
+  const now=await page.evaluate(()=>{const d=document,m=d.querySelector('.workflow-article'),c=m?.querySelector('.article-content');return{title:d.title,description:d.querySelector('meta[name="description"]')?.content,date:d.querySelector('meta[property="article:published_time"]')?.content||d.querySelector('meta[name="date"]')?.content,h1:m?.querySelector('h1')?.textContent.trim(),lead:m?.querySelector('.workflow-hero-lead')?.textContent.trim(),text:c?.innerText.replace(/\s+/g,' ').trim(),headings:[...c.querySelectorAll('h2,h3')].map(x=>x.textContent.trim()),ids:[...d.querySelectorAll('[id]')].map(x=>x.id),images:[...m.querySelectorAll('img')].map(x=>[x.getAttribute('src'),x.alt,x.getAttribute('width'),x.getAttribute('height'),x.closest('figure')?.querySelector('figcaption')?.innerText.trim()||'']),links:[...c.querySelectorAll('a[href]')].map(x=>[x.getAttribute('href'),x.textContent.trim()])}});
+  for(const key of ['title','description','date','h1','lead','text','headings','images','links'])expect(now[key],a.href+' '+key).toEqual(old[key]);
+  for(const id of old.ids)expect(now.ids).toContain(id);
+  expect(new Set(now.ids).size).toBe(now.ids.length);
+ }
+});
+test('wave 18 hub preserves static order and agrees with its four dynamic series records',async({page})=>{
+ const expected=await page.evaluate(markup=>{const d=new DOMParser().parseFromString(markup,'text/html');return[...d.querySelectorAll('[data-series-list] li a')].map(a=>[a.getAttribute('href'),a.textContent.trim()])},wave18Baseline('filozofovani-s-ai.html'));
+ expect(expected).toHaveLength(4);
+ await page.goto(baseURL+'/filozofovani-s-ai.html');
+ const staticItems=await page.locator('[data-series-list] li a').evaluateAll(as=>as.map(a=>[a.getAttribute('href'),a.textContent.trim()]));
+ expect(staticItems).toEqual(expected);
+ expect(staticItems.map(x=>x[0])).toEqual(wave18Articles.map(x=>x.href));
+ await expect(page.locator('.article-content-navigation')).toHaveCount(0);
+ const parts=await page.evaluate(()=>window.siteArticles.filter(x=>x.series==='Filozofování s AI').sort((a,b)=>a.seriesNumber-b.seriesNumber).map(x=>[x.href,x.seriesNumber]));
+ expect(parts).toEqual(wave18Articles.map(x=>[x.href,x.n]));
+ await page.setJavaScriptEnabled(false);await page.goto(baseURL+'/filozofovani-s-ai.html');
+ await expect(page.locator('[data-series-list] li a')).toHaveCount(4);
+});
+test('wave 18 series navigation has exact order, boundaries, active part, and hub return',async({page})=>{
+ for(const a of wave18Articles){
+  await page.goto(baseURL+'/'+a.href);const nav=page.locator('.series-navigation');
+  await expect(nav).toBeVisible();await expect(nav.locator('a[aria-current="page"]')).toHaveAttribute('href',a.href);
+  await expect(nav.locator('a[aria-current="page"]')).toContainText('díl '+a.n+' ze 4');
+  if(a.n===1)await expect(nav.locator('a[rel="prev"]')).toHaveCount(0);else await expect(nav.locator('a[rel="prev"]')).toHaveAttribute('href',wave18Articles[a.n-2].href);
+  if(a.n===4)await expect(nav.locator('a[rel="next"]')).toHaveCount(0);else await expect(nav.locator('a[rel="next"]')).toHaveAttribute('href',wave18Articles[a.n].href);
+  await expect(nav.locator('a[href="filozofovani-s-ai.html"]')).toBeVisible();
+  const clean=a.href.replace(/\\.html$/,'');
+  await page.route('**/'+clean,route=>route.fulfill({status:200,contentType:'text/html; charset=utf-8',body:require('node:fs').readFileSync(a.href,'utf8')}));
+  await page.goto(baseURL+'/'+clean);
+  await expect(page).toHaveURL(baseURL+'/'+clean);
+  await expect(page.locator('.series-navigation a[aria-current="page"]')).toHaveAttribute('href',a.href);
+ }
+});
+test('wave 18 fragment navigation works without JavaScript and layouts fit every requested width',async({browser})=>{
+ const ctx=await browser.newContext({javaScriptEnabled:false,reducedMotion:'reduce'}),page=await ctx.newPage();
+ for(const a of wave18Articles)for(const width of widths){
+  await page.setViewportSize({width,height:900});await page.goto(baseURL+'/'+a.href);
+  const link=page.locator('.article-content-navigation a').first(),href=await link.getAttribute('href');
+  await link.click();await expect(page).toHaveURL(new RegExp(href.replace('#','')));
+  await expect(page.locator(href)).toBeInViewport();
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(width+1);
+  expect(await page.locator('.article-content-navigation').evaluate(x=>getComputedStyle(x).position)).toBe(width<=960?'static':'sticky');
+ }
+ await ctx.close();
+ const k=await browser.newPage({viewport:{width:390,height:844}});await k.goto(baseURL+'/'+wave18Articles[0].href);
+ await k.keyboard.press('Tab');await expect(k.locator('.skip-link')).toBeFocused();await k.keyboard.press('Tab');await expect(k.locator('.site-nav a').first()).toBeFocused();await expect(k.locator(':focus-visible')).toBeVisible();
+});
+test('wave 18 records image and light-design evidence and creates a five-hero contact sheet',async({page})=>{
+ const fs=require('node:fs');fs.mkdirSync('artifacts',{recursive:true});
+ const evidence={testedSha:process.env.TESTED_SHA||'unavailable',base:wave18Base,articles:[]},cards=[];
+ for(const a of wave18Articles){
+  await page.setViewportSize({width:1440,height:1000});await page.goto(baseURL+'/'+a.href);
+  const images=await page.locator('.workflow-article img').evaluateAll(xs=>Promise.all(xs.map(async x=>{x.loading='eager';await x.decode().catch(()=>{});return{src:x.getAttribute('src'),alt:x.alt,width:x.naturalWidth,height:x.naturalHeight}})));
+  expect(images.every(x=>x.width>0&&x.height>0)).toBeTruthy();
+  const hero=page.locator('.philosophy-editorial-shell');await expect(hero).toBeVisible();
+  const styles=await page.evaluate(()=>({background:getComputedStyle(document.body).backgroundColor,toc:getComputedStyle(document.querySelector('.article-content-navigation')).position}));
+  expect(styles.background).not.toBe('rgb(0, 0, 0)');evidence.articles.push({file:a.href,images,styles});
+  const png=await hero.screenshot();cards.push({title:a.href,png:png.toString('base64')});
+  await hero.screenshot({path:'artifacts/wave18-'+a.href+'-hero.png'});
+  await page.locator('.article-content-navigation').screenshot({path:'artifacts/wave18-'+a.href+'-toc.png'});
+  await page.locator('.series-navigation').screenshot({path:'artifacts/wave18-'+a.href+'-series.png'});
+  await page.setViewportSize({width:390,height:844});await page.screenshot({path:'artifacts/wave18-'+a.href+'-mobile.png'});
+ }
+ await page.setViewportSize({width:1440,height:1000});await page.goto(baseURL+'/filozofovani-s-ai.html');
+ const hub=page.locator('.workflow-hero'),shot=await hub.screenshot();cards.push({title:'filozofovani-s-ai.html',png:shot.toString('base64')});
+ evidence.hub={heroAlt:await page.locator('.philosophy-hero-cover').getAttribute('alt'),image:await page.locator('.philosophy-hero-cover').getAttribute('src')};
+ await hub.screenshot({path:'artifacts/wave18-hub-hero.png'});
+ const html=cards.map(x=>'<article><h2>'+x.title+'</h2><img src="data:image/png;base64,'+x.png+'"></article>').join('');
+ await page.setContent('<!doctype html><meta charset="utf-8"><style>body{font:16px Arial;background:#fffefa;color:#183b39;padding:20px}main{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}article{min-width:0;background:white;border:1px solid #ddd;padding:12px}img{width:100%;max-height:320px;object-fit:contain;object-position:top}</style><h1>Vlna 18 – kontaktní přehled hero sekcí</h1><main>'+html+'</main>');
+ await page.screenshot({path:'artifacts/wave18-hero-contact-sheet.png',fullPage:true});
+ fs.writeFileSync('artifacts/wave18-browser-evidence.json',JSON.stringify(evidence,null,2));
+});
