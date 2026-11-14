@@ -76,17 +76,22 @@ function buildHeadings(bodySource) {
     const originalId = idAttribute ? decodeEntities(idAttribute[2]) : '';
     const baseId = originalId || slugify(innerHtml);
     let id = baseId;
-    let suffix = 2;
-    while (usedIds.has(id)) id = `${baseId}-${suffix++}`;
+    if (originalId) {
+      if (usedIds.has(originalId)) throw new Error(`Duplicate heading ID in article body: ${originalId}`);
+    } else {
+      let suffix = 2;
+      while (usedIds.has(id)) id = `${baseId}-${suffix++}`;
+    }
     usedIds.add(id);
 
     const headingText = plainText(innerHtml);
     const label = headingText.replace(/^\s*\d+\s*[.)\u2013\u2014:-]?\s*/u, '').trim() || headingText;
     headings.push({ level, id, label });
 
-    const nextAttributes = idAttribute
+    let nextAttributes = idAttribute
       ? attributes.replace(idAttribute[0], `id="${escapeHtml(id)}"`)
       : `${attributes} id="${escapeHtml(id)}"`;
+    if (!/\btabindex\s*=/i.test(nextAttributes)) nextAttributes += ' tabindex="-1"';
     return `<h${level}${nextAttributes}>${innerHtml}</h${level}>`;
   });
 

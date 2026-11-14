@@ -82,14 +82,12 @@ body.magazine-article-page {
 .magazine-main { width: min(1150px, calc(100% - 48px)); margin: 0 auto; padding: 48px 0 70px; }
 .magazine-reading-grid { display: grid; grid-template-columns: 235px minmax(0, 760px); align-items: start; justify-content: space-between; gap: clamp(32px, 5vw, 76px); }
 .magazine-reading-grid-no-toc { grid-template-columns: minmax(0, 760px); justify-content: center; }
-.magazine-toc { position: sticky; top: 24px; max-height: calc(100vh - 48px); overflow: auto; padding: 20px; border: 1px solid var(--magazine-line); border-radius: 15px; background: #f4f7f2; }
-.magazine-toc h2 { margin: 0 0 12px; color: var(--magazine-ink); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
-.magazine-toc ol { margin: 0; padding-left: 19px; }
-.magazine-toc ol ol { margin: 7px 0 2px; padding-left: 16px; }
-.magazine-toc li { margin: 8px 0; color: #708279; font-size: 12px; }
-.magazine-toc ol ol li { margin: 6px 0; font-size: 11px; }
-.magazine-toc a { color: #426459; line-height: 1.45; text-decoration: none; }
-.magazine-toc a:hover { color: #087568; text-decoration: underline; text-underline-offset: 3px; }
+.magazine-article-page .article-content-navigation { align-self: start; padding: 20px; border: 1px solid var(--magazine-line); border-radius: 15px; background: #f4f7f2; color: var(--magazine-ink); box-shadow: 0 8px 22px #173b350d; }
+.magazine-article-page .article-content-navigation summary { color: var(--magazine-ink); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+.magazine-article-page .article-content-navigation nav { max-height: calc(100vh - var(--nav-height, 0px) - 5.25rem); }
+.magazine-article-page .article-content-navigation a { color: #426459; font-size: 12px; line-height: 1.45; }
+.magazine-article-page .article-content-navigation a:hover { color: #087568; }
+.magazine-article-page .article-content-navigation a.is-current { background: #e6f1ed; color: #07584f; }
 .magazine-article-page .workflow-article { min-width: 0; overflow: visible; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
 .magazine-article-page .workflow-article-intro { margin: 0 0 24px; padding: 0 0 18px; border-bottom: 1px solid var(--magazine-line); }
 .magazine-article-page .workflow-article-summary { max-width: 68ch; margin: 0 0 12px; color: #3f5b51; font-family: "Playfair Display", Georgia, serif; font-size: 1.2rem; line-height: 1.5; }
@@ -143,6 +141,12 @@ body.magazine-article-page {
 .magazine-article-page .workflow-footer a:hover { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
 .magazine-article-page .workflow-footer .site-footer-mark { display: block; margin-top: 10px; color: #c9e8da; font-size: 12px; font-weight: 650; letter-spacing: .04em; }
 
+@media (max-width: 960px) {
+  .magazine-article-page .magazine-reading-grid { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .magazine-article-page .article-content-navigation { position: static; margin-bottom: 20px; }
+  .magazine-article-page .article-content-navigation nav { max-height: none; overflow: visible; }
+}
+
 @media (max-width: 1100px) {
   .magazine-article-page .site-nav { gap: 16px; }
   .magazine-article-page .nav-content { gap: 14px; }
@@ -170,7 +174,6 @@ body.magazine-article-page {
   .magazine-article-page .site-search button span { display: inline; }
   .magazine-reading-grid { grid-template-columns: minmax(0, 1fr); gap: 0; }
   .magazine-hero-highlights { grid-template-columns: minmax(0, 1fr); }
-  .magazine-toc { display: none; }
   .magazine-article-page .workflow-related-heading { align-items: flex-start; flex-direction: column; }
   .magazine-article-page .workflow-related-heading p { text-align: left; }
   .magazine-article-page .workflow-related-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }

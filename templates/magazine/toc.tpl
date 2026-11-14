@@ -1,4 +1,6 @@
-<nav class="magazine-toc" aria-label="V tomto článku">
-  <h2>V tomto článku</h2>
-  <ol>{{TOC_ITEMS}}</ol>
-</nav>
+<details class="article-content-navigation" open>
+  <summary>V tomto článku</summary>
+  <nav aria-label="Obsah článku">
+    <ol>{{TOC_ITEMS}}</ol>
+  </nav>
+</details>

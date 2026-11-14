@@ -36,6 +36,7 @@ jobs:
       WAVE14_BASELINE_SHA: 709eeb0edb22c8bdd988ec41999e087b25861143
       WAVE15_BASELINE_SHA: 1a2ca130db05a6cfe46e072235a18ecb75d2adbb
       WAVE16_BASELINE_SHA: 287b9c331e8c938b5f8152f8718e423521ee1e11
+      WAVE17_BASELINE_SHA: e7bbb564051bfc7db9f55792acb6a37856ce04e3
     steps:
       - name: Checkout the tested commit
         uses: actions/checkout@v4
@@ -66,6 +67,7 @@ jobs:
           git fetch --no-tags --depth=1 origin "$WAVE14_BASELINE_SHA"
           git fetch --no-tags --depth=1 origin "$WAVE15_BASELINE_SHA"
           git fetch --no-tags --depth=1 origin "$WAVE16_BASELINE_SHA"
+          git fetch --no-tags --depth=1 origin "$WAVE17_BASELINE_SHA"
 
       - name: Verify guide generator determinism and scope
         run: |
@@ -93,6 +95,33 @@ jobs:
           const report = { testedSha: process.env.TESTED_SHA, manifestPageCount: manifest.length, generatedPaths: outputs, firstAndSecondRunHashesMatch: true, checkMode: 'passed', changedFilesAfterBuild: [], outputSha256: hashes };
           fs.writeFileSync(process.env.RUNNER_TEMP + '/guide-generator-check.json', JSON.stringify(report, null, 2));
           NODE
+      - name: Verify magazine generator determinism, IDs, and negative cases
+        run: |
+          set -euo pipefail
+          node scripts/test-magazine-articles.js > "$RUNNER_TEMP/magazine-generator-negative-tests.json"
+          targets=(ai-novinka-ai-duvod-premyslet.html ai-novinka-ai-ve-vzdelavani-zari-2026.html)
+          node scripts/build-magazine-articles.js --check
+          first_hashes=$(sha256sum "${targets[@]}")
+          node scripts/build-magazine-articles.js
+          second_hashes=$(sha256sum "${targets[@]}")
+          test "$first_hashes" = "$second_hashes"
+          node scripts/build-magazine-articles.js --check
+          git diff --exit-code -- "${targets[@]}"
+          if [ -n "$(git status --porcelain)" ]; then
+            echo 'Magazine generator changed committed files after repeat generation:'
+            git status --short
+            exit 1
+          fi
+          node <<'NODE'
+          const fs = require('node:fs');
+          const crypto = require('node:crypto');
+          const outputs = ['ai-novinka-ai-duvod-premyslet.html', 'ai-novinka-ai-ve-vzdelavani-zari-2026.html'];
+          const hashes = Object.fromEntries(outputs.map(file => [file, crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex')]));
+          const negative = JSON.parse(fs.readFileSync(process.env.RUNNER_TEMP + '/magazine-generator-negative-tests.json', 'utf8'));
+          const report = { testedSha: process.env.TESTED_SHA, manifestOutputs: outputs, firstAndSecondRunHashesMatch: true, preAndPostGenerationCheckMode: 'passed', outputSha256: hashes, isolatedGeneratorFixtures: negative };
+          fs.writeFileSync(process.env.RUNNER_TEMP + '/magazine-generator-check.json', JSON.stringify(report, null, 2));
+          NODE
+
       - name: Install isolated browser test runner
         run: |
           npm install --no-save --package-lock=false @playwright/test
@@ -102,6 +131,8 @@ jobs:
         run: |
           mkdir -p artifacts test-results
           cp "$RUNNER_TEMP/guide-generator-check.json" artifacts/guide-generator-check.json
+          cp "$RUNNER_TEMP/magazine-generator-check.json" artifacts/magazine-generator-check.json
+          cp "$RUNNER_TEMP/magazine-generator-negative-tests.json" artifacts/magazine-generator-negative-tests.json
           printf '%s\n' "$TESTED_SHA" > artifacts/tested-sha.txt
           python3 -m http.server 4173 --bind 127.0.0.1 > test-results/http-server.log 2>&1 &
           server_pid=$!
