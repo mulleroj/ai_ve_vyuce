@@ -8,6 +8,12 @@
     <meta name="description"
         content="Úvod do Vibe Codingu pro učitele: co tento způsob tvorby znamená, jak začít prvním zadáním a jak výsledek bezpečně otestovat." />
     <link rel="stylesheet" href="css/workflow.css?v=20260823-site-palette" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261113-8a" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261114-8c" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261113-8a" />
+
+
     <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/vibe-coding-ucitele" />
     <meta property="og:title" content="Úvod do Vibe Codingu pro učitele | AI ve Výuce" />
     <meta property="og:description" content="Úvod do Vibe Codingu pro učitele: co tento způsob tvorby znamená, jak začít prvním zadáním a jak výsledek bezpečně otestovat." />
@@ -23,12 +29,18 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-            <a class="workflow-back" href="vibe-coding.html">← Vibe Coding</a>
-        </div>
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="create">
+    <header class="site-header" id="top">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+      <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a>
+    </div></div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="vibe-coding.html">Vibe Coding</a></li><li aria-current="page">Úvod do vibe codingu pro učitele</li></ol></nav>
+<header class="workflow-shell">
         <div class="workflow-hero">
             <div>
                 <div class="workflow-eyebrow">Vibe Coding · Úvod pro učitele</div>
@@ -45,7 +57,9 @@
         </div>
     </header>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
+        <details class="article-content-navigation" open><summary><span>V tomto článku</span></summary><nav aria-label="Obsah článku"><ol><li><a href="#wave13-vibe-coding-ucitele-h2-01">Co je vibe coding?</a></li><li><a href="#wave13-vibe-coding-ucitele-h2-02">Jaký první projekt zvolit?</a></li><li><a href="#wave13-vibe-coding-ucitele-h2-03">Začněte problémem, ne technologií</a></li><li><a href="#wave13-vibe-coding-ucitele-h2-04">Vibe coding není jeden zázračný prompt</a></li><li><a href="#wave13-vibe-coding-ucitele-h2-05">Nejprve funkce, potom vzhled</a></li><li><a href="#wave13-vibe-coding-ucitele-h2-06">Vy jste odborník na výuku</a></li><li><a href="#wave13-vibe-coding-ucitele-h2-07">Aplikaci vždy otestujte</a></li><li><a href="#wave13-vibe-coding-ucitele-h2-08">Pozor na osobní údaje</a></li><li><a href="#wave13-vibe-coding-ucitele-h2-09">Nechte AI udělat kontrolu</a></li><li><a href="#wave13-vibe-coding-ucitele-h2-10">Ukládejte si funkční verze</a></li><li><a href="#wave13-vibe-coding-ucitele-h2-11">Vyzkoušejte svůj první projekt</a></li><li><a href="#wave13-vibe-coding-ucitele-h2-12">Musí tedy učitel umět programovat?</a></li></ol></nav></details>
+        
         <article id="vibe-coding-uvod" class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Základní pojmy, první zadání, role učitele, testování a bezpečné hranice při tvorbě jednoduché výukové aplikace pomocí AI.</p>
@@ -60,7 +74,7 @@
 
                 <blockquote><strong>Stačí umět dobře popsat, co má aplikace dělat.</strong> AI může připravit technickou část, ale učitel zůstává autorem nápadu, pedagogem, testerem a člověkem, který rozhoduje, zda má výsledná aplikace ve výuce smysl.</blockquote>
 
-                <h2>Co je vibe coding?</h2>
+                <h2 id="wave13-vibe-coding-ucitele-h2-01">Co je vibe coding?</h2>
                 <p>Při vibe codingu neprogramujete aplikaci řádek po řádku. Místo toho popíšete AI svůj nápad běžným jazykem.</p>
                 <p>Například:</p>
                 <blockquote>Chci jednoduchou aplikaci pro žáky na úrovni A1, která procvičuje anglická slovíčka. Žák uvidí slovo a vybere správný český překlad ze tří možností. Po deseti otázkách se zobrazí skóre.</blockquote>
@@ -73,7 +87,7 @@
                 </ul>
                 <p>Vibe coding je tedy spíše <strong>spolupráce s AI při vývoji aplikace</strong> než klasické programování.</p>
 
-                <h2>Jaký první projekt zvolit?</h2>
+                <h2 id="wave13-vibe-coding-ucitele-h2-02">Jaký první projekt zvolit?</h2>
                 <p>Pro školní použití nemusí jít o žádné složité systémy. Naopak. Nejlepší výsledky často vzniknou tehdy, když aplikace řeší jeden konkrétní problém.</p>
                 <p>Můžete vytvořit například:</p>
                 <ul>
@@ -96,7 +110,7 @@
                 </ul>
                 <p>Pro první pokus rozhodně nemusíte vytvářet nový informační systém školy. Malý kvíz je bezpečnější začátek než vlastní konkurence Bakalářům. Přehled konkrétních typů nástrojů a hotových projektů najdete na stránce <a class="workflow-inline-link" href="vibe-coding-pro-ucitele.html">Co si můžete vytvořit do výuky</a>.</p>
 
-                <h2>Začněte problémem, ne technologií</h2>
+                <h2 id="wave13-vibe-coding-ucitele-h2-03">Začněte problémem, ne technologií</h2>
                 <p>Nemusíte vědět, co je React, JavaScript nebo CSS. Pro učitele je důležitější popsat:</p>
                 <ul>
                     <li><strong>Kdo bude aplikaci používat?</strong></li>
@@ -110,7 +124,7 @@
                 <div class="article-prompt">Vytvoř jednoduchou webovou aplikaci pro žáky 1. ročníku střední školy na úrovni A1.<br /><br />Cílem je procvičit osobní zájmena I, you, he, she, it, we, they.<br /><br />Vždy zobraz krátkou větu s mezerou a tři možnosti odpovědi. Po odpovědi okamžitě ukaž, zda byla správná. Po deseti otázkách zobraz skóre a tlačítko „Zkusit znovu“.<br /><br />Aplikace nesmí vyžadovat přihlášení ani ukládat osobní údaje žáků. Musí dobře fungovat na telefonu i počítači.</div>
                 <p>Takové zadání dává AI mnohem lepší představu o výsledku, který potřebujete.</p>
 
-                <h2>Vibe coding není jeden zázračný prompt</h2>
+                <h2 id="wave13-vibe-coding-ucitele-h2-04">Vibe coding není jeden zázračný prompt</h2>
                 <p>Nečekejte:</p>
                 <blockquote><strong>zadání → dokonalá aplikace</strong></blockquote>
                 <p>Mnohem realističtější postup je:</p>
@@ -119,47 +133,47 @@
                 <div class="article-prompt">Skóre se po nové hře nevynuluje. Oprav pouze tento problém a neměň ostatní části aplikace.</div>
                 <p>Právě poslední část je užitečná. Když AI dostane deset změn najednou, někdy při opravě jedné věci rozbije dvě další.</p>
 
-                <h2>Nejprve funkce, potom vzhled</h2>
+                <h2 id="wave13-vibe-coding-ucitele-h2-05">Nejprve funkce, potom vzhled</h2>
                 <p>Je lákavé začít požadavkem na krásné animace, 3D ikony a efektní barevné přechody. Jenže nejdříve by měla fungovat samotná aplikace.</p>
                 <p>Otestujte:</p>
                 <ul><li>otázky,</li><li>odpovědi,</li><li>tlačítka,</li><li>skóre,</li><li>navigaci,</li><li>restart aplikace.</li></ul>
                 <p><strong>Funkčnost → testování → design.</strong></p>
 
-                <h2>Vy jste odborník na výuku</h2>
+                <h2 id="wave13-vibe-coding-ucitele-h2-06">Vy jste odborník na výuku</h2>
                 <p>AI může vytvořit technickou část aplikace. To ale neznamená, že má rozhodovat o tom, <strong>co se mají vaši žáci učit</strong>.</p>
                 <p>Pokud můžete, dodávejte AI vlastní:</p>
                 <ul><li>slovní zásobu,</li><li>otázky,</li><li>správné odpovědi,</li><li>texty,</li><li>výukové materiály,</li><li>požadovanou úroveň CEFR,</li><li>kritéria hodnocení.</li></ul>
                 <p>Nechte AI vytvořit technickou vrstvu kolem vašeho výukového obsahu. Právě zde má učitel oproti běžnému programátorovi velkou výhodu — zná své žáky a ví, čeho chce ve výuce dosáhnout.</p>
 
-                <h2>Aplikaci vždy otestujte</h2>
+                <h2 id="wave13-vibe-coding-ucitele-h2-07">Aplikaci vždy otestujte</h2>
                 <p>Profesionálně vypadající aplikace nemusí být správná aplikace.</p>
                 <p>AI může vytvořit nástroj, který:</p>
                 <ul><li>chybně počítá body,</li><li>označuje špatnou odpověď jako správnou,</li><li>nefunguje na telefonu,</li><li>po určité kombinaci kliknutí zamrzne,</li><li>obsahuje chybný výukový obsah.</li></ul>
                 <p>Proto aplikaci před použitím se žáky vždy sami projděte. Vyzkoušejte správné i špatné odpovědi, restart aplikace, mobilní zobrazení i situace, které jste původně neplánovali.</p>
                 <p>Ideální je dát ji před hodinou vyzkoušet také někomu, kdo ji nikdy neviděl. Autor totiž obvykle přesně ví, kam má kliknout. Žák už takovou výhodu nemá.</p>
 
-                <h2>Pozor na osobní údaje</h2>
+                <h2 id="wave13-vibe-coding-ucitele-h2-08">Pozor na osobní údaje</h2>
                 <p>Pro první školní projekty platí jednoduché pravidlo:</p>
                 <blockquote><strong>Pokud aplikace osobní údaje nepotřebuje, vůbec je nesbírejte.</strong></blockquote>
                 <p>Běžný procvičovací kvíz nemusí znát:</p>
                 <ul><li>jméno žáka,</li><li>e-mail,</li><li>datum narození,</li><li>známky,</li><li>údaje o zdravotním stavu nebo podpůrných opatřeních,</li><li>přihlašovací údaje.</li></ul>
                 <p>Vlastní aplikace pro klasifikaci, docházku nebo ukládání citlivých údajů už není vhodný začátečnický vibe-codingový projekt. Tam je potřeba řešit zabezpečení, oprávnění, ochranu osobních údajů a další věci, které samotné vygenerování kódu nevyřeší.</p>
 
-                <h2>Nechte AI udělat kontrolu</h2>
+                <h2 id="wave13-vibe-coding-ucitele-h2-09">Nechte AI udělat kontrolu</h2>
                 <p>Před dokončením aplikace můžete zadat například:</p>
                 <div class="article-prompt">Proveď kontrolu této aplikace.<br /><br />Zkontroluj funkčnost všech tlačítek, správnost odpovědí a skórování, restart aplikace, zobrazení na mobilním telefonu, čitelnost, přístupnost a případné bezpečnostní problémy.<br /><br />Zkontroluj také, zda aplikace zbytečně nesbírá nebo neukládá data uživatele.<br /><br />Nalezené problémy nejprve vypiš. Zatím nic neměň.</div>
                 <p>Až poté můžete jednotlivé chyby postupně opravovat.</p>
 
-                <h2>Ukládejte si funkční verze</h2>
+                <h2 id="wave13-vibe-coding-ucitele-h2-10">Ukládejte si funkční verze</h2>
                 <p>Jedna z nejčastějších vět při vibe codingu zní:</p>
                 <blockquote>Ještě uděláme jednu malou změnu…</blockquote>
                 <p>A právě po ní může přestat fungovat něco, co před chvílí fungovalo perfektně. Jakmile máte funkční verzi, uložte si ji nebo vytvořte její kopii. Před větší změnou se tak vždy můžete vrátit zpět.</p>
 
-                <h2>Vyzkoušejte svůj první projekt</h2>
+                <h2 id="wave13-vibe-coding-ucitele-h2-11">Vyzkoušejte svůj první projekt</h2>
                 <p>Začít můžete opravdu jednoduše. Zkopírujte například tento prompt a doplňte vlastní slovíčka:</p>
                 <div class="article-prompt">Vytvoř jednoduchou responzivní webovou aplikaci pro procvičování anglické slovní zásoby.<br /><br />Cílová skupina: žáci střední školy na úrovni A1.<br /><br />Použij tato slovíčka:<br /><strong>[VLOŽTE 10 SLOV]</strong><br /><br />V každém kole zobraz anglické slovo a tři české možnosti.<br /><br />Po výběru okamžitě ukaž, zda byla odpověď správná.<br /><br />Po deseti otázkách zobraz počet správných odpovědí, procentuální úspěšnost a tlačítko „Zkusit znovu“.<br /><br />Aplikace nesmí vyžadovat přihlášení ani ukládat osobní údaje.<br /><br />Musí dobře fungovat na telefonu i počítači.<br /><br />Vzhled vytvoř jednoduchý a přehledný. Nejdříve se soustřeď na správnou funkčnost aplikace, teprve potom na její design.</div>
 
-                <h2>Musí tedy učitel umět programovat?</h2>
+                <h2 id="wave13-vibe-coding-ucitele-h2-12">Musí tedy učitel umět programovat?</h2>
                 <p>Nemusí.</p>
                 <p>Je ale dobré naučit se <strong>přesně formulovat požadavky, testovat výsledek a poznat, kdy něco nefunguje správně</strong>.</p>
                 <p>Vibe coding totiž neznamená, že už nemusíme přemýšlet. Znamená, že můžeme věnovat méně času samotnému psaní kódu a více času otázce:</p>
@@ -195,6 +209,10 @@
 
     <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="vibe-coding.html">Zpět na Vibe Coding</a></footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+
+    <script src="js/article-content-navigation.js?v=20261113-8a"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
 </body>
 
 </html>

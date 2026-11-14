@@ -7,7 +7,12 @@
     <title>Neplýtvej inteligencí: Efektivnější práce s AI | AI ve výuce</title>
     <meta name="description" content="Jak efektivně využívat AI modely, šetřit tokeny a rozdělovat práci mezi AI agenty. Šest principů a praktické prompty pro učitele." />
     <link rel="stylesheet" href="css/workflow.css?v=20260923-neplytvej-inteligenci" />
-    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7i" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261113-8a" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261114-8c" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261113-8a" />
+
+
     <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/neplytvej-inteligenci-ai-modely" />
     <meta property="og:title" content="Neplýtvej inteligencí: Efektivnější práce s AI | AI ve výuce" />
     <meta property="og:description" content="Jak efektivně využívat AI modely, šetřit tokeny a rozdělovat práci mezi AI agenty. Šest principů a praktické prompty pro učitele." />
@@ -27,27 +32,18 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
 </head>
 
-<body class="workflow-page site-navigation-enabled" data-site-navigation-area="prepare">
+<body class="workflow-page site-navigation-enabled light-background-pilot ai-agent-light-page tool-guide-page" data-site-navigation-area="prepare">
 <header class="site-header" id="top">
   <nav class="site-nav" aria-label="Hlavní navigace">
     <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
-    <div class="nav-content" id="primary-menu">
-      <div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
-        <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a>
-        <a href="ai-navody.html">Připravit výuku</a>
-        <a href="aktivity.html">Učit s AI</a>
-        <a href="asistenti.html">Nástroje a asistenti</a>
-        <a href="vibe-coding.html">Tvořit s AI</a>
-        <a href="ai.html">Číst a objevovat</a>
-      </div>
-    </div>
+    <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+      <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a>
+    </div></div>
   </nav>
 </header>
-    <section class="workflow-shell">
-        <div class="workflow-topbar">
-            <a class="workflow-back" href="ai.html#navody">← Praktické návody</a>
-        </div>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="ai.html#navody">Praktické návody</a></li><li aria-current="page">Neplýtvej inteligencí</li></ol></nav>
+<section class="workflow-shell">
         <div class="workflow-hero">
             <div>
                 <div class="workflow-eyebrow">AI v praxi · Praktický návod · 23. září 2026</div>
@@ -63,7 +59,9 @@
         </div>
     </section>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
+        <details class="article-content-navigation" open><summary><span>V tomto článku</span></summary><nav aria-label="Obsah článku"><ol><li><a href="#jak-nevycerpat">Jak nevyčerpat AI zbytečně</a></li><li><a href="#principy">Šest principů efektivnější práce s AI</a></li><li><a href="#princip-1">1. Nejprve zjistěte, kde skutečně plýtváte</a></li><li><a href="#prompty">Praktické prompty</a><ol><li><a href="#wave13-neplytvej-inteligenci-ai-modely-h3-01">Vyzkoušejte si: Audit práce s AI</a></li></ol></li><li><a href="#prompt-1-title">Audit využívání AI</a></li><li><a href="#princip-2">2. Maximální uvažování není automaticky nejlepší volba</a></li><li><a href="#princip-3">3. Silný model může být architektem, nikoli vykonavatelem každé drobnosti</a><ol><li><a href="#wave13-neplytvej-inteligenci-ai-modely-h3-02">Vyzkoušejte si: AI jako koordinátor práce učitele</a></li></ol></li><li><a href="#prompt-2-title">Rozdělení práce podle náročnosti</a></li><li><a href="#princip-4">4. Méně kontextu může znamenat efektivnější práci</a></li><li><a href="#princip-5">5. Nový úkol nemusí znamenat pokračování nekonečné konverzace</a><ol><li><a href="#wave13-neplytvej-inteligenci-ai-modely-h3-03">Vyzkoušejte si: Předání projektu do nové konverzace</a></li></ol></li><li><a href="#prompt-3-title">Předávací dokument</a></li><li><a href="#princip-6">6. Úspora nesmí být na úkor kvality</a></li><li><a href="#prompt-4-heading">Bonusový prompt A: Vytvoření plánovacího agenta</a></li><li><a href="#prompt-4-title">Plánovací agent</a></li><li><a href="#prompt-5-heading">Bonusový prompt B: Vytvoření pomocného agenta</a></li><li><a href="#prompt-5-title">Pomocný agent</a></li><li><a href="#prompt-6-heading">Bonusový prompt C: Hlavní agent jako koordinátor</a></li><li><a href="#prompt-6-title">Koordinátor agentů</a></li><li><a href="#ucitel">Co si z toho může odnést běžný učitel?</a></li><li><a href="#zaver">Závěrečné zamyšlení</a></li><li><a href="#zdroje">Zdroje a další informace</a></li></ol></nav></details>
+        
         <article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-kicker"><span class="workflow-step">AI</span> AI V PRAXI · PRAKTICKÝ NÁVOD</p>
@@ -71,17 +69,6 @@
                 <p class="workflow-article-summary">Šest principů efektivnější práce s umělou inteligencí a praktické prompty, které můžete rovnou vyzkoušet.</p>
                 <div class="workflow-article-meta"><span>23. září 2026</span><span>AI ve výuce</span><span>Praktický návod</span></div>
             </div>
-
-            <nav class="article-toc" aria-labelledby="toc-heading-neplytvej-inteligenci">
-                <p class="article-toc-label" id="toc-heading-neplytvej-inteligenci">V tomto článku</p>
-                <ul>
-                    <li><a href="#principy">Šest principů efektivnější práce</a></li>
-                    <li><a href="#prompty">Praktické prompty</a></li>
-                    <li><a href="#bonus">Pokročilý bonus</a></li>
-                    <li><a href="#zaver">Závěrečné zamyšlení</a></li>
-                    <li><a href="#zdroje">Zdroje</a></li>
-                </ul>
-            </nav>
 
             <div class="article-content">
                 <p class="article-lead">Umělá inteligence je stále výkonnější. Dokáže analyzovat rozsáhlé dokumenty, vytvářet výukové materiály, programovat aplikace nebo řídit práci dalších AI agentů.</p>
@@ -112,7 +99,7 @@
                 <p>U placených API se spotřeba promítá do ceny. U předplatného může ovlivňovat čerpání dostupných limitů.</p>
 
                 <h2 id="prompty">Praktické prompty</h2>
-                <h3>Vyzkoušejte si: Audit práce s AI</h3>
+                <h3 id="wave13-neplytvej-inteligenci-ai-modely-h3-01">Vyzkoušejte si: Audit práce s AI</h3>
                 <p>Následující prompt můžete použít v prostředí ChatGPT nebo Codexu. Je inspirovaný autorovým původním zadáním, ale doplněný o požadavek na ověřitelnost údajů.</p>
                 <section class="prompt-card" aria-labelledby="prompt-1-title">
                     <div class="prompt-card-header"><div><span class="tool-guide-callout-label">PROMPT 1</span><h2 id="prompt-1-title">Audit využívání AI</h2></div><button class="prompt-copy-button" type="button" data-copy-prompt="prompt-1" aria-describedby="prompt-1-feedback">Kopírovat prompt</button></div>
@@ -153,7 +140,7 @@ Navrhni tři konkrétní změny, které mohou zvýšit efektivitu mé práce, a 
                 <p>Nakonec musí někdo výsledky spojit a ověřit, že celek skutečně funguje.</p>
                 <p>Tento princip odpovídá práci víceagentních systémů, ve kterých různí AI agenti plní odlišné role.</p>
                 <p>Nemusíme však být programátory, abychom si podobný přístup vyzkoušeli.</p>
-                <h3>Vyzkoušejte si: AI jako koordinátor práce učitele</h3>
+                <h3 id="wave13-neplytvej-inteligenci-ai-modely-h3-02">Vyzkoušejte si: AI jako koordinátor práce učitele</h3>
                 <section class="prompt-card" aria-labelledby="prompt-2-title">
                     <div class="prompt-card-header"><div><span class="tool-guide-callout-label">PROMPT 2</span><h2 id="prompt-2-title">Rozdělení práce podle náročnosti</h2></div><button class="prompt-copy-button" type="button" data-copy-prompt="prompt-2" aria-describedby="prompt-2-feedback">Kopírovat prompt</button></div>
                     <p class="prompt-card-intro">Pomůže rozdělit výukový úkol mezi vhodný model, rutinní zpracování a lidskou kontrolu.</p>
@@ -194,7 +181,7 @@ Uveď, které výsledky musí zkontrolovat učitel před použitím ve výuce.</
                 <p>U samostatných témat proto často dává smysl začít novou konverzaci.</p>
                 <p>U dlouhodobých projektů je situace jiná. Tam potřebujeme zachovat rozhodnutí, důležité souvislosti a návaznost práce.</p>
                 <p>Řešením může být stručný, ale úplný předávací dokument.</p>
-                <h3>Vyzkoušejte si: Předání projektu do nové konverzace</h3>
+                <h3 id="wave13-neplytvej-inteligenci-ai-modely-h3-03">Vyzkoušejte si: Předání projektu do nové konverzace</h3>
                 <section class="prompt-card" aria-labelledby="prompt-3-title">
                     <div class="prompt-card-header"><div><span class="tool-guide-callout-label">PROMPT 3</span><h2 id="prompt-3-title">Předávací dokument</h2></div><button class="prompt-copy-button" type="button" data-copy-prompt="prompt-3" aria-describedby="prompt-3-feedback">Kopírovat prompt</button></div>
                     <p class="prompt-card-intro">Vytvoří přenositelný kontext pro bezpečné pokračování projektu v nové konverzaci nebo s jiným agentem.</p>
@@ -352,8 +339,11 @@ Pokud delegování není technicky dostupné, vysvětli omezení a navrhni alter
     <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="ai.html#navody">Zpět na praktické návody</a></footer>
     <script src="js/tool-guide.js?v=20260923-neplytvej-prompts" defer></script>
     <script src="js/site-navigation-data.js?v=20261109-7i"></script>
-    <script src="js/site-navigation.js?v=20261109-7i"></script>
+
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+
+    <script src="js/article-content-navigation.js?v=20261113-8a"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
 </body>
 
 </html>
