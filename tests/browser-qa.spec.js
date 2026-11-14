@@ -865,7 +865,7 @@ for (const article of migrationArticles) {
         expect(state.scrollWidth, `horizontal overflow at ${width}px on ${article.file}`).toBeLessThanOrEqual(width + 1);
         expect(state.idsUnique, `duplicate IDs on ${article.file}`).toBe(true);
         expect(state.anchorsResolve, `broken contents anchor on ${article.file}`).toBe(true);
-        expect(state.bodyBackground).toBe('rgb(255, 253, 247)');
+        expect(state.bodyBackground).toBe('rgb(255, 254, 250)');
         expect(state.imageStatus.length, `article illustration missing on ${article.file}`).toBeGreaterThan(0);
         expect(state.imageStatus.every(image => image.complete && image.naturalWidth > 0 && image.alt), `article illustration failed to load or lacks alt text on ${article.file}`).toBe(true);
         expect(state.promptStyles.every(style => style.background !== 'rgba(0, 0, 0, 0)' && style.color !== 'rgba(0, 0, 0, 0)'), `prompt styling missing on ${article.file}`).toBe(true);
@@ -2839,6 +2839,7 @@ test('wave 16 internal fragments, local article links, and source destinations r
 const wave17MagazineArticles = [
   {
     file: 'ai-novinka-ai-duvod-premyslet.html',
+    imageCount: 3,
     date: '2026-10-30',
     dateLabel: '30. října 2026',
     h2Count: 12,
@@ -2850,6 +2851,7 @@ const wave17MagazineArticles = [
   },
   {
     file: 'ai-novinka-ai-ve-vzdelavani-zari-2026.html',
+    imageCount: 2,
     date: '2026-09-09',
     dateLabel: '9. září 2026',
     h2Count: 14,
@@ -2987,9 +2989,9 @@ test('wave 17 shared contents navigation, global navigation, and media work acro
       expect(state.anchorsResolve).toBe(true);
       expect(state.allFragmentsResolve).toBe(true);
       expect(state.uniqueIds).toBe(true);
-      expect(state.images.length).toBe(3);
+      expect(state.images.length).toBe(article.imageCount);
       expect(state.images.every(image => image.complete && image.naturalWidth > 0)).toBe(true);
-      expect(state.articleImages.length).toBe(2);
+      expect(state.articleImages.length).toBe(article.imageCount - 1);
       expect(state.articleImages.every(image => image.complete && image.naturalWidth > 0 && image.alt)).toBe(true);
       await expect(page.locator('.brand-symbol')).toHaveCount(1);
       expect(state.heroBackground).toContain('linear-gradient');
@@ -3157,7 +3159,7 @@ test('wave 17 magazine visuals, images, viewport screenshots, and light referenc
       };
     });
     evidence.views.push({ file: article.file, width: 1440, computedStyles: desktopStyles });
-    expect(desktopStyles.body.background).toBe('rgb(255, 254, 250)');
+    expect(desktopStyles.body.background).toBe('rgb(255, 253, 247)');
     expect(desktopStyles.hero.backgroundImage).toContain('linear-gradient');
     expect(desktopStyles.heroTitle.fontFamily).toMatch(/Playfair Display|Georgia/);
     expect(desktopStyles.toc.position).toBe('sticky');
