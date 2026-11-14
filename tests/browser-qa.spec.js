@@ -140,18 +140,26 @@ test('contents anchor works with JavaScript disabled', async ({ browser }) => {
   const link = page.locator('.article-content-navigation a[href="#obsah-co-si-odnest"]');
   await expect(chapter).not.toBeInViewport();
 
-  // Keep Playwright's own click scrolling out of the measurement; then observe the
-  // browser's native smooth anchor scroll to completion instead of racing its animation.
+  // Keep Playwright's click auto-scroll out of the measurement, then wait for the
+  // actual chapter to enter the viewport during the browser's native smooth scroll.
   await link.evaluate(el => el.scrollIntoView({ behavior: 'instant', block: 'center' }));
+  await expect(chapter).not.toBeInViewport();
   const scrollYBeforeAnchor = await page.evaluate(() => window.scrollY);
   await page.evaluate(() => {
-    window.__noJsAnchorScrollEnd = new Promise(resolve => {
-      document.addEventListener('scrollend', () => resolve(window.scrollY), { once: true });
+    const target = document.getElementById('obsah-co-si-odnest');
+    window.__noJsAnchorTargetVisible = new Promise(resolve => {
+      const observer = new IntersectionObserver(entries => {
+        if (entries.some(entry => entry.isIntersecting)) {
+          observer.disconnect();
+          resolve(window.scrollY);
+        }
+      });
+      observer.observe(target);
     });
   });
   await link.click();
   await expect(page).toHaveURL(/#obsah-co-si-odnest$/);
-  const scrollYAfterAnchor = await page.evaluate(() => window.__noJsAnchorScrollEnd);
+  const scrollYAfterAnchor = await page.evaluate(() => window.__noJsAnchorTargetVisible);
   expect(scrollYAfterAnchor).toBeGreaterThan(scrollYBeforeAnchor);
   await expect(chapter).toBeInViewport();
   await expect(page.locator('.article-content-navigation')).toHaveJSProperty('open', true);
