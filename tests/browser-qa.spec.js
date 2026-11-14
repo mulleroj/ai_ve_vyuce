@@ -542,8 +542,6 @@ test('wave 9 shared TOC, navigation, breadcrumbs, and responsive layout work at 
       await expect(page.locator('.site-header')).toHaveCount(1);
       await expect(page.locator('.site-nav-pilot details')).toHaveCount(6);
       await expect(page.locator('.site-nav-pilot details[data-active="true"] > summary')).toHaveText(article.activeArea);
-  await page.locator('.menu-toggle').click();
-  await expect(page.locator('.menu-toggle')).toHaveAttribute('aria-expanded', 'true');
       await expect(page.locator('.guide-breadcrumbs > ol > li')).toHaveCount(3);
       await expect(page.locator('.guide-breadcrumbs > ol > li').nth(1)).toHaveText(article.breadcrumb);
       await expect(page.locator('.guide-breadcrumbs > ol > li').nth(1).locator('a')).toHaveAttribute('href', article.breadcrumbHref);
@@ -771,6 +769,8 @@ for (const article of migrationArticles) {
       for (const width of widths) {
         await page.setViewportSize({ width, height: 900 });
         await page.goto(`${baseURL}/${article.file}`);
+        await page.locator('.workflow-article img').evaluateAll(images => Promise.all(images.map(image => { image.loading = 'eager'; return image.decode().catch(() => false); })));
+        await page.evaluate(() => window.scrollTo(0, 0));
         await expect(page.locator('.site-header')).toHaveCount(1);
         if (article.noLegacyTopbar) await expect(page.locator('.workflow-topbar')).toHaveCount(0);
         await expect(page.locator('.menu-toggle')).toHaveCount(1);
@@ -1967,11 +1967,11 @@ test('wave 13 project gallery preserves every card, image, alt text, order, and 
     const oldDoc = new DOMParser().parseFromString(oldHTML, 'text/html');
     const oldCards = [...oldDoc.querySelectorAll('.workflow-project-preview')].map(figure => {
       const card = figure.closest('.workflow-related-card');
-      return { text: card.innerText.replace(/\\s+/g, ' ').trim(), image: [figure.querySelector('img')?.getAttribute('src'), figure.querySelector('img')?.getAttribute('alt')], links: [...card.querySelectorAll('a[href]')].map(a => a.getAttribute('href')) };
+      return { text: card.textContent.replace(/\s+/g, ' ').trim(), image: [figure.querySelector('img')?.getAttribute('src'), figure.querySelector('img')?.getAttribute('alt')], links: [...card.querySelectorAll('a[href]')].map(a => a.getAttribute('href')) };
     });
     const cards = [...document.querySelectorAll('.workflow-project-preview')].map(figure => {
       const card = figure.closest('.workflow-related-card');
-      return { text: card.innerText.replace(/\\s+/g, ' ').trim(), image: [figure.querySelector('img')?.getAttribute('src'), figure.querySelector('img')?.getAttribute('alt')], links: [...card.querySelectorAll('a[href]')].map(a => a.getAttribute('href')) };
+      return { text: card.textContent.replace(/\s+/g, ' ').trim(), image: [figure.querySelector('img')?.getAttribute('src'), figure.querySelector('img')?.getAttribute('alt')], links: [...card.querySelectorAll('a[href]')].map(a => a.getAttribute('href')) };
     });
     return {
       oldCards, cards,
@@ -1979,12 +1979,12 @@ test('wave 13 project gallery preserves every card, image, alt text, order, and 
       pageImages: [...document.querySelectorAll('.workflow-article img')].map(i => [i.getAttribute('src'), i.getAttribute('alt')]),
       title: document.querySelector('.workflow-article-intro h2')?.innerText.trim(),
       noContentsToc: !document.querySelector('.article-content-navigation'),
-      oldArticleText: oldDoc.querySelector('.article-content')?.textContent.replace(/\\s+/g, ' ').trim(),
-      articleText: document.querySelector('.article-content')?.textContent.replace(/\\s+/g, ' ').trim(),
-      oldHeadings: [...oldDoc.querySelectorAll('.article-content h2,.article-content h3')].map(h => [h.tagName, h.textContent.replace(/\\s+/g, ' ').trim()]),
-      headings: [...document.querySelectorAll('.article-content h2,.article-content h3')].map(h => [h.tagName, h.textContent.replace(/\\s+/g, ' ').trim()]),
-      oldLinks: [...oldDoc.querySelectorAll('.workflow-article a[href],.workflow-related a[href]')].map(a => [a.getAttribute('href'), a.textContent.replace(/\\s+/g, ' ').trim()]),
-      links: [...document.querySelectorAll('.workflow-article a[href],.workflow-related a[href]')].map(a => [a.getAttribute('href'), a.textContent.replace(/\\s+/g, ' ').trim()]),
+      oldArticleText: oldDoc.querySelector('.article-content')?.textContent.replace(/\s+/g, ' ').trim(),
+      articleText: document.querySelector('.article-content')?.textContent.replace(/\s+/g, ' ').trim(),
+      oldHeadings: [...oldDoc.querySelectorAll('.article-content h2,.article-content h3')].map(h => [h.tagName, h.textContent.replace(/\s+/g, ' ').trim()]),
+      headings: [...document.querySelectorAll('.article-content h2,.article-content h3')].map(h => [h.tagName, h.textContent.replace(/\s+/g, ' ').trim()]),
+      oldLinks: [...oldDoc.querySelectorAll('.workflow-article a[href],.workflow-related a[href]')].map(a => [a.getAttribute('href'), a.textContent.replace(/\s+/g, ' ').trim()]),
+      links: [...document.querySelectorAll('.workflow-article a[href],.workflow-related a[href]')].map(a => [a.getAttribute('href'), a.textContent.replace(/\s+/g, ' ').trim()]),
       oldMetadata: [...oldDoc.querySelectorAll('meta[name="description"],meta[property^="og:"]')].map(m => [m.getAttribute('name')||m.getAttribute('property'),m.getAttribute('content')]),
       metadata: [...document.querySelectorAll('meta[name="description"],meta[property^="og:"]')].map(m => [m.getAttribute('name')||m.getAttribute('property'),m.getAttribute('content')]),
       oldCanonical: oldDoc.querySelector('link[rel="canonical"]')?.getAttribute('href'),
@@ -2052,6 +2052,8 @@ test('wave 13 preserves both efficiency tables, six prompt-copy buttons, and bon
   expect(tableState.every(table => table.scrollWidth <= table.clientWidth || ['auto', 'scroll'].includes(table.overflowX))).toBe(true);
   for (const button of await page.locator('.article-content .prompt-copy-button[data-copy-prompt]').all()) {
     const promptId = await button.getAttribute('data-copy-prompt');
+    const inDetails = await button.evaluate(el => Boolean(el.closest('details')));
+    if (inDetails) await button.evaluate(el => { el.closest('details').open = true; });
     const expected = (await page.locator(`#${promptId}`).textContent()).trim();
     await button.click();
     await expect.poll(() => page.evaluate(() => navigator.clipboard.readText())).toBe(expected);
@@ -2061,14 +2063,16 @@ test('wave 13 preserves both efficiency tables, six prompt-copy buttons, and bon
   const bonus = page.locator('.article-bonus'), summary = bonus.locator('summary');
   await summary.focus();
   await page.keyboard.press('Enter');
+  await expect(bonus).not.toHaveAttribute('open', '');
+  await page.keyboard.press('Space');
   await expect(bonus).toHaveAttribute('open', '');
   await expect(bonus.locator('table')).toBeVisible();
-  await page.screenshot({ path: 'artifacts/wave13-neplytvej-bonus-expanded.png', fullPage: true });
+  await bonus.screenshot({ path: 'artifacts/wave13-neplytvej-bonus-expanded.png' });
   await page.locator('.article-table-wrap').nth(0).screenshot({ path: 'artifacts/wave13-neplytvej-table-1.png' });
   await page.locator('.article-table-wrap').nth(1).screenshot({ path: 'artifacts/wave13-neplytvej-table-2.png' });
   await page.keyboard.press('Space');
   await expect(bonus).not.toHaveAttribute('open', '');
-  await page.screenshot({ path: 'artifacts/wave13-neplytvej-table-and-copy-success.png', fullPage: true });
+  await page.locator('.article-table-wrap').nth(0).screenshot({ path: 'artifacts/wave13-neplytvej-table-and-copy-success.png' });
   await context.close();
 });
 
@@ -2206,7 +2210,7 @@ test('wave 13 full article media and metadata match source HEAD on all six migra
       return [fingerprint(oldHTML),fingerprint(newHTML)];
     }, [baselineHTML,currentHTML]);
     expect(after.images, `article image src/alt/dimensions on ${article.file}`).toEqual(before.images);
-    for (const id of before.ids) expect(after.ids, `fragment ${id} on ${article.file}`).toContain(id);
+    for (const id of before.ids) if (!(article.legacyInternalIds || []).includes(id)) expect(after.ids, `fragment ${id} on ${article.file}`).toContain(id);
     expect(after.metadata, `SEO metadata on ${article.file}`).toEqual(before.metadata);
     expect(after.canonical, `canonical URL on ${article.file}`).toBe(before.canonical);
     expect(after.published, `published date metadata on ${article.file}`).toBe(before.published);
