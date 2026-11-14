@@ -133,30 +133,27 @@ test('keyboard disclosure and mobile menu support Space, Enter, and Escape', asy
 });
 
 test('contents anchor works with JavaScript disabled', async ({ browser }) => {
-  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, javaScriptEnabled: false });
+  const context = await browser.newContext({
+    viewport: { width: 390, height: 844 },
+    javaScriptEnabled: false,
+    reducedMotion: 'reduce'
+  });
   const page = await context.newPage();
   await page.goto(`${baseURL}/ai-novinka-datovi-agenti-lidske-schvaleni.html`);
   const chapter = page.locator('#obsah-co-si-odnest');
   const link = page.locator('.article-content-navigation a[href="#obsah-co-si-odnest"]');
+  const rootScrollBehavior = await page.evaluate(() => getComputedStyle(document.documentElement).scrollBehavior);
+  expect(rootScrollBehavior).toBe('auto');
   await expect(chapter).not.toBeInViewport();
 
-  // Keep Playwright's click auto-scroll out of the measurement. The page uses smooth
-  // scrolling, so poll the actual target geometry after the native no-JS anchor click.
-  await link.evaluate(el => el.scrollIntoView({ behavior: 'instant', block: 'center' }));
+  await link.scrollIntoViewIfNeeded();
   await expect(chapter).not.toBeInViewport();
   const scrollYBeforeAnchor = await page.evaluate(() => window.scrollY);
   await link.click();
   await expect(page).toHaveURL(/#obsah-co-si-odnest$/);
-  const visibleChapter = await page.waitForFunction(before => {
-    const target = document.getElementById('obsah-co-si-odnest');
-    const rect = target.getBoundingClientRect();
-    return window.scrollY > before && rect.bottom > 0 && rect.top < window.innerHeight
-      ? window.scrollY
-      : false;
-  }, scrollYBeforeAnchor);
-  const scrollYAfterAnchor = await visibleChapter.jsonValue();
-  expect(scrollYAfterAnchor).toBeGreaterThan(scrollYBeforeAnchor);
   await expect(chapter).toBeInViewport();
+  const scrollYAfterAnchor = await page.evaluate(() => window.scrollY);
+  expect(scrollYAfterAnchor).toBeGreaterThan(scrollYBeforeAnchor);
   await expect(page.locator('.article-content-navigation')).toHaveJSProperty('open', true);
   await context.close();
 });
