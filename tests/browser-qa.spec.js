@@ -2586,6 +2586,7 @@ test('wave 16 computed styles, six screenshots, and seven-hero contact sheet', a
   for (const article of refs) {
     await page.setViewportSize({ width: 1440, height: 1000 });
     await page.goto(baseURL + '/' + article.file, { waitUntil: 'networkidle' });
+    await page.locator('img').evaluateAll(images => Promise.all(images.map(image => { image.loading = 'eager'; return image.decode().catch(() => false); })));
     await page.evaluate(async () => { await document.fonts.ready; });
     const hero = page.locator('.workflow-shell');
     await expect(hero).toBeVisible();
@@ -2662,6 +2663,7 @@ test('wave 16 computed styles, six screenshots, and seven-hero contact sheet', a
 
       await page.setViewportSize({ width: 390, height: 844 });
       await page.goto(baseURL + '/' + article.file, { waitUntil: 'networkidle' });
+    await page.locator('img').evaluateAll(images => Promise.all(images.map(image => { image.loading = 'eager'; return image.decode().catch(() => false); })));
       await page.evaluate(async () => { await document.fonts.ready; });
       await page.locator('.workflow-shell').screenshot({ path: 'artifacts/wave16-' + article.file + '-mobile-390-hero.png' });
       const mobileToc = page.locator('.article-content-navigation');
@@ -2697,6 +2699,7 @@ test('wave 16 computed styles, six screenshots, and seven-hero contact sheet', a
       await page.screenshot({ path: 'artifacts/wave16-data-agents-desktop-1440-chapter.png' });
       await page.setViewportSize({ width: 390, height: 844 });
       await page.goto(baseURL + '/' + article.file, { waitUntil: 'networkidle' });
+    await page.locator('img').evaluateAll(images => Promise.all(images.map(image => { image.loading = 'eager'; return image.decode().catch(() => false); })));
       await page.evaluate(async () => { await document.fonts.ready; });
       await page.locator('.workflow-shell').screenshot({ path: 'artifacts/wave16-data-agents-mobile-390-hero.png' });
       const mobilePilotToc = page.locator('.article-content-navigation');
@@ -2720,6 +2723,7 @@ test('wave 16 student chat page keeps its original menu, metadata, scripts, and 
   page.on('pageerror', error => errors.push(error.message));
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto(baseURL + '/gemini-notebook-ucitel-vidi-chaty-zaku.html', { waitUntil: 'networkidle' });
+    await page.locator('img').evaluateAll(images => Promise.all(images.map(image => { image.loading = 'eager'; return image.decode().catch(() => false); })));
   await expect(page.locator('script[src*="js/main.js"]')).toHaveCount(1);
   await expect(page.locator('meta[property="article:published_time"]')).toHaveAttribute('content', '2026-10-23');
   await expect(page.locator('.workflow-meta time')).toHaveAttribute('datetime', '2026-10-23');
