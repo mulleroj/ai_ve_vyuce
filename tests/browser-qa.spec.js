@@ -421,7 +421,7 @@ test('wave 7 hero contact sheet includes the approved light reference', async ({
 test('homepage renders the six newest catalog entries and complete records through wave 11', async ({ page }) => {
   await page.goto(baseURL, { waitUntil: 'networkidle' });
   await expect(page.locator('#latest-articles .latest-card')).toHaveCount(6);
-  const [expected, actual, wave7Records, wave8Records, wave10Records, wave11Records, duplicateHrefs] = await page.evaluate(() => {
+  const [expected, actual, wave7Records, wave8Records, wave10Records, wave11Records, wave12Records, duplicateHrefs] = await page.evaluate(() => {
     const ordered = window.siteArticles
       .map((article, index) => ({ article, index }))
       .sort((left, right) => (right.article.date || '').localeCompare(left.article.date || '') || left.index - right.index)
@@ -438,12 +438,14 @@ test('homepage renders the six newest catalog entries and complete records throu
         .map(href => window.siteArticles.find(article => article.href === href)),
       ['ai-workflow-10-promptu-gemini.html', 'ai-workflow-18-promptu.html', 'ai-workflow-chatgpt-images-2-5.html', 'ai-workflow-gemini-notebook-ai-agent.html']
         .map(href => window.siteArticles.find(article => href === article.href)),
+      ['ai-workflow-css-grid-vibe-coding.html', 'ai-workflow-fotografie-ucebnice.html', 'ai-workflow-prezentace-webova-stranka.html', 'ai-workflow-vibe-coding.html', 'ai-ziva-hlasova-ai-ve-vyuce.html']
+        .map(href => window.siteArticles.find(article => href === article.href)),
       window.siteArticles.map(item => item.href).filter((href, index, all) => all.indexOf(href) !== index)
     ];
   });
   expect(actual).toEqual(expected);
   expect(duplicateHrefs).toEqual([]);
-  for (const article of [...wave7Records, ...wave8Records, ...wave10Records, ...wave11Records]) {
+  for (const article of [...wave7Records, ...wave8Records, ...wave10Records, ...wave11Records, ...wave12Records]) {
     expect(article).toBeTruthy();
     for (const field of ['href', 'title', 'summary', 'category', 'date', 'dateLabel', 'icon', 'tags', 'badgeClass']) {
       expect(article[field], `catalog ${field} for ${article.href}`).toBeTruthy();
@@ -457,10 +459,18 @@ test('homepage renders the six newest catalog entries and complete records throu
     'ai-workflow-10-promptu-gemini.html': ['2026-08-26', '26. srpna 2026'],
     'ai-workflow-18-promptu.html': ['2026-08-25', '25. srpna 2026'],
     'ai-workflow-chatgpt-images-2-5.html': ['2026-09-11', '11. září 2026'],
-    'ai-workflow-gemini-notebook-ai-agent.html': ['2026-09-08', '8. září 2026']
+    'ai-workflow-gemini-notebook-ai-agent.html': ['2026-09-08', '8. září 2026'],
+    'ai-workflow-css-grid-vibe-coding.html': ['2026-09-03', '3. září 2026'],
+    'ai-workflow-fotografie-ucebnice.html': ['2026-08-27', '27. srpna 2026'],
+    'ai-workflow-prezentace-webova-stranka.html': ['2026-09-02', '2. září 2026'],
+    'ai-workflow-vibe-coding.html': ['2026-08-26', '26. srpna 2026'],
+    'ai-ziva-hlasova-ai-ve-vyuce.html': ['2026-09-21', '21. září 2026']
   };
   for (const article of [...wave10Records, ...wave11Records]) {
     expect(article.category).toBe('Workflow');
+    expect([article.date, article.dateLabel]).toEqual(expectedDates[article.href]);
+  }
+  for (const article of wave12Records) {
     expect([article.date, article.dateLabel]).toEqual(expectedDates[article.href]);
   }
 });
@@ -724,7 +734,15 @@ const wave11Articles = [
   { file: 'ai-workflow-gemini-notebook-ai-agent.html', title: 'Jak vytvořit chytrý učitelský sešit v Gemini Notebooku pomocí AI agenta', activeArea: 'Připravit výuku', breadcrumb: 'Workflow pro učitele', breadcrumbHref: 'ai.html#workflow', tocCount: 20, h2: '#toc-01', h3: '#ai-workflow-gemini-notebook-ai-agent-h3-01', baselineSha: '4f48ddb65eef3f19fa4be7ff62b05b3d8e2bb8c5', checkTocScroll: true, waitForStableViewportChapter: true, noLegacyTopbar: true, legacyInternalIds: ['toc-heading-ai-workflow-gemini-notebook-ai-agent-html'], representative: '#ai-workflow-gemini-notebook-ai-agent-h2-07', promptCount: 5, representativePromptIndex: 1 },
 ];
 
-const migrationArticles = [...wave1Articles, ...wave2Articles, ...wave3Articles, ...wave4Articles, ...wave5Articles, ...wave6Articles, ...wave7Articles, ...wave8Articles, ...wave10Articles, ...wave11Articles];
+const wave12Articles = [
+  { file: 'ai-workflow-css-grid-vibe-coding.html', title: 'CSS Grid: proč se při vibe codingu vyplatí rozumět řádkům a sloupcům', activeArea: 'Tvořit s AI', breadcrumb: 'Články o Vibe Codingu', breadcrumbHref: 'vibe-coding-clanky.html', tocCount: 13, h2: '#ai-workflow-css-grid-vibe-coding-h2-01', baselineSha: '3a566d2deb6e54e202acd4d1dc88194714477093', noLegacyTopbar: true, waitForStableViewportChapter: true, representative: '#ai-workflow-css-grid-vibe-coding-h2-02' },
+  { file: 'ai-workflow-fotografie-ucebnice.html', title: 'Fotografii učebnice už nemusíte přepisovat', activeArea: 'Připravit výuku', breadcrumb: 'ChatGPT pro učitele', breadcrumbHref: 'chatgpt-pro-ucitele.html', tocCount: 4, h2: '#ai-workflow-fotografie-ucebnice-h2-01', baselineSha: '3a566d2deb6e54e202acd4d1dc88194714477093', noLegacyTopbar: true, waitForStableViewportChapter: true, representative: '#ai-workflow-fotografie-ucebnice-h2-02' },
+  { file: 'ai-workflow-prezentace-webova-stranka.html', title: 'Od prezentace k webové stránce', activeArea: 'Připravit výuku', breadcrumb: 'Workflow pro učitele', breadcrumbHref: 'ai.html#workflow', tocCount: 15, h2: '#ai-workflow-prezentace-webova-stranka-h2-01', h3: '#ai-workflow-prezentace-webova-stranka-h3-01', baselineSha: '3a566d2deb6e54e202acd4d1dc88194714477093', noLegacyTopbar: true, waitForStableViewportChapter: true, representative: '#ai-workflow-prezentace-webova-stranka-h2-03' },
+  { file: 'ai-workflow-vibe-coding.html', title: 'Vibe coding krok za krokem', activeArea: 'Tvořit s AI', breadcrumb: 'Vibe Coding', breadcrumbHref: 'vibe-coding.html', tocCount: 15, h2: '#ai-workflow-vibe-coding-h2-01', baselineSha: '3a566d2deb6e54e202acd4d1dc88194714477093', noLegacyTopbar: true, waitForStableViewportChapter: true, representative: '#ai-workflow-vibe-coding-h2-02' },
+  { file: 'ai-ziva-hlasova-ai-ve-vyuce.html', title: 'Když AI začne skutečně naslouchat: živá hlasová umělá inteligence ve výuce', activeArea: 'Číst a objevovat', breadcrumb: 'AI ve vzdělávání', breadcrumbHref: 'ai.html#novinky', tocCount: 21, h2: '#ai-ziva-hlasova-ai-ve-vyuce-h2-01', h3: '#ai-ziva-hlasova-ai-ve-vyuce-h3-01', baselineSha: '3a566d2deb6e54e202acd4d1dc88194714477093', noLegacyTopbar: true, waitForStableViewportChapter: true, representative: '#ai-ziva-hlasova-ai-ve-vyuce-h2-03' },
+];
+
+const migrationArticles = [...wave1Articles, ...wave2Articles, ...wave3Articles, ...wave4Articles, ...wave5Articles, ...wave6Articles, ...wave7Articles, ...wave8Articles, ...wave10Articles, ...wave11Articles, ...wave12Articles];
 
 for (const article of migrationArticles) {
   test.describe(`Migration: ${article.file}`, () => {
@@ -1456,7 +1474,7 @@ test('wave 5 graphic audit captures images and prompt panels at desktop and mobi
   const cards = [];
 
   for (const article of wave5Articles) {
-    const stem = article.file.replace(/\\.html$/, '');
+    const stem = article.file.replace(/\.html$/, '');
     for (const viewport of [
       { name: 'desktop-1440', width: 1440, height: 900 },
       { name: 'mobile-390', width: 390, height: 844 }
@@ -1750,3 +1768,176 @@ test('wave 8 screenshots show TOC, representative content, and live interactions
   await context.close();
 });
 
+
+test('wave 12 CSS Grid examples remain exact, selectable, copyable, and contained at 320px', async ({ browser }) => {
+  const context = await browser.newContext({ viewport: { width: 320, height: 900 }, permissions: ['clipboard-read', 'clipboard-write'] });
+  const page = await context.newPage();
+  await page.goto(baseURL + '/ai-workflow-css-grid-vibe-coding.html', { waitUntil: 'networkidle' });
+  const codes = page.locator('.article-content code');
+  await expect(codes).toHaveCount(31);
+  await expect(page.locator('.article-content button')).toHaveCount(0);
+  for (let index = 0; index < 31; index++) {
+    const code = codes.nth(index);
+    const selected = await code.evaluate(element => {
+      const range = document.createRange();
+      range.selectNodeContents(element);
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      return { text: selection.toString(), userSelect: getComputedStyle(element).userSelect };
+    });
+    expect(selected.text, 'CSS example ' + index + ' must remain selectable').not.toBe('');
+    expect(selected.userSelect).not.toBe('none');
+    await page.keyboard.press('Control+C');
+    await expect.poll(() => page.evaluate(() => navigator.clipboard.readText())).toBe(selected.text);
+  }
+  for (const viewport of [{ width: 1440, height: 1000, label: 'desktop' }, { width: 320, height: 900, label: 'mobile-320' }]) {
+    await page.setViewportSize({ width: viewport.width, height: viewport.height });
+    await page.goto(baseURL + '/ai-workflow-css-grid-vibe-coding.html', { waitUntil: 'networkidle' });
+    const overflow = await page.evaluate(() => ({
+      pageWidth: document.documentElement.scrollWidth,
+      viewport: innerWidth,
+      prompts: [...document.querySelectorAll('.article-content .article-prompt')].map(element => ({
+        width: element.clientWidth, scrollWidth: element.scrollWidth, overflowX: getComputedStyle(element).overflowX
+      }))
+    }));
+    expect(overflow.pageWidth, 'page horizontal overflow at ' + viewport.width).toBeLessThanOrEqual(viewport.width + 1);
+    expect(overflow.prompts.every(item => item.scrollWidth <= item.width || ['auto', 'scroll'].includes(item.overflowX)),
+      'technical example overflow must stay inside its content block').toBe(true);
+    const examples = page.locator('.article-content .article-prompt');
+    for (const index of [0, 1, 2]) {
+      await examples.nth(index).scrollIntoViewIfNeeded();
+      await examples.nth(index).screenshot({ path: 'artifacts/wave12-css-grid-' + viewport.label + '-example-' + (index + 1) + '.png' });
+    }
+  }
+  await context.close();
+});
+
+test('wave 12 light hero computed styles, full screenshots, and hero contact sheet', async ({ page }) => {
+  const fs = require('node:fs');
+  const records = [];
+  const cards = [];
+  const contrast = (foreground, background) => {
+    const rgb = value => {
+      const match = value.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)\)/);
+      if (!match) return null;
+      return match.slice(1, 4).map(channel => {
+        const component = Number(channel) / 255;
+        return component <= 0.04045 ? component / 12.92 : ((component + 0.055) / 1.055) ** 2.4;
+      }).reduce((sum, component, index) => sum + component * [0.2126, 0.7152, 0.0722][index], 0);
+    };
+    const a = rgb(foreground), b = rgb(background);
+    if (a === null || b === null) return 0;
+    return (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
+  };
+  for (const article of wave12Articles) {
+    for (const viewport of [
+      { name: 'desktop-1440', width: 1440, height: 1000 },
+      { name: 'mobile-390', width: 390, height: 844 }
+    ]) {
+      await page.setViewportSize({ width: viewport.width, height: viewport.height });
+      await page.goto(baseURL + '/' + article.file, { waitUntil: 'networkidle' });
+      await page.evaluate(() => document.fonts.ready);
+      const image = await page.locator('.workflow-article img').evaluate(element => {
+        const rect = element.getBoundingClientRect();
+        return { complete: element.complete, naturalWidth: element.naturalWidth, naturalHeight: element.naturalHeight, width: rect.width, height: rect.height, alt: element.alt };
+      });
+      expect(image.complete && image.naturalWidth > 0 && image.naturalHeight > 0 && image.alt.trim()).toBe(true);
+      expect(Math.abs((image.width / image.height) / (image.naturalWidth / image.naturalHeight) - 1)).toBeLessThan(0.02);
+      const styles = await page.evaluate(() => {
+        const selectors = [
+          'body', '.site-header', '.site-breadcrumbs', '.workflow-shell', '.workflow-hero',
+          '.workflow-eyebrow', '.workflow-hero h1', '.workflow-hero h1 span', '.workflow-hero-lead',
+          '.workflow-meta span', '.workflow-route', '.workflow-stage', '.workflow-stage-number',
+          '.workflow-stage strong', '.workflow-stage small', '.workflow-shell::before', '.workflow-shell::after',
+          '.workflow-route::before', '.workflow-stage::before'
+        ];
+        const read = item => ({
+          display: item.display, content: item.content, backgroundColor: item.backgroundColor,
+          backgroundImage: item.backgroundImage, color: item.color, opacity: item.opacity,
+          filter: item.filter, backdropFilter: item.backdropFilter, borderColor: item.borderColor
+        });
+        return selectors.map(selector => {
+          const pseudo = selector.includes('::') ? selector.slice(selector.indexOf('::')) : null;
+          const target = pseudo ? selector.slice(0, selector.indexOf('::')) : selector;
+          const element = document.querySelector(target);
+          if (!element) return null;
+          return { selector, ...read(getComputedStyle(element, pseudo)) };
+        }).filter(Boolean);
+      });
+      records.push({ file: article.file, ...viewport, styles, image });
+      const value = selector => styles.find(item => item.selector === selector);
+      const dark = /#0a0f1e|#0d1b40|10, 15, 30|13, 27, 64/i;
+      expect(value('body').backgroundColor).toBe('rgb(255, 254, 250)');
+      expect(value('.workflow-shell').backgroundImage).toContain('linear-gradient');
+      expect(value('.workflow-shell').backgroundImage).not.toMatch(dark);
+      expect(value('.workflow-shell::after').display).toBe('none');
+      expect(value('.workflow-hero h1').color).toBe('rgb(16, 45, 43)');
+      expect(value('.workflow-hero h1 span').color).toBe('rgb(7, 88, 79)');
+      expect(value('.workflow-hero-lead').color).toBe('rgb(52, 75, 69)');
+      expect(contrast(value('.workflow-hero h1').color, 'rgb(255, 254, 250)')).toBeGreaterThan(7);
+      expect(contrast(value('.workflow-hero-lead').color, 'rgb(255, 254, 250)')).toBeGreaterThan(4.5);
+      for (const selector of ['.workflow-route', '.workflow-stage', '.workflow-meta span', '.workflow-stage-number',
+        '.workflow-shell::before', '.workflow-shell::after', '.workflow-route::before', '.workflow-stage::before']) {
+        const entry = value(selector);
+        if (!entry) continue;
+        expect(entry.backgroundColor, selector + ' light surface').not.toMatch(dark);
+        expect(entry.backgroundImage, selector + ' light gradient').not.toMatch(dark);
+        expect(entry.backdropFilter, selector + ' no dark overlay').toBe('none');
+      }
+      for (const selector of ['.workflow-stage strong', '.workflow-stage small']) {
+        expect(value(selector).color, selector + ' readable text').not.toMatch(dark);
+      }
+
+      const heroPath = 'artifacts/wave12-' + article.file + '-' + viewport.name + '-hero.png';
+      await page.locator('.workflow-shell').screenshot({ path: heroPath });
+      if (viewport.width === 1440) {
+        cards.push({ title: article.title, data: (await fs.promises.readFile(heroPath)).toString('base64') });
+        const toc = page.locator('.article-content-navigation');
+        await toc.scrollIntoViewIfNeeded();
+        await page.waitForTimeout(100);
+        await page.screenshot({ path: 'artifacts/wave12-' + article.file + '-desktop-1440-sticky-toc.png' });
+        const inner = toc.locator('nav');
+        const scroll = await inner.evaluate(element => ({ height: element.scrollHeight, client: element.clientHeight }));
+        if (scroll.height > scroll.client) {
+          await inner.evaluate(element => { element.scrollTop = Math.floor((element.scrollHeight - element.clientHeight) / 2); });
+          await expect.poll(() => inner.evaluate(element => element.scrollTop)).toBeGreaterThan(0);
+          await toc.screenshot({ path: 'artifacts/wave12-' + article.file + '-desktop-1440-toc-inner-scroll.png' });
+        } else {
+          expect(scroll.height, article.file + ' TOC fits without internal overflow').toBeLessThanOrEqual(scroll.client);
+        }
+        await page.locator(article.representative).scrollIntoViewIfNeeded();
+        await page.screenshot({ path: 'artifacts/wave12-' + article.file + '-desktop-1440-content.png' });
+      } else {
+        const toc = page.locator('.article-content-navigation');
+        await expect(toc).toHaveJSProperty('open', true);
+        await toc.screenshot({ path: 'artifacts/wave12-' + article.file + '-mobile-390-expanded-toc.png' });
+        await page.locator(article.representative).scrollIntoViewIfNeeded();
+        await page.screenshot({ path: 'artifacts/wave12-' + article.file + '-mobile-390-content.png' });
+      }
+    }
+  }
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto(baseURL + '/ai-navod-edit-kontrola.html', { waitUntil: 'networkidle' });
+  const reference = await page.locator('.workflow-shell').screenshot();
+  cards.push({ title: 'Schválený světlý pilot EDIT', data: reference.toString('base64') });
+  const contact = cards.map(item => '<article><h2>' + item.title + '</h2><img alt="' + item.title + '" src="data:image/png;base64,' + item.data + '"></article>').join('');
+  await page.setContent('<!doctype html><html lang="cs"><meta charset="utf-8"><title>Vlna 12 – hero a schválený světlý pilot</title><style>*{box-sizing:border-box}body{margin:0;padding:24px;background:#fffefa;color:#102d2b;font:600 15px Arial,sans-serif}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}article{min-width:0;padding:10px;border:1px solid #dfe8e1;border-radius:12px;background:#fff;overflow:hidden}h2{font-size:16px;min-height:40px;margin:4px 0 12px}img{display:block;width:100%;height:auto;border:1px solid #e5e7e1;border-radius:8px}</style><h1>Vlna 12 – pět migrovaných článků a světlá reference</h1><main class="grid">' + contact + '</main></html>');
+  await page.screenshot({ path: 'artifacts/wave12-hero-contact-sheet.png', fullPage: true });
+  fs.writeFileSync('artifacts/wave12-computed-styles.json', JSON.stringify(records, null, 2));
+});
+
+test('wave 12 article and related internal links resolve from the local preview', async ({ page, request }) => {
+  for (const article of wave12Articles) {
+    await page.goto(baseURL + '/' + article.file, { waitUntil: 'networkidle' });
+    const hrefs = await page.locator('.article-content a[href], .workflow-related a[href]').evaluateAll(links =>
+      [...new Set(links.map(link => link.getAttribute('href')).filter(Boolean))]
+    );
+    for (const href of hrefs) {
+      const url = new URL(href, baseURL + '/' + article.file);
+      if (url.origin !== new URL(baseURL).origin || url.pathname.endsWith('.pdf') || url.pathname.endsWith('.docx')) continue;
+      const response = await request.get(url.origin + url.pathname);
+      expect(response.ok(), article.file + ' link ' + href + ' returned ' + response.status()).toBe(true);
+    }
+  }
+});

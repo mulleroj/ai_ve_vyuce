@@ -7,6 +7,10 @@
     <title>CSS Grid: proč se při vibe codingu vyplatí rozumět řádkům a sloupcům | AI ve Výuce</title>
     <meta name="description" content="Praktické vysvětlení CSS Gridu pro vibe coding: řádky, sloupce, fr, gap, repeat() a rozdíl mezi Gridem a Flexboxem." />
     <link rel="stylesheet" href="css/workflow.css?v=20260903-css-grid-vibe-coding" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261114-8b" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261114-8b" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261113-8a" />
     <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/ai-workflow-css-grid-vibe-coding" />
     <meta property="og:title" content="CSS Grid: proč se při vibe codingu vyplat&#237; rozumět ř&#225;dkům a sloupcům | AI ve V&#253;uce" />
     <meta property="og:description" content="Praktick&#233; vysvětlen&#237; CSS Gridu pro vibe coding: ř&#225;dky, sloupce, fr, gap, repeat() a rozd&#237;l mezi Gridem a Flexboxem." />
@@ -22,12 +26,18 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-            <a class="workflow-back" href="vibe-coding-clanky.html">← Články o Vibe Codingu</a>
-        </div>
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="create">
+    <header class="site-header">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+      <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a>
+    </div></div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="vibe-coding-clanky.html">Články o Vibe Codingu</a></li><li aria-current="page">CSS Grid: proč se při vibe codingu vyplatí rozumět řádkům a sloupcům</li></ol></nav>
+<header class="workflow-shell">
         <div class="workflow-hero">
             <div>
                 <div class="workflow-eyebrow">Vibe Coding · 3. září 2026</div>
@@ -44,7 +54,20 @@
         </div>
     </header>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
+        <details class="article-content-navigation" open><summary><span>V tomto článku</span></summary><nav aria-label="Obsah článku"><ol><li><a href="#ai-workflow-css-grid-vibe-coding-h2-01">Co je CSS Grid</a></li>
+<li><a href="#ai-workflow-css-grid-vibe-coding-h2-02">První důležitý příkaz: display: grid</a></li>
+<li><a href="#ai-workflow-css-grid-vibe-coding-h2-03">Sloupce: grid-template-columns</a></li>
+<li><a href="#ai-workflow-css-grid-vibe-coding-h2-04">Praktický příklad</a></li>
+<li><a href="#ai-workflow-css-grid-vibe-coding-h2-05">Řádky: grid-template-rows</a></li>
+<li><a href="#ai-workflow-css-grid-vibe-coding-h2-06">Co znamená gap</a></li>
+<li><a href="#ai-workflow-css-grid-vibe-coding-h2-07">Kratší zápis pomocí repeat()</a></li>
+<li><a href="#ai-workflow-css-grid-vibe-coding-h2-08">Proč je CSS Grid tak užitečný</a></li>
+<li><a href="#ai-workflow-css-grid-vibe-coding-h2-09">Grid není jediná možnost</a></li>
+<li><a href="#ai-workflow-css-grid-vibe-coding-h2-10">Co z toho potřebuje znát člověk, který vibecoduje</a></li>
+<li><a href="#ai-workflow-css-grid-vibe-coding-h2-11">Nemusíme psát kód. Potřebujeme umět řídit výsledek</a></li>
+<li><a href="#ai-workflow-css-grid-vibe-coding-h2-12">CSS Grid jako součást nové digitální gramotnosti</a></li>
+<li><a href="#ai-workflow-css-grid-vibe-coding-h2-13">Rychlý tahák</a></li></ol></nav></details>
         <article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Umělá inteligence dnes zvládne vytvořit HTML, CSS i celé uživatelské rozhraní během několika minut. Základní porozumění CSS Gridu vám ale pomůže výsledek číst, testovat a přesně upravovat.</p>
@@ -63,7 +86,7 @@
                 <p>model pravděpodobně použije právě CSS Grid.</p>
                 <p>Nemusíme přitom být frontendoví vývojáři. Stačí pochopit, co se pod několika základními příkazy skrývá.</p>
 
-                <h2>Co je CSS Grid</h2>
+                <h2 id="ai-workflow-css-grid-vibe-coding-h2-01">Co je CSS Grid</h2>
                 <p>CSS Grid je systém pro vytváření rozložení webové stránky.</p>
                 <p>Umožňuje rozdělit prostor například:</p>
                 <ul>
@@ -80,7 +103,7 @@
                 <div class="article-prompt"><strong>Hlavní část</strong> – Přehled dne, Přípravy, Materiály<br /><strong>Postranní panel</strong> – Úkoly, Upozornění, Kalendář</div>
                 <p>A přesně podobné rozložení může CSS Grid řídit.</p>
 
-                <h2>První důležitý příkaz: <code>display: grid</code></h2>
+                <h2 id="ai-workflow-css-grid-vibe-coding-h2-02">První důležitý příkaz: <code>display: grid</code></h2>
                 <p>Základ Gridu může vypadat překvapivě jednoduše:</p>
                 <div class="article-prompt"><code>.container {<br />&nbsp;&nbsp;display: grid;<br />}</code></div>
                 <p>Tím prohlížeči říkáme:</p>
@@ -89,7 +112,7 @@
                 <p>Všechny jeho přímé vnitřní prvky se potom stávají grid items, tedy položkami mřížky.</p>
                 <p>Nemusíme tedy nastavovat každý prvek zvlášť.</p>
 
-                <h2>Sloupce: <code>grid-template-columns</code></h2>
+                <h2 id="ai-workflow-css-grid-vibe-coding-h2-03">Sloupce: <code>grid-template-columns</code></h2>
                 <p>Dalším krokem je určit, kolik chceme sloupců.</p>
                 <p>Například:</p>
                 <div class="article-prompt"><code>.container {<br />&nbsp;&nbsp;display: grid;<br />&nbsp;&nbsp;grid-template-columns: 1fr 1fr 1fr;<br />}</code></div>
@@ -104,7 +127,7 @@
                 <p>To je typické například pro dashboard:</p>
                 <div class="article-prompt"><strong>hlavní obsah + užší postranní panel</strong></div>
 
-                <h2>Praktický příklad</h2>
+                <h2 id="ai-workflow-css-grid-vibe-coding-h2-04">Praktický příklad</h2>
                 <p>Představme si aplikaci pro učitele.</p>
                 <p>Chceme mít vlevo velkou část s dnešními hodinami a vpravo menší panel s úkoly.</p>
                 <p>AI může vytvořit například:</p>
@@ -114,7 +137,7 @@
                 <blockquote>„Vytvoř dva sloupce. Levý bude dvakrát širší než pravý a mezi nimi nech mezeru 20 pixelů.“</blockquote>
                 <p>A právě takové základní porozumění je při vibe codingu velmi užitečné.</p>
 
-                <h2>Řádky: <code>grid-template-rows</code></h2>
+                <h2 id="ai-workflow-css-grid-vibe-coding-h2-05">Řádky: <code>grid-template-rows</code></h2>
                 <p>Stejným způsobem můžeme řídit také výšku jednotlivých řádků.</p>
                 <p>Například:</p>
                 <div class="article-prompt"><strong><code>grid-template-rows: 100px 100px;</code></strong></div>
@@ -122,7 +145,7 @@
                 <p>Ve skutečných aplikacích však často není nutné výšku řádků nastavovat přesně. Obsah může jejich velikost určit automaticky.</p>
                 <p>Proto při běžném vibe codingu narazíme na práci se sloupci pravděpodobně častěji než na přesné nastavování řádků.</p>
 
-                <h2>Co znamená <code>gap</code></h2>
+                <h2 id="ai-workflow-css-grid-vibe-coding-h2-06">Co znamená <code>gap</code></h2>
                 <p>Jedním z nejužitečnějších příkazů je:</p>
                 <div class="article-prompt"><strong><code>gap: 20px;</code></strong></div>
                 <p>Určuje velikost mezery mezi jednotlivými prvky Gridu.</p>
@@ -133,7 +156,7 @@
                 <blockquote>„Zmenši mezery mezi kartami.“</blockquote>
                 <p>AI pravděpodobně změní právě tuto hodnotu.</p>
 
-                <h2>Kratší zápis pomocí <code>repeat()</code></h2>
+                <h2 id="ai-workflow-css-grid-vibe-coding-h2-07">Kratší zápis pomocí <code>repeat()</code></h2>
                 <p>Pokud chceme například tři stejné sloupce, můžeme místo:</p>
                 <div class="article-prompt"><code>grid-template-columns: 1fr 1fr 1fr;</code></div>
                 <p>použít:</p>
@@ -144,7 +167,7 @@
                 <p><code>repeat(3, 1fr)</code> jednoduše znamená:</p>
                 <blockquote>„Vytvoř tři stejné sloupce.“</blockquote>
 
-                <h2>Proč je CSS Grid tak užitečný</h2>
+                <h2 id="ai-workflow-css-grid-vibe-coding-h2-08">Proč je CSS Grid tak užitečný</h2>
                 <p>Grid se velmi dobře hodí například pro:</p>
                 <ul>
                     <li><strong>Dashboardy</strong> – karty s přehledy, statistikami, úkoly nebo upozorněními.</li>
@@ -154,7 +177,7 @@
                 </ul>
                 <p>Právě proto se s Gridem při generování moderních webových aplikací pomocí AI setkáme velmi často.</p>
 
-                <h2>Grid není jediná možnost</h2>
+                <h2 id="ai-workflow-css-grid-vibe-coding-h2-09">Grid není jediná možnost</h2>
                 <p>Tady je dobré udělat jednu důležitou poznámku.</p>
                 <p>Někdy narazíme na tvrzení:</p>
                 <blockquote>„Staré rozložení stránky je chaotické, Grid je moderní řešení.“</blockquote>
@@ -169,7 +192,7 @@
                 <p>Moderní web proto klidně používá Grid i Flexbox současně.</p>
                 <p>Není mezi nimi válka. Naštěstí. Frontend má dost jiných důvodů k hádkám.</p>
 
-                <h2>Co z toho potřebuje znát člověk, který vibecoduje</h2>
+                <h2 id="ai-workflow-css-grid-vibe-coding-h2-10">Co z toho potřebuje znát člověk, který vibecoduje</h2>
                 <p>Pokud web vytváříme pomocí AI, nemusíme se učit kompletní CSS.</p>
                 <p>Velmi užitečné je ale poznat alespoň tyto čtyři věci:</p>
                 <ul>
@@ -182,7 +205,7 @@
                 <div class="article-prompt"><strong><code>1fr</code> znamená podíl dostupného prostoru.</strong></div>
                 <p>To už nám umožní rozumět poměrně velké části kódu, který nám AI vytvoří.</p>
 
-                <h2>Nemusíme psát kód. Potřebujeme umět řídit výsledek</h2>
+                <h2 id="ai-workflow-css-grid-vibe-coding-h2-11">Nemusíme psát kód. Potřebujeme umět řídit výsledek</h2>
                 <p>A právě tady se podle mě mění způsob, jakým má smysl učit se programování v době generativní AI.</p>
                 <p>Dříve bylo nutné vědět:</p>
                 <blockquote>„Jak tento kód napíšu?“</blockquote>
@@ -196,7 +219,7 @@
                 <p>Stačí AI říct:</p>
                 <blockquote>„Změň rozložení ze čtyř karet vedle sebe na tři.“</blockquote>
 
-                <h2>CSS Grid jako součást nové digitální gramotnosti</h2>
+                <h2 id="ai-workflow-css-grid-vibe-coding-h2-12">CSS Grid jako součást nové digitální gramotnosti</h2>
                 <p>Vibe coding neznamená, že se už nemusíme nic učit.</p>
                 <p>Spíše se mění to, co má smysl se učit.</p>
                 <p>Nemusíme si pamatovat desítky CSS vlastností.</p>
@@ -213,7 +236,7 @@
                 <p>Stává se jeho zadavatelkou, kontrolorkou a návrhářkou řešení.</p>
                 <p>A přesně v tom podle mě spočívá skutečná síla vibe codingu.</p>
 
-                <h2>Rychlý tahák</h2>
+                <h2 id="ai-workflow-css-grid-vibe-coding-h2-13">Rychlý tahák</h2>
                 <div class="article-prompt"><strong><code>display: grid;</code></strong><br />→ zapne CSS Grid<br /><br /><strong><code>grid-template-columns: 1fr 1fr;</code></strong><br />→ dva stejné sloupce<br /><br /><strong><code>grid-template-columns: 2fr 1fr;</code></strong><br />→ široký hlavní sloupec + užší vedlejší<br /><br /><strong><code>grid-template-columns: repeat(3, 1fr);</code></strong><br />→ tři stejné sloupce<br /><br /><strong><code>gap: 20px;</code></strong><br />→ mezera 20 px mezi jednotlivými prvky</div>
                 <p>A to pro začátek úplně stačí.</p>
                 <p>Při vibe codingu nemusíme soutěžit s programátorem, který má za sebou deset let frontendu. Potřebujeme především rozumět konstrukci natolik, abychom mohli AI přesně říct, co má postavit, co se nám nelíbí a co má opravit.</p>
@@ -248,6 +271,9 @@
 
     <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="vibe-coding.html">Zpět na Vibe Coding</a></footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261113-8a"></script>
 </body>
 
 </html>

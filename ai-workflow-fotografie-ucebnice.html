@@ -7,6 +7,10 @@
     <title>Fotografii učebnice už nemusíte ručně přepisovat | AI ve Výuce</title>
     <meta name="description" content="Jak v ChatGPT využít fotografii nebo sken stránky učebnice k rychlé tvorbě infografiky, pracovního listu, pojmové mapy a dalších výukových materiálů." />
     <link rel="stylesheet" href="css/workflow.css?v=20260827-chatgpt-photo" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261114-8b" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261114-8b" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261109-7m" />
+    <link rel="stylesheet" href="css/article-content-navigation.css?v=20261113-8a" />
     <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/ai-workflow-fotografie-ucebnice" />
     <meta property="og:title" content="Fotografii učebnice už nemus&#237;te ručně přepisovat | AI ve V&#253;uce" />
     <meta property="og:description" content="Jak v ChatGPT využ&#237;t fotografii nebo sken str&#225;nky učebnice k rychl&#233; tvorbě infografiky, pracovn&#237;ho listu, pojmov&#233; mapy a dalš&#237;ch v&#253;ukov&#253;ch materi&#225;lů." />
@@ -22,12 +26,18 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
-        <div class="workflow-topbar">
-            <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
-            <a class="workflow-back" href="chatgpt-pro-ucitele.html">← ChatGPT pro učitele</a>
-        </div>
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="prepare">
+    <header class="site-header">
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+      <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a>
+    </div></div>
+  </nav>
+</header>
+<nav class="site-breadcrumbs" aria-label="Drobečková navigace"><ol><li><a href="index.html">Domů</a></li><li><a href="chatgpt-pro-ucitele.html">ChatGPT pro učitele</a></li><li aria-current="page">Fotografii učebnice už nemusíte přepisovat</li></ol></nav>
+<header class="workflow-shell">
         <div class="workflow-hero">
             <div>
                 <div class="workflow-eyebrow">Workflow pro učitele · 27. srpna 2026</div>
@@ -44,7 +54,11 @@
         </div>
     </header>
 
-    <main class="workflow-main">
+    <main class="workflow-main article-content-layout">
+        <details class="article-content-navigation" open><summary><span>V tomto článku</span></summary><nav aria-label="Obsah článku"><ol><li><a href="#ai-workflow-fotografie-ucebnice-h2-01">OCR už není slabé místo jako dříve</a></li>
+<li><a href="#ai-workflow-fotografie-ucebnice-h2-02">Z jednoho obrázku můžete pokračovat dál</a></li>
+<li><a href="#ai-workflow-fotografie-ucebnice-h2-03">Na kvalitě fotografie pořád záleží</a></li>
+<li><a href="#ai-workflow-fotografie-ucebnice-h2-04">Proč je to pro učitele tak důležité?</a></li></ol></nav></details>
         <article class="workflow-article">
             <div class="workflow-article-intro">
                 <p class="workflow-article-summary">Jednou z nejpraktičtějších změn při práci s dnešními AI nástroji je výrazně kvalitnější práce s textem přímo z fotografií a naskenovaných dokumentů.</p>
@@ -74,14 +88,14 @@
                     <li>nebo vzdělávací komiks.</li>
                 </ul>
 
-                <h2>OCR už není slabé místo jako dříve</h2>
+                <h2 id="ai-workflow-fotografie-ucebnice-h2-01">OCR už není slabé místo jako dříve</h2>
                 <p>OCR neboli optické rozpoznávání textu bývalo při práci s fotografiemi učebnic poměrně nespolehlivé. Často bylo nutné rozpoznaný text opravovat nebo celý dokument nejprve převést pomocí specializovaného programu.</p>
                 <p>Dnešní multimodální AI dokáže kvalitní fotografie běžného tištěného textu zpracovat velmi dobře.</p>
                 <p><strong>V praxi to znamená, že u běžné stránky učebnice často odpadá celý mezikrok ručního přepisování textu.</strong></p>
                 <p>A to může učiteli ušetřit překvapivě hodně času.</p>
                 <div class="article-prompt"><strong>učebnice → ruční přepis → úprava textu → tvorba materiálu</strong><br /><br /><strong>učebnice → fotografie → ChatGPT → hotový výukový materiál</strong></div>
 
-                <h2>Z jednoho obrázku můžete pokračovat dál</h2>
+                <h2 id="ai-workflow-fotografie-ucebnice-h2-02">Z jednoho obrázku můžete pokračovat dál</h2>
                 <p>Velkou výhodou je, že práce nemusí skončit prvním výsledkem.</p>
                 <p>Po vytvoření materiálu můžete jednoduše pokračovat:</p>
                 <ul>
@@ -95,7 +109,7 @@
                 </ul>
                 <p>Nemusíte pokaždé začínat znovu. ChatGPT už v konverzaci pracuje s nahraným podkladem a můžete společně postupně hledat nejlepší podobu výsledného materiálu.</p>
 
-                <h2>Na kvalitě fotografie pořád záleží</h2>
+                <h2 id="ai-workflow-fotografie-ucebnice-h2-03">Na kvalitě fotografie pořád záleží</h2>
                 <p>Ani dnešní AI není kouzelník na rozmazané fotky focené přes půl třídy.</p>
                 <p>Pro nejlepší výsledek se vyplatí:</p>
                 <ul>
@@ -110,7 +124,7 @@
                 <p>Proto zůstává poslední krok stejný jako u každého materiálu vytvořeného pomocí AI:</p>
                 <blockquote><strong>rychlá kontrola učitelem před použitím ve výuce.</strong></blockquote>
 
-                <h2>Proč je to pro učitele tak důležité?</h2>
+                <h2 id="ai-workflow-fotografie-ucebnice-h2-04">Proč je to pro učitele tak důležité?</h2>
                 <p>Protože velká část školních materiálů stále neleží v dokonale připravených digitálních dokumentech.</p>
                 <p>Máme je v:</p>
                 <p><strong>učebnicích, starších pracovních listech, skriptech, vytištěných materiálech, metodických příručkách nebo vlastních šanonech.</strong></p>
@@ -148,6 +162,9 @@
 
     <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="chatgpt-pro-ucitele.html">Zpět na ChatGPT pro učitele</a></footer>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
+    <script src="js/site-navigation-data.js?v=20261109-7m"></script>
+    <script src="js/site-navigation.js?v=20261109-7m"></script>
+    <script src="js/article-content-navigation.js?v=20261113-8a"></script>
 </body>
 
 </html>
