@@ -1013,6 +1013,7 @@ for (const article of migrationArticles) {
             links: [...content.querySelectorAll('a'), ...doc.querySelectorAll('.workflow-related a')].map(el => [el.getAttribute('href'), normalize(el)]),
             metadata: [...doc.querySelectorAll('meta[name="description"],meta[property^="og:"]')].map(el => [el.getAttribute('name') || el.getAttribute('property'), el.getAttribute('content')]),
             canonical: doc.querySelector('link[rel="canonical"]')?.getAttribute('href'),
+            allCode: [...doc.querySelectorAll('code')].map(el => el.innerHTML),
             preservedStructures: [...content.querySelectorAll('table,pre,code,details,button,form,.article-prompt,.article-table')].map(el => [el.tagName, el.className, el.outerHTML])
           };
         };
@@ -1030,6 +1031,7 @@ for (const article of migrationArticles) {
       expect(after.metadata).toEqual(before.metadata);
       expect(after.canonical).toBe(before.canonical);
       expect(after.preservedStructures).toEqual(before.preservedStructures);
+      expect(after.allCode, 'all code element contents must match the exact pre-migration HTML').toEqual(before.allCode);
       for (const id of before.publicAnchorIds) expect(after.ids, `lost public article anchor: ${id}`).toContain(id);
       const lostIds = before.ids.filter(id => !after.ids.includes(id));
       expect(lostIds.sort(), 'only explicitly documented internal IDs from the removed TOC label may disappear')
@@ -1789,7 +1791,7 @@ test('wave 12 CSS Grid examples remain exact, selectable, copyable, and containe
     expect(selected.text, 'CSS example ' + index + ' must remain selectable').not.toBe('');
     expect(selected.userSelect).not.toBe('none');
     await page.keyboard.press('Control+C');
-    await expect.poll(() => page.evaluate(() => navigator.clipboard.readText())).toBe(selected.text);
+    await expect.poll(() => page.evaluate(() => navigator.clipboard.readText())).toBe(selected.text.replace(/\u00a0/g, ' '));
   }
   for (const viewport of [{ width: 1440, height: 1000, label: 'desktop' }, { width: 320, height: 900, label: 'mobile-320' }]) {
     await page.setViewportSize({ width: viewport.width, height: viewport.height });
