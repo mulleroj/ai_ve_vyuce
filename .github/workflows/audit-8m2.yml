@@ -1,0 +1,40 @@
+name: 8M/2 remaining pages browser audit
+on:
+  push:
+    branches:
+      - codex/audit-8m2-remaining-rendered-pages
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: write
+jobs:
+  browser-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install isolated browser test dependencies
+        run: npm install --no-save --package-lock=false @playwright/test axe-core
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Start local HTTP server
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/8m2-http.log 2>&1 &
+          echo $! > /tmp/8m2-http.pid
+          for attempt in $(seq 1 30); do curl --fail --silent http://127.0.0.1:4173/prompty.html >/dev/null && exit 0; sleep 1; done
+          cat /tmp/8m2-http.log
+          exit 1
+      - name: Run rendered audit
+        run: npx playwright test tests/remaining-pages-8m2.spec.js --reporter=list
+      - name: Upload audit screenshots and report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: 8m2-browser-audit-${{ github.sha }}
+          path: artifacts/8m2/
+          if-no-files-found: warn
+          retention-days: 30
+
