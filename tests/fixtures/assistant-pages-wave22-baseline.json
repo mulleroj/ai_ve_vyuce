@@ -1,0 +1,941 @@
+{
+  "baselineSha": "2ddaab92e024cd4bafb638f9ea0e62835ef10d27",
+  "pages": {
+    "asistenti.html": {
+      "file": "asistenti.html",
+      "title": "AI asistenti a boti pro učitele – Přehled",
+      "metadata": [
+        {
+          "name": "viewport",
+          "property": null,
+          "http-equiv": null,
+          "content": "width=device-width, initial-scale=1.0"
+        },
+        {
+          "name": "description",
+          "property": null,
+          "http-equiv": null,
+          "content": "Rozcestník AI platforem, hotových specializovaných asistentů a osobních AI pomocníků, které si učitel postupně nastaví: ChatGPT, Gemini, Claude, Copilot, Perplexity a Gemini Notebook."
+        },
+        {
+          "name": null,
+          "property": "og:title",
+          "http-equiv": null,
+          "content": "AI asistenti a boti pro učitele – Přehled"
+        },
+        {
+          "name": null,
+          "property": "og:description",
+          "http-equiv": null,
+          "content": "Rozcestník AI platforem, hotových asistentů a osobních AI pomocníků pro učitele."
+        },
+        {
+          "name": null,
+          "property": "og:url",
+          "http-equiv": null,
+          "content": "https://ai-ve-vyuce.netlify.app/asistenti"
+        }
+      ],
+      "canonical": [
+        "https://ai-ve-vyuce.netlify.app/asistenti"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "AI asistenti a boti"
+        },
+        {
+          "level": 2,
+          "text": "Vyberte si cestu"
+        },
+        {
+          "level": 2,
+          "text": "⚡ Rychlé srovnání platforem"
+        },
+        {
+          "level": 2,
+          "text": "📋 Platformy podle použití"
+        },
+        {
+          "level": 2,
+          "text": "🧑‍🏫 Vlastní osobní asistent a boti"
+        },
+        {
+          "level": 4,
+          "text": "🎯 Předměty"
+        },
+        {
+          "level": 4,
+          "text": "📚 Zdroje"
+        },
+        {
+          "level": 4,
+          "text": "🔗 Navigace"
+        }
+      ],
+      "contentText": "🤖 AI asistenti a boti Vyberte obecnou AI platformu, hotového specializovaného asistenta – nebo si postupně nastavte vlastního osobního AI pomocníka pro přípravy, plánování a administrativu. 🤖 6 AI platforem ✅ Bezplatné i placené 🧭 Orientační výběr Co hledáte? Vyberte si cestu Platforma je obecné prostředí pro různé úkoly. Specializovaný asistent má předem připravené zaměření, instrukce nebo prompt pro konkrétní práci. 🧭 Chci vybrat AI platformu ChatGPT · Gemini · Claude · Copilot · Perplexity · Gemini Notebook Porovnejte obecná prostředí podle toho, s čím vám mohou pomoci při přípravě, tvorbě materiálů, práci se zdroji nebo ve školním ekosystému. Prohlédnout platformy ↓ 🧩 Chci hotového AI asistenta Custom GPTs · Gemini Gems · Claude projekty Projděte katalog připravených specializovaných asistentů s popisem, promptem a odkazem pro použití nebo vlastní vytvoření. Hledám hotového AI asistenta → ⚡ Rychlé srovnání platforem Přehled dle hlavního použití ve výuce Platforma Klíčové použití Zdarma? Hodí se pro 🟢 ChatGPT Tvorba úloh, konverzace, obecné úkoly ✓ Zdarma Mat, AJ, Obecné 🟠 Claude Opravování, zpětná vazba, literatura ✓ Zdarma ČJ, Dějepis, SŠ 🔵 Gemini Aktuální data, obrázky, Google integrace ✓ Zdarma Přírodní vědy, AJ 🔷 Copilot Microsoft 365 integrace, firemní bezpečnost ✓ s M365 Školní prostředí 🟤 Perplexity Výzkum s citacemi, ověřená fakta ✓ Zdarma Přírodní vědy, Dějepis 🟡 Gemini Notebook Analýza dokumentů, příprava na hodinu z PDF ✓ Zdarma Příprava hodin 📋 Platformy podle použití 🟢 ChatGPT OpenAI · GPT-4o · 2026 Obecná platforma pro tvorbu úloh, práci s obrázky a konverzaci. Hodí se pro rychlé návrhy i iterativní úpravy zadání. Tvorba úloh Konverzace Matematika Zdarma · placené rozšíření Více pro učitele → 🟠 Claude Anthropic · Claude 3.5 Sonnet Platforma vhodná pro práci s delšími texty, zpětnou vazbou, psaním a literárními úkoly. Opravování Zpětná vazba Literatura Zdarma · placené rozšíření Více pro učitele → 🔵 Google Gemini Google · Gemini 2.0 Platforma pro práci s aktuálními informacemi, obrázky a nástroji Google. Hodí se pro přírodovědná témata i multimodální zadání. Přírodní vědy Obrázky Aktuální data Zdarma · placené rozšíření Více pro učitele → 🔷 Microsoft Copilot Microsoft · GPT-4 Turbo Platforma propojená s Microsoft 365, například Wordem a Teams. Hodí se pro školy, které už používají školní Microsoft prostředí. Microsoft 365 GDPR Školní prostředí Závisí na školní licenci Více pro učitele → 🔍 Perplexity AI Perplexity Platforma zaměřená na práci s webovými zdroji a citacemi. Hodí se pro rešerše, ověřování informací a badatelská zadání. Citace Výzkum Fakta Zdarma · placené rozšíření Více pro učitele → 📓 Gemini Notebook Google · Gemini Notebook Pracovní prostor pro analýzu vlastních PDF, prezentací a dalších zdrojů. Hodí se pro přípravu hodin, sumarizaci a otázky nad dodanými materiály. PDF analýza Příprava hodin Sumarizace Dostupnost podle účtu Prompty pro Gemini Notebook → Více pro učitele → Nová série 🧑‍🏫 Vlastní osobní asistent a boti Kromě hotových asistentů z katalogu si můžete v ChatGPT, Claude, Gemini nebo Copilotu postavit pomocníka, který zná vaše pokyny, dokumenty a opakované postupy – a postupně ho vylepšovat. Pokročilejší kroky vedou k propojení s kalendářem, diskem nebo vlastním botu ve Vibe Codingu. 🤖 Asistent učitele: úvod série Chatbot · asistent · agent · GDPR Čím se osobní AI asistent liší od běžného chatbota, jak pomáhá s přípravami a administrativou, kdy schvalovat kroky a jak začít po týdnech – včetně modelového dne učitele. Osobní asistent Příprava na výuku Human in the Loop 25. října 2026 · 1. díl série Číst článek → ⚠️ GDPR a ochrana dat žáků: Před vložením jakýchkoliv dat žáků do AI asistentů vždy anonymizujte osobní údaje. Pokud škola používá Microsoft 365, může být užitečné ověřit nastavení Copilotu a školního tenantu podle konkrétní licence.",
+      "cards": [
+        {
+          "title": "Chci vybrat AI platformu",
+          "description": "Porovnejte obecná prostředí podle toho, s čím vám mohou pomoci při přípravě, tvorbě materiálů, práci se zdroji nebo ve školním ekosystému.",
+          "text": "🧭 Chci vybrat AI platformu ChatGPT · Gemini · Claude · Copilot · Perplexity · Gemini Notebook Porovnejte obecná prostředí podle toho, s čím vám mohou pomoci při přípravě, tvorbě materiálů, práci se zdroji nebo ve školním ekosystému. Prohlédnout platformy ↓",
+          "links": [
+            {
+              "href": "#rychle-srovnani",
+              "text": "Prohlédnout platformy ↓",
+              "title": null,
+              "target": null,
+              "rel": null
+            }
+          ],
+          "images": [],
+          "data": {}
+        },
+        {
+          "title": "Chci hotového AI asistenta",
+          "description": "Projděte katalog připravených specializovaných asistentů s popisem, promptem a odkazem pro použití nebo vlastní vytvoření.",
+          "text": "🧩 Chci hotového AI asistenta Custom GPTs · Gemini Gems · Claude projekty Projděte katalog připravených specializovaných asistentů s popisem, promptem a odkazem pro použití nebo vlastní vytvoření. Hledám hotového AI asistenta →",
+          "links": [
+            {
+              "href": "katalog-asistenti.html",
+              "text": "Hledám hotového AI asistenta →",
+              "title": null,
+              "target": null,
+              "rel": null
+            }
+          ],
+          "images": [],
+          "data": {}
+        },
+        {
+          "title": "ChatGPT",
+          "description": "Obecná platforma pro tvorbu úloh, práci s obrázky a konverzaci. Hodí se pro rychlé návrhy i iterativní úpravy zadání.",
+          "text": "🟢 ChatGPT OpenAI · GPT-4o · 2026 Obecná platforma pro tvorbu úloh, práci s obrázky a konverzaci. Hodí se pro rychlé návrhy i iterativní úpravy zadání. Tvorba úloh Konverzace Matematika Zdarma · placené rozšíření Více pro učitele →",
+          "links": [
+            {
+              "href": "chatgpt-pro-ucitele.html",
+              "text": "Více pro učitele →",
+              "title": null,
+              "target": null,
+              "rel": null
+            }
+          ],
+          "images": [],
+          "data": {}
+        },
+        {
+          "title": "Claude",
+          "description": "Platforma vhodná pro práci s delšími texty, zpětnou vazbou, psaním a literárními úkoly.",
+          "text": "🟠 Claude Anthropic · Claude 3.5 Sonnet Platforma vhodná pro práci s delšími texty, zpětnou vazbou, psaním a literárními úkoly. Opravování Zpětná vazba Literatura Zdarma · placené rozšíření Více pro učitele →",
+          "links": [
+            {
+              "href": "claude-pro-ucitele.html",
+              "text": "Více pro učitele →",
+              "title": null,
+              "target": null,
+              "rel": null
+            }
+          ],
+          "images": [],
+          "data": {}
+        },
+        {
+          "title": "Google Gemini",
+          "description": "Platforma pro práci s aktuálními informacemi, obrázky a nástroji Google. Hodí se pro přírodovědná témata i multimodální zadání.",
+          "text": "🔵 Google Gemini Google · Gemini 2.0 Platforma pro práci s aktuálními informacemi, obrázky a nástroji Google. Hodí se pro přírodovědná témata i multimodální zadání. Přírodní vědy Obrázky Aktuální data Zdarma · placené rozšíření Více pro učitele →",
+          "links": [
+            {
+              "href": "gemini-pro-ucitele.html",
+              "text": "Více pro učitele →",
+              "title": null,
+              "target": null,
+              "rel": null
+            }
+          ],
+          "images": [],
+          "data": {}
+        },
+        {
+          "title": "Microsoft Copilot",
+          "description": "Platforma propojená s Microsoft 365, například Wordem a Teams. Hodí se pro školy, které už používají školní Microsoft prostředí.",
+          "text": "🔷 Microsoft Copilot Microsoft · GPT-4 Turbo Platforma propojená s Microsoft 365, například Wordem a Teams. Hodí se pro školy, které už používají školní Microsoft prostředí. Microsoft 365 GDPR Školní prostředí Závisí na školní licenci Více pro učitele →",
+          "links": [
+            {
+              "href": "copilot-pro-ucitele.html",
+              "text": "Více pro učitele →",
+              "title": null,
+              "target": null,
+              "rel": null
+            }
+          ],
+          "images": [],
+          "data": {}
+        },
+        {
+          "title": "Perplexity AI",
+          "description": "Platforma zaměřená na práci s webovými zdroji a citacemi. Hodí se pro rešerše, ověřování informací a badatelská zadání.",
+          "text": "🔍 Perplexity AI Perplexity Platforma zaměřená na práci s webovými zdroji a citacemi. Hodí se pro rešerše, ověřování informací a badatelská zadání. Citace Výzkum Fakta Zdarma · placené rozšíření Více pro učitele →",
+          "links": [
+            {
+              "href": "perplexity-pro-ucitele.html",
+              "text": "Více pro učitele →",
+              "title": null,
+              "target": null,
+              "rel": null
+            }
+          ],
+          "images": [],
+          "data": {}
+        },
+        {
+          "title": "Gemini Notebook",
+          "description": "Pracovní prostor pro analýzu vlastních PDF, prezentací a dalších zdrojů. Hodí se pro přípravu hodin, sumarizaci a otázky nad dodanými materiály.",
+          "text": "📓 Gemini Notebook Google · Gemini Notebook Pracovní prostor pro analýzu vlastních PDF, prezentací a dalších zdrojů. Hodí se pro přípravu hodin, sumarizaci a otázky nad dodanými materiály. PDF analýza Příprava hodin Sumarizace Dostupnost podle účtu Prompty pro Gemini Notebook → Více pro učitele →",
+          "links": [
+            {
+              "href": "gemini-notebook-prompty.html",
+              "text": "Prompty pro Gemini Notebook →",
+              "title": null,
+              "target": null,
+              "rel": null
+            },
+            {
+              "href": "gemini-notebook.html",
+              "text": "Více pro učitele →",
+              "title": null,
+              "target": null,
+              "rel": null
+            }
+          ],
+          "images": [],
+          "data": {}
+        },
+        {
+          "title": "Asistent učitele: úvod série",
+          "description": "Čím se osobní AI asistent liší od běžného chatbota, jak pomáhá s přípravami a administrativou, kdy schvalovat kroky a jak začít po týdnech – včetně modelového dne učitele.",
+          "text": "🤖 Asistent učitele: úvod série Chatbot · asistent · agent · GDPR Čím se osobní AI asistent liší od běžného chatbota, jak pomáhá s přípravami a administrativou, kdy schvalovat kroky a jak začít po týdnech – včetně modelového dne učitele. Osobní asistent Příprava na výuku Human in the Loop 25. října 2026 · 1. díl série Číst článek →",
+          "links": [
+            {
+              "href": "asistent-ucitele-osobni-ai-asistent.html",
+              "text": "Číst článek →",
+              "title": null,
+              "target": null,
+              "rel": null
+            }
+          ],
+          "images": [],
+          "data": {}
+        }
+      ],
+      "links": [
+        {
+          "href": "index.html",
+          "text": "AI ve výuce INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "text": "Začít s AI",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "ai-navody.html",
+          "text": "Připravit výuku",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Učit s AI",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "asistenti.html",
+          "text": "Nástroje a asistenti",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "vibe-coding.html",
+          "text": "Tvořit s AI",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "ai.html",
+          "text": "Číst a objevovat",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "#rychle-srovnani",
+          "text": "Prohlédnout platformy ↓",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "katalog-asistenti.html",
+          "text": "Hledám hotového AI asistenta →",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "chatgpt-pro-ucitele.html",
+          "text": "Více pro učitele →",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "claude-pro-ucitele.html",
+          "text": "Více pro učitele →",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "gemini-pro-ucitele.html",
+          "text": "Více pro učitele →",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "copilot-pro-ucitele.html",
+          "text": "Více pro učitele →",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "perplexity-pro-ucitele.html",
+          "text": "Více pro učitele →",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "gemini-notebook-prompty.html",
+          "text": "Prompty pro Gemini Notebook →",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "gemini-notebook.html",
+          "text": "Více pro učitele →",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "asistent-ucitele-osobni-ai-asistent.html",
+          "text": "Číst článek →",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "index.html",
+          "text": "AI ve Výuce",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "matematika.html",
+          "text": "🔢 Matematika",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "cestina.html",
+          "text": "📖 Český jazyk",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "anglictina.html",
+          "text": "🇬🇧 Angličtina",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "prirodoveda.html",
+          "text": "🔬 Přírodní vědy",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "dejepis.html",
+          "text": "🏛️ Dějepis",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "prompty.html",
+          "text": "✨ Prompty",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "aktivity.html",
+          "text": "🎯 Aktivity",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "asistenti.html",
+          "text": "🤖 Asistenti",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "index.html",
+          "text": "🏠 Domů",
+          "title": null,
+          "target": null,
+          "rel": null
+        }
+      ],
+      "images": [
+        {
+          "src": "images/ai-assistant-book-logo.png?v=robot-20261103",
+          "alt": "",
+          "title": null,
+          "width": "512",
+          "height": "491",
+          "loading": null,
+          "decoding": null
+        }
+      ],
+      "publicIds": [
+        "primary-menu",
+        "asistenti-cesta",
+        "rychle-srovnani",
+        "osobni-asistenti-boti"
+      ],
+      "navigation": [
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "text": "Začít s AI",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "ai-navody.html",
+          "text": "Připravit výuku",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Učit s AI",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "asistenti.html",
+          "text": "Nástroje a asistenti",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "vibe-coding.html",
+          "text": "Tvořit s AI",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "ai.html",
+          "text": "Číst a objevovat",
+          "title": null,
+          "target": null,
+          "rel": null
+        }
+      ],
+      "filters": [],
+      "scripts": [
+        {
+          "src": "js/main.js",
+          "defer": false,
+          "async": false
+        },
+        {
+          "src": "js/site-footer.js?v=20260927-human-loop",
+          "defer": false,
+          "async": false
+        },
+        {
+          "src": "js/site-navigation-data.js?v=20261108-7f",
+          "defer": false,
+          "async": false
+        },
+        {
+          "src": "js/site-navigation.js?v=20261108-7f",
+          "defer": false,
+          "async": false
+        }
+      ],
+      "noJavaScript": {
+        "cardsVisible": 9,
+        "navigationLinks": 6
+      },
+      "withJavaScript": {
+        "cardsVisible": 9
+      }
+    },
+    "katalog-asistenti.html": {
+      "file": "katalog-asistenti.html",
+      "title": "Hotoví AI asistenti pro učitele | Katalog GPTs, Gems a projektů",
+      "metadata": [
+        {
+          "name": "viewport",
+          "property": null,
+          "http-equiv": null,
+          "content": "width=device-width, initial-scale=1.0"
+        },
+        {
+          "name": "description",
+          "property": null,
+          "http-equiv": null,
+          "content": "Hotoví AI asistenti pro učitele: Custom GPTs, Gemini Gems, Claude projekty a další specializované nástroje s popisem, promptem a odkazy."
+        },
+        {
+          "name": null,
+          "property": "og:title",
+          "http-equiv": null,
+          "content": "Hotoví AI asistenti pro učitele | Katalog GPTs, Gems a projektů"
+        },
+        {
+          "name": null,
+          "property": "og:description",
+          "http-equiv": null,
+          "content": "Hotoví specializovaní AI asistenti pro učitele: Custom GPTs, Gemini Gems a Claude projekty s prompty a odkazy."
+        },
+        {
+          "name": null,
+          "property": "og:url",
+          "http-equiv": null,
+          "content": "https://ai-ve-vyuce.netlify.app/katalog-asistenti"
+        }
+      ],
+      "canonical": [
+        "https://ai-ve-vyuce.netlify.app/katalog-asistenti"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Hotoví AI asistenti pro učitele"
+        },
+        {
+          "level": 4,
+          "text": "🎯 Předměty"
+        },
+        {
+          "level": 4,
+          "text": "📚 Zdroje"
+        },
+        {
+          "level": 4,
+          "text": "🔗 Navigace"
+        }
+      ],
+      "contentText": "🚀 Hotoví AI asistenti pro učitele Nejde o srovnání ChatGPT, Gemini a dalších platforem. Tady najdete hotové specializované asistenty, například Custom GPTs, Gemini Gems a Claude projekty. 🟢 Custom GPTs 🔵 Gemini Gems 🟠 Claude Projekty 💡 Jak to funguje? Klikněte na kartu asistenta → na detailní stránce najdete popis , kompletní prompt ke zkopírování a odkaz pro sdílení , přes který si asistenta jednoduše přidáte do svého účtu (ChatGPT, Gemini, Claude). Nebo prompt zkopírujete a vytvoříte si asistenta sami. ← Chci nejprve vybrat AI platformu 🚀 Všichni 🟢 ChatGPT GPTs 🔵 Gemini Gems 🟠 Claude Projekty Metodický asistent 🔵 Gemini Gem Váš pravá ruka při plánování výuky. Pomůže s cíli, strukturou hodiny i aktivizačními metodami. Více informací → MathCERMAT 🚀 Multi-platform (ChatGPT, Claude, Gemini) Digitální asistent pro pedagogy, který rychle generuje matematické úlohy dle standardů CERMAT a SCIO vč. řešení a analýzy chyb. Více informací → 🚀 Katalog se připravuje Brzy zde najdete předpřipravené AI asistenty s prompty a odkazy na sdílení. Sledujte tuto stránku – průběžně přidáváme nové. 📋 Chcete přidat vlastního asistenta? Pokud máte tip na užitečného AI asistenta pro učitele, dejte nám vědět. Rádi ho přidáme do katalogu a zpřístupníme ostatním pedagogům.",
+      "cards": [
+        {
+          "title": "Metodický asistent",
+          "description": "Váš pravá ruka při plánování výuky. Pomůže s cíli, strukturou hodiny i aktivizačními metodami.",
+          "text": "Metodický asistent 🔵 Gemini Gem Váš pravá ruka při plánování výuky. Pomůže s cíli, strukturou hodiny i aktivizačními metodami. Více informací →",
+          "links": [
+            {
+              "href": "asistenti/metodicky-asistent-gemini.html",
+              "text": "Více informací →",
+              "title": null,
+              "target": null,
+              "rel": null
+            }
+          ],
+          "images": [
+            {
+              "src": "images/asistent-hero.png",
+              "alt": "Metodický asistent",
+              "title": null,
+              "width": null,
+              "height": null,
+              "loading": null,
+              "decoding": null
+            }
+          ],
+          "data": {
+            "data-platform": "gem"
+          }
+        },
+        {
+          "title": "MathCERMAT",
+          "description": "Digitální asistent pro pedagogy, který rychle generuje matematické úlohy dle standardů CERMAT a SCIO vč. řešení a analýzy chyb.",
+          "text": "MathCERMAT 🚀 Multi-platform (ChatGPT, Claude, Gemini) Digitální asistent pro pedagogy, který rychle generuje matematické úlohy dle standardů CERMAT a SCIO vč. řešení a analýzy chyb. Více informací →",
+          "links": [
+            {
+              "href": "asistenti/math-cermat.html",
+              "text": "Více informací →",
+              "title": null,
+              "target": null,
+              "rel": null
+            }
+          ],
+          "images": [
+            {
+              "src": "images/asistent-hero.png",
+              "alt": "MathCERMAT",
+              "title": null,
+              "width": null,
+              "height": null,
+              "loading": null,
+              "decoding": null
+            }
+          ],
+          "data": {
+            "data-platform": "gpt gem claude"
+          }
+        }
+      ],
+      "links": [
+        {
+          "href": "index.html",
+          "text": "AI ve výuce INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "text": "Začít s AI",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "ai-navody.html",
+          "text": "Připravit výuku",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Učit s AI",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "asistenti.html",
+          "text": "Nástroje a asistenti",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "vibe-coding.html",
+          "text": "Tvořit s AI",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "ai.html",
+          "text": "Číst a objevovat",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "asistenti.html",
+          "text": "← Chci nejprve vybrat AI platformu",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "asistenti/metodicky-asistent-gemini.html",
+          "text": "Více informací →",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "asistenti/math-cermat.html",
+          "text": "Více informací →",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "index.html",
+          "text": "AI ve Výuce",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "matematika.html",
+          "text": "🔢 Matematika",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "cestina.html",
+          "text": "📖 Český jazyk",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "anglictina.html",
+          "text": "🇬🇧 Angličtina",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "prirodoveda.html",
+          "text": "🔬 Přírodní vědy",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "dejepis.html",
+          "text": "🏛️ Dějepis",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "prompty.html",
+          "text": "✨ Prompty",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "aktivity.html",
+          "text": "🎯 Aktivity",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "asistenti.html",
+          "text": "🤖 Asistenti",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "vibe-coding.html",
+          "text": "💻 Vibe Coding",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "index.html",
+          "text": "🏠 Domů",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "asistenti.html",
+          "text": "🤖 AI Asistenti",
+          "title": null,
+          "target": null,
+          "rel": null
+        }
+      ],
+      "images": [
+        {
+          "src": "images/ai-assistant-book-logo.png?v=robot-20261103",
+          "alt": "",
+          "title": null,
+          "width": "512",
+          "height": "491",
+          "loading": null,
+          "decoding": null
+        },
+        {
+          "src": "images/asistent-hero.png",
+          "alt": "Katalog AI asistentů pro učitele",
+          "title": null,
+          "width": null,
+          "height": null,
+          "loading": null,
+          "decoding": null
+        },
+        {
+          "src": "images/asistent-hero.png",
+          "alt": "Metodický asistent",
+          "title": null,
+          "width": null,
+          "height": null,
+          "loading": null,
+          "decoding": null
+        },
+        {
+          "src": "images/asistent-hero.png",
+          "alt": "MathCERMAT",
+          "title": null,
+          "width": null,
+          "height": null,
+          "loading": null,
+          "decoding": null
+        }
+      ],
+      "publicIds": [
+        "primary-menu",
+        "heroSection",
+        "heroSubtitle",
+        "catalogGrid",
+        "emptyState"
+      ],
+      "navigation": [
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "text": "Začít s AI",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "ai-navody.html",
+          "text": "Připravit výuku",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Učit s AI",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "asistenti.html",
+          "text": "Nástroje a asistenti",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "vibe-coding.html",
+          "text": "Tvořit s AI",
+          "title": null,
+          "target": null,
+          "rel": null
+        },
+        {
+          "href": "ai.html",
+          "text": "Číst a objevovat",
+          "title": null,
+          "target": null,
+          "rel": null
+        }
+      ],
+      "filters": [
+        {
+          "text": "🚀 Všichni",
+          "platform": "all",
+          "pressed": "true"
+        },
+        {
+          "text": "🟢 ChatGPT GPTs",
+          "platform": "gpt",
+          "pressed": "false"
+        },
+        {
+          "text": "🔵 Gemini Gems",
+          "platform": "gem",
+          "pressed": "false"
+        },
+        {
+          "text": "🟠 Claude Projekty",
+          "platform": "claude",
+          "pressed": "false"
+        }
+      ],
+      "scripts": [
+        {
+          "src": "js/main.js",
+          "defer": false,
+          "async": false
+        },
+        {
+          "src": null,
+          "defer": false,
+          "async": false
+        },
+        {
+          "src": "js/site-footer.js?v=20260927-human-loop",
+          "defer": false,
+          "async": false
+        },
+        {
+          "src": "js/site-navigation-data.js?v=20261108-7g",
+          "defer": false,
+          "async": false
+        },
+        {
+          "src": "js/site-navigation.js?v=20261108-7g",
+          "defer": false,
+          "async": false
+        }
+      ],
+      "noJavaScript": {
+        "cardsVisible": 2,
+        "emptyStateVisible": true,
+        "filtersVisible": true,
+        "navigationLinks": 6
+      },
+      "withJavaScript": {
+        "initialVisibleCards": 2,
+        "initialEmptyStateVisible": false,
+        "filters": {
+          "all": 2,
+          "gpt": 1,
+          "gem": 2,
+          "claude": 1
+        },
+        "emptyFilterShowsEmptyState": true
+      }
+    }
+  }
+}
