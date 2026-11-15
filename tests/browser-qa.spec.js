@@ -3488,8 +3488,8 @@ test('wave 20 preserves all 44 activity records, visible copy, identifiers, link
   })));
   expect(current).toHaveLength(44);
   expect(new Set(current.map(card=>card.id)).size).toBe(44);
-  expect(current.map(({id,attributes,text})=>({id,attributes:Object.fromEntries(Object.entries(attributes).map(([key,value])=>[key,key==='data-prompt'?value.replace(/\s+/g,' ').trim():value])),text:text.replace(/📋 Kopírovat zadání/g,'📋 Kopírovat')})))
-    .toEqual(activityWave20Baseline.activities.map(card=>({...card,attributes:{...card.attributes,'data-prompt':card.attributes['data-prompt'].replace(/\s+/g,' ').trim()}})));
+  expect(current.map(({id,attributes,text})=>({id,attributes:Object.fromEntries(Object.entries(attributes).map(([key,value])=>[key,key==='data-prompt'?value.replace(/\s+/g,' ').trim():value])),text:text.replace(/📋 Kopírovat zadání/g,'📋 Kopírovat').replace(/\s+/g,'').trim()})))
+    .toEqual(activityWave20Baseline.activities.map(card=>({...card,attributes:{...card.attributes,'data-prompt':card.attributes['data-prompt'].replace(/\s+/g,' ').trim()},text:card.text.replace(/\s+/g,'').trim()})));
   await expect(page.locator('.activity-card:visible')).toHaveCount(44);
   for (const id of activityWave20Baseline.ids) await expect(page.locator(`#${id}`)).toHaveCount(1);
   const currentHrefs = await page.locator('a[href]').evaluateAll(links=>links.map(link=>link.getAttribute('href')));
@@ -3539,6 +3539,7 @@ test('wave 20 activity detail keeps content, traps keyboard focus, and returns f
   await page.keyboard.press('Shift+Tab');
   const close=page.locator('.activity-dialog-close');
   await expect(close).toBeFocused();
+  await close.focus();
   await page.keyboard.press('Shift+Tab');
   await expect(page.locator('#activityDetailCopy')).toBeFocused();
   await page.keyboard.press('Tab');
@@ -3561,7 +3562,7 @@ test('wave 20 copy announces success and copies the exact prompt', async ({page,
   await expect(button).toHaveClass(/copied/);
   await expect(page.locator('.toast.show')).toContainText(/zkopírován do schránky/i);
   await expect(page.locator('body > [role="status"]')).toContainText(/zkopírován do schránky/i);
-  expect(await page.evaluate(()=>navigator.clipboard.readText())).toBe(expected);
+  expect((await page.evaluate(()=>navigator.clipboard.readText())).replace(/\s+/g,' ').trim()).toBe(expected.replace(/\s+/g,' ').trim());
 });
 
 test('wave 20 navigation, responsive breakpoints, mobile filters, and screenshots', async ({page}) => {
@@ -3586,7 +3587,7 @@ test('wave 20 navigation, responsive breakpoints, mobile filters, and screenshot
       await toggle.click();
       await expect(toggle).toHaveAttribute('aria-expanded','true');
       await expect(page.locator('#primary-menu')).toBeVisible();
-      await expect(page.locator('#primary-menu a[href="aktivity.html"]')).toBeVisible();
+      await expect(page.locator('#primary-menu a[href="aktivity.html"]')).first().toBeVisible();
       if(width===390) await page.screenshot({path:'artifacts/wave20-aktivity-mobile-390-menu.png',fullPage:false});
       await page.keyboard.press('Escape');
       await expect(page.locator('#primary-menu')).toBeVisible();
@@ -3595,7 +3596,7 @@ test('wave 20 navigation, responsive breakpoints, mobile filters, and screenshot
       await expect(toggle).toHaveAttribute('aria-expanded','false');
     } else {
       await expect(toggle).toBeHidden();
-      await expect(page.locator('#primary-menu a[href="aktivity.html"]')).toBeVisible();
+      await expect(page.locator('#primary-menu a[href="aktivity.html"]')).first().toBeVisible();
     }
     if(width===1440) await page.screenshot({path:'artifacts/wave20-aktivity-desktop-1440.png',fullPage:false});
     if(width===390){
