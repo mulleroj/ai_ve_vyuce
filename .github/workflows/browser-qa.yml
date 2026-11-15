@@ -3,6 +3,8 @@ name: Browser QA – article contents navigation
 on:
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
+  push:
+    branches: [codex/ai-ve-vyuce-8n-zaverecna-migrace-vlna-23]
   workflow_dispatch:
     inputs:
       tested_sha:
@@ -19,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
-      TESTED_SHA: ${{ github.event_name == 'workflow_dispatch' && inputs.tested_sha || github.event.pull_request.head.sha }}
+      TESTED_SHA: ${{ github.event_name == 'workflow_dispatch' && inputs.tested_sha || github.event.pull_request.head.sha || github.sha }}
       BASELINE_SHA: 1abd3fc39df4650b402f5f6d31f6a2148f7a769f
       WAVE2_BASELINE_SHA: 6ae5e726d79b6aea3c87845193b9e0caa0f3ed19
       WAVE3_BASELINE_SHA: 258e96761fb8d327d06ecea9b283cc1bd9f3ea10
@@ -43,7 +45,7 @@ jobs:
       SUBJECT_PAGES_BASELINE_SHA: bfd39f3973d7139aeb4632ba7a74e94ab648f7bc
       ASSISTANT_PAGES_BASELINE_SHA: 2ddaab92e024cd4bafb638f9ea0e62835ef10d27
       WAVE23_BASELINE_SHA: ccbe7322895e31240e7a42133624d9ede4bf83bd
-      WAVE23_COMPLETED_GROUPS: A
+      WAVE23_COMPLETED_GROUPS: A,B
     steps:
       - name: Checkout the tested commit
         uses: actions/checkout@v4

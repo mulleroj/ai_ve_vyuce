@@ -456,3 +456,11 @@ body.wave16-ai-rules .article-content-navigation nav {
     scrollbar-gutter: stable;
   }
 }
+
+/* Wave 23 skip links on migrated workflow directories. */
+body.ai-agent-light-page.light-background-pilot.workflow-page .skip-link {
+  position: fixed; z-index: 150; top: -5rem; left: 1rem; padding: .7rem 1rem;
+  border: 2px solid #07584f; border-radius: 8px; background: #fff; color: #173b35;
+  box-shadow: 0 4px 18px #102d2b30;
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page .skip-link:focus { top: 1rem; }

@@ -20,7 +20,7 @@ function contentContract(value) {
   return {
     title:value.title, metadata:value.metadata, canonical:value.canonical,
     headings:value.headings, contentText:value.contentText, links:value.links,
-    images:value.images, prompts:value.prompts, navigation:value.navigation
+    images:value.images, prompts:value.prompts, navigation:value.navigation.map(nav=>nav.links)
   };
 }
 
@@ -39,9 +39,14 @@ test('wave 23 fixture is generated from the exact PR 76 HEAD and preserves page 
   for (const file of PAGE_FILES) {
     const actual = snapshot(file,fs.readFileSync(path.resolve(__dirname,'..',file),'utf8'));
     const expected = baseline.pages[file];
-    expect(contentContract(actual),`${file}: headings, full text, links, images/alt, metadata, canonical, prompt order and scripts`).toEqual(contentContract(expected));
+    expect(contentContract(actual),`${file}: headings, full text, links, images/alt, metadata, canonical and prompt order`).toEqual(contentContract(expected));
     for (const id of expected.publicIds) expect(actual.publicIds,`${file}: public id ${id}`).toContain(id);
-    for (const script of expected.scripts) expect(actual.scripts,`${file}: retained script ${script}`).toContain(script);
+    let scriptCursor = 0;
+    for (const script of expected.scripts) {
+      const index = actual.scripts.indexOf(script,scriptCursor);
+      expect(index,`${file}: retained script in original order ${script}`).toBeGreaterThanOrEqual(scriptCursor);
+      scriptCursor = index + 1;
+    }
   }
 });
 
@@ -87,6 +92,14 @@ test('wave 23 pages have one main landmark, accessible focus and working shared 
       await page.keyboard.press('Escape');
       await expect(toggle).toHaveAttribute('aria-expanded','false');
       await expect(toggle).toBeFocused();
+    }
+    const localToggle=page.locator('body.wave23-vibe-articles .nav-mobile-toggle, body.wave23-vibe-page .nav-mobile-toggle').first();
+    if (await localToggle.count()) {
+      await localToggle.click();
+      await expect(localToggle,`${file} local menu expanded`).toHaveAttribute('aria-expanded','true');
+      const localMenu=page.locator('body.wave23-vibe-articles #vibe-clanky-mobile-menu, body.wave23-vibe-page .mobile-menu').first();
+      await expect(localMenu,`${file} local menu visible`).toBeVisible();
+      await page.screenshot({path:`artifacts/wave23/${file.replace('.html','')}-mobile-390-menu.png`,fullPage:true});
     }
   }
 });
@@ -154,7 +167,7 @@ test('no-JavaScript mode keeps prompt text, page content and navigation reachabl
   const evidence=[];
   for (const file of PAGE_FILES) {
     await page.goto(`${BASE_URL}/${file}`,{waitUntil:'domcontentloaded'});
-    const info=await page.evaluate(()=>({document:document.documentElement.scrollWidth,body:document.body.scrollWidth,mains:document.querySelectorAll('main').length,prompts:document.querySelectorAll('.prompt-card').length,headerLinks:[...document.querySelectorAll('.site-header a')].map(a=>a.getAttribute('href'))}));
+    const info=await page.evaluate(()=>({document:document.documentElement.scrollWidth,body:document.body.scrollWidth,mains:document.querySelectorAll('main').length,prompts:document.querySelectorAll('.prompt-card').length,headerLinks:[...document.querySelectorAll('.site-header a, nav[aria-label] a')].map(a=>a.getAttribute('href')),localMenuVisible:['wave23-vibe-articles','wave23-vibe-page'].some(c=>document.body.classList.contains(c))&&getComputedStyle(document.querySelector('.mobile-menu')).display!=='none'}));
     evidence.push({file, ...info, migrated:migratedPages.includes(file)});
     if (migratedPages.includes(file)) {
       expect(info.document,`${file} no-JS document width`).toBeLessThanOrEqual(391);
@@ -162,6 +175,7 @@ test('no-JavaScript mode keeps prompt text, page content and navigation reachabl
       expect(info.mains,`${file} no-JS main landmark`).toBe(1);
       if (GROUPS.A.includes(file)) expect(info.prompts,`${file} prompts remain visible without JavaScript`).toBe(baseline.pages[file].prompts.length);
       expect(info.headerLinks.length,`${file} no-JS shared navigation links`).toBeGreaterThan(0);
+      if (GROUPS.C.includes(file)) expect(info.localMenuVisible,`${file} local navigation remains visible without JavaScript`).toBe(true);
     }
   }
   mkdir();

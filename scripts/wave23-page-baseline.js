@@ -67,7 +67,7 @@ function snapshot(file, html) {
     .map(e => ({name:e.attrs.name??null,property:e.attrs.property??null,httpEquiv:e.attrs['http-equiv']??null,content:e.attrs.content??null}));
   const title = all.find(e => e.tag === 'title');
   const canonical = select(all, e => e.tag === 'link' && (e.attrs.rel||'').toLowerCase().split(/\s+/).includes('canonical')).map(e => e.attrs.href||null);
-  const textRanges = all.filter(e => e.tag === 'header' && classes(e.attrs).has('site-header')).map(e => [e.start,e.end]).filter(([a,b])=>b>a).sort((a,b)=>b[0]-a[0]);
+  const textRanges = all.filter(e => (e.tag === 'header' && classes(e.attrs).has('site-header')) || (e.tag === 'a' && classes(e.attrs).has('skip-link') && !e.ancestors.some(a=>classes(a).has('site-header')))).map(e => [e.start,e.end]).filter(([a,b])=>b>a).sort((a,b)=>b[0]-a[0]);
   let bodyTextSource = html;
   for (const [a,b] of textRanges) bodyTextSource = bodyTextSource.slice(0,a) + bodyTextSource.slice(b);
   const headings = select(all,e=>/^h[1-6]$/.test(e.tag)&&visible(e)).map(e=>({level:+e.tag[1],text:txt(e.inner)}));
