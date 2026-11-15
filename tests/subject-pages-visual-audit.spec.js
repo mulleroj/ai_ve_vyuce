@@ -176,6 +176,12 @@ test('subject pages: responsive rendering, menus, content, accessibility, and sc
           impact: v.impact,
           help: v.help,
           nodes: v.nodes.map(n => ({ target: n.target, summary: n.failureSummary }))
+        })),
+        incomplete: result.incomplete.map(v => ({
+          id: v.id,
+          impact: v.impact,
+          help: v.help,
+          nodes: v.nodes.map(n => ({ target: n.target, summary: n.any.map(check => check.message), reasons: n.none.map(check => check.message) }))
         }))
       };
     });
