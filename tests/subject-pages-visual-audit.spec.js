@@ -194,7 +194,7 @@ test('subject pages: responsive rendering, menus, content, accessibility, and sc
   for (const item of pages) {
     await noJsPage.goto(BASE_URL + '/' + item.file);
     await expect(noJsPage.locator('[data-site-navigation] a')).toHaveCount(6);
-    await expect(noJsPage.locator('[data-site-navigation] a[href="matematika.html"]')).toBeVisible();
+    await expect(noJsPage.locator('[data-site-navigation] a[href="aktivity.html"]')).toBeVisible();
     const width = await noJsPage.evaluate(() => document.documentElement.scrollWidth);
     if (width > 391) evidence.failures.push(item.file + ': no-JS mobile overflow (' + width + 'px)');
   }
