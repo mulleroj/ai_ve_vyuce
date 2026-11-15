@@ -3576,7 +3576,7 @@ test('wave 20 navigation, responsive breakpoints, mobile filters, and screenshot
       await toggle.click();
       await expect(toggle).toHaveAttribute('aria-expanded','true');
       await expect(page.locator('#primary-menu')).toBeVisible();
-      await expect(page.locator('#primary-menu a[href="aktivity.html"]').last()).toBeVisible();
+      await expect(page.locator('#primary-menu .site-nav-area > summary:visible')).toHaveCount(6);
       if(width===390) await page.screenshot({path:'artifacts/wave20-aktivity-mobile-390-menu.png',fullPage:false});
       await page.keyboard.press('Escape');
       await expect(page.locator('#primary-menu')).toBeHidden();
@@ -3584,7 +3584,7 @@ test('wave 20 navigation, responsive breakpoints, mobile filters, and screenshot
       await expect(toggle).toHaveAttribute('aria-expanded','false');
     } else {
       await expect(toggle).toBeHidden();
-      await expect(page.locator('#primary-menu a[href="aktivity.html"]').last()).toBeVisible();
+      await expect(page.locator('#primary-menu .site-nav-area > summary:visible')).toHaveCount(6);
     }
     if(width===1440) await page.screenshot({path:'artifacts/wave20-aktivity-desktop-1440.png',fullPage:false});
     if(width===390){
