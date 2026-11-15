@@ -222,7 +222,7 @@ test('subject pages: responsive rendering, menus, content, accessibility, and sc
     '',
     'Full geometry, computed styles, axe targets, and screenshot filenames are in subject-pages-visual-evidence.json.'
   ];
-  fs.writeFileSync('artifacts/subject-pages-visual-report.md', reportLines.join('\\n') + '\\n');
+  fs.writeFileSync('artifacts/subject-pages-visual-report.md', reportLines.join('\n') + '\n');
   expect(evidence.failures, evidence.failures.join('\n')).toEqual([]);
   expect(localErrors, localErrors.join('\n')).toEqual([]);
 });
