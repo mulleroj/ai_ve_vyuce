@@ -74,10 +74,11 @@ test.describe('8M/2 rendered audit', () => {
           findings.axe[`${path} @390px`]=await runAxe(page).catch(e=>({error:String(e)}));
         }
       }
-      const noJs=await context.newPage(); await noJs.setDefaultTimeout(5000); await noJs.setJavaScriptEnabled(false); await noJs.setViewportSize({width:390,height:844});
+      const noJsContext=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}});
+      const noJs=await noJsContext.newPage(); await noJs.setDefaultTimeout(5000);
       await noJs.goto(`http://127.0.0.1:4173/${path}`,{waitUntil:'domcontentloaded',timeout:10000}).catch(()=>{});
       row.noJavaScript=await noJs.evaluate(()=>({h1:document.querySelector('h1')?.innerText||null,mainCount:document.querySelectorAll('main,[role="main"]').length,visibleLinks:[...document.querySelectorAll('a')].filter(a=>a.offsetWidth||a.offsetHeight).length,documentWidth:document.documentElement.scrollWidth})).catch(()=>null);
-      await context.close().catch(()=>{}); writeReport();
+      await noJsContext.close().catch(()=>{}); await context.close().catch(()=>{}); writeReport();
     });
   }
   for(const path of ['prompty.html','gemini-notebook-prompty.html','vibe-coding-prompty.html']){
