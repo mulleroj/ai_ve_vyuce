@@ -23,7 +23,7 @@ const evidence = {
 };
 
 function contentContract(page) {
-  const { noJavaScript, withJavaScript, ...contract } = page;
+  const { noJavaScript, withJavaScript, publicIds, ...contract } = page;
   return contract;
 }
 
@@ -96,6 +96,7 @@ test('wave 22 fixes the exact 320px overflow present at the PR 75 baseline', asy
   }
 
   evidence.baselineOverflow = overflowEvidence;
+  console.log('Wave 22 baseline overflow diagnosis: ' + JSON.stringify(overflowEvidence));
   fs.writeFileSync('artifacts/assistant-pages-wave22-overflow.json', JSON.stringify(overflowEvidence, null, 2) + '\n');
 });
 
@@ -123,7 +124,10 @@ test('assistant pages retain accessible landmarks, keyboard controls, filters, a
   for (const file of PAGE_FILES) {
     const slug = file.replace('.html', '');
     await page.setViewportSize({ width: 1440, height: 1000 });
-    await page.goto(BASE_URL + '/' + file);
+    const response = await page.goto(BASE_URL + '/' + file);
+    if (await page.locator('main').count() === 0) {
+      console.log('Wave 22 page response diagnostic: ' + JSON.stringify({ file, status: response?.status(), url: page.url(), title: await page.title(), body: (await page.locator('body').innerText()).slice(0, 500) }));
+    }
     await expect(page.locator('main')).toHaveCount(1);
     await expect(page.locator('body > header.site-header')).toHaveCount(1);
     await expect(page.locator('body > main.assistant-directory-main')).toHaveCount(1);
