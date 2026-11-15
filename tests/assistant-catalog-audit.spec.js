@@ -76,7 +76,12 @@ test('capture page inventories, screenshots, interactions, responsive states and
       for(const button of await page.locator('.filter-btn').all()){
         const name=(await button.innerText()).trim();
         await button.click();
-        info.filters.push(await page.evaluate(name=>({name,pressed:document.querySelector('.filter-btn[aria-pressed="true"]')?.innerText.trim(),visibleCards:[...document.querySelectorAll('.catalog-card')].filter(c=>getComputedStyle(c).display!=='none').map(c=>c.querySelector('.catalog-card-title')?.innerText.trim()),emptyStateVisible:getComputedStyle(document.querySelector('#emptyState')).display!=='none}),name));
+        const state=await page.evaluate(()=>({
+          pressed:document.querySelector('.filter-btn[aria-pressed="true"]')?.innerText.trim(),
+          visibleCards:[...document.querySelectorAll('.catalog-card')].filter(c=>getComputedStyle(c).display!=='none').map(c=>c.querySelector('.catalog-card-title')?.innerText.trim()),
+          emptyStateVisible:getComputedStyle(document.querySelector('#emptyState')).display!=='none'
+        }));
+        info.filters.push({name,...state});
       }
     }
 
