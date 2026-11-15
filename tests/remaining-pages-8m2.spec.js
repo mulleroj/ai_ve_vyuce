@@ -11,9 +11,20 @@ const pages = [
 const widths = [1440, 1024, 768, 390, 320];
 const out = 'artifacts/8m2';
 const findings = { pages: {}, axe: {}, interactions: {}, notes: [] };
+function writeReport() {
+  fs.writeFileSync(`${out}/report.json`, JSON.stringify(findings,null,2));
+  fs.writeFileSync(`${out}/report.md`, '# 8M/2 Browser audit\n\nRaw page metrics, axe-core violations/incomplete results, interaction outcomes, browser errors, and screenshots are packaged with this report.\n');
+}
+async function runAxe(page) {
+  await page.addScriptTag({ content: axeSource });
+  return page.evaluate(async () => {
+    const r = await axe.run(document, { runOnly: { type: 'tag', values: ['wcag2a','wcag2aa','wcag21a','wcag21aa','best-practice'] } });
+    return { violations:r.violations.map(v=>({ id:v.id, impact:v.impact, description:v.description, help:v.help, nodes:v.nodes.map(n=>({ target:n.target, html:n.html, summary:n.failureSummary })) })), incomplete:r.incomplete.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.map(n=>({target:n.target,html:n.html}))})), passes:r.passes.length };
+  });
+}
 
 test('8M/2 rendered audit of remaining pages', async ({ browser }) => {
-  test.setTimeout(15 * 60 * 1000);
+  test.setTimeout(10 * 60 * 1000);
   fs.mkdirSync(out, { recursive: true });
   for (const path of pages) {
     const slug = path.replaceAll('/', '--').replace('.html', '');
@@ -27,8 +38,9 @@ test('8M/2 rendered audit of remaining pages', async ({ browser }) => {
     page.on('response', res => { if (res.status() >= 400) findings.pages[path].httpErrors.push({ url: res.url(), status: res.status() }); });
     for (const width of widths) {
       await page.setViewportSize({ width, height: 1000 });
-      const response = await page.goto(`http://127.0.0.1:4173/${path}`, { waitUntil: 'networkidle', timeout: 45000 }).catch(async error => { findings.notes.push(`${path} navigation at ${width}px: ${error}`); return null; });
-      await page.evaluate(() => document.fonts?.ready);
+      const response = await page.goto(`http://127.0.0.1:4173/${path}`, { waitUntil: 'domcontentloaded', timeout: 15000 }).catch(async error => { findings.notes.push(`${path} navigation at ${width}px: ${error}`); return null; });
+      await page.evaluate(() => Promise.race([document.fonts?.ready || Promise.resolve(), new Promise(resolve => setTimeout(resolve, 1200))])).catch(() => {});
+      await page.waitForTimeout(150);
       await page.addStyleTag({ content: '*,*::before,*::after{scroll-behavior:auto!important;animation-duration:0s!important;transition-duration:0s!important}' }).catch(() => {});
       const metrics = await page.evaluate(() => ({
         title: document.title, mainCount: document.querySelectorAll('main,[role="main"]').length,
@@ -39,14 +51,10 @@ test('8M/2 rendered audit of remaining pages', async ({ browser }) => {
       }));
       findings.pages[path].widths[width] = { status: response?.status() ?? null, ...metrics, horizontalOverflow: metrics.documentWidth > width + 1 || metrics.bodyWidth > width + 1 };
       await page.screenshot({ path: `${out}/${slug}-${width}.png`, fullPage: width === 1440, animations: 'disabled' }).catch(() => {});
-      if (width === 1440) {
-        await page.addScriptTag({ content: axeSource });
-        findings.axe[path] = await page.evaluate(async () => {
-          const r = await axe.run(document, { runOnly: { type: 'tag', values: ['wcag2a','wcag2aa','wcag21a','wcag21aa','best-practice'] } });
-          return { violations:r.violations.map(v=>({ id:v.id, impact:v.impact, description:v.description, help:v.help, nodes:v.nodes.map(n=>({ target:n.target, html:n.html, summary:n.failureSummary })) })), incomplete:r.incomplete.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.map(n=>({target:n.target,html:n.html}))})), passes:r.passes.length };
-        });
-      }
+      if (width === 1440) findings.axe[path] = await runAxe(page);
       if (width === 390) {
+        await page.keyboard.press('Tab').catch(() => {});
+        findings.pages[path].keyboardFocus = await page.evaluate(() => { const a=document.activeElement; const s=getComputedStyle(a); return {tag:a?.tagName,text:a?.innerText?.slice(0,80)||a?.getAttribute('aria-label'),outline:s.outline,outlineStyle:s.outlineStyle,boxShadow:s.boxShadow}; }).catch(()=>null);
         const toggle = page.locator('.menu-toggle, .nav-toggle, .nav-mobile-toggle').first();
         if (await toggle.count()) {
           await toggle.click().catch(() => {});
@@ -58,23 +66,26 @@ test('8M/2 rendered audit of remaining pages', async ({ browser }) => {
           const summary = d.locator('summary');
           if (await summary.count()) { await summary.click().catch(() => {}); await page.screenshot({ path: `${out}/${slug}-390-local-nav-open.png`, fullPage: false, animations:'disabled' }).catch(() => {}); break; }
         }
+        findings.axe[`${path} @390px`] = await runAxe(page).catch(error => ({error:String(error)}));
       }
     }
     // Static essential-content and no-JavaScript behavior at 390px.
     const noJs = await context.newPage();
     await noJs.setJavaScriptEnabled(false);
     await noJs.setViewportSize({ width:390,height:844 });
-    await noJs.goto(`http://127.0.0.1:4173/${path}`, { waitUntil:'domcontentloaded', timeout:45000 }).catch(()=>{});
+    await noJs.goto(`http://127.0.0.1:4173/${path}`, { waitUntil:'domcontentloaded', timeout:15000 }).catch(()=>{});
     findings.pages[path].noJavaScript = await noJs.evaluate(() => ({ h1:document.querySelector('h1')?.innerText||null, mainCount:document.querySelectorAll('main,[role="main"]').length, visibleLinks:[...document.querySelectorAll('a')].filter(a=>a.offsetWidth||a.offsetHeight).length, documentWidth:document.documentElement.scrollWidth }));
     await noJs.close();
     await context.close();
+    writeReport();
   }
 
   // Prompt search, filter and copy controls where implemented.
   for (const path of ['prompty.html','gemini-notebook-prompty.html','vibe-coding-prompty.html']) {
     const context = await browser.newContext({ permissions:['clipboard-read','clipboard-write'] });
     const page = await context.newPage();
-    await page.goto(`http://127.0.0.1:4173/${path}`, { waitUntil:'networkidle' });
+    await page.goto(`http://127.0.0.1:4173/${path}`, { waitUntil:'domcontentloaded', timeout:15000 });
+    await page.waitForTimeout(250);
     const result = { search:null, filter:null, copy:null };
     const search = page.locator('input[type="search"],input[id*="search"],input[aria-label*="Hledat" i]').first();
     if (await search.count()) { const before=await page.locator('.prompt-card:visible').count(); await search.fill('xyz-audit-no-match'); result.search={before,after:await page.locator('.prompt-card:visible').count()}; }
@@ -84,11 +95,13 @@ test('8M/2 rendered audit of remaining pages', async ({ browser }) => {
     if (await copy.count()) { await copy.click(); await page.waitForTimeout(150); result.copy={buttonText:await copy.innerText().catch(()=>''), clipboardLength:await page.evaluate(()=>navigator.clipboard.readText().then(t=>t.length).catch(()=>0))}; }
     findings.interactions[path]=result;
     await context.close();
+    writeReport();
   }
   // QR generation and PNG download. CDN failures are recorded as actual behavior.
   {
     const context=await browser.newContext({acceptDownloads:true}); const page=await context.newPage();
-    await page.goto('http://127.0.0.1:4173/qr-kod.html',{waitUntil:'networkidle'});
+    await page.goto('http://127.0.0.1:4173/qr-kod.html',{waitUntil:'domcontentloaded',timeout:15000});
+    await page.waitForTimeout(250);
     const result={libraryAvailable:await page.evaluate(()=>typeof window.QRCode==='function'),generated:false,download:null,error:null};
     await page.locator('#urlInput').fill('https://example.com/audit');
     await page.locator('#qrForm button[type="submit"]').click();
@@ -98,8 +111,7 @@ test('8M/2 rendered audit of remaining pages', async ({ browser }) => {
     if(result.generated){const dl=page.waitForEvent('download',{timeout:10000});await page.locator('#downloadQr').click();result.download=(await dl).suggestedFilename();}
     findings.interactions['qr-kod.html']=result; await context.close();
   }
-  fs.writeFileSync(`${out}/report.json`, JSON.stringify(findings,null,2));
-  fs.writeFileSync(`${out}/report.md`, '# 8M/2 Browser audit\n\nRaw page metrics, axe-core violations/incomplete results, interaction outcomes, browser errors, and screenshots are packaged with this report.\n');
+  writeReport();
   console.log(`8M2 audit completed for ${Object.keys(findings.pages).length} pages; full data is in artifacts/8m2/report.json`);
   expect(Object.keys(findings.pages)).toHaveLength(pages.length);
 });
