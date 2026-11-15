@@ -2976,5 +2976,18 @@
       "specialProductSectionIds": [],
       "searchInputCount": 1
     }
-  }
+  },
+  "knownGeneratorSourceDrift": [
+    {
+      "href": "ai-novinka-datovi-agenti-lidske-schvaleni.html",
+      "pages": [
+        "ai.html",
+        "ai-novinky.html"
+      ],
+      "field": "summary",
+      "renderedAtBaseline": "Datoví agenti, lidské schvalování akcí a principy bezpečnější automatizace pro školy. Praktické souvislosti pro učitele.",
+      "catalogValueAtBaseline": "Datoví agenti, lidské schvalování a bezpečnější automatizace pro školy. Navigace usnadňuje návrat k vybraným kapitolám.",
+      "resolution": "Regeneration renders the unchanged central catalog value; no catalog copy is edited."
+    }
+  ]
 }
