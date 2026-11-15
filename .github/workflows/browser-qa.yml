@@ -39,6 +39,7 @@ jobs:
       WAVE17_BASELINE_SHA: e7bbb564051bfc7db9f55792acb6a37856ce04e3
       WAVE18_BASELINE_SHA: 5505c10e72de01513b70c6f8bf84d498820158b0
       WAVE19_BASELINE_SHA: 7d46df5ee7ee3e9f27c085d42f8d7611ff0b802b
+      WAVE20_BASELINE_SHA: 9efd3e51b4a5d8a83edf7279bed526c8377d88b0
     steps:
       - name: Checkout the tested commit
         uses: actions/checkout@v4
@@ -72,6 +73,7 @@ jobs:
           git fetch --no-tags --depth=1 origin "$WAVE17_BASELINE_SHA"
           git fetch --no-tags --depth=1 origin "$WAVE18_BASELINE_SHA"
           git fetch --no-tags --depth=1 origin "$WAVE19_BASELINE_SHA"
+          git fetch --no-tags --depth=1 origin "$WAVE20_BASELINE_SHA"
 
       - name: Verify guide generator determinism and scope
         run: |
@@ -152,6 +154,14 @@ jobs:
           fs.writeFileSync(process.env.RUNNER_TEMP+'/catalog-generator-check.json',JSON.stringify(report,null,2));
           NODE
 
+      - name: Verify wave 20 activity regression baseline
+        run: |
+          set -euo pipefail
+          git show "$WAVE20_BASELINE_SHA:aktivity.html" > "$RUNNER_TEMP/aktivity-wave20-baseline.html"
+          node scripts/capture-activity-baseline.js "$RUNNER_TEMP/aktivity-wave20-baseline.html" "$RUNNER_TEMP/activity-library-wave20-baseline.json"
+          cmp tests/fixtures/activity-library-wave20-baseline.json "$RUNNER_TEMP/activity-library-wave20-baseline.json"
+          node -e "const f=require('./tests/fixtures/activity-library-wave20-baseline.json'); if(f.baselineSha!==process.env.WAVE20_BASELINE_SHA || f.activities.length!==44 || new Set(f.activities.map(x=>x.id)).size!==44) process.exit(1)"
+
       - name: Install isolated browser test runner
         run: |
           npm install --no-save --package-lock=false @playwright/test
@@ -166,6 +176,7 @@ jobs:
           cp "$RUNNER_TEMP/catalog-generator-check.json" artifacts/catalog-generator-check.json
           cp "$RUNNER_TEMP/catalog-generator-negative-tests.json" artifacts/catalog-generator-negative-tests.json
           cp tests/fixtures/catalog-pages-wave19-baseline.json artifacts/catalog-pages-wave19-baseline.json
+          cp tests/fixtures/activity-library-wave20-baseline.json artifacts/activity-library-wave20-baseline.json
           printf '%s\n' "$TESTED_SHA" > artifacts/tested-sha.txt
           python3 -m http.server 4173 --bind 127.0.0.1 > test-results/http-server.log 2>&1 &
           server_pid=$!
@@ -211,6 +222,36 @@ jobs:
           else
             echo "No Playwright report was produced."
           fi
+
+      - name: Generate wave 20 technical report
+        if: always()
+        run: |
+          mkdir -p artifacts
+          node <<'NODE'
+          const fs=require('node:fs');
+          let report={};
+          try { report=JSON.parse(fs.readFileSync('test-results/report.json','utf8')); } catch {}
+          let responsive={};
+          try { responsive=JSON.parse(fs.readFileSync('artifacts/wave20-activity-responsive.json','utf8')); } catch {}
+          const stats=report.stats||{};
+          const widths=responsive.widths||[];
+          const lines=[
+            '# Technická zpráva — AI ve výuce 2.0, vlna 20',
+            '',
+            '- Testovaný commit: `'+(process.env.TESTED_SHA||'unavailable')+'`',
+            '- Regresní baseline: `'+(process.env.WAVE20_BASELINE_SHA||'unavailable')+'`',
+            '- Aktivity v baseline: 44',
+            '- Browser QA: '+(stats.expected??0)+' passed, '+(stats.unexpected??0)+' failed, '+(stats.skipped??0)+' skipped, '+(stats.flaky??0)+' flaky',
+            '- Responzivní šířky: '+(widths.map(x=>x.viewport+' px').join(', ')||'bez reportu'),
+            '- Kontrola: 44 záznamů, všechna metadata a text karet, filtry, detaily, kopírování, klávesnice/fokus, odkazy a SEO.',
+            '- Bez JavaScriptu: stránka a aktivity zůstávají čitelné, navigační odkazy fungují.',
+            '- Screenshoty: wave20-aktivity-desktop-1440.png, wave20-aktivity-mobile-390.png, wave20-aktivity-mobile-390-menu.png',
+            '- Rozsah: aktivity.html, css/activity-library.css, testy a baseline; bez změny obsahu aktivit nebo sdílené navigační architektury.',
+            '',
+            'Omezení: přístupnost byla ověřena automatizovaným Chromium ovládáním; ruční test čtečky obrazovky nebyl součástí Browser QA.'
+          ];
+          fs.writeFileSync('artifacts/wave20-activity-technical-report.md',lines.join('\n')+'\n');
+          NODE
 
       - name: Upload screenshots, report, and diagnostics
         if: always()

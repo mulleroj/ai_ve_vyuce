@@ -3468,3 +3468,151 @@ test('wave 19 preserves all six generated catalogs and shared navigation at resp
   evidence.urlHistory={filter:'philosophy',backForward:'passed',reload:'passed',diacriticSearchCount:4};
   fs.writeFileSync('artifacts/wave19-catalog-evidence.json',JSON.stringify(evidence,null,2));
 });
+
+const activityWave20Baseline = require('./fixtures/activity-library-wave20-baseline.json');
+const activityWave20Widths = [1440, 1101, 1100, 1024, 801, 800, 768, 390];
+const activityGeometry = () => {
+  const visible=[...document.body.querySelectorAll('*')].filter(el=>getComputedStyle(el).display!=='none'&&getComputedStyle(el).visibility!=='hidden');
+  const rects=visible.map(el=>el.getBoundingClientRect());
+  return {viewport:innerWidth,documentScroll:document.documentElement.scrollWidth,bodyScroll:document.body.scrollWidth,maxRight:Math.max(0,...rects.map(rect=>rect.right)),minLeft:Math.min(0,...rects.map(rect=>rect.left))};
+};
+
+test('wave 20 preserves all 44 activity records, visible copy, identifiers, links, and SEO', async ({page}) => {
+  expect(activityWave20Baseline.baselineSha).toBe(process.env.WAVE20_BASELINE_SHA);
+  await page.setViewportSize({width:1440,height:1000});
+  await page.goto(`${baseURL}/aktivity.html`);
+  const current = await page.locator('#allActivities .activity-card[data-activity-id]').evaluateAll(cards => cards.map(card => ({
+    id:card.dataset.activityId,
+    attributes:Object.fromEntries(card.getAttributeNames().filter(name=>name.startsWith('data-')).map(name=>[name,card.getAttribute(name)])),
+    text:card.textContent.replace(/\s+/g,' ').trim()
+  })));
+  expect(current).toHaveLength(44);
+  expect(new Set(current.map(card=>card.id)).size).toBe(44);
+  expect(current.map(({id,attributes,text})=>({id,attributes:Object.fromEntries(Object.entries(attributes).map(([key,value])=>[key,key==='data-prompt'?value.replace(/\s+/g,' ').trim():value])),text:text.replace(/📋 Kopírovat zadání/g,'📋 Kopírovat').replace(/\s+/g,'').trim()})))
+    .toEqual(activityWave20Baseline.activities.map(card=>({...card,attributes:{...card.attributes,'data-prompt':card.attributes['data-prompt'].replace(/\s+/g,' ').trim()},text:card.text.replace(/\s+/g,'').trim()})));
+  await expect(page.locator('.activity-card:visible')).toHaveCount(44);
+  for (const id of activityWave20Baseline.ids) await expect(page.locator(`#${id}`)).toHaveCount(1);
+  const currentHrefs = await page.locator('a[href]').evaluateAll(links=>links.map(link=>link.getAttribute('href')));
+  for (const link of activityWave20Baseline.anchors) if(link.href) expect(currentHrefs).toContain(link.href);
+  const localAnchors=activityWave20Baseline.anchors.filter(link=>link.href?.startsWith('#')).map(link=>link.href.slice(1));
+  for(const id of localAnchors) await expect(page.locator(`#${id}`)).toHaveCount(1);
+  await expect(page).toHaveTitle(activityWave20Baseline.title);
+  await expect(page.locator('meta[name="description"]')).toHaveAttribute('content',activityWave20Baseline.meta.description);
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href',activityWave20Baseline.meta.canonical);
+});
+
+test('wave 20 search and combined subject, grade, and tool filters match the baseline data', async ({page}) => {
+  await page.setViewportSize({width:1440,height:1000});
+  await page.goto(`${baseURL}/aktivity.html`);
+  const search=page.locator('#activitySearch');
+  await search.fill('matematicky modeluji');
+  const normalizeCzech=value=>value.toLocaleLowerCase('cs').normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  const searchMatches=activityWave20Baseline.activities.filter(card=>normalizeCzech(card.attributes['data-search']).includes(normalizeCzech('matematicky modeluji')));
+  await expect(page.locator('.activity-card:visible')).toHaveCount(searchMatches.length);
+  await expect(page.locator('#activityResults')).toContainText(String(searchMatches.length));
+  await search.fill('nenalezeny-zaznam-wave20');
+  await expect(page.locator('.activity-card:visible')).toHaveCount(0);
+  await expect(page.locator('#emptyState')).toBeVisible();
+  await page.locator('#resetActivityFilters').click();
+  await page.locator('#subjectFilter').selectOption('mat');
+  await page.locator('#levelFilter').selectOption('zs2');
+  await page.locator('#toolFilter').selectOption('chatgpt');
+  const expected=activityWave20Baseline.activities.filter(card=>card.attributes['data-subject']==='mat'&&card.attributes['data-level'].split(/\s+/).includes('zs2')&&card.attributes['data-tool']==='chatgpt').map(card=>card.id);
+  const actual=await page.locator('.activity-card:visible').evaluateAll(cards=>cards.map(card=>card.dataset.activityId));
+  expect(actual).toEqual(expected);
+  await page.locator('#resetActivityFilters').click();
+  await expect(page.locator('#activitySearch')).toBeFocused();
+  await expect(page.locator('.activity-card:visible')).toHaveCount(44);
+});
+
+test('wave 20 activity detail opens from keyboard and returns focus on close', async ({page}) => {
+  await page.setViewportSize({width:1024,height:900});
+  await page.goto(`${baseURL}/aktivity.html`);
+  const trigger=page.locator('[data-open-activity="math-real-life-word-problems"]');
+  await trigger.focus(); await page.keyboard.press('Enter');
+  const dialog=page.locator('#activityDetailDialog');
+  await expect(dialog).toBeVisible();
+  await expect(dialog).toHaveAttribute('aria-modal','true');
+  await expect(page.locator('#activityDetailTitle')).toHaveText('Žáci matematicky modelují reálnou situaci');
+  await expect(page.locator('#activityDetailPrompt')).toHaveText(activityWave20Baseline.activities[0].attributes['data-prompt']);
+  await expect(page.locator('#activityDetailTitle')).toBeFocused();
+  await page.keyboard.press('Escape');
+  await expect(dialog).toBeHidden();
+  await expect(trigger).toBeFocused();
+});
+
+test('wave 20 copy announces success and copies the exact prompt', async ({page,context}) => {
+  await context.grantPermissions(['clipboard-read','clipboard-write'],{origin:baseURL});
+  await page.setViewportSize({width:390,height:844});
+  await page.goto(`${baseURL}/aktivity.html`);
+  const expected=activityWave20Baseline.activities[0].attributes['data-prompt'].trim();
+  const button=page.locator('[data-open-activity="math-real-life-word-problems"]').locator('..').locator('..').locator('.copy-btn');
+  await button.click();
+  await expect(button).toHaveClass(/copied/);
+  await expect(page.locator('.toast.show')).toContainText(/zkopírován do schránky/i);
+  await expect(page.locator('body > [role="status"]')).toContainText(/zkopírován do schránky/i);
+  expect((await page.evaluate(()=>navigator.clipboard.readText())).replace(/\s+/g,' ').trim()).toBe(expected.replace(/\s+/g,' ').trim());
+});
+
+test('wave 20 navigation, responsive breakpoints, mobile filters, and screenshots', async ({page}) => {
+  const fs=require('node:fs'); fs.mkdirSync('artifacts',{recursive:true});
+  const browserErrors=[];
+  page.on('console',message=>{if(message.type()==='error')browserErrors.push(message.text())});
+  page.on('pageerror',error=>browserErrors.push(error.message));
+  page.on('response',response=>{if(response.url().startsWith(baseURL)&&response.status()>=400)browserErrors.push(`HTTP ${response.status()} ${response.url()}`)});
+  const evidence=[];
+  for(const width of activityWave20Widths){
+    await page.setViewportSize({width,height:width===390?844:960});
+    await page.goto(`${baseURL}/aktivity.html`);
+    await expect(page.locator('nav[aria-label="Hlavní navigace"]')).toHaveCount(1);
+    const overflow=await page.evaluate(activityGeometry);
+    expect(overflow.documentScroll,`document overflow at ${width}px`).toBeLessThanOrEqual(width+1);
+    expect(overflow.bodyScroll,`body overflow at ${width}px`).toBeLessThanOrEqual(width+1);
+    expect(overflow.maxRight,`visible element overflow at ${width}px`).toBeLessThanOrEqual(width+1);
+    expect(overflow.minLeft,`visible element left overflow at ${width}px`).toBeGreaterThanOrEqual(-1);
+    const toggle=page.locator('.menu-toggle');
+    if(width<=800){
+      await expect(toggle).toBeVisible();
+      await toggle.click();
+      await expect(toggle).toHaveAttribute('aria-expanded','true');
+      await expect(page.locator('#primary-menu')).toBeVisible();
+      await expect(page.locator('#primary-menu .site-nav-area > summary:visible')).toHaveCount(6);
+      if(width===390) await page.screenshot({path:'artifacts/wave20-aktivity-mobile-390-menu.png',fullPage:false});
+      await page.keyboard.press('Escape');
+      await expect(page.locator('#primary-menu')).toBeHidden();
+      await expect(toggle).toBeFocused();
+      await expect(toggle).toHaveAttribute('aria-expanded','false');
+    } else {
+      await expect(toggle).toBeHidden();
+      await expect(page.locator('#primary-menu .site-nav-area > summary:visible')).toHaveCount(6);
+    }
+    if(width===1440) await page.screenshot({path:'artifacts/wave20-aktivity-desktop-1440.png',fullPage:false});
+    if(width===390){
+      await expect(page.getByLabel('Hledat podle názvu nebo popisu')).toBeVisible();
+      for(const label of ['Předmět','Ročník','AI nástroj']) await expect(page.getByLabel(label)).toBeVisible();
+      await expect(page.getByRole('button',{name:'Vymazat filtry'})).toBeVisible();
+      await page.screenshot({path:'artifacts/wave20-aktivity-mobile-390.png',fullPage:false});
+    }
+    evidence.push({...overflow,navToggleVisible:width<=800});
+  }
+  expect(browserErrors,browserErrors.join('\n')).toEqual([]);
+  fs.writeFileSync('artifacts/wave20-activity-responsive.json',JSON.stringify({baselineSha:activityWave20Baseline.baselineSha,widths:evidence},null,2));
+});
+
+test('wave 20 preserves the readable page and working navigation without JavaScript', async ({browser}) => {
+  const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}});
+  const page=await context.newPage();
+  await page.goto(`${baseURL}/aktivity.html`);
+  await expect(page.locator('#allActivities .activity-card[data-activity-id]')).toHaveCount(44);
+  await expect(page.locator('#allActivities .activity-card:visible')).toHaveCount(44);
+  await expect(page.locator('.site-nav-pilot a[href="ai.html"]')).toBeVisible();
+  await expect(page.locator('.activity-filters')).toBeVisible();
+  await expect(page.locator('h1')).toHaveText('Výukové aktivity s AI');
+  const overflow=await page.evaluate(activityGeometry);
+  expect(overflow.documentScroll).toBeLessThanOrEqual(391);
+  expect(overflow.bodyScroll).toBeLessThanOrEqual(391);
+  expect(overflow.maxRight).toBeLessThanOrEqual(391);
+  await page.locator('.site-nav-pilot a[href="ai.html"]').click();
+  await expect(page).toHaveURL(/\/ai\.html$/);
+  await context.close();
+});

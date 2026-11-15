@@ -127,6 +127,14 @@
     if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
     else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
   }, true);
+  dialog.addEventListener('keydown', event => {
+    if (event.key !== 'Tab' || dialog.hidden) return;
+    const focusable = [...panel.querySelectorAll('button:not([disabled]),a[href]:not([hidden]),[tabindex="0"]')].filter(element => element.getClientRects().length);
+    if (!focusable.length) return;
+    const first = focusable[0], last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+  });
   window.addEventListener('popstate', () => { readUrl(); apply(false); });
   readUrl(); apply(false);
 })();
