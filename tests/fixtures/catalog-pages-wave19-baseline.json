@@ -1,0 +1,2804 @@
+{
+  "baselineSha": "7d46df5ee7eea5018f1cc025e75dac0b23623f00",
+  "generatedFrom": "Generated catalog pages at PR #72 HEAD",
+  "pages": {
+    "ai.html": {
+      "cardCount": 76,
+      "cards": [
+        {
+          "href": "ai-novinka-ai-duvod-premyslet.html",
+          "title": "AI nemá za žáka přemýšlet. Má mu dát důvod přemýšlet.",
+          "summary": "Jak využít umělou inteligenci k probuzení zvídavosti, samostatnosti a skutečného zájmu o učení. Sedm principů, ukázka hodiny, tři prompty a infografika pro učitele.",
+          "category": "AI ve vzdělávání",
+          "contentType": "magazine",
+          "directoryGroup": null,
+          "date": "2026-10-30",
+          "image": "images/ai-duvod-premyslet-hero.webp",
+          "imageAlt": "Učitelka se studenty zkoumá školní projekt a přemýšlí nad jeho řešením."
+        },
+        {
+          "href": "gemini-notebook-ucitel-vidi-chaty-zaku.html",
+          "title": "Učitel nově uvidí, jak se žáci učí s AI. Google Gemini Notebook otevírá novou kapitolu výuky",
+          "summary": "Insight Summaries v Gemini Notebooku a Google Classroom: přehled práce žáků, individuální rozhovory, formativní hodnocení a otázky soukromí. Praktický příklad a přehledná infografika.",
+          "category": "AI ve vzdělávání",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-10-23",
+          "image": "images/gemini-notebook-insight-summaries-hero.webp",
+          "imageAlt": "Učitelka sleduje studijní práci žáků u notebooku."
+        },
+        {
+          "href": "co-se-muze-ucitel-naucit-od-youtube.html",
+          "title": "Co se může učitel naučit od YouTube? Pozornost žáků není samozřejmost",
+          "summary": "Co si mohou učitelé odnést z postupů profesionálních tvůrců videí? Praktický pohled na pozornost, scénáře, interaktivitu a využití AI při tvorbě výukových materiálů – bez zbytečných marketingových triků.",
+          "category": "AI ve vzdělávání",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-10-16",
+          "image": "images/home-article-video-attention.jpg",
+          "imageAlt": "Studenti se soustředí na výukové video na notebooku."
+        },
+        {
+          "href": "kdyz-ai-jedna-odpovednost-ai-agenta.html",
+          "title": "Když AI už nejen radí, ale jedná: kdo nese odpovědnost za AI agenta?",
+          "summary": "Tři úrovně autonomie AI agenta, lidský dohled, oprávnění a odpovědnost ve škole.",
+          "category": "Filozofování s AI",
+          "contentType": "philosophy",
+          "directoryGroup": null,
+          "date": "2026-09-30",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "uci-se-zak-nebo-za-nej-premysli-ai.html",
+          "title": "Učí se žák, nebo za něj přemýšlí AI?",
+          "summary": "Jak poznat, kdy umělá inteligence podporuje učení a kdy už přebírá práci studenta.",
+          "category": "Filozofování s AI",
+          "contentType": "philosophy",
+          "directoryGroup": null,
+          "date": "2026-09-23",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-ziva-hlasova-ai-ve-vyuce.html",
+          "title": "Když AI začne skutečně naslouchat: živá hlasová umělá inteligence ve výuce",
+          "summary": "Praktické aktivity pro cizí jazyky, pracovní pohovor, odbornou komunikaci, argumentaci, vysvětlování i nácvik obtížných situací.",
+          "category": "AI ve vzdělávání",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-09-21",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-novinka-gemini-desktop-chatgpt-word-agenti.html",
+          "title": "AI ve vzdělávání: Gemini na Windows, ChatGPT ve Wordu a nové hranice pro AI agenty",
+          "summary": "Gemini přichází na Windows, ChatGPT do Wordu a Gemini Notebook rozšiřuje studijní možnosti. Praktické souvislosti pro učitele, oprávnění a ochranu školních dat.",
+          "category": "Novinka",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-09-18",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-novinka-filozofovani-s-ai-chybejici-role.html",
+          "title": "AI možná nevezme učitelům práci. Možná nám ukáže, kolik lidí nám celou dobu chybělo",
+          "summary": "Druhý díl autorské série o tom, jak AI odhaluje práci a podpůrné role, které lidé vykonávali bez podpory a pro které jsme nikdy nevytvořili samostatné místo.",
+          "category": "Filozofování s AI",
+          "contentType": "philosophy",
+          "directoryGroup": null,
+          "date": "2026-09-16",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-novinka-filozofovani-s-ai-kriticke-mysleni.html",
+          "title": "Kritické myšlení už nestačí? Human in the Loop jako další krok v době AI",
+          "summary": "První díl autorské série o kritickém myšlení, Human in the Loop a další roli člověka v době AI.",
+          "category": "Filozofování s AI",
+          "contentType": "philosophy",
+          "directoryGroup": null,
+          "date": "2026-09-15",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-novinka-datovi-agenti-lidske-schvaleni.html",
+          "title": "AI ve vzdělávání: datoví agenti, lidské schvalování a bezpečnější automatizace",
+          "summary": "Datoví agenti, lidské schvalování akcí a principy bezpečnější automatizace pro školy. Praktické souvislosti pro učitele.",
+          "category": "Novinka",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-09-14",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-novinka-sdilene-zdroje-propojene-aplikace-2026.html",
+          "title": "AI ve vzdělávání: sdílené zdroje, propojené aplikace a bezpečnější práce s daty",
+          "summary": "AI se mění z osobního chatbota na součást společné informační infrastruktury školy. Důležitá jsou data, oprávnění, audit a lidská kontrola.",
+          "category": "Novinka",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-09-11",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-novinka-ai-ve-vzdelavani-zari-2026.html",
+          "title": "AI ve vzdělávání: přesnější práce s obrázky, bezpečnější přístup k AI a nové zázemí pro školy",
+          "summary": "Přesnější editace existujících materiálů, kontextové zabezpečení Gemini a specializované AI nástroje pro učitele.",
+          "category": "Novinka",
+          "contentType": "magazine",
+          "directoryGroup": null,
+          "date": "2026-09-09",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-novinka-agenti-onenote-pruvodce-ucenim.html",
+          "title": "AI ve vzdělávání: chytřejší agenti, OneNote v ChatGPT a AI jako průvodce učením",
+          "summary": "Chytřejší agenti, propojení ChatGPT s OneNotem a AI jako průvodce učením. Tři směry vývoje a praktické tipy pro učitele.",
+          "category": "Novinka",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-09-07",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-novinka-google-ai-vzdelavani-zari-2026.html",
+          "title": "AI ve vzdělávání: Google posiluje tvorbu materiálů i bezpečnost práce s daty",
+          "summary": "Novinky v AI pro vzdělávání: editace existujících materiálů, klasifikace dokumentů, řízení oprávnění a praktické tipy pro učitele.",
+          "category": "Novinka",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-09-02",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-novinka-ai-ve-vzdelavani-srpen-2026.html",
+          "title": "AI ve vzdělávání: co je nového na konci srpna 2026",
+          "summary": "Přehled novinek od Microsoftu, Googlu a OpenAI: AI jako tutor, práce se zdroji a postupné začleňování do školního prostředí.",
+          "category": "Novinka",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-27",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-novinka-pravidla-ve-skole.html",
+          "title": "AI pravidla ve škole",
+          "summary": "Co má obsahovat dobrá školní politika pro žáky, učitele, vedení školy a rodiče v roce 2026.",
+          "category": "Novinka",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-25",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-novinka-gemini-notebook-sablona.html",
+          "title": "Gemini Notebook jako výuková šablona",
+          "summary": "Jak z učitelské přípravy vytvořit kopírovatelný AI studijní balíček pro každého studenta.",
+          "category": "Novinka",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-24",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-novinka-microsoft-ai-workflow.html",
+          "title": "Microsoft skládá celý AI workflow pro učitele",
+          "summary": "Jak propojit přípravu učitele, tvorbu aktivity, zadání studentům, práci žáka a výsledky.",
+          "category": "Novinka",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-21",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-novinka-chatgpt-interaktivni-kvizy.html",
+          "title": "ChatGPT přidává interaktivní kvízy",
+          "summary": "Jak využít interaktivní kvízy, vlastní zdroje a průběžnou zpětnou vazbu pro učení.",
+          "category": "Novinka",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-19",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-novinka-microsoft-gemini.html",
+          "title": "Microsoft skládá AI do jednoho pracovního prostředí",
+          "summary": "Jak integrace AI s účty, dokumenty, tabulkami a nástroji mění každodenní práci školy.",
+          "category": "Novinka",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-17",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-novinka-vykonnejsi-ai.html",
+          "title": "Výkonnější AI se stává běžně dostupnou",
+          "summary": "Proč dostupnější výkonná AI mění školní zadání, detekci AI, bezpečnost i práci učitele.",
+          "category": "Novinka",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-14",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-novinka-gemini-classroom.html",
+          "title": "Gemini v Google Classroom míří i k mladším studentům",
+          "summary": "Co znamená rozšiřování Gemini v Google Classroom pro mladší studenty, učitele a AI gramotnost.",
+          "category": "Novinka",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-12",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "gemini-skills-pro-ucitele.html",
+          "title": "Gemini Skills pro učitele: jednou nastavíte, pak už Gemini ví, jak má pracovat",
+          "summary": "První Gemini Skill krok za krokem a Teacher Skill Library: osm hotových pracovních postupů ke zkopírování, jejich kombinace a kontrola výsledku.",
+          "category": "Google Gemini",
+          "contentType": "guide",
+          "directoryGroup": null,
+          "date": "2026-10-01",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "gemini-desktop-navod-pro-ucitele.html",
+          "title": "Gemini Desktop pro učitele: instalace a první kroky ve Windows",
+          "summary": "Praktický návod na instalaci Gemini pro Windows, použití zkratky Alt + Space a první učitelské workflow včetně školního účtu a bezpečnosti.",
+          "category": "Návod",
+          "contentType": "tool-guide",
+          "directoryGroup": null,
+          "date": "2026-09-18",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "gemini-notebook-navod-pro-ucitele.html",
+          "title": "Gemini Notebook: jak si vytvořit sešit, který opravdu šetří práci",
+          "summary": "Jak správně nastavit instrukce, metodiku, tematický plán, zdroje a vzorové materiály, aby Notebook pomáhal s přípravou výuky místo opakovaného zadávání stejných promptů.",
+          "category": "Nástroj krok za krokem",
+          "contentType": "tool-guide",
+          "directoryGroup": null,
+          "date": "2026-09-15",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "gemini-storybook-navod-pro-ucitele.html",
+          "title": "Gemini Storybook: jak vytvořit ilustrovaný příběh pro výuku",
+          "summary": "Praktický návod od výukového cíle přes zadání a kontrolu až po použití ilustrovaného příběhu ve třídě.",
+          "category": "Nástroj krok za krokem",
+          "contentType": "tool-guide",
+          "directoryGroup": null,
+          "date": "2026-09-15",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-ai-agent-v-prohlizeci.html",
+          "title": "AI agent v prohlížeči: když AI nejen radí, ale také pracuje",
+          "summary": "Co umí browserový agent, jak může učiteli pomoci s webovým workflow a proč je nutná kontrola oprávnění, osobních údajů a výsledků.",
+          "category": "Návod",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-09-08",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-lepsi-prompty-10-zasad.html",
+          "title": "Jak psát lepší prompty pro AI: 10 zásad pro učitele",
+          "summary": "Deset jednoduchých zásad pro přesnější zadání, která pomohou AI připravit použitelnější materiály pro konkrétní žáky a výuku.",
+          "category": "Návod",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-09-08",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-7-univerzalnich-promptu.html",
+          "title": "7 univerzálních AI promptů pro učitele",
+          "summary": "Sedm upravitelných šablon pro pracovní listy, studijní materiály, prezentace, aktivity a diferenciaci v ChatGPT, Gemini i Claude.",
+          "category": "Návod",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-29",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-gemini-notebook-prezentace.html",
+          "title": "7 promptů pro lepší výukovou prezentaci",
+          "summary": "Sedm promptů, které z vlastních materiálů v Gemini Notebooku vytvoří smysluplnější výukovou prezentaci a celou promyšlenou hodinu.",
+          "category": "Návod",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-28",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "title": "ChatGPT pro učitele: jak začít bezpečně a co zvládnete i zdarma",
+          "summary": "Praktický začátečnický návod k bezpečnému nastavení účtu, ochraně dat žáků a možnostem bezplatného ChatGPT.",
+          "category": "Návod",
+          "contentType": "guide",
+          "directoryGroup": null,
+          "date": "2026-08-27",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-chatgpt-vizualni-materialy.html",
+          "title": "7 promptů pro ChatGPT: vizuální výukové materiály",
+          "summary": "Jak z vlastních dokumentů, fotografií, skenů a tabulek připravit v ChatGPT infografiku, mapu, diagram, pracovní list nebo komiks.",
+          "category": "Návod",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-27",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-gemini-notebook-priprava.html",
+          "title": "7 promptů pro Gemini Notebook: kompletní příprava na výuku",
+          "summary": "Prompty pro plán hodiny, vysvětlení učiva, aktivity, diferenciaci, test, hodnocení a audio přehled.",
+          "category": "Návod",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-26",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-gemini-notebook-vyuka.html",
+          "title": "Gemini Notebook ve výuce: interaktivní studijní prostředí",
+          "summary": "Jak z učebních materiálů připravit přehledy, kartičky, kvízy, audio, video a další cesty k učení.",
+          "category": "Návod",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-26",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "gemini-notebook-prompty.html",
+          "title": "Prompty pro Gemini Notebook",
+          "summary": "Připravená zadání pro práci se zdroji, shrnutí, studijní materiály, otázky a kritickou analýzu.",
+          "category": "Nástroj",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-26",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-edit-kontrola.html",
+          "title": "EDIT: Jak kriticky kontrolovat výstupy AI",
+          "summary": "Čtyřkrokový postup pro kontrolu srozumitelnosti, faktické správnosti, zkreslení a použitelnosti výstupu AI.",
+          "category": "Návod",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-25",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-prep-prompty.html",
+          "title": "PREP: Jak psát lepší prompty pro AI ve výuce",
+          "summary": "Framework pro přesnější zadání, která pomohou AI připravit použitelnější materiály, aktivity a hodiny.",
+          "category": "Návod",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-25",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-gemini-notebook-infografiky.html",
+          "title": "7 promptů pro Gemini Notebook: přehledné infografiky",
+          "summary": "Prompty pro tvorbu infografik ke gramatice, slovní zásobě, četbě, poslechu, psaní, mluvení i celé lekci.",
+          "category": "Návod",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-23",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-commands-chatgpt.html",
+          "title": "Commands v ChatGPT: jak si zkrátit práci",
+          "summary": "Přehled commands pro učení, psaní, obrázky, video, organizaci práce a kritické myšlení.",
+          "category": "Návod",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-23",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "notebooklm-hlasovy-rozhovor-nad-zdroji.html",
+          "title": "Když AI zná naše učivo: hlasový rozhovor nad zdroji v NotebookLM",
+          "summary": "Jak se liší obecný rozhovor s AI od studijního rozhovoru nad materiály, které vybral učitel, a jak připravit bezpečný pilot ve výuce.",
+          "category": "Gemini Notebook",
+          "contentType": "workflow",
+          "directoryGroup": null,
+          "date": "2026-09-23",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "neplytvej-inteligenci-ai-modely.html",
+          "title": "Neplýtvej inteligencí: Proč nemusí každý úkol řešit nejsilnější AI model",
+          "summary": "Šest principů efektivnější práce s AI, rozdělení úkolů podle náročnosti a praktické prompty pro učitele i pokročilé uživatele.",
+          "category": "AI V PRAXI",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-09-23",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "google-ai-studio-2026-vibe-coding.html",
+          "title": "Google AI Studio 2026: od jednoduchého promptu k celé aplikaci",
+          "summary": "Praktický pohled na Build mode, vibe coding, GitHub, Google Workspace, API klíče a bezpečný vývoj vlastní výukové aplikace.",
+          "category": "Vibe Coding",
+          "contentType": "workflow",
+          "directoryGroup": null,
+          "date": "2026-09-18",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-chatgpt-images-2-5.html",
+          "title": "ChatGPT Images 2.5 ve výuce: od jednoduchého obrázku k výukovému materiálu",
+          "summary": "Praktický workflow od výukového cíle přes první návrh a cílené úpravy až k sadě materiálů, kontrole a použití ve výuce.",
+          "category": "Workflow",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-09-11",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-gemini-notebook-ai-agent.html",
+          "title": "Jak vytvořit chytrý učitelský sešit v Gemini Notebooku pomocí AI agenta",
+          "summary": "Praktický workflow od účelu a hierarchie zdrojů přes rešerši a ověření až po nastavení, testování a aktualizaci tematického sešitu.",
+          "category": "Workflow",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-09-08",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-prezentace-webova-stranka.html",
+          "title": "Od prezentace k webové stránce: jak může AI pomoci vytvořit výukový materiál",
+          "summary": "Jak propojit výukový cíl, vlastní zdroje, Gemini Notebook, Gemini a vibe coding při tvorbě webové stránky, ke které se žáci mohou vracet.",
+          "category": "Workflow",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-09-02",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-7-kroku-gemini-notebook.html",
+          "title": "Gemini Notebook jako kompletní příprava výuky",
+          "summary": "Opakovatelný workflow od vlastních zdrojů přes plán hodiny a materiály až po aktualizaci a AI tutora.",
+          "category": "Workflow",
+          "contentType": "workflow",
+          "directoryGroup": null,
+          "date": "2026-08-29",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-fotografie-ucebnice.html",
+          "title": "Fotografii učebnice už nemusíte ručně přepisovat",
+          "summary": "Jak z fotografie nebo skenu stránky učebnice připravit v ChatGPT infografiku, pracovní list, pojmovou mapu nebo další výukový materiál.",
+          "category": "Workflow",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-27",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-vibe-coding.html",
+          "title": "Vibe coding krok za krokem",
+          "summary": "Jak si učitel může vytvořit vlastní aplikaci bez programování – od malého problému přes prototyp a testování až po další rozvoj.",
+          "category": "Workflow",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-26",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-10-promptu-gemini.html",
+          "title": "10 promptů pro Gemini Notebook",
+          "summary": "Od práce s více zdroji přes shrnutí a ověření až po studijní materiály, další výstupy a kritickou analýzu.",
+          "category": "Workflow",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-26",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-prep-edit.html",
+          "title": "PREP + EDIT: Praktický workflow pro práci s AI",
+          "summary": "Šest kroků pro bezpečnější tvorbu školních materiálů: zdroj, zadání, návrh AI, kontrola, ověření a schválení.",
+          "category": "Workflow",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-25",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-18-promptu.html",
+          "title": "18 praktických AI promptů pro učitele",
+          "summary": "Šablony pro plánování hodin, pracovní listy, diferenciaci, testy, konverzaci, zpětnou vazbu a EDIT.",
+          "category": "Workflow",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-25",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-8-otazek.html",
+          "title": "8 otázek, které by si měl učitel položit při práci s AI",
+          "summary": "Rychlé otázky pro posouzení přínosu, spolupráce, učení žáků, bezpečnosti a lidské odpovědnosti.",
+          "category": "Workflow",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-25",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-udl-ai.html",
+          "title": "UDL + AI: Jak přizpůsobit výuku různým žákům",
+          "summary": "Jak připravit různé úrovně podpory, varianty materiálu a způsoby výstupu bez snížení vzdělávacího cíle.",
+          "category": "Workflow",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-25",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-usetri-praci.html",
+          "title": "Jak může AI skutečně ušetřit učiteli práci",
+          "summary": "Praktické rozdělení práce mezi AI a učitele: návrhy, varianty, převody, kontrola a rozhodování.",
+          "category": "Workflow",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-25",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow.html",
+          "title": "Workflow: ChatGPT → Claude",
+          "summary": "Workflow pro vytvoření vizuálních poznámek, kontrolu faktů v Claude a opravu chyb v ChatGPT.",
+          "category": "Workflow",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-23",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "skill-anglictina-vyukove-materialy.html",
+          "title": "Jeden SKILL, sedm výukových materiálů: AI pomocník pro angličtinu",
+          "summary": "Jeden otevřený SKILL pro učitele angličtiny, který pomáhá připravit sedm druhů materiálů. Obsahuje návody pro ChatGPT, Claude a Gemini a kompletní ZIP ke stažení.",
+          "category": "Angličtina",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-11-01",
+          "image": "images/home-article-english-materials.jpg",
+          "imageAlt": "Učitelka a studenti společně připravují materiály k výuce angličtiny."
+        },
+        {
+          "href": "asistent-ucitele-osobni-ai-asistent.html",
+          "title": "Asistent učitele: Pomocník, který pedagogům dosud chyběl",
+          "summary": "Každý učitel si zaslouží vlastního asistenta. Ukazujeme, čím se osobní AI asistent liší od běžného chatbota, jak může pomáhat s přípravami, plánováním a administrativou – a proč o důležitých krocích musí dál rozhodovat učitel.",
+          "category": "AI asistenti",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-10-25",
+          "image": "images/home-article-teacher-assistant.jpg",
+          "imageAlt": "Učitelka plánuje výuku u notebooku v učebně."
+        },
+        {
+          "href": "vibe-coding-bezpecnost-kodu-php2shell.html",
+          "title": "Vibe Coding: AI ti naprogramuje aplikaci. Ale kdo zkontroluje její bezpečnost?",
+          "summary": "Funkční aplikace z vibe codingu ještě nemusí být bezpečná. Dvě vrstvy kontroly, nástroj OpenAI php2shell-checker a deset kroků před zveřejněním včetně lidského dohledu.",
+          "category": "Vibe Coding",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-10-25",
+          "image": "images/home-article-security-v2.jpg",
+          "imageAlt": "Bezpečnostní výstraha na notebooku při kontrole kódu."
+        },
+        {
+          "href": "vibe-coding-pro-ucitele.html",
+          "title": "Vibe coding pro učitele: co si můžete vytvořit do výuky",
+          "summary": "Praktický průvodce typy výukových nástrojů, skutečnými projekty ze SchoolLabu a kontrolou prvního prototypu.",
+          "category": "Vibe Coding",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-09-11",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "vibe-coding-ucitele.html",
+          "title": "Úvod do Vibe Codingu pro učitele",
+          "summary": "Základní orientace ve Vibe Codingu: první zadání, role učitele, testování a bezpečné hranice při tvorbě výukové aplikace pomocí AI.",
+          "category": "Vibe Coding",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-23",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-css-grid-vibe-coding.html",
+          "title": "CSS Grid: proč se vám při vibe codingu vyplatí vědět, co znamenají řádky a sloupce",
+          "summary": "Praktické vysvětlení CSS Gridu při vibe codingu: řádky, sloupce, fr, gap, repeat() a rozdíl mezi Gridem a Flexboxem.",
+          "category": "Vibe Coding",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-09-03",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-agenti-llm-tools-rag-memory-skills-workflow-mcp.html",
+          "title": "Jak spolu souvisí LLM, Tools, RAG, Memory, Skills, Workflow a MCP",
+          "summary": "Přehledná mapa agentního systému: jak spolu souvisí LLM, tools, Function Calling, memory, RAG, skills, workflow, MCP a samotný AI agent.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Architektura",
+          "date": "2026-09-01",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-agenti-skills.html",
+          "title": "Skills: jak naučit AI agenta opakovat osvědčený pracovní postup",
+          "summary": "Co jsou skills, jak se liší od promptu, nástroje, workflow a paměti a jak vytvořit první opakovatelnou schopnost pro AI agenta ve škole.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Praxe",
+          "date": "2026-09-01",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-agenti-chatbot-automatizace-workflow.html",
+          "title": "AI agent, automatizace, workflow nebo chatbot?",
+          "summary": "Jak vybrat mezi chatbotem, klasickou automatizací, workflow a AI agentem. Praktické příklady ze školy, srovnání a otázky pro rychlé rozhodnutí.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Základy",
+          "date": "2026-09-01",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-agenti-kdy-nepouzivat.html",
+          "title": "Kdy AI agenta ve škole raději nepoužívat",
+          "summary": "Kdy AI agenta ve škole raději nepoužívat: známky, kázeňská rozhodnutí, citlivá data, oprávnění, kontrola výsledků a praktický semafor autonomie.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Bezpečnost",
+          "date": "2026-09-01",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-agenti-10-ukolu.html",
+          "title": "10 úkolů, které může AI agent převzít učiteli",
+          "summary": "Deset konkrétních školních úkolů, které může AI agent převzít nebo zjednodušit — od pracovních listů přes dokumenty až po denní pracovní přehled.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Praxe",
+          "date": "2026-09-01",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-agenti-prvni-agent.html",
+          "title": "Jak navrhnout svého prvního jednoduchého AI agenta",
+          "summary": "Praktický návod, jak navrhnout prvního jednoduchého AI agenta: vyberte úkol, definujte vstupy, zdroje, nástroje, workflow, kontrolu a bezpečné hranice.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Praxe",
+          "date": "2026-09-01",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-agenti-ve-skole.html",
+          "title": "AI agent ve škole: co může skutečně dělat učiteli",
+          "summary": "Praktický průvodce využitím AI agenta ve škole: příprava výuky, vlastní materiály, diferenciace, administrativa, školní dokumenty, bezpečnost a lidská kontrola.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Praxe",
+          "date": "2026-09-01",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-agenti-coding-agenti.html",
+          "title": "Od vibe codingu ke coding agentům: když AI pracuje na projektu",
+          "summary": "Jak se vibe coding potkává s coding agenty: AI může prohlédnout projekt, navrhnout změnu, upravit kód, spustit testy a opravit chyby.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Architektura",
+          "date": "2026-09-01",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-agenti-multi-agentni.html",
+          "title": "Multi-agentní systémy: když na jednom úkolu pracuje tým AI",
+          "summary": "Jak fungují multi-agentní systémy, orchestrátor, specializované role, sekvenční a paralelní spolupráce a proč více AI agentů neznamená automaticky lepší řešení.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Architektura",
+          "date": "2026-09-01",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-agenti-mcp.html",
+          "title": "MCP: univerzální konektor pro svět AI agentů",
+          "summary": "Jak funguje Model Context Protocol: otevřený standard pro propojení AI aplikací s nástroji, databázemi, dokumenty a dalšími systémy.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Architektura",
+          "date": "2026-09-01",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-agenti-rag.html",
+          "title": "RAG: když AI pracuje s vašimi vlastními dokumenty",
+          "summary": "Jak funguje RAG: AI vyhledá relevantní části školních, interních nebo vlastních dokumentů a předá je modelu pro přesnější odpověď podle zdrojů.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Architektura",
+          "date": "2026-09-01",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-agenti-pamet.html",
+          "title": "Paměť AI agentů: co si AI skutečně pamatuje",
+          "summary": "Jak funguje paměť AI agentů: kontext, pracovní a dlouhodobá paměť, externí znalostní zdroje, RAG, soukromí, aktuálnost a rozdíl proti trénování modelu.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Architektura",
+          "date": "2026-09-01",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-agenti-nastroje-function-calling.html",
+          "title": "Nástroje a Function Calling: jak dostane AI „ruce“",
+          "summary": "Jak AI agent používá nástroje a Function Calling: aktuální data, soubory, databáze, API, minimální oprávnění, human in the loop a nástroje ve vibe codingu.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Architektura",
+          "date": "2026-09-01",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-agenti-agentni-smycka.html",
+          "title": "Jak funguje AI agent: agentní smyčka krok za krokem",
+          "summary": "Jak funguje agentní smyčka krok za krokem: pochop, naplánuj, proveď a zkontroluj. Praktický příklad ze školy, nástroje, autonomie a human in the loop.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Architektura",
+          "date": "2026-09-01",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-agenti-co-je-ai-agent.html",
+          "title": "AI agenti: když AI přestane jen odpovídat a začne pracovat",
+          "summary": "Úvod do AI agentů: od chatbotu k plnění celých pracovních úkolů, agentní smyčka, nástroje, paměť, bezpečnost a souvislost s vibe codingem.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Základy",
+          "date": "2026-09-01",
+          "image": null,
+          "imageAlt": null
+        }
+      ],
+      "filters": [
+        {
+          "value": "all",
+          "label": "Vše",
+          "category": null,
+          "contentType": null,
+          "directoryGroup": null
+        },
+        {
+          "value": "chatgpt",
+          "label": "ChatGPT",
+          "category": null,
+          "contentType": null,
+          "directoryGroup": null
+        },
+        {
+          "value": "gemini",
+          "label": "Gemini",
+          "category": null,
+          "contentType": null,
+          "directoryGroup": null
+        },
+        {
+          "value": "microsoft",
+          "label": "Microsoft",
+          "category": null,
+          "contentType": null,
+          "directoryGroup": null
+        },
+        {
+          "value": "vibe-coding",
+          "label": "Vibe Coding",
+          "category": null,
+          "contentType": null,
+          "directoryGroup": null
+        },
+        {
+          "value": "philosophy",
+          "label": "Filozofování s AI",
+          "category": null,
+          "contentType": null,
+          "directoryGroup": null
+        }
+      ],
+      "publicIds": [
+        "primary-nav",
+        "obsah",
+        "catalog-search",
+        "filter-label",
+        "novinky",
+        "navody",
+        "workflow",
+        "temata"
+      ],
+      "internalAnchors": [
+        "obsah",
+        "novinky",
+        "navody",
+        "workflow",
+        "temata"
+      ],
+      "imageAltTexts": [
+        {
+          "src": "images/ai-assistant-book-logo.png",
+          "alt": ""
+        },
+        {
+          "src": "images/ai-ve-vyuce-robot-navody-transparentni.webp",
+          "alt": ""
+        },
+        {
+          "src": "images/ai-duvod-premyslet-hero.webp",
+          "alt": "Učitelka se studenty zkoumá školní projekt a přemýšlí nad jeho řešením."
+        },
+        {
+          "src": "images/gemini-notebook-insight-summaries-hero.webp",
+          "alt": "Učitelka sleduje studijní práci žáků u notebooku."
+        },
+        {
+          "src": "images/home-article-video-attention.jpg",
+          "alt": "Studenti se soustředí na výukové video na notebooku."
+        },
+        {
+          "src": "images/home-article-english-materials.jpg",
+          "alt": "Učitelka a studenti společně připravují materiály k výuce angličtiny."
+        },
+        {
+          "src": "images/home-article-teacher-assistant.jpg",
+          "alt": "Učitelka plánuje výuku u notebooku v učebně."
+        },
+        {
+          "src": "images/home-article-security-v2.jpg",
+          "alt": "Bezpečnostní výstraha na notebooku při kontrole kódu."
+        },
+        {
+          "src": "images/ai-assistant-book-logo.png",
+          "alt": ""
+        }
+      ],
+      "navigationAreaLinks": [
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "label": "Začít s AI",
+          "current": null
+        },
+        {
+          "href": "ai-navody.html",
+          "label": "Připravit výuku",
+          "current": null
+        },
+        {
+          "href": "aktivity.html",
+          "label": "Učit s AI",
+          "current": null
+        },
+        {
+          "href": "asistenti.html",
+          "label": "Nástroje a asistenti",
+          "current": null
+        },
+        {
+          "href": "vibe-coding.html",
+          "label": "Tvořit s AI",
+          "current": null
+        },
+        {
+          "href": "ai.html",
+          "label": "Číst a objevovat",
+          "current": "page"
+        }
+      ],
+      "activeNavigation": "page",
+      "specialProductSectionIds": [
+        "novinky",
+        "navody",
+        "workflow",
+        "temata"
+      ],
+      "searchInputCount": 1
+    },
+    "ai-navody.html": {
+      "cardCount": 32,
+      "cards": [
+        {
+          "href": "ai-novinka-ai-duvod-premyslet.html",
+          "title": "AI nemá za žáka přemýšlet. Má mu dát důvod přemýšlet.",
+          "summary": "Jak využít umělou inteligenci k probuzení zvídavosti, samostatnosti a skutečného zájmu o učení. Sedm principů, ukázka hodiny, tři prompty a infografika pro učitele.",
+          "category": "AI ve vzdělávání",
+          "contentType": "magazine",
+          "directoryGroup": null,
+          "date": "2026-10-30",
+          "image": "images/ai-duvod-premyslet-hero.webp",
+          "imageAlt": "Učitelka se studenty zkoumá školní projekt a přemýšlí nad jeho řešením."
+        },
+        {
+          "href": "gemini-skills-pro-ucitele.html",
+          "title": "Gemini Skills pro učitele: jednou nastavíte, pak už Gemini ví, jak má pracovat",
+          "summary": "První Gemini Skill krok za krokem a Teacher Skill Library: osm hotových pracovních postupů ke zkopírování, jejich kombinace a kontrola výsledku.",
+          "category": "Google Gemini",
+          "contentType": "guide",
+          "directoryGroup": null,
+          "date": "2026-10-01",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "notebooklm-hlasovy-rozhovor-nad-zdroji.html",
+          "title": "Když AI zná naše učivo: hlasový rozhovor nad zdroji v NotebookLM",
+          "summary": "Jak se liší obecný rozhovor s AI od studijního rozhovoru nad materiály, které vybral učitel, a jak připravit bezpečný pilot ve výuce.",
+          "category": "Gemini Notebook",
+          "contentType": "workflow",
+          "directoryGroup": null,
+          "date": "2026-09-23",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "gemini-desktop-navod-pro-ucitele.html",
+          "title": "Gemini Desktop pro učitele: instalace a první kroky ve Windows",
+          "summary": "Praktický návod na instalaci Gemini pro Windows, použití zkratky Alt + Space a první učitelské workflow včetně školního účtu a bezpečnosti.",
+          "category": "Návod",
+          "contentType": "tool-guide",
+          "directoryGroup": null,
+          "date": "2026-09-18",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "google-ai-studio-2026-vibe-coding.html",
+          "title": "Google AI Studio 2026: od jednoduchého promptu k celé aplikaci",
+          "summary": "Praktický pohled na Build mode, vibe coding, GitHub, Google Workspace, API klíče a bezpečný vývoj vlastní výukové aplikace.",
+          "category": "Vibe Coding",
+          "contentType": "workflow",
+          "directoryGroup": null,
+          "date": "2026-09-18",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "gemini-notebook-navod-pro-ucitele.html",
+          "title": "Gemini Notebook: jak si vytvořit sešit, který opravdu šetří práci",
+          "summary": "Jak správně nastavit instrukce, metodiku, tematický plán, zdroje a vzorové materiály, aby Notebook pomáhal s přípravou výuky místo opakovaného zadávání stejných promptů.",
+          "category": "Nástroj krok za krokem",
+          "contentType": "tool-guide",
+          "directoryGroup": null,
+          "date": "2026-09-15",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "gemini-storybook-navod-pro-ucitele.html",
+          "title": "Gemini Storybook: jak vytvořit ilustrovaný příběh pro výuku",
+          "summary": "Praktický návod od výukového cíle přes zadání a kontrolu až po použití ilustrovaného příběhu ve třídě.",
+          "category": "Nástroj krok za krokem",
+          "contentType": "tool-guide",
+          "directoryGroup": null,
+          "date": "2026-09-15",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-chatgpt-images-2-5.html",
+          "title": "ChatGPT Images 2.5 ve výuce: od jednoduchého obrázku k výukovému materiálu",
+          "summary": "Praktický workflow od výukového cíle přes první návrh a cílené úpravy až k sadě materiálů, kontrole a použití ve výuce.",
+          "category": "Workflow",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-09-11",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-ai-agent-v-prohlizeci.html",
+          "title": "AI agent v prohlížeči: když AI nejen radí, ale také pracuje",
+          "summary": "Co umí browserový agent, jak může učiteli pomoci s webovým workflow a proč je nutná kontrola oprávnění, osobních údajů a výsledků.",
+          "category": "Návod",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-09-08",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-gemini-notebook-ai-agent.html",
+          "title": "Jak vytvořit chytrý učitelský sešit v Gemini Notebooku pomocí AI agenta",
+          "summary": "Praktický workflow od účelu a hierarchie zdrojů přes rešerši a ověření až po nastavení, testování a aktualizaci tematického sešitu.",
+          "category": "Workflow",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-09-08",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-lepsi-prompty-10-zasad.html",
+          "title": "Jak psát lepší prompty pro AI: 10 zásad pro učitele",
+          "summary": "Deset jednoduchých zásad pro přesnější zadání, která pomohou AI připravit použitelnější materiály pro konkrétní žáky a výuku.",
+          "category": "Návod",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-09-08",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-prezentace-webova-stranka.html",
+          "title": "Od prezentace k webové stránce: jak může AI pomoci vytvořit výukový materiál",
+          "summary": "Jak propojit výukový cíl, vlastní zdroje, Gemini Notebook, Gemini a vibe coding při tvorbě webové stránky, ke které se žáci mohou vracet.",
+          "category": "Workflow",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-09-02",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-7-univerzalnich-promptu.html",
+          "title": "7 univerzálních AI promptů pro učitele",
+          "summary": "Sedm upravitelných šablon pro pracovní listy, studijní materiály, prezentace, aktivity a diferenciaci v ChatGPT, Gemini i Claude.",
+          "category": "Návod",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-29",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-7-kroku-gemini-notebook.html",
+          "title": "Gemini Notebook jako kompletní příprava výuky",
+          "summary": "Opakovatelný workflow od vlastních zdrojů přes plán hodiny a materiály až po aktualizaci a AI tutora.",
+          "category": "Workflow",
+          "contentType": "workflow",
+          "directoryGroup": null,
+          "date": "2026-08-29",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-gemini-notebook-prezentace.html",
+          "title": "7 promptů pro lepší výukovou prezentaci",
+          "summary": "Sedm promptů, které z vlastních materiálů v Gemini Notebooku vytvoří smysluplnější výukovou prezentaci a celou promyšlenou hodinu.",
+          "category": "Návod",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-28",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "title": "ChatGPT pro učitele: jak začít bezpečně a co zvládnete i zdarma",
+          "summary": "Praktický začátečnický návod k bezpečnému nastavení účtu, ochraně dat žáků a možnostem bezplatného ChatGPT.",
+          "category": "Návod",
+          "contentType": "guide",
+          "directoryGroup": null,
+          "date": "2026-08-27",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-chatgpt-vizualni-materialy.html",
+          "title": "7 promptů pro ChatGPT: vizuální výukové materiály",
+          "summary": "Jak z vlastních dokumentů, fotografií, skenů a tabulek připravit v ChatGPT infografiku, mapu, diagram, pracovní list nebo komiks.",
+          "category": "Návod",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-27",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-fotografie-ucebnice.html",
+          "title": "Fotografii učebnice už nemusíte ručně přepisovat",
+          "summary": "Jak z fotografie nebo skenu stránky učebnice připravit v ChatGPT infografiku, pracovní list, pojmovou mapu nebo další výukový materiál.",
+          "category": "Workflow",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-27",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-vibe-coding.html",
+          "title": "Vibe coding krok za krokem",
+          "summary": "Jak si učitel může vytvořit vlastní aplikaci bez programování – od malého problému přes prototyp a testování až po další rozvoj.",
+          "category": "Workflow",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-26",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-10-promptu-gemini.html",
+          "title": "10 promptů pro Gemini Notebook",
+          "summary": "Od práce s více zdroji přes shrnutí a ověření až po studijní materiály, další výstupy a kritickou analýzu.",
+          "category": "Workflow",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-26",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-gemini-notebook-priprava.html",
+          "title": "7 promptů pro Gemini Notebook: kompletní příprava na výuku",
+          "summary": "Prompty pro plán hodiny, vysvětlení učiva, aktivity, diferenciaci, test, hodnocení a audio přehled.",
+          "category": "Návod",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-26",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-gemini-notebook-vyuka.html",
+          "title": "Gemini Notebook ve výuce: interaktivní studijní prostředí",
+          "summary": "Jak z učebních materiálů připravit přehledy, kartičky, kvízy, audio, video a další cesty k učení.",
+          "category": "Návod",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-26",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-prep-edit.html",
+          "title": "PREP + EDIT: Praktický workflow pro práci s AI",
+          "summary": "Šest kroků pro bezpečnější tvorbu školních materiálů: zdroj, zadání, návrh AI, kontrola, ověření a schválení.",
+          "category": "Workflow",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-25",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-edit-kontrola.html",
+          "title": "EDIT: Jak kriticky kontrolovat výstupy AI",
+          "summary": "Čtyřkrokový postup pro kontrolu srozumitelnosti, faktické správnosti, zkreslení a použitelnosti výstupu AI.",
+          "category": "Návod",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-25",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-prep-prompty.html",
+          "title": "PREP: Jak psát lepší prompty pro AI ve výuce",
+          "summary": "Framework pro přesnější zadání, která pomohou AI připravit použitelnější materiály, aktivity a hodiny.",
+          "category": "Návod",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-25",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-18-promptu.html",
+          "title": "18 praktických AI promptů pro učitele",
+          "summary": "Šablony pro plánování hodin, pracovní listy, diferenciaci, testy, konverzaci, zpětnou vazbu a EDIT.",
+          "category": "Workflow",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-25",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-8-otazek.html",
+          "title": "8 otázek, které by si měl učitel položit při práci s AI",
+          "summary": "Rychlé otázky pro posouzení přínosu, spolupráce, učení žáků, bezpečnosti a lidské odpovědnosti.",
+          "category": "Workflow",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-25",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-udl-ai.html",
+          "title": "UDL + AI: Jak přizpůsobit výuku různým žákům",
+          "summary": "Jak připravit různé úrovně podpory, varianty materiálu a způsoby výstupu bez snížení vzdělávacího cíle.",
+          "category": "Workflow",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-25",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-usetri-praci.html",
+          "title": "Jak může AI skutečně ušetřit učiteli práci",
+          "summary": "Praktické rozdělení práce mezi AI a učitele: návrhy, varianty, převody, kontrola a rozhodování.",
+          "category": "Workflow",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-25",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-gemini-notebook-infografiky.html",
+          "title": "7 promptů pro Gemini Notebook: přehledné infografiky",
+          "summary": "Prompty pro tvorbu infografik ke gramatice, slovní zásobě, četbě, poslechu, psaní, mluvení i celé lekci.",
+          "category": "Návod",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-23",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-commands-chatgpt.html",
+          "title": "Commands v ChatGPT: jak si zkrátit práci",
+          "summary": "Přehled commands pro učení, psaní, obrázky, video, organizaci práce a kritické myšlení.",
+          "category": "Návod",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-23",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow.html",
+          "title": "Workflow: ChatGPT → Claude",
+          "summary": "Workflow pro vytvoření vizuálních poznámek, kontrolu faktů v Claude a opravu chyb v ChatGPT.",
+          "category": "Workflow",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-23",
+          "image": null,
+          "imageAlt": null
+        }
+      ],
+      "filters": [
+        {
+          "value": "all",
+          "label": "Vše",
+          "category": null,
+          "contentType": null,
+          "directoryGroup": null
+        },
+        {
+          "value": "chatgpt",
+          "label": "ChatGPT",
+          "category": null,
+          "contentType": null,
+          "directoryGroup": null
+        },
+        {
+          "value": "gemini",
+          "label": "Gemini",
+          "category": null,
+          "contentType": null,
+          "directoryGroup": null
+        },
+        {
+          "value": "microsoft",
+          "label": "Microsoft",
+          "category": null,
+          "contentType": null,
+          "directoryGroup": null
+        },
+        {
+          "value": "vibe-coding",
+          "label": "Vibe Coding",
+          "category": null,
+          "contentType": null,
+          "directoryGroup": null
+        },
+        {
+          "value": "philosophy",
+          "label": "Filozofování s AI",
+          "category": null,
+          "contentType": null,
+          "directoryGroup": null
+        }
+      ],
+      "publicIds": [
+        "primary-menu",
+        "obsah",
+        "katalog-navodu",
+        "catalog-search",
+        "filter-label",
+        "zacatek-s-ai",
+        "zadani",
+        "kontrola-vystupu"
+      ],
+      "internalAnchors": [
+        "obsah",
+        "katalog-navodu"
+      ],
+      "imageAltTexts": [
+        {
+          "src": "images/ai-assistant-book-logo.png?v=robot-20261103",
+          "alt": ""
+        },
+        {
+          "src": "images/ai-ve-vyuce-robot-navody-transparentni.webp",
+          "alt": ""
+        },
+        {
+          "src": "images/ai-duvod-premyslet-hero.webp",
+          "alt": "Učitelka se studenty zkoumá školní projekt a přemýšlí nad jeho řešením."
+        },
+        {
+          "src": "images/ai-assistant-book-logo.png",
+          "alt": ""
+        }
+      ],
+      "navigationAreaLinks": [
+        {
+          "href": "index.html",
+          "label": "AI ve výuce INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE",
+          "current": null
+        },
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "label": "Začít s AI",
+          "current": null
+        },
+        {
+          "href": "ai-navody.html",
+          "label": "Připravit výuku",
+          "current": null
+        },
+        {
+          "href": "aktivity.html",
+          "label": "Učit s AI",
+          "current": null
+        },
+        {
+          "href": "asistenti.html",
+          "label": "Nástroje a asistenti",
+          "current": null
+        },
+        {
+          "href": "vibe-coding.html",
+          "label": "Tvořit s AI",
+          "current": null
+        },
+        {
+          "href": "ai.html",
+          "label": "Číst a objevovat",
+          "current": null
+        }
+      ],
+      "activeNavigation": "",
+      "specialProductSectionIds": [
+        "katalog-navodu",
+        "zacatek-s-ai",
+        "zadani",
+        "kontrola-vystupu"
+      ],
+      "searchInputCount": 1
+    },
+    "ai-novinky.html": {
+      "cardCount": 22,
+      "cards": [
+        {
+          "href": "ai-novinka-ai-duvod-premyslet.html",
+          "title": "AI nemá za žáka přemýšlet. Má mu dát důvod přemýšlet.",
+          "summary": "Jak využít umělou inteligenci k probuzení zvídavosti, samostatnosti a skutečného zájmu o učení. Sedm principů, ukázka hodiny, tři prompty a infografika pro učitele.",
+          "category": "AI ve vzdělávání",
+          "contentType": "magazine",
+          "directoryGroup": null,
+          "date": "2026-10-30",
+          "image": "images/ai-duvod-premyslet-hero.webp",
+          "imageAlt": "Učitelka se studenty zkoumá školní projekt a přemýšlí nad jeho řešením."
+        },
+        {
+          "href": "gemini-notebook-ucitel-vidi-chaty-zaku.html",
+          "title": "Učitel nově uvidí, jak se žáci učí s AI. Google Gemini Notebook otevírá novou kapitolu výuky",
+          "summary": "Insight Summaries v Gemini Notebooku a Google Classroom: přehled práce žáků, individuální rozhovory, formativní hodnocení a otázky soukromí. Praktický příklad a přehledná infografika.",
+          "category": "AI ve vzdělávání",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-10-23",
+          "image": "images/gemini-notebook-insight-summaries-hero.webp",
+          "imageAlt": "Učitelka sleduje studijní práci žáků u notebooku."
+        },
+        {
+          "href": "co-se-muze-ucitel-naucit-od-youtube.html",
+          "title": "Co se může učitel naučit od YouTube? Pozornost žáků není samozřejmost",
+          "summary": "Co si mohou učitelé odnést z postupů profesionálních tvůrců videí? Praktický pohled na pozornost, scénáře, interaktivitu a využití AI při tvorbě výukových materiálů – bez zbytečných marketingových triků.",
+          "category": "AI ve vzdělávání",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-10-16",
+          "image": "images/home-article-video-attention.jpg",
+          "imageAlt": "Studenti se soustředí na výukové video na notebooku."
+        },
+        {
+          "href": "kdyz-ai-jedna-odpovednost-ai-agenta.html",
+          "title": "Když AI už nejen radí, ale jedná: kdo nese odpovědnost za AI agenta?",
+          "summary": "Tři úrovně autonomie AI agenta, lidský dohled, oprávnění a odpovědnost ve škole.",
+          "category": "Filozofování s AI",
+          "contentType": "philosophy",
+          "directoryGroup": null,
+          "date": "2026-09-30",
+          "image": "images/kdyz-ai-jedna-odpovednost-ai-agenta-uvod.png",
+          "imageAlt": "Když AI už nejen radí, ale jedná: kdo nese odpovědnost za AI agenta?"
+        },
+        {
+          "href": "uci-se-zak-nebo-za-nej-premysli-ai.html",
+          "title": "Učí se žák, nebo za něj přemýšlí AI?",
+          "summary": "Jak poznat, kdy umělá inteligence podporuje učení a kdy už přebírá práci studenta.",
+          "category": "Filozofování s AI",
+          "contentType": "philosophy",
+          "directoryGroup": null,
+          "date": "2026-09-23",
+          "image": "images/uci-se-zak-nebo-za-nej-premysli-ai.png",
+          "imageAlt": "Učí se žák, nebo za něj přemýšlí AI?"
+        },
+        {
+          "href": "ai-ziva-hlasova-ai-ve-vyuce.html",
+          "title": "Když AI začne skutečně naslouchat: živá hlasová umělá inteligence ve výuce",
+          "summary": "Praktické aktivity pro cizí jazyky, pracovní pohovor, odbornou komunikaci, argumentaci, vysvětlování i nácvik obtížných situací.",
+          "category": "AI ve vzdělávání",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-09-21",
+          "image": "images/ziva-hlasova-ai-ve-vyuce.png",
+          "imageAlt": "Když AI začne skutečně naslouchat: živá hlasová umělá inteligence ve výuce"
+        },
+        {
+          "href": "ai-novinka-gemini-desktop-chatgpt-word-agenti.html",
+          "title": "AI ve vzdělávání: Gemini na Windows, ChatGPT ve Wordu a nové hranice pro AI agenty",
+          "summary": "Gemini přichází na Windows, ChatGPT do Wordu a Gemini Notebook rozšiřuje studijní možnosti. Praktické souvislosti pro učitele, oprávnění a ochranu školních dat.",
+          "category": "Novinka",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-09-18",
+          "image": "images/ai-vzdelavani-gemini-desktop-word-agenti.png",
+          "imageAlt": "AI ve vzdělávání: Gemini na Windows, ChatGPT ve Wordu a nové hranice pro AI agenty"
+        },
+        {
+          "href": "ai-novinka-filozofovani-s-ai-chybejici-role.html",
+          "title": "AI možná nevezme učitelům práci. Možná nám ukáže, kolik lidí nám celou dobu chybělo",
+          "summary": "Druhý díl autorské série o tom, jak AI odhaluje práci a podpůrné role, které lidé vykonávali bez podpory a pro které jsme nikdy nevytvořili samostatné místo.",
+          "category": "Filozofování s AI",
+          "contentType": "philosophy",
+          "directoryGroup": null,
+          "date": "2026-09-16",
+          "image": "images/filozofovani-s-ai-ai-asistent-ucitele.png",
+          "imageAlt": "AI možná nevezme učitelům práci. Možná nám ukáže, kolik lidí nám celou dobu chybělo"
+        },
+        {
+          "href": "ai-novinka-filozofovani-s-ai-kriticke-mysleni.html",
+          "title": "Kritické myšlení už nestačí? Human in the Loop jako další krok v době AI",
+          "summary": "První díl autorské série o kritickém myšlení, Human in the Loop a další roli člověka v době AI.",
+          "category": "Filozofování s AI",
+          "contentType": "philosophy",
+          "directoryGroup": null,
+          "date": "2026-09-15",
+          "image": "images/filozofovani-s-ai-human-in-the-loop.png",
+          "imageAlt": "Kritické myšlení už nestačí? Human in the Loop jako další krok v době AI"
+        },
+        {
+          "href": "ai-novinka-datovi-agenti-lidske-schvaleni.html",
+          "title": "AI ve vzdělávání: datoví agenti, lidské schvalování a bezpečnější automatizace",
+          "summary": "Datoví agenti, lidské schvalování akcí a principy bezpečnější automatizace pro školy. Praktické souvislosti pro učitele.",
+          "category": "Novinka",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-09-14",
+          "image": "images/ai-vzdelavani-datovi-agenti-lidske-schvaleni.png",
+          "imageAlt": "AI ve vzdělávání: datoví agenti, lidské schvalování a bezpečnější automatizace"
+        },
+        {
+          "href": "ai-novinka-sdilene-zdroje-propojene-aplikace-2026.html",
+          "title": "AI ve vzdělávání: sdílené zdroje, propojené aplikace a bezpečnější práce s daty",
+          "summary": "AI se mění z osobního chatbota na součást společné informační infrastruktury školy. Důležitá jsou data, oprávnění, audit a lidská kontrola.",
+          "category": "Novinka",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-09-11",
+          "image": "images/ai-vzdelavani-sdilene-zdroje-data-2026.png",
+          "imageAlt": "AI ve vzdělávání: sdílené zdroje, propojené aplikace a bezpečnější práce s daty"
+        },
+        {
+          "href": "ai-novinka-ai-ve-vzdelavani-zari-2026.html",
+          "title": "AI ve vzdělávání: přesnější práce s obrázky, bezpečnější přístup k AI a nové zázemí pro školy",
+          "summary": "Přesnější editace existujících materiálů, kontextové zabezpečení Gemini a specializované AI nástroje pro učitele.",
+          "category": "Novinka",
+          "contentType": "magazine",
+          "directoryGroup": null,
+          "date": "2026-09-09",
+          "image": "images/ai-vzdelavani-obrazky-bezpecnost-skoly-zari-2026.png",
+          "imageAlt": "AI ve vzdělávání: přesnější práce s obrázky, bezpečnější přístup k AI a nové zázemí pro školy"
+        },
+        {
+          "href": "ai-novinka-agenti-onenote-pruvodce-ucenim.html",
+          "title": "AI ve vzdělávání: chytřejší agenti, OneNote v ChatGPT a AI jako průvodce učením",
+          "summary": "Chytřejší agenti, propojení ChatGPT s OneNotem a AI jako průvodce učením. Tři směry vývoje a praktické tipy pro učitele.",
+          "category": "Novinka",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-09-07",
+          "image": "images/ai-vzdelavani-agenti-onenote-pruvodce-ucenim.png",
+          "imageAlt": "AI ve vzdělávání: chytřejší agenti, OneNote v ChatGPT a AI jako průvodce učením"
+        },
+        {
+          "href": "ai-novinka-google-ai-vzdelavani-zari-2026.html",
+          "title": "AI ve vzdělávání: Google posiluje tvorbu materiálů i bezpečnost práce s daty",
+          "summary": "Novinky v AI pro vzdělávání: editace existujících materiálů, klasifikace dokumentů, řízení oprávnění a praktické tipy pro učitele.",
+          "category": "Novinka",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-09-02",
+          "image": "images/ai-ve-vzdelavani-google-zari-2026.png",
+          "imageAlt": "AI ve vzdělávání: Google posiluje tvorbu materiálů i bezpečnost práce s daty"
+        },
+        {
+          "href": "ai-novinka-ai-ve-vzdelavani-srpen-2026.html",
+          "title": "AI ve vzdělávání: co je nového na konci srpna 2026",
+          "summary": "Přehled novinek od Microsoftu, Googlu a OpenAI: AI jako tutor, práce se zdroji a postupné začleňování do školního prostředí.",
+          "category": "Novinka",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-27",
+          "image": "images/ai-ve-vzdelavani-konec-srpna-2026.png",
+          "imageAlt": "AI ve vzdělávání: co je nového na konci srpna 2026"
+        },
+        {
+          "href": "ai-novinka-pravidla-ve-skole.html",
+          "title": "AI pravidla ve škole",
+          "summary": "Co má obsahovat dobrá školní politika pro žáky, učitele, vedení školy a rodiče v roce 2026.",
+          "category": "Novinka",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-25",
+          "image": "images/ai-pravidla-ve-skole-2026.png",
+          "imageAlt": "AI pravidla ve škole"
+        },
+        {
+          "href": "ai-novinka-gemini-notebook-sablona.html",
+          "title": "Gemini Notebook jako výuková šablona",
+          "summary": "Jak z učitelské přípravy vytvořit kopírovatelný AI studijní balíček pro každého studenta.",
+          "category": "Novinka",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-24",
+          "image": "images/gemini-notebook-sablona.png",
+          "imageAlt": "Gemini Notebook jako výuková šablona"
+        },
+        {
+          "href": "ai-novinka-microsoft-ai-workflow.html",
+          "title": "Microsoft skládá celý AI workflow pro učitele",
+          "summary": "Jak propojit přípravu učitele, tvorbu aktivity, zadání studentům, práci žáka a výsledky.",
+          "category": "Novinka",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-21",
+          "image": "images/microsoft-ai-workflow-ucitele.png",
+          "imageAlt": "Microsoft skládá celý AI workflow pro učitele"
+        },
+        {
+          "href": "ai-novinka-chatgpt-interaktivni-kvizy.html",
+          "title": "ChatGPT přidává interaktivní kvízy",
+          "summary": "Jak využít interaktivní kvízy, vlastní zdroje a průběžnou zpětnou vazbu pro učení.",
+          "category": "Novinka",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-19",
+          "image": "images/chatgpt-interaktivni-kvizy.png",
+          "imageAlt": "ChatGPT přidává interaktivní kvízy"
+        },
+        {
+          "href": "ai-novinka-microsoft-gemini.html",
+          "title": "Microsoft skládá AI do jednoho pracovního prostředí",
+          "summary": "Jak integrace AI s účty, dokumenty, tabulkami a nástroji mění každodenní práci školy.",
+          "category": "Novinka",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-17",
+          "image": "images/microsoft-copilot-gemini-pracovni-prostredi.png",
+          "imageAlt": "Microsoft skládá AI do jednoho pracovního prostředí"
+        },
+        {
+          "href": "ai-novinka-vykonnejsi-ai.html",
+          "title": "Výkonnější AI se stává běžně dostupnou",
+          "summary": "Proč dostupnější výkonná AI mění školní zadání, detekci AI, bezpečnost i práci učitele.",
+          "category": "Novinka",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-14",
+          "image": "images/vykonnejsi-ai-pro-skoly.png",
+          "imageAlt": "Výkonnější AI se stává běžně dostupnou"
+        },
+        {
+          "href": "ai-novinka-gemini-classroom.html",
+          "title": "Gemini v Google Classroom míří i k mladším studentům",
+          "summary": "Co znamená rozšiřování Gemini v Google Classroom pro mladší studenty, učitele a AI gramotnost.",
+          "category": "Novinka",
+          "contentType": "",
+          "directoryGroup": null,
+          "date": "2026-08-12",
+          "image": "images/gemini-classroom-ai-vyuka.png",
+          "imageAlt": "Gemini v Google Classroom míří i k mladším studentům"
+        }
+      ],
+      "filters": [
+        {
+          "value": "all",
+          "label": "Všechny rubriky",
+          "category": null,
+          "contentType": null,
+          "directoryGroup": null
+        },
+        {
+          "value": "AI ve vzdělávání",
+          "label": "AI ve vzdělávání",
+          "category": "AI ve vzdělávání",
+          "contentType": null,
+          "directoryGroup": null
+        },
+        {
+          "value": "Novinka",
+          "label": "Novinky",
+          "category": "Novinka",
+          "contentType": null,
+          "directoryGroup": null
+        },
+        {
+          "value": "Filozofování s AI",
+          "label": "Filozofování s AI",
+          "category": "Filozofování s AI",
+          "contentType": null,
+          "directoryGroup": null
+        }
+      ],
+      "publicIds": [
+        "primary-menu",
+        "obsah",
+        "catalog-search",
+        "filter-label",
+        "news-heading",
+        "nove-funkce",
+        "funkce-pro-skolu",
+        "bezpecnost-ai"
+      ],
+      "internalAnchors": [
+        "obsah"
+      ],
+      "imageAltTexts": [
+        {
+          "src": "images/ai-assistant-book-logo.png?v=robot-20261103",
+          "alt": ""
+        },
+        {
+          "src": "images/ai-duvod-premyslet-hero.webp",
+          "alt": "Učitelka se studenty zkoumá školní projekt a přemýšlí nad jeho řešením."
+        },
+        {
+          "src": "images/gemini-notebook-insight-summaries-hero.webp",
+          "alt": "Učitelka sleduje studijní práci žáků u notebooku."
+        },
+        {
+          "src": "images/home-article-video-attention.jpg",
+          "alt": "Studenti se soustředí na výukové video na notebooku."
+        },
+        {
+          "src": "images/kdyz-ai-jedna-odpovednost-ai-agenta-uvod.png",
+          "alt": "Když AI už nejen radí, ale jedná: kdo nese odpovědnost za AI agenta?"
+        },
+        {
+          "src": "images/uci-se-zak-nebo-za-nej-premysli-ai.png",
+          "alt": "Učí se žák, nebo za něj přemýšlí AI?"
+        },
+        {
+          "src": "images/ziva-hlasova-ai-ve-vyuce.png",
+          "alt": "Když AI začne skutečně naslouchat: živá hlasová umělá inteligence ve výuce"
+        },
+        {
+          "src": "images/ai-vzdelavani-gemini-desktop-word-agenti.png",
+          "alt": "AI ve vzdělávání: Gemini na Windows, ChatGPT ve Wordu a nové hranice pro AI agenty"
+        },
+        {
+          "src": "images/filozofovani-s-ai-ai-asistent-ucitele.png",
+          "alt": "AI možná nevezme učitelům práci. Možná nám ukáže, kolik lidí nám celou dobu chybělo"
+        },
+        {
+          "src": "images/filozofovani-s-ai-human-in-the-loop.png",
+          "alt": "Kritické myšlení už nestačí? Human in the Loop jako další krok v době AI"
+        },
+        {
+          "src": "images/ai-vzdelavani-datovi-agenti-lidske-schvaleni.png",
+          "alt": "AI ve vzdělávání: datoví agenti, lidské schvalování a bezpečnější automatizace"
+        },
+        {
+          "src": "images/ai-vzdelavani-sdilene-zdroje-data-2026.png",
+          "alt": "AI ve vzdělávání: sdílené zdroje, propojené aplikace a bezpečnější práce s daty"
+        },
+        {
+          "src": "images/ai-vzdelavani-obrazky-bezpecnost-skoly-zari-2026.png",
+          "alt": "AI ve vzdělávání: přesnější práce s obrázky, bezpečnější přístup k AI a nové zázemí pro školy"
+        },
+        {
+          "src": "images/ai-vzdelavani-agenti-onenote-pruvodce-ucenim.png",
+          "alt": "AI ve vzdělávání: chytřejší agenti, OneNote v ChatGPT a AI jako průvodce učením"
+        },
+        {
+          "src": "images/ai-ve-vzdelavani-google-zari-2026.png",
+          "alt": "AI ve vzdělávání: Google posiluje tvorbu materiálů i bezpečnost práce s daty"
+        },
+        {
+          "src": "images/ai-ve-vzdelavani-konec-srpna-2026.png",
+          "alt": "AI ve vzdělávání: co je nového na konci srpna 2026"
+        },
+        {
+          "src": "images/ai-pravidla-ve-skole-2026.png",
+          "alt": "AI pravidla ve škole"
+        },
+        {
+          "src": "images/gemini-notebook-sablona.png",
+          "alt": "Gemini Notebook jako výuková šablona"
+        },
+        {
+          "src": "images/microsoft-ai-workflow-ucitele.png",
+          "alt": "Microsoft skládá celý AI workflow pro učitele"
+        },
+        {
+          "src": "images/chatgpt-interaktivni-kvizy.png",
+          "alt": "ChatGPT přidává interaktivní kvízy"
+        },
+        {
+          "src": "images/microsoft-copilot-gemini-pracovni-prostredi.png",
+          "alt": "Microsoft skládá AI do jednoho pracovního prostředí"
+        },
+        {
+          "src": "images/vykonnejsi-ai-pro-skoly.png",
+          "alt": "Výkonnější AI se stává běžně dostupnou"
+        },
+        {
+          "src": "images/gemini-classroom-ai-vyuka.png",
+          "alt": "Gemini v Google Classroom míří i k mladším studentům"
+        },
+        {
+          "src": "images/ai-assistant-book-logo.png",
+          "alt": ""
+        }
+      ],
+      "navigationAreaLinks": [
+        {
+          "href": "index.html",
+          "label": "AI ve výuce INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE",
+          "current": null
+        },
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "label": "Začít s AI",
+          "current": null
+        },
+        {
+          "href": "ai-navody.html",
+          "label": "Připravit výuku",
+          "current": null
+        },
+        {
+          "href": "aktivity.html",
+          "label": "Učit s AI",
+          "current": null
+        },
+        {
+          "href": "asistenti.html",
+          "label": "Nástroje a asistenti",
+          "current": null
+        },
+        {
+          "href": "vibe-coding.html",
+          "label": "Tvořit s AI",
+          "current": null
+        },
+        {
+          "href": "ai.html",
+          "label": "Číst a objevovat",
+          "current": null
+        }
+      ],
+      "activeNavigation": "",
+      "specialProductSectionIds": [
+        "nove-funkce",
+        "funkce-pro-skolu",
+        "bezpecnost-ai"
+      ],
+      "searchInputCount": 1
+    },
+    "ai-agenti.html": {
+      "cardCount": 15,
+      "cards": [
+        {
+          "href": "ai-agenti-co-je-ai-agent.html",
+          "title": "Co je AI agent?",
+          "summary": "Jednoduché vysvětlení rozdílu mezi chatbotem, AI nástrojem a agentem, který umí plánovat další kroky a pracovat s úkolem.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Základy",
+          "date": "2026-09-01",
+          "image": "images/ai-agenti-prehled.png",
+          "imageAlt": "Infografika vysvětlující rozdíl mezi běžným chatbotem a AI agentem, agentní smyčku, nástroje, paměť a bezpečnost"
+        },
+        {
+          "href": "ai-agenti-nastroje-function-calling.html",
+          "title": "Nástroje a Function Calling",
+          "summary": "Jak jazykový model používá nástroje, pracuje s aktuálními daty a bezpečně provádí jednotlivé akce.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Architektura",
+          "date": "2026-09-01",
+          "image": "images/ai-agentni-nastroje-function-calling.png",
+          "imageAlt": "Infografika vysvětlující nástroje a Function Calling, rozdíl mezi jazykovým modelem a agentem a bezpečné používání nástrojů"
+        },
+        {
+          "href": "ai-agenti-agentni-smycka.html",
+          "title": "Jak funguje AI agent",
+          "summary": "Jak agent pochopí cíl, naplánuje postup, použije nástroje, zkontroluje výsledek a podle potřeby pokračuje dalším krokem.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Architektura",
+          "date": "2026-09-01",
+          "image": "images/ai-agentni-smycka.png",
+          "imageAlt": "Infografika vysvětlující agentní smyčku krok za krokem od cíle přes plánování a použití nástroje ke kontrole výsledku"
+        },
+        {
+          "href": "ai-agenti-pamet.html",
+          "title": "Paměť AI agentů",
+          "summary": "Co si AI skutečně pamatuje, jak se liší kontext, pracovní a dlouhodobá paměť od trénování modelu a proč záleží na aktuálnosti dat.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Architektura",
+          "date": "2026-09-01",
+          "image": "images/ai-agenti-pamet.png",
+          "imageAlt": "Infografika vysvětlující kontext, pracovní a dlouhodobou paměť AI agentů, externí zdroje, RAG a rozdíl proti trénování modelu"
+        },
+        {
+          "href": "ai-agenti-rag.html",
+          "title": "RAG: vlastní dokumenty",
+          "summary": "Jak AI vyhledá relevantní části vašich dokumentů a předá je modelu, aby odpovídal podle konkrétních zdrojů.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Architektura",
+          "date": "2026-09-01",
+          "image": "images/ai-agenti-rag.png",
+          "imageAlt": "Infografika vysvětlující RAG: vyhledání relevantních částí vlastních dokumentů, předání kontextu modelu, výhody, rizika a využití ve škole"
+        },
+        {
+          "href": "ai-agenti-mcp.html",
+          "title": "MCP: univerzální konektor",
+          "summary": "Jak otevřený standard propojuje AI aplikace s nástroji, databázemi a dalšími systémy a proč je důležitá bezpečnost.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Architektura",
+          "date": "2026-09-01",
+          "image": "images/ai-agenti-mcp.png",
+          "imageAlt": "Infografika vysvětlující MCP jako společný standard mezi AI aplikací, MCP servery, nástroji a daty včetně rolí host, client a server"
+        },
+        {
+          "href": "ai-agenti-multi-agentni.html",
+          "title": "Multi-agentní systémy",
+          "summary": "Jak si více specializovaných agentů může rozdělit role, spolupracovat na úkolu a proč více agentů neznamená automaticky lepší výsledek.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Architektura",
+          "date": "2026-09-01",
+          "image": "images/ai-agenti-multi-agentni.png",
+          "imageAlt": "Infografika vysvětlující multi-agentní systémy, role specializovaných agentů, orchestrátora, sekvenční a paralelní spolupráci a bezpečnost"
+        },
+        {
+          "href": "ai-agenti-coding-agenti.html",
+          "title": "Od vibe codingu ke coding agentům",
+          "summary": "Jak AI přechází od psaní jednotlivých ukázek kódu k práci s celým projektem, testování a opravám.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Architektura",
+          "date": "2026-09-01",
+          "image": "images/ai-agenti-coding-agenti.png",
+          "imageAlt": "Infografika vysvětlující rozdíl mezi vibe codingem a coding agentem, agentní smyčku v programování, projektový kontext, nástroje, testování a bezpečnost"
+        },
+        {
+          "href": "ai-agenti-ve-skole.html",
+          "title": "AI agent ve škole",
+          "summary": "Co může AI agent skutečně dělat učiteli, kde pomáhá s přípravou a administrativou a kde musí zůstat člověk u rozhodování.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Praxe",
+          "date": "2026-09-01",
+          "image": "images/ai-agenti-ve-skole.png",
+          "imageAlt": "Infografika o využití AI agenta ve škole: příprava výuky, práce s materiály, diferenciace, kontrola, dokumenty, administrativa, e-mail, bezpečnost a lidská kontrola"
+        },
+        {
+          "href": "ai-agenti-prvni-agent.html",
+          "title": "Jak navrhnout prvního AI agenta",
+          "summary": "Praktický návod, jak začít jedním konkrétním úkolem, určit vstupy, zdroje, nástroje, kontrolu a bezpečné hranice.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Praxe",
+          "date": "2026-09-01",
+          "image": "images/ai-agenti-prvni-agent.png",
+          "imageAlt": "Infografika s deseti kroky návrhu prvního jednoduchého AI agenta od výběru úkolu přes vstupy, zdroje, nástroje a workflow až po testování a kontrolu člověkem"
+        },
+        {
+          "href": "ai-agenti-10-ukolu.html",
+          "title": "10 úkolů pro AI agenta",
+          "summary": "Praktický přehled činností, které může agent učiteli převzít nebo zjednodušit — od přípravy materiálů po analýzu výsledků a denní přehled.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Praxe",
+          "date": "2026-09-01",
+          "image": "images/ai-agenti-10-ukolu.png",
+          "imageAlt": "Infografika s deseti úkoly, které může AI agent převzít učiteli, a s přehledem tří úrovní autonomie"
+        },
+        {
+          "href": "ai-agenti-kdy-nepouzivat.html",
+          "title": "Kdy AI agenta ve škole nepoužívat",
+          "summary": "Kde končí užitečná automatizace: známky, kázeňská rozhodnutí, citlivá data, oprávnění, zastaralé zdroje a úkoly bez lidské kontroly.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Bezpečnost",
+          "date": "2026-09-01",
+          "image": "images/ai-agenti-kdy-nepouzivat.png",
+          "imageAlt": "Infografika o tom, kdy AI agenta ve škole raději nepoužívat, s příklady rizik, úrovní autonomie a kontrolními otázkami"
+        },
+        {
+          "href": "ai-agenti-chatbot-automatizace-workflow.html",
+          "title": "AI agent, automatizace, workflow nebo chatbot?",
+          "summary": "Jak vybrat správný typ řešení podle toho, zda potřebujete odpověď, pevné pravidlo, známý proces nebo rozhodování podle situace.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Základy",
+          "date": "2026-09-01",
+          "image": "images/ai-agenti-chatbot-automatizace-workflow.png",
+          "imageAlt": "Infografika porovnávající chatbot, automatizaci, workflow a AI agenta podle způsobu práce a vhodného použití ve škole"
+        },
+        {
+          "href": "ai-agenti-skills.html",
+          "title": "Skills pro AI agenty",
+          "summary": "Jak uložit osvědčený pracovní postup jako opakovaně použitelnou schopnost a proč skill není jen další dlouhý prompt.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Praxe",
+          "date": "2026-09-01",
+          "image": "images/ai-agenti-skills.png",
+          "imageAlt": "Infografika vysvětlující skills, jejich rozdíl oproti promptu, nástroji, workflow a paměti a použití při práci AI agenta"
+        },
+        {
+          "href": "ai-agenti-llm-tools-rag-memory-skills-workflow-mcp.html",
+          "title": "Jak spolu souvisí části AI agenta",
+          "summary": "Jedna mapa pro LLM, tools, RAG, memory, skills, workflow, MCP a agenta — včetně příkladu, jak spolupracují při přípravě výuky.",
+          "category": "AI agenti",
+          "contentType": "",
+          "directoryGroup": "Architektura",
+          "date": "2026-09-01",
+          "image": "images/ai-agenti-llm-tools-rag-memory-skills-workflow-mcp.png",
+          "imageAlt": "Infografika vysvětlující vztah mezi LLM, tools, Function Calling, memory, RAG, skills, workflow, MCP a AI agentem"
+        }
+      ],
+      "filters": [
+        {
+          "value": "all",
+          "label": "Všechna témata",
+          "category": null,
+          "contentType": null,
+          "directoryGroup": null
+        },
+        {
+          "value": "základy",
+          "label": "Základy",
+          "category": null,
+          "contentType": null,
+          "directoryGroup": "Základy"
+        },
+        {
+          "value": "architektura",
+          "label": "Architektura",
+          "category": null,
+          "contentType": null,
+          "directoryGroup": "Architektura"
+        },
+        {
+          "value": "praxe",
+          "label": "Praxe",
+          "category": null,
+          "contentType": null,
+          "directoryGroup": "Praxe"
+        },
+        {
+          "value": "bezpečnost",
+          "label": "Bezpečnost",
+          "category": null,
+          "contentType": null,
+          "directoryGroup": "Bezpečnost"
+        }
+      ],
+      "publicIds": [
+        "primary-menu",
+        "obsah",
+        "ai-agenti-katalog",
+        "catalog-search",
+        "filter-label"
+      ],
+      "internalAnchors": [
+        "obsah",
+        "ai-agenti-katalog"
+      ],
+      "imageAltTexts": [
+        {
+          "src": "images/ai-assistant-book-logo.png?v=robot-20261103",
+          "alt": ""
+        },
+        {
+          "src": "images/ai-ve-vyuce-robot-agenti-transparentni.webp",
+          "alt": ""
+        },
+        {
+          "src": "images/ai-agenti-prehled.png",
+          "alt": "Infografika vysvětlující rozdíl mezi běžným chatbotem a AI agentem, agentní smyčku, nástroje, paměť a bezpečnost"
+        },
+        {
+          "src": "images/ai-agentni-nastroje-function-calling.png",
+          "alt": "Infografika vysvětlující nástroje a Function Calling, rozdíl mezi jazykovým modelem a agentem a bezpečné používání nástrojů"
+        },
+        {
+          "src": "images/ai-agentni-smycka.png",
+          "alt": "Infografika vysvětlující agentní smyčku krok za krokem od cíle přes plánování a použití nástroje ke kontrole výsledku"
+        },
+        {
+          "src": "images/ai-agenti-pamet.png",
+          "alt": "Infografika vysvětlující kontext, pracovní a dlouhodobou paměť AI agentů, externí zdroje, RAG a rozdíl proti trénování modelu"
+        },
+        {
+          "src": "images/ai-agenti-rag.png",
+          "alt": "Infografika vysvětlující RAG: vyhledání relevantních částí vlastních dokumentů, předání kontextu modelu, výhody, rizika a využití ve škole"
+        },
+        {
+          "src": "images/ai-agenti-mcp.png",
+          "alt": "Infografika vysvětlující MCP jako společný standard mezi AI aplikací, MCP servery, nástroji a daty včetně rolí host, client a server"
+        },
+        {
+          "src": "images/ai-agenti-multi-agentni.png",
+          "alt": "Infografika vysvětlující multi-agentní systémy, role specializovaných agentů, orchestrátora, sekvenční a paralelní spolupráci a bezpečnost"
+        },
+        {
+          "src": "images/ai-agenti-coding-agenti.png",
+          "alt": "Infografika vysvětlující rozdíl mezi vibe codingem a coding agentem, agentní smyčku v programování, projektový kontext, nástroje, testování a bezpečnost"
+        },
+        {
+          "src": "images/ai-agenti-ve-skole.png",
+          "alt": "Infografika o využití AI agenta ve škole: příprava výuky, práce s materiály, diferenciace, kontrola, dokumenty, administrativa, e-mail, bezpečnost a lidská kontrola"
+        },
+        {
+          "src": "images/ai-agenti-prvni-agent.png",
+          "alt": "Infografika s deseti kroky návrhu prvního jednoduchého AI agenta od výběru úkolu přes vstupy, zdroje, nástroje a workflow až po testování a kontrolu člověkem"
+        },
+        {
+          "src": "images/ai-agenti-10-ukolu.png",
+          "alt": "Infografika s deseti úkoly, které může AI agent převzít učiteli, a s přehledem tří úrovní autonomie"
+        },
+        {
+          "src": "images/ai-agenti-kdy-nepouzivat.png",
+          "alt": "Infografika o tom, kdy AI agenta ve škole raději nepoužívat, s příklady rizik, úrovní autonomie a kontrolními otázkami"
+        },
+        {
+          "src": "images/ai-agenti-chatbot-automatizace-workflow.png",
+          "alt": "Infografika porovnávající chatbot, automatizaci, workflow a AI agenta podle způsobu práce a vhodného použití ve škole"
+        },
+        {
+          "src": "images/ai-agenti-skills.png",
+          "alt": "Infografika vysvětlující skills, jejich rozdíl oproti promptu, nástroji, workflow a paměti a použití při práci AI agenta"
+        },
+        {
+          "src": "images/ai-agenti-llm-tools-rag-memory-skills-workflow-mcp.png",
+          "alt": "Infografika vysvětlující vztah mezi LLM, tools, Function Calling, memory, RAG, skills, workflow, MCP a AI agentem"
+        },
+        {
+          "src": "images/ai-assistant-book-logo.png",
+          "alt": ""
+        }
+      ],
+      "navigationAreaLinks": [
+        {
+          "href": "index.html",
+          "label": "AI ve výuce INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE",
+          "current": null
+        },
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "label": "Začít s AI",
+          "current": null
+        },
+        {
+          "href": "ai-navody.html",
+          "label": "Připravit výuku",
+          "current": null
+        },
+        {
+          "href": "aktivity.html",
+          "label": "Učit s AI",
+          "current": null
+        },
+        {
+          "href": "asistenti.html",
+          "label": "Nástroje a asistenti",
+          "current": null
+        },
+        {
+          "href": "vibe-coding.html",
+          "label": "Tvořit s AI",
+          "current": null
+        },
+        {
+          "href": "ai.html",
+          "label": "Číst a objevovat",
+          "current": null
+        }
+      ],
+      "activeNavigation": "",
+      "specialProductSectionIds": [
+        "ai-agenti-katalog"
+      ],
+      "searchInputCount": 1
+    },
+    "chatgpt-pro-ucitele.html": {
+      "cardCount": 20,
+      "cards": [
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "title": "ChatGPT pro učitele: jak začít bezpečně a co zvládnete i zdarma",
+          "summary": "Praktický začátečnický návod k bezpečnému nastavení účtu, ochraně dat žáků a možnostem bezplatného ChatGPT.",
+          "category": "Návod",
+          "contentType": "guide",
+          "directoryGroup": null,
+          "date": "2026-08-27",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-ai-agent-v-prohlizeci.html",
+          "title": "AI agent v prohlížeči: když AI nejen radí, ale také pracuje",
+          "summary": "Co umí browserový agent, jak může učiteli pomoci s webovým workflow a proč je nutná kontrola oprávnění, osobních údajů a výsledků.",
+          "category": "Návod",
+          "contentType": "guide",
+          "directoryGroup": null,
+          "date": "2026-09-08",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-lepsi-prompty-10-zasad.html",
+          "title": "Jak psát lepší prompty pro AI: 10 zásad pro učitele",
+          "summary": "Deset jednoduchých zásad pro přesnější zadání, která pomohou AI připravit použitelnější materiály pro konkrétní žáky a výuku.",
+          "category": "Návod",
+          "contentType": "guide",
+          "directoryGroup": null,
+          "date": "2026-09-08",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-novinka-ai-ve-vzdelavani-srpen-2026.html",
+          "title": "AI ve vzdělávání: co je nového na konci srpna 2026",
+          "summary": "Přehled novinek od Microsoftu, Googlu a OpenAI: AI jako tutor, práce se zdroji a postupné začleňování do školního prostředí.",
+          "category": "Novinka",
+          "contentType": "magazine",
+          "directoryGroup": null,
+          "date": "2026-08-27",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-chatgpt-vizualni-materialy.html",
+          "title": "7 promptů pro ChatGPT: vizuální výukové materiály",
+          "summary": "Jak z vlastních dokumentů, fotografií, skenů a tabulek připravit v ChatGPT infografiku, mapu, diagram, pracovní list nebo komiks.",
+          "category": "Návod",
+          "contentType": "guide",
+          "directoryGroup": null,
+          "date": "2026-08-27",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-fotografie-ucebnice.html",
+          "title": "Fotografii učebnice už nemusíte ručně přepisovat",
+          "summary": "Jak z fotografie nebo skenu stránky učebnice připravit v ChatGPT infografiku, pracovní list, pojmovou mapu nebo další výukový materiál.",
+          "category": "Workflow",
+          "contentType": "workflow",
+          "directoryGroup": null,
+          "date": "2026-08-27",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-novinka-pravidla-ve-skole.html",
+          "title": "AI pravidla ve škole",
+          "summary": "Co má obsahovat dobrá školní politika pro žáky, učitele, vedení školy a rodiče v roce 2026.",
+          "category": "Novinka",
+          "contentType": "magazine",
+          "directoryGroup": null,
+          "date": "2026-08-25",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-prep-edit.html",
+          "title": "PREP + EDIT: Praktický workflow pro práci s AI",
+          "summary": "Šest kroků pro bezpečnější tvorbu školních materiálů: zdroj, zadání, návrh AI, kontrola, ověření a schválení.",
+          "category": "Workflow",
+          "contentType": "workflow",
+          "directoryGroup": null,
+          "date": "2026-08-25",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-edit-kontrola.html",
+          "title": "EDIT: Jak kriticky kontrolovat výstupy AI",
+          "summary": "Čtyřkrokový postup pro kontrolu srozumitelnosti, faktické správnosti, zkreslení a použitelnosti výstupu AI.",
+          "category": "Návod",
+          "contentType": "guide",
+          "directoryGroup": null,
+          "date": "2026-08-25",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-prep-prompty.html",
+          "title": "PREP: Jak psát lepší prompty pro AI ve výuce",
+          "summary": "Framework pro přesnější zadání, která pomohou AI připravit použitelnější materiály, aktivity a hodiny.",
+          "category": "Návod",
+          "contentType": "guide",
+          "directoryGroup": null,
+          "date": "2026-08-25",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-18-promptu.html",
+          "title": "18 praktických AI promptů pro učitele",
+          "summary": "Šablony pro plánování hodin, pracovní listy, diferenciaci, testy, konverzaci, zpětnou vazbu a EDIT.",
+          "category": "Workflow",
+          "contentType": "workflow",
+          "directoryGroup": null,
+          "date": "2026-08-25",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-8-otazek.html",
+          "title": "8 otázek, které by si měl učitel položit při práci s AI",
+          "summary": "Rychlé otázky pro posouzení přínosu, spolupráce, učení žáků, bezpečnosti a lidské odpovědnosti.",
+          "category": "Workflow",
+          "contentType": "workflow",
+          "directoryGroup": null,
+          "date": "2026-08-25",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-udl-ai.html",
+          "title": "UDL + AI: Jak přizpůsobit výuku různým žákům",
+          "summary": "Jak připravit různé úrovně podpory, varianty materiálu a způsoby výstupu bez snížení vzdělávacího cíle.",
+          "category": "Workflow",
+          "contentType": "workflow",
+          "directoryGroup": null,
+          "date": "2026-08-25",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow-usetri-praci.html",
+          "title": "Jak může AI skutečně ušetřit učiteli práci",
+          "summary": "Praktické rozdělení práce mezi AI a učitele: návrhy, varianty, převody, kontrola a rozhodování.",
+          "category": "Workflow",
+          "contentType": "workflow",
+          "directoryGroup": null,
+          "date": "2026-08-25",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-navod-commands-chatgpt.html",
+          "title": "Commands v ChatGPT: jak si zkrátit práci",
+          "summary": "Přehled commands pro učení, psaní, obrázky, video, organizaci práce a kritické myšlení.",
+          "category": "Návod",
+          "contentType": "guide",
+          "directoryGroup": null,
+          "date": "2026-08-23",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-workflow.html",
+          "title": "Workflow: ChatGPT → Claude",
+          "summary": "Workflow pro vytvoření vizuálních poznámek, kontrolu faktů v Claude a opravu chyb v ChatGPT.",
+          "category": "Workflow",
+          "contentType": "workflow",
+          "directoryGroup": null,
+          "date": "2026-08-23",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-novinka-microsoft-ai-workflow.html",
+          "title": "Microsoft skládá celý AI workflow pro učitele",
+          "summary": "Jak propojit přípravu učitele, tvorbu aktivity, zadání studentům, práci žáka a výsledky.",
+          "category": "Novinka",
+          "contentType": "magazine",
+          "directoryGroup": null,
+          "date": "2026-08-21",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-novinka-chatgpt-interaktivni-kvizy.html",
+          "title": "ChatGPT přidává interaktivní kvízy",
+          "summary": "Jak využít interaktivní kvízy, vlastní zdroje a průběžnou zpětnou vazbu pro učení.",
+          "category": "Novinka",
+          "contentType": "magazine",
+          "directoryGroup": null,
+          "date": "2026-08-19",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-novinka-microsoft-gemini.html",
+          "title": "Microsoft skládá AI do jednoho pracovního prostředí",
+          "summary": "Jak integrace AI s účty, dokumenty, tabulkami a nástroji mění každodenní práci školy.",
+          "category": "Novinka",
+          "contentType": "magazine",
+          "directoryGroup": null,
+          "date": "2026-08-17",
+          "image": null,
+          "imageAlt": null
+        },
+        {
+          "href": "ai-novinka-vykonnejsi-ai.html",
+          "title": "Výkonnější AI se stává běžně dostupnou",
+          "summary": "Proč dostupnější výkonná AI mění školní zadání, detekci AI, bezpečnost i práci učitele.",
+          "category": "Novinka",
+          "contentType": "magazine",
+          "directoryGroup": null,
+          "date": "2026-08-14",
+          "image": null,
+          "imageAlt": null
+        }
+      ],
+      "filters": [
+        {
+          "value": "all",
+          "label": "Vše",
+          "category": null,
+          "contentType": null,
+          "directoryGroup": null
+        },
+        {
+          "value": "guides",
+          "label": "Návody",
+          "category": null,
+          "contentType": "guide,tool-guide",
+          "directoryGroup": null
+        },
+        {
+          "value": "workflow",
+          "label": "Workflow",
+          "category": null,
+          "contentType": "workflow",
+          "directoryGroup": null
+        },
+        {
+          "value": "news",
+          "label": "Novinky",
+          "category": null,
+          "contentType": "magazine",
+          "directoryGroup": null
+        }
+      ],
+      "publicIds": [
+        "top",
+        "primary-menu",
+        "obsah",
+        "chatgpt-articles-heading",
+        "catalog-search",
+        "filter-label",
+        "chatgpt-articles-grid"
+      ],
+      "internalAnchors": [
+        "obsah"
+      ],
+      "imageAltTexts": [
+        {
+          "src": "images/ai-assistant-book-logo.png?v=robot-20261103",
+          "alt": ""
+        }
+      ],
+      "navigationAreaLinks": [
+        {
+          "href": "index.html",
+          "label": "AI ve výuce INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE",
+          "current": null
+        },
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "label": "Začít s AI",
+          "current": null
+        },
+        {
+          "href": "ai-navody.html",
+          "label": "Připravit výuku",
+          "current": null
+        },
+        {
+          "href": "aktivity.html",
+          "label": "Učit s AI",
+          "current": null
+        },
+        {
+          "href": "asistenti.html",
+          "label": "Nástroje a asistenti",
+          "current": null
+        },
+        {
+          "href": "vibe-coding.html",
+          "label": "Tvořit s AI",
+          "current": null
+        },
+        {
+          "href": "ai.html",
+          "label": "Číst a objevovat",
+          "current": null
+        }
+      ],
+      "activeNavigation": "",
+      "specialProductSectionIds": [],
+      "searchInputCount": 1
+    },
+    "gemini-notebook.html": {
+      "cardCount": 11,
+      "cards": [
+        {
+          "href": "notebooklm-hlasovy-rozhovor-nad-zdroji.html",
+          "title": "Když AI zná naše učivo: hlasový rozhovor nad zdroji",
+          "summary": "Jak vést studijní rozhovor nad materiály, které vybral učitel, a ověřit, co student po vypnutí AI skutečně umí.",
+          "category": "Gemini Notebook",
+          "contentType": "workflow",
+          "directoryGroup": null,
+          "date": "2026-09-23",
+          "image": "images/notebooklm-hlasovy-rozhovor-nad-zdroji.png",
+          "imageAlt": "Student vede hlasový studijní rozhovor s AI nad materiály vybranými učitelem."
+        },
+        {
+          "href": "gemini-notebook-navod-pro-ucitele.html",
+          "title": "Gemini Notebook: jak si vytvořit sešit, který opravdu šetří práci",
+          "summary": "Jak správně nastavit instrukce, metodiku, tematický plán, zdroje a vzorové materiály, aby Notebook skutečně šetřil čas při přípravě výuky.",
+          "category": "Nástroj krok za krokem",
+          "contentType": "tool-guide",
+          "directoryGroup": null,
+          "date": "2026-09-15",
+          "image": "images/gemini-notebook-nastroj-krok-za-krokem.png",
+          "imageAlt": "Gemini Notebook – praktický návod pro učitele, jak si vytvořit sešit, který opravdu šetří práci"
+        },
+        {
+          "href": "ai-workflow-gemini-notebook-ai-agent.html",
+          "title": "Chytrý učitelský sešit pomocí AI agenta",
+          "summary": "Jak pomocí Claude a AI agenta vyhledat, ověřit a uspořádat zdroje pro tematický sešit v Gemini Notebooku.",
+          "category": "Workflow",
+          "contentType": "workflow",
+          "directoryGroup": null,
+          "date": "2026-09-08",
+          "image": "images/chytry-ucitelsky-sesit-gemini-ai-agent.png",
+          "imageAlt": "Infografika o vytvoření chytrého učitelského sešitu v Gemini Notebooku pomocí AI agenta, Claude in Chrome a Claude Cowork"
+        },
+        {
+          "href": "ai-workflow-prezentace-webova-stranka.html",
+          "title": "Od prezentace k webové stránce",
+          "summary": "Jak z výukového cíle, vlastních zdrojů a Gemini vytvořit webový materiál s možností interaktivity.",
+          "category": "Workflow",
+          "contentType": "workflow",
+          "directoryGroup": null,
+          "date": "2026-09-02",
+          "image": "images/ai-workflow-prezentace-webova-stranka.png",
+          "imageAlt": "Infografika o workflow od prezentace k výukové webové stránce s využitím Gemini Notebooku, Gemini a interaktivity"
+        },
+        {
+          "href": "ai-workflow-7-kroku-gemini-notebook.html",
+          "title": "Gemini Notebook jako kompletní příprava výuky",
+          "summary": "Opakovatelný postup od vlastních zdrojů přes plánování a materiály až po aktualizaci a AI tutora.",
+          "category": "Workflow",
+          "contentType": "workflow",
+          "directoryGroup": null,
+          "date": "2026-08-29",
+          "image": "images/gemini-notebook-7-kroku-priprava-vyuky.png",
+          "imageAlt": "Infografika Gemini Notebooku jako kompletní přípravy výuky v sedmi krocích od zdrojů až k AI tutorovi"
+        },
+        {
+          "href": "ai-navod-gemini-notebook-prezentace.html",
+          "title": "7 promptů pro lepší výukovou prezentaci",
+          "summary": "Jak z vlastních materiálů připravit kompletní výklad, interaktivní hodinu, procvičování i ověření porozumění.",
+          "category": "Návod",
+          "contentType": "guide",
+          "directoryGroup": null,
+          "date": "2026-08-28",
+          "image": "images/gemini-notebook-7-promptu-prezentace.png",
+          "imageAlt": "Infografika se sedmi prompty pro vytvoření lepší výukové prezentace z vlastních materiálů v Gemini Notebooku"
+        },
+        {
+          "href": "ai-navod-gemini-notebook-priprava.html",
+          "title": "7 promptů pro Gemini Notebook: kompletní příprava na výuku",
+          "summary": "Jak z jedné sady materiálů vytvořit plán hodiny, aktivity, diferenciaci, test a audio přehled.",
+          "category": "Návod",
+          "contentType": "guide",
+          "directoryGroup": null,
+          "date": "2026-08-26",
+          "image": "images/gemini-notebook-7-promptu-priprava.png",
+          "imageAlt": "Infografika se sedmi prompty pro Gemini Notebook od plánu hodiny po audio přehled"
+        },
+        {
+          "href": "ai-navod-gemini-notebook-vyuka.html",
+          "title": "Gemini Notebook ve výuce: interaktivní studijní prostředí",
+          "summary": "Jak z učebních materiálů vytvořit přehledy, kartičky, kvízy, audio, video a další cesty k učení.",
+          "category": "Návod",
+          "contentType": "guide",
+          "directoryGroup": null,
+          "date": "2026-08-26",
+          "image": "images/gemini-notebook-vyuka.png",
+          "imageAlt": "Infografika o využití Gemini Notebooku ve výuce od vlastních zdrojů k interaktivnímu studijnímu balíčku"
+        },
+        {
+          "href": "ai-novinka-gemini-notebook-sablona.html",
+          "title": "Gemini Notebook jako výuková šablona",
+          "summary": "Jak z jedné učitelské přípravy vytvořit opakovaně použitelný AI studijní balíček pro studenty.",
+          "category": "Novinka",
+          "contentType": "magazine",
+          "directoryGroup": null,
+          "date": "2026-08-24",
+          "image": "images/gemini-notebook-sablona.png",
+          "imageAlt": "Infografika o využití Gemini Notebooku jako výukové šablony pro učitele a studenty"
+        },
+        {
+          "href": "ai-navod-gemini-notebook-infografiky.html",
+          "title": "7 promptů pro Gemini Notebook: přehledné infografiky",
+          "summary": "Jak z učebnic, prezentací a poznámek připravit infografiky pro gramatiku, slovní zásobu, četbu i celou lekci.",
+          "category": "Návod",
+          "contentType": "guide",
+          "directoryGroup": null,
+          "date": "2026-08-23",
+          "image": "images/gemini-notebook-infografiky.png",
+          "imageAlt": "Infografika se sedmi prompty pro tvorbu výukových infografik v Gemini Notebooku"
+        },
+        {
+          "href": "ai-workflow-10-promptu-gemini.html",
+          "title": "10 promptů pro Gemini Notebook, které mohou učiteli ušetřit hodiny práce",
+          "summary": "Praktický postup od práce s více zdroji přes ověření a tvorbu materiálů až po kritickou kontrolu.",
+          "category": "Workflow",
+          "contentType": "workflow",
+          "directoryGroup": null,
+          "date": "2026-08-26",
+          "image": "images/10-promptu-gemini-notebook-workflow.png",
+          "imageAlt": "Infografika s doporučeným workflow a deseti prompty pro učitele v Gemini Notebooku"
+        }
+      ],
+      "filters": [
+        {
+          "value": "all",
+          "label": "Všechny články",
+          "category": null,
+          "contentType": null,
+          "directoryGroup": null
+        },
+        {
+          "value": "guides",
+          "label": "Návody",
+          "category": null,
+          "contentType": "guide,tool-guide",
+          "directoryGroup": null
+        },
+        {
+          "value": "workflow",
+          "label": "Workflow",
+          "category": null,
+          "contentType": "workflow",
+          "directoryGroup": null
+        },
+        {
+          "value": "news",
+          "label": "Novinky",
+          "category": null,
+          "contentType": "magazine",
+          "directoryGroup": null
+        }
+      ],
+      "publicIds": [
+        "primary-menu",
+        "obsah",
+        "gemini-articles-heading",
+        "catalog-search",
+        "filter-label"
+      ],
+      "internalAnchors": [
+        "obsah",
+        "gemini-articles-heading"
+      ],
+      "imageAltTexts": [
+        {
+          "src": "images/ai-assistant-book-logo.png?v=robot-20261103",
+          "alt": ""
+        },
+        {
+          "src": "images/notebooklm-hlasovy-rozhovor-nad-zdroji.png",
+          "alt": "Student vede hlasový studijní rozhovor s AI nad materiály vybranými učitelem."
+        },
+        {
+          "src": "images/gemini-notebook-nastroj-krok-za-krokem.png",
+          "alt": "Gemini Notebook – praktický návod pro učitele, jak si vytvořit sešit, který opravdu šetří práci"
+        },
+        {
+          "src": "images/chytry-ucitelsky-sesit-gemini-ai-agent.png",
+          "alt": "Infografika o vytvoření chytrého učitelského sešitu v Gemini Notebooku pomocí AI agenta, Claude in Chrome a Claude Cowork"
+        },
+        {
+          "src": "images/ai-workflow-prezentace-webova-stranka.png",
+          "alt": "Infografika o workflow od prezentace k výukové webové stránce s využitím Gemini Notebooku, Gemini a interaktivity"
+        },
+        {
+          "src": "images/gemini-notebook-7-kroku-priprava-vyuky.png",
+          "alt": "Infografika Gemini Notebooku jako kompletní přípravy výuky v sedmi krocích od zdrojů až k AI tutorovi"
+        },
+        {
+          "src": "images/gemini-notebook-7-promptu-prezentace.png",
+          "alt": "Infografika se sedmi prompty pro vytvoření lepší výukové prezentace z vlastních materiálů v Gemini Notebooku"
+        },
+        {
+          "src": "images/gemini-notebook-7-promptu-priprava.png",
+          "alt": "Infografika se sedmi prompty pro Gemini Notebook od plánu hodiny po audio přehled"
+        },
+        {
+          "src": "images/gemini-notebook-vyuka.png",
+          "alt": "Infografika o využití Gemini Notebooku ve výuce od vlastních zdrojů k interaktivnímu studijnímu balíčku"
+        },
+        {
+          "src": "images/gemini-notebook-sablona.png",
+          "alt": "Infografika o využití Gemini Notebooku jako výukové šablony pro učitele a studenty"
+        },
+        {
+          "src": "images/gemini-notebook-infografiky.png",
+          "alt": "Infografika se sedmi prompty pro tvorbu výukových infografik v Gemini Notebooku"
+        },
+        {
+          "src": "images/10-promptu-gemini-notebook-workflow.png",
+          "alt": "Infografika s doporučeným workflow a deseti prompty pro učitele v Gemini Notebooku"
+        },
+        {
+          "src": "images/ai-assistant-book-logo.png",
+          "alt": ""
+        }
+      ],
+      "navigationAreaLinks": [
+        {
+          "href": "index.html",
+          "label": "AI ve výuce INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE",
+          "current": null
+        },
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "label": "Začít s AI",
+          "current": null
+        },
+        {
+          "href": "ai-navody.html",
+          "label": "Připravit výuku",
+          "current": null
+        },
+        {
+          "href": "aktivity.html",
+          "label": "Učit s AI",
+          "current": null
+        },
+        {
+          "href": "asistenti.html",
+          "label": "Nástroje a asistenti",
+          "current": null
+        },
+        {
+          "href": "vibe-coding.html",
+          "label": "Tvořit s AI",
+          "current": null
+        },
+        {
+          "href": "ai.html",
+          "label": "Číst a objevovat",
+          "current": null
+        }
+      ],
+      "activeNavigation": "",
+      "specialProductSectionIds": [],
+      "searchInputCount": 1
+    }
+  }
+}
