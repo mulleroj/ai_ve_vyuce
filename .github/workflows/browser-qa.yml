@@ -41,6 +41,7 @@ jobs:
       WAVE19_BASELINE_SHA: 7d46df5ee7ee3e9f27c085d42f8d7611ff0b802b
       WAVE20_BASELINE_SHA: 9efd3e51b4a5d8a83edf7279bed526c8377d88b0
       SUBJECT_PAGES_BASELINE_SHA: bfd39f3973d7139aeb4632ba7a74e94ab648f7bc
+      ASSISTANT_PAGES_BASELINE_SHA: 2ddaab92e024cd4bafb638f9ea0e62835ef10d27
     steps:
       - name: Checkout the tested commit
         uses: actions/checkout@v4
@@ -76,6 +77,7 @@ jobs:
           git fetch --no-tags --depth=1 origin "$WAVE19_BASELINE_SHA"
           git fetch --no-tags --depth=1 origin "$WAVE20_BASELINE_SHA"
           git fetch --no-tags --depth=1 origin "$SUBJECT_PAGES_BASELINE_SHA"
+          git fetch --no-tags --depth=1 origin "$ASSISTANT_PAGES_BASELINE_SHA"
 
       - name: Verify guide generator determinism and scope
         run: |
@@ -176,6 +178,19 @@ jobs:
           cmp tests/fixtures/subject-pages-wave21-baseline.json "$RUNNER_TEMP/subject-pages-wave21-baseline.json"
           node -e "const f=require('./tests/fixtures/subject-pages-wave21-baseline.json'); if(f.baselineSha!==process.env.SUBJECT_PAGES_BASELINE_SHA || Object.keys(f.pages).length!==5) process.exit(1)"
 
+      - name: Verify wave 22 assistant-page regression baseline
+        run: |
+          set -euo pipefail
+          baseline_dir="$RUNNER_TEMP/assistant-pages-wave22-baseline"
+          mkdir -p "$baseline_dir"
+          for file in asistenti.html katalog-asistenti.html; do
+            git show "$ASSISTANT_PAGES_BASELINE_SHA:$file" > "$baseline_dir/$file"
+          done
+          node scripts/assistant-pages-baseline.js "$baseline_dir" "$RUNNER_TEMP/assistant-pages-wave22-baseline.json"
+          cmp tests/fixtures/assistant-pages-wave22-baseline.json "$RUNNER_TEMP/assistant-pages-wave22-baseline.json"
+          node -e "const f=require('./tests/fixtures/assistant-pages-wave22-baseline.json'); if(f.baselineSha!==process.env.ASSISTANT_PAGES_BASELINE_SHA || f.pages['asistenti.html'].cards.length!==9 || f.pages['katalog-asistenti.html'].cards.length!==2) process.exit(1)"
+          echo "ASSISTANT_WAVE22_BASELINE_DIR=$baseline_dir" >> "$GITHUB_ENV"
+
       - name: Install isolated browser test runner
         run: |
           npm install --no-save --package-lock=false @playwright/test axe-core
@@ -191,6 +206,7 @@ jobs:
           cp "$RUNNER_TEMP/catalog-generator-negative-tests.json" artifacts/catalog-generator-negative-tests.json
           cp tests/fixtures/catalog-pages-wave19-baseline.json artifacts/catalog-pages-wave19-baseline.json
           cp tests/fixtures/activity-library-wave20-baseline.json artifacts/activity-library-wave20-baseline.json
+          cp tests/fixtures/assistant-pages-wave22-baseline.json artifacts/assistant-pages-wave22-baseline.json
           printf '%s\n' "$TESTED_SHA" > artifacts/tested-sha.txt
           python3 -m http.server 4173 --bind 127.0.0.1 > test-results/http-server.log 2>&1 &
           server_pid=$!
@@ -201,7 +217,7 @@ jobs:
             fi
             sleep 1
           done
-          PLAYWRIGHT_JSON_OUTPUT_NAME=test-results/report.json npx playwright test tests/browser-qa.spec.js tests/subject-pages-a11y.spec.js --reporter=list,json
+          PLAYWRIGHT_JSON_OUTPUT_NAME=test-results/report.json npx playwright test tests/browser-qa.spec.js tests/subject-pages-a11y.spec.js tests/assistant-pages-wave22.spec.js --reporter=list,json
 
       - name: Publish test summary
         if: always()
@@ -265,6 +281,32 @@ jobs:
             'Omezení: přístupnost byla ověřena automatizovaným Chromium ovládáním; ruční test čtečky obrazovky nebyl součástí Browser QA.'
           ];
           fs.writeFileSync('artifacts/wave20-activity-technical-report.md',lines.join('\n')+'\n');
+          NODE
+
+      - name: Generate wave 22 assistant technical report
+        if: always()
+        run: |
+          mkdir -p artifacts
+          node <<'NODE'
+          const fs=require('node:fs');
+          const report=(()=>{try{return JSON.parse(fs.readFileSync('artifacts/assistant-pages-wave22-report.json','utf8'))}catch{return {}}})();
+          const results=(()=>{try{return JSON.parse(fs.readFileSync('test-results/report.json','utf8'))}catch{return {stats:{}}}})();
+          const pages=report.pages||[];
+          const lines=[
+            '# Technická zpráva — AI ve výuce 2.0, vlna 22',
+            '',
+            '- Výchozí commit: `'+(process.env.ASSISTANT_PAGES_BASELINE_SHA||'unavailable')+'`',
+            '- Testovaný commit: `'+(process.env.TESTED_SHA||'unavailable')+'`',
+            '- Browser QA celého projektu: '+(results.stats?.expected??0)+' passed, '+(results.stats?.unexpected??0)+' failed, '+(results.stats?.skipped??0)+' skipped, '+(results.stats?.flaky??0)+' flaky',
+            '- Karty podle regresní fixture: rozcestník '+(report.pages?.find(page=>page.file==='asistenti.html')?.cards??'n/a')+', katalog '+(report.pages?.find(page=>page.file==='katalog-asistenti.html')?.cards??'n/a'),
+            '- Axe před opravami: rozcestník 37 kontrastních uzlů + 6 neshod názvů; katalog 13 kontrastních uzlů + 1 neshoda názvu.',
+            '- Axe po opravách: '+pages.map(page=>page.file+': '+(page.axe?.violations?.length??'n/a')+' porušení').join('; '),
+            '- Kontrola: metadata, canonical, Open Graph, texty, pořadí a počty karet, odkazy, obrázky/alt texty, ID, skripty, filtry, landmarky, klávesnice, no-JS, breakpointy a overflow.',
+            '- Výstupy: screenshoty a JSON v tomto artefaktu; automatizovaná kontrola kontrastu ověřila běžný text ≥ 4,5:1 i nejméně příznivé barvy hero gradientů.',
+            '',
+            'Ruční kontrola čtečky obrazovky nebyla součástí automatizovaného běhu.'
+          ];
+          fs.writeFileSync('artifacts/assistant-pages-wave22-technical-report.md',lines.join('\n')+'\n');
           NODE
 
       - name: Upload screenshots, report, and diagnostics
