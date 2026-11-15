@@ -40,6 +40,7 @@ jobs:
       WAVE18_BASELINE_SHA: 5505c10e72de01513b70c6f8bf84d498820158b0
       WAVE19_BASELINE_SHA: 7d46df5ee7ee3e9f27c085d42f8d7611ff0b802b
       WAVE20_BASELINE_SHA: 9efd3e51b4a5d8a83edf7279bed526c8377d88b0
+      SUBJECT_PAGES_BASELINE_SHA: bfd39f3973d7139aeb4632ba7a74e94ab648f7bc
     steps:
       - name: Checkout the tested commit
         uses: actions/checkout@v4
@@ -74,6 +75,7 @@ jobs:
           git fetch --no-tags --depth=1 origin "$WAVE18_BASELINE_SHA"
           git fetch --no-tags --depth=1 origin "$WAVE19_BASELINE_SHA"
           git fetch --no-tags --depth=1 origin "$WAVE20_BASELINE_SHA"
+          git fetch --no-tags --depth=1 origin "$SUBJECT_PAGES_BASELINE_SHA"
 
       - name: Verify guide generator determinism and scope
         run: |
@@ -162,9 +164,21 @@ jobs:
           cmp tests/fixtures/activity-library-wave20-baseline.json "$RUNNER_TEMP/activity-library-wave20-baseline.json"
           node -e "const f=require('./tests/fixtures/activity-library-wave20-baseline.json'); if(f.baselineSha!==process.env.WAVE20_BASELINE_SHA || f.activities.length!==44 || new Set(f.activities.map(x=>x.id)).size!==44) process.exit(1)"
 
+      - name: Verify wave 21 subject-page regression baseline
+        run: |
+          set -euo pipefail
+          baseline_dir="$RUNNER_TEMP/subject-pages-wave21-baseline"
+          mkdir -p "$baseline_dir"
+          for file in anglictina.html cestina.html dejepis.html matematika.html prirodoveda.html; do
+            git show "$SUBJECT_PAGES_BASELINE_SHA:$file" > "$baseline_dir/$file"
+          done
+          node scripts/capture-subject-pages-baseline.js "$baseline_dir" "$RUNNER_TEMP/subject-pages-wave21-baseline.json"
+          cmp tests/fixtures/subject-pages-wave21-baseline.json "$RUNNER_TEMP/subject-pages-wave21-baseline.json"
+          node -e "const f=require('./tests/fixtures/subject-pages-wave21-baseline.json'); if(f.baselineSha!==process.env.SUBJECT_PAGES_BASELINE_SHA || Object.keys(f.pages).length!==5) process.exit(1)"
+
       - name: Install isolated browser test runner
         run: |
-          npm install --no-save --package-lock=false @playwright/test
+          npm install --no-save --package-lock=false @playwright/test axe-core
           npx playwright install chromium
 
       - name: Run tests against a local HTTP server
@@ -187,7 +201,7 @@ jobs:
             fi
             sleep 1
           done
-          PLAYWRIGHT_JSON_OUTPUT_NAME=test-results/report.json npx playwright test tests/browser-qa.spec.js --reporter=list,json
+          PLAYWRIGHT_JSON_OUTPUT_NAME=test-results/report.json npx playwright test tests/browser-qa.spec.js tests/subject-pages-a11y.spec.js --reporter=list,json
 
       - name: Publish test summary
         if: always()

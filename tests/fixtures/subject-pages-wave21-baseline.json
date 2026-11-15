@@ -1,0 +1,2696 @@
+{
+  "baselineSha": "bfd39f3973d7139aeb4632ba7a74e94ab648f7bc",
+  "captureVersion": 1,
+  "pages": {
+    "anglictina.html": {
+      "bodyText": "AI ve výuce INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE Začít s AI Připravit výuku Učit s AI Nástroje a asistenti Tvořit s AI Číst a objevovat EN Anglický jazyk s AI Vytvořte konverzačního partnera, opravujte gramatiku, budujte slovní zásobu a připravujte žáky na certifikáty. Skvělé pro všechny úrovně CEFR. 🎯 6 aktivit ✨ 4 promptů 🤖 3 AI nástroje 📊 A1–C1 CEFR NOVINKA · SKILL ZDARMA 7 druhů materiálů do angličtiny v jednom AI SKILLu Gramatický plakát, slovní zásoba, pracovní list, poslech, čtení, mluvení i infografika. S didaktickými pravidly a kontrolou správnosti. Prohlédnout SKILL a návod 🎯 Aktivity ✨ Prompty 🤖 Asistenti 💡 Tipy Výukové aktivity Ročník: Vše 1.–5. ročník 6.–9. ročník SŠ Zobrazeno 6 z 6 aktivit ChatGPT 6.–9. ročník 💬 Individuální anglická konverzace podle CEFR Žák si procvičuje komunikaci na úrovni CEFR zadané učitelem. AI přizpůsobí jazyk, nechá prostor pro samostatnou odpověď a opravuje jen vybrané jevy v závěrečné formativní zpětné vazbě. Původních 15 min je orientační délka aktivity; přesný rozpis nebyl doložen. Role AI: Žák pracuje s AI Čas: Aktivita · asi 15 min 👤 Individuální Připraveno Detail → Claude SŠ ✔️ Formativní zpětná vazba k anglickému textu AI nabídne formativní zpětnou vazbu k anglickému textu a vysvětlí pravidla v jazyce zvoleném podle úrovně žáka. Role AI: Učitel připravuje Čas zatím neurčen 👤 Individuální Připraveno Detail → Gemini 1.–5. ročník 📚 Tematická slovní zásoba: vybav si a použij Učitel určí CEFR, ročník, komunikační cíl a známá slova. AI připraví přiměřenou malou sadu a cyklus seznámení, aktivního vybavení, použití ve větě a opakování; učitelský klíč oddělí od žákovské verze. Role AI: Učitel připravuje Čas: Příprava · asi 10 min 🏫 Třída Oblíbené Detail → ChatGPT SŠ 📝 Orientační procvičování Cambridge English AI připraví originální neoficiální procvičování pro zadanou zkoušku, úroveň, dovednost a typ úlohy; nejde o oficiální materiál, skóre ani předpověď. Role AI: Žák pracuje s AI Čas: Aktivita · asi 30 min 👤 Individuální Připraveno Detail → Gemini 6.–9. ročník 🔤 Anglická gramatika: krátký pracovní list podle cíle Učitel zadá CEFR, ročník, gramatický jev, předchozí znalosti, cíl, počet úloh, čas žákovského řešení a případnou podporu. AI připraví žákovský list, oddělený klíč s českým vysvětlením, kontrolní seznam přiměřenosti a volitelnou přenosovou úlohu. Učitel ověří jednoznačnost i možné správné varianty. Role AI: Učitel připravuje Čas: Příprava · asi 5 min 🏫 Třída Připraveno Detail → Claude SŠ 🌍 Skupinová překladatelská dílna: volba, zdůvodnění, revize. Skupiny nejprve navrhnou vlastní překlad krátkého oprávněně použitelného textu. Učitel následně zprostředkuje AI jako druhou variantu; žáci porovnají idiomy a kulturní odkazy, zdůvodní vlastní volbu a označí nejistotu. Role AI: Učitel vede AI Čas: Aktivita · asi 10 min 👥 Skupiny Připraveno Detail → Prompty pro výuku Konverzační partner (CEFR level) ChatGPT A1–C1 You are a friendly English conversation partner for a Czech student at [A1/A2/B1/B2/C1] level. Topic: [TOPIC]. Rules: speak only English, use vocabulary appropriate to their level, ask follow-up questions to keep conversation going, gently correct grammar by echoing corrected version, never criticize harshly. Start with a warm greeting and an opening question. Konverzace 📋 Kopírovat Gramatická cvičení s klíčem Gemini ZŠ/SŠ Create 15 grammar exercises for Czech students at [CEFR] level focusing on [GRAMMAR TOPIC, e.g. Present Perfect, Conditionals, Passive Voice]. Mix exercise types: gap-fill (5), sentence transformation (5), error correction (5). Add: answer key, brief grammar rule explanation in Czech, and 3 common Czech student mistakes to avoid. Gramatika 📋 Kopírovat Opravovač eseje s rubrikou Claude SŠ Grade this English essay by a Czech high school student ([CEFR] level) using Cambridge Writing rubric: Content (0–10), Organization (0–10), Grammar (0–10), Vocabulary (0–10), Style (0–10). For each criterion: score + 2-3 specific comments. Overall feedback in Czech. Suggested improved version of weakest paragraph. ESSAY: [TEXT] Eseje 📋 Kopírovat Tematické slovíčka s příklady ChatGPT ZŠ Create a vocabulary set of 20 words on the topic [TOPIC] for Czech students at [CEFR] level. For each word: English word, Czech translation, example sentence (simple, memorable), and a memory tip or word association. Format as a numbered table. Then add 5 practice sentences using random words from the list. Slovíčka 📋 Kopírovat AI asistenti 🟢 ChatGPT OpenAI · GPT-4o Ideální konverzační partner – přirozeně komunikuje, koriguje chyby a přizpůsobí jazyk úrovni žáka. Zvládne i hlasové konverzace přes app. Konverzace Hlasový mód ★★★★★ Otevřít → 🟠 Claude Anthropic Nejpřesnější při opravování esejí a písemných projevů. Poskytuje detailní, pedagogicky hodnotnou zpětnou vazbu. Opravování Eseje ★★★★★ Otevřít → 🔷 Microsoft Copilot Microsoft · GPT-4 Integrovaný do školního prostředí Microsoft 365. Vhodný pro školy s Microsoft licencí – bezpečný pro žáky díky firemní politice. Microsoft 365 Školní licence ★★★★☆ Otevřít → Tipy pro práci s AI 💡 Tip: Specifikujte CEFR úroveň Vždy uveďte CEFR úroveň žáka (A1–C2). AI pak volí správnou slovní zásobu a gramatické struktury – výstupy jsou okamžitě použitelné. 🎙️ Tip: Hlasový mód ChatGPT pro konverzaci ChatGPT app pro mobilní telefony má hlasový mód – žáci tak mohou opravdu mluvit anglicky s AI, nejen psát. Skvělé pro procvičování výslovnosti. ✅ Osvědčená praxe: Roleplay scénáře Nechte AI hrát roli – \"Jsi recepční v hotelu / prodavač / průvodce.\" Žáci musí komunikovat v angličtině v konkrétní situaci. Motivuje více než cvičení z učebnice. AI ve výuce Inspirace · nástroje · praxe pro učitele Moderní průvodce světem AI pro české učitele. Návody Prompty Aktivity AI nástroje © 2026 AI ve výuce ✕",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Anglický jazyk s AI"
+        },
+        {
+          "level": 2,
+          "text": "7 druhů materiálů do angličtiny v jednom AI SKILLu"
+        },
+        {
+          "level": 2,
+          "text": "Výukové aktivity"
+        },
+        {
+          "level": 3,
+          "text": "Individuální anglická konverzace podle CEFR"
+        },
+        {
+          "level": 3,
+          "text": "Formativní zpětná vazba k anglickému textu"
+        },
+        {
+          "level": 3,
+          "text": "Tematická slovní zásoba: vybav si a použij"
+        },
+        {
+          "level": 3,
+          "text": "Orientační procvičování Cambridge English"
+        },
+        {
+          "level": 3,
+          "text": "Anglická gramatika: krátký pracovní list podle cíle"
+        },
+        {
+          "level": 3,
+          "text": "Skupinová překladatelská dílna: volba, zdůvodnění, revize."
+        },
+        {
+          "level": 2,
+          "text": "Prompty pro výuku"
+        },
+        {
+          "level": 2,
+          "text": "AI asistenti"
+        },
+        {
+          "level": 2,
+          "text": "Tipy pro práci s AI"
+        },
+        {
+          "level": 3,
+          "text": ""
+        }
+      ],
+      "cards": [
+        {
+          "title": "Individuální anglická konverzace podle CEFR",
+          "description": "Žák si procvičuje komunikaci na úrovni CEFR zadané učitelem. AI přizpůsobí jazyk, nechá prostor pro samostatnou odpověď a opravuje jen vybrané jevy v závěrečné formativní zpětné vazbě. Původních 15 min je orientační délka aktivity; přesný rozpis nebyl doložen.",
+          "text": "ChatGPT 6.–9. ročník 💬 Individuální anglická konverzace podle CEFR Žák si procvičuje komunikaci na úrovni CEFR zadané učitelem. AI přizpůsobí jazyk, nechá prostor pro samostatnou odpověď a opravuje jen vybrané jevy v závěrečné formativní zpětné vazbě. Původních 15 min je orientační délka aktivity; přesný rozpis nebyl doložen. Role AI: Žák pracuje s AI Čas: Aktivita · asi 15 min 👤 Individuální Připraveno Detail →",
+          "data": {
+            "data-level": "zs2"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "017457b4219dd622"
+            }
+          ]
+        },
+        {
+          "title": "Formativní zpětná vazba k anglickému textu",
+          "description": "AI nabídne formativní zpětnou vazbu k anglickému textu a vysvětlí pravidla v jazyce zvoleném podle úrovně žáka.",
+          "text": "Claude SŠ ✔️ Formativní zpětná vazba k anglickému textu AI nabídne formativní zpětnou vazbu k anglickému textu a vysvětlí pravidla v jazyce zvoleném podle úrovně žáka. Role AI: Učitel připravuje Čas zatím neurčen 👤 Individuální Připraveno Detail →",
+          "data": {
+            "data-level": "ss"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "79135607fd904604"
+            }
+          ]
+        },
+        {
+          "title": "Tematická slovní zásoba: vybav si a použij",
+          "description": "Učitel určí CEFR, ročník, komunikační cíl a známá slova. AI připraví přiměřenou malou sadu a cyklus seznámení, aktivního vybavení, použití ve větě a opakování; učitelský klíč oddělí od žákovské verze.",
+          "text": "Gemini 1.–5. ročník 📚 Tematická slovní zásoba: vybav si a použij Učitel určí CEFR, ročník, komunikační cíl a známá slova. AI připraví přiměřenou malou sadu a cyklus seznámení, aktivního vybavení, použití ve větě a opakování; učitelský klíč oddělí od žákovské verze. Role AI: Učitel připravuje Čas: Příprava · asi 10 min 🏫 Třída Oblíbené Detail →",
+          "data": {
+            "data-level": "zs1"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "abdf91d9ed733515"
+            }
+          ]
+        },
+        {
+          "title": "Orientační procvičování Cambridge English",
+          "description": "AI připraví originální neoficiální procvičování pro zadanou zkoušku, úroveň, dovednost a typ úlohy; nejde o oficiální materiál, skóre ani předpověď.",
+          "text": "ChatGPT SŠ 📝 Orientační procvičování Cambridge English AI připraví originální neoficiální procvičování pro zadanou zkoušku, úroveň, dovednost a typ úlohy; nejde o oficiální materiál, skóre ani předpověď. Role AI: Žák pracuje s AI Čas: Aktivita · asi 30 min 👤 Individuální Připraveno Detail →",
+          "data": {
+            "data-level": "ss"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "8a6da010f5e079ae"
+            }
+          ]
+        },
+        {
+          "title": "Anglická gramatika: krátký pracovní list podle cíle",
+          "description": "Učitel zadá CEFR, ročník, gramatický jev, předchozí znalosti, cíl, počet úloh, čas žákovského řešení a případnou podporu. AI připraví žákovský list, oddělený klíč s českým vysvětlením, kontrolní seznam přiměřenosti a volitelnou přenosovou úlohu. Učitel ověří jednoznačnost i možné správné varianty.",
+          "text": "Gemini 6.–9. ročník 🔤 Anglická gramatika: krátký pracovní list podle cíle Učitel zadá CEFR, ročník, gramatický jev, předchozí znalosti, cíl, počet úloh, čas žákovského řešení a případnou podporu. AI připraví žákovský list, oddělený klíč s českým vysvětlením, kontrolní seznam přiměřenosti a volitelnou přenosovou úlohu. Učitel ověří jednoznačnost i možné správné varianty. Role AI: Učitel připravuje Čas: Příprava · asi 5 min 🏫 Třída Připraveno Detail →",
+          "data": {
+            "data-level": "zs2"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "4d3e4c90533af1d7"
+            }
+          ]
+        },
+        {
+          "title": "Skupinová překladatelská dílna: volba, zdůvodnění, revize.",
+          "description": "Skupiny nejprve navrhnou vlastní překlad krátkého oprávněně použitelného textu. Učitel následně zprostředkuje AI jako druhou variantu; žáci porovnají idiomy a kulturní odkazy, zdůvodní vlastní volbu a označí nejistotu.",
+          "text": "Claude SŠ 🌍 Skupinová překladatelská dílna: volba, zdůvodnění, revize. Skupiny nejprve navrhnou vlastní překlad krátkého oprávněně použitelného textu. Učitel následně zprostředkuje AI jako druhou variantu; žáci porovnají idiomy a kulturní odkazy, zdůvodní vlastní volbu a označí nejistotu. Role AI: Učitel vede AI Čas: Aktivita · asi 10 min 👥 Skupiny Připraveno Detail →",
+          "data": {
+            "data-level": "ss"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "acc3174ffaccc201"
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "href": "index.html",
+          "text": "AI ve výuce INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE",
+          "ariaLabel": "AI ve výuce – domů",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": "brand"
+        },
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "text": "Začít s AI",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "ai-navody.html",
+          "text": "Připravit výuku",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Učit s AI",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "asistenti.html",
+          "text": "Nástroje a asistenti",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "vibe-coding.html",
+          "text": "Tvořit s AI",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "ai.html",
+          "text": "Číst a objevovat",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "skill-anglictina-vyukove-materialy.html",
+          "text": "Prohlédnout SKILL a návod",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": "btn btn-primary"
+        },
+        {
+          "href": "https://chatgpt.com",
+          "text": "Otevřít →",
+          "ariaLabel": null,
+          "title": null,
+          "target": "_blank",
+          "rel": null,
+          "class": "btn btn-primary btn-sm"
+        },
+        {
+          "href": "https://claude.ai",
+          "text": "Otevřít →",
+          "ariaLabel": null,
+          "title": null,
+          "target": "_blank",
+          "rel": null,
+          "class": "btn btn-primary btn-sm"
+        },
+        {
+          "href": "https://copilot.microsoft.com",
+          "text": "Otevřít →",
+          "ariaLabel": null,
+          "title": null,
+          "target": "_blank",
+          "rel": null,
+          "class": "btn btn-primary btn-sm"
+        },
+        {
+          "href": "index.html",
+          "text": "AI ve výuce Inspirace · nástroje · praxe pro učitele",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": "brand"
+        },
+        {
+          "href": "ai-navody.html",
+          "text": "Návody",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "prompty.html",
+          "text": "Prompty",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Aktivity",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "asistenti.html",
+          "text": "AI nástroje",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        }
+      ],
+      "images": [
+        {
+          "src": "images/ai-assistant-book-logo.png?v=robot-20261103",
+          "alt": "",
+          "title": null,
+          "width": "512",
+          "height": "491",
+          "loading": null,
+          "decoding": null
+        },
+        {
+          "src": "images/ai-ve-vyuce-robot-anglictina-hero.webp",
+          "alt": "",
+          "title": null,
+          "width": "965",
+          "height": "640",
+          "loading": null,
+          "decoding": "async"
+        },
+        {
+          "src": "images/ai-assistant-book-logo.png?v=robot-20261103",
+          "alt": "",
+          "title": null,
+          "width": "512",
+          "height": "491",
+          "loading": null,
+          "decoding": null
+        }
+      ],
+      "publicIds": [
+        "primary-menu",
+        "skill-anglictina-link",
+        "tab-aktivity",
+        "subject-heading-aktivity",
+        "tab-prompty",
+        "subject-heading-prompty",
+        "prompt-english-conversation-partner",
+        "prompt-english-grammar-exercises",
+        "prompt-english-essay-grader",
+        "prompt-english-vocabulary-set",
+        "tab-asistenti",
+        "subject-heading-asistenti",
+        "tab-tipy",
+        "subject-heading-tipy",
+        "modalOverlay"
+      ],
+      "buttons": [
+        {
+          "text": "",
+          "attributes": {
+            "type": "button",
+            "aria-label": "Otevřít navigaci",
+            "aria-expanded": "false",
+            "aria-controls": "primary-menu"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "🎯 Aktivity",
+          "attributes": {
+            "type": "button",
+            "aria-controls": "tab-aktivity",
+            "aria-pressed": "true"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "✨ Prompty",
+          "attributes": {
+            "type": "button",
+            "aria-controls": "tab-prompty",
+            "aria-pressed": "false"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "🤖 Asistenti",
+          "attributes": {
+            "type": "button",
+            "aria-controls": "tab-asistenti",
+            "aria-pressed": "false"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "💡 Tipy",
+          "attributes": {
+            "type": "button",
+            "aria-controls": "tab-tipy",
+            "aria-pressed": "false"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "Vše",
+          "attributes": {},
+          "onclickHash": null
+        },
+        {
+          "text": "1.–5. ročník",
+          "attributes": {},
+          "onclickHash": null
+        },
+        {
+          "text": "6.–9. ročník",
+          "attributes": {},
+          "onclickHash": null
+        },
+        {
+          "text": "SŠ",
+          "attributes": {},
+          "onclickHash": null
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "017457b4219dd622"
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "79135607fd904604"
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "abdf91d9ed733515"
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "8a6da010f5e079ae"
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "4d3e4c90533af1d7"
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "acc3174ffaccc201"
+        },
+        {
+          "text": "📋 Kopírovat",
+          "attributes": {
+            "type": "button"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "📋 Kopírovat",
+          "attributes": {
+            "type": "button"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "📋 Kopírovat",
+          "attributes": {
+            "type": "button"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "📋 Kopírovat",
+          "attributes": {
+            "type": "button"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "✕",
+          "attributes": {},
+          "onclickHash": "1cfc5ccfdaf23635"
+        }
+      ],
+      "seo": {
+        "title": "Anglický jazyk – AI Pomůcky pro Učitele",
+        "canonical": [
+          "https://ai-ve-vyuce.netlify.app/anglictina"
+        ],
+        "metas": [
+          {
+            "name": "viewport",
+            "property": null,
+            "http-equiv": null,
+            "content": "width=device-width, initial-scale=1.0"
+          },
+          {
+            "name": "description",
+            "property": null,
+            "http-equiv": null,
+            "content": "AI aktivity a prompty pro výuku anglického jazyka. Konverzační partner, gramatické opravy, slovní zásoba."
+          },
+          {
+            "name": null,
+            "property": "og:title",
+            "http-equiv": null,
+            "content": "Anglický jazyk – AI Pomůcky pro Učitele"
+          },
+          {
+            "name": null,
+            "property": "og:description",
+            "http-equiv": null,
+            "content": "AI aktivity a prompty pro výuku anglického jazyka. Konverzační partner, gramatické opravy, slovní zásoba."
+          },
+          {
+            "name": null,
+            "property": "og:url",
+            "http-equiv": null,
+            "content": "https://ai-ve-vyuce.netlify.app/anglictina"
+          }
+        ]
+      },
+      "subjectNavigation": [
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "text": "Začít s AI"
+        },
+        {
+          "href": "ai-navody.html",
+          "text": "Připravit výuku"
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Učit s AI"
+        },
+        {
+          "href": "asistenti.html",
+          "text": "Nástroje a asistenti"
+        },
+        {
+          "href": "vibe-coding.html",
+          "text": "Tvořit s AI"
+        },
+        {
+          "href": "ai.html",
+          "text": "Číst a objevovat"
+        }
+      ],
+      "activityLibraryLinks": [
+        {
+          "href": "aktivity.html",
+          "text": "Učit s AI",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Aktivity",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        }
+      ],
+      "scripts": [
+        "js/subject-navigation.js",
+        "js/main.js",
+        "js/subject-pages.js?v=20261103-stage5a",
+        "js/site-footer.js?v=20260927-human-loop",
+        "js/site-navigation-data.js?v=20261108-7f",
+        "js/site-navigation.js?v=20261108-7f"
+      ]
+    },
+    "cestina.html": {
+      "bodyText": "AI ve výuce INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE Začít s AI Připravit výuku Učit s AI Nástroje a asistenti Tvořit s AI Číst a objevovat 📖 Český jazyk s AI Opravujte slohy, generujte diktáty, analyzujte literaturu a tvořte gramatická cvičení s pomocí AI. Ušetřete hodiny opravování. 🎯 6 aktivit ✨ 4 promptů 🤖 3 AI nástroje 🏫 ZŠ · SŠ 🎯 Aktivity ✨ Prompty 🤖 Asistenti 💡 Tipy Ročník: Vše 1.–5. ročník 6.–9. ročník SŠ Zobrazeno 6 z 6 aktivit Claude 6.–9. ročník ✍️ Formativní zpětná vazba ke slohu AI navrhne učiteli věkově a jazykově přiměřenou formativní zpětnou vazbu k modelovému textu nebo práci ve školou schváleném režimu. Role AI: Učitel připravuje Čas zatím neurčen 📝 Sloh Připraveno Detail → ChatGPT 6.–9. ročník 🎧 Učitelská příprava pravopisného diktátu Učitel zadá konkrétní pravopisný jev a věkovou úroveň; AI připraví krátký diktát, oddělený klíč, procvičované jevy a poznámku k opravě. Učitel před použitím ověří správnost i přiměřenost textu. Role AI: Učitel připravuje Čas: Příprava · asi 5 min 🏫 Třída Připraveno Detail → Gemini SŠ 📚 Příprava literárního rozboru pro učitele AI pomáhá učiteli připravit otázky a osnovu práce s ověřenou literární ukázkou. Učitel kontroluje každé tvrzení; čas 10 min označuje původní orientační dobu přípravy, která se může podle ověřování prodloužit. Role AI: Učitel připravuje Čas: Příprava · asi 10 min 👤 Individuální Připraveno Detail → ChatGPT 1.–5. ročník 🔤 Vyjmenovaná slova: procvič pravopis i význam Učitel určí probranou řadu a učivo. AI připraví krátký modelový text a několik různých úloh, v nichž žák volí odpověď a vysvětluje pravidlo i významový vztah. Učitelský klíč je oddělený a vyžaduje kontrolu pravopisu i příbuznosti slov. Role AI: Učitel připravuje Čas: Příprava · asi 5 min 🏫 Třída Oblíbené Detail → Claude SŠ 🗣️ Orientační nácvik maturitního rozhovoru AI vede neoficiální nácvik maturitního rozhovoru s oporou o dílo a dodané ověřené školní podklady; neznámkuje ani nepředpovídá výsledek. Role AI: Žák pracuje s AI Čas: Aktivita · asi 20 min 👤 Individuální Připraveno Detail → ChatGPT 6.–9. ročník 📝 Žák píše vlastní sloh s průvodcem Žák zůstává autorem: nejprve si ujasní znaky útvaru a vlastní záměr, potom z vlastních nápadů sestaví osnovu a reviduje svůj text. AI klade otázky a upozorňuje na nejasnosti, ale odstavce za žáka nepíše. Role AI: Žák pracuje s AI Čas: Aktivita · asi 15 min 👤 Individuální Připraveno Detail → Opravovač slohu s konstruktivní zpětnou vazbou Claude 6.–9. ročník Oprav tuto slohovou práci žáka [ROČNÍK]. Zaměř se na: 1) gramatiku a pravopis, 2) stavbu vět a odstavců, 3) vhodnost slovní zásoby, 4) splnění zadání. Pro každou skupinu chyb uveď počet, příklady a správnou variantu. Na závěr: celkové zhodnocení (2–3 věty) a 3 konkrétní tipy na zlepšení. TEXT: [VLOŽTE TEXT] Opravování 📋 Kopírovat Generátor diktátu s klíčem ChatGPT ZŠ Vytvoř diktát pro žáky [ROČNÍK] zaměřený na [GRAMATICKÝ JEV]. Délka: cca [POČET] slov. Text musí být tematicky zajímavý pro žáky. Přidej: opravný klíč (označení správných písmen), seznam klíčových slov s pravidlem a 3 cvičné věty jako rozcvičení před diktátem. Diktáty 📋 Kopírovat Literární rozbor – kompletní šablona Gemini SŠ Proveď literární rozbor díla „[NÁZEV]“ od [AUTOR]. Struktura: 1) Bibliografické údaje, 2) Literární druh a žánr, 3) Téma, motiv, hlavní myšlenka, 4) Charakteristika postav, 5) Kompozice a struktura, 6) Jazykové prostředky, 7) Historický a společenský kontext, 8) Osobní hodnocení díla. Vhodné pro přípravu na maturitu. Literatura 📋 Kopírovat Průvodce psaním slohového útvaru Claude ZŠ/SŠ Pomoz mi napsat [SLOHOVÝ ÚTVAR: líčení/popis/vypravování/charakteristika/úvaha] na téma [TÉMA] pro žáka [ROČNÍK]. Nejprve vysvětli strukturu tohoto útvaru, pak uveď osnovu, klíčová jazyková spojení typická pro tento útvar a nakonec ukázkový odstavec jako inspiraci. Nestyl za mě celý text. Sloh 📋 Kopírovat 🟠 Claude Anthropic · Claude 3.5 Sonnet Nejlepší volba pro opravování slohů a tvorbu strukturovaných zpětných vazeb. Claude exceluje v porozumění jazykové kvalitě textu. Opravování slohů Zpětná vazba ★★★★★ Otevřít → 🟢 ChatGPT OpenAI · GPT-4o Výborný pro generování diktátů, cvičení a výuku gramatiky. Zvládá i rozbor literárních textů a tvorbu testů. Diktáty Gramatika ★★★★★ Otevřít → 🔵 Gemini Google Vhodný pro literární rozbory díky přístupu k aktuálním informacím. Gemini zvládne kontext díla v rámci doby i aktuálního výkladu. Literatura Kontext ★★★★☆ Otevřít → 💡 Tip: Claude je král opravování Pro opravování slohových prací je Claude výrazně lepší než ostatní modely – lépe rozumí stylistickým nuancím češtiny a dává konkrétnější zpětnou vazbu. 📝 Tip: Vždy specifikujte slohový útvar AI potřebuje vědět, jaký slohový útvar opravuje – jinak hodnotí každý text stejně. Vždy napište: \"Toto je [útvar] pro žáka [ročník].\" ⚠️ Upozornění: Citlivost dat žáků Před vložením slohu žáka do AI odstraňte nebo anonymizujte osobní údaje (jméno, škola, třída). Dodržujte GDPR. AI ve výuce Inspirace · nástroje · praxe pro učitele Moderní průvodce světem AI pro české učitele. Návody Prompty Aktivity AI nástroje © 2026 AI ve výuce ✕",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Český jazyk s AI"
+        },
+        {
+          "level": 3,
+          "text": ""
+        }
+      ],
+      "cards": [
+        {
+          "title": "Formativní zpětná vazba ke slohu",
+          "description": "AI navrhne učiteli věkově a jazykově přiměřenou formativní zpětnou vazbu k modelovému textu nebo práci ve školou schváleném režimu.",
+          "text": "Claude 6.–9. ročník ✍️ Formativní zpětná vazba ke slohu AI navrhne učiteli věkově a jazykově přiměřenou formativní zpětnou vazbu k modelovému textu nebo práci ve školou schváleném režimu. Role AI: Učitel připravuje Čas zatím neurčen 📝 Sloh Připraveno Detail →",
+          "data": {
+            "data-level": "zs2"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "97222a31cabf224f"
+            }
+          ]
+        },
+        {
+          "title": "Učitelská příprava pravopisného diktátu",
+          "description": "Učitel zadá konkrétní pravopisný jev a věkovou úroveň; AI připraví krátký diktát, oddělený klíč, procvičované jevy a poznámku k opravě. Učitel před použitím ověří správnost i přiměřenost textu.",
+          "text": "ChatGPT 6.–9. ročník 🎧 Učitelská příprava pravopisného diktátu Učitel zadá konkrétní pravopisný jev a věkovou úroveň; AI připraví krátký diktát, oddělený klíč, procvičované jevy a poznámku k opravě. Učitel před použitím ověří správnost i přiměřenost textu. Role AI: Učitel připravuje Čas: Příprava · asi 5 min 🏫 Třída Připraveno Detail →",
+          "data": {
+            "data-level": "zs2"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "9fc08b56d75c1d5a"
+            }
+          ]
+        },
+        {
+          "title": "Příprava literárního rozboru pro učitele",
+          "description": "AI pomáhá učiteli připravit otázky a osnovu práce s ověřenou literární ukázkou. Učitel kontroluje každé tvrzení; čas 10 min označuje původní orientační dobu přípravy, která se může podle ověřování prodloužit.",
+          "text": "Gemini SŠ 📚 Příprava literárního rozboru pro učitele AI pomáhá učiteli připravit otázky a osnovu práce s ověřenou literární ukázkou. Učitel kontroluje každé tvrzení; čas 10 min označuje původní orientační dobu přípravy, která se může podle ověřování prodloužit. Role AI: Učitel připravuje Čas: Příprava · asi 10 min 👤 Individuální Připraveno Detail →",
+          "data": {
+            "data-level": "ss"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "5a5afa16757ab885"
+            }
+          ]
+        },
+        {
+          "title": "Vyjmenovaná slova: procvič pravopis i význam",
+          "description": "Učitel určí probranou řadu a učivo. AI připraví krátký modelový text a několik různých úloh, v nichž žák volí odpověď a vysvětluje pravidlo i významový vztah. Učitelský klíč je oddělený a vyžaduje kontrolu pravopisu i příbuznosti slov.",
+          "text": "ChatGPT 1.–5. ročník 🔤 Vyjmenovaná slova: procvič pravopis i význam Učitel určí probranou řadu a učivo. AI připraví krátký modelový text a několik různých úloh, v nichž žák volí odpověď a vysvětluje pravidlo i významový vztah. Učitelský klíč je oddělený a vyžaduje kontrolu pravopisu i příbuznosti slov. Role AI: Učitel připravuje Čas: Příprava · asi 5 min 🏫 Třída Oblíbené Detail →",
+          "data": {
+            "data-level": "zs1"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "7954d8ddd7e70ff8"
+            }
+          ]
+        },
+        {
+          "title": "Orientační nácvik maturitního rozhovoru",
+          "description": "AI vede neoficiální nácvik maturitního rozhovoru s oporou o dílo a dodané ověřené školní podklady; neznámkuje ani nepředpovídá výsledek.",
+          "text": "Claude SŠ 🗣️ Orientační nácvik maturitního rozhovoru AI vede neoficiální nácvik maturitního rozhovoru s oporou o dílo a dodané ověřené školní podklady; neznámkuje ani nepředpovídá výsledek. Role AI: Žák pracuje s AI Čas: Aktivita · asi 20 min 👤 Individuální Připraveno Detail →",
+          "data": {
+            "data-level": "ss"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "e500563c3715ae8e"
+            }
+          ]
+        },
+        {
+          "title": "Žák píše vlastní sloh s průvodcem",
+          "description": "Žák zůstává autorem: nejprve si ujasní znaky útvaru a vlastní záměr, potom z vlastních nápadů sestaví osnovu a reviduje svůj text. AI klade otázky a upozorňuje na nejasnosti, ale odstavce za žáka nepíše.",
+          "text": "ChatGPT 6.–9. ročník 📝 Žák píše vlastní sloh s průvodcem Žák zůstává autorem: nejprve si ujasní znaky útvaru a vlastní záměr, potom z vlastních nápadů sestaví osnovu a reviduje svůj text. AI klade otázky a upozorňuje na nejasnosti, ale odstavce za žáka nepíše. Role AI: Žák pracuje s AI Čas: Aktivita · asi 15 min 👤 Individuální Připraveno Detail →",
+          "data": {
+            "data-level": "zs2"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "bc943cbd95301cf5"
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "href": "index.html",
+          "text": "AI ve výuce INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE",
+          "ariaLabel": "AI ve výuce – domů",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": "brand"
+        },
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "text": "Začít s AI",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "ai-navody.html",
+          "text": "Připravit výuku",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Učit s AI",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "asistenti.html",
+          "text": "Nástroje a asistenti",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "vibe-coding.html",
+          "text": "Tvořit s AI",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "ai.html",
+          "text": "Číst a objevovat",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "https://claude.ai",
+          "text": "Otevřít →",
+          "ariaLabel": null,
+          "title": null,
+          "target": "_blank",
+          "rel": null,
+          "class": "btn btn-primary btn-sm"
+        },
+        {
+          "href": "https://chatgpt.com",
+          "text": "Otevřít →",
+          "ariaLabel": null,
+          "title": null,
+          "target": "_blank",
+          "rel": null,
+          "class": "btn btn-primary btn-sm"
+        },
+        {
+          "href": "https://gemini.google.com",
+          "text": "Otevřít →",
+          "ariaLabel": null,
+          "title": null,
+          "target": "_blank",
+          "rel": null,
+          "class": "btn btn-primary btn-sm"
+        },
+        {
+          "href": "index.html",
+          "text": "AI ve výuce Inspirace · nástroje · praxe pro učitele",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": "brand"
+        },
+        {
+          "href": "ai-navody.html",
+          "text": "Návody",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "prompty.html",
+          "text": "Prompty",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Aktivity",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "asistenti.html",
+          "text": "AI nástroje",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        }
+      ],
+      "images": [
+        {
+          "src": "images/ai-assistant-book-logo.png?v=robot-20261103",
+          "alt": "",
+          "title": null,
+          "width": "512",
+          "height": "491",
+          "loading": null,
+          "decoding": null
+        },
+        {
+          "src": "images/ai-ve-vyuce-robot-cestina-hero.webp",
+          "alt": "",
+          "title": null,
+          "width": "1020",
+          "height": "353",
+          "loading": null,
+          "decoding": "async"
+        },
+        {
+          "src": "images/ai-assistant-book-logo.png?v=robot-20261103",
+          "alt": "",
+          "title": null,
+          "width": "512",
+          "height": "491",
+          "loading": null,
+          "decoding": null
+        }
+      ],
+      "publicIds": [
+        "primary-menu",
+        "tab-aktivity",
+        "tab-prompty",
+        "prompt-czech-essay-feedback",
+        "prompt-czech-dictation-generator",
+        "prompt-czech-literary-analysis",
+        "prompt-czech-writing-guide",
+        "tab-asistenti",
+        "tab-tipy",
+        "modalOverlay"
+      ],
+      "buttons": [
+        {
+          "text": "",
+          "attributes": {
+            "type": "button",
+            "aria-label": "Otevřít navigaci",
+            "aria-expanded": "false",
+            "aria-controls": "primary-menu"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "🎯 Aktivity",
+          "attributes": {
+            "type": "button",
+            "aria-controls": "tab-aktivity",
+            "aria-pressed": "true"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "✨ Prompty",
+          "attributes": {
+            "type": "button",
+            "aria-controls": "tab-prompty",
+            "aria-pressed": "false"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "🤖 Asistenti",
+          "attributes": {
+            "type": "button",
+            "aria-controls": "tab-asistenti",
+            "aria-pressed": "false"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "💡 Tipy",
+          "attributes": {
+            "type": "button",
+            "aria-controls": "tab-tipy",
+            "aria-pressed": "false"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "Vše",
+          "attributes": {
+            "aria-pressed": "true"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "1.–5. ročník",
+          "attributes": {
+            "aria-pressed": "false"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "6.–9. ročník",
+          "attributes": {
+            "aria-pressed": "false"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "SŠ",
+          "attributes": {
+            "aria-pressed": "false"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "97222a31cabf224f"
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "9fc08b56d75c1d5a"
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "5a5afa16757ab885"
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "7954d8ddd7e70ff8"
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "e500563c3715ae8e"
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "bc943cbd95301cf5"
+        },
+        {
+          "text": "📋 Kopírovat",
+          "attributes": {
+            "type": "button"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "📋 Kopírovat",
+          "attributes": {
+            "type": "button"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "📋 Kopírovat",
+          "attributes": {
+            "type": "button"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "📋 Kopírovat",
+          "attributes": {
+            "type": "button"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "✕",
+          "attributes": {},
+          "onclickHash": "1cfc5ccfdaf23635"
+        }
+      ],
+      "seo": {
+        "title": "Český jazyk – AI Pomůcky pro Učitele",
+        "canonical": [
+          "https://ai-ve-vyuce.netlify.app/cestina"
+        ],
+        "metas": [
+          {
+            "name": "viewport",
+            "property": null,
+            "http-equiv": null,
+            "content": "width=device-width, initial-scale=1.0"
+          },
+          {
+            "name": "description",
+            "property": null,
+            "http-equiv": null,
+            "content": "AI aktivity a prompty pro výuku českého jazyka. Opravování slohů, diktáty, literární rozbory, gramatická cvičení."
+          },
+          {
+            "name": null,
+            "property": "og:title",
+            "http-equiv": null,
+            "content": "Český jazyk – AI Pomůcky pro Učitele"
+          },
+          {
+            "name": null,
+            "property": "og:description",
+            "http-equiv": null,
+            "content": "AI aktivity a prompty pro výuku českého jazyka. Opravování slohů, diktáty, literární rozbory, gramatická cvičení."
+          },
+          {
+            "name": null,
+            "property": "og:url",
+            "http-equiv": null,
+            "content": "https://ai-ve-vyuce.netlify.app/cestina"
+          }
+        ]
+      },
+      "subjectNavigation": [
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "text": "Začít s AI"
+        },
+        {
+          "href": "ai-navody.html",
+          "text": "Připravit výuku"
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Učit s AI"
+        },
+        {
+          "href": "asistenti.html",
+          "text": "Nástroje a asistenti"
+        },
+        {
+          "href": "vibe-coding.html",
+          "text": "Tvořit s AI"
+        },
+        {
+          "href": "ai.html",
+          "text": "Číst a objevovat"
+        }
+      ],
+      "activityLibraryLinks": [
+        {
+          "href": "aktivity.html",
+          "text": "Učit s AI",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Aktivity",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        }
+      ],
+      "scripts": [
+        "js/subject-navigation.js",
+        "js/main.js",
+        "js/subject-pages.js?v=20261104-stage5b",
+        "js/site-footer.js?v=20260927-human-loop",
+        "js/site-navigation-data.js?v=20261108-7g",
+        "js/site-navigation.js?v=20261108-7g"
+      ]
+    },
+    "dejepis.html": {
+      "bodyText": "AI ve výuce INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE Začít s AI Připravit výuku Učit s AI Nástroje a asistenti Tvořit s AI Číst a objevovat 🏛️ Dějepis s AI Oživte historii: nechte žáky debatovat jako historické osobnosti, vytvářejte časové osy, simulujte historické situace a rozvíjejte kritické myšlení. 🎯 6 aktivit ✨ 4 promptů 🤖 3 AI nástroje 📅 ZŠ · SŠ 🎯 Aktivity ✨ Prompty 🤖 Asistenti 💡 Tipy Ročník: Vše 1.–5. ročník 6.–9. ročník SŠ Zobrazeno 6 z 6 aktivit Claude 6.–9. ročník 🎭 Historický rozhovor – výslovně označená simulace. Učitelem vedená historická simulace, v níž žáci kladou otázky, AI označuje neověřené odpovědi jako modelované a třída po každém kole porovnává tvrzení s historickými prameny. Role AI: Učitel vede AI Čas zatím neurčen 👥 Třída Oblíbené Detail → ChatGPT ZŠ/SŠ 📅 Historická časová osa z podkladů: seřaď a dolož. AI převede učitelem dodaný ověřený seznam událostí do pracovního návrhu. Žáci jej kontrolují, seřadí případné karty a označí, která příčinná tvrzení vyžadují další zdroj. Role AI: Učitel připravuje Čas: Příprava · asi 5 min 🏫 Třída Připraveno Detail → Gemini SŠ ⚖️ Historická debata podložená prameny Žáci tvoří vlastní argumenty, dokládají je historickými prameny a odpovídají na protiargumenty. Učitel předem schvaluje téma i prameny; dobře doložené poznání se nesrovnává falešně s nepodloženými tvrzeními. Původních 25 min je orientační čas výuky při předem připravených krátkých pramenech. Role AI: Učitel vede AI Čas: Aktivita · asi 25 min 👥 Skupiny Připraveno Detail → ChatGPT 6.–9. ročník 🗞️ Simulovaný dobový článek a redakční kontrola faktů. Učitel připraví jasně označený simulovaný článek. Žáci jej porovnají s ověřenými prameny, vyznačí doložené informace a tvůrčí prvky a článek upraví tak, aby čtenář fikci nezaměnil za historický zdroj. Role AI: Učitel připravuje Čas: Příprava · asi 10 min 👤 Individuální Připraveno Detail → Claude SŠ 🧠 Skupinová analýza pramene: důkaz, kontext, nejistota. Žáci ve skupině sami nejprve zkoumají vybraný pramen a jeho jazyk. AI nabídne otázky a oddělené hypotézy; skupina je ověřuje proti prameni a schváleným zdrojům. Role AI: Učitel vede AI Čas zatím neurčen 👥 Skupiny Připraveno Detail → Gemini ZŠ 🌍 Čtení historické mapy: žák hledá důkaz. Učitel vybere mapu a její ověřený zdroj. Žáci z mapy sami popisují změnu; AI nabídne interpretační otázky a oddělí, co je vidět, od historického vysvětlení, které je třeba doložit. Role AI: Učitel vede AI Čas zatím neurčen 🏫 Třída Připraveno Detail → Roleplay historické osoby Claude ZŠ/SŠ Budeš hrát roli [HISTORICKÁ OSOBNOST] v době [HISTORICKÉ OBDOBÍ]. Mluv v první osobě, přesně dle historických faktů. Odpovídej z pohledu této osobnosti s ohledem na její dobu, hodnoty a přesvědčení. Na konci každé odpovědi přidej poznámku v závorce pro učitele: (Historická poznámka: …) s ověřením fakticity. Roleplay 📋 Kopírovat Příčiny a důsledky události ChatGPT ZŠ/SŠ Analyzuj historickou událost „[UDÁLOST]\" pro žáky [ROČNÍK]. Struktura: 1) Historický kontext (co jí předcházelo), 2) Bezprostřední příčiny, 3) Průběh události, 4) Krátkodobé důsledky, 5) Dlouhodobé důsledky a přesah do dnešní doby. Vyhni se zjednodušování, ale zachovej srozumitelnost pro daný ročník. Analýza 📋 Kopírovat Debatní příprava – obě strany Gemini SŠ Připrav podklady pro školní debatu na toto historické nebo aktuální téma: [TÉMA]. Pro každou stranu uveď: 4 klíčové argumenty s historickými nebo faktickými důkazy, 2 protiargumenty k anticipaci a 3 otázky, které může protistrana položit. Zachovej nestrannost a věcnost. Debata 📋 Kopírovat Dobový fiktivní deník ChatGPT ZŠ Napiš fiktivní deník [FIKTIVNÍ POSTAVA: obyčejný člověk / voják / žena / dítě] žijící v době [HISTORICKÉ OBDOBÍ – konkrétní rok]. Datum zápisů: [DATUM]. Zahrň každodenní život, historické události z perspektivy obyčejného člověka, jeho obavy, naděje. 3–5 zápisů. Jazyk přizpůsob věku žáků [ROČNÍK]. Kreativní psaní 📋 Kopírovat 🟠 Claude Anthropic Nejlepší pro roleplay historických osobností a analýzu historických pramenů. Výjimečně dobré porozumění historickému kontextu a nuancím. Roleplay Analýza ★★★★★ Otevřít → 🟤 Perplexity AI Perplexity Výzkumný asistent s ověřenými citacemi – skvělý pro ověřování historických faktů a hledání primárních zdrojů online. Zdroje Fakta ★★★★★ Otevřít → 🔵 Gemini Google Propojuje historické informace s aktuálním děním a geografickým kontextem. Vhodný pro analýzu map a geopolitických přesahů. Geografie Mapy ★★★★☆ Otevřít → 🎭 Tip: Roleplay jako motivátor Žáci jsou fascinovaně, když mohou \"mluvit\" s Napoleonem nebo Karlem IV. Roleplay aktivita výrazně zvyšuje zájem o historii a zapamatování si faktů. 💡 Tip: Kritické myšlení pomocí \"Co kdyby…\" Zadejte otázku \"Co kdyby [HISTORICKÁ UDÁLOST] nedopadla tak, jak dopadla?\" – AI navede žáky k uvažování o historických příčinnostech. ⚠️ Upozornění: Fiktivní vs. historicky přesné Při roleplay vždy zdůrazněte žákům, že AI může historické osobnosti \"vylepšovat\" nebo zkreslit. Vždy doplňte ověřenými primárními zdroji. AI ve výuce Inspirace · nástroje · praxe pro učitele Moderní průvodce světem AI pro české učitele. Návody Prompty Aktivity AI nástroje © 2026 AI ve výuce ✕",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Dějepis s AI"
+        },
+        {
+          "level": 3,
+          "text": ""
+        }
+      ],
+      "cards": [
+        {
+          "title": "Historický rozhovor – výslovně označená simulace.",
+          "description": "Učitelem vedená historická simulace, v níž žáci kladou otázky, AI označuje neověřené odpovědi jako modelované a třída po každém kole porovnává tvrzení s historickými prameny.",
+          "text": "Claude 6.–9. ročník 🎭 Historický rozhovor – výslovně označená simulace. Učitelem vedená historická simulace, v níž žáci kladou otázky, AI označuje neověřené odpovědi jako modelované a třída po každém kole porovnává tvrzení s historickými prameny. Role AI: Učitel vede AI Čas zatím neurčen 👥 Třída Oblíbené Detail →",
+          "data": {
+            "data-level": "zs2"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "5c394f06c2b5fda3"
+            }
+          ]
+        },
+        {
+          "title": "Historická časová osa z podkladů: seřaď a dolož.",
+          "description": "AI převede učitelem dodaný ověřený seznam událostí do pracovního návrhu. Žáci jej kontrolují, seřadí případné karty a označí, která příčinná tvrzení vyžadují další zdroj.",
+          "text": "ChatGPT ZŠ/SŠ 📅 Historická časová osa z podkladů: seřaď a dolož. AI převede učitelem dodaný ověřený seznam událostí do pracovního návrhu. Žáci jej kontrolují, seřadí případné karty a označí, která příčinná tvrzení vyžadují další zdroj. Role AI: Učitel připravuje Čas: Příprava · asi 5 min 🏫 Třída Připraveno Detail →",
+          "data": {
+            "data-level": "zs1 zs2 ss"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "c55a422389376bfe"
+            }
+          ]
+        },
+        {
+          "title": "Historická debata podložená prameny",
+          "description": "Žáci tvoří vlastní argumenty, dokládají je historickými prameny a odpovídají na protiargumenty. Učitel předem schvaluje téma i prameny; dobře doložené poznání se nesrovnává falešně s nepodloženými tvrzeními. Původních 25 min je orientační čas výuky při předem připravených krátkých pramenech.",
+          "text": "Gemini SŠ ⚖️ Historická debata podložená prameny Žáci tvoří vlastní argumenty, dokládají je historickými prameny a odpovídají na protiargumenty. Učitel předem schvaluje téma i prameny; dobře doložené poznání se nesrovnává falešně s nepodloženými tvrzeními. Původních 25 min je orientační čas výuky při předem připravených krátkých pramenech. Role AI: Učitel vede AI Čas: Aktivita · asi 25 min 👥 Skupiny Připraveno Detail →",
+          "data": {
+            "data-level": "ss"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "8c4e62e7ef3cccb3"
+            }
+          ]
+        },
+        {
+          "title": "Simulovaný dobový článek a redakční kontrola faktů.",
+          "description": "Učitel připraví jasně označený simulovaný článek. Žáci jej porovnají s ověřenými prameny, vyznačí doložené informace a tvůrčí prvky a článek upraví tak, aby čtenář fikci nezaměnil za historický zdroj.",
+          "text": "ChatGPT 6.–9. ročník 🗞️ Simulovaný dobový článek a redakční kontrola faktů. Učitel připraví jasně označený simulovaný článek. Žáci jej porovnají s ověřenými prameny, vyznačí doložené informace a tvůrčí prvky a článek upraví tak, aby čtenář fikci nezaměnil za historický zdroj. Role AI: Učitel připravuje Čas: Příprava · asi 10 min 👤 Individuální Připraveno Detail →",
+          "data": {
+            "data-level": "zs2"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "9be70e4de67419a0"
+            }
+          ]
+        },
+        {
+          "title": "Skupinová analýza pramene: důkaz, kontext, nejistota.",
+          "description": "Žáci ve skupině sami nejprve zkoumají vybraný pramen a jeho jazyk. AI nabídne otázky a oddělené hypotézy; skupina je ověřuje proti prameni a schváleným zdrojům.",
+          "text": "Claude SŠ 🧠 Skupinová analýza pramene: důkaz, kontext, nejistota. Žáci ve skupině sami nejprve zkoumají vybraný pramen a jeho jazyk. AI nabídne otázky a oddělené hypotézy; skupina je ověřuje proti prameni a schváleným zdrojům. Role AI: Učitel vede AI Čas zatím neurčen 👥 Skupiny Připraveno Detail →",
+          "data": {
+            "data-level": "ss"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "be994626f2cc6131"
+            }
+          ]
+        },
+        {
+          "title": "Čtení historické mapy: žák hledá důkaz.",
+          "description": "Učitel vybere mapu a její ověřený zdroj. Žáci z mapy sami popisují změnu; AI nabídne interpretační otázky a oddělí, co je vidět, od historického vysvětlení, které je třeba doložit.",
+          "text": "Gemini ZŠ 🌍 Čtení historické mapy: žák hledá důkaz. Učitel vybere mapu a její ověřený zdroj. Žáci z mapy sami popisují změnu; AI nabídne interpretační otázky a oddělí, co je vidět, od historického vysvětlení, které je třeba doložit. Role AI: Učitel vede AI Čas zatím neurčen 🏫 Třída Připraveno Detail →",
+          "data": {
+            "data-level": "zs1 zs2"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "eba3d2b26986a6ee"
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "href": "index.html",
+          "text": "AI ve výuce INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE",
+          "ariaLabel": "AI ve výuce – domů",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": "brand"
+        },
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "text": "Začít s AI",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "ai-navody.html",
+          "text": "Připravit výuku",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Učit s AI",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "asistenti.html",
+          "text": "Nástroje a asistenti",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "vibe-coding.html",
+          "text": "Tvořit s AI",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "ai.html",
+          "text": "Číst a objevovat",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "https://claude.ai",
+          "text": "Otevřít →",
+          "ariaLabel": null,
+          "title": null,
+          "target": "_blank",
+          "rel": null,
+          "class": "btn btn-primary btn-sm"
+        },
+        {
+          "href": "https://perplexity.ai",
+          "text": "Otevřít →",
+          "ariaLabel": null,
+          "title": null,
+          "target": "_blank",
+          "rel": null,
+          "class": "btn btn-primary btn-sm"
+        },
+        {
+          "href": "https://gemini.google.com",
+          "text": "Otevřít →",
+          "ariaLabel": null,
+          "title": null,
+          "target": "_blank",
+          "rel": null,
+          "class": "btn btn-primary btn-sm"
+        },
+        {
+          "href": "index.html",
+          "text": "AI ve výuce Inspirace · nástroje · praxe pro učitele",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": "brand"
+        },
+        {
+          "href": "ai-navody.html",
+          "text": "Návody",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "prompty.html",
+          "text": "Prompty",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Aktivity",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "asistenti.html",
+          "text": "AI nástroje",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        }
+      ],
+      "images": [
+        {
+          "src": "images/ai-assistant-book-logo.png?v=robot-20261103",
+          "alt": "",
+          "title": null,
+          "width": "512",
+          "height": "491",
+          "loading": null,
+          "decoding": null
+        },
+        {
+          "src": "images/ai-ve-vyuce-robot-dejepis-hero.webp",
+          "alt": "",
+          "title": null,
+          "width": "950",
+          "height": "359",
+          "loading": null,
+          "decoding": "async"
+        },
+        {
+          "src": "images/ai-assistant-book-logo.png?v=robot-20261103",
+          "alt": "",
+          "title": null,
+          "width": "512",
+          "height": "491",
+          "loading": null,
+          "decoding": null
+        }
+      ],
+      "publicIds": [
+        "primary-menu",
+        "tab-aktivity",
+        "tab-prompty",
+        "prompt-history-roleplay-person",
+        "prompt-history-event-causes-effects",
+        "prompt-history-debate-preparation",
+        "prompt-history-period-diary",
+        "tab-asistenti",
+        "tab-tipy",
+        "modalOverlay"
+      ],
+      "buttons": [
+        {
+          "text": "",
+          "attributes": {
+            "type": "button",
+            "aria-label": "Otevřít navigaci",
+            "aria-expanded": "false",
+            "aria-controls": "primary-menu"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "🎯 Aktivity",
+          "attributes": {
+            "type": "button",
+            "aria-controls": "tab-aktivity",
+            "aria-pressed": "true"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "✨ Prompty",
+          "attributes": {
+            "type": "button",
+            "aria-controls": "tab-prompty",
+            "aria-pressed": "false"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "🤖 Asistenti",
+          "attributes": {
+            "type": "button",
+            "aria-controls": "tab-asistenti",
+            "aria-pressed": "false"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "💡 Tipy",
+          "attributes": {
+            "type": "button",
+            "aria-controls": "tab-tipy",
+            "aria-pressed": "false"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "Vše",
+          "attributes": {
+            "aria-pressed": "true"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "1.–5. ročník",
+          "attributes": {
+            "aria-pressed": "false"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "6.–9. ročník",
+          "attributes": {
+            "aria-pressed": "false"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "SŠ",
+          "attributes": {
+            "aria-pressed": "false"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "5c394f06c2b5fda3"
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "c55a422389376bfe"
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "8c4e62e7ef3cccb3"
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "9be70e4de67419a0"
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "be994626f2cc6131"
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "eba3d2b26986a6ee"
+        },
+        {
+          "text": "📋 Kopírovat",
+          "attributes": {
+            "type": "button"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "📋 Kopírovat",
+          "attributes": {
+            "type": "button"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "📋 Kopírovat",
+          "attributes": {
+            "type": "button"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "📋 Kopírovat",
+          "attributes": {
+            "type": "button"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "✕",
+          "attributes": {},
+          "onclickHash": "1cfc5ccfdaf23635"
+        }
+      ],
+      "seo": {
+        "title": "Dějepis – AI Pomůcky pro Učitele",
+        "canonical": [
+          "https://ai-ve-vyuce.netlify.app/dejepis"
+        ],
+        "metas": [
+          {
+            "name": "viewport",
+            "property": null,
+            "http-equiv": null,
+            "content": "width=device-width, initial-scale=1.0"
+          },
+          {
+            "name": "description",
+            "property": null,
+            "http-equiv": null,
+            "content": "AI aktivity a prompty pro výuku dějepisu a výchovy k občanství. Historické narativy, debatní aktivity, časové osy."
+          },
+          {
+            "name": null,
+            "property": "og:title",
+            "http-equiv": null,
+            "content": "Dějepis – AI Pomůcky pro Učitele"
+          },
+          {
+            "name": null,
+            "property": "og:description",
+            "http-equiv": null,
+            "content": "AI aktivity a prompty pro výuku dějepisu a výchovy k občanství. Historické narativy, debatní aktivity, časové osy."
+          },
+          {
+            "name": null,
+            "property": "og:url",
+            "http-equiv": null,
+            "content": "https://ai-ve-vyuce.netlify.app/dejepis"
+          }
+        ]
+      },
+      "subjectNavigation": [
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "text": "Začít s AI"
+        },
+        {
+          "href": "ai-navody.html",
+          "text": "Připravit výuku"
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Učit s AI"
+        },
+        {
+          "href": "asistenti.html",
+          "text": "Nástroje a asistenti"
+        },
+        {
+          "href": "vibe-coding.html",
+          "text": "Tvořit s AI"
+        },
+        {
+          "href": "ai.html",
+          "text": "Číst a objevovat"
+        }
+      ],
+      "activityLibraryLinks": [
+        {
+          "href": "aktivity.html",
+          "text": "Učit s AI",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Aktivity",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        }
+      ],
+      "scripts": [
+        "js/subject-navigation.js",
+        "js/main.js",
+        "js/subject-pages.js?v=20261104-stage5b",
+        "js/site-footer.js?v=20260927-human-loop",
+        "js/site-navigation-data.js?v=20261108-7g",
+        "js/site-navigation.js?v=20261108-7g"
+      ]
+    },
+    "matematika.html": {
+      "bodyText": "AI ve výuce INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE Začít s AI Připravit výuku Učit s AI Nástroje a asistenti Tvořit s AI Číst a objevovat 🔢 Matematika s AI Generujte úlohy, vysvětlujte koncepty krok za krokem, vizualizujte grafy a tvořte testy přizpůsobené vašim žákům. 🎯 6 aktivit ✨ 4 promptů 🤖 3 AI nástroje 🏫 ZŠ · SŠ 🎯 Aktivity ✨ Prompty 🤖 Asistenti 💡 Tipy Výukové aktivity Ročník: Vše 1.–5. ročník 6.–9. ročník SŠ Zobrazeno 6 z 6 aktivit ChatGPT 1.–5. ročník 📝 Generátor slovních úloh pro učitele AI připraví návrhy pro učitele podle cíle, ročníku a čtenářské náročnosti. Učitel samostatně ověří každé zadání, výpočet, jednotku a klíč. Původních 10 min je referenční údaj bez doloženého vymezení; zahrnuje-li kontrolu i úpravy, může být delší. Role AI: Učitel připravuje Čas zatím neurčen 👥 Celá třída Připraveno Detail → Gemini 6.–9. ročník 📐 Matematický průvodce: nejdřív zkus, potom nápověda. Aktivita je určena hlavně k individuálnímu procvičování žáka: vlastní pokus, nápověda, oprava, ověření a nová samostatná úloha. Učitel může AI použít také při společné demonstraci. Role AI: Učitel nebo žák Čas zatím neurčen 👤 Individuální Připraveno Detail → Claude SŠ 📋 Návrh matematického testu AI připraví návrh matematického testu podle cíle, počtu úloh a délky. Učitel ověří zadání, řešení, bodování i škálu a sám rozhoduje o klasifikaci. Role AI: Učitel připravuje Čas zatím neurčen 🏫 Třída Připraveno Detail → ChatGPT 6.–9. ročník 🎯 Varianty úlohy podle úrovně podpory AI vytvoří tři varianty úlohy s různou mírou opory při zachování společného vzdělávacího cíle; učitel ověří správnost i vhodnost. Role AI: Učitel připravuje Čas zatím neurčen 👥 Skupiny Připraveno Detail → Gemini 1.–5. ročník 🎮 Skupinová matematická výprava: příběh a úlohy Učitel zadá ročník, probrané učivo a matematický cíl. AI navrhne krátký příběh s přizpůsobeným počtem navazujících úloh, oddělenými kartami a učitelským klíčem. Skupiny zdůvodňují postup; závěrečná samostatná úloha ověřuje přenos. Učitel ověří všechna zadání i řešení. Role AI: Učitel připravuje Čas zatím neurčen 👥 Skupiny Oblíbené Detail → ChatGPT SŠ 📊 Průvodce žákovským zkoumáním dat Učitelem vedené zkoumání: učitel ovládá AI, žáci formulují hypotézy, počítají a interpretují data; učitel ověřuje správnost a vede diskusi. Použijte syntetická nebo školou schválená data. Role AI: Učitel vede AI Čas zatím neurčen 👤 Individuální Připraveno Detail → Prompty pro výuku Generátor úloh – slovní ChatGPT Jsi zkušený učitel matematiky na [ZŠ/SŠ]. Vygeneruj 10 slovních úloh na téma [TÉMA] pro žáky [ROČNÍK]. Každá úloha musí mít realistický kontext z každodenního života žáků a být přiměřená věku. Za každou úlohou uveď správné řešení s podrobným postupem výpočtu. Generování 📋 Kopírovat Srozumitelné vysvětlení konceptu Gemini Vysvětli mi matematický koncept [TÉMA] tak, jako bych byl žák [ROČNÍK]. Použij přirovnání z každodenního života, uveď konkrétní příklady a ověř mé porozumění 3 otázkami na konci. Vyhni se odborným termínům bez vysvětlení. Vysvětlení 📋 Kopírovat Písemka s bodovacím klíčem Claude Vytvoř písemnou práci z matematiky pro [ROČNÍK] na téma [TÉMA]. Struktura: A) výpočetní úlohy (40%), B) slovní úlohy (35%), C) grafické úlohy (25%). Celkem [POČET] bodů. Přidej vzorové řešení, bodovací klíč a hodnotící škálu. Testy 📋 Kopírovat Diferenciace – 3 úrovně obtížnosti ChatGPT Vezmi tuto matematickou úlohu: [ÚLOHA]. Přepracuj ji do 3 verzí obtížnosti: 1) Lehká verze – pro žáky potřebující podporu, 2) Standardní verze – původní, 3) Rozšiřující verze – pro nadané žáky s dalšími podmínkami. Diferenciace 📋 Kopírovat AI asistenti 🟢 ChatGPT OpenAI · GPT-4o Nejpopulárnější AI pro generování matematických úloh, vysvětlení postupů a tvorbu testů. Generování Vysvětlení Testy ★★★★★ Otevřít → 🔵 Gemini Google Silný v multimodálních úlohách – dokáže číst fotografie z tabule a analyzovat grafy. Grafy Multimodální ★★★★☆ Otevřít → 🟠 Claude Anthropic Vynikající pro tvorbu strukturovaných testů a podrobná vysvětlení přizpůsobená věku. Testy Diferenciace ★★★★★ Otevřít → Tipy pro práci s AI 💡 Tip: Vždy specifikujte ročník Každý AI model generuje výstupy lépe, pokud přesně určíte ročník a obtížnost. Místo \"pro žáky ZŠ\" napište \"pro žáky 7. ročníku ZŠ, kteří právě probírají lineární rovnice\". 🎯 Tip: Požádejte o diferenciaci AI dokáže přizpůsobit úlohu více úrovním žáků najednou. Přidejte: \"Vygeneruj 3 verze: pro slabší, průměrné a nadané žáky.\" ✅ Osvědčená praxe: Vždy ověřte výsledky Matematické výstupy AI mohou obsahovat chyby u složitějších výpočtů. Vždy zkontrolujte výsledky před rozdáním žákům. AI ve výuce Inspirace · nástroje · praxe pro učitele Moderní průvodce světem AI pro české učitele. Návody Prompty Aktivity AI nástroje © 2026 AI ve výuce ✕",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Matematika s AI"
+        },
+        {
+          "level": 2,
+          "text": "Výukové aktivity"
+        },
+        {
+          "level": 3,
+          "text": "Generátor slovních úloh pro učitele"
+        },
+        {
+          "level": 3,
+          "text": "Matematický průvodce: nejdřív zkus, potom nápověda."
+        },
+        {
+          "level": 3,
+          "text": "Návrh matematického testu"
+        },
+        {
+          "level": 3,
+          "text": "Varianty úlohy podle úrovně podpory"
+        },
+        {
+          "level": 3,
+          "text": "Skupinová matematická výprava: příběh a úlohy"
+        },
+        {
+          "level": 3,
+          "text": "Průvodce žákovským zkoumáním dat"
+        },
+        {
+          "level": 2,
+          "text": "Prompty pro výuku"
+        },
+        {
+          "level": 2,
+          "text": "AI asistenti"
+        },
+        {
+          "level": 2,
+          "text": "Tipy pro práci s AI"
+        },
+        {
+          "level": 3,
+          "text": ""
+        }
+      ],
+      "cards": [
+        {
+          "title": "Generátor slovních úloh pro učitele",
+          "description": "AI připraví návrhy pro učitele podle cíle, ročníku a čtenářské náročnosti. Učitel samostatně ověří každé zadání, výpočet, jednotku a klíč. Původních 10 min je referenční údaj bez doloženého vymezení; zahrnuje-li kontrolu i úpravy, může být delší.",
+          "text": "ChatGPT 1.–5. ročník 📝 Generátor slovních úloh pro učitele AI připraví návrhy pro učitele podle cíle, ročníku a čtenářské náročnosti. Učitel samostatně ověří každé zadání, výpočet, jednotku a klíč. Původních 10 min je referenční údaj bez doloženého vymezení; zahrnuje-li kontrolu i úpravy, může být delší. Role AI: Učitel připravuje Čas zatím neurčen 👥 Celá třída Připraveno Detail →",
+          "data": {
+            "data-level": "zs1"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "ebc2f65a07ddd0af"
+            }
+          ]
+        },
+        {
+          "title": "Matematický průvodce: nejdřív zkus, potom nápověda.",
+          "description": "Aktivita je určena hlavně k individuálnímu procvičování žáka: vlastní pokus, nápověda, oprava, ověření a nová samostatná úloha. Učitel může AI použít také při společné demonstraci.",
+          "text": "Gemini 6.–9. ročník 📐 Matematický průvodce: nejdřív zkus, potom nápověda. Aktivita je určena hlavně k individuálnímu procvičování žáka: vlastní pokus, nápověda, oprava, ověření a nová samostatná úloha. Učitel může AI použít také při společné demonstraci. Role AI: Učitel nebo žák Čas zatím neurčen 👤 Individuální Připraveno Detail →",
+          "data": {
+            "data-level": "zs2"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "3fb356f1c515d82b"
+            }
+          ]
+        },
+        {
+          "title": "Návrh matematického testu",
+          "description": "AI připraví návrh matematického testu podle cíle, počtu úloh a délky. Učitel ověří zadání, řešení, bodování i škálu a sám rozhoduje o klasifikaci.",
+          "text": "Claude SŠ 📋 Návrh matematického testu AI připraví návrh matematického testu podle cíle, počtu úloh a délky. Učitel ověří zadání, řešení, bodování i škálu a sám rozhoduje o klasifikaci. Role AI: Učitel připravuje Čas zatím neurčen 🏫 Třída Připraveno Detail →",
+          "data": {
+            "data-level": "ss"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "75422655f67e11b1"
+            }
+          ]
+        },
+        {
+          "title": "Varianty úlohy podle úrovně podpory",
+          "description": "AI vytvoří tři varianty úlohy s různou mírou opory při zachování společného vzdělávacího cíle; učitel ověří správnost i vhodnost.",
+          "text": "ChatGPT 6.–9. ročník 🎯 Varianty úlohy podle úrovně podpory AI vytvoří tři varianty úlohy s různou mírou opory při zachování společného vzdělávacího cíle; učitel ověří správnost i vhodnost. Role AI: Učitel připravuje Čas zatím neurčen 👥 Skupiny Připraveno Detail →",
+          "data": {
+            "data-level": "zs2"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "093cc6e2f4e3e3cc"
+            }
+          ]
+        },
+        {
+          "title": "Skupinová matematická výprava: příběh a úlohy",
+          "description": "Učitel zadá ročník, probrané učivo a matematický cíl. AI navrhne krátký příběh s přizpůsobeným počtem navazujících úloh, oddělenými kartami a učitelským klíčem. Skupiny zdůvodňují postup; závěrečná samostatná úloha ověřuje přenos. Učitel ověří všechna zadání i řešení.",
+          "text": "Gemini 1.–5. ročník 🎮 Skupinová matematická výprava: příběh a úlohy Učitel zadá ročník, probrané učivo a matematický cíl. AI navrhne krátký příběh s přizpůsobeným počtem navazujících úloh, oddělenými kartami a učitelským klíčem. Skupiny zdůvodňují postup; závěrečná samostatná úloha ověřuje přenos. Učitel ověří všechna zadání i řešení. Role AI: Učitel připravuje Čas zatím neurčen 👥 Skupiny Oblíbené Detail →",
+          "data": {
+            "data-level": "zs1"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "32f3f88c8652f69c"
+            }
+          ]
+        },
+        {
+          "title": "Průvodce žákovským zkoumáním dat",
+          "description": "Učitelem vedené zkoumání: učitel ovládá AI, žáci formulují hypotézy, počítají a interpretují data; učitel ověřuje správnost a vede diskusi. Použijte syntetická nebo školou schválená data.",
+          "text": "ChatGPT SŠ 📊 Průvodce žákovským zkoumáním dat Učitelem vedené zkoumání: učitel ovládá AI, žáci formulují hypotézy, počítají a interpretují data; učitel ověřuje správnost a vede diskusi. Použijte syntetická nebo školou schválená data. Role AI: Učitel vede AI Čas zatím neurčen 👤 Individuální Připraveno Detail →",
+          "data": {
+            "data-level": "ss"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "754aea80e18dc803"
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "href": "index.html",
+          "text": "AI ve výuce INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE",
+          "ariaLabel": "AI ve výuce – domů",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": "brand"
+        },
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "text": "Začít s AI",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "ai-navody.html",
+          "text": "Připravit výuku",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Učit s AI",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "asistenti.html",
+          "text": "Nástroje a asistenti",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "vibe-coding.html",
+          "text": "Tvořit s AI",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "ai.html",
+          "text": "Číst a objevovat",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "https://chatgpt.com",
+          "text": "Otevřít →",
+          "ariaLabel": null,
+          "title": null,
+          "target": "_blank",
+          "rel": null,
+          "class": "btn btn-primary btn-sm"
+        },
+        {
+          "href": "https://gemini.google.com",
+          "text": "Otevřít →",
+          "ariaLabel": null,
+          "title": null,
+          "target": "_blank",
+          "rel": null,
+          "class": "btn btn-primary btn-sm"
+        },
+        {
+          "href": "https://claude.ai",
+          "text": "Otevřít →",
+          "ariaLabel": null,
+          "title": null,
+          "target": "_blank",
+          "rel": null,
+          "class": "btn btn-primary btn-sm"
+        },
+        {
+          "href": "index.html",
+          "text": "AI ve výuce Inspirace · nástroje · praxe pro učitele",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": "brand"
+        },
+        {
+          "href": "ai-navody.html",
+          "text": "Návody",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "prompty.html",
+          "text": "Prompty",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Aktivity",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "asistenti.html",
+          "text": "AI nástroje",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        }
+      ],
+      "images": [
+        {
+          "src": "images/ai-assistant-book-logo.png?v=robot-20261103",
+          "alt": "",
+          "title": null,
+          "width": "512",
+          "height": "491",
+          "loading": null,
+          "decoding": null
+        },
+        {
+          "src": "images/ai-ve-vyuce-robot-matematika-hero.webp",
+          "alt": "",
+          "title": null,
+          "width": "1536",
+          "height": "1024",
+          "loading": null,
+          "decoding": "async"
+        },
+        {
+          "src": "images/ai-assistant-book-logo.png?v=robot-20261103",
+          "alt": "",
+          "title": null,
+          "width": "512",
+          "height": "491",
+          "loading": null,
+          "decoding": null
+        }
+      ],
+      "publicIds": [
+        "primary-menu",
+        "tab-aktivity",
+        "subject-heading-aktivity",
+        "tab-prompty",
+        "subject-heading-prompty",
+        "prompt-math-word-problems-generator",
+        "prompt-math-concept-explanation",
+        "prompt-math-test-with-rubric",
+        "prompt-math-differentiation-levels",
+        "tab-asistenti",
+        "subject-heading-asistenti",
+        "tab-tipy",
+        "subject-heading-tipy",
+        "modalOverlay"
+      ],
+      "buttons": [
+        {
+          "text": "",
+          "attributes": {
+            "type": "button",
+            "aria-label": "Otevřít navigaci",
+            "aria-expanded": "false",
+            "aria-controls": "primary-menu"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "🎯 Aktivity",
+          "attributes": {
+            "type": "button",
+            "aria-controls": "tab-aktivity",
+            "aria-pressed": "true"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "✨ Prompty",
+          "attributes": {
+            "type": "button",
+            "aria-controls": "tab-prompty",
+            "aria-pressed": "false"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "🤖 Asistenti",
+          "attributes": {
+            "type": "button",
+            "aria-controls": "tab-asistenti",
+            "aria-pressed": "false"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "💡 Tipy",
+          "attributes": {
+            "type": "button",
+            "aria-controls": "tab-tipy",
+            "aria-pressed": "false"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "Vše",
+          "attributes": {},
+          "onclickHash": null
+        },
+        {
+          "text": "1.–5. ročník",
+          "attributes": {},
+          "onclickHash": null
+        },
+        {
+          "text": "6.–9. ročník",
+          "attributes": {},
+          "onclickHash": null
+        },
+        {
+          "text": "SŠ",
+          "attributes": {},
+          "onclickHash": null
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "ebc2f65a07ddd0af"
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "3fb356f1c515d82b"
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "75422655f67e11b1"
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "093cc6e2f4e3e3cc"
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "32f3f88c8652f69c"
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "754aea80e18dc803"
+        },
+        {
+          "text": "📋 Kopírovat",
+          "attributes": {
+            "type": "button"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "📋 Kopírovat",
+          "attributes": {
+            "type": "button"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "📋 Kopírovat",
+          "attributes": {
+            "type": "button"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "📋 Kopírovat",
+          "attributes": {
+            "type": "button"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "✕",
+          "attributes": {},
+          "onclickHash": "1cfc5ccfdaf23635"
+        }
+      ],
+      "seo": {
+        "title": "Matematika – AI Pomůcky pro Učitele",
+        "canonical": [
+          "https://ai-ve-vyuce.netlify.app/matematika"
+        ],
+        "metas": [
+          {
+            "name": "viewport",
+            "property": null,
+            "http-equiv": null,
+            "content": "width=device-width, initial-scale=1.0"
+          },
+          {
+            "name": "description",
+            "property": null,
+            "http-equiv": null,
+            "content": "AI aktivity a prompty pro výuku matematiky. Generátory úloh, krok-za-krokem průvodci, vizualizace grafů."
+          },
+          {
+            "name": null,
+            "property": "og:title",
+            "http-equiv": null,
+            "content": "Matematika – AI Pomůcky pro Učitele"
+          },
+          {
+            "name": null,
+            "property": "og:description",
+            "http-equiv": null,
+            "content": "AI aktivity a prompty pro výuku matematiky. Generátory úloh, krok-za-krokem průvodci, vizualizace grafů."
+          },
+          {
+            "name": null,
+            "property": "og:url",
+            "http-equiv": null,
+            "content": "https://ai-ve-vyuce.netlify.app/matematika"
+          }
+        ]
+      },
+      "subjectNavigation": [
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "text": "Začít s AI"
+        },
+        {
+          "href": "ai-navody.html",
+          "text": "Připravit výuku"
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Učit s AI"
+        },
+        {
+          "href": "asistenti.html",
+          "text": "Nástroje a asistenti"
+        },
+        {
+          "href": "vibe-coding.html",
+          "text": "Tvořit s AI"
+        },
+        {
+          "href": "ai.html",
+          "text": "Číst a objevovat"
+        }
+      ],
+      "activityLibraryLinks": [
+        {
+          "href": "aktivity.html",
+          "text": "Učit s AI",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Aktivity",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        }
+      ],
+      "scripts": [
+        "js/subject-navigation.js",
+        "js/main.js",
+        "js/subject-pages.js?v=20261103-stage5a",
+        "js/site-footer.js?v=20260927-human-loop",
+        "js/site-navigation-data.js?v=20261108-7f",
+        "js/site-navigation.js?v=20261108-7f"
+      ]
+    },
+    "prirodoveda.html": {
+      "bodyText": "AI ve výuce INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE Začít s AI Připravit výuku Učit s AI Nástroje a asistenti Tvořit s AI Číst a objevovat 🔬 Přírodní vědy s AI Biologie, chemie a fyzika s AI: simulujte experimenty, vysvětlujte přírodní jevy a připravujte aktivity pro různé ročníky. 🎯 6 aktivit ✨ 4 promptů ⚗️ Bio · Che · Fyz 🏫 ZŠ · SŠ 🎯 Aktivity ✨ Prompty 🤖 Asistenti 💡 Tipy Ročník: Vše 1.–5. ročník 6.–9. ročník SŠ Obor: Vše 🧬 Biologie ⚗️ Chemie ⚡ Fyzika Zobrazeno 6 z 6 aktivit Gemini Biologie 🧬 Biologická simulace: hypotéza a meze modelu Učitel vede zkoumání biologického procesu. Žáci předem formulují hypotézu, porovnají ji s jasně označeným modelovaným scénářem a popíší předpoklady i omezení modelu. Původních 20 min je orientační čas aktivity; přesný rozpis nebyl doložen. Role AI: Učitel vede AI Čas: Aktivita · asi 20 min 👥 Skupiny Připraveno Detail → ChatGPT Chemie ⚗️ Chemické rovnice: nejprve počty atomů, pak nápověda Žák nejprve sám spočítá atomy na obou stranách a navrhne koeficienty. AI dává postupné nápovědy, odlišuje koeficienty od indexů a kontroluje zachování atomů; chemickou smysluplnost rovnice ověřuje učitel. Role AI: Učitel nebo žák Čas zatím neurčen 👤 Individuální Připraveno Detail → ChatGPT Fyzika ⚡ Učitelská příprava fyzikálních analogií Učitel získá návrhy analogií k obtížnému fyzikálnímu jevu včetně mapování podobností, hranic a možných zavádějících představ. Každý návrh před výukou ověří a vybere jen ten vhodný pro daný ročník. Role AI: Učitel připravuje Čas zatím neurčen 🏫 Třída Oblíbené Detail → Gemini Biologie 🐾 Badatelský profil živočicha Krátký režim (původních 8 min): učitel dodá dva ověřené krátké podklady, žáci porovnají tvrzení a vytvoří stručný profil. Rozšířený režim (orientačně 20–30 min): žáci ověřují informace ve více zdrojích. AI nesmí vymýšlet zdroje ani aktuální údaje o ohrožení. Role AI: Žák pracuje s AI Čas: Více režimů · rozpis v detailu 👤 Individuální Připraveno Detail → Claude Fyzika 🔭 Fyzikální tutor s nápovědou po vlastním pokusu. Žák nejprve sepíše známé veličiny a vlastní plán. AI potom po krocích nabízí nápovědu a kontrolní otázky; celý vzorový postup ukáže až po žákově pokusu a ověří jej učitel. Role AI: Žák pracuje s AI Čas zatím neurčen 👤 Individuální Připraveno Detail → ChatGPT Chemie 🧪 Chemický kvíz: značky, vzorce a vlastnosti Učitel stanoví ročník, probrané pojmy a cíl kvízu. AI připraví přiměřený počet různých otázek v žákovské verzi a oddělený klíč s vysvětlením. Učitel ověří každý symbol, vzorec a údaj o vlastnosti; žák pak reflektuje chybu nebo zdůvodní správnou odpověď. Role AI: Učitel připravuje Čas: Příprava · asi 6 min 🏫 Třída Připraveno Detail → Simulace laboratorního experimentu Gemini ZŠ/SŠ Simuluj laboratorní experiment „[NÁZEV]\" pro žáky [ROČNÍK]. Zahrň: potřebné pomůcky, bezpečnostní pravidla, postup krok za krokem, popis průběhu reakce / jevu, vědecké vysvětlení, závěrečné otázky pro žáky a návrh protokolu, který si žáci mohou vyplnit. Experimenty 📋 Kopírovat Vysvětlení jevu analogiemi z praxe ChatGPT ZŠ Vysvětli přírodovědný/fyzikální/chemický jev „[JEV]\" žákům [ROČNÍK] pomocí 3 různých analogií z každodenního života. Pak uveď reálné příklady tohoto jevu v praxi. Zakončit 3 otázkami, které ověří porozumění. Vyvaruj se odborného žargonu bez vysvětlení. Vysvětlení 📋 Kopírovat Opakovací kvíz z přírodovědného tema ChatGPT ZŠ/SŠ Vytvoř opakovací kvíz z [PŘEDMĚT: biologie/chemie/fyzika] na téma [TÉMA] pro žáky [ROČNÍK]. Formát: 5 testových otázek (ABCD), 3 otevřené otázky, 2 úlohy na přiřazení. Přidej správné odpovědi a stručné vysvětlení každé odpovědi. Kvízy 📋 Kopírovat Průvodce výzkumným projektem Claude SŠ Pomoz mi navrhnout výzkumný projekt na téma [TÉMA] pro žáky [ROČNÍK] SŠ. Struktura: výzkumná otázka, hypotéza, metodologie (jak sbírat data), potřebné materiály, jak analyzovat výsledky, jak prezentovat závěry. Přizpůsob délce [POČET] týdnů výuky. Projekty 📋 Kopírovat 🔵 Gemini Google · Gemini 2.0 Nejlepší volba pro přírodní vědy – propojuje vědecké informace s aktuálními daty z Google, zvládá analýzu grafů a experimentálních schémat. Experimenty Reálná data ★★★★★ Otevřít → 🟤 Perplexity AI Perplexity Výzkumný asistent s citacemi – ideální pro vědecká témata. Odpověď vždy obsahuje zdroje, takže učitelé mohou ověřit fakta. Vědecké zdroje Citace ★★★★★ Otevřít → 🟢 ChatGPT OpenAI Skvělý pro tvorbu kvízů, vysvětlení analogiemi a tvorbu úloh z fyziky a chemie. Zvládá i analýzu obrázků (fotografie z tabule). Kvízy Fyzika ★★★★☆ Otevřít → 🔬 Tip: Perplexity pro fakta s citacemi Pro vědecká fakta používejte Perplexity AI – každá odpověď obsahuje zdroje, které si žáci i vy můžete ověřit. Vynikající pro projekt-based learning. 💡 Tip: Fotografie z mikroskopu nebo tabule ChatGPT a Gemini dokáží analyzovat fotografie – vyfotografujte schéma buňky, graf nebo pokus z tabule a nechte AI vysvětlit, co vidí. ⚠️ Upozornění: Vždy ověřujte vědecká fakta AI může generovat nepřesné nebo zastaralé vědecké informace. Pro chemické reakce a biologické klasifikace vždy ověřte u odborného zdroje. AI ve výuce Inspirace · nástroje · praxe pro učitele Moderní průvodce světem AI pro české učitele. Návody Prompty Aktivity AI nástroje © 2026 AI ve výuce ✕",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Přírodní vědy s AI"
+        },
+        {
+          "level": 3,
+          "text": ""
+        }
+      ],
+      "cards": [
+        {
+          "title": "Biologická simulace: hypotéza a meze modelu",
+          "description": "Učitel vede zkoumání biologického procesu. Žáci předem formulují hypotézu, porovnají ji s jasně označeným modelovaným scénářem a popíší předpoklady i omezení modelu. Původních 20 min je orientační čas aktivity; přesný rozpis nebyl doložen.",
+          "text": "Gemini Biologie 🧬 Biologická simulace: hypotéza a meze modelu Učitel vede zkoumání biologického procesu. Žáci předem formulují hypotézu, porovnají ji s jasně označeným modelovaným scénářem a popíší předpoklady i omezení modelu. Původních 20 min je orientační čas aktivity; přesný rozpis nebyl doložen. Role AI: Učitel vede AI Čas: Aktivita · asi 20 min 👥 Skupiny Připraveno Detail →",
+          "data": {
+            "data-level": "zs2",
+            "data-subject": "bio"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "e931042c2c693dbb"
+            }
+          ]
+        },
+        {
+          "title": "Chemické rovnice: nejprve počty atomů, pak nápověda",
+          "description": "Žák nejprve sám spočítá atomy na obou stranách a navrhne koeficienty. AI dává postupné nápovědy, odlišuje koeficienty od indexů a kontroluje zachování atomů; chemickou smysluplnost rovnice ověřuje učitel.",
+          "text": "ChatGPT Chemie ⚗️ Chemické rovnice: nejprve počty atomů, pak nápověda Žák nejprve sám spočítá atomy na obou stranách a navrhne koeficienty. AI dává postupné nápovědy, odlišuje koeficienty od indexů a kontroluje zachování atomů; chemickou smysluplnost rovnice ověřuje učitel. Role AI: Učitel nebo žák Čas zatím neurčen 👤 Individuální Připraveno Detail →",
+          "data": {
+            "data-level": "ss",
+            "data-subject": "che"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "84e3f7e24f53c2ad"
+            }
+          ]
+        },
+        {
+          "title": "Učitelská příprava fyzikálních analogií",
+          "description": "Učitel získá návrhy analogií k obtížnému fyzikálnímu jevu včetně mapování podobností, hranic a možných zavádějících představ. Každý návrh před výukou ověří a vybere jen ten vhodný pro daný ročník.",
+          "text": "ChatGPT Fyzika ⚡ Učitelská příprava fyzikálních analogií Učitel získá návrhy analogií k obtížnému fyzikálnímu jevu včetně mapování podobností, hranic a možných zavádějících představ. Každý návrh před výukou ověří a vybere jen ten vhodný pro daný ročník. Role AI: Učitel připravuje Čas zatím neurčen 🏫 Třída Oblíbené Detail →",
+          "data": {
+            "data-level": "zs2",
+            "data-subject": "fyz"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "1c6c017679ea5143"
+            }
+          ]
+        },
+        {
+          "title": "Badatelský profil živočicha",
+          "description": "Krátký režim (původních 8 min): učitel dodá dva ověřené krátké podklady, žáci porovnají tvrzení a vytvoří stručný profil. Rozšířený režim (orientačně 20–30 min): žáci ověřují informace ve více zdrojích. AI nesmí vymýšlet zdroje ani aktuální údaje o ohrožení.",
+          "text": "Gemini Biologie 🐾 Badatelský profil živočicha Krátký režim (původních 8 min): učitel dodá dva ověřené krátké podklady, žáci porovnají tvrzení a vytvoří stručný profil. Rozšířený režim (orientačně 20–30 min): žáci ověřují informace ve více zdrojích. AI nesmí vymýšlet zdroje ani aktuální údaje o ohrožení. Role AI: Žák pracuje s AI Čas: Více režimů · rozpis v detailu 👤 Individuální Připraveno Detail →",
+          "data": {
+            "data-level": "zs1",
+            "data-subject": "bio"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "4dacaf4a0660d5ca"
+            }
+          ]
+        },
+        {
+          "title": "Fyzikální tutor s nápovědou po vlastním pokusu.",
+          "description": "Žák nejprve sepíše známé veličiny a vlastní plán. AI potom po krocích nabízí nápovědu a kontrolní otázky; celý vzorový postup ukáže až po žákově pokusu a ověří jej učitel.",
+          "text": "Claude Fyzika 🔭 Fyzikální tutor s nápovědou po vlastním pokusu. Žák nejprve sepíše známé veličiny a vlastní plán. AI potom po krocích nabízí nápovědu a kontrolní otázky; celý vzorový postup ukáže až po žákově pokusu a ověří jej učitel. Role AI: Žák pracuje s AI Čas zatím neurčen 👤 Individuální Připraveno Detail →",
+          "data": {
+            "data-level": "ss",
+            "data-subject": "fyz"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "d28d8284c516f234"
+            }
+          ]
+        },
+        {
+          "title": "Chemický kvíz: značky, vzorce a vlastnosti",
+          "description": "Učitel stanoví ročník, probrané pojmy a cíl kvízu. AI připraví přiměřený počet různých otázek v žákovské verzi a oddělený klíč s vysvětlením. Učitel ověří každý symbol, vzorec a údaj o vlastnosti; žák pak reflektuje chybu nebo zdůvodní správnou odpověď.",
+          "text": "ChatGPT Chemie 🧪 Chemický kvíz: značky, vzorce a vlastnosti Učitel stanoví ročník, probrané pojmy a cíl kvízu. AI připraví přiměřený počet různých otázek v žákovské verzi a oddělený klíč s vysvětlením. Učitel ověří každý symbol, vzorec a údaj o vlastnosti; žák pak reflektuje chybu nebo zdůvodní správnou odpověď. Role AI: Učitel připravuje Čas: Příprava · asi 6 min 🏫 Třída Připraveno Detail →",
+          "data": {
+            "data-level": "zs2",
+            "data-subject": "che"
+          },
+          "buttons": [
+            {
+              "text": "Detail →",
+              "attributes": {},
+              "onclickHash": "e5260a350bfd5444"
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "href": "index.html",
+          "text": "AI ve výuce INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE",
+          "ariaLabel": "AI ve výuce – domů",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": "brand"
+        },
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "text": "Začít s AI",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "ai-navody.html",
+          "text": "Připravit výuku",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Učit s AI",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "asistenti.html",
+          "text": "Nástroje a asistenti",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "vibe-coding.html",
+          "text": "Tvořit s AI",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "ai.html",
+          "text": "Číst a objevovat",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "https://gemini.google.com",
+          "text": "Otevřít →",
+          "ariaLabel": null,
+          "title": null,
+          "target": "_blank",
+          "rel": null,
+          "class": "btn btn-primary btn-sm"
+        },
+        {
+          "href": "https://perplexity.ai",
+          "text": "Otevřít →",
+          "ariaLabel": null,
+          "title": null,
+          "target": "_blank",
+          "rel": null,
+          "class": "btn btn-primary btn-sm"
+        },
+        {
+          "href": "https://chatgpt.com",
+          "text": "Otevřít →",
+          "ariaLabel": null,
+          "title": null,
+          "target": "_blank",
+          "rel": null,
+          "class": "btn btn-primary btn-sm"
+        },
+        {
+          "href": "index.html",
+          "text": "AI ve výuce Inspirace · nástroje · praxe pro učitele",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": "brand"
+        },
+        {
+          "href": "ai-navody.html",
+          "text": "Návody",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "prompty.html",
+          "text": "Prompty",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Aktivity",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "asistenti.html",
+          "text": "AI nástroje",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        }
+      ],
+      "images": [
+        {
+          "src": "images/ai-assistant-book-logo.png?v=robot-20261103",
+          "alt": "",
+          "title": null,
+          "width": "512",
+          "height": "491",
+          "loading": null,
+          "decoding": null
+        },
+        {
+          "src": "images/ai-ve-vyuce-robot-prirodni-vedy-hero.webp",
+          "alt": "",
+          "title": null,
+          "width": "902",
+          "height": "359",
+          "loading": null,
+          "decoding": "async"
+        },
+        {
+          "src": "images/ai-assistant-book-logo.png?v=robot-20261103",
+          "alt": "",
+          "title": null,
+          "width": "512",
+          "height": "491",
+          "loading": null,
+          "decoding": null
+        }
+      ],
+      "publicIds": [
+        "primary-menu",
+        "tab-aktivity",
+        "tab-prompty",
+        "prompt-science-lab-experiment",
+        "prompt-science-phenomenon-analogies",
+        "prompt-science-review-quiz",
+        "prompt-science-research-project",
+        "tab-asistenti",
+        "tab-tipy",
+        "modalOverlay"
+      ],
+      "buttons": [
+        {
+          "text": "",
+          "attributes": {
+            "type": "button",
+            "aria-label": "Otevřít navigaci",
+            "aria-expanded": "false",
+            "aria-controls": "primary-menu"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "🎯 Aktivity",
+          "attributes": {
+            "type": "button",
+            "aria-controls": "tab-aktivity",
+            "aria-pressed": "true"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "✨ Prompty",
+          "attributes": {
+            "type": "button",
+            "aria-controls": "tab-prompty",
+            "aria-pressed": "false"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "🤖 Asistenti",
+          "attributes": {
+            "type": "button",
+            "aria-controls": "tab-asistenti",
+            "aria-pressed": "false"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "💡 Tipy",
+          "attributes": {
+            "type": "button",
+            "aria-controls": "tab-tipy",
+            "aria-pressed": "false"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "Vše",
+          "attributes": {
+            "aria-pressed": "true"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "1.–5. ročník",
+          "attributes": {
+            "aria-pressed": "false"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "6.–9. ročník",
+          "attributes": {
+            "aria-pressed": "false"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "SŠ",
+          "attributes": {
+            "aria-pressed": "false"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "Vše",
+          "attributes": {
+            "aria-pressed": "true"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "🧬 Biologie",
+          "attributes": {
+            "aria-pressed": "false"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "⚗️ Chemie",
+          "attributes": {
+            "aria-pressed": "false"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "⚡ Fyzika",
+          "attributes": {
+            "aria-pressed": "false"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "e931042c2c693dbb"
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "84e3f7e24f53c2ad"
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "1c6c017679ea5143"
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "4dacaf4a0660d5ca"
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "d28d8284c516f234"
+        },
+        {
+          "text": "Detail →",
+          "attributes": {},
+          "onclickHash": "e5260a350bfd5444"
+        },
+        {
+          "text": "📋 Kopírovat",
+          "attributes": {
+            "type": "button"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "📋 Kopírovat",
+          "attributes": {
+            "type": "button"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "📋 Kopírovat",
+          "attributes": {
+            "type": "button"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "📋 Kopírovat",
+          "attributes": {
+            "type": "button"
+          },
+          "onclickHash": null
+        },
+        {
+          "text": "✕",
+          "attributes": {},
+          "onclickHash": "1cfc5ccfdaf23635"
+        }
+      ],
+      "seo": {
+        "title": "Přírodní vědy – AI Pomůcky pro Učitele",
+        "canonical": [
+          "https://ai-ve-vyuce.netlify.app/prirodoveda"
+        ],
+        "metas": [
+          {
+            "name": "viewport",
+            "property": null,
+            "http-equiv": null,
+            "content": "width=device-width, initial-scale=1.0"
+          },
+          {
+            "name": "description",
+            "property": null,
+            "http-equiv": null,
+            "content": "AI aktivity a prompty pro výuku biologie, chemie a fyziky. Virtuální experimenty, vysvětlení jevů, kvízy."
+          },
+          {
+            "name": null,
+            "property": "og:title",
+            "http-equiv": null,
+            "content": "Přírodní vědy – AI Pomůcky pro Učitele"
+          },
+          {
+            "name": null,
+            "property": "og:description",
+            "http-equiv": null,
+            "content": "AI aktivity a prompty pro výuku biologie, chemie a fyziky. Virtuální experimenty, vysvětlení jevů, kvízy."
+          },
+          {
+            "name": null,
+            "property": "og:url",
+            "http-equiv": null,
+            "content": "https://ai-ve-vyuce.netlify.app/prirodoveda"
+          }
+        ]
+      },
+      "subjectNavigation": [
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "text": "Začít s AI"
+        },
+        {
+          "href": "ai-navody.html",
+          "text": "Připravit výuku"
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Učit s AI"
+        },
+        {
+          "href": "asistenti.html",
+          "text": "Nástroje a asistenti"
+        },
+        {
+          "href": "vibe-coding.html",
+          "text": "Tvořit s AI"
+        },
+        {
+          "href": "ai.html",
+          "text": "Číst a objevovat"
+        }
+      ],
+      "activityLibraryLinks": [
+        {
+          "href": "aktivity.html",
+          "text": "Učit s AI",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Aktivity",
+          "ariaLabel": null,
+          "title": null,
+          "target": null,
+          "rel": null,
+          "class": null
+        }
+      ],
+      "scripts": [
+        "js/subject-navigation.js",
+        "js/main.js",
+        "js/subject-pages.js?v=20261104-stage5b",
+        "js/site-footer.js?v=20260927-human-loop",
+        "js/site-navigation-data.js?v=20261108-7g",
+        "js/site-navigation.js?v=20261108-7g"
+      ]
+    }
+  }
+}
