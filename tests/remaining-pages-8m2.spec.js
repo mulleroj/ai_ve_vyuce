@@ -50,7 +50,9 @@ test('8M/2 rendered audit of remaining pages', async ({ browser }) => {
         localNav: [...document.querySelectorAll('nav, .local-nav, .subject-nav, .prompt-collection-nav, .toc')].map(n => ({ class:n.className?.toString(), visible:!!(n.offsetWidth||n.offsetHeight), rect:Math.round(n.getBoundingClientRect().height) }))
       }));
       findings.pages[path].widths[width] = { status: response?.status() ?? null, ...metrics, horizontalOverflow: metrics.documentWidth > width + 1 || metrics.bodyWidth > width + 1 };
-      await page.screenshot({ path: `${out}/${slug}-${width}.png`, fullPage: width === 1440, animations: 'disabled' }).catch(() => {});
+      // Keep each screenshot at the exact viewport size. Full-page shots of long
+      // prompt catalogs can create enormous bitmaps and stall Chromium.
+      await page.screenshot({ path: `${out}/${slug}-${width}.png`, fullPage: false, animations: 'disabled' }).catch(() => {});
       if (width === 1440) findings.axe[path] = await runAxe(page);
       if (width === 390) {
         await page.keyboard.press('Tab').catch(() => {});
