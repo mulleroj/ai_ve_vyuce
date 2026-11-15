@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
-      TARGET_SHA: ${{ env.TARGET_SHA }}
+      TARGET_SHA: 2ddaab92e024cd4bafb638f9ea0e62835ef10d27
     steps:
       - name: Check out audit harness
         uses: actions/checkout@v4
@@ -23,7 +23,7 @@ jobs:
       - name: Check out exact PR 75 source
         uses: actions/checkout@v4
         with:
-          ref: ${{ env.TARGET_SHA }}
+          ref: 2ddaab92e024cd4bafb638f9ea0e62835ef10d27
           path: site
           persist-credentials: false
       - name: Set up Node.js
@@ -56,7 +56,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: assistant-catalog-audit-${{ github.sha }}
+          name: assistant-catalog-audit-pr75-head
           path: |
             artifacts/
             test-results/
