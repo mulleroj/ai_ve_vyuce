@@ -1,0 +1,65 @@
+name: Assistant pages audit (audit only)
+
+on:
+  push:
+    branches:
+      - codex/ai-ve-vyuce-8l1-assistenti-katalog-audit
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    name: Chromium audit of assistant pages
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      TARGET_SHA: ${{ env.TARGET_SHA }}
+    steps:
+      - name: Check out audit harness
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Check out exact PR 75 source
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.TARGET_SHA }}
+          path: site
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install isolated Playwright and axe
+        run: |
+          npm install --no-save --package-lock=false @playwright/test axe-core
+          npx playwright install chromium
+      - name: Start local HTTP server
+        run: |
+          node scripts/audit-server.js "$GITHUB_WORKSPACE/site" > server.log 2>&1 &
+          echo $! > server.pid
+          for i in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:4173/asistenti.html >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat server.log
+          exit 1
+      - name: Run visual, content, interaction, accessibility audit
+        run: |
+          mkdir -p artifacts test-results
+          AUDIT_TARGET_SHA="$TARGET_SHA" PLAYWRIGHT_JSON_OUTPUT_NAME=test-results/report.json \
+            npx playwright test tests/assistant-catalog-audit.spec.js --reporter=list,json
+      - name: Publish audit findings
+        if: always()
+        run: node scripts/write-assistant-audit-summary.js
+      - name: Upload screenshots and reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: assistant-catalog-audit-${{ github.sha }}
+          path: |
+            artifacts/
+            test-results/
+            server.log
+          if-no-files-found: warn
+          retention-days: 14
