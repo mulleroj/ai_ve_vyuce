@@ -164,6 +164,8 @@ test('subject pages: responsive rendering, menus, content, accessibility, and sc
     // Run axe on the rendered page and retain all findings.
     await page.setViewportSize({ width: 1440, height: 1000 });
     await page.goto(BASE_URL + '/' + item.file);
+    // Assess the settled visual state, not transient scroll-reveal opacity during page load.
+    await page.addStyleTag({ content: '.reveal { opacity: 1 !important; transform: none !important; transition: none !important; }' });
     await page.addScriptTag({ content: require('axe-core').source });
     const axe = await page.evaluate(async () => {
       const result = await window.axe.run(document, {
