@@ -3377,3 +3377,94 @@ test('wave 18 series navigation stays clear of sticky contents and links correct
     }
   }
 });
+
+
+const wave19Baseline = require('./fixtures/catalog-pages-wave19-baseline.json');
+const wave19Pages = ['ai.html','ai-navody.html','ai-novinky.html','ai-agenti.html','chatgpt-pro-ucitele.html','gemini-notebook.html'];
+const wave19Areas = {'ai.html':'discover','ai-navody.html':'prepare','ai-novinky.html':'discover','ai-agenti.html':'create','chatgpt-pro-ucitele.html':'tools','gemini-notebook.html':'tools'};
+
+test('wave 19 preserves all six generated catalogs and shared navigation at responsive widths', async ({page}) => {
+  const fs=require('node:fs'); fs.mkdirSync('artifacts',{recursive:true});
+  const evidence={baselineSha:wave19Baseline.baselineSha,pages:[]};
+  for(const file of wave19Pages){
+    const baseline=wave19Baseline.pages[file];
+    const rawHtml=fs.readFileSync(file,'utf8');
+    const headerStart=rawHtml.indexOf('<header');
+    expect(headerStart,file+' generated header').toBeGreaterThan(0);
+    expect(rawHtml.slice(0,headerStart),file+' raw HTML above the header').not.toContain('\\n');
+    await page.setViewportSize({width:1440,height:1000});
+    await page.goto(baseURL+'/'+file);
+    const literalTextBeforeHeader=await page.evaluate(()=>{
+      const header=document.querySelector('.site-header');
+      const text=[];
+      for(let node=header?.previousSibling;node;node=node.previousSibling)
+        if(node.nodeType===Node.TEXT_NODE&&node.textContent.includes('\\n'))text.push(node.textContent);
+      return text;
+    });
+    expect(literalTextBeforeHeader,file+' browser text nodes above header').toEqual([]);
+    await expect(page.locator('nav[aria-label="Hlavní navigace"]')).toHaveCount(1);
+    await expect(page.locator('.site-nav-pilot > details.site-nav-area')).toHaveCount(6);
+    const activeArea=page.locator('.site-nav-pilot > details.site-nav-area[data-active="true"]');
+    await expect(activeArea).toHaveCount(1);
+    await expect(activeArea).toHaveAttribute('data-area',wave19Areas[file]);
+    await expect(activeArea.locator('summary')).toHaveAttribute('aria-current',/^(page|location)$/);
+    const current=await page.locator('[data-card]').evaluateAll(cards=>cards.map(card=>({
+      href:card.getAttribute('data-href'),category:card.getAttribute('data-category'),
+      contentType:card.getAttribute('data-content-type')||'',directoryGroup:card.getAttribute('data-directory-group'),
+      title:card.querySelector('h3')?.textContent.trim(),summary:card.querySelector('.card-copy p')?.textContent.trim(),
+      date:card.querySelector('time')?.getAttribute('datetime'),image:card.querySelector('img')?.getAttribute('src')||null,
+      imageAlt:card.querySelector('img')?.getAttribute('alt')||null
+    })));
+    expect(current,file+' card count').toHaveLength(baseline.cardCount);
+    expect(new Set(current.map(x=>x.href)).size,file+' unique hrefs').toBe(current.length);
+    for(let i=0;i<current.length;i++){
+      const got=current[i],want=baseline.cards[i];
+      for(const key of ['href','category','contentType','directoryGroup','title','date','image','imageAlt'])
+        expect(got[key],file+' '+i+' '+key).toEqual(want[key]??null);
+      const drift=(wave19Baseline.knownGeneratorSourceDrift||[]).find(x=>x.href===got.href&&x.field==='summary'&&x.pages.includes(file));
+      expect(got.summary,file+' '+i+' summary').toEqual(drift?drift.catalogValueAtBaseline:want.summary);
+    }
+    const ids=await page.locator('[id]').evaluateAll(xs=>xs.map(x=>x.id));
+    for(const id of baseline.publicIds.filter(id=>id!=='primary-nav')) expect(ids,file+' public id '+id).toContain(id);
+    const geometry=await page.evaluate(()=>({viewport:innerWidth,scroll:document.documentElement.scrollWidth,
+      body:getComputedStyle(document.body).backgroundColor,nav:getComputedStyle(document.querySelector('nav[aria-label="Hlavní navigace"]')).position}));
+    expect(geometry.scroll,file+' desktop overflow').toBeLessThanOrEqual(1441);
+    
+    await page.screenshot({path:'artifacts/wave19-'+file.replace('.html','')+'-desktop-1440.png',fullPage:false});
+    evidence.pages.push({file,cardCount:current.length,activeArea:wave19Areas[file],desktop:geometry});
+    for(const width of [1024,390]){
+      await page.setViewportSize({width,height:width===390?844:1000});
+      await page.goto(baseURL+'/'+file);
+      await expect(page.locator('nav[aria-label="Hlavní navigace"]')).toHaveCount(1);
+      const overflow=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));
+      expect(overflow.scroll,file+' overflow at '+width).toBeLessThanOrEqual(width+1);
+      if(width===390){
+        const toggle=page.locator('.menu-toggle');
+        await toggle.click(); await expect(toggle).toHaveAttribute('aria-expanded','true');
+        await expect(page.locator('.site-nav-pilot > details.site-nav-area')).toHaveCount(6);
+        await page.screenshot({path:'artifacts/wave19-'+file.replace('.html','')+'-mobile-390-menu.png',fullPage:false});
+        await page.keyboard.press('Escape'); await expect(toggle).toHaveAttribute('aria-expanded','false');
+        await page.screenshot({path:'artifacts/wave19-'+file.replace('.html','')+'-mobile-390.png',fullPage:false});
+      }
+    }
+  }
+  await page.goto(baseURL+'/ai.html');
+  const search=page.locator('[data-query]');
+  await search.fill('filozofovani');
+  await expect(page.locator('[data-card]:visible')).toHaveCount(4);
+  await expect(page.locator('[data-status]')).toContainText('4');
+  await page.screenshot({path:'artifacts/wave19-ai-search-diacritics.png',fullPage:false});
+  await search.fill('nenalezeny-zaznam-xyz');
+  await expect(page.locator('[data-card]:visible')).toHaveCount(0);
+  await expect(page.locator('[data-status]')).toBeVisible();
+  await page.locator('[data-clear]').click();
+  await expect(page.locator('[data-card]:visible')).toHaveCount(76);
+  await page.locator('[data-filter="philosophy"]').click();
+  await expect(page.locator('[data-card]:visible')).toHaveCount(4);
+  await expect(page).toHaveURL(/filter=philosophy/);
+  await page.goBack(); await expect(page.locator('[data-card]:visible')).toHaveCount(76);
+  await page.goForward(); await expect(page.locator('[data-card]:visible')).toHaveCount(4);
+  await page.reload(); await expect(page.locator('[data-card]:visible')).toHaveCount(4);
+  evidence.urlHistory={filter:'philosophy',backForward:'passed',reload:'passed',diacriticSearchCount:4};
+  fs.writeFileSync('artifacts/wave19-catalog-evidence.json',JSON.stringify(evidence,null,2));
+});
