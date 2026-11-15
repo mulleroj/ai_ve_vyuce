@@ -59,7 +59,7 @@ test('capture page inventories, screenshots, interactions, responsive states and
       await page.setViewportSize({width,height:width<500?844:900});
       const g=await page.evaluate(()=>({viewport:innerWidth,scrollWidth:document.documentElement.scrollWidth,bodyWidth:document.body.scrollWidth,overflow:Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)>innerWidth,nav:(()=>{const r=document.querySelector('.site-nav').getBoundingClientRect();return{x:r.x,right:r.right,bottom:r.bottom}})(),hero:(()=>{const r=document.querySelector('.page-hero').getBoundingClientRect();return{x:r.x,right:r.right,top:r.top}})()}));
       info.viewports.push(g);
-      if(width===768||width===390)await page.screenshot({path:artifact(slug+'-'+width+'.png'),fullPage:true});
+      if(width===320||width===768||width===390)await page.screenshot({path:artifact(slug+'-'+width+'.png'),fullPage:true});
     }
     if(info.viewports.some(x=>x.overflow))report.findings.push(file+': horizontal overflow at '+info.viewports.filter(x=>x.overflow).map(x=>x.viewport).join(', ')+'px.');
 
