@@ -3489,7 +3489,7 @@ test('wave 20 preserves all 44 activity records, visible copy, identifiers, link
   expect(current).toHaveLength(44);
   expect(new Set(current.map(card=>card.id)).size).toBe(44);
   expect(current.map(({id,attributes,text})=>({id,attributes:Object.fromEntries(Object.entries(attributes).map(([key,value])=>[key,key==='data-prompt'?value.replace(/\s+/g,' ').trim():value])),text:text.replace(/📋 Kopírovat zadání/g,'📋 Kopírovat')})))
-    .toEqual(activityWave20Baseline.activities);
+    .toEqual(activityWave20Baseline.activities.map(card=>({...card,attributes:{...card.attributes,'data-prompt':card.attributes['data-prompt'].replace(/\s+/g,' ').trim()}})));
   await expect(page.locator('.activity-card:visible')).toHaveCount(44);
   for (const id of activityWave20Baseline.ids) await expect(page.locator(`#${id}`)).toHaveCount(1);
   const currentHrefs = await page.locator('a[href]').evaluateAll(links=>links.map(link=>link.getAttribute('href')));
