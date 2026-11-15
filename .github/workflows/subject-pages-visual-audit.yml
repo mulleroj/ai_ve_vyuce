@@ -1,0 +1,89 @@
+name: Subject pages visual audit (audit only)
+
+on:
+  push:
+    branches:
+      - codex/ai-ve-vyuce-8k2-subject-pages-audit
+
+permissions:
+  contents: read
+
+jobs:
+  subject-pages-visual-audit:
+    name: Chromium visual audit of five subject pages
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      BASELINE_SHA: bfd39f3973d7139aeb4632ba7a74e94ab648f7bc
+      TESTED_SHA: ${{ github.sha }}
+    steps:
+      - name: Check out the isolated audit branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Verify tested page sources equal the reference commit
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin "$BASELINE_SHA"
+          git diff --exit-code "$BASELINE_SHA" -- \
+            anglictina.html cestina.html dejepis.html matematika.html prirodoveda.html \
+            css/style.css css/subject-pages.css css/site-navigation.css \
+            js/site-navigation.js js/site-navigation-data.js js/main.js js/subject-pages.js \
+            images/ai-ve-vyuce-robot-anglictina-hero.webp \
+            images/ai-ve-vyuce-robot-cestina-hero.webp \
+            images/ai-ve-vyuce-robot-dejepis-hero.webp \
+            images/ai-ve-vyuce-robot-matematika-hero.webp \
+            images/ai-ve-vyuce-robot-prirodoveda-hero.webp \
+            images/ai-assistant-book-logo.png
+
+      - name: Install Playwright, Chromium, and axe
+        run: |
+          npm install --no-save --package-lock=false @playwright/test axe-core
+          npx playwright install chromium
+
+      - name: Run Playwright against a local HTTP server
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts test-results
+          printf '%s\n' "$BASELINE_SHA" > artifacts/subject-pages-reference-sha.txt
+          printf '%s\n' "$TESTED_SHA" > artifacts/subject-pages-workflow-sha.txt
+          python3 -m http.server 4173 --bind 127.0.0.1 > test-results/subject-pages-http-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:4173/anglictina.html >/dev/null; then break; fi
+            sleep 1
+          done
+          curl --fail --silent http://127.0.0.1:4173/anglictina.html >/dev/null
+          PLAYWRIGHT_JSON_OUTPUT_NAME=test-results/subject-pages-playwright-report.json \
+            npx playwright test tests/subject-pages-visual-audit.spec.js --reporter=list,json
+
+      - name: Keep an incomplete-run report if Playwright stopped early
+        if: always()
+        run: |
+          mkdir -p artifacts
+          if [ ! -f artifacts/subject-pages-visual-report.md ]; then
+            printf '%s\n' '# Subject pages visual audit' '' \
+              "Reference: $BASELINE_SHA" \
+              "Audit commit: $TESTED_SHA" \
+              'Playwright did not produce a complete evidence report; inspect the test report and logs.' \
+              > artifacts/subject-pages-visual-report.md
+          fi
+
+      - name: Upload screenshots and reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: subject-pages-visual-audit-${{ github.sha }}
+          path: |
+            artifacts/
+            test-results/
+          if-no-files-found: warn
+          retention-days: 14
