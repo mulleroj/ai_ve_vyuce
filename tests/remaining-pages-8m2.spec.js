@@ -30,6 +30,22 @@ async function runAxe(page) {
 
 test.describe('8M/2 rendered audit', () => {
   test.describe.configure({ mode:'serial' });
+  test.afterAll(() => {
+    writeReport();
+    const compact={
+      pageCount:Object.keys(findings.pages).length,
+      pages:Object.fromEntries(Object.entries(findings.pages).map(([path,p])=>[path,{
+        mainCounts:Object.fromEntries(Object.entries(p.widths||{}).map(([w,m])=>[w,m.mainCount])),
+        overflows:Object.entries(p.widths||{}).filter(([,m])=>m.horizontalOverflow).map(([w,m])=>({width:w,documentWidth:m.documentWidth,bodyWidth:m.bodyWidth})),
+        statuses:Object.fromEntries(Object.entries(p.widths||{}).map(([w,m])=>[w,m.status])),
+        mobileMenu:p.mobileMenu,noJavaScript:p.noJavaScript,keyboardFocus:p.keyboardFocus,
+        consoleErrors:p.consoleErrors,pageErrors:p.pageErrors,failedRequests:p.failedRequests,httpErrors:p.httpErrors
+      }])),
+      axe:Object.fromEntries(Object.entries(findings.axe).map(([path,a])=>[path,a?.error?{error:a.error}:{timedOut:!!a?.timedOut,violations:(a?.violations||[]).map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.map(n=>({target:n.target,html:n.html}))})),incomplete:(a?.incomplete||[]).map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.map(n=>({target:n.target,html:n.html}))})),passes:a?.passes}])),
+      interactions:findings.interactions,notes:findings.notes
+    };
+    console.log('8M2_AUDIT_JSON='+JSON.stringify(compact));
+  });
   for (const path of pages) {
     test(path, async ({ browser }) => {
       test.setTimeout(120000);
@@ -87,11 +103,11 @@ test.describe('8M/2 rendered audit', () => {
       await page.goto(`http://127.0.0.1:4173/${path}`,{waitUntil:'domcontentloaded',timeout:10000}).catch(()=>{});
       const result={search:null,filter:null,copy:null};
       const search=page.locator('input[type="search"],input[id*="search"],input[aria-label*="Hledat" i]').first();
-      if(await search.count()){const before=await page.locator('.prompt-card:visible').count();await search.fill('xyz-audit-no-match');result.search={before,after:await page.locator('.prompt-card:visible').count()}}
+      if(await search.count()){const before=await page.locator('.prompt-card:visible').count();await search.fill('xyz-audit-no-match');result.search={before,after:await page.locator('.prompt-card:visible').count()};await search.fill('')}
       const chip=page.locator('.filter-chip[data-filter]').nth(1);
-      if(await chip.count()){await chip.click();result.filter={selected:await chip.getAttribute('aria-pressed'),visibleCards:await page.locator('.prompt-card:visible').count()}}
+      if(await chip.count()){await chip.click().catch(e=>{result.filterClickError=String(e)});result.filter={selected:await chip.getAttribute('aria-pressed').catch(()=>null),visibleCards:await page.locator('.prompt-card:visible').count()}}
       const copy=page.locator('.copy-btn,[data-copy-prompt]').first();
-      if(await copy.count()){await copy.click();result.copy={buttonText:await copy.innerText().catch(()=>''),clipboardLength:await page.evaluate(()=>navigator.clipboard.readText().then(t=>t.length).catch(()=>0))}}
+      if(await copy.count()){await copy.click({timeout:3000}).catch(e=>{result.copyError=String(e)});result.copy={buttonText:await copy.innerText().catch(()=>''),clipboardLength:await page.evaluate(()=>navigator.clipboard.readText().then(t=>t.length).catch(()=>0))}}
       findings.interactions[path]=result; await context.close(); writeReport();
     });
   }
