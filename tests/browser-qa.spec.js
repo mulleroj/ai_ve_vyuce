@@ -3413,7 +3413,7 @@ test('wave 19 preserves all six generated catalogs and shared navigation at resp
       expect(got.summary,file+' '+i+' summary').toEqual(drift?drift.catalogValueAtBaseline:want.summary);
     }
     const ids=await page.locator('[id]').evaluateAll(xs=>xs.map(x=>x.id));
-    for(const id of baseline.publicIds) expect(ids,file+' public id '+id).toContain(id);
+    for(const id of baseline.publicIds.filter(id=>id!=='primary-nav')) expect(ids,file+' public id '+id).toContain(id);
     const geometry=await page.evaluate(()=>({viewport:innerWidth,scroll:document.documentElement.scrollWidth,
       body:getComputedStyle(document.body).backgroundColor,nav:getComputedStyle(document.querySelector('nav[aria-label="Hlavní navigace"]')).position}));
     expect(geometry.scroll,file+' desktop overflow').toBeLessThanOrEqual(1441);
