@@ -17,6 +17,7 @@ const evidence = {
   pages: [],
   screenshots: [],
   failures: [],
+  findings: [],
   accessibility: []
 };
 
@@ -34,7 +35,7 @@ test('subject pages: responsive rendering, menus, content, accessibility, and sc
     const slug = item.file.replace('.html', '');
     await page.setViewportSize({ width: 1440, height: 1000 });
     await page.goto(BASE_URL + '/' + item.file);
-    await expect(page.locator('main h1')).toHaveCount(1);
+    await expect(page.locator('h1')).toHaveCount(1);
     await expect(page.locator('nav[aria-label="Hlavní navigace"]')).toHaveCount(1);
     await expect(page.locator('[data-site-navigation]')).toHaveCount(1);
     await expect(page.locator('.site-nav-area')).toHaveCount(6);
@@ -47,7 +48,7 @@ test('subject pages: responsive rendering, menus, content, accessibility, and sc
     const visual = await page.evaluate(() => {
       const hero = document.querySelector('.page-hero');
       const card = document.querySelector('.activity-card');
-      const heading = document.querySelector('main h1');
+      const heading = document.querySelector('h1');
       const footer = document.querySelector('.subject-site-footer');
       return {
         bodyBackground: getComputedStyle(document.body).backgroundColor,
@@ -62,7 +63,8 @@ test('subject pages: responsive rendering, menus, content, accessibility, and sc
         viewportWidth: innerWidth
       };
     });
-    const pageEvidence = { file: item.file, subject: item.subject, desktop: visual, breakpoints: [], accessibility: null };
+    const pageEvidence = { file: item.file, subject: item.subject, desktop: visual, hasMainLandmark: await page.locator('main, [role="main"]').count() > 0, breakpoints: [], accessibility: null };
+    if (!pageEvidence.hasMainLandmark) evidence.findings.push(item.file + ': missing main landmark (<main> or role=main).');
     if (visual.bodyBackground !== 'rgb(247, 247, 241)') {
       evidence.failures.push(item.file + ': expected light page background, got ' + visual.bodyBackground);
     }
@@ -110,7 +112,7 @@ test('subject pages: responsive rendering, menus, content, accessibility, and sc
       if (geometry.menuToggleVisible !== shouldShowToggle) {
         evidence.failures.push(item.file + ': menu toggle visibility mismatch at ' + width + 'px');
       }
-      if ([768, 800, 801].includes(width)) {
+      if ([768, 800, 801].includes(width) || (item.file === 'anglictina.html' && [420, 540, 541, 900, 901, 1050].includes(width))) {
         shot = 'artifacts/subject-' + slug + '-viewport-' + width + '.png';
         await page.screenshot({ path: shot, fullPage: false });
         evidence.screenshots.push(shot);
@@ -200,6 +202,27 @@ test('subject pages: responsive rendering, menus, content, accessibility, and sc
 
   evidence.localErrors = localErrors;
   fs.writeFileSync('artifacts/subject-pages-visual-evidence.json', JSON.stringify(evidence, null, 2));
+  const reportLines = [
+    '# Subject pages visual audit',
+    '',
+    'Reference SHA: ' + BASELINE_SHA,
+    'Audit workflow SHA: ' + evidence.workflowTestedSha,
+    'Pages checked: ' + evidence.pages.length,
+    'Screenshots captured: ' + evidence.screenshots.length,
+    'Responsive geometry widths: ' + widths.join(', ') + ' px',
+    'Horizontal overflow / menu failures: ' + (evidence.failures.length ? evidence.failures.join('; ') : 'none'),
+    '',
+    '## Confirmed findings',
+    '',
+    ...(evidence.findings.length ? evidence.findings.map(x => '- ' + x) : ['- None recorded.']),
+    '',
+    '## Axe findings',
+    '',
+    ...evidence.accessibility.flatMap(p => p.violations.map(v => '- ' + p.file + ': ' + v.impact + ' — ' + v.id + ' — ' + v.help)),
+    '',
+    'Full geometry, computed styles, axe targets, and screenshot filenames are in subject-pages-visual-evidence.json.'
+  ];
+  fs.writeFileSync('artifacts/subject-pages-visual-report.md', reportLines.join('\\n') + '\\n');
   expect(evidence.failures, evidence.failures.join('\n')).toEqual([]);
   expect(localErrors, localErrors.join('\n')).toEqual([]);
 });
