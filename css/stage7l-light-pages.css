@@ -393,3 +393,65 @@ body.light-background-pilot.gemini-notebook-prompt-page.stage7l-notebook-prompts
   background: #d3e9dc;
   color: #063f39;
 }
+
+/* Wave 23 prompt libraries reuse the established light pilot palette. */
+body.light-background-pilot.stage7l-notebook-prompts {
+  --bg-primary: #fffefa;
+  --bg-secondary: #f2f6f1;
+  --bg-card: #fff;
+  --bg-card-hover: #f7faf5;
+  --bg-glass: rgba(255,254,250,.96);
+  --text-primary: #173b35;
+  --text-secondary: #52675f;
+  --text-muted: #52675f;
+  --border: #dfe8e1;
+  --border-hover: #9fcab2;
+  --accent-mint: #07584f;
+  --accent-blue: #1d4f91;
+  --accent-purple: #68347b;
+  --accent-green: #176b3a;
+  --accent-orange: #774000;
+  --accent-pink: #a21865;
+  --gradient-hero: linear-gradient(135deg,#fffefa,#f2f6f1);
+  --gradient-mint: linear-gradient(135deg,#07584f,#087568);
+  --shadow: 0 8px 28px rgba(23,56,47,.09);
+  --shadow-hover: 0 14px 34px rgba(23,56,47,.13);
+  --shadow-mint: 0 8px 24px rgba(7,88,79,.15);
+  background: #fffefa;
+  color: #25343d;
+  font-family: 'DM Sans', Arial, sans-serif;
+}
+body.light-background-pilot.stage7l-notebook-prompts .page-hero {
+  background: linear-gradient(135deg,#fffefa 0%,#f2f6f1 100%) !important;
+  border-bottom: 1px solid #dfe8e1;
+}
+body.light-background-pilot.stage7l-notebook-prompts .page-hero-glow { opacity: .12; }
+body.light-background-pilot.stage7l-notebook-prompts .skip-link {
+  position: fixed; z-index: 150; top: -5rem; left: 1rem; padding: .7rem 1rem;
+  border-radius: 8px; background: #fff; color: #07584f; box-shadow: 0 4px 18px #102d2b30;
+}
+body.light-background-pilot.stage7l-notebook-prompts .skip-link:focus { top: 1rem; }
+body.light-background-pilot.stage7l-notebook-prompts .search-bar,
+body.light-background-pilot.stage7l-notebook-prompts .filter-chip,
+body.light-background-pilot.stage7l-notebook-prompts .catalog-role-note,
+body.light-background-pilot.stage7l-notebook-prompts .info-box {
+  border-color: #dfe8e1;
+  background: #fff;
+  color: #25343d;
+}
+body.light-background-pilot.stage7l-notebook-prompts .search-input { color: #173b35; }
+body.light-background-pilot.stage7l-notebook-prompts .search-input::placeholder { color: #52675f; opacity: 1; }
+body.light-background-pilot.stage7l-notebook-prompts .filter-chip { color: #07584f; }
+body.light-background-pilot.stage7l-notebook-prompts .filter-chip.active { background: #07584f; color: #fff; }
+body.light-background-pilot.stage7l-notebook-prompts .filter-chip:focus-visible,
+body.light-background-pilot.stage7l-notebook-prompts .search-input:focus-visible,
+body.light-background-pilot.stage7l-notebook-prompts .copy-btn:focus-visible,
+body.light-background-pilot.stage7l-notebook-prompts .prompt-body:focus-visible {
+  outline: 3px solid #087568; outline-offset: 3px;
+}
+body.light-background-pilot.stage7l-notebook-prompts .footer {
+  border-top: 1px solid #dfe8e1; background: #f2f6f1; color: #35524c;
+}
+body.light-background-pilot.stage7l-notebook-prompts .footer a { color: #07584f; }
+body.light-background-pilot.stage7l-notebook-prompts .footer a:hover,
+body.light-background-pilot.stage7l-notebook-prompts .footer a:focus-visible { color: #063f39; }
