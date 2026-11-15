@@ -16,7 +16,7 @@ const write = (p, value) => {
     const expected = normalizeLineEndings(value).replace(/\n+$/, '');
     if (actual === null || actual !== expected) throw new Error(`${p} is stale; run node scripts/build-catalog-pages.js`);
     console.log(`OK ${p}`);
-  } else fs.writeFileSync(target, value);
+  } else { fs.mkdirSync(path.dirname(target), { recursive: true }); fs.writeFileSync(target, value); }
 };
 const escape = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const context = { window: {} };
