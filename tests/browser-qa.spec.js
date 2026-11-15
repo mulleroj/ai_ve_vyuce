@@ -3388,8 +3388,20 @@ test('wave 19 preserves all six generated catalogs and shared navigation at resp
   const evidence={baselineSha:wave19Baseline.baselineSha,pages:[]};
   for(const file of wave19Pages){
     const baseline=wave19Baseline.pages[file];
+    const rawHtml=fs.readFileSync(file,'utf8');
+    const headerStart=rawHtml.indexOf('<header');
+    expect(headerStart,file+' generated header').toBeGreaterThan(0);
+    expect(rawHtml.slice(0,headerStart),file+' raw HTML above the header').not.toContain('\\n');
     await page.setViewportSize({width:1440,height:1000});
     await page.goto(baseURL+'/'+file);
+    const literalTextBeforeHeader=await page.evaluate(()=>{
+      const header=document.querySelector('.site-header');
+      const text=[];
+      for(let node=header?.previousSibling;node;node=node.previousSibling)
+        if(node.nodeType===Node.TEXT_NODE&&node.textContent.includes('\\n'))text.push(node.textContent);
+      return text;
+    });
+    expect(literalTextBeforeHeader,file+' browser text nodes above header').toEqual([]);
     await expect(page.locator('nav[aria-label="Hlavní navigace"]')).toHaveCount(1);
     await expect(page.locator('.site-nav-pilot > details.site-nav-area')).toHaveCount(6);
     const activeArea=page.locator('.site-nav-pilot > details.site-nav-area[data-active="true"]');
