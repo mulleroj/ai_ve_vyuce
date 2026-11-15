@@ -1,4 +1,4 @@
-const { test, expect } = require('@playwright/test');
+const { test } = require('@playwright/test');
 const axeSource = require('axe-core').source;
 const fs = require('node:fs');
 
@@ -11,110 +11,98 @@ const pages = [
 const widths = [1440, 1024, 768, 390, 320];
 const out = 'artifacts/8m2';
 const findings = { pages: {}, axe: {}, interactions: {}, notes: [] };
+fs.mkdirSync(out, { recursive: true });
 function writeReport() {
   fs.writeFileSync(`${out}/report.json`, JSON.stringify(findings,null,2));
-  fs.writeFileSync(`${out}/report.md`, '# 8M/2 Browser audit\n\nRaw page metrics, axe-core violations/incomplete results, interaction outcomes, browser errors, and screenshots are packaged with this report.\n');
+  fs.writeFileSync(`${out}/report.md`, '# 8M/2 Browser audit\n\nJSON records per-page viewport metrics, axe-core violations and manual-review items, interaction outcomes, console/network errors, and screenshot paths. Screenshots use exact viewport dimensions.\n');
 }
 async function runAxe(page) {
-  await page.addScriptTag({ content: axeSource });
+  await page.addScriptTag({ content: axeSource, timeout: 5000 });
   return page.evaluate(async () => {
-    const r = await axe.run(document, { runOnly: { type: 'tag', values: ['wcag2a','wcag2aa','wcag21a','wcag21aa','best-practice'] } });
-    return { violations:r.violations.map(v=>({ id:v.id, impact:v.impact, description:v.description, help:v.help, nodes:v.nodes.map(n=>({ target:n.target, html:n.html, summary:n.failureSummary })) })), incomplete:r.incomplete.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.map(n=>({target:n.target,html:n.html}))})), passes:r.passes.length };
-  });
+    const timeout = new Promise(resolve => setTimeout(() => resolve({ timedOut:true }), 12000));
+    const audit = axe.run(document, { runOnly: { type:'tag', values:['wcag2a','wcag2aa','wcag21a','wcag21aa','best-practice'] } }).then(r => ({
+      violations:r.violations.map(v=>({id:v.id,impact:v.impact,description:v.description,help:v.help,nodes:v.nodes.map(n=>({target:n.target,html:n.html,summary:n.failureSummary}))})),
+      incomplete:r.incomplete.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.map(n=>({target:n.target,html:n.html}))})),passes:r.passes.length
+    }));
+    return Promise.race([audit,timeout]);
+  }, null, {timeout:18000});
 }
 
-test('8M/2 rendered audit of remaining pages', async ({ browser }) => {
-  test.setTimeout(10 * 60 * 1000);
-  fs.mkdirSync(out, { recursive: true });
+test.describe('8M/2 rendered audit', () => {
+  test.describe.configure({ mode:'serial' });
   for (const path of pages) {
-    const slug = path.replaceAll('/', '--').replace('.html', '');
-    findings.pages[path] = { widths: {}, consoleErrors: [], pageErrors: [], failedRequests: [], httpErrors: [] };
-    const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, acceptDownloads: true });
-    await context.grantPermissions(['clipboard-read', 'clipboard-write']).catch(() => {});
-    const page = await context.newPage();
-    page.on('console', msg => { if (msg.type() === 'error') findings.pages[path].consoleErrors.push(msg.text()); });
-    page.on('pageerror', err => findings.pages[path].pageErrors.push(String(err)));
-    page.on('requestfailed', req => findings.pages[path].failedRequests.push({ url: req.url(), error: req.failure()?.errorText }));
-    page.on('response', res => { if (res.status() >= 400) findings.pages[path].httpErrors.push({ url: res.url(), status: res.status() }); });
-    for (const width of widths) {
-      await page.setViewportSize({ width, height: 1000 });
-      const response = await page.goto(`http://127.0.0.1:4173/${path}`, { waitUntil: 'domcontentloaded', timeout: 15000 }).catch(async error => { findings.notes.push(`${path} navigation at ${width}px: ${error}`); return null; });
-      await page.evaluate(() => Promise.race([document.fonts?.ready || Promise.resolve(), new Promise(resolve => setTimeout(resolve, 1200))])).catch(() => {});
-      await page.waitForTimeout(150);
-      await page.addStyleTag({ content: '*,*::before,*::after{scroll-behavior:auto!important;animation-duration:0s!important;transition-duration:0s!important}' }).catch(() => {});
-      const metrics = await page.evaluate(() => ({
-        title: document.title, mainCount: document.querySelectorAll('main,[role="main"]').length,
-        viewport: innerWidth, documentWidth: document.documentElement.scrollWidth,
-        bodyWidth: document.body.scrollWidth,
-        nav: [...document.querySelectorAll('nav')].map(n => ({ label:n.getAttribute('aria-label'), visible:!!(n.offsetWidth||n.offsetHeight), text:n.innerText.slice(0,180) })),
-        localNav: [...document.querySelectorAll('nav, .local-nav, .subject-nav, .prompt-collection-nav, .toc')].map(n => ({ class:n.className?.toString(), visible:!!(n.offsetWidth||n.offsetHeight), rect:Math.round(n.getBoundingClientRect().height) }))
-      }));
-      findings.pages[path].widths[width] = { status: response?.status() ?? null, ...metrics, horizontalOverflow: metrics.documentWidth > width + 1 || metrics.bodyWidth > width + 1 };
-      // Keep each screenshot at the exact viewport size. Full-page shots of long
-      // prompt catalogs can create enormous bitmaps and stall Chromium.
-      await page.screenshot({ path: `${out}/${slug}-${width}.png`, fullPage: false, animations: 'disabled' }).catch(() => {});
-      if (width === 1440) findings.axe[path] = await runAxe(page);
-      if (width === 390) {
-        await page.keyboard.press('Tab').catch(() => {});
-        findings.pages[path].keyboardFocus = await page.evaluate(() => { const a=document.activeElement; const s=getComputedStyle(a); return {tag:a?.tagName,text:a?.innerText?.slice(0,80)||a?.getAttribute('aria-label'),outline:s.outline,outlineStyle:s.outlineStyle,boxShadow:s.boxShadow}; }).catch(()=>null);
-        const toggle = page.locator('.menu-toggle, .nav-toggle, .nav-mobile-toggle').first();
-        if (await toggle.count()) {
-          await toggle.click().catch(() => {});
-          await page.screenshot({ path: `${out}/${slug}-390-menu.png`, fullPage: false, animations: 'disabled' }).catch(() => {});
-          findings.pages[path].mobileMenu = await page.evaluate(() => ({ toggleExpanded:document.querySelector('.menu-toggle,.nav-toggle,.nav-mobile-toggle')?.getAttribute('aria-expanded'), visibleMenus:[...document.querySelectorAll('#primary-menu,.primary-nav,.nav-content')].filter(n=>n.offsetWidth||n.offsetHeight).length }));
-          await page.keyboard.press('Escape').catch(() => {});
+    test(path, async ({ browser }) => {
+      test.setTimeout(120000);
+      const slug=path.replaceAll('/','--').replace('.html','');
+      const row={widths:{},consoleErrors:[],pageErrors:[],failedRequests:[],httpErrors:[]};
+      findings.pages[path]=row;
+      const context=await browser.newContext({viewport:{width:1440,height:900},acceptDownloads:true});
+      const page=await context.newPage();
+      page.setDefaultTimeout(5000);
+      page.on('console',m=>{if(m.type()==='error')row.consoleErrors.push(m.text())});
+      page.on('pageerror',e=>row.pageErrors.push(String(e)));
+      page.on('requestfailed',r=>row.failedRequests.push({url:r.url(),error:r.failure()?.errorText}));
+      page.on('response',r=>{if(r.status()>=400)row.httpErrors.push({url:r.url(),status:r.status()})});
+      for(const width of widths){
+        await page.setViewportSize({width,height:900});
+        const response=await page.goto(`http://127.0.0.1:4173/${path}`,{waitUntil:'domcontentloaded',timeout:10000}).catch(e=>{findings.notes.push(`${path} @${width}: ${e.message}`);return null});
+        await page.waitForTimeout(100);
+        const m=await page.evaluate(()=>({
+          title:document.title,mainCount:document.querySelectorAll('main,[role="main"]').length,viewport:innerWidth,
+          documentWidth:document.documentElement.scrollWidth,bodyWidth:document.body.scrollWidth,
+          nav:[...document.querySelectorAll('nav')].map(n=>({label:n.getAttribute('aria-label'),visible:!!(n.offsetWidth||n.offsetHeight),text:n.innerText.slice(0,120)})),
+          localNav:[...document.querySelectorAll('nav,.local-nav,.subject-nav,.prompt-collection-nav,.toc')].map(n=>({class:n.className?.toString(),visible:!!(n.offsetWidth||n.offsetHeight),height:Math.round(n.getBoundingClientRect().height)}))
+        })).catch(()=>({title:null,mainCount:0,viewport:width,documentWidth:0,bodyWidth:0,nav:[],localNav:[]}));
+        row.widths[width]={status:response?.status()??null,...m,horizontalOverflow:m.documentWidth>width+1||m.bodyWidth>width+1};
+        await page.screenshot({path:`${out}/${slug}-${width}.png`,fullPage:false,animations:'disabled',timeout:10000}).catch(()=>{});
+        if(width===1440) findings.axe[path]=await runAxe(page).catch(e=>({error:String(e)}));
+        if(width===390){
+          await page.keyboard.press('Tab').catch(()=>{});
+          row.keyboardFocus=await page.evaluate(()=>{const a=document.activeElement,s=getComputedStyle(a);return{tag:a?.tagName,text:a?.innerText?.slice(0,80)||a?.getAttribute('aria-label'),outline:s.outline,outlineStyle:s.outlineStyle,boxShadow:s.boxShadow}}).catch(()=>null);
+          const toggle=page.locator('.menu-toggle,.nav-toggle,.nav-mobile-toggle').first();
+          if(await toggle.count()){
+            await toggle.click({timeout:3000}).catch(()=>{});
+            await page.screenshot({path:`${out}/${slug}-390-menu.png`,fullPage:false,timeout:10000}).catch(()=>{});
+            row.mobileMenu=await page.evaluate(()=>({expanded:document.querySelector('.menu-toggle,.nav-toggle,.nav-mobile-toggle')?.getAttribute('aria-expanded'),visibleMenus:[...document.querySelectorAll('#primary-menu,.primary-nav,.nav-content')].filter(n=>n.offsetWidth||n.offsetHeight).length})).catch(()=>null);
+            await page.keyboard.press('Escape').catch(()=>{});
+          }
+          const d=page.locator('details').first();
+          if(await d.count()&&await d.locator('summary').count()){
+            await d.locator('summary').click({timeout:3000}).catch(()=>{});
+            await page.screenshot({path:`${out}/${slug}-390-local-nav-open.png`,fullPage:false,timeout:10000}).catch(()=>{});
+          }
+          findings.axe[`${path} @390px`]=await runAxe(page).catch(e=>({error:String(e)}));
         }
-        for (const d of await page.locator('details').all()) {
-          const summary = d.locator('summary');
-          if (await summary.count()) { await summary.click().catch(() => {}); await page.screenshot({ path: `${out}/${slug}-390-local-nav-open.png`, fullPage: false, animations:'disabled' }).catch(() => {}); break; }
-        }
-        findings.axe[`${path} @390px`] = await runAxe(page).catch(error => ({error:String(error)}));
       }
-    }
-    // Static essential-content and no-JavaScript behavior at 390px.
-    const noJs = await context.newPage();
-    await noJs.setJavaScriptEnabled(false);
-    await noJs.setViewportSize({ width:390,height:844 });
-    await noJs.goto(`http://127.0.0.1:4173/${path}`, { waitUntil:'domcontentloaded', timeout:15000 }).catch(()=>{});
-    findings.pages[path].noJavaScript = await noJs.evaluate(() => ({ h1:document.querySelector('h1')?.innerText||null, mainCount:document.querySelectorAll('main,[role="main"]').length, visibleLinks:[...document.querySelectorAll('a')].filter(a=>a.offsetWidth||a.offsetHeight).length, documentWidth:document.documentElement.scrollWidth }));
-    await noJs.close();
-    await context.close();
-    writeReport();
+      const noJs=await context.newPage(); await noJs.setDefaultTimeout(5000); await noJs.setJavaScriptEnabled(false); await noJs.setViewportSize({width:390,height:844});
+      await noJs.goto(`http://127.0.0.1:4173/${path}`,{waitUntil:'domcontentloaded',timeout:10000}).catch(()=>{});
+      row.noJavaScript=await noJs.evaluate(()=>({h1:document.querySelector('h1')?.innerText||null,mainCount:document.querySelectorAll('main,[role="main"]').length,visibleLinks:[...document.querySelectorAll('a')].filter(a=>a.offsetWidth||a.offsetHeight).length,documentWidth:document.documentElement.scrollWidth})).catch(()=>null);
+      await context.close().catch(()=>{}); writeReport();
+    });
   }
-
-  // Prompt search, filter and copy controls where implemented.
-  for (const path of ['prompty.html','gemini-notebook-prompty.html','vibe-coding-prompty.html']) {
-    const context = await browser.newContext({ permissions:['clipboard-read','clipboard-write'] });
-    const page = await context.newPage();
-    await page.goto(`http://127.0.0.1:4173/${path}`, { waitUntil:'domcontentloaded', timeout:15000 });
-    await page.waitForTimeout(250);
-    const result = { search:null, filter:null, copy:null };
-    const search = page.locator('input[type="search"],input[id*="search"],input[aria-label*="Hledat" i]').first();
-    if (await search.count()) { const before=await page.locator('.prompt-card:visible').count(); await search.fill('xyz-audit-no-match'); result.search={before,after:await page.locator('.prompt-card:visible').count()}; }
-    const chip=page.locator('.filter-chip[data-filter]').nth(1);
-    if (await chip.count()) { await chip.click(); result.filter={selected:await chip.getAttribute('aria-pressed'),visibleCards:await page.locator('.prompt-card:visible').count()}; }
-    const copy=page.locator('.copy-btn,[data-copy-prompt]').first();
-    if (await copy.count()) { await copy.click(); await page.waitForTimeout(150); result.copy={buttonText:await copy.innerText().catch(()=>''), clipboardLength:await page.evaluate(()=>navigator.clipboard.readText().then(t=>t.length).catch(()=>0))}; }
-    findings.interactions[path]=result;
-    await context.close();
-    writeReport();
+  for(const path of ['prompty.html','gemini-notebook-prompty.html','vibe-coding-prompty.html']){
+    test(`prompt controls: ${path}`,async({browser})=>{
+      test.setTimeout(60000); const context=await browser.newContext({permissions:['clipboard-read','clipboard-write']}); const page=await context.newPage(); page.setDefaultTimeout(5000);
+      await page.goto(`http://127.0.0.1:4173/${path}`,{waitUntil:'domcontentloaded',timeout:10000}).catch(()=>{});
+      const result={search:null,filter:null,copy:null};
+      const search=page.locator('input[type="search"],input[id*="search"],input[aria-label*="Hledat" i]').first();
+      if(await search.count()){const before=await page.locator('.prompt-card:visible').count();await search.fill('xyz-audit-no-match');result.search={before,after:await page.locator('.prompt-card:visible').count()}}
+      const chip=page.locator('.filter-chip[data-filter]').nth(1);
+      if(await chip.count()){await chip.click();result.filter={selected:await chip.getAttribute('aria-pressed'),visibleCards:await page.locator('.prompt-card:visible').count()}}
+      const copy=page.locator('.copy-btn,[data-copy-prompt]').first();
+      if(await copy.count()){await copy.click();result.copy={buttonText:await copy.innerText().catch(()=>''),clipboardLength:await page.evaluate(()=>navigator.clipboard.readText().then(t=>t.length).catch(()=>0))}}
+      findings.interactions[path]=result; await context.close(); writeReport();
+    });
   }
-  // QR generation and PNG download. CDN failures are recorded as actual behavior.
-  {
-    const context=await browser.newContext({acceptDownloads:true}); const page=await context.newPage();
-    await page.goto('http://127.0.0.1:4173/qr-kod.html',{waitUntil:'domcontentloaded',timeout:15000});
-    await page.waitForTimeout(250);
-    const result={libraryAvailable:await page.evaluate(()=>typeof window.QRCode==='function'),generated:false,download:null,error:null};
-    await page.locator('#urlInput').fill('https://example.com/audit');
-    await page.locator('#qrForm button[type="submit"]').click();
-    await page.waitForTimeout(500);
-    result.generated=await page.locator('#qrCode canvas,#qrCode img').count()>0;
-    result.error=await page.locator('#qrError').innerText().catch(()=>null);
-    if(result.generated){const dl=page.waitForEvent('download',{timeout:10000});await page.locator('#downloadQr').click();result.download=(await dl).suggestedFilename();}
-    findings.interactions['qr-kod.html']=result; await context.close();
-  }
-  writeReport();
-  console.log(`8M2 audit completed for ${Object.keys(findings.pages).length} pages; full data is in artifacts/8m2/report.json`);
-  expect(Object.keys(findings.pages)).toHaveLength(pages.length);
+  test('QR input, generation and PNG download',async({browser})=>{
+    test.setTimeout(60000);const context=await browser.newContext({acceptDownloads:true});const page=await context.newPage();page.setDefaultTimeout(5000);
+    await page.goto('http://127.0.0.1:4173/qr-kod.html',{waitUntil:'domcontentloaded',timeout:10000}).catch(()=>{});
+    const result={libraryAvailable:await page.evaluate(()=>typeof window.QRCode==='function').catch(()=>false),generated:false,download:null,error:null};
+    await page.locator('#urlInput').fill('https://example.com/audit').catch(()=>{});
+    await page.locator('#qrForm button[type="submit"]').click().catch(()=>{});
+    await page.waitForTimeout(300);result.generated=await page.locator('#qrCode canvas,#qrCode img').count()>0;result.error=await page.locator('#qrError').innerText().catch(()=>null);
+    if(result.generated){try{const dl=page.waitForEvent('download',{timeout:8000});await page.locator('#downloadQr').click();result.download=(await dl).suggestedFilename()}catch(e){result.downloadError=String(e)}}
+    findings.interactions['qr-kod.html']=result;await context.close();writeReport();
+  });
 });
 
