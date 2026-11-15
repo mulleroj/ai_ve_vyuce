@@ -38,6 +38,8 @@ test.describe('8M/2 rendered audit', () => {
         mainCounts:Object.fromEntries(Object.entries(p.widths||{}).map(([w,m])=>[w,m.mainCount])),
         overflows:Object.entries(p.widths||{}).filter(([,m])=>m.horizontalOverflow).map(([w,m])=>({width:w,documentWidth:m.documentWidth,bodyWidth:m.bodyWidth})),
         statuses:Object.fromEntries(Object.entries(p.widths||{}).map(([w,m])=>[w,m.status])),
+        appearance:p.widths?.['1440']?.appearance,
+        nav:p.widths?.['1440']?.nav,
         mobileMenu:p.mobileMenu,noJavaScript:p.noJavaScript,keyboardFocus:p.keyboardFocus,
         consoleErrors:p.consoleErrors,pageErrors:p.pageErrors,failedRequests:p.failedRequests,httpErrors:p.httpErrors
       }])),
@@ -66,7 +68,8 @@ test.describe('8M/2 rendered audit', () => {
         const m=await page.evaluate(()=>({
           title:document.title,mainCount:document.querySelectorAll('main,[role="main"]').length,viewport:innerWidth,
           documentWidth:document.documentElement.scrollWidth,bodyWidth:document.body.scrollWidth,
-          nav:[...document.querySelectorAll('nav')].map(n=>({label:n.getAttribute('aria-label'),visible:!!(n.offsetWidth||n.offsetHeight),text:n.innerText.slice(0,120)})),
+          appearance:{bodyBackground:getComputedStyle(document.body).backgroundColor,bodyColor:getComputedStyle(document.body).color,bodyFont:getComputedStyle(document.body).fontFamily,headerBackground:getComputedStyle(document.querySelector('header')||document.body).backgroundColor,heroBackground:getComputedStyle(document.querySelector('.page-hero, .hero, main')||document.body).backgroundColor,cardBackground:getComputedStyle(document.querySelector('.prompt-card,.qr-card,.activity-card,.assistant-card,.content-section,article')||document.body).backgroundColor},
+          nav:[...document.querySelectorAll('nav,.nav-links,.primary-nav,.site-nav')].map(n=>({label:n.getAttribute('aria-label'),class:n.className?.toString(),visible:!!(n.offsetWidth||n.offsetHeight),text:n.innerText.slice(0,120)})),
           localNav:[...document.querySelectorAll('nav,.local-nav,.subject-nav,.prompt-collection-nav,.toc')].map(n=>({class:n.className?.toString(),visible:!!(n.offsetWidth||n.offsetHeight),height:Math.round(n.getBoundingClientRect().height)}))
         })).catch(()=>({title:null,mainCount:0,viewport:width,documentWidth:0,bodyWidth:0,nav:[],localNav:[]}));
         row.widths[width]={status:response?.status()??null,...m,horizontalOverflow:m.documentWidth>width+1||m.bodyWidth>width+1};
@@ -79,7 +82,7 @@ test.describe('8M/2 rendered audit', () => {
           if(await toggle.count()){
             await toggle.click({timeout:3000}).catch(()=>{});
             await page.screenshot({path:`${out}/${slug}-390-menu.png`,fullPage:false,timeout:10000}).catch(()=>{});
-            row.mobileMenu=await page.evaluate(()=>({expanded:document.querySelector('.menu-toggle,.nav-toggle,.nav-mobile-toggle')?.getAttribute('aria-expanded'),visibleMenus:[...document.querySelectorAll('#primary-menu,.primary-nav,.nav-content')].filter(n=>n.offsetWidth||n.offsetHeight).length})).catch(()=>null);
+            row.mobileMenu=await page.evaluate(()=>({expanded:document.querySelector('.menu-toggle,.nav-toggle,.nav-mobile-toggle')?.getAttribute('aria-expanded'),visibleMenus:[...document.querySelectorAll('#primary-menu,.primary-nav,.nav-content,.mobile-menu,.nav-links')].filter(n=>n.offsetWidth||n.offsetHeight).length,openDetails:document.querySelectorAll('details[open]').length})).catch(()=>null);
             await page.keyboard.press('Escape').catch(()=>{});
           }
           const d=page.locator('details').first();
@@ -106,7 +109,7 @@ test.describe('8M/2 rendered audit', () => {
       if(await search.count()){const before=await page.locator('.prompt-card:visible').count();await search.fill('xyz-audit-no-match');result.search={before,after:await page.locator('.prompt-card:visible').count()};await search.fill('')}
       const chip=page.locator('.filter-chip[data-filter]').nth(1);
       if(await chip.count()){await chip.click().catch(e=>{result.filterClickError=String(e)});result.filter={selected:await chip.getAttribute('aria-pressed').catch(()=>null),visibleCards:await page.locator('.prompt-card:visible').count()}}
-      const copy=page.locator('.copy-btn,[data-copy-prompt]').first();
+      const copy=page.locator('.copy-btn:visible,[data-copy-prompt]:visible').first();
       if(await copy.count()){await copy.click({timeout:3000}).catch(e=>{result.copyError=String(e)});result.copy={buttonText:await copy.innerText().catch(()=>''),clipboardLength:await page.evaluate(()=>navigator.clipboard.readText().then(t=>t.length).catch(()=>0))}}
       findings.interactions[path]=result; await context.close(); writeReport();
     });
