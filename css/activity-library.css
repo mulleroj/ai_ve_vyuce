@@ -104,20 +104,7 @@ body.activity-dialog-open { overflow: hidden; }
 .activity-library-page .activity-dialog-prompt { background: #f0f5ef; }
 .activity-library-page .activity-dialog-prompt pre { color: #344f43; }
 .activity-library-page .site-footer-mark { color: #476257; border-color: #e0e8e0; }
-@media (max-width: 1100px) {
-  .activity-library-page .site-nav { min-height: 68px; width: calc(100% - 32px); }
-  .activity-library-page .menu-toggle { display: flex; width: 43px; height: 43px; flex: none; flex-direction: column; justify-content: center; gap: 5px; padding: 10px; border: 1px solid #d9e4df; border-radius: 12px; cursor: pointer; }
-  .activity-library-page .nav-content { position: absolute; z-index: 41; top: 68px; left: 0; right: 0; display: none; align-items: stretch; flex-direction: column; padding: 14px 22px 18px; background: #fff; border-bottom: 1px solid #e4e9e5; box-shadow: 0 12px 18px #132b1b13; }
-  .activity-library-page .nav-content.is-open { display: flex; }
-  .activity-library-page .nav-content .site-nav-pilot { align-items: stretch; flex-direction: column; gap: 0; }
-  .activity-library-page .site-nav-pilot .site-nav-area { width: 100%; }
-  .activity-library-page .site-nav-pilot .site-nav-area > summary { padding: .65rem; font-size: 15px; }
-  .activity-library-page .site-nav-pilot .site-nav-panel { position: static; min-width: 0; margin: 0 0 .45rem; border-radius: .45rem; box-shadow: none; }
-  html:not(.js) .activity-library-page .menu-toggle { display: none; }
-  html:not(.js) .activity-library-page .nav-content { position: static; display: flex; width: 100%; padding: 10px 16px; box-shadow: none; }
-  .activity-library-page .page-hero { padding-top: 46px; }
-  .activity-library-page .activity-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
+@media (max-width: 1100px) { .activity-library-page .page-hero { padding-top: 46px; } .activity-library-page .activity-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 800px) {
   .activity-library-page .site-nav { width: calc(100% - 28px); gap: 8px; }
   .activity-library-page .brand-copy strong { font-size: 20px; letter-spacing: -.8px; }

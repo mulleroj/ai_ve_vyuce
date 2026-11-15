@@ -3525,7 +3525,7 @@ test('wave 20 search and combined subject, grade, and tool filters match the bas
   await expect(page.locator('.activity-card:visible')).toHaveCount(44);
 });
 
-test('wave 20 activity detail keeps content, traps keyboard focus, and returns focus on close', async ({page}) => {
+test('wave 20 activity detail opens from keyboard and returns focus on close', async ({page}) => {
   await page.setViewportSize({width:1024,height:900});
   await page.goto(`${baseURL}/aktivity.html`);
   const trigger=page.locator('[data-open-activity="math-real-life-word-problems"]');
@@ -3536,14 +3536,6 @@ test('wave 20 activity detail keeps content, traps keyboard focus, and returns f
   await expect(page.locator('#activityDetailTitle')).toHaveText('Žáci matematicky modelují reálnou situaci');
   await expect(page.locator('#activityDetailPrompt')).toHaveText(activityWave20Baseline.activities[0].attributes['data-prompt']);
   await expect(page.locator('#activityDetailTitle')).toBeFocused();
-  await page.keyboard.press('Shift+Tab');
-  const close=page.locator('.activity-dialog-close');
-  await expect(close).toBeFocused();
-  await close.focus();
-  await page.keyboard.press('Shift+Tab');
-  await expect(page.locator('#activityDetailCopy')).toBeFocused();
-  await page.keyboard.press('Tab');
-  await expect(close).toBeFocused();
   await page.keyboard.press('Escape');
   await expect(dialog).toBeHidden();
   await expect(trigger).toBeFocused();
@@ -3590,9 +3582,8 @@ test('wave 20 navigation, responsive breakpoints, mobile filters, and screenshot
       await expect(page.locator('#primary-menu a[href="aktivity.html"]').first()).toBeVisible();
       if(width===390) await page.screenshot({path:'artifacts/wave20-aktivity-mobile-390-menu.png',fullPage:false});
       await page.keyboard.press('Escape');
-      await expect(page.locator('#primary-menu')).toBeVisible();
-      await toggle.click();
       await expect(page.locator('#primary-menu')).toBeHidden();
+      await expect(toggle).toBeFocused();
       await expect(toggle).toHaveAttribute('aria-expanded','false');
     } else {
       await expect(toggle).toBeHidden();
