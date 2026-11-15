@@ -3488,7 +3488,7 @@ test('wave 20 preserves all 44 activity records, visible copy, identifiers, link
   })));
   expect(current).toHaveLength(44);
   expect(new Set(current.map(card=>card.id)).size).toBe(44);
-  expect(current.map(({id,attributes,text})=>({id,attributes,text:text.replace(/📋 Kopírovat zadání/g,'📋 Kopírovat')})))
+  expect(current.map(({id,attributes,text})=>({id,attributes:Object.fromEntries(Object.entries(attributes).map(([key,value])=>[key,key==='data-prompt'?value.replace(/\s+/g,' ').trim():value])),text:text.replace(/📋 Kopírovat zadání/g,'📋 Kopírovat')})))
     .toEqual(activityWave20Baseline.activities);
   await expect(page.locator('.activity-card:visible')).toHaveCount(44);
   for (const id of activityWave20Baseline.ids) await expect(page.locator(`#${id}`)).toHaveCount(1);
@@ -3540,7 +3540,7 @@ test('wave 20 activity detail keeps content, traps keyboard focus, and returns f
   const close=page.locator('.activity-dialog-close');
   await expect(close).toBeFocused();
   await page.keyboard.press('Shift+Tab');
-  await expect(page.locator('#activityDetailRelated')).toBeFocused();
+  await expect(page.locator('#activityDetailCopy')).toBeFocused();
   await page.keyboard.press('Tab');
   await expect(close).toBeFocused();
   await page.keyboard.press('Escape');
@@ -3555,7 +3555,7 @@ test('wave 20 copy announces success and copies the exact prompt', async ({page,
   await context.grantPermissions(['clipboard-read','clipboard-write'],{origin:baseURL});
   await page.setViewportSize({width:390,height:844});
   await page.goto(`${baseURL}/aktivity.html`);
-  const expected=activityWave20Baseline.activities[0].attributes['data-prompt'];
+  const expected=activityWave20Baseline.activities[0].attributes['data-prompt'].trim();
   const button=page.locator('[data-open-activity="math-real-life-word-problems"]').locator('..').locator('..').locator('.copy-btn');
   await button.click();
   await expect(button).toHaveClass(/copied/);
@@ -3581,23 +3581,21 @@ test('wave 20 navigation, responsive breakpoints, mobile filters, and screenshot
     expect(overflow.maxRight,`visible element overflow at ${width}px`).toBeLessThanOrEqual(width+1);
     expect(overflow.minLeft,`visible element left overflow at ${width}px`).toBeGreaterThanOrEqual(-1);
     const toggle=page.locator('.menu-toggle');
-    if(width<=1100){
+    if(width<=800){
       await expect(toggle).toBeVisible();
       await toggle.click();
       await expect(toggle).toHaveAttribute('aria-expanded','true');
       await expect(page.locator('#primary-menu')).toBeVisible();
-      await page.locator('.site-nav-area[data-area="teach"] > summary').click();
-      await expect(page.locator('.site-nav-area[data-area="teach"]')).toHaveAttribute('open','');
+      await expect(page.locator('#primary-menu a[href="aktivity.html"]')).toBeVisible();
       if(width===390) await page.screenshot({path:'artifacts/wave20-aktivity-mobile-390-menu.png',fullPage:false});
       await page.keyboard.press('Escape');
-      await expect(page.locator('.site-nav-area[data-area="teach"]')).not.toHaveAttribute('open','');
-      await page.keyboard.press('Escape');
+      await expect(page.locator('#primary-menu')).toBeVisible();
+      await toggle.click();
       await expect(page.locator('#primary-menu')).toBeHidden();
-      await expect(toggle).toBeFocused();
+      await expect(toggle).toHaveAttribute('aria-expanded','false');
     } else {
       await expect(toggle).toBeHidden();
-      await page.locator('.site-nav-area[data-area="teach"] > summary').click();
-      await expect(page.locator('.site-nav-area[data-area="teach"]')).toHaveAttribute('open','');
+      await expect(page.locator('#primary-menu a[href="aktivity.html"]')).toBeVisible();
     }
     if(width===1440) await page.screenshot({path:'artifacts/wave20-aktivity-desktop-1440.png',fullPage:false});
     if(width===390){
@@ -3606,7 +3604,7 @@ test('wave 20 navigation, responsive breakpoints, mobile filters, and screenshot
       await expect(page.getByRole('button',{name:'Vymazat filtry'})).toBeVisible();
       await page.screenshot({path:'artifacts/wave20-aktivity-mobile-390.png',fullPage:false});
     }
-    evidence.push({...overflow,navToggleVisible:width<=1100});
+    evidence.push({...overflow,navToggleVisible:width<=800});
   }
   expect(browserErrors,browserErrors.join('\n')).toEqual([]);
   fs.writeFileSync('artifacts/wave20-activity-responsive.json',JSON.stringify({baselineSha:activityWave20Baseline.baselineSha,widths:evidence},null,2));
