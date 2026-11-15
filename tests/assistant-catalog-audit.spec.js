@@ -94,6 +94,7 @@ test('capture page inventories, screenshots, interactions, responsive states and
     await page.keyboard.press('Escape');
     info.mobileKeyboard.expandedAfterEscape=await toggle.getAttribute('aria-expanded');
     info.mobileKeyboard.focusRestored=await toggle.evaluate(e=>document.activeElement===e);
+    await page.setViewportSize({width:1440,height:1000});
     const details=page.locator('.site-nav-area[data-area="tools"] summary');
     await details.focus();
     await page.keyboard.press('Enter');
