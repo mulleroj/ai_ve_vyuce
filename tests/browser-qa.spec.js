@@ -3392,7 +3392,10 @@ test('wave 19 preserves all six generated catalogs and shared navigation at resp
     await page.goto(baseURL+'/'+file);
     await expect(page.locator('nav[aria-label="Hlavní navigace"]')).toHaveCount(1);
     await expect(page.locator('.site-nav-pilot > details.site-nav-area')).toHaveCount(6);
-    await expect(page.locator('.site-nav-pilot > details.site-nav-area[data-active="true"]')).toHaveAttribute('aria-current','page');
+    const activeArea=page.locator('.site-nav-pilot > details.site-nav-area[data-active="true"]');
+    await expect(activeArea).toHaveCount(1);
+    await expect(activeArea).toHaveAttribute('data-area',wave19Areas[file]);
+    await expect(activeArea.locator('summary')).toHaveAttribute('aria-current',/^(page|location)$/);
     const current=await page.locator('[data-card]').evaluateAll(cards=>cards.map(card=>({
       href:card.getAttribute('data-href'),category:card.getAttribute('data-category'),
       contentType:card.getAttribute('data-content-type')||'',directoryGroup:card.getAttribute('data-directory-group'),
