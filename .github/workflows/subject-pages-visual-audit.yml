@@ -77,6 +77,40 @@ jobs:
               > artifacts/subject-pages-visual-report.md
           fi
 
+      - name: Publish complete axe findings to the run summary
+        if: always()
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const file = 'artifacts/subject-pages-visual-evidence.json';
+          if (!fs.existsSync(file)) {
+            fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, '## Subject pages axe report\\n\\nEvidence JSON was not generated.\\n');
+            process.exit(0);
+          }
+          const evidence = JSON.parse(fs.readFileSync(file, 'utf8'));
+          const lines = ['## Subject pages axe report', '', 'Reference SHA: ' + evidence.baselineSha, '', '### Confirmed audit findings', '', ...(evidence.findings.length ? evidence.findings.map(x => '- ' + x) : ['- None']), '', '### WCAG violations (confirmed)', ''];
+          for (const page of evidence.accessibility) {
+            lines.push('#### ' + page.file, '');
+            for (const violation of page.violations) {
+              lines.push('- **' + violation.impact + ' — ' + violation.id + ':** ' + violation.help);
+              for (const node of violation.nodes) lines.push('  - Element: \`' + node.target.join(', ') + '\`' + (node.summary ? '; ' + node.summary.replace(/\\n/g, ' ') : ''));
+            }
+            if (!page.violations.length) lines.push('- No WCAG violations.');
+            lines.push('');
+          }
+          lines.push('### Needs manual review (axe incomplete)', '');
+          for (const page of evidence.accessibility) {
+            lines.push('#### ' + page.file, '');
+            for (const item of (page.incomplete || [])) {
+              lines.push('- **' + item.id + (item.impact ? ' — ' + item.impact : '') + ':** ' + item.help);
+              for (const node of item.nodes) lines.push('  - Element: \`' + node.target.join(', ') + '\`; checks: ' + [...node.summary, ...node.reasons].join(' | '));
+            }
+            if (!(page.incomplete || []).length) lines.push('- No incomplete axe checks.');
+            lines.push('');
+          }
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, lines.join('\\n') + '\\n');
+          NODE
+
       - name: Upload screenshots and reports
         if: always()
         uses: actions/upload-artifact@v4
