@@ -11,7 +11,8 @@ if (nav) {
 }
 
 /* ── Mobile menu ── */
-const mobileToggle = document.querySelector('.nav-mobile-toggle, .menu-toggle');
+const mobileToggle = document.querySelector('.nav-mobile-toggle')
+    || (document.body.classList.contains('site-navigation-enabled') ? null : document.querySelector('.menu-toggle'));
 const mobileMenu = document.querySelector('.mobile-menu, #primary-menu');
 if (mobileToggle && mobileMenu) {
     mobileToggle.addEventListener('click', () => {

@@ -61,7 +61,7 @@
   .site-navigation-enabled .site-nav-pilot { gap: 10px; }
   .site-navigation-enabled .site-nav-pilot .site-nav-area > summary { font-size: 13px; }
 }
-@media (max-width: 800px) {
+@media (max-width: 960px) {
   .site-navigation-enabled .site-nav { min-height: 68px; width: calc(100% - 32px); }
   .site-navigation-enabled .brand-symbol { width: 49px; height: 49px; }
   .site-navigation-enabled .brand-copy strong { font-size: 22px; }
@@ -129,7 +129,7 @@
 
 /* With scripting disabled, stack the header rows so the full menu keeps its
    available width instead of shrinking beside the brand. */
-@media (max-width: 800px) {
+@media (max-width: 960px) {
   html:not(.js) .site-navigation-enabled .site-nav {
     align-items: stretch;
     flex-direction: column;
