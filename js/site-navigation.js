@@ -56,7 +56,7 @@
         document.body.style.overflow = '';
         if (returnFocus) toggle.focus();
       };
-      const desktop = window.matchMedia('(min-width: 801px)');
+      const desktop = window.matchMedia('(min-width: 961px)');
       if (desktop.addEventListener) desktop.addEventListener('change', (event) => { if (event.matches) closeMenu(); });
       else if (desktop.addListener) desktop.addListener((event) => { if (event.matches) closeMenu(); });
       toggle.addEventListener('keydown', (event) => {
@@ -64,7 +64,9 @@
         event.preventDefault();
         closeMenu(true);
       });
-      if (!mainScriptLoaded) {
+      const mainScriptOwnsToggle = mainScriptLoaded
+        && document.querySelector('.nav-mobile-toggle, .menu-toggle') === toggle;
+      if (!mainScriptOwnsToggle) {
         toggle.addEventListener('click', () => {
           const opening = !menu.classList.contains('is-open');
           menu.classList.toggle('is-open', opening);

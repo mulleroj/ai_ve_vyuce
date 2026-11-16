@@ -8,6 +8,8 @@
     <meta name="description"
         content="Rozcestník článků, workflow a promptů pro Vibe Coding ve výuce. Vyberte si úvodní návod, praktický workflow nebo připravená zadání." />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/site-navigation.css" />
+    <link rel="stylesheet" href="css/stage7l-light-pages.css?v=20261115-8n" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
         .vc-article-grid {
@@ -144,8 +146,17 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
 </head>
 
-<body>
-    <nav class="nav" id="nav">
+<body class="wave23-vibe-articles" data-site-navigation-area="create">
+    <a class="skip-link" href="#obsah">Přejít na obsah</a>
+    <header class="site-header wave23-shared-header">
+        <nav class="site-nav wave23-shared-nav" aria-label="Hlavní navigace">
+            <a class="brand" href="index.html" aria-label="AI ve výuce – domů"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+            <div class="nav-content"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+                <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html" aria-current="location">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a>
+            </div></div>
+        </nav>
+    </header>
+    <nav class="nav" id="nav" aria-label="Rychlé odkazy">
         <div class="nav-inner">
             <a href="index.html" class="nav-logo">
                 <span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span>
@@ -168,11 +179,11 @@
                 <a href="vibe-coding.html" class="nav-link active">💻 Vibe Coding</a>
                 <a href="qr-kod.html" class="nav-link">🔳 QR kód</a>
             </div>
-            <button class="nav-mobile-toggle" aria-label="Otevřít menu"><span></span><span></span><span></span></button>
+            <button class="nav-mobile-toggle" type="button" aria-label="Otevřít navigaci" aria-expanded="false" aria-controls="vibe-clanky-mobile-menu"><span></span><span></span><span></span></button>
         </div>
     </nav>
 
-    <div class="mobile-menu">
+    <div class="mobile-menu" id="vibe-clanky-mobile-menu">
         <a href="index.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🏠 Domů</a>
         <a href="matematika.html" class="nav-link" style="font-size:1rem;padding:14px 16px">🔢 Matematika</a>
         <a href="cestina.html" class="nav-link" style="font-size:1rem;padding:14px 16px">📖 Český jazyk</a>
@@ -203,7 +214,7 @@
         </div>
     </section>
 
-    <main>
+    <main id="obsah" tabindex="-1">
         <section class="section" aria-labelledby="vibe-clanky">
             <div class="container">
                 <div class="section-header">
@@ -326,6 +337,8 @@
         </div>
     </footer>
 
+    <script src="js/site-navigation-data.js"></script>
+    <script src="js/site-navigation.js"></script>
     <script src="js/main.js"></script>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
 </body>

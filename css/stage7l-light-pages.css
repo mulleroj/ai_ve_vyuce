@@ -592,3 +592,6 @@ body.wave23-vibe-page .wave23-existing-header { position: relative; z-index: 100
   body.wave23-vibe-articles .wave23-shared-nav .site-nav-pilot .site-nav-area > summary { padding: .55rem .65rem; }
   body.wave23-vibe-articles .wave23-shared-nav .site-nav-pilot .site-nav-panel { position: static; box-shadow: none; }
 }
+body.stage7l-notebook-prompts .prompt-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr)); }
+body.stage7l-notebook-prompts .prompt-card,
+body.stage7l-notebook-prompts .prompt-body { min-width: 0; overflow-wrap: anywhere; }

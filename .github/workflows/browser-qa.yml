@@ -45,7 +45,7 @@ jobs:
       SUBJECT_PAGES_BASELINE_SHA: bfd39f3973d7139aeb4632ba7a74e94ab648f7bc
       ASSISTANT_PAGES_BASELINE_SHA: 2ddaab92e024cd4bafb638f9ea0e62835ef10d27
       WAVE23_BASELINE_SHA: ccbe7322895e31240e7a42133624d9ede4bf83bd
-      WAVE23_COMPLETED_GROUPS: A,B
+      WAVE23_COMPLETED_GROUPS: A,B,C
     steps:
       - name: Checkout the tested commit
         uses: actions/checkout@v4

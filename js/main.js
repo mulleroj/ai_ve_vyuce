@@ -37,7 +37,7 @@ if (mobileToggle && mobileMenu) {
         });
     });
 
-    const desktopNavigation = window.matchMedia('(min-width: 801px)');
+    const desktopNavigation = window.matchMedia('(min-width: 961px)');
     const closeMobileMenu = () => {
         mobileMenu.classList.remove('open', 'is-open');
         mobileMenu.querySelectorAll('details[open]').forEach(details => { details.open = false; });
