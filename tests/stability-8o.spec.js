@@ -175,13 +175,13 @@ test('8O target pages render at five widths with no document or element overflow
     });
     pageEvidence.axe = axeResult;
     evidence.axe.push({ file, ...axeResult });
-    expect(axeResult.violations, file + ' axe-core violations').toEqual([]);
     pageEvidence.localErrors = [...localErrors];
     pageEvidence.localFailures = [...failures];
     pageEvidence.consoleErrors = [...consoleErrors];
     pageEvidence.networkFailures = [...networkFailures];
     evidence.pages.push(pageEvidence);
   }
+  expect(evidence.axe.filter(page => page.violations.length > 0), 'axe-core violations across the three target pages').toEqual([]);
   expect(localErrors).toEqual([]);
   expect(failures).toEqual([]);
   expect(consoleErrors).toEqual([]);
