@@ -1,0 +1,940 @@
+{
+  "baselineSha": "342780b03feb07232852d50a089db290688f04c5",
+  "pages": {
+    "qr-kod.html": {
+      "file": "qr-kod.html",
+      "title": "QR kód z odkazu | AI ve Výuce",
+      "metadata": [
+        {
+          "name": "viewport",
+          "property": null,
+          "httpEquiv": null,
+          "content": "width=device-width, initial-scale=1.0"
+        },
+        {
+          "name": "description",
+          "property": null,
+          "httpEquiv": null,
+          "content": "Vytvořte QR kód z webové adresy během několika sekund a stáhněte ho jako obrázek PNG."
+        },
+        {
+          "name": null,
+          "property": "og:title",
+          "httpEquiv": null,
+          "content": "QR kód z odkazu | AI ve Výuce"
+        },
+        {
+          "name": null,
+          "property": "og:description",
+          "httpEquiv": null,
+          "content": "Vytvořte QR kód z webové adresy během několika sekund a stáhněte ho jako obrázek PNG."
+        },
+        {
+          "name": null,
+          "property": "og:url",
+          "httpEquiv": null,
+          "content": "https://ai-ve-vyuce.netlify.app/qr-kod"
+        }
+      ],
+      "canonical": [
+        "https://ai-ve-vyuce.netlify.app/qr-kod"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Vytvořte QR kód z odkazu"
+        },
+        {
+          "level": 2,
+          "text": "Zadejte adresu"
+        },
+        {
+          "level": 3,
+          "text": "Doplněk uprostřed QR kódu"
+        },
+        {
+          "level": 2,
+          "text": "Náhled QR kódu"
+        },
+        {
+          "level": 3,
+          "text": "Pro výuku"
+        },
+        {
+          "level": 3,
+          "text": "Připravené k tisku"
+        },
+        {
+          "level": 3,
+          "text": "Odkaz lze kdykoli změnit"
+        },
+        {
+          "level": 4,
+          "text": "🎯 Předměty"
+        },
+        {
+          "level": 4,
+          "text": "📚 Zdroje"
+        },
+        {
+          "level": 4,
+          "text": "🤖 AI Nástroje"
+        }
+      ],
+      "visibleText": "AI ve výuce INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE Začít s AI Připravit výuku Učit s AI Nástroje a asistenti Tvořit s AI Číst a objevovat 🔳 Praktický nástroj Vytvořte QR kód z odkazu Vložte adresu webu, vytvořte QR kód a stáhněte ho jako obrázek. Hodí se do pracovních listů, prezentací i třídních materiálů. ⚡ Rychle bez registrace 🔒 Soukromě v prohlížeči ⬇️ PNG ke stažení Zadejte adresu Použijte úplný odkaz nebo napište doménu bez protokolu. Nástroj bezpečně doplní https:// , pokud ho adresa neobsahuje. Adresa webu QR kód může vést na web, dokument, formulář nebo libovolnou stránku s adresou HTTP/HTTPS. Doplněk uprostřed QR kódu Odkaz zůstane zakódovaný. Volitelně můžete doprostřed vložit krátký nápis nebo obrázek/logo. Bez doplňku Nápis Obrázek Krátký nápis Obrázek nebo logo Použijte menší čtvercový obrázek PNG, JPG nebo WebP. 🔳 Vytvořit QR kód Vymazat Náhled QR kódu Po zadání adresy se zde zobrazí váš QR kód. ⬇️ Stáhnout PNG 🎓 Pro výuku Odkaz na pracovní list, prezentaci, video nebo aktivitu můžete umístit přímo do materiálů pro žáky. 🖨️ Připravené k tisku Stáhněte obrázek PNG a vložte ho do pracovního listu, plakátu nebo prezentace. 🔗 Odkaz lze kdykoli změnit Potřebujete jinou stránku? Vložte nový odkaz a vytvořte nový QR kód během okamžiku. AI ve Výuce Moderní průvodce světem AI pro české učitele. Aktivity, prompty a asistenti pro efektivnější výuku. Zdarma Bez registrace Pro učitele 🎯 Předměty 🔢 Matematika 📖 Český jazyk 🇬🇧 Anglický jazyk 🔬 Přírodní vědy 🏛️ Dějepis 📚 Zdroje ✨ Knihovna promptů 🎯 Všechny aktivity 🤖 AI Asistenti 🔳 QR kód z odkazu 🤖 AI Nástroje ChatGPT Google Gemini Claude (Anthropic) Gemini Notebook © 2026 AI ve Výuce · Vytvořeno s ❤️ pro české pedagogy Domů Prompty Asistenti",
+      "links": [
+        {
+          "href": "index.html",
+          "text": "AI ve výuce INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": "AI ve výuce – domů"
+        },
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "text": "Začít s AI",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "ai-navody.html",
+          "text": "Připravit výuku",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Učit s AI",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "asistenti.html",
+          "text": "Nástroje a asistenti",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "vibe-coding.html",
+          "text": "Tvořit s AI",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "ai.html",
+          "text": "Číst a objevovat",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "index.html",
+          "text": "AI ve Výuce",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "matematika.html",
+          "text": "🔢 Matematika",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "cestina.html",
+          "text": "📖 Český jazyk",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "anglictina.html",
+          "text": "🇬🇧 Anglický jazyk",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "prirodoveda.html",
+          "text": "🔬 Přírodní vědy",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "dejepis.html",
+          "text": "🏛️ Dějepis",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "prompty.html",
+          "text": "✨ Knihovna promptů",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "aktivity.html",
+          "text": "🎯 Všechny aktivity",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "asistenti.html",
+          "text": "🤖 AI Asistenti",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "qr-kod.html",
+          "text": "🔳 QR kód z odkazu",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "https://chatgpt.com",
+          "text": "ChatGPT",
+          "title": null,
+          "target": "_blank",
+          "rel": "noopener",
+          "ariaLabel": null
+        },
+        {
+          "href": "https://gemini.google.com",
+          "text": "Google Gemini",
+          "title": null,
+          "target": "_blank",
+          "rel": "noopener",
+          "ariaLabel": null
+        },
+        {
+          "href": "https://claude.ai",
+          "text": "Claude (Anthropic)",
+          "title": null,
+          "target": "_blank",
+          "rel": "noopener",
+          "ariaLabel": null
+        },
+        {
+          "href": "https://notebooklm.google.com",
+          "text": "Gemini Notebook",
+          "title": null,
+          "target": "_blank",
+          "rel": "noopener",
+          "ariaLabel": null
+        },
+        {
+          "href": "index.html",
+          "text": "Domů",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "prompty.html",
+          "text": "Prompty",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "asistenti.html",
+          "text": "Asistenti",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        }
+      ],
+      "images": [
+        {
+          "src": "images/ai-assistant-book-logo.png?v=robot-20261103",
+          "alt": "",
+          "title": null,
+          "width": "512",
+          "height": "491"
+        }
+      ],
+      "publicIds": [
+        "primary-menu",
+        "qr-form-title",
+        "qrForm",
+        "urlInput",
+        "qrTextOption",
+        "qrText",
+        "qrImageOption",
+        "qrImage",
+        "clearQr",
+        "qrError",
+        "qr-result-title",
+        "qrCode",
+        "qrStatus",
+        "downloadQr"
+      ],
+      "forms": [
+        {
+          "id": "qrForm",
+          "action": null,
+          "method": null,
+          "controls": [
+            {
+              "tag": "input",
+              "type": "text",
+              "id": "urlInput",
+              "name": "url"
+            },
+            {
+              "tag": "input",
+              "type": "radio",
+              "id": null,
+              "name": "overlayType"
+            },
+            {
+              "tag": "input",
+              "type": "radio",
+              "id": null,
+              "name": "overlayType"
+            },
+            {
+              "tag": "input",
+              "type": "radio",
+              "id": null,
+              "name": "overlayType"
+            },
+            {
+              "tag": "input",
+              "type": "text",
+              "id": "qrText",
+              "name": null
+            },
+            {
+              "tag": "input",
+              "type": "file",
+              "id": "qrImage",
+              "name": null
+            },
+            {
+              "tag": "button",
+              "type": "submit",
+              "id": null,
+              "name": null
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "id": "clearQr",
+              "name": null
+            }
+          ]
+        }
+      ],
+      "controls": [
+        {
+          "tag": "button",
+          "type": "button",
+          "id": null,
+          "name": null,
+          "value": null,
+          "placeholder": null,
+          "required": false,
+          "disabled": false,
+          "ariaLabel": "Otevřít navigaci",
+          "label": ""
+        },
+        {
+          "tag": "input",
+          "type": "text",
+          "id": "urlInput",
+          "name": "url",
+          "value": null,
+          "placeholder": "např. https://ai-vezuce.cz",
+          "required": true,
+          "disabled": false,
+          "ariaLabel": null,
+          "label": "Adresa webu"
+        },
+        {
+          "tag": "input",
+          "type": "radio",
+          "id": null,
+          "name": "overlayType",
+          "value": "none",
+          "placeholder": null,
+          "required": false,
+          "disabled": false,
+          "ariaLabel": null,
+          "label": "Bez doplňku"
+        },
+        {
+          "tag": "input",
+          "type": "radio",
+          "id": null,
+          "name": "overlayType",
+          "value": "text",
+          "placeholder": null,
+          "required": false,
+          "disabled": false,
+          "ariaLabel": null,
+          "label": "Nápis"
+        },
+        {
+          "tag": "input",
+          "type": "radio",
+          "id": null,
+          "name": "overlayType",
+          "value": "image",
+          "placeholder": null,
+          "required": false,
+          "disabled": false,
+          "ariaLabel": null,
+          "label": "Obrázek"
+        },
+        {
+          "tag": "input",
+          "type": "text",
+          "id": "qrText",
+          "name": null,
+          "value": null,
+          "placeholder": "např. OTEVŘÍT",
+          "required": false,
+          "disabled": false,
+          "ariaLabel": null,
+          "label": "Krátký nápis"
+        },
+        {
+          "tag": "input",
+          "type": "file",
+          "id": "qrImage",
+          "name": null,
+          "value": null,
+          "placeholder": null,
+          "required": false,
+          "disabled": false,
+          "ariaLabel": null,
+          "label": "Obrázek nebo logo"
+        },
+        {
+          "tag": "button",
+          "type": "submit",
+          "id": null,
+          "name": null,
+          "value": null,
+          "placeholder": null,
+          "required": false,
+          "disabled": false,
+          "ariaLabel": null,
+          "label": ""
+        },
+        {
+          "tag": "button",
+          "type": "button",
+          "id": "clearQr",
+          "name": null,
+          "value": null,
+          "placeholder": null,
+          "required": false,
+          "disabled": false,
+          "ariaLabel": null,
+          "label": ""
+        },
+        {
+          "tag": "button",
+          "type": "button",
+          "id": "downloadQr",
+          "name": null,
+          "value": null,
+          "placeholder": null,
+          "required": false,
+          "disabled": true,
+          "ariaLabel": null,
+          "label": ""
+        }
+      ],
+      "promptBlocks": [],
+      "scripts": [
+        {
+          "src": "js/main.js",
+          "inlineSha256": null
+        },
+        {
+          "src": "https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js",
+          "inlineSha256": null
+        },
+        {
+          "src": "js/qr-kod.js",
+          "inlineSha256": null
+        },
+        {
+          "src": "js/site-footer.js?v=20260927-human-loop",
+          "inlineSha256": null
+        },
+        {
+          "src": "js/site-navigation-data.js?v=20261108-7g",
+          "inlineSha256": null
+        },
+        {
+          "src": "js/site-navigation.js?v=20261108-7g",
+          "inlineSha256": null
+        }
+      ],
+      "qrGenerator": {
+        "scriptSha256": "7b86f9197e515676d4886f98b908397220675b135aac3d80b17bc293b442f90d",
+        "functionDeclarations": [
+          "setError",
+          "normalizeUrl",
+          "clearResult",
+          "getOverlayType",
+          "updateOverlayOptions",
+          "getQrImage",
+          "drawRoundedRect",
+          "drawTextOverlay",
+          "drawImageOverlay",
+          "getOverlay",
+          "renderQr",
+          "draw",
+          "downloadQrCode"
+        ]
+      }
+    },
+    "asistenti/math-cermat.html": {
+      "file": "asistenti/math-cermat.html",
+      "title": "MathCERMAT – AI ve Výuce | Detail asistenta",
+      "metadata": [
+        {
+          "name": "viewport",
+          "property": null,
+          "httpEquiv": null,
+          "content": "width=device-width, initial-scale=1.0"
+        },
+        {
+          "name": "description",
+          "property": null,
+          "httpEquiv": null,
+          "content": "Digitální asistent pro české středoškolské učitele. Generuje matematické úlohy dle standardů CERMAT a SCIO včetně řešení a analýzy chyb."
+        },
+        {
+          "name": null,
+          "property": "og:title",
+          "httpEquiv": null,
+          "content": "MathCERMAT – AI ve Výuce | Detail asistenta"
+        },
+        {
+          "name": null,
+          "property": "og:description",
+          "httpEquiv": null,
+          "content": "Digitální asistent pro české středoškolské učitele. Generuje matematické úlohy dle standardů CERMAT a SCIO včetně řešení a analýzy chyb."
+        },
+        {
+          "name": null,
+          "property": "og:url",
+          "httpEquiv": null,
+          "content": "https://ai-ve-vyuce.netlify.app/asistenti/math-cermat"
+        }
+      ],
+      "canonical": [
+        "https://ai-ve-vyuce.netlify.app/asistenti/math-cermat"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "MathCERMAT"
+        },
+        {
+          "level": 2,
+          "text": "Asistent pro tvorbu českých testových úloh z matematiky"
+        },
+        {
+          "level": 2,
+          "text": "Co asistent umí"
+        },
+        {
+          "level": 2,
+          "text": "Jak vypadá výstup"
+        },
+        {
+          "level": 2,
+          "text": "Jak asistenta používat"
+        },
+        {
+          "level": 2,
+          "text": "K čemu je asistent ideální"
+        },
+        {
+          "level": 2,
+          "text": "Co od něj nečekat"
+        },
+        {
+          "level": 2,
+          "text": "Prompt ke zkopírování"
+        },
+        {
+          "level": 3,
+          "text": "Přístup"
+        },
+        {
+          "level": 3,
+          "text": "Kategorie"
+        },
+        {
+          "level": 3,
+          "text": "Vhodné pro"
+        }
+      ],
+      "visibleText": "AI ve Výuce ✨ Prompty 🤖 AI Asistenti 🎯 Aktivity 🧠 AI pro školy 🔳 QR kód 🚀 Katalog Zpět do katalogu 📐 MathCERMAT ChatGPT · Claude · Gemini Pro Asistent pro tvorbu českých testových úloh z matematiky Tento asistent je určen učitelům středních škol, kteří chtějí rychle a kvalitně vytvářet matematické úlohy ve stylu českých přijímacích zkoušek a maturit (CERMAT, SCIO). Pomáhá generovat úlohy, které odpovídají české testovací logice – tedy důraz na porozumění zadání, vícekrokové řešení, práci s chybou a praktický kontext. Co asistent umí Asistent dokáže vytvářet: ✅ Uzavřené testové úlohy (4 možnosti A–D) ✅ Otevřené úlohy s výpočtem ✅ Vícekrokové slovní úlohy ✅ Úlohy zaměřené na argumentaci a zdůvodnění postupu ✅ Varianty jedné úlohy pro diferenciaci výuky ✅ Úlohy z praxe (finance v Kč, energie, doprava, technické obory, demografie…) Všechny matematické zápisy jsou přehledně formátované v LaTeXu. Jak vypadá výstup Každá úloha obsahuje: Zadání Řešení krok za krokem Typickou chybu žáka (didaktická poznámka) Označení obtížnosti (základní / střední / vyšší) U testových úloh jsou připraveny realistické distraktory odpovídající běžným chybám. Jak asistenta používat Na začátku stačí zadat: Téma (např. „kvadratické funkce\", „pravděpodobnost\", „Pythagorova věta\", „lineární rovnice\") Typ úlohy (testová / otevřená / kombinovaná) Obtížnost (základní / střední / vyšší) „Lineární rovnice, testová úloha, střední obtížnost.\" Asistent následně vygeneruje kompletní zadání včetně řešení a didaktické poznámky. Po každé úloze můžete požádat o: • další úlohu stejného typu • variantu na procvičení jiné dovednosti • zvýšení nebo snížení obtížnosti • úpravu pro konkrétní typ školy (např. technický obor) K čemu je asistent ideální • rychlá příprava na maturitu • tvorba cvičných testů • diferenciace ve třídě • příprava opravných či náhradních testů • tvorba domácích úkolů • procvičování konkrétních chyb Co od něj nečekat Asistent nenahrazuje výklad ani pedagogický úsudek učitele. Je to nástroj pro efektivní tvorbu kvalitních úloh, ne automatický hodnoticí systém. Prompt ke zkopírování Vložte tento text do svého oblíbeného LLM (ChatGPT, Claude nebo Gemini) jako systémovou instrukci: Kopírovat Role a persona Jste specialista na tvorbu testových úloh pro české střední školy. Pomáháte učitelům vytvářet úlohy ve stylu přijímacích zkoušek a maturit (CERMAT/SCIO) a zároveň podporujete rozvoj logického myšlení žáků. Vaším cílem je generovat kvalitní testové i otevřené matematické úlohy na základě tématu zadaného učitelem. ──────────────────────────────────────── Obsahové oblasti Úlohy mohou spadat do oblastí: 1. Algebra 2. Funkce 3. Geometrie (slovní popis) 4. Statistika a pravděpodobnost 5. Číselné výrazy a rovnice 6. Slovní úlohy z praxe (finance v Kč, energie, demografie, doprava, technické obory) ──────────────────────────────────────── Formát úloh Asistent musí být schopen generovat: – uzavřené úlohy (4 možnosti A–D) – otevřené úlohy s výpočtem – úlohy na argumentaci / zdůvodnění – komplexní vícekrokové příklady Všechny matematické zápisy musí být v LaTeXu. ──────────────────────────────────────── Struktura výstupu Každá úloha musí obsahovat: 1. Zadání 2. Řešení (krok za krokem) 3. Typickou chybu žáka (didaktická poznámka) 4. Označení obtížnosti (základní / střední / vyšší) ──────────────────────────────────────── Interakce Na začátku se zeptejte učitele: 1. Téma 2. Typ úlohy (testová / otevřená / kombinovaná) 3. Obtížnost Po vygenerování nabídněte: „Chcete další úlohu stejného typu, nebo variantu na procvičení jiné dovednosti?\" Přístup Univerzální prompt použitelný ve všech hlavních AI nástrojích. 🟢 ChatGPT 🟠 Claude 🔵 Gemini Kategorie Matematika CERMAT SCIO SŠ / Maturita Vhodné pro 📝 Přípravu na maturitu 📄 Tvorbu cvičných testů 🎯 Diferenciaci ve třídě 🏠 Domácí úkoly 🔄 Opravné a náhradní testy © 2026 AI ve Výuce · Pro české pedagogy",
+      "links": [
+        {
+          "href": "../index.html",
+          "text": "AI ve Výuce",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "../prompty.html",
+          "text": "✨ Prompty",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "../asistenti.html",
+          "text": "🤖 AI Asistenti",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "../aktivity.html",
+          "text": "🎯 Aktivity",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "../ai.html",
+          "text": "🧠 AI pro školy",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "../qr-kod.html",
+          "text": "🔳 QR kód",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "../katalog-asistenti.html",
+          "text": "🚀 Katalog",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "../katalog-asistenti.html",
+          "text": "Zpět do katalogu",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "https://chatgpt.com",
+          "text": "🟢 ChatGPT",
+          "title": null,
+          "target": "_blank",
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "https://claude.ai",
+          "text": "🟠 Claude",
+          "title": null,
+          "target": "_blank",
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "https://gemini.google.com",
+          "text": "🔵 Gemini",
+          "title": null,
+          "target": "_blank",
+          "rel": null,
+          "ariaLabel": null
+        }
+      ],
+      "images": [
+        {
+          "src": "../images/MathCERMAT.png",
+          "alt": "MathCERMAT – asistent pro matematické úlohy",
+          "title": null,
+          "width": null,
+          "height": null
+        }
+      ],
+      "publicIds": [
+        "nav",
+        "assistantPrompt"
+      ],
+      "forms": [],
+      "controls": [
+        {
+          "tag": "button",
+          "type": null,
+          "id": null,
+          "name": null,
+          "value": null,
+          "placeholder": null,
+          "required": false,
+          "disabled": false,
+          "ariaLabel": null,
+          "label": ""
+        }
+      ],
+      "promptBlocks": [
+        "Kopírovat Role a persona Jste specialista na tvorbu testových úloh pro české střední školy. Pomáháte učitelům vytvářet úlohy ve stylu přijímacích zkoušek a maturit (CERMAT/SCIO) a zároveň podporujete rozvoj logického myšlení žáků. Vaším cílem je generovat kvalitní testové i otevřené matematické úlohy na základě tématu zadaného učitelem. ──────────────────────────────────────── Obsahové oblasti Úlohy mohou spadat do oblastí: 1. Algebra 2. Funkce 3. Geometrie (slovní popis) 4. Statistika a pravděpodobnost 5. Číselné výrazy a rovnice 6. Slovní úlohy z praxe (finance v Kč, energie, demografie, doprava, technické obory) ──────────────────────────────────────── Formát úloh Asistent musí být schopen generovat: – uzavřené úlohy (4 možnosti A–D) – otevřené úlohy s výpočtem – úlohy na argumentaci / zdůvodnění – komplexní vícekrokové příklady Všechny matematické zápisy musí být v LaTeXu. ──────────────────────────────────────── Struktura výstupu Každá úloha musí obsahovat: 1. Zadání 2. Řešení (krok za krokem) 3. Typickou chybu žáka (didaktická poznámka) 4. Označení obtížnosti (základní / střední / vyšší) ──────────────────────────────────────── Interakce Na začátku se zeptejte učitele: 1. Téma 2. Typ úlohy (testová / otevřená / kombinovaná) 3. Obtížnost Po vygenerování nabídněte: „Chcete další úlohu stejného typu, nebo variantu na procvičení jiné dovednosti?\""
+      ],
+      "scripts": [
+        {
+          "src": "../js/main.js",
+          "inlineSha256": null
+        },
+        {
+          "src": null,
+          "inlineSha256": "8cb12740516d0cf1e5a46bd503f4bd39aefaf453e8939be2598c88e202b62047"
+        },
+        {
+          "src": "../js/site-footer.js?v=20260927-human-loop",
+          "inlineSha256": null
+        }
+      ]
+    },
+    "asistenti/metodicky-asistent-gemini.html": {
+      "file": "asistenti/metodicky-asistent-gemini.html",
+      "title": "Metodický asistent – AI ve Výuce | Detail asistenta",
+      "metadata": [
+        {
+          "name": "viewport",
+          "property": null,
+          "httpEquiv": null,
+          "content": "width=device-width, initial-scale=1.0"
+        },
+        {
+          "name": "description",
+          "property": null,
+          "httpEquiv": null,
+          "content": "Podrobnosti o AI asistentovi pro tvorbu metodických příprav a plánování hodin. Prompt ke zkopírování a návod k použití."
+        },
+        {
+          "name": null,
+          "property": "og:title",
+          "httpEquiv": null,
+          "content": "Metodický asistent – AI ve Výuce | Detail asistenta"
+        },
+        {
+          "name": null,
+          "property": "og:description",
+          "httpEquiv": null,
+          "content": "Podrobnosti o AI asistentovi pro tvorbu metodických příprav a plánování hodin. Prompt ke zkopírování a návod k použití."
+        },
+        {
+          "name": null,
+          "property": "og:url",
+          "httpEquiv": null,
+          "content": "https://ai-ve-vyuce.netlify.app/asistenti/metodicky-asistent-gemini"
+        }
+      ],
+      "canonical": [
+        "https://ai-ve-vyuce.netlify.app/asistenti/metodicky-asistent-gemini"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Metodický asistent (Gemini Gem)"
+        },
+        {
+          "level": 2,
+          "text": "O asistentovi"
+        },
+        {
+          "level": 2,
+          "text": "Prompt ke zkopírování"
+        },
+        {
+          "level": 2,
+          "text": "Jak asistenta používat"
+        },
+        {
+          "level": 3,
+          "text": "Přímý odkaz"
+        },
+        {
+          "level": 3,
+          "text": "Kategorie"
+        },
+        {
+          "level": 3,
+          "text": "Hodnocení"
+        }
+      ],
+      "visibleText": "AI ve Výuce ✨ Prompty 🤖 AI Asistenti 🎯 Aktivity 🧠 AI pro školy 🔳 QR kód 🧩 Katalog Zpět do katalogu 🎨 Metodický asistent (Gemini Gem) Platforma: Google Gemini O asistentovi Tento asistent je navržen tak, aby se stal vaším pravou rukou při plánování výuky. Rozumí struktuře českého vzdělávacího systému (RVP/ŠVP) a pomůže vám vytvářet hodiny, které jsou moderní, interaktivní a smysluplné. Prompt ke zkopírování Zkopírujte tento text a vložte jej jako instrukci při vytváření nového Gemu v Google Gemini: Jsi zkušený pedagogický mentor a metodik se zaměřením na moderní trendy ve vzdělávání a digitální gramotnost. Tvým úkolem je pomáhat učitelům s přípravou vyučovacích hodin. Při práci s učitelem: 1. Vždy se ptej na předmět, téma a cílovou skupinu (ročník). 2. Navrhuj vzdělávací cíle podle Bloomovy taxonomie. 3. Strukturuj hodinu do fází (evokace, uvědomění, reflexe). 4. Navrhuj konkrétní aktivity, které zapojují žáky a využívají aktivní učení. 5. Pokud je to možné, navrhni i využití AI nebo digitálních nástrojů přímo v hodině. Piš v přátelském, ale profesionálním tónu. Používej českou pedagogickou terminologii. Pokud něco nevíš, zeptej se na upřesnění. Kopírovat Jak asistenta používat 1. Otevřete Google Gemini Gems . 2. Klikněte na \"Vytvořit Gem\". 3. Do pole pro pokyny vložte zkopírovaný prompt výše. 4. Pojmenujte ho např. \"Metodický asistent\" a uložte. Přímý odkaz Otevřete Google Gemini Gems a podle promptu výše si asistenta vytvořte ve svém účtu: Otevřít Gemini Gems → Kategorie Metodika Příprava hodin RVP / ŠVP Hodnocení ★★★★★ Prověřeno v praxi učiteli na ZŠ i SŠ. © 2026 AI ve Výuce · Pro české pedagogy",
+      "links": [
+        {
+          "href": "../index.html",
+          "text": "AI ve Výuce",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "../prompty.html",
+          "text": "✨ Prompty",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "../asistenti.html",
+          "text": "🤖 AI Asistenti",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "../aktivity.html",
+          "text": "🎯 Aktivity",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "../ai.html",
+          "text": "🧠 AI pro školy",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "../qr-kod.html",
+          "text": "🔳 QR kód",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "../katalog-asistenti.html",
+          "text": "🧩 Katalog",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "../katalog-asistenti.html",
+          "text": "Zpět do katalogu",
+          "title": null,
+          "target": null,
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "https://gemini.google.com/gems",
+          "text": "Google Gemini Gems",
+          "title": null,
+          "target": "_blank",
+          "rel": null,
+          "ariaLabel": null
+        },
+        {
+          "href": "https://gemini.google.com/gems",
+          "text": "Otevřít Gemini Gems →",
+          "title": null,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "ariaLabel": null
+        }
+      ],
+      "images": [],
+      "publicIds": [
+        "nav",
+        "assistantPrompt"
+      ],
+      "forms": [],
+      "controls": [
+        {
+          "tag": "button",
+          "type": null,
+          "id": null,
+          "name": null,
+          "value": null,
+          "placeholder": null,
+          "required": false,
+          "disabled": false,
+          "ariaLabel": null,
+          "label": ""
+        }
+      ],
+      "promptBlocks": [
+        "Jsi zkušený pedagogický mentor a metodik se zaměřením na moderní trendy ve vzdělávání a digitální gramotnost. Tvým úkolem je pomáhat učitelům s přípravou vyučovacích hodin. Při práci s učitelem: 1. Vždy se ptej na předmět, téma a cílovou skupinu (ročník). 2. Navrhuj vzdělávací cíle podle Bloomovy taxonomie. 3. Strukturuj hodinu do fází (evokace, uvědomění, reflexe). 4. Navrhuj konkrétní aktivity, které zapojují žáky a využívají aktivní učení. 5. Pokud je to možné, navrhni i využití AI nebo digitálních nástrojů přímo v hodině. Piš v přátelském, ale profesionálním tónu. Používej českou pedagogickou terminologii. Pokud něco nevíš, zeptej se na upřesnění. Kopírovat"
+      ],
+      "scripts": [
+        {
+          "src": "../js/main.js",
+          "inlineSha256": null
+        },
+        {
+          "src": null,
+          "inlineSha256": "fc456ad130ba86a076aae1a324899f53020f3955c60283f45b2c7f85f7c06ffa"
+        },
+        {
+          "src": "../js/site-footer.js?v=20260927-human-loop",
+          "inlineSha256": null
+        }
+      ]
+    }
+  }
+}

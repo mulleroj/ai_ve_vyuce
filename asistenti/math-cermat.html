@@ -12,9 +12,17 @@
     <style>
         .assistant-detail-grid {
             display: grid;
-            grid-template-columns: 1fr 340px;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
             gap: 32px;
             margin-top: 40px;
+        }
+
+        .detail-main,
+        .detail-sidebar,
+        .sidebar-box,
+        .content-section,
+        .detail-title {
+            min-width: 0;
         }
 
         .detail-main {
@@ -64,7 +72,7 @@
 
         .detail-platform {
             font-size: 0.9rem;
-            color: var(--text-muted);
+            color: var(--text-secondary);
         }
 
         .detail-hero-img {
@@ -138,7 +146,16 @@
             line-height: 1.6;
             color: #d1d5db;
             white-space: pre-wrap;
+            overflow-wrap: anywhere;
             margin-top: 16px;
+        }
+
+        .nav-logo:focus-visible,
+        .nav-link:focus-visible,
+        .copy-btn:focus-visible,
+        .sidebar-box a:focus-visible {
+            outline: 3px solid #00d4a8;
+            outline-offset: 3px;
         }
 
         .copy-btn {
@@ -166,6 +183,14 @@
             display: flex;
             gap: 8px;
             flex-wrap: wrap;
+        }
+
+        .detail-sidebar .badge-blue {
+            color: #8ab4f8;
+        }
+
+        .detail-sidebar .badge-purple {
+            color: #d6a0ec;
         }
 
         .sidebar-title {
@@ -200,11 +225,32 @@
 
         @media(max-width:900px) {
             .assistant-detail-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: minmax(0, 1fr);
             }
 
             .detail-main {
                 padding: 24px;
+            }
+        }
+
+        @media(max-width:520px) {
+            .detail-header {
+                align-items: flex-start;
+                gap: 14px;
+            }
+
+            .detail-title {
+                flex: 1 1 0;
+            }
+
+            .detail-title h1 {
+                overflow-wrap: anywhere;
+                font-size: 1.55rem;
+            }
+
+            .prompt-container {
+                padding-right: 18px;
+                padding-left: 18px;
             }
         }
     </style>
@@ -242,7 +288,7 @@
 
     <div class="container" style="padding-top:120px; padding-bottom:80px;">
         <a href="../katalog-asistenti.html"
-            style="color:var(--text-muted); text-decoration:none; display:inline-flex; align-items:center; gap:8px; margin-bottom:24px; font-size:0.9rem">
+            style="color:var(--text-secondary); text-decoration:none; display:inline-flex; align-items:center; gap:8px; margin-bottom:24px; font-size:0.9rem">
             <i class="fa-solid fa-arrow-left"></i> Zpět do katalogu
         </a>
 
@@ -420,11 +466,11 @@
                         použitelný ve všech hlavních AI nástrojích.</p>
                     <div style="display:flex; flex-direction:column; gap:8px;">
                         <a href="https://chatgpt.com" target="_blank" class="btn btn-sm"
-                            style="border:1px solid #10a37f; color:#10a37f; text-align:center">🟢 ChatGPT</a>
+                            style="border:1px solid #47d3a1; color:#47d3a1; text-align:center">🟢 ChatGPT</a>
                         <a href="https://claude.ai" target="_blank" class="btn btn-sm"
-                            style="border:1px solid #de7c3c; color:#de7c3c; text-align:center">🟠 Claude</a>
+                            style="border:1px solid #f39b69; color:#f39b69; text-align:center">🟠 Claude</a>
                         <a href="https://gemini.google.com" target="_blank" class="btn btn-sm"
-                            style="border:1px solid #4285f4; color:#4285f4; text-align:center">🔵 Gemini</a>
+                            style="border:1px solid #8ab4f8; color:#8ab4f8; text-align:center">🔵 Gemini</a>
                     </div>
                 </div>
 

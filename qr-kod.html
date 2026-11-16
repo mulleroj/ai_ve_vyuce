@@ -60,7 +60,7 @@
     }
 
     .qr-input::placeholder {
-      color: var(--text-muted);
+      color: var(--text-secondary);
     }
 
     .qr-input:focus {
@@ -82,7 +82,7 @@
     }
 
     .qr-customize-hint {
-      color: var(--text-muted);
+      color: var(--text-secondary);
       font-size: 0.82rem;
       line-height: 1.55;
       margin-bottom: 14px;
@@ -115,6 +115,16 @@
 
     .qr-choice input {
       accent-color: var(--accent-mint);
+    }
+
+    .qr-choice input:focus-visible,
+    .qr-file-input:focus-visible,
+    .qr-form-actions .btn:focus-visible,
+    #downloadQr:focus-visible,
+    #clearQr:focus-visible,
+    .menu-toggle:focus-visible {
+      outline: 3px solid #00d4a8;
+      outline-offset: 3px;
     }
 
     .qr-option {
@@ -164,7 +174,7 @@
     }
 
     .qr-hint {
-      color: var(--text-muted);
+      color: var(--text-secondary);
       margin-top: 4px;
     }
 
@@ -202,7 +212,7 @@
 
     .qr-code-frame:empty::before {
       content: 'QR kód se zobrazí zde';
-      color: #6d7890;
+      color: #526070;
       font-size: 0.95rem;
     }
 
@@ -367,7 +377,7 @@
 
           <section class="qr-card qr-result-card" aria-labelledby="qr-result-title">
             <h2 id="qr-result-title" class="section-title">Náhled QR kódu</h2>
-            <div class="qr-code-frame" id="qrCode" aria-label="Náhled vygenerovaného QR kódu"></div>
+            <div class="qr-code-frame" id="qrCode"></div>
             <p class="qr-status" id="qrStatus" aria-live="polite">Po zadání adresy se zde zobrazí váš QR kód.</p>
             <button class="btn btn-primary" id="downloadQr" type="button" disabled>⬇️ Stáhnout PNG</button>
           </section>

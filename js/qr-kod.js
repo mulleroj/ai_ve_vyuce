@@ -30,6 +30,14 @@
     error.textContent = message;
   }
 
+  function setRenderError(message) {
+    container.replaceChildren();
+    qrSource.replaceChildren();
+    downloadButton.disabled = true;
+    status.textContent = 'QR kód nebyl vytvořen. Zadaná adresa zůstává ve formuláři.';
+    setError(message);
+  }
+
   function normalizeUrl(value) {
     const trimmed = value.trim();
     if (!trimmed) {
@@ -168,58 +176,83 @@
 
   function renderQr() {
     setError('');
+    container.replaceChildren();
+    qrSource.replaceChildren();
+    downloadButton.disabled = true;
+    status.textContent = 'QR kód se připravuje…';
     let overlay;
     try {
       overlay = getOverlay();
     } catch (overlayError) {
-      setError(overlayError.message);
+      setRenderError(overlayError.message);
       return;
     }
 
     if (typeof window.QRCode !== 'function') {
-      setError('Generátor QR kódu se právě nenačetl. Obnovte stránku a zkuste to znovu.');
+      setRenderError('Generátor QR kódu se právě nenačetl. Zkontrolujte připojení a zkuste to znovu.');
       return;
     }
 
     const size = 320;
-    qrSource.replaceChildren();
-    new window.QRCode(qrSource, {
-      text: generatedUrl,
-      width: size,
-      height: size,
-      colorDark: '#0a0f1e',
-      colorLight: '#ffffff',
-      correctLevel: window.QRCode.CorrectLevel.H
-    });
+    try {
+      new window.QRCode(qrSource, {
+        text: generatedUrl,
+        width: size,
+        height: size,
+        colorDark: '#0a0f1e',
+        colorLight: '#ffffff',
+        correctLevel: window.QRCode.CorrectLevel.H
+      });
 
-    const sourceImage = qrSource.querySelector('canvas, img');
-    if (!sourceImage) {
-      setError('QR kód se nepodařilo vykreslit. Zkuste to prosím znovu.');
-      return;
-    }
-
-    const output = document.createElement('canvas');
-    output.width = size;
-    output.height = size;
-    output.setAttribute('aria-label', 'Vygenerovaný QR kód');
-    const context = output.getContext('2d');
-    const draw = function () {
-      context.drawImage(sourceImage, 0, 0, size, size);
-      if (overlay.type === 'text') {
-        drawTextOverlay(context, size, overlay.value);
-      } else if (overlay.type === 'image') {
-        drawImageOverlay(context, size, overlay.value);
+      const sourceImage = qrSource.querySelector('canvas, img');
+      if (!sourceImage) {
+        setRenderError('QR kód se nepodařilo vykreslit. Zkuste to prosím znovu.');
+        return;
       }
-      container.replaceChildren(output);
-      downloadButton.disabled = false;
-      const overlayLabel = overlay.type === 'none' ? '' : overlay.type === 'text' ? ' s nápisem' : ' s obrázkem';
-      status.innerHTML = `<strong>QR kód${overlayLabel} je připraven.</strong><br>${generatedUrl}`;
-    };
 
-    if (sourceImage.tagName.toLowerCase() === 'img' && !sourceImage.complete) {
-      sourceImage.addEventListener('load', draw, { once: true });
-    } else {
-      draw();
+      const output = document.createElement('canvas');
+      output.width = size;
+      output.height = size;
+      output.setAttribute('role', 'img');
+      output.setAttribute('aria-label', 'Vygenerovaný QR kód');
+      const context = output.getContext('2d');
+      if (!context) {
+        setRenderError('Prohlížeč nemůže připravit obrázek QR kódu.');
+        return;
+      }
+
+      const draw = function () {
+        try {
+          context.drawImage(sourceImage, 0, 0, size, size);
+          if (overlay.type === 'text') {
+            drawTextOverlay(context, size, overlay.value);
+          } else if (overlay.type === 'image') {
+            drawImageOverlay(context, size, overlay.value);
+          }
+          container.replaceChildren(output);
+          downloadButton.disabled = false;
+          const overlayLabel = overlay.type === 'none' ? '' : overlay.type === 'text' ? ' s nápisem' : ' s obrázkem';
+          const success = document.createElement('strong');
+          success.textContent = `QR kód${overlayLabel} je připraven.`;
+          status.replaceChildren(success, document.createElement('br'), document.createTextNode(generatedUrl));
+          setError('');
+        } catch (drawError) {
+          setRenderError('QR kód se nepodařilo vykreslit. Zkuste to prosím znovu.');
+        }
+      };
+
+      if (sourceImage.tagName.toLowerCase() === 'img' && !sourceImage.complete) {
+        sourceImage.addEventListener('load', draw, { once: true });
+        sourceImage.addEventListener('error', function () {
+          setRenderError('QR kód se nepodařilo načíst. Zkuste to prosím znovu.');
+        }, { once: true });
+      } else if (sourceImage.tagName.toLowerCase() === 'img' && !sourceImage.naturalWidth) {
+        setRenderError('QR kód se nepodařilo načíst. Zkuste to prosím znovu.');
+      } else {
+        draw();
+      }
+    } catch (renderError) {
+      setRenderError('Generátor QR kódu selhal. Zadaná adresa zůstává ve formuláři.');
     }
   }
 
@@ -229,24 +262,22 @@
       return;
     }
 
-    let dataUrl = '';
-    if (image.tagName.toLowerCase() === 'canvas') {
-      dataUrl = image.toDataURL('image/png');
-    } else {
-      dataUrl = image.src;
-    }
+    try {
+      const dataUrl = image.toDataURL('image/png');
+      if (!dataUrl || !dataUrl.startsWith('data:image/png')) {
+        throw new Error('PNG data URL unavailable');
+      }
 
-    if (!dataUrl) {
+      const link = document.createElement('a');
+      link.href = dataUrl;
+      link.download = 'qr-kod.png';
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      setError('');
+    } catch (downloadError) {
       setError('QR kód se nepodařilo připravit ke stažení.');
-      return;
     }
-
-    const link = document.createElement('a');
-    link.href = dataUrl;
-    link.download = 'qr-kod.png';
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
   }
 
   form.addEventListener('submit', function (event) {

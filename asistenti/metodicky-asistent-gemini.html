@@ -12,9 +12,17 @@
     <style>
         .assistant-detail-grid {
             display: grid;
-            grid-template-columns: 1fr 340px;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
             gap: 32px;
             margin-top: 40px;
+        }
+
+        .detail-main,
+        .detail-sidebar,
+        .sidebar-box,
+        .content-section,
+        .detail-title {
+            min-width: 0;
         }
 
         .detail-main {
@@ -64,7 +72,7 @@
 
         .detail-platform {
             font-size: 0.9rem;
-            color: var(--text-muted);
+            color: var(--text-secondary);
         }
 
         .content-section {
@@ -96,7 +104,9 @@
             line-height: 1.5;
             color: #d1d5db;
             white-space: pre-wrap;
+            overflow-wrap: anywhere;
             margin-top: 16px;
+            padding-top: 48px;
         }
 
         .copy-btn {
@@ -120,10 +130,26 @@
             background: rgba(255, 255, 255, 0.2);
         }
 
+        .nav-logo:focus-visible,
+        .nav-link:focus-visible,
+        .copy-btn:focus-visible,
+        .sidebar-box a:focus-visible {
+            outline: 3px solid #8ab4f8;
+            outline-offset: 3px;
+        }
+
         .tag-list {
             display: flex;
             gap: 8px;
             flex-wrap: wrap;
+        }
+
+        .detail-sidebar .badge-blue {
+            color: #8ab4f8;
+        }
+
+        .detail-sidebar .badge-purple {
+            color: #d6a0ec;
         }
 
         .sidebar-title {
@@ -137,8 +163,35 @@
 
         @media(max-width:900px) {
             .assistant-detail-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: minmax(0, 1fr);
             }
+
+            .detail-main {
+                padding: 24px;
+            }
+        }
+
+        @media(max-width:520px) {
+            .detail-header {
+                align-items: flex-start;
+                gap: 14px;
+            }
+
+            .detail-title {
+                flex: 1 1 0;
+            }
+
+            .detail-title h1 {
+                overflow-wrap: anywhere;
+                font-size: 1.55rem;
+            }
+
+            .prompt-container {
+                padding-right: 18px;
+                padding-left: 18px;
+            }
+        }
+
         }
     </style>
     <link rel="canonical" href="https://ai-ve-vyuce.netlify.app/asistenti/metodicky-asistent-gemini" />
@@ -175,7 +228,7 @@
 
     <div class="container" style="padding-top:120px; padding-bottom:80px;">
         <a href="../katalog-asistenti.html"
-            style="color:var(--text-muted); text-decoration:none; display:inline-flex; align-items:center; gap:8px; margin-bottom:24px; font-size:0.9rem">
+            style="color:var(--text-secondary); text-decoration:none; display:inline-flex; align-items:center; gap:8px; margin-bottom:24px; font-size:0.9rem">
             <i class="fa-solid fa-arrow-left"></i> Zpět do katalogu
         </a>
 
@@ -250,7 +303,7 @@
                 <div class="sidebar-box">
                     <h3 class="sidebar-title"><i class="fa-solid fa-star"></i> Hodnocení</h3>
                     <div style="font-size:1.2rem; color:#f5a623">★★★★★</div>
-                    <p style="font-size:0.8rem; color:var(--text-muted); margin-top:8px;">Prověřeno v praxi učiteli na
+                    <p style="font-size:0.8rem; color:var(--text-secondary); margin-top:8px;">Prověřeno v praxi učiteli na
                         ZŠ i SŠ.</p>
                 </div>
             </aside>
