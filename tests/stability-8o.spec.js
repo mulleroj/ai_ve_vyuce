@@ -44,11 +44,21 @@ async function geometry(page) {
       const rect = element.getBoundingClientRect();
       const style = getComputedStyle(element);
       if (!rect.width || !rect.height || style.display === 'none' || style.visibility === 'hidden') return null;
-      if (rect.right <= innerWidth + 1 && rect.left >= -1) return null;
+      let left = rect.left;
+      let right = rect.right;
+      for (let ancestor = element.parentElement; ancestor && ancestor !== document.documentElement; ancestor = ancestor.parentElement) {
+        const ancestorStyle = getComputedStyle(ancestor);
+        if (['hidden', 'clip', 'auto', 'scroll'].includes(ancestorStyle.overflowX)) {
+          const clip = ancestor.getBoundingClientRect();
+          left = Math.max(left, clip.left);
+          right = Math.min(right, clip.right);
+        }
+      }
+      if (right <= innerWidth + 1 && left >= -1) return null;
       let selector = element.tagName.toLowerCase();
       if (element.id) selector += '#' + element.id;
       if (element.classList.length) selector += '.' + [...element.classList].slice(0, 3).join('.');
-      return { selector, left: Math.round(rect.left * 10) / 10, right: Math.round(rect.right * 10) / 10, width: Math.round(rect.width * 10) / 10, scrollWidth: element.scrollWidth, clientWidth: element.clientWidth, overflowX: style.overflowX };
+      return { selector, left: Math.round(left * 10) / 10, right: Math.round(right * 10) / 10, width: Math.round((right - left) * 10) / 10, scrollWidth: element.scrollWidth, clientWidth: element.clientWidth, overflowX: style.overflowX };
     }).filter(Boolean).sort((a, b) => Math.max(b.right - innerWidth, -b.left) - Math.max(a.right - innerWidth, -a.left)).slice(0, 12);
     return { viewportWidth: innerWidth, documentWidth: document.documentElement.scrollWidth, bodyWidth: document.body.scrollWidth, offenders };
   });
@@ -260,6 +270,9 @@ test('no-JavaScript QR and assistant pages remain navigable and fit the mobile v
   const page = await context.newPage();
   for (const file of PAGE_FILES) {
     await page.goto(BASE_URL + '/' + file, { waitUntil:'domcontentloaded' });
+    await page.waitForFunction(() => [...document.querySelectorAll('link[rel="stylesheet"]')]
+      .filter(link => new URL(link.href).origin === location.origin)
+      .every(link => Boolean(link.sheet)));
     const measured = await geometry(page);
     expect(measured.documentWidth, file + ' no-JS document overflow: ' + JSON.stringify(measured.offenders)).toBeLessThanOrEqual(321);
     expect(measured.bodyWidth, file + ' no-JS body overflow: ' + JSON.stringify(measured.offenders)).toBeLessThanOrEqual(321);
@@ -307,3 +320,4 @@ test('shared navigation still works across seven representative pages', async ({
   }
   evidence.sharedNavigation = checks;
 });
+
