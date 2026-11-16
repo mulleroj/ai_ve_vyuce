@@ -7,6 +7,7 @@ on:
     branches:
       - codex/ai-ve-vyuce-8n-zaverecna-migrace-vlna-23
       - codex/ai-ve-vyuce-8o-technicka-stabilizace
+      - codex/ai-ve-vyuce-8p2-seo-finalizace
   workflow_dispatch:
     inputs:
       tested_sha:
@@ -244,7 +245,7 @@ jobs:
             fi
             sleep 1
           done
-          PLAYWRIGHT_JSON_OUTPUT_NAME=test-results/report.json npx playwright test tests/browser-qa.spec.js tests/subject-pages-a11y.spec.js tests/assistant-pages-wave22.spec.js tests/wave23-pages.spec.js tests/stability-8o.spec.js --reporter=list,json
+          PLAYWRIGHT_JSON_OUTPUT_NAME=test-results/report.json npx playwright test tests/browser-qa.spec.js tests/subject-pages-a11y.spec.js tests/assistant-pages-wave22.spec.js tests/wave23-pages.spec.js tests/stability-8o.spec.js tests/seo-preflight-8p2.spec.js --reporter=list,json
 
       - name: Publish test summary
         if: always()
