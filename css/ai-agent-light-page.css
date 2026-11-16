@@ -206,7 +206,8 @@ body.ai-agent-light-page.light-background-pilot.workflow-page .workflow-related-
   background: #e6f1ed;
   color: #07584f;
 }
-body.ai-agent-light-page.light-background-pilot.workflow-page .copilot-article-meta {
+body.ai-agent-light-page.light-background-pilot.workflow-page .copilot-article-meta,
+body.ai-agent-light-page.light-background-pilot.workflow-page .perplexity-article-meta {
   color: #07584f;
 }
 body.ai-agent-light-page.light-background-pilot.workflow-page .workflow-related-heading h2,
@@ -236,15 +237,15 @@ body.ai-agent-light-page.light-background-pilot.workflow-page :focus-visible {
   body.ai-agent-light-page.light-background-pilot.workflow-page .workflow-stage { grid-template-columns: 44px minmax(0, 1fr); gap: 12px; }
 }
 @media (max-width: 960px) {
-  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled .site-nav {
+  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled[data-site-navigation-area="prepare"] .site-nav {
     min-height: 68px;
     width: calc(100% - 32px);
   }
-  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled .brand-symbol {
+  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled[data-site-navigation-area="prepare"] .brand-symbol {
     width: 49px;
     height: 49px;
   }
-  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled .menu-toggle {
+  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled[data-site-navigation-area="prepare"] .menu-toggle {
     display: flex;
     width: 43px;
     height: 43px;
@@ -257,7 +258,7 @@ body.ai-agent-light-page.light-background-pilot.workflow-page :focus-visible {
     border-radius: 12px;
     cursor: pointer;
   }
-  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled .nav-content {
+  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled[data-site-navigation-area="prepare"] .nav-content {
     position: absolute;
     z-index: 41;
     top: 68px;
@@ -271,31 +272,60 @@ body.ai-agent-light-page.light-background-pilot.workflow-page :focus-visible {
     border-bottom: 1px solid #e4e9e5;
     box-shadow: 0 12px 18px #132b1b13;
   }
-  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled .nav-content.is-open {
+  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled[data-site-navigation-area="prepare"] .nav-content.is-open {
     display: flex;
   }
-  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled .nav-content .site-nav-pilot {
+  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled[data-site-navigation-area="prepare"] .nav-content .site-nav-pilot {
     align-items: stretch;
     flex-direction: column;
     gap: 0;
   }
-  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled .site-nav-pilot .site-nav-area {
+  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled[data-site-navigation-area="prepare"] .site-nav-pilot .site-nav-area {
     width: 100%;
   }
-  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled .site-nav-pilot .site-nav-area > summary {
+  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled[data-site-navigation-area="prepare"] .site-nav-pilot .site-nav-area > summary {
     padding: .65rem;
     font-size: 15px;
   }
-  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled .site-nav-pilot > a {
+  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled[data-site-navigation-area="prepare"] .site-nav-pilot > a {
     padding: .65rem;
     font-size: 15px;
     white-space: normal;
   }
-  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled .site-nav-pilot .site-nav-panel {
+  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled[data-site-navigation-area="prepare"] .site-nav-pilot .site-nav-panel {
     position: static;
     min-width: 0;
     margin: 0 0 .45rem;
     border-radius: .45rem;
+    box-shadow: none;
+  }
+}
+@media (max-width: 920px) {
+  body.ai-agent-light-page.light-background-pilot.workflow-page[data-site-navigation-area="prepare"] .copilot-articles-grid .workflow-related-card {
+    grid-template-columns: 40px minmax(0, 1fr);
+    row-gap: 8px;
+  }
+  body.ai-agent-light-page.light-background-pilot.workflow-page[data-site-navigation-area="prepare"] .copilot-articles-grid .workflow-card-number {
+    grid-row: 1 / span 4;
+    align-self: start;
+  }
+  body.ai-agent-light-page.light-background-pilot.workflow-page[data-site-navigation-area="prepare"] .copilot-articles-grid .copilot-article-meta,
+  body.ai-agent-light-page.light-background-pilot.workflow-page[data-site-navigation-area="prepare"] .copilot-articles-grid .workflow-related-card h3,
+  body.ai-agent-light-page.light-background-pilot.workflow-page[data-site-navigation-area="prepare"] .copilot-articles-grid .workflow-related-card p,
+  body.ai-agent-light-page.light-background-pilot.workflow-page[data-site-navigation-area="prepare"] .copilot-articles-grid .copilot-article-link {
+    grid-column: 2;
+  }
+}
+@media (max-width: 960px) {
+  html:not(.js) body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled[data-site-navigation-area="prepare"] .site-nav {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  html:not(.js) body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled[data-site-navigation-area="prepare"] .nav-content {
+    position: static;
+    display: flex;
+    width: 100%;
+    padding: 10px 16px;
     box-shadow: none;
   }
 }

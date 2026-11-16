@@ -168,7 +168,7 @@ test('no-JavaScript mode keeps prompt text, page content and navigation reachabl
   const evidence=[];
   const failures=[];
   for (const file of PAGE_FILES) {
-    await page.goto(`${BASE_URL}/${file}`,{waitUntil:'domcontentloaded'});
+    await page.goto(`${BASE_URL}/${file}`,{waitUntil:'load'});
     const info=await page.evaluate(()=>({document:document.documentElement.scrollWidth,body:document.body.scrollWidth,mains:document.querySelectorAll('main').length,prompts:document.querySelectorAll('.prompt-card').length,headerLinks:[...document.querySelectorAll('.site-header a, nav[aria-label] a')].map(a=>a.getAttribute('href')),localMenuVisible:['wave23-vibe-articles','wave23-vibe-page'].some(c=>document.body.classList.contains(c))&&getComputedStyle(document.querySelector('.mobile-menu')).display!=='none',overflowing:[...document.querySelectorAll('body *')].map(el=>({tag:el.tagName,cls:typeof el.className==='string'?el.className:'',id:el.id,right:Math.round(el.getBoundingClientRect().right),width:Math.round(el.getBoundingClientRect().width),text:(el.innerText||'').slice(0,70)})).filter(el=>el.right>innerWidth+1).sort((a,b)=>b.right-a.right).slice(0,12)}));
     evidence.push({file, ...info, migrated:migratedPages.includes(file)});
     if (migratedPages.includes(file)) {
@@ -196,5 +196,6 @@ test('wave 23 desktop and mobile screenshots are captured for all target pages',
   }
   fs.writeFileSync('artifacts/wave23/screenshots.json',JSON.stringify(shots,null,2)+'\n');
 });
+
 
 
