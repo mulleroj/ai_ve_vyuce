@@ -45,7 +45,6 @@
     const header = nav.closest('.site-navigation-enabled .site-header');
     const toggle = header && header.querySelector('.menu-toggle');
     const menu = toggle && toggle.closest('.site-nav')?.querySelector('#primary-menu');
-    const mainScriptLoaded = !!document.querySelector('script[src*="js/main.js"]');
     if (toggle && menu) {
       const closeMenu = (returnFocus = false) => {
         menu.classList.remove('is-open');
@@ -64,15 +63,13 @@
         event.preventDefault();
         closeMenu(true);
       });
-      if (!mainScriptLoaded) {
-        toggle.addEventListener('click', () => {
-          const opening = !menu.classList.contains('is-open');
-          menu.classList.toggle('is-open', opening);
-          toggle.setAttribute('aria-expanded', String(opening));
-          toggle.setAttribute('aria-label', opening ? 'Zavřít navigaci' : 'Otevřít navigaci');
-          document.body.style.overflow = opening ? 'hidden' : '';
-        });
-      }
+      toggle.addEventListener('click', () => {
+        const opening = !menu.classList.contains('is-open');
+        menu.classList.toggle('is-open', opening);
+        toggle.setAttribute('aria-expanded', String(opening));
+        toggle.setAttribute('aria-label', opening ? 'Zavřít navigaci' : 'Otevřít navigaci');
+        document.body.style.overflow = opening ? 'hidden' : '';
+      });
       menu.addEventListener('click', (event) => {
         if (event.target.closest('a')) closeMenu();
       });
@@ -114,3 +111,4 @@
   });
 
 })();
+

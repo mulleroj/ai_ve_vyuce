@@ -20,10 +20,23 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=robot-20261103" />
   <link rel="shortcut icon" href="/favicon.ico?v=robot-20261103" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=robot-20261103" />
+    <link rel="stylesheet" href="css/light-background-pilot.css?v=20261115-8n" />
+    <link rel="stylesheet" href="css/ai-agent-light-page.css?v=20261115-8n" />
+    <link rel="stylesheet" href="css/site-navigation.css?v=20261115-8n" />
 </head>
 
-<body class="workflow-page">
-    <header class="workflow-shell">
+<body class="workflow-page light-background-pilot ai-agent-light-page site-navigation-enabled" data-site-navigation-area="prepare">
+<header class="site-header">
+  <a class="skip-link" href="#obsah">Přejít na obsah</a>
+  <nav class="site-nav" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html"><img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="" /><span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Otevřít navigaci"><span></span><span></span><span></span><span class="visually-hidden">Otevřít navigaci</span></button>
+    <div class="nav-content" id="primary-menu"><div class="site-nav-pilot" data-site-navigation role="group" aria-label="Oblasti webu">
+      <a href="ai-navod-chatgpt-zacatek-bezpecne.html">Začít s AI</a><a href="ai-navody.html">Připravit výuku</a><a href="aktivity.html">Učit s AI</a><a href="asistenti.html">Nástroje a asistenti</a><a href="vibe-coding.html">Tvořit s AI</a><a href="ai.html">Číst a objevovat</a>
+    </div></div>
+  </nav>
+</header>
+    <div class="workflow-shell">
         <div class="workflow-topbar">
             <a href="index.html" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true"></span>AI ve <span>Výuce</span></a>
             <a class="workflow-back" href="asistenti.html">← AI Asistenti</a>
@@ -43,9 +56,8 @@
                 <a class="workflow-launch-link" href="https://copilot.microsoft.com" target="_blank" rel="noopener noreferrer">Otevřít skutečný Microsoft Copilot →</a>
             </div>
         </div>
-    </header>
-
-    <main class="workflow-main">
+    </div>
+    <main id="obsah" class="workflow-main" tabindex="-1">
         <section class="workflow-related" aria-labelledby="copilot-articles-heading">
             <div class="workflow-related-heading">
                 <h2 id="copilot-articles-heading">Články a návody pro Microsoft Copilot</h2>
@@ -118,6 +130,8 @@
     </main>
 
     <footer class="workflow-footer">© 2026 AI ve Výuce · <a href="asistenti.html">Zpět na AI Asistenti</a></footer>
+    <script src="js/site-navigation-data.js?v=20261115-8n"></script>
+    <script src="js/site-navigation.js?v=20261115-8n"></script>
     <script src="js/site-footer.js?v=20260927-human-loop"></script>
 </body>
 

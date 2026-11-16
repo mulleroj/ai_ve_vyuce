@@ -11,7 +11,9 @@ if (nav) {
 }
 
 /* ── Mobile menu ── */
-const mobileToggle = document.querySelector('.nav-mobile-toggle, .menu-toggle');
+const legacyMobileToggle = document.querySelector('.nav-mobile-toggle');
+const sharedMobileToggle = document.querySelector('.site-navigation-enabled .menu-toggle');
+const mobileToggle = legacyMobileToggle || (sharedMobileToggle ? null : document.querySelector('.menu-toggle'));
 const mobileMenu = document.querySelector('.mobile-menu, #primary-menu');
 if (mobileToggle && mobileMenu) {
     mobileToggle.addEventListener('click', () => {
@@ -525,3 +527,4 @@ if ('IntersectionObserver' in window) {
         if (!isNaN(target)) el.textContent = target + (el.dataset.suffix || '');
     });
 }
+

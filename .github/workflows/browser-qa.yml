@@ -3,6 +3,8 @@ name: Browser QA – article contents navigation
 on:
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
+  push:
+    branches: [codex/ai-ve-vyuce-8n-zaverecna-migrace-vlna-23]
   workflow_dispatch:
     inputs:
       tested_sha:
@@ -19,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
-      TESTED_SHA: ${{ github.event_name == 'workflow_dispatch' && inputs.tested_sha || github.event.pull_request.head.sha }}
+      TESTED_SHA: ${{ github.event_name == 'workflow_dispatch' && inputs.tested_sha || github.event.pull_request.head.sha || github.sha }}
       BASELINE_SHA: 1abd3fc39df4650b402f5f6d31f6a2148f7a769f
       WAVE2_BASELINE_SHA: 6ae5e726d79b6aea3c87845193b9e0caa0f3ed19
       WAVE3_BASELINE_SHA: 258e96761fb8d327d06ecea9b283cc1bd9f3ea10
@@ -42,6 +44,8 @@ jobs:
       WAVE20_BASELINE_SHA: 9efd3e51b4a5d8a83edf7279bed526c8377d88b0
       SUBJECT_PAGES_BASELINE_SHA: bfd39f3973d7139aeb4632ba7a74e94ab648f7bc
       ASSISTANT_PAGES_BASELINE_SHA: 2ddaab92e024cd4bafb638f9ea0e62835ef10d27
+      WAVE23_BASELINE_SHA: ccbe7322895e31240e7a42133624d9ede4bf83bd
+      WAVE23_COMPLETED_GROUPS: A,B,C
     steps:
       - name: Checkout the tested commit
         uses: actions/checkout@v4
@@ -190,6 +194,10 @@ jobs:
           cmp tests/fixtures/assistant-pages-wave22-baseline.json "$RUNNER_TEMP/assistant-pages-wave22-baseline.json"
           node -e "const f=require('./tests/fixtures/assistant-pages-wave22-baseline.json'); if(f.baselineSha!==process.env.ASSISTANT_PAGES_BASELINE_SHA || f.pages['asistenti.html'].cards.length!==9 || f.pages['katalog-asistenti.html'].cards.length!==2) process.exit(1)"
           echo "ASSISTANT_WAVE22_BASELINE_DIR=$baseline_dir" >> "$GITHUB_ENV"
+          git fetch --no-tags --depth=1 origin "$WAVE23_BASELINE_SHA"
+          node scripts/wave23-page-baseline.js "$WAVE23_BASELINE_SHA" "$RUNNER_TEMP/pages-wave23-baseline.json"
+          cmp tests/fixtures/pages-wave23-baseline.json "$RUNNER_TEMP/pages-wave23-baseline.json"
+          node -e "const f=require('./tests/fixtures/pages-wave23-baseline.json'); const p=f.pages; if(f.baselineSha!==process.env.WAVE23_BASELINE_SHA || Object.keys(p).length!==8 || p['prompty.html'].prompts.length!==145 || p['vibe-coding-prompty.html'].prompts.length!==11 || p['gemini-notebook-prompty.html'].prompts.length!==28) process.exit(1)"
 
       - name: Install isolated browser test runner
         run: |
@@ -198,7 +206,7 @@ jobs:
 
       - name: Run tests against a local HTTP server
         run: |
-          mkdir -p artifacts test-results
+          mkdir -p artifacts artifacts/wave23 test-results
           cp "$RUNNER_TEMP/guide-generator-check.json" artifacts/guide-generator-check.json
           cp "$RUNNER_TEMP/magazine-generator-check.json" artifacts/magazine-generator-check.json
           cp "$RUNNER_TEMP/magazine-generator-negative-tests.json" artifacts/magazine-generator-negative-tests.json
@@ -207,6 +215,7 @@ jobs:
           cp tests/fixtures/catalog-pages-wave19-baseline.json artifacts/catalog-pages-wave19-baseline.json
           cp tests/fixtures/activity-library-wave20-baseline.json artifacts/activity-library-wave20-baseline.json
           cp tests/fixtures/assistant-pages-wave22-baseline.json artifacts/assistant-pages-wave22-baseline.json
+          cp tests/fixtures/pages-wave23-baseline.json artifacts/wave23/pages-wave23-baseline.json
           printf '%s\n' "$TESTED_SHA" > artifacts/tested-sha.txt
           python3 -m http.server 4173 --bind 127.0.0.1 > test-results/http-server.log 2>&1 &
           server_pid=$!
@@ -217,7 +226,7 @@ jobs:
             fi
             sleep 1
           done
-          PLAYWRIGHT_JSON_OUTPUT_NAME=test-results/report.json npx playwright test tests/browser-qa.spec.js tests/subject-pages-a11y.spec.js tests/assistant-pages-wave22.spec.js --reporter=list,json
+          PLAYWRIGHT_JSON_OUTPUT_NAME=test-results/report.json npx playwright test tests/browser-qa.spec.js tests/subject-pages-a11y.spec.js tests/assistant-pages-wave22.spec.js tests/wave23-pages.spec.js --reporter=list,json
 
       - name: Publish test summary
         if: always()
