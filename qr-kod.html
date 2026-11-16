@@ -13,11 +13,34 @@
       padding-bottom: 44px;
     }
 
+    body.site-navigation-enabled.qr-generator-page .brand-symbol {
+      width: 52px;
+      height: 52px;
+    }
+
+    .qr-generator-page .footer-brand p,
+    .qr-generator-page .footer-links a,
+    .qr-generator-page .footer-bottom,
+    .qr-generator-page .footer-bottom-links a {
+      color: var(--text-secondary);
+    }
+
+    .qr-generator-page .badge-blue {
+      color: #80b7ff;
+    }
+
     .qr-page-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
       gap: 24px;
       align-items: stretch;
+      min-width: 0;
+    }
+
+    .qr-page-grid > .qr-card,
+    .qr-form,
+    .qr-customize {
+      min-width: 0;
     }
 
     .qr-card {
@@ -49,6 +72,8 @@
 
     .qr-input {
       width: 100%;
+      min-width: 0;
+      max-width: min(100%, calc(100vw - 70px));
       border: 1px solid var(--border-hover);
       border-radius: var(--radius-md);
       padding: 15px 17px;
@@ -60,7 +85,7 @@
     }
 
     .qr-input::placeholder {
-      color: var(--text-muted);
+      color: var(--text-secondary);
     }
 
     .qr-input:focus {
@@ -82,7 +107,7 @@
     }
 
     .qr-customize-hint {
-      color: var(--text-muted);
+      color: var(--text-secondary);
       font-size: 0.82rem;
       line-height: 1.55;
       margin-bottom: 14px;
@@ -115,6 +140,16 @@
 
     .qr-choice input {
       accent-color: var(--accent-mint);
+    }
+
+    .qr-choice input:focus-visible,
+    .qr-file-input:focus-visible,
+    .qr-form-actions .btn:focus-visible,
+    #downloadQr:focus-visible,
+    #clearQr:focus-visible,
+    .menu-toggle:focus-visible {
+      outline: 3px solid #00d4a8;
+      outline-offset: 3px;
     }
 
     .qr-option {
@@ -164,7 +199,7 @@
     }
 
     .qr-hint {
-      color: var(--text-muted);
+      color: var(--text-secondary);
       margin-top: 4px;
     }
 
@@ -202,7 +237,7 @@
 
     .qr-code-frame:empty::before {
       content: 'QR kód se zobrazí zde';
-      color: #6d7890;
+      color: #526070;
       font-size: 0.95rem;
     }
 
@@ -255,15 +290,23 @@
     }
 
     @media (max-width: 800px) {
-      .qr-page-grid,
+      .qr-page-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
       .qr-feature-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
       }
     }
 
     @media (max-width: 450px) {
+      body.site-navigation-enabled.qr-generator-page .brand-symbol {
+        width: 44px;
+        height: 44px;
+      }
+
       .qr-card {
-        padding: 22px;
+        padding: 18px;
       }
 
       .qr-code-frame {
@@ -290,10 +333,10 @@
   <link rel="stylesheet" href="css/site-navigation.css?v=20261108-7g" />
 </head>
 
-<body class="site-navigation-enabled">
+<body class="site-navigation-enabled qr-generator-page">
   <header class="site-header">
       <nav class="site-nav" aria-label="Hlavní navigace">
-        <a class="brand" href="index.html" aria-label="AI ve výuce – domů">
+        <a class="brand" href="index.html">
           <img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="">
           <span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span>
         </a>
@@ -367,7 +410,7 @@
 
           <section class="qr-card qr-result-card" aria-labelledby="qr-result-title">
             <h2 id="qr-result-title" class="section-title">Náhled QR kódu</h2>
-            <div class="qr-code-frame" id="qrCode" aria-label="Náhled vygenerovaného QR kódu"></div>
+            <div class="qr-code-frame" id="qrCode"></div>
             <p class="qr-status" id="qrStatus" aria-live="polite">Po zadání adresy se zde zobrazí váš QR kód.</p>
             <button class="btn btn-primary" id="downloadQr" type="button" disabled>⬇️ Stáhnout PNG</button>
           </section>
@@ -458,3 +501,4 @@
 </body>
 
 </html>
+
