@@ -75,6 +75,10 @@ test('8O baseline retains all three pages, metadata, links, prompts, forms, IDs,
     if (file === 'qr-kod.html') {
       expected.qrGenerator.scriptSha256 = null;
       actual.qrGenerator.functionDeclarations = actual.qrGenerator.functionDeclarations.filter(name => expected.qrGenerator.functionDeclarations.includes(name));
+      const brandLink = actual.links.find(link => link.href === 'index.html' && link.ariaLabel);
+      const baselineBrandLink = expected.links.find(link => link.href === 'index.html' && link.ariaLabel);
+      expect(brandLink?.ariaLabel).toBe('AI ve výuce · Inspirace, nástroje, praxe pro učitele');
+      if (brandLink && baselineBrandLink) brandLink.ariaLabel = baselineBrandLink.ariaLabel;
     }
     expect(actual, file + ' semantic baseline').toEqual(expected);
     for (const link of baseline.pages[file].links) {
