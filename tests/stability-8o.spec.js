@@ -64,6 +64,16 @@ async function geometry(page) {
   });
 }
 
+async function settleVisualState(page) {
+  await page.evaluate(() => {
+    document.querySelectorAll('.reveal').forEach(element => element.classList.add('visible'));
+    document.getAnimations({ subtree: true }).forEach(animation => {
+      try { animation.finish(); } catch {}
+    });
+  });
+  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+}
+
 test('8O baseline retains all three pages, metadata, links, prompts, forms, IDs, images and scripts', async () => {
   expect(baseline.baselineSha).toBe(BASELINE_SHA);
   expect(Object.keys(baseline.pages)).toEqual(PAGE_FILES);
@@ -117,6 +127,7 @@ test('8O target pages render at five widths with no document or element overflow
       await page.setViewportSize({ width, height: width <= 390 ? 860 : 1000 });
       await page.goto(BASE_URL + '/' + file, { waitUntil: 'domcontentloaded' });
       await page.evaluate(() => document.fonts.ready);
+      await settleVisualState(page);
       const measured = await geometry(page);
       pageEvidence.widths.push(measured);
       expect(measured.documentWidth, file + ' document overflow at ' + width + 'px: ' + JSON.stringify(measured.offenders)).toBeLessThanOrEqual(width + 1);
@@ -165,6 +176,7 @@ test('8O target pages render at five widths with no document or element overflow
       expect(normalizeText(copiedPrompt), file + ' keyboard copied prompt').toBe(normalizeText(expectedPrompt));
     }
 
+    await settleVisualState(page);
     await page.addScriptTag({ path: require.resolve('axe-core') });
     const axeResult = await page.evaluate(async () => {
       const result = await axe.run(document);
