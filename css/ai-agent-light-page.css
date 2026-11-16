@@ -202,6 +202,13 @@ body.ai-agent-light-page.light-background-pilot.workflow-page .workflow-related-
   background: #ffffff;
   box-shadow: 0 4px 14px rgba(22, 55, 43, 0.05);
 }
+body.ai-agent-light-page.light-background-pilot.workflow-page .workflow-related-card .workflow-card-number {
+  background: #e6f1ed;
+  color: #07584f;
+}
+body.ai-agent-light-page.light-background-pilot.workflow-page .copilot-article-meta {
+  color: #07584f;
+}
 body.ai-agent-light-page.light-background-pilot.workflow-page .workflow-related-heading h2,
 body.ai-agent-light-page.light-background-pilot.workflow-page .workflow-related-card h3 { color: var(--agent-ink); }
 body.ai-agent-light-page.light-background-pilot.workflow-page .workflow-related-heading p,
@@ -227,6 +234,70 @@ body.ai-agent-light-page.light-background-pilot.workflow-page :focus-visible {
   }
   body.ai-agent-light-page.light-background-pilot.workflow-page .workflow-hero h1 { font-size: clamp(2.35rem, 5.7vw, 3.65rem); }
   body.ai-agent-light-page.light-background-pilot.workflow-page .workflow-stage { grid-template-columns: 44px minmax(0, 1fr); gap: 12px; }
+}
+@media (max-width: 960px) {
+  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled .site-nav {
+    min-height: 68px;
+    width: calc(100% - 32px);
+  }
+  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled .brand-symbol {
+    width: 49px;
+    height: 49px;
+  }
+  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled .menu-toggle {
+    display: flex;
+    width: 43px;
+    height: 43px;
+    flex: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+    border: 1px solid #d9e4df;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled .nav-content {
+    position: absolute;
+    z-index: 41;
+    top: 68px;
+    left: 0;
+    right: 0;
+    display: none;
+    align-items: stretch;
+    flex-direction: column;
+    padding: 14px 22px 18px;
+    background: #fff;
+    border-bottom: 1px solid #e4e9e5;
+    box-shadow: 0 12px 18px #132b1b13;
+  }
+  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled .nav-content.is-open {
+    display: flex;
+  }
+  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled .nav-content .site-nav-pilot {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0;
+  }
+  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled .site-nav-pilot .site-nav-area {
+    width: 100%;
+  }
+  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled .site-nav-pilot .site-nav-area > summary {
+    padding: .65rem;
+    font-size: 15px;
+  }
+  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled .site-nav-pilot > a {
+    padding: .65rem;
+    font-size: 15px;
+    white-space: normal;
+  }
+  body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled .site-nav-pilot .site-nav-panel {
+    position: static;
+    min-width: 0;
+    margin: 0 0 .45rem;
+    border-radius: .45rem;
+    box-shadow: none;
+  }
 }
 @media (max-width: 760px) {
   body.ai-agent-light-page.light-background-pilot.workflow-page .workflow-topbar,
@@ -464,3 +535,4 @@ body.ai-agent-light-page.light-background-pilot.workflow-page .skip-link {
   box-shadow: 0 4px 18px #102d2b30;
 }
 body.ai-agent-light-page.light-background-pilot.workflow-page .skip-link:focus { top: 1rem; }
+
