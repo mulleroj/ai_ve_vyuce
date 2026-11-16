@@ -166,22 +166,19 @@ test('no-JavaScript mode keeps prompt text, page content and navigation reachabl
   const context=await browser.newContext({viewport:{width:390,height:844},javaScriptEnabled:false});
   const page=await context.newPage();
   const evidence=[];
+  const failures=[];
   for (const file of PAGE_FILES) {
     await page.goto(`${BASE_URL}/${file}`,{waitUntil:'domcontentloaded'});
     const info=await page.evaluate(()=>({document:document.documentElement.scrollWidth,body:document.body.scrollWidth,mains:document.querySelectorAll('main').length,prompts:document.querySelectorAll('.prompt-card').length,headerLinks:[...document.querySelectorAll('.site-header a, nav[aria-label] a')].map(a=>a.getAttribute('href')),localMenuVisible:['wave23-vibe-articles','wave23-vibe-page'].some(c=>document.body.classList.contains(c))&&getComputedStyle(document.querySelector('.mobile-menu')).display!=='none',overflowing:[...document.querySelectorAll('body *')].map(el=>({tag:el.tagName,cls:typeof el.className==='string'?el.className:'',id:el.id,right:Math.round(el.getBoundingClientRect().right),width:Math.round(el.getBoundingClientRect().width),text:(el.innerText||'').slice(0,70)})).filter(el=>el.right>innerWidth+1).sort((a,b)=>b.right-a.right).slice(0,12)}));
     evidence.push({file, ...info, migrated:migratedPages.includes(file)});
     if (migratedPages.includes(file)) {
-      expect(info.document,`${file} no-JS document width`).toBeLessThanOrEqual(391);
-      expect(info.body,`${file} no-JS body width`).toBeLessThanOrEqual(391);
-      expect(info.mains,`${file} no-JS main landmark`).toBe(1);
-      if (GROUPS.A.includes(file)) expect(info.prompts,`${file} prompts remain visible without JavaScript`).toBe(baseline.pages[file].prompts.length);
-      expect(info.headerLinks.length,`${file} no-JS shared navigation links`).toBeGreaterThan(0);
-      if (GROUPS.C.includes(file)) expect(info.localMenuVisible,`${file} local navigation remains visible without JavaScript`).toBe(true);
+      if (info.document>391 || info.body>391 || info.mains!==1 || (GROUPS.A.includes(file)&&info.prompts!==baseline.pages[file].prompts.length) || !info.headerLinks.length || (GROUPS.C.includes(file)&&!info.localMenuVisible)) failures.push({file,info});
     }
   }
   mkdir();
   fs.writeFileSync('artifacts/wave23/no-javascript.json',JSON.stringify({completedGroups,pages:evidence},null,2)+'\n');
   await context.close();
+  expect(failures,'No-JS accessibility, content or overflow diagnostics').toEqual([]);
 });
 
 test('wave 23 desktop and mobile screenshots are captured for all target pages', async ({page}) => {
