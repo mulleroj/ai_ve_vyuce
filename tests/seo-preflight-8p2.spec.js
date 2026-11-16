@@ -16,10 +16,12 @@ function snapshot(html) {
   const scripts = [...html.matchAll(/<script\b([^>]*)>/gi)].map(m => ({ src: (m[1].match(/\bsrc=["']([^"']*)['"]/i) || [])[1] || '', type: (m[1].match(/\btype=["']([^"']*)['"]/i) || [])[1] || '' }));
   const controls = [...html.matchAll(/<(input|textarea|select|button)\b([^>]*)>/gi)].map(m => ({ tag: m[1].toLowerCase(), id: (m[2].match(/\bid=["']([^"']*)['"]/i) || [])[1] || '', name: (m[2].match(/\bname=["']([^"']*)['"]/i) || [])[1] || '' }));
   const preserved = html.replace(/<link\b(?=[^>]*\brel\s*=\s*["']canonical["'])[^>]*>\s*/ig, '').replace(/<meta\b(?=[^>]*\bproperty\s*=\s*["']og:url["'])[^>]*>\s*/ig, '').replace(/\r\n/g, '\n');
+  const canonicalTag = html.match(/<link\b(?=[^>]*\brel=["']canonical["'])[^>]*>/i)?.[0] || '';
+  const ogTag = html.match(/<meta\b(?=[^>]*\bproperty=["']og:url["'])[^>]*>/i)?.[0] || '';
   return {
     title: (html.match(/<title>([\s\S]*?)<\/title>/i) || [])[1] || '',
-    canonical: (html.match(/<link\b(?=[^>]*\brel=["']canonical["'])[^>]*>/i) || [])[0] || null,
-    og: (html.match(/<meta\b(?=[^>]*\bproperty=["']og:url["'])[^>]*>/i) || [])[0] || null,
+    canonical: (canonicalTag.match(/\bhref=["']([^"']*)["']/i) || [])[1] || null,
+    og: (ogTag.match(/\bcontent=["']([^"']*)["']/i) || [])[1] || null,
     robots: (html.match(/<meta\b(?=[^>]*\bname=["']robots["'])[^>]*>/i) || [])[0] || null,
     headings, ids, links, images, scripts, forms: controls,
     contentSha256: crypto.createHash('sha256').update(preserved, 'utf8').digest('hex')
