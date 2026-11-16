@@ -315,6 +315,20 @@ body.ai-agent-light-page.light-background-pilot.workflow-page :focus-visible {
   body.ai-agent-light-page.light-background-pilot.workflow-page[data-site-navigation-area="prepare"] .copilot-articles-grid .copilot-article-link {
     grid-column: 2;
   }
+  body.ai-agent-light-page.light-background-pilot.workflow-page[data-site-navigation-area="prepare"] .perplexity-articles-grid .workflow-related-card {
+    grid-template-columns: 40px minmax(0, 1fr);
+    row-gap: 8px;
+  }
+  body.ai-agent-light-page.light-background-pilot.workflow-page[data-site-navigation-area="prepare"] .perplexity-articles-grid .workflow-card-number {
+    grid-row: 1 / span 4;
+    align-self: start;
+  }
+  body.ai-agent-light-page.light-background-pilot.workflow-page[data-site-navigation-area="prepare"] .perplexity-articles-grid .perplexity-article-meta,
+  body.ai-agent-light-background-pilot.workflow-page[data-site-navigation-area="prepare"] .perplexity-articles-grid .workflow-related-card h3,
+  body.ai-agent-light-background-pilot.workflow-page[data-site-navigation-area="prepare"] .perplexity-articles-grid .workflow-related-card p,
+  body.ai-agent-light-page.light-background-pilot.workflow-page[data-site-navigation-area="prepare"] .perplexity-articles-grid .perplexity-article-link {
+    grid-column: 2;
+  }
 }
 @media (max-width: 960px) {
   html:not(.js) body.ai-agent-light-page.light-background-pilot.workflow-page.site-navigation-enabled[data-site-navigation-area="prepare"] .site-nav {
