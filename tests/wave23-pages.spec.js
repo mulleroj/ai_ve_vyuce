@@ -118,7 +118,8 @@ test('wave 23 axe-core report: all pages assessed, migrated groups have no confi
   }
   fs.writeFileSync('artifacts/wave23/axe-core.json',JSON.stringify({baselineSha:baseline.baselineSha,completedGroups,migratedPages,reports},null,2)+'\n');
   for (const item of reports.filter(report=>migratedPages.includes(report.file))) {
-    expect(item.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.length})),`${item.file} axe at ${item.viewport}px`).toEqual([]);
+    const violations=item.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.map(node=>({target:node.target,summary:node.failureSummary}))}));
+    expect(violations,`${item.file} axe at ${item.viewport}px`).toEqual([]);
   }
 });
 

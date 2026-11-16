@@ -12,7 +12,7 @@
 .site-nav-pilot .site-nav-panel a:hover, .site-nav-pilot .site-nav-panel a:focus-visible { background: rgba(23,56,47,.08); }
 .site-nav-pilot summary:focus-visible, .site-nav-pilot a:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
 .site-nav-pilot .site-nav-area[open] > summary::after { content: "⌃"; }
-@media (max-width: 960px) {
+@media (max-width: 800px) {
   .site-nav-pilot { align-items: stretch; }
   .site-nav-pilot .site-nav-area { width: 100%; }
   .site-nav-pilot .site-nav-area > summary { padding: .65rem; }
@@ -26,7 +26,7 @@
 @media (max-width: 768px) {
   .nav-links.site-nav-pilot { display: none; }
 }
-@media (min-width: 961px) {
+@media (min-width: 801px) {
   .mobile-menu.site-nav-pilot { display: none !important; }
   .site-nav-pilot .site-nav-panel { display: none; }
   .site-nav-pilot .site-nav-area[open] > .site-nav-panel { display: grid; }
