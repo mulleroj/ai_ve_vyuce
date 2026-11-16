@@ -3,6 +3,10 @@ const { test, expect } = require('@playwright/test');
 const baseURL = 'http://127.0.0.1:4173';
 const widths = [320, 390, 768, 960, 961, 1024, 1440];
 const localProblems = [];
+const seoCanonicalOverrides = {
+  'asistent-ucitele-osobni-ai-asistent.html': 'https://ai-ve-vyuce.netlify.app/asistent-ucitele-osobni-ai-asistent',
+  'vibe-coding-bezpecnost-kodu-php2shell.html': 'https://ai-ve-vyuce.netlify.app/vibe-coding-bezpecnost-kodu-php2shell'
+};
 
 test.beforeEach(async ({ page }) => {
   page.on('console', message => {
@@ -1081,8 +1085,8 @@ for (const article of migrationArticles) {
       expect(after.headings).toEqual(before.headings);
       expect(after.images).toEqual(before.images);
       expect(after.links).toEqual(before.links);
-      expect(after.metadata).toEqual(before.metadata);
-      expect(after.canonical).toBe(before.canonical);
+      expect(after.metadata.filter(([name]) => name !== 'og:url')).toEqual(before.metadata.filter(([name]) => name !== 'og:url'));
+      expect(after.canonical).toBe(seoCanonicalOverrides[article.file] || before.canonical);
       expect(after.preservedStructures).toEqual(before.preservedStructures);
       expect(after.allCode, 'all code element contents must match the exact pre-migration HTML').toEqual(before.allCode);
       for (const id of before.publicAnchorIds) expect(after.ids, `lost public article anchor: ${id}`).toContain(id);
@@ -2289,8 +2293,8 @@ test('wave 13 full article media and metadata match source HEAD on all six migra
     }, [baselineHTML,currentHTML]);
     expect(after.images, `article image src/alt/dimensions on ${article.file}`).toEqual(before.images);
     for (const id of before.ids) if (!(article.legacyInternalIds || []).includes(id)) expect(after.ids, `fragment ${id} on ${article.file}`).toContain(id);
-    expect(after.metadata, `SEO metadata on ${article.file}`).toEqual(before.metadata);
-    expect(after.canonical, `canonical URL on ${article.file}`).toBe(before.canonical);
+    expect(after.metadata.filter(([name]) => name !== 'og:url'), `SEO metadata on ${article.file}`).toEqual(before.metadata.filter(([name]) => name !== 'og:url'));
+    expect(after.canonical, `canonical URL on ${article.file}`).toBe(seoCanonicalOverrides[article.file] || before.canonical);
     expect(after.published, `published date metadata on ${article.file}`).toBe(before.published);
     expect(after.dates, `article dates on ${article.file}`).toEqual(before.dates);
   }

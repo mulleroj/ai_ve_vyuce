@@ -1,0 +1,2084 @@
+{
+  "baselineSha": "2d1bbb915a393d78dbefbfebfd2acc9ea00bb30f",
+  "pages": {
+    "ai-novinka-ai-duvod-premyslet.html": {
+      "canonical": "<link rel=\"canonical\" href=\"https://ai-ve-vyuce.netlify.app/ai-novinka-ai-duvod-premyslet\" />",
+      "og": "<meta property=\"og:url\" content=\"https://ai-ve-vyuce.netlify.app/ai-novinka-ai-duvod-premyslet\" />",
+      "title": "AI nemá za žáka přemýšlet. Má mu dát důvod přemýšlet. | AI ve Výuce",
+      "robots": null,
+      "headings": [
+        {
+          "level": 1,
+          "text": "AI nemá za žáka přemýšlet. Má mu dát důvod přemýšlet."
+        },
+        {
+          "level": 2,
+          "text": "1. Začněme otázkou, ne definicí"
+        },
+        {
+          "level": 2,
+          "text": "2. AI jako průvodce, který se nejprve ptá"
+        },
+        {
+          "level": 2,
+          "text": "3. Chyba nemusí znamenat neúspěch"
+        },
+        {
+          "level": 2,
+          "text": "4. Každý žák potřebuje jinou míru podpory"
+        },
+        {
+          "level": 2,
+          "text": "5. Propojujme učivo se skutečným životem"
+        },
+        {
+          "level": 2,
+          "text": "6. Ne všechno musí být zábavné"
+        },
+        {
+          "level": 2,
+          "text": "7. Nejdůležitější okamžik přichází po vypnutí AI"
+        },
+        {
+          "level": 2,
+          "text": "Praktická ukázka: 25 minut výuky s AI"
+        },
+        {
+          "level": 3,
+          "text": "1. Problém ze života – 3 minuty"
+        },
+        {
+          "level": 3,
+          "text": "2. Vlastní hypotézy – 5 minut"
+        },
+        {
+          "level": 3,
+          "text": "3. Práce s AI – 7 minut"
+        },
+        {
+          "level": 3,
+          "text": "4. Vysvětlení spolužákovi – 5 minut"
+        },
+        {
+          "level": 3,
+          "text": "5. Ověření bez AI – 5 minut"
+        },
+        {
+          "level": 2,
+          "text": "Tři prompty, které může učitel ihned vyzkoušet"
+        },
+        {
+          "level": 3,
+          "text": "Probuď zvídavost"
+        },
+        {
+          "level": 3,
+          "text": "Buď průvodcem, ne strojem na odpovědi"
+        },
+        {
+          "level": 3,
+          "text": "Ověř skutečné porozumění"
+        },
+        {
+          "level": 2,
+          "text": "Co si musí učitel pohlídat"
+        },
+        {
+          "level": 2,
+          "text": "Závěr: Technologie může pomoci. Zájem musí vzniknout u žáka."
+        },
+        {
+          "level": 2,
+          "text": "Odborné zdroje"
+        },
+        {
+          "level": 2,
+          "text": "Další články o učení s AI"
+        },
+        {
+          "level": 3,
+          "text": "Učí se žák, nebo za něj přemýšlí AI?"
+        },
+        {
+          "level": 3,
+          "text": "Neplýtvej inteligencí"
+        },
+        {
+          "level": 3,
+          "text": "Rozcestník AI pro školy"
+        }
+      ],
+      "ids": [
+        "top",
+        "primary-menu",
+        "main-content",
+        "ai-duvod-premyslet",
+        "princip-1",
+        "princip-2",
+        "princip-3",
+        "princip-4",
+        "princip-5",
+        "princip-6",
+        "princip-7",
+        "prakticka-ukazka",
+        "1-problem-ze-zivota-3-minuty",
+        "2-vlastni-hypotezy-5-minut",
+        "3-prace-s-ai-7-minut",
+        "4-vysvetleni-spoluzakovi-5-minut",
+        "5-overeni-bez-ai-5-minut",
+        "prompty",
+        "prompt-1-title",
+        "prompt-1",
+        "prompt-1-feedback",
+        "prompt-2-title",
+        "prompt-2",
+        "prompt-2-feedback",
+        "prompt-3-title",
+        "prompt-3",
+        "prompt-3-feedback",
+        "pohlidat",
+        "zaver",
+        "odborne-zdroje",
+        "ai-duvod-premyslet-related"
+      ],
+      "links": [
+        {
+          "href": "#main-content",
+          "text": "Přeskočit na obsah"
+        },
+        {
+          "href": "index.html",
+          "text": "AI ve výuce INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE"
+        },
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "text": "Začít s AI"
+        },
+        {
+          "href": "ai-navody.html",
+          "text": "Připravit výuku"
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Učit s AI"
+        },
+        {
+          "href": "asistenti.html",
+          "text": "Nástroje a asistenti"
+        },
+        {
+          "href": "vibe-coding.html",
+          "text": "Tvořit s AI"
+        },
+        {
+          "href": "ai.html",
+          "text": "Číst a objevovat"
+        },
+        {
+          "href": "index.html",
+          "text": "Domů"
+        },
+        {
+          "href": "ai.html",
+          "text": "AI ve vzdělávání"
+        },
+        {
+          "href": "images/ai-duvod-premyslet-hero-full.png",
+          "text": ""
+        },
+        {
+          "href": "#princip-1",
+          "text": "Začněme otázkou, ne definicí"
+        },
+        {
+          "href": "#princip-2",
+          "text": "AI jako průvodce, který se nejprve ptá"
+        },
+        {
+          "href": "#princip-3",
+          "text": "Chyba nemusí znamenat neúspěch"
+        },
+        {
+          "href": "#princip-4",
+          "text": "Každý žák potřebuje jinou míru podpory"
+        },
+        {
+          "href": "#princip-5",
+          "text": "Propojujme učivo se skutečným životem"
+        },
+        {
+          "href": "#princip-6",
+          "text": "Ne všechno musí být zábavné"
+        },
+        {
+          "href": "#princip-7",
+          "text": "Nejdůležitější okamžik přichází po vypnutí AI"
+        },
+        {
+          "href": "#prakticka-ukazka",
+          "text": "Praktická ukázka: 25 minut výuky s AI"
+        },
+        {
+          "href": "#1-problem-ze-zivota-3-minuty",
+          "text": "Problém ze života – 3 minuty"
+        },
+        {
+          "href": "#2-vlastni-hypotezy-5-minut",
+          "text": "Vlastní hypotézy – 5 minut"
+        },
+        {
+          "href": "#3-prace-s-ai-7-minut",
+          "text": "Práce s AI – 7 minut"
+        },
+        {
+          "href": "#4-vysvetleni-spoluzakovi-5-minut",
+          "text": "Vysvětlení spolužákovi – 5 minut"
+        },
+        {
+          "href": "#5-overeni-bez-ai-5-minut",
+          "text": "Ověření bez AI – 5 minut"
+        },
+        {
+          "href": "#prompty",
+          "text": "Tři prompty, které může učitel ihned vyzkoušet"
+        },
+        {
+          "href": "#prompt-1-title",
+          "text": "Probuď zvídavost"
+        },
+        {
+          "href": "#prompt-2-title",
+          "text": "Buď průvodcem, ne strojem na odpovědi"
+        },
+        {
+          "href": "#prompt-3-title",
+          "text": "Ověř skutečné porozumění"
+        },
+        {
+          "href": "#pohlidat",
+          "text": "Co si musí učitel pohlídat"
+        },
+        {
+          "href": "#zaver",
+          "text": "Závěr: Technologie může pomoci. Zájem musí vzniknout u žáka."
+        },
+        {
+          "href": "#odborne-zdroje",
+          "text": "Odborné zdroje"
+        },
+        {
+          "href": "images/ai-duvod-premyslet-infografika-full.png",
+          "text": ""
+        },
+        {
+          "href": "https://www.oecd.org/en/publications/oecd-digital-education-outlook-2026_062a7394-en.html",
+          "text": "OECD – Digital Education Outlook 2026"
+        },
+        {
+          "href": "https://educationendowmentfoundation.org.uk/education-evidence/guidance-reports/metacognition",
+          "text": "Education Endowment Foundation – Metacognition and Self-Regulated Learning (2025)"
+        },
+        {
+          "href": "https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research",
+          "text": "UNESCO – Guidance for Generative AI in Education and Research"
+        },
+        {
+          "href": "https://educationendowmentfoundation.org.uk/education-evidence/guidance-reports/digital",
+          "text": "EEF – Using Digital Technology to Improve Learning"
+        },
+        {
+          "href": "#top",
+          "text": "↑ Zpět nahoru"
+        },
+        {
+          "href": "uci-se-zak-nebo-za-nej-premysli-ai.html",
+          "text": "01 Učí se žák, nebo za něj přemýšlí AI? Jak poznat, kdy AI podporuje učení a kdy přebírá práci studenta."
+        },
+        {
+          "href": "neplytvej-inteligenci-ai-modely.html",
+          "text": "02 Neplýtvej inteligencí Praktické prompty a principy smysluplné práce s AI."
+        },
+        {
+          "href": "ai.html",
+          "text": "→ Rozcestník AI pro školy Novinky, návody a workflow na jednom místě."
+        },
+        {
+          "href": "ai-novinky.html",
+          "text": "AI ve vzdělávání"
+        },
+        {
+          "href": "ai-navody.html",
+          "text": "Praktické návody"
+        }
+      ],
+      "images": [
+        {
+          "src": "images/ai-assistant-book-logo.png?v=robot-20261103",
+          "alt": ""
+        },
+        {
+          "src": "images/ai-duvod-premyslet-hero.png",
+          "alt": "Učitelka a tři středoškoláci v technické dílně společně zkoumají zapojení jističů na pracovním stole. Na obrazovce notebooku je vidět vzdělávací aplikace s otázkou, jak funguje jistič a kdy se používá."
+        },
+        {
+          "src": "images/ai-duvod-premyslet-infografika.png",
+          "alt": "Infografika AI nemá za žáka přemýšlet: sedm principů efektivního využití AI ve výuce, srovnání nevhodného a vhodného přístupu a schéma otázka – zkoumání s AI – vysvětlení – ověření bez AI."
+        }
+      ],
+      "scripts": [
+        {
+          "src": "js/main.js?v=20261102-magazine-shared-v1",
+          "type": ""
+        },
+        {
+          "src": "js/site-footer.js?v=20260927-human-loop",
+          "type": ""
+        },
+        {
+          "src": "js/site-navigation-data.js?v=20261108-7h",
+          "type": ""
+        },
+        {
+          "src": "js/site-navigation.js?v=20261108-7h",
+          "type": ""
+        },
+        {
+          "src": "js/article-content-navigation.js?v=20261114-shared-content-v1",
+          "type": ""
+        },
+        {
+          "src": "js/tool-guide.js?v=20261030-ai-duvod-prompty",
+          "type": ""
+        }
+      ],
+      "forms": [
+        {
+          "tag": "button",
+          "id": "",
+          "name": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "name": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "name": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "name": ""
+        }
+      ],
+      "contentSha256": "72a5486e218bb9872b6412eb818d5ae004c425960be1771c04bddfd6f5e19747"
+    },
+    "asistent-ucitele-osobni-ai-asistent.html": {
+      "canonical": "<link rel=\"canonical\" href=\"https://ai-ve-vyuce.netlify.app/asistent-ucitele-osobni-ai-asistent.html\" />",
+      "og": "<meta property=\"og:url\" content=\"https://ai-ve-vyuce.netlify.app/asistent-ucitele-osobni-ai-asistent.html\" />",
+      "title": "Asistent učitele: Pomocník, který pedagogům dosud chyběl | AI ve Výuce",
+      "robots": null,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Asistent učitele: Pomocník, který pedagogům dosud chyběl"
+        },
+        {
+          "level": 2,
+          "text": "Učitel bez asistenta"
+        },
+        {
+          "level": 2,
+          "text": "1. Chatbot, asistent, nebo agent?"
+        },
+        {
+          "level": 2,
+          "text": "2. Jak se asistent učí vaše postupy"
+        },
+        {
+          "level": 2,
+          "text": "3. Vlastní dokumenty, tematické plány a přípravy"
+        },
+        {
+          "level": 2,
+          "text": "4. Před hodinou, při přípravě a po hodině"
+        },
+        {
+          "level": 2,
+          "text": "5. Administrativa, plánování a připomínky"
+        },
+        {
+          "level": 2,
+          "text": "6. Propojení s aplikacemi a dalšími agenty"
+        },
+        {
+          "level": 2,
+          "text": "7. Proč musí učitel dál schvalovat důležité kroky"
+        },
+        {
+          "level": 2,
+          "text": "8. Ochrana osobních údajů žáků a školních dokumentů"
+        },
+        {
+          "level": 2,
+          "text": "Modelový den učitele"
+        },
+        {
+          "level": 2,
+          "text": "9. Jak začít a postupně rozšiřovat"
+        },
+        {
+          "level": 3,
+          "text": "✅ Checklist: Jak začít"
+        },
+        {
+          "level": 2,
+          "text": "Závěr"
+        },
+        {
+          "level": 2,
+          "text": "Zdroje (ověřeno k 25. 10. 2026)"
+        },
+        {
+          "level": 2,
+          "text": "Kam dál"
+        },
+        {
+          "level": 3,
+          "text": "AI asistenti a boti"
+        },
+        {
+          "level": 3,
+          "text": "AI agenti"
+        },
+        {
+          "level": 3,
+          "text": "Vibe Coding"
+        }
+      ],
+      "ids": [
+        "top",
+        "primary-menu",
+        "asistent-ucitele-osobni-ai-asistent",
+        "wave13-asistent-ucitele-osobni-ai-asistent-h2-01",
+        "wave13-asistent-ucitele-osobni-ai-asistent-h2-02",
+        "wave13-asistent-ucitele-osobni-ai-asistent-h2-03",
+        "wave13-asistent-ucitele-osobni-ai-asistent-h2-04",
+        "wave13-asistent-ucitele-osobni-ai-asistent-h2-05",
+        "wave13-asistent-ucitele-osobni-ai-asistent-h2-06",
+        "wave13-asistent-ucitele-osobni-ai-asistent-h2-07",
+        "wave13-asistent-ucitele-osobni-ai-asistent-h2-08",
+        "wave13-asistent-ucitele-osobni-ai-asistent-h2-09",
+        "wave13-asistent-ucitele-osobni-ai-asistent-h2-10",
+        "wave13-asistent-ucitele-osobni-ai-asistent-h2-11",
+        "wave13-asistent-ucitele-osobni-ai-asistent-h3-01",
+        "wave13-asistent-ucitele-osobni-ai-asistent-h2-12",
+        "wave13-asistent-ucitele-osobni-ai-asistent-h2-13",
+        "related-asistent-ucitele"
+      ],
+      "links": [
+        {
+          "href": "index.html",
+          "text": "AI ve výuce INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE"
+        },
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "text": "Začít s AI"
+        },
+        {
+          "href": "ai-navody.html",
+          "text": "Připravit výuku"
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Učit s AI"
+        },
+        {
+          "href": "asistenti.html",
+          "text": "Nástroje a asistenti"
+        },
+        {
+          "href": "vibe-coding.html",
+          "text": "Tvořit s AI"
+        },
+        {
+          "href": "ai.html",
+          "text": "Číst a objevovat"
+        },
+        {
+          "href": "index.html",
+          "text": "Domů"
+        },
+        {
+          "href": "asistenti.html",
+          "text": "AI asistenti a boti"
+        },
+        {
+          "href": "#wave13-asistent-ucitele-osobni-ai-asistent-h2-01",
+          "text": "Učitel bez asistenta"
+        },
+        {
+          "href": "#wave13-asistent-ucitele-osobni-ai-asistent-h2-02",
+          "text": "1. Chatbot, asistent, nebo agent?"
+        },
+        {
+          "href": "#wave13-asistent-ucitele-osobni-ai-asistent-h2-03",
+          "text": "2. Jak se asistent učí vaše postupy"
+        },
+        {
+          "href": "#wave13-asistent-ucitele-osobni-ai-asistent-h2-04",
+          "text": "3. Vlastní dokumenty, tematické plány a přípravy"
+        },
+        {
+          "href": "#wave13-asistent-ucitele-osobni-ai-asistent-h2-05",
+          "text": "4. Před hodinou, při přípravě a po hodině"
+        },
+        {
+          "href": "#wave13-asistent-ucitele-osobni-ai-asistent-h2-06",
+          "text": "5. Administrativa, plánování a připomínky"
+        },
+        {
+          "href": "#wave13-asistent-ucitele-osobni-ai-asistent-h2-07",
+          "text": "6. Propojení s aplikacemi a dalšími agenty"
+        },
+        {
+          "href": "#wave13-asistent-ucitele-osobni-ai-asistent-h2-08",
+          "text": "7. Proč musí učitel dál schvalovat důležité kroky"
+        },
+        {
+          "href": "#wave13-asistent-ucitele-osobni-ai-asistent-h2-09",
+          "text": "8. Ochrana osobních údajů žáků a školních dokumentů"
+        },
+        {
+          "href": "#wave13-asistent-ucitele-osobni-ai-asistent-h2-10",
+          "text": "Modelový den učitele"
+        },
+        {
+          "href": "#wave13-asistent-ucitele-osobni-ai-asistent-h2-11",
+          "text": "9. Jak začít a postupně rozšiřovat"
+        },
+        {
+          "href": "#wave13-asistent-ucitele-osobni-ai-asistent-h3-01",
+          "text": "✅ Checklist: Jak začít"
+        },
+        {
+          "href": "#wave13-asistent-ucitele-osobni-ai-asistent-h2-12",
+          "text": "Závěr"
+        },
+        {
+          "href": "#wave13-asistent-ucitele-osobni-ai-asistent-h2-13",
+          "text": "Zdroje (ověřeno k 25. 10. 2026)"
+        },
+        {
+          "href": "images/asistent-ucitele-osobni-ai-asistent.png",
+          "text": ""
+        },
+        {
+          "href": "https://help.openai.com/en/articles/8590148-memory-and-projects",
+          "text": "https://help.openai.com/en/articles/8590148-memory-and-projects"
+        },
+        {
+          "href": "https://help.openai.com/en/articles/10169521-projects-in-chatgpt",
+          "text": "https://help.openai.com/en/articles/10169521-projects-in-chatgpt"
+        },
+        {
+          "href": "https://help.openai.com/en/articles/8554407-gpts-in-chatgpt",
+          "text": "https://help.openai.com/en/articles/8554407-gpts-in-chatgpt"
+        },
+        {
+          "href": "https://help.openai.com/en/articles/20001519-custom-gpt-retirement-and-migration-faq",
+          "text": "https://help.openai.com/en/articles/20001519-custom-gpt-retirement-and-migration-faq"
+        },
+        {
+          "href": "https://support.google.com/gemini/answer/18560919",
+          "text": "https://support.google.com/gemini/answer/18560919"
+        },
+        {
+          "href": "https://knowledge.workspace.google.com/admin/generative-ai/gemini-app/about-the-transition-to-skills",
+          "text": "https://knowledge.workspace.google.com/admin/generative-ai/gemini-app/about-the-transition-to-skills"
+        },
+        {
+          "href": "https://support.claude.com/en/articles/9517075-what-are-projects",
+          "text": "https://support.claude.com/en/articles/9517075-what-are-projects"
+        },
+        {
+          "href": "https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp",
+          "text": "https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp"
+        },
+        {
+          "href": "https://claude.com/docs/extend/overview",
+          "text": "https://claude.com/docs/extend/overview"
+        },
+        {
+          "href": "https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-with-microsoft-365-copilot-notebooks",
+          "text": "https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-with-microsoft-365-copilot-notebooks"
+        },
+        {
+          "href": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new",
+          "text": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new"
+        },
+        {
+          "href": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agent-extend-action-mcp",
+          "text": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agent-extend-action-mcp"
+        },
+        {
+          "href": "https://support.google.com/gemini/answer/17209137",
+          "text": "https://support.google.com/gemini/answer/17209137"
+        },
+        {
+          "href": "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+          "text": "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+        },
+        {
+          "href": "asistenti.html#osobni-asistenti-boti",
+          "text": "01 AI asistenti a boti Rozcestník platforem, hotových asistentů a série o osobním asistentu učitele."
+        },
+        {
+          "href": "ai-agenti.html",
+          "text": "02 AI agenti Když AI přestane jen odpovídat a začne plnit vícekrokové úkoly."
+        },
+        {
+          "href": "vibe-coding.html",
+          "text": "03 Vibe Coding Tvorba vlastních výukových aplikací a nástrojů s pomocí AI."
+        },
+        {
+          "href": "asistenti.html",
+          "text": "Zpět na AI asistenti a boti"
+        }
+      ],
+      "images": [
+        {
+          "src": "images/ai-assistant-book-logo.png?v=robot-20261103",
+          "alt": ""
+        },
+        {
+          "src": "images/asistent-ucitele-osobni-ai-asistent.png",
+          "alt": "Infografika Asistent učitele: rozdíl mezi chatbotem, asistentem a agentem, co asistent umí dnes, co vyžaduje propojení dalších služeb a co je pokročilá či budoucí možnost, ochrana údajů žáků a lidské schvalování důležitých kroků."
+        }
+      ],
+      "scripts": [
+        {
+          "src": "js/site-footer.js?v=20260927-human-loop",
+          "type": ""
+        },
+        {
+          "src": "js/site-navigation-data.js?v=20261109-7m",
+          "type": ""
+        },
+        {
+          "src": "js/article-content-navigation.js?v=20261113-8a",
+          "type": ""
+        },
+        {
+          "src": "js/site-navigation.js?v=20261109-7m",
+          "type": ""
+        }
+      ],
+      "forms": [
+        {
+          "tag": "button",
+          "id": "",
+          "name": ""
+        }
+      ],
+      "contentSha256": "b3cd501131129951673ee18226eab6b12cda3a766593a025efaa377c21e5b94a"
+    },
+    "filozofovani-s-ai.html": {
+      "canonical": "<link rel=\"canonical\" href=\"https://ai-ve-vyuce.netlify.app/filozofovani-s-ai\">",
+      "og": "<meta property=\"og:url\" content=\"https://ai-ve-vyuce.netlify.app/filozofovani-s-ai\">",
+      "title": "Filozofování s AI – autorská série | AI ve Výuce",
+      "robots": null,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Filozofování s AI"
+        },
+        {
+          "level": 2,
+          "text": "Všechny díly série"
+        },
+        {
+          "level": 2,
+          "text": "Související témata"
+        }
+      ],
+      "ids": [
+        "top",
+        "primary-menu",
+        "home-search",
+        "main-content",
+        "series-title",
+        "series-parts-title"
+      ],
+      "links": [
+        {
+          "href": "#main-content",
+          "text": "Přeskočit na obsah"
+        },
+        {
+          "href": "/",
+          "text": "AI ve výuce INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE"
+        },
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "text": "Začít s AI"
+        },
+        {
+          "href": "ai-navody.html",
+          "text": "Připravit výuku"
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Učit s AI"
+        },
+        {
+          "href": "asistenti.html",
+          "text": "Nástroje a asistenti"
+        },
+        {
+          "href": "vibe-coding.html",
+          "text": "Tvořit s AI"
+        },
+        {
+          "href": "ai.html",
+          "text": "Číst a objevovat"
+        },
+        {
+          "href": "index.html",
+          "text": "Domů"
+        },
+        {
+          "href": "ai.html",
+          "text": "Číst a objevovat"
+        },
+        {
+          "href": "ai-novinka-filozofovani-s-ai-kriticke-mysleni.html",
+          "text": "Díl 1: Kritické myšlení už nestačí? Human in the Loop jako další krok v době AI"
+        },
+        {
+          "href": "ai-novinka-filozofovani-s-ai-chybejici-role.html",
+          "text": "Díl 2: AI možná nevezme učitelům práci. Možná nám ukáže, kolik lidí nám celou dobu chybělo"
+        },
+        {
+          "href": "uci-se-zak-nebo-za-nej-premysli-ai.html",
+          "text": "Díl 3: Učí se žák, nebo za něj přemýšlí AI?"
+        },
+        {
+          "href": "kdyz-ai-jedna-odpovednost-ai-agenta.html",
+          "text": "Díl 4: Když AI už nejen radí, ale jedná: kdo nese odpovědnost za AI agenta?"
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Práce žáků s AI ve výuce"
+        },
+        {
+          "href": "ai.html?filter=philosophy",
+          "text": "Human in the Loop a další články série"
+        },
+        {
+          "href": "ai-agenti-kdy-nepouzivat.html",
+          "text": "Bezpečnost a odpovědnost AI agentů"
+        },
+        {
+          "href": "ai.html",
+          "text": "← Zpět do magazínu"
+        },
+        {
+          "href": "/",
+          "text": "AI ve výuce Inspirace · nástroje · praxe pro učitele"
+        },
+        {
+          "href": "ai-navody.html",
+          "text": "Návody"
+        },
+        {
+          "href": "prompty.html",
+          "text": "Prompty"
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Aktivity"
+        },
+        {
+          "href": "asistenti.html",
+          "text": "AI nástroje"
+        }
+      ],
+      "images": [
+        {
+          "src": "images/ai-assistant-book-logo.png?v=robot-20261103",
+          "alt": ""
+        },
+        {
+          "src": "images/home-philosophy-banner-v2.jpg",
+          "alt": "Malý robot sedí na knihách pod teplým světlem lampy v tmavě zelené knihovně"
+        },
+        {
+          "src": "images/ai-assistant-book-logo.png?v=robot-20261103",
+          "alt": ""
+        }
+      ],
+      "scripts": [
+        {
+          "src": "js/site-navigation-data.js",
+          "type": ""
+        },
+        {
+          "src": "js/site-navigation.js",
+          "type": ""
+        },
+        {
+          "src": "js/main.js",
+          "type": ""
+        },
+        {
+          "src": "js/site-articles.js",
+          "type": ""
+        },
+        {
+          "src": "js/site-article-series.js",
+          "type": ""
+        },
+        {
+          "src": "js/site-footer.js?v=20260927-human-loop",
+          "type": ""
+        }
+      ],
+      "forms": [
+        {
+          "tag": "button",
+          "id": "",
+          "name": ""
+        },
+        {
+          "tag": "input",
+          "id": "home-search",
+          "name": "q"
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "name": ""
+        }
+      ],
+      "contentSha256": "a581e2a97d65dc46edcdbb91259b4b0429bbd4a6a053b4c30559a4a35576b220"
+    },
+    "gemini-skills-pro-ucitele.html": {
+      "canonical": "<link rel=\"canonical\" href=\"https://ai-ve-vyuce.netlify.app/gemini-skills-pro-ucitele\">",
+      "og": "<meta property=\"og:url\" content=\"https://ai-ve-vyuce.netlify.app/gemini-skills-pro-ucitele\">",
+      "title": "Gemini Skills pro učitele: návod krok za krokem | AI ve výuce",
+      "robots": null,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Gemini Skills pro učitele: jednou nastavíte, pak už Gemini ví, jak má pracovat"
+        },
+        {
+          "level": 2,
+          "text": "Začínáte s Gemini?"
+        },
+        {
+          "level": 2,
+          "text": "Co je Gemini Skill"
+        },
+        {
+          "level": 2,
+          "text": "Prompt, Skill a Notebook: tři různé role"
+        },
+        {
+          "level": 3,
+          "text": "Prompt"
+        },
+        {
+          "level": 3,
+          "text": "Skill"
+        },
+        {
+          "level": 3,
+          "text": "Gemini Notebook"
+        },
+        {
+          "level": 2,
+          "text": "Stav k 1. 10. 2026"
+        },
+        {
+          "level": 2,
+          "text": "Vytvoříme první Skill: Pracuj pouze ze zdrojů"
+        },
+        {
+          "level": 3,
+          "text": "Varianta A: vytvoření ručně"
+        },
+        {
+          "level": 3,
+          "text": "Varianta B: s pomocí Gemini"
+        },
+        {
+          "level": 2,
+          "text": "Hotový Skill: Pracuj pouze ze zdrojů"
+        },
+        {
+          "level": 3,
+          "text": "NAME / Název"
+        },
+        {
+          "level": 3,
+          "text": "DESCRIPTION / Popis"
+        },
+        {
+          "level": 3,
+          "text": "INSTRUCTIONS / Instrukce"
+        },
+        {
+          "level": 2,
+          "text": "Proč je popis tak důležitý"
+        },
+        {
+          "level": 2,
+          "text": "Jak Skill použít"
+        },
+        {
+          "level": 3,
+          "text": "1. Automaticky"
+        },
+        {
+          "level": 3,
+          "text": "2. Přímým výběrem"
+        },
+        {
+          "level": 2,
+          "text": "Celý postup: pracovní list na present simple"
+        },
+        {
+          "level": 2,
+          "text": "Gemini Notebook + Skills"
+        },
+        {
+          "level": 2,
+          "text": "Teacher Skill Library – 8 hotových Skills pro učitele"
+        },
+        {
+          "level": 3,
+          "text": "Pracuj pouze ze zdrojů"
+        },
+        {
+          "level": 3,
+          "text": "Naplánuj 45minutovou hodinu"
+        },
+        {
+          "level": 3,
+          "text": "Vytvoř pracovní list"
+        },
+        {
+          "level": 3,
+          "text": "Vytvoř test nebo ověření"
+        },
+        {
+          "level": 3,
+          "text": "Uprav výukový materiál"
+        },
+        {
+          "level": 3,
+          "text": "Vytvoř výukovou prezentaci"
+        },
+        {
+          "level": 3,
+          "text": "Vytěž obsah lekce ze zdroje"
+        },
+        {
+          "level": 3,
+          "text": "Zkontroluj výukový materiál"
+        },
+        {
+          "level": 2,
+          "text": "Jak Skills kombinovat"
+        },
+        {
+          "level": 3,
+          "text": "Pracovní list z učebnice"
+        },
+        {
+          "level": 3,
+          "text": "Test po lekci"
+        },
+        {
+          "level": 3,
+          "text": "Příprava hodiny"
+        },
+        {
+          "level": 3,
+          "text": "Přístupnější pracovní list"
+        },
+        {
+          "level": 3,
+          "text": "Výuková prezentace"
+        },
+        {
+          "level": 3,
+          "text": "Zpracování lekce z učebnice"
+        },
+        {
+          "level": 3,
+          "text": "Finální kontrola"
+        },
+        {
+          "level": 2,
+          "text": "Pět častých chyb"
+        },
+        {
+          "level": 2,
+          "text": "Co patří do Skillu a co do Notebooku"
+        },
+        {
+          "level": 2,
+          "text": "Bezpečnost a školní data"
+        },
+        {
+          "level": 2,
+          "text": "Můj první Skill – kontrolní seznam"
+        },
+        {
+          "level": 2,
+          "text": "Co dál?"
+        },
+        {
+          "level": 2,
+          "text": "Zdroje a další informace"
+        },
+        {
+          "level": 2,
+          "text": "Související návody"
+        },
+        {
+          "level": 3,
+          "text": "První Gemini Notebook"
+        },
+        {
+          "level": 3,
+          "text": "Gemini pro učitele"
+        }
+      ],
+      "ids": [
+        "top",
+        "primary-menu",
+        "toc-title",
+        "gemini-zaklady",
+        "co-je-skill",
+        "tri-casti",
+        "wave8-gemini-skills-pro-ucitele-h3-01",
+        "wave8-gemini-skills-pro-ucitele-h3-02",
+        "wave8-gemini-skills-pro-ucitele-h3-03",
+        "dostupnost",
+        "prvni-skill",
+        "wave8-gemini-skills-pro-ucitele-h3-04",
+        "wave8-gemini-skills-pro-ucitele-h3-05",
+        "hotovy-skill",
+        "wave8-gemini-skills-pro-ucitele-h3-06",
+        "skill-name",
+        "wave8-gemini-skills-pro-ucitele-h3-07",
+        "skill-description",
+        "wave8-gemini-skills-pro-ucitele-h3-08",
+        "skill-instructions",
+        "popis",
+        "pouziti",
+        "wave8-gemini-skills-pro-ucitele-h3-09",
+        "wave8-gemini-skills-pro-ucitele-h3-10",
+        "workflow",
+        "notebook",
+        "teacher-skill-library",
+        "library-work-only-from-sources",
+        "library-text-1",
+        "library-plan-45-minute-lesson",
+        "library-text-2",
+        "library-create-student-worksheet",
+        "library-text-3",
+        "library-create-assessment",
+        "library-text-4",
+        "library-adapt-learning-material",
+        "library-text-5",
+        "library-create-teaching-presentation",
+        "library-text-6",
+        "library-extract-lesson-content",
+        "library-text-7",
+        "library-quality-check-teaching-material",
+        "library-text-8",
+        "kombinace",
+        "wave8-gemini-skills-pro-ucitele-h3-19",
+        "wave8-gemini-skills-pro-ucitele-h3-20",
+        "wave8-gemini-skills-pro-ucitele-h3-21",
+        "wave8-gemini-skills-pro-ucitele-h3-22",
+        "wave8-gemini-skills-pro-ucitele-h3-23",
+        "wave8-gemini-skills-pro-ucitele-h3-24",
+        "wave8-gemini-skills-pro-ucitele-h3-25",
+        "chyby",
+        "kam-co",
+        "data",
+        "checklist",
+        "co-dal",
+        "zdroje",
+        "related-title"
+      ],
+      "links": [
+        {
+          "href": "index.html",
+          "text": "AI ve výuce INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE"
+        },
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "text": "Začít s AI"
+        },
+        {
+          "href": "ai-navody.html",
+          "text": "Připravit výuku"
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Učit s AI"
+        },
+        {
+          "href": "asistenti.html",
+          "text": "Nástroje a asistenti"
+        },
+        {
+          "href": "vibe-coding.html",
+          "text": "Tvořit s AI"
+        },
+        {
+          "href": "ai.html",
+          "text": "Číst a objevovat"
+        },
+        {
+          "href": "index.html",
+          "text": "Domů"
+        },
+        {
+          "href": "gemini-pro-ucitele.html",
+          "text": "Gemini pro učitele"
+        },
+        {
+          "href": "ai.html",
+          "text": "← Rozcestník AI"
+        },
+        {
+          "href": "#gemini-zaklady",
+          "text": "Začínáte s Gemini?"
+        },
+        {
+          "href": "#co-je-skill",
+          "text": "Co je Gemini Skill"
+        },
+        {
+          "href": "#tri-casti",
+          "text": "Prompt, Skill a Notebook: tři různé role"
+        },
+        {
+          "href": "#wave8-gemini-skills-pro-ucitele-h3-01",
+          "text": "Prompt"
+        },
+        {
+          "href": "#wave8-gemini-skills-pro-ucitele-h3-02",
+          "text": "Skill"
+        },
+        {
+          "href": "#wave8-gemini-skills-pro-ucitele-h3-03",
+          "text": "Gemini Notebook"
+        },
+        {
+          "href": "#dostupnost",
+          "text": "Stav k 1. 10. 2026"
+        },
+        {
+          "href": "#prvni-skill",
+          "text": "Vytvoříme první Skill: Pracuj pouze ze zdrojů"
+        },
+        {
+          "href": "#wave8-gemini-skills-pro-ucitele-h3-04",
+          "text": "Varianta A: vytvoření ručně"
+        },
+        {
+          "href": "#wave8-gemini-skills-pro-ucitele-h3-05",
+          "text": "Varianta B: s pomocí Gemini"
+        },
+        {
+          "href": "#hotovy-skill",
+          "text": "Hotový Skill: Pracuj pouze ze zdrojů"
+        },
+        {
+          "href": "#wave8-gemini-skills-pro-ucitele-h3-06",
+          "text": "NAME / Název"
+        },
+        {
+          "href": "#wave8-gemini-skills-pro-ucitele-h3-07",
+          "text": "DESCRIPTION / Popis"
+        },
+        {
+          "href": "#wave8-gemini-skills-pro-ucitele-h3-08",
+          "text": "INSTRUCTIONS / Instrukce"
+        },
+        {
+          "href": "#popis",
+          "text": "Proč je popis tak důležitý"
+        },
+        {
+          "href": "#pouziti",
+          "text": "Jak Skill použít"
+        },
+        {
+          "href": "#wave8-gemini-skills-pro-ucitele-h3-09",
+          "text": "1. Automaticky"
+        },
+        {
+          "href": "#wave8-gemini-skills-pro-ucitele-h3-10",
+          "text": "2. Přímým výběrem"
+        },
+        {
+          "href": "#workflow",
+          "text": "Celý postup: pracovní list na present simple"
+        },
+        {
+          "href": "#notebook",
+          "text": "Gemini Notebook + Skills"
+        },
+        {
+          "href": "#teacher-skill-library",
+          "text": "Teacher Skill Library – 8 hotových Skills pro učitele"
+        },
+        {
+          "href": "#kombinace",
+          "text": "Jak Skills kombinovat"
+        },
+        {
+          "href": "#wave8-gemini-skills-pro-ucitele-h3-19",
+          "text": "Pracovní list z učebnice"
+        },
+        {
+          "href": "#wave8-gemini-skills-pro-ucitele-h3-20",
+          "text": "Test po lekci"
+        },
+        {
+          "href": "#wave8-gemini-skills-pro-ucitele-h3-21",
+          "text": "Příprava hodiny"
+        },
+        {
+          "href": "#wave8-gemini-skills-pro-ucitele-h3-22",
+          "text": "Přístupnější pracovní list"
+        },
+        {
+          "href": "#wave8-gemini-skills-pro-ucitele-h3-23",
+          "text": "Výuková prezentace"
+        },
+        {
+          "href": "#wave8-gemini-skills-pro-ucitele-h3-24",
+          "text": "Zpracování lekce z učebnice"
+        },
+        {
+          "href": "#wave8-gemini-skills-pro-ucitele-h3-25",
+          "text": "Finální kontrola"
+        },
+        {
+          "href": "#chyby",
+          "text": "Pět častých chyb"
+        },
+        {
+          "href": "#kam-co",
+          "text": "Co patří do Skillu a co do Notebooku"
+        },
+        {
+          "href": "#data",
+          "text": "Bezpečnost a školní data"
+        },
+        {
+          "href": "#checklist",
+          "text": "Můj první Skill – kontrolní seznam"
+        },
+        {
+          "href": "#co-dal",
+          "text": "Co dál?"
+        },
+        {
+          "href": "#zdroje",
+          "text": "Zdroje a další informace"
+        },
+        {
+          "href": "gemini-pro-ucitele.html",
+          "text": "← Nejprve: Google Gemini pro učitele"
+        },
+        {
+          "href": "https://support.google.com/gemini/answer/17094296?hl=en",
+          "text": "Podmínky v Google Help"
+        },
+        {
+          "href": "https://workspaceupdates.googleblog.com/2026/09/skills-gemini-app-workspace.html?hl=en_PA",
+          "text": "Oznámení Workspace rolloutu"
+        },
+        {
+          "href": "https://support.google.com/gemini/answer/18560919?hl=en",
+          "text": "Přechod z Gems"
+        },
+        {
+          "href": "https://gemini.google.com/",
+          "text": "Gemini ve webovém prohlížeči"
+        },
+        {
+          "href": "https://support.google.com/gemini/answer/17094296?hl=en",
+          "text": "Oficiální postup vytvoření"
+        },
+        {
+          "href": "https://support.google.com/gemini/answer/17102773?hl=en",
+          "text": "Doporučení Googlu k názvu a popisu"
+        },
+        {
+          "href": "https://support.google.com/gemini/answer/18560919?hl=en",
+          "text": "Přímé vyvolání podle Googlu"
+        },
+        {
+          "href": "https://support.google.com/gemini/answer/16972047?hl=en",
+          "text": "Notebooky v Gemini"
+        },
+        {
+          "href": "https://support.google.com/gemininotebook/answer/16215270",
+          "text": "Přidávání zdrojů"
+        },
+        {
+          "href": "https://support.google.com/gemini/answer/18560919?hl=en",
+          "text": "Plánované propojení se Skills"
+        },
+        {
+          "href": "gemini-pro-ucitele.html",
+          "text": "← Zpět na Google Gemini pro učitele"
+        },
+        {
+          "href": "https://support.google.com/gemini/answer/17094296?hl=en",
+          "text": "Create &amp; manage skills for Gemini Apps"
+        },
+        {
+          "href": "https://support.google.com/gemini/answer/17102773?hl=en",
+          "text": "Write effective skills for Gemini Apps"
+        },
+        {
+          "href": "https://support.google.com/gemini/answer/18560919?hl=en",
+          "text": "About the transition from Gems to skills"
+        },
+        {
+          "href": "https://workspaceupdates.googleblog.com/2026/09/skills-gemini-app-workspace.html?hl=en_PA",
+          "text": "Introducing skills in the Gemini app and Workspace"
+        },
+        {
+          "href": "https://support.google.com/gemini/answer/16972047?hl=en",
+          "text": "Organize your projects with notebooks in Gemini Apps"
+        },
+        {
+          "href": "https://support.google.com/gemininotebook/answer/16215270",
+          "text": "Add or discover new sources for your notebook"
+        },
+        {
+          "href": "gemini-notebook-navod-pro-ucitele.html",
+          "text": "První Gemini Notebook Účel, instrukce a zdroje sešitu."
+        },
+        {
+          "href": "gemini-pro-ucitele.html",
+          "text": "Gemini pro učitele Další články a praktické postupy."
+        },
+        {
+          "href": "ai.html",
+          "text": "Rozcestník AI"
+        }
+      ],
+      "images": [
+        {
+          "src": "images/ai-assistant-book-logo.png?v=robot-20261103",
+          "alt": ""
+        },
+        {
+          "src": "images/gemini-skills-pro-ucitele.png",
+          "alt": "Notebook poskytuje zdroje, Skill pravidla práce a prompt aktuální úkol; učitel výsledný materiál zkontroluje."
+        },
+        {
+          "src": "images/teacher-skill-library.png",
+          "alt": "Přehled osmi Gemini Skills pro učitele a příklady jejich kombinování"
+        }
+      ],
+      "scripts": [
+        {
+          "src": "js/tool-guide.js?v=20261001-skill-library",
+          "type": ""
+        },
+        {
+          "src": "js/site-footer.js?v=20260927-human-loop",
+          "type": ""
+        },
+        {
+          "src": "js/site-navigation-data.js?v=20261109-7m",
+          "type": ""
+        },
+        {
+          "src": "js/site-navigation.js?v=20261109-7m",
+          "type": ""
+        },
+        {
+          "src": "js/article-content-navigation.js?v=20261110-7q",
+          "type": ""
+        }
+      ],
+      "forms": [
+        {
+          "tag": "button",
+          "id": "",
+          "name": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "name": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "name": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "name": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "name": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "name": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "name": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "name": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "name": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "name": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "name": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "name": ""
+        },
+        {
+          "tag": "input",
+          "id": "",
+          "name": ""
+        },
+        {
+          "tag": "input",
+          "id": "",
+          "name": ""
+        },
+        {
+          "tag": "input",
+          "id": "",
+          "name": ""
+        },
+        {
+          "tag": "input",
+          "id": "",
+          "name": ""
+        },
+        {
+          "tag": "input",
+          "id": "",
+          "name": ""
+        },
+        {
+          "tag": "input",
+          "id": "",
+          "name": ""
+        },
+        {
+          "tag": "input",
+          "id": "",
+          "name": ""
+        },
+        {
+          "tag": "input",
+          "id": "",
+          "name": ""
+        }
+      ],
+      "contentSha256": "6bbf3867f380d9f3dc0cb1887009305534da983d2e3534039207104bc687b0f1"
+    },
+    "skill-anglictina-vyukove-materialy.html": {
+      "canonical": "<link rel=\"canonical\" href=\"https://ai-ve-vyuce.netlify.app/skill-anglictina-vyukove-materialy\" />",
+      "og": "<meta property=\"og:url\" content=\"https://ai-ve-vyuce.netlify.app/skill-anglictina-vyukove-materialy\" />",
+      "title": "Jeden SKILL, sedm výukových materiálů: AI pomocník pro angličtinu | AI ve Výuce",
+      "robots": null,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Jeden SKILL, sedm výukových materiálů: AI pomocník pro angličtinu"
+        },
+        {
+          "level": 2,
+          "text": "Co je SKILL a čím se liší od běžného promptu?"
+        },
+        {
+          "level": 2,
+          "text": "Sedm druhů materiálů v jednom balíčku"
+        },
+        {
+          "level": 2,
+          "text": "Jak SKILL získat?"
+        },
+        {
+          "level": 2,
+          "text": "Jak SKILL dostat do chatbota?"
+        },
+        {
+          "level": 3,
+          "text": "ChatGPT: projekt nebo běžná konverzace"
+        },
+        {
+          "level": 3,
+          "text": "Claude: vlastní Skills, pokud jsou ve vašem prostředí dostupné"
+        },
+        {
+          "level": 3,
+          "text": "Gemini: import vlastního SKILLu"
+        },
+        {
+          "level": 3,
+          "text": "Další agenti s podporou Agent Skills"
+        },
+        {
+          "level": 2,
+          "text": "Vyzkoušejte si ho na jedné lekci"
+        },
+        {
+          "level": 3,
+          "text": "Připravte pracovní list na Present Simple"
+        },
+        {
+          "level": 2,
+          "text": "Co SKILL sám o sobě nedokáže?"
+        },
+        {
+          "level": 2,
+          "text": "Proč to stojí za vyzkoušení?"
+        },
+        {
+          "level": 3,
+          "text": "English Teaching Materials 1.0"
+        },
+        {
+          "level": 2,
+          "text": "Angličtina a AI ve škole"
+        },
+        {
+          "level": 3,
+          "text": "Angličtina"
+        },
+        {
+          "level": 3,
+          "text": "AI pro školy"
+        },
+        {
+          "level": 3,
+          "text": "Knihovna promptů"
+        }
+      ],
+      "ids": [
+        "top",
+        "primary-menu",
+        "skill-anglictina-vyukove-materialy",
+        "wave13-skill-anglictina-vyukove-materialy-h2-01",
+        "wave13-skill-anglictina-vyukove-materialy-h2-02",
+        "wave13-skill-anglictina-vyukove-materialy-h2-03",
+        "jak-pouzit",
+        "wave13-skill-anglictina-vyukove-materialy-h3-01",
+        "wave13-skill-anglictina-vyukove-materialy-h3-02",
+        "wave13-skill-anglictina-vyukove-materialy-h3-03",
+        "wave13-skill-anglictina-vyukove-materialy-h3-04",
+        "wave13-skill-anglictina-vyukove-materialy-h2-05",
+        "skill-example-title",
+        "skill-example",
+        "skill-example-feedback",
+        "wave13-skill-anglictina-vyukove-materialy-h2-06",
+        "wave13-skill-anglictina-vyukove-materialy-h2-07",
+        "english-skill-download-title",
+        "english-skill-related-title"
+      ],
+      "links": [
+        {
+          "href": "index.html",
+          "text": "AI ve výuce INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE"
+        },
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "text": "Začít s AI"
+        },
+        {
+          "href": "ai-navody.html",
+          "text": "Připravit výuku"
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Učit s AI"
+        },
+        {
+          "href": "asistenti.html",
+          "text": "Nástroje a asistenti"
+        },
+        {
+          "href": "vibe-coding.html",
+          "text": "Tvořit s AI"
+        },
+        {
+          "href": "ai.html",
+          "text": "Číst a objevovat"
+        },
+        {
+          "href": "index.html",
+          "text": "Domů"
+        },
+        {
+          "href": "anglictina.html",
+          "text": "Angličtina"
+        },
+        {
+          "href": "#wave13-skill-anglictina-vyukove-materialy-h2-01",
+          "text": "Co je SKILL a čím se liší od běžného promptu?"
+        },
+        {
+          "href": "#wave13-skill-anglictina-vyukove-materialy-h2-02",
+          "text": "Sedm druhů materiálů v jednom balíčku"
+        },
+        {
+          "href": "#wave13-skill-anglictina-vyukove-materialy-h2-03",
+          "text": "Jak SKILL získat?"
+        },
+        {
+          "href": "#jak-pouzit",
+          "text": "Jak SKILL dostat do chatbota?"
+        },
+        {
+          "href": "#wave13-skill-anglictina-vyukove-materialy-h3-01",
+          "text": "ChatGPT: projekt nebo běžná konverzace"
+        },
+        {
+          "href": "#wave13-skill-anglictina-vyukove-materialy-h3-02",
+          "text": "Claude: vlastní Skills, pokud jsou ve vašem prostředí dostupné"
+        },
+        {
+          "href": "#wave13-skill-anglictina-vyukove-materialy-h3-03",
+          "text": "Gemini: import vlastního SKILLu"
+        },
+        {
+          "href": "#wave13-skill-anglictina-vyukove-materialy-h3-04",
+          "text": "Další agenti s podporou Agent Skills"
+        },
+        {
+          "href": "#wave13-skill-anglictina-vyukove-materialy-h2-05",
+          "text": "Vyzkoušejte si ho na jedné lekci"
+        },
+        {
+          "href": "#skill-example-title",
+          "text": "Připravte pracovní list na Present Simple"
+        },
+        {
+          "href": "#wave13-skill-anglictina-vyukove-materialy-h2-06",
+          "text": "Co SKILL sám o sobě nedokáže?"
+        },
+        {
+          "href": "#wave13-skill-anglictina-vyukove-materialy-h2-07",
+          "text": "Proč to stojí za vyzkoušení?"
+        },
+        {
+          "href": "#english-skill-download-title",
+          "text": "English Teaching Materials 1.0"
+        },
+        {
+          "href": "https://agentskills.io/specification",
+          "text": "Agent Skills"
+        },
+        {
+          "href": "images/english-teaching-materials-infografika.png",
+          "text": ""
+        },
+        {
+          "href": "https://help.openai.com/en/articles/10169521-projects-in-chatgpt",
+          "text": "Návod OpenAI k Projektům"
+        },
+        {
+          "href": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
+          "text": "Představení Agent Skills od Anthropic"
+        },
+        {
+          "href": "https://gemini.google.com",
+          "text": "gemini.google.com"
+        },
+        {
+          "href": "https://support.google.com/gemini/answer/17094296",
+          "text": "vytváření a import Skills v Gemini"
+        },
+        {
+          "href": "https://support.google.com/gemini/answer/18560919",
+          "text": "přechod z Gems na Skills"
+        },
+        {
+          "href": "https://workspaceupdates.googleblog.com/2026/09/skills-gemini-app-workspace.html",
+          "text": "oznámení Google Workspace k přechodu a termínům"
+        },
+        {
+          "href": "https://agentskills.io/specification",
+          "text": "specifikace Agent Skills"
+        },
+        {
+          "href": "downloads/english-teaching-materials-v1.0.0.zip",
+          "text": "Stáhnout kompletní SKILL (ZIP)"
+        },
+        {
+          "href": "anglictina.html",
+          "text": "01 Angličtina Rozcestník materiálů a nástrojů pro výuku anglického jazyka."
+        },
+        {
+          "href": "ai.html",
+          "text": "02 AI pro školy Novinky, praktické návody a workflow pro učitele."
+        },
+        {
+          "href": "prompty.html",
+          "text": "03 Knihovna promptů Hotová zadání a inspirace pro přípravu výuky."
+        },
+        {
+          "href": "anglictina.html",
+          "text": "Angličtina"
+        },
+        {
+          "href": "ai.html",
+          "text": "AI pro školy"
+        }
+      ],
+      "images": [
+        {
+          "src": "images/ai-assistant-book-logo.png?v=robot-20261103",
+          "alt": ""
+        },
+        {
+          "src": "images/english-teaching-materials-infografika.webp",
+          "alt": "Infografika představuje sedm typů výukových materiálů: názornou výukovou pomůcku, gramatický plakát, obrázkovou slovní zásobu, pracovní list, vizuální podporu čtení a poslechu, konverzační aktivitu a infografiku lekce."
+        }
+      ],
+      "scripts": [
+        {
+          "src": "js/tool-guide.js?v=20261101-english-skill-copy",
+          "type": ""
+        },
+        {
+          "src": "js/site-footer.js?v=20260927-human-loop",
+          "type": ""
+        },
+        {
+          "src": "js/site-navigation-data.js?v=20261109-7m",
+          "type": ""
+        },
+        {
+          "src": "js/article-content-navigation.js?v=20261113-8a",
+          "type": ""
+        },
+        {
+          "src": "js/site-navigation.js?v=20261109-7m",
+          "type": ""
+        }
+      ],
+      "forms": [
+        {
+          "tag": "button",
+          "id": "",
+          "name": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "name": ""
+        }
+      ],
+      "contentSha256": "0d73928da2a31b307ede3dfd67a2ca02601949d06c67803f4a1ef7e59b89a5d7"
+    },
+    "vibe-coding-bezpecnost-kodu-php2shell.html": {
+      "canonical": "<link rel=\"canonical\" href=\"https://ai-ve-vyuce.netlify.app/vibe-coding-bezpecnost-kodu-php2shell.html\" />",
+      "og": "<meta property=\"og:url\" content=\"https://ai-ve-vyuce.netlify.app/vibe-coding-bezpecnost-kodu-php2shell.html\" />",
+      "title": "Vibe Coding: AI ti naprogramuje aplikaci. Ale kdo zkontroluje její bezpečnost? | AI ve Výuce",
+      "robots": null,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Vibe Coding: AI ti naprogramuje aplikaci. Ale kdo zkontroluje její bezpečnost?"
+        },
+        {
+          "level": 2,
+          "text": "Od nápadu k vlastní aplikaci"
+        },
+        {
+          "level": 2,
+          "text": "Funguje to. Ale je to bezpečné?"
+        },
+        {
+          "level": 2,
+          "text": "Dvě vrstvy bezpečnosti"
+        },
+        {
+          "level": 2,
+          "text": "OpenAI a kontrola zranitelností PHP"
+        },
+        {
+          "level": 2,
+          "text": "Co znamenají výsledky kontroly?"
+        },
+        {
+          "level": 2,
+          "text": "Týká se to i učitele, který si vytváří vlastní aplikaci?"
+        },
+        {
+          "level": 2,
+          "text": "Deset věcí, které zkontrolovat před zveřejněním AI aplikace"
+        },
+        {
+          "level": 2,
+          "text": "Můžeme požádat AI, aby zkontrolovala práci jiné AI?"
+        },
+        {
+          "level": 2,
+          "text": "Human in the Loop: člověk zůstává odpovědný"
+        },
+        {
+          "level": 2,
+          "text": "Zdroje a další čtení"
+        },
+        {
+          "level": 2,
+          "text": "Pokračujte ve Vibe Codingu"
+        },
+        {
+          "level": 3,
+          "text": "Vibe coding krok za krokem"
+        },
+        {
+          "level": 3,
+          "text": "Vibe coding pro učitele"
+        },
+        {
+          "level": 3,
+          "text": "Úvod do Vibe Codingu"
+        }
+      ],
+      "ids": [
+        "top",
+        "primary-menu",
+        "vibe-coding-bezpecnost-kodu-php2shell",
+        "wave13-vibe-coding-bezpecnost-kodu-php2shell-h2-01",
+        "wave13-vibe-coding-bezpecnost-kodu-php2shell-h2-02",
+        "wave13-vibe-coding-bezpecnost-kodu-php2shell-h2-03",
+        "wave13-vibe-coding-bezpecnost-kodu-php2shell-h2-04",
+        "wave13-vibe-coding-bezpecnost-kodu-php2shell-h2-05",
+        "wave13-vibe-coding-bezpecnost-kodu-php2shell-h2-06",
+        "wave13-vibe-coding-bezpecnost-kodu-php2shell-h2-07",
+        "wave13-vibe-coding-bezpecnost-kodu-php2shell-h2-08",
+        "wave13-vibe-coding-bezpecnost-kodu-php2shell-h2-09",
+        "wave13-vibe-coding-bezpecnost-kodu-php2shell-h2-10",
+        "related-vibe-security"
+      ],
+      "links": [
+        {
+          "href": "index.html",
+          "text": "AI ve výuce INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE"
+        },
+        {
+          "href": "ai-navod-chatgpt-zacatek-bezpecne.html",
+          "text": "Začít s AI"
+        },
+        {
+          "href": "ai-navody.html",
+          "text": "Připravit výuku"
+        },
+        {
+          "href": "aktivity.html",
+          "text": "Učit s AI"
+        },
+        {
+          "href": "asistenti.html",
+          "text": "Nástroje a asistenti"
+        },
+        {
+          "href": "vibe-coding.html",
+          "text": "Tvořit s AI"
+        },
+        {
+          "href": "ai.html",
+          "text": "Číst a objevovat"
+        },
+        {
+          "href": "index.html",
+          "text": "Domů"
+        },
+        {
+          "href": "vibe-coding.html",
+          "text": "Vibe Coding"
+        },
+        {
+          "href": "#wave13-vibe-coding-bezpecnost-kodu-php2shell-h2-01",
+          "text": "Od nápadu k vlastní aplikaci"
+        },
+        {
+          "href": "#wave13-vibe-coding-bezpecnost-kodu-php2shell-h2-02",
+          "text": "Funguje to. Ale je to bezpečné?"
+        },
+        {
+          "href": "#wave13-vibe-coding-bezpecnost-kodu-php2shell-h2-03",
+          "text": "Dvě vrstvy bezpečnosti"
+        },
+        {
+          "href": "#wave13-vibe-coding-bezpecnost-kodu-php2shell-h2-04",
+          "text": "OpenAI a kontrola zranitelností PHP"
+        },
+        {
+          "href": "#wave13-vibe-coding-bezpecnost-kodu-php2shell-h2-05",
+          "text": "Co znamenají výsledky kontroly?"
+        },
+        {
+          "href": "#wave13-vibe-coding-bezpecnost-kodu-php2shell-h2-06",
+          "text": "Týká se to i učitele, který si vytváří vlastní aplikaci?"
+        },
+        {
+          "href": "#wave13-vibe-coding-bezpecnost-kodu-php2shell-h2-07",
+          "text": "Deset věcí, které zkontrolovat před zveřejněním AI aplikace"
+        },
+        {
+          "href": "#wave13-vibe-coding-bezpecnost-kodu-php2shell-h2-08",
+          "text": "Můžeme požádat AI, aby zkontrolovala práci jiné AI?"
+        },
+        {
+          "href": "#wave13-vibe-coding-bezpecnost-kodu-php2shell-h2-09",
+          "text": "Human in the Loop: člověk zůstává odpovědný"
+        },
+        {
+          "href": "#wave13-vibe-coding-bezpecnost-kodu-php2shell-h2-10",
+          "text": "Zdroje a další čtení"
+        },
+        {
+          "href": "images/vibe-coding-bezpecnost-kodu-php2shell.png",
+          "text": ""
+        },
+        {
+          "href": "https://github.com/openai/php2shell-checker",
+          "text": "php2shell-checker"
+        },
+        {
+          "href": "https://github.com/openai/php2shell-checker/blob/main/skills/phpcheck-url/SKILL.md",
+          "text": "phpcheck-url"
+        },
+        {
+          "href": "https://github.com/openai/php2shell-checker/blob/main/skills/phpcheck-server/SKILL.md",
+          "text": "phpcheck-server"
+        },
+        {
+          "href": "https://github.com/openai/php2shell-checker",
+          "text": "OpenAI – php2shell-checker"
+        },
+        {
+          "href": "https://github.com/openai/php2shell-checker/blob/main/skills/phpcheck-url/SKILL.md",
+          "text": "OpenAI – phpcheck-url SKILL"
+        },
+        {
+          "href": "https://github.com/openai/php2shell-checker/blob/main/skills/phpcheck-server/SKILL.md",
+          "text": "OpenAI – phpcheck-server SKILL"
+        },
+        {
+          "href": "https://cheatsheetseries.owasp.org/cheatsheets/Secure_Code_Review_Cheat_Sheet.html",
+          "text": "OWASP – Secure Code Review Cheat Sheet"
+        },
+        {
+          "href": "https://cheatsheetseries.owasp.org/cheatsheets/Secure_Coding_with_AI_Cheat_Sheet.html",
+          "text": "OWASP – Secure Coding with AI Cheat Sheet"
+        },
+        {
+          "href": "https://www.php.net/manual/en/introduction.php",
+          "text": "PHP – Introduction (PHP Manual)"
+        },
+        {
+          "href": "https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Security_Cheat_Sheet.html",
+          "text": "OWASP – Transport Layer Security Cheat Sheet"
+        },
+        {
+          "href": "ai-workflow-vibe-coding.html",
+          "text": "01 Vibe coding krok za krokem Od problému přes prototyp a testování až po bezpečnost a nasazení."
+        },
+        {
+          "href": "vibe-coding-pro-ucitele.html",
+          "text": "02 Vibe coding pro učitele Co si můžete vytvořit do výuky a jak ověřit první prototyp."
+        },
+        {
+          "href": "vibe-coding-ucitele.html",
+          "text": "03 Úvod do Vibe Codingu První zadání, testování a bezpečné hranice při tvorbě výukové aplikace."
+        },
+        {
+          "href": "vibe-coding.html",
+          "text": "Zpět na Vibe Coding"
+        }
+      ],
+      "images": [
+        {
+          "src": "images/ai-assistant-book-logo.png?v=robot-20261103",
+          "alt": ""
+        },
+        {
+          "src": "images/vibe-coding-bezpecnost-kodu-php2shell.png",
+          "alt": "Infografika Vibe coding a bezpečnost kódu: co je vibe coding, dvě vrstvy kontroly (kód aplikace a prostředí serveru), příklad nástroje OpenAI php2shell-checker, výsledky OK, POTENTIALLY VULNERABLE a UNKNOWN, kontrolní otázky před zveřejněním a princip Human in the Loop."
+        }
+      ],
+      "scripts": [
+        {
+          "src": "js/site-footer.js?v=20260927-human-loop",
+          "type": ""
+        },
+        {
+          "src": "js/site-navigation-data.js?v=20261109-7m",
+          "type": ""
+        },
+        {
+          "src": "js/article-content-navigation.js?v=20261113-8a",
+          "type": ""
+        },
+        {
+          "src": "js/site-navigation.js?v=20261109-7m",
+          "type": ""
+        }
+      ],
+      "forms": [
+        {
+          "tag": "button",
+          "id": "",
+          "name": ""
+        }
+      ],
+      "contentSha256": "133b781547c5a3691de797be85e460b4ef0bdd713f13935f3345c243edc1d4de"
+    }
+  }
+}
