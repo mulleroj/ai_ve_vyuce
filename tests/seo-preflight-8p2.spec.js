@@ -21,7 +21,7 @@ function snapshot(html) {
     canonical: (html.match(/<link\b(?=[^>]*\brel=["']canonical["'])[^>]*>/i) || [])[0] || null,
     og: (html.match(/<meta\b(?=[^>]*\bproperty=["']og:url["'])[^>]*>/i) || [])[0] || null,
     robots: (html.match(/<meta\b(?=[^>]*\bname=["']robots["'])[^>]*>/i) || [])[0] || null,
-    headings, ids, links, images, scripts, controls,
+    headings, ids, links, images, scripts, forms: controls,
     contentSha256: crypto.createHash('sha256').update(preserved, 'utf8').digest('hex')
   };
 }
