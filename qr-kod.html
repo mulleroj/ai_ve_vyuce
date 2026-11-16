@@ -34,6 +34,13 @@
       grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
       gap: 24px;
       align-items: stretch;
+      min-width: 0;
+    }
+
+    .qr-page-grid > .qr-card,
+    .qr-form,
+    .qr-customize {
+      min-width: 0;
     }
 
     .qr-card {
@@ -65,6 +72,8 @@
 
     .qr-input {
       width: 100%;
+      min-width: 0;
+      max-width: 100%;
       border: 1px solid var(--border-hover);
       border-radius: var(--radius-md);
       padding: 15px 17px;
@@ -281,9 +290,12 @@
     }
 
     @media (max-width: 800px) {
-      .qr-page-grid,
+      .qr-page-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
       .qr-feature-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
       }
     }
 
@@ -324,7 +336,7 @@
 <body class="site-navigation-enabled qr-generator-page">
   <header class="site-header">
       <nav class="site-nav" aria-label="Hlavní navigace">
-        <a class="brand" href="index.html" aria-label="AI ve výuce · Inspirace, nástroje, praxe pro učitele">
+        <a class="brand" href="index.html">
           <img class="brand-symbol" src="images/ai-assistant-book-logo.png?v=robot-20261103" width="512" height="491" alt="">
           <span class="brand-copy"><strong>AI ve výuce</strong><small>INSPIRACE · NÁSTROJE · PRAXE PRO UČITELE</small></span>
         </a>
