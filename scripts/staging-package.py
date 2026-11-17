@@ -252,7 +252,7 @@ def build(source, output):
     htmls = {p for p in tracked if p.lower().endswith(".html") and not excluded(p)}
     verification = {
         p for p in htmls - public - ({"404.html"} if "404.html" in htmls else set())
-        if "/" not in p and re.fullmatch(r"google[a-f0-9]+\\.html", p)
+        if "/" not in p and re.fullmatch(r"google[a-f0-9]+\.html", p)
         and (source / p).read_text(encoding="utf-8", errors="replace").strip() == "google-site-verification: " + p
     }
     extras = htmls - public - ({"404.html"} if "404.html" in htmls else set()) - verification
