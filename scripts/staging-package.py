@@ -252,7 +252,7 @@ def build(source, output):
     htmls = {p for p in tracked if p.lower().endswith(".html") and not excluded(p)}
     verification = {
         p for p in htmls - public - ({"404.html"} if "404.html" in htmls else set())
-        if "/" not in p and re.fullmatch(r"google[a-f0-9]+\.html", p)
+        if "/" not in p and re.fullmatch(r"google[a-f0-9]+\\.html", p)
         and (source / p).read_text(encoding="utf-8", errors="replace").strip() == "google-site-verification: " + p
     }
     extras = htmls - public - ({"404.html"} if "404.html" in htmls else set()) - verification
@@ -288,11 +288,17 @@ def build(source, output):
         if (source / name).is_file():
             add(name, "required site/Netlify config")
 
-    def ref(value, base, why):
+    def ref(value, base, why, javascript_literal=False):
         if not value or value.startswith(("#", "mailto:", "tel:", "javascript:", "data:", "blob:")):
             return
         url = urllib.parse.urljoin(base, value)
         rel, kind = url_file(url, source, origin, routes)
+        if kind == "missing" and javascript_literal:
+            # JavaScript string literals may be labels rather than requests; resolve a site-root candidate before ignoring.
+            url = urllib.parse.urljoin(origin.rstrip("/") + "/", value)
+            rel, kind = url_file(url, source, origin, routes)
+            if kind == "missing":
+                return
         if kind in ("external", "non-http"):
             return
         if kind == "missing" or rel is None:
@@ -322,7 +328,7 @@ def build(source, output):
                     ref(value, base, "inline JS: " + rel)
         elif ext in (".css", ".js", ".mjs"):
             for value in text_refs(rel, (source / rel).read_text(encoding="utf-8", errors="replace")):
-                ref(value, current_url, "dependency: " + rel)
+                ref(value, current_url, "dependency: " + rel, javascript_literal=ext in (".js", ".mjs"))
 
     active_dirs = {PurePosixPath(p).parts[0].lower() for p in included
                    if len(PurePosixPath(p).parts) > 1 and PurePosixPath(p).parts[0].lower() in ASSET_DIRS}
@@ -336,8 +342,9 @@ def build(source, output):
             continue
         processed.add(rel)
         if Path(rel).suffix.lower() in (".css", ".js", ".mjs"):
+            ext = Path(rel).suffix.lower()
             for value in text_refs(rel, (source / rel).read_text(encoding="utf-8", errors="replace")):
-                ref(value, current_url, "dependency: " + rel)
+                ref(value, current_url, "dependency: " + rel, javascript_literal=ext in (".js", ".mjs"))
 
     if len(public) != EXPECTED_PUBLIC_HTML or not public.issubset(included):
         die("The complete set of 103 public HTML pages is not packaged")
