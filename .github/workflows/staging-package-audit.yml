@@ -61,6 +61,11 @@ jobs:
         run: |
           test "$(git -C source rev-parse HEAD)" = "$SOURCE_SHA"
           python3 audit/scripts/staging-package.py lfs-check --source source
+      - name: Fetch Browser QA baseline commits
+        run: |
+          for sha in "$BASELINE_SHA" "$WAVE2_BASELINE_SHA" "$WAVE3_BASELINE_SHA" "$WAVE4_BASELINE_SHA" "$WAVE5_BASELINE_SHA" "$WAVE6_BASELINE_SHA" "$WAVE7_BASELINE_SHA" "$WAVE8_BASELINE_SHA" "$WAVE9_BASELINE_SHA" "$WAVE10_BASELINE_SHA" "$WAVE11_BASELINE_SHA" "$WAVE12_BASELINE_SHA" "$WAVE13_BASELINE_SHA" "$WAVE14_BASELINE_SHA" "$WAVE15_BASELINE_SHA" "$WAVE16_BASELINE_SHA" "$WAVE17_BASELINE_SHA" "$WAVE18_BASELINE_SHA" "$WAVE19_BASELINE_SHA" "$WAVE20_BASELINE_SHA" "$SUBJECT_PAGES_BASELINE_SHA" "$ASSISTANT_PAGES_BASELINE_SHA" "$WAVE23_BASELINE_SHA" "$STABILITY_8O_BASELINE_SHA"; do
+            git -C source fetch --no-tags --depth=1 https://github.com/mulleroj/ai_ve_vyuce.git "$sha"
+          done
       - name: Build and verify deterministic package
         run: |
           python3 audit/scripts/staging-package.py build --source source --output package-output
