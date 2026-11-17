@@ -1,0 +1,120 @@
+name: Staging package audit
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches: [codex/ai-ve-vyuce-8p2-seo-finalizace]
+permissions:
+  contents: read
+jobs:
+  package:
+    name: Build and verify pinned staging package
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      SOURCE_SHA: 69221d32aad4258c365eb41d14dc52aa2b303a8e
+      TESTED_SHA: 69221d32aad4258c365eb41d14dc52aa2b303a8e
+      BASELINE_SHA: 1abd3fc39df4650b402f5f6d31f6a2148f7a769f
+      WAVE2_BASELINE_SHA: 6ae5e726d79b6aea3c87845193b9e0caa0f3ed19
+      WAVE3_BASELINE_SHA: 258e96761fb8d327d06ecea9b283cc1bd9f3ea10
+      WAVE4_BASELINE_SHA: fdc0a22750a024ab2dccc422084c24f51e356581
+      WAVE5_BASELINE_SHA: bcdd8e48cf8a97b44917b90c40f59c5a6e348f4f
+      WAVE6_BASELINE_SHA: 180c5a3880089216910f5b31b5de6a9b6b6fde38
+      WAVE7_BASELINE_SHA: 80caef268f88b36c496518d35cf18209f7ff3e8f
+      WAVE8_BASELINE_SHA: 815614650945db4c916f29a73c6444d00abe23c9
+      WAVE9_BASELINE_SHA: 55347de6a974110071b66406404e7ab29dfef46b
+      WAVE10_BASELINE_SHA: 94be232d7d0f20e589deb5910c820a6b95fc5171
+      WAVE11_BASELINE_SHA: 4f48ddb65eef3f19fa4be7ff62b05b3d8e2bb8c5
+      WAVE12_BASELINE_SHA: 3a566d2deb6e54e202acd4d1dc88194714477093
+      WAVE13_BASELINE_SHA: 646735727573f95b337fa03977b12530b8ebff61
+      WAVE14_BASELINE_SHA: 709eeb0edb22c8bdd988ec41999e087b25861143
+      WAVE15_BASELINE_SHA: 1a2ca130db05a6cfe46e072235a18ecb75d2adbb
+      WAVE16_BASELINE_SHA: 287b9c331e8c938b5f8152f8718e423521ee1e11
+      WAVE17_BASELINE_SHA: e7bbb564051bfc7db9f55792acb6a37856ce04e3
+      WAVE18_BASELINE_SHA: 5505c10e72de01513b70c6f8bf84d498820158b0
+      WAVE19_BASELINE_SHA: 7d46df5ee7ee3e9f27c085d42f8d7611ff0b802b
+      WAVE20_BASELINE_SHA: 9efd3e51b4a5d8a83edf7279bed526c8377d88b0
+      SUBJECT_PAGES_BASELINE_SHA: bfd39f3973d7139aeb4632ba7a74e94ab648f7bc
+      ASSISTANT_PAGES_BASELINE_SHA: 2ddaab92e024cd4bafb638f9ea0e62835ef10d27
+      WAVE23_BASELINE_SHA: ccbe7322895e31240e7a42133624d9ede4bf83bd
+      WAVE23_COMPLETED_GROUPS: A,B,C
+      STABILITY_8O_BASELINE_SHA: 342780b03feb07232852d50a089db290688f04c5
+    steps:
+      - name: Checkout audit PR
+        uses: actions/checkout@v4
+        with:
+          path: audit
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Checkout pinned publication source
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}
+          ref: ${{ env.SOURCE_SHA }}
+          path: source
+          lfs: true
+          submodules: false
+          persist-credentials: false
+      - name: Verify exact source and Git LFS
+        run: |
+          test "$(git -C source rev-parse HEAD)" = "$SOURCE_SHA"
+          python3 audit/scripts/staging-package.py lfs-check --source source
+      - name: Fetch Browser QA baseline commits
+        run: |
+          for sha in "$BASELINE_SHA" "$WAVE2_BASELINE_SHA" "$WAVE3_BASELINE_SHA" "$WAVE4_BASELINE_SHA" "$WAVE5_BASELINE_SHA" "$WAVE6_BASELINE_SHA" "$WAVE7_BASELINE_SHA" "$WAVE8_BASELINE_SHA" "$WAVE9_BASELINE_SHA" "$WAVE10_BASELINE_SHA" "$WAVE11_BASELINE_SHA" "$WAVE12_BASELINE_SHA" "$WAVE13_BASELINE_SHA" "$WAVE14_BASELINE_SHA" "$WAVE15_BASELINE_SHA" "$WAVE16_BASELINE_SHA" "$WAVE17_BASELINE_SHA" "$WAVE18_BASELINE_SHA" "$WAVE19_BASELINE_SHA" "$WAVE20_BASELINE_SHA" "$SUBJECT_PAGES_BASELINE_SHA" "$ASSISTANT_PAGES_BASELINE_SHA" "$WAVE23_BASELINE_SHA" "$STABILITY_8O_BASELINE_SHA"; do
+            git -C source fetch --no-tags --depth=1 https://github.com/mulleroj/ai_ve_vyuce.git "$sha"
+          done
+      - name: Build and verify deterministic package
+        run: |
+          python3 audit/scripts/staging-package.py build --source source --output package-output
+          python3 audit/scripts/staging-package.py verify-zip --zip package-output/ai-ve-vyuce-2-staging.zip --manifest package-output/staging-files-sha256.csv
+          python3 audit/scripts/staging-package.py verify --root package-output/verification-unpacked --manifest package-output/staging-files-sha256.csv
+      - name: Stage exact assistant-page baseline fixture
+        run: |
+          mkdir -p package-output/assistant-wave22-baseline
+          git -C source show "$ASSISTANT_PAGES_BASELINE_SHA:asistenti.html" > package-output/assistant-wave22-baseline/asistenti.html
+          git -C source show "$ASSISTANT_PAGES_BASELINE_SHA:katalog-asistenti.html" > package-output/assistant-wave22-baseline/katalog-asistenti.html
+      - name: Install existing Browser QA dependencies
+        working-directory: source
+        run: |
+          npm install --no-save --package-lock=false @playwright/test axe-core
+          npx playwright install --with-deps chromium
+      - name: Serve extracted package locally
+        run: |
+          mkdir -p package-output/test-results
+          python3 audit/scripts/staging-package.py serve --root package-output/verification-unpacked --port 4173 > package-output/test-results/http-server.log 2>&1 &
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:4173/ >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat package-output/test-results/http-server.log
+          exit 1
+      - name: Check every packaged file over HTTP
+        run: python3 audit/scripts/staging-package.py http-check --root package-output/verification-unpacked --manifest package-output/staging-files-sha256.csv
+      - name: Run all existing Browser QA suites against the package
+        working-directory: source
+        env:
+          PLAYWRIGHT_JSON_OUTPUT_NAME: ../package-output/test-results/report.json
+          ASSISTANT_WAVE22_BASELINE_DIR: ../package-output/assistant-wave22-baseline
+        run: |
+          npx playwright test tests/browser-qa.spec.js tests/subject-pages-a11y.spec.js tests/assistant-pages-wave22.spec.js tests/wave23-pages.spec.js tests/stability-8o.spec.js tests/seo-preflight-8p2.spec.js --reporter=list,json
+      - name: Add Browser QA results to report
+        if: always()
+        run: python3 audit/scripts/staging-package.py report --output package-output --qa-report package-output/test-results/report.json --tested-sha "$TESTED_SHA"
+      - name: Upload package and reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-ve-vyuce-2-staging-package
+          path: |
+            package-output/ai-ve-vyuce-2-staging.zip
+            package-output/staging-files-sha256.csv
+            package-output/staging-manifest-summary.txt
+            package-output/staging-technical-report.md
+            package-output/test-results/**
+            source/artifacts/**
+            source/test-results/**
+          if-no-files-found: warn
+          retention-days: 30
