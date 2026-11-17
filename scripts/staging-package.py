@@ -467,9 +467,8 @@ def serve(root, port):
             print(fmt % args, flush=True)
         def respond(self, body):
             path = urllib.parse.unquote(urllib.parse.urlsplit(self.path).path)
-            rule = routes.get(path)
-            if rule and 300 <= rule[1] < 400:
-                self.send_response(rule[1]); self.send_header("Location", rule[0]); self.end_headers(); return
+            # Match the project's existing Browser QA HTTP server: test packaged files directly.
+            # Netlify redirect rules remain in the ZIP; this loopback server does not emulate platform redirects.
             clean = path.lstrip("/")
             candidates = [clean]
             if not clean or path.endswith("/"):
