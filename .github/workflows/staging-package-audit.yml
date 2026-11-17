@@ -71,6 +71,11 @@ jobs:
           python3 audit/scripts/staging-package.py build --source source --output package-output
           python3 audit/scripts/staging-package.py verify-zip --zip package-output/ai-ve-vyuce-2-staging.zip --manifest package-output/staging-files-sha256.csv
           python3 audit/scripts/staging-package.py verify --root package-output/verification-unpacked --manifest package-output/staging-files-sha256.csv
+      - name: Stage exact assistant-page baseline fixture
+        run: |
+          mkdir -p package-output/assistant-wave22-baseline
+          git -C source show "$ASSISTANT_PAGES_BASELINE_SHA:asistenti.html" > package-output/assistant-wave22-baseline/asistenti.html
+          git -C source show "$ASSISTANT_PAGES_BASELINE_SHA:katalog-asistenti.html" > package-output/assistant-wave22-baseline/katalog-asistenti.html
       - name: Install existing Browser QA dependencies
         working-directory: source
         run: |
@@ -92,6 +97,7 @@ jobs:
         working-directory: source
         env:
           PLAYWRIGHT_JSON_OUTPUT_NAME: ../package-output/test-results/report.json
+          ASSISTANT_WAVE22_BASELINE_DIR: ../package-output/assistant-wave22-baseline
         run: |
           npx playwright test tests/browser-qa.spec.js tests/subject-pages-a11y.spec.js tests/assistant-pages-wave22.spec.js tests/wave23-pages.spec.js tests/stability-8o.spec.js tests/seo-preflight-8p2.spec.js --reporter=list,json
       - name: Add Browser QA results to report
