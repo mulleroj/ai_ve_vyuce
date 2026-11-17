@@ -250,9 +250,14 @@ def build(source, output):
     pages = make_pages(source, tracked, origin, routes)
     public = set(pages)
     htmls = {p for p in tracked if p.lower().endswith(".html") and not excluded(p)}
-    extras = htmls - public - ({"404.html"} if "404.html" in htmls else set())
+    verification = {
+        p for p in htmls - public - ({"404.html"} if "404.html" in htmls else set())
+        if "/" not in p and re.fullmatch(r"google[a-f0-9]+\.html", p)
+        and (source / p).read_text(encoding="utf-8", errors="replace").strip() == "google-site-verification: " + p
+    }
+    extras = htmls - public - ({"404.html"} if "404.html" in htmls else set()) - verification
     if extras:
-        die("Unclassified HTML outside sitemap/404: " + ", ".join(sorted(extras)))
+        die("Unclassified HTML outside sitemap/404/Google verification: " + ", ".join(sorted(extras)))
     if "404.html" in tracked:
         pages["404.html"] = origin.rstrip("/") + "/404.html"
     for config in ("robots.txt", "_redirects", "_headers", "netlify.toml"):
@@ -277,6 +282,8 @@ def build(source, output):
 
     for rel, url in pages.items():
         add(rel, "sitemap" if rel != "404.html" else "Netlify 404", url)
+    for rel in sorted(verification):
+        add(rel, "Google Search Console verification resource", origin.rstrip("/") + "/" + rel)
     for name in ("sitemap.xml", "robots.txt", "_redirects", "_headers", "netlify.toml"):
         if (source / name).is_file():
             add(name, "required site/Netlify config")
@@ -494,6 +501,7 @@ def http_check(root, manifest, base_url):
 
 def report(output, qa_report, tested_sha):
     output = Path(output)
+    output.mkdir(parents=True, exist_ok=True)
     report_path = output / "staging-technical-report.md"
     text = report_path.read_text(encoding="utf-8") if report_path.exists() else "# Staging package technical report\n"
     text += f"\n## Browser QA\n\n- Tested source SHA: {tested_sha}\n"
